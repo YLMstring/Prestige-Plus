@@ -9,7 +9,8 @@
 Homebrew Options:  
 - Summon Shadow: You can choose an animal companian instead and make it undead!
 - Shadow Jump: You can choose any feat from the dimentional feat chain instead! This requires [Microscopic Content Expansion mod](https://github.com/alterasc/MicroscopicContentExpansion/), which requires [TabletopTweaks-Core](https://github.com/Vek17/TabletopTweaks-Core). If you don't want these feats, my mod doesn't require anything, as the original feature will still be there.
-
+- Extra Shadow Jump: This is a homebrew feat that gives you 4 extra uses of Shadow Jump ability and you can take it as soon as shadowdancer level 1!
+  
 ### New Rogue Talents
 
 - [Defensive Roll](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-advanced-talents/defensive-roll-ex/)
