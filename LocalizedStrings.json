@@ -30,7 +30,7 @@
     // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
     // links to encycolpedia pages.
     "ProcessTemplates": false,
-    "enGB": "ShadowDancer",
+    "enGB": "Shadowdancer",
     "zhCN": "影舞者"
   },
 
@@ -188,5 +188,124 @@
     "Key": "ShadowDancerSummonShadow.Description",
     "enGB": "Once per day, as a free action you can summons a shadow which scales with your level. Summoned monsters appear where you designate and act according to their initiative results. They attack your opponents to the best of their ability.",
     "zhCN": "每日一次，你可以用自由动作召唤一个随你成长的幽影。它会在你的回合出现在你指定的位置，并根据其先攻展开行动。它会尽全力攻击你的敌人。"
+  },
+
+  {
+    "Key": "InheritorCrusader.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Inheritor’s Crusader",
+    "zhCN": "后继者远征骑士"
+  },
+
+  {
+    "Key": "InheritorCrusader.Description",
+    "enGB": "Honor, justice, and valor—while many righteous folk believe in these things, a select group of champions live and breathe them. It is in their blood and constantly at the forefront of their thoughts. The teachings of this once small, exclusive group of knights have inspired others, and now heroes all across the world take up swords in the name of these ideals. Most crusaders spend their time advancing the cause of the downtrodden, freeing the oppressed from tyranny and injustice, or helping the timid rise up in the face of evil, though their powers also make them suited for hunting down criminals, breaking the mental shackles of brainwashing and witchcraft, and destroying monsters that pierce the bravest hearts with fear.",
+    "zhCN": "勇气、正义与荣耀——虽然许多正义之士都相信这些美德，但有一小群艾奥梅黛的神选勇士则视之为生命。这些理念在他们的血液中流淌，总是出现在他们思想的第一线。这些骑士原本数量稀少且与世独立，但他们的理念启发了众人，而现在格拉利昂各地皆可见到英雄为这些理念而战。大多数的远征骑士把时间用于替受欺压者谋福利、解救被暴政与不公压迫的人们，或者帮助怯懦之人挺身直面邪恶，不过他们的能力也很适合追缉罪犯、打破洗脑或巫术施加的精神枷锁，并消灭那些可以让勇士中的勇士心生恐惧的怪物。"
+  },
+
+  {
+    "Key": "InheritorCrusaderspellupgrade.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Spells per Day",
+    "zhCN": "每日法术"
+  },
+
+  {
+    "Key": "InheritorCrusaderspellupgrade.Description",
+    "enGB": "At each level, the crusader gains new spells per day as if he had gained a level in cleric or paladin (depending on whether he has cleric or paladin levels). The MOD doesn't limit you, but remember by the rules this works like other prestige classes in the base game.",
+    "zhCN": "每个等级，远征骑士都会如同他在牧师，战斗祭司或圣武士（取决于他拥有的是牧师，战斗祭司或圣武士等级）上提升等级般获得新的每日法术。本MOD不限制你的选择，但实际上的规则是跟本体游戏里几个进阶职业一样的。"
+  },
+  {
+    "Key": "InheritorCrusaderChampionHonor.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Champion of Honor",
+    "zhCN": "荣光神选"
+  },
+
+  {
+    "Key": "InheritorCrusaderChampionHonor.Description",
+    "enGB": "An Inheritor’s crusader can smite evil once per day. A crusader’s class levels stack with paladin class levels for the purpose of determining the damage of the paladin’s smite evil ability.",
+    "zhCN": "后继者远征骑士可每日使用一次制裁邪恶能力。在决定制裁邪恶能力的伤害时，将远征骑士的等级与圣武士职业等级叠加计算。"
+  },
+
+  {
+    "Key": "InheritorCrusaderGreaterAura.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Aura of Great Courage",
+    "zhCN": "高等勇气灵光"
+  },
+
+  {
+    "Key": "InheritorCrusaderGreaterAura.Description",
+    "enGB": "At 1st level, the crusader gains an aura of courage equivalent to that of a 3rd-level paladin. If the crusader already has this ability, the aura’s range increases to 20 feet.",
+    "zhCN": "1级时，远征骑士获得勇气灵光，如同3级圣武士。若远征骑士已经拥有此能力，灵光范围增加至20尺。"
+  },
+
+  {
+    "Key": "DestroyTyranny.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Destroyer of Tyranny",
+    "zhCN": "颠覆暴政"
+  },
+
+  {
+    "Key": "DestroyTyranny.Description",
+    "enGB": "At 2nd level, a crusader can shatter the oppressive influence of others. Dispell any ongoing charm or compulsion effect upon any creature targeted by a crusader’s channel positive energy ability, positive energy fervor or lay on hands, using charactor level as the caster level.",
+    "zhCN": "2级时，远征骑士可以粉碎压迫他人的力量。使用角色等级作为施法者等级，尝试解除任何被远征骑士的引导正向能量，正向能量热忱或圣疗作为目标的生物身上正在生效的魅惑或胁迫效果。"
+  },
+
+  {
+    "Key": "InheritorCrusaderSwordAgainstInjustice.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Sword Against Injustice",
+    "zhCN": "剑斩不公"
+  },
+
+  {
+    "Key": "InheritorCrusaderSwordAgainstInjustice.Description",
+    "enGB": "At 3rd level, a crusader may use his power to judge the guilty and absolve the innocent. As a standard action he may announce he is bringing divine judgment upon a target who is accused of a crime (attacking the knight commander of the fifth crusade!); the crusader makes a melee attack with his sword against the target as part of this judgment. if the target is guilty, the attack automatically hits with a flash of white light. This attack requires no attack roll and cannot critically hit. If the target is protected by an effect that inhibits divinations (such as mind blank), the attack bounces off the target with an unpleasant metallic hiss, like quenching a red-hot blade in water. The crusader may use this ability once per day; each additional use beyond the first drains him, causing him to become fatigued. He cannot use this class ability if he is exhausted. He may expend a use of fervor or lay on hands while activating this ability to prevent fatigue.",
+    "zhCN": "3级时，远征骑士可以用自己的力量来审判罪人、赦免无辜者。他可以用一个标准动作，宣告自己将为被指控犯罪（袭击指挥官）的对象降下神圣裁决；作为裁决的一部份，远征骑士用他的剑对该目标进行一次攻击。若目标有罪，该次攻击自动命中，并迸发出白色的闪光。此次攻击不需要进行攻击检定，且不会重击。若目标受到能够压制预言系能力的效果影响（例如心灵屏障），则攻击会从目标身上弹开，并且发出彷佛将烧得火红的刀剑放进水中，令人不悦的金属嘶嘶声。远征骑士每天可以使用此能力一次；每天初次使用后的每一次都会消耗角色的体力，让他变得疲乏。他不能在力竭时使用此能力。他可以在启动此能力时，花费一次热忱或圣疗的使用次数来避免陷入疲乏。"
+  },
+
+  {
+    "Key": "Chevalier.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Chevalier",
+    "zhCN": "骑士"
+  },
+
+  {
+    "Key": "Chevalier.Description",
+    "enGB": "Some heroes don’t believe in fancy rules or high creeds or big flowery speeches, they just want to kill evil things, spend time with friends, and swap great tales over a good meal and tasty drinks. Not as stuffy or restrictive as a full-fledged knighthood, in their hearts chevaliers are just good people who want to celebrate the good things in life and fight evil wherever it dares to tread.",
+    "zhCN": "有些英雄不信仰繁文缛节，或是花言巧语，她们只想消灭邪恶之物，和伙伴们共度时光，一边侃大山一边喝酒吃肉。不像所谓真正的骑士那样沉闷又规矩，她们只是想要享受生命中的美好，并抗击胆敢侵犯它的邪恶。"
+  },
+
+  {
+    "Key": "ChevalierReckless.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Recklessness",
+    "zhCN": "鲁莽"
+  },
+
+  {
+    "Key": "ChevalierReckless.Description",
+    "enGB": "Sometimes hasty action proves more useful than even the best laid plans. A chevalier gains a morale bonus equal to his class level on attack and damage rolls on the round he enters a battle. ",
+    "zhCN": "有时候草率行动比精心策划更有用。骑士在进入战斗的第一轮内，其攻击和伤害骰获得等同于职业等级的士气加值。"
   }
 ]

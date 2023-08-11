@@ -6,6 +6,7 @@ using HarmonyLib;
 using Kingmaker.Blueprints.JsonSystem;
 using System;
 using UnityModManagerNet;
+using PrestigePlus.Modify;
 
 namespace PrestigePlus
 {
@@ -55,9 +56,9 @@ namespace PrestigePlus
           Initialized = true;
 
           Logger.Info("Configuring blueprints.");
-
-          ShadowDancer.Configure(); ShadowDancer.ExtraShadowJump();DefensiveRoll.Configure();
-        }
+                    SpellbookLevelUp.AccursedWitch(); SpellbookLevelUp.Alchemist(); SpellbookLevelUp.AngelfireApostle(); SpellbookLevelUp.Arcanist(); SpellbookLevelUp.ArmagsBlade(); SpellbookLevelUp.Bard(); SpellbookLevelUp.Bloodrager(); SpellbookLevelUp.Cleric(); SpellbookLevelUp.Crossblooded(); SpellbookLevelUp.Crusader(); SpellbookLevelUp.Druid(); SpellbookLevelUp.EldritchFont(); SpellbookLevelUp.EldritchScion(); SpellbookLevelUp.EldritchScoundrel(); SpellbookLevelUp.Empyreal(); SpellbookLevelUp.ExploiterWizard(); SpellbookLevelUp.Feyspeaker(); SpellbookLevelUp.Hunter(); SpellbookLevelUp.Inquisitor(); SpellbookLevelUp.LeyLineGuardianWitch(); SpellbookLevelUp.Magus(); SpellbookLevelUp.MasterSpy(); SpellbookLevelUp.NatureMage(); SpellbookLevelUp.Oracle(); SpellbookLevelUp.Paladin(); SpellbookLevelUp.Ranger(); SpellbookLevelUp.Sage(); SpellbookLevelUp.Shaman(); SpellbookLevelUp.Skald(); SpellbookLevelUp.Sorcerer(); SpellbookLevelUp.SwordSaint(); SpellbookLevelUp.ThassilonianAbjuration(); SpellbookLevelUp.ThassilonianConjuration(); SpellbookLevelUp.ThassilonianEnchantment(); SpellbookLevelUp.ThassilonianEvocation(); SpellbookLevelUp.ThassilonianIllusion(); SpellbookLevelUp.ThassilonianNecromancy(); SpellbookLevelUp.ThassilonianTransmutation(); SpellbookLevelUp.UnletteredArcanist(); SpellbookLevelUp.Warpriest(); SpellbookLevelUp.Witch(); SpellbookLevelUp.Wizard();
+                    ShadowDancer.Configure(); ShadowDancer.ExtraShadowJump();DefensiveRoll.Configure(); InheritorCrusader.Configure();Chevalier.Configure();
+          }
         catch (Exception e)
         {
           Logger.Error("Failed to configure blueprints.", e);

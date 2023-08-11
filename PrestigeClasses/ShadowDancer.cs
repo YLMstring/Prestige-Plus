@@ -108,6 +108,8 @@ namespace PrestigePlus.PrestigeClasses
                 .SetReflexSave(ReProgressGuid)
                 .SetWillSave(WiProgressGuid)
                 .SetProgression(progression)
+                .SetIsArcaneCaster(false)
+                .SetIsDivineCaster(false)
                 .SetClassSkills(new StatType[] { StatType.SkillStealth, StatType.SkillThievery, StatType.SkillMobility, StatType.SkillPerception, StatType.SkillPersuasion })
                 .AddPrerequisiteStatValue(StatType.SkillStealth, 5)
                 .AddPrerequisiteStatValue(StatType.SkillMobility, 2)
