@@ -1,10 +1,17 @@
 # PrestigePlus mod for Pathfinder: Wrath of the Righteous 
 
-- Add Shadowdancer prestige class, and Rogue Talent Defensive Roll. 
+- Add Chevalier, Inheritor’s Crusader, Shadowdancer prestige class. More coming soon!
+- Add Rogue Talent Defensive Roll. 
 - Apart from some minor tweaks, all the homebrew stuff are optional.
 
 ## Featuring
 
+### [Chevalier Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/c-d/chevalier/)
+- The class has only 3 levels.
+### [Inheritor’s Crusader Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/i-m/inheritor-s-crusader/)
+- The class has only 3 levels.
+#### Homebrew Options:  
+- Spells per day/Destroyer of Tyranny/Sword Against Injustice: Now warpriest-friendly!
 ### [Shadowdancer Class](https://www.d20pfsrd.com/classes/prestige-classes/core-rulebook/shadowdancer/)   
 #### Homebrew Options:  
 - Summon Shadow: You can choose an animal companian instead and make it undead!
