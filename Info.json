@@ -1,8 +1,8 @@
 {
   "Id": "PrestigePlus",
   "DisplayName": "PrestigePlus",
-  "Author": "",
-  "Version": "0.1",
+  "Author": "String",
+  "Version": "0.2.0",
   "ManagerVersion": "0.21.3",
   "Requirements": [],
   "AssemblyName": "PrestigePlus.dll",

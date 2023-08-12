@@ -230,8 +230,8 @@
 
   {
     "Key": "InheritorCrusaderChampionHonor.Description",
-    "enGB": "An Inheritor’s crusader can smite evil once per day. A crusader’s class levels stack with paladin class levels for the purpose of determining the damage of the paladin’s smite evil ability.",
-    "zhCN": "后继者远征骑士可每日使用一次制裁邪恶能力。在决定制裁邪恶能力的伤害时，将远征骑士的等级与圣武士职业等级叠加计算。"
+    "enGB": "An Inheritor’s crusader can smite evil once (or once more) per day. A crusader’s class levels stack with paladin class levels for the purpose of determining the damage of the paladin’s smite evil ability.",
+    "zhCN": "后继者远征骑士可每日使用一次（或额外使用一次）制裁邪恶能力。在决定制裁邪恶能力的伤害时，将远征骑士的等级与圣武士职业等级叠加计算。"
   },
 
   {
@@ -261,7 +261,7 @@
   {
     "Key": "DestroyTyranny.Description",
     "enGB": "At 2nd level, a crusader can shatter the oppressive influence of others. Dispell any ongoing charm or compulsion effect upon any creature targeted by a crusader’s channel positive energy ability, positive energy fervor or lay on hands, using charactor level as the caster level.",
-    "zhCN": "2级时，远征骑士可以粉碎压迫他人的力量。使用角色等级作为施法者等级，尝试解除任何被远征骑士的引导正向能量，正向能量热忱或圣疗作为目标的生物身上正在生效的魅惑或胁迫效果。"
+    "zhCN": "2级时，远征骑士可以粉碎压迫他人的力量。使用角色等级作为施法者等级，尝试解除任何被远征骑士的引导正向能量，正向能量热诚或圣疗作为目标的生物身上正在生效的魅惑或胁迫效果。"
   },
 
   {
@@ -276,7 +276,7 @@
   {
     "Key": "InheritorCrusaderSwordAgainstInjustice.Description",
     "enGB": "At 3rd level, a crusader may use his power to judge the guilty and absolve the innocent. As a standard action he may announce he is bringing divine judgment upon a target who is accused of a crime (attacking the knight commander of the fifth crusade!); the crusader makes a melee attack with his sword against the target as part of this judgment. if the target is guilty, the attack automatically hits with a flash of white light. This attack requires no attack roll and cannot critically hit. If the target is protected by an effect that inhibits divinations (such as mind blank), the attack bounces off the target with an unpleasant metallic hiss, like quenching a red-hot blade in water. The crusader may use this ability once per day; each additional use beyond the first drains him, causing him to become fatigued. He cannot use this class ability if he is exhausted. He may expend a use of fervor or lay on hands while activating this ability to prevent fatigue.",
-    "zhCN": "3级时，远征骑士可以用自己的力量来审判罪人、赦免无辜者。他可以用一个标准动作，宣告自己将为被指控犯罪（袭击指挥官）的对象降下神圣裁决；作为裁决的一部份，远征骑士用他的剑对该目标进行一次攻击。若目标有罪，该次攻击自动命中，并迸发出白色的闪光。此次攻击不需要进行攻击检定，且不会重击。若目标受到能够压制预言系能力的效果影响（例如心灵屏障），则攻击会从目标身上弹开，并且发出彷佛将烧得火红的刀剑放进水中，令人不悦的金属嘶嘶声。远征骑士每天可以使用此能力一次；每天初次使用后的每一次都会消耗角色的体力，让他变得疲乏。他不能在力竭时使用此能力。他可以在启动此能力时，花费一次热忱或圣疗的使用次数来避免陷入疲乏。"
+    "zhCN": "3级时，远征骑士可以用自己的力量来审判罪人、赦免无辜者。他可以用一个标准动作，宣告自己将为被指控犯罪（袭击指挥官）的对象降下神圣裁决；作为裁决的一部份，远征骑士用他的剑对该目标进行一次攻击。若目标有罪，该次攻击自动命中，并迸发出白色的闪光。此次攻击不需要进行攻击检定，且不会重击。若目标受到能够压制预言系能力的效果影响（例如心灵屏障），则攻击会从目标身上弹开，并且发出彷佛将烧得火红的刀剑放进水中，令人不悦的金属嘶嘶声。远征骑士每天可以使用此能力一次；每天初次使用后的每一次都会消耗角色的体力，让他变得疲乏。他不能在力竭时使用此能力。他可以在启动此能力时，花费一次热诚或圣疗的使用次数来避免陷入疲乏。"
   },
 
   {
@@ -307,5 +307,50 @@
     "Key": "ChevalierReckless.Description",
     "enGB": "Sometimes hasty action proves more useful than even the best laid plans. A chevalier gains a morale bonus equal to his class level on attack and damage rolls on the round he enters a battle. ",
     "zhCN": "有时候草率行动比精心策划更有用。骑士在进入战斗的第一轮内，其攻击和伤害骰获得等同于职业等级的士气加值。"
+  },
+
+  {
+    "Key": "ChevalierControllCharge.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Controlled Charge",
+    "zhCN": "严密冲锋"
+  },
+
+  {
+    "Key": "ChevalierControllCharge.Description",
+    "enGB": "At 2nd level, a chevalier gains a +2 bonus to AC when charging.",
+    "zhCN": "2级时，骑士在冲锋时获得+2AC加值。"
+  },
+
+  {
+    "Key": "ChevalierStubbornMind.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Stubborn Mind",
+    "zhCN": "坚定心智"
+  },
+
+  {
+    "Key": "ChevalierStubbornMind.Description",
+    "enGB": "At 2nd level, a chevalier gains bonus on saving throws against mind-affecting conditions equal to her strength modifier.",
+    "zhCN": "2级时，骑士在抵抗影响心智效应的豁免中获得等同于力量调整值的加值。"
+  },
+
+  {
+    "Key": "ChevalierSmite.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Smite Evil",
+    "zhCN": "制裁邪恶"
+  },
+
+  {
+    "Key": "ChevalierSmite.Description",
+    "enGB": "Once per day, a chevalier can smite evil as if he were a paladin of his character level.",
+    "zhCN": "骑士可每日使用一次制裁邪恶能力。在决定制裁邪恶能力的伤害时，她视为纯职圣武士。"
   }
 ]

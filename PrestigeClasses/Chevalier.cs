@@ -33,6 +33,8 @@ using BlueprintCore.Utils;
 using static Dreamteck.Splines.SplineMesh;
 using System.IO.Ports;
 using Kingmaker.UnitLogic.Mechanics.Components;
+using Kingmaker.UnitLogic.FactLogic;
+using Kingmaker.Designers.Mechanics.Facts;
 
 namespace PrestigePlus.PrestigeClasses
 {
@@ -55,9 +57,9 @@ namespace PrestigePlus.PrestigeClasses
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, FeatureRefs.AuraOfCourageFeature.ToString(), CreateReckless())
-                .AddToLevelEntry(2, CreateControllCharge())
-                .AddToLevelEntry(3, FeatureRefs.PoisonImmunity.ToString())
+                .AddToLevelEntry(1, FeatureRefs.AuraOfCourageFeature.ToString(), CreateReckless(), FeatureRefs.MythicIgnoreAlignmentRestrictions.ToString())
+                .AddToLevelEntry(2, CreateControllCharge(), CreateStubbornMind())
+                .AddToLevelEntry(3, FeatureRefs.PoisonImmunity.ToString(), CreateSmite())
                 .SetRanks(1)
                 .SetIsClassFeature(true)
                 .SetDisplayName(ArchetypeDisplayName)
@@ -169,6 +171,52 @@ namespace PrestigePlus.PrestigeClasses
             BuffConfigurator.For(BuffRefs.ChargeBuff)
             .EditComponent<AddFactContextActions>(
                 a => a.Activated.Actions = CommonTool.Append(a.Activated.Actions, action.Actions))
+              .Configure();
+
+            return feat;
+        }
+
+        private const string StubbornMind = "Chevalier.StubbornMind";
+        private static readonly string StubbornMindGuid = "{42D656DB-1669-417D-87F1-0BBFD93A141B}";
+
+        internal const string StubbornMindDisplayName = "ChevalierStubbornMind.Name";
+        private const string StubbornMindDescription = "ChevalierStubbornMind.Description";
+        private static BlueprintFeature CreateStubbornMind()
+        {
+            var icon = FeatureRefs.SlipperyMind.Reference.Get().Icon;
+
+            var feat = FeatureConfigurator.New(StubbornMind, StubbornMindGuid)
+              .SetDisplayName(StubbornMindDisplayName)
+              .SetDescription(StubbornMindDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddSavingThrowBonusAgainstDescriptor(ContextValues.Rank(), spellDescriptor: SpellDescriptor.MindAffecting)
+              .AddContextRankConfig(ContextRankConfigs.StatBonus(StatType.Strength).WithBonusValueProgression(0))
+              .AddRecalculateOnStatChange(stat: StatType.Strength, useKineticistMainStat: false)
+              .Configure();
+
+            return feat;
+        }
+
+        private const string Smite = "Chevalier.Smite";
+        private static readonly string SmiteGuid = "{08B9C71F-D39B-4ED1-806E-D7FE7B8B36E3}";
+
+        internal const string SmiteDisplayName = "ChevalierSmite.Name";
+        private const string SmiteDescription = "ChevalierSmite.Description";
+
+        private static readonly string InheritorGuid = "{772F4078-A60A-4D0F-B06C-61E56C4688D7}";
+        private static BlueprintFeature CreateSmite()
+        {
+            var feat = FeatureConfigurator.New(Smite, SmiteGuid)
+                .CopyFrom(
+                FeatureRefs.SmiteEvilFeature,
+                typeof(AddFacts),
+                typeof(AddAbilityResources))
+              .SetDisplayName(SmiteDisplayName)
+              .SetDescription(SmiteDescription)
+              .SetIsClassFeature(true)
+              .AddDamageBonusAgainstFactOwner(bonus: ContextValues.Rank(AbilityRankType.DamageBonus), checkedFact: BuffRefs.SmiteEvilBuff.ToString())
+              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { InheritorGuid, CharacterClassRefs.PaladinClass.ToString() }, excludeClasses: true, type: AbilityRankType.DamageBonus).WithLinearProgression(1, 0))
               .Configure();
 
             return feat;
