@@ -544,7 +544,8 @@ namespace PrestigePlus.PrestigeClasses
               .SetDescription(SummonShadowDescription)
               .SetIcon(icon)
               .SetFlags(BlueprintBuff.Flags.HiddenInUi)
-              .AddContextRankConfig(ContextRankConfigs.BaseStat(StatType.SaveWill).WithLinearProgression(1, 1, minProgressionValue: 0))
+              .AddFacts(new() { FeatureRefs.ChannelResistance4.ToString() })
+              .AddContextRankConfig(ContextRankConfigs.BaseStat(StatType.SaveWill).WithLinearProgression(1, -3, minProgressionValue: 0))
               .AddContextStatBonus(stat: StatType.SaveWill, value: ContextValues.Rank())
               .Configure();
 
