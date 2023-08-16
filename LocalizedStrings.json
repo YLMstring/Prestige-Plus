@@ -352,5 +352,155 @@
     "Key": "ChevalierSmite.Description",
     "enGB": "Once per day, a chevalier can smite evil as if he were a paladin of his character level.",
     "zhCN": "骑士可每日使用一次制裁邪恶能力。在决定制裁邪恶能力的伤害时，她视为纯职圣武士。"
+  },
+
+  {
+    "Key": "Spellupgrade.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Spells per Day",
+    "zhCN": "每日法术"
+  },
+
+  {
+    "Key": "Spellupgrade.Description",
+    "enGB": "When a new level in this class is gained, the character gains new spells as if he had also gained a level in a spellcasting class he belonged to before adding the prestige class. The MOD doesn't limit you, but remember by the rules this works like other prestige classes in the base game.",
+    "zhCN": "在这个职业中每获得一个等级，该角色都会如同他在已有的施法者职业上提升等级般获得新的每日法术。本MOD不限制你的选择，但实际上的规则是跟本体游戏里几个进阶职业一样的。"
+  },
+
+  {
+    "Key": "AgentoftheGrave.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Agent of the Grave",
+    "zhCN": "墓穴使徒"
+  },
+
+  {
+    "Key": "AgentoftheGrave.Description",
+    "enGB": "Agents of the Grave learn the deepest arcane secrets in their quest for undeath, gaining undead-like traits before their final shift to a state beyond death. Agents of the Grave master the necromantic arts, yet instead of controlling hordes of undead minions, they instead seek ultimate enlightenment, and possess subtle and murderous skills to help them attain it.",
+    "zhCN": "墓穴使徒在探索亡灵之道的过程中掌握了默语魔道最深层的奥术秘密，使得他们在最终晋升为超越死亡的形态之前便已经获得了类似不死生物的特质。由于这些秽恶的力量，加之以掩盖自我意图和拓展知识宽度的能力，在那些意图成为侍奉默语之道的强大法师与牧师，以及寻觅散落在格拉里昂各处的污秽遗迹、零件和尸骸，还有病态秘密的收藏家的人群中，墓穴使徒乃是最为完美的成员。"
+  },
+
+  {
+    "Key": "AgentoftheGraveLichTouch.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Lich’s Touch",
+    "zhCN": "巫妖之触"
+  },
+
+  {
+    "Key": "AgentoftheGraveLichTouch.Description",
+    "enGB": "At 1st level, the Agent of the Grave becomes a conduit for negative energy and the chill powers of death, allowing him to make a melee touch attack dealing 1d6 points of damage from negative energy per level of the Agent of the Grave class he attains. This ability allows him to heal undead minions, and himself upon attaining the negative energy affinity ability at 4th level. He can use this ability a number of times per day equal to 3 + his Charisma bonus.",
+    "zhCN": "1级时，墓穴使徒成为负能量与冰冷死亡之力的通道，这让他就能够以近战接触攻击造成每个墓穴使徒等级1d6点负能量伤害。这个能力也允许他治疗不死仆从，当他4级获得负能量亲和（Negative Energy Affinity）能力后，也可以用于治疗他自己。他每天能够使用这个能力的次数等同于3+他的魅力加值。"
+  },
+
+  {
+    "Key": "AgentoftheGraveUnholyFortitude.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Unholy Fortitude",
+    "zhCN": "不洁坚韧"
+  },
+
+  {
+    "Key": "AgentoftheGraveUnholyFortitude.Description",
+    "enGB": "At 1st level, the Agent of the Grave can tap into his conviction and bolster his health. His Constitution bonus is increased to a minimum value equaled with his Charisma bonus.",
+    "zhCN": "1级时，墓穴使徒迈向极致的信念强化了他的身体。他将体质加值提升至等同于魅力加值。"
+  },
+
+  {
+    "Key": "AgentoftheGraveDeathShroud.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Death’s Shroud",
+    "zhCN": "死亡尸衣"
+  },
+
+  {
+    "Key": "AgentoftheGraveDeathShroud.Description",
+    "enGB": "As an Agent of the Grave gains power within the organization, he often must infiltrate other groups to gain further knowledge. At 4th level, he learns how to cloak his true intentions, making his alignment undetectable.",
+    "zhCN": "由于墓穴使徒需要从组织内汲取力量，他必须经常潜入其他组织以获得更进一步的学识。4级时，他知晓如何隐藏自己的真实意图和角色阵营。"
+  },
+
+  {
+    "Key": "AgentoftheGraveDesecrate.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Negative Energy Conduit",
+    "zhCN": "负能量通道"
+  },
+
+  {
+    "Key": "AgentoftheGraveDesecrate.Description",
+    "enGB": "At 3rd level, an Agent of the Grave bolsters undead around him. As a standard action, an Agent of the Grave manifests an aura identical to the desecrate spell, except this foul aura has a duration of 10 minutes per level. Every undead creature entering a desecrated area gains a +1 profane bonus on all attack rolls, damage rolls, and saving throws. An Agent of the Grave can use this ability once per day. In addition, any undead the Agent of the Grave summons gains +1 hit points per caster level.",
+    "zhCN": "3级时，墓穴使徒能够增强围绕着他的不死生物。以一个标准动作，墓穴使徒展现出如同亵渎术一般的灵光，攻击骰，伤害骰和所有豁免均获得+1亵渎加值。不过这个秽恶的灵光只会持续每个等级10分钟。墓穴使徒每天能够使用这个能力一次。此外，墓穴使徒创造的不死生物获得每施法者等级+1生命值。"
+  },
+
+  {
+    "Key": "AgentoftheGraveGhoul.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Ghoul Transformation",
+    "zhCN": "转化食尸鬼"
+  },
+
+  {
+    "Key": "AgentoftheGraveGhoul.Description",
+    "enGB": "Inspired by what was done in the lost chapel, the Agent of the Grave transforms into a ghast while retaining his inteligence as well as class levels. He gains Ghast Special Abilities, bite (1d6) and 2 claws (1d6).",
+    "zhCN": "从失落神殿一战中汲取灵感后，墓穴使者转变为保留智慧和职业等级的食尸鬼，他获得食尸鬼的特殊能力，1d6噬咬攻击和2次1d6爪抓。"
+  },
+
+  {
+    "Key": "AgentoftheGraveVampire.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Vampire Transformation",
+    "zhCN": "转化吸血鬼"
+  },
+
+  {
+    "Key": "AgentoftheGraveVampire.Description",
+    "enGB": "The Agent of the Grave is no longer a half-vampire but a real one. He gains Vampire Spawn Special Abilities, Resistence, and 2 slams (1d6).",
+    "zhCN": "墓穴使者不再是半吸血鬼，而是真正的吸血鬼。他获得吸血鬼衍体的特殊能力，抗性和1d6挥击。"
+  },
+
+  {
+    "Key": "AgentoftheGraveSecretDeath.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Secrets of Death",
+    "zhCN": "死亡之秘"
+  },
+
+  {
+    "Key": "AgentoftheGraveSecretDeath.Description",
+    "enGB": "The Agent of the Grave gains new insights into the dark arts of necromancy. At the time he gains this ability, the character add all cleric and wizard necromancy spells to a full caster's spell list.",
+    "zhCN": "墓穴使徒借由默语魔道把持的秘密洞悉了死灵术的奥妙。当他获得这个能力时，角色将牧师和法师法术列表上的死灵学派法术添加到九环施法者的法术列表中。"
+  },
+
+  {
+    "Key": "UndeathInitiate.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Undeath Initiate",
+    "zhCN": "亡灵之途"
+  },
+
+  {
+    "Key": "UndeathInitiate.Description",
+    "enGB": "At 5th level, an Agent of the Grave has prepared his body and mind for the transition into undeath. Shall he do it now, or wait for a chance to transform into a lich?",
+    "zhCN": "5级时，墓穴使徒已经准备好将他的身体与心灵转化为不死生物，他应该立刻动手，还是等待转化巫妖的机会？"
   }
 ]
