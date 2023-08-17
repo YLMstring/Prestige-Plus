@@ -1,4 +1,4 @@
-# PrestigePlus mod for Pathfinder: Wrath of the Righteous 
+# Prestige Plus mod for Pathfinder: Wrath of the Righteous 
 
 - Add Chevalier, Inheritor’s Crusader, Shadowdancer prestige class. More coming soon!
 - Add Rogue Talent Defensive Roll. 
