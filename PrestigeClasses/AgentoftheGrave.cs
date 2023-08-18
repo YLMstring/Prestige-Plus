@@ -44,6 +44,9 @@ using BlueprintCore.Blueprints.CustomConfigurators.Classes.Spells;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
+using Kingmaker.UnitLogic.Buffs.Components;
+using Kingmaker.UnitLogic.Mechanics.Components;
+using Kingmaker.Designers.Mechanics.Facts;
 
 namespace PrestigePlus.PrestigeClasses
 {
@@ -65,15 +68,15 @@ namespace PrestigePlus.PrestigeClasses
 
         public static void Configure()
         {
-            string spellupgradeGuid = "{E995A687-EC47-4A29-9AFE-1C2715E0CC24}";
+            string spellupgradeGuid = "{05DC9561-0542-41BD-9E9F-404F59AB68C5}";
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, CreateLichTouch(), CreateUnholyFortitude())
-                .AddToLevelEntry(2, spellupgradeGuid, FeatureRefs.BloodlineUndeadArcana.ToString())
-                .AddToLevelEntry(3, spellupgradeGuid, CreateDesecrate())
-                .AddToLevelEntry(4, spellupgradeGuid, FeatureRefs.NegativeEnergyAffinityDhampir.ToString(), CreateDeathShroud())
-                .AddToLevelEntry(5, spellupgradeGuid, ExtraFeat())
+                .AddToLevelEntry(1, spellupgradeGuid, CreateLichTouch(), CreateUnholyFortitude())
+                .AddToLevelEntry(2, FeatureRefs.BloodlineUndeadArcana.ToString())
+                .AddToLevelEntry(3, CreateDesecrate())
+                .AddToLevelEntry(4, FeatureRefs.NegativeEnergyAffinityDhampir.ToString(), CreateDeathShroud())
+                .AddToLevelEntry(5, ExtraFeat())
                 .SetUIGroups(UIGroupBuilder.New()
                     .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { FeatureRefs.Evasion.Reference.Get().ToReference<BlueprintFeatureBaseReference>(), FeatureRefs.ImprovedEvasion.Reference.Get().ToReference<BlueprintFeatureBaseReference>() })
                     .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { FeatureRefs.UncannyDodge.Reference.Get().ToReference<BlueprintFeatureBaseReference>(), FeatureRefs.ImprovedUncannyDodge.Reference.Get().ToReference<BlueprintFeatureBaseReference>() }))
@@ -352,14 +355,125 @@ namespace PrestigePlus.PrestigeClasses
 
         private const string spelllist = "AgentoftheGrave.spelllist";
         private static readonly string spelllistguid = "{72869416-FA1F-4864-BB0A-AAAFD05D7177}";
+
+        private static readonly BlueprintSpellList WizardNecromancySpells = SpellListRefs.WizardNecromancySpellList.Reference.Get();
         private static BlueprintFeature CreateSecretDeath()
         {
             var icon = AbilityRefs.AnimateDead.Reference.Get().Icon;
 
+            var firstLevelSpells = new SpellLevelList(1)
+            {
+                m_Spells =
+          WizardNecromancySpells.GetSpells(1)
+            .Select(s => s.ToReference<BlueprintAbilityReference>())
+            .Append(AbilityRefs.Doom.Cast<BlueprintAbilityReference>().Reference)
+            .Append(AbilityRefs.InflictLightWoundsCast.Cast<BlueprintAbilityReference>().Reference)
+            .Append(AbilityRefs.HurricaneBow.Cast<BlueprintAbilityReference>().Reference)
+            .ToList()
+            };
+
+            var secondLevelSpells = new SpellLevelList(2)
+            {
+                m_Spells =
+                WizardNecromancySpells.GetSpells(2)
+                  .Select(s => s.ToReference<BlueprintAbilityReference>())
+                  .Append(AbilityRefs.BoneFists.Cast<BlueprintAbilityReference>().Reference)
+                  .Append(AbilityRefs.InflictModerateWoundsCast.Cast<BlueprintAbilityReference>().Reference)
+                  .ToList()
+            };
+
+            var thirdLevelSpells = new SpellLevelList(3)
+            {
+                m_Spells =
+                WizardNecromancySpells.GetSpells(3)
+                  .Select(s => s.ToReference<BlueprintAbilityReference>())
+                  .Append(AbilityRefs.Blindness.Cast<BlueprintAbilityReference>().Reference)
+                  .Append(AbilityRefs.BestowCurse.Cast<BlueprintAbilityReference>().Reference)
+                  .Append(AbilityRefs.Contagion.Cast<BlueprintAbilityReference>().Reference)
+                  .Append(AbilityRefs.InflictSeriousWoundsCast.Cast<BlueprintAbilityReference>().Reference)
+                  .ToList()
+            };
+
+            var fourthLevelSpells = new SpellLevelList(4)
+            {
+                m_Spells =
+                WizardNecromancySpells.GetSpells(4)
+                  .Select(s => s.ToReference<BlueprintAbilityReference>())
+                  .Append(AbilityRefs.DeathWardCast.Cast<BlueprintAbilityReference>().Reference)
+                  .Append(AbilityRefs.InflictCriticalWoundsCast.Cast<BlueprintAbilityReference>().Reference)
+                  .ToList()
+            };
+
+            var fifthLevelSpells = new SpellLevelList(5)
+            {
+                m_Spells =
+                WizardNecromancySpells.GetSpells(5)
+                  .Select(s => s.ToReference<BlueprintAbilityReference>())
+                  .Append(AbilityRefs.Boneshatter.Cast<BlueprintAbilityReference>().Reference)
+                  .Append(AbilityRefs.InflictLightWoundsMass.Cast<BlueprintAbilityReference>().Reference)
+                  .Append(AbilityRefs.SlayLivingCast.Cast<BlueprintAbilityReference>().Reference)
+                  .ToList()
+            };
+
+            var sixthLevelSpells = new SpellLevelList(6)
+            {
+                m_Spells =
+                WizardNecromancySpells.GetSpells(6)
+                  .Select(s => s.ToReference<BlueprintAbilityReference>())
+                  .Append(AbilityRefs.HarmCast.Cast<BlueprintAbilityReference>().Reference)
+                  .Append(AbilityRefs.InflictModerateWoundsMass.Cast<BlueprintAbilityReference>().Reference)
+                  .ToList()
+            };
+
+            var seventhLevelSpells = new SpellLevelList(7)
+            {
+                m_Spells =
+                WizardNecromancySpells.GetSpells(7)
+                  .Select(s => s.ToReference<BlueprintAbilityReference>())
+                  .Append(AbilityRefs.Destruction.Cast<BlueprintAbilityReference>().Reference)
+                  .Append(AbilityRefs.BestowCurseGreater.Cast<BlueprintAbilityReference>().Reference)
+                  .Append(AbilityRefs.InflictSeriousWoundsMass.Cast<BlueprintAbilityReference>().Reference)
+                  .ToList()
+            };
+
+            var eighthLevelSpells = new SpellLevelList(8)
+            {
+                m_Spells =
+                WizardNecromancySpells.GetSpells(8)
+                  .Select(s => s.ToReference<BlueprintAbilityReference>())
+                  .Append(AbilityRefs.InflictCriticalWoundsMass.Cast<BlueprintAbilityReference>().Reference)
+                  .ToList()
+            };
+
+            var ninthLevelSpells = new SpellLevelList(9)
+            {
+                m_Spells =
+                WizardNecromancySpells.GetSpells(9)
+                  .Select(s => s.ToReference<BlueprintAbilityReference>())
+                  .ToList()
+            };
+
             SpellListConfigurator.New(spelllist, spelllistguid)
               .SetFilterBySchool(true)
+              .SetIsMythic(false)
+              .SetFilterByMaxLevel(9)
+              .SetFilterByDescriptor(false)
+              .SetDescriptor(SpellDescriptor.None)
+              .SetExcludeFilterSchool(true)
               .SetFilterSchool(SpellSchool.Necromancy)
+              .SetFilterSchool2(SpellSchool.None)
               .SetFilteredList(SpellListRefs.ClericSpellList.Reference.Get())
+              .AddToSpellsByLevel(
+                new(0),
+                firstLevelSpells,
+                secondLevelSpells,
+                thirdLevelSpells,
+                fourthLevelSpells,
+                fifthLevelSpells,
+                sixthLevelSpells,
+                seventhLevelSpells,
+                eighthLevelSpells,
+                ninthLevelSpells)
               .Configure();
 
             var feat = FeatureConfigurator.New(SecretDeath, SecretDeathGuid)
@@ -368,22 +482,14 @@ namespace PrestigePlus.PrestigeClasses
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddPrerequisiteStatValue(StatType.Intelligence, 13)
-              .AddLearnSpellList(spellList: SpellListRefs.WizardNecromancySpellList.ToString(), characterClass: CharacterClassRefs.ClericClass.ToString())
               .AddLearnSpellList(spellList: spelllistguid, characterClass: CharacterClassRefs.ClericClass.ToString())
               .AddLearnSpellList(spellList: spelllistguid, characterClass: CharacterClassRefs.OracleClass.ToString())
-              .AddLearnSpellList(spellList: SpellListRefs.WizardNecromancySpellList.ToString(), characterClass: CharacterClassRefs.OracleClass.ToString())
               .AddLearnSpellList(spellList: spelllistguid, characterClass: CharacterClassRefs.ShamanClass.ToString())
-              .AddLearnSpellList(spellList: SpellListRefs.WizardNecromancySpellList.ToString(), characterClass: CharacterClassRefs.ShamanClass.ToString())
               .AddLearnSpellList(spellList: spelllistguid, characterClass: CharacterClassRefs.DruidClass.ToString())
-              .AddLearnSpellList(spellList: SpellListRefs.WizardNecromancySpellList.ToString(), characterClass: CharacterClassRefs.DruidClass.ToString())
               .AddLearnSpellList(spellList: spelllistguid, characterClass: CharacterClassRefs.WizardClass.ToString())
-              .AddLearnSpellList(spellList: SpellListRefs.WizardNecromancySpellList.ToString(), characterClass: CharacterClassRefs.WizardClass.ToString())
               .AddLearnSpellList(spellList: spelllistguid, characterClass: CharacterClassRefs.SorcererClass.ToString())
-              .AddLearnSpellList(spellList: SpellListRefs.WizardNecromancySpellList.ToString(), characterClass: CharacterClassRefs.SorcererClass.ToString())
               .AddLearnSpellList(spellList: spelllistguid, characterClass: CharacterClassRefs.ArcanistClass.ToString())
-              .AddLearnSpellList(spellList: SpellListRefs.WizardNecromancySpellList.ToString(), characterClass: CharacterClassRefs.ArcanistClass.ToString())
               .AddLearnSpellList(spellList: spelllistguid, characterClass: CharacterClassRefs.WitchClass.ToString())
-              .AddLearnSpellList(spellList: SpellListRefs.WizardNecromancySpellList.ToString(), characterClass: CharacterClassRefs.WitchClass.ToString())
               .Configure();
 
             return feat;

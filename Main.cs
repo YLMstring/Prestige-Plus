@@ -7,6 +7,10 @@ using Kingmaker.Blueprints.JsonSystem;
 using System;
 using UnityModManagerNet;
 using PrestigePlus.Modify;
+using ModMenu.Settings;
+using PrestigePlus.Menu;
+using System.Globalization;
+using System.Text;
 
 namespace PrestigePlus
 {
@@ -14,8 +18,13 @@ namespace PrestigePlus
   {
     public static bool Enabled;
     private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
+        private static readonly string RootKey = "mod-menu.test-settings";
+        private static string GetKey(string partialKey)
+        {
+            return $"{RootKey}.{partialKey}";
+        }
 
-    public static bool Load(UnityModManager.ModEntry modEntry)
+        public static bool Load(UnityModManager.ModEntry modEntry)
     {
       try
       {
@@ -36,17 +45,48 @@ namespace PrestigePlus
       Enabled = value;
       return true;
     }
+        private static void onclick()
+        {
+            var log = new StringBuilder();
+            log.AppendLine("Current settings: ");
+            ///log.AppendLine($"-Toggle: {CheckToggle()}");
+            log.AppendLine($"-Default Slider Float: {ModMenu.ModMenu.GetSettingValue<float>(GetKey("float-default"))}");
+            log.AppendLine($"-Slider Float: {ModMenu.ModMenu.GetSettingValue<float>(GetKey("float"))}");
+            log.AppendLine($"-Default Slider Int: {ModMenu.ModMenu.GetSettingValue<int>(GetKey("int-default"))}");
+            log.AppendLine($"-Slider Int: {ModMenu.ModMenu.GetSettingValue<int>(GetKey("int"))}");
+            Logger.Info(log.ToString());
+        }
 
-    [HarmonyPatch(typeof(BlueprintsCache))]
+        [HarmonyPatch(typeof(BlueprintsCache))]
     static class BlueprintsCaches_Patch
     {
       private static bool Initialized = false;
 
       [HarmonyPriority(Priority.First)]
       [HarmonyPatch(nameof(BlueprintsCache.Init)), HarmonyPostfix]
+
       static void Init()
       {
-        try
+       ModMenu.ModMenu.AddSettings(
+        SettingsBuilder.New(RootKey, Helpers.CreateString("title", "Prestige Plus"))
+          .AddDefaultButton()
+          .AddButton(
+            Button.New(
+              Helpers.CreateString("button-desc", "Restart the game to apply changes!"), Helpers.CreateString("button-text", "Do Not Turn Any Chosen Features Off"), onclick))
+          .AddToggle(
+            Toggle.New(GetKey("grave"), defaultValue: true, Helpers.CreateString("toggle-desc1", "Agent of the Grave"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("chevalier"), defaultValue: true, Helpers.CreateString("toggle-desc2", "Chevalier"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("crusader"), defaultValue: true, Helpers.CreateString("toggle-desc3", "Inheritor¡¯s Crusader"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("dancer"), defaultValue: true, Helpers.CreateString("toggle-desc4", "Shadowdancer (Defensive Roll)"))
+              .ShowVisualConnection()));
+
+                try
         {
           if (Initialized)
           {
@@ -56,9 +96,12 @@ namespace PrestigePlus
           Initialized = true;
 
           Logger.Info("Configuring blueprints.");
-                    SpellbookLevelUp.AccursedWitch(); SpellbookLevelUp.Alchemist(); SpellbookLevelUp.AngelfireApostle(); SpellbookLevelUp.Arcanist(); SpellbookLevelUp.ArmagsBlade(); SpellbookLevelUp.Bard(); SpellbookLevelUp.Bloodrager(); SpellbookLevelUp.Cleric(); SpellbookLevelUp.Crossblooded(); SpellbookLevelUp.Crusader(); SpellbookLevelUp.Druid(); SpellbookLevelUp.EldritchFont(); SpellbookLevelUp.EldritchScion(); SpellbookLevelUp.EldritchScoundrel(); SpellbookLevelUp.Empyreal(); SpellbookLevelUp.ExploiterWizard(); SpellbookLevelUp.Feyspeaker(); SpellbookLevelUp.Hunter(); SpellbookLevelUp.Inquisitor(); SpellbookLevelUp.LeyLineGuardianWitch(); SpellbookLevelUp.Magus(); SpellbookLevelUp.MasterSpy(); SpellbookLevelUp.NatureMage(); SpellbookLevelUp.Oracle(); SpellbookLevelUp.Paladin(); SpellbookLevelUp.Ranger(); SpellbookLevelUp.Sage(); SpellbookLevelUp.Shaman(); SpellbookLevelUp.Skald(); SpellbookLevelUp.Sorcerer(); SpellbookLevelUp.SwordSaint(); SpellbookLevelUp.ThassilonianAbjuration(); SpellbookLevelUp.ThassilonianConjuration(); SpellbookLevelUp.ThassilonianEnchantment(); SpellbookLevelUp.ThassilonianEvocation(); SpellbookLevelUp.ThassilonianIllusion(); SpellbookLevelUp.ThassilonianNecromancy(); SpellbookLevelUp.ThassilonianTransmutation(); SpellbookLevelUp.UnletteredArcanist(); SpellbookLevelUp.Warpriest(); SpellbookLevelUp.Witch(); SpellbookLevelUp.Wizard();
-                    ShadowDancer.Configure(); ShadowDancer.ExtraShadowJump();DefensiveRoll.Configure(); InheritorCrusader.Configure();Chevalier.Configure();
-          }
+                    SpellbookReplace.Select();
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("grave"))) AgentoftheGrave.Configure();
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("chevalier"))) Chevalier.Configure();
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("crusader"))) InheritorCrusader.Configure();
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("dancer"))) { ShadowDancer.Configure(); ShadowDancer.ExtraShadowJump(); DefensiveRoll.Configure(); }
+                }
         catch (Exception e)
         {
           Logger.Error("Failed to configure blueprints.", e);
