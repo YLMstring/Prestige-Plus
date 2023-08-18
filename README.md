@@ -1,11 +1,21 @@
 # Prestige Plus mod for Pathfinder: Wrath of the Righteous 
+## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu).
 
-- Add Chevalier, Inheritor’s Crusader, Shadowdancer prestige class. More coming soon!
+- Add Agent of the Grave, Chevalier, Inheritor’s Crusader, Shadowdancer prestige class. More coming soon!
 - Add Rogue Talent Defensive Roll. 
 - Apart from some minor tweaks, all the homebrew stuff are optional.
+- And they are togglable now!
 
 ## Featuring
 
+### [Agent of the Grave Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/a-b/agent-of-the-grave/)
+- The class has only 5 levels.
+- Agent of the Grave lose spell progression at level 1. I have no idea why my code can make you lose spell progression, but it just works.
+- Hide your alignment!
+#### Homebrew Options:  
+- At level 5 you can learn all necromancy spells (require 13 int, full caster)
+- Or become a ghoul! (you're undead so incompatible with lichdom)
+- Or become a vampire! (require blood drinker, incompatible with lichdom)
 ### [Chevalier Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/c-d/chevalier/)
 - The class has only 3 levels.
 ### [Inheritor’s Crusader Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/i-m/inheritor-s-crusader/)
