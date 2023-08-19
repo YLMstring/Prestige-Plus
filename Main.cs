@@ -96,7 +96,7 @@ namespace PrestigePlus
           Initialized = true;
 
           Logger.Info("Configuring blueprints.");
-                    SpellbookReplace.Select();
+                    SpellbookReplace.Select(); SpellbookLevelUp.Select();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("grave"))) AgentoftheGrave.Configure();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("chevalier"))) Chevalier.Configure();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("crusader"))) InheritorCrusader.Configure();

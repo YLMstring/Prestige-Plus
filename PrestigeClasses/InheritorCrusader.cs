@@ -249,7 +249,7 @@ namespace PrestigePlus.PrestigeClasses
                 return;
 
             var purify = ActionsBuilder.New()
-                .Conditional(conditions: ConditionsBuilder.New().HasFact(DestroyTyrannyGuid), ifTrue: ActionsBuilder.New()
+                .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(DestroyTyrannyGuid), ifTrue: ActionsBuilder.New()
                     .DispelMagic(buffType: Kingmaker.UnitLogic.Mechanics.Actions.ContextActionDispelMagic.BuffType.All, checkType: Kingmaker.RuleSystem.Rules.RuleDispelMagic.CheckType.CasterLevel, maxSpellLevel: ContextValues.Constant(9), checkSchoolOrDescriptor: false, descriptor: SpellDescriptor.Charm)
                     .DispelMagic(buffType: Kingmaker.UnitLogic.Mechanics.Actions.ContextActionDispelMagic.BuffType.All, checkType: Kingmaker.RuleSystem.Rules.RuleDispelMagic.CheckType.CasterLevel, maxSpellLevel: ContextValues.Constant(9), checkSchoolOrDescriptor: false, descriptor: SpellDescriptor.Compulsion)
                     .Build())
