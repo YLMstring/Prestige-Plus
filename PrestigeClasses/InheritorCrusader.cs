@@ -249,7 +249,7 @@ namespace PrestigePlus.PrestigeClasses
                 return;
 
             var purify = ActionsBuilder.New()
-                .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(DestroyTyrannyGuid), ifTrue: ActionsBuilder.New()
+                .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(DestroyTyrannyGuid).Build(), ifTrue: ActionsBuilder.New()
                     .DispelMagic(buffType: Kingmaker.UnitLogic.Mechanics.Actions.ContextActionDispelMagic.BuffType.All, checkType: Kingmaker.RuleSystem.Rules.RuleDispelMagic.CheckType.CasterLevel, maxSpellLevel: ContextValues.Constant(9), checkSchoolOrDescriptor: false, descriptor: SpellDescriptor.Charm)
                     .DispelMagic(buffType: Kingmaker.UnitLogic.Mechanics.Actions.ContextActionDispelMagic.BuffType.All, checkType: Kingmaker.RuleSystem.Rules.RuleDispelMagic.CheckType.CasterLevel, maxSpellLevel: ContextValues.Constant(9), checkSchoolOrDescriptor: false, descriptor: SpellDescriptor.Compulsion)
                     .Build())
@@ -291,7 +291,7 @@ namespace PrestigePlus.PrestigeClasses
 
             var sword2 = ActionsBuilder.New()
                 .MeleeAttack(autoHit: true, extraAttack: true)
-                .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(BuffRefs.Fatigued.ToString()), ifTrue: ActionsBuilder.New()
+                .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(BuffRefs.Fatigued.ToString()).Build(), ifTrue: ActionsBuilder.New()
                     .ApplyBuffPermanent(buff: BuffRefs.Exhausted.ToString(), toCaster: true)
                     .Build())
                 .ApplyBuffPermanent(buff: BuffRefs.Fatigued.ToString(), toCaster: true)

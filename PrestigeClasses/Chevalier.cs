@@ -163,7 +163,7 @@ namespace PrestigePlus.PrestigeClasses
               .Configure();
             
             var action = ActionsBuilder.New()
-                .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(feat), ifTrue: ActionsBuilder.New()
+                .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(feat).Build(), ifTrue: ActionsBuilder.New()
                     .ApplyBuff(buff: Buff1, durationValue: ContextDuration.Fixed(1))
                     .Build())
                 .Build();

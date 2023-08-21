@@ -47,6 +47,7 @@ using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Designers.Mechanics.Facts;
+using PrestigePlus.Feats;
 
 namespace PrestigePlus.PrestigeClasses
 {
@@ -153,7 +154,7 @@ namespace PrestigePlus.PrestigeClasses
                 .SetCanTargetSelf(true)
                 .SetType(AbilityType.Supernatural)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-                .Conditional(conditions: ConditionsBuilder.New().HasFact(FeatureRefs.NegativeEnergyAffinity.ToString()), 
+                .Conditional(conditions: ConditionsBuilder.New().HasFact(FeatureRefs.NegativeEnergyAffinity.ToString()).Build(), 
                     ifTrue: ActionsBuilder.New()
                     .HealTarget(ContextDice.Value(DiceType.D6, bonus: 0, diceCount: ContextValues.Rank()))
                     .Build(),
@@ -263,7 +264,7 @@ namespace PrestigePlus.PrestigeClasses
                 .SetShape(AreaEffectShape.Cylinder)
                 .SetSize(FeetExtension.Feet(23))
                 .AddAbilityAreaEffectBuff(buff: Buff, checkConditionEveryRound: true, 
-                    condition: ConditionsBuilder.New().HasFact(FeatureRefs.UndeadType.ToString()))
+                    condition: ConditionsBuilder.New().HasFact(FeatureRefs.UndeadType.ToString()).Build())
                 .Configure();
 
             var Aura = BuffConfigurator.New(DesecrateAuraBuff, DesecrateAuraGuidBuff)

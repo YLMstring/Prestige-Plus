@@ -67,7 +67,7 @@ namespace PrestigePlus.Feats
               .SetIcon(icon2)
               .AddUnitHealthGuard(0)
               .AddBuffActions(deactivated: ActionsBuilder.New()
-                .Conditional(conditions: ConditionsBuilder.New().IsFlatFooted(), ifFalse: ActionsBuilder.New()
+                .Conditional(conditions: ConditionsBuilder.New().IsFlatFooted().Build(), ifFalse: ActionsBuilder.New()
                     .HealTarget(ContextDice.Value(DiceType.One))
                     .Build())
                 .Build())
