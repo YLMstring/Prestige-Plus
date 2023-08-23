@@ -80,6 +80,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("chevalier"), defaultValue: true, Helpers.CreateString("toggle-desc2", "Chevalier"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("lander"), defaultValue: true, Helpers.CreateString("toggle-desc5", "Hinterlander"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("crusader"), defaultValue: true, Helpers.CreateString("toggle-desc3", "Inheritor¡¯s Crusader"))
               .ShowVisualConnection())
           .AddToggle(
@@ -96,10 +99,11 @@ namespace PrestigePlus
           Initialized = true;
 
           Logger.Info("Configuring blueprints.");
-                    SpellbookReplace.Select(); SpellbookLevelUp.Select();
+                    SpellbookReplace.Select(); SpellbookLevelUp.Select(); ImbueArrow.Configure();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("grave"))) AgentoftheGrave.Configure();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("chevalier"))) Chevalier.Configure();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("crusader"))) InheritorCrusader.Configure();
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("lander"))) Hinterlander.Configure();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("dancer"))) { ShadowDancer.Configure(); ShadowDancer.ExtraShadowJump(); DefensiveRoll.Configure(); }
                 }
         catch (Exception e)

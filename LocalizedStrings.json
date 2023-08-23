@@ -502,5 +502,80 @@
     "Key": "UndeathInitiate.Description",
     "enGB": "At 5th level, an Agent of the Grave has prepared his body and mind for the transition into undeath. Shall he do it now, or wait for a chance to transform into a lich?",
     "zhCN": "5级时，墓穴使徒已经准备好将他的身体与心灵转化为不死生物，他应该立刻动手，还是等待转化巫妖的机会？"
+  },
+
+  {
+    "Key": "ImbueArrow.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Imbue Arrow",
+    "zhCN": "灌法箭"
+  },
+
+  {
+    "Key": "ImbueArrow.Description",
+    "enGB": "At 2nd level, an arcane archer gains the ability to place an area spell upon an arrow. The arrow is fired toward center of the spell’s area. A spell cast in this way uses its own casting time and the arcane archer can fire the arrow as part of the casting. The arrow must be fired during the round that the casting is completed or the spell is wasted. If the arrow misses, the spell is wasted. Click again to cancel.",
+    "zhCN": "2级开始，魔射手可在箭上灌注一个区域性法术。向该法术影响区域中心射出。如此施法时耗费法术本身的施法时间，而且射箭视为施法的一部分。施法与射箭必须在同一轮完成，否则法术便失效。如果箭未命中，则法术失效。按第二下可以取消。"
+  },
+
+  {
+    "Key": "Hinterlander.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Hinterlander",
+    "zhCN": "戍乡人"
+  },
+
+  {
+    "Key": "Hinterlander.Description",
+    "enGB": "Hinterlanders shield rural folk from dangerous creatures, extraplanar interlopers, and marauding undead. A hinterlander is skilled with a bow and in tune with the wild, yet capable of harnessing natural resources to nourish mortal communities. They are often touched by the divine, sworn to guard the borders of towns and villages against the forces that threaten to snuff out the hearth fires.",
+    "zhCN": "戍乡人从危险的生物、跨位面的入侵者以及肆虐的亡者手中守护着村落。戍乡人是用弓的高手，他们善于融入荒野之中，并利用自然之力来守护凡人构筑起的社群。戍乡人通常都是在受到了神祇的感召之后，誓言守卫那些位于边缘地带的村镇，对抗那些企图熄灭人间烟火的势力。"
+  },
+
+  {
+    "Key": "HinterlanderFeat.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Master Archer",
+    "zhCN": "弓术大师"
+  },
+
+  {
+    "Key": "HinterlanderFeat.Description",
+    "enGB": "At 1st level, and again at 3rd and 5th levels, a hinterlander gains a bonus feat from the following list, even if he doesn’t meet the prerequisites: Deadeye’s Blessing, Far Shot, Point-Blank Shot, Precise Shot, and Rapid Shot. At 3rd level, he adds Improved Precise Shot, Point Blank Master, and Manyshot to the list. At 5th level, he adds Pinpoint Targeting and Mobility to the list.",
+    "zhCN": "在第1级、第3级以及第5级，戍乡人均会从后述列表中获得一个奖励专长，即便他并不满足专长的先决条件也可以：埃拉斯蒂尔之赐福（Erastil's Blessing），精准射击（Precise Shot），近距射击（Point-Blank Shot）和快速射击（Rapid Shot）。在第3级时，他将精通精准射击（Improved Precise Shot），贴身射击（Point Blank Master；APG）和多重射击（Manyshot）加入到列表中。在第5级，他将精确瞄准（Pinpoint Targeting）和灵活移动（Mobility）加入到列表中。"
+  },
+
+  {
+    "Key": "ImprovedFavor.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Improved Favored Enemy",
+    "zhCN": "精通宿敌"
+  },
+
+  {
+    "Key": "ImprovedFavor.Description",
+    "enGB": "The hinterlander gains an additional ability corresponding with the favored enemy chosen. Aberrations: The hinterlander gains a +2 bonus on all saves against spells, spell-like abilities, and supernatural abilities used by aberrations. Constructs: The hinterlander’s ranged attacks ignore the first 10 points of DR or hardness. Evil Outsiders: The hinterlander’s attacks are treated as good weapons for the purposes of overcoming damage reduction. Monstrous Humanoids: The hinterlander gains a +2 bonus on all saves against spells, spell-like abilities, and supernatural abilities used by monstrous humanoids. Undead: A hinterlander’s weapons are infused with divine power, as if the they had the ghost touch weapon special ability.",
+    "zhCN": "The hinterlander gains an additional ability corresponding with the favored enemy chosen. Aberrations: The hinterlander gains a +2 bonus on all saves against spells, spell-like abilities, and supernatural abilities used by aberrations. Constructs: The hinterlander’s ranged attacks ignore the first 10 points of DR or hardness. Evil Outsiders: The hinterlander’s attacks are treated as good weapons for the purposes of overcoming damage reduction. Monstrous Humanoids: The hinterlander gains a +2 bonus on all saves against spells, spell-like abilities, and supernatural abilities used by monstrous humanoids. Undead: A hinterlander’s weapons are infused with divine power, as if the they had the ghost touch weapon special ability."
+  },
+
+  {
+    "Key": "HinterlanderProficiencies.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Weapon and Armor Proficiency",
+    "zhCN": "戍乡人擅长"
+  },
+
+  {
+    "Key": "HinterlanderProficiencies.Description",
+    "enGB": "A hinterlander is proficient with all simple weapons, longbows, light armor, medium armor, and shields (except tower shields).",
+    "zhCN": "戍乡人擅长所有简易武器、长弓、轻甲、中甲和盾牌（塔盾除外）。"
   }
 ]
