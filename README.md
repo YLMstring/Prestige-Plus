@@ -1,7 +1,7 @@
 # Prestige Plus mod for Pathfinder: Wrath of the Righteous 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu).
 
-- Add Agent of the Grave, Chevalier, Inheritor’s Crusader, Shadowdancer prestige class. More coming soon!
+- Add Agent of the Grave, Chevalier, Hinterlander, Inheritor’s Crusader, Shadowdancer prestige class. More coming soon!
 - Add Rogue Talent Defensive Roll. 
 - Apart from some minor tweaks, all the homebrew stuff are optional.
 - And they are togglable now!
@@ -18,6 +18,9 @@
 - Or become a vampire! (require blood drinker, incompatible with lichdom)
 ### [Chevalier Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/c-d/chevalier/)
 - The class has only 3 levels.
+### [Hinterlander Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/hinterlander/)
+- Gain a new Favored Terrain at level 2, 6, and an upgrade at level 9, 10. No need to study for 24 hours!
+- A True Imbue Arrow is always with a quickened spell XD
 ### [Inheritor’s Crusader Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/i-m/inheritor-s-crusader/)
 - The class has only 3 levels.
 #### Homebrew Options:  
