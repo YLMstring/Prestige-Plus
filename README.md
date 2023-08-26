@@ -1,7 +1,7 @@
 # Prestige Plus mod for Pathfinder: Wrath of the Righteous 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu).
 
-- Add Agent of the Grave, Chevalier, Hinterlander, Inheritor’s Crusader, Shadowdancer prestige class. More coming soon!
+- Add Agent of the Grave, Arcane Archer, Chevalier, Hinterlander,  Inheritor’s Crusader, Shadowdancer prestige class. More coming soon!
 - Add Rogue Talent Defensive Roll. 
 - Apart from some minor tweaks, all the homebrew stuff are optional.
 - And they are togglable now!
