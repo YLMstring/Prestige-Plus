@@ -577,5 +577,170 @@
     "Key": "HinterlanderProficiencies.Description",
     "enGB": "A hinterlander is proficient with all simple weapons, longbows, light armor, medium armor, and shields (except tower shields).",
     "zhCN": "戍乡人擅长所有简易武器、长弓、轻甲、中甲和盾牌（塔盾除外）。"
+  },
+
+  {
+    "Key": "ArcaneArcher.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Arcane Archer",
+    "zhCN": "魔射手"
+  },
+
+  {
+    "Key": "ArcaneArcher.Description",
+    "enGB": "Many who seek to perfect the use of the bow sometimes pursue the path of the arcane archer. Arcane archers are masters of ranged combat, as they possess the ability to strike at targets with unerring accuracy and can imbue their arrows with powerful spells. Arrows fired by arcane archers fly at weird and uncanny angles to strike at foes around corners, and can pass through solid objects to hit enemies that cower behind such cover. At the height of their power, arcane archers can fell even the most powerful foes with a single, deadly shot.",
+    "zhCN": "那些希望完善弓技的精灵和半精灵常常选择成为一个魔射手。因其精准的打击，以及施加在箭上的魔法，魔射手掌控着远程战斗。魔射手的箭会可以绕过弯角命中敌人，即使他全身躲在岩石后面，箭也可以穿过掩体完成攻击。在职业巅峰，他可以得到一箭毙命的强大箭术。"
+  },
+
+  {
+    "Key": "ArcaneArcherProficiencies.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Weapon and Armor Proficiency",
+    "zhCN": "魔射手擅长"
+  },
+
+  {
+    "Key": "ArcaneArcherProficiencies.Description",
+    "enGB": "An arcane archer is proficient with all simple and martial weapons, light armor, medium armor, and shields.",
+    "zhCN": "魔射手擅长全部简易武器与军用武器、轻型盔甲、中型盔甲与盾牌。"
+  },
+
+  {
+    "Key": "EnhanceArrows1.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Enhance Arrows",
+    "zhCN": "附魔箭"
+  },
+
+  {
+    "Key": "EnhanceArrows1.Description",
+    "enGB": "At 1st level, every arrow an arcane archer nocks and lets fly becomes magical, gaining a +1 enhancement bonus. The bonuses granted by a magic bow apply as normal to arrows that have been enhanced with this ability. Only the larger enhancement bonus applies. Duplicate abilities do not stack.",
+    "zhCN": "1级开始，任何由魔射手搭弦并射出的箭会变成魔法箭，具有+1增强加值。由魔法弓带来的增强特性可以正常的附加在这些已被弓箭手能力增强过的箭上。但是除非有更高的加值，否则相同能力不叠加。"
+  },
+
+  {
+    "Key": "EnhanceArrows2.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Enhance Arrows",
+    "zhCN": "附魔箭"
+  },
+
+  {
+    "Key": "EnhanceArrows2.Description",
+    "enGB": "At 3rd level, every arrow fired by an arcane archer gains one of the following elemental themed weapon qualities: flaming, frost, or shock. At 7th level, every non-magical arrow fired by an arcane archer gains one of the following elemental burst weapon qualities: flaming burst, icy burst, or shocking burst. This ability replaces the ability gained at 3rd level.",
+    "zhCN": "在3级，每个由魔射手射出的箭获得以下的能量特性之一：炽焰，冻寒，电击。在7级，每个由魔射手射出的非魔法箭获得以下的能量特性之一：焰爆，冰寒，电爆。这取代第3级时取得的能力。"
+  },
+
+  {
+    "Key": "EnhanceArrows3.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Enhance Arrows",
+    "zhCN": "附魔箭"
+  },
+
+  {
+    "Key": "EnhanceArrows3.Description",
+    "enGB": "At 9th level, every arrow fired by an arcane archer gains one of the following aligned weapon qualities: anarchic, axiomatic, holy, or unholy. The arcane archer cannot choose an ability that is the opposite of his alignment (for example, a lawful good arcane archer could not choose anarchic or unholy as his weapon quality).",
+    "zhCN": "在9级，每个由魔射手射出的箭获得以下的武器特性之一：秩序，混沌，神圣，邪恶。魔射手不能选择与自身阵营相背的特性。比如守序善良的魔射手不能选择邪恶和混乱特性。"
+  },
+
+  {
+    "Key": "EnhanceArrows4.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Enhance Arrows",
+    "zhCN": "附魔箭"
+  },
+
+  {
+    "Key": "EnhanceArrows4.Description",
+    "enGB": "At 5th level, an arcane archer gains extra reach equal to the range of his bow.",
+    "zhCN": "在5级，魔射手获得等同于所持弓攻击范围的额外触及。"
+  },
+
+  {
+    "Key": "ArcaneArcherSeekerArrow.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Seeker Arrow",
+    "zhCN": "追踪箭"
+  },
+
+  {
+    "Key": "ArcaneArcherSeekerArrow.Description",
+    "enGB": "At 4th level, an arcane archer can launch an arrow at a target known to him within range, and the arrow travels to the target, even around corners. Only an unavoidable obstacle or the limit of the arrow’s range prevents the arrow’s flight. This ability negates cover and concealment modifiers, but otherwise the attack is rolled normally. Using this ability is a standard action (and shooting the arrow is part of the action). An arcane archer can use this ability once per day at 4th level, and one additional time per day for every two levels beyond 4th, to a maximum of four times per day at 10th level.",
+    "zhCN": "4级开始，魔射手每日可射出一支箭追踪射程内的一个他所知的目标，该箭可以绕过弯角命中敌人。只有遇到不能绕避的障碍物或超出射程时才无法追踪。掩蔽与隐蔽加值对此能力无效，但此外其他攻击相关检定仍照常。使用此能力属于标准动作（射箭为动作的一部分）。4级时魔射手每日可使用1次本能力，此后的每两个等级将增加一次，在第10级时达到最多的4次每日。"
+  },
+
+  {
+    "Key": "ArcaneArcherPhaseArrow.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Phase Arrow",
+    "zhCN": "相位箭"
+  },
+
+  {
+    "Key": "ArcaneArcherPhaseArrow.Description",
+    "enGB": "At 6th level, an arcane archer can launch an arrow once per day at a target known to him within range, and the arrow travels to the target in a straight path, passing through any nonmagical barrier or wall in its way. (Any magical barrier stops the arrow.) This ability negates cover, concealment, armor, and shield modifiers, but otherwise the attack is rolled normally. Using this ability is a standard action (and shooting the arrow is part of the action). An arcane archer can use this ability once per day at 6th level, and one additional time per day for every two levels beyond 6th, to a maximum of three times per day at 10th level.",
+    "zhCN": "6级开始，魔射手每日可对射程内已知目标射出一支相位箭，此间会贯穿途中所有非魔法障壁，直线飞抵目标（任何法术障碍都会阻挡箭）。该能力忽视掩蔽、隐蔽加值，以及任何盔甲修正。但此外其他攻击相关检定仍照常。使用此能力属于标准动作（射箭为动作的一部分）。6级时每日可使用1次相位箭，此后每两级增加一次，在第10级时达到最多3次每日。"
+  },
+
+  {
+    "Key": "ArcaneArcherHailArrow.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Hail of Arrows",
+    "zhCN": "箭雨"
+  },
+
+  {
+    "Key": "ArcaneArcherHailArrow.Description",
+    "enGB": "In lieu of his regular attacks, once per day an arcane archer of 8th level or higher can fire an arrow at each and every target within range. Each attack uses the archer’s primary attack bonus, and each enemy may only be targeted by a single arrow.",
+    "zhCN": "8级开始，替代一般攻击，魔射手可同时对射程内所有目标各射一箭。该能力每日可使用一次。每支箭的攻击都使用射手的主要攻击加值，同时只能向每个敌人射一箭。"
+  },
+
+  {
+    "Key": "ArcaneArcherDeathArrow.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Arrow of Death",
+    "zhCN": "死亡箭"
+  },
+
+  {
+    "Key": "ArcaneArcherDeathArrow.Description",
+    "enGB": "At 10th level, an arcane archer can create a special type of slaying arrow that forces the target, if damaged by the arrow’s attack, to make a Fortitude save or be slain immediately. The DC of this save is equal to 20 + the arcane archer’s Charisma modifier. It takes 1 day to make a slaying arrow, and the arrow only functions for the arcane archer who created it. The slaying arrow lasts no longer than 1 year, and the archer can only have one such arrow in existence at a time.",
+    "zhCN": "10级开始，魔射手可以使用死亡箭，目标若中此箭，须进行DC为“20+魅力修正”的强韧豁免，未通过则立即死亡。制造死亡箭需要一整天，而且只有制造者能使用。死亡箭至多能保存一年，魔射手不能同时拥有一支以上的死亡箭。"
+  },
+
+  {
+    "Key": "StormArrow.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Storm of Arrows",
+    "zhCN": "箭矢风暴"
+  },
+
+  {
+    "Key": "StormArrow.Description",
+    "enGB": "You've learned a way to increase the number of uses of Hail of Arrows ability. Benefit: You can use Hail of Arrows a number of additional times per day equal to half your mythic rank.",
+    "zhCN": "你掌握了多次使用箭雨能力的方法。每有两个神话阶级，你便可以额外使用一次箭雨。"
   }
 ]

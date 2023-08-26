@@ -77,6 +77,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("grave"), defaultValue: true, Helpers.CreateString("toggle-desc1", "Agent of the Grave"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("archer"), defaultValue: true, Helpers.CreateString("toggle-desc6", "Arcane Archer"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("chevalier"), defaultValue: true, Helpers.CreateString("toggle-desc2", "Chevalier"))
               .ShowVisualConnection())
           .AddToggle(
@@ -101,6 +104,7 @@ namespace PrestigePlus
           Logger.Info("Configuring blueprints.");
                     SpellbookReplace.Select(); SpellbookLevelUp.Select(); ImbueArrow.Configure();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("grave"))) AgentoftheGrave.Configure();
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("archer"))) ArcaneArcher.Configure(); StormArrow.Configure();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("chevalier"))) Chevalier.Configure();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("crusader"))) InheritorCrusader.Configure();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("lander"))) Hinterlander.Configure();

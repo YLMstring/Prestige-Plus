@@ -26,6 +26,8 @@ using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.Blueprints;
 using Kingmaker.UI.MVVM._VM.Other;
 using PrestigePlus.Modify;
+using Kingmaker.ElementsSystem;
+using static UnityEngine.UI.Extensions.ImageExtended;
 
 namespace PrestigePlus.Feats
 {
@@ -59,8 +61,15 @@ namespace PrestigePlus.Feats
                 .SetIcon(icon)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
                 .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Special)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-                    .ApplyBuff(Buff1, ContextDuration.Fixed(1))
+                    .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(ImbueArrowGuidBuff).Build(), 
+                    ifFalse: ActionsBuilder.New()
+                        .ApplyBuff(Buff1, ContextDuration.Fixed(1))
+                        .Build(),
+                    ifTrue: ActionsBuilder.New()
+                        .RemoveBuff(Buff1)
+                        .Build())
                     .Build())
                 .Configure();
 
@@ -124,6 +133,8 @@ namespace PrestigePlus.Feats
 
                 if (spell.GetComponent<AbilityEffectRunAction>().Actions.Actions == null)
                     return;
+
+                ///shoot = ActionsBuilder.New().AddAll(spell.GetComponent<AbilityEffectRunAction>().Actions).Build();
             }
             catch (Exception e)
             {
@@ -137,13 +148,24 @@ namespace PrestigePlus.Feats
                             .AddAll(originalList)
                             .Build();
 
+                var original2 = ActionsBuilder.New()
+                            .AddAll(originalList)
+                            .Build();
+
+                if (spell.GetComponent<AdditionalAbilityEffectRunActionOnClickedTarget>() != null)
+                    if (spell.GetComponent<AdditionalAbilityEffectRunActionOnClickedTarget>().Action != null)
+                        if (spell.GetComponent<AdditionalAbilityEffectRunActionOnClickedTarget>().Action.Actions != null)
+                            original = ActionsBuilder.New()
+                            .AddAll(original2)
+                            .AddAll(spell.GetComponent<AdditionalAbilityEffectRunActionOnClickedTarget>().Action)
+                            .Build();
+
                 shoot = ActionsBuilder.New()
                         .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(ImbueArrowGuidBuff).Build(), ifFalse: original,
                         ifTrue: ActionsBuilder.New()
                             .Conditional(conditions: ConditionsBuilder.New().IsMainTarget().Build(), ifFalse: ActionsBuilder.New().Build(),
                             ifTrue: ActionsBuilder.New()
-                                .RemoveBuff(ImbueArrowGuidBuff, toCaster: true)
-                                .Add<RangedAttackExtended>(a => a.OnHit = ActionsBuilder.New().CastSpell(spell, false).Build())
+                                .Add<RangedAttackExtended>(a => a.OnHit = ActionsBuilder.New().RemoveBuff(ImbueArrowGuidBuff, toCaster: true).CastSpell(spell, false).Build())
                                 .Build())
                             .Build())
                         .Build();
@@ -155,6 +177,8 @@ namespace PrestigePlus.Feats
             AbilityConfigurator.For(spell)
               .EditComponent<AbilityEffectRunAction>(
                 a => a.Actions.Actions = shoot.Actions)
+              .EditComponent<AdditionalAbilityEffectRunActionOnClickedTarget>(a => a.Action.Actions = ActionsBuilder.New().Build().Actions)
+              .SetCanTargetEnemies(true)
               .Configure(delayed: true); 
             
         }

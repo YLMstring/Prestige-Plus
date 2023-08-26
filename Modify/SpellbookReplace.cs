@@ -46,7 +46,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(AccursedWitchName, AccursedWitchGuid)
                 .SetDisplayName(AccursedWitchDisplayName)
                 .SetDescription(AccursedWitchDescription)
-                .SetSpellbook(SpellbookRefs.AccursedWitchSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.AccursedWitchSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -62,7 +62,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(AlchemistName, AlchemistGuid)
                 .SetDisplayName(AlchemistDisplayName)
                 .SetDescription(AlchemistDescription)
-                .SetSpellbook(SpellbookRefs.AlchemistSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.AlchemistSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -78,7 +78,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(AngelfireApostleName, AngelfireApostleGuid)
                 .SetDisplayName(AngelfireApostleDisplayName)
                 .SetDescription(AngelfireApostleDescription)
-                .SetSpellbook(SpellbookRefs.AngelfireApostleSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.AngelfireApostleSpellbook.ToString()).SetRanks(10)
                 .SetIsClassFeature(true)
                 .SetAllowNonContextActions(false)
                 .Configure();
@@ -95,7 +95,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(ArcanistName, ArcanistGuid)
                 .SetDisplayName(ArcanistDisplayName)
                 .SetDescription(ArcanistDescription)
-                .SetSpellbook(SpellbookRefs.ArcanistSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.ArcanistSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -111,7 +111,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(ArmagsBladeName, ArmagsBladeGuid)
                 .SetDisplayName(ArmagsBladeDisplayName)
                 .SetDescription(ArmagsBladeDescription)
-                .SetSpellbook(SpellbookRefs.ArmagsBladeSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.ArmagsBladeSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -127,7 +127,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(BardName, BardGuid)
                 .SetDisplayName(BardDisplayName)
                 .SetDescription(BardDescription)
-                .SetSpellbook(SpellbookRefs.BardSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.BardSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -143,7 +143,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(BloodragerName, BloodragerGuid)
                 .SetDisplayName(BloodragerDisplayName)
                 .SetDescription(BloodragerDescription)
-                .SetSpellbook(SpellbookRefs.BloodragerSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.BloodragerSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -159,7 +159,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(ClericName, ClericGuid)
                 .SetDisplayName(ClericDisplayName)
                 .SetDescription(ClericDescription)
-                .SetSpellbook(SpellbookRefs.ClericSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.ClericSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -175,7 +175,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(CrossbloodedName, CrossbloodedGuid)
                 .SetDisplayName(CrossbloodedDisplayName)
                 .SetDescription(CrossbloodedDescription)
-                .SetSpellbook(SpellbookRefs.CrossbloodedSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.CrossbloodedSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -191,7 +191,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(CrusaderName, CrusaderGuid)
                 .SetDisplayName(CrusaderDisplayName)
                 .SetDescription(CrusaderDescription)
-                .SetSpellbook(SpellbookRefs.CrusaderSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.CrusaderSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -207,7 +207,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(DruidName, DruidGuid)
                 .SetDisplayName(DruidDisplayName)
                 .SetDescription(DruidDescription)
-                .SetSpellbook(SpellbookRefs.DruidSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.DruidSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -223,7 +223,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(EldritchFontName, EldritchFontGuid)
                 .SetDisplayName(EldritchFontDisplayName)
                 .SetDescription(EldritchFontDescription)
-                .SetSpellbook(SpellbookRefs.EldritchFontSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.EldritchFontSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -239,7 +239,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(EldritchScionName, EldritchScionGuid)
                 .SetDisplayName(EldritchScionDisplayName)
                 .SetDescription(EldritchScionDescription)
-                .SetSpellbook(SpellbookRefs.EldritchScionSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.EldritchScionSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -255,7 +255,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(EldritchScoundrelName, EldritchScoundrelGuid)
                 .SetDisplayName(EldritchScoundrelDisplayName)
                 .SetDescription(EldritchScoundrelDescription)
-                .SetSpellbook(SpellbookRefs.EldritchScoundrelSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.EldritchScoundrelSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -271,7 +271,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(EmpyrealName, EmpyrealGuid)
                 .SetDisplayName(EmpyrealDisplayName)
                 .SetDescription(EmpyrealDescription)
-                .SetSpellbook(SpellbookRefs.EmpyrealSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.EmpyrealSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -287,7 +287,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(ExploiterWizardName, ExploiterWizardGuid)
                 .SetDisplayName(ExploiterWizardDisplayName)
                 .SetDescription(ExploiterWizardDescription)
-                .SetSpellbook(SpellbookRefs.ExploiterWizardSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.ExploiterWizardSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -303,7 +303,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(FeyspeakerName, FeyspeakerGuid)
                 .SetDisplayName(FeyspeakerDisplayName)
                 .SetDescription(FeyspeakerDescription)
-                .SetSpellbook(SpellbookRefs.FeyspeakerSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.FeyspeakerSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -319,7 +319,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(HunterName, HunterGuid)
                 .SetDisplayName(HunterDisplayName)
                 .SetDescription(HunterDescription)
-                .SetSpellbook(SpellbookRefs.HunterSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.HunterSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -335,7 +335,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(InquisitorName, InquisitorGuid)
                 .SetDisplayName(InquisitorDisplayName)
                 .SetDescription(InquisitorDescription)
-                .SetSpellbook(SpellbookRefs.InquisitorSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.InquisitorSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -351,7 +351,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(LeyLineGuardianWitchName, LeyLineGuardianWitchGuid)
                 .SetDisplayName(LeyLineGuardianWitchDisplayName)
                 .SetDescription(LeyLineGuardianWitchDescription)
-                .SetSpellbook(SpellbookRefs.LeyLineGuardianWitchSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.LeyLineGuardianWitchSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -367,7 +367,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(MagusName, MagusGuid)
                 .SetDisplayName(MagusDisplayName)
                 .SetDescription(MagusDescription)
-                .SetSpellbook(SpellbookRefs.MagusSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.MagusSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -383,7 +383,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(MasterSpyName, MasterSpyGuid)
                 .SetDisplayName(MasterSpyDisplayName)
                 .SetDescription(MasterSpyDescription)
-                .SetSpellbook(SpellbookRefs.MasterSpySpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.MasterSpySpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -399,7 +399,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(NatureMageName, NatureMageGuid)
                 .SetDisplayName(NatureMageDisplayName)
                 .SetDescription(NatureMageDescription)
-                .SetSpellbook(SpellbookRefs.NatureMageSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.NatureMageSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -415,7 +415,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(OracleName, OracleGuid)
                 .SetDisplayName(OracleDisplayName)
                 .SetDescription(OracleDescription)
-                .SetSpellbook(SpellbookRefs.OracleSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.OracleSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -431,7 +431,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(PaladinName, PaladinGuid)
                 .SetDisplayName(PaladinDisplayName)
                 .SetDescription(PaladinDescription)
-                .SetSpellbook(SpellbookRefs.PaladinSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.PaladinSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -447,7 +447,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(RangerName, RangerGuid)
                 .SetDisplayName(RangerDisplayName)
                 .SetDescription(RangerDescription)
-                .SetSpellbook(SpellbookRefs.RangerSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.RangerSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -463,7 +463,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(SageName, SageGuid)
                 .SetDisplayName(SageDisplayName)
                 .SetDescription(SageDescription)
-                .SetSpellbook(SpellbookRefs.SageSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.SageSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -479,7 +479,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(ShamanName, ShamanGuid)
                 .SetDisplayName(ShamanDisplayName)
                 .SetDescription(ShamanDescription)
-                .SetSpellbook(SpellbookRefs.ShamanSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.ShamanSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -495,7 +495,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(SkaldName, SkaldGuid)
                 .SetDisplayName(SkaldDisplayName)
                 .SetDescription(SkaldDescription)
-                .SetSpellbook(SpellbookRefs.SkaldSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.SkaldSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -512,7 +512,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(SorcererName, SorcererGuid)
                 .SetDisplayName(SorcererDisplayName)
                 .SetDescription(SorcererDescription)
-                .SetSpellbook(SpellbookRefs.SorcererSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.SorcererSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -528,7 +528,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(SwordSaintName, SwordSaintGuid)
                 .SetDisplayName(SwordSaintDisplayName)
                 .SetDescription(SwordSaintDescription)
-                .SetSpellbook(SpellbookRefs.SwordSaintSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.SwordSaintSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -544,7 +544,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(ThassilonianAbjurationName, ThassilonianAbjurationGuid)
                 .SetDisplayName(ThassilonianAbjurationDisplayName)
                 .SetDescription(ThassilonianAbjurationDescription)
-                .SetSpellbook(SpellbookRefs.ThassilonianAbjurationSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.ThassilonianAbjurationSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -560,7 +560,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(ThassilonianConjurationName, ThassilonianConjurationGuid)
                 .SetDisplayName(ThassilonianConjurationDisplayName)
                 .SetDescription(ThassilonianConjurationDescription)
-                .SetSpellbook(SpellbookRefs.ThassilonianConjurationSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.ThassilonianConjurationSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -576,7 +576,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(ThassilonianEnchantmentName, ThassilonianEnchantmentGuid)
                 .SetDisplayName(ThassilonianEnchantmentDisplayName)
                 .SetDescription(ThassilonianEnchantmentDescription)
-                .SetSpellbook(SpellbookRefs.ThassilonianEnchantmentSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.ThassilonianEnchantmentSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -592,7 +592,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(ThassilonianEvocationName, ThassilonianEvocationGuid)
                 .SetDisplayName(ThassilonianEvocationDisplayName)
                 .SetDescription(ThassilonianEvocationDescription)
-                .SetSpellbook(SpellbookRefs.ThassilonianEvocationSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.ThassilonianEvocationSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -608,7 +608,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(ThassilonianIllusionName, ThassilonianIllusionGuid)
                 .SetDisplayName(ThassilonianIllusionDisplayName)
                 .SetDescription(ThassilonianIllusionDescription)
-                .SetSpellbook(SpellbookRefs.ThassilonianIllusionSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.ThassilonianIllusionSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -624,7 +624,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(ThassilonianNecromancyName, ThassilonianNecromancyGuid)
                 .SetDisplayName(ThassilonianNecromancyDisplayName)
                 .SetDescription(ThassilonianNecromancyDescription)
-                .SetSpellbook(SpellbookRefs.ThassilonianNecromancySpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.ThassilonianNecromancySpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -640,7 +640,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(ThassilonianTransmutationName, ThassilonianTransmutationGuid)
                 .SetDisplayName(ThassilonianTransmutationDisplayName)
                 .SetDescription(ThassilonianTransmutationDescription)
-                .SetSpellbook(SpellbookRefs.ThassilonianTransmutationSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.ThassilonianTransmutationSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -656,7 +656,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(UnletteredArcanistName, UnletteredArcanistGuid)
                 .SetDisplayName(UnletteredArcanistDisplayName)
                 .SetDescription(UnletteredArcanistDescription)
-                .SetSpellbook(SpellbookRefs.UnletteredArcanistSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.UnletteredArcanistSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -672,7 +672,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(WarpriestName, WarpriestGuid)
                 .SetDisplayName(WarpriestDisplayName)
                 .SetDescription(WarpriestDescription)
-                .SetSpellbook(SpellbookRefs.WarpriestSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.WarpriestSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -688,7 +688,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(WitchName, WitchGuid)
                 .SetDisplayName(WitchDisplayName)
                 .SetDescription(WitchDescription)
-                .SetSpellbook(SpellbookRefs.WitchSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.WitchSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
@@ -704,7 +704,7 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(WizardName, WizardGuid)
                 .SetDisplayName(WizardDisplayName)
                 .SetDescription(WizardDescription)
-                .SetSpellbook(SpellbookRefs.WizardSpellbook.ToString())
+                .SetSpellbook(SpellbookRefs.WizardSpellbook.ToString()).SetRanks(10)
                 
                 .Configure();
         }
