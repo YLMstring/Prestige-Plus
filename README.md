@@ -16,12 +16,15 @@
 - At level 5 you can learn all necromancy spells (require 13 int, full caster)
 - Or become a ghoul! (you're undead so incompatible with lichdom)
 - Or become a vampire! (require blood drinker, incompatible with lichdom)
+### [Arcane Archer Class](https://www.d20pfsrd.com/classes/prestige-classes/core-rulebook/arcane-archer/)   
+- A True Imbue Arrow is always with a quickened spell XD
+#### Homebrew Options:  
+- Storm of Arrows: a mythic ability to increase the number of uses of Hail of Arrows!
 ### [Chevalier Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/c-d/chevalier/)
 - The class has only 3 levels.
 ### [Hinterlander Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/hinterlander/)
 - Master Archer gives access to [Deadeye’s Blessing in TTT](https://github.com/Vek17/TabletopTweaks-Base) and [Pinpoint Targeting in ExpandedContent](https://github.com/ka-dyn/ExpandedContent), but you'll need the respective mod active to select them. If you don't want these feats, my mod doesn't require anything, as the original feature will still be there.
 - Gain a new Favored Terrain at level 2, 6, and an upgrade at level 9, 10. No need to study for 24 hours!
-- A True Imbue Arrow is always with a quickened spell XD
 ### [Inheritor’s Crusader Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/i-m/inheritor-s-crusader/)
 - The class has only 3 levels.
 #### Homebrew Options:  
