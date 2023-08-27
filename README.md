@@ -1,7 +1,7 @@
 # Prestige Plus mod for Pathfinder: Wrath of the Righteous 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu).
 
-- Add Agent of the Grave, Arcane Archer, Chevalier, Hinterlander,  Inheritor’s Crusader, Shadowdancer prestige class. More coming soon!
+- Add Agent of the Grave, Arcane Archer, Deadeye Devotee, Chevalier, Hinterlander, Inheritor’s Crusader, Shadowdancer prestige class. More coming soon!
 - Add Rogue Talent Defensive Roll. 
 - Apart from some minor tweaks, all the homebrew stuff are optional.
 - And they are togglable now!
@@ -18,6 +18,7 @@
 - Or become a vampire! (require blood drinker, incompatible with lichdom)
 ### [Arcane Archer Class](https://www.d20pfsrd.com/classes/prestige-classes/core-rulebook/arcane-archer/)   
 - A True Imbue Arrow is always with a quickened spell XD
+- And we have [Deadeye Devotee](https://aonprd.com/ArchetypeDisplay.aspx?FixedName=Arcane%20Archer%20Deadeye%20Devotee)!
 #### Homebrew Options:  
 - Storm of Arrows: a mythic ability to increase the number of uses of Hail of Arrows!
 ### [Chevalier Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/c-d/chevalier/)
