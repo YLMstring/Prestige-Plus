@@ -641,7 +641,7 @@ namespace PrestigePlus.PrestigeClasses
             var abilityresourse = AbilityResourceConfigurator.New(PhaseArrowAblityRes, PhaseArrowAblityResGuid)
                 .SetMaxAmount(
                     ResourceAmountBuilder.New(0)
-                        .IncreaseByLevelStartPlusDivStep(classes: new string[] { ArchetypeGuid }, otherClassLevelsMultiplier: 0, levelsPerStep: 2, bonusPerStep: 1, startingLevel: 4))
+                        .IncreaseByLevelStartPlusDivStep(classes: new string[] { ArchetypeGuid, DeadeyeDevotee.ArchetypeGuid }, otherClassLevelsMultiplier: 0, levelsPerStep: 2, bonusPerStep: 1, startingLevel: 4))
                 .SetUseMax()
                 .SetMax(3)
                 .Configure();

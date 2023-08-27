@@ -59,7 +59,36 @@ namespace PrestigePlus.Modify
           AbilityRefs.HexChannelerChannelEnergy.Reference,
           
         };
-        
+
+        public static readonly List<Blueprint<BlueprintAbilityReference>> CureOrInflict =
+        new()
+        {
+          AbilityRefs.CureLightWoundsCast.Reference.ToString(),
+          AbilityRefs.CureModerateWoundsCast.Reference.ToString(),
+          AbilityRefs.CureSeriousWoundsCast.Reference.ToString(),
+          AbilityRefs.CureCriticalWoundsCast.Reference.ToString(),
+          AbilityRefs.CureLightWoundsMass.Reference.ToString(),
+          AbilityRefs.CureModerateWoundsMass.Reference.ToString(),
+          AbilityRefs.CureSeriousWoundsMass.Reference.ToString(),
+          AbilityRefs.CureCriticalWoundsMass.Reference.ToString(),
+          AbilityRefs.InflictLightWoundsCast.Reference.ToString(),
+          AbilityRefs.InflictModerateWoundsCast.Reference.ToString(),
+          AbilityRefs.InflictSeriousWoundsCast.Reference.ToString(),
+          AbilityRefs.InflictCriticalWoundsCast.Reference.ToString(),
+          AbilityRefs.InflictLightWoundsMass.Reference.ToString(),
+          AbilityRefs.InflictModerateWoundsMass.Reference.ToString(),
+          AbilityRefs.InflictSeriousWoundsMass.Reference.ToString(),
+          AbilityRefs.InflictCriticalWoundsMass.Reference.ToString(),
+          AbilityRefs.CureLightWounds.Reference.ToString(),
+          AbilityRefs.CureModerateWounds.Reference.ToString(),
+          AbilityRefs.CureSeriousWounds.Reference.ToString(),
+          AbilityRefs.CureCriticalWounds.Reference.ToString(),
+          AbilityRefs.InflictLightWounds.Reference.ToString(),
+          AbilityRefs.InflictModerateWounds.Reference.ToString(),
+          AbilityRefs.InflictSeriousWounds.Reference.ToString(),
+          AbilityRefs.InflictCriticalWounds.Reference.ToString(),
+        };
+
 
         public static readonly string AngelfireApostleName = "AngelfireApostle";
         public static readonly string AngelfireApostleGuid = "8ed3202d-a978-4961-83cc-1b0776856021";

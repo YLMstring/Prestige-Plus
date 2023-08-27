@@ -1,4 +1,5 @@
 ﻿using BlueprintCore.Utils;
+using Kingmaker.Blueprints.JsonSystem;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.Enums;
 using Kingmaker.Enums.Damage;
@@ -16,6 +17,7 @@ using System.Threading.Tasks;
 
 namespace PrestigePlus.Modify
 {
+    [TypeId("{52F7DBF3-1AD6-4445-A87F-0D6C0B5E840E}")]
     internal class EnergyArrow : UnitFactComponentDelegate, ITargetRulebookHandler<RuleCalculateDamage>, IRulebookHandler<RuleCalculateDamage>, ISubscriber, ITargetRulebookSubscriber, ITargetRulebookHandler<RuleDealDamage>, IRulebookHandler<RuleDealDamage>
     {
         private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
@@ -25,11 +27,14 @@ namespace PrestigePlus.Modify
             try
             {
                 int num = 0;
+                Logger.Info("start heal");
                 foreach (DamageValue damageValue in evt.ResultList)
                 {
-                    num += damageValue.FinalValue;
+                    num += damageValue.RollAndBonusValue;
+                    Logger.Info(num.ToString());
                 }
                 int healValue = num;
+                Logger.Info("finish heal");
                 if (healValue > 0)
                 {
                     Rulebook.Trigger<RuleHealDamage>(new RuleHealDamage(base.Owner, base.Owner, healValue));

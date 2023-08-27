@@ -742,5 +742,35 @@
     "Key": "StormArrow.Description",
     "enGB": "You've learned a way to increase the number of uses of Hail of Arrows ability. Benefit: You can use Hail of Arrows a number of additional times per day equal to half your mythic rank.",
     "zhCN": "你掌握了多次使用箭雨能力的方法。每有两个神话阶级，你便可以额外使用一次箭雨。"
+  },
+
+  {
+    "Key": "DeadeyeDevotee.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Deadeye Devotee",
+    "zhCN": "神射信徒"
+  },
+
+  {
+    "Key": "DeadeyeDevotee.Description",
+    "enGB": "Dedicated followers of Erastil become closer to their god by mastering archery and caring for each other. They can tap into the power of the Elk Father, who guides and empowers their arrows.",
+    "zhCN": "艾若斯提的虔诚信徒通过掌握弓术，彼此关怀来趋向她们的神。她们能沟通橡树父亲的力量，以此指引并强化手中的箭矢。"
+  },
+
+  {
+    "Key": "DeadeyeDevoteeEnergyArrow.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Energy Arrow",
+    "zhCN": "能量箭"
+  },
+
+  {
+    "Key": "DeadeyeDevoteeEnergyArrow.Description",
+    "enGB": "At 4th level, whenever a deadeye devotee cast a cure wounds or inflict wounds spell, it becomes reach. And she can launch an arrow at a target within range as a swift action this turn. The arrow automatically hits and its damage is converted into healing.",
+    "zhCN": "At 4th level, whenever a deadeye devotee cast a cure wounds or inflict wounds spell, it becomes reach. And she can launch an arrow at a target within range as a swift action this turn. The arrow automatically hits and its damage is converted into healing."
   }
 ]

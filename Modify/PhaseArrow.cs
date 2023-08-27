@@ -19,26 +19,17 @@ namespace PrestigePlus.Modify
         private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         void IRulebookHandler<RuleCalculateAC>.OnEventAboutToTrigger(RuleCalculateAC evt)
         {
-            Logger.Info("before AC");
-            if (evt != null)
-                if (evt.m_ModifiableBonus != null)
-                    if (evt.m_ModifiableBonus.Modifiers != null)
-                        foreach (var mod in evt.m_ModifiableBonus.Modifiers)
-                            Logger.Info(mod.ToString());
-
-            if (evt != null)
-                if (evt.BrilliantEnergy == null)
-                {
-                    Logger.Info("modify AC");
-                    evt.AddModifier(-RuleCalculateAC.CalculateArmorAndShieldBonuses(evt.Target), evt.BrilliantEnergy, ModifierDescriptor.UntypedStackable);
-                }
-            base.OnEventAboutToTrigger(evt);
-            if (evt != null)
-                if (evt.m_ModifiableBonus != null)
-                    if (evt.m_ModifiableBonus.Modifiers != null)
-                        foreach (var mod in evt.m_ModifiableBonus.Modifiers)
-                            Logger.Info(mod.ToString());
-            Logger.Info("after AC");
+            try
+            {
+                if (evt != null)
+                    if (evt.BrilliantEnergy == null)
+                    {
+                        Logger.Info("modify AC");
+                        evt.AddModifier(-RuleCalculateAC.CalculateArmorAndShieldBonuses(evt.Target), evt.BrilliantEnergy, ModifierDescriptor.UntypedStackable);
+                    }
+                base.OnEventAboutToTrigger(evt);
+            }
+            catch (Exception e) { Logger.Error("Failed to phase arrow.", e); }
         }
     }
 }

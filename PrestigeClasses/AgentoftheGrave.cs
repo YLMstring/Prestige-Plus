@@ -66,7 +66,6 @@ namespace PrestigePlus.PrestigeClasses
 
         private const string ClassProgressName = "AgentoftheGravePrestige";
         private static readonly string ClassProgressGuid = "{C7BA87F4-64B1-4F3F-AF2F-974A3D1AF180}";
-
         public static void Configure()
         {
             string spellupgradeGuid = "{05DC9561-0542-41BD-9E9F-404F59AB68C5}";

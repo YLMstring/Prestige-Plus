@@ -172,7 +172,7 @@ namespace PrestigePlus.Feats
             }
             catch (Exception e)
             {
-                LogWrapper.Get("PrestigePlus").Error("Failed to configure 2.", e);
+                LogWrapper.Get("PrestigePlus").Error(spell.m_DisplayName.ToString(), e);
             }
             AbilityConfigurator.For(spell)
               .EditComponent<AbilityEffectRunAction>(

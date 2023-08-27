@@ -20,7 +20,7 @@ namespace PrestigePlus.Feats
     internal class StormArrow
     {
         private static readonly string FeatName = "StormArrow";
-        private static readonly string FeatGuid = "3967B46C-99CA-41E9-B7A2-96644EED8C96";
+        private static readonly string FeatGuid = "{546C0AA1-250D-46EC-B243-6E00751E87D0}";
 
         private static readonly string DisplayName = "StormArrow.Name";
         private static readonly string Description = "StormArrow.Description";
