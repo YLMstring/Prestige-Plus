@@ -1,4 +1,5 @@
 ﻿using BlueprintCore.Utils;
+using Kingmaker.Blueprints.JsonSystem;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.Enums;
 using Kingmaker.PubSubSystem;
@@ -14,6 +15,7 @@ using static UnityModManagerNet.UnityModManager.Param;
 
 namespace PrestigePlus.Modify
 {
+    [TypeId("{29896BE9-4421-4B70-9A39-461444E1741C}")]
     internal class PhaseArrow : BrilliantEnergy, IInitiatorRulebookHandler<RuleCalculateAC>
     {
         private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");

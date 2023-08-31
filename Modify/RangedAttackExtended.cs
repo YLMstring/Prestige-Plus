@@ -1,4 +1,5 @@
 ﻿using BlueprintCore.Utils;
+using Kingmaker.Blueprints.JsonSystem;
 using Kingmaker.ElementsSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic.Mechanics.Actions;
@@ -7,7 +8,9 @@ using static UnityModManagerNet.UnityModManager.ModEntry;
 
 namespace PrestigePlus.Modify
 {
-  internal class RangedAttackExtended : ContextActionRangedAttack
+
+    [TypeId("{2BB0DDCD-E84B-4689-996F-06A0DC220E9E}")]
+    internal class RangedAttackExtended : ContextActionRangedAttack
   {
         private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
 

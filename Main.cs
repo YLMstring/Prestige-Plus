@@ -92,6 +92,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("crusader"), defaultValue: true, Helpers.CreateString("toggle-desc3", "Inheritor¡¯s Crusader"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("scar"), defaultValue: true, Helpers.CreateString("toggle-desc8", "Scar Seeker"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("dancer"), defaultValue: true, Helpers.CreateString("toggle-desc4", "Shadowdancer (Defensive Roll)"))
               .ShowVisualConnection()));
 
@@ -112,6 +115,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("chevalier"))) Chevalier.Configure();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("crusader"))) InheritorCrusader.Configure();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("lander"))) Hinterlander.Configure();
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("scar"))) { ScarSeeker.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("dancer"))) { ShadowDancer.Configure(); ShadowDancer.ExtraShadowJump(); DefensiveRoll.Configure(); }
                 }
         catch (Exception e)

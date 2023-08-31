@@ -772,5 +772,185 @@
     "Key": "DeadeyeDevoteeEnergyArrow.Description",
     "enGB": "At 4th level, whenever a deadeye devotee cast a cure wounds or inflict wounds spell, it becomes reach. And she can launch an arrow at a target within range as a swift action this turn. The arrow automatically hits and its damage is converted into healing.",
     "zhCN": "At 4th level, whenever a deadeye devotee cast a cure wounds or inflict wounds spell, it becomes reach. And she can launch an arrow at a target within range as a swift action this turn. The arrow automatically hits and its damage is converted into healing."
+  },
+
+  {
+    "Key": "ScarSeeker.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Scar Seeker",
+    "zhCN": "负痕求道者"
+  },
+
+  {
+    "Key": "ScarSeeker.Description",
+    "enGB": "Some turn their own skins into scarred manuscripts of noteworthy deeds and unforgettable failures. Those who wholly embrace these rites of scarification are known as scar seekers.",
+    "zhCN": "至高天神使薇尔迪斯并未要求信徒进行苦修。尽管如此，仍然有一些追随者将自己的肌肤当做纸张，在上面篆刻功绩或者铭刻失败。这些完全接受了具有仪式性的伤疤的人们被称作负痕求道者。"
+  },
+
+  {
+    "Key": "EnduringScar.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Enduring Scar",
+    "zhCN": "不灭圣痕"
+  },
+
+  {
+    "Key": "EnduringScar.Description",
+    "enGB": "As a scar seeker gains levels, he accumulates scars of supernatural significance. He can activate his enduring scars abilities in any combination a number of times per day equal to half his class level plus his Charisma modifier. At 1st level and every 2 class levels thereafter, the scar seeker awakens a new enduring scar selected from the list below.",
+    "zhCN": "随着负痕求道者的等级得到提升，他会积累具有超自然含义的伤痕。他可以以任何组合方式启动自身的不灭圣痕能力，每日使用次数为他的职业等级的一半 + 他的魅力调整值。在1级以及之后的每2个等级，负痕求道者都会从后述列表中觉醒1个新的不灭圣痕。"
+  },
+
+  {
+    "Key": "ScarSeekerBlood.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Blood",
+    "zhCN": "鲜血"
+  },
+
+  {
+    "Key": "ScarSeekerBlood.Description",
+    "enGB": "As a swift action, the scar seeker can imbue a melee weapon he wields with the vicious weapon special ability for a number of rounds equal to his Charisma modifier (minimum 1 round). This enchantment stacks with existing vicious effect. At 5th and 9th level, he can select this scar one more time to increase the extra damage by the same amount.",
+    "zhCN": "As a swift action, the scar seeker can imbue a melee weapon he wields with the vicious weapon special ability for a number of rounds equal to his Charisma modifier (minimum 1 round). This enchantment stacks with existing vicious effect. At 5th and 9th level, he can select this scar one more time to increase the extra damage by the same amount."
+  },
+
+  {
+    "Key": "ScarSeekerHealing.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Healing",
+    "zhCN": "治愈"
+  },
+
+  {
+    "Key": "ScarSeekerHealing.Description",
+    "enGB": "When the scar seeker uses his lay on hands ability to heal another creature, the scar seeker can use this scar to heal double the normal amount of damage; however, the scar seeker immediately takes divine damage equal to half the amount he healed.",
+    "zhCN": "当负痕求道者使用圣疗能力治疗其他生物时，可以使用该圣痕来让治疗量变为正常的两倍；然而这会让负痕求道者立即受到神力伤害，数值相当于最终治疗量的一半。"
+  },
+
+  {
+    "Key": "ScarSeekerMartyr.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Martyr",
+    "zhCN": "殉道"
+  },
+
+  {
+    "Key": "ScarSeekerMartyr.Description",
+    "enGB": "When the scar seeker is brought below 0 hit points, he can expend all his remaining uses of lay on hands (minimum 1) in order to heal his allies and harm evil enemies in a 30-foot radius. He restores or deals an amount of divine damage equal to 4d6 plus his level, and the damage increases by 1d6 for each use of lay on hands he expends; a creature takes half damage if it succeeds at a Will save (DC = 10 + the scar seeker’s level + his Charisma modifier). The scar seeker must be 5th level in order to select this scar.",
+    "zhCN": "当负痕求道者的生命值降至0点以下时，他能够耗尽所有剩余的圣疗使用次数（最低1次），以此在对半径30尺内的盟友进行治疗的同时，以神力伤害该范围内的所有邪恶敌人。他治愈或造成的伤害量等同于4d6 + 他的等级，每发由此方式消耗的圣疗使用次数都会让数值增加1d6点；成功通过意志豁免能够让该能力造成的伤害减半（DC = 10 + 负痕求道者的等级 + 他的魅力调整值）。负痕求道者必须达到5级才能选择该项不灭圣痕。"
+  },
+
+  {
+    "Key": "ScarSeekerSacrifice.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Sacrifice",
+    "zhCN": "牺牲"
+  },
+
+  {
+    "Key": "ScarSeekerSacrifice.Description",
+    "enGB": "Once per round, the scar seeker can share the damage from attacks taken by one ally he can see within 30 feet for the round. The subject gains a +1 deflection bonus to AC and a +1 resistance bonus on saves. The scar seeker must be 3rd level to select this scar.",
+    "zhCN": "Once per round, the scar seeker can share the damage from attacks taken by one ally he can see within 30 feet for the round. The subject gains a +1 deflection bonus to AC and a +1 resistance bonus on saves. The scar seeker must be 3rd level to select this scar."
+  },
+
+  {
+    "Key": "ScarSeekerMercy.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Mercy",
+    "zhCN": "恩惠"
+  },
+
+  {
+    "Key": "ScarSeekerMercy.Description",
+    "enGB": "Upon selecting this scar, the scar seeker gains 3 paladin mercy of his choice. A scar seeker’s class levels stack with levels in any other class that grants the mercy ability. The scar seeker must have a Healing enduring scar to select this scar.",
+    "zhCN": "Upon selecting this scar, the scar seeker gains 3 paladin mercy of his choice. A scar seeker’s class levels stack with levels in any other class that grants the mercy ability. The scar seeker must have a Healing enduring scar to select this scar."
+  },
+
+  {
+    "Key": "ScarSeekerSuffering.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Suffering",
+    "zhCN": "受难"
+  },
+
+  {
+    "Key": "ScarSeekerSuffering.Description",
+    "enGB": "As a swift action, the scar seeker’s skin and nerves harden until the beginning of his next turn, granting him DR 2/— and a +2 bonus on saving throws against spells and effects with the emotion or fear descriptor. At 7th level, he can select this scar a second time to increase the damage reduction and saving throw bonus to half his class level.",
+    "zhCN": "以迅捷动作，负痕求道者的皮肤和精神都会变得更加坚韧，获得DR 2/－，在对抗具有情绪和恐惧描述符的法术和效果时豁免获得+2加值，持续至他的下个回合开始为止。7级起，他能够再次选择该圣痕，来使伤害减免以及豁免检定的加值提升至他的职业等级的一半。"
+  },
+
+  {
+    "Key": "ScarSeekerTenacity.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Tenacity",
+    "zhCN": "顽强"
+  },
+
+  {
+    "Key": "ScarSeekerTenacity.Description",
+    "enGB": "When a scar seeker is struck by a critical hit or struck when flat footed, the scar seeker can gain a +2 morale bonus on attack rolls, skill checks, ability checks, and saving throws for a number of rounds equal to his Charisma modifier. If the scar seeker already receives a morale bonus on one or more of these rolls, the morale bonus increases by 1 while this ability lasts.",
+    "zhCN": "当负痕求道者受到了重击或在措手不及时被击中，他在攻击检定、技能检定、属性检定和豁免检定中获得+2士气加值，持续轮数等同于他的魅力调整值。如果负痕求道者在上述检定中的一项或多项上已经获得了士气加值，那么在该能力持续期间，这些士气加值会增加1点。"
+  },
+
+  {
+    "Key": "ScarSeekerPurify.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Painful Purification",
+    "zhCN": "痛楚净身"
+  },
+
+  {
+    "Key": "ScarSeekerPurify.Description",
+    "enGB": "A scar seeker can relive his past sacrifices in order to restore one daily use of his enduring scar’s ability, by taking 1 point of damage per Hit Die he has. This damage can’t be healed by any means other than getting a full night’s rest, which removes all damage dealt in this fashion. This damage cannot be ignored, reduced, or redirected.",
+    "zhCN": "负痕求道者可以通过重温过去曾经遭受的痛苦来激活不灭圣痕。负痕求道者能够通过承受每生命骰1点伤害来激活不灭圣痕，恢复一次每日使用次数。这些伤害无法被任何方式治愈，只有进行整夜的休息之后，才能够移除所有由此方式带来的伤害。这些伤害无法被忽略，减免或转移。"
+  },
+
+  {
+    "Key": "ScarSeekerPurify2.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Sanguine Sacrifice",
+    "zhCN": "勇于献身"
+  },
+
+  {
+    "Key": "ScarSeekerPurify2.Description",
+    "enGB": "At 6th level, when a scar seeker uses the painful purification ability, he gains a +1 morale bonus on attack rolls, skill checks, ability checks, and saving throws for 1 hour. Multiple uses of this ability increase the morale bonus by 1 (maximum one-third his class level).",
+    "zhCN": "6级起，当负痕求道者使用痛楚净身能力时，他会在攻击检定、技能检定、属性检定以及豁免检定中获得+1士气加值，持续1小时。再次使用该能力会使得这些士气加值增加1点（最高为他的职业等级的三分之一）。"
+  },
+
+  {
+    "Key": "ScarSeekerChampionHonor.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Champion of Honor",
+    "zhCN": "荣光神选"
+  },
+
+  {
+    "Key": "ScarSeekerChampionHonor.Description",
+    "enGB": "A scar seeker can smite evil once (or once more) per day. A crusader’s class levels stack with paladin class levels for the purpose of determining the damage of the paladin’s smite evil ability, but the scar seeker’s effective paladin level equals his class level–3.",
+    "zhCN": "负痕求道者可每日使用一次（或额外使用一次）制裁邪恶能力。在决定制裁邪恶能力的伤害时，将远征骑士的等级与圣武士职业等级叠加后-3计算。"
   }
 ]
