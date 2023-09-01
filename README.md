@@ -1,7 +1,7 @@
 # Prestige Plus mod for Pathfinder: Wrath of the Righteous 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu).
 
-- Add Agent of the Grave, Arcane Archer, Deadeye Devotee, Chevalier, Hinterlander, Inheritor’s Crusader, Shadowdancer prestige class. More coming soon!
+- Add Agent of the Grave, Arcane Archer, Deadeye Devotee, Chevalier, Hinterlander, Inheritor’s Crusader, Scar Seeker, Shadowdancer prestige class. More coming soon!
 - Add Rogue Talent Defensive Roll. 
 - Apart from some minor tweaks, all the homebrew stuff are optional.
 - And they are togglable now!
@@ -30,6 +30,8 @@
 - The class has only 3 levels.
 #### Homebrew Options:  
 - Spells per day/Destroyer of Tyranny/Sword Against Injustice: Now warpriest-friendly!
+### [Scar Seeker Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/scar-seeker/)   
+- Gain spell progression at level 2, 4, 6, 8, 10.
 ### [Shadowdancer Class](https://www.d20pfsrd.com/classes/prestige-classes/core-rulebook/shadowdancer/)   
 #### Homebrew Options:  
 - Summon Shadow: You can choose an animal companian instead and make it undead!
