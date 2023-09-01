@@ -69,7 +69,8 @@ namespace PrestigePlus.Modify
             if (maybeCaster == null) { return false; }
             if (evt.Target == null) { return false; }
             if (!evt.Target.Descriptor.HasFact(this.KeepBuff) && maybeCaster.Descriptor.HasFact(this.CooldownBuff)) { return false; }
-            return  maybeCaster.Descriptor.HasFact(this.CheckBuff) && maybeCaster.DistanceTo(base.Owner) <= 30.Feet().Meters && maybeCaster.Descriptor.State.CanAct && !maybeCaster.Descriptor.State.HasCondition(UnitCondition.Confusion) ;
+            if (!evt.Target.Descriptor.HasFact(this.KeepBuff) && !maybeCaster.Descriptor.HasFact(this.CheckBuff)) { return false; }
+            return  maybeCaster.DistanceTo(base.Owner) <= 30.Feet().Meters && maybeCaster.Descriptor.State.CanAct && !maybeCaster.Descriptor.State.HasCondition(UnitCondition.Confusion) ;
         }
 
         void IRulebookHandler<RuleDealDamage>.OnEventAboutToTrigger(RuleDealDamage evt)

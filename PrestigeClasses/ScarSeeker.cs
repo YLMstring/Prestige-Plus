@@ -1,5 +1,6 @@
 ﻿using BlueprintCore.Actions.Builder;
 using BlueprintCore.Actions.Builder.ContextEx;
+using BlueprintCore.Blueprints.Configurators;
 using BlueprintCore.Blueprints.Configurators.Classes;
 using BlueprintCore.Blueprints.Configurators.Root;
 using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
@@ -14,6 +15,7 @@ using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Conditions.Builder.ContextEx;
 using BlueprintCore.Utils;
 using BlueprintCore.Utils.Types;
+using Kingmaker.AreaLogic.SummonPool;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
@@ -76,7 +78,7 @@ namespace PrestigePlus.PrestigeClasses
             .AddToLevelEntry(7, EnduringScarGuid)
             .AddToLevelEntry(8, FeatureRefs.SmiteEvilAdditionalUse.ToString())
             .AddToLevelEntry(9, EnduringScarGuid, PurifyGreaterFeat())
-            .AddToLevelEntry(10)
+            .AddToLevelEntry(10, TrueMFeat())
             .SetRanks(1)
             .SetIsClassFeature(true)
             .SetDisplayName(ArchetypeDisplayName)
@@ -499,19 +501,21 @@ namespace PrestigePlus.PrestigeClasses
 
         internal const string MercyDisplayName = "ScarSeekerMercy.Name";
         private const string MercyDescription = "ScarSeekerMercy.Description";
-        public static BlueprintFeature MercyFeat()
+        public static BlueprintProgression MercyFeat()
         {
             var icon = FeatureRefs.AuraOfFaithFeature.Reference.Get().Icon;
-            return FeatureConfigurator.New(Mercy, MercyGuid)
+            return ProgressionConfigurator.New(Mercy, MercyGuid)
               .SetDisplayName(MercyDisplayName)
               .SetDescription(MercyDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddPrerequisiteFeature(HealingGuid)
               .AddClassLevelsForPrerequisites(actualClass: ArchetypeGuid, fakeClass: CharacterClassRefs.PaladinClass.ToString(), modifier: 1, summand: 0)
-              .AddFeatureOnApply(FeatureSelectionRefs.SelectionMercy.ToString())
-              .AddFeatureOnApply(FeatureSelectionRefs.SelectionMercy.ToString())
-              .AddFeatureOnApply(FeatureSelectionRefs.SelectionMercy.ToString())
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(1, FeatureSelectionRefs.SelectionMercy.ToString())
+              .AddToLevelEntry(2, FeatureSelectionRefs.SelectionMercy.ToString())
+              .AddToLevelEntry(3, FeatureSelectionRefs.SelectionMercy.ToString())
+              ///.AddFeatureOnApply(FeatureSelectionRefs.SelectionMercy.ToString())
               .Configure();
         }
 
@@ -836,6 +840,9 @@ namespace PrestigePlus.PrestigeClasses
         private const string Purify3Buff = "ScarSeeker.Purify3Buff";
         private static readonly string Purify3BuffGuid = "{9D881C51-F097-4BDC-9551-E088DA2A7415}";
 
+        private const string Purify4Buff = "ScarSeeker.Purify4Buff";
+        private static readonly string Purify4BuffGuid = "{7576C7DE-484B-4AC5-8DDE-378FC739F4DC}";
+
         internal const string PurifyDisplayName = "ScarSeekerPurify.Name";
         private const string PurifyDescription = "ScarSeekerPurify.Description";
 
@@ -874,12 +881,29 @@ namespace PrestigePlus.PrestigeClasses
              .AddBuffAbilityRollsBonus(affectAllStats: true, descriptor: ModifierDescriptor.Morale, value: 3)
              .AddAttackBonusConditional(bonus: ContextValues.Constant(3), descriptor: ModifierDescriptor.Morale)
              .Configure();
-            
+
+            var Buff4 = BuffConfigurator.New(Purify4Buff, Purify4BuffGuid)
+             .SetDisplayName(PurifyDisplayName)
+             .SetDescription(PurifyDescription)
+             .SetIcon(icon)
+             .AddComponent<PainfulPurification>(c => { c.Action = ActionsBuilder.New().RemoveSelf().Build(); })
+             ///.AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }))
+             .AddBuffActions(activated: ActionsBuilder.New()
+                .DealDamage(value: ContextDice.Value(DiceType.Zero, bonus: ContextValues.Constant(1), diceCount: ContextValues.Constant(0)), damageType: DamageTypes.Energy(type: Kingmaker.Enums.Damage.DamageEnergyType.Divine))
+                .Build())
+             .SetFlags(new Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags[] { Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath, Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi })
+             .SetStacking(Kingmaker.UnitLogic.Buffs.Blueprints.StackingType.Stack)
+             .Configure();
+
             var ability = AbilityConfigurator.New(PurifyAblity, PurifyAblityGuid)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                     //some kind of burn
-                    
+                    .ApplyBuffPermanent(Buff4)
                     .RestoreResource(EnduringScarAblityResGuid, ContextValues.Constant(1))
+                    .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(TrueMGuid).Build(),
+                            ifTrue: ActionsBuilder.New()
+                                .ApplyBuff(TrueMBuffGuid, ContextDuration.Variable(ContextValues.Constant(1)))
+                                .Build())
                     .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(PurifyGreaterGuid).CasterHasFact(Buff2).Build(),
                     ifTrue: ActionsBuilder.New()
                         .ApplyBuff(Buff3, ContextDuration.Variable(ContextValues.Constant(600)))
@@ -903,6 +927,7 @@ namespace PrestigePlus.PrestigeClasses
                 .SetDescription(PurifyDescription)
                 .SetIcon(icon)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .AddAbilityCasterInCombat(false)
                 .SetRange(AbilityRange.Personal)
                 .SetType(AbilityType.Special)
                 .Configure();
@@ -934,6 +959,43 @@ namespace PrestigePlus.PrestigeClasses
               .AddToAllFeatures(FeatureRefs.SmiteEvilAdditionalUse.ToString())
               .AddDamageBonusAgainstFactOwner(bonus: ContextValues.Rank(), checkedFact: BuffRefs.SmiteEvilBuff.ToString())
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }).WithLinearProgression(1, -3))
+              .Configure();
+        }
+
+        private const string TrueM = "ScarSeeker.TrueM";
+        private static readonly string TrueMGuid = "{6A523C2D-9BD3-46E3-A585-04630EFEBA64}";
+
+        private const string TrueMBuff = "ScarSeeker.TrueMBuff";
+        private static readonly string TrueMBuffGuid = "{6DB9C8A4-B862-48EE-9BC2-92609B4330E3}";
+
+        private const string SummonPool = "ScarSeeker.SummonPool";
+        private static readonly string SummonPoolGuid = "{D41FC2B1-469F-48D4-8DB7-8F5A2AD74EBC}";
+
+        internal const string TrueMDisplayName = "ScarSeekerTrueM.Name";
+        private const string TrueMDescription = "ScarSeekerTrueM.Description";
+        public static BlueprintFeature TrueMFeat()
+        {
+            var icon = FeatureRefs.FlamewardenPhoenixRising.Reference.Get().Icon;
+
+            var summonpool = SummonPoolConfigurator.New(SummonPool, SummonPoolGuid)
+                .SetDoNotRemoveDeadUnits(false)
+                .Configure();
+
+            BuffConfigurator.New(TrueMBuff, TrueMBuffGuid)
+             .SetDisplayName(TrueMDisplayName)
+             .SetDescription(TrueMDescription)
+             .SetIcon(icon)
+             .AddDeathActions(deathTrigger: DeathActions.DeathTrigger.OnUnitDeath, checkResource: false, withUnconsciousLifeState: false,
+                    actions: ActionsBuilder.New()
+                        .SpawnUnlinkedMonster(monster: UnitRefs.MonadicDevaSummoned.ToString(), setCasterGroup: true)
+                        .Build())
+             .Configure();
+
+            return FeatureConfigurator.New(TrueM, TrueMGuid)
+              .SetDisplayName(TrueMDisplayName)
+              .SetDescription(TrueMDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
               .Configure();
         }
     }
