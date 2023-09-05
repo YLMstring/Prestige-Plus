@@ -1,4 +1,4 @@
-# Prestige Plus mod for Pathfinder: Wrath of the Righteous 
+# Prestige Plus mod for Pathfinder: Wrath of the Righteous v0.7.0
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu).
 
 - Add Agent of the Grave, Arcane Archer, Deadeye Devotee, Chevalier, Hinterlander, Horizon Walker, Inheritor’s Crusader, Sanguine Angel, Scar Seeker, Shadowdancer prestige class. More coming soon!
