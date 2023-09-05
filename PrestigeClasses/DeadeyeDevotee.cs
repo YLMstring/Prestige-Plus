@@ -99,7 +99,7 @@ namespace PrestigePlus.PrestigeClasses
                 .AddPrerequisiteFeature(FeatureRefs.GreenFaithFeature.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                 .AddPrerequisiteFeature(FeatureRefs.GreenFaithCameliaFeature.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                 .AddPrerequisiteFeature(FeatureRefs.PreciseShot.ToString())
-                .AddPrerequisiteFeature(FeatureRefs.WeaponFocusLongbow.ToString())
+                .AddPrerequisiteParametrizedWeaponFeature(ParametrizedFeatureRefs.WeaponFocus.ToString(), WeaponCategory.Longbow)
                 .AddPrerequisiteCasterTypeSpellLevel(false, false, 1)
                 .Configure();
 

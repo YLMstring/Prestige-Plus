@@ -414,7 +414,7 @@ namespace PrestigePlus.PrestigeClasses
                     ifTrue: ActionsBuilder.New()
                         .Conditional(conditions: ConditionsBuilder.New().Alignment(AlignmentComponent.Evil).Build(),
                         ifTrue: ActionsBuilder.New()
-                            .DealDamage(value: ContextDice.Value(DiceType.D6, diceCount: ContextValues.Constant(1)), damageType: DamageTypes.Energy(type: Kingmaker.Enums.Damage.DamageEnergyType.Divine), halfIfSaved: true)
+                            .DealDamage(value: ContextDice.Value(DiceType.D6, diceCount: ContextValues.Constant(1)), damageType: DamageTypes.Energy(type: Kingmaker.Enums.Damage.DamageEnergyType.Magic), halfIfSaved: true)
                             .Build())
                         .Build(),
                     ifFalse: ActionsBuilder.New()
@@ -515,7 +515,6 @@ namespace PrestigePlus.PrestigeClasses
               .AddToLevelEntry(1, FeatureSelectionRefs.SelectionMercy.ToString())
               .AddToLevelEntry(2, FeatureSelectionRefs.SelectionMercy.ToString())
               .AddToLevelEntry(3, FeatureSelectionRefs.SelectionMercy.ToString())
-              ///.AddFeatureOnApply(FeatureSelectionRefs.SelectionMercy.ToString())
               .Configure();
         }
 

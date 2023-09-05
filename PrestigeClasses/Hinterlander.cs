@@ -88,7 +88,7 @@ namespace PrestigePlus.PrestigeClasses
                 .AddPrerequisiteStatValue(StatType.SkillLoreNature, 5)
                 .AddPrerequisiteStatValue(StatType.SkillPerception, 5)
                 .AddPrerequisiteFeature(FeatureRefs.Endurance.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.All)
-                .AddPrerequisiteFeature(FeatureRefs.WeaponFocusLongbow.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.All)
+                .AddPrerequisiteParametrizedWeaponFeature(ParametrizedFeatureRefs.WeaponFocus.ToString(), WeaponCategory.Longbow, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.All)
                 .AddPrerequisiteCasterTypeSpellLevel(true, false, 1, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                 .AddPrerequisiteCasterTypeSpellLevel(false, false, 1, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                 .Configure();

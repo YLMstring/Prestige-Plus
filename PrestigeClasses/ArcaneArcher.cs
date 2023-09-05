@@ -96,8 +96,8 @@ namespace PrestigePlus.PrestigeClasses
                 .AddPrerequisiteStatValue(StatType.BaseAttackBonus, 6)
                 .AddPrerequisiteFeature(FeatureRefs.PointBlankShot.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.All)
                 .AddPrerequisiteFeature(FeatureRefs.PreciseShot.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.All)
-                .AddPrerequisiteFeature(FeatureRefs.WeaponFocusLongbow.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
-                .AddPrerequisiteFeature(FeatureRefs.WeaponFocusShortbow.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .AddPrerequisiteParametrizedWeaponFeature(ParametrizedFeatureRefs.WeaponFocus.ToString(), WeaponCategory.Longbow, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .AddPrerequisiteParametrizedWeaponFeature(ParametrizedFeatureRefs.WeaponFocus.ToString(), WeaponCategory.Shortbow, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                 .AddPrerequisiteCasterTypeSpellLevel(true, false, 1, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.All)
                 .Configure();
 

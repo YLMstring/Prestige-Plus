@@ -77,7 +77,7 @@ namespace PrestigePlus.PrestigeClasses
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, CreateProficiencies(), FeatureRefs.AssassinHideInPlainSight.ToString())
+                .AddToLevelEntry(1, ProficienciesGuid, FeatureRefs.AssassinHideInPlainSight.ToString())
                 .AddToLevelEntry(2, FeatureRefs.Evasion.ToString(), FeatureRefs.UncannyDodge.ToString())
                 .AddToLevelEntry(3, FeatureSelectionRefs.RogueTalentSelection.ToString(), CreateShadowIllusion(), SummonShadowSelection())
                 .AddToLevelEntry(4, CreateShadowCall(), ExtraFeat())
@@ -153,7 +153,7 @@ namespace PrestigePlus.PrestigeClasses
         private const string ShadowJumpAblityRes = "ShadowDancer.ShadowJumpRes";
         private static readonly string ShadowJumpAblityResGuid = "E96F5710-5344-495F-A3C7-A4859C1ABF81";
 
-        private static BlueprintFeature CreateProficiencies()
+        public static BlueprintFeature CreateProficiencies()
         {
             var abilityresourse = AbilityResourceConfigurator.New(ShadowJumpAblityRes, ShadowJumpAblityResGuid)
                 .SetMaxAmount(ResourceAmountBuilder.New(0))

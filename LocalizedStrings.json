@@ -967,5 +967,440 @@
     "Key": "ScarSeekerTrueM.Description",
     "enGB": "At 10th level, when a scar seeker uses the painful purification ability, If he would be killed in this round, his blood coalesces in his space in the form of a lawful good monadic deva that fights in his place.",
     "zhCN": "At 10th level, when a scar seeker uses the painful purification ability, If he would be killed in this round, his blood coalesces in his space in the form of a lawful good monadic deva that fights in his place."
+  },
+
+  {
+    "Key": "SanguineAngel.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Sanguine Angel",
+    "zhCN": "血色天使"
+  },
+
+  {
+    "Key": "SanguineAngel.Description",
+    "enGB": "Sanguine angels are heartless soldiers who have turned to worship infernal demigoddesses. These vengeful devils reward the company’s elite with infernal powers.",
+    "zhCN": "欲魔连队的精英成员是这些被称为“血色天使”的无情士兵。在灰少女还是一个世俗组织的时候，这些欲魔中的多数已经开始崇拜被称作“暗夜女王”的女性半神们。这些热衷复仇的魔鬼则回报欲魔连队的精英们以地狱的伟力。"
+  },
+
+  {
+    "Key": "SanguineAngelHardenedHeart.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Hardened Heart",
+    "zhCN": "坚定之心"
+  },
+
+  {
+    "Key": "SanguineAngelHardenedHeart.Description",
+    "enGB": "A sanguine angel adds twice her class level to her intimidate check.",
+    "zhCN": "血色天使把她职业等级的两倍加到她的威吓检定上。"
+  },
+
+  {
+    "Key": "SanguineAngelMaidenShield.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Maiden’s Shield",
+    "zhCN": "少女之盾"
+  },
+
+  {
+    "Key": "SanguineAngelMaidenShield.Description",
+    "enGB": "A sanguine angel is treated as if she had the Two-Weapon Fighting, Prodigious Two-Weapon Fighting feat.",
+    "zhCN": "血色天使视作拥有双武器战斗，有力双武器战斗专长。"
+  },
+
+  {
+    "Key": "SanguineAngelFuriousHuntress.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Furious Huntress",
+    "zhCN": "狂怒猎手"
+  },
+
+  {
+    "Key": "SanguineAngelFuriousHuntress.Description",
+    "enGB": "The sanguine angel adds her Strength bonus, rather than her Dexterity bonus, to attack rolls made with bows.",
+    "zhCN": "代替敏捷调整值，血色天使将她的力量调整值加到使用弓时的攻击骰上。"
+  },
+
+  {
+    "Key": "SanguineAngelTyrantDiscipline.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Tyrant’s Discipline",
+    "zhCN": "暴君戒律"
+  },
+
+  {
+    "Key": "SanguineAngelTyrantDiscipline.Description",
+    "enGB": "At 2nd level, a sanguine angel draws upon her indoctrination, tactical training, and devotion to tyranny to develop potent talents. A sanguine angel selects a discipline from the following list.",
+    "zhCN": "欲魔中队的启蒙持续而深入地教导着血色天使，使得她们效忠于地狱女皇，就像昔日灰少女效忠于艾露莎那样。从2级开始，血色天使凭借她接受的教导和战斗训练，以及对暴政的忠诚发展出了强力的天赋。血色天使从下述列表中选取一个戒律。"
+  },
+
+  {
+    "Key": "SanguineAngelArmoredAngel.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Armored Angel",
+    "zhCN": "装甲天使"
+  },
+
+  {
+    "Key": "SanguineAngelArmoredAngel.Description",
+    "enGB": "At 3rd level, a sanguine angel gains the armor training class feature, and more.",
+    "zhCN": "3级时，血色天使获得护甲训练，以及更多能力。"
+  },
+
+  {
+    "Key": "SanguineAngelUnyielding.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Unyielding",
+    "zhCN": "永不屈服"
+  },
+
+  {
+    "Key": "SanguineAngelUnyielding.Description",
+    "enGB": "The sanguine angel gains DR 1/-.",
+    "zhCN": "血色天使获得DR1/-。"
+  },
+
+  {
+    "Key": "SanguineAngelAngelDeath.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Angel of Death",
+    "zhCN": "死亡天使"
+  },
+
+  {
+    "Key": "SanguineAngelAngelDeath.Description",
+    "enGB": "A sanguine angel’s type changes to outsider (evil, lawful). She gains fire resistance 30, and the see invisibility ability. Ebon-feathered wings emerge from the sanguine angel’s back, granting her a bonus speed of 20 feet.",
+    "zhCN": "A sanguine angel’s type changes to outsider (evil, lawful). She gains fire resistance 30, and the see invisibility ability. Ebon-feathered wings emerge from the sanguine angel’s back, granting her a bonus speed of 20 feet."
+  },
+
+  {
+    "Key": "SanguineAngelErinyesFury.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Erinyes Fury",
+    "zhCN": "欲魔怒火"
+  },
+
+  {
+    "Key": "SanguineAngelErinyesFury.Description",
+    "enGB": "The sanguine angel can enter a dispassionate, murderous state. This functions as the instinctual warrior barbarian’s focused rage ability and her sanguine angel levels instead stack with her barbarian levels to determine the duration of her rage.",
+    "zhCN": "血色天使能够进入一种残忍无情的状态。这个能力类似先觉斗士野蛮人变体的狂暴能力，将她的血色天使等级和野蛮人等级叠加，以此来决定她每日的狂暴轮数。"
+  },
+
+  {
+    "Key": "SanguineAngelKinslayer.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Kinslayer",
+    "zhCN": "弑亲者"
+  },
+
+  {
+    "Key": "SanguineAngelKinslayer.Description",
+    "enGB": "The sanguine angel gains favored enemy (humanoids [humans, elfs, dwarfs, halfling, gnome] +2), as per the ranger ability. If the sanguine angel already has the same favored enemy bonus from another class, her existing bonus instead increases by 2.",
+    "zhCN": "血色天使获得宿敌（人类，精灵，矮人，半身人，侏儒，+2加值），如同游侠的同名能力。如果血色天使已经从其他职业那里获得了相同的宿敌加值，那么作为代替，她的这个加值提升2。"
+  },
+
+  {
+    "Key": "HorizonWalker.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Horizon Walker",
+    "zhCN": "大地旅者"
+  },
+
+  {
+    "Key": "HorizonWalker.Description",
+    "enGB": "Those whose wanderlust drives them to push the boundary of safe environments sometimes seek the calling of the horizon walker. Horizon walkers are masters of travel, always seeking to find the safe ways through inhospitable terrain. They are comfortable in places others speak of only in hushed whispers, and they can both venture forth onto untrod paths themselves and guide the less-traveled through such hazardous lands.",
+    "zhCN": "想要走出安全范围去冒险的发烧驴友们，往往会求助于一名大地旅者。大地旅者是旅行方面的大师，总是在搜索着安全通过敌对区域的路径。他们在别人只会恼怒咒骂的恶劣环境下怡然自得，不仅为自己披荆斩棘拓出新路，同时指点那些缺乏经验的旅人如何通过灾难之域。"
+  },
+
+  {
+    "Key": "HorizonWalkerMasteryDesert.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Desert",
+    "zhCN": "沙漠"
+  },
+
+  {
+    "Key": "HorizonWalkerMasteryDesert.Description",
+    "enGB": "The horizon walker gains immunity to exhaustion.",
+    "zhCN": "大地旅者免疫力竭状态。"
+  },
+
+  {
+    "Key": "HorizonWalkerDominanceDesert.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Desert",
+    "zhCN": "沙漠"
+  },
+
+  {
+    "Key": "HorizonWalkerDominanceDesert.Description",
+    "enGB": "The horizon walker gains fire resistance 10 and immunity to fatigue.",
+    "zhCN": "大地旅者获得10点火焰抗性，并免疫疲乏效果。"
+  },
+
+  {
+    "Key": "HorizonWalkerMasteryForest.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Forest",
+    "zhCN": "森林"
+  },
+
+  {
+    "Key": "HorizonWalkerMasteryForest.Description",
+    "enGB": "The horizon walker gains a +4 competence bonus on Stealth checks and increases his CMD against grapple maneuvers by +4.",
+    "zhCN": "大地旅者获得隐匿技能的+4表现加值，对抗擒抱的CMD同样+4。"
+  },
+
+  {
+    "Key": "HorizonWalkerDominanceForest.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Forest",
+    "zhCN": "森林"
+  },
+
+  {
+    "Key": "HorizonWalkerDominanceForest.Description",
+    "enGB": "The walker’s base speed increases by +10 feet.",
+    "zhCN": "大地旅者的陆地速度增加10尺。"
+  },
+
+  {
+    "Key": "HorizonWalkerMasteryHighlands.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Highlands",
+    "zhCN": "山岳"
+  },
+
+  {
+    "Key": "HorizonWalkerMasteryHighlands.Description",
+    "enGB": "The horizon walker gains a +4 competence bonus on Athletics checks and does not lose his Dexterity modifier to AC while climbing.",
+    "zhCN": "大地旅者获得运动技能的+4表现加值，并在攀爬时不会失去敏捷带来的AC加值。"
+  },
+
+  {
+    "Key": "HorizonWalkerDominanceHighlands.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Highlands",
+    "zhCN": "山岳"
+  },
+
+  {
+    "Key": "HorizonWalkerDominanceHighlands.Description",
+    "enGB": "The horizon walker gains DR 2/adamantine.",
+    "zhCN": "大地旅者获得伤害减免“2/精金”。"
+  },
+
+  {
+    "Key": "HorizonWalkerMasteryUnderground.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Underground",
+    "zhCN": "地下"
+  },
+
+  {
+    "Key": "HorizonWalkerMasteryUnderground.Description",
+    "enGB": "The horizon walker gains Blind-Fight as a bonus feat.",
+    "zhCN": "大地旅者获得“盲斗”作为奖励专长。"
+  },
+
+  {
+    "Key": "HorizonWalkerDominanceUnderground.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Underground",
+    "zhCN": "地下"
+  },
+
+  {
+    "Key": "HorizonWalkerDominanceUnderground.Description",
+    "enGB": "The horizon walker gains tremorsense with a 30-foot range. He must be at least 5th level before selecting this power.",
+    "zhCN": "大地旅者获得30尺颤动感知。大地旅者必须达到5级才能选取此地形能力。"
+  },
+
+  {
+    "Key": "HorizonWalkerMasteryUrban.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Urban",
+    "zhCN": "城市"
+  },
+
+  {
+    "Key": "HorizonWalkerMasteryUrban.Description",
+    "enGB": "The horizon walker gains a +4 competence bonus on Diplomacy checks.",
+    "zhCN": "大地旅者获得交涉技能的+4表现加值。"
+  },
+
+  {
+    "Key": "HorizonWalkerDominanceUrban.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Urban",
+    "zhCN": "城市"
+  },
+
+  {
+    "Key": "HorizonWalkerDominanceUrban.Description",
+    "enGB": "For the purpose of bypassing damage reduction, the horizon walker’s manufactured and natural weapons count as Lawful alignment.The horizon walker gains favored enemy (humanoids [humans] +2), as per the ranger ability. If the horizon walker already has the same favored enemy bonus from another class, her existing bonus instead increases by 2.",
+    "zhCN": "大地旅者持用的人工武器或天生武器，在穿透伤害减免时视为守序阵营。大地旅者获得宿敌（类人生物，人类，+2加值），如同游侠的同名能力。如果大地旅者已经从其他职业那里获得了相同的宿敌加值，那么作为代替，她的这个加值提升2。"
+  },
+
+  {
+    "Key": "HorizonWalkerMasteryAstral.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Astral",
+    "zhCN": "星界"
+  },
+
+  {
+    "Key": "HorizonWalkerMasteryAstral.Description",
+    "enGB": "The horizon walker’s fly speed increases by +30 feet on planes with no gravity or subjective gravity.",
+    "zhCN": "大地旅者在无重力或主观重力的位面下，飞行速度增加30尺。"
+  },
+
+  {
+    "Key": "HorizonWalkerDominanceAstral.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Astral",
+    "zhCN": "星界"
+  },
+
+  {
+    "Key": "HorizonWalkerDominanceAstral.Description",
+    "enGB": "The horizon walker gains a +1 competence bonus on attack and damage rolls against outsiders. He gains dimension door as a spell-like ability a number of times per day equal to 3 + the character’s Wisdom modifier (caster level equal to the character’s level). He also gains Abudant Step if he has a ki pool.",
+    "zhCN": "大地旅者对异界生物的攻击和伤害+1表现加值，并且可以将“任意门”作为类法术能力使用，每天使用次数为“3+感知修正”，施法者等级视为大地旅者人物等级。如果他有气池，还可以使用无相挪移能力。"
+  },
+
+  {
+    "Key": "HorizonWalkerLikeyAstral.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Favored Terrain - Astral",
+    "zhCN": "偏好地形（星界）"
+  },
+
+  {
+    "Key": "HorizonWalkerLikeyAstral.Description",
+    "enGB": "At 3rd level, a ranger may select a type of terrain. The ranger gains a +2 bonus on initiative checks and a few skill checks when he is in this terrain. At 8th level and every five levels thereafter, the ranger may select an additional favored terrain. In addition, at each such interval, the skill bonus and initiative bonus in any one favored terrain (including the one just selected, if so desired) increases by +2.",
+    "zhCN": "At 3rd level, a ranger may select a type of terrain. The ranger gains a +2 bonus on initiative checks and a few skill checks when he is in this terrain. At 8th level and every five levels thereafter, the ranger may select an additional favored terrain. In addition, at each such interval, the skill bonus and initiative bonus in any one favored terrain (including the one just selected, if so desired) increases by +2."
+  },
+
+  {
+    "Key": "HorizonWalkerMasterLands.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Master of All Lands",
+    "zhCN": "大地皇者"
+  },
+
+  {
+    "Key": "HorizonWalkerMasterLands.Description",
+    "enGB": "At 10th level, the horizon walker becomes familiar with and comfortable in all possible terrains. His terrain bonus in all favored terrains increases by +2, and he treats all other terrains as if they were favored terrains (+2 bonus). He gains +1 to all saving throws.",
+    "zhCN": "10级时，大地旅者对全部地形了如指掌。他的所有偏好地形加值+2，并将其他地形均视为偏好地形（获得+2加值）。所有豁免+1加值。"
+  },
+
+  {
+    "Key": "HorizonWalkerTerrainMastery.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Terrain Mastery",
+    "zhCN": "地形熟稔"
+  },
+
+  {
+    "Key": "HorizonWalkerTerrainMastery.Description",
+    "enGB": "At 2nd level, a horizon walker selects a favored terrain to master; these benefits apply to the horizon walker at all times whether or not he is in the relevant terrain.",
+    "zhCN": "2级时，大地旅者可以选择并专精于一种偏好地形。大地旅者无论是否处于该地形中都可享受这些优势。"
+  },
+
+  {
+    "Key": "HorizonWalkerTerrainDominance.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Terrain Dominance",
+    "zhCN": "地形支配"
+  },
+
+  {
+    "Key": "HorizonWalkerTerrainDominance.Description",
+    "enGB": "At 3rd level, a horizon walker learns total dominance over one terrain he has already selected for terrain mastery. When the horizon walker gains a new terrain dominance he may, if he prefers, instead pick an additional terrain mastery.",
+    "zhCN": "3级时，大地旅者对他所熟稔的一种地形获得了完全的掌控。当大地旅者可以选择一项新的“地形支配”时，若他愿意，也可代之以选择一项新的“地形熟稔”。"
+  },
+
+  {
+    "Key": "HorizonWalkerAbyssDominance.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Abyss",
+    "zhCN": "深渊"
+  },
+
+  {
+    "Key": "HorizonWalkerAbyssDominance.Description",
+    "enGB": "For the purpose of bypassing damage reduction, the horizon walker’s manufactured and natural weapons count as Good alignment. When dealing with creatures native to abyss, the horizon walker treats his favored terrain bonus for that terrain as a favored enemy bonus (as the ranger class feature) against those creatures. This bonus overlaps (does not stack with) bonuses gained when fighting a favored enemy.",
+    "zhCN": "大地旅者持用的人工武器或天生武器，在穿透伤害减免时视为善良阵营。当面对深渊的原住民生物时，大地旅者可将他的偏好地形加值作为宿敌加值使用（参见游侠职业特性）。该加值与宿敌加值等效（并不叠加）。"
+  },
+
+  {
+    "Key": "HorizonWalkerAbyssMastery.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Abyss",
+    "zhCN": "深渊"
+  },
+
+  {
+    "Key": "HorizonWalkerAbyssMastery.Description",
+    "enGB": "If the horizon walker selects a plane with an alignment trait, he can choose to detect as that alignment (fooling all forms of magic divination) as an immediate action; this benefit lasts until he dismisses it (a free action).",
+    "zhCN": "若大地旅者选择带有阵营特性的位面，可通过直觉动作在受到侦测时选择成为该阵营（骗过所有形式的魔法侦测）。该效果持续到大地旅者解除之。"
   }
 ]

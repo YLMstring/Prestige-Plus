@@ -53,6 +53,7 @@ namespace PrestigePlus.Feats
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
+              .AddComponent<ImbueAdvanced>()
               .Configure(); 
             
             var ability = AbilityConfigurator.New(ImbueArrowBuff3, ImbueArrowGuidBuff3)
@@ -80,11 +81,11 @@ namespace PrestigePlus.Feats
                     .AddFacts(new() { ability })
                     .Configure();
 
-            foreach (var spell in AbilityRefs.All)
-                AddImbueToSpell(spell.Reference.Get());
+            //foreach (var spell in AbilityRefs.All)
+                //AddImbueToSpell(spell.Reference.Get());
         }
 
-        private static void AddImbueToSpell(BlueprintAbility spell)
+        private static void AddImbueToSpell(BlueprintAbility spell) //depleted
         {
             var shoot = ActionsBuilder.New().Build();
             try
