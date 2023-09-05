@@ -1,7 +1,7 @@
 # Prestige Plus mod for Pathfinder: Wrath of the Righteous 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu).
 
-- Add Agent of the Grave, Arcane Archer, Deadeye Devotee, Chevalier, Hinterlander, Inheritor’s Crusader, Scar Seeker, Shadowdancer prestige class. More coming soon!
+- Add Agent of the Grave, Arcane Archer, Deadeye Devotee, Chevalier, Hinterlander, Horizon Walker, Inheritor’s Crusader, Sanguine Angel, Scar Seeker, Shadowdancer prestige class. More coming soon!
 - Add Rogue Talent Defensive Roll. 
 - Apart from some minor tweaks, all the homebrew stuff are optional.
 - And they are togglable now!
@@ -23,6 +23,9 @@
 - Storm of Arrows: a mythic ability to increase the number of uses of Hail of Arrows!
 ### [Chevalier Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/c-d/chevalier/)
 - The class has only 3 levels.
+### [Horizon Walker Class](https://www.d20pfsrd.com/classes/prestige-classes/apg/horizon-walker/)
+- The Terrain Mastery abilities of Astral Plane and Abyss are actually useless in the module but they are prerequisites for their Terrain Dominance.
+- There isn't a GM available telling which creature is native to where, so ONLY ABYSS's favored enemy bonus works, for demons (which is written explicitly in the its description). And you guys probably won't focus on other creatures anyway lol
 ### [Hinterlander Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/hinterlander/)
 - Master Archer gives access to [Deadeye’s Blessing in TTT](https://github.com/Vek17/TabletopTweaks-Base) and [Pinpoint Targeting in ExpandedContent](https://github.com/ka-dyn/ExpandedContent), but you'll need the respective mod active to select them. If you don't want these feats, my mod doesn't require anything, as the original feature will still be there.
 - Gain a new Favored Terrain at level 2, 6, and an upgrade at level 9, 10. No need to study for 24 hours!
@@ -30,6 +33,10 @@
 - The class has only 3 levels.
 #### Homebrew Options:  
 - Spells per day/Destroyer of Tyranny/Sword Against Injustice: Now warpriest-friendly!
+### [Sanguine Angel Class (Lite)](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/sanguine-angel/)
+- The class has 10 levels, but I only implement the first 3 levels because it doesn't have good stuff at higher levels.
+#### Homebrew Options:  
+- Become an Angel of Death early! (require precise shot)
 ### [Scar Seeker Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/scar-seeker/)   
 - Gain spell progression at level 2, 4, 6, 8, 10.
 ### [Shadowdancer Class](https://www.d20pfsrd.com/classes/prestige-classes/core-rulebook/shadowdancer/)   
