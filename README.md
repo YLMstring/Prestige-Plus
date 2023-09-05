@@ -34,6 +34,7 @@
 #### Homebrew Options:  
 - Spells per day/Destroyer of Tyranny/Sword Against Injustice: Now warpriest-friendly!
 ### [Sanguine Angel Class (Lite)](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/sanguine-angel/)
+- Require [Dark Codex](https://github.com/Truinto/DarkCodex), or you won't gain Prodigious Two-Weapon Fighting。
 - The class has 10 levels, but I only implement the first 3 levels because it doesn't have good stuff at higher levels.
 #### Homebrew Options:  
 - Become an Angel of Death early! (require precise shot)
