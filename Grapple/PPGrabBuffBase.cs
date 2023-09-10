@@ -2,6 +2,8 @@
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem;
 using Kingmaker.RuleSystem.Rules;
+using Kingmaker.RuleSystem.Rules.Abilities;
+using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Buffs.Components;
 using System;
 using System.Collections.Generic;
@@ -12,7 +14,7 @@ using UnityEngine;
 
 namespace PrestigePlus.Grapple
 {
-    internal class PPGrabBuffBase : UnitBuffComponentDelegate, IInitiatorRulebookHandler<RuleCalculateAttackBonus>, IRulebookHandler<RuleCalculateAttackBonus>, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleCalculateAttacksCount>, IRulebookHandler<RuleCalculateAttacksCount>
+    internal class PPGrabBuffBase : UnitBuffComponentDelegate, IInitiatorRulebookHandler<RuleCalculateAttackBonus>, IRulebookHandler<RuleCalculateAttackBonus>, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleCalculateAttacksCount>, IRulebookHandler<RuleCalculateAttacksCount>, IInitiatorRulebookHandler<RuleCastSpell>, IRulebookHandler<RuleCastSpell>
     {
         public override void OnTurnOn()
         {
@@ -27,6 +29,42 @@ namespace PrestigePlus.Grapple
             base.Owner.Stats.Dexterity.RemoveModifiersFrom(base.Runtime);
         }
 
+        public void OnEventAboutToTrigger(RuleCastSpell evt)
+        {
+            AbilityData spell = evt.Spell;
+            UnitPartGrappleTargetPP UnitPartGrappleTargetPP = base.Owner.Get<UnitPartGrappleTargetPP>();
+            if (UnitPartGrappleTargetPP == null || !UnitPartGrappleTargetPP.IsPinned)
+            {
+                return;
+            }
+            if (spell.Blueprint == null)
+            {
+                return;
+            }
+            if (spell.Blueprint.Type != Kingmaker.UnitLogic.Abilities.Blueprints.AbilityType.Spell && spell.Blueprint.Type != Kingmaker.UnitLogic.Abilities.Blueprints.AbilityType.SpellLike)
+            {
+                return;
+            }
+            RuleCalculateCMB ruleCalculateCMB = new RuleCalculateCMB(UnitPartGrappleTargetPP.Initiator, base.Owner, CombatManeuver.Grapple);
+            Rulebook.Trigger<RuleCalculateCMB>(ruleCalculateCMB);
+            int result = ruleCalculateCMB.Result;
+            RuleCalculateAbilityParams ruleCalculateAbilityParams = new RuleCalculateAbilityParams(base.Owner, spell);
+            Rulebook.Trigger<RuleCalculateAbilityParams>(ruleCalculateAbilityParams);
+            int spellLevel = ruleCalculateAbilityParams.Result.SpellLevel;
+            int value = 10 + result + spellLevel;
+            RuleCheckConcentration ruleCheckConcentration = new RuleCheckConcentration(base.Owner, spell);
+            ruleCheckConcentration.CustomDC = new int?(value);
+            base.Context.TriggerRule<RuleCheckConcentration>(ruleCheckConcentration);
+            if (!ruleCheckConcentration.Success)
+            {
+                evt.ForceFail = true;
+            }
+        }
+
+        // Token: 0x0600C1FD RID: 49661 RVA: 0x00327F28 File Offset: 0x00326128
+        public void OnEventDidTrigger(RuleCastSpell evt)
+        {
+        }
         // Token: 0x0600C1F4 RID: 49652 RVA: 0x00327D1C File Offset: 0x00325F1C
         public void OnEventAboutToTrigger(RuleCalculateAttackBonus evt)
         {

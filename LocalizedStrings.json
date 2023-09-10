@@ -1567,5 +1567,65 @@
     "Key": "GreaterGrappleMythic.Description",
     "enGB": "When you fail to maintain grapple, your can immediately make your second grapple check to maintain again.",
     "zhCN": "当你维持擒抱失败时，你可以立即进行你的第二次擒抱检定来维持擒抱。"
+  },
+
+  {
+    "Key": "RapidGrappler.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Rapid Grappler",
+    "zhCN": "快速擒抱"
+  },
+
+  {
+    "Key": "RapidGrappler.Description",
+    "enGB": "You are a quick hand at grappling. Whenever you use Greater Grapple to successfully maintain a grapple as a move action, you can then spend a swift action to make a grapple combat maneuver check at a –5 penalty.",
+    "zhCN": "You are a quick hand at grappling. Whenever you use Greater Grapple to successfully maintain a grapple as a move action, you can then spend a swift action to make a grapple combat maneuver check at a –5 penalty."
+  },
+
+  {
+    "Key": "UnfairGrip.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Unfair Grip",
+    "zhCN": "Unfair Grip"
+  },
+
+  {
+    "Key": "UnfairGrip.Description",
+    "enGB": "You learned to fight in places that have no rules of engagement, such as back alleys or fighting pits, and you can grab foes in ways that are difficult to escape. When you perform a grapple combat maneuver, you gain a +1 bonus on checks to maintain your grapple, and +1 bonus to your Combat Maneuver Defense whenever an opponent tries to grapple you.",
+    "zhCN": "You learned to fight in places that have no rules of engagement, such as back alleys or fighting pits, and you can grab foes in ways that are difficult to escape. When you perform a grapple combat maneuver, you gain a +1 bonus on checks to maintain your grapple, and +1 bonus to your Combat Maneuver Defense whenever an opponent tries to grapple you."
+  },
+
+  {
+    "Key": "PinningKnockout.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Pinning Knockout",
+    "zhCN": "压制击昏"
+  },
+
+  {
+    "Key": "PinningKnockout.Description",
+    "enGB": "An opponent you have pinned is easy for you to knock out. While you have an opponent pinned, when you succeed at a grapple combat maneuver check to deal an opponent damage, double your damage result.",
+    "zhCN": "你能轻松击倒一个被你压制的敌人。当你压制一个对手，如果你成功的进行了一次擒抱战技检定对其造成伤害，你的伤害翻倍。"
+  },
+
+  {
+    "Key": "PinningRend.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Pinning Rend",
+    "zhCN": "压制撕裂"
+  },
+
+  {
+    "Key": "PinningRend.Description",
+    "enGB": "You tear flesh when you damage an opponent that you have pinned. While you have an opponent pinned, when you succeed at a grapple combat maneuver check to deal an opponent damage, they also take 3d6 bleed damage.",
+    "zhCN": "你能轻松击倒一个被你压制的敌人。当你压制一个对手，如果你成功的进行了一次擒抱战技检定对其造成伤害，同时产生3d6流血伤害。"
   }
 ]

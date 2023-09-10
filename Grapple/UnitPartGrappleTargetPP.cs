@@ -58,7 +58,7 @@ namespace PrestigePlus.Grapple
             base.Owner.State.Features.RotationForbidden.Retain();
             base.Owner.State.AddCondition(UnitCondition.CantMove, null, null);
             base.Owner.State.AddCondition(UnitCondition.DisableAttacksOfOpportunity, null, null);
-            this.LastBreakFreeAttempt = Game.Instance.TimeController.GameTime;
+            //this.LastBreakFreeAttempt = Game.Instance.TimeController.GameTime;
         }
 
         // Token: 0x0600BBDF RID: 48095 RVA: 0x0031134C File Offset: 0x0030F54C

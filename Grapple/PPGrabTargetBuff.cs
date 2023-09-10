@@ -16,44 +16,9 @@ using UnityEngine;
 
 namespace PrestigePlus.Grapple
 {
-    internal class PPGrabTargetBuff : PPGrabBuffBase, IInitiatorRulebookHandler<RuleCastSpell>, IRulebookHandler<RuleCastSpell>, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleCalculateAC>, IRulebookHandler<RuleCalculateAC>, ITargetRulebookHandler<RuleCheckTargetFlatFooted>, IRulebookHandler<RuleCheckTargetFlatFooted>, ITargetRulebookSubscriber
+    internal class PPGrabTargetBuff : PPGrabBuffBase, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleCalculateAC>, IRulebookHandler<RuleCalculateAC>, ITargetRulebookHandler<RuleCheckTargetFlatFooted>, IRulebookHandler<RuleCheckTargetFlatFooted>, ITargetRulebookSubscriber
     {
-        public void OnEventAboutToTrigger(RuleCastSpell evt)
-        {
-            AbilityData spell = evt.Spell;
-            UnitPartGrappleTargetPP UnitPartGrappleTargetPP = base.Owner.Get<UnitPartGrappleTargetPP>();
-            if (UnitPartGrappleTargetPP == null || !UnitPartGrappleTargetPP.IsPinned)
-            {
-                return;
-            }
-            if (spell.Blueprint == null)
-            {
-                return;
-            }
-            if (spell.Blueprint.Type != Kingmaker.UnitLogic.Abilities.Blueprints.AbilityType.Spell && spell.Blueprint.Type != Kingmaker.UnitLogic.Abilities.Blueprints.AbilityType.SpellLike)
-            { 
-                return;
-            }
-            RuleCalculateCMB ruleCalculateCMB = new RuleCalculateCMB(UnitPartGrappleTargetPP.Initiator, base.Owner, CombatManeuver.Grapple);
-            Rulebook.Trigger<RuleCalculateCMB>(ruleCalculateCMB);
-            int result = ruleCalculateCMB.Result;
-            RuleCalculateAbilityParams ruleCalculateAbilityParams = new RuleCalculateAbilityParams(base.Owner, spell);
-            Rulebook.Trigger<RuleCalculateAbilityParams>(ruleCalculateAbilityParams);
-            int spellLevel = ruleCalculateAbilityParams.Result.SpellLevel;
-            int value = 10 + result + spellLevel;
-            RuleCheckConcentration ruleCheckConcentration = new RuleCheckConcentration(base.Owner, spell);
-            ruleCheckConcentration.CustomDC = new int?(value);
-            base.Context.TriggerRule<RuleCheckConcentration>(ruleCheckConcentration);
-            if (!ruleCheckConcentration.Success)
-            {
-                evt.ForceFail = true;
-            }
-        }
-
-        // Token: 0x0600C1FD RID: 49661 RVA: 0x00327F28 File Offset: 0x00326128
-        public void OnEventDidTrigger(RuleCastSpell evt)
-        {
-        }
+        
 
         // Token: 0x0600C201 RID: 49665 RVA: 0x00327F7C File Offset: 0x0032617C
         public void OnEventAboutToTrigger(RuleCalculateAC evt)

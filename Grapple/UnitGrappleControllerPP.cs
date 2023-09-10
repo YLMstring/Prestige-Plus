@@ -22,6 +22,7 @@ using static HarmonyLib.Code;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
 using static Kingmaker.UnitLogic.Commands.Base.UnitCommand;
+using BlueprintCore.Blueprints.References;
 
 namespace PrestigePlus.Grapple
 {
@@ -104,7 +105,10 @@ namespace PrestigePlus.Grapple
             UnitEntityData value = UnitPartGrappleInitiatorPP.Target.Value;
             UnitPartGrappleTargetPP UnitPartGrappleTargetPP = value.Get<UnitPartGrappleTargetPP>();
             if (UnitPartGrappleTargetPP == null) { return false; }
-            if (isMaintain) { grappleInitiator.SpendAction(Action, false, 0); }
+            if (isMaintain) 
+            { 
+                grappleInitiator.SpendAction(Action, false, 0); 
+            }
             if (!UnitPartGrappleTargetPP.IsTiedUp && !grappleInitiator.Context.TriggerRule(new RuleCombatManeuver(grappleInitiator, value, CombatManeuver.Grapple, null)).Success)
             {
                 return isMaintain;
@@ -121,8 +125,31 @@ namespace PrestigePlus.Grapple
                 UnitPartGrappleInitiatorPP.TryClearPinning();
                 return false;
             }
-            UnitGrappleInitiatorAttackPP cmd = new UnitGrappleInitiatorAttackPP(value);
-            grappleInitiator.Commands.AddToQueue(cmd);
+            UnitGrappleInitiatorAttackPP cmd = new(value);
+            if (isMaintain)
+            {
+                grappleInitiator.Commands.AddToQueue(cmd);
+            }
+            else
+            {
+                grappleInitiator.Commands.Run(cmd, fromQueue: false, doNotClearQueue: true);
+            }
+            if (UnitPartGrappleTargetPP.IsPinned && grappleInitiator.HasFact(KnockOut))
+            {
+                UnitGrappleInitiatorAttackPP cmd2 = new(value);
+                if (isMaintain)
+                {
+                    grappleInitiator.Commands.AddToQueue(cmd2);
+                }
+                else
+                {
+                    grappleInitiator.Commands.Run(cmd2, fromQueue: false, doNotClearQueue: true);
+                }
+            }
+            if (UnitPartGrappleTargetPP.IsPinned && grappleInitiator.HasFact(Rend))
+            {
+                value.AddBuff(Bleed, grappleInitiator);
+            }
             return false;
         }
 
@@ -165,6 +192,10 @@ namespace PrestigePlus.Grapple
 
         private static BlueprintBuffReference NoPin = BlueprintTool.GetRef<BlueprintBuffReference>("{D3B37428-69BE-43F2-83DA-04A38D35CDCB}");
         private static BlueprintBuffReference NoTieUp = BlueprintTool.GetRef<BlueprintBuffReference>("{B14E98A0-53AC-4212-86A0-29D1CA1D8446}");
+        private static BlueprintBuffReference Bleed = BlueprintTool.GetRef<BlueprintBuffReference>(BuffRefs.Bleed3d6Buff.ToString());
+
+        private static BlueprintFeatureReference Rend = BlueprintTool.GetRef<BlueprintFeatureReference>("{0B5D02BD-68EA-429F-9F2A-BE7BDBEC5484}");
+        private static BlueprintFeatureReference KnockOut = BlueprintTool.GetRef<BlueprintFeatureReference>("{42F2A645-479F-4444-A967-0ECBD3CA5585}");
     }
 
     [HarmonyPatch(typeof(GameModesFactory), nameof(GameModesFactory.Initialize))]

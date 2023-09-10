@@ -14,7 +14,7 @@ namespace PrestigePlus.Grapple
     internal class ConditionTwoFreeHand : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleCombatManeuver>, IRulebookHandler<RuleCombatManeuver>, ISubscriber, IInitiatorRulebookSubscriber
     {
 
-        private  bool CheckCondition()
+        private bool CheckCondition()
         {
             var secondaryHand = Owner.Body.CurrentHandsEquipmentSet.SecondaryHand;
             var primaryHand = Owner.Body.CurrentHandsEquipmentSet.PrimaryHand;
@@ -35,11 +35,37 @@ namespace PrestigePlus.Grapple
             return hasFreeHand;
         }
 
+        public bool CheckCondition2()
+        {
+            var secondaryHand = Owner.Body.CurrentHandsEquipmentSet.SecondaryHand;
+            var primaryHand = Owner.Body.CurrentHandsEquipmentSet.PrimaryHand;
+            bool hasFreeHand = true;
+            if (secondaryHand.HasShield)
+            {
+                var maybeShield = secondaryHand.MaybeShield;
+                hasFreeHand &= maybeShield.Blueprint.Type.ProficiencyGroup == ArmorProficiencyGroup.Buckler;
+            }
+            else if (secondaryHand.HasWeapon && secondaryHand.MaybeWeapon != Owner.Body.EmptyHandWeapon)
+            {
+                hasFreeHand = false;
+            }
+            if (primaryHand.HasWeapon)
+            {
+                hasFreeHand &= !primaryHand.MaybeWeapon.HoldInTwoHands;
+            }
+            return hasFreeHand;
+        }
+
         void IRulebookHandler<RuleCombatManeuver>.OnEventAboutToTrigger(RuleCombatManeuver evt)
         {
             if (evt.Type != CombatManeuver.Grapple) { return; }
             if (CheckCondition()) { return; }
-            evt.AddModifier(4, base.Fact, descriptor: Kingmaker.Enums.ModifierDescriptor.Penalty);
+            if (CheckCondition2()) 
+            {
+                evt.AddModifier(-4, base.Fact, descriptor: Kingmaker.Enums.ModifierDescriptor.Penalty); 
+                return; 
+            }
+            evt.AddModifier(-10, base.Fact, descriptor: Kingmaker.Enums.ModifierDescriptor.Penalty);
         }
 
         void IRulebookHandler<RuleCombatManeuver>.OnEventDidTrigger(RuleCombatManeuver evt)
