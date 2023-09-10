@@ -708,5 +708,21 @@ namespace PrestigePlus.Modify
                 
                 .Configure();
         }
+        //expanded content
+        public static readonly string DreadKnightSpellbook = "FDA83B75-D1B8-4858-9F3E-87A251560FF9";
+        public static readonly string ClawOfTheFalseWyrmSpellbook = "4e0a9fa3-23c7-449f-af05-f4a20d5a20e1";
+        public static readonly string SilverChampionSpellbook = "cf4f5875-5ead-4079-ab90-96cfe2238d38";
+        public static readonly string RavenerHunterSpellbook = "e1604126-b492-4139-9add-2f9359f777e8";
+        public static readonly string LivingScriptureSpellbook = "5ad84e29-93f9-44a9-8cb2-60343f08664d";
+        public static readonly string SkulkingHunterSpellbook = "c59579dd-addf-4590-95a4-45eacb0a6d7e";
+        public static readonly string SwornOfTheEldestSpellbook = "a241cf18-fca0-47a3-a98d-8a1befd781cf";
+        //character option plus
+        public static readonly string ArrowsongMinstrelSpellbook = "b9e9804e-5361-43e7-87c2-ffb7b1195be5";
+        //micro content
+        public static readonly string AntipaladinSpellbook = "c164072a-cbd2-4c6a-8c4e-271bbb7a6903";
+        //ttt
+        public static readonly string ChannelerOfTheUnknownSpellbook = "00aef73f-0e57-4d5b-a30e-c30e69165fee";
+        public static readonly string MyrmidarchSpellbook = "df419202-e786-4382-adf1-f99b2a60e6c9";
+
     }
 }

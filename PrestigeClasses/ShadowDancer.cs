@@ -80,7 +80,7 @@ namespace PrestigePlus.PrestigeClasses
                 .AddToLevelEntry(1, ProficienciesGuid, FeatureRefs.AssassinHideInPlainSight.ToString())
                 .AddToLevelEntry(2, FeatureRefs.Evasion.ToString(), FeatureRefs.UncannyDodge.ToString())
                 .AddToLevelEntry(3, FeatureSelectionRefs.RogueTalentSelection.ToString(), CreateShadowIllusion(), SummonShadowSelection())
-                .AddToLevelEntry(4, CreateShadowCall(), ExtraFeat())
+                .AddToLevelEntry(4, CreateShadowCall(), ShadowJumpGuidFeat)
                 .AddToLevelEntry(5, FeatureRefs.ImprovedUncannyDodge.ToString(), DefensiveGuid)
                 .AddToLevelEntry(6, FeatureSelectionRefs.RogueTalentSelection.ToString(), ShadowJumpGuidFeat)
                 .AddToLevelEntry(7, FeatureRefs.SlipperyMind.ToString())

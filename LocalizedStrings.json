@@ -1402,5 +1402,170 @@
     "Key": "HorizonWalkerAbyssMastery.Description",
     "enGB": "If the horizon walker selects a plane with an alignment trait, he can choose to detect as that alignment (fooling all forms of magic divination) as an immediate action; this benefit lasts until he dismisses it (a free action).",
     "zhCN": "若大地旅者选择带有阵营特性的位面，可通过直觉动作在受到侦测时选择成为该阵营（骗过所有形式的魔法侦测）。该效果持续到大地旅者解除之。"
+  },
+
+  {
+    "Key": "BlackSeraphStyle.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Black Seraph Style",
+    "zhCN": "黑堕流"
+  },
+
+  {
+    "Key": "BlackSeraphStyle.Description",
+    "enGB": "You laugh off the cowardly assaults of your foes. Against the abilities of creatures that are shaken, frightened, panicked, or cowering, you gain a +1 profane bonus to your AC and on saving throws. This bonus increases by +1 at character level 5th and at every five levels thereafter.",
+    "zhCN": "你嘲笑敌人那懦弱的攻击。在对抗战栗、惊惧、恐慌或畏缩的敌人时，你的防御等级和豁免检定得到+1亵渎加值。此加值在5级和之后每5个等级提高1点。"
+  },
+
+  {
+    "Key": "BlackSeraphMalevolence.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Black Seraph’s Malevolence",
+    "zhCN": "黑堕恶念"
+  },
+
+  {
+    "Key": "BlackSeraphMalevolence.Description",
+    "enGB": "You rip into creatures that cannot withstand your terror. Your unholy weapons become holy at the same time.",
+    "zhCN": "你撕碎那些屈服于你的恐怖的生物。你的污邪武器同时成为神圣武器。"
+  },
+
+  {
+    "Key": "BlackSeraphAnnihilation.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Black Seraph Annihilation",
+    "zhCN": "黑堕湮灭"
+  },
+
+  {
+    "Key": "BlackSeraphAnnihilation.Description",
+    "enGB": "You drive your foes before you. Creatures within 30 feet of you can be affected by fear effects even if they are normally immune to fear. Creatures within 30 feet of you that are normally immune to mind-affecting effects can still be affected by demoralize actions, although they gain a +5 resistance bonus if saves are required.",
+    "zhCN": "你驱赶面前之敌。距你30尺内的生物即使免疫恐惧也会被恐惧效果影响。距你30尺内的生物即使免疫影响心灵效果也会被打击士气效果影响，但若需要豁免检定则有+5抗力加值。"
+  },
+
+  {
+    "Key": "ImprovedGrapple.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Grapple",
+    "zhCN": "擒抱"
+  },
+
+  {
+    "Key": "ImprovedGrapple.Description",
+    "enGB": "You are skilled at grappling opponents. You do not provoke an attack of opportunity when performing a grapple combat maneuver. In addition, you receive a +2 bonus on checks made to grapple a foe. You also receive a +2 bonus to your Combat Maneuver Defense whenever an opponent tries to grapple you.",
+    "zhCN": "You are skilled at grappling opponents. 你使用擒抱战技时不会引发借机攻击。此外你在擒抱检定上获得+2加值，同时在对抗擒抱的战技防御上获得+2加值。"
+  },
+
+  {
+    "Key": "Grappled.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Grappled",
+    "zhCN": "蕉灼"
+  },
+
+  {
+    "Key": "Grappled.Description",
+    "enGB": "You are grappled.",
+    "zhCN": "陷入蕉灼"
+  },
+
+  {
+    "Key": "GrappledPin.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Do not Pin",
+    "zhCN": "不进行压制"
+  },
+
+  {
+    "Key": "GrappledPin.Description",
+    "enGB": "Deal damage instead.",
+    "zhCN": "直接造成伤害"
+  },
+
+  {
+    "Key": "GrappledTieUp.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Do not Tie Up",
+    "zhCN": "不进行捆绑"
+  },
+
+  {
+    "Key": "GrappledTieUp.Description",
+    "enGB": "Deal damage instead.",
+    "zhCN": "直接造成伤害"
+  },
+
+  {
+    "Key": "GrappledRelease.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Release Grapple",
+    "zhCN": "脱离擒抱"
+  },
+
+  {
+    "Key": "GrappledRelease.Description",
+    "enGB": "Although both creatures have the grappled condition, you can, as the creature that initiated the grapple, release the grapple as a free action, removing the condition from both you and the target.",
+    "zhCN": "Although both creatures have the grappled condition, you can, as the creature that initiated the grapple, release the grapple as a free action, removing the condition from both you and the target."
+  },
+
+  {
+    "Key": "ImprovedGrappleMythic.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Grapple (Mythic)",
+    "zhCN": "擒抱（神话）"
+  },
+
+  {
+    "Key": "ImprovedGrappleMythic.Description",
+    "enGB": "Your wrestling moves are difficult to counter. You gain a bonus equal to half your tier on checks to grapple, and to your CMD when an opponent tries to grapple you. These bonuses stack with those granted by Improved Grapple.",
+    "zhCN": "Your wrestling moves are difficult to counter. You gain a bonus equal to half your tier on checks to grapple, and to your CMD when an opponent tries to grapple you. These bonuses stack with those granted by Improved Grapple."
+  },
+
+  {
+    "Key": "GreaterGrapple.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Greater Grapple",
+    "zhCN": "高等擒抱"
+  },
+
+  {
+    "Key": "GreaterGrapple.Description",
+    "enGB": "Maintaining a grapple is second nature to you. You receive a +2 bonus on checks made to grapple a foe. This bonus stacks with the bonus granted by Improved Grapple. Once you have grappled a creature, maintaining the grapple is a move action. This feat allows you to make a second grapple check as a standard action each round to move, harm, or pin your opponent further.",
+    "zhCN": "维持擒抱是你的第二天性。你在擒抱检定中获得+2加值，此加值与“精通擒抱”专长带来的加值累计。每当你成功擒抱一个生物，维持擒抱是一个移动动作。本专长允许你以标准动作进行第二次擒抱检定来进一步移动、伤害或压制你的对手。"
+  },
+
+  {
+    "Key": "GreaterGrappleMythic.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Greater Grapple (Mythic)",
+    "zhCN": "高等擒抱（神话）"
+  },
+
+  {
+    "Key": "GreaterGrappleMythic.Description",
+    "enGB": "When you fail to maintain grapple, your can immediately make your second grapple check to maintain again.",
+    "zhCN": "当你维持擒抱失败时，你可以立即进行你的第二次擒抱检定来维持擒抱。"
   }
 ]

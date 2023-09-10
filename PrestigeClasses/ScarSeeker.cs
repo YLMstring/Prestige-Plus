@@ -434,7 +434,7 @@ namespace PrestigePlus.PrestigeClasses
                 .SetIcon(icon)
                 .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Any, radius: 30.Feet(), spreadSpeed: 40.Feet())
                 .AddContextRankConfig(ContextRankConfigs.ClassLevel(new[] { ArchetypeGuid }, type: AbilityRankType.DamageBonus))
-                .AddComponent<CustomDC>()
+                .AddComponent<CustomDC>(c => { c.classguid = ArchetypeGuid; c.Property = StatType.Charisma; })
                 .SetRange(AbilityRange.Personal)
                 .SetType(AbilityType.Special)
                 .Configure();
@@ -466,7 +466,7 @@ namespace PrestigePlus.PrestigeClasses
                 .SetIcon(icon)
                 .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Any, radius: 30.Feet(), spreadSpeed: 40.Feet())
                 .AddContextRankConfig(ContextRankConfigs.ClassLevel(new[] { ArchetypeGuid }, type: AbilityRankType.DamageBonus))
-                .AddComponent<CustomDC>()
+                .AddComponent<CustomDC>(c => { c.classguid = ArchetypeGuid; c.Property = StatType.Charisma; })
                 .SetRange(AbilityRange.Personal)
                 .SetType(AbilityType.Special)
                 .Configure();

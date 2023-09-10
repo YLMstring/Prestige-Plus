@@ -26,8 +26,6 @@ namespace PrestigePlus.Modify
     [TypeId("{1826B09B-766F-46C0-B964-9A231BAD1E81}")]
     internal class CustomDC : ContextCalculateAbilityParams
     {
-        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
-        private static readonly string ArchetypeGuid = "{A9827D49-8599-4525-B763-0E4554DCC1A0}";
         public override AbilityParams Calculate(MechanicsContext context)
         {
             UnitEntityData maybeCaster = context.MaybeCaster;
@@ -44,16 +42,16 @@ namespace PrestigePlus.Modify
 
         private AbilityParams MyCalculate([CanBeNull] MechanicsContext context, [NotNull] BlueprintScriptableObject blueprint, [NotNull] UnitEntityData caster, [CanBeNull] AbilityData ability)
         {
-            StatType value = StatType.Charisma;
-            var level = ContextValues.Rank(Kingmaker.Enums.AbilityRankType.DamageBonus);
+            //StatType value = StatType.Charisma;
+            StatType value = Property;
             RuleCalculateAbilityParams ruleCalculateAbilityParams = (ability != null) ? new RuleCalculateAbilityParams(caster, ability) : new RuleCalculateAbilityParams(caster, blueprint, null);
             ruleCalculateAbilityParams.ReplaceStat = new StatType?(value);
             if (this.StatTypeFromCustomProperty)
             {
                 ruleCalculateAbilityParams.ReplaceStatBonusModifier = new int?(this.m_CustomProperty.Get().GetInt(caster));
             }
-            var guid = "{A9827D49-8599-4525-B763-0E4554DCC1A0}";
-            var archetype = BlueprintTool.GetRef<BlueprintCharacterClassReference>(guid);
+            //var guid = "{A9827D49-8599-4525-B763-0E4554DCC1A0}";
+            var archetype = BlueprintTool.GetRef<BlueprintCharacterClassReference>(classguid);
             ruleCalculateAbilityParams.ReplaceCasterLevel = new int?(caster.Descriptor.Progression.GetClassLevel(archetype));
             ruleCalculateAbilityParams.ReplaceSpellLevel = new int?(caster.Descriptor.Progression.GetClassLevel(archetype));
             if (context != null)
@@ -62,6 +60,9 @@ namespace PrestigePlus.Modify
             }
             return Rulebook.Trigger<RuleCalculateAbilityParams>(ruleCalculateAbilityParams).Result;
         }
+
+        public string classguid;
+        public StatType Property;
 
     }
 }

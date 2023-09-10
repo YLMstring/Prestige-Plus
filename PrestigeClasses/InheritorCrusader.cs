@@ -198,7 +198,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetDescription(InheritorCrusaderGreaterAuraDescription)
               .SetIcon(icon)
               .AddPrerequisiteFeature(FeatureRefs.AuraOfCourageFeature.ToString())
-              .AddFacts(new() { Buff1 })
+              .AddAuraFeatureComponent(Buff1)
               .Configure();
         }
 
