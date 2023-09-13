@@ -1,13 +1,21 @@
-# Prestige Plus v0.7.0 for WoTR 
-## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu).
+# Prestige Plus v0.8.0 for WoTR 
+## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core]([https://github.com/WittleWolfie/ModMenu](https://github.com/Vek17/TabletopTweaks-Core)).
 
+- Add Grapple Mechanic!
 - Add Agent of the Grave, Arcane Archer, Deadeye Devotee, Chevalier, Hinterlander, Horizon Walker, Inheritor’s Crusader, Sanguine Angel, Scar Seeker, Shadowdancer prestige class. More coming soon!
-- Add Rogue Talent Defensive Roll. 
 - Apart from some minor tweaks, all the homebrew stuff are optional.
 - And they are togglable now!
+- Only Black Seraph Style requires TTT-Core, for now.
 
 ## Featuring
 
+### [Grapple Mechanic](https://www.d20pfsrd.com/gamemastering/Combat/#Grapple)
+- This is how I implement it:
+- 1. There are 3 kinds of grapples in the game. My Grapple Mechanic is very close to tabletop. Shifter grapples stay owlcat-brew but once the shifter take Grapple (Improved Grapple) feat, their grapple mechanics would be turned into mine. Finally, monster grapples stay the way it is in Vanilla.
+- 2. If you are grappled, you can attempt to break the grapple by making a combat maneuver check (DC equal to your opponent’s CMD; this does not provoke an attack of opportunity) or Thievery check (with a DC equal to your opponent’s CMD). If you succeed, you break the grapple as a standard action. However, if you fail nothing happens, you don't use your standard action.
+- 3. Tied Up creatures still need to be grappled. The rope would be bursted if you release grapple, because you don't have time to tie someone up properly in combat. They are not helpless but can become the target of Coup De Grace. Additionally, grapple actions against them auto-succeed, they're auto pinned by the rope and their Thievery check DC to escape is higher.
+- Added Feats: Grapple (Improved Grapple), Greater Grapple, Rapid Grappler, Unfair Grip, Pinning Knockout, Pinning Rend, Savage Slam, Dramatic Slam, Hamatula Strike
+- Added Mythic Feats and Abilities (inspired by tabletop abilities of the same name): Grapple (Mythic), Uncanny Grapple, Aerial Assault, Knot Expert, Meat Shield, Maneuver Expert
 ### [Agent of the Grave Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/a-b/agent-of-the-grave/)
 - The class has only 5 levels.
 - Agent of the Grave lose spell progression at level 1. I have no idea why my code can make you lose spell progression, but it just works.
@@ -46,6 +54,14 @@
 - Shadow Jump: You can choose any feat from the dimentional feat chain instead! This requires [Microscopic Content Expansion mod](https://github.com/alterasc/MicroscopicContentExpansion/), which requires [TabletopTweaks-Core](https://github.com/Vek17/TabletopTweaks-Core). If you don't want these feats, my mod doesn't require anything, as the original feature will still be there.
 - Extra Shadow Jump: This is a homebrew feat that gives you 4 extra uses of Shadow Jump ability and you can take it as soon as shadowdancer level 1!
   
+### New Style Feats
+
+- [Black Seraph Style](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/black-seraph-style-combat-style/)
+- [Black Seraph’s Malevolence](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/black-seraphs-malevolence-combat/)
+- [Black Seraph Annihilation](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/black-seraph-annihilation-combat/)
+- From Path of War, Make them Fear!
+- Requires TTT-Core.
+
 ### New Rogue Talents
 
 - [Defensive Roll](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-advanced-talents/defensive-roll-ex/)
