@@ -23,10 +23,11 @@ using Kingmaker.Utility;
 using Kingmaker.Enums;
 using System.Data;
 using PrestigePlus.Feats;
+using Kingmaker.UnitLogic.Buffs.Components;
 
 namespace PrestigePlus.Grapple
 {
-    internal class PPGrabInitiatorBuff : PPGrabBuffBase, ITickEachRound, IUnitNewCombatRoundHandler, IGlobalSubscriber, ISubscriber, IPolymorphDeactivatedHandler, IInitiatorRulebookHandler<RuleCombatManeuver>, IRulebookHandler<RuleCombatManeuver>
+    internal class PPGrabInitiatorFree : UnitBuffComponentDelegate, ITickEachRound, IUnitNewCombatRoundHandler, IGlobalSubscriber, ISubscriber, IPolymorphDeactivatedHandler, IInitiatorRulebookHandler<RuleCombatManeuver>, IRulebookHandler<RuleCombatManeuver>
     {
         public void HandleNewCombatRound(UnitEntityData unit)
         {

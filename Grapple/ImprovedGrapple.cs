@@ -38,11 +38,17 @@ namespace PrestigePlus.Grapple
         private static readonly string DisplayName = "Grappled.Name";
         private static readonly string Description = "Grappled.Description";
 
-        private const string Stylebuff = "ImprovedGrapple.Stylebuff";
+        private const string Stylebuff = "ImprovedGrapple.Stylebuff";  //normal grapple
         private static readonly string StylebuffGuid = "{D6D08842-8E03-4A9D-81B8-1D9FB2245649}";
 
-        private const string Stylebuff2 = "ImprovedGrapple.Stylebuff2";
+        private const string Stylebuff2 = "ImprovedGrapple.Stylebuff2";  //target
         private static readonly string StylebuffGuid2 = "{F505D659-0610-41B1-B178-E767CCB9292E}";
+
+        private const string Stylebuff3 = "ImprovedGrapple.Stylebuff3";  //free not grappled
+        private static readonly string StylebuffGuid3 = "{D4DD258E-B9F1-42D1-9BD0-ADBD217AFE23}";
+
+        private const string Stylebuff4 = "ImprovedGrapple.Stylebuff4";  //charge grapple
+        private static readonly string StylebuffGuid4 = "{C5F4DDFE-CA2E-4309-90BB-1BB5C0F32E78}";
 
         private const string StyleAbility = "ImprovedGrapple.StyleAbility";
         private static readonly string StyleAbilityGuid = "{3011EAD3-71BD-4F62-B535-877285808A0E}";
@@ -65,6 +71,15 @@ namespace PrestigePlus.Grapple
         private const string TieUpbuff = "ImprovedGrapple.TieUpbuff";
         private static readonly string TieUpbuffGuid = "{B14E98A0-53AC-4212-86A0-29D1CA1D8446}";
 
+        private const string ReadyAbility = "ImprovedGrapple.ReadyAbility";
+        private static readonly string ReadyAbilityGuid = "{A5057A11-9D24-46D8-9BE6-F5C7D605EDC5}";
+
+        private static readonly string ReadyDisplayName = "GrappledReady.Name";
+        private static readonly string ReadyDescription = "GrappledReady.Description";
+
+        private const string Readybuff = "ImprovedGrapple.Readybuff";
+        private static readonly string ReadybuffGuid = "{AD21943C-2AC2-465B-8A1E-F99F3446EBE4}";
+
         private const string ReleaseAbility = "ImprovedGrapple.ReleaseAbility";
         private static readonly string ReleaseAbilityGuid = "{A75ED2DD-7F0D-4367-9953-4179F3E531D2}";
 
@@ -86,11 +101,26 @@ namespace PrestigePlus.Grapple
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
+              .SetFxOnStart("063ff6e114b9ff94c9b32ea0e5567c6a")
               .AddComponent<PPGrabTargetBuff>()
               .Configure();
 
+            var Buff3 = BuffConfigurator.New(Stylebuff3, StylebuffGuid3)
+              .SetDisplayName(DisplayName)
+              .SetDescription(Description)
+              .SetIcon(icon)
+              .AddComponent<PPGrabInitiatorFree>()
+              .Configure();
+
+            var Buff4 = BuffConfigurator.New(Stylebuff4, StylebuffGuid4)
+              .SetDisplayName(DisplayName)
+              .SetDescription(Description)
+              .SetIcon(icon)
+              .AddComponent<PPGrabInitiatorBuff>()
+              .Configure();
+
             var grab = ActionsBuilder.New()
-                .Add<PPActionGrapple>(c => { c.CasterBuff = Buff; c.TargetBuff = Buff2; })
+                .Add<PPActionGrapple>(c => { c.isAway = false; })
                 .Build();
 
             var grapple = ActionsBuilder.New()
@@ -106,7 +136,7 @@ namespace PrestigePlus.Grapple
                 .SetCanTargetEnemies(true)
                 .SetCanTargetSelf(false)
                 .SetRange(AbilityRange.Touch)
-                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Touch)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.BreathWeapon)
                 .AddAbilityCasterHasNoFacts(new() { StylebuffGuid })
                 .AddAbilityTargetHasFact(new() { StylebuffGuid2 }, inverted: true)
                 .Configure();
@@ -121,7 +151,7 @@ namespace PrestigePlus.Grapple
             var abilityPin = ActivatableAbilityConfigurator.New(PinAbility, PinAbilityGuid)
                 .SetDisplayName(PinDisplayName)
                 .SetDescription(PinDescription)
-                .SetIcon(icon)
+                .SetIcon(FeatureRefs.Toughness.Reference.Get().Icon)
                 .SetBuff(BuffPin)
                 .SetDeactivateImmediately()
                 .SetIsOnByDefault(false)
@@ -137,8 +167,24 @@ namespace PrestigePlus.Grapple
             var abilityTieUp = ActivatableAbilityConfigurator.New(TieUpAbility, TieUpAbilityGuid)
                 .SetDisplayName(TieUpDisplayName)
                 .SetDescription(TieUpDescription)
-                .SetIcon(icon)
+                .SetIcon(FeatureRefs.ImprovedDisarm.Reference.Get().Icon)
                 .SetBuff(BuffTieUp)
+                .SetDeactivateImmediately()
+                .SetIsOnByDefault(false)
+                .Configure();
+
+            var BuffReady = BuffConfigurator.New(Readybuff, ReadybuffGuid)
+              .SetDisplayName(DisplayName)
+              .SetDescription(Description)
+              .SetIcon(icon)
+              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .Configure();
+
+            var abilityReady = ActivatableAbilityConfigurator.New(ReadyAbility, ReadyAbilityGuid)
+                .SetDisplayName(ReadyDisplayName)
+                .SetDescription(ReadyDescription)
+                .SetIcon(FeatureRefs.CraneStyleWingFeat.Reference.Get().Icon)
+                .SetBuff(BuffReady)
                 .SetDeactivateImmediately()
                 .SetIsOnByDefault(false)
                 .Configure();
@@ -149,7 +195,7 @@ namespace PrestigePlus.Grapple
                     .Build())
                 .SetDisplayName(ReleaseDisplayName)
                 .SetDescription(ReleaseDescription)
-                .SetIcon(icon)
+                .SetIcon(FeatureRefs.CraneStyleRiposteFeat.Reference.Get().Icon)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
                 .SetRange(AbilityRange.Personal)
                 .SetType(AbilityType.Special)
@@ -161,7 +207,7 @@ namespace PrestigePlus.Grapple
                     .SetIcon(icon)
                     .AddPrerequisiteStatValue(StatType.Dexterity, 13)
                     .AddPrerequisiteFeature(FeatureRefs.ImprovedUnarmedStrike.ToString())
-                    .AddFacts(new() { ability, abilityRelease, abilityPin, abilityTieUp })
+                    .AddFacts(new() { ability, abilityRelease, abilityReady, abilityPin, abilityTieUp })
                     .AddComponent<ConditionTwoFreeHand>()
                     .AddCMBBonusForManeuver(maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple }, value: ContextValues.Constant(2))
                     .AddCMDBonusAgainstManeuvers(maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple }, value: ContextValues.Constant(2))

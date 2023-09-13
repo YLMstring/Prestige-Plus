@@ -86,6 +86,7 @@ namespace PrestigePlus.Grapple
             }
             this.IsPinned = true;
             base.Owner.State.AddCondition(UnitCondition.CantUseStandardActions, null, null);
+            base.Owner.State.AddCondition(UnitCondition.LoseDexterityToAC, null, null);
         }
 
         // Token: 0x0600BBE1 RID: 48097 RVA: 0x003113DC File Offset: 0x0030F5DC
@@ -97,6 +98,7 @@ namespace PrestigePlus.Grapple
             }
             this.IsPinned = false;
             base.Owner.State.RemoveCondition(UnitCondition.CantUseStandardActions, null);
+            base.Owner.State.RemoveCondition(UnitCondition.LoseDexterityToAC, null);
         }
 
         public void TrySetTiedUp()

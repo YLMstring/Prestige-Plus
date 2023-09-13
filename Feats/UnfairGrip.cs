@@ -22,7 +22,7 @@ namespace PrestigePlus.Feats
 
         public static void Configure()
         {
-            var icon = FeatureRefs.CriticalFocus.Reference.Get().Icon;
+            var icon = FeatureRefs.PummelingStyle.Reference.Get().Icon;
 
             FeatureConfigurator.New(FeatName, FeatGuid, Kingmaker.Blueprints.Classes.FeatureGroup.Feat)
                     .SetDisplayName(DisplayName)

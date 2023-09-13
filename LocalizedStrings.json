@@ -1510,6 +1510,21 @@
   },
 
   {
+    "Key": "GrappledReady.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Release Next Turn",
+    "zhCN": "下轮脱离"
+  },
+
+  {
+    "Key": "GrappledReady.Description",
+    "enGB": "Although both creatures have the grappled condition, you can, as the creature that initiated the grapple, release the grapple as a free action, removing the condition from both you and the target.",
+    "zhCN": "Although both creatures have the grappled condition, you can, as the creature that initiated the grapple, release the grapple as a free action, removing the condition from both you and the target."
+  },
+
+  {
     "Key": "GrappledRelease.Name",
     // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
     // links to encycolpedia pages.
@@ -1555,18 +1570,18 @@
   },
 
   {
-    "Key": "GreaterGrappleMythic.Name",
+    "Key": "ManeuverExpert.Name",
     // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
     // links to encycolpedia pages.
     "ProcessTemplates": false,
-    "enGB": "Greater Grapple (Mythic)",
-    "zhCN": "高等擒抱（神话）"
+    "enGB": "Maneuver Expert",
+    "zhCN": "Maneuver Expert"
   },
 
   {
-    "Key": "GreaterGrappleMythic.Description",
-    "enGB": "When you fail to maintain grapple, your can immediately make your second grapple check to maintain again.",
-    "zhCN": "当你维持擒抱失败时，你可以立即进行你的第二次擒抱检定来维持擒抱。"
+    "Key": "ManeuverExpert.Description",
+    "enGB": "You always takes a –1 penalty on all saves, as you expend your mythic power whenever you attempt a combat maneuver check to gain the benefits of the Improved and Greater feats tied to that maneuver.",
+    "zhCN": "You always takes a –1 penalty on all saves, as you expend your mythic power whenever you attempt a combat maneuver check to gain the benefits of the Improved and Greater feats tied to that maneuver."
   },
 
   {
@@ -1627,5 +1642,110 @@
     "Key": "PinningRend.Description",
     "enGB": "You tear flesh when you damage an opponent that you have pinned. While you have an opponent pinned, when you succeed at a grapple combat maneuver check to deal an opponent damage, they also take 3d6 bleed damage.",
     "zhCN": "你能轻松击倒一个被你压制的敌人。当你压制一个对手，如果你成功的进行了一次擒抱战技检定对其造成伤害，同时产生3d6流血伤害。"
+  },
+
+  {
+    "Key": "SavageSlam.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Savage Slam",
+    "zhCN": "Savage Slam"
+  },
+
+  {
+    "Key": "SavageSlam.Description",
+    "enGB": "Using your lock on the enemy’s body, you forcefully hurl your opponent to the ground. When you begin your turn grappling an opponent, instead of attempting a combat maneuver check to maintain the grapple, you can try to viciously slam your opponent down. When you deal damage with a grapple combat maneuver check against the opponent, release your grapple and the opponent falls prone.",
+    "zhCN": "Using your lock on the enemy’s body, you forcefully hurl your opponent to the ground. When you begin your turn grappling an opponent, instead of attempting a combat maneuver check to maintain the grapple, you can try to viciously slam your opponent down. When you deal damage with a grapple combat maneuver check against the opponent, release your grapple and the opponent falls prone."
+  },
+
+  {
+    "Key": "UncannyGrapple.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Uncanny Grapple",
+    "zhCN": "Uncanny Grapple"
+  },
+
+  {
+    "Key": "UncannyGrapple.Description",
+    "enGB": "Upon making a successful Savage Slam against a creature you are grappling, you can throw the target of your grapple up to 10 feet per tier, deal 1d6 points of divine damage per tier and the opponent lands prone.",
+    "zhCN": "Upon making a successful Savage Slam against a creature you are grappling, you can throw the target of your grapple up to 10 feet per tier, deal 1d6 points of divine damage per tier and the opponent lands prone."
+  },
+
+  {
+    "Key": "HamatulaStrike.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Hamatula Strike",
+    "zhCN": "Hamatula Strike"
+  },
+
+  {
+    "Key": "HamatulaStrike.Description",
+    "enGB": "You can catch your opponents on your weapon and hold them in place. Whenever you damage an opponent with a melee piercing weapon, you can immediately make a grapple check; success means the opponent is impaled on your weapon and you both gain the grappled condition. While the opponent is impaled, as an attack action you may make a grapple check on your turn at a -4 penalty to damage the opponent with your weapon, even if your weapon cannot normally be used in a grapple.",
+    "zhCN": "You can catch your opponents on your weapon and hold them in place. Whenever you damage an opponent with a melee piercing weapon, you can immediately make a grapple check; success means the opponent is impaled on your weapon and you both gain the grappled condition. While the opponent is impaled, as an attack action you may make a grapple check on your turn at a -4 penalty to damage the opponent with your weapon, even if your weapon cannot normally be used in a grapple."
+  },
+
+  {
+    "Key": "DramaticSlam.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Dramatic Slam",
+    "zhCN": "Dramatic Slam"
+  },
+
+  {
+    "Key": "DramaticSlam.Description",
+    "enGB": "While you are using Savage Slam, if you succeed at your grapple combat maneuver check to knock the opponent prone, you can attempt an Intimidate check to demoralize foes within 30 feet who could see your attack.",
+    "zhCN": "While you are using Savage Slam, if you succeed at your grapple combat maneuver check to knock the opponent prone, you can attempt an Intimidate check to demoralize foes within 30 feet who could see your attack."
+  },
+
+  {
+    "Key": "KnotExpert.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Knot Expert",
+    "zhCN": "Knot Expert"
+  },
+
+  {
+    "Key": "KnotExpert.Description",
+    "enGB": "You tie knots in rope with a flick of your wrist, and can do so from the far end of the rope. As a full round action, you can make a range touch attack with it, then attempt a grapple combat maneuver against that creature you hit, adding your tier to your combat maneuver check. If successful, you are not considered to be grappled, though you still can't move.",
+    "zhCN": "You tie knots in rope with a flick of your wrist, and can do so from the far end of the rope. As a full round action, you can make a range touch attack with it, then attempt a grapple combat maneuver against that creature you hit, adding your tier to your combat maneuver check. If successful, you are not considered to be grappled, though you still can't move."
+  },
+
+  {
+    "Key": "AerialAssault.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Aerial Assault",
+    "zhCN": "Aerial Assault"
+  },
+
+  {
+    "Key": "AerialAssault.Description",
+    "enGB": "When making a charge attack, you can replace your melee attack from this charge with a grapple check, even if the creature is immune to grapple normally.",
+    "zhCN": "When making a charge attack, you can replace your melee attack from this charge with a grapple check, even if the creature is immune to grapple normally."
+  },
+
+  {
+    "Key": "MeatShield.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Meat Shield",
+    "zhCN": "Meat Shield"
+  },
+
+  {
+    "Key": "MeatShield.Description",
+    "enGB": "You can use a creature you’re grappling to protect you from harm. If you’re grappling a creature and are attacked with a melee or ranged attack, once per round you can attempt a grapple combat maneuver check against your grappled opponent. If you succeed, the incoming attack targets your grappled opponent instead of you. If you fail, the grappled opponent breaks free from the grapple and the incoming attack targets you as normal.",
+    "zhCN": "You can use a creature you’re grappling to protect you from harm. If you’re grappling a creature and are attacked with a melee or ranged attack, once per round you can attempt a grapple combat maneuver check against your grappled opponent. If you succeed, the incoming attack targets your grappled opponent instead of you. If you fail, the grappled opponent breaks free from the grapple and the incoming attack targets you as normal."
   }
 ]

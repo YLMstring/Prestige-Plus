@@ -1,4 +1,7 @@
-﻿using Kingmaker.Blueprints.Items.Armors;
+﻿using BlueprintCore.Utils;
+using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Items.Armors;
+using Kingmaker.EntitySystem.Entities;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic;
@@ -14,38 +17,38 @@ namespace PrestigePlus.Grapple
     internal class ConditionTwoFreeHand : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleCombatManeuver>, IRulebookHandler<RuleCombatManeuver>, ISubscriber, IInitiatorRulebookSubscriber
     {
 
-        private bool CheckCondition()
+        private static bool CheckCondition(UnitEntityData unit)
         {
-            var secondaryHand = Owner.Body.CurrentHandsEquipmentSet.SecondaryHand;
-            var primaryHand = Owner.Body.CurrentHandsEquipmentSet.PrimaryHand;
+            var secondaryHand = unit.Body.CurrentHandsEquipmentSet.SecondaryHand;
+            var primaryHand = unit.Body.CurrentHandsEquipmentSet.PrimaryHand;
             bool hasFreeHand = true;
             if (secondaryHand.HasShield)
             {
                 var maybeShield = secondaryHand.MaybeShield;
                 hasFreeHand &= maybeShield.Blueprint.Type.ProficiencyGroup == ArmorProficiencyGroup.Buckler;
             }
-            else if (secondaryHand.HasWeapon && secondaryHand.MaybeWeapon != Owner.Body.EmptyHandWeapon)
+            else if (secondaryHand.HasWeapon && secondaryHand.MaybeWeapon != unit.Body.EmptyHandWeapon)
             {
                 hasFreeHand = false;
             }
-            if (primaryHand.HasWeapon && primaryHand.MaybeWeapon != Owner.Body.EmptyHandWeapon)
+            if (primaryHand.HasWeapon && primaryHand.MaybeWeapon != unit.Body.EmptyHandWeapon)
             {
                 hasFreeHand = false;
             }
             return hasFreeHand;
         }
 
-        public bool CheckCondition2()
+        public static bool CheckCondition2(UnitEntityData unit)
         {
-            var secondaryHand = Owner.Body.CurrentHandsEquipmentSet.SecondaryHand;
-            var primaryHand = Owner.Body.CurrentHandsEquipmentSet.PrimaryHand;
+            var secondaryHand = unit.Body.CurrentHandsEquipmentSet.SecondaryHand;
+            var primaryHand = unit.Body.CurrentHandsEquipmentSet.PrimaryHand;
             bool hasFreeHand = true;
             if (secondaryHand.HasShield)
             {
                 var maybeShield = secondaryHand.MaybeShield;
                 hasFreeHand &= maybeShield.Blueprint.Type.ProficiencyGroup == ArmorProficiencyGroup.Buckler;
             }
-            else if (secondaryHand.HasWeapon && secondaryHand.MaybeWeapon != Owner.Body.EmptyHandWeapon)
+            else if (secondaryHand.HasWeapon && secondaryHand.MaybeWeapon != unit.Body.EmptyHandWeapon)
             {
                 hasFreeHand = false;
             }
@@ -59,15 +62,21 @@ namespace PrestigePlus.Grapple
         void IRulebookHandler<RuleCombatManeuver>.OnEventAboutToTrigger(RuleCombatManeuver evt)
         {
             if (evt.Type != CombatManeuver.Grapple) { return; }
-            if (CheckCondition()) { return; }
-            if (CheckCondition2()) 
+            if (CheckCondition(Owner)) { return; }
+            if (CheckCondition2(Owner)) 
             {
                 evt.AddModifier(-4, base.Fact, descriptor: Kingmaker.Enums.ModifierDescriptor.Penalty); 
                 return; 
             }
-            evt.AddModifier(-10, base.Fact, descriptor: Kingmaker.Enums.ModifierDescriptor.Penalty);
+            if (Owner.HasFact(HamatulaStrike))
+            {
+                evt.AddModifier(-4, base.Fact, descriptor: Kingmaker.Enums.ModifierDescriptor.Penalty);
+                return;
+            }
+            evt.AddModifier(-4, base.Fact, descriptor: Kingmaker.Enums.ModifierDescriptor.Penalty);
         }
 
+        private static BlueprintBuffReference HamatulaStrike = BlueprintTool.GetRef<BlueprintBuffReference>("{2AF7906A-C641-4596-B6A7-DF1F0CDA8758}");
         void IRulebookHandler<RuleCombatManeuver>.OnEventDidTrigger(RuleCombatManeuver evt)
         {
             

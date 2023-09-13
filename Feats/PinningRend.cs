@@ -22,7 +22,7 @@ namespace PrestigePlus.Feats
 
         public static void Configure()
         {
-            var icon = FeatureRefs.ShifterGriffonRend.Reference.Get().Icon;
+            var icon = FeatureRefs.DragonStyle.Reference.Get().Icon;
 
             FeatureConfigurator.New(FeatName, FeatGuid, Kingmaker.Blueprints.Classes.FeatureGroup.Feat)
                     .SetDisplayName(DisplayName)

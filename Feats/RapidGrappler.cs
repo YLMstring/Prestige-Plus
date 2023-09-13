@@ -31,7 +31,7 @@ namespace PrestigePlus.Feats
         private static readonly string RapidGrabbuffGuid = "{78A6C2A5-FFD0-4740-837A-ED69D9D8A030}";
         public static void Configure()
         {
-            var icon = FeatureRefs.GreaterBullRush.Reference.Get().Icon;
+            var icon = FeatureRefs.AgileManeuvers.Reference.Get().Icon;
 
             var BuffRapidGrab = BuffConfigurator.New(RapidGrabbuff, RapidGrabbuffGuid)
               .SetDisplayName(DisplayName)

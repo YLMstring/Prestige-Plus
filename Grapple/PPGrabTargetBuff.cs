@@ -16,7 +16,7 @@ using UnityEngine;
 
 namespace PrestigePlus.Grapple
 {
-    internal class PPGrabTargetBuff : PPGrabBuffBase, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleCalculateAC>, IRulebookHandler<RuleCalculateAC>, ITargetRulebookHandler<RuleCheckTargetFlatFooted>, IRulebookHandler<RuleCheckTargetFlatFooted>, ITargetRulebookSubscriber
+    internal class PPGrabTargetBuff : PPGrabBuffBase, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleCalculateAC>, IRulebookHandler<RuleCalculateAC>, ITargetRulebookSubscriber
     {
         
 
@@ -33,22 +33,6 @@ namespace PrestigePlus.Grapple
 
         // Token: 0x0600C202 RID: 49666 RVA: 0x00327FB5 File Offset: 0x003261B5
         public void OnEventDidTrigger(RuleCalculateAC evt)
-        {
-        }
-
-        // Token: 0x0600C203 RID: 49667 RVA: 0x00327FB7 File Offset: 0x003261B7
-        public void OnEventAboutToTrigger(RuleCheckTargetFlatFooted evt)
-        {
-            UnitPartGrappleTargetPP UnitPartGrappleTargetPP = base.Owner.Get<UnitPartGrappleTargetPP>();
-            if (UnitPartGrappleTargetPP == null || !UnitPartGrappleTargetPP.IsPinned)
-            {
-                return;
-            }
-            evt.ForceFlatFooted = true;
-        }
-
-        // Token: 0x0600C204 RID: 49668 RVA: 0x00327FC0 File Offset: 0x003261C0
-        public void OnEventDidTrigger(RuleCheckTargetFlatFooted evt)
         {
         }
 
