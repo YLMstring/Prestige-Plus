@@ -110,7 +110,7 @@ namespace PrestigePlus.Feats
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .AddToGroups(FeatureGroup.StyleFeat)
                     .AddBuffActions(newRound: ActionsBuilder.New()
-                        .Conditional(ConditionsBuilder.New().CasterHasFact(StylebuffGuid).Add<MalevolenceEnchant>().Build(), ifTrue: ActionsBuilder.New()
+                        .Conditional(ConditionsBuilder.New().Add<MalevolenceEnchant>().Build(), ifTrue: ActionsBuilder.New()
                             .EnchantWornItem(ContextDuration.Fixed(1), WeaponEnchantmentRefs.Holy.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.PrimaryHand)
                             .EnchantWornItem(ContextDuration.Fixed(1), WeaponEnchantmentRefs.Holy.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.SecondaryHand)
                             .Build())
@@ -152,7 +152,7 @@ namespace PrestigePlus.Feats
               .Configure();
 
             var area = AbilityAreaEffectConfigurator.New(AnnihilationAura, AnnihilationAuraGuid)
-                .AddAbilityAreaEffectBuff(Buff2, checkConditionEveryRound: true, condition: ConditionsBuilder.New().CasterHasFact(StylebuffGuid).Build())
+                .AddAbilityAreaEffectBuff(Buff2, checkConditionEveryRound: true, condition: ConditionsBuilder.New().IsCaster(true).Build())
                 .SetAggroEnemies(true)
                 .SetAffectEnemies(true)
                 .SetAffectDead(true)

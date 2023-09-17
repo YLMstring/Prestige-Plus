@@ -216,8 +216,8 @@
 
   {
     "Key": "InheritorCrusaderspellupgrade.Description",
-    "enGB": "At each level, the crusader gains new spells per day as if he had gained a level in cleric or paladin (depending on whether he has cleric or paladin levels). The MOD doesn't limit you, but remember by the rules this works like other prestige classes in the base game.",
-    "zhCN": "每个等级，远征骑士都会如同他在牧师，战斗祭司或圣武士（取决于他拥有的是牧师，战斗祭司或圣武士等级）上提升等级般获得新的每日法术。本MOD不限制你的选择，但实际上的规则是跟本体游戏里几个进阶职业一样的。"
+    "enGB": "At each level, the crusader gains new spells per day as if he had gained a level in cleric or paladin (depending on whether he has cleric or paladin levels).",
+    "zhCN": "每个等级，远征骑士都会如同他在牧师，战斗祭司或圣武士（取决于他拥有的是牧师，战斗祭司或圣武士等级）上提升等级般获得新的每日法术。"
   },
   {
     "Key": "InheritorCrusaderChampionHonor.Name",
@@ -365,8 +365,8 @@
 
   {
     "Key": "Spellupgrade.Description",
-    "enGB": "When a new level in this class is gained, the character gains new spells as if he had also gained a level in a spellcasting class he belonged to before adding the prestige class. The MOD doesn't limit you, but remember by the rules this works like other prestige classes in the base game.",
-    "zhCN": "在这个职业中每获得一个等级，该角色都会如同他在已有的施法者职业上提升等级般获得新的每日法术。本MOD不限制你的选择，但实际上的规则是跟本体游戏里几个进阶职业一样的。"
+    "enGB": "When a new level in this class is gained, the character gains new spells as if he had also gained a level in a spellcasting class he belonged to before adding the prestige class.",
+    "zhCN": "在这个职业中每获得一个等级，该角色都会如同他在已有的施法者职业上提升等级般获得新的每日法术。"
   },
 
   {
@@ -905,8 +905,8 @@
 
   {
     "Key": "ScarSeekerTenacity.Description",
-    "enGB": "When a scar seeker is struck by a critical hit or struck when flat footed, the scar seeker can gain a +2 morale bonus on attack rolls, skill checks, ability checks, and saving throws for a number of rounds equal to his Charisma modifier. If the scar seeker already receives a morale bonus on one or more of these rolls, the morale bonus increases by 1 while this ability lasts.",
-    "zhCN": "当负痕求道者受到了重击或在措手不及时被击中，他在攻击检定、技能检定、属性检定和豁免检定中获得+2士气加值，持续轮数等同于他的魅力调整值。如果负痕求道者在上述检定中的一项或多项上已经获得了士气加值，那么在该能力持续期间，这些士气加值会增加1点。"
+    "enGB": "When a scar seeker is struck by a critical hit or sneak attack, the scar seeker can gain a +2 morale bonus on attack rolls, skill checks and saving throws for a number of rounds equal to his Charisma modifier. If the scar seeker already receives a morale bonus on one or more of these rolls, the morale bonus increases by 1 while this ability lasts.",
+    "zhCN": "当负痕求道者受到了重击或被偷袭时，他在攻击检定、技能检定和豁免检定中获得+2士气加值，持续轮数等同于他的魅力调整值。如果负痕求道者在上述检定中的一项或多项上已经获得了士气加值，那么在该能力持续期间，这些士气加值会增加1点。"
   },
 
   {
@@ -1747,5 +1747,589 @@
     "Key": "MeatShield.Description",
     "enGB": "You can use a creature you’re grappling to protect you from harm. If you’re grappling a creature and are attacked with a melee or ranged attack, once per round you can attempt a grapple combat maneuver check against your grappled opponent. If you succeed, the incoming attack targets your grappled opponent instead of you. If you fail, the grappled opponent breaks free from the grapple and the incoming attack targets you as normal.",
     "zhCN": "You can use a creature you’re grappling to protect you from harm. If you’re grappling a creature and are attacked with a melee or ranged attack, once per round you can attempt a grapple combat maneuver check against your grappled opponent. If you succeed, the incoming attack targets your grappled opponent instead of you. If you fail, the grappled opponent breaks free from the grapple and the incoming attack targets you as normal."
+  },
+
+  {
+    "Key": "GrabbingStyle.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Grabbing Style",
+    "zhCN": "大擒拿手"
+  },
+
+  {
+    "Key": "GrabbingStyle.Description",
+    "enGB": "You are adept at the one-handed grab. When you use this style, you do not take a –4 penalty on combat maneuver checks to grapple a foe with only one hand. Additionally, you do not lose your Dexterity bonus to AC while pinning an opponent.",
+    "zhCN": "你单手即可将人抓牢。当你开启大擒拿手流派时，你在仅用单手擒抱目标的战技攻击检定上不再承受-4减值。除此之外，你在压制一个敌人时不再会失去防御等级上的敏捷加值。"
+  },
+
+  {
+    "Key": "GrabbingDrag.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Grabbing Drag",
+    "zhCN": "万象天引"
+  },
+
+  {
+    "Key": "GrabbingDrag.Description",
+    "enGB": "You can use a move action to attempt a grapple combat maneuver against a creature within 30 feet to pull it towards you. This movement as well as the ability itself provoke attack of opportunity.",
+    "zhCN": "你可以以移动动作对三十尺内一个生物发起擒抱检定，若成功则将其拉向你，该移动及本能力均会引发借机攻击。"
+  },
+
+  {
+    "Key": "GrabbingMaster.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Grabbing Master",
+    "zhCN": "天地合"
+  },
+
+  {
+    "Key": "GrabbingMaster.Description",
+    "enGB": "Your grapple may target anyone, even if the creature is immune to grapple.",
+    "zhCN": "你可以擒抱任何生物，即使它对其免疫。"
+  },
+
+  {
+    "Key": "AccursedWitch.Name",
+    "ProcessTemplates": false,
+    "enGB": "AccursedWitch"
+  },
+  {
+    "Key": "AccursedWitch.Description",
+    "enGB": "AccursedWitch"
+  },
+  {
+    "Key": "Alchemist.Name",
+    "ProcessTemplates": false,
+    "enGB": "Alchemist"
+  },
+  {
+    "Key": "Alchemist.Description",
+    "enGB": "Alchemist"
+  },
+  {
+    "Key": "AngelfireApostle.Name",
+    "ProcessTemplates": false,
+    "enGB": "AngelfireApostle"
+  },
+  {
+    "Key": "AngelfireApostle.Description",
+    "enGB": "AngelfireApostle"
+  },
+  {
+    "Key": "Arcanist.Name",
+    "ProcessTemplates": false,
+    "enGB": "Arcanist"
+  },
+  {
+    "Key": "Arcanist.Description",
+    "enGB": "Arcanist"
+  },
+  {
+    "Key": "ArmagsBlade.Name",
+    "ProcessTemplates": false,
+    "enGB": "ArmagsBlade"
+  },
+  {
+    "Key": "ArmagsBlade.Description",
+    "enGB": "ArmagsBlade"
+  },
+  {
+    "Key": "Bard.Name",
+    "ProcessTemplates": false,
+    "enGB": "Bard"
+  },
+  {
+    "Key": "Bard.Description",
+    "enGB": "Bard"
+  },
+  {
+    "Key": "Bloodrager.Name",
+    "ProcessTemplates": false,
+    "enGB": "Bloodrager"
+  },
+  {
+    "Key": "Bloodrager.Description",
+    "enGB": "Bloodrager"
+  },
+  {
+    "Key": "Cleric.Name",
+    "ProcessTemplates": false,
+    "enGB": "Cleric"
+  },
+  {
+    "Key": "Cleric.Description",
+    "enGB": "Cleric"
+  },
+  {
+    "Key": "Crossblooded.Name",
+    "ProcessTemplates": false,
+    "enGB": "Crossblooded"
+  },
+  {
+    "Key": "Crossblooded.Description",
+    "enGB": "Crossblooded"
+  },
+  {
+    "Key": "Crusader.Name",
+    "ProcessTemplates": false,
+    "enGB": "Crusader"
+  },
+  {
+    "Key": "Crusader.Description",
+    "enGB": "Crusader"
+  },
+  {
+    "Key": "Druid.Name",
+    "ProcessTemplates": false,
+    "enGB": "Druid"
+  },
+  {
+    "Key": "Druid.Description",
+    "enGB": "Druid"
+  },
+  {
+    "Key": "EldritchFont.Name",
+    "ProcessTemplates": false,
+    "enGB": "EldritchFont"
+  },
+  {
+    "Key": "EldritchFont.Description",
+    "enGB": "EldritchFont"
+  },
+  {
+    "Key": "EldritchScion.Name",
+    "ProcessTemplates": false,
+    "enGB": "EldritchScion"
+  },
+  {
+    "Key": "EldritchScion.Description",
+    "enGB": "EldritchScion"
+  },
+  {
+    "Key": "EldritchScoundrel.Name",
+    "ProcessTemplates": false,
+    "enGB": "EldritchScoundrel"
+  },
+  {
+    "Key": "EldritchScoundrel.Description",
+    "enGB": "EldritchScoundrel"
+  },
+  {
+    "Key": "Empyreal.Name",
+    "ProcessTemplates": false,
+    "enGB": "Empyreal"
+  },
+  {
+    "Key": "Empyreal.Description",
+    "enGB": "Empyreal"
+  },
+  {
+    "Key": "ExploiterWizard.Name",
+    "ProcessTemplates": false,
+    "enGB": "ExploiterWizard"
+  },
+  {
+    "Key": "ExploiterWizard.Description",
+    "enGB": "ExploiterWizard"
+  },
+  {
+    "Key": "Feyspeaker.Name",
+    "ProcessTemplates": false,
+    "enGB": "Feyspeaker"
+  },
+  {
+    "Key": "Feyspeaker.Description",
+    "enGB": "Feyspeaker"
+  },
+  {
+    "Key": "Hunter.Name",
+    "ProcessTemplates": false,
+    "enGB": "Hunter"
+  },
+  {
+    "Key": "Hunter.Description",
+    "enGB": "Hunter"
+  },
+  {
+    "Key": "Inquisitor.Name",
+    "ProcessTemplates": false,
+    "enGB": "Inquisitor"
+  },
+  {
+    "Key": "Inquisitor.Description",
+    "enGB": "Inquisitor"
+  },
+  {
+    "Key": "LeyLineGuardianWitch.Name",
+    "ProcessTemplates": false,
+    "enGB": "LeyLineGuardianWitch"
+  },
+  {
+    "Key": "LeyLineGuardianWitch.Description",
+    "enGB": "LeyLineGuardianWitch"
+  },
+  {
+    "Key": "Magus.Name",
+    "ProcessTemplates": false,
+    "enGB": "Magus"
+  },
+  {
+    "Key": "Magus.Description",
+    "enGB": "Magus"
+  },
+  {
+    "Key": "MasterSpy.Name",
+    "ProcessTemplates": false,
+    "enGB": "MasterSpy"
+  },
+  {
+    "Key": "MasterSpy.Description",
+    "enGB": "MasterSpy"
+  },
+  {
+    "Key": "NatureMage.Name",
+    "ProcessTemplates": false,
+    "enGB": "NatureMage"
+  },
+  {
+    "Key": "NatureMage.Description",
+    "enGB": "NatureMage"
+  },
+  {
+    "Key": "Oracle.Name",
+    "ProcessTemplates": false,
+    "enGB": "Oracle"
+  },
+  {
+    "Key": "Oracle.Description",
+    "enGB": "Oracle"
+  },
+  {
+    "Key": "Paladin.Name",
+    "ProcessTemplates": false,
+    "enGB": "Paladin"
+  },
+  {
+    "Key": "Paladin.Description",
+    "enGB": "Paladin"
+  },
+  {
+    "Key": "Ranger.Name",
+    "ProcessTemplates": false,
+    "enGB": "Ranger"
+  },
+  {
+    "Key": "Ranger.Description",
+    "enGB": "Ranger"
+  },
+  {
+    "Key": "Sage.Name",
+    "ProcessTemplates": false,
+    "enGB": "Sage"
+  },
+  {
+    "Key": "Sage.Description",
+    "enGB": "Sage"
+  },
+  {
+    "Key": "Shaman.Name",
+    "ProcessTemplates": false,
+    "enGB": "Shaman"
+  },
+  {
+    "Key": "Shaman.Description",
+    "enGB": "Shaman"
+  },
+  {
+    "Key": "Skald.Name",
+    "ProcessTemplates": false,
+    "enGB": "Skald"
+  },
+  {
+    "Key": "Skald.Description",
+    "enGB": "Skald"
+  },
+  {
+    "Key": "Sorcerer.Name",
+    "ProcessTemplates": false,
+    "enGB": "Sorcerer"
+  },
+  {
+    "Key": "Sorcerer.Description",
+    "enGB": "Sorcerer"
+  },
+  {
+    "Key": "SwordSaint.Name",
+    "ProcessTemplates": false,
+    "enGB": "SwordSaint"
+  },
+  {
+    "Key": "SwordSaint.Description",
+    "enGB": "SwordSaint"
+  },
+  {
+    "Key": "ThassilonianAbjuration.Name",
+    "ProcessTemplates": false,
+    "enGB": "ThassilonianAbjuration"
+  },
+  {
+    "Key": "ThassilonianAbjuration.Description",
+    "enGB": "ThassilonianAbjuration"
+  },
+  {
+    "Key": "ThassilonianConjuration.Name",
+    "ProcessTemplates": false,
+    "enGB": "ThassilonianConjuration"
+  },
+  {
+    "Key": "ThassilonianConjuration.Description",
+    "enGB": "ThassilonianConjuration"
+  },
+  {
+    "Key": "ThassilonianEnchantment.Name",
+    "ProcessTemplates": false,
+    "enGB": "ThassilonianEnchantment"
+  },
+  {
+    "Key": "ThassilonianEnchantment.Description",
+    "enGB": "ThassilonianEnchantment"
+  },
+  {
+    "Key": "ThassilonianEvocation.Name",
+    "ProcessTemplates": false,
+    "enGB": "ThassilonianEvocation"
+  },
+  {
+    "Key": "ThassilonianEvocation.Description",
+    "enGB": "ThassilonianEvocation"
+  },
+  {
+    "Key": "ThassilonianIllusion.Name",
+    "ProcessTemplates": false,
+    "enGB": "ThassilonianIllusion"
+  },
+  {
+    "Key": "ThassilonianIllusion.Description",
+    "enGB": "ThassilonianIllusion"
+  },
+  {
+    "Key": "ThassilonianNecromancy.Name",
+    "ProcessTemplates": false,
+    "enGB": "ThassilonianNecromancy"
+  },
+  {
+    "Key": "ThassilonianNecromancy.Description",
+    "enGB": "ThassilonianNecromancy"
+  },
+  {
+    "Key": "ThassilonianTransmutation.Name",
+    "ProcessTemplates": false,
+    "enGB": "ThassilonianTransmutation"
+  },
+  {
+    "Key": "ThassilonianTransmutation.Description",
+    "enGB": "ThassilonianTransmutation"
+  },
+  {
+    "Key": "UnletteredArcanist.Name",
+    "ProcessTemplates": false,
+    "enGB": "UnletteredArcanist"
+  },
+  {
+    "Key": "UnletteredArcanist.Description",
+    "enGB": "UnletteredArcanist"
+  },
+  {
+    "Key": "Warpriest.Name",
+    "ProcessTemplates": false,
+    "enGB": "Warpriest"
+  },
+  {
+    "Key": "Warpriest.Description",
+    "enGB": "Warpriest"
+  },
+  {
+    "Key": "Witch.Name",
+    "ProcessTemplates": false,
+    "enGB": "Witch"
+  },
+  {
+    "Key": "Witch.Description",
+    "enGB": "Witch"
+  },
+  {
+    "Key": "Wizard.Name",
+    "ProcessTemplates": false,
+    "enGB": "Wizard"
+  },
+  {
+    "Key": "Wizard.Description",
+    "enGB": "Wizard"
+  },
+  {
+    "Key": "DreadKnight.Name",
+    "ProcessTemplates": false,
+    "enGB": "DreadKnight"
+  },
+  {
+    "Key": "DreadKnight.Description",
+    "enGB": "DreadKnight"
+  },
+  {
+    "Key": "ClawOfTheFalseWyrm.Name",
+    "ProcessTemplates": false,
+    "enGB": "ClawOfTheFalseWyrm"
+  },
+  {
+    "Key": "ClawOfTheFalseWyrm.Description",
+    "enGB": "ClawOfTheFalseWyrm"
+  },
+  {
+    "Key": "SilverChampion.Name",
+    "ProcessTemplates": false,
+    "enGB": "SilverChampion"
+  },
+  {
+    "Key": "SilverChampion.Description",
+    "enGB": "SilverChampion"
+  },
+  {
+    "Key": "RavenerHunter.Name",
+    "ProcessTemplates": false,
+    "enGB": "RavenerHunter"
+  },
+  {
+    "Key": "RavenerHunter.Description",
+    "enGB": "RavenerHunter"
+  },
+  {
+    "Key": "LivingScripture.Name",
+    "ProcessTemplates": false,
+    "enGB": "LivingScripture"
+  },
+  {
+    "Key": "LivingScripture.Description",
+    "enGB": "LivingScripture"
+  },
+  {
+    "Key": "SkulkingHunter.Name",
+    "ProcessTemplates": false,
+    "enGB": "SkulkingHunter"
+  },
+  {
+    "Key": "SkulkingHunter.Description",
+    "enGB": "SkulkingHunter"
+  },
+  {
+    "Key": "SwornOfTheEldest.Name",
+    "ProcessTemplates": false,
+    "enGB": "SwornOfTheEldest"
+  },
+  {
+    "Key": "SwornOfTheEldest.Description",
+    "enGB": "SwornOfTheEldest"
+  },
+  {
+    "Key": "ArrowsongMinstrel.Name",
+    "ProcessTemplates": false,
+    "enGB": "ArrowsongMinstrel"
+  },
+  {
+    "Key": "ArrowsongMinstrel.Description",
+    "enGB": "ArrowsongMinstrel"
+  },
+  {
+    "Key": "Antipaladin.Name",
+    "ProcessTemplates": false,
+    "enGB": "Antipaladin"
+  },
+  {
+    "Key": "Antipaladin.Description",
+    "enGB": "Antipaladin"
+  },
+  {
+    "Key": "ChannelerOfTheUnknown.Name",
+    "ProcessTemplates": false,
+    "enGB": "ChannelerOfTheUnknown"
+  },
+  {
+    "Key": "ChannelerOfTheUnknown.Description",
+    "enGB": "ChannelerOfTheUnknown"
+  },
+  {
+    "Key": "Myrmidarch.Name",
+    "ProcessTemplates": false,
+    "enGB": "Myrmidarch"
+  },
+  {
+    "Key": "Myrmidarch.Description",
+    "enGB": "Myrmidarch"
+  },
+
+  {
+    "Key": "StagStyle.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Grabbing Style",
+    "zhCN": "鹿冲流"
+  },
+
+  {
+    "Key": "StagStyle.Description",
+    "enGB": "This style originated among shamanic monks who spent their lives in the wild, allowing them to quickly subdue both game and poachers using the element of surprise. Practitioners of Charging Stag Style can charge fluidly around trees, taking enemies by surprise in the wilderness. When using this style you can charge through difficult terrain, allies and obstacles, making turns if neccessary. You must see your target at the beginning of your charge, and can make only a single attack at the end, even if you would normally be able to make multiple attacks (such as with the pounce ability).",
+    "zhCN": "这个流派起源于生活在野外的萨满教武僧，这使他们能够赢得胜利的同时也能给予偷猎者惊喜，鹿冲流的习练者能在林中顺畅冲锋，在荒野中突袭敌人。当你使用鹿冲流时，可以冲锋穿过友军，小障碍物或困难地形，在必要时转向。你必须在冲锋开始时就能看到你的目标，并且冲锋结束时也只能进行一次攻击，即使你通常可以进行多次攻击（例如猛扑能力）。"
+  },
+
+  {
+    "Key": "StagHorns.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Stag Horns",
+    "zhCN": "鹿绞角"
+  },
+
+  {
+    "Key": "StagHorns.Description",
+    "enGB": "You’ve learned to gain the upper hand against your enemies by charging at them with feigned abandon, yet gaining a strong grip on them after attacking. While using Charging Stag Style, if you make a successful unarmed attack at the end of a charge, you can attempt a free grapple check against the target of your charge without provoking an attack of opportunity.",
+    "zhCN": "你已学会佯装放弃冲锋以获得对敌人的上风优势，在攻击之后对其进行有力控制。当你使用鹿冲流时，如果你在冲锋结束时进行了一次成功的徒手攻击，那么你可以免费对目标进行一次不会引发借机攻击的擒抱检定。"
+  },
+
+  {
+    "Key": "StagSubmission.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Stag Submission",
+    "zhCN": "鹿角绞"
+  },
+
+  {
+    "Key": "StagSubmission.Description",
+    "enGB": "You can quickly subdue an opponent you’ve charged using a special submission hold. When you are in Charging Stag Style and succeed at a combat maneuver check to pin a foe, you can choose to also knock the foe prone or to deal your attack damage to the foe.",
+    "zhCN": "你使用一种特殊的关节技来快速制服对手。当你使用鹿冲流并成功通过战技检定压制敌人时，你可以选择同时将敌人击倒或者对敌人造成攻击伤害。"
+  },
+
+  {
+    "Key": "StagSubmissionPin.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Knock Prone",
+    "zhCN": "击倒"
+  },
+
+  {
+    "Key": "StagSubmissionPin.Description",
+    "enGB": "Knock your foe prone if possible.",
+    "zhCN": "尽可能选择击倒敌人。"
   }
+
 ]

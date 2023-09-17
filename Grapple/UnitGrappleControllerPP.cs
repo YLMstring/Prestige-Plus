@@ -140,6 +140,21 @@ namespace PrestigePlus.Grapple
             {
                 UnitPartGrappleTargetPP.TrySetPinned();
                 UnitPartGrappleInitiatorPP.TrySetPinning();
+                if (grappleInitiator.HasFact(StagBuff))
+                {
+                    if (grappleInitiator.HasFact(StagSub) && value.CanBeKnockedOff())
+                    {
+                        value.Descriptor.State.Prone.ShouldBeActive = true;
+                        EventBus.RaiseEvent(delegate (IKnockOffHandler h)
+                        {
+                            h.HandleKnockOff(grappleInitiator, value);
+                        }, true);
+                    }
+                    else
+                    {
+                        RunAttackRule(grappleInitiator, value);
+                    }
+                }
                 return false;
             }
             if (!UnitPartGrappleTargetPP.IsTiedUp && !grappleInitiator.HasFact(NoTieUp))
@@ -263,6 +278,8 @@ namespace PrestigePlus.Grapple
         private static BlueprintBuffReference Uncanny = BlueprintTool.GetRef<BlueprintBuffReference>("{E4A64303-1E48-4339-AF81-B4D1BD00DB74}");
         private static BlueprintBuffReference HamatulaStrike = BlueprintTool.GetRef<BlueprintBuffReference>("{2AF7906A-C641-4596-B6A7-DF1F0CDA8758}");
         private static BlueprintBuffReference FreeBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{D4DD258E-B9F1-42D1-9BD0-ADBD217AFE23}");
+        private static BlueprintBuffReference StagBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{21F094D4-1D59-400B-9CEB-558E6218FB0C}");
+        private static BlueprintBuffReference StagSub = BlueprintTool.GetRef<BlueprintBuffReference>("{166DF6CC-25B6-4864-9F1D-C9EFF2AA6869}");
 
         private static BlueprintFeatureReference Base = BlueprintTool.GetRef<BlueprintFeatureReference>("{D74F645A-D0F2-470B-B68B-E76EC083A6D8}");
 

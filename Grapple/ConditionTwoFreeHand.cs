@@ -1,4 +1,5 @@
-﻿using BlueprintCore.Utils;
+﻿using BlueprintCore.Blueprints.References;
+using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Items.Armors;
 using Kingmaker.EntitySystem.Entities;
@@ -62,21 +63,21 @@ namespace PrestigePlus.Grapple
         void IRulebookHandler<RuleCombatManeuver>.OnEventAboutToTrigger(RuleCombatManeuver evt)
         {
             if (evt.Type != CombatManeuver.Grapple) { return; }
-            if (CheckCondition(Owner)) { return; }
-            if (CheckCondition2(Owner)) 
+            if (Owner.HasFact(GrabbingStyle) || Owner.HasFact(Bear) || Owner.HasFact(Tiger) || Owner.HasFact(Lizard) || Owner.HasFact(Griffon))
             {
-                evt.AddModifier(-4, base.Fact, descriptor: Kingmaker.Enums.ModifierDescriptor.Penalty); 
-                return; 
-            }
-            if (Owner.HasFact(HamatulaStrike))
-            {
-                evt.AddModifier(-4, base.Fact, descriptor: Kingmaker.Enums.ModifierDescriptor.Penalty);
                 return;
             }
+            if (CheckCondition(Owner)) { return; }
             evt.AddModifier(-4, base.Fact, descriptor: Kingmaker.Enums.ModifierDescriptor.Penalty);
         }
 
-        private static BlueprintBuffReference HamatulaStrike = BlueprintTool.GetRef<BlueprintBuffReference>("{2AF7906A-C641-4596-B6A7-DF1F0CDA8758}");
+        //private static BlueprintBuffReference HamatulaStrike = BlueprintTool.GetRef<BlueprintBuffReference>("{2AF7906A-C641-4596-B6A7-DF1F0CDA8758}");
+        private static BlueprintBuffReference GrabbingStyle = BlueprintTool.GetRef<BlueprintBuffReference>("{133A887D-5353-465D-B06B-9FC40BB29040}");
+
+        private static BlueprintFeatureReference Bear = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ShifterGrabBear.ToString());
+        private static BlueprintFeatureReference Tiger = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ShifterGrabTiger.ToString());
+        private static BlueprintFeatureReference Lizard = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ShifterGrabLizard.ToString());
+        private static BlueprintFeatureReference Griffon = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ShifterGrabGriffon.ToString());
         void IRulebookHandler<RuleCombatManeuver>.OnEventDidTrigger(RuleCombatManeuver evt)
         {
             

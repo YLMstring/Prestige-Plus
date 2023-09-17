@@ -738,7 +738,7 @@ namespace PrestigePlus.PrestigeClasses
 
         public static BlueprintFeature TenacityFeat()
         {
-            var icon = FeatureRefs.Stalwart.Reference.Get().Icon;
+            var icon = FeatureRefs.Diehard.Reference.Get().Icon;
 
             var Buff1 = BuffConfigurator.New(TenacityBuff, TenacityBuffGuid)
                 .SetDisplayName(TenacityDisplayName)
@@ -746,10 +746,10 @@ namespace PrestigePlus.PrestigeClasses
                 .SetIcon(icon)
                 .AddBuffAllSavesBonus(descriptor: ModifierDescriptor.Morale, value: 1)
                 .AddBuffAllSavesBonus(value: 1)
-                .AddBuffAllSkillsBonus(descriptor: ModifierDescriptor.Morale, value: 1)
-                .AddBuffAllSkillsBonus(value: 1)
-                .AddBuffAbilityRollsBonus(affectAllStats: true, descriptor: ModifierDescriptor.Morale, value: 1)
-                .AddBuffAbilityRollsBonus(affectAllStats: true, value: 1)
+                .AddBuffAllSkillsBonus(descriptor: ModifierDescriptor.Morale, value: 1, multiplier: ContextValues.Constant(1))
+                .AddBuffAllSkillsBonus(value: 1, multiplier: ContextValues.Constant(1))
+                //.AddBuffAbilityRollsBonus(affectAllStats: true, descriptor: ModifierDescriptor.Morale, value: 1, multiplier: ContextValues.Constant(1))
+                //.AddBuffAbilityRollsBonus(affectAllStats: true, value: 1, multiplier: ContextValues.Constant(1))
                 .AddAttackBonusConditional(bonus: ContextValues.Constant(1), descriptor: ModifierDescriptor.Morale)
                 .AddAttackBonusConditional(bonus: ContextValues.Constant(1))
                 .Configure();
@@ -761,21 +761,13 @@ namespace PrestigePlus.PrestigeClasses
                         .Build())
                     .Build();
 
-            var action2 = ActionsBuilder.New()
-                    .Conditional(conditions: ConditionsBuilder.New().IsFlatFooted().HasFact(Buff1, negate: true).Build(), ifTrue: ActionsBuilder.New()
-                        .ApplyBuff(Buff1, ContextDuration.Variable(ContextValues.Rank()))
-                        .ContextSpendResource(EnduringScarAblityResGuid, 1)
-                        .Build())
-                    .Build();
-
             var Buff2 = BuffConfigurator.New(Tenacity2Buff, Tenacity2BuffGuid)
                 .SetDisplayName(TenacityDisplayName)
                 .SetDescription(TenacityDescription)
                 .SetIcon(icon)
                 .AddContextRankConfig(ContextRankConfigs.StatBonus(stat: StatType.Charisma, min: 1))
                 .AddComponent<AddAbilityResourceDepletedTrigger>(c => { c.m_Resource = BlueprintTool.GetRef<BlueprintAbilityResourceReference>("{CDE7679C-3AE2-48E6-8103-7ECCAF3EB9BC}"); c.Action = ActionsBuilder.New().RemoveSelf().Build(); c.Cost = 1; })
-                .AddTargetAttackRollTrigger(criticalHit: true, actionOnSelf: action)
-                .AddTargetAttackRollTrigger(criticalHit: false, actionOnSelf: action2)
+                .AddComponent<ScarTenacity>(a => { a.ActionOnSelf = action; })
                 .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(TenacityAblity, TenacityAblityGuid)

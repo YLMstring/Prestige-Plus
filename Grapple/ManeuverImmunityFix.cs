@@ -25,9 +25,12 @@ namespace PrestigePlus.Grapple
             if (evt.Initiator.Get<UnitPartGrappleTargetPP>()) { evt.AutoFailure = false; return; }
             if (evt.Initiator.HasFact(ChargeGrappleBuff)) { evt.AutoFailure = false; return; }
             if (evt.Initiator.HasFact(CasterBuff)) { evt.AutoFailure = false; return; }
+            if (evt.Initiator.HasFact(Master)) { evt.AutoFailure = false; return; }
         }
 
         private static BlueprintBuffReference CasterBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{E78853A3-7B2C-40B6-831F-824B1423F7F6}");
         private static BlueprintBuffReference ChargeGrappleBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{C5F4DDFE-CA2E-4309-90BB-1BB5C0F32E78}");
+
+        private static BlueprintFeatureReference Master = BlueprintTool.GetRef<BlueprintFeatureReference>("{E6382367-C2B3-4A72-8B3E-C5C7C5841874}");
     }
 }

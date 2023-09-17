@@ -102,7 +102,8 @@ namespace PrestigePlus.Modify
                 .SetDisplayName(AngelfireApostleDisplayName)
                 .SetDescription(AngelfireApostleDescription)
                 .AddSpellbookLevel(SpellbookRefs.AngelfireApostleSpellbook.ToString())
-                .SetRanks(10)
+                .SetRanks(10).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.AngelfireApostleSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -120,7 +121,8 @@ namespace PrestigePlus.Modify
                 .SetDisplayName(ClericDisplayName)
                 .SetDescription(ClericDescription)
                 .AddSpellbookLevel(SpellbookRefs.ClericSpellbook.ToString())
-                .SetRanks(10)
+                .SetRanks(10).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.ClericSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -138,7 +140,8 @@ namespace PrestigePlus.Modify
                 .SetDisplayName(CrusaderDisplayName)
                 .SetDescription(CrusaderDescription)
                 .AddSpellbookLevel(SpellbookRefs.CrusaderSpellbook.ToString())
-                .SetRanks(10)
+                .SetRanks(10).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.CrusaderSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -156,7 +159,8 @@ namespace PrestigePlus.Modify
                 .SetDisplayName(PaladinDisplayName)
                 .SetDescription(PaladinDescription)
                 .AddSpellbookLevel(SpellbookRefs.PaladinSpellbook.ToString())
-                .SetRanks(10)
+                .SetRanks(10).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.PaladinSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -173,7 +177,8 @@ namespace PrestigePlus.Modify
                 .SetDisplayName(WarpriestDisplayName)
                 .SetDescription(WarpriestDescription)
                 .AddSpellbookLevel(SpellbookRefs.WarpriestSpellbook.ToString())
-                .SetRanks(10)
+                .SetRanks(10).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.WarpriestSpellbook.ToString(); })
                 .Configure();
         }
 

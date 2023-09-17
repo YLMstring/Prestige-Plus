@@ -20,6 +20,7 @@ namespace PrestigePlus.Grapple
         {
             base.OnTurnOn();
             base.Owner.Stats.Dexterity.AddModifier(this.m_DexterityBonus, base.Runtime, ModifierDescriptor.Penalty);
+            //base.Owner.Stats.Speed.AddModifier(-100, base.Runtime, ModifierDescriptor.Penalty);
         }
 
         // Token: 0x0600C1F3 RID: 49651 RVA: 0x00327CF8 File Offset: 0x00325EF8
@@ -27,6 +28,7 @@ namespace PrestigePlus.Grapple
         {
             base.OnTurnOff();
             base.Owner.Stats.Dexterity.RemoveModifiersFrom(base.Runtime);
+            //base.Owner.Stats.Speed.RemoveModifiersFrom(base.Runtime);
         }
 
         public void OnEventAboutToTrigger(RuleCastSpell evt)

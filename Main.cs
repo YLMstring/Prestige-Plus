@@ -111,6 +111,12 @@ namespace PrestigePlus
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("seraph"), defaultValue: true, Helpers.CreateString("toggle-desc11", "Black Seraph Style"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("grabbing"), defaultValue: true, Helpers.CreateString("toggle-desc13", "Grabbing Style"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("stag"), defaultValue: true, Helpers.CreateString("toggle-desc14", "Charging Stag Style"))
               .ShowVisualConnection()));
 
                 try
@@ -136,6 +142,8 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("scar"))) { ScarSeeker.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("dancer"))) { ShadowDancer.Configure(); ShadowDancer.ExtraShadowJump(); ShadowDancer.ExtraFeat();  DefensiveRoll.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("seraph"))) { BlackSeraphStyle.StyleConfigure(); BlackSeraphStyle.MalevolenceConfigure(); BlackSeraphStyle.AnnihilationConfigure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("grabbing"))) { GrabbingStyle.StyleConfigure(); GrabbingStyle.DragConfigure(); GrabbingStyle.MasterConfigure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("stag"))) { StagStyle.StyleConfigure(); StagStyle.HornsConfigure(); StagStyle.SubmissionConfigure(); }
                 }
         catch (Exception e)
         {

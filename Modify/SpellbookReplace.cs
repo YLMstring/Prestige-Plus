@@ -37,8 +37,8 @@ namespace PrestigePlus.Modify
                   .SetDescription(SpellupgradeDescription)
                   .SetIgnorePrerequisites(false)
                   .SetObligatory(false)
-                  .SetAllFeatures(new Blueprint<BlueprintFeatureReference>[] { AccursedWitch(), Alchemist(), AngelfireApostle(), Arcanist(), ArmagsBlade(), Bard(), Bloodrager(), Cleric(), Crossblooded(), Crusader(), Druid(), EldritchFont(), EldritchScion(), EldritchScoundrel(), Empyreal(), ExploiterWizard(), Feyspeaker(), Hunter(), Inquisitor(), LeyLineGuardianWitch(), Magus(), MasterSpy(), NatureMage(), Oracle(), Paladin(), Ranger(), Sage(), Shaman(), Skald(), Sorcerer(), SwordSaint(), ThassilonianAbjuration(), ThassilonianConjuration(), ThassilonianEnchantment(), ThassilonianEvocation(), ThassilonianIllusion(), ThassilonianNecromancy(), ThassilonianTransmutation(), UnletteredArcanist(), Warpriest(), Witch(), Wizard() })
-                  .Configure();
+                  .SetAllFeatures(new Blueprint<BlueprintFeatureReference>[] { AccursedWitch(), Alchemist(), AngelfireApostle(), Arcanist(), ArmagsBlade(), Bard(), Bloodrager(), Cleric(), Crossblooded(), Crusader(), Druid(), EldritchFont(), EldritchScion(), EldritchScoundrel(), Empyreal(), ExploiterWizard(), Feyspeaker(), Hunter(), Inquisitor(), LeyLineGuardianWitch(), Magus(), MasterSpy(), NatureMage(), Oracle(), Paladin(), Ranger(), Sage(), Shaman(), Skald(), Sorcerer(), SwordSaint(), ThassilonianAbjuration(), ThassilonianConjuration(), ThassilonianEnchantment(), ThassilonianEvocation(), ThassilonianIllusion(), ThassilonianNecromancy(), ThassilonianTransmutation(), UnletteredArcanist(), Warpriest(), Witch(), Wizard(), DreadKnight(), ClawOfTheFalseWyrm(), SilverChampion(), RavenerHunter(), LivingScripture(), SkulkingHunter(), SwornOfTheEldest(), ArrowsongMinstrel(), Antipaladin(), ChannelerOfTheUnknown(), Myrmidarch() })
+                  .Configure(delayed: true);
         }
 
         public static BlueprintFeatureReplaceSpellbook AccursedWitch()
@@ -46,8 +46,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(AccursedWitchName, AccursedWitchGuid)
                 .SetDisplayName(AccursedWitchDisplayName)
                 .SetDescription(AccursedWitchDescription)
-                .SetSpellbook(SpellbookRefs.AccursedWitchSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.AccursedWitchSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.AccursedWitchSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -62,8 +62,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(AlchemistName, AlchemistGuid)
                 .SetDisplayName(AlchemistDisplayName)
                 .SetDescription(AlchemistDescription)
-                .SetSpellbook(SpellbookRefs.AlchemistSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.AlchemistSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.AlchemistSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -78,9 +78,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(AngelfireApostleName, AngelfireApostleGuid)
                 .SetDisplayName(AngelfireApostleDisplayName)
                 .SetDescription(AngelfireApostleDescription)
-                .SetSpellbook(SpellbookRefs.AngelfireApostleSpellbook.ToString()).SetRanks(10)
-                .SetIsClassFeature(true)
-                .SetAllowNonContextActions(false)
+                .SetSpellbook(SpellbookRefs.AngelfireApostleSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.AngelfireApostleSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -95,8 +94,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(ArcanistName, ArcanistGuid)
                 .SetDisplayName(ArcanistDisplayName)
                 .SetDescription(ArcanistDescription)
-                .SetSpellbook(SpellbookRefs.ArcanistSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.ArcanistSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.ArcanistSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -111,8 +110,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(ArmagsBladeName, ArmagsBladeGuid)
                 .SetDisplayName(ArmagsBladeDisplayName)
                 .SetDescription(ArmagsBladeDescription)
-                .SetSpellbook(SpellbookRefs.ArmagsBladeSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.ArmagsBladeSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.ArmagsBladeSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -127,8 +126,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(BardName, BardGuid)
                 .SetDisplayName(BardDisplayName)
                 .SetDescription(BardDescription)
-                .SetSpellbook(SpellbookRefs.BardSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.BardSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.BardSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -143,8 +142,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(BloodragerName, BloodragerGuid)
                 .SetDisplayName(BloodragerDisplayName)
                 .SetDescription(BloodragerDescription)
-                .SetSpellbook(SpellbookRefs.BloodragerSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.BloodragerSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.BloodragerSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -159,8 +158,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(ClericName, ClericGuid)
                 .SetDisplayName(ClericDisplayName)
                 .SetDescription(ClericDescription)
-                .SetSpellbook(SpellbookRefs.ClericSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.ClericSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.ClericSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -175,8 +174,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(CrossbloodedName, CrossbloodedGuid)
                 .SetDisplayName(CrossbloodedDisplayName)
                 .SetDescription(CrossbloodedDescription)
-                .SetSpellbook(SpellbookRefs.CrossbloodedSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.CrossbloodedSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.CrossbloodedSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -191,8 +190,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(CrusaderName, CrusaderGuid)
                 .SetDisplayName(CrusaderDisplayName)
                 .SetDescription(CrusaderDescription)
-                .SetSpellbook(SpellbookRefs.CrusaderSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.CrusaderSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.CrusaderSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -207,8 +206,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(DruidName, DruidGuid)
                 .SetDisplayName(DruidDisplayName)
                 .SetDescription(DruidDescription)
-                .SetSpellbook(SpellbookRefs.DruidSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.DruidSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.DruidSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -223,8 +222,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(EldritchFontName, EldritchFontGuid)
                 .SetDisplayName(EldritchFontDisplayName)
                 .SetDescription(EldritchFontDescription)
-                .SetSpellbook(SpellbookRefs.EldritchFontSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.EldritchFontSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.EldritchFontSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -239,8 +238,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(EldritchScionName, EldritchScionGuid)
                 .SetDisplayName(EldritchScionDisplayName)
                 .SetDescription(EldritchScionDescription)
-                .SetSpellbook(SpellbookRefs.EldritchScionSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.EldritchScionSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.EldritchScionSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -255,8 +254,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(EldritchScoundrelName, EldritchScoundrelGuid)
                 .SetDisplayName(EldritchScoundrelDisplayName)
                 .SetDescription(EldritchScoundrelDescription)
-                .SetSpellbook(SpellbookRefs.EldritchScoundrelSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.EldritchScoundrelSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.EldritchScoundrelSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -271,8 +270,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(EmpyrealName, EmpyrealGuid)
                 .SetDisplayName(EmpyrealDisplayName)
                 .SetDescription(EmpyrealDescription)
-                .SetSpellbook(SpellbookRefs.EmpyrealSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.EmpyrealSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.EmpyrealSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -287,8 +286,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(ExploiterWizardName, ExploiterWizardGuid)
                 .SetDisplayName(ExploiterWizardDisplayName)
                 .SetDescription(ExploiterWizardDescription)
-                .SetSpellbook(SpellbookRefs.ExploiterWizardSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.ExploiterWizardSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.ExploiterWizardSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -303,8 +302,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(FeyspeakerName, FeyspeakerGuid)
                 .SetDisplayName(FeyspeakerDisplayName)
                 .SetDescription(FeyspeakerDescription)
-                .SetSpellbook(SpellbookRefs.FeyspeakerSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.FeyspeakerSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.FeyspeakerSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -319,8 +318,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(HunterName, HunterGuid)
                 .SetDisplayName(HunterDisplayName)
                 .SetDescription(HunterDescription)
-                .SetSpellbook(SpellbookRefs.HunterSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.HunterSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.HunterSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -335,8 +334,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(InquisitorName, InquisitorGuid)
                 .SetDisplayName(InquisitorDisplayName)
                 .SetDescription(InquisitorDescription)
-                .SetSpellbook(SpellbookRefs.InquisitorSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.InquisitorSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.InquisitorSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -351,8 +350,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(LeyLineGuardianWitchName, LeyLineGuardianWitchGuid)
                 .SetDisplayName(LeyLineGuardianWitchDisplayName)
                 .SetDescription(LeyLineGuardianWitchDescription)
-                .SetSpellbook(SpellbookRefs.LeyLineGuardianWitchSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.LeyLineGuardianWitchSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.LeyLineGuardianWitchSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -367,8 +366,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(MagusName, MagusGuid)
                 .SetDisplayName(MagusDisplayName)
                 .SetDescription(MagusDescription)
-                .SetSpellbook(SpellbookRefs.MagusSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.MagusSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.MagusSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -383,8 +382,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(MasterSpyName, MasterSpyGuid)
                 .SetDisplayName(MasterSpyDisplayName)
                 .SetDescription(MasterSpyDescription)
-                .SetSpellbook(SpellbookRefs.MasterSpySpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.MasterSpySpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.MasterSpySpellbook.ToString(); })
                 .Configure();
         }
 
@@ -399,8 +398,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(NatureMageName, NatureMageGuid)
                 .SetDisplayName(NatureMageDisplayName)
                 .SetDescription(NatureMageDescription)
-                .SetSpellbook(SpellbookRefs.NatureMageSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.NatureMageSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.NatureMageSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -415,8 +414,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(OracleName, OracleGuid)
                 .SetDisplayName(OracleDisplayName)
                 .SetDescription(OracleDescription)
-                .SetSpellbook(SpellbookRefs.OracleSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.OracleSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.OracleSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -431,8 +430,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(PaladinName, PaladinGuid)
                 .SetDisplayName(PaladinDisplayName)
                 .SetDescription(PaladinDescription)
-                .SetSpellbook(SpellbookRefs.PaladinSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.PaladinSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.PaladinSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -447,8 +446,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(RangerName, RangerGuid)
                 .SetDisplayName(RangerDisplayName)
                 .SetDescription(RangerDescription)
-                .SetSpellbook(SpellbookRefs.RangerSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.RangerSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.RangerSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -463,8 +462,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(SageName, SageGuid)
                 .SetDisplayName(SageDisplayName)
                 .SetDescription(SageDescription)
-                .SetSpellbook(SpellbookRefs.SageSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.SageSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.SageSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -479,8 +478,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(ShamanName, ShamanGuid)
                 .SetDisplayName(ShamanDisplayName)
                 .SetDescription(ShamanDescription)
-                .SetSpellbook(SpellbookRefs.ShamanSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.ShamanSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.ShamanSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -495,8 +494,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(SkaldName, SkaldGuid)
                 .SetDisplayName(SkaldDisplayName)
                 .SetDescription(SkaldDescription)
-                .SetSpellbook(SpellbookRefs.SkaldSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.SkaldSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.SkaldSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -512,8 +511,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(SorcererName, SorcererGuid)
                 .SetDisplayName(SorcererDisplayName)
                 .SetDescription(SorcererDescription)
-                .SetSpellbook(SpellbookRefs.SorcererSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.SorcererSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.SorcererSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -528,8 +527,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(SwordSaintName, SwordSaintGuid)
                 .SetDisplayName(SwordSaintDisplayName)
                 .SetDescription(SwordSaintDescription)
-                .SetSpellbook(SpellbookRefs.SwordSaintSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.SwordSaintSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.SwordSaintSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -544,8 +543,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(ThassilonianAbjurationName, ThassilonianAbjurationGuid)
                 .SetDisplayName(ThassilonianAbjurationDisplayName)
                 .SetDescription(ThassilonianAbjurationDescription)
-                .SetSpellbook(SpellbookRefs.ThassilonianAbjurationSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.ThassilonianAbjurationSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.ThassilonianAbjurationSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -560,8 +559,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(ThassilonianConjurationName, ThassilonianConjurationGuid)
                 .SetDisplayName(ThassilonianConjurationDisplayName)
                 .SetDescription(ThassilonianConjurationDescription)
-                .SetSpellbook(SpellbookRefs.ThassilonianConjurationSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.ThassilonianConjurationSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.ThassilonianConjurationSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -576,8 +575,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(ThassilonianEnchantmentName, ThassilonianEnchantmentGuid)
                 .SetDisplayName(ThassilonianEnchantmentDisplayName)
                 .SetDescription(ThassilonianEnchantmentDescription)
-                .SetSpellbook(SpellbookRefs.ThassilonianEnchantmentSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.ThassilonianEnchantmentSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.ThassilonianEnchantmentSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -592,8 +591,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(ThassilonianEvocationName, ThassilonianEvocationGuid)
                 .SetDisplayName(ThassilonianEvocationDisplayName)
                 .SetDescription(ThassilonianEvocationDescription)
-                .SetSpellbook(SpellbookRefs.ThassilonianEvocationSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.ThassilonianEvocationSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.ThassilonianEvocationSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -608,8 +607,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(ThassilonianIllusionName, ThassilonianIllusionGuid)
                 .SetDisplayName(ThassilonianIllusionDisplayName)
                 .SetDescription(ThassilonianIllusionDescription)
-                .SetSpellbook(SpellbookRefs.ThassilonianIllusionSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.ThassilonianIllusionSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.ThassilonianIllusionSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -624,8 +623,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(ThassilonianNecromancyName, ThassilonianNecromancyGuid)
                 .SetDisplayName(ThassilonianNecromancyDisplayName)
                 .SetDescription(ThassilonianNecromancyDescription)
-                .SetSpellbook(SpellbookRefs.ThassilonianNecromancySpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.ThassilonianNecromancySpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.ThassilonianNecromancySpellbook.ToString(); })
                 .Configure();
         }
 
@@ -640,8 +639,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(ThassilonianTransmutationName, ThassilonianTransmutationGuid)
                 .SetDisplayName(ThassilonianTransmutationDisplayName)
                 .SetDescription(ThassilonianTransmutationDescription)
-                .SetSpellbook(SpellbookRefs.ThassilonianTransmutationSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.ThassilonianTransmutationSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.ThassilonianTransmutationSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -656,8 +655,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(UnletteredArcanistName, UnletteredArcanistGuid)
                 .SetDisplayName(UnletteredArcanistDisplayName)
                 .SetDescription(UnletteredArcanistDescription)
-                .SetSpellbook(SpellbookRefs.UnletteredArcanistSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.UnletteredArcanistSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.UnletteredArcanistSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -672,8 +671,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(WarpriestName, WarpriestGuid)
                 .SetDisplayName(WarpriestDisplayName)
                 .SetDescription(WarpriestDescription)
-                .SetSpellbook(SpellbookRefs.WarpriestSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.WarpriestSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.WarpriestSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -688,8 +687,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(WitchName, WitchGuid)
                 .SetDisplayName(WitchDisplayName)
                 .SetDescription(WitchDescription)
-                .SetSpellbook(SpellbookRefs.WitchSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.WitchSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.WitchSpellbook.ToString(); })
                 .Configure();
         }
 
@@ -704,8 +703,8 @@ namespace PrestigePlus.Modify
             return FeatureReplaceSpellbookConfigurator.New(WizardName, WizardGuid)
                 .SetDisplayName(WizardDisplayName)
                 .SetDescription(WizardDescription)
-                .SetSpellbook(SpellbookRefs.WizardSpellbook.ToString()).SetRanks(10)
-                
+                .SetSpellbook(SpellbookRefs.WizardSpellbook.ToString()).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.WizardSpellbook.ToString(); })
                 .Configure();
         }
         //expanded content
@@ -724,5 +723,182 @@ namespace PrestigePlus.Modify
         public static readonly string ChannelerOfTheUnknownSpellbook = "00aef73f-0e57-4d5b-a30e-c30e69165fee";
         public static readonly string MyrmidarchSpellbook = "df419202-e786-4382-adf1-f99b2a60e6c9";
 
+        //mod support
+        public static readonly string DreadKnightName = "2DreadKnight";
+        public static readonly string DreadKnightGuid = "{898544D6-9C30-4E19-B0B8-90CB935EF68C}";
+
+        public static readonly string DreadKnightDisplayName = "DreadKnight.Name";
+        public static readonly string DreadKnightDescription = "DreadKnight.Description";
+
+        public static BlueprintFeatureReplaceSpellbook DreadKnight()
+        {
+            return FeatureReplaceSpellbookConfigurator.New(DreadKnightName, DreadKnightGuid)
+                .SetDisplayName(DreadKnightDisplayName)
+                .SetDescription(DreadKnightDescription)
+                .SetSpellbook(DreadKnightSpellbook).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = DreadKnightSpellbook; })
+                .Configure(delayed: true);
+        }
+
+        public static readonly string ClawOfTheFalseWyrmName = "2ClawOfTheFalseWyrm";
+        public static readonly string ClawOfTheFalseWyrmGuid = "{B56D6A2F-500B-43C9-80CE-ADF57D55E8C0}";
+
+        public static readonly string ClawOfTheFalseWyrmDisplayName = "ClawOfTheFalseWyrm.Name";
+        public static readonly string ClawOfTheFalseWyrmDescription = "ClawOfTheFalseWyrm.Description";
+
+        public static BlueprintFeatureReplaceSpellbook ClawOfTheFalseWyrm()
+        {
+            return FeatureReplaceSpellbookConfigurator.New(ClawOfTheFalseWyrmName, ClawOfTheFalseWyrmGuid)
+                .SetDisplayName(ClawOfTheFalseWyrmDisplayName)
+                .SetDescription(ClawOfTheFalseWyrmDescription)
+                .SetSpellbook(ClawOfTheFalseWyrmSpellbook).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = ClawOfTheFalseWyrmSpellbook; })
+                .Configure(delayed: true);
+        }
+
+        public static readonly string SilverChampionName = "2SilverChampion";
+        public static readonly string SilverChampionGuid = "{E6B79914-EAD0-4862-92F6-5BE40FE4508B}";
+
+        public static readonly string SilverChampionDisplayName = "SilverChampion.Name";
+        public static readonly string SilverChampionDescription = "SilverChampion.Description";
+
+        public static BlueprintFeatureReplaceSpellbook SilverChampion()
+        {
+            return FeatureReplaceSpellbookConfigurator.New(SilverChampionName, SilverChampionGuid)
+                .SetDisplayName(SilverChampionDisplayName)
+                .SetDescription(SilverChampionDescription)
+                .SetSpellbook(SilverChampionSpellbook).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SilverChampionSpellbook; })
+                .Configure(delayed: true);
+        }
+
+        public static readonly string RavenerHunterName = "2RavenerHunter";
+        public static readonly string RavenerHunterGuid = "{6C51F7A5-0DC2-4815-9509-A77DCBFE7292}";
+
+        public static readonly string RavenerHunterDisplayName = "RavenerHunter.Name";
+        public static readonly string RavenerHunterDescription = "RavenerHunter.Description";
+
+        public static BlueprintFeatureReplaceSpellbook RavenerHunter()
+        {
+            return FeatureReplaceSpellbookConfigurator.New(RavenerHunterName, RavenerHunterGuid)
+                .SetDisplayName(RavenerHunterDisplayName)
+                .SetDescription(RavenerHunterDescription)
+                .SetSpellbook(RavenerHunterSpellbook).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = RavenerHunterSpellbook; })
+                .Configure(delayed: true);
+        }
+
+        public static readonly string LivingScriptureName = "2LivingScripture";
+        public static readonly string LivingScriptureGuid = "{B0E300DC-413C-4943-9461-79E1C55505A6}";
+
+        public static readonly string LivingScriptureDisplayName = "LivingScripture.Name";
+        public static readonly string LivingScriptureDescription = "LivingScripture.Description";
+
+        public static BlueprintFeatureReplaceSpellbook LivingScripture()
+        {
+            return FeatureReplaceSpellbookConfigurator.New(LivingScriptureName, LivingScriptureGuid)
+                .SetDisplayName(LivingScriptureDisplayName)
+                .SetDescription(LivingScriptureDescription)
+                .SetSpellbook(LivingScriptureSpellbook).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = LivingScriptureSpellbook; })
+                .Configure(delayed: true);
+        }
+
+        public static readonly string SkulkingHunterName = "2SkulkingHunter";
+        public static readonly string SkulkingHunterGuid = "{7A9EDBE1-8592-41E3-8EBC-8B4172462A28}";
+
+        public static readonly string SkulkingHunterDisplayName = "SkulkingHunter.Name";
+        public static readonly string SkulkingHunterDescription = "SkulkingHunter.Description";
+
+        public static BlueprintFeatureReplaceSpellbook SkulkingHunter()
+        {
+            return FeatureReplaceSpellbookConfigurator.New(SkulkingHunterName, SkulkingHunterGuid)
+                .SetDisplayName(SkulkingHunterDisplayName)
+                .SetDescription(SkulkingHunterDescription)
+                .SetSpellbook(SkulkingHunterSpellbook).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SkulkingHunterSpellbook; })
+                .Configure(delayed: true);
+        }
+
+        public static readonly string SwornOfTheEldestName = "2SwornOfTheEldest";
+        public static readonly string SwornOfTheEldestGuid = "{E4282A13-BCDB-4F10-A756-9D57B94640F0}";
+
+        public static readonly string SwornOfTheEldestDisplayName = "SwornOfTheEldest.Name";
+        public static readonly string SwornOfTheEldestDescription = "SwornOfTheEldest.Description";
+
+        public static BlueprintFeatureReplaceSpellbook SwornOfTheEldest()
+        {
+            return FeatureReplaceSpellbookConfigurator.New(SwornOfTheEldestName, SwornOfTheEldestGuid)
+                .SetDisplayName(SwornOfTheEldestDisplayName)
+                .SetDescription(SwornOfTheEldestDescription)
+                .SetSpellbook(SwornOfTheEldestSpellbook).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SwornOfTheEldestSpellbook; })
+                .Configure(delayed: true);
+        }
+
+        public static readonly string ArrowsongMinstrelName = "2ArrowsongMinstrel";
+        public static readonly string ArrowsongMinstrelGuid = "{0271757F-DFBB-459E-A7D8-D80513362686}";
+
+        public static readonly string ArrowsongMinstrelDisplayName = "ArrowsongMinstrel.Name";
+        public static readonly string ArrowsongMinstrelDescription = "ArrowsongMinstrel.Description";
+
+        public static BlueprintFeatureReplaceSpellbook ArrowsongMinstrel()
+        {
+            return FeatureReplaceSpellbookConfigurator.New(ArrowsongMinstrelName, ArrowsongMinstrelGuid)
+                .SetDisplayName(ArrowsongMinstrelDisplayName)
+                .SetDescription(ArrowsongMinstrelDescription)
+                .SetSpellbook(ArrowsongMinstrelSpellbook).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = ArrowsongMinstrelSpellbook; })
+                .Configure(delayed: true);
+        }
+
+        public static readonly string AntipaladinName = "2Antipaladin";
+        public static readonly string AntipaladinGuid = "{768BF21E-CD41-471B-BAE0-03CC88461CD3}";
+
+        public static readonly string AntipaladinDisplayName = "Antipaladin.Name";
+        public static readonly string AntipaladinDescription = "Antipaladin.Description";
+
+        public static BlueprintFeatureReplaceSpellbook Antipaladin()
+        {
+            return FeatureReplaceSpellbookConfigurator.New(AntipaladinName, AntipaladinGuid)
+                .SetDisplayName(AntipaladinDisplayName)
+                .SetDescription(AntipaladinDescription)
+                .SetSpellbook(AntipaladinSpellbook)
+                .SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = AntipaladinSpellbook; })
+                .Configure(delayed: true);
+        }
+
+        public static readonly string ChannelerOfTheUnknownName = "2ChannelerOfTheUnknown";
+        public static readonly string ChannelerOfTheUnknownGuid = "{55313A0B-7038-4BB5-888A-FB648B338693}";
+
+        public static readonly string ChannelerOfTheUnknownDisplayName = "ChannelerOfTheUnknown.Name";
+        public static readonly string ChannelerOfTheUnknownDescription = "ChannelerOfTheUnknown.Description";
+
+        public static BlueprintFeatureReplaceSpellbook ChannelerOfTheUnknown()
+        {
+            return FeatureReplaceSpellbookConfigurator.New(ChannelerOfTheUnknownName, ChannelerOfTheUnknownGuid)
+                .SetDisplayName(ChannelerOfTheUnknownDisplayName)
+                .SetDescription(ChannelerOfTheUnknownDescription)
+                .SetSpellbook(ChannelerOfTheUnknownSpellbook).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = ChannelerOfTheUnknownSpellbook; })
+                .Configure(delayed: true);
+        }
+
+        public static readonly string MyrmidarchName = "2Myrmidarch";
+        public static readonly string MyrmidarchGuid = "{973D6EB8-A5DD-462A-96EA-C42EF2C5CDC4}";
+
+        public static readonly string MyrmidarchDisplayName = "Myrmidarch.Name";
+        public static readonly string MyrmidarchDescription = "Myrmidarch.Description";
+
+        public static BlueprintFeatureReplaceSpellbook Myrmidarch()
+        {
+            return FeatureReplaceSpellbookConfigurator.New(MyrmidarchName, MyrmidarchGuid)
+                .SetDisplayName(MyrmidarchDisplayName)
+                .SetDescription(MyrmidarchDescription)
+                .SetSpellbook(MyrmidarchSpellbook).SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = MyrmidarchSpellbook; })
+                .Configure(delayed: true);
+        }
     }
 }

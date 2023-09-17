@@ -56,7 +56,7 @@ namespace PrestigePlus.Grapple
                 this.m_Buff = base.Owner.AddBuff(buff, parentContext, null);
             }
             base.Owner.State.Features.RotationForbidden.Retain();
-            base.Owner.State.AddCondition(UnitCondition.CantMove, null, null);
+            base.Owner.State.AddCondition(UnitCondition.MovementBan, null, null);
             base.Owner.State.AddCondition(UnitCondition.DisableAttacksOfOpportunity, null, null);
             //this.LastBreakFreeAttempt = Game.Instance.TimeController.GameTime;
         }
@@ -71,7 +71,7 @@ namespace PrestigePlus.Grapple
                 buff.Remove();
             }
             base.Owner.State.Features.RotationForbidden.Release();
-            base.Owner.State.RemoveCondition(UnitCondition.CantMove, null);
+            base.Owner.State.RemoveCondition(UnitCondition.MovementBan, null);
             base.Owner.State.RemoveCondition(UnitCondition.DisableAttacksOfOpportunity, null);
             this.TryClearPinned();
             this.TryClearTiedUp();

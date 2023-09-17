@@ -11,6 +11,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BlueprintCore.Utils;
+using Kingmaker.Blueprints;
 
 namespace PrestigePlus.Grapple
 {
@@ -35,7 +37,7 @@ namespace PrestigePlus.Grapple
                 this.m_Buff = base.Owner.AddBuff(buff, parentContext, null);
             }
             base.Owner.State.Features.RotationForbidden.Retain();
-            base.Owner.State.AddCondition(UnitCondition.CantMove, null, null);
+            base.Owner.State.AddCondition(UnitCondition.MovementBan, null, null);
             base.Owner.State.AddCondition(UnitCondition.DisableAttacksOfOpportunity, null, null);
         }
 
@@ -49,7 +51,7 @@ namespace PrestigePlus.Grapple
                 buff.Remove();
             }
             base.Owner.State.Features.RotationForbidden.Release();
-            base.Owner.State.RemoveCondition(UnitCondition.CantMove, null);
+            base.Owner.State.RemoveCondition(UnitCondition.MovementBan, null);
             base.Owner.State.RemoveCondition(UnitCondition.DisableAttacksOfOpportunity, null);
             TryClearPinning();
         }
@@ -62,6 +64,10 @@ namespace PrestigePlus.Grapple
                 return;
             }
             this.IsPinning = true;
+            if (Owner.HasFact(GrabbingStyle))
+            {
+                return;
+            }
             base.Owner.State.AddCondition(UnitCondition.LoseDexterityToAC, null, null);
         }
 
@@ -79,6 +85,7 @@ namespace PrestigePlus.Grapple
         // Token: 0x04007F41 RID: 32577
         [JsonProperty]
         private Buff m_Buff;
+        private static BlueprintBuffReference GrabbingStyle = BlueprintTool.GetRef<BlueprintBuffReference>("{133A887D-5353-465D-B06B-9FC40BB29040}");
 
         // Token: 0x04007F42 RID: 32578
         [JsonProperty]
