@@ -1,4 +1,4 @@
-# Prestige Plus v0.8.0 for WoTR 
+# Prestige Plus v0.9.0 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - Add Grapple Mechanic!
@@ -61,7 +61,19 @@
 - [Black Seraph Annihilation](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/black-seraph-annihilation-combat/)
 - From Path of War, Make them Fear!
 - Requires TTT-Core.
-
+- [Grabbing Style](https://www.d20pfsrd.com/feats/combat-feats/grabbing-style-combat-style/)
+- Grabbing Drag (homebrew: drag effect)
+- Grabbing Master (homebrew: bypass immunity)
+- [Charging Stag Style](https://www.d20pfsrd.com/feats/combat-feats/charging-stag-style-combat-style/)
+- [Stag Horns](https://www.d20pfsrd.com/feats/combat-feats/stag-horns-combat-style/)
+- [Stag Submission](https://www.d20pfsrd.com/feats/combat-feats/stag-submission-combat-style/)
+- [Snapping Turtle Style](https://www.d20pfsrd.com/feats/combat-feats/snapping-turtle-style-combat-style/)
+- [Snapping Turtle Clutch](https://www.d20pfsrd.com/feats/combat-feats/snapping-turtle-clutch-combat/)
+- [Snapping Turtle Shell](https://www.d20pfsrd.com/feats/combat-feats/snapping-turtle-shell-combat/)
+- [Kraken Style](https://www.d20pfsrd.com/feats/combat-feats/kraken-style-combat-style/)
+- [Kraken Wrack](https://www.d20pfsrd.com/feats/combat-feats/kraken-wrack-combat-style/)
+- [Medusa’s Wrath](https://www.d20pfsrd.com/feats/combat-feats/medusa-s-wrath-combat/)
+- Use Kraken Style Feats as prerequisites since they are all tentacle-like.
 ### New Rogue Talents
 
 - [Defensive Roll](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-advanced-talents/defensive-roll-ex/)
