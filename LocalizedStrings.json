@@ -561,7 +561,7 @@
   {
     "Key": "ImprovedFavor.Description",
     "enGB": "The hinterlander gains an additional ability corresponding with the favored enemy chosen. Aberrations: The hinterlander gains a +2 bonus on all saves against spells, spell-like abilities, and supernatural abilities used by aberrations. Constructs: The hinterlander’s ranged attacks ignore the first 10 points of DR or hardness. Evil Outsiders: The hinterlander’s attacks are treated as good weapons for the purposes of overcoming damage reduction. Monstrous Humanoids: The hinterlander gains a +2 bonus on all saves against spells, spell-like abilities, and supernatural abilities used by monstrous humanoids. Undead: A hinterlander’s weapons are infused with divine power, as if the they had the ghost touch weapon special ability.",
-    "zhCN": "The hinterlander gains an additional ability corresponding with the favored enemy chosen. Aberrations: The hinterlander gains a +2 bonus on all saves against spells, spell-like abilities, and supernatural abilities used by aberrations. Constructs: The hinterlander’s ranged attacks ignore the first 10 points of DR or hardness. Evil Outsiders: The hinterlander’s attacks are treated as good weapons for the purposes of overcoming damage reduction. Monstrous Humanoids: The hinterlander gains a +2 bonus on all saves against spells, spell-like abilities, and supernatural abilities used by monstrous humanoids. Undead: A hinterlander’s weapons are infused with divine power, as if the they had the ghost touch weapon special ability."
+    "zhCN": "根据所选择宿敌的类型，戍乡人能获得额外的能力。\n异怪：戍乡人在对抗由异怪所使用的法术、类法术能力和超自然能力（时，所有豁免检定均会获得+2加值。\n构装体： 戍乡人的远程攻击能够忽略构装体的前10点DR或硬度。\n邪恶异界生物：在判断是否能够克服伤害减免时，戍乡人的远程攻击被视为善良武器。\n人型怪物：戍乡人在对抗由人型怪物所使用的法术、类法术能力和超自然能力时，所有豁免检定均会获得+2加值。\n不死生物：从戍乡人手中的长弓所击发的箭矢均被灌入了神圣之力，它能够对任何虚体不死生物造成全额伤害，就如同箭矢具有幽冥特殊能力一般。"
   },
 
   {
@@ -771,7 +771,7 @@
   {
     "Key": "DeadeyeDevoteeEnergyArrow.Description",
     "enGB": "At 4th level, whenever a deadeye devotee cast a cure wounds or inflict wounds spell, it becomes reach. And she can launch an arrow at a target within range as a swift action this turn. The arrow automatically hits and its damage is converted into healing.",
-    "zhCN": "At 4th level, whenever a deadeye devotee cast a cure wounds or inflict wounds spell, it becomes reach. And she can launch an arrow at a target within range as a swift action this turn. The arrow automatically hits and its damage is converted into healing."
+    "zhCN": "4级起，当神射信徒信徒释放治疗伤害或造成伤害法术时，获得及远效果。同时本回合内她可以以一个迅捷动作向射程内的目标射出一箭，箭矢会自动命中并将其伤害转化为治疗。"
   },
 
   {
@@ -816,7 +816,7 @@
   {
     "Key": "ScarSeekerBlood.Description",
     "enGB": "As a swift action, the scar seeker can imbue a melee weapon he wields with the vicious weapon special ability for a number of rounds equal to his Charisma modifier (minimum 1 round). This enchantment stacks with existing vicious effect. At 5th and 9th level, he can select this scar one more time to increase the extra damage by the same amount.",
-    "zhCN": "As a swift action, the scar seeker can imbue a melee weapon he wields with the vicious weapon special ability for a number of rounds equal to his Charisma modifier (minimum 1 round). This enchantment stacks with existing vicious effect. At 5th and 9th level, he can select this scar one more time to increase the extra damage by the same amount."
+    "zhCN": "负痕求道者能够以迅捷动作向自身持用的一把近战武器注入恶毒效果，持续轮数等同于他的魅力调整值（最低1轮）。这个效果和武器原有的恶毒效果叠加。5级和9级时，他都能再次选择该圣痕，让额外伤害增加相同数值。"
   },
 
   {
@@ -861,7 +861,7 @@
   {
     "Key": "ScarSeekerSacrifice.Description",
     "enGB": "Once per round, the scar seeker can share the damage from attacks taken by one ally he can see within 30 feet for the round. The subject gains a +1 deflection bonus to AC and a +1 resistance bonus on saves. The scar seeker must be 3rd level to select this scar.",
-    "zhCN": "Once per round, the scar seeker can share the damage from attacks taken by one ally he can see within 30 feet for the round. The subject gains a +1 deflection bonus to AC and a +1 resistance bonus on saves. The scar seeker must be 3rd level to select this scar."
+    "zhCN": "每轮一次，负痕求道者可以分担盟友受到的伤害，该名盟友与他的距离不得超过30尺，并且能够被他看到。目标在 AC 上获得+1反射加值，并在豁免上获得 +1 抗力加值。负痕求道者必须达到3级才能选择该项圣痕。"
   },
 
   {
@@ -876,7 +876,7 @@
   {
     "Key": "ScarSeekerMercy.Description",
     "enGB": "Upon selecting this scar, the scar seeker gains 3 paladin mercy of his choice. A scar seeker’s class levels stack with levels in any other class that grants the mercy ability. The scar seeker must have a Healing enduring scar to select this scar.",
-    "zhCN": "Upon selecting this scar, the scar seeker gains 3 paladin mercy of his choice. A scar seeker’s class levels stack with levels in any other class that grants the mercy ability. The scar seeker must have a Healing enduring scar to select this scar."
+    "zhCN": "选择此项圣痕的负痕求道者可以选择 3 项圣武士的救赎。负痕求道者的等级会与其它给予救赎能力的职业叠加计算效果。负痕求道者必须先拥有治愈圣痕才能选择此项圣痕。"
   },
 
   {
@@ -966,7 +966,7 @@
   {
     "Key": "ScarSeekerTrueM.Description",
     "enGB": "At 10th level, when a scar seeker uses the painful purification ability, If he would be killed in this round, his blood coalesces in his space in the form of a lawful good monadic deva that fights in his place.",
-    "zhCN": "At 10th level, when a scar seeker uses the painful purification ability, If he would be killed in this round, his blood coalesces in his space in the form of a lawful good monadic deva that fights in his place."
+    "zhCN": "10级起，当负痕求道者使用痛楚净身能力时，如果会在这一轮死亡，他的血液会汇聚到自身所占据的空间，形成一名守序善良的元素使徒，并于他所在的位置战斗。"
   },
 
   {
@@ -975,13 +975,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Sanguine Angel",
-    "zhCN": "血色天使"
+    "zhCN": "染血天使"
   },
 
   {
     "Key": "SanguineAngel.Description",
     "enGB": "Sanguine angels are heartless soldiers who have turned to worship infernal demigoddesses. These vengeful devils reward the company’s elite with infernal powers.",
-    "zhCN": "欲魔连队的精英成员是这些被称为“血色天使”的无情士兵。在灰少女还是一个世俗组织的时候，这些欲魔中的多数已经开始崇拜被称作“暗夜女王”的女性半神们。这些热衷复仇的魔鬼则回报欲魔连队的精英们以地狱的伟力。"
+    "zhCN": "欲魔连队的精英成员是这些被称为“染血天使”的无情士兵。在灰少女还是一个世俗组织的时候，这些欲魔中的多数已经开始崇拜被称作“暗夜女王”的女性半神们。这些热衷复仇的魔鬼则回报欲魔连队的精英们以地狱的伟力。"
   },
 
   {
@@ -996,7 +996,7 @@
   {
     "Key": "SanguineAngelHardenedHeart.Description",
     "enGB": "A sanguine angel adds twice her class level to her intimidate check.",
-    "zhCN": "血色天使把她职业等级的两倍加到她的威吓检定上。"
+    "zhCN": "染血天使把她职业等级的两倍加到她的威吓检定上。"
   },
 
   {
@@ -1011,7 +1011,7 @@
   {
     "Key": "SanguineAngelMaidenShield.Description",
     "enGB": "A sanguine angel is treated as if she had the Two-Weapon Fighting, Prodigious Two-Weapon Fighting feat.",
-    "zhCN": "血色天使视作拥有双武器战斗，有力双武器战斗专长。"
+    "zhCN": "染血天使视作拥有双武器战斗，有力双武器战斗专长。"
   },
 
   {
@@ -1026,7 +1026,7 @@
   {
     "Key": "SanguineAngelFuriousHuntress.Description",
     "enGB": "The sanguine angel adds her Strength bonus, rather than her Dexterity bonus, to attack rolls made with bows.",
-    "zhCN": "代替敏捷调整值，血色天使将她的力量调整值加到使用弓时的攻击骰上。"
+    "zhCN": "代替敏捷调整值，染血天使将她的力量调整值加到使用弓时的攻击骰上。"
   },
 
   {
@@ -1041,7 +1041,7 @@
   {
     "Key": "SanguineAngelTyrantDiscipline.Description",
     "enGB": "At 2nd level, a sanguine angel draws upon her indoctrination, tactical training, and devotion to tyranny to develop potent talents. A sanguine angel selects a discipline from the following list.",
-    "zhCN": "欲魔中队的启蒙持续而深入地教导着血色天使，使得她们效忠于地狱女皇，就像昔日灰少女效忠于艾露莎那样。从2级开始，血色天使凭借她接受的教导和战斗训练，以及对暴政的忠诚发展出了强力的天赋。血色天使从下述列表中选取一个戒律。"
+    "zhCN": "欲魔中队的启蒙持续而深入地教导着血色天使，使得她们效忠于地狱女皇，就像昔日灰少女效忠于艾露莎那样。从2级开始，染血天使凭借她接受的教导和战斗训练，以及对暴政的忠诚发展出了强力的天赋。染血天使从下述列表中选取一个戒律。"
   },
 
   {
@@ -1056,7 +1056,7 @@
   {
     "Key": "SanguineAngelArmoredAngel.Description",
     "enGB": "At 3rd level, a sanguine angel gains the armor training class feature, and more.",
-    "zhCN": "3级时，血色天使获得护甲训练，以及更多能力。"
+    "zhCN": "3级时，染血天使获得护甲训练，以及更多能力。"
   },
 
   {
@@ -1071,7 +1071,7 @@
   {
     "Key": "SanguineAngelUnyielding.Description",
     "enGB": "The sanguine angel gains DR 1/-.",
-    "zhCN": "血色天使获得DR1/-。"
+    "zhCN": "染血天使获得DR1/-。"
   },
 
   {
@@ -1086,7 +1086,7 @@
   {
     "Key": "SanguineAngelAngelDeath.Description",
     "enGB": "A sanguine angel’s type changes to outsider (evil, lawful). She gains fire resistance 30, and the see invisibility ability. Ebon-feathered wings emerge from the sanguine angel’s back, granting her a bonus speed of 20 feet.",
-    "zhCN": "A sanguine angel’s type changes to outsider (evil, lawful). She gains fire resistance 30, and the see invisibility ability. Ebon-feathered wings emerge from the sanguine angel’s back, granting her a bonus speed of 20 feet."
+    "zhCN": "染血天使的种类变为异界生物（邪恶，守序）。他获得火焰抗力 30 和识破隐形能力。黑檀羽翼从她的背后生出，使她获得 20 尺速度加值。"
   },
 
   {
@@ -1316,8 +1316,6 @@
 
   {
     "Key": "HorizonWalkerLikeyAstral.Name",
-    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
-    // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Favored Terrain - Astral",
     "zhCN": "偏好地形（星界）"
@@ -1326,7 +1324,7 @@
   {
     "Key": "HorizonWalkerLikeyAstral.Description",
     "enGB": "At 3rd level, a ranger may select a type of terrain. The ranger gains a +2 bonus on initiative checks and a few skill checks when he is in this terrain. At 8th level and every five levels thereafter, the ranger may select an additional favored terrain. In addition, at each such interval, the skill bonus and initiative bonus in any one favored terrain (including the one just selected, if so desired) increases by +2.",
-    "zhCN": "At 3rd level, a ranger may select a type of terrain. The ranger gains a +2 bonus on initiative checks and a few skill checks when he is in this terrain. At 8th level and every five levels thereafter, the ranger may select an additional favored terrain. In addition, at each such interval, the skill bonus and initiative bonus in any one favored terrain (including the one just selected, if so desired) increases by +2."
+    "zhCN": "达到3级时，游侠可以选择一种地形。游侠在当前地形时，进行{g|Encyclopedia:Initiative}先攻{/g}{g|Encyclopedia:Check}检定{/g}、{g|Encyclopedia:Lore_Nature}学识（自然）{/g}、{g|Encyclopedia:Perception}察觉{/g}和{g|Encyclopedia:Stealth}隐匿{/g}{g|Encyclopedia:Skills}技能检定{/g}时获得+2{g|Encyclopedia:Bonus}加值{/g}。\n达到8级时，且之后每提升5级，游侠都可额外选择一种偏好地形。另外，还可使任意一种偏好地形提供的技能加值和先攻加值（可选择刚习得的偏好地形）提高2点。"
   },
 
   {
@@ -1451,8 +1449,6 @@
 
   {
     "Key": "ImprovedGrapple.Name",
-    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
-    // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Grapple",
     "zhCN": "擒抱"
@@ -1461,28 +1457,24 @@
   {
     "Key": "ImprovedGrapple.Description",
     "enGB": "You are skilled at grappling opponents. You do not provoke an attack of opportunity when performing a grapple combat maneuver. In addition, you receive a +2 bonus on checks made to grapple a foe. You also receive a +2 bonus to your Combat Maneuver Defense whenever an opponent tries to grapple you.",
-    "zhCN": "You are skilled at grappling opponents. 你使用擒抱战技时不会引发借机攻击。此外你在擒抱检定上获得+2加值，同时在对抗擒抱的战技防御上获得+2加值。"
+    "zhCN": "你擅长擒抱你的敌人，使用擒抱战技时不会引发借机攻击。此外你在擒抱检定上获得+2加值，同时在对抗擒抱的战技防御上获得+2加值。"
   },
 
   {
     "Key": "Grappled.Name",
-    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
-    // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Grappled",
-    "zhCN": "蕉灼"
+    "zhCN": "擒抱"
   },
 
   {
     "Key": "Grappled.Description",
     "enGB": "You are grappled.",
-    "zhCN": "陷入蕉灼"
+    "zhCN": "你陷入擒抱"
   },
 
   {
     "Key": "GrappledPin.Name",
-    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
-    // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Do not Pin",
     "zhCN": "不进行压制"
@@ -1496,8 +1488,6 @@
 
   {
     "Key": "GrappledTieUp.Name",
-    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
-    // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Do not Tie Up",
     "zhCN": "不进行捆绑"
@@ -1511,8 +1501,6 @@
 
   {
     "Key": "GrappledReady.Name",
-    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
-    // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Release Next Turn",
     "zhCN": "下轮脱离"
@@ -1521,13 +1509,11 @@
   {
     "Key": "GrappledReady.Description",
     "enGB": "Although both creatures have the grappled condition, you can, as the creature that initiated the grapple, release the grapple as a free action, removing the condition from both you and the target.",
-    "zhCN": "Although both creatures have the grappled condition, you can, as the creature that initiated the grapple, release the grapple as a free action, removing the condition from both you and the target."
+    "zhCN": "尽管两个生物处于擒抱中彼此缠斗的状态，你作为擒抱的发起方，可以以自由动作脱离擒抱，使得双方彼此都解除擒抱状态。"
   },
 
   {
     "Key": "GrappledRelease.Name",
-    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
-    // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Release Grapple",
     "zhCN": "脱离擒抱"
@@ -1536,13 +1522,11 @@
   {
     "Key": "GrappledRelease.Description",
     "enGB": "Although both creatures have the grappled condition, you can, as the creature that initiated the grapple, release the grapple as a free action, removing the condition from both you and the target.",
-    "zhCN": "Although both creatures have the grappled condition, you can, as the creature that initiated the grapple, release the grapple as a free action, removing the condition from both you and the target."
+    "zhCN": "尽管两个生物处于擒抱中彼此缠斗的状态，你作为擒抱的发起方，可以以自由动作脱离擒抱，使得双方彼此都解除擒抱状态。"
   },
 
   {
     "Key": "ImprovedGrappleMythic.Name",
-    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
-    // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Grapple (Mythic)",
     "zhCN": "擒抱（神话）"
@@ -1551,13 +1535,11 @@
   {
     "Key": "ImprovedGrappleMythic.Description",
     "enGB": "Your wrestling moves are difficult to counter. You gain a bonus equal to half your tier on checks to grapple, and to your CMD when an opponent tries to grapple you. These bonuses stack with those granted by Improved Grapple.",
-    "zhCN": "Your wrestling moves are difficult to counter. You gain a bonus equal to half your tier on checks to grapple, and to your CMD when an opponent tries to grapple you. These bonuses stack with those granted by Improved Grapple."
+    "zhCN": "你的格斗技巧难以招架。在你尝试进行擒抱检定，或者对试图擒抱你的敌人做战技防御（CMD）时，获得等于神话阶层一半的加值。这个加值能够和精通擒抱提供的加值叠加。"
   },
 
   {
     "Key": "GreaterGrapple.Name",
-    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
-    // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Greater Grapple",
     "zhCN": "高等擒抱"
@@ -1566,28 +1548,24 @@
   {
     "Key": "GreaterGrapple.Description",
     "enGB": "Maintaining a grapple is second nature to you. You receive a +2 bonus on checks made to grapple a foe. This bonus stacks with the bonus granted by Improved Grapple. Once you have grappled a creature, maintaining the grapple is a move action. This feat allows you to make a second grapple check as a standard action each round to move, harm, or pin your opponent further.",
-    "zhCN": "维持擒抱是你的第二天性。你在擒抱检定中获得+2加值，此加值与“精通擒抱”专长带来的加值累计。每当你成功擒抱一个生物，维持擒抱是一个移动动作。本专长允许你以标准动作进行第二次擒抱检定来进一步移动、伤害或压制你的对手。"
+    "zhCN": "维持擒抱是你的第二天性。你在擒抱检定中获得+2加值，此加值与“精通擒抱”专长带来的加值累计。当你成功擒抱一个生物，可以用移动动作维持擒抱。本专长允许你以标准动作进行第二次擒抱检定来进一步移动、伤害或压制你的对手。"
   },
 
   {
     "Key": "ManeuverExpert.Name",
-    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
-    // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Maneuver Expert",
-    "zhCN": "Maneuver Expert"
+    "zhCN": "战技专家"
   },
 
   {
     "Key": "ManeuverExpert.Description",
     "enGB": "You always takes a –1 penalty on all saves, as you expend your mythic power whenever you attempt a combat maneuver check to gain the benefits of the Improved and Greater feats tied to that maneuver.",
-    "zhCN": "You always takes a –1 penalty on all saves, as you expend your mythic power whenever you attempt a combat maneuver check to gain the benefits of the Improved and Greater feats tied to that maneuver."
+    "zhCN": "你的所有豁免-1，因为你将这部分神话之力用于在尝试战技检定时，获取对应战技的精通和高等专长效果。"
   },
 
   {
     "Key": "RapidGrappler.Name",
-    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
-    // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Rapid Grappler",
     "zhCN": "快速擒抱"
@@ -1596,28 +1574,24 @@
   {
     "Key": "RapidGrappler.Description",
     "enGB": "You are a quick hand at grappling. Whenever you use Greater Grapple to successfully maintain a grapple as a move action, you can then spend a swift action to make a grapple combat maneuver check at a –5 penalty.",
-    "zhCN": "You are a quick hand at grappling. Whenever you use Greater Grapple to successfully maintain a grapple as a move action, you can then spend a swift action to make a grapple combat maneuver check at a –5 penalty."
+    "zhCN": "你是快速擒抱的专家。当你成功地使用“高等擒抱”以移动动作维持了一次擒抱之后，接下来你只用迅捷动作就可以以承受-5减值进行维持擒抱的战技检定。"
   },
 
   {
     "Key": "UnfairGrip.Name",
-    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
-    // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Unfair Grip",
-    "zhCN": "Unfair Grip"
+    "zhCN": "盘身扭"
   },
 
   {
     "Key": "UnfairGrip.Description",
     "enGB": "You learned to fight in places that have no rules of engagement, such as back alleys or fighting pits, and you can grab foes in ways that are difficult to escape. When you perform a grapple combat maneuver, you gain a +1 bonus on checks to maintain your grapple, and +1 bonus to your Combat Maneuver Defense whenever an opponent tries to grapple you.",
-    "zhCN": "You learned to fight in places that have no rules of engagement, such as back alleys or fighting pits, and you can grab foes in ways that are difficult to escape. When you perform a grapple combat maneuver, you gain a +1 bonus on checks to maintain your grapple, and +1 bonus to your Combat Maneuver Defense whenever an opponent tries to grapple you."
+    "zhCN": "你在那些全无规则可言的格斗场——比如阿巴萨罗姆的黑街——上磨练自己的摔角技，被你抓住的对手极难挣脱。当你发动擒抱战技攻击时，你在维持擒抱的战技检定上获得+1加值，你的对手在挣脱你的擒抱的战技对抗检定上承受-1减值。"
   },
 
   {
     "Key": "PinningKnockout.Name",
-    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
-    // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Pinning Knockout",
     "zhCN": "压制击昏"
@@ -1631,8 +1605,6 @@
 
   {
     "Key": "PinningRend.Name",
-    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
-    // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Pinning Rend",
     "zhCN": "压制撕裂"
@@ -1646,107 +1618,93 @@
 
   {
     "Key": "SavageSlam.Name",
-    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
-    // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Savage Slam",
-    "zhCN": "Savage Slam"
+    "zhCN": "野蛮裂地"
   },
 
   {
     "Key": "SavageSlam.Description",
     "enGB": "Using your lock on the enemy’s body, you forcefully hurl your opponent to the ground. When you begin your turn grappling an opponent, instead of attempting a combat maneuver check to maintain the grapple, you can try to viciously slam your opponent down. When you deal damage with a grapple combat maneuver check against the opponent, release your grapple and the opponent falls prone.",
-    "zhCN": "Using your lock on the enemy’s body, you forcefully hurl your opponent to the ground. When you begin your turn grappling an opponent, instead of attempting a combat maneuver check to maintain the grapple, you can try to viciously slam your opponent down. When you deal damage with a grapple combat maneuver check against the opponent, release your grapple and the opponent falls prone."
+    "zhCN": "通过锁住对方的躯体，你有力地将对手摔倒在地。当你以正在擒抱对手的状态开始回合时，作为尝试用战技检定维持擒抱的代替，你可以尝试猛然将敌人摔倒在地上。当你用擒抱战技鉴定对敌人造成伤害时，解开擒抱，且对手会被击倒为俯卧。"
   },
 
   {
     "Key": "UncannyGrapple.Name",
-    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
-    // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Uncanny Grapple",
-    "zhCN": "Uncanny Grapple"
+    "zhCN": "粗野擒抱"
   },
 
   {
     "Key": "UncannyGrapple.Description",
     "enGB": "Upon making a successful Savage Slam against a creature you are grappling, you can throw the target of your grapple up to 10 feet per tier, deal 1d6 points of divine damage per tier and the opponent lands prone.",
-    "zhCN": "Upon making a successful Savage Slam against a creature you are grappling, you can throw the target of your grapple up to 10 feet per tier, deal 1d6 points of divine damage per tier and the opponent lands prone."
+    "zhCN": "当你对正在擒抱的对手施加野蛮裂地时，你可以将其投掷到最多每神话阶层 10 尺远处，造成每神话阶层 10 点神力伤害，且目标会被击倒为俯卧。"
   },
 
   {
     "Key": "HamatulaStrike.Name",
-    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
-    // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Hamatula Strike",
-    "zhCN": "Hamatula Strike"
+    "zhCN": "尖刺魔之触"
   },
 
   {
     "Key": "HamatulaStrike.Description",
     "enGB": "You can catch your opponents on your weapon and hold them in place. Whenever you damage an opponent with a melee piercing weapon, you can immediately make a grapple check; success means the opponent is impaled on your weapon and you both gain the grappled condition. While the opponent is impaled, as an attack action you may make a grapple check on your turn at a -4 penalty to damage the opponent with your weapon, even if your weapon cannot normally be used in a grapple.",
-    "zhCN": "You can catch your opponents on your weapon and hold them in place. Whenever you damage an opponent with a melee piercing weapon, you can immediately make a grapple check; success means the opponent is impaled on your weapon and you both gain the grappled condition. While the opponent is impaled, as an attack action you may make a grapple check on your turn at a -4 penalty to damage the opponent with your weapon, even if your weapon cannot normally be used in a grapple."
+    "zhCN": "你可以用你的武器抓住对手并将它们控制在原地。无论何时，当你的穿刺武器对敌人造成伤害时，你可以立即做一个擒抱检定；如果成功则意味着敌人被你的武器所“刺穿”，你们同时进入擒抱状态。当你的对手处于“刺穿”状态时，在你的回合你可以承受-4罚值的以攻击动作进行擒抱检定来用武器来伤害你的对手，即便是正常擒抱中不能使用的武器此时也可。"
   },
 
   {
     "Key": "DramaticSlam.Name",
-    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
-    // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Dramatic Slam",
-    "zhCN": "Dramatic Slam"
+    "zhCN": "炫目裂地"
   },
 
   {
     "Key": "DramaticSlam.Description",
     "enGB": "While you are using Savage Slam, if you succeed at your grapple combat maneuver check to knock the opponent prone, you can attempt an Intimidate check to demoralize foes within 30 feet who could see your attack.",
-    "zhCN": "While you are using Savage Slam, if you succeed at your grapple combat maneuver check to knock the opponent prone, you can attempt an Intimidate check to demoralize foes within 30 feet who could see your attack."
+    "zhCN": "当你使用野蛮裂地时，如果你成功用擒抱战技检定击倒了对手，你可以尝试立刻进行威吓鉴定，对30尺内能看到你的敌人进行打击士气。"
   },
 
   {
     "Key": "KnotExpert.Name",
-    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
-    // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Knot Expert",
-    "zhCN": "Knot Expert"
+    "zhCN": "绳结专家"
   },
 
   {
     "Key": "KnotExpert.Description",
     "enGB": "You tie knots in rope with a flick of your wrist, and can do so from the far end of the rope. As a full round action, you can make a range touch attack with it, then attempt a grapple combat maneuver against that creature you hit, adding your tier to your combat maneuver check. If successful, you are not considered to be grappled, though you still can't move.",
-    "zhCN": "You tie knots in rope with a flick of your wrist, and can do so from the far end of the rope. As a full round action, you can make a range touch attack with it, then attempt a grapple combat maneuver against that creature you hit, adding your tier to your combat maneuver check. If successful, you are not considered to be grappled, though you still can't move."
+    "zhCN": "你用手腕轻轻一抖就能在绳索上打结，在绳索的另一端操纵也一样能做到。以一个整轮动作，你可以对范围内的任何生物进行一次远程接触攻击，如果击中可以尝试使用擒抱战技检定，将你的神话阶层加入战技检定中。如果成功，你不被视为进入擒抱状态，但不能移动。"
   },
 
   {
     "Key": "AerialAssault.Name",
-    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
-    // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Aerial Assault",
-    "zhCN": "Aerial Assault"
+    "zhCN": "飞跃突袭"
   },
 
   {
     "Key": "AerialAssault.Description",
     "enGB": "When making a charge attack, you can replace your melee attack from this charge with a grapple check, even if the creature is immune to grapple normally.",
-    "zhCN": "When making a charge attack, you can replace your melee attack from this charge with a grapple check, even if the creature is immune to grapple normally."
+    "zhCN": "当进行冲锋攻击时，你可以将冲锋中的近战攻击改为进行擒抱检定，即使目标生物在通常状况下免疫擒抱也是如此。"
   },
 
   {
     "Key": "MeatShield.Name",
-    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
-    // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Meat Shield",
-    "zhCN": "Meat Shield"
+    "zhCN": "肉盾"
   },
 
   {
     "Key": "MeatShield.Description",
     "enGB": "You can use a creature you’re grappling to protect you from harm. If you’re grappling a creature and are attacked with a melee or ranged attack, once per round you can attempt a grapple combat maneuver check against your grappled opponent. If you succeed, the incoming attack targets your grappled opponent instead of you. If you fail, the grappled opponent breaks free from the grapple and the incoming attack targets you as normal.",
-    "zhCN": "You can use a creature you’re grappling to protect you from harm. If you’re grappling a creature and are attacked with a melee or ranged attack, once per round you can attempt a grapple combat maneuver check against your grappled opponent. If you succeed, the incoming attack targets your grappled opponent instead of you. If you fail, the grappled opponent breaks free from the grapple and the incoming attack targets you as normal."
+    "zhCN": "你可以使用正在被你擒抱的生物来保护自己免受伤害。若你正在擒抱1名生物，并且受到近战或远程攻击，以直觉动作，你能够尝试进行擒抱战技检定对抗被擒抱的敌人。若成功，到来的攻击会以你擒抱的敌人为目标。若失败，被擒抱的敌人会从擒抱中挣脱，到来的攻击会如常以你为目标。"
   },
 
   {
@@ -2330,6 +2288,111 @@
     "Key": "StagSubmissionPin.Description",
     "enGB": "Knock your foe prone if possible.",
     "zhCN": "尽可能选择击倒敌人。"
+  },
+
+  {
+    "Key": "SnappingTurtleStyle.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Snapping Turtle Style",
+    "zhCN": "鳄龟流"
+  },
+
+  {
+    "Key": "SnappingTurtleStyle.Description",
+    "enGB": "Your deft unarmed style allows you to shield your body from harm. While using the Snapping Turtle Style feat, you gain a +1 shield bonus to AC.",
+    "zhCN": "你高超的徒手战斗技巧给予你保护。当你处于鳄龟流派架势时，你在AC上得到+1盾牌加值。"
+  },
+
+  {
+    "Key": "SnappingTurtleClutch.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Snapping Turtle Clutch",
+    "zhCN": "鳄龟爪"
+  },
+
+  {
+    "Key": "SnappingTurtleClutch.Description",
+    "enGB": "Your unarmed style allows you to turn your opponent’s attack into an opportunity. While you are using the Snapping Turtle Style feat, the shield bonus the style grants to your AC applies to your CMD and touch AC. Whenever an opponent misses you with a melee attack while you are using the Snapping Turtle Style feat, you can once per round attempt a grapple combat maneuver against that opponent, but with a –2 penalty.",
+    "zhCN": "你的徒手战斗技巧可以让你将敌人的攻击化作你反击的契机。你从鳄龟流派架势获得的盾牌加值能加到CMD和接触AC上；当你采用鳄龟流派架势时，如果对手对你近战攻击失手，每轮一次你可对该对手发起一次受-2减值的擒抱。"
+  },
+
+  {
+    "Key": "SnappingTurtleShell.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Snapping Turtle Shell",
+    "zhCN": "鳄龟甲"
+  },
+
+  {
+    "Key": "SnappingTurtleShell.Description",
+    "enGB": "Your guarding hand is almost magical in its skill at deflecting incoming blows. While you are using the Snapping Turtle Style feat, the shield bonus the style grants to your AC increases to +2, and your enemies take a –4 penalty on critical confirmation rolls against you.",
+    "zhCN": "你的防御手在拨挡攻击方面已臻化境。当你处于鳄龟流派架势时，你在此架势获得的盾牌加值变成+2，而且对手对你的重击确认骰受到-4减值。"
+  },
+
+  {
+    "Key": "KrakenStyle.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Kraken Style",
+    "zhCN": "触手流"
+  },
+
+  {
+    "Key": "KrakenStyle.Description",
+    "enGB": "You savagely squeeze and twist when grappling. When you succeed at a grapple check while using this style, your opponent takes an amount of bludgeoning damage equal to your Wisdom modifier in addition to any damage your grapple deals, such as when you choose to harm your opponent as part of a successful check to maintain a grapple. In addition, you gain a +2 bonus on combat maneuver checks to maintain a grapple.",
+    "zhCN": "你野蛮地压榨挤压被你擒抱的家伙。当你使用该流派并成功通过一次擒抱检定时，被你擒抱的目标额外受到等同于你感知调整值的数值的钝击伤害。此外你维持擒抱的擒抱战技检定获得+2加值。"
+  },
+
+  {
+    "Key": "KrakenWrack.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Kraken Wrack",
+    "zhCN": "触手紧缚"
+  },
+
+  {
+    "Key": "KrakenWrack.Description",
+    "enGB": "You squeeze your opponent tightly enough to crush armor between you. The damage you deal with the Kraken Style feat on a successful grapple combat maneuver check increases to an amount equal to your Wisdom modifier + 4 force damage. While using this style, you can crush your opponent when you successfully maintain a grapple instead of choking, damaging, moving, pinning, or tying up your opponent. When you do, the target loses its bonuses from armor for 1 round.",
+    "zhCN": "你超强的紧缚能力压碎了敌人和你之间的护甲。你在擒抱战技检定成功时触手流专长所提供的额外伤害增加为你的感知调整值+4力场伤害。当你使用该流派时，你在成功维持擒抱后可以选择压碎目标，而非锁喉、造成伤害、移动、压制或捆绑目标。若如此做，一回合内目标失去护甲带来的防御加值。"
+  },
+
+  {
+    "Key": "KrakenWrath.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Medusa's Wrath",
+    "zhCN": "万蛇出洞"
+  },
+
+  {
+    "Key": "KrakenWrath.Description",
+    "enGB": "You can take advantage of your opponent’s confusion, delivering multiple blows. Whenever you use the full-attack action and make at least one unarmed strike, you can make two additional unarmed strikes at your highest base attack bonus. These bonus attacks must be made against a dazed, flat-footed, paralyzed, staggered, stunned, or unconscious foe.",
+    "zhCN": "你的连续攻击令对手眼花缭乱。每当你进行全力攻击并做出至少一次徒手击打攻击时，你可以额外以最高BAB做出两次徒手击打攻击。这些额外攻击必须针对晕眩、措手不及、麻痹、恍惚、震慑或昏迷状态的敌人。"
+  },
+
+  {
+    "Key": "KrakenWrackPin.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Crush",
+    "zhCN": "碾碎"
+  },
+
+  {
+    "Key": "KrakenWrackPin.Description",
+    "enGB": "Crush your opponent when you successfully maintain a grapple instead.",
+    "zhCN": "擒抱时优先碾碎护甲。"
   }
 
 ]

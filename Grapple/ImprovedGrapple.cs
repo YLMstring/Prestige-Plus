@@ -212,6 +212,9 @@ namespace PrestigePlus.Grapple
                     .AddCMBBonusForManeuver(maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple }, value: ContextValues.Constant(2))
                     .AddCMDBonusAgainstManeuvers(maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple }, value: ContextValues.Constant(2))
                     .AddToGroups(FeatureGroup.CombatFeat)
+                    .AddToFeatureSelection(FeatureSelectionRefs.MonkBonusFeatSelectionLevel1.ToString())
+                    .AddToFeatureSelection(FeatureSelectionRefs.MonkBonusFeatSelectionLevel6.ToString())
+                    .AddToFeatureSelection(FeatureSelectionRefs.MonkBonusFeatSelectionLevel10.ToString())
                     .Configure();
 
         }

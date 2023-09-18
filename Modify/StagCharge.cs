@@ -329,7 +329,7 @@ namespace PrestigePlus.Modify
                 failReason = BlueprintRoot.Instance.LocalizedTexts.Reasons.TargetIsTooClose;
                 return false;
             }
-            if (!caster.HasFact(CasterBuff))
+            if (ObstacleAnalyzer.TraceAlongNavmesh(caster.Position, unitEntityData.Position) != unitEntityData.Position && !caster.HasFact(CasterBuff))
             {
                 failReason = BlueprintRoot.Instance.LocalizedTexts.Reasons.ObstacleBetweenCasterAndTarget;
                 return false;

@@ -101,6 +101,10 @@ namespace PrestigePlus.Grapple
             {
                 GrabRollBonus += 1;
             }
+            if (Owner.HasFact(Kraken))
+            {
+                GrabRollBonus += 2;
+            }
             if (UnitGrappleControllerPP.GrappleTrick(Owner, true, type))
             {
                 if (Owner.HasFact(GreaterGrapple))
@@ -160,5 +164,6 @@ namespace PrestigePlus.Grapple
         private static BlueprintFeatureReference UnfairGrip = BlueprintTool.GetRef<BlueprintFeatureReference>("{D6FB8873-0F92-4BBD-A162-BD72C3852028}");
 
         private static BlueprintBuffReference RapidGrabbuff = BlueprintTool.GetRef<BlueprintBuffReference>("{78A6C2A5-FFD0-4740-837A-ED69D9D8A030}");
+        private static BlueprintBuffReference Kraken = BlueprintTool.GetRef<BlueprintBuffReference>("{8F08E0D5-9A2B-487A-8CEC-CD3E600D7984}");
     }
 }

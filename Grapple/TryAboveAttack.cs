@@ -200,7 +200,7 @@ namespace PrestigePlus.Grapple
                         break;
                     }
                     Vector3 position = target.Position;
-                    if (ObstacleAnalyzer.TraceAlongNavmesh(caster.Position, position) != position)
+                    if (ObstacleAnalyzer.TraceAlongNavmesh(caster.Position, position) != position && !caster.HasFact(StagBuff))
                     {
                         PFLog.Default.Log("Charge: obstacle != newEndPoint", Array.Empty<object>());
                         break;
@@ -324,7 +324,7 @@ namespace PrestigePlus.Grapple
                 failReason = BlueprintRoot.Instance.LocalizedTexts.Reasons.TargetIsTooClose;
                 return false;
             }
-            if (ObstacleAnalyzer.TraceAlongNavmesh(caster.Position, unitEntityData.Position) != unitEntityData.Position)
+            if (ObstacleAnalyzer.TraceAlongNavmesh(caster.Position, unitEntityData.Position) != unitEntityData.Position && !caster.HasFact(StagBuff))
             {
                 failReason = BlueprintRoot.Instance.LocalizedTexts.Reasons.ObstacleBetweenCasterAndTarget;
                 return false;
@@ -342,7 +342,7 @@ namespace PrestigePlus.Grapple
                     if (!(unitEntityData2 == caster) && !(unitEntityData2 == unitEntityData) && unitEntityData2.View && !unitEntityData2.View.MovementAgent.AvoidanceDisabled)
                     {
                         magnitude = (a - unitEntityData2.Position.To2D()).magnitude;
-                        if (magnitude < (caster.View.Corpulence + unitEntityData2.View.Corpulence) * 0.8f)
+                        if (magnitude < (caster.View.Corpulence + unitEntityData2.View.Corpulence) * 0.8f && (!caster.HasFact(StagBuff) || !unitEntityData2.IsAlly(caster)))
                         {
                             failReason = BlueprintRoot.Instance.LocalizedTexts.Reasons.ObstacleBetweenCasterAndTarget;
                             return false;
@@ -365,5 +365,6 @@ namespace PrestigePlus.Grapple
         private static BlueprintBuffReference TargetBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{F505D659-0610-41B1-B178-E767CCB9292E}");
 
         private static BlueprintBuffReference CastBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{E78853A3-7B2C-40B6-831F-824B1423F7F6}");
+        private static BlueprintBuffReference StagBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{21F094D4-1D59-400B-9CEB-558E6218FB0C}");
     }
 }

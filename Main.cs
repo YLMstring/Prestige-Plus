@@ -113,10 +113,16 @@ namespace PrestigePlus
             Toggle.New(GetKey("seraph"), defaultValue: true, Helpers.CreateString("toggle-desc11", "Black Seraph Style"))
               .ShowVisualConnection())
           .AddToggle(
-            Toggle.New(GetKey("grabbing"), defaultValue: true, Helpers.CreateString("toggle-desc13", "Grabbing Style"))
+            Toggle.New(GetKey("stag"), defaultValue: true, Helpers.CreateString("toggle-desc14", "Charging Stag Style"))
               .ShowVisualConnection())
           .AddToggle(
-            Toggle.New(GetKey("stag"), defaultValue: true, Helpers.CreateString("toggle-desc14", "Charging Stag Style"))
+            Toggle.New(GetKey("grabbing"), defaultValue: true, Helpers.CreateString("toggle-desc13", "Grabbing Style"))
+              .ShowVisualConnection())
+           .AddToggle(
+            Toggle.New(GetKey("kraken"), defaultValue: true, Helpers.CreateString("toggle-desc16", "Kraken Style"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("turtle"), defaultValue: true, Helpers.CreateString("toggle-desc15", "Snapping Turtle Style"))
               .ShowVisualConnection()));
 
                 try
@@ -144,8 +150,10 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("seraph"))) { BlackSeraphStyle.StyleConfigure(); BlackSeraphStyle.MalevolenceConfigure(); BlackSeraphStyle.AnnihilationConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("grabbing"))) { GrabbingStyle.StyleConfigure(); GrabbingStyle.DragConfigure(); GrabbingStyle.MasterConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("stag"))) { StagStyle.StyleConfigure(); StagStyle.HornsConfigure(); StagStyle.SubmissionConfigure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("turtle"))) { SnappingTurtleStyle.StyleConfigure(); SnappingTurtleStyle.ClutchConfigure(); SnappingTurtleStyle.ShellConfigure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("kraken"))) { KrakenStyle.StyleConfigure(); KrakenStyle.WrackConfigure(); KrakenStyle.WrathConfigure(); }
                 }
-        catch (Exception e)
+                catch (Exception e)
         {
           Logger.Error("Failed to configure blueprints.", e);
         }

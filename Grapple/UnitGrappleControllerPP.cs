@@ -35,6 +35,7 @@ using Kingmaker.Items.Slots;
 using Kingmaker.UnitLogic.Commands;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.RuleSystem.Rules.Abilities;
+using Kingmaker.Blueprints.Root;
 
 namespace PrestigePlus.Grapple
 {
@@ -135,6 +136,11 @@ namespace PrestigePlus.Grapple
                 {
                     RunAttackRule(grappleInitiator, value);
                 }
+            }
+            if (grappleInitiator.HasFact(Kraken))
+            {
+                GameHelper.ApplyBuff(value, BlueprintRoot.Instance.SystemMechanics.SunderArmorBuff, duration: new Rounds?(1.Rounds()));
+                return false;
             }
             if (!UnitPartGrappleTargetPP.IsPinned && !grappleInitiator.HasFact(NoPin))
             {
@@ -280,6 +286,7 @@ namespace PrestigePlus.Grapple
         private static BlueprintBuffReference FreeBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{D4DD258E-B9F1-42D1-9BD0-ADBD217AFE23}");
         private static BlueprintBuffReference StagBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{21F094D4-1D59-400B-9CEB-558E6218FB0C}");
         private static BlueprintBuffReference StagSub = BlueprintTool.GetRef<BlueprintBuffReference>("{166DF6CC-25B6-4864-9F1D-C9EFF2AA6869}");
+        private static BlueprintBuffReference Kraken = BlueprintTool.GetRef<BlueprintBuffReference>("{E355834F-3B1F-4790-A8CA-01F66683550A}");
 
         private static BlueprintFeatureReference Base = BlueprintTool.GetRef<BlueprintFeatureReference>("{D74F645A-D0F2-470B-B68B-E76EC083A6D8}");
 
