@@ -26,6 +26,7 @@ namespace PrestigePlus.Modify
         {
             if (evt.Target == null) return;
             if (!evt.Success) return;
+            if (evt.Type != CombatManeuver.Grapple) return;
             int damage = Owner.Stats.Wisdom.Bonus;
             if (Owner.HasFact(Wrack))
             {
@@ -41,5 +42,6 @@ namespace PrestigePlus.Modify
         }
 
         private static BlueprintFeatureReference Wrack = BlueprintTool.GetRef<BlueprintFeatureReference>("{527797B0-A313-453B-8558-A3F30C657623}");
+        //private static BlueprintFeatureReference Shadow = BlueprintTool.GetRef<BlueprintFeatureReference>("{8146D8AA-C4CA-4924-BE9D-999BF59A139E}");
     }
 }

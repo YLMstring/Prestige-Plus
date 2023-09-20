@@ -2,7 +2,7 @@
   "Id": "PrestigePlus",
   "DisplayName": "PrestigePlus",
   "Author": "String",
-  "Version": "0.9.0",
+  "Version": "1.0.0",
   "ManagerVersion": "0.21.3",
   "Requirements": [ "ModMenu-1.3.0" ],
   "AssemblyName": "PrestigePlus.dll",

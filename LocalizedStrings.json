@@ -1713,13 +1713,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Grabbing Style",
-    "zhCN": "大擒拿手"
+    "zhCN": "擒拿手"
   },
 
   {
     "Key": "GrabbingStyle.Description",
     "enGB": "You are adept at the one-handed grab. When you use this style, you do not take a –4 penalty on combat maneuver checks to grapple a foe with only one hand. Additionally, you do not lose your Dexterity bonus to AC while pinning an opponent.",
-    "zhCN": "你单手即可将人抓牢。当你开启大擒拿手流派时，你在仅用单手擒抱目标的战技攻击检定上不再承受-4减值。除此之外，你在压制一个敌人时不再会失去防御等级上的敏捷加值。"
+    "zhCN": "你单手即可将人抓牢。当你开启擒拿手流派时，你在仅用单手擒抱目标的战技攻击检定上不再承受-4减值。除此之外，你在压制一个敌人时不再会失去防御等级上的敏捷加值。"
   },
 
   {
@@ -1728,7 +1728,7 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Grabbing Drag",
-    "zhCN": "万象天引"
+    "zhCN": "擒拿手-擒龙控鹤"
   },
 
   {
@@ -1743,7 +1743,7 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Grabbing Master",
-    "zhCN": "天地合"
+    "zhCN": "擒拿手-袖里乾坤"
   },
 
   {
@@ -2235,14 +2235,14 @@
     // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
     // links to encycolpedia pages.
     "ProcessTemplates": false,
-    "enGB": "Grabbing Style",
-    "zhCN": "鹿冲流"
+    "enGB": "Charging Stag Style",
+    "zhCN": "鹿家赶蟾步"
   },
 
   {
     "Key": "StagStyle.Description",
     "enGB": "This style originated among shamanic monks who spent their lives in the wild, allowing them to quickly subdue both game and poachers using the element of surprise. Practitioners of Charging Stag Style can charge fluidly around trees, taking enemies by surprise in the wilderness. When using this style you can charge through difficult terrain, allies and obstacles, making turns if neccessary. You must see your target at the beginning of your charge, and can make only a single attack at the end, even if you would normally be able to make multiple attacks (such as with the pounce ability).",
-    "zhCN": "这个流派起源于生活在野外的萨满教武僧，这使他们能够赢得胜利的同时也能给予偷猎者惊喜，鹿冲流的习练者能在林中顺畅冲锋，在荒野中突袭敌人。当你使用鹿冲流时，可以冲锋穿过友军，小障碍物或困难地形，在必要时转向。你必须在冲锋开始时就能看到你的目标，并且冲锋结束时也只能进行一次攻击，即使你通常可以进行多次攻击（例如猛扑能力）。"
+    "zhCN": "鹿家赶蟾步的习练者能在林中顺畅冲锋，在荒野中突袭敌人。当你使用鹿家赶蟾步时，可以冲锋穿过友军，小障碍物或困难地形，在必要时转向。你必须在冲锋开始时就能看到你的目标，并且冲锋结束时也只能进行一次攻击，即使你通常可以进行多次攻击（例如猛扑能力）。"
   },
 
   {
@@ -2251,13 +2251,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Stag Horns",
-    "zhCN": "鹿绞角"
+    "zhCN": "鹿家鹰爪功"
   },
 
   {
     "Key": "StagHorns.Description",
     "enGB": "You’ve learned to gain the upper hand against your enemies by charging at them with feigned abandon, yet gaining a strong grip on them after attacking. While using Charging Stag Style, if you make a successful unarmed attack at the end of a charge, you can attempt a free grapple check against the target of your charge without provoking an attack of opportunity.",
-    "zhCN": "你已学会佯装放弃冲锋以获得对敌人的上风优势，在攻击之后对其进行有力控制。当你使用鹿冲流时，如果你在冲锋结束时进行了一次成功的徒手攻击，那么你可以免费对目标进行一次不会引发借机攻击的擒抱检定。"
+    "zhCN": "你已学会佯装放弃冲锋以获得对敌人的上风优势，在攻击之后对其进行有力控制。当你使用鹿家赶蟾步时，如果你在冲锋结束时进行了一次成功的徒手攻击，那么你可以免费对目标进行一次不会引发借机攻击的擒抱检定。"
   },
 
   {
@@ -2266,13 +2266,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Stag Submission",
-    "zhCN": "鹿角绞"
+    "zhCN": "鹿家一指"
   },
 
   {
     "Key": "StagSubmission.Description",
     "enGB": "You can quickly subdue an opponent you’ve charged using a special submission hold. When you are in Charging Stag Style and succeed at a combat maneuver check to pin a foe, you can choose to also knock the foe prone or to deal your attack damage to the foe.",
-    "zhCN": "你使用一种特殊的关节技来快速制服对手。当你使用鹿冲流并成功通过战技检定压制敌人时，你可以选择同时将敌人击倒或者对敌人造成攻击伤害。"
+    "zhCN": "你使用鹿家秘传指法来快速制服对手。当你使用鹿家赶蟾步并成功通过战技检定压制敌人时，你可以选择同时将敌人击倒或者对敌人造成攻击伤害。"
   },
 
   {
@@ -2296,13 +2296,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Snapping Turtle Style",
-    "zhCN": "鳄龟流"
+    "zhCN": "玄武掌"
   },
 
   {
     "Key": "SnappingTurtleStyle.Description",
     "enGB": "Your deft unarmed style allows you to shield your body from harm. While using the Snapping Turtle Style feat, you gain a +1 shield bonus to AC.",
-    "zhCN": "你高超的徒手战斗技巧给予你保护。当你处于鳄龟流派架势时，你在AC上得到+1盾牌加值。"
+    "zhCN": "你高超的徒手战斗技巧给予你保护。当你处于该流派架势时，你在AC上得到+1盾牌加值。"
   },
 
   {
@@ -2311,13 +2311,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Snapping Turtle Clutch",
-    "zhCN": "鳄龟爪"
+    "zhCN": "玄武寂灭抓"
   },
 
   {
     "Key": "SnappingTurtleClutch.Description",
     "enGB": "Your unarmed style allows you to turn your opponent’s attack into an opportunity. While you are using the Snapping Turtle Style feat, the shield bonus the style grants to your AC applies to your CMD and touch AC. Whenever an opponent misses you with a melee attack while you are using the Snapping Turtle Style feat, you can once per round attempt a grapple combat maneuver against that opponent, but with a –2 penalty.",
-    "zhCN": "你的徒手战斗技巧可以让你将敌人的攻击化作你反击的契机。你从鳄龟流派架势获得的盾牌加值能加到CMD和接触AC上；当你采用鳄龟流派架势时，如果对手对你近战攻击失手，每轮一次你可对该对手发起一次受-2减值的擒抱。"
+    "zhCN": "你的徒手战斗技巧可以让你将敌人的攻击化作你反击的契机。你从该流派架势获得的盾牌加值能加到CMD和接触AC上；当你采用该流派架势时，如果对手对你近战攻击失手，每轮一次你可对该对手发起一次受-2减值的擒抱。"
   },
 
   {
@@ -2326,13 +2326,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Snapping Turtle Shell",
-    "zhCN": "鳄龟甲"
+    "zhCN": "玄武不坏神功"
   },
 
   {
     "Key": "SnappingTurtleShell.Description",
     "enGB": "Your guarding hand is almost magical in its skill at deflecting incoming blows. While you are using the Snapping Turtle Style feat, the shield bonus the style grants to your AC increases to +2, and your enemies take a –4 penalty on critical confirmation rolls against you.",
-    "zhCN": "你的防御手在拨挡攻击方面已臻化境。当你处于鳄龟流派架势时，你在此架势获得的盾牌加值变成+2，而且对手对你的重击确认骰受到-4减值。"
+    "zhCN": "你的防御手在拨挡攻击方面已臻化境。当你处于该流派架势时，你在此架势获得的盾牌加值变成+2，而且对手对你的重击确认骰受到-4减值。"
   },
 
   {
@@ -2341,7 +2341,7 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Kraken Style",
-    "zhCN": "触手流"
+    "zhCN": "缠丝手"
   },
 
   {
@@ -2356,7 +2356,7 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Kraken Wrack",
-    "zhCN": "触手紧缚"
+    "zhCN": "缠丝手-金蛇擒鹤"
   },
 
   {
@@ -2371,7 +2371,7 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Medusa's Wrath",
-    "zhCN": "万蛇出洞"
+    "zhCN": "缠丝手-万蛇出洞"
   },
 
   {
@@ -2393,6 +2393,185 @@
     "Key": "KrakenWrackPin.Description",
     "enGB": "Crush your opponent when you successfully maintain a grapple instead.",
     "zhCN": "擒抱时优先碾碎护甲。"
-  }
+  },
 
+  {
+    "Key": "UmbralAgent.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Umbral Agent",
+    "zhCN": "阴影代理人"
+  },
+
+  {
+    "Key": "UmbralAgent.Description",
+    "enGB": "Some Umbral agents work in the open as diplomats and consuls, others in secret as spies, agitators, and agents provocateur. Most agents spend their time hunting down apostates and heretics, seeking to purge the world of inappropriate influences. Those acting abroad seek out positions in rival nations’ halls of power. Regardless of their methods, all serve the will of their dark god with blind devotion.",
+    "zhCN": "阴影代理人控制着整个奈多的疆域以及周边地区。其中一些人的公开身份为外交官或者领事，而其他人则在暗处作为间谍、煽动者或者奸细活动。大多数奈多的阴影代理人会把时间花费在追捕叛逃者与异端上，并试图清除对国家造成不良影响的人。而在海外活动的成员则在敌对国家的权力殿堂中寻找位置。无论他们使用何种方式，所有阴影代理人都盲目地奉献自身，献身于奈多的荣光，以及黑暗神祗的意志。"
+  },
+
+  {
+    "Key": "UmbralAgentProficiencies.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Weapon and Armor Proficiency",
+    "zhCN": "阴影代理人擅长"
+  },
+
+  {
+    "Key": "UmbralAgentProficiencies.Description",
+    "enGB": "An Umbral agent gains proficiency with the sling staff.",
+    "zhCN": "阴影代理人擅长投石杖。"
+  },
+
+  {
+    "Key": "UmbralAgentTenebrous.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Tenebrous Magic",
+    "zhCN": "晦暗法术"
+  },
+
+  {
+    "Key": "UmbralAgentTenebrous.Description",
+    "enGB": "An Umbral agent receives a metamagic feat of her choice as a bonus feat at 1st level. In addition, whenever she casts a spell of the illusion school, in 1d4 rounds her spells' effective caster level and any associated save DCs are increased by 2.",
+    "zhCN": "阴影代理人在1级时自选一个额外超魔专长，施放幻术系法术后的1d4轮内，施法者等级+2，法术DC+2。"
+  },
+
+  {
+    "Key": "UmbralAgentUmbralCourtier.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Umbral Courtier",
+    "zhCN": "阴影朝臣"
+  },
+
+  {
+    "Key": "UmbralAgentUmbralCourtier.Description",
+    "enGB": "An Umbral agent gains a competence bonus on Bluff, Diplomacy, and Knowledge (world) checks equal to his class level.",
+    "zhCN": "阴影代理人的唬骗，交涉以及知识（世界）获得等同于他职业等级的表现加值。"
+  },
+
+  {
+    "Key": "UmbralAgentBlessingDarkness.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Blessings of Darkness",
+    "zhCN": "黑暗祝福"
+  },
+
+  {
+    "Key": "UmbralAgentBlessingDarkness.Description",
+    "enGB": "An Umbral agent gains the Darkness domain at 1st level, using his class level as his effective cleric level to determine the effects of its granted powers. If he already possesses the Darkness domain from another class, his Umbral agent levels stack with levels in that class when determining the effects of his Darkness domain powers. The Umbral agent does not receive bonus spells or domain spell slots from his Umbral agent levels.",
+    "zhCN": "阴影代理人在1级时获得黑暗领域，在确定他的神授力量的效果时，使用他的职业等级作为他的有效牧师等级。如果他已经由其他职业获得了黑暗领域，那么在决定黑暗领域的神授力量的效果时，他的阴影代理人等级与该职业等级叠加。阴影代理人不会从阴影代理人等级中获得奖励法术以及领域法术位。"
+  },
+
+  {
+    "Key": "UmbralAgentShadowChains.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Shadow Chains",
+    "zhCN": "阴影锁链"
+  },
+
+  {
+    "Key": "UmbralAgentShadowChains.Description",
+    "enGB": "At 3rd level, an Umbral agent can use his touch of darkness ability one additional time per day. When using the touch of darkness ability, the Umbral agent manifests shadowy chains that increase the reach of his melee touch attack by 5 feet. A creature struck by these chains must succeed at a Reflex save (DC 10 + the Umbral agent’s level + the Umbral agent’s Wisdom modifier) or be entangled for 1d4 rounds in addition to the normal effects of the ability.",
+    "zhCN": "3级起，阴影代理人每日能够使用黑暗之触能力的次数提高1次。当阴影代理人使用黑暗之触时，他会挥出阴影锁链，使得他的近战接触攻击的触及范围提高5尺。被这些阴影锁链击中的生物必须成功通过反射豁免（DC为10 + 阴影代理人的等级 + 阴影代理人的感知调整值），否则会在该能力原有的效果基础之上额外被纠缠1d4轮。"
+  },
+
+  {
+    "Key": "UmbralAgentShadowChains2.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Grasping Darkness",
+    "zhCN": "暗影之握"
+  },
+
+  {
+    "Key": "UmbralAgentShadowChains2.Description",
+    "enGB": "At 6th level, an Umbral agent can use his touch of darkness ability an additional time per day, and the reach provided by his shadow chains ability increases by 5 feet (to a total 10 foot increase). In place of entangling the target, the Umbral agent can attempt to grapple the target without provoking an attack of opportunity, using his Wisdom modifier in place of his Strength modifier for the purpose of determining his CMB. He gains a +5 bonus on this grapple check. The Umbral agent does not gain the grappled condition when using his shadow chains this way.",
+    "zhCN": "6级起，阴影代理人每日能够使用黑暗之触能力的次数额外提高1次，并且由阴影锁链能力所提供的触及范围提高5尺（合计提高10尺）。阴影代理人能够尝试擒抱目标以替代纠缠，这不会引起借机攻击，在确定他的CMB时，使用他的感知调整值替代力量调整值，且擒抱检定中获得+5加值。当阴影代理人以此方式使用阴影锁链时，他不会获得擒抱状态。"
+  },
+
+  {
+    "Key": "UmbralAgentShadowChains3.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Crushing Umbra",
+    "zhCN": "绞杀之影"
+  },
+
+  {
+    "Key": "UmbralAgentShadowChains3.Description",
+    "enGB": "At 10th level, an Umbral agent can use his touch of darkness ability at will, and the reach provided by his shadow chains increases by another 10 feet (to a total 20 foot increase). The Umbral agent can constrict his victim as a free action, dealing 5d6 points of damage whenever he makes a successful grapple check.",
+    "zhCN": "10级起，阴影代理人能够随意使用黑暗之触，并且由阴影锁链能力所提供的触及范围额外提高10尺（合计提高20尺）。阴影代理人能够以自由动作勒紧他擒抱的目标，每当他成功进行擒抱检定时都会造成5d6点伤害。"
+  },
+
+  {
+    "Key": "UmbralAgentGaze.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Unnerving Gaze",
+    "zhCN": "不安凝视"
+  },
+
+  {
+    "Key": "UmbralAgentGaze.Description",
+    "enGB": "At 5th level, an Umbral agent gains a gaze attack similar to the kyton ability of the same name. Creatures within 30 feet of the Umbral agent must succeed at a Will save (DC 10 + the Umbral agent’s level + the Umbral agent’s Wisdom modifier) or be shaken for 1 round. The Umbral agent can use this ability for a number of rounds per day equal to his level; these rounds do not need to be consecutive. Activating this ability is a swift action. The Umbral agent is immune to the unnerving gaze of kytons (whether or not his own unnerving gaze is active). This is a mind-affecting fear effect that follows all the normal rules for a gaze attack. As the Umbral agent gains levels, his unnerving gaze grows more potent.",
+    "zhCN": "5级起，阴影代理人获得类似于链魔同名能力的凝视攻击。在距离阴影代理人30尺内的生物必须成功进行意志豁免（DC为10 + 阴影代理人的等级 + 阴影代理人的感知调整值），否则会战栗1轮。阴影代理人每日能够使用该能力的次数等同于他的等级；这些轮数不必连续。以迅捷动作可以激活该能力。阴影代理人免疫链魔的不安凝视（无论他自身的不安凝视是否已经被激活）。这是一个影响心灵的恐惧效果，并且遵循所有凝视攻击的规则。当阴影代理人的等级获得提升时，他的不安凝视会变得更加强大。"
+  },
+
+  {
+    "Key": "UmbralAgentGaze2.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Unnerving Gaze",
+    "zhCN": "不安凝视"
+  },
+
+  {
+    "Key": "UmbralAgentGaze2.Description",
+    "enGB": "At 7th level, creatures that fail their save are shaken for 1d4 rounds.",
+    "zhCN": "7级起，在豁免中失败的生物会战栗1d4轮。"
+  },
+
+  {
+    "Key": "UmbralAgentGaze3.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Unnerving Gaze",
+    "zhCN": "不安凝视"
+  },
+
+  {
+    "Key": "UmbralAgentGaze3.Description",
+    "enGB": "At 9th level, creatures that fail their save are staggered for 1 round and shaken for 1d4 rounds after.",
+    "zhCN": "9级起，在豁免中失败的生物会恍惚1轮，战栗1d4轮。"
+  },
+
+  {
+    "Key": "UmbralAgentGaze4.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Endless Gaze",
+    "zhCN": "无尽凝视"
+  },
+
+  {
+    "Key": "UmbralAgentGaze4.Description",
+    "enGB": "You no longer have a limited amount of Unnerving Gaze rounds per day.",
+    "zhCN": "你使用不安凝视时不再有轮数限制。"
+  }
 ]

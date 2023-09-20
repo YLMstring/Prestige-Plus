@@ -108,8 +108,6 @@ namespace PrestigePlus.PrestigeClasses
                 .SetReflexSave(ReProgressGuid)
                 .SetWillSave(WiProgressGuid)
                 .SetProgression(progression)
-                .SetIsArcaneCaster(false)
-                .SetIsDivineCaster(false)
                 .SetClassSkills(new StatType[] { StatType.SkillStealth, StatType.SkillThievery, StatType.SkillMobility, StatType.SkillPerception, StatType.SkillPersuasion })
                 .AddPrerequisiteStatValue(StatType.SkillStealth, 5)
                 .AddPrerequisiteStatValue(StatType.SkillMobility, 2)
@@ -388,7 +386,8 @@ namespace PrestigePlus.PrestigeClasses
               .SetDescription(ShadowJumpDescription)
               .SetIcon(icon)
               .SetRanks(10)
-              .AddPrerequisiteClassLevel(ArchetypeGuid, 1)
+              .AddPrerequisiteClassLevel(ArchetypeGuid, 1, group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteClassLevel(UmbralAgent.ArchetypeGuid, 1, group: Prerequisite.GroupType.Any)
               .AddIncreaseResourceAmount(ShadowJumpAblityResGuid, 4)
               .AddFeatureTagsComponent(FeatureTag.ClassSpecific)
               .Configure();

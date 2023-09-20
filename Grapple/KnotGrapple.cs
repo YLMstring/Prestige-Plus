@@ -92,8 +92,19 @@ namespace PrestigePlus.Grapple
                 return;
             }
             var AttackBonusRule = new RuleCalculateAttackBonus(maybeCaster, unit, maybeCaster.Body.EmptyHandWeapon, 0){ };
-            AttackBonusRule.AddModifier(maybeCaster.Descriptor.Progression.MythicLevel, descriptor: Kingmaker.Enums.ModifierDescriptor.UntypedStackable);
+            if (isAway)
+            {
+                AttackBonusRule.AddModifier(maybeCaster.Descriptor.Progression.MythicLevel, descriptor: Kingmaker.Enums.ModifierDescriptor.UntypedStackable);
+            }
+            else
+            {
+                AttackBonusRule.AddModifier(5, descriptor: Kingmaker.Enums.ModifierDescriptor.UntypedStackable);
+            }
             RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(maybeCaster, unit, CombatManeuver.Grapple, AttackBonusRule);
+            if (!isAway)
+            {
+                ruleCombatManeuver.ReplaceBaseStat = Kingmaker.EntitySystem.Stats.StatType.Wisdom;
+            }
             ruleCombatManeuver = (Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
             if (ruleCombatManeuver.Success)
             {
@@ -109,6 +120,6 @@ namespace PrestigePlus.Grapple
 
         private static BlueprintBuffReference CasterBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{D4DD258E-B9F1-42D1-9BD0-ADBD217AFE23}");
         private static BlueprintBuffReference TargetBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{F505D659-0610-41B1-B178-E767CCB9292E}");
-        public bool isAway;
+        public bool isAway = true;
     }
 }

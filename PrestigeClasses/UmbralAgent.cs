@@ -40,13 +40,15 @@ using Kingmaker.Utility;
 using TabletopTweaks.Core.NewComponents;
 using Kingmaker.UnitLogic.Buffs;
 using TabletopTweaks.Core.Utilities;
+using PrestigePlus.Grapple;
+using Kingmaker.Blueprints.Classes.Selection;
 
 namespace PrestigePlus.PrestigeClasses
 {
     internal class UmbralAgent
     {
         private const string ArchetypeName = "UmbralAgent";
-        private static readonly string ArchetypeGuid = "{18CA6378-AC25-4580-B684-31F929189459}";
+        public static readonly string ArchetypeGuid = "{18CA6378-AC25-4580-B684-31F929189459}";
         internal const string ArchetypeDisplayName = "UmbralAgent.Name";
         private const string ArchetypeDescription = "UmbralAgent.Description";
 
@@ -69,7 +71,7 @@ namespace PrestigePlus.PrestigeClasses
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
                 .AddToLevelEntry(1, spellupgradeGuid, CreateProficiencies(), SABlessingDarkness(), TenebrousGuid, SAUmbralCourtier())
-                .AddToLevelEntry(2)
+                .AddToLevelEntry(2, FeatureRefs.BlindFight.ToString())
                 .AddToLevelEntry(3, ShadowChainsGuid)
                 .AddToLevelEntry(4, ShadowJumpGuidFeat)
                 .AddToLevelEntry(5, GazeGuid)
@@ -79,8 +81,9 @@ namespace PrestigePlus.PrestigeClasses
                 .AddToLevelEntry(9, Gaze3Guid)
                 .AddToLevelEntry(10, ShadowChains3Guid, ShadowJumpGuidFeat)
                 .SetUIGroups(UIGroupBuilder.New()
-                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { FeatureRefs.Evasion.Reference.Get().ToReference<BlueprintFeatureBaseReference>(), FeatureRefs.ImprovedEvasion.Reference.Get().ToReference<BlueprintFeatureBaseReference>() })
-                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { FeatureRefs.UncannyDodge.Reference.Get().ToReference<BlueprintFeatureBaseReference>(), FeatureRefs.ImprovedUncannyDodge.Reference.Get().ToReference<BlueprintFeatureBaseReference>() }))
+                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { spellupgradeGuid, ShadowChainsGuid, ShadowChains2Guid, ShadowChains3Guid })
+                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { TenebrousGuid, GazeGuid, Gaze2Guid, Gaze3Guid })
+                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { ShadowJumpGuidFeat, ProficienciesGuid }))
                 .SetRanks(1)
                 .SetIsClassFeature(true)
                 .SetDisplayName(ArchetypeDisplayName)
@@ -133,6 +136,7 @@ namespace PrestigePlus.PrestigeClasses
 
         private static readonly string ShadowJumpAblityGuid = "E1A86DF3-38E6-4E78-82B9-4EF7A6436BA8";
         private static readonly string ShadowJumpAblityGuid2 = "{8ED8B86D-A5DB-46FE-B88A-05098198041A}";
+        private static readonly string ShadowJumpAblityResGuid = "E96F5710-5344-495F-A3C7-A4859C1ABF81";
 
         public static BlueprintFeature CreateProficiencies()
         {
@@ -141,6 +145,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetDescription(ProficienciesDescription)
               .SetIsClassFeature(true)
               .AddFacts(new() { ShadowJumpAblityGuid, ShadowJumpAblityGuid2 })
+              .AddAbilityResources(resource: ShadowJumpAblityResGuid, restoreAmount: true)
               .AddProficiencies(
                 weaponProficiencies:
                   new WeaponCategory[]
@@ -156,20 +161,19 @@ namespace PrestigePlus.PrestigeClasses
         private const string TenebrousBuff = "UmbralAgent.TenebrousBuff";
         private static readonly string TenebrousBuffGuid = "{D32CC7CB-8AE7-4698-850E-7F6FB7A0507F}";
 
-        internal const string TenebrousDisplayName = "Tenebrous.Name";
-        private const string TenebrousDescription = "Tenebrous.Description";
+        internal const string TenebrousDisplayName = "UmbralAgentTenebrous.Name";
+        private const string TenebrousDescription = "UmbralAgentTenebrous.Description";
 
         public static void TenebrousFeat()
         {
-            var icon = AbilityRefs.DarkVeilAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.Thoughtsense.Reference.Get().Icon;
 
             var MasterBuff = BuffConfigurator.New(TenebrousBuff, TenebrousBuffGuid)
               .SetDisplayName(TenebrousDisplayName)
               .SetDescription(TenebrousDescription)
               .SetIcon(icon)
-              .AddIncreaseCasterLevel(value: ContextValues.Constant(1))
-              .AddIncreaseAllSpellsDC(value: ContextValues.Constant(1))
-              .AddDispelCasterLevelCheckBonus(value: ContextValues.Constant(2))
+              .AddIncreaseCasterLevel(value: ContextValues.Constant(2))
+              .AddIncreaseAllSpellsDC(value: ContextValues.Constant(2))
               .SetStacking(StackingType.Prolong)
               .Configure();
 
@@ -183,8 +187,8 @@ namespace PrestigePlus.PrestigeClasses
               .SetIcon(icon)
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
-              .AddAbilityUseTrigger(action: action, checkAbilityType: true, type: AbilityType.Spell)
-              .AddAbilityUseTrigger(action: action, checkAbilityType: true, type: AbilityType.SpellLike)
+              .AddAbilityUseTrigger(action: action, checkSpellSchool: true, isSpellSchool: SpellSchool.Illusion)
+              //.AddAbilityUseTrigger(action: action, checkAbilityType: true, type: AbilityType.SpellLike)
               .AddToAllFeatures(FeatureRefs.BolsteredSpellFeat.ToString())
               .AddToAllFeatures(FeatureRefs.EmpowerSpellFeat.ToString())
               .AddToAllFeatures(FeatureRefs.ExtendSpellFeat.ToString())
@@ -222,14 +226,32 @@ namespace PrestigePlus.PrestigeClasses
 
         internal const string UmbralAgentBlessingDarknessDisplayName = "UmbralAgentBlessingDarkness.Name";
         private const string UmbralAgentBlessingDarknessDescription = "UmbralAgentBlessingDarkness.Description";
-        public static BlueprintFeature SABlessingDarkness()
+        public static BlueprintFeatureSelection SABlessingDarkness()
         {
-            var icon = FeatureRefs.DarknessBlessingFeature.Reference.Get().Icon;
-            return FeatureConfigurator.New(BlessingDarkness, BlessingDarknessGuid)
+            var icon = AbilityRefs.DarknessDomainBaseAbility.Reference.Get().Icon;
+
+            ProgressionConfigurator.For(ProgressionRefs.DarknessDomainProgression)
+              .SetClasses(new Blueprint<BlueprintCharacterClassReference> [] { CharacterClassRefs.ClericClass.Reference.Get(), CharacterClassRefs.InquisitorClass.Reference.Get(), CharacterClassRefs.HunterClass.Reference.Get(), BlueprintTool.GetRef<BlueprintCharacterClassReference>(ArchetypeGuid) })
+              .Configure();
+
+            ProgressionConfigurator.For(ProgressionRefs.DarknessDomainProgressionDruid)
+              .SetClasses(new Blueprint<BlueprintCharacterClassReference>[] { CharacterClassRefs.DruidClass.Reference.Get(), BlueprintTool.GetRef<BlueprintCharacterClassReference>(ArchetypeGuid) })
+              .Configure();
+
+            ProgressionConfigurator.For(ProgressionRefs.DarknessDomainProgressionSecondary)
+              .SetClasses(new Blueprint<BlueprintCharacterClassReference>[] { CharacterClassRefs.ClericClass.Reference.Get(), BlueprintTool.GetRef<BlueprintCharacterClassReference>(ArchetypeGuid) })
+              .Configure();
+
+            return FeatureSelectionConfigurator.New(BlessingDarkness, BlessingDarknessGuid)
               .SetDisplayName(UmbralAgentBlessingDarknessDisplayName)
               .SetDescription(UmbralAgentBlessingDarknessDescription)
               .SetIcon(icon)
-              .AddFacts(new() { ProgressionRefs.DarknessDomainProgression.ToString()})
+              .AddNoSelectionIfAlreadyHasFeature(true)
+              .AddToAllFeatures(ProgressionRefs.DarknessDomainProgression.ToString())
+              .AddToAllFeatures(ProgressionRefs.DarknessDomainProgressionSecondary.ToString())
+              .AddToAllFeatures(ProgressionRefs.DarknessDomainProgressionDruid.ToString())
+              .SetIgnorePrerequisites(true)
+              //.AddFacts(new() { ProgressionRefs.DarknessDomainProgression.ToString(), ProgressionRefs.DarknessDomainProgressionDruid.ToString(), ProgressionRefs.DarknessDomainProgressionSecondary.ToString() })
               .Configure();
         }
 
@@ -258,13 +280,18 @@ namespace PrestigePlus.PrestigeClasses
         private const string UmbralAgentShadowChains3Description = "UmbralAgentShadowChains3.Description";
         public static void SAShadowChains()
         {
-            var icon = FeatureRefs.DarknessBlessingFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.DarknessDomainBaseAbility.Reference.Get().Icon;
 
             var chain = ActionsBuilder.New()
                 .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(ShadowChainsGuid).CasterHasFact(ShadowChains2BuffGuid, true).Build(), ifTrue: ActionsBuilder.New()
                     .SavingThrow(type: SavingThrowType.Reflex, useDCFromContextSavingThrow: true, 
                     onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New()
                         .ApplyBuff(BuffRefs.EntangledBuff.ToString(), durationValue: ContextDuration.FixedDice(diceType: DiceType.D4)).Build()).Build())
+                    .Build())
+                .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(ShadowChains2BuffGuid).Build(), ifTrue: ActionsBuilder.New()
+                    .SavingThrow(type: SavingThrowType.Reflex, useDCFromContextSavingThrow: true,
+                    onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New()
+                        .Add<KnotGrapple>(c => { c.isAway = false; }).Build()).Build())
                     .Build())
                 .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(ShadowChains3Guid).Build(), ifTrue: ActionsBuilder.New()
                     .OnContextCaster(ActionsBuilder.New().RestoreResource(AbilityResourceRefs.DarknessDomainBaseResource.ToString(), 1).Build())
@@ -321,6 +348,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetDisplayName(UmbralAgentShadowChains3DisplayName)
               .SetDescription(UmbralAgentShadowChains3Description)
               .SetIcon(icon)
+              .AddComponent<ShadowConstrict>()
               .AddComponent<AddStatBonus>(c => {
                   c.Stat = CustomStatType.MeleeTouchReach.Stat();
                   c.Value = 10;
@@ -420,8 +448,8 @@ namespace PrestigePlus.PrestigeClasses
                 .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(GazeAbility, GazeAbilityGuid)
-                .SetDisplayName(UmbralAgentShadowChains2DisplayName)
-                .SetDescription(UmbralAgentShadowChains2Description)
+                .SetDisplayName(GazeDisplayName)
+                .SetDescription(GazeDescription)
                 .SetIcon(icon)
                 .SetBuff(Buff1)
                 .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound, freeBlueprint: Gaze4Guid)
@@ -458,6 +486,7 @@ namespace PrestigePlus.PrestigeClasses
                     .SetDisplayName(Gaze4DisplayName)
                     .SetDescription(Gaze4Description)
                     .SetIcon(icon)
+                    .AddPrerequisiteClassLevel(ArchetypeGuid, 5)
                     .Configure();
 
         }
