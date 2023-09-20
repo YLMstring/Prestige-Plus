@@ -42,6 +42,7 @@ using Kingmaker.UnitLogic.Buffs;
 using TabletopTweaks.Core.Utilities;
 using PrestigePlus.Grapple;
 using Kingmaker.Blueprints.Classes.Selection;
+using Kingmaker.UnitLogic.Abilities;
 
 namespace PrestigePlus.PrestigeClasses
 {
@@ -285,7 +286,7 @@ namespace PrestigePlus.PrestigeClasses
             var chain = ActionsBuilder.New()
                 .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(ShadowChainsGuid).CasterHasFact(ShadowChains2BuffGuid, true).Build(), ifTrue: ActionsBuilder.New()
                     .SavingThrow(type: SavingThrowType.Reflex, useDCFromContextSavingThrow: true, 
-                    onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New()
+                    onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New()//.HealTarget(ContextDice.Value(DiceType.One, ContextValues.Constant(1)))
                         .ApplyBuff(BuffRefs.EntangledBuff.ToString(), durationValue: ContextDuration.FixedDice(diceType: DiceType.D4)).Build()).Build())
                     .Build())
                 .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(ShadowChains2BuffGuid).Build(), ifTrue: ActionsBuilder.New()
@@ -334,7 +335,8 @@ namespace PrestigePlus.PrestigeClasses
             FeatureConfigurator.New(ShadowChains2, ShadowChains2Guid)
               .SetDisplayName(UmbralAgentShadowChains2DisplayName)
               .SetDescription(UmbralAgentShadowChains2Description)
-              .SetIcon(icon)
+            .SetIcon(icon)
+              .AddFacts(new() { ability3, PinAbilityGuid1, TieUpAbilityGuid, ReadyAbilityGuid, ReleaseAbilityGuid })
               .AddIncreaseResourceAmount(AbilityResourceRefs.DarknessDomainBaseResource.ToString(), 1)
               .AddComponent<AddStatBonus>(c => {
                   c.Stat = CustomStatType.MeleeTouchReach.Stat();
@@ -356,6 +358,11 @@ namespace PrestigePlus.PrestigeClasses
               })
               .Configure();
         }
+
+        private static readonly string PinAbilityGuid1 = "{531632AA-0E0F-402C-8A07-18E8E0D35C80}";
+        private static readonly string TieUpAbilityGuid = "{DB453CF7-8799-4FDD-941B-FA33EFF5771A}";
+        private static readonly string ReadyAbilityGuid = "{A5057A11-9D24-46D8-9BE6-F5C7D605EDC5}";
+        private static readonly string ReleaseAbilityGuid = "{A75ED2DD-7F0D-4367-9953-4179F3E531D2}";
 
         private static readonly string GazeName = "UmbralAgentGaze";
         public static readonly string GazeGuid = "{64815A7D-7869-4C70-9863-606BE4C451C5}";
@@ -422,8 +429,8 @@ namespace PrestigePlus.PrestigeClasses
                 .AddComponent<CustomDC>(c => { c.classguid = ArchetypeGuid; c.Property = StatType.Wisdom; })
                 .SetAggroEnemies(true)
                 .SetAffectEnemies(true)
-                .SetAffectDead(true)
-                .SetTargetType(BlueprintAbilityAreaEffect.TargetType.Any)
+                .SetTargetType(BlueprintAbilityAreaEffect.TargetType.Enemy)
+                .SetAffectDead(false)
                 .SetShape(AreaEffectShape.Cylinder)
                 .SetSize(FeetExtension.Feet(33))
                 .AddSpellDescriptorComponent(descriptor: SpellDescriptor.GazeAttack)
@@ -452,6 +459,9 @@ namespace PrestigePlus.PrestigeClasses
                 .SetDescription(GazeDescription)
                 .SetIcon(icon)
                 .SetBuff(Buff1)
+                .SetDeactivateIfCombatEnded(true)
+                .SetActivationType(AbilityActivationType.WithUnitCommand)
+                .SetActivateWithUnitCommand(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
                 .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound, freeBlueprint: Gaze4Guid)
                 .SetDeactivateImmediately()
                 .Configure();

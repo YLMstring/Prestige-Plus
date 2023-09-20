@@ -135,7 +135,8 @@ namespace PrestigePlus.Grapple
                 .SetType(AbilityType.Physical)
                 .SetCanTargetEnemies(true)
                 .SetCanTargetSelf(false)
-                .SetRange(AbilityRange.Touch)
+                .SetRange(AbilityRange.Custom)
+                .SetCustomRange(2)
                 .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.BreathWeapon)
                 .AddAbilityCasterHasNoFacts(new() { StylebuffGuid })
                 .AddAbilityTargetHasFact(new() { StylebuffGuid2 }, inverted: true)
@@ -216,6 +217,10 @@ namespace PrestigePlus.Grapple
                     .AddToFeatureSelection(FeatureSelectionRefs.MonkBonusFeatSelectionLevel6.ToString())
                     .AddToFeatureSelection(FeatureSelectionRefs.MonkBonusFeatSelectionLevel10.ToString())
                     .Configure();
+
+            FeatureConfigurator.For(FeatureRefs.AgileManeuvers)
+                .AddPrerequisiteFeature(StyleGuid, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .Configure();
 
         }
     }
