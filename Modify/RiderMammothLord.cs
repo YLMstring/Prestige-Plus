@@ -1,4 +1,5 @@
-﻿using BlueprintCore.Utils;
+﻿using BlueprintCore.Blueprints.References;
+using BlueprintCore.Utils;
 using Kingmaker;
 using Kingmaker.Blueprints;
 using Kingmaker.Designers;
@@ -34,6 +35,8 @@ namespace PrestigePlus.Modify
         private static BlueprintBuffReference Cooldown = BlueprintTool.GetRef<BlueprintBuffReference>("{9FC08BA6-263E-4E95-96C2-55E3835314DA}");
         private static BlueprintBuffReference buff1 = BlueprintTool.GetRef<BlueprintBuffReference>("{ED201D33-F183-47B5-A43F-4C10D4260948}");
         private static BlueprintBuffReference buff2 = BlueprintTool.GetRef<BlueprintBuffReference>("{ECB56394-C6DA-4EFB-AE8C-93B058632DAB}");
+
+        private static BlueprintBuffReference stun = BlueprintTool.GetRef<BlueprintBuffReference>(BuffRefs.Stunned.ToString());
         private void RiderAction(RuleAttackWithWeapon evt)
         {
             GameHelper.ApplyBuff(evt.Target, buff1, new Rounds?(1.Rounds()));
@@ -63,9 +66,9 @@ namespace PrestigePlus.Modify
             {
                 IgnoreDifficultyBonusToDC = mount.IsPlayersEnemy
             }, evt.Target.Context, true).Success;
-            if (pass)
+            if (!pass)
             {
-                GameHelper.ApplyBuff(evt.Target, Game.Instance.BlueprintRoot.SystemMechanics.StunnedBuff, new Rounds?(1.Rounds()));
+                GameHelper.ApplyBuff(evt.Target, stun, new Rounds?(1.Rounds()));
             }
         }
     }

@@ -1,5 +1,6 @@
 ﻿using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Root;
 using Kingmaker.Designers;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.Enums;
@@ -28,7 +29,7 @@ namespace PrestigePlus.Modify
             {
                 return;
             }
-            if (Owner.HasFact(Cooldown))
+            if (Owner.HasFact(Cooldown) || !Owner.HasFact(BlueprintRoot.Instance.SystemMechanics.ChargeBuff))
             {
                 return;
             }

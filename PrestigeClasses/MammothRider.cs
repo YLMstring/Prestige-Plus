@@ -124,6 +124,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetDescription(GiganticSteedDescription)
               .SetIcon(icon)
               .AddChangeUnitSize(type: Kingmaker.Designers.Mechanics.Buffs.ChangeUnitSize.ChangeType.Delta, size: Kingmaker.Enums.Size.Fine, sizeDelta: 1)
+              .AddStatBonus(Kingmaker.Enums.ModifierDescriptor.Penalty, false, StatType.Dexterity, -2)
               .Configure();
 
             var feat2 = FeatureConfigurator.New(GiganticSteed2, GiganticSteed2Guid)
@@ -271,7 +272,7 @@ namespace PrestigePlus.PrestigeClasses
         private const string MistrustDescription = "MammothRiderMistrust.Description";
         public static BlueprintFeature MistrustFeat()
         {
-            var icon = FeatureRefs.ShamanHexAirBarrierFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.AuraOfResolveFeature.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Mistrust, MistrustGuid)
               .SetDisplayName(MistrustDisplayName)
@@ -289,7 +290,7 @@ namespace PrestigePlus.PrestigeClasses
         private const string ValiantDevotionDescription = "MammothRiderValiantDevotion.Description";
         public static BlueprintFeature ValiantDevotionFeat()
         {
-            var icon = FeatureRefs.ShamanHexAirBarrierFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.AuraOfCourageFeature.Reference.Get().Icon;
 
             return FeatureConfigurator.New(ValiantDevotion, ValiantDevotionGuid)
               .SetDisplayName(ValiantDevotionDisplayName)
@@ -311,7 +312,7 @@ namespace PrestigePlus.PrestigeClasses
 
         public static BlueprintFeatureSelection SummonQuarrySelection()
         {
-            var icon = FeatureRefs.ImprovedQuarry.Reference.Get().Icon;
+            var icon = FeatureRefs.Quarry.Reference.Get().Icon;
 
             FeatureConfigurator.For(FeatureRefs.ImprovedQuarry)
               .AddPrerequisiteFeature(FeatureRefs.Quarry.ToString())
@@ -338,7 +339,7 @@ namespace PrestigePlus.PrestigeClasses
         private static readonly string GiganticSteed5Guid = "{D20FC086-5821-430F-A7BC-357FE7A5DA08}";
         public static BlueprintFeature ReachSteedFeat()
         {
-            var icon = AbilityRefs.ArmyReachingStrike.Reference.Get().Icon;
+            var icon = FeatureRefs.FeralChampnionClaws2d8.Reference.Get().Icon;
 
             var feat5 = FeatureConfigurator.New(GiganticSteed5, GiganticSteed5Guid)
               .SetDisplayName(ReachSteedDisplayName)
@@ -367,7 +368,7 @@ namespace PrestigePlus.PrestigeClasses
         private const string CombinedMightDescription = "MammothRiderCombinedMight.Description";
         public static BlueprintFeature CombinedMightFeat()
         {
-            var icon = FeatureRefs.MightyRage.Reference.Get().Icon;
+            var icon = FeatureRefs.CavalierCharge.Reference.Get().Icon;
 
             BuffConfigurator.New(CombinedMightBuff, CombinedMightBuffGuid)
               .SetDisplayName(CombinedMightDisplayName)
@@ -398,7 +399,7 @@ namespace PrestigePlus.PrestigeClasses
         private const string PulverizingAssaultDescription = "MammothRiderPulverizingAssault.Description";
         public static BlueprintFeature PulverizingAssaultFeat()
         {
-            var icon = FeatureRefs.MightyRage.Reference.Get().Icon;
+            var icon = FeatureRefs.MountedCombat.Reference.Get().Icon;
 
             var bam = ActionsBuilder.New()
                 .SavingThrow(type: SavingThrowType.Fortitude, customDC: ContextValues.Rank(), useDCFromContextSavingThrow: true,
@@ -422,7 +423,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetDescription(PulverizingAssaultDescription)
               .SetIcon(icon)
               .AddRunActionOnTurnStart(actions: ActionsBuilder.New()
-                    .ApplyBuffPermanent(buff)
+                    .ApplyBuffPermanent(buff, toCaster: true)
                     .Build())
               .Configure();
 
@@ -432,6 +433,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddFeatureToPet(feat)
+              .AddFeatureToPet(GiganticSteed3Guid)
               .Configure();
         }
 
