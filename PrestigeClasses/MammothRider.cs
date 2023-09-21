@@ -1,4 +1,6 @@
-﻿using BlueprintCore.Blueprints.Configurators.Classes;
+﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
+using BlueprintCore.Blueprints.Configurators.Classes;
 using BlueprintCore.Blueprints.Configurators.Root;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
@@ -16,7 +18,9 @@ using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Blueprints.Root;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.RuleSystem;
+using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
+using Kingmaker.Utility;
 using PrestigePlus.Modify;
 using System;
 using System.Collections.Generic;
@@ -53,9 +57,9 @@ namespace PrestigePlus.PrestigeClasses
                 .AddToLevelEntry(5, RuggedSteedGuid, ValiantDevotionFeat())
                 .AddToLevelEntry(6, BornSurvivorGuidFeat, SummonQuarrySelection())
                 .AddToLevelEntry(7, RuggedSteedGuid, ReachSteedFeat())
-                .AddToLevelEntry(8)
-                .AddToLevelEntry(9, RuggedSteedGuid)
-                .AddToLevelEntry(10)
+                .AddToLevelEntry(8, CombinedMightFeat())
+                .AddToLevelEntry(9, PulverizingAssaultFeat(), RuggedSteedGuid)
+                .AddToLevelEntry(10, MammothLordFeat())
                 .SetRanks(1)
                 .SetIsClassFeature(true)
                 .SetDisplayName(ArchetypeDisplayName)
@@ -378,6 +382,121 @@ namespace PrestigePlus.PrestigeClasses
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddComponent<RiderCombinedMight>()
+              .Configure();
+        }
+
+        private const string PulverizingAssault = "MammothRider.PulverizingAssault";
+        private static readonly string PulverizingAssaultGuid = "{248EB49D-DDB4-4846-995F-2C2947163CB6}";
+
+        private const string PulverizingAssault2 = "MammothRider.PulverizingAssault2";
+        private static readonly string PulverizingAssault2Guid = "{D2E3342A-F5CD-4CCA-AA57-BDF25D7C8C76}";
+
+        private const string PulverizingAssaultBuff = "MammothRider.PulverizingAssaultBuff";
+        private static readonly string PulverizingAssaultBuffGuid = "{7EA9F7F5-408B-48BD-B7F6-44AA5B56CEDA}";
+
+        internal const string PulverizingAssaultDisplayName = "MammothRiderPulverizingAssault.Name";
+        private const string PulverizingAssaultDescription = "MammothRiderPulverizingAssault.Description";
+        public static BlueprintFeature PulverizingAssaultFeat()
+        {
+            var icon = FeatureRefs.MightyRage.Reference.Get().Icon;
+
+            var bam = ActionsBuilder.New()
+                .SavingThrow(type: SavingThrowType.Fortitude, customDC: ContextValues.Rank(), useDCFromContextSavingThrow: true,
+                    onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New()
+                    .ApplyBuff(BuffRefs.Staggered.ToString(), durationValue: ContextDuration.VariableDice(DiceType.D4, 1))
+                    .Build()).Build())
+                .RemoveBuff(PulverizingAssaultBuffGuid, toCaster: true)
+                .Build();
+
+            var buff = BuffConfigurator.New(PulverizingAssaultBuff, PulverizingAssaultBuffGuid)
+              .SetDisplayName(PulverizingAssaultDisplayName)
+              .SetDescription(PulverizingAssaultDescription)
+              .SetIcon(icon)
+              //.SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddContextRankConfig(ContextRankConfigs.StatBonus(stat: StatType.Strength).WithBonusValueProgression(20, false))
+              .AddInitiatorAttackWithWeaponTrigger(bam, onCharge: true, onlyHit: true)
+              .Configure();
+
+            var feat = FeatureConfigurator.New(PulverizingAssault2, PulverizingAssault2Guid)
+              .SetDisplayName(PulverizingAssaultDisplayName)
+              .SetDescription(PulverizingAssaultDescription)
+              .SetIcon(icon)
+              .AddRunActionOnTurnStart(actions: ActionsBuilder.New()
+                    .ApplyBuffPermanent(buff)
+                    .Build())
+              .Configure();
+
+            return FeatureConfigurator.New(PulverizingAssault, PulverizingAssaultGuid)
+              .SetDisplayName(PulverizingAssaultDisplayName)
+              .SetDescription(PulverizingAssaultDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddFeatureToPet(feat)
+              .Configure();
+        }
+
+        private const string MammothLord = "MammothRider.MammothLord";
+        private static readonly string MammothLordGuid = "{9D9ECF52-56BD-43DE-969E-A3D33F3AE6B7}";
+
+        private const string MammothLord2 = "MammothRider.MammothLord2";
+        private static readonly string MammothLord2Guid = "{A0B7A217-C1B0-4C12-88E5-CD745233E453}";
+
+        private const string MammothLordBuff = "MammothRider.MammothLordBuff";
+        private static readonly string MammothLordBuffGuid = "{9FC08BA6-263E-4E95-96C2-55E3835314DA}";
+
+        private const string MammothLordBuff1 = "MammothRider.MammothLordBuff1";
+        private static readonly string MammothLordBuff1Guid = "{ED201D33-F183-47B5-A43F-4C10D4260948}";
+
+        private const string MammothLordBuff2 = "MammothRider.MammothLordBuff2";
+        private static readonly string MammothLordBuff2Guid = "{ECB56394-C6DA-4EFB-AE8C-93B058632DAB}";
+
+        internal const string MammothLordDisplayName = "MammothRiderMammothLord.Name";
+        private const string MammothLordDescription = "MammothRiderMammothLord.Description";
+        public static BlueprintFeature MammothLordFeat()
+        {
+            var icon = FeatureRefs.MightyRage.Reference.Get().Icon;
+
+            var buff = BuffConfigurator.New(MammothLordBuff, MammothLordBuffGuid)
+              .SetDisplayName(MammothLordDisplayName)
+              .SetDescription(MammothLordDescription)
+              .SetIcon(icon)
+              //.SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .Configure();
+
+            var buff1 = BuffConfigurator.New(MammothLordBuff1, MammothLordBuff1Guid)
+              .SetDisplayName(MammothLordDisplayName)
+              .SetDescription(MammothLordDescription)
+              .SetIcon(icon)
+              //.SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .Configure();
+
+            var buff2 = BuffConfigurator.New(MammothLordBuff2, MammothLordBuff2Guid)
+              .SetDisplayName(MammothLordDisplayName)
+              .SetDescription(MammothLordDescription)
+              .SetIcon(icon)
+              //.SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .Configure();
+
+            var feat = FeatureConfigurator.New(MammothLord2, MammothLord2Guid)
+              .SetDisplayName(MammothLordDisplayName)
+              .SetDescription(MammothLordDescription)
+              .SetIcon(icon)
+              .AddComponent<RiderMammothLord>()
+              .Configure();
+
+            return FeatureConfigurator.New(MammothLord, MammothLordGuid)
+              .SetDisplayName(MammothLordDisplayName)
+              .SetDescription(MammothLordDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddConditionImmunity(UnitCondition.Dazed)
+              .AddConditionImmunity(UnitCondition.Fatigued)
+              .AddConditionImmunity(UnitCondition.Shaken)
+              .AddConditionImmunity(UnitCondition.Sickened)
+              .AddConditionImmunity(UnitCondition.Staggered)
+              .AddConditionImmunity(UnitCondition.Stunned)
+              .AddFeatureToPet(feat)
+              .AddComponent<RiderMammothLord>()
               .Configure();
         }
     }

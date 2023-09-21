@@ -108,7 +108,7 @@ namespace PrestigePlus.PrestigeClasses
                 .AddPrerequisiteStatValue(StatType.SkillLoreReligion, 7)
                 .AddPrerequisiteStatValue(StatType.SkillPersuasion, 5)
                 .AddPrerequisiteAlignment(AlignmentMaskType.Evil, checkInProgression: true)
-                .AddPrerequisiteFeature(FeatureRefs.Deceitful.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.All)
+                .AddPrerequisiteFeature(FeatureRefs.ScribingScrolls.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.All)
                 .AddPrerequisiteCasterTypeSpellLevel(true, false, 2, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                 .AddPrerequisiteCasterTypeSpellLevel(false, false, 2, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                 .Configure();
