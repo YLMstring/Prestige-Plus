@@ -1,8 +1,8 @@
-# Prestige Plus v0.9.0 for WoTR 
+# Prestige Plus v1.0.0 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - Add Grapple Mechanic!
-- Add Agent of the Grave, Arcane Archer, Deadeye Devotee, Chevalier, Hinterlander, Horizon Walker, Inheritor’s Crusader, Sanguine Angel, Scar Seeker, Shadowdancer prestige class. More coming soon!
+- Add Agent of the Grave, Arcane Archer, Deadeye Devotee, Chevalier, Hinterlander, Horizon Walker, Inheritor’s Crusader, Sanguine Angel, Scar Seeker, Shadowdancer, Umbral Agent prestige class. More coming soon!
 - Apart from some minor tweaks, all the homebrew stuff are optional.
 - And they are togglable now!
 - Only Black Seraph Style requires TTT-Core, for now.
@@ -53,6 +53,11 @@
 - Summon Shadow: You can choose an animal companian instead and make it undead!
 - Shadow Jump: You can choose any feat from the dimentional feat chain instead! This requires [Microscopic Content Expansion mod](https://github.com/alterasc/MicroscopicContentExpansion/), which requires [TabletopTweaks-Core](https://github.com/Vek17/TabletopTweaks-Core). If you don't want these feats, my mod doesn't require anything, as the original feature will still be there.
 - Extra Shadow Jump: This is a homebrew feat that gives you 4 extra uses of Shadow Jump ability and you can take it as soon as shadowdancer level 1!
+### [Umbral Agent Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/umbral-agent/)   
+#### Homebrew Options:  
+- Endless Gaze: a mythic ability to use Unnerving Gaze for free!
+- Shadow Jump: You can choose any feat from the dimentional feat chain instead! This requires [Microscopic Content Expansion mod](https://github.com/alterasc/MicroscopicContentExpansion/), which requires [TabletopTweaks-Core](https://github.com/Vek17/TabletopTweaks-Core). If you don't want these feats, my mod doesn't require anything, as the original feature will still be there.
+- Extra Shadow Jump: This is a homebrew feat that gives you 4 extra uses of Shadow Jump ability and you can take it as soon as umbral agent level 1!
   
 ### New Style Feats
 
