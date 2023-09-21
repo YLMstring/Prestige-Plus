@@ -2573,5 +2573,185 @@
     "Key": "UmbralAgentGaze4.Description",
     "enGB": "You no longer have a limited amount of Unnerving Gaze rounds per day.",
     "zhCN": "你使用不安凝视时不再有轮数限制。"
+  },
+
+  {
+    "Key": "MammothRider.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Mammoth Rider",
+    "zhCN": "巨兽驭手"
+  },
+
+  {
+    "Key": "MammothRider.Description",
+    "enGB": "From the inhospitable arctic wastes of the far north come the mighty mammoth riders, fearsome warriors who have trained the great beasts that wander the chilly wilds to serve as their faithful steeds. Toughened by their harsh environment, mammoth riders tame their surroundings through tenacious determination and sheer force of will, fighting alongside their bestial companions to take down huge game and carve out a hard existence in the icy north.",
+    "zhCN": "From the inhospitable arctic wastes of the far north come the mighty mammoth riders, fearsome warriors who have trained the great beasts that wander the chilly wilds to serve as their faithful steeds. Toughened by their harsh environment, mammoth riders tame their surroundings through tenacious determination and sheer force of will, fighting alongside their bestial companions to take down huge game and carve out a hard existence in the icy north."
+  },
+
+  {
+    "Key": "MammothRiderGiganticSteed.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Gigantic Steed",
+    "zhCN": "庞然坐骑"
+  },
+
+  {
+    "Key": "MammothRiderGiganticSteed.Description",
+    "enGB": "The size of a mammoth rider’s steed increases one level. The creature takes a -1 penalty on attack rolls and to AC, and a -2 penalty to Dexterity (to a minimum of 1); its base damage increases by one size category; and its reach increases to 10 feet. It also gains a +2 size bonus to its Strength and Constitution. At 3rd level and every 2 levels thereafter, the Strength bonus increases by an additional 2; the bonus to Constitution increases by an additional 2 at 5th and again at 9th level.",
+    "zhCN": "巨兽驭手的坐骑体型增长一级。它在攻击掷骰和AC上承受-1罚值，在敏捷上承受-2罚值(至少为1)；它的基本伤害增大一级；它的触及增加至10尺。它同时在力量和体质上获得+2体型加值。在3级和之后的每2级，力量加值都会再增加+2；体质加值在5级和9级会再增加+2。"
+  },
+
+  {
+    "Key": "MammothRiderFeat.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Born Survivor",
+    "zhCN": "生存本能"
+  },
+
+  {
+    "Key": "MammothRiderFeat.Description",
+    "enGB": "At 2nd level and again at 6th level, a mammoth rider gains a bonus feat from the following list: Great Fortitude, Improved Great Fortitude, Improved Iron Will, Improved Lightning Reflexes, Iron Will, Lightning Reflexes. She must meet the prerequisites for these feats.",
+    "zhCN": "在2级和6级时，巨兽驭手获得一个奖励专长，从以下列表中选择：强韧加强，精通强韧加强，精通钢铁意志，精通闪电反射，钢铁意志，闪电反射。她必须满足专长的先决条件。"
+  },
+
+  {
+    "Key": "MammothRiderRuggedSteed.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Rugged Steed",
+    "zhCN": "巍然坐骑"
+  },
+
+  {
+    "Key": "MammothRiderRuggedSteed.Description",
+    "enGB": "At 3rd level and every 2 levels thereafter, the natural armor bonus of a mammoth rider’s steed increases by 1.",
+    "zhCN": "在3级和之后的每2级，巨兽驭手坐骑的天生护甲加值都提升+1。"
+  },
+
+  {
+    "Key": "MammothRiderColossusHunter.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Colossus Hunter",
+    "zhCN": "巨兽猎手"
+  },
+
+  {
+    "Key": "MammothRiderColossusHunter.Description",
+    "enGB": "At 2nd level, a mammoth rider gains a +1 bonus on weapon attacks and damage rolls against Large and Huge creatures, and a +2 bonus on weapon attacks and damage rolls against Gargantuan and Colossal creatures.",
+    "zhCN": "2级时，巨兽驭手在对大型和超大型生物的武器攻击和伤害掷骰上获得+1加值，在对巨型和超巨型生物的武器攻击和伤害掷骰上获得+2加值。"
+  },
+
+  {
+    "Key": "MammothRiderMistrust.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Mistrust of Magic",
+    "zhCN": "怀疑魔法"
+  },
+
+  {
+    "Key": "MammothRiderMistrust.Description",
+    "enGB": "At 4th level, as long as a mammoth rider doesn’t have levels in a class that grants arcane spellcasting ability, she gains a +2 morale bonus on saving throws against arcane spells. If she has no levels in classes granting divine spellcasting ability, she gains a +2 morale bonus on saving throws against divine spells.",
+    "zhCN": "4级时，只要巨兽驭手不在提供奥术施法能力的职业上拥有等级，她就在对抗奥术的豁免掷骰中获得+2士气加值。若她在提供神术施法能力的职业上拥有等级，她在对抗神术的豁免掷骰中获得+2士气加值。"
+  },
+
+  {
+    "Key": "MammothRiderValiantDevotion.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Valiant Devotion",
+    "zhCN": "坚定忠诚"
+  },
+
+  {
+    "Key": "MammothRiderValiantDevotion.Description",
+    "enGB": "At 5th level, a mammoth rider’s steed gains a +4 morale bonus against charm, compulsion, and fear effects.",
+    "zhCN": "5级时，巨兽驭手的坐骑在对抗魅惑，胁迫和恐惧效果时获得+4士气加值。"
+  },
+
+  {
+    "Key": "MammothRiderSummonBigQuarry.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Hunter’s Instinct",
+    "zhCN": "猎手直觉"
+  },
+
+  {
+    "Key": "MammothRiderSummonBigQuarry.Description",
+    "enGB": "At 6th level, a mammoth rider gains the quarry class feature; this functions exactly like the ranger ability of the same name. If she already has the quarry class feature from another class, she instead gains the improved quarry class feature. A mammoth rider can use these abilities on any creature.",
+    "zhCN": "6级时，巨兽驭手获得狩猎目标职业能力；这一能力完全如同游侠同名能力般运作。若她已通过其他职业获得了狩猎目标职业能力，她则获得精通狩猎目标职业能力。巨兽驭手可以对任何生物使用这些能力。"
+  },
+
+  {
+    "Key": "MammothRiderReachSteed.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Steed’s Reach",
+    "zhCN": "巨兽触及"
+  },
+
+  {
+    "Key": "MammothRiderReachSteed.Description",
+    "enGB": "At 7th level, a mammoth rider’s steed’s reach improves to 15 feet.",
+    "zhCN": "7级时，巨兽驭手坐骑的触及增长至15尺。"
+  },
+
+  {
+    "Key": "MammothRiderCombinedMight.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Combined Might",
+    "zhCN": "人马合一"
+  },
+
+  {
+    "Key": "MammothRiderCombinedMight.Description",
+    "enGB": "At 8th level, a mounted mammoth rider strikes with the combined power of herself and her steed. Once per round, when the mammoth rider hits with a melee attack from astride her steed during a charge, she adds half her steed’s Strength bonus to the damage roll in addition to her own, provided her steed is currently capable of taking a free action.",
+    "zhCN": "8级时，骑乘中的巨兽驭手可以将自己和坐骑的力量融为一体发动攻击。每轮一次，当巨兽驭手在骑乘其坐骑冲锋时的一次近战攻击命中，只要她的坐骑还能进行自由动作，她便可以将其坐骑力量调整值的一半额外加在她的伤害掷骰上。"
+  },
+
+  {
+    "Key": "MammothRiderPulverizingAssault.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Pulverizing Assault",
+    "zhCN": "粉碎突击"
+  },
+
+  {
+    "Key": "MammothRiderPulverizingAssault.Description",
+    "enGB": "At 9th level, if a mammoth rider directs her steed to charge, then the first time that her steed deals damage with that attack this round, the target must succeed at a Fortitude save (DC = 20 + the steed’s Strength modifier) or be staggered for 1d4 rounds.",
+    "zhCN": "9级时，若巨兽驭手驱策她的坐骑冲锋，则在这一轮中当她的坐骑第一次以此攻击造成伤害，目标必须进行一个强韧豁免(DC=20+坐骑力量调整值)，若未通过则恍惚1d4轮。"
+  },
+
+  {
+    "Key": "MammothRiderMammothLord.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Mammoth Lord",
+    "zhCN": "巨兽之王"
+  },
+
+  {
+    "Key": "MammothRiderMammothLord.Description",
+    "enGB": "At 10th level, a mammoth rider becomes immune to the dazed, fatigued, shaken, sickened, staggered, and stunned conditions. If a mammoth rider and her steed both hit an opponent on the same round, the foe must succeed at a Fortitude save (DC = 20 + the steed’s Strength modifier) or be stunned for 1 round. Whether or not the target succeeds, it is immune to this ability for 24 hours thereafter.",
+    "zhCN": "10级时，巨兽驭手不会受到眩晕，疲乏，战力，恶心，恍惚，震慑状态的影响。若巨兽驭手和其坐骑在同一轮同时成功命中一名对手，敌人必须进行一个强韧豁免(DC=20+坐骑力量调整值)，若失败则震慑一轮。不论豁免是否成功，被影响的生物都在接下来的24小时内免疫该效果。"
   }
 ]
