@@ -47,7 +47,7 @@ namespace PrestigePlus.Modify
                 var weapon = maybeCaster.GetThreatHandMelee();
                 if (weapon == null) { Logger.Info("no weapon"); return; }
                 if (weapon.Weapon == null) { Logger.Info("no weapon2"); return; }
-                if (weapon.Weapon.Blueprint.Category != Kingmaker.Enums.WeaponCategory.UnarmedStrike) { Logger.Info("not fist"); return; }
+                if (weapon.Weapon.Blueprint.Category != Kingmaker.Enums.WeaponCategory.UnarmedStrike && !maybeCaster.HasFact(Feral)) { Logger.Info("not fist"); return; }
                 var IsTargetFlatFooted = Rulebook.Trigger(new RuleCheckTargetFlatFooted(maybeCaster, unit)).IsFlatFooted;
                 if (IsTargetFlatFooted || unit.State.HasCondition(UnitCondition.Dazed) || unit.State.HasCondition(UnitCondition.LoseDexterityToAC) || unit.State.HasCondition(UnitCondition.Paralyzed) || unit.State.HasCondition(UnitCondition.Staggered) || unit.State.HasCondition(UnitCondition.Stunned) || unit.State.HasCondition(UnitCondition.Unconscious))
                 {
@@ -111,5 +111,7 @@ namespace PrestigePlus.Modify
         }
 
         private static BlueprintBuffReference CasterBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{5BFEF430-F580-4A45-965B-7100D745F055}");
+        //FeralCombatTrainingFeature	edb2546d1215491ca404f8dd1a0c2af3
+        private static BlueprintFeatureReference Feral = BlueprintTool.GetRef<BlueprintFeatureReference>("edb2546d1215491ca404f8dd1a0c2af3");
     }
 }
