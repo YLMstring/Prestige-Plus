@@ -2631,8 +2631,8 @@
 
   {
     "Key": "MammothRiderRuggedSteed.Description",
-    "enGB": "At 3rd level and every 2 levels thereafter, the natural armor bonus of a mammoth rider’s steed increases by 1.",
-    "zhCN": "在3级和之后的每2级，巨兽驭手坐骑的天生护甲加值都提升+1。"
+    "enGB": "At 3rd level and every 2 levels thereafter, the AC bonus of a mammoth rider’s steed increases by 1.",
+    "zhCN": "在3级和之后的每2级，巨兽驭手坐骑的AC加值都提升+1。"
   },
 
   {

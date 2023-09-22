@@ -353,7 +353,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetDisplayName(ReachSteedDisplayName)
               .SetDescription(ReachSteedDescription)
               .SetIcon(icon)
-              .AddStatBonus(stat: StatType.Reach, value: 5)
+              .AddStatBonus(stat: StatType.Reach, value: 4)
               .SetRanks(10)
               .Configure();
 
