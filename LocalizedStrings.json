@@ -2736,8 +2736,8 @@
 
   {
     "Key": "MammothRiderPulverizingAssault.Description",
-    "enGB": "At 9th level, if a mammoth rider directs her steed to charge, then the first time that her steed deals damage with that attack this round, the target must succeed at a Fortitude save (DC = 20 + the steed’s Strength modifier) or be staggered for 1d4 rounds.",
-    "zhCN": "9级时，若巨兽驭手驱策她的坐骑冲锋，则在这一轮中当她的坐骑第一次以此攻击造成伤害，目标必须进行一个强韧豁免(DC=20+坐骑力量调整值)，若未通过则恍惚1d4轮。"
+    "enGB": "At 9th level, if a mammoth rider is mounted on her steed and directs it to charge, then the first time that her steed deals damage with that attack this round, the target must succeed at a Fortitude save (DC = 20 + the steed’s Strength modifier) or be staggered for 1d4 rounds.",
+    "zhCN": "9级时，若巨兽驭手驱策她所骑乘的坐骑冲锋，则在这一轮中当她的坐骑第一次以此攻击造成伤害，目标必须进行一个强韧豁免(DC=20+坐骑力量调整值)，若未通过则恍惚1d4轮。"
   },
 
   {

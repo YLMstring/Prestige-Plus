@@ -287,7 +287,7 @@ namespace PrestigePlus.PrestigeClasses
                 .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(ShadowChainsGuid).CasterHasFact(ShadowChains2BuffGuid, true).Build(), ifTrue: ActionsBuilder.New()
                     .SavingThrow(type: SavingThrowType.Reflex, useDCFromContextSavingThrow: true, 
                     onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New()//.HealTarget(ContextDice.Value(DiceType.One, ContextValues.Constant(1)))
-                        .ApplyBuff(BuffRefs.EntangledBuff.ToString(), durationValue: ContextDuration.FixedDice(diceType: DiceType.D4)).Build()).Build())
+                        .ApplyBuff(BuffRefs.EntangleBuff.ToString(), durationValue: ContextDuration.FixedDice(diceType: DiceType.D4)).Build()).Build())
                     .Build())
                 .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(ShadowChains2BuffGuid).Build(), ifTrue: ActionsBuilder.New()
                     .SavingThrow(type: SavingThrowType.Reflex, useDCFromContextSavingThrow: true,

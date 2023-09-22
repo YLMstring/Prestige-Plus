@@ -34,7 +34,7 @@ namespace PrestigePlus.PrestigeClasses
     internal class MammothRider
     {
         private const string ArchetypeName = "MammothRider";
-        private static readonly string ArchetypeGuid = "{FBD0C6EB-0513-483B-862F-A087D32B03D1}";
+        public static readonly string ArchetypeGuid = "{FBD0C6EB-0513-483B-862F-A087D32B03D1}";
         internal const string ArchetypeDisplayName = "MammothRider.Name";
         private const string ArchetypeDescription = "MammothRider.Description";
 
@@ -53,7 +53,7 @@ namespace PrestigePlus.PrestigeClasses
                 .AddToLevelEntry(1, GiganticSteedFeat(), SummonAnimalSelection())
                 .AddToLevelEntry(2, ExtraFeat(), ColossusHunterFeat())
                 .AddToLevelEntry(3, RuggedSteedFeat())
-                .AddToLevelEntry(4, MistrustFeat())
+                .AddToLevelEntry(4, MistrustFeat(), FeatureRefs.IntimidatingProwess.ToString())
                 .AddToLevelEntry(5, RuggedSteedGuid, ValiantDevotionFeat())
                 .AddToLevelEntry(6, BornSurvivorGuidFeat, SummonQuarrySelection())
                 .AddToLevelEntry(7, RuggedSteedGuid, ReachSteedFeat())
@@ -149,8 +149,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddFeatureToPet(feat)
-              .AddFeatureToPet(feat2)
-              .AddFeatureToPet(feat3)
+              .AddComponent<GiganticSteedLogic>()
               .Configure();
         }
 
@@ -227,8 +226,8 @@ namespace PrestigePlus.PrestigeClasses
               .SetDescription(RuggedSteedDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddFeatureToPet(feat4)
-              .AddFeatureToPet(GiganticSteed2Guid)
+              //.AddFeatureToPet(feat4)
+              //.AddFeatureToPet(GiganticSteed2Guid)
               .Configure();
         }
 
@@ -288,19 +287,28 @@ namespace PrestigePlus.PrestigeClasses
 
         internal const string ValiantDevotionDisplayName = "MammothRiderValiantDevotion.Name";
         private const string ValiantDevotionDescription = "MammothRiderValiantDevotion.Description";
+
+        private const string GiganticSteed6 = "MammothRider.GiganticSteed6";
+        private static readonly string GiganticSteed6Guid = "{E6623989-2B79-42B1-A4AE-582ECFA96FEE}";
         public static BlueprintFeature ValiantDevotionFeat()
         {
             var icon = FeatureRefs.AuraOfCourageFeature.Reference.Get().Icon;
+
+            var feat6 = FeatureConfigurator.New(GiganticSteed6, GiganticSteed6Guid)
+              .SetDisplayName(ValiantDevotionDisplayName)
+              .SetDescription(ValiantDevotionDescription)
+              .SetIcon(icon)
+              .AddSavingThrowBonusAgainstDescriptor(ContextValues.Constant(4), spellDescriptor: SpellDescriptor.Charm, modifierDescriptor: Kingmaker.Enums.ModifierDescriptor.Morale)
+              .AddSavingThrowBonusAgainstDescriptor(ContextValues.Constant(4), spellDescriptor: SpellDescriptor.Compulsion, modifierDescriptor: Kingmaker.Enums.ModifierDescriptor.Morale)
+              .AddSavingThrowBonusAgainstDescriptor(ContextValues.Constant(4), spellDescriptor: SpellDescriptor.Fear, modifierDescriptor: Kingmaker.Enums.ModifierDescriptor.Morale)
+              .Configure();
 
             return FeatureConfigurator.New(ValiantDevotion, ValiantDevotionGuid)
               .SetDisplayName(ValiantDevotionDisplayName)
               .SetDescription(ValiantDevotionDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddSavingThrowBonusAgainstDescriptor(ContextValues.Constant(4), spellDescriptor: SpellDescriptor.Charm, modifierDescriptor: Kingmaker.Enums.ModifierDescriptor.Morale)
-              .AddSavingThrowBonusAgainstDescriptor(ContextValues.Constant(4), spellDescriptor: SpellDescriptor.Compulsion, modifierDescriptor: Kingmaker.Enums.ModifierDescriptor.Morale)
-              .AddSavingThrowBonusAgainstDescriptor(ContextValues.Constant(4), spellDescriptor: SpellDescriptor.Fear, modifierDescriptor: Kingmaker.Enums.ModifierDescriptor.Morale)
-              .AddFeatureToPet(GiganticSteed3Guid)
+              .AddFeatureToPet(feat6)
               .Configure();
         }
 
@@ -413,18 +421,16 @@ namespace PrestigePlus.PrestigeClasses
               .SetDisplayName(PulverizingAssaultDisplayName)
               .SetDescription(PulverizingAssaultDescription)
               .SetIcon(icon)
-              //.SetFlags(BlueprintBuff.Flags.HiddenInUi)
-              .AddContextRankConfig(ContextRankConfigs.StatBonus(stat: StatType.Strength).WithBonusValueProgression(20, false))
-              .AddInitiatorAttackWithWeaponTrigger(bam, onCharge: true, onlyHit: true)
+              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              //.AddContextRankConfig(ContextRankConfigs.StatBonus(stat: StatType.Strength).WithBonusValueProgression(20, false))
+              //.AddInitiatorAttackWithWeaponTrigger(bam, onCharge: true, onlyHit: true)
               .Configure();
 
             var feat = FeatureConfigurator.New(PulverizingAssault2, PulverizingAssault2Guid)
               .SetDisplayName(PulverizingAssaultDisplayName)
               .SetDescription(PulverizingAssaultDescription)
               .SetIcon(icon)
-              .AddRunActionOnTurnStart(actions: ActionsBuilder.New()
-                    .ApplyBuffPermanent(buff, toCaster: true)
-                    .Build())
+              .AddComponent<RiderPulverizingAssault>()
               .Configure();
 
             return FeatureConfigurator.New(PulverizingAssault, PulverizingAssaultGuid)
@@ -433,7 +439,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddFeatureToPet(feat)
-              .AddFeatureToPet(GiganticSteed3Guid)
+              //.AddFeatureToPet(GiganticSteed3Guid)
               .Configure();
         }
 
@@ -462,21 +468,21 @@ namespace PrestigePlus.PrestigeClasses
               .SetDisplayName(MammothLordDisplayName)
               .SetDescription(MammothLordDescription)
               .SetIcon(icon)
-              //.SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
               .Configure();
 
             var buff1 = BuffConfigurator.New(MammothLordBuff1, MammothLordBuff1Guid)
               .SetDisplayName(MammothLordDisplayName)
               .SetDescription(MammothLordDescription)
               .SetIcon(icon)
-              //.SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
               .Configure();
 
             var buff2 = BuffConfigurator.New(MammothLordBuff2, MammothLordBuff2Guid)
               .SetDisplayName(MammothLordDisplayName)
               .SetDescription(MammothLordDescription)
               .SetIcon(icon)
-              //.SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
               .Configure();
 
             var feat = FeatureConfigurator.New(MammothLord2, MammothLord2Guid)

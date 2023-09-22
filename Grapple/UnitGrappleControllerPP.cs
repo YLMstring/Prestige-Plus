@@ -36,6 +36,7 @@ using Kingmaker.UnitLogic.Commands;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.RuleSystem.Rules.Abilities;
 using Kingmaker.Blueprints.Root;
+using PrestigePlus.Modify;
 
 namespace PrestigePlus.Grapple
 {
@@ -309,6 +310,7 @@ namespace PrestigePlus.Grapple
         static void Postfix()
         {
             GameModesFactory.Register(new UnitGrappleControllerPP(), new GameModeType[] { GameModesFactory.Default });
+            GameModesFactory.Register(new GiganticAssaultController(), new GameModeType[] { GameModesFactory.Default });
         }
     }
 }
