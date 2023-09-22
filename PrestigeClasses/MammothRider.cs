@@ -347,7 +347,7 @@ namespace PrestigePlus.PrestigeClasses
         private static readonly string GiganticSteed5Guid = "{D20FC086-5821-430F-A7BC-357FE7A5DA08}";
         public static BlueprintFeature ReachSteedFeat()
         {
-            var icon = FeatureRefs.FeralChampnionClaws2d8.Reference.Get().Icon;
+            var icon = FeatureRefs.DragonStyle.Reference.Get().Icon;
 
             var feat5 = FeatureConfigurator.New(GiganticSteed5, GiganticSteed5Guid)
               .SetDisplayName(ReachSteedDisplayName)

@@ -2662,7 +2662,7 @@
   {
     "Key": "MammothRiderMistrust.Description",
     "enGB": "At 4th level, as long as a mammoth rider doesn’t have levels in a class that grants arcane spellcasting ability, she gains a +2 morale bonus on saving throws against arcane spells. If she has no levels in classes granting divine spellcasting ability, she gains a +2 morale bonus on saving throws against divine spells.",
-    "zhCN": "4级时，只要巨兽驭手不在提供奥术施法能力的职业上拥有等级，她就在对抗奥术的豁免掷骰中获得+2士气加值。若她在提供神术施法能力的职业上拥有等级，她在对抗神术的豁免掷骰中获得+2士气加值。"
+    "zhCN": "4级时，只要巨兽驭手不在提供奥术施法能力的职业上拥有等级，她就在对抗奥术的豁免掷骰中获得+2士气加值。若她不在提供神术施法能力的职业上拥有等级，她在对抗神术的豁免掷骰中获得+2士气加值。"
   },
 
   {
@@ -2752,7 +2752,7 @@
   {
     "Key": "MammothRiderMammothLord.Description",
     "enGB": "At 10th level, a mammoth rider becomes immune to the dazed, fatigued, shaken, sickened, staggered, and stunned conditions. If a mammoth rider and her steed both hit an opponent on the same round, the foe must succeed at a Fortitude save (DC = 20 + the steed’s Strength modifier) or be stunned for 1 round. Whether or not the target succeeds, it is immune to this ability for 24 hours thereafter.",
-    "zhCN": "10级时，巨兽驭手不会受到眩晕，疲乏，战力，恶心，恍惚，震慑状态的影响。若巨兽驭手和其坐骑在同一轮同时成功命中一名对手，敌人必须进行一个强韧豁免(DC=20+坐骑力量调整值)，若失败则震慑一轮。不论豁免是否成功，被影响的生物都在接下来的24小时内免疫该效果。"
+    "zhCN": "10级时，巨兽驭手不会受到眩晕，疲乏，战栗，恶心，恍惚，震慑状态的影响。若巨兽驭手和其坐骑在同一轮同时成功命中一名对手，敌人必须进行一个强韧豁免(DC=20+坐骑力量调整值)，若失败则震慑一轮。不论豁免是否成功，被影响的生物都在接下来的24小时内免疫该效果。"
   },
 
   {
