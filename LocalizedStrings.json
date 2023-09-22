@@ -2753,5 +2753,20 @@
     "Key": "MammothRiderMammothLord.Description",
     "enGB": "At 10th level, a mammoth rider becomes immune to the dazed, fatigued, shaken, sickened, staggered, and stunned conditions. If a mammoth rider and her steed both hit an opponent on the same round, the foe must succeed at a Fortitude save (DC = 20 + the steed’s Strength modifier) or be stunned for 1 round. Whether or not the target succeeds, it is immune to this ability for 24 hours thereafter.",
     "zhCN": "10级时，巨兽驭手不会受到眩晕，疲乏，战力，恶心，恍惚，震慑状态的影响。若巨兽驭手和其坐骑在同一轮同时成功命中一名对手，敌人必须进行一个强韧豁免(DC=20+坐骑力量调整值)，若失败则震慑一轮。不论豁免是否成功，被影响的生物都在接下来的24小时内免疫该效果。"
+  },
+
+  {
+    "Key": "GiganticAssault.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Gigantic Assault",
+    "zhCN": "巨兽出击"
+  },
+
+  {
+    "Key": "GiganticAssault.Description",
+    "enGB": "The mammoth rider is always considered charging if mounted, but considered not charging if otherwise.",
+    "zhCN": "巨兽驭手在骑乘时视为冲锋，不骑乘时视为不冲锋。"
   }
 ]
