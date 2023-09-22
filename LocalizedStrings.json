@@ -2766,7 +2766,7 @@
 
   {
     "Key": "GiganticAssault.Description",
-    "enGB": "The mammoth rider is always considered charging if mounted, but considered not charging if otherwise.",
-    "zhCN": "巨兽驭手在骑乘时视为冲锋，不骑乘时视为不冲锋。"
+    "enGB": "With the inertia of her steed, the mammoth rider is always considered charging if mounted, but considered not charging if otherwise.",
+    "zhCN": "由于坐骑的冲力，巨兽驭手在骑乘时总是视为冲锋，但不骑乘时视为不冲锋。"
   }
 ]

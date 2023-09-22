@@ -2,6 +2,7 @@
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.Configurators.Classes;
 using BlueprintCore.Blueprints.Configurators.Root;
+using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
@@ -19,6 +20,7 @@ using Kingmaker.Blueprints.Root;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic;
+using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.Utility;
 using PrestigePlus.Modify;
@@ -28,6 +30,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TabletopTweaks.Core.NewComponents;
 
 namespace PrestigePlus.PrestigeClasses
 {
@@ -123,7 +126,8 @@ namespace PrestigePlus.PrestigeClasses
               .SetDisplayName(GiganticSteedDisplayName)
               .SetDescription(GiganticSteedDescription)
               .SetIcon(icon)
-              .AddChangeUnitSize(type: Kingmaker.Designers.Mechanics.Buffs.ChangeUnitSize.ChangeType.Delta, size: Kingmaker.Enums.Size.Fine, sizeDelta: 1)
+              //.AddChangeUnitSize(type: Kingmaker.Designers.Mechanics.Buffs.ChangeUnitSize.ChangeType.Delta, size: Kingmaker.Enums.Size.Fine, sizeDelta: 1)
+              .AddComponent<ChangeUnitBaseSize>(c => { c.SizeDelta = 1; c.m_Type = TabletopTweaks.Core.NewUnitParts.UnitPartBaseSizeAdjustment.ChangeType.Delta; })
               .AddStatBonus(Kingmaker.Enums.ModifierDescriptor.Penalty, false, StatType.Dexterity, -2)
               .Configure();
 
@@ -345,16 +349,40 @@ namespace PrestigePlus.PrestigeClasses
 
         private const string GiganticSteed5 = "MammothRider.GiganticSteed5";
         private static readonly string GiganticSteed5Guid = "{D20FC086-5821-430F-A7BC-357FE7A5DA08}";
+
+        private const string ReleaseAbility = "GiganticAssault.ReleaseAbility";
+        private static readonly string ReleaseAbilityGuid = "{0A583282-B9AD-45A1-BE18-328F79D92C69}";
+
+        private const string ReleaseAbilitybuff = "GiganticAssault.ReleaseAbilitybuff";
+        private static readonly string ReleaseAbilitybuffGuid = "{747F27A3-58AD-496D-9E46-D24FE93B71AA}";
         public static BlueprintFeature ReachSteedFeat()
         {
             var icon = FeatureRefs.DragonStyle.Reference.Get().Icon;
+
+            var Buff = BuffConfigurator.New(ReleaseAbilitybuff, ReleaseAbilitybuffGuid)
+              .SetDisplayName(ReachSteedDisplayName)
+              .SetDescription(ReachSteedDescription)
+              .SetIcon(icon)
+              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddStatBonus(stat: StatType.Reach, value: 4)
+              .Configure();
+
+            var ability = ActivatableAbilityConfigurator.New(ReleaseAbility, ReleaseAbilityGuid)
+                .SetDisplayName(ReachSteedDisplayName)
+                .SetDescription(ReachSteedDescription)
+                .SetIcon(icon)
+                .SetBuff(Buff)
+                .SetDeactivateImmediately(true)
+                .SetActivationType(AbilityActivationType.Immediately)
+                .SetIsOnByDefault(true)
+                .Configure();
 
             var feat5 = FeatureConfigurator.New(GiganticSteed5, GiganticSteed5Guid)
               .SetDisplayName(ReachSteedDisplayName)
               .SetDescription(ReachSteedDescription)
               .SetIcon(icon)
-              .AddStatBonus(stat: StatType.Reach, value: 4)
-              .SetRanks(10)
+              //.AddStatBonus(stat: StatType.Reach, value: 4)
+              .AddFacts(new() { ability })
               .Configure();
 
             return FeatureConfigurator.New(ReachSteed, ReachSteedGuid)

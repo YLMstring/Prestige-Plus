@@ -17,6 +17,7 @@ using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.ActivatableAbilities;
+using Kingmaker.UnitLogic.Mechanics.Components;
 using Owlcat.Runtime.UI.ConsoleTools.GamepadInput;
 using PrestigePlus.Modify;
 using System;
@@ -221,6 +222,18 @@ namespace PrestigePlus.Grapple
             FeatureConfigurator.For(FeatureRefs.AgileManeuvers)
                 .AddPrerequisiteFeature(StyleGuid, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                 .Configure();
+
+            var grab2 = ActionsBuilder.New()
+                .ApplyBuffPermanent(BuffRefs.GrapplingInfusionEffectBuff.ToString(), true)
+                .Build();
+
+            var grapple2 = ActionsBuilder.New()
+                .CombatManeuver(onSuccess: grab2, type: Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple)
+                .Build();
+
+            //BuffConfigurator.For(BuffRefs.GrapplingInfusionBuff)
+                //.EditComponent<AddKineticistInfusionDamageTrigger>(a => a.Actions.Actions = grapple2.Actions)
+                //.Configure();
 
         }
     }

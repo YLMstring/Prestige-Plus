@@ -29,31 +29,9 @@ namespace PrestigePlus.Feats
         private static readonly string DisplayName = "GiganticAssault.Name";
         private static readonly string Description = "GiganticAssault.Description";
 
-        private const string ReleaseAbility = "GiganticAssault.ReleaseAbility";
-        private static readonly string ReleaseAbilityGuid = "{0A583282-B9AD-45A1-BE18-328F79D92C69}";
-
-        private const string ReleaseAbilitybuff = "GiganticAssault.ReleaseAbilitybuff";
-        private static readonly string ReleaseAbilitybuffGuid = "{747F27A3-58AD-496D-9E46-D24FE93B71AA}";
         public static void Configure()
         {
             var icon = FeatureRefs.ArmyChargeAbilityFeature.Reference.Get().Icon;
-
-            var Buff = BuffConfigurator.New(ReleaseAbilitybuff, ReleaseAbilitybuffGuid)
-              .SetDisplayName(DisplayName)
-              .SetDescription(Description)
-              .SetIcon(icon)
-              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-              .Configure();
-
-            var ability = ActivatableAbilityConfigurator.New(ReleaseAbility, ReleaseAbilityGuid)
-                .SetDisplayName(DisplayName)
-                .SetDescription(Description)
-                .SetIcon(icon)
-                .SetBuff(Buff)
-                .SetDeactivateImmediately(true)
-                .SetActivationType(AbilityActivationType.Immediately)
-                .SetIsOnByDefault(true)
-                .Configure();
 
             FeatureConfigurator.New(FeatName, FeatGuid, Kingmaker.Blueprints.Classes.FeatureGroup.MythicAbility)
                     .SetDisplayName(DisplayName)
