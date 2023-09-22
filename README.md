@@ -2,10 +2,9 @@
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - Add Grapple Mechanic!
-- Add Agent of the Grave, Arcane Archer, Deadeye Devotee, Chevalier, Hinterlander, Horizon Walker, Inheritor’s Crusader, Sanguine Angel, Scar Seeker, Shadowdancer, Umbral Agent prestige class. More coming soon!
+- Add Agent of the Grave, Arcane Archer, Deadeye Devotee, Chevalier, Hinterlander, Horizon Walker, Inheritor’s Crusader, Mammoth Rider, Sanguine Angel, Scar Seeker, Shadowdancer, Umbral Agent prestige class. More coming soon!
 - Apart from some minor tweaks, all the homebrew stuff are optional.
 - And they are togglable now!
-- Only Black Seraph Style requires TTT-Core, for now.
 
 ## Featuring
 
@@ -41,6 +40,11 @@
 - The class has only 3 levels.
 #### Homebrew Options:  
 - Spells per day/Destroyer of Tyranny/Sword Against Injustice: Now warpriest-friendly!
+### [Mammoth Rider](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/i-m/mammoth-rider/)
+- Gigantic Steed gives stackable bonus instead of size bonus. It just doesn't make any sense that this can't stack with magical enlarge effect!
+- Steed’s Reach is togglable, because longer reach might have negative impact in the game.
+#### Homebrew Options:  
+- Gigantic Assault: a mythic ability to charge like a beast!
 ### [Sanguine Angel Class (Lite)](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/sanguine-angel/)
 - Require [Dark Codex](https://github.com/Truinto/DarkCodex), or you won't gain Prodigious Two-Weapon Fighting.
 - The class has 10 levels, but I only implement the first 3 levels because it doesn't have good stuff at higher levels.
@@ -65,7 +69,6 @@
 - [Black Seraph’s Malevolence](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/black-seraphs-malevolence-combat/)
 - [Black Seraph Annihilation](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/black-seraph-annihilation-combat/)
 - From Path of War, Make them Fear!
-- Requires TTT-Core.
 - [Grabbing Style](https://www.d20pfsrd.com/feats/combat-feats/grabbing-style-combat-style/)
 - Grabbing Drag (homebrew: drag effect)
 - Grabbing Master (homebrew: bypass immunity)
