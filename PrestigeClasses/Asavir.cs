@@ -57,7 +57,7 @@ namespace PrestigePlus.PrestigeClasses
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
                 .AddToLevelEntry(1, EquineBondFeat(), SummonAnimalSelection(), FeatureRefs.PaladinProficiencies.ToString())
-                .AddToLevelEntry(2, ShaitanFeat())
+                .AddToLevelEntry(2, ShaitanFeat(), ThunderousChargeFeat())
                 .AddToLevelEntry(3, FeatureRefs.AuraOfCourageFeature.ToString(), FeatureRefs.MythicIgnoreAlignmentRestrictions.ToString())
                 .AddToLevelEntry(4, DjinniFeat(), CreateControllCharge())
                 .AddToLevelEntry(5)
@@ -113,7 +113,7 @@ namespace PrestigePlus.PrestigeClasses
 
         internal const string EquineBondDisplayName = "AsavirEquineBond.Name";
         private const string EquineBondDescription = "AsavirEquineBond.Description";
-
+        //"CavalierMobilityFeature": "272aa4cc-a738-4a69-92da-395f4fae3d22",
         public static BlueprintFeature EquineBondFeat()
         {
             var icon = AbilityRefs.AnimalGrowth.Reference.Get().Icon;
@@ -124,6 +124,8 @@ namespace PrestigePlus.PrestigeClasses
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddCompanionBoon(2, FeatureRefs.AnimalCompanionRank.ToString())
+              .AddFeatureToPet(FeatureRefs.LightBardingProficiency.ToString())
+              .AddFacts(new() { "272aa4cc-a738-4a69-92da-395f4fae3d22" }) ///ttt
               .Configure();
         }
 
@@ -485,7 +487,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetDescription(InspiringLeaderDescription)
               .SetIcon(icon)
               .AddSpellDescriptorComponent(descriptor: SpellDescriptor.MindAffecting)
-
+              .AddComponent<AsavirInspiringLeader>()
               .Configure();
 
             var ability = AbilityConfigurator.New(InspiringLeaderAbility, InspiringLeaderAbilityGuid)
@@ -509,6 +511,129 @@ namespace PrestigePlus.PrestigeClasses
             return FeatureConfigurator.New(InspiringLeader, InspiringLeaderGuid)
               .SetDisplayName(InspiringLeaderDisplayName)
               .SetDescription(InspiringLeaderDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string ThunderousCharge = "Asavir.ThunderousCharge";
+        private static readonly string ThunderousChargeGuid = "{45C5B9B9-3C0E-47A5-84AF-07A62A86AF2F}";
+
+        internal const string ThunderousChargeDisplayName = "AsavirThunderousCharge.Name";
+        private const string ThunderousChargeDescription = "AsavirThunderousCharge.Description";
+
+        private const string ThunderousChargeAbility = "Asavir.ThunderousChargeAbility";
+        private static readonly string ThunderousChargeAbilityGuid = "{24C220B0-2B0E-4D5A-97E4-865CFF4B9674}";
+
+        private const string ThunderousChargeAbilityRes = "Asavir.ThunderousChargeAbilityRes";
+        private static readonly string ThunderousChargeAbilityResGuid = "{C26EADB2-B1DE-4D8E-85DC-EE7BD390DEA2}";
+
+        private const string ThunderousChargeAbility1 = "Asavir.ThunderousChargeAbility1";
+        private static readonly string ThunderousChargeAbility1Guid = "{1F870299-BF72-41B6-B9BC-9C0D6D658455}";
+
+        private const string ThunderousChargeAbility2 = "Asavir.ThunderousChargeAbility2";
+        private static readonly string ThunderousChargeAbility2Guid = "{07174E7F-EC67-4ABE-8DCE-14D0DFA10A88}";
+
+        private const string ThunderousChargeAbility3 = "Asavir.ThunderousChargeAbility3";
+        private static readonly string ThunderousChargeAbility3Guid = "{D895EF5B-54D9-44BB-9C5D-17158AC40AD7}";
+
+        private const string ThunderousChargeBuff = "Asavir.ThunderousCharge";
+        private static readonly string ThunderousChargeBuffGuid = "{8ABCBA5E-E12A-4962-AB5A-0AC43102DAB2}";
+
+        public static BlueprintFeature ThunderousChargeFeat()
+        {
+            var icon = FeatureRefs.FavoredEnemyLargeFeature.Reference.Get().Icon;
+
+            var action = ActionsBuilder.New()
+                .Conditional(ConditionsBuilder.New().CharacterClass(true, ArchetypeGuid, 1, false).CharacterClass(true, ArchetypeGuid, 6, true).Build(), ifTrue: ActionsBuilder.New().CastSpell(ThunderousChargeAbility1Guid).Build())
+                .Conditional(ConditionsBuilder.New().CharacterClass(true, ArchetypeGuid, 6, false).CharacterClass(true, ArchetypeGuid, 10, true).Build(), ifTrue: ActionsBuilder.New().CastSpell(ThunderousChargeAbility2Guid).Build())
+                .Conditional(ConditionsBuilder.New().CharacterClass(true, ArchetypeGuid, 10, false).Build(), ifTrue: ActionsBuilder.New().CastSpell(ThunderousChargeAbility3Guid).Build())
+                .RemoveSelf()
+                .Build();
+
+            var abilityresourse = AbilityResourceConfigurator.New(ThunderousChargeAbilityRes, ThunderousChargeAbilityResGuid)
+                 .SetMaxAmount(
+                    ResourceAmountBuilder.New(0)
+                        .IncreaseByLevelStartPlusDivStep(classes: new string[] { ArchetypeGuid }, otherClassLevelsMultiplier: 0, levelsPerStep: 1, bonusPerStep: 1))
+                .Configure();
+
+            var Buff = BuffConfigurator.New(ThunderousChargeBuff, ThunderousChargeBuffGuid)
+              .SetDisplayName(ThunderousChargeDisplayName)
+              .SetDescription(ThunderousChargeDescription)
+              .SetIcon(icon)
+              .AddInitiatorAttackWithWeaponTrigger(action, true, triggerBeforeAttack: true)
+              .Configure();
+
+            var ability = AbilityConfigurator.New(ThunderousChargeAbility, ThunderousChargeAbilityGuid)
+                .CopyFrom(
+                AbilityRefs.DazzlingDisplayAction,
+                typeof(AbilitySpawnFx))
+                //.SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.EnchantWeapon)
+                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(Buff, ContextDuration.Fixed(1)).Build())
+                .SetDisplayName(ThunderousChargeDisplayName)
+                .SetDescription(ThunderousChargeDescription)
+                .SetIcon(icon)
+                //.AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Ally, radius: 60.Feet(), spreadSpeed: 40.Feet())
+                //.AddComponent<CustomDC>(c => { c.classguid = ArchetypeGuid; c.Property = StatType.Charisma; })
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Special)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .Configure();
+
+            var ability1 = AbilityConfigurator.New(ThunderousChargeAbility1, ThunderousChargeAbility1Guid)
+                .CopyFrom(
+                AbilityRefs.DazzlingDisplayAction,
+                typeof(AbilitySpawnFx))
+                //.SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.EnchantWeapon)
+                .AddAbilityEffectRunAction(ActionsBuilder.New().Add<AsavirThunderousCharge>().Build())
+                .SetDisplayName(ThunderousChargeDisplayName)
+                .SetDescription(ThunderousChargeDescription)
+                .SetIcon(icon)
+                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Enemy, radius: 5.Feet(), spreadSpeed: 5.Feet())
+                //.AddComponent<CustomDC>(c => { c.classguid = ArchetypeGuid; c.Property = StatType.Charisma; })
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Special)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(ThunderousChargeAbility2, ThunderousChargeAbility2Guid)
+                .CopyFrom(
+                AbilityRefs.DazzlingDisplayAction,
+                typeof(AbilitySpawnFx))
+                //.SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.EnchantWeapon)
+                .AddAbilityEffectRunAction(ActionsBuilder.New().Add<AsavirThunderousCharge>().Build())
+                .SetDisplayName(ThunderousChargeDisplayName)
+                .SetDescription(ThunderousChargeDescription)
+                .SetIcon(icon)
+                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Enemy, radius: 10.Feet(), spreadSpeed: 5.Feet())
+                //.AddComponent<CustomDC>(c => { c.classguid = ArchetypeGuid; c.Property = StatType.Charisma; })
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Special)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .Configure();
+
+            var ability3 = AbilityConfigurator.New(ThunderousChargeAbility3, ThunderousChargeAbility3Guid)
+                .CopyFrom(
+                AbilityRefs.DazzlingDisplayAction,
+                typeof(AbilitySpawnFx))
+                //.SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.EnchantWeapon)
+                .AddAbilityEffectRunAction(ActionsBuilder.New().Add<AsavirThunderousCharge>().Build())
+                .SetDisplayName(ThunderousChargeDisplayName)
+                .SetDescription(ThunderousChargeDescription)
+                .SetIcon(icon)
+                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Enemy, radius: 20.Feet(), spreadSpeed: 5.Feet())
+                //.AddComponent<CustomDC>(c => { c.classguid = ArchetypeGuid; c.Property = StatType.Charisma; })
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Special)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .Configure();
+
+            return FeatureConfigurator.New(ThunderousCharge, ThunderousChargeGuid)
+              .SetDisplayName(ThunderousChargeDisplayName)
+              .SetDescription(ThunderousChargeDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)

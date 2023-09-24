@@ -2768,5 +2768,170 @@
     "Key": "GiganticAssault.Description",
     "enGB": "With the inertia of her steed, the mammoth rider is always considered charging if mounted, but considered not charging if otherwise.",
     "zhCN": "由于坐骑的冲力，巨兽驭手在骑乘时总是视为冲锋，但不骑乘时视为不冲锋。"
+  },
+
+  {
+    "Key": "Asavir.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Asavir",
+    "zhCN": "亚萨维尔"
+  },
+
+  {
+    "Key": "Asavir.Description",
+    "enGB": "An asavir’s bond with her genie-blessed mount is even closer than the partnership most horselords share with their steeds, and her human compatriots fight with extra ferocity, knowing that they have a tireless protector. Asavirs sometimes leave their tribe to become mercenaries or adventurers, and it is from such asavirs that the techniques of this prestige class are usually spread.",
+    "zhCN": "An asavir’s bond with her genie-blessed mount is even closer than the partnership most horselords share with their steeds, and her human compatriots fight with extra ferocity, knowing that they have a tireless protector. Asavirs sometimes leave their tribe to become mercenaries or adventurers, and it is from such asavirs that the techniques of this prestige class are usually spread."
+  },
+
+  {
+    "Key": "AsavirEquineBond.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Equine Bond",
+    "zhCN": "Equine Bond"
+  },
+
+  {
+    "Key": "AsavirEquineBond.Description",
+    "enGB": "An asavir gains a horse as a loyal steed. This mount functions as a druid’s animal companion, using the asavir’s level + 2 as her effective druid level. Her total effective druid level for determining her mount’s statistics can never exceed her total character level. An asavir doesn’t take an armor check penalty on Ride checks while riding her mount, and her mount is always considered combat trained and begins play with Light Armor Proficiency as a bonus feat.",
+    "zhCN": "An asavir gains a horse as a loyal steed. This mount functions as a druid’s animal companion, using the asavir’s level + 2 as her effective druid level. Her total effective druid level for determining her mount’s statistics can never exceed her total character level. An asavir doesn’t take an armor check penalty on Ride checks while riding her mount, and her mount is always considered combat trained and begins play with Light Armor Proficiency as a bonus feat."
+  },
+
+  {
+    "Key": "AsavirShaitan.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Shaitan’s Blessing",
+    "zhCN": "Shaitan’s Blessing"
+  },
+
+  {
+    "Key": "AsavirShaitan.Description",
+    "enGB": "When an asavir reaches 2nd level, her mount receives the blessing of the shaitans. It receives a +2 racial bonus on saving throws against all mind-affecting and fear effects. When the asavir reaches 9th level, this bonus increases to +4.",
+    "zhCN": "When an asavir reaches 2nd level, her mount receives the blessing of the shaitans. It receives a +2 racial bonus on saving throws against all mind-affecting and fear effects. When the asavir reaches 9th level, this bonus increases to +4."
+  },
+
+  {
+    "Key": "AsavirDjinni.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Djinni’s Blessing",
+    "zhCN": "Djinni’s Blessing"
+  },
+
+  {
+    "Key": "AsavirDjinni.Description",
+    "enGB": "When an asavir reaches 4th level, her mount receives the blessing of the djinn, making it swift and tireless. The mount’s speed increases by 10 feet, and it can carry any party member. When the asavir reaches 8th level, her mount’s speed increases by an additional 10 feet.",
+    "zhCN": "When an asavir reaches 4th level, her mount receives the blessing of the djinn, making it swift and tireless. The mount’s speed increases by 10 feet, and it can carry any party member. When the asavir reaches 8th level, her mount’s speed increases by an additional 10 feet."
+  },
+
+  {
+    "Key": "AsavirMarid.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Marid’s Blessing",
+    "zhCN": "Marid’s Blessing"
+  },
+
+  {
+    "Key": "AsavirMarid.Description",
+    "enGB": "At 6th level, an asavir’s mount receives the blessing of the marids, making it an agile partner with a flowing pace. She gains +2 bonus to concentration checks. The mount gains a +2 racial bonus on Reflex saves.",
+    "zhCN": "At 6th level, an asavir’s mount receives the blessing of the marids, making it an agile partner with a flowing pace. She gains +2 bonus to concentration checks. The mount gains a +2 racial bonus on Reflex saves."
+  },
+
+  {
+    "Key": "AsavirEfreeti.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Efreeti’s Blessing",
+    "zhCN": "Efreeti’s Blessing"
+  },
+
+  {
+    "Key": "AsavirEfreeti.Description",
+    "enGB": "When an asavir reaches 8th level, her mount receives the blessing of the efreet, gaining fire resistance 5. It also deals an additional 1d6 points of fire damage with its attacks.",
+    "zhCN": "When an asavir reaches 8th level, her mount receives the blessing of the efreet, gaining fire resistance 5. It also deals an additional 1d6 points of fire damage with its attacks."
+  },
+
+  {
+    "Key": "AsavirJanni.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Janni’s Blessing",
+    "zhCN": "Janni’s Blessing"
+  },
+
+  {
+    "Key": "AsavirJanni.Description",
+    "enGB": "At 10th level, when an asavir rolls a d20 to resolve an attack, saving throw, or skill check, she can roll twice and choose the better result. The asavir can use this ability once per day for herself and once per day for her mount. Both the asavir and her mount gain a +1 luck bonus on all saving throws.",
+    "zhCN": "At 10th level, when an asavir rolls a d20 to resolve an attack, saving throw, or skill check, she can roll twice and choose the better result. The asavir can use this ability once per day for herself and once per day for her mount. Both the asavir and her mount gain a +1 luck bonus on all saving throws."
+  },
+
+  {
+    "Key": "AsavirControllCharge.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Controlled Charge",
+    "zhCN": "Controlled Charge"
+  },
+
+  {
+    "Key": "AsavirControllCharge.Description",
+    "enGB": "At 4th level, an asavir learns to attack with greater accuracy from the back of a charging mount. She gains a +4 bonus on melee attacks on a charge while mounted (instead of the normal +2) and gains +2 bonus to her AC after making a charge attack while mounted.",
+    "zhCN": "At 4th level, an asavir learns to attack with greater accuracy from the back of a charging mount. She gains a +4 bonus on melee attacks on a charge while mounted (instead of the normal +2) and gains +2 bonus to her AC after making a charge attack while mounted."
+  },
+
+  {
+    "Key": "AsavirAllEyes.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "All Eyes on Me",
+    "zhCN": "All Eyes on Me"
+  },
+
+  {
+    "Key": "AsavirAllEyes.Description",
+    "enGB": "At 7th level, three times per day as a swift action, an asavir can call out a challenge. Each opponent within 30 feet must succeed at a Will save (DC = 10 + the asavir’s character level + the asavir’s Charisma bonus) or be distracted by the display until the beginning of the asavir’s next turn. Any creature that fails is considered to be flat-footed and takes a -2 penalty to AC against attacks from the asavir’s allies. This is a mind-affecting, visual effect.",
+    "zhCN": "At 7th level, three times per day as a swift action, an asavir can call out a challenge. Each opponent within 30 feet must succeed at a Will save (DC = 10 + the asavir’s character level + the asavir’s Charisma bonus) or be distracted by the display until the beginning of the asavir’s next turn. Any creature that fails is considered to be flat-footed and takes a -2 penalty to AC against attacks from the asavir’s allies. This is a mind-affecting, visual effect."
+  },
+
+  {
+    "Key": "AsavirInspiringLeader.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Inspiring Leader",
+    "zhCN": "Inspiring Leader"
+  },
+
+  {
+    "Key": "AsavirInspiringLeader.Description",
+    "enGB": "At 9th level, an asavir can call out encouragement to her allies as a move action, bolstering their courage. Allies within 60 feet of the asavir who can hear her receive a morale bonus equal to the asavir’s Charisma bonus on attack and damage rolls with weapons for 1 round. An asavir can use this ability three times per day. This is a mind-affecting, language-dependent effect.",
+    "zhCN": "At 9th level, an asavir can call out encouragement to her allies as a move action, bolstering their courage. Allies within 60 feet of the asavir who can hear her receive a morale bonus equal to the asavir’s Charisma bonus on attack and damage rolls with weapons for 1 round. An asavir can use this ability three times per day. This is a mind-affecting, language-dependent effect."
+  },
+
+  {
+    "Key": "AsavirThunderousCharge.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Thunderous Charge",
+    "zhCN": "Thunderous Charge"
+  },
+
+  {
+    "Key": "AsavirThunderousCharge.Description",
+    "enGB": "At 2nd level, a number of times per day equal to her asavir level, an asavir and her mount can make a charge that causes the ground to shake. This is a full-round action and works as a normal charge. Enemies within a 5-foot radius of the charge’s ending point must succeed at a Reflex save (DC = 10 + the asavir’s class level + the mount’s Strength modifier) or fall prone. At 6th level, the radius of thunderous charge increases to 10 feet, and at 10th level it increases to 20 feet.",
+    "zhCN": "At 2nd level, a number of times per day equal to her asavir level, an asavir and her mount can make a charge that causes the ground to shake. This is a full-round action and works as a normal charge. Enemies within a 5-foot radius of the charge’s ending point must succeed at a Reflex save (DC = 10 + the asavir’s class level + the mount’s Strength modifier) or fall prone. At 6th level, the radius of thunderous charge increases to 10 feet, and at 10th level it increases to 20 feet."
   }
 ]

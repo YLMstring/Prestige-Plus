@@ -86,6 +86,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("archer"), defaultValue: true, Helpers.CreateString("toggle-desc6", "Arcane Archer"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("asavir"), defaultValue: true, Helpers.CreateString("toggle-desc19", "Asavir"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("devotee"), defaultValue: true, Helpers.CreateString("toggle-desc7", "Deadeye Devotee (Arcane Archer archetype)"))
               .ShowVisualConnection())
           .AddToggle(
@@ -160,6 +163,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("kraken"))) { KrakenStyle.StyleConfigure(); KrakenStyle.WrackConfigure(); KrakenStyle.WrathConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("umbral"))) { UmbralAgent.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("biggg"))) { MammothRider.Configure(); GiganticAssault.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("asavir"))) { Asavir.Configure(); }
                 }
                 catch (Exception e)
         {
