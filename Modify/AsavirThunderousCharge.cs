@@ -32,6 +32,7 @@ namespace PrestigePlus.Modify
         {
             try
             {
+                Logger.Info("start");
                 UnitEntityData unit = base.Target.Unit;
                 if (unit == null)
                 {
@@ -45,7 +46,7 @@ namespace PrestigePlus.Modify
                     return;
                 }
                 UnitEntityData mount = maybeCaster.GetSaddledUnit();
-                if (mount != null) return;
+                if (mount == null) { Logger.Info("Caster not mount"); return; }
                 int dc = mount.Stats.Strength.Bonus + 10 + maybeCaster.Descriptor.Progression.GetClassLevel(BlueprintTool.GetRef<BlueprintCharacterClassReference>(Asavir.ArchetypeGuid));
                 Logger.Info(dc.ToString());
                 bool pass = GameHelper.TriggerSkillCheck(new RuleSkillCheck(unit, Kingmaker.EntitySystem.Stats.StatType.SaveReflex, dc)

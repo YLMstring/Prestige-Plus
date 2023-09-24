@@ -2871,8 +2871,8 @@
 
   {
     "Key": "AsavirJanni.Description",
-    "enGB": "At 10th level, when an asavir rolls a d20 to resolve an attack, saving throw, or skill check, she can roll twice and choose the better result. The asavir can use this ability once per day for herself and once per day for her mount. Both the asavir and her mount gain a +1 luck bonus on all saving throws.",
-    "zhCN": "At 10th level, when an asavir rolls a d20 to resolve an attack, saving throw, or skill check, she can roll twice and choose the better result. The asavir can use this ability once per day for herself and once per day for her mount. Both the asavir and her mount gain a +1 luck bonus on all saving throws."
+    "enGB": "At 10th level, an asavir gains Perfect Strike as a bonus feat, even if he does not meet the prerequisites. Both the asavir and her mount gain a +1 luck bonus on all saving throws.",
+    "zhCN": "At 10th level, an asavir gains Perfect Strike as a bonus feat, even if he does not meet the prerequisites. Both the asavir and her mount gain a +1 luck bonus on all saving throws."
   },
 
   {

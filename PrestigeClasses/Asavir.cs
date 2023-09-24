@@ -67,8 +67,7 @@ namespace PrestigePlus.PrestigeClasses
                 .AddToLevelEntry(9, InspiringLeaderFeat(), ShaitanBlessFeat())
                 .AddToLevelEntry(10, JanniBlessFeat())
                 .SetUIGroups(UIGroupBuilder.New()
-                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { ShaitanGuid, ShaitanBlessGuid })
-                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { DjinniGuid, DjinniGuid }))
+                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { DjinniGuid, ShaitanGuid, MaridGuid, MaridBlessGuid, JanniBlessGuid }))
                 .SetRanks(1)
                 .SetIsClassFeature(true)
                 .SetDisplayName(ArchetypeDisplayName)
@@ -119,7 +118,7 @@ namespace PrestigePlus.PrestigeClasses
         //"CavalierMobilityFeature": "272aa4cc-a738-4a69-92da-395f4fae3d22",
         public static BlueprintFeature EquineBondFeat()
         {
-            var icon = FeatureRefs.HunterAnimalFocus.Reference.Get().Icon;
+            var icon = FeatureRefs.CompanionBoon.Reference.Get().Icon;
 
             return FeatureConfigurator.New(EquineBond, EquineBondGuid)
               .SetDisplayName(EquineBondDisplayName)
@@ -211,6 +210,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddFeatureToPet(feat5)
+              .SetHideInUI(true)
               .Configure();
         }
 
@@ -264,6 +264,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddFeatureToPet(feat7)
+              .SetHideInUI(true)
               .Configure();
         }
 
@@ -496,9 +497,6 @@ namespace PrestigePlus.PrestigeClasses
               .Configure();
 
             var ability = AbilityConfigurator.New(InspiringLeaderAbility, InspiringLeaderAbilityGuid)
-                .CopyFrom(
-                AbilityRefs.DazzlingDisplayAction,
-                typeof(AbilitySpawnFx))
                 //.SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.EnchantWeapon)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                     .Conditional(ConditionsBuilder.New().IsCaster().Build(), ifFalse: ActionsBuilder.New()
@@ -553,7 +551,7 @@ namespace PrestigePlus.PrestigeClasses
 
         public static BlueprintFeature ThunderousChargeFeat()
         {
-            var icon = FeatureRefs.FavoredEnemyLargeFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.CavalierMightyCharge.Reference.Get().Icon;
 
             var action = ActionsBuilder.New()
                 .Conditional(ConditionsBuilder.New().CharacterClass(true, ArchetypeGuid, 1, false).CharacterClass(true, ArchetypeGuid, 6, true).Build(), ifTrue: ActionsBuilder.New().CastSpell(ThunderousChargeAbility1Guid).Build())
@@ -601,7 +599,7 @@ namespace PrestigePlus.PrestigeClasses
                 .SetDisplayName(ThunderousChargeDisplayName)
                 .SetDescription(ThunderousChargeDescription)
                 .SetIcon(icon)
-                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Enemy, radius: 5.Feet(), spreadSpeed: 5.Feet())
+                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Enemy, radius: 10.Feet(), spreadSpeed: 5.Feet())
                 //.AddComponent<CustomDC>(c => { c.classguid = ArchetypeGuid; c.Property = StatType.Charisma; })
                 .SetRange(AbilityRange.Personal)
                 .SetType(AbilityType.Special)
@@ -617,7 +615,7 @@ namespace PrestigePlus.PrestigeClasses
                 .SetDisplayName(ThunderousChargeDisplayName)
                 .SetDescription(ThunderousChargeDescription)
                 .SetIcon(icon)
-                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Enemy, radius: 10.Feet(), spreadSpeed: 5.Feet())
+                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Enemy, radius: 15.Feet(), spreadSpeed: 5.Feet())
                 //.AddComponent<CustomDC>(c => { c.classguid = ArchetypeGuid; c.Property = StatType.Charisma; })
                 .SetRange(AbilityRange.Personal)
                 .SetType(AbilityType.Special)
@@ -633,7 +631,7 @@ namespace PrestigePlus.PrestigeClasses
                 .SetDisplayName(ThunderousChargeDisplayName)
                 .SetDescription(ThunderousChargeDescription)
                 .SetIcon(icon)
-                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Enemy, radius: 20.Feet(), spreadSpeed: 5.Feet())
+                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Enemy, radius: 25.Feet(), spreadSpeed: 5.Feet())
                 //.AddComponent<CustomDC>(c => { c.classguid = ArchetypeGuid; c.Property = StatType.Charisma; })
                 .SetRange(AbilityRange.Personal)
                 .SetType(AbilityType.Special)
