@@ -1,4 +1,5 @@
-﻿using Kingmaker.Enums;
+﻿using Kingmaker.EntitySystem.Entities;
+using Kingmaker.Enums;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem;
 using Kingmaker.RuleSystem.Rules;
@@ -34,11 +35,12 @@ namespace PrestigePlus.Grapple
         public void OnEventAboutToTrigger(RuleCastSpell evt)
         {
             AbilityData spell = evt.Spell;
+            UnitEntityData unit = null;
             UnitPartGrappleTargetPP UnitPartGrappleTargetPP = base.Owner.Get<UnitPartGrappleTargetPP>();
-            if (UnitPartGrappleTargetPP == null || !UnitPartGrappleTargetPP.IsPinned)
-            {
-                return;
-            }
+            if (UnitPartGrappleTargetPP != null) { unit = UnitPartGrappleTargetPP.Initiator; }
+            UnitPartGrappleInitiatorPP UnitPartGrappleInitiatorPP = base.Owner.Get<UnitPartGrappleInitiatorPP>();
+            if (UnitPartGrappleInitiatorPP != null) { unit = UnitPartGrappleInitiatorPP.Target; }
+            if (unit == null) { return; }
             if (spell.Blueprint == null)
             {
                 return;
@@ -47,7 +49,7 @@ namespace PrestigePlus.Grapple
             {
                 return;
             }
-            RuleCalculateCMB ruleCalculateCMB = new RuleCalculateCMB(UnitPartGrappleTargetPP.Initiator, base.Owner, CombatManeuver.Grapple);
+            RuleCalculateCMB ruleCalculateCMB = new RuleCalculateCMB(unit, base.Owner, CombatManeuver.Grapple);
             Rulebook.Trigger<RuleCalculateCMB>(ruleCalculateCMB);
             int result = ruleCalculateCMB.Result;
             RuleCalculateAbilityParams ruleCalculateAbilityParams = new RuleCalculateAbilityParams(base.Owner, spell);

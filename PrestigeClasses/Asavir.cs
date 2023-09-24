@@ -66,6 +66,9 @@ namespace PrestigePlus.PrestigeClasses
                 .AddToLevelEntry(8, DjinniBlessFeat(), MaridBlessFeat())
                 .AddToLevelEntry(9, InspiringLeaderFeat(), ShaitanBlessFeat())
                 .AddToLevelEntry(10, JanniBlessFeat())
+                .SetUIGroups(UIGroupBuilder.New()
+                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { ShaitanGuid, ShaitanBlessGuid })
+                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { DjinniGuid, DjinniGuid }))
                 .SetRanks(1)
                 .SetIsClassFeature(true)
                 .SetDisplayName(ArchetypeDisplayName)
@@ -116,7 +119,7 @@ namespace PrestigePlus.PrestigeClasses
         //"CavalierMobilityFeature": "272aa4cc-a738-4a69-92da-395f4fae3d22",
         public static BlueprintFeature EquineBondFeat()
         {
-            var icon = AbilityRefs.AnimalGrowth.Reference.Get().Icon;
+            var icon = FeatureRefs.HunterAnimalFocus.Reference.Get().Icon;
 
             return FeatureConfigurator.New(EquineBond, EquineBondGuid)
               .SetDisplayName(EquineBondDisplayName)
@@ -144,6 +147,10 @@ namespace PrestigePlus.PrestigeClasses
                 .SetClasses(ArchetypeGuid)
                 .Configure();
 
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.DeitySelection.ToString())
+                .AddFacts(new() { FeatureRefs.MountTargetFeature.ToString() })
+                .Configure();
+
             return FeatureSelectionConfigurator.New(SummonBigAnimal2, SummonBigAnimalGuid2)
               .CopyFrom(
                 FeatureSelectionRefs.AnimalCompanionSelectionSylvanSorcerer)
@@ -164,14 +171,13 @@ namespace PrestigePlus.PrestigeClasses
         private static readonly string EquineBond4Guid = "{C862E371-C7DB-43AE-B7AD-63170A480D6A}";
         public static BlueprintFeature ShaitanFeat()
         {
-            var icon = AbilityRefs.Barkskin.Reference.Get().Icon;
+            var icon = AbilityRefs.RemoveFear.Reference.Get().Icon;
 
             var feat4 = FeatureConfigurator.New(EquineBond4, EquineBond4Guid)
               .SetDisplayName(ShaitanDisplayName)
               .SetDescription(ShaitanDescription)
               .SetIcon(icon)
-              .AddSavingThrowBonusAgainstDescriptor(ContextValues.Constant(2), spellDescriptor: SpellDescriptor.MindAffecting, modifierDescriptor: Kingmaker.Enums.ModifierDescriptor.Racial)
-              .AddSavingThrowBonusAgainstDescriptor(ContextValues.Constant(2), spellDescriptor: SpellDescriptor.Fear, modifierDescriptor: Kingmaker.Enums.ModifierDescriptor.Racial)
+              .AddSavingThrowBonusAgainstDescriptor(ContextValues.Constant(2), spellDescriptor: SpellDescriptor.MindAffecting, modifierDescriptor: ModifierDescriptor.Racial)
               .Configure();
 
             return FeatureConfigurator.New(Shaitan, ShaitanGuid)
@@ -190,14 +196,13 @@ namespace PrestigePlus.PrestigeClasses
         private static readonly string EquineBond5Guid = "{37CB53E9-6C4C-49CB-9EF0-1691459DFCE0}";
         public static BlueprintFeature ShaitanBlessFeat()
         {
-            var icon = AbilityRefs.Barkskin.Reference.Get().Icon;
+            var icon = AbilityRefs.RemoveFear.Reference.Get().Icon;
 
             var feat5 = FeatureConfigurator.New(EquineBond5, EquineBond5Guid)
               .SetDisplayName(ShaitanDisplayName)
               .SetDescription(ShaitanDescription)
               .SetIcon(icon)
-              .AddSavingThrowBonusAgainstDescriptor(ContextValues.Constant(4), spellDescriptor: SpellDescriptor.MindAffecting, modifierDescriptor: Kingmaker.Enums.ModifierDescriptor.Racial)
-              .AddSavingThrowBonusAgainstDescriptor(ContextValues.Constant(4), spellDescriptor: SpellDescriptor.Fear, modifierDescriptor: Kingmaker.Enums.ModifierDescriptor.Racial)
+              .AddSavingThrowBonusAgainstDescriptor(ContextValues.Constant(2), spellDescriptor: SpellDescriptor.MindAffecting, modifierDescriptor: ModifierDescriptor.Racial)
               .Configure();
 
             return FeatureConfigurator.New(ShaitanBless, ShaitanBlessGuid)
@@ -219,7 +224,7 @@ namespace PrestigePlus.PrestigeClasses
         private static readonly string EquineBond6Guid = "{9FF96DBE-FA76-486A-A0B0-41A7788862BA}";
         public static BlueprintFeature DjinniFeat()
         {
-            var icon = AbilityRefs.Barkskin.Reference.Get().Icon;
+            var icon = FeatureRefs.MountedCombat.Reference.Get().Icon;
 
             var feat6 = FeatureConfigurator.New(EquineBond6, EquineBond6Guid)
               .SetDisplayName(DjinniDisplayName)
@@ -244,7 +249,7 @@ namespace PrestigePlus.PrestigeClasses
         private static readonly string EquineBond7Guid = "{C3332C59-0E83-4F9B-9ABD-ED903D3A6827}";
         public static BlueprintFeature DjinniBlessFeat()
         {
-            var icon = AbilityRefs.Barkskin.Reference.Get().Icon;
+            var icon = FeatureRefs.MountedCombat.Reference.Get().Icon;
 
             var feat7 = FeatureConfigurator.New(EquineBond7, EquineBond7Guid)
               .SetDisplayName(DjinniDisplayName)
@@ -272,7 +277,7 @@ namespace PrestigePlus.PrestigeClasses
         private static readonly string EquineBond8Guid = "{F413EB1D-CBEC-4BA0-8F44-8AD7654B8B19}";
         public static BlueprintFeature MaridFeat()
         {
-            var icon = AbilityRefs.Barkskin.Reference.Get().Icon;
+            var icon = FeatureRefs.MountedShield.Reference.Get().Icon;
 
             var feat8 = FeatureConfigurator.New(EquineBond8, EquineBond8Guid)
               .SetDisplayName(MaridDisplayName)
@@ -297,11 +302,11 @@ namespace PrestigePlus.PrestigeClasses
         internal const string EfreetiDisplayName = "AsavirEfreeti.Name";
         private const string EfreetiDescription = "AsavirEfreeti.Description";
 
-        private const string EquineBond9 = "Asavir.EquineBond7";
+        private const string EquineBond9 = "Asavir.EquineBond9";
         private static readonly string EquineBond9Guid = "{1DD92609-BE11-4F83-9B99-D35F094B26AC}";
         public static BlueprintFeature MaridBlessFeat()
         {
-            var icon = AbilityRefs.Barkskin.Reference.Get().Icon;
+            var icon = AbilityRefs.AngelPhoenixGift.Reference.Get().Icon;
 
             var feat9 = FeatureConfigurator.New(EquineBond9, EquineBond9Guid)
               .SetDisplayName(EfreetiDisplayName)
@@ -314,8 +319,8 @@ namespace PrestigePlus.PrestigeClasses
               .Configure();
 
             return FeatureConfigurator.New(MaridBless, MaridBlessGuid)
-              .SetDisplayName(MaridDisplayName)
-              .SetDescription(MaridDescription)
+              .SetDisplayName(EfreetiDisplayName)
+              .SetDescription(EfreetiDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddFeatureToPet(feat9)
@@ -325,14 +330,14 @@ namespace PrestigePlus.PrestigeClasses
         private const string JanniBless = "Asavir.JanniBless";
         private static readonly string JanniBlessGuid = "{880C69F1-FB49-43DE-AF1A-9C9C40FB5EA8}";
 
-        private const string EquineBond1 = "Asavir.EquineBond7";
+        private const string EquineBond1 = "Asavir.EquineBond1";
         private static readonly string EquineBond1Guid = "{4EFE06D3-91E0-474D-A22E-1220010A7F7B}";
 
         internal const string JanniDisplayName = "AsavirJanni.Name";
         private const string JanniDescription = "AsavirJanni.Description";
         public static BlueprintFeature JanniBlessFeat()
         {
-            var icon = AbilityRefs.Barkskin.Reference.Get().Icon;
+            var icon = AbilityRefs.Bless.Reference.Get().Icon;
 
             var feat1 = FeatureConfigurator.New(EquineBond1, EquineBond1Guid)
               .SetDisplayName(JanniDisplayName)
@@ -405,12 +410,12 @@ namespace PrestigePlus.PrestigeClasses
         private const string AllEyesAbilityRes = "Asavir.AllEyesAbilityRes";
         private static readonly string AllEyesAbilityResGuid = "{16650270-7BAE-4258-9D8F-E850F2253F0A}";
 
-        private const string AllEyesBuff = "Asavir.AllEyes";
+        private const string AllEyesBuff = "Asavir.AllEyesBuff";
         private static readonly string AllEyesBuffGuid = "{220E113B-5204-4A41-986D-6A0FB3E2BAE8}";
 
         public static BlueprintFeature AllEyesFeat()
         {
-            var icon = FeatureRefs.FavoredEnemyLargeFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.Glitterdust.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(AllEyesAbilityRes, AllEyesAbilityResGuid)
                 .SetMaxAmount(
@@ -432,7 +437,7 @@ namespace PrestigePlus.PrestigeClasses
                 typeof(AbilitySpawnFx))
                 //.SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.EnchantWeapon)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-                    .SavingThrow(type: SavingThrowType.Will, customDC: ContextValues.Rank(), useDCFromContextSavingThrow: true,
+                    .SavingThrow(type: SavingThrowType.Will, useDCFromContextSavingThrow: true,
                     onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(Buff, ContextDuration.Fixed(1)).Build()).Build())
                     .Build())
                 .SetDisplayName(AllEyesDisplayName)
@@ -470,12 +475,12 @@ namespace PrestigePlus.PrestigeClasses
         private const string InspiringLeaderAbilityRes = "Asavir.InspiringLeaderAbilityRes";
         private static readonly string InspiringLeaderAbilityResGuid = "{7391923E-72D5-4413-92A2-45C0F0FD59D3}";
 
-        private const string InspiringLeaderBuff = "Asavir.InspiringLeader";
+        private const string InspiringLeaderBuff = "Asavir.InspiringLeaderBuff";
         private static readonly string InspiringLeaderBuffGuid = "{826BA996-7424-45F1-8DBA-0A7DBF49F750}";
 
         public static BlueprintFeature InspiringLeaderFeat()
         {
-            var icon = FeatureRefs.FavoredEnemyLargeFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.InspireHeroicsFeature.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(InspiringLeaderAbilityRes, InspiringLeaderAbilityResGuid)
                 .SetMaxAmount(
@@ -495,7 +500,11 @@ namespace PrestigePlus.PrestigeClasses
                 AbilityRefs.DazzlingDisplayAction,
                 typeof(AbilitySpawnFx))
                 //.SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.EnchantWeapon)
-                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(Buff, ContextDuration.Fixed(1)).Build())
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                    .Conditional(ConditionsBuilder.New().IsCaster().Build(), ifFalse: ActionsBuilder.New()
+                        .ApplyBuff(Buff, ContextDuration.Fixed(1))
+                        .Build())
+                    .Build())
                 .SetDisplayName(InspiringLeaderDisplayName)
                 .SetDescription(InspiringLeaderDescription)
                 .SetIcon(icon)
@@ -539,7 +548,7 @@ namespace PrestigePlus.PrestigeClasses
         private const string ThunderousChargeAbility3 = "Asavir.ThunderousChargeAbility3";
         private static readonly string ThunderousChargeAbility3Guid = "{D895EF5B-54D9-44BB-9C5D-17158AC40AD7}";
 
-        private const string ThunderousChargeBuff = "Asavir.ThunderousCharge";
+        private const string ThunderousChargeBuff = "Asavir.ThunderousChargeBuff";
         private static readonly string ThunderousChargeBuffGuid = "{8ABCBA5E-E12A-4962-AB5A-0AC43102DAB2}";
 
         public static BlueprintFeature ThunderousChargeFeat()

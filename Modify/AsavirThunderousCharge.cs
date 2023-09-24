@@ -22,6 +22,7 @@ namespace PrestigePlus.Modify
 {
     internal class AsavirThunderousCharge : ContextAction
     {
+        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus"); 
         public override string GetCaption()
         {
             return "Thunderous Charge";
@@ -29,37 +30,43 @@ namespace PrestigePlus.Modify
 
         public override void RunAction()
         {
-            UnitEntityData unit = base.Target.Unit;
-            if (unit == null)
+            try
             {
-                PFLog.Default.Error("Target unit is missing", Array.Empty<object>());
-                return;
-            }
-            UnitEntityData maybeCaster = base.Context.MaybeCaster;
-            if (maybeCaster == null || !maybeCaster.HasFact(BlueprintRoot.Instance.SystemMechanics.ChargeBuff))
-            {
-                PFLog.Default.Error("Caster is missing", Array.Empty<object>());
-                return;
-            }
-            UnitEntityData mount = maybeCaster.GetSaddledUnit();
-            if (mount != null) return;
-            int dc = mount.Stats.Strength.Bonus + 10 + maybeCaster.Descriptor.Progression.GetClassLevel(BlueprintTool.GetRef<BlueprintCharacterClassReference>(Asavir.ArchetypeGuid));
-            bool pass = GameHelper.TriggerSkillCheck(new RuleSkillCheck(unit, Kingmaker.EntitySystem.Stats.StatType.SaveReflex, dc)
-            {
-                IgnoreDifficultyBonusToDC = mount.IsPlayersEnemy
-            }, unit.Context, true).Success;
-            if (!pass)
-            {
-                if (unit.CanBeKnockedOff())
+                UnitEntityData unit = base.Target.Unit;
+                if (unit == null)
                 {
-                    unit.Descriptor.State.Prone.ShouldBeActive = true;
-                    EventBus.RaiseEvent(delegate (IKnockOffHandler h)
+                    Logger.Info("Target unit is missing");
+                    return;
+                }
+                UnitEntityData maybeCaster = base.Context.MaybeCaster;
+                if (maybeCaster == null || !maybeCaster.HasFact(BlueprintRoot.Instance.SystemMechanics.ChargeBuff))
+                {
+                    Logger.Info("Caster is missing or no charge");
+                    return;
+                }
+                UnitEntityData mount = maybeCaster.GetSaddledUnit();
+                if (mount != null) return;
+                int dc = mount.Stats.Strength.Bonus + 10 + maybeCaster.Descriptor.Progression.GetClassLevel(BlueprintTool.GetRef<BlueprintCharacterClassReference>(Asavir.ArchetypeGuid));
+                Logger.Info(dc.ToString());
+                bool pass = GameHelper.TriggerSkillCheck(new RuleSkillCheck(unit, Kingmaker.EntitySystem.Stats.StatType.SaveReflex, dc)
+                {
+                    IgnoreDifficultyBonusToDC = mount.IsPlayersEnemy
+                }, unit.Context, true).Success;
+                Logger.Info("skill check end");
+                if (!pass)
+                {
+                    Logger.Info("not pass");
+                    if (unit.CanBeKnockedOff())
                     {
-                        h.HandleKnockOff(maybeCaster, unit);
-                    }, true);
+                        unit.Descriptor.State.Prone.ShouldBeActive = true;
+                        EventBus.RaiseEvent(delegate (IKnockOffHandler h)
+                        {
+                            h.HandleKnockOff(maybeCaster, unit);
+                        }, true);
+                    }
                 }
             }
-
+            catch (Exception ex) { Logger.Error("Failed to thunder.", ex); }
 
         }
     }

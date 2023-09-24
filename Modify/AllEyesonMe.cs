@@ -28,17 +28,17 @@ namespace PrestigePlus.Modify
 
         void IRulebookHandler<RuleCheckTargetFlatFooted>.OnEventAboutToTrigger(RuleCheckTargetFlatFooted evt)
         {
-            throw new NotImplementedException();
-        }
-
-        void IRulebookHandler<RuleCalculateAC>.OnEventDidTrigger(RuleCalculateAC evt)
-        {
             UnitEntityData maybeCaster = base.Buff.Context.MaybeCaster;
             if (maybeCaster == null || evt.Initiator == null || maybeCaster == evt.Initiator)
             {
                 return;
             }
             evt.ForceFlatFooted = true;
+        }
+
+        void IRulebookHandler<RuleCalculateAC>.OnEventDidTrigger(RuleCalculateAC evt)
+        {
+            
         }
 
         void IRulebookHandler<RuleCheckTargetFlatFooted>.OnEventDidTrigger(RuleCheckTargetFlatFooted evt)
