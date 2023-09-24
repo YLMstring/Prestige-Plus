@@ -237,8 +237,9 @@ namespace PrestigePlus.PrestigeClasses
               .SetDisplayName(SanguineAngelAngelDeathDisplayName)
               .SetDescription(SanguineAngelAngelDeathDescription)
               .SetIcon(icon)
-              .AddFacts(new() { FeatureRefs.OutsiderType.ToString(), FeatureRefs.SubtypeEvil.ToString(), FeatureRefs.SubtypeLawful.ToString(), BuffRefs.SeeInvisibilitytBuff.ToString(), BuffRefs.WingsAngelBlack.ToString(), ability })
+              .AddFacts(new() { FeatureRefs.OutsiderType.ToString(), FeatureRefs.SubtypeEvil.ToString(), FeatureRefs.SubtypeLawful.ToString(), BuffRefs.WingsAngelBlack.ToString() })
               .AddBuffMovementSpeed(value: 20)
+              .AddAuraFeatureComponent(BuffRefs.SeeInvisibilitytBuff.ToString())
               .AddDamageResistanceEnergy(healOnDamage: false, value: ContextValues.Constant(30), type: Kingmaker.Enums.Damage.DamageEnergyType.Fire)
               .AddPrerequisiteFeature(FeatureRefs.PreciseShot.ToString())
               .Configure();
