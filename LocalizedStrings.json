@@ -2985,8 +2985,8 @@
     // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
     // links to encycolpedia pages.
     "ProcessTemplates": false,
-    "enGB": "Bond of Genie",
-    "zhCN": "Bond of Genie"
+    "enGB": "Bond of Genies",
+    "zhCN": "Bond of Genies"
   },
 
   {
