@@ -34,6 +34,7 @@ using Kingmaker.Utility;
 using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic;
 using BlueprintCore.Blueprints.CustomConfigurators;
+using Pathfinding.Voxels;
 
 namespace PrestigePlus.PrestigeClasses
 {
@@ -61,7 +62,7 @@ namespace PrestigePlus.PrestigeClasses
                 .AddToLevelEntry(3, FeatureRefs.AuraOfCourageFeature.ToString(), FeatureRefs.MythicIgnoreAlignmentRestrictions.ToString())
                 .AddToLevelEntry(4, DjinniFeat(), CreateControllCharge())
                 .AddToLevelEntry(5)
-                .AddToLevelEntry(6, MaridFeat(), FeatureRefs.Trample.ToString())
+                .AddToLevelEntry(6, MaridFeat(), SummonTrampleSelection())
                 .AddToLevelEntry(7, AllEyesFeat())
                 .AddToLevelEntry(8, DjinniBlessFeat(), MaridBlessFeat())
                 .AddToLevelEntry(9, InspiringLeaderFeat(), ShaitanBlessFeat())
@@ -645,6 +646,52 @@ namespace PrestigePlus.PrestigeClasses
               .SetIsClassFeature(true)
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string SummonBigTrample2 = "Asavir.SummonBigTrample2";
+        private static readonly string SummonBigTrampleGuid2 = "{D26E55CB-5979-44AE-BDE2-DDBCE3C6BAA5}";
+
+        internal const string SummonBigTrample2DisplayName = "AsavirSummonBigTrample2.Name";
+        private const string SummonBigTrample2Description = "AsavirSummonBigTrample2.Description";
+
+        private const string SummonBigTrample = "Asavir.SummonBigTrample";
+        private static readonly string SummonBigTrampleGuid = "{275FE548-1359-40C9-85E9-610BCC892392}";
+
+        private const string SummonBigTrample1 = "Asavir.SummonBigTrample1";
+        private static readonly string SummonBigTrample1Guid = "{03FECF1C-4B49-4DC7-96C2-FC97F9849E82}";
+
+        internal const string SummonBigTrampleDisplayName = "AsavirSummonBigTrample.Name";
+        private const string SummonBigTrampleDescription = "AsavirSummonBigTrample.Description";
+
+        public static BlueprintFeatureSelection SummonTrampleSelection()
+        {
+            var icon = FeatureRefs.Trample.Reference.Get().Icon;
+
+            var feat1 = FeatureConfigurator.New(SummonBigTrample1, SummonBigTrample1Guid)
+              .SetDisplayName(SummonBigTrampleDisplayName)
+              .SetDescription(SummonBigTrampleDescription)
+              .SetIcon(icon)
+              .AddCMBBonusForManeuver(maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.Overrun }, value: ContextValues.Constant(4))
+              .Configure();
+
+            var feat = FeatureConfigurator.New(SummonBigTrample, SummonBigTrampleGuid)
+              .SetDisplayName(SummonBigTrampleDisplayName)
+              .SetDescription(SummonBigTrampleDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddPrerequisiteFeature(FeatureRefs.Trample.ToString())
+              .AddFeatureToPet(feat1)
+              .Configure();
+
+            return FeatureSelectionConfigurator.New(SummonBigTrample2, SummonBigTrampleGuid2)
+              .SetDisplayName(SummonBigTrample2DisplayName)
+              .SetDescription(SummonBigTrample2Description)
+              .SetIcon(icon)
+              .SetIgnorePrerequisites(false)
+              .SetObligatory(false)
+              .AddToAllFeatures(FeatureRefs.Trample.ToString())
+              .AddToAllFeatures(feat)
               .Configure();
         }
     }

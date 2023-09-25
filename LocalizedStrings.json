@@ -2933,5 +2933,65 @@
     "Key": "AsavirThunderousCharge.Description",
     "enGB": "At 2nd level, a number of times per day equal to her asavir level, an asavir and her mount can make a charge that causes the ground to shake. This is a full-round action and works as a normal charge. Enemies within a 5-foot radius of the charge’s ending point must succeed at a Reflex save (DC = 10 + the asavir’s class level + the mount’s Strength modifier) or fall prone. At 6th level, the radius of thunderous charge increases to 10 feet, and at 10th level it increases to 20 feet.",
     "zhCN": "At 2nd level, a number of times per day equal to her asavir level, an asavir and her mount can make a charge that causes the ground to shake. This is a full-round action and works as a normal charge. Enemies within a 5-foot radius of the charge’s ending point must succeed at a Reflex save (DC = 10 + the asavir’s class level + the mount’s Strength modifier) or fall prone. At 6th level, the radius of thunderous charge increases to 10 feet, and at 10th level it increases to 20 feet."
+  },
+
+  {
+    "Key": "AsavirSummonBigTrample.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Improved Trample",
+    "zhCN": "Improved Trample"
+  },
+
+  {
+    "Key": "AsavirSummonBigTrample.Description",
+    "enGB": "The asavir’s mount receive a +4 bonus on checks made to overrun a foe.",
+    "zhCN": "The asavir’s mount receive a +4 bonus on checks made to overrun a foe."
+  },
+
+  {
+    "Key": "AsavirSummonBigTrample2.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Trampling Gallop",
+    "zhCN": "Trampling Gallop"
+  },
+
+  {
+    "Key": "AsavirSummonBigTrample2.Description",
+    "enGB": "At 6th level, an asavir’s mount gains better trample ability.",
+    "zhCN": "At 6th level, an asavir’s mount gains better trample ability."
+  },
+
+  {
+    "Key": "TrampleMythic.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Trample (Mythic)",
+    "zhCN": "Trample (Mythic)"
+  },
+
+  {
+    "Key": "TrampleMythic.Description",
+    "enGB": "You can use Trample as a move action.",
+    "zhCN": "You can use Trample as a move action."
+  },
+
+  {
+    "Key": "BondGenie.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Bond of Genie",
+    "zhCN": "Bond of Genie"
+  },
+
+  {
+    "Key": "BondGenie.Description",
+    "enGB": "You can mount any party member.",
+    "zhCN": "You can mount any party member."
   }
 ]

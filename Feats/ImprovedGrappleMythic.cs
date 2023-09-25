@@ -31,6 +31,7 @@ namespace PrestigePlus.Feats
                     .AddCMBBonusForManeuver(maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple }, value: ContextValues.Rank())
                     .AddCMDBonusAgainstManeuvers(maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple }, value: ContextValues.Rank())
                     .AddContextRankConfig(ContextRankConfigs.MythicLevel().WithDiv2Progression())
+                    .AddToFeatureSelection("0d3a3619-9d99-47af-8e47-cb6cc4d26821") //ttt
                     .Configure();
         }
     }

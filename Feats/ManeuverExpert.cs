@@ -29,7 +29,9 @@ namespace PrestigePlus.Feats
                     .SetIcon(icon)
                     .AddBuffAllSavesBonus(Kingmaker.Enums.ModifierDescriptor.Penalty, -1)
                     .AddFacts( new() { FeatureRefs.ImprovedBullRush.ToString(), FeatureRefs.ImprovedDirtyTrick.ToString(), FeatureRefs.ImprovedDisarm.ToString(), FeatureRefs.ImprovedSunder.ToString(), FeatureRefs.ImprovedTrip.ToString(),
-                    FeatureRefs.GreaterBullRush.ToString(), FeatureRefs.GreaterDirtyTrick.ToString(), FeatureRefs.GreaterDisarm.ToString(), FeatureRefs.GreaterSunder.ToString(), FeatureRefs.GreaterTrip.ToString(), ImprovedGrapple.StyleGuid, GreaterGrapple.FeatGuid})
+                    FeatureRefs.GreaterBullRush.ToString(), FeatureRefs.GreaterDirtyTrick.ToString(), FeatureRefs.GreaterDisarm.ToString(), FeatureRefs.GreaterSunder.ToString(), FeatureRefs.GreaterTrip.ToString(), ImprovedGrapple.StyleGuid, GreaterGrapple.FeatGuid,
+                    FeatureRefs.ImprovedOverrun.ToString(), AbilityRefs.OverrunAbility.ToString()})
+                    .AddToFeatureSelection("0d3a3619-9d99-47af-8e47-cb6cc4d26821") //ttt
                     .Configure();
         }
     }
