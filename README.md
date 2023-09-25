@@ -29,7 +29,7 @@
 #### Homebrew Options:  
 - Storm of Arrows: a mythic ability to increase the number of uses of Hail of Arrows!
 ### [Asavir Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/a-b/asavir/)   
-- Thanks to bittercranberry for his aid another and camaraderie (which is in the next [EC update](https://github.com/ka-dyn/ExpandedContent))!
+- Thanks to bittercranberry for his aid another and camaraderie (in the next [EC update](https://github.com/ka-dyn/ExpandedContent) which it requires)!
 - Share your pet with Djinni’s Blessing!
 - Trample (Mythic): a mythic feat inspired by tabletop abilities of the same name! (notice that owlcat trample works differently from tabletop)
 #### Homebrew Options:  
