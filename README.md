@@ -1,8 +1,8 @@
-# Prestige Plus v1.1.0 for WoTR 
+# Prestige Plus v1.2.0 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - Add Grapple Mechanic!
-- Add Agent of the Grave, Arcane Archer, Deadeye Devotee, Chevalier, Hinterlander, Horizon Walker, Inheritor’s Crusader, Mammoth Rider, Sanguine Angel, Scar Seeker, Shadowdancer, Umbral Agent prestige class. More coming soon!
+- Add Agent of the Grave, Arcane Archer, Asavir, Deadeye Devotee, Chevalier, Hinterlander, Horizon Walker, Inheritor’s Crusader, Mammoth Rider, Sanguine Angel, Scar Seeker, Shadowdancer, Umbral Agent prestige class. More coming soon!
 - Apart from some minor tweaks, all the homebrew stuff are optional.
 - And they are togglable now!
 
@@ -28,6 +28,12 @@
 - And we have [Deadeye Devotee](https://aonprd.com/ArchetypeDisplay.aspx?FixedName=Arcane%20Archer%20Deadeye%20Devotee)!
 #### Homebrew Options:  
 - Storm of Arrows: a mythic ability to increase the number of uses of Hail of Arrows!
+### [Asavir Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/a-b/asavir/)   
+- Thanks to bittercranberry for his aid another and camaraderie (which is in the next [EC update](https://github.com/ka-dyn/ExpandedContent))!
+- Share your pet with Djinni’s Blessing!
+- Trample (Mythic): a mythic feat inspired by tabletop abilities of the same name! (notice that owlcat trample works differently from tabletop)
+#### Homebrew Options:  
+- Bond of Genies: a mythic ability to mount any party member!
 ### [Chevalier Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/c-d/chevalier/)
 - The class has only 3 levels.
 ### [Horizon Walker Class](https://www.d20pfsrd.com/classes/prestige-classes/apg/horizon-walker/)
