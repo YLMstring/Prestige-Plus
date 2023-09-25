@@ -2976,8 +2976,8 @@
 
   {
     "Key": "TrampleMythic.Description",
-    "enGB": "You can use Trample as a move action.",
-    "zhCN": "You can use Trample as a move action."
+    "enGB": "You can use Trample or Overrun as a move action.",
+    "zhCN": "You can use Trample or Overrun as a move action."
   },
 
   {
