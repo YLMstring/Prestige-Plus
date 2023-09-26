@@ -147,9 +147,9 @@ namespace PrestigePlus.PrestigeClasses
                 .SetClasses(ArchetypeGuid)
                 .Configure();
 
-            FeatureSelectionConfigurator.For(FeatureSelectionRefs.DeitySelection.ToString())
-                .AddFacts(new() { FeatureRefs.MountTargetFeature.ToString() })
-                .Configure();
+            //FeatureSelectionConfigurator.For(FeatureSelectionRefs.DeitySelection.ToString())
+                //.AddFacts(new() { FeatureRefs.MountTargetFeature.ToString() })
+                //.Configure();
 
             return FeatureSelectionConfigurator.New(SummonBigAnimal2, SummonBigAnimalGuid2)
               .CopyFrom(
@@ -218,6 +218,12 @@ namespace PrestigePlus.PrestigeClasses
         private const string Djinni = "Asavir.Djinni";
         private static readonly string DjinniGuid = "{D2806EDF-9FE1-4748-A189-0EF330E61E2F}";
 
+        private const string DjinniBuff = "Asavir.DjinniBuff";
+        private static readonly string DjinniBuffGuid = "{DE2DBC9B-77AC-448C-A26F-F438C6EF7D72}";
+
+        private const string DjinniAbility = "Asavir.DjinniAbility";
+        private static readonly string DjinniAbilityGuid = "{0A106946-66F9-4EA4-B177-86FFC2142D61}";
+
         internal const string DjinniDisplayName = "AsavirDjinni.Name";
         private const string DjinniDescription = "AsavirDjinni.Description";
 
@@ -234,12 +240,44 @@ namespace PrestigePlus.PrestigeClasses
               .AddBuffMovementSpeed(value: 10)
               .Configure();
 
+            var Buff1 = BuffConfigurator.New(DjinniBuff, DjinniBuffGuid)
+             .SetDisplayName(DjinniDisplayName)
+             .SetDescription(DjinniDescription)
+             .SetIcon(icon)
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+             .AddFacts(new() { FeatureRefs.MountTargetFeature.ToString() })
+             .Configure();
+
+            var ability = AbilityConfigurator.New(DjinniAbility, DjinniAbilityGuid)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Point)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                    .Conditional(conditions: ConditionsBuilder.New().HasFact(Buff1).Build(),
+                    ifFalse: ActionsBuilder.New()
+                        .ApplyBuffPermanent(Buff1)
+                        .Build(),
+                    ifTrue: ActionsBuilder.New()
+                        .RemoveBuff(Buff1)
+                        .Build())
+                    .Build())
+                .SetDisplayName(DjinniDisplayName)
+                .SetDescription(DjinniDescription)
+                .SetIcon(icon)
+                .SetRange(AbilityRange.Close)
+                .SetType(AbilityType.Special)
+                .SetCanTargetEnemies(false)
+                .SetCanTargetFriends(true)
+                .SetCanTargetPoint(false)
+                .SetCanTargetSelf(false)
+                .Configure();
+
             return FeatureConfigurator.New(Djinni, DjinniGuid)
               .SetDisplayName(DjinniDisplayName)
               .SetDescription(DjinniDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddFeatureToPet(feat6)
+              .AddFacts(new() { ability })
               .Configure();
         }
 

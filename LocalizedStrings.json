@@ -2993,5 +2993,35 @@
     "Key": "BondGenie.Description",
     "enGB": "You can mount any party member.",
     "zhCN": "You can mount any party member."
+  },
+
+  {
+    "Key": "ThroatSlicer.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Throat Slicer",
+    "zhCN": "Throat Slicer"
+  },
+
+  {
+    "Key": "ThroatSlicer.Description",
+    "enGB": "When using a one-handed, light, or natural weapon, you can deliver a coup de grace to an unconscious, bound, or pinned target as a standard action.",
+    "zhCN": "When using a one-handed, light, or natural weapon, you can deliver a coup de grace to an unconscious, bound, or pinned target as a standard action."
+  },
+
+  {
+    "Key": "CrabKing.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Crab King",
+    "zhCN": "Crab King"
+  },
+
+  {
+    "Key": "CrabKing.Description",
+    "enGB": "Master gains a +2 bonus on CMB checks to start and maintain a grapple.",
+    "zhCN": "Master gains a +2 bonus on CMB checks to start and maintain a grapple."
   }
 ]

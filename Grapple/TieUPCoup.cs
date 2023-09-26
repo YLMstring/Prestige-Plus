@@ -1,5 +1,9 @@
-﻿using HarmonyLib;
+﻿using BlueprintCore.Utils;
+using HarmonyLib;
+using Kingmaker.Blueprints;
+using Kingmaker.EntitySystem.Entities;
 using Kingmaker.GameModes;
+using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Abilities.Components.TargetCheckers;
 using Kingmaker.Utility;
 using System;
@@ -13,8 +17,16 @@ namespace PrestigePlus.Grapple
     [HarmonyPatch(typeof(AbilityTargetHasConditionOrBuff), nameof(AbilityTargetHasConditionOrBuff.IsTargetRestrictionPassed))]
     internal class TieUPCoup
     {
-        static void Postfix(ref bool __result, ref AbilityTargetHasConditionOrBuff __instance, ref TargetWrapper target)
+        static void Postfix(ref bool __result, ref AbilityTargetHasConditionOrBuff __instance, ref TargetWrapper target, ref UnitEntityData caster)
         {
+            if (caster == null) { return; }
+            var weapon = caster.GetThreatHandMelee();
+            if (weapon == null) { return; }
+            if (caster.HasFact(SlicerBuff) && weapon.Weapon.Blueprint.IsTwoHanded)
+            {
+                __result = false;
+                return;
+            }
             if (__instance.Condition != Kingmaker.UnitLogic.UnitCondition.Helpless) 
             {
                 return;
@@ -23,11 +35,18 @@ namespace PrestigePlus.Grapple
             {
                 return;
             }
-            if (!target.Unit.Descriptor.Get<UnitPartGrappleTargetPP>().IsTiedUp)
+            if (target.Unit.Descriptor.Get<UnitPartGrappleTargetPP>().IsTiedUp)
             {
+                __result = true;
                 return;
             }
-            __result = true; 
+            if (caster.HasFact(SlicerBuff) && target.Unit.Descriptor.Get<UnitPartGrappleTargetPP>().IsPinned)
+            {
+                __result = true;
+                return;
+            }
         }
+
+        private static BlueprintBuffReference SlicerBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{2D59E73D-3E3A-448A-9ECB-0EAB89AD4009}");
     }
 }

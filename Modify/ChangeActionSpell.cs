@@ -22,11 +22,17 @@ namespace PrestigePlus.Modify
     {
         public BlueprintAbility Ability;
         public CommandType Type;
+        public bool CancelFullRound = false;
 
         // Token: 0x0600C12A RID: 49450 RVA: 0x00325827 File Offset: 0x00323A27
         public override void OnTurnOn()
         {
-            base.Owner.Ensure<UnitPartAbilityModifiers>().AddEntry(new UnitPartAbilityModifiers.ActionEntry(base.Fact, Type, this.Ability));
+            var entry = new UnitPartAbilityModifiers.ActionEntry(base.Fact, Type, this.Ability);
+            if (CancelFullRound)
+            {
+                entry.RequireFullRound = false;
+            }
+            base.Owner.Ensure<UnitPartAbilityModifiers>().AddEntry(entry);
         }
 
         // Token: 0x0600C12B RID: 49451 RVA: 0x0032584B File Offset: 0x00323A4B
