@@ -3015,13 +3015,28 @@
     // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
     // links to encycolpedia pages.
     "ProcessTemplates": false,
-    "enGB": "Crab King",
-    "zhCN": "Crab King"
+    "enGB": "Crab King Familiar",
+    "zhCN": "Crab King Familiar"
   },
 
   {
     "Key": "CrabKing.Description",
     "enGB": "Master gains a +2 bonus on CMB checks to start and maintain a grapple.",
     "zhCN": "Master gains a +2 bonus on CMB checks to start and maintain a grapple."
+  },
+
+  {
+    "Key": "RippleWater.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Ripple in Still Water",
+    "zhCN": "Ripple in Still Water"
+  },
+
+  {
+    "Key": "RippleWater.Description",
+    "enGB": "Your kineticist levels and your monk levels stack for determining the number of points in your ki pool each day and the base damage of your kinetic blasts. In addition, you do not provoke attacks of opportunity for using your kinetic blast while threatened",
+    "zhCN": "Your kineticist levels and your monk levels stack for determining the number of points in your ki pool each day and the base damage of your kinetic blasts. In addition, you do not provoke attacks of opportunity for using your kinetic blast while threatened"
   }
 ]

@@ -322,6 +322,7 @@ namespace PrestigePlus.PrestigeClasses
                 .SetDescription(UmbralAgentShadowChains2Description)
                 .SetIcon(icon)
                 .SetFlags(BlueprintBuff.Flags.HiddenInUi)
+                .AddReplaceSingleCombatManeuverStat(statType: StatType.Wisdom, type: Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple)
                 .Configure();
 
             var ability3 = ActivatableAbilityConfigurator.New(ShadowChains2Ability, ShadowChains2AbilityGuid)
@@ -335,7 +336,7 @@ namespace PrestigePlus.PrestigeClasses
             FeatureConfigurator.New(ShadowChains2, ShadowChains2Guid)
               .SetDisplayName(UmbralAgentShadowChains2DisplayName)
               .SetDescription(UmbralAgentShadowChains2Description)
-            .SetIcon(icon)
+              .SetIcon(icon)
               .AddFacts(new() { ability3, PinAbilityGuid1, TieUpAbilityGuid, ReadyAbilityGuid, ReleaseAbilityGuid })
               .AddIncreaseResourceAmount(AbilityResourceRefs.DarknessDomainBaseResource.ToString(), 1)
               .AddComponent<AddStatBonus>(c => {
@@ -343,7 +344,6 @@ namespace PrestigePlus.PrestigeClasses
                   c.Value = 5;
                   c.Descriptor = ModifierDescriptor.Feat;
               })
-
               .Configure();
 
             FeatureConfigurator.New(ShadowChains3, ShadowChains3Guid)

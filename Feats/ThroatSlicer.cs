@@ -37,7 +37,7 @@ namespace PrestigePlus.Feats
               .SetDescription(Description)
               .SetIcon(icon)
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-              .AddComponent<ChangeActionSpell>(a => { a.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>(AbilityRefs.CoupDeGraceAbility.ToString()); a.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard; a.CancelFullRound = true; })
+              //.AddComponent<ChangeActionSpell>(a => { a.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>(AbilityRefs.CoupDeGraceAbility.ToString()); a.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard; a.CancelFullRound = true; })
               .Configure();
 
             var abilityTrick = ActivatableAbilityConfigurator.New(ThroatSlicerAbility, ThroatSlicerAbilityGuid)
@@ -55,6 +55,7 @@ namespace PrestigePlus.Feats
                     .SetIcon(icon)
                     .AddPrerequisiteStatValue(StatType.BaseAttackBonus, 1)
                     .AddFacts(new() { abilityTrick })
+                    //.AddComponent<ChangeActionSpell>(a => { a.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>(AbilityRefs.CoupDeGraceAbility.ToString()); a.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard; a.CancelFullRound = true; })
                     .AddToGroups(Kingmaker.Blueprints.Classes.FeatureGroup.CombatFeat)
                     .Configure();
         }
