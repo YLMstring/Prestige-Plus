@@ -57,18 +57,26 @@ namespace PrestigePlus.Feats
               .AddToLevelEntry(20)
               .Configure();
 
-            FeatureSelectionConfigurator.New(FeatName, FeatGuid, Kingmaker.Blueprints.Classes.FeatureGroup.Feat)
+            var feat = FeatureSelectionConfigurator.New(FeatName, FeatGuid)
                     .SetDisplayName(DisplayName)
                     .SetDescription(Description)
                     .SetIcon(icon)
                     .AddPrerequisiteClassLevel(CharacterClassRefs.KineticistClass.ToString(), 1)
                     .AddPrerequisiteFeature(FeatureRefs.KiPowerFeature.ToString())
                     .AddToAllFeatures(pro)
+                    //.AddToAllFeatures(FeatureRefs.ImprovedBullRush.ToString())
+                    //.AddToAllFeatures(FeatureRefs.ImprovedTrip.ToString())
+                    //.AddFacts(new() { pro })
                     .AddPointBlankMaster(Kingmaker.Enums.WeaponCategory.KineticBlast)
                     .AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.KiPowerResource.ToString(), ContextValues.Rank())
                     .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.KineticistClass.ToString() }).WithOnePlusDiv2Progression())
-                    .AddToGroups(Kingmaker.Blueprints.Classes.FeatureGroup.CombatFeat)
+                    //.AddToGroups(Kingmaker.Blueprints.Classes.FeatureGroup.Feat)
+                    //.AddToGroups(Kingmaker.Blueprints.Classes.FeatureGroup.CombatFeat)
                     .Configure();
+
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.BasicFeatSelection)
+                .AddToAllFeatures(feat)
+                .Configure();
         }
     }
 }

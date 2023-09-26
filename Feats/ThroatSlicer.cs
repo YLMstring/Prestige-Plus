@@ -1,10 +1,16 @@
-﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
+﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
+using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
+using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
+using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints;
 using Kingmaker.EntitySystem.Stats;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.UnitLogic.Abilities.Components;
 using PrestigePlus.Grapple;
 using PrestigePlus.Modify;
 using System;
@@ -40,13 +46,23 @@ namespace PrestigePlus.Feats
               //.AddComponent<ChangeActionSpell>(a => { a.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>(AbilityRefs.CoupDeGraceAbility.ToString()); a.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard; a.CancelFullRound = true; })
               .Configure();
 
-            var abilityTrick = ActivatableAbilityConfigurator.New(ThroatSlicerAbility, ThroatSlicerAbilityGuid)
+            var sword = ActionsBuilder.New()
+                .ApplyBuff(BuffThroatSlicer, ContextDuration.Fixed(1), toCaster: true)
+                .CastSpell(AbilityRefs.CoupDeGraceAbility.ToString())
+                .Build();
+
+            var abilityTrick = AbilityConfigurator.New(ThroatSlicerAbility, ThroatSlicerAbilityGuid)
                 .SetDisplayName(DisplayName)
                 .SetDescription(Description)
                 .SetIcon(icon)
-                .SetBuff(BuffThroatSlicer)
-                .SetDeactivateImmediately()
-                .SetIsOnByDefault(true)
+                //.SetBuff(BuffThroatSlicer)
+                .AddAbilityEffectRunAction(sword)
+                .SetType(AbilityType.Physical)
+                .SetCanTargetEnemies(true)
+                .SetCanTargetSelf(false)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.CoupDeGrace)
+                .SetRange(AbilityRange.Weapon)
+                .AddAbilityRequirementHasItemInHands(type: AbilityRequirementHasItemInHands.RequirementType.HasMeleeWeapon)
                 .Configure();
 
             FeatureConfigurator.New(FeatName, FeatGuid, Kingmaker.Blueprints.Classes.FeatureGroup.Feat)
