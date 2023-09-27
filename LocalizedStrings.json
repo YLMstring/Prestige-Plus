@@ -3038,5 +3038,94 @@
     "Key": "RippleWater.Description",
     "enGB": "Your kineticist levels and your monk levels stack for determining the number of points in your ki pool each day and the base damage of your kinetic blasts. In addition, you do not provoke attacks of opportunity for using your kinetic blast while threatened.",
     "zhCN": "Your kineticist levels and your monk levels stack for determining the number of points in your ki pool each day and the base damage of your kinetic blasts. In addition, you do not provoke attacks of opportunity for using your kinetic blast while threatened."
+  },
+
+  {
+    "Key": "Disarm.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Disarm (Next)",
+    "zhCN": "Disarm (Next)"
+  },
+
+  {
+    "Key": "Disarm.Description",
+    "enGB": "You can attempt to disarm your opponent in place of your next melee attack in a full-round attack.",
+    "zhCN": "You can attempt to disarm your opponent in place of your next melee attack in a full-round attack."
+  },
+
+  {
+    "Key": "Disarm2.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Disarm (All)",
+    "zhCN": "Disarm (All)"
+  },
+
+  {
+    "Key": "Disarm2.Description",
+    "enGB": "You can attempt to disarm your opponent in place of your melee attacks in a full-round attack.",
+    "zhCN": "You can attempt to disarm your opponent in place of your melee attacks in a full-round attack."
+  },
+
+  {
+    "Key": "Sunder.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Sunder (Next)",
+    "zhCN": "Sunder (Next)"
+  },
+
+  {
+    "Key": "Sunder.Description",
+    "enGB": "You can attempt to Sunder your opponent's armor in place of your next melee attack in a full-round attack.",
+    "zhCN": "You can attempt to Sunder your opponent's armor in place of your next melee attack in a full-round attack."
+  },
+
+  {
+    "Key": "Sunder2.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Sunder (All)",
+    "zhCN": "Sunder (All)"
+  },
+
+  {
+    "Key": "Sunder2.Description",
+    "enGB": "You can attempt to Sunder your opponent's armor in place of your melee attacks in a full-round attack.",
+    "zhCN": "You can attempt to Sunder your opponent's armor in place of your melee attacks in a full-round attack."
+  },
+  {
+    "Key": "Trip.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Trip (Next)",
+    "zhCN": "Trip (Next)"
+  },
+
+  {
+    "Key": "Trip.Description",
+    "enGB": "You can attempt to Trip your opponent in place of your next melee attack in a full-round attack.",
+    "zhCN": "You can attempt to Trip your opponent in place of your next melee attack in a full-round attack."
+  },
+
+  {
+    "Key": "Trip2.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Trip (All)",
+    "zhCN": "Trip (All)"
+  },
+
+  {
+    "Key": "Trip2.Description",
+    "enGB": "You can attempt to Trip your opponent in place of your melee attacks in a full-round attack.",
+    "zhCN": "You can attempt to Trip your opponent in place of your melee attacks in a full-round attack."
   }
 ]

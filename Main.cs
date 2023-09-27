@@ -14,6 +14,7 @@ using System.Text;
 using PrestigePlus.Grapple;
 using Kingmaker.Controllers.Units;
 using Kingmaker.GameModes;
+using PrestigePlus.Maneuvers;
 
 namespace PrestigePlus
 {
@@ -143,7 +144,7 @@ namespace PrestigePlus
           }
           Initialized = true;
 
-                    Logger.Info("Configuring blueprints.");
+                    Logger.Info("Configuring blueprints."); ReplaceAttack.DisarmConfigure(); ReplaceAttack.SunderConfigure(); ReplaceAttack.TripConfigure();
                     SpellbookReplace.Select(); SpellbookLevelUp.Select(); ImbueArrow.Configure(); ShadowDancer.CreateProficiencies(); ShadowDancer.ExtraShadowJump(); ShadowDancer.ExtraFeat();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("grapple"))) { ImprovedGrapple.StyleConfigure(); ImprovedGrappleMythic.Configure(); GreaterGrapple.Configure(); ManeuverExpert.Configure(); RapidGrappler.Configure(); UnfairGrip.Configure(); PinningKnockout.Configure(); PinningRend.Configure(); SavageSlam.Configure(); UncannyGrapple.Configure(); HamatulaStrike.Configure(); DramaticSlam.Configure(); KnotExpert.Configure(); AerialAssault.Configure(); MeatShield.Configure(); ThroatSlicer.Configure(); CrabKing.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("grave"))) AgentoftheGrave.Configure();
