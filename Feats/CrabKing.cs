@@ -29,5 +29,24 @@ namespace PrestigePlus.Feats
                     .AddCMBBonusForManeuver(maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple }, value: ContextValues.Constant(2))
                     .Configure();
         }
+
+        private static readonly string Feat2Name = "Tentacle";
+        private static readonly string Feat2Guid = "{2C36C615-58FF-4C1A-B9E9-F0261B6006A1}";
+
+        private static readonly string DisplayName2 = "TentacleGrab.Name";
+        private static readonly string Description2 = "TentacleGrab.Description";
+
+        public static void Configure2()
+        {
+            var icon = FeatureRefs.PoisonImmunity.Reference.Get().Icon;
+
+            FeatureConfigurator.New(Feat2Name, Feat2Guid, Kingmaker.Blueprints.Classes.FeatureGroup.Discovery)
+                    .SetDisplayName(DisplayName2)
+                    .SetDescription(Description2)
+                    .SetIcon(icon)
+                    .AddCMBBonusForManeuver(maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple }, value: ContextValues.Constant(4))
+                    .AddToGroups(Kingmaker.Blueprints.Classes.FeatureGroup.VivisectionistDiscovery)
+                    .Configure();
+        }
     }
 }

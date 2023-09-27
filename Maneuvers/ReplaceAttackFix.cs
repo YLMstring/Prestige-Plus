@@ -7,6 +7,7 @@ using Kingmaker.Designers;
 using Kingmaker.RuleSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic;
+using Kingmaker.UnitLogic.Commands;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using System;
 using System.Collections.Generic;
@@ -16,22 +17,22 @@ using System.Threading.Tasks;
 
 namespace PrestigePlus.Maneuvers
 {
-    [HarmonyPatch(typeof(RuleAttackWithWeapon), nameof(RuleAttackWithWeapon.OnTrigger))]
+    [HarmonyPatch(typeof(UnitAttack), nameof(UnitAttack.TriggerAttackRule))]
     internal class ReplaceAttackFix
     {
         private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus"); 
-        static bool Prefix(ref RuleAttackWithWeapon __instance)
+        static bool Prefix(ref UnitAttack __instance, ref AttackHandInfo attack)
         {
             try
             {
-                var caster = __instance.Initiator;
+                var caster = __instance.Executor;
                 var target = __instance.Target;
-                if (!__instance.IsFullAttack || !__instance.Weapon.Blueprint.IsMelee) { return true; }
+                if (!__instance.IsAttackFull || !attack.Weapon.Blueprint.IsMelee) { return true; }
                 if (caster.HasFact(Disarm1) || caster.HasFact(Disarm2))
                 {
                     GameHelper.RemoveBuff(caster, Disarm1);
-                    if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.DisarmMainHandBuff)) { return true; }
-                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(target, caster, CombatManeuver.Disarm, null);
+                    if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.DisarmMainHandBuff) && target.HasFact(BlueprintRoot.Instance.SystemMechanics.DisarmOffHandBuff)) { return true; }
+                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.Disarm, null);
                     ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
                     return false;
                 }
@@ -39,7 +40,7 @@ namespace PrestigePlus.Maneuvers
                 {
                     GameHelper.RemoveBuff(caster, Sunder1);
                     if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.SunderArmorBuff)) { return true; }
-                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(target, caster, CombatManeuver.SunderArmor, null);
+                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.SunderArmor, null);
                     ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
                     return false;
                 }
@@ -47,7 +48,7 @@ namespace PrestigePlus.Maneuvers
                 {
                     GameHelper.RemoveBuff(caster, Trip1);
                     if (target.Descriptor.State.Prone.Active) { return true; }
-                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(target, caster, CombatManeuver.Trip, null);
+                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.Trip, null);
                     ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
                     return false;
                 }

@@ -3127,5 +3127,20 @@
     "Key": "Trip2.Description",
     "enGB": "You can attempt to Trip your opponent in place of your melee attacks in a full-round attack.",
     "zhCN": "You can attempt to Trip your opponent in place of your melee attacks in a full-round attack."
+  },
+
+  {
+    "Key": "TentacleGrab.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Tentacle",
+    "zhCN": "Tentacle"
+  },
+
+  {
+    "Key": "TentacleGrab.Description",
+    "enGB": "The alchemist gains a prehensile, arm-length tentacle on his body. The tentacle is fully under his control and cannot be concealed except with magic or bulky clothing. The tentacle does not give the alchemist any extra attacks or actions per round, though it has the grab ability with a +4 bonus on CMB checks to start and maintain a grapple.",
+    "zhCN": "The alchemist gains a prehensile, arm-length tentacle on his body. The tentacle is fully under his control and cannot be concealed except with magic or bulky clothing. The tentacle does not give the alchemist any extra attacks or actions per round, though it has the grab ability with a +4 bonus on CMB checks to start and maintain a grapple."
   }
 ]
