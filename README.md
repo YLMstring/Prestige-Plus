@@ -93,6 +93,9 @@
 - [Kraken Wrack](https://www.d20pfsrd.com/feats/combat-feats/kraken-wrack-combat-style/)
 - [Medusa’s Wrath](https://www.d20pfsrd.com/feats/combat-feats/medusa-s-wrath-combat/)
 - Use Kraken Style Feats as prerequisites since they are all tentacle-like.
+### New Feats
+
+- [Ripple in Still Water](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/ripple-in-still-water-combat/): Not a combat feat atm
 ### New Rogue Talents
 
 - [Defensive Roll](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-advanced-talents/defensive-roll-ex/)
