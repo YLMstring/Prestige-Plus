@@ -72,9 +72,30 @@ namespace PrestigePlus.Feats
                     .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.KineticistClass.ToString() }).WithOnePlusDiv2Progression())
                     //.AddToGroups(Kingmaker.Blueprints.Classes.FeatureGroup.Feat)
                     //.AddToGroups(Kingmaker.Blueprints.Classes.FeatureGroup.CombatFeat)
+                    //.AddToFeatureSelection(FeatureSelectionRefs.BasicFeatSelection.ToString())
+                    //.AddToFeatureSelection(FeatureSelectionRefs.FighterFeatSelection.ToString())
+                    //.AddToFeatureSelection(FeatureSelectionRefs.CombatTrick.ToString())
+                    //.AddToFeatureSelection(FeatureSelectionRefs.LoremasterCombatFeatSelection.ToString())
+                    //.AddToFeatureSelection(FeatureSelectionRefs.LoremasterTricksterCombatFeatSelection.ToString())
+                    //.AddToFeatureSelection(FeatureSelectionRefs.StudentOfWarCombatFeatSelection.ToString())
                     .Configure();
 
             FeatureSelectionConfigurator.For(FeatureSelectionRefs.BasicFeatSelection)
+                .AddToAllFeatures(feat)
+                .Configure();
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.FighterFeatSelection)
+                .AddToAllFeatures(feat)
+                .Configure();
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.CombatTrick)
+                .AddToAllFeatures(feat)
+                .Configure();
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.LoremasterCombatFeatSelection)
+                .AddToAllFeatures(feat)
+                .Configure();
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.LoremasterTricksterCombatFeatSelection)
+                .AddToAllFeatures(feat)
+                .Configure();
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.StudentOfWarCombatFeatSelection)
                 .AddToAllFeatures(feat)
                 .Configure();
         }

@@ -89,7 +89,7 @@ namespace PrestigePlus.Grapple
 
         public static void StyleConfigure()
         {
-            var icon = FeatureRefs.ImprovedBullRush.Reference.Get().Icon;
+            var icon = AbilityRefs.ArmyShifterGrabAbility.Reference.Get().Icon;
 
             var Buff = BuffConfigurator.New(Stylebuff, StylebuffGuid)
               .SetDisplayName(DisplayName)

@@ -3142,5 +3142,20 @@
     "Key": "TentacleGrab.Description",
     "enGB": "The alchemist gains a prehensile, arm-length tentacle on his body. The tentacle is fully under his control and cannot be concealed except with magic or bulky clothing. The tentacle does not give the alchemist any extra attacks or actions per round, though it has the grab ability with a +4 bonus on CMB checks to start and maintain a grapple.",
     "zhCN": "The alchemist gains a prehensile, arm-length tentacle on his body. The tentacle is fully under his control and cannot be concealed except with magic or bulky clothing. The tentacle does not give the alchemist any extra attacks or actions per round, though it has the grab ability with a +4 bonus on CMB checks to start and maintain a grapple."
+  },
+
+  {
+    "Key": "SeizetheOpportunity.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Seize the Opportunity",
+    "zhCN": "Seize the Opportunity"
+  },
+
+  {
+    "Key": "SeizetheOpportunity.Description",
+    "enGB": "When you make an attack of opportunity, you can take an attack action (such as when using the Vital Strike feat) or attempt a combat maneuver (such as a bull rush, disarm or dirty trick) in place of your attack of opportunity. This feat does not allow you to move when it isn’t your turn.",
+    "zhCN": "When you make an attack of opportunity, you can take an attack action (such as when using the Vital Strike feat) or attempt a combat maneuver (such as a bull rush, disarm or dirty trick) in place of your attack of opportunity. This feat does not allow you to move when it isn’t your turn."
   }
 ]

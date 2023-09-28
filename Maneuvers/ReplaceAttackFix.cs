@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Kingmaker.UI.CanvasScalerWorkaround;
 
 namespace PrestigePlus.Maneuvers
 {
@@ -28,11 +29,13 @@ namespace PrestigePlus.Maneuvers
                 var caster = __instance.Executor;
                 var target = __instance.Target;
                 if (!__instance.IsAttackFull || !attack.Weapon.Blueprint.IsMelee) { return true; }
+                var AttackBonusRule = new RuleCalculateAttackBonus(caster, target, caster.Body.EmptyHandWeapon, attack.AttackBonusPenalty) { };
+                //AttackBonusRule.AddModifier(-2, descriptor: Kingmaker.Enums.ModifierDescriptor.Penalty);
                 if (caster.HasFact(Disarm1) || caster.HasFact(Disarm2))
                 {
                     GameHelper.RemoveBuff(caster, Disarm1);
-                    if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.DisarmMainHandBuff) && target.HasFact(BlueprintRoot.Instance.SystemMechanics.DisarmOffHandBuff)) { return true; }
-                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.Disarm, null);
+                    if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.DisarmMainHandBuff) && (target.HasFact(BlueprintRoot.Instance.SystemMechanics.DisarmOffHandBuff) || !target.Body.CurrentHandsEquipmentSet.SecondaryHand.HasWeapon)) { return true; }
+                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.Disarm, AttackBonusRule);
                     ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
                     return false;
                 }
@@ -40,7 +43,7 @@ namespace PrestigePlus.Maneuvers
                 {
                     GameHelper.RemoveBuff(caster, Sunder1);
                     if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.SunderArmorBuff)) { return true; }
-                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.SunderArmor, null);
+                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.SunderArmor, AttackBonusRule);
                     ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
                     return false;
                 }
@@ -48,7 +51,7 @@ namespace PrestigePlus.Maneuvers
                 {
                     GameHelper.RemoveBuff(caster, Trip1);
                     if (target.Descriptor.State.Prone.Active) { return true; }
-                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.Trip, null);
+                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.Trip, AttackBonusRule);
                     ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
                     return false;
                 }
