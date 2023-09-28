@@ -3,6 +3,7 @@ using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using Kingmaker.EntitySystem.Stats;
+using Kingmaker.UnitLogic.ActivatableAbilities;
 using PrestigePlus.Grapple;
 using System;
 using System.Collections.Generic;
@@ -78,7 +79,7 @@ namespace PrestigePlus.Maneuvers
         private static readonly string SeizetheGrapplebuffGuid = "{55BD97E6-84AB-4E2A-9F0D-EF8A730DC7CF}";
         public static void Configure()
         {
-            var icon = FeatureRefs.SiezeTheMoment.Reference.Get().Icon;
+            var icon = FeatureRefs.VitalStrikeFeature.Reference.Get().Icon;
 
             var BuffSeizetheOpportunity = BuffConfigurator.New(SeizetheOpportunitybuff, SeizetheOpportunitybuffGuid)
               .SetDisplayName(DisplayName)
@@ -238,6 +239,8 @@ namespace PrestigePlus.Maneuvers
                 .SetDescription(Description)
                 .SetIcon(icon)
                 .AddActivationDisable()
+                .SetDeactivateImmediately()
+                .SetActivationType(AbilityActivationType.Immediately)
                 .AddActivatableAbilityVariants(variants: new() { abilityBullRush, abilityDirtyBlind, abilityDirtyEntangle, abilityDirtySicken, abilityDisarm, abilityGrapple, abilitySunder, abilityTrip, abilityOpportunity })
                 .Configure();
 

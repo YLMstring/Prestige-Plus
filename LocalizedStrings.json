@@ -3157,5 +3157,20 @@
     "Key": "SeizetheOpportunity.Description",
     "enGB": "When you make an attack of opportunity, you can take an attack action (such as when using the Vital Strike feat) or attempt a combat maneuver (such as a bull rush, disarm or dirty trick) in place of your attack of opportunity. This feat does not allow you to move when it isn’t your turn.",
     "zhCN": "When you make an attack of opportunity, you can take an attack action (such as when using the Vital Strike feat) or attempt a combat maneuver (such as a bull rush, disarm or dirty trick) in place of your attack of opportunity. This feat does not allow you to move when it isn’t your turn."
+  },
+
+  {
+    "Key": "BarbarianStrengthSurge.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Strength Surge",
+    "zhCN": "Strength Surge"
+  },
+
+  {
+    "Key": "BarbarianStrengthSurge.Description",
+    "enGB": "The barbarian adds her barbarian level on her next combat maneuver check in 2 rounds. This power is used as a swift action.",
+    "zhCN": "The barbarian adds her barbarian level on her next combat maneuver check in 2 rounds. This power is used as a swift action."
   }
 ]

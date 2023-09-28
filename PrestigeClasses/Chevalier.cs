@@ -59,7 +59,7 @@ namespace PrestigePlus.PrestigeClasses
                 .SetClasses(ArchetypeGuid)
                 .AddToLevelEntry(1, FeatureRefs.AuraOfCourageFeature.ToString(), CreateReckless(), FeatureRefs.MythicIgnoreAlignmentRestrictions.ToString())
                 .AddToLevelEntry(2, CreateControllCharge(), CreateStubbornMind())
-                .AddToLevelEntry(3, FeatureRefs.PoisonImmunity.ToString(), CreateSmite())
+                .AddToLevelEntry(3, FeatureRefs.PoisonImmunity.ToString(), CreateSmite(), FeatureRefs.SmiteEvilFeature.ToString())
                 .SetRanks(1)
                 .SetIsClassFeature(true)
                 .SetDisplayName(ArchetypeDisplayName)

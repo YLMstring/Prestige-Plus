@@ -96,6 +96,8 @@ namespace PrestigePlus.Maneuvers
                     maneuver = CombatManeuver.Trip;
                 }
                 Logger.Info("check grapple");
+                if (caster.HasFact(Grapple)) { Logger.Info("has buff"); }
+                if (caster.HasFact(GrappleFeat)) { Logger.Info("has feat"); }
                 if (caster.HasFact(Grapple) && caster.HasFact(GrappleFeat))
                 {
                     Logger.Info("start grapple");
