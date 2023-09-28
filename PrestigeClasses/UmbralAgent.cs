@@ -87,7 +87,7 @@ namespace PrestigePlus.PrestigeClasses
                     .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { ShadowJumpGuidFeat, ProficienciesGuid }))
                 .SetRanks(1)
                 .SetIsClassFeature(true)
-                .SetDisplayName(ArchetypeDisplayName)
+                .SetDisplayName("")
                 .SetDescription(ArchetypeDescription)
                 .Configure();
             var archetype =

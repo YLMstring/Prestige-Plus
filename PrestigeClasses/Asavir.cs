@@ -71,7 +71,7 @@ namespace PrestigePlus.PrestigeClasses
                     .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { DjinniGuid, ShaitanGuid, MaridGuid, MaridBlessGuid, JanniBlessGuid }))
                 .SetRanks(1)
                 .SetIsClassFeature(true)
-                .SetDisplayName(ArchetypeDisplayName)
+                .SetDisplayName("")
                 .SetDescription(ArchetypeDescription)
                 .Configure();
 

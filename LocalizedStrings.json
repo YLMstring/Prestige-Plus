@@ -1534,8 +1534,8 @@
 
   {
     "Key": "ImprovedGrappleMythic.Description",
-    "enGB": "Your wrestling moves are difficult to counter. You gain a bonus equal to half your tier on checks to grapple, and to your CMD when an opponent tries to grapple you. These bonuses stack with those granted by Improved Grapple.",
-    "zhCN": "你的格斗技巧难以招架。在你尝试进行擒抱检定，或者对试图擒抱你的敌人做战技防御（CMD）时，获得等于神话阶层一半的加值。这个加值能够和精通擒抱提供的加值叠加。"
+    "enGB": "Your wrestling moves are difficult to counter. You gain a bonus equal to half your tier on checks to grapple, and to your CMD when an opponent tries to grapple you. These bonuses stack with those granted by Improved Grapple. Furthermore, you can make an attack of opportunity against any creature that attempts to grapple you, unless it also has this feat.",
+    "zhCN": "你的格斗技巧难以招架。在你尝试进行擒抱检定，或者对试图擒抱你的敌人做战技防御（CMD）时，获得等于神话阶层一半的加值。这个加值能够和精通擒抱提供的加值叠加。另外，你还能对任何擒抱你的生物发起借机攻击，除非它也有这个专长。"
   },
 
   {
@@ -3170,7 +3170,7 @@
 
   {
     "Key": "BarbarianStrengthSurge.Description",
-    "enGB": "The barbarian adds her barbarian level on her next combat maneuver check in 2 rounds. This power is used as a swift action.",
-    "zhCN": "The barbarian adds her barbarian level on her next combat maneuver check in 2 rounds. This power is used as a swift action."
+    "enGB": "The barbarian adds her barbarian level on her next combat maneuver check in 2 rounds as a swift action. This power can only be used once per rage.",
+    "zhCN": "The barbarian adds her barbarian level on her next combat maneuver check in 2 rounds as a swift action. This power can only be used once per rage."
   }
 ]

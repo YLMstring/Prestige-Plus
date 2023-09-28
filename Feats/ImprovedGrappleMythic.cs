@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PrestigePlus.Grapple;
+using PrestigePlus.Modify;
 
 namespace PrestigePlus.Feats
 {
@@ -31,7 +32,8 @@ namespace PrestigePlus.Feats
                     .AddCMBBonusForManeuver(maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple }, value: ContextValues.Rank())
                     .AddCMDBonusAgainstManeuvers(maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple }, value: ContextValues.Rank())
                     .AddContextRankConfig(ContextRankConfigs.MythicLevel().WithDiv2Progression())
-                    .AddCounterAttackOfOpportunityOnCombatManeuver(Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple)
+                    //.AddCounterAttackOfOpportunityOnCombatManeuver(Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple)
+                    .AddComponent<GrappleAttackBack>()
                     .AddToFeatureSelection("0d3a3619-9d99-47af-8e47-cb6cc4d26821") //ttt
                     .Configure();
         }

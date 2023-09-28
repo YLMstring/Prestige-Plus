@@ -69,7 +69,7 @@ namespace PrestigePlus.PrestigeClasses
                     ///.AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { ImprovedFavorGuid, FeatureSelectionRefs.FavoriteEnemyRankUp.ToString() }))
                 .SetRanks(1)
                 .SetIsClassFeature(true)
-                .SetDisplayName(ArchetypeDisplayName)
+                .SetDisplayName("")
                 .SetDescription(ArchetypeDescription)
                 .Configure();
             var archetype =

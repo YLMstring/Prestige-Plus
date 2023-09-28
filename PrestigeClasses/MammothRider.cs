@@ -65,7 +65,7 @@ namespace PrestigePlus.PrestigeClasses
                 .AddToLevelEntry(10, MammothLordFeat())
                 .SetRanks(1)
                 .SetIsClassFeature(true)
-                .SetDisplayName(ArchetypeDisplayName)
+                .SetDisplayName("")
                 .SetDescription(ArchetypeDescription)
                 .Configure();
 

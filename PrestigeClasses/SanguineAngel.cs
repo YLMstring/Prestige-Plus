@@ -55,7 +55,7 @@ namespace PrestigePlus.PrestigeClasses
                 .AddToLevelEntry(3, SAArmoredAngel(), FeatureRefs.ArmorTraining.ToString())
                 .SetRanks(1)
                 .SetIsClassFeature(true)
-                .SetDisplayName(ArchetypeDisplayName)
+                .SetDisplayName("")
                 .SetDescription(ArchetypeDescription)
                 .Configure();
 

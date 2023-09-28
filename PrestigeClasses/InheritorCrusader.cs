@@ -72,7 +72,7 @@ namespace PrestigePlus.PrestigeClasses
                 .AddToLevelEntry(3, spellupgradeGuid, CreateSwordAgainstInjustice())
                 .SetRanks(1)
                 .SetIsClassFeature(true)
-                .SetDisplayName(ArchetypeDisplayName)
+                .SetDisplayName("")
                 .SetDescription(ArchetypeDescription)
                 .Configure();
 

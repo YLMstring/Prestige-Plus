@@ -59,10 +59,10 @@ namespace PrestigePlus.PrestigeClasses
                 .SetClasses(ArchetypeGuid)
                 .AddToLevelEntry(1, FeatureRefs.AuraOfCourageFeature.ToString(), CreateReckless(), FeatureRefs.MythicIgnoreAlignmentRestrictions.ToString())
                 .AddToLevelEntry(2, CreateControllCharge(), CreateStubbornMind())
-                .AddToLevelEntry(3, FeatureRefs.PoisonImmunity.ToString(), CreateSmite(), FeatureRefs.SmiteEvilFeature.ToString())
+                .AddToLevelEntry(3, FeatureRefs.PoisonImmunity.ToString(), CreateSmite())
                 .SetRanks(1)
                 .SetIsClassFeature(true)
-                .SetDisplayName(ArchetypeDisplayName)
+                .SetDisplayName("")
                 .SetDescription(ArchetypeDescription)
                 .Configure();
 
@@ -215,6 +215,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetDisplayName(SmiteDisplayName)
               .SetDescription(SmiteDescription)
               .SetIsClassFeature(true)
+              .AddFacts(new() { FeatureRefs.SmiteEvilFeature.ToString() })
               .AddDamageBonusAgainstFactOwner(bonus: ContextValues.Rank(AbilityRankType.DamageBonus), checkedFact: BuffRefs.SmiteEvilBuff.ToString())
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { InheritorGuid, CharacterClassRefs.PaladinClass.ToString() }, excludeClasses: true, type: AbilityRankType.DamageBonus).WithLinearProgression(1, 0))
               .Configure();

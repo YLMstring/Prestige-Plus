@@ -82,7 +82,7 @@ namespace PrestigePlus.Maneuvers
                 }
                 if (caster.HasFact(Disarm) && caster.HasFact(DisarmFeat))
                 {
-                    if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.DisarmMainHandBuff) && (target.HasFact(BlueprintRoot.Instance.SystemMechanics.DisarmOffHandBuff) || !target.Body.CurrentHandsEquipmentSet.SecondaryHand.HasWeapon)) { return true; }
+                    if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.DisarmMainHandBuff) && (target.HasFact(BlueprintRoot.Instance.SystemMechanics.DisarmOffHandBuff) || target.GetThreatHandMelee() == null)) { return true; }
                     maneuver = CombatManeuver.Disarm;
                 }
                 if (caster.HasFact(Sunder) && caster.HasFact(SunderFeat))
@@ -95,9 +95,6 @@ namespace PrestigePlus.Maneuvers
                     if (target.Descriptor.State.Prone.Active) { return true; }
                     maneuver = CombatManeuver.Trip;
                 }
-                Logger.Info("check grapple");
-                if (caster.HasFact(Grapple)) { Logger.Info("has buff"); }
-                if (caster.HasFact(GrappleFeat)) { Logger.Info("has feat"); }
                 if (caster.HasFact(Grapple) && caster.HasFact(GrappleFeat))
                 {
                     Logger.Info("start grapple");

@@ -66,7 +66,7 @@ namespace PrestigePlus.PrestigeClasses
                 .AddToLevelEntry(10, FeatureSelectionRefs.FavoriteTerrainSelection.ToString(), FeatureSelectionRefs.FavoriteTerrainSelectionRankUp.ToString(), MasterLandsFeat())
                 .SetRanks(1)
                 .SetIsClassFeature(true)
-                .SetDisplayName(ArchetypeDisplayName)
+                .SetDisplayName("")
                 .SetDescription(ArchetypeDescription)
                 .Configure();
 

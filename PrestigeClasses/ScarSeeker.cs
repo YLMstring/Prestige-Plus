@@ -81,7 +81,7 @@ namespace PrestigePlus.PrestigeClasses
             .AddToLevelEntry(10, TrueMFeat())
             .SetRanks(1)
             .SetIsClassFeature(true)
-            .SetDisplayName(ArchetypeDisplayName)
+            .SetDisplayName("")
             .SetDescription(ArchetypeDescription)
             .Configure();
 

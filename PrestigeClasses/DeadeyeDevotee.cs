@@ -77,7 +77,7 @@ namespace PrestigePlus.PrestigeClasses
                 ///.AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { EnergyArrowGuid, PhaseArrowGuid, HailArrowGuid, DeathArrowGuid }))
                 .SetRanks(1)
                 .SetIsClassFeature(true)
-                .SetDisplayName(ArchetypeDisplayName)
+                .SetDisplayName("")
                 .SetDescription(ArchetypeDescription)
                 .Configure();
             var archetype =

@@ -146,7 +146,7 @@ namespace PrestigePlus.Grapple
             if (evt.Type != CombatManeuver.Grapple) { return; }
             if (GrabRollBonus > 0)
             {
-                evt.AddModifier(GrabRollBonus, base.Fact, descriptor: ModifierDescriptor.UntypedStackable);
+                evt.AddModifier(GrabRollBonus, base.Fact, descriptor: ModifierDescriptor.Circumstance);
             }
             if (GrabRollBonus < 0)
             {

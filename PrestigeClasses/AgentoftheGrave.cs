@@ -82,7 +82,7 @@ namespace PrestigePlus.PrestigeClasses
                     .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { FeatureRefs.UncannyDodge.Reference.Get().ToReference<BlueprintFeatureBaseReference>(), FeatureRefs.ImprovedUncannyDodge.Reference.Get().ToReference<BlueprintFeatureBaseReference>() }))
                 .SetRanks(1)
                 .SetIsClassFeature(true)
-                .SetDisplayName(ArchetypeDisplayName)
+                .SetDisplayName("")
                 .SetDescription(ArchetypeDescription)
                 .Configure();
             var archetype =

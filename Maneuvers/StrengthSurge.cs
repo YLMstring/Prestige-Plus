@@ -56,7 +56,7 @@ namespace PrestigePlus.Maneuvers
               .SetIcon(icon)
               .AddCMBBonus(value: ContextValues.Rank())
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.BarbarianClass.ToString(), CharacterClassRefs.BloodragerClass.ToString() }))
-              .AddManeuverTrigger(ActionsBuilder.New().RemoveSelf().Build())
+              .AddManeuverTrigger(ActionsBuilder.New().RemoveBuff(StrengthSurgeBuffGuid, toCaster: true).Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.None, false)
               .Configure();
 
             var ability = AbilityConfigurator.New(StrengthSurgeAbility, StrengthSurgeAbilityGuid)
