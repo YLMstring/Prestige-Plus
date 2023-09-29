@@ -1,4 +1,4 @@
-# Prestige Plus v1.2.1 for WoTR 
+# Prestige Plus v1.2.2 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - Add Grapple Mechanic!
@@ -8,8 +8,10 @@
 
 ## Featuring
 
-### Combat Maneuver Plus
+### Combat Maneuver+
 - You can Disarm, Sunder, or Trip in lieu of an melee attack, like on tabletop!
+- [Seize the Opportunity](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/seize-the-opportunity-combat/)
+- [Strength Surge](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/strength-surge-ex/)
 - More coming soon!
 ### [Grapple Mechanic](https://www.d20pfsrd.com/gamemastering/Combat/#Grapple)
 - This is how I implement it:
@@ -95,7 +97,7 @@
 - Use Kraken Style Feats as prerequisites since they are all tentacle-like.
 ### New Feats
 
-- [Ripple in Still Water](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/ripple-in-still-water-combat/): Not a combat feat atm
+- [Ripple in Still Water](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/ripple-in-still-water-combat/)
 ### New Rogue Talents
 
 - [Defensive Roll](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-advanced-talents/defensive-roll-ex/)
