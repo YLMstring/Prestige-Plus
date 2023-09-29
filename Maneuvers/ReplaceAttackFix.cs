@@ -36,11 +36,12 @@ namespace PrestigePlus.Maneuvers
                 Logger.Info(attack.AttackBonusPenalty.ToString());
                 var AttackBonusRule = new RuleCalculateAttackBonus(caster, target, caster.Body.EmptyHandWeapon, 0) { };
                 int penalty = -attack.AttackBonusPenalty + DualPenalty(caster, attack);
-                AttackBonusRule.AddModifier(penalty, descriptor: Kingmaker.Enums.ModifierDescriptor.Penalty);
+                AttackBonusRule.AddModifier(penalty, descriptor: ModifierDescriptor.Penalty);
                 if (caster.HasFact(Disarm1) || caster.HasFact(Disarm2))
                 {
                     GameHelper.RemoveBuff(caster, Disarm1);
-                    if (target.GetThreatHandMelee() == null || target.GetThreatHandMelee().MaybeWeapon == null || target.GetThreatHandMelee().MaybeWeapon.Blueprint.IsNatural) { return true; }
+                    var threat = target.GetThreatHandMelee();
+                    if (threat == null || threat.MaybeWeapon == null || threat.MaybeWeapon.Blueprint.IsNatural || threat.MaybeWeapon.Blueprint.IsUnarmed) { return true; }
                     RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.Disarm, AttackBonusRule);
                     ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
                     return false;
@@ -56,7 +57,7 @@ namespace PrestigePlus.Maneuvers
                 if (caster.HasFact(Trip1) || caster.HasFact(Trip2))
                 {
                     GameHelper.RemoveBuff(caster, Trip1);
-                    if (target.Descriptor.State.Prone.Active) { return true; }
+                    if (!target.CanBeKnockedOff()) { return true; }
                     RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.Trip, AttackBonusRule);
                     ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
                     return false;

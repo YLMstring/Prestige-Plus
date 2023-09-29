@@ -63,6 +63,7 @@ namespace PrestigePlus.Maneuvers
                 }
                 if (caster.HasFact(BullRush) && caster.HasFact(BullRushFeat))
                 {
+                    if (target.State.HasCondition(UnitCondition.ForceMove)) { return true; }
                     maneuver = CombatManeuver.BullRush;
                 }
                 if (caster.HasFact(DirtyBlind) && caster.HasFact(DirtyFeat))
@@ -82,7 +83,8 @@ namespace PrestigePlus.Maneuvers
                 }
                 if (caster.HasFact(Disarm) && caster.HasFact(DisarmFeat))
                 {
-                    if (target.GetThreatHandMelee() == null || target.GetThreatHandMelee().MaybeWeapon == null || target.GetThreatHandMelee().MaybeWeapon.Blueprint.IsNatural) { return true; }
+                    var threat = target.GetThreatHandMelee();
+                    if (threat == null || threat.MaybeWeapon == null || threat.MaybeWeapon.Blueprint.IsNatural || threat.MaybeWeapon.Blueprint.IsUnarmed) { return true; }
                     maneuver = CombatManeuver.Disarm;
                 }
                 if (caster.HasFact(Sunder) && caster.HasFact(SunderFeat))
@@ -92,7 +94,7 @@ namespace PrestigePlus.Maneuvers
                 }
                 if (caster.HasFact(Trip) && caster.HasFact(TripFeat))
                 {
-                    if (target.Descriptor.State.Prone.Active) { return true; }
+                    if (!target.CanBeKnockedOff()) { return true; }
                     maneuver = CombatManeuver.Trip;
                 }
                 if (caster.HasFact(Grapple) && caster.HasFact(GrappleFeat))
