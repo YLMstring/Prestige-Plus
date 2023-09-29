@@ -40,7 +40,7 @@ namespace PrestigePlus.Maneuvers
                 if (caster.HasFact(Disarm1) || caster.HasFact(Disarm2))
                 {
                     GameHelper.RemoveBuff(caster, Disarm1);
-                    if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.DisarmMainHandBuff) && (target.HasFact(BlueprintRoot.Instance.SystemMechanics.DisarmOffHandBuff) || target.GetThreatHandMelee() == null)) { return true; }
+                    if (target.GetThreatHandMelee() == null || target.GetThreatHandMelee().MaybeWeapon == null || target.GetThreatHandMelee().MaybeWeapon.Blueprint.IsNatural) { return true; }
                     RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.Disarm, AttackBonusRule);
                     ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
                     return false;

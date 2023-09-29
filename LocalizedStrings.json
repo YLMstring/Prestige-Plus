@@ -2782,7 +2782,7 @@
   {
     "Key": "Asavir.Description",
     "enGB": "An asavir’s bond with her genie-blessed mount is even closer than the partnership most horselords share with their steeds, and her human compatriots fight with extra ferocity, knowing that they have a tireless protector. Asavirs sometimes leave their tribe to become mercenaries or adventurers, and it is from such asavirs that the techniques of this prestige class are usually spread.",
-    "zhCN": "An asavir’s bond with her genie-blessed mount is even closer than the partnership most horselords share with their steeds, and her human compatriots fight with extra ferocity, knowing that they have a tireless protector. Asavirs sometimes leave their tribe to become mercenaries or adventurers, and it is from such asavirs that the techniques of this prestige class are usually spread."
+    "zhCN": "亚萨维尔和她的灵佑坐骑之间的羁绊比多数骑手来得更深，有了这样一位不知疲倦的守护者，她的人民作战时便会格外凶猛。有时，亚萨维尔会离开部族，成为雇佣兵和冒险者，这一进阶职业的技艺往往就是这样传播开来的。"
   },
 
   {
@@ -2791,13 +2791,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Equine Bond",
-    "zhCN": "Equine Bond"
+    "zhCN": "神骏纽带"
   },
 
   {
     "Key": "AsavirEquineBond.Description",
     "enGB": "An asavir gains a horse as a loyal steed. This mount functions as a druid’s animal companion, using the asavir’s level + 2 as her effective druid level. Her total effective druid level for determining her mount’s statistics can never exceed her total character level. An asavir doesn’t take an armor check penalty on Ride checks while riding her mount, and her mount is always considered combat trained and begins play with Light Armor Proficiency as a bonus feat.",
-    "zhCN": "An asavir gains a horse as a loyal steed. This mount functions as a druid’s animal companion, using the asavir’s level + 2 as her effective druid level. Her total effective druid level for determining her mount’s statistics can never exceed her total character level. An asavir doesn’t take an armor check penalty on Ride checks while riding her mount, and her mount is always considered combat trained and begins play with Light Armor Proficiency as a bonus feat."
+    "zhCN": "亚萨维尔获得一匹马作为坐骑，如同德鲁伊的动物伙伴一般，使用亚萨维尔的等级+2作为他的有效德鲁伊等级。决定他的坐骑的数据时，他的总体有效德鲁伊等级不会超过他的角色等级。亚萨维尔不会在骑乘检定时受到盔甲带来的减值，他的坐骑视为已接受战斗训练，并获得擅长轻型盔甲作为奖励专长。"
   },
 
   {
@@ -2806,13 +2806,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Shaitan’s Blessing",
-    "zhCN": "Shaitan’s Blessing"
+    "zhCN": "土灵祝福"
   },
 
   {
     "Key": "AsavirShaitan.Description",
     "enGB": "When an asavir reaches 2nd level, her mount receives the blessing of the shaitans. It receives a +2 racial bonus on saving throws against all mind-affecting and fear effects. When the asavir reaches 9th level, this bonus increases to +4.",
-    "zhCN": "When an asavir reaches 2nd level, her mount receives the blessing of the shaitans. It receives a +2 racial bonus on saving throws against all mind-affecting and fear effects. When the asavir reaches 9th level, this bonus increases to +4."
+    "zhCN": "2级时，亚萨维尔的坐骑受到了土灵的祝福，它在对抗所有影响心灵和恐惧效果的豁免检定中获得+2的种族加值。9级时，这个加值提升到+4。"
   },
 
   {
@@ -2821,13 +2821,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Djinni’s Blessing",
-    "zhCN": "Djinni’s Blessing"
+    "zhCN": "风灵祝福"
   },
 
   {
     "Key": "AsavirDjinni.Description",
     "enGB": "When an asavir reaches 4th level, her mount receives the blessing of the djinn, making it swift and tireless. The mount’s speed increases by 10 feet, and it can carry any party member. When the asavir reaches 8th level, her mount’s speed increases by an additional 10 feet.",
-    "zhCN": "When an asavir reaches 4th level, her mount receives the blessing of the djinn, making it swift and tireless. The mount’s speed increases by 10 feet, and it can carry any party member. When the asavir reaches 8th level, her mount’s speed increases by an additional 10 feet."
+    "zhCN": "4级时，亚萨维尔的坐骑受到了风灵的祝福，使它变得迅捷而不知疲倦。坐骑的速度增加10尺，它也可以被其他队友骑乘。8级时，坐骑速度再额外提升10尺。"
   },
 
   {
@@ -2836,13 +2836,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Marid’s Blessing",
-    "zhCN": "Marid’s Blessing"
+    "zhCN": "水灵祝福"
   },
 
   {
     "Key": "AsavirMarid.Description",
     "enGB": "At 6th level, an asavir’s mount receives the blessing of the marids, making it an agile partner with a flowing pace. She gains +2 bonus to concentration checks. The mount gains a +2 racial bonus on Reflex saves.",
-    "zhCN": "At 6th level, an asavir’s mount receives the blessing of the marids, making it an agile partner with a flowing pace. She gains +2 bonus to concentration checks. The mount gains a +2 racial bonus on Reflex saves."
+    "zhCN": "6级时，亚萨维尔的坐骑受到了水灵的祝福，使它的步伐流畅而灵巧。亚萨维尔的专注检定获得+2加值，坐骑在反射豁免上获得+2种族加值。"
   },
 
   {
@@ -2851,13 +2851,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Efreeti’s Blessing",
-    "zhCN": "Efreeti’s Blessing"
+    "zhCN": "火灵祝福"
   },
 
   {
     "Key": "AsavirEfreeti.Description",
     "enGB": "When an asavir reaches 8th level, her mount receives the blessing of the efreet, gaining fire resistance 5. It also deals an additional 1d6 points of fire damage with its attacks.",
-    "zhCN": "When an asavir reaches 8th level, her mount receives the blessing of the efreet, gaining fire resistance 5. It also deals an additional 1d6 points of fire damage with its attacks."
+    "zhCN": "8级时，亚萨维尔的坐骑受到了火灵的祝福，获得了5点火焰抗力。它的攻击还会造成1d6点额外火焰伤害。"
   },
 
   {
@@ -2866,13 +2866,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Janni’s Blessing",
-    "zhCN": "Janni’s Blessing"
+    "zhCN": "巨灵祝福"
   },
 
   {
     "Key": "AsavirJanni.Description",
     "enGB": "At 10th level, an asavir gains Perfect Strike as a bonus feat, even if he does not meet the prerequisites. Both the asavir and her mount gain a +1 luck bonus on all saving throws.",
-    "zhCN": "At 10th level, an asavir gains Perfect Strike as a bonus feat, even if he does not meet the prerequisites. Both the asavir and her mount gain a +1 luck bonus on all saving throws."
+    "zhCN": "10级时，亚萨维尔获得极意击作为奖励专长，即使她不满足先决条件。她和她的坐骑的所有豁免获得+1运气加值。"
   },
 
   {
@@ -2881,13 +2881,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Controlled Charge",
-    "zhCN": "Controlled Charge"
+    "zhCN": "可控冲锋"
   },
 
   {
     "Key": "AsavirControllCharge.Description",
     "enGB": "At 4th level, an asavir learns to attack with greater accuracy from the back of a charging mount. She gains a +4 bonus on melee attacks on a charge while mounted (instead of the normal +2) and gains +2 bonus to her AC after making a charge attack while mounted.",
-    "zhCN": "At 4th level, an asavir learns to attack with greater accuracy from the back of a charging mount. She gains a +4 bonus on melee attacks on a charge while mounted (instead of the normal +2) and gains +2 bonus to her AC after making a charge attack while mounted."
+    "zhCN": "4级时，亚萨维尔能够在骑乘中做出更精确的冲锋，他在骑乘冲锋时获得+4攻击加值（替代普通的+2），并且+2AC加值。"
   },
 
   {
@@ -2896,13 +2896,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "All Eyes on Me",
-    "zhCN": "All Eyes on Me"
+    "zhCN": "万众瞩目"
   },
 
   {
     "Key": "AsavirAllEyes.Description",
     "enGB": "At 7th level, three times per day as a swift action, an asavir can call out a challenge. Each opponent within 30 feet must succeed at a Will save (DC = 10 + the asavir’s character level + the asavir’s Charisma bonus) or be distracted by the display until the beginning of the asavir’s next turn. Any creature that fails is considered to be flat-footed and takes a -2 penalty to AC against attacks from the asavir’s allies. This is a mind-affecting, visual effect.",
-    "zhCN": "At 7th level, three times per day as a swift action, an asavir can call out a challenge. Each opponent within 30 feet must succeed at a Will save (DC = 10 + the asavir’s character level + the asavir’s Charisma bonus) or be distracted by the display until the beginning of the asavir’s next turn. Any creature that fails is considered to be flat-footed and takes a -2 penalty to AC against attacks from the asavir’s allies. This is a mind-affecting, visual effect."
+    "zhCN": "7级时，每天三次，亚萨维尔可以用一个迅捷动作发起挑战。30尺内的每个对手必须成功通过一个意志豁免（DC=10+亚萨维尔的角色等级+亚萨维尔的魅力加值），否则受到该动作的干扰，直到亚萨维尔的下一回合开始。被干扰的的生物在对抗亚萨维尔的队友的攻击时视为措手不及，且AC受到-2减值。这是一种影响心灵，视觉效果。"
   },
 
   {
@@ -2911,13 +2911,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Inspiring Leader",
-    "zhCN": "Inspiring Leader"
+    "zhCN": "领袖鼓舞"
   },
 
   {
     "Key": "AsavirInspiringLeader.Description",
     "enGB": "At 9th level, an asavir can call out encouragement to her allies as a move action, bolstering their courage. Allies within 60 feet of the asavir who can hear her receive a morale bonus equal to the asavir’s Charisma bonus on attack and damage rolls with weapons for 1 round. An asavir can use this ability three times per day. This is a mind-affecting, language-dependent effect.",
-    "zhCN": "At 9th level, an asavir can call out encouragement to her allies as a move action, bolstering their courage. Allies within 60 feet of the asavir who can hear her receive a morale bonus equal to the asavir’s Charisma bonus on attack and damage rolls with weapons for 1 round. An asavir can use this ability three times per day. This is a mind-affecting, language-dependent effect."
+    "zhCN": "9级时，亚萨维尔可以用一个移动动作鼓舞他的队友，加强他们的勇气。60尺内能够听见亚萨维尔的队友在1轮内的攻击和武器伤害检定上会获得等同于亚萨维尔的魅力加值的士气加值。亚萨维尔一天能使用三次该能力。这是一种影响心灵，语言效果。"
   },
 
   {
@@ -2926,13 +2926,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Thunderous Charge",
-    "zhCN": "Thunderous Charge"
+    "zhCN": "雷鸣冲锋"
   },
 
   {
     "Key": "AsavirThunderousCharge.Description",
     "enGB": "At 2nd level, a number of times per day equal to her asavir level, an asavir and her mount can make a charge that causes the ground to shake. This is a full-round action and works as a normal charge. Enemies within a 5-foot radius of the charge’s ending point must succeed at a Reflex save (DC = 10 + the asavir’s class level + the mount’s Strength modifier) or fall prone. At 6th level, the radius of thunderous charge increases to 10 feet, and at 10th level it increases to 20 feet.",
-    "zhCN": "At 2nd level, a number of times per day equal to her asavir level, an asavir and her mount can make a charge that causes the ground to shake. This is a full-round action and works as a normal charge. Enemies within a 5-foot radius of the charge’s ending point must succeed at a Reflex save (DC = 10 + the asavir’s class level + the mount’s Strength modifier) or fall prone. At 6th level, the radius of thunderous charge increases to 10 feet, and at 10th level it increases to 20 feet."
+    "zhCN": "2级时，亚萨维尔和他的坐骑能够进行一次令大地颤动的冲锋。这是一个全回合动作，如普通冲锋一般。在冲锋结束点半径五尺的生物必须成功通过一个反射检定（DC=10+亚萨维尔的职业等级+亚萨维尔的力量调整）否则倒地。亚萨维尔每天能够使用该能力等同于职业等级的次数，6级时，雷鸣冲锋的半径扩大到10尺，10级时扩大到20尺。"
   },
 
   {
@@ -2941,13 +2941,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Improved Trample",
-    "zhCN": "Improved Trample"
+    "zhCN": "精通践踏"
   },
 
   {
     "Key": "AsavirSummonBigTrample.Description",
     "enGB": "The asavir’s mount receive a +4 bonus on checks made to overrun a foe.",
-    "zhCN": "The asavir’s mount receive a +4 bonus on checks made to overrun a foe."
+    "zhCN": "亚萨维尔的坐骑获得+4闯越检定加值。"
   },
 
   {
@@ -2956,13 +2956,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Trampling Gallop",
-    "zhCN": "Trampling Gallop"
+    "zhCN": "飞驰践踏"
   },
 
   {
     "Key": "AsavirSummonBigTrample2.Description",
     "enGB": "At 6th level, an asavir’s mount gains better trample ability.",
-    "zhCN": "At 6th level, an asavir’s mount gains better trample ability."
+    "zhCN": "6级时，亚萨维尔的坐骑获得更强的践踏能力。"
   },
 
   {
@@ -2971,13 +2971,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Trample (Mythic)",
-    "zhCN": "Trample (Mythic)"
+    "zhCN": "践踏（神话）"
   },
 
   {
     "Key": "TrampleMythic.Description",
     "enGB": "You can use Trample or Overrun as a move action.",
-    "zhCN": "You can use Trample or Overrun as a move action."
+    "zhCN": "你可以用移动动作践踏或闯越。"
   },
 
   {
@@ -2986,13 +2986,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Bond of Genies",
-    "zhCN": "Bond of Genies"
+    "zhCN": "巨灵纽带"
   },
 
   {
     "Key": "BondGenie.Description",
     "enGB": "You can mount any party member.",
-    "zhCN": "You can mount any party member."
+    "zhCN": "你可以骑乘任何队伍成员。"
   },
 
   {
@@ -3001,13 +3001,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Throat Slicer",
-    "zhCN": "Throat Slicer"
+    "zhCN": "割喉者"
   },
 
   {
     "Key": "ThroatSlicer.Description",
     "enGB": "When using a one-handed, light, or natural weapon, you can deliver a coup de grace to an unconscious, bound, or pinned target as a standard action.",
-    "zhCN": "When using a one-handed, light, or natural weapon, you can deliver a coup de grace to an unconscious, bound, or pinned target as a standard action."
+    "zhCN": "当你使用单手，轻型，或者天生武器时，可以以一个标准动作对失去知觉，或被擒抱状态所压制或捆绑的目标发起致命一击。"
   },
 
   {
@@ -3016,13 +3016,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Crab King Familiar",
-    "zhCN": "Crab King Familiar"
+    "zhCN": "蟹王魔宠"
   },
 
   {
     "Key": "CrabKing.Description",
     "enGB": "Master gains a +2 bonus on CMB checks to start and maintain a grapple.",
-    "zhCN": "Master gains a +2 bonus on CMB checks to start and maintain a grapple."
+    "zhCN": "主人获得+2擒抱检定加值。"
   },
 
   {
@@ -3031,13 +3031,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Ripple in Still Water",
-    "zhCN": "Ripple in Still Water"
+    "zhCN": "风吹幡动"
   },
 
   {
     "Key": "RippleWater.Description",
     "enGB": "Your kineticist levels and your monk levels stack for determining the number of points in your ki pool each day and the base damage of your kinetic blasts. In addition, you do not provoke attacks of opportunity for using your kinetic blast while threatened.",
-    "zhCN": "Your kineticist levels and your monk levels stack for determining the number of points in your ki pool each day and the base damage of your kinetic blasts. In addition, you do not provoke attacks of opportunity for using your kinetic blast while threatened."
+    "zhCN": "将你的操念使等级与武僧等级叠加，决定你气池的每日点数和你念袭的伤害。此外，在你受威胁时使用念袭不会引发借机攻击。"
   },
 
   {
@@ -3046,13 +3046,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Disarm (Next)",
-    "zhCN": "Disarm (Next)"
+    "zhCN": "缴械（一次）"
   },
 
   {
     "Key": "Disarm.Description",
     "enGB": "You can attempt to disarm your opponent in place of your next melee attack in a full-round attack.",
-    "zhCN": "You can attempt to disarm your opponent in place of your next melee attack in a full-round attack."
+    "zhCN": "整轮攻击中下一次攻击变成缴械"
   },
 
   {
@@ -3061,13 +3061,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Disarm (All)",
-    "zhCN": "Disarm (All)"
+    "zhCN": "缴械（全部）"
   },
 
   {
     "Key": "Disarm2.Description",
     "enGB": "You can attempt to disarm your opponent in place of your melee attacks in a full-round attack.",
-    "zhCN": "You can attempt to disarm your opponent in place of your melee attacks in a full-round attack."
+    "zhCN": "整轮攻击全部变成缴械"
   },
 
   {
@@ -3076,13 +3076,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Sunder (Next)",
-    "zhCN": "Sunder (Next)"
+    "zhCN": "击破（一次）"
   },
 
   {
     "Key": "Sunder.Description",
     "enGB": "You can attempt to Sunder your opponent's armor in place of your next melee attack in a full-round attack.",
-    "zhCN": "You can attempt to Sunder your opponent's armor in place of your next melee attack in a full-round attack."
+    "zhCN": "整轮攻击中下一次攻击变成击破"
   },
 
   {
@@ -3091,13 +3091,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Sunder (All)",
-    "zhCN": "Sunder (All)"
+    "zhCN": "击破（全部）"
   },
 
   {
     "Key": "Sunder2.Description",
     "enGB": "You can attempt to Sunder your opponent's armor in place of your melee attacks in a full-round attack.",
-    "zhCN": "You can attempt to Sunder your opponent's armor in place of your melee attacks in a full-round attack."
+    "zhCN": "整轮攻击全部变成击破"
   },
   {
     "Key": "Trip.Name",
@@ -3105,13 +3105,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Trip (Next)",
-    "zhCN": "Trip (Next)"
+    "zhCN": "绊摔（一次）"
   },
 
   {
     "Key": "Trip.Description",
     "enGB": "You can attempt to Trip your opponent in place of your next melee attack in a full-round attack.",
-    "zhCN": "You can attempt to Trip your opponent in place of your next melee attack in a full-round attack."
+    "zhCN": "整轮攻击中下一次攻击变成绊摔"
   },
 
   {
@@ -3120,13 +3120,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Trip (All)",
-    "zhCN": "Trip (All)"
+    "zhCN": "绊摔（全部）"
   },
 
   {
     "Key": "Trip2.Description",
     "enGB": "You can attempt to Trip your opponent in place of your melee attacks in a full-round attack.",
-    "zhCN": "You can attempt to Trip your opponent in place of your melee attacks in a full-round attack."
+    "zhCN": "整轮攻击全部变成绊摔"
   },
 
   {
@@ -3135,13 +3135,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Tentacle",
-    "zhCN": "Tentacle"
+    "zhCN": "触手"
   },
 
   {
     "Key": "TentacleGrab.Description",
     "enGB": "The alchemist gains a prehensile, arm-length tentacle on his body. The tentacle is fully under his control and cannot be concealed except with magic or bulky clothing. The tentacle does not give the alchemist any extra attacks or actions per round, though it has the grab ability with a +4 bonus on CMB checks to start and maintain a grapple.",
-    "zhCN": "The alchemist gains a prehensile, arm-length tentacle on his body. The tentacle is fully under his control and cannot be concealed except with magic or bulky clothing. The tentacle does not give the alchemist any extra attacks or actions per round, though it has the grab ability with a +4 bonus on CMB checks to start and maintain a grapple."
+    "zhCN": "炼金术师身上展出具有抓握性、长度大约一臂长的触手。这只触手受他控制，但无法用除了魔法或厚重服装之外的方式隐藏。此触手不会给予炼金术师每轮额外的攻击或动作，但触手的“攫抓”能力具有+4擒抱检定加值。"
   },
 
   {
@@ -3150,13 +3150,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Seize the Opportunity",
-    "zhCN": "Seize the Opportunity"
+    "zhCN": "批亢捣虚"
   },
 
   {
     "Key": "SeizetheOpportunity.Description",
     "enGB": "You possess an exceptional knack for exploiting sudden openings by your opponents. When you make an attack of opportunity, you can take an attack action (such as when using the Vital Strike feat) or attempt a learned combat maneuver (such as a bull rush, disarm or dirty trick) in place of your attack of opportunity. This feat does not allow you to move when it isn’t your turn.",
-    "zhCN": "You possess an exceptional knack for exploiting sudden openings by your opponents. When you make an attack of opportunity, you can take an attack action (such as when using the Vital Strike feat) or attempt a learned combat maneuver (such as a bull rush, disarm or dirty trick) in place of your attack of opportunity. This feat does not allow you to move when it isn’t your turn."
+    "zhCN": "你非常擅长利用对手稍瞬即逝的破绽。当你进行借机攻击时，你可以使用攻击行动（如要害打击专长）或尝试一个已学会的战技（如冲撞、卸武或阴招）来代替借机攻击。这个专长不允许你在回合外移动。"
   },
 
   {
@@ -3165,12 +3165,12 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Strength Surge",
-    "zhCN": "Strength Surge"
+    "zhCN": "怒涛狂涌"
   },
 
   {
     "Key": "BarbarianStrengthSurge.Description",
     "enGB": "The barbarian adds her barbarian level on her next combat maneuver check in 2 rounds as a swift action. This power can only be used once per rage.",
-    "zhCN": "The barbarian adds her barbarian level on her next combat maneuver check in 2 rounds as a swift action. This power can only be used once per rage."
+    "zhCN": "以一个迅捷动作，野蛮人将她的职业等级加到两轮内下一次战技检定上，每次狂暴中限一次。"
   }
 ]

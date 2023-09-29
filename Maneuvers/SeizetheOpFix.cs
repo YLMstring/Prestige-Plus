@@ -82,7 +82,7 @@ namespace PrestigePlus.Maneuvers
                 }
                 if (caster.HasFact(Disarm) && caster.HasFact(DisarmFeat))
                 {
-                    if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.DisarmMainHandBuff) && (target.HasFact(BlueprintRoot.Instance.SystemMechanics.DisarmOffHandBuff) || target.GetThreatHandMelee() == null)) { return true; }
+                    if (target.GetThreatHandMelee() == null || target.GetThreatHandMelee().MaybeWeapon == null || target.GetThreatHandMelee().MaybeWeapon.Blueprint.IsNatural) { return true; }
                     maneuver = CombatManeuver.Disarm;
                 }
                 if (caster.HasFact(Sunder) && caster.HasFact(SunderFeat))
