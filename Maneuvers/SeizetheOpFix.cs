@@ -20,6 +20,7 @@ using BlueprintCore.Blueprints.References;
 using Kingmaker.UnitLogic.Abilities.Components;
 using System.Runtime.Remoting.Contexts;
 using Kingmaker.EntitySystem;
+using Kingmaker.EntitySystem.Entities;
 
 namespace PrestigePlus.Maneuvers
 {
@@ -116,6 +117,7 @@ namespace PrestigePlus.Maneuvers
             }
             catch (Exception ex) { Logger.Error("Failed to replace op attack.", ex); return true; }
         }
+
         private const string SeizetheOpportunityAbility = "SeizetheOpportunity.SeizetheOpportunityAbility";
         private static readonly string SeizetheOpportunityAbilityGuid = "{52AE2CA9-7FA4-45E8-8D7B-22AC1C7F0F6C}";
 
