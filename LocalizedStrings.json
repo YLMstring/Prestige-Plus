@@ -3172,5 +3172,95 @@
     "Key": "BarbarianStrengthSurge.Description",
     "enGB": "The barbarian adds her barbarian level on her next combat maneuver check in 2 rounds as a swift action. This power can only be used once per rage.",
     "zhCN": "以一个迅捷动作，野蛮人将她的职业等级加到两轮内下一次战技检定上，每次狂暴中限一次。"
+  },
+
+  {
+    "Key": "HalflingOpportunist.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Halfling Opportunist",
+    "zhCN": "半身任侠"
+  },
+
+  {
+    "Key": "HalflingOpportunist.Description",
+    "enGB": "Even more so than the rest of their kind, halfling opportunists make their own luck. Shamelessly willing to take advantage of their foes, they can instantly assess a situation in order to find a way to turn it to their own benefit. When a giant swings his club, the halfling opportunist leaps onto it and uses the momentum to make her jump go that much further. When a spellcaster hurls a bolt of magical energy, the halfling opportunist steps in front of a door and uses the power to help her to smash through so she can make her escape. When a courtier tries to blacken her name, the halfling opportunist lets loose such a stream of cheeky accusations that the courtier ends up looking like the traitor instead. Halfling opportunists’ ability to exploit their enemies gives them a breezy self-confidence and the sheer audacity to take risks few others would dare. Perhaps because of this brazenness, they seem blessed by amazing strokes of good fortune. However, they rarely take their luck for granted. Instead they rely upon their keen senses to sidestep danger and their adaptability to carry them through both combat and social settings.",
+    "zhCN": "Even more so than the rest of their kind, halfling opportunists make their own luck. Shamelessly willing to take advantage of their foes, they can instantly assess a situation in order to find a way to turn it to their own benefit. When a giant swings his club, the halfling opportunist leaps onto it and uses the momentum to make her jump go that much further. When a spellcaster hurls a bolt of magical energy, the halfling opportunist steps in front of a door and uses the power to help her to smash through so she can make her escape. When a courtier tries to blacken her name, the halfling opportunist lets loose such a stream of cheeky accusations that the courtier ends up looking like the traitor instead. Halfling opportunists’ ability to exploit their enemies gives them a breezy self-confidence and the sheer audacity to take risks few others would dare. Perhaps because of this brazenness, they seem blessed by amazing strokes of good fortune. However, they rarely take their luck for granted. Instead they rely upon their keen senses to sidestep danger and their adaptability to carry them through both combat and social settings."
+  },
+
+  {
+    "Key": "HalflingOpportunistExploitive.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Exploitive Maneuver",
+    "zhCN": "斗转星移"
+  },
+
+  {
+    "Key": "HalflingOpportunistExploitive.Description",
+    "enGB": "A halfling opportunist can use an enemy’s actions in combat for her own gain. Once per round she can attempt a combat maneuver against an opponent that makes a melee attack against her. If she succeeds, the halfling opportunist adds +3 bonus to her next attack this round and subtracts that bonus from the enemy’s attack roll. This increases by +1 at 3rd level and again at 5th level.",
+    "zhCN": "半身任侠能够利用敌人的行动令自己受益。每轮限一次，她可以对近战攻击她的敌人发起战技检定，如果成功，本轮下一次攻击获得+3加值，敌人的攻击检定获得同样的减值。这个加值在3级和5级的时候各上升1点。"
+  },
+
+  {
+    "Key": "HalflingOpportunistExploitive2.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Exploitive Maneuver (Mythic)",
+    "zhCN": "斗转星移（神话）"
+  },
+
+  {
+    "Key": "HalflingOpportunistExploitive2.Description",
+    "enGB": "You can perform a specific combat maneuver you've learned when activating Exploitive Maneuver class ability.",
+    "zhCN": "在使用斗转星移职业能力时，你可以使用一项特定的已学会的战技。"
+  },
+
+  {
+    "Key": "HalflingOpportunistSummonSmall.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Halfling Bloodline",
+    "zhCN": "半身人血脉"
+  },
+
+  {
+    "Key": "HalflingOpportunistSummonSmall.Description",
+    "enGB": "The influence of your halfling bloodline manifests. A halfling opportunist's size decreaces one level unless she is a true halfling.",
+    "zhCN": "你的半身人血统产生了作用。半身任侠的体型缩小一级，除非她本来就是半身人。"
+  },
+
+  {
+    "Key": "HalflingOpportunistLucky.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Exceptionally Lucky",
+    "zhCN": "超常好运"
+  },
+
+  {
+    "Key": "HalflingOpportunistLucky.Description",
+    "enGB": "A halfling opportunist learns how to squeeze even more from her innate luck. Her racial bonus on saving throws increases by 1.",
+    "zhCN": "半身任侠学会了如何从天生的好运中获利更多。她的所有豁免获得可叠加的+1种族加值。"
+  },
+
+  {
+    "Key": "HalflingOpportunistOpportunity.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Opportunity Attacker",
+    "zhCN": "借机斗士"
+  },
+
+  {
+    "Key": "HalflingOpportunistOpportunity.Description",
+    "enGB": "At 5th level, a halfling opportunist masters the art of striking foes when they are at their most vulnerable. When making an attack of opportunity, she always deals her sneak attack damage.",
+    "zhCN": "第5级，半身任侠掌握了如何在对方最脆弱的时候进行攻击。当进行借机攻击时，你总是可以应用偷袭的伤害。"
   }
 ]

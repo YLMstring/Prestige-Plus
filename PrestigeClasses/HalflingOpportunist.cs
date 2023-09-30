@@ -52,7 +52,7 @@ namespace PrestigePlus.PrestigeClasses
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, CreateExploitive(), SummonSmallSelection())
+                .AddToLevelEntry(1, CreateExploitive(), FeatureRefs.AgileManeuvers.ToString(), SummonSmallSelection())
                 .AddToLevelEntry(2, LuckyFeat(), FeatureRefs.SneakAttack.ToString())
                 .AddToLevelEntry(3, FeatureRefs.CannyObserver.ToString())
                 .AddToLevelEntry(4, LuckyFeat(), FeatureRefs.SneakAttack.ToString())
@@ -173,9 +173,6 @@ namespace PrestigePlus.PrestigeClasses
         private const string SummonSmall2 = "HalflingOpportunist.SummonSmall2";
         private static readonly string SummonSmallGuid2 = "{E7562A3D-553B-4E88-BDA3-1DB3D86BD322}";
 
-        internal const string SummonSmall2DisplayName = "HalflingOpportunistSummonSmall2.Name";
-        private const string SummonSmall2Description = "HalflingOpportunistSummonSmall2.Description";
-
         private const string SummonSmall = "HalflingOpportunist.SummonSmall";
         private static readonly string SummonSmallGuid = "{0E6FBDC4-17FA-44FA-96D5-351EE26814CF}";
 
@@ -184,7 +181,7 @@ namespace PrestigePlus.PrestigeClasses
 
         public static BlueprintFeatureSelection SummonSmallSelection()
         {
-            var icon = FeatureRefs.LuckBlessingFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.ReducePerson.Reference.Get().Icon;
 
             var feat = FeatureConfigurator.New(SummonSmall, SummonSmallGuid)
               .SetDisplayName(SummonSmallDisplayName)
@@ -196,8 +193,8 @@ namespace PrestigePlus.PrestigeClasses
               .Configure();
 
             return FeatureSelectionConfigurator.New(SummonSmall2, SummonSmallGuid2)
-              .SetDisplayName(SummonSmall2DisplayName)
-              .SetDescription(SummonSmall2Description)
+              .SetDisplayName(SummonSmallDisplayName)
+              .SetDescription(SummonSmallDescription)
               .SetIcon(icon)
               .SetIgnorePrerequisites(false)
               .SetObligatory(true)
@@ -213,7 +210,7 @@ namespace PrestigePlus.PrestigeClasses
 
         public static BlueprintFeature LuckyFeat()
         {
-            var icon = AbilityRefs.RemoveFear.Reference.Get().Icon;
+            var icon = AbilityRefs.LuckBlessingMajorAbility.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Lucky, LuckyGuid)
               .SetDisplayName(LuckyDisplayName)
@@ -229,7 +226,7 @@ namespace PrestigePlus.PrestigeClasses
 
         public static BlueprintFeature Lucky2Feat()
         {
-            var icon = AbilityRefs.RemoveFear.Reference.Get().Icon;
+            var icon = AbilityRefs.LuckBlessingMajorAbility.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Lucky2, Lucky2Guid)
               .SetDisplayName(LuckyDisplayName)
