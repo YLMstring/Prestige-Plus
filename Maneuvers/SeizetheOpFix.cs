@@ -62,43 +62,43 @@ namespace PrestigePlus.Maneuvers
                     __result = UnitCommand.ResultType.Success;
                     return false;
                 }
-                if (caster.HasFact(BullRush) && caster.HasFact(BullRushFeat))
+                else if (caster.HasFact(BullRush) && caster.HasFact(BullRushFeat))
                 {
                     if (target.State.HasCondition(UnitCondition.ForceMove)) { return true; }
                     maneuver = CombatManeuver.BullRush;
                 }
-                if (caster.HasFact(DirtyBlind) && caster.HasFact(DirtyFeat))
+                else if (caster.HasFact(DirtyBlind) && caster.HasFact(DirtyFeat))
                 {
                     if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.DirtyTrickBlindnessBuff)) { return true; }
                     maneuver = CombatManeuver.DirtyTrickBlind;
                 }
-                if (caster.HasFact(DirtyEntangle) && caster.HasFact(DirtyFeat))
+                else if (caster.HasFact(DirtyEntangle) && caster.HasFact(DirtyFeat))
                 {
                     if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.DirtyTrickEntangledBuff)) { return true; }
                     maneuver = CombatManeuver.DirtyTrickEntangle;
                 }
-                if (caster.HasFact(DirtySicken) && caster.HasFact(DirtyFeat))
+                else if (caster.HasFact(DirtySicken) && caster.HasFact(DirtyFeat))
                 {
                     if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.DirtyTrickSickenedBuff)) { return true; }
                     maneuver = CombatManeuver.DirtyTrickSickened;
                 }
-                if (caster.HasFact(Disarm) && caster.HasFact(DisarmFeat))
+                else if (caster.HasFact(Disarm) && caster.HasFact(DisarmFeat))
                 {
                     var threat = target.GetThreatHandMelee();
                     if (threat == null || threat.MaybeWeapon == null || threat.MaybeWeapon.Blueprint.IsNatural || threat.MaybeWeapon.Blueprint.IsUnarmed) { return true; }
                     maneuver = CombatManeuver.Disarm;
                 }
-                if (caster.HasFact(Sunder) && caster.HasFact(SunderFeat))
+                else if (caster.HasFact(Sunder) && caster.HasFact(SunderFeat))
                 {
                     if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.SunderArmorBuff)) { return true; }
                     maneuver = CombatManeuver.SunderArmor;
                 }
-                if (caster.HasFact(Trip) && caster.HasFact(TripFeat))
+                else if (caster.HasFact(Trip) && caster.HasFact(TripFeat))
                 {
                     if (!target.CanBeKnockedOff()) { return true; }
                     maneuver = CombatManeuver.Trip;
                 }
-                if (caster.HasFact(Grapple) && caster.HasFact(GrappleFeat))
+                else if (caster.HasFact(Grapple) && caster.HasFact(GrappleFeat))
                 {
                     Logger.Info("start grapple");
                     if (caster.Get<UnitPartGrappleInitiatorPP>() || target.Get<UnitPartGrappleTargetPP>() || !ConditionTwoFreeHand.CheckCondition2(caster)) { return true; }

@@ -23,6 +23,12 @@ using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Blueprints;
 using BlueprintCore.Blueprints.Configurators.Root;
 using BlueprintCore.Actions.Builder.ContextEx;
+using PrestigePlus.Maneuvers;
+using PrestigePlus.CustomAction;
+using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
+using Kingmaker.Blueprints.Classes.Selection;
+using TabletopTweaks.Core.NewComponents;
+using PrestigePlus.Modify;
 
 namespace PrestigePlus.PrestigeClasses
 {
@@ -46,11 +52,11 @@ namespace PrestigePlus.PrestigeClasses
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, FeatureRefs.AuraOfCourageFeature.ToString(), CreateExploitive(), FeatureRefs.MythicIgnoreAlignmentRestrictions.ToString())
-                .AddToLevelEntry(2, FeatureRefs.SneakAttack.ToString())
+                .AddToLevelEntry(1, CreateExploitive(), SummonSmallSelection())
+                .AddToLevelEntry(2, LuckyFeat(), FeatureRefs.SneakAttack.ToString())
                 .AddToLevelEntry(3, FeatureRefs.CannyObserver.ToString())
-                .AddToLevelEntry(4, FeatureRefs.SneakAttack.ToString())
-                .AddToLevelEntry(5, FeatureRefs.CannyObserver.ToString())
+                .AddToLevelEntry(4, LuckyFeat(), FeatureRefs.SneakAttack.ToString())
+                .AddToLevelEntry(5, OpportunityFeat())
                 .SetRanks(1)
                 .SetIsClassFeature(true)
                 .SetDisplayName("")
@@ -96,6 +102,9 @@ namespace PrestigePlus.PrestigeClasses
         private const string Exploitive = "HalflingOpportunist.Exploitive";
         private static readonly string ExploitiveGuid = "{1A5088E4-3A14-465F-98B5-408B7ACB6627}";
 
+        private const string Exploitive2 = "HalflingOpportunist.Exploitive2";
+        private static readonly string ExploitiveGuid2 = "{BCCD43B4-D897-4604-9957-5429ACDFB22C}";
+
         private const string ExploitiveBuff = "HalflingOpportunist.ExploitiveBuff";
         private static readonly string ExploitiveGuidBuff = "{1F58B574-C1D0-4D95-9888-2F765FBA7669}";
 
@@ -107,6 +116,9 @@ namespace PrestigePlus.PrestigeClasses
 
         internal const string ExploitiveDisplayName = "HalflingOpportunistExploitive.Name";
         private const string ExploitiveDescription = "HalflingOpportunistExploitive.Description";
+
+        internal const string ExploitiveDisplayName2 = "HalflingOpportunistExploitive2.Name";
+        private const string ExploitiveDescription2 = "HalflingOpportunistExploitive2.Description";
         private static BlueprintFeature CreateExploitive()
         {
             var icon = AbilityRefs.SpellDanceAbility.Reference.Get().Icon;
@@ -137,8 +149,17 @@ namespace PrestigePlus.PrestigeClasses
               .Configure();
 
             var action = ActionsBuilder.New()
-                //component
+                .Add<ExploitiveManeuver>()
                 .Build();
+
+            var mythicfeat = FeatureConfigurator.New(Exploitive2, ExploitiveGuid2, FeatureGroup.MythicFeat)
+              .SetDisplayName(ExploitiveDisplayName2)
+              .SetDescription(ExploitiveDescription2)
+              .SetIcon(icon)
+              .AddPrerequisiteClassLevel(ArchetypeGuid, 1)
+              .AddPrerequisiteFeature(SeizetheOpportunity.FeatGuid)
+              .AddToFeatureSelection("0d3a3619-9d99-47af-8e47-cb6cc4d26821") //ttt
+              .Configure();
 
             return FeatureConfigurator.New(Exploitive, ExploitiveGuid)
               .SetDisplayName(ExploitiveDisplayName)
@@ -149,91 +170,93 @@ namespace PrestigePlus.PrestigeClasses
               .Configure();
         }
 
-        private const string ControllCharge = "HalflingOpportunist.ControllCharge";
-        private static readonly string ControllChargeGuid = "{48AF1EDA-5A68-4C0F-B62F-7F4F9A7A721C}";
+        private const string SummonSmall2 = "HalflingOpportunist.SummonSmall2";
+        private static readonly string SummonSmallGuid2 = "{E7562A3D-553B-4E88-BDA3-1DB3D86BD322}";
 
-        private const string ControllChargeBuff = "HalflingOpportunist.ControllChargeBuff";
-        private static readonly string ControllChargeGuidBuff = "{1AE0EC6C-3E58-4309-8B49-17CDD0EFD65B}";
+        internal const string SummonSmall2DisplayName = "HalflingOpportunistSummonSmall2.Name";
+        private const string SummonSmall2Description = "HalflingOpportunistSummonSmall2.Description";
 
-        internal const string ControllChargeDisplayName = "HalflingOpportunistControllCharge.Name";
-        private const string ControllChargeDescription = "HalflingOpportunistControllCharge.Description";
-        private static BlueprintFeature CreateControllCharge()
+        private const string SummonSmall = "HalflingOpportunist.SummonSmall";
+        private static readonly string SummonSmallGuid = "{0E6FBDC4-17FA-44FA-96D5-351EE26814CF}";
+
+        internal const string SummonSmallDisplayName = "HalflingOpportunistSummonSmall.Name";
+        private const string SummonSmallDescription = "HalflingOpportunistSummonSmall.Description";
+
+        public static BlueprintFeatureSelection SummonSmallSelection()
         {
-            var icon = FeatureRefs.CavalierCharge.Reference.Get().Icon;
+            var icon = FeatureRefs.LuckBlessingFeature.Reference.Get().Icon;
 
-            var Buff1 = BuffConfigurator.New(ControllChargeBuff, ControllChargeGuidBuff)
-              .SetDisplayName(ControllChargeDisplayName)
-              .SetDescription(ControllChargeDescription)
-              .SetIcon(icon)
-              .AddACBonusAgainstAttacks(armorClassBonus: 2)
-              .Configure();
-
-            var feat = FeatureConfigurator.New(ControllCharge, ControllChargeGuid)
-              .SetDisplayName(ControllChargeDisplayName)
-              .SetDescription(ControllChargeDescription)
+            var feat = FeatureConfigurator.New(SummonSmall, SummonSmallGuid)
+              .SetDisplayName(SummonSmallDisplayName)
+              .SetDescription(SummonSmallDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
+              .AddPrerequisiteNoFeature(RaceRefs.HalflingRace.ToString())
+              .AddComponent<ChangeUnitBaseSize>(c => { c.SizeDelta = -1; c.m_Type = TabletopTweaks.Core.NewUnitParts.UnitPartBaseSizeAdjustment.ChangeType.Delta; })
               .Configure();
 
-            var action = ActionsBuilder.New()
-                .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(feat).Build(), ifTrue: ActionsBuilder.New()
-                    .ApplyBuff(buff: Buff1, durationValue: ContextDuration.Fixed(1))
-                    .Build())
-                .Build();
-
-            BuffConfigurator.For(BuffRefs.ChargeBuff)
-            .EditComponent<AddFactContextActions>(
-                a => a.Activated.Actions = CommonTool.Append(a.Activated.Actions, action.Actions))
+            return FeatureSelectionConfigurator.New(SummonSmall2, SummonSmallGuid2)
+              .SetDisplayName(SummonSmall2DisplayName)
+              .SetDescription(SummonSmall2Description)
+              .SetIcon(icon)
+              .SetIgnorePrerequisites(false)
+              .SetObligatory(true)
+              .AddToAllFeatures(feat)
               .Configure();
-
-            return feat;
         }
 
-        private const string StubbornMind = "HalflingOpportunist.StubbornMind";
-        private static readonly string StubbornMindGuid = "{42D656DB-1669-417D-87F1-0BBFD93A141B}";
+        private const string Lucky = "HalflingOpportunist.Lucky";
+        private static readonly string LuckyGuid = "{70CC63B0-C72A-4577-9D35-0CB3AD6E348F}";
 
-        internal const string StubbornMindDisplayName = "HalflingOpportunistStubbornMind.Name";
-        private const string StubbornMindDescription = "HalflingOpportunistStubbornMind.Description";
-        private static BlueprintFeature CreateStubbornMind()
+        internal const string LuckyDisplayName = "HalflingOpportunistLucky.Name";
+        private const string LuckyDescription = "HalflingOpportunistLucky.Description";
+
+        public static BlueprintFeature LuckyFeat()
         {
-            var icon = FeatureRefs.SlipperyMind.Reference.Get().Icon;
+            var icon = AbilityRefs.RemoveFear.Reference.Get().Icon;
 
-            var feat = FeatureConfigurator.New(StubbornMind, StubbornMindGuid)
-              .SetDisplayName(StubbornMindDisplayName)
-              .SetDescription(StubbornMindDescription)
+            return FeatureConfigurator.New(Lucky, LuckyGuid)
+              .SetDisplayName(LuckyDisplayName)
+              .SetDescription(LuckyDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddSavingThrowBonusAgainstDescriptor(ContextValues.Rank(), spellDescriptor: SpellDescriptor.MindAffecting)
-              .AddContextRankConfig(ContextRankConfigs.StatBonus(StatType.Strength).WithBonusValueProgression(0))
-              .AddRecalculateOnStatChange(stat: StatType.Strength, useKineticistMainStat: false)
+              .AddBuffAllSavesBonus(descriptor: ModifierDescriptor.Racial, 1)
               .Configure();
-
-            return feat;
         }
 
-        private const string Smite = "HalflingOpportunist.Smite";
-        private static readonly string SmiteGuid = "{08B9C71F-D39B-4ED1-806E-D7FE7B8B36E3}";
+        private const string Lucky2 = "HalflingOpportunist.Lucky2";
+        private static readonly string Lucky2Guid = "{20AFD37E-6F88-4726-B18B-A07B9248C630}";
 
-        internal const string SmiteDisplayName = "HalflingOpportunistSmite.Name";
-        private const string SmiteDescription = "HalflingOpportunistSmite.Description";
-
-        private static readonly string InheritorGuid = "{772F4078-A60A-4D0F-B06C-61E56C4688D7}";
-        private static BlueprintFeature CreateSmite()
+        public static BlueprintFeature Lucky2Feat()
         {
-            var feat = FeatureConfigurator.New(Smite, SmiteGuid)
-                .CopyFrom(
-                FeatureRefs.SmiteEvilFeature,
-                typeof(AddFacts),
-                typeof(AddAbilityResources))
-              .SetDisplayName(SmiteDisplayName)
-              .SetDescription(SmiteDescription)
-              .SetIsClassFeature(true)
-              .AddFacts(new() { FeatureRefs.SmiteEvilFeature.ToString() })
-              .AddDamageBonusAgainstFactOwner(bonus: ContextValues.Rank(AbilityRankType.DamageBonus), checkedFact: BuffRefs.SmiteEvilBuff.ToString())
-              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { InheritorGuid, CharacterClassRefs.PaladinClass.ToString() }, excludeClasses: true, type: AbilityRankType.DamageBonus).WithLinearProgression(1, 0))
-              .Configure();
+            var icon = AbilityRefs.RemoveFear.Reference.Get().Icon;
 
-            return feat;
+            return FeatureConfigurator.New(Lucky2, Lucky2Guid)
+              .SetDisplayName(LuckyDisplayName)
+              .SetDescription(LuckyDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddBuffAllSavesBonus(descriptor: ModifierDescriptor.Racial, 1)
+              .Configure();
+        }
+
+        private const string Opportunity = "HalflingOpportunist.Opportunity";
+        private static readonly string OpportunityGuid = "{1D7C9736-1309-45F1-B5E0-B45E7F3755E0}";
+
+        internal const string OpportunityDisplayName = "HalflingOpportunistOpportunity.Name";
+        private const string OpportunityDescription = "HalflingOpportunistOpportunity.Description";
+
+        public static BlueprintFeature OpportunityFeat()
+        {
+            var icon = FeatureRefs.Opportunist.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Opportunity, OpportunityGuid)
+              .SetDisplayName(OpportunityDisplayName)
+              .SetDescription(OpportunityDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddComponent<ForceSneakDamage>()
+              .Configure();
         }
     }
 }
