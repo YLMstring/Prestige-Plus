@@ -19,7 +19,8 @@ namespace PrestigePlus.Modify
     internal class ForceSneakDamage : UnitFactComponentDelegate,
         IInitiatorRulebookHandler<RuleAttackRoll>,
         IRulebookHandler<RuleAttackRoll>,
-        ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleAttackWithWeapon>, IRulebookHandler<RuleAttackWithWeapon>
+        ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleAttackWithWeapon>, IRulebookHandler<RuleAttackWithWeapon>, IInitiatorRulebookHandler<RulePrepareDamage>,
+        IRulebookHandler<RulePrepareDamage>
     {
         void IRulebookHandler<RuleAttackRoll>.OnEventAboutToTrigger(RuleAttackRoll evt)
         {
@@ -45,6 +46,22 @@ namespace PrestigePlus.Modify
         void IRulebookHandler<RuleAttackWithWeapon>.OnEventDidTrigger(RuleAttackWithWeapon evt)
         {
             opp = false;
+        }
+
+        void IRulebookHandler<RulePrepareDamage>.OnEventAboutToTrigger(RulePrepareDamage evt)
+        {
+            
+        }
+
+        void IRulebookHandler<RulePrepareDamage>.OnEventDidTrigger(RulePrepareDamage evt)
+        {
+            if (!opp) return;
+            if (evt.ParentRule == null) return;
+            if (evt.ParentRule.DamageBundle == null) return;
+            foreach (var damage in evt.ParentRule.DamageBundle)
+            {
+                if (damage != null && damage.Precision && damage.Sneak) { damage.Precision = false; damage.Sneak = false; }
+            }
         }
 
         private bool opp = false;

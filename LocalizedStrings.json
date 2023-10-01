@@ -3155,8 +3155,8 @@
 
   {
     "Key": "SeizetheOpportunity.Description",
-    "enGB": "You possess an exceptional knack for exploiting sudden openings by your opponents. When you make an attack of opportunity, you can take an attack action (such as when using the Vital Strike feat) or attempt a learned combat maneuver (such as a bull rush, disarm or dirty trick) in place of your attack of opportunity. This feat does not allow you to move when it isn’t your turn.",
-    "zhCN": "你非常擅长利用对手稍瞬即逝的破绽。当你进行借机攻击时，你可以使用攻击行动（如要害打击专长）或尝试一个已学会的战技（如冲撞、卸武或阴招）来代替借机攻击。这个专长不允许你在回合外移动。"
+    "enGB": "You possess an exceptional knack for exploiting sudden openings by your opponents. When you make an attack of opportunity, you can activate Vital Strike or attempt a learned combat maneuver (such as a bull rush, disarm or dirty trick) in place of your attack of opportunity. This feat does not allow you to move when it isn’t your turn.",
+    "zhCN": "你非常擅长利用对手稍瞬即逝的破绽。当你进行借机攻击时，你可以使用要害打击或尝试一个已学会的战技（如冲撞、卸武或阴招）来代替借机攻击。这个专长不允许你在回合外移动。"
   },
 
   {
@@ -3200,8 +3200,8 @@
 
   {
     "Key": "HalflingOpportunistExploitive.Description",
-    "enGB": "A halfling opportunist can use an enemy’s actions in combat for her own gain. Once per round she can attempt a combat maneuver against an opponent that makes a melee attack against her. If she succeeds, the halfling opportunist adds +3 bonus to her next attack this round and subtracts that bonus from the enemy’s attack roll. This increases by +1 at 3rd level and again at 5th level.",
-    "zhCN": "半身任侠能够利用敌人的行动令自己受益。每轮限一次，她可以对近战攻击她的敌人发起战技检定，如果成功，本轮下一次攻击获得+3加值，敌人的攻击检定获得同样的减值。这个加值在3级和5级的时候各上升1点。"
+    "enGB": "A halfling opportunist can use an enemy’s actions in combat for her own gain. Once per round she can attempt a pull combat maneuver against an opponent that makes a melee attack against her. The opportunist substitutes her Dexterity score modifier for her Strength if higher. If she succeeds, the halfling opportunist adds +3 bonus to her next attack this round and subtracts that bonus from the enemy’s attack roll. This increases by +1 at 3rd level and again at 5th level.",
+    "zhCN": "半身任侠能够利用敌人的行动令自己受益。每轮限一次，她可以对近战攻击她的敌人发起拖拽战技检定，如果成功，本轮下一次攻击获得+3加值，敌人的攻击检定获得同样的减值。这个加值在3级和5级的时候各上升1点。"
   },
 
   {
@@ -3215,8 +3215,8 @@
 
   {
     "Key": "HalflingOpportunistExploitive2.Description",
-    "enGB": "You can perform a specific combat maneuver you've learned when activating Exploitive Maneuver class ability.",
-    "zhCN": "在使用斗转星移职业能力时，你可以使用一项特定的已学会的战技。"
+    "enGB": "You may perform another combat maneuver you've learned when activating Exploitive Maneuver class ability, but can't gain the +3 attack bonus if so choose.",
+    "zhCN": "在使用斗转星移职业能力时，可以换成另一项已学会的战技，但如此做不能获得原本的+3攻击加值。"
   },
 
   {

@@ -52,10 +52,10 @@ namespace PrestigePlus.PrestigeClasses
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, CreateExploitive(), FeatureRefs.AgileManeuvers.ToString(), SummonSmallSelection())
+                .AddToLevelEntry(1, CreateExploitive(), SummonSmallSelection())
                 .AddToLevelEntry(2, LuckyFeat(), FeatureRefs.SneakAttack.ToString())
                 .AddToLevelEntry(3, FeatureRefs.CannyObserver.ToString())
-                .AddToLevelEntry(4, LuckyFeat(), FeatureRefs.SneakAttack.ToString())
+                .AddToLevelEntry(4, Lucky2Feat(), FeatureRefs.SneakAttack.ToString())
                 .AddToLevelEntry(5, OpportunityFeat())
                 .SetRanks(1)
                 .SetIsClassFeature(true)
@@ -121,15 +121,17 @@ namespace PrestigePlus.PrestigeClasses
         private const string ExploitiveDescription2 = "HalflingOpportunistExploitive2.Description";
         private static BlueprintFeature CreateExploitive()
         {
-            var icon = AbilityRefs.SpellDanceAbility.Reference.Get().Icon;
+            var icon = FeatureRefs.CraneStyleFeat.Reference.Get().Icon;
 
             var selfbuff = BuffConfigurator.New(ExploitiveBuff, ExploitiveGuidBuff)
               .SetDisplayName(ExploitiveDisplayName)
               .SetDescription(ExploitiveDescription)
               .SetIcon(icon)
               .AddAttackBonusConditional(bonus: ContextValues.Rank(), descriptor: ModifierDescriptor.UntypedStackable)
+              .AddCMBBonus(value: ContextValues.Rank(), descriptor: ModifierDescriptor.UntypedStackable)
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }).WithCustomProgression((2, 3), (4, 4), (5, 5)))
-              .AddInitiatorAttackRollTrigger(ActionsBuilder.New().RemoveSelf().Build(), onOwner: true)
+              .AddInitiatorAttackRollTrigger(ActionsBuilder.New().RemoveBuff(ExploitiveGuidBuff, toCaster: true).Build(), onOwner: true)
+              .AddManeuverTrigger(ActionsBuilder.New().RemoveBuff(ExploitiveGuidBuff, toCaster: true).Build(), onlySuccess: false)
               .Configure();
 
             var enemydebuff = BuffConfigurator.New(ExploitiveBuff2, ExploitiveGuidBuff2)
@@ -137,8 +139,9 @@ namespace PrestigePlus.PrestigeClasses
               .SetDescription(ExploitiveDescription)
               .SetIcon(icon)
               .AddAttackBonusConditional(bonus: ContextValues.Rank(), descriptor: ModifierDescriptor.Penalty)
-              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }).WithCustomProgression((2, 3), (4, 4), (5, 5)))
-              .AddInitiatorAttackRollTrigger(ActionsBuilder.New().RemoveSelf().Build(), onOwner: true)
+              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }).WithCustomProgression((2, -3), (4, -4), (5, -5)))
+              //.AddInitiatorAttackRollTrigger(ActionsBuilder.New().RemoveBuff(ExploitiveGuidBuff2, toCaster: false).Build(), onOwner: true)
+              .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().RemoveBuff(ExploitiveGuidBuff2, toCaster: false).Build(), actionsOnInitiator: true, onlyHit: false)
               .Configure();
 
             var cooldownbuff = BuffConfigurator.New(ExploitiveBuff3, ExploitiveGuidBuff3)
@@ -156,7 +159,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetDisplayName(ExploitiveDisplayName2)
               .SetDescription(ExploitiveDescription2)
               .SetIcon(icon)
-              .AddPrerequisiteClassLevel(ArchetypeGuid, 1)
+              .AddPrerequisiteClassLevel(ArchetypeGuid, 5)
               .AddPrerequisiteFeature(SeizetheOpportunity.FeatGuid)
               .AddToFeatureSelection("0d3a3619-9d99-47af-8e47-cb6cc4d26821") //ttt
               .Configure();
@@ -167,8 +170,11 @@ namespace PrestigePlus.PrestigeClasses
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddTargetAttackWithWeaponTrigger(actionsOnAttacker: action, onlyMelee: true, triggerBeforeAttack: true)
+              .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New().RemoveBuff(cooldownbuff, toCaster: true).Build())
               .Configure();
         }
+        private const string SummonSmall0 = "HalflingOpportunist.SummonSmall0";
+        private static readonly string SummonSmallGuid0 = "{A1EE2344-5261-481C-A4D5-D3CACB77782D}";
 
         private const string SummonSmall2 = "HalflingOpportunist.SummonSmall2";
         private static readonly string SummonSmallGuid2 = "{E7562A3D-553B-4E88-BDA3-1DB3D86BD322}";
@@ -182,6 +188,14 @@ namespace PrestigePlus.PrestigeClasses
         public static BlueprintFeatureSelection SummonSmallSelection()
         {
             var icon = AbilityRefs.ReducePerson.Reference.Get().Icon;
+
+            var feat0 = FeatureConfigurator.New(SummonSmall0, SummonSmallGuid0)
+              .SetDisplayName(SummonSmallDisplayName)
+              .SetDescription(SummonSmallDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddPrerequisiteFeature(RaceRefs.HalflingRace.ToString())
+              .Configure();
 
             var feat = FeatureConfigurator.New(SummonSmall, SummonSmallGuid)
               .SetDisplayName(SummonSmallDisplayName)
@@ -198,6 +212,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetIcon(icon)
               .SetIgnorePrerequisites(false)
               .SetObligatory(true)
+              .AddToAllFeatures(feat0)
               .AddToAllFeatures(feat)
               .Configure();
         }
@@ -210,7 +225,7 @@ namespace PrestigePlus.PrestigeClasses
 
         public static BlueprintFeature LuckyFeat()
         {
-            var icon = AbilityRefs.LuckBlessingMajorAbility.Reference.Get().Icon;
+            var icon = FeatureRefs.LuckDomainBaseFeature.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Lucky, LuckyGuid)
               .SetDisplayName(LuckyDisplayName)
@@ -226,7 +241,7 @@ namespace PrestigePlus.PrestigeClasses
 
         public static BlueprintFeature Lucky2Feat()
         {
-            var icon = AbilityRefs.LuckBlessingMajorAbility.Reference.Get().Icon;
+            var icon = FeatureRefs.LuckDomainBaseFeature.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Lucky2, Lucky2Guid)
               .SetDisplayName(LuckyDisplayName)
