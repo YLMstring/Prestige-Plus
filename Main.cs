@@ -15,6 +15,7 @@ using PrestigePlus.Grapple;
 using Kingmaker.Controllers.Units;
 using Kingmaker.GameModes;
 using PrestigePlus.Maneuvers;
+using PrestigePlus.BasePrestigeEnhance;
 
 namespace PrestigePlus
 {
@@ -139,6 +140,9 @@ namespace PrestigePlus
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("turtle"), defaultValue: true, Helpers.CreateString("toggle-desc15", "Snapping Turtle Style"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("enhance"), defaultValue: true, Helpers.CreateString("toggle-desc22", "Mythic Prestige Class Features"))
               .ShowVisualConnection()));
 
                 try
@@ -173,6 +177,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("asavir"))) { Asavir.Configure(); BondGenie.Configure(); TrampleMythic.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("maneuver"))) { ReplaceAttack.DisarmConfigure(); ReplaceAttack.SunderConfigure(); ReplaceAttack.TripConfigure(); StrengthSurge.StrengthSurgeFeat(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("halfling"))) { HalflingOpportunist.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("enhance"))) { SwiftDeath.Configure(); SwiftDeath.Configure2(); UnbreakableDefance.Configure(); MythicWings.Configure(); }
                 }
                 catch (Exception e)
         {

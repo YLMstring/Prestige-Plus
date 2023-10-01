@@ -3262,5 +3262,65 @@
     "Key": "HalflingOpportunistOpportunity.Description",
     "enGB": "At 5th level, a halfling opportunist masters the art of striking foes when they are at their most vulnerable. When making an attack of opportunity, she always deals her sneak attack damage.",
     "zhCN": "第5级，半身任侠掌握了如何在对方最脆弱的时候进行攻击。当进行借机攻击时，你总是可以应用偷袭的伤害。"
+  },
+
+  {
+    "Key": "SwiftDeath1.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Swift Death",
+    "zhCN": "轻巧夺命"
+  },
+
+  {
+    "Key": "SwiftDeath1.Description",
+    "enGB": "Your Death Attack becomes a standard action. At 10th assassin level, it becomes a move action.",
+    "zhCN": "你的夺命攻击变成标准动作，刺客10级时还会变成移动动作。"
+  },
+
+  {
+    "Key": "SwiftDeath2.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Greater Swift Death",
+    "zhCN": "高等轻巧夺命"
+  },
+
+  {
+    "Key": "SwiftDeath2.Description",
+    "enGB": "Your Death Attack becomes a move action. At 10th assassin level, it becomes a swift action.",
+    "zhCN": "你的夺命攻击变成移动动作，刺客10级时还会变成迅捷动作。"
+  },
+
+  {
+    "Key": "UnbreakableDefance.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Unbreakable Defance",
+    "zhCN": "固若金汤"
+  },
+
+  {
+    "Key": "UnbreakableDefance.Description",
+    "enGB": "You no longer have a limited amount of Defensive Stance rounds per day.",
+    "zhCN": "你使用防御姿态时不再有轮数限制。"
+  },
+
+  {
+    "Key": "MythicWings.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Draconic Wings",
+    "zhCN": "龙翼"
+  },
+
+  {
+    "Key": "MythicWings.Description",
+    "enGB": "The disciple gains two primary wing attacks that deal 1d4 damage.",
+    "zhCN": "你获得两个1d4翼击作为主要天生武器。"
   }
 ]

@@ -18,6 +18,7 @@ namespace PrestigePlus.Modify
 {
     [AllowedOn(typeof(BlueprintUnitFact), false)]
     [AllowedOn(typeof(BlueprintBuff), false)]
+    [AllowMultipleComponents]
     internal class ChangeActionSpell : UnitFactComponentDelegate
     {
         public BlueprintAbility Ability;
