@@ -1,6 +1,8 @@
 ﻿using BlueprintCore.Actions.Builder;
 using BlueprintCore.Actions.Builder.BasicEx;
 using BlueprintCore.Actions.Builder.ContextEx;
+using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
+using BlueprintCore.Blueprints.CustomConfigurators;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
@@ -9,6 +11,7 @@ using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Conditions.Builder.BasicEx;
 using BlueprintCore.Conditions.Builder.ContextEx;
 using BlueprintCore.Utils.Types;
+using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Blueprints.Root;
 using Kingmaker.Enums;
@@ -19,6 +22,7 @@ using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Mechanics.Components;
+using PrestigePlus.Modify;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,45 +48,49 @@ namespace PrestigePlus.Feats
         private const string DefensiveRollBuff3 = "DefensiveRollBuff3";
         private static readonly string DefensiveRollGuidBuff3 = "1A59633B-FE44-4B74-8ABD-41C33BD5EF19";
 
+        private const string DefensiveRollAbility = "DefensiveRoll.DefensiveRollAbility";
+        private static readonly string DefensiveRollAbilityGuid = "{8CE3C5BA-3FCB-43B7-A90A-D89F0EEA9A21}";
+
+        private const string DefensiveRollAblityRes = "DefensiveRollAblityRes";
+        private static readonly string DefensiveRollAblityResGuid = "{D6CD7849-DF81-4528-90C8-A78350CAEBC1}";
         public static void Configure()
         {
             var icon = FeatureRefs.Evasion.Reference.Get().Icon;
-            var icon2 = FeatureRefs.UncannyDodge.Reference.Get().Icon;
 
             var Buff1 = BuffConfigurator.New(DefensiveRollBuff, DefensiveRollGuidBuff)
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
-              .AddUnitHealthGuard(0)
-              .AddBuffOnHealthTickingTrigger((float)0.05, DefensiveRollGuidBuff2)
+              .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddComponent<RogueAnotherDay>()
               .Configure();
 
             var Buff3 = BuffConfigurator.New(DefensiveRollBuff3, DefensiveRollGuidBuff3)
-              .CopyFrom(
-                BuffRefs.CloakofDreamsEffectBuff,
-                typeof(AddIncomingDamageTrigger),
-                typeof(RemoveWhenCombatEnded))
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
-              .SetIcon(icon2)
-              .AddUnitHealthGuard(0)
-              .AddBuffActions(deactivated: ActionsBuilder.New()
-                .Conditional(conditions: ConditionsBuilder.New().IsFlatFooted().Build(), ifFalse: ActionsBuilder.New()
-                    .HealTarget(ContextDice.Value(DiceType.One))
-                    .Build())
-                .Build())
+              .SetIcon(icon)
               .Configure();
 
             var Buff2 = BuffConfigurator.New(DefensiveRollBuff2, DefensiveRollGuidBuff2)
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
-              .SetIcon(icon2)
-              .AddBuffActions(activated: ActionsBuilder.New()
-                .RemoveSelf() 
-                .ApplyBuff(buff: Buff3, durationValue: ContextDuration.Fixed(1))
-                .RemoveBuff(Buff1)
-                .Build())
+              .SetIcon(icon)
               .Configure();
+
+            BlueprintAbilityResource Scarabilityresourse = AbilityResourceConfigurator.New(DefensiveRollAblityRes, DefensiveRollAblityResGuid)
+                .SetMaxAmount(
+                    ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var ability = ActivatableAbilityConfigurator.New(DefensiveRollAbility, DefensiveRollAbilityGuid)
+                .SetDisplayName(DisplayName)
+                .SetDescription(Description)
+                .SetIcon(icon)
+                .SetBuff(Buff1)
+                .SetDeactivateImmediately()
+                .AddActivatableAbilityResourceLogic(requiredResource: Scarabilityresourse, spendType: Kingmaker.UnitLogic.ActivatableAbilities.ActivatableAbilityResourceLogic.ResourceSpendType.Never)
+                .SetIsOnByDefault(true)
+                .Configure();
 
             FeatureSelectionConfigurator.For(FeatureSelectionRefs.RogueTalentSelection)
                 .AddToAllFeatures(FeatureConfigurator.New(FeatName, FeatGuid)
@@ -90,10 +98,8 @@ namespace PrestigePlus.Feats
                     .SetDescription(Description)
                     .SetIcon(icon)
                     .AddPrerequisiteFeature(FeatureRefs.AdvanceTalents.ToString())
-                    .AddRestTrigger(ActionsBuilder.New()
-                        .ApplyBuffPermanent(Buff1)
-                        .Build())
-                    .AddFacts(new() { Buff1 })
+                    .AddFacts(new() { ability })
+                    .AddAbilityResources(resource: Scarabilityresourse, restoreAmount: true)
                     .Configure())
                 .Configure(delayed: true);
         }

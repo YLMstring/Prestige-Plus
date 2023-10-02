@@ -27,17 +27,17 @@ namespace PrestigePlus.Modify
             try
             {
                 int num = 0;
-                Logger.Info("start heal");
+                //Logger.Info("start heal");
                 foreach (DamageValue damageValue in evt.ResultList)
                 {
                     num += damageValue.RollAndBonusValue;
-                    Logger.Info(num.ToString());
+                    //Logger.Info(num.ToString());
                 }
                 int healValue = num;
-                Logger.Info("finish heal");
+                //Logger.Info("finish heal");
                 if (healValue > 0)
                 {
-                    Rulebook.Trigger<RuleHealDamage>(new RuleHealDamage(base.Owner, base.Owner, healValue));
+                    Rulebook.Trigger(new RuleHealDamage(base.Owner, base.Owner, healValue));
                 }
             }
             catch (Exception ex) { Logger.Error("Failed to heal energy arrow.", ex); }

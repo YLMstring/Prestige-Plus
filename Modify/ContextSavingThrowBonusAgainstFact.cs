@@ -25,15 +25,15 @@ namespace PrestigePlus.Modify
             {
                 UnitEntityData caster = evt.Reason.Caster;
                 UnitDescriptor unitDescriptor = (caster != null) ? caster.Descriptor : null;
-                Logger.Info("start Add save");
+                //Logger.Info("start Add save");
                 if (unitDescriptor != null && unitDescriptor.HasFact(this.CheckedFact))
                 {
-                    Logger.Info("Add save1");
+                    //Logger.Info("Add save1");
                     int num = this.Bonus.Calculate(base.Fact.MaybeContext) + this.Value * base.Fact.GetRank();
                     evt.AddTemporaryModifier(evt.Initiator.Stats.SaveWill.AddModifier(num, base.Runtime, this.Descriptor));
                     evt.AddTemporaryModifier(evt.Initiator.Stats.SaveReflex.AddModifier(num, base.Runtime, this.Descriptor));
                     evt.AddTemporaryModifier(evt.Initiator.Stats.SaveFortitude.AddModifier(num, base.Runtime, this.Descriptor));
-                    Logger.Info("Add save2");
+                    //Logger.Info("Add save2");
                 }
             }
             catch (Exception ex) { Logger.Error("Failed to ContextSavingThrowBonusAgainstFact.", ex); }

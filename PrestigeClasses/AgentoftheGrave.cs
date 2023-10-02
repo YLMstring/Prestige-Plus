@@ -184,13 +184,18 @@ namespace PrestigePlus.PrestigeClasses
         {
             var icon = AbilityRefs.BloodlineUndeadGraveTouchAbility.Reference.Get().Icon;
 
+            FeatureConfigurator.For(FeatureRefs.UndeadImmunities)
+                .AddRemoveFeatureOnApply(UnholyFortitudeGuid)
+                .Configure();
+
             return FeatureConfigurator.New(UnholyFortitude, UnholyFortitudeGuid)
               .SetDisplayName(UnholyFortitudeDisplayName)
               .SetDescription(UnholyFortitudeDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddRaiseStatToMinimum(stat: StatType.Constitution, targetValue: ContextValues.Rank())
-              .AddContextRankConfig(ContextRankConfigs.BaseStat(StatType.Charisma))
+              //.AddRaiseStatToMinimum(stat: StatType.Constitution, targetValue: ContextValues.Rank())
+              //.AddContextRankConfig(ContextRankConfigs.BaseStat(StatType.Charisma))
+              .AddComponent<UnholyFortitudeLogic>()
               .Configure();
         }
         private const string DeathShroud = "AgentoftheGrave.DeathShroud";

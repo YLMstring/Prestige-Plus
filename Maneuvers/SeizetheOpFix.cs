@@ -100,7 +100,7 @@ namespace PrestigePlus.Maneuvers
                 }
                 else if (caster.HasFact(Grapple) && caster.HasFact(GrappleFeat))
                 {
-                    Logger.Info("start grapple");
+                    //Logger.Info("start grapple");
                     if (caster.Get<UnitPartGrappleInitiatorPP>() || target.Get<UnitPartGrappleTargetPP>() || !ConditionTwoFreeHand.CheckCondition2(caster)) { return true; }
                     maneuver = CombatManeuver.Grapple;
                 }

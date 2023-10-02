@@ -1,4 +1,6 @@
-﻿using Kingmaker.Enums;
+﻿using BlueprintCore.Utils;
+using Kingmaker.Blueprints;
+using Kingmaker.Enums;
 using Kingmaker.Items;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem;
@@ -60,7 +62,7 @@ namespace PrestigePlus.Modify
             if (evt.ParentRule.DamageBundle == null) return;
             foreach (var damage in evt.ParentRule.DamageBundle)
             {
-                if (damage != null && damage.Precision && damage.Sneak) { damage.Precision = false; damage.Sneak = false; }
+                if (damage != null && damage.Sneak) { damage.Precision = false; }
             }
         }
 

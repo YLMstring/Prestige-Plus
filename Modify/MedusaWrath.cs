@@ -32,7 +32,7 @@ namespace PrestigePlus.Modify
             try
             {
                 UnitEntityData unit = base.Target.Unit;
-                Logger.Info("start");
+                //Logger.Info("start");
                 if (unit == null)
                 {
                     Logger.Info("no unit");
@@ -51,7 +51,7 @@ namespace PrestigePlus.Modify
                 var IsTargetFlatFooted = Rulebook.Trigger(new RuleCheckTargetFlatFooted(maybeCaster, unit)).IsFlatFooted;
                 if (IsTargetFlatFooted || unit.State.HasCondition(UnitCondition.Dazed) || unit.State.HasCondition(UnitCondition.LoseDexterityToAC) || unit.State.HasCondition(UnitCondition.Paralyzed) || unit.State.HasCondition(UnitCondition.Staggered) || unit.State.HasCondition(UnitCondition.Stunned) || unit.State.HasCondition(UnitCondition.Unconscious))
                 {
-                    Logger.Info("add buff");
+                    //Logger.Info("add buff");
                     GameHelper.ApplyBuff(maybeCaster, CasterBuff, new Rounds?(1.Rounds()));
                 }
             }catch (Exception ex) { Logger.Error("Failed to medusa.", ex); }
@@ -62,7 +62,7 @@ namespace PrestigePlus.Modify
         {
             try
             {
-                Logger.Info("start rua"); 
+                //Logger.Info("start rua"); 
                 UnitEntityData maybeCaster = base.Context.MaybeCaster;
                 WeaponSlot threatHandMelee = maybeCaster.GetThreatHandMelee(false);
                 float meters = threatHandMelee.Weapon.AttackRange.Meters;
@@ -73,7 +73,7 @@ namespace PrestigePlus.Modify
                 {
                     if (selectNewTarget)
                     {
-                        Logger.Info("start rua real");
+                        //Logger.Info("start rua real");
                         int num = 0;
                         IEnumerable<UnitAttack.AttackInfo> enumerable = UnitAttack.EnumerateFullAttack(maybeCaster);
                         int attacksCount = enumerable.Count<UnitAttack.AttackInfo>();

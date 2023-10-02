@@ -99,7 +99,7 @@ namespace PrestigePlus.Modify
                 }
             }
             catch (Exception e) { Logger.Error("Failed to imbue", e);  }
-            Logger.Info("attack hit");
+            //Logger.Info("attack hit");
             return;
         }
 

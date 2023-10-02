@@ -33,7 +33,8 @@ namespace PrestigePlus.Maneuvers
                 var caster = __instance.Executor;
                 var target = __instance.Target;
                 if (!__instance.IsAttackFull || !attack.Weapon.Blueprint.IsMelee) { return true; }
-                Logger.Info(attack.AttackBonusPenalty.ToString());
+                //Logger.Info(attack.AttackBonusPenalty.ToString());
+                if (caster.Body?.EmptyHandWeapon == null) { return true; }
                 var AttackBonusRule = new RuleCalculateAttackBonus(caster, target, caster.Body.EmptyHandWeapon, 0) { };
                 int penalty = -attack.AttackBonusPenalty + DualPenalty(caster, attack);
                 AttackBonusRule.AddModifier(penalty, descriptor: ModifierDescriptor.Penalty);

@@ -32,7 +32,7 @@ namespace PrestigePlus.Modify
         {
             try
             {
-                Logger.Info("start");
+                //Logger.Info("start");
                 UnitEntityData unit = base.Target.Unit;
                 if (unit == null)
                 {
@@ -48,15 +48,15 @@ namespace PrestigePlus.Modify
                 UnitEntityData mount = maybeCaster.GetSaddledUnit();
                 if (mount == null) { Logger.Info("Caster not mount"); return; }
                 int dc = mount.Stats.Strength.Bonus + 10 + maybeCaster.Descriptor.Progression.GetClassLevel(BlueprintTool.GetRef<BlueprintCharacterClassReference>(Asavir.ArchetypeGuid));
-                Logger.Info(dc.ToString());
+                //Logger.Info(dc.ToString());
                 bool pass = GameHelper.TriggerSkillCheck(new RuleSkillCheck(unit, Kingmaker.EntitySystem.Stats.StatType.SaveReflex, dc)
                 {
                     IgnoreDifficultyBonusToDC = mount.IsPlayersEnemy
                 }, unit.Context, true).Success;
-                Logger.Info("skill check end");
+                //Logger.Info("skill check end");
                 if (!pass)
                 {
-                    Logger.Info("not pass");
+                    //Logger.Info("not pass");
                     if (unit.CanBeKnockedOff())
                     {
                         unit.Descriptor.State.Prone.ShouldBeActive = true;

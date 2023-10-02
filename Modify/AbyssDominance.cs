@@ -22,18 +22,18 @@ namespace PrestigePlus.Modify
             var guid = "{59352D08-B18B-45B8-B2BB-528479DAFC8F}";
             var archetype = BlueprintTool.GetRef<BlueprintFeatureReference>(guid);
             if (Owner == null) { 
-                Logger.Info("owner null");
+                //Logger.Info("owner null");
                 base.Owner.Ensure<UnitPartFavoredEnemy>().AddEntry(this.CheckedFacts.ToArray<BlueprintUnitFact>(), base.Fact, 0 * base.Fact.GetRank());
                 return; }
             if (Owner.Descriptor == null) { 
-                Logger.Info("descriptor null");
+                //Logger.Info("descriptor null");
                 base.Owner.Ensure<UnitPartFavoredEnemy>().AddEntry(this.CheckedFacts.ToArray<BlueprintUnitFact>(), base.Fact, 0 * base.Fact.GetRank());
                 return; }
             if (!Owner.Descriptor.HasFact(archetype)) { 
-                Logger.Info("no dominance");
+                //Logger.Info("no dominance");
                 base.Owner.Ensure<UnitPartFavoredEnemy>().AddEntry(this.CheckedFacts.ToArray<BlueprintUnitFact>(), base.Fact, 0 * base.Fact.GetRank());
                 return; }
-            Logger.Info("work favor");
+            //Logger.Info("work favor");
             base.OnTurnOn();
         }
     }

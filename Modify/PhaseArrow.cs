@@ -26,7 +26,7 @@ namespace PrestigePlus.Modify
                 if (evt != null)
                     if (evt.BrilliantEnergy == null)
                     {
-                        Logger.Info("modify AC");
+                        //Logger.Info("modify AC");
                         evt.AddModifier(-RuleCalculateAC.CalculateArmorAndShieldBonuses(evt.Target), evt.BrilliantEnergy, ModifierDescriptor.UntypedStackable);
                     }
                 base.OnEventAboutToTrigger(evt);

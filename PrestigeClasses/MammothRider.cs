@@ -531,6 +531,8 @@ namespace PrestigePlus.PrestigeClasses
               .AddConditionImmunity(UnitCondition.Sickened)
               .AddConditionImmunity(UnitCondition.Staggered)
               .AddConditionImmunity(UnitCondition.Stunned)
+              .AddEvasion(SavingThrowType.Fortitude)
+              .AddEvasion(SavingThrowType.Will)
               .AddFeatureToPet(feat)
               .AddComponent<RiderMammothLord>()
               .Configure();
