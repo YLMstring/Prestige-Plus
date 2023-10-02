@@ -40,7 +40,7 @@ namespace PrestigePlus.BasePrestigeEnhance
                     .SetDisplayName(DisplayName)
                     .SetDescription(Description)
                     .SetIcon(icon)
-                    .AddFeatureOnClassLevel(beforeThisLevel: false, clazz: CharacterClassRefs.AssassinClass.ToString(), level: 2, feature: feat)
+                    .AddFeatureOnClassLevel(beforeThisLevel: false, clazz: CharacterClassRefs.AssassinClass.ToString(), level: 10, feature: feat)
                     .AddFacts(new() { FeatureRefs.AssassinDeathAttackStandard.ToString()})
                     .AddPrerequisiteClassLevel(CharacterClassRefs.AssassinClass.ToString(), 1)
                     .Configure();
@@ -86,8 +86,8 @@ namespace PrestigePlus.BasePrestigeEnhance
                     .SetDescription(Description2)
                     .SetIcon(icon)
                     .AddPrerequisiteFeature(FeatGuid)
-                    .AddFeatureOnClassLevel(beforeThisLevel: true, clazz: CharacterClassRefs.AssassinClass.ToString(), level: 2, feature: feat4)
-                    .AddFeatureOnClassLevel(beforeThisLevel: false, clazz: CharacterClassRefs.AssassinClass.ToString(), level: 2, feature: feat)
+                    .AddFeatureOnClassLevel(beforeThisLevel: true, clazz: CharacterClassRefs.AssassinClass.ToString(), level: 10, feature: feat4)
+                    .AddFeatureOnClassLevel(beforeThisLevel: false, clazz: CharacterClassRefs.AssassinClass.ToString(), level: 10, feature: feat)
                     .Configure();
         }
     }

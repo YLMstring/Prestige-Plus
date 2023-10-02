@@ -3322,5 +3322,20 @@
     "Key": "MythicWings.Description",
     "enGB": "The disciple gains two primary wing attacks that deal 1d4 damage.",
     "zhCN": "你获得两个1d4翼击作为主要天生武器。"
+  },
+
+  {
+    "Key": "MythicBreath.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Endless Breath",
+    "zhCN": "无尽吐息"
+  },
+
+  {
+    "Key": "MythicBreath.Description",
+    "enGB": "You have 1/3 chance to recover one use of your breath weapon at the start of your turn. Additionally, your Gold Dragon Breath (Mythic) becomes a move action.",
+    "zhCN": "你每回合开始时有1/3概率恢复一次吐息次数，另外，你的金龙道途吐息变成移动动作。"
   }
 ]
