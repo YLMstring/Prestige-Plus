@@ -48,6 +48,7 @@ using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Designers.Mechanics.Facts;
 using PrestigePlus.Feats;
+using TabletopTweaks.Core.NewComponents.Prerequisites;
 
 namespace PrestigePlus.PrestigeClasses
 {
@@ -100,8 +101,13 @@ namespace PrestigePlus.PrestigeClasses
                 .SetClassSkills(new StatType[] { StatType.SkillKnowledgeWorld, StatType.SkillKnowledgeArcana, StatType.SkillLoreReligion, StatType.SkillUseMagicDevice, StatType.SkillPersuasion })
                 .AddPrerequisiteStatValue(StatType.SkillKnowledgeArcana, 5)
                 .AddPrerequisiteStatValue(StatType.SkillLoreReligion, 5)
-                .AddPrerequisiteCasterTypeSpellLevel(true, false, 3, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
-                .AddPrerequisiteCasterTypeSpellLevel(false, false, 3, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .AddComponent<PrerequisiteSpellKnown>(c => { c.m_Spell = BlueprintTool.GetRef<BlueprintAbilityReference>(AbilityRefs.AnimateDead.ToString()); c.RequireSpellbook = true; })
+                .AddPrerequisiteAlignment(AlignmentMaskType.Evil, true, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .AddPrerequisiteAlignment(AlignmentMaskType.LawfulNeutral, true, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .AddPrerequisiteAlignment(AlignmentMaskType.TrueNeutral, true, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticNeutral, true, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                //.AddPrerequisiteCasterTypeSpellLevel(true, false, 3, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                //.AddPrerequisiteCasterTypeSpellLevel(false, false, 3, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                 .Configure();
 
             Action<ProgressionRoot> act = delegate (ProgressionRoot i)
