@@ -38,7 +38,7 @@ namespace PrestigePlus.Feats
                     .SetDescription(Description)
                     .SetIcon(icon)
                     .AddPrerequisiteClassLevel(MammothRider.ArchetypeGuid, 8)
-                    //.AddFacts(new() { ability })
+                    .AddComponent<GiganticLimit>()
                     .Configure();
         }
     }

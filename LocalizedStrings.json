@@ -3367,5 +3367,35 @@
     "Key": "MetaphysicalSneak.Description",
     "enGB": "If the student of war deals sneak attack damage to a target, he can study that target, allowing him to apply his Know Your Enemy effects. Additionally, his sneak attack no longer deals precision damage.",
     "zhCN": "战争学徒在偷袭敌人时自动研究目标，可以直接进行知识检定。另外，他的偷袭伤害不再是精准伤害。"
+  },
+
+  {
+    "Key": "SpellSynthesis.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Lesser Spell Synthesis",
+    "zhCN": "次级双法合璧"
+  },
+
+  {
+    "Key": "SpellSynthesis.Description",
+    "enGB": "Your skill in two different branches of magic allows you to combine your powers in unorthodox ways. Once per day as a full-round action, you can cast two spells, each from a different spellcasting class. Both spells must have a casting time of 1 standard action and must be a spell level equal to or lower than the level of spells you can prepare with the combined spells ability. You can make any decisions concerning the spells, such as the spells’ targets, independently.",
+    "zhCN": "你在魔法的两门分支上都有着出色的造诣，这让你能够以非同寻常的方式将法术结合起来。每天一次，以一个整轮动作，你可以同时施展两个来自不同施法职业的法术。这两个法术的施法时间都必须是1个标准动作，其法术环级必须等同（或低于）你能用法术结合职业能力准备的法术环级。你可以分别决定这两个法术的任何相关内容（例如法术目标）。"
+  },
+
+  {
+    "Key": "SpellSynthesis2.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Mythic Catalyst",
+    "zhCN": "秘术催化剂"
+  },
+
+  {
+    "Key": "SpellSynthesis2.Description",
+    "enGB": "You can use Lesser Spell Synthesis ability at will.",
+    "zhCN": "你能随意使用次级双法合璧。"
   }
 ]

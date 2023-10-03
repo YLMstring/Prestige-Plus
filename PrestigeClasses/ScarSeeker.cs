@@ -250,7 +250,7 @@ namespace PrestigePlus.PrestigeClasses
              .SetDisplayName(BloodDisplayName)
              .SetDescription(BloodDescription)
              .SetIcon(icon)
-             .AddInitiatorAttackWithWeaponTrigger(action: VicousEnemy, actionsOnInitiator: false, triggerBeforeAttack: false, onlyHit: true, checkWeaponRangeType: true, rangeType: WeaponRangeType.Melee)
+             //.AddInitiatorAttackWithWeaponTrigger(action: VicousEnemy, actionsOnInitiator: false, triggerBeforeAttack: false, onlyHit: true, checkWeaponRangeType: true, rangeType: WeaponRangeType.Melee)
              .AddInitiatorAttackWithWeaponTrigger(action: VicousSelf, actionsOnInitiator: true, triggerBeforeAttack: false, onlyHit: true, checkWeaponRangeType: true, rangeType: WeaponRangeType.Melee)
              .Configure();
 
@@ -280,6 +280,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetDescription(BloodDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
+              .AddComponent<ScarVicious>()
               .AddFacts(new() { ability })
               .AddAbilityResources(resource: EnduringScarAblityResGuid, restoreAmount: true)
               .Configure();
@@ -296,6 +297,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetDescription(BloodDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
+              .AddComponent<ScarVicious>()
               .AddPrerequisiteClassLevel(ArchetypeGuid, 5)
               .AddPrerequisiteFeature(BloodGuid)
               .Configure();
@@ -313,6 +315,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetDescription(BloodDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
+              .AddComponent<ScarVicious>()
               .AddPrerequisiteClassLevel(ArchetypeGuid, 9)
               .AddPrerequisiteFeature(BloodImprovedGuid)
               .Configure();

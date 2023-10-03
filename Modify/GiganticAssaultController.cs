@@ -34,7 +34,7 @@ namespace PrestigePlus.Modify
 
         }
 
-        //private static BlueprintBuffReference Buff = BlueprintTool.GetRef<BlueprintBuffReference>("{747F27A3-58AD-496D-9E46-D24FE93B71AA}");
+        //private static BlueprintBuffReference Buff = BlueprintTool.GetRef<BlueprintBuffReference>("{27519583-B18E-4491-B18A-2AA1698FFBAC}");
         private static BlueprintFeatureReference Base = BlueprintTool.GetRef<BlueprintFeatureReference>("{D47DC15C-3A96-4358-A652-DB9E632009A7}");
     }
 }
