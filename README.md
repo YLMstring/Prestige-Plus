@@ -1,8 +1,8 @@
-# Prestige Plus v1.2.2 for WoTR 
+# Prestige Plus v1.3.0 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - Add Grapple Mechanic!
-- Add Agent of the Grave, Arcane Archer, Asavir, Deadeye Devotee, Chevalier, Hinterlander, Horizon Walker, Inheritor’s Crusader, Mammoth Rider, Sanguine Angel, Scar Seeker, Shadowdancer, Umbral Agent prestige class. More coming soon!
+- Add Agent of the Grave, Arcane Archer, Asavir, Deadeye Devotee, Chevalier, Halfling Opportunist, Hinterlander, Horizon Walker, Inheritor’s Crusader, Mammoth Rider, Sanguine Angel, Scar Seeker, Shadowdancer, Umbral Agent prestige class. More coming soon!
 - Apart from some minor tweaks, all the homebrew stuff are optional.
 - And they are togglable now!
 
@@ -43,6 +43,11 @@
 - Bond of Genies: a mythic ability to mount any party member!
 ### [Chevalier Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/c-d/chevalier/)
 - The class has only 3 levels.
+### [Halfling Opportunist Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/halfling-opportunist/)
+- Thanks to bittercranberry for his aid another and Excellent Aid (in next update of [Expanded Content](https://github.com/ka-dyn/ExpandedContent) which it requires)!
+#### Homebrew Options:  
+- Alternative access to the class for non-halflings!
+- A mythic feat to use another combat maneuver with Exploitive Maneuver.
 ### [Horizon Walker Class](https://www.d20pfsrd.com/classes/prestige-classes/apg/horizon-walker/)
 - The Terrain Mastery abilities of Astral Plane and Abyss are actually useless in the module but they are prerequisites for their Terrain Dominance.
 - There isn't a GM available telling which creature is native to where, so ONLY ABYSS's favored enemy bonus works, for demons (which is written explicitly in the its description). And you guys probably won't focus on other creatures anyway lol
@@ -98,10 +103,21 @@
 ### New Feats
 
 - [Ripple in Still Water](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/ripple-in-still-water-combat/)
+- [Lesser Spell Synthesis](https://www.d20pfsrd.com/feats/general-feats/lesser-spell-synthesis/)
+- Where is Spell Synthesis? In [Mystical Mayhem](https://gitgud.io/Kreaddy/mysticalmayhem/)!
 ### New Rogue Talents
 
-- [Defensive Roll](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-advanced-talents/defensive-roll-ex/)
-- I homebrew it to work like a one-time last stand, so at least it looks like an advanced talent :)
+- [Another Day](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-advanced-talents/another-day-ex/)
+### New Mythic Prestige Class Features
+
+- Swift Death: Your Death Attack becomes a standard action. At 10th assassin level, it becomes a move action.
+- Greater Swift Death: Your Death Attack becomes a move action. At 10th assassin level, it becomes a swift action.
+- Unbreakable Defance: You no longer have a limited amount of Defensive Stance rounds per day.
+- Draconic Wings: The disciple gains two primary wing attacks that deal 1d4 damage.
+- Endless Breath: You have 1/3 chance to recover one use of your breath weapon at the start of your turn. Additionally, your Gold Dragon Breath (Mythic) becomes a move action.
+- Riposte (Mythic): The duelist adds her mythic tier as a bonus on her attack roll when attempting a parry and riposte. This bonus does not stack with Ever Ready mythic feat.
+- Metaphysical Sneak Attack: If the student of war deals sneak attack damage to a target, he can study that target, allowing him to apply his Know Your Enemy effects. Additionally, his sneak attack no longer deals precision damage.
+- Mythic Catalyst: You can use Lesser Spell Synthesis ability at will.
 
 ## Thanks to  
 -   WittleWolfie for his [Blueprint-Core](https://wittlewolfie.github.io/WW-Blueprint-Core/index.html), which makes modding easy and enjoyable.
