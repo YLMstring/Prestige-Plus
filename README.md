@@ -112,7 +112,7 @@
 
 - Swift Death: Your Death Attack becomes a standard action. At 10th assassin level, it becomes a move action.
 - Greater Swift Death: Your Death Attack becomes a move action. At 10th assassin level, it becomes a swift action.
-- Unbreakable Defance: You no longer have a limited amount of Defensive Stance rounds per day.
+- Unbreakable Defense: You no longer have a limited amount of Defensive Stance rounds per day.
 - Draconic Wings: The disciple gains two primary wing attacks that deal 1d4 damage.
 - Endless Breath: You have 1/3 chance to recover one use of your breath weapon at the start of your turn. Additionally, your Gold Dragon Breath (Mythic) becomes a move action.
 - Riposte (Mythic): The duelist adds her mythic tier as a bonus on her attack roll when attempting a parry and riposte. This bonus does not stack with Ever Ready mythic feat.
