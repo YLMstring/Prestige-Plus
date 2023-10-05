@@ -247,7 +247,7 @@ namespace PrestigePlus.Grapple
             StatType statType = StatType.SkillThievery;
             return GameHelper.TriggerSkillCheck(new RuleSkillCheck(grappleTarget, statType, dc)
             {
-                IgnoreDifficultyBonusToDC = grappleInitiator.IsPlayersEnemy
+                IgnoreDifficultyBonusToDC = grappleTarget.IsPlayersEnemy
             }, context2, true).Success;
         }
 

@@ -42,12 +42,6 @@ namespace PrestigePlus.Feats
         private const string DefensiveRollBuff = "DefensiveRollBuff";
         private static readonly string DefensiveRollGuidBuff = "A812D3F2-BBF8-4EF1-A627-9FBFCAC810F8";
 
-        private const string DefensiveRollBuff2 = "DefensiveRollBuff2";
-        private static readonly string DefensiveRollGuidBuff2 = "D813AAE6-03A9-4122-BF75-280666EF3587";
-
-        private const string DefensiveRollBuff3 = "DefensiveRollBuff3";
-        private static readonly string DefensiveRollGuidBuff3 = "1A59633B-FE44-4B74-8ABD-41C33BD5EF19";
-
         private const string DefensiveRollAbility = "DefensiveRoll.DefensiveRollAbility";
         private static readonly string DefensiveRollAbilityGuid = "{8CE3C5BA-3FCB-43B7-A90A-D89F0EEA9A21}";
 
@@ -63,18 +57,6 @@ namespace PrestigePlus.Feats
               .SetIcon(icon)
               .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
               .AddComponent<RogueAnotherDay>()
-              .Configure();
-
-            var Buff3 = BuffConfigurator.New(DefensiveRollBuff3, DefensiveRollGuidBuff3)
-              .SetDisplayName(DisplayName)
-              .SetDescription(Description)
-              .SetIcon(icon)
-              .Configure();
-
-            var Buff2 = BuffConfigurator.New(DefensiveRollBuff2, DefensiveRollGuidBuff2)
-              .SetDisplayName(DisplayName)
-              .SetDescription(Description)
-              .SetIcon(icon)
               .Configure();
 
             BlueprintAbilityResource Scarabilityresourse = AbilityResourceConfigurator.New(DefensiveRollAblityRes, DefensiveRollAblityResGuid)

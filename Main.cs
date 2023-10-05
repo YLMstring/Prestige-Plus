@@ -131,6 +131,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("fightereg"), defaultValue: true, Helpers.CreateString("toggle-desc23", "Eldritch Guardian"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("lorew"), defaultValue: true, Helpers.CreateString("toggle-desc24", "Lore Warden"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("seraph"), defaultValue: true, Helpers.CreateString("toggle-desc11", "Black Seraph Style (Path of War)"))
               .ShowVisualConnection())
           .AddToggle(
@@ -183,6 +186,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("halfling"))) { HalflingOpportunist.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("enhance"))) { SwiftDeath.Configure(); SwiftDeath.Configure2(); UnbreakableDefance.Configure(); MythicWings.Configure(); MythicWings.Configure2(); MythicRiposte.Configure(); MetaphysicalSneak.Configure(); LesserSpellSynthesis.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fightereg"))) { EldritchGuardian.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("lorew"))) { LoreWarden.Configure(); }
                 }
                 catch (Exception e)
         {

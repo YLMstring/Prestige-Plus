@@ -27,6 +27,7 @@ namespace PrestigePlus.Feats
                     .SetDescription(Description)
                     .SetIcon(icon)
                     .AddCMBBonusForManeuver(maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple }, value: ContextValues.Constant(2))
+                    .AddToFeatureSelection(FeatureSelectionRefs.Familiar.ToString())
                     .Configure();
         }
 

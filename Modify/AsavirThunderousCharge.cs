@@ -51,7 +51,7 @@ namespace PrestigePlus.Modify
                 //Logger.Info(dc.ToString());
                 bool pass = GameHelper.TriggerSkillCheck(new RuleSkillCheck(unit, Kingmaker.EntitySystem.Stats.StatType.SaveReflex, dc)
                 {
-                    IgnoreDifficultyBonusToDC = mount.IsPlayersEnemy
+                    IgnoreDifficultyBonusToDC = unit.IsPlayersEnemy
                 }, unit.Context, true).Success;
                 //Logger.Info("skill check end");
                 if (!pass)
