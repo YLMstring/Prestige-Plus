@@ -16,6 +16,7 @@ using Kingmaker.Controllers.Units;
 using Kingmaker.GameModes;
 using PrestigePlus.Maneuvers;
 using PrestigePlus.BasePrestigeEnhance;
+using PrestigePlus.Archetype;
 
 namespace PrestigePlus
 {
@@ -121,10 +122,13 @@ namespace PrestigePlus
             Toggle.New(GetKey("scar"), defaultValue: true, Helpers.CreateString("toggle-desc8", "Scar Seeker"))
               .ShowVisualConnection())
           .AddToggle(
-            Toggle.New(GetKey("dancer"), defaultValue: true, Helpers.CreateString("toggle-desc4", "Shadowdancer (Defensive Roll)"))
+            Toggle.New(GetKey("dancer"), defaultValue: true, Helpers.CreateString("toggle-desc4", "Shadowdancer (Another Day)"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("umbral"), defaultValue: true, Helpers.CreateString("toggle-desc17", "Umbral Agent"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("fightereg"), defaultValue: true, Helpers.CreateString("toggle-desc23", "Eldritch Guardian"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("seraph"), defaultValue: true, Helpers.CreateString("toggle-desc11", "Black Seraph Style (Path of War)"))
@@ -178,6 +182,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("maneuver"))) { ReplaceAttack.DisarmConfigure(); ReplaceAttack.SunderConfigure(); ReplaceAttack.TripConfigure(); StrengthSurge.StrengthSurgeFeat(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("halfling"))) { HalflingOpportunist.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("enhance"))) { SwiftDeath.Configure(); SwiftDeath.Configure2(); UnbreakableDefance.Configure(); MythicWings.Configure(); MythicWings.Configure2(); MythicRiposte.Configure(); MetaphysicalSneak.Configure(); LesserSpellSynthesis.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fightereg"))) { EldritchGuardian.Configure(); }
                 }
                 catch (Exception e)
         {

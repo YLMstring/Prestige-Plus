@@ -3299,7 +3299,7 @@
     // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
     // links to encycolpedia pages.
     "ProcessTemplates": false,
-    "enGB": "Unbreakable Defance",
+    "enGB": "Unbreakable Defense",
     "zhCN": "固若金汤"
   },
 
@@ -3389,7 +3389,7 @@
     // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
     // links to encycolpedia pages.
     "ProcessTemplates": false,
-    "enGB": "Mythic Catalyst",
+    "enGB": "Mystic Catalyst",
     "zhCN": "秘术催化剂"
   },
 
@@ -3397,5 +3397,50 @@
     "Key": "SpellSynthesis2.Description",
     "enGB": "You can use Lesser Spell Synthesis ability at will.",
     "zhCN": "你能随意使用次级双法合璧。"
+  },
+
+  {
+    "Key": "EldritchGuardian.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Eldritch Guardian",
+    "zhCN": "奥法卫士"
+  },
+
+  {
+    "Key": "EldritchGuardian.Description",
+    "enGB": "Eldritch guardians are trained to detect and give warning about magic threats to the people and places they protect.",
+    "zhCN": "奥法卫士的训练让她们能够侦测魔法带来的威胁，并警告身边的人。"
+  },
+
+  {
+    "Key": "EldritchGuardianShareTraining.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Share Training",
+    "zhCN": "共享训练"
+  },
+
+  {
+    "Key": "EldritchGuardianShareTraining.Description",
+    "enGB": "At 2nd level, when the familiar can see and hear its master, an eldritch guardian's animal companions can use any combat feat possessed by the eldritch guardian without meeting the feat’s prerequisites.",
+    "zhCN": "2级起，奥法卫士的魔宠能看到和听到主人时，她的动物伙伴可以使用任何她拥有的战斗专长，无需满足前置条件。"
+  },
+
+  {
+    "Key": "EldritchGuardianSteelWill.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Steel Will",
+    "zhCN": "意志如钢"
+  },
+
+  {
+    "Key": "EldritchGuardianSteelWill.Description",
+    "enGB": "At 2nd level, the eldritch guardian gains a +1 bonus on Will saves against fear and mind-affecting effects. This bonus increases by 1 for every 4 levels beyond 2nd.",
+    "zhCN": "2级起，奥法卫士对抗恐惧和影响心智效应的意志豁免获得+1加值，之后每4个职业等级，该加值提高1点。"
   }
 ]
