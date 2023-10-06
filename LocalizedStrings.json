@@ -665,8 +665,8 @@
 
   {
     "Key": "EnhanceArrows4.Description",
-    "enGB": "At 5th level, an arcane archer gains extra reach equal to the range of his bow.",
-    "zhCN": "在5级，魔射手获得等同于所持弓攻击范围的额外触及。"
+    "enGB": "At 5th level, every arrow fired by an arcane archer gains the distance weapon quality. A distance weapon has double the range increment of other weapons of its kind.",
+    "zhCN": "在5级，魔射手的箭射程翻倍。"
   },
 
   {

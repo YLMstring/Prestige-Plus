@@ -9,6 +9,7 @@ using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Conditions.Builder.ContextEx;
+using BlueprintCore.Utils;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -59,7 +60,7 @@ namespace PrestigePlus.Archetype
               .AddToClassSkills(StatType.SkillLoreNature)
               .AddToClassSkills(StatType.SkillPersuasion)
               .SetReplaceClassSkills(true)
-              .SetAddSkillPoints(4)
+              .SetAddSkillPoints(2)
               .Configure();
         }
 
@@ -86,7 +87,7 @@ namespace PrestigePlus.Archetype
 
         public static BlueprintFeatureSelection SwordsSecretFeat()
         {
-            var icon = FeatureSelectionRefs.MagusArcanaSelection.Reference.Get().Icon;
+            var icon = FeatureRefs.DuelistParryFeature.Reference.Get().Icon;
 
             return FeatureSelectionConfigurator.New(SwordsSecret, SwordsSecretGuid)
               .SetDisplayName(SwordsSecretDisplayName)
@@ -108,6 +109,15 @@ namespace PrestigePlus.Archetype
         private const string ManeuverMastery1 = "LoreWarden.ManeuverMastery1";
         private static readonly string ManeuverMasteryGuid1 = "{439AF2C4-0E51-4538-94D6-A139BCAF6057}";
 
+        private const string ManeuverMastery2 = "LoreWarden.ManeuverMastery2";
+        private static readonly string ManeuverMasteryGuid2 = "{C6B1A786-2C73-4C94-A98B-4FC63A4093E4}";
+
+        private const string ManeuverMastery3 = "LoreWarden.ManeuverMastery3";
+        private static readonly string ManeuverMasteryGuid3 = "{0156840A-0E08-4AA9-867E-A544F0885297}";
+
+        private const string ManeuverMastery4 = "LoreWarden.ManeuverMastery4";
+        private static readonly string ManeuverMasteryGuid4 = "{69446283-9004-4AB5-974D-2B267BD20EE9}";
+
         internal const string ManeuverMasteryDisplayName = "LoreWardenManeuverMastery.Name";
         private const string ManeuverMasteryDescription = "LoreWardenManeuverMastery.Description";
         public static BlueprintProgression ManeuverMasteryFeat()
@@ -118,7 +128,33 @@ namespace PrestigePlus.Archetype
               .SetDisplayName(ManeuverMasteryDisplayName)
               .SetDescription(ManeuverMasteryDescription)
               .SetIcon(icon)
-              .SetRanks(10)
+              .SetIsClassFeature(true)
+              .AddCMBBonus(value: ContextValues.Constant(2))
+              .AddCMDBonus(value: ContextValues.Constant(2))
+              .Configure();
+
+            var feat2 = FeatureConfigurator.New(ManeuverMastery2, ManeuverMasteryGuid2)
+              .SetDisplayName(ManeuverMasteryDisplayName)
+              .SetDescription(ManeuverMasteryDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddCMBBonus(value: ContextValues.Constant(2))
+              .AddCMDBonus(value: ContextValues.Constant(2))
+              .Configure();
+
+            var feat3 = FeatureConfigurator.New(ManeuverMastery3, ManeuverMasteryGuid3)
+              .SetDisplayName(ManeuverMasteryDisplayName)
+              .SetDescription(ManeuverMasteryDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddCMBBonus(value: ContextValues.Constant(2))
+              .AddCMDBonus(value: ContextValues.Constant(2))
+              .Configure();
+
+            var feat4 = FeatureConfigurator.New(ManeuverMastery4, ManeuverMasteryGuid4)
+              .SetDisplayName(ManeuverMasteryDisplayName)
+              .SetDescription(ManeuverMasteryDescription)
+              .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddCMBBonus(value: ContextValues.Constant(2))
               .AddCMDBonus(value: ContextValues.Constant(2))
@@ -130,10 +166,11 @@ namespace PrestigePlus.Archetype
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .SetGiveFeaturesForPreviousLevels(true)
+              .SetClasses(BlueprintTool.GetRef<BlueprintCharacterClassReference>(CharacterClassRefs.FighterClass.ToString()))
               .AddToLevelEntry(3, feat)
-              .AddToLevelEntry(7, feat)
-              .AddToLevelEntry(11, feat)
-              .AddToLevelEntry(15, feat)
+              .AddToLevelEntry(7, feat2)
+              .AddToLevelEntry(11, feat3)
+              .AddToLevelEntry(15, feat4)
               .Configure();
         }
 
@@ -156,7 +193,7 @@ namespace PrestigePlus.Archetype
         private const string KnowThyDescription = "LoreWardenKnowThy.Description";
         public static BlueprintFeature KnowThyFeat()
         {
-            var icon = FeatureRefs.StudentOfWarKnowSlowYourEnemyFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.SlayerStudyTargetAbility.Reference.Get().Icon;
 
             var Buff1 = BuffConfigurator.New(KnowThyBuff, KnowThyBuffGuid)
              .SetDisplayName(KnowThyDisplayName)
@@ -184,7 +221,7 @@ namespace PrestigePlus.Archetype
                 .SetDescription(KnowThyDescription)
                 .SetIcon(icon)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard)
-                .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.FighterClass.ToString() }, max: 20, min: 4).WithDiv2Progression())
+                .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.FighterClass.ToString() }, max: 10, min: 2).WithDiv2Progression())
                 .Configure();
 
             var ability1 = AbilityConfigurator.New(KnowThyAbility1, KnowThyAbilityGuid1)
@@ -201,7 +238,7 @@ namespace PrestigePlus.Archetype
                 .SetDescription(KnowThyDescription)
                 .SetIcon(icon)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move)
-                .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.FighterClass.ToString() }, max: 20, min: 4).WithDiv2Progression())
+                .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.FighterClass.ToString() }, max: 10, min: 2).WithDiv2Progression())
                 .Configure();
 
             var ability2 = AbilityConfigurator.New(KnowThyAbility2, KnowThyAbilityGuid2)
@@ -218,7 +255,7 @@ namespace PrestigePlus.Archetype
                 .SetDescription(KnowThyDescription)
                 .SetIcon(icon)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
-                .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.FighterClass.ToString() }, max: 20, min: 4).WithDiv2Progression())
+                .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.FighterClass.ToString() }, max: 10, min: 2).WithDiv2Progression())
                 .Configure();
 
             return FeatureConfigurator.New(KnowThy, KnowThyGuid)
@@ -243,7 +280,7 @@ namespace PrestigePlus.Archetype
         private const string SwiftAssessmentDescription = "LoreWardenSwiftAssessment.Description";
         public static BlueprintProgression SwiftAssessmentFeat()
         {
-            var icon = FeatureRefs.BullRushMythicFeat.Reference.Get().Icon;
+            var icon = FeatureRefs.Quarry.Reference.Get().Icon;
 
             var feat = FeatureConfigurator.New(SwiftAssessment1, SwiftAssessmentGuid1)
               .SetDisplayName(SwiftAssessmentDisplayName)
@@ -266,6 +303,7 @@ namespace PrestigePlus.Archetype
               .SetDescription(SwiftAssessmentDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
+              .SetClasses(BlueprintTool.GetRef<BlueprintCharacterClassReference>(CharacterClassRefs.FighterClass.ToString()))
               .SetGiveFeaturesForPreviousLevels(true)
               .AddPrerequisiteFeature(KnowThyGuid)
               .AddToLevelEntry(7, feat)
@@ -295,7 +333,7 @@ namespace PrestigePlus.Archetype
         private const string ExploitWeaknessDescription = "LoreWardenExploitWeakness.Description";
         public static BlueprintProgression ExploitWeaknessFeat()
         {
-            var icon = FeatureRefs.BullRushMythicFeat.Reference.Get().Icon;
+            var icon = AbilityRefs.SenseVitals.Reference.Get().Icon;
 
             var Buff1 = BuffConfigurator.New(ExploitWeaknessBuff, ExploitWeaknessBuffGuid)
              .SetDisplayName(ExploitWeaknessDisplayName)
@@ -303,13 +341,15 @@ namespace PrestigePlus.Archetype
              .SetIcon(icon)
              .AddInitiatorCritAutoconfirm()
              .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().RemoveSelf().Build(), true, criticalHit: true)
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
              .Configure();
 
             var Buff2 = BuffConfigurator.New(ExploitWeaknessBuff2, ExploitWeaknessBuffGuid2)
              .SetDisplayName(ExploitWeaknessDisplayName)
              .SetDescription(ExploitWeaknessDescription)
              .SetIcon(icon)
-             .AddPartialDRIgnore(checkWeaponCategories: true, reductionReduction: 5, useContextValue: false)
+             .AddPartialDRIgnore(checkWeaponCategories: false, reductionReduction: 5, useContextValue: false)
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
              .Configure();
 
             var feat = FeatureConfigurator.New(ExploitWeakness1, ExploitWeaknessGuid1)
@@ -342,6 +382,7 @@ namespace PrestigePlus.Archetype
               .SetDescription(ExploitWeaknessDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
+              .SetClasses(BlueprintTool.GetRef<BlueprintCharacterClassReference>(CharacterClassRefs.FighterClass.ToString()))
               .SetGiveFeaturesForPreviousLevels(true)
               .AddToLevelEntry(3, feat)
               .AddToLevelEntry(11, feat2)
@@ -371,7 +412,7 @@ namespace PrestigePlus.Archetype
         private const string HairDescription = "LoreWardenHair.Description";
         public static BlueprintProgression HairFeat()
         {
-            var icon = FeatureRefs.BullRushMythicFeat.Reference.Get().Icon;
+            var icon = FeatureRefs.SavingSlash.Reference.Get().Icon;
 
             BlueprintAbilityResource Scarabilityresourse = AbilityResourceConfigurator.New(HairAblityRes, HairAblityResGuid)
                 .SetMaxAmount(
@@ -382,8 +423,8 @@ namespace PrestigePlus.Archetype
              .SetDisplayName(HairDisplayName)
              .SetDescription(HairDescription)
              .SetIcon(icon)
-             .AddInitiatorCritAutoconfirm()
-             .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().RemoveSelf().Build(), true, criticalHit: true)
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+             .AddComponent<LoreWardenHair>()
              .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(HairAbility, HairAbilityGuid)
@@ -402,6 +443,7 @@ namespace PrestigePlus.Archetype
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddFacts(new() { ability })
+              .AddAbilityResources(resource: Scarabilityresourse, restoreAmount: true)
               .Configure();
 
             var feat3 = FeatureConfigurator.New(Hair3, HairGuid3)
@@ -417,10 +459,11 @@ namespace PrestigePlus.Archetype
               .SetDescription(HairDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
+              .SetClasses(BlueprintTool.GetRef<BlueprintCharacterClassReference>(CharacterClassRefs.FighterClass.ToString()))
               .SetGiveFeaturesForPreviousLevels(true)
               .AddPrerequisiteClassLevel(CharacterClassRefs.FighterClass.ToString(), 11)
               .AddToLevelEntry(11, feat2)
-              .AddToLevelEntry(19, feat3)
+              .AddToLevelEntry(15, feat3)
               .Configure();
         }
     }

@@ -18,7 +18,7 @@ namespace PrestigePlus.Archetype
         {
             if (Buff?.Context?.MaybeCaster != evt.Initiator) return;
             int bonus = 2;
-            if (evt.Initiator.Descriptor.Progression.GetClassLevel(CharacterClassRefs.FighterClass.Reference.Get()) >= 5)
+            if (evt.Initiator.Descriptor.Progression.GetClassLevel(CharacterClassRefs.FighterClass.Reference.Get()) >= 19)
             {
                 bonus = 3;
             }
@@ -29,7 +29,7 @@ namespace PrestigePlus.Archetype
         {
             if (Buff?.Context?.MaybeCaster != evt.Initiator) return;
             int bonus = 2;
-            if (evt.Initiator.Descriptor.Progression.GetClassLevel(CharacterClassRefs.FighterClass.Reference.Get()) >= 5)
+            if (evt.Initiator.Descriptor.Progression.GetClassLevel(CharacterClassRefs.FighterClass.Reference.Get()) >= 19)
             {
                 bonus = 3;
             }
@@ -40,11 +40,11 @@ namespace PrestigePlus.Archetype
         {
             if (Buff?.Context?.MaybeCaster != evt.Target) return;
             int bonus = 0;
-            if (evt.Target.Descriptor.Progression.GetClassLevel(CharacterClassRefs.FighterClass.Reference.Get()) >= 4)
+            if (evt.Target.Descriptor.Progression.GetClassLevel(CharacterClassRefs.FighterClass.Reference.Get()) >= 11)
             {
                 bonus = 2;
             }
-            if (evt.Target.Descriptor.Progression.GetClassLevel(CharacterClassRefs.FighterClass.Reference.Get()) >= 5)
+            if (evt.Target.Descriptor.Progression.GetClassLevel(CharacterClassRefs.FighterClass.Reference.Get()) >= 19)
             {
                 bonus = 3;
             }

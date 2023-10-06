@@ -18,19 +18,29 @@ using BlueprintCore.Actions.Builder.ContextEx;
 
 namespace PrestigePlus.Archetype
 {
-    internal class LoreWardenHair : UnitBuffComponentDelegate, ITargetRulebookHandler<RuleDealDamage>, IRulebookHandler<RuleDealDamage>, ISubscriber, ITargetRulebookSubscriber
+    internal class LoreWardenHair : UnitBuffComponentDelegate, ITargetRulebookHandler<RuleAttackRoll>, IRulebookHandler<RuleAttackRoll>, ISubscriber, ITargetRulebookSubscriber
     {
-        void IRulebookHandler<RuleDealDamage>.OnEventAboutToTrigger(RuleDealDamage evt)
+        void IRulebookHandler<RuleAttackRoll>.OnEventAboutToTrigger(RuleAttackRoll evt)
         {
-            if (evt.AttackRoll?.Result == AttackResult.CriticalHit)
+            
+        }
+
+        void IRulebookHandler<RuleAttackRoll>.OnEventDidTrigger(RuleAttackRoll evt)
+        {
+            if (evt.Result == AttackResult.CriticalHit)
             {
-                int dc = evt.AttackRoll.CriticalConfirmationRoll;
+                int dc = evt.CriticalConfirmationRoll;
+                if (evt.AutoCriticalConfirmation)
+                {
+                    dc = evt.CriticalConfirmationRollBonus;
+                }
                 if (GameHelper.TriggerSkillCheck(new RuleSkillCheck(Owner, Kingmaker.EntitySystem.Stats.StatType.SkillMobility, dc)
                 {
                     IgnoreDifficultyBonusToDC = false
                 }, Owner.Context, true).Success)
                 {
-                    evt.AttackRoll.Result = AttackResult.Hit;
+                    evt.Result = AttackResult.Hit;
+                    evt.IsCriticalConfirmed = false;
                 }
                 Fact.RunActionInContext(Action, evt.Target);
                 if (!Owner.Descriptor.Resources.HasEnoughResource(Resource, 1))
@@ -38,11 +48,6 @@ namespace PrestigePlus.Archetype
                     Owner.Descriptor.RemoveFact(Buff);
                 }
             }
-        }
-
-        void IRulebookHandler<RuleDealDamage>.OnEventDidTrigger(RuleDealDamage evt)
-        {
-
         }
 
         private static BlueprintAbilityResourceReference Resource = BlueprintTool.GetRef<BlueprintAbilityResourceReference>("{993D5BAE-1EC5-487D-8216-C81190A7FF59}");

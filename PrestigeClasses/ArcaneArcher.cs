@@ -530,10 +530,10 @@ namespace PrestigePlus.PrestigeClasses
               .SetDisplayName(EnhanceArrows4DisplayName)
               .SetDescription(EnhanceArrows4Description)
               .SetIcon(icon)
-              .AddStatBonusWeaponRestriction(category: WeaponCategory.Longbow, checkCategory: true, stat: StatType.Reach, value: 50)
-              .AddStatBonusWeaponRestriction(category: WeaponCategory.Shortbow, checkCategory: true, stat: StatType.Reach, value: 40)
-              .AddStatBonusWeaponRestriction(category: WeaponCategory.LightCrossbow, checkCategory: true, stat: StatType.Reach, value: 50)
-              .AddStatBonusWeaponRestriction(category: WeaponCategory.HeavyCrossbow, checkCategory: true, stat: StatType.Reach, value: 50)
+              //.AddStatBonusWeaponRestriction(category: WeaponCategory.Longbow, checkCategory: true, stat: StatType.Reach, value: 50)
+              //.AddStatBonusWeaponRestriction(category: WeaponCategory.Shortbow, checkCategory: true, stat: StatType.Reach, value: 40)
+              //.AddStatBonusWeaponRestriction(category: WeaponCategory.LightCrossbow, checkCategory: true, stat: StatType.Reach, value: 50)
+              //.AddStatBonusWeaponRestriction(category: WeaponCategory.HeavyCrossbow, checkCategory: true, stat: StatType.Reach, value: 50)
               .Configure();
         }
 

@@ -379,7 +379,6 @@ namespace PrestigePlus.PrestigeClasses
             .Select(s => s.ToReference<BlueprintAbilityReference>())
             .Append(AbilityRefs.Doom.Cast<BlueprintAbilityReference>().Reference)
             .Append(AbilityRefs.InflictLightWoundsCast.Cast<BlueprintAbilityReference>().Reference)
-            .Append(AbilityRefs.HurricaneBow.Cast<BlueprintAbilityReference>().Reference)
             .ToList()
             };
 
@@ -485,7 +484,7 @@ namespace PrestigePlus.PrestigeClasses
                 seventhLevelSpells,
                 eighthLevelSpells,
                 ninthLevelSpells)
-              .Configure();
+              .Configure(delayed: true);
 
             var feat = FeatureConfigurator.New(SecretDeath, SecretDeathGuid)
               .SetDisplayName(SecretDeathDisplayName)
