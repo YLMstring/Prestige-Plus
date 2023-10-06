@@ -3442,5 +3442,125 @@
     "Key": "EldritchGuardianSteelWill.Description",
     "enGB": "At 2nd level, the eldritch guardian gains a +1 bonus on Will saves against fear and mind-affecting effects. This bonus increases by 1 for every 4 levels beyond 2nd.",
     "zhCN": "2级起，奥法卫士对抗恐惧和影响心智效应的意志豁免获得+1加值，之后每4个职业等级，该加值提高1点。"
+  },
+
+  {
+    "Key": "LoreWarden.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Lore Warden",
+    "zhCN": "学识守卫"
+  },
+
+  {
+    "Key": "LoreWarden.Description",
+    "enGB": "Quick thinking and deception can often carry the day where raw force might not. Lore wardens are the bodyguards, guardians, and soldiers of the Pathfinder Society. Not only are they often called upon to protect and watch over important repositories of lore, but they themselves are impressive keepers of all manner of knowledge. Lore wardens are fighters who benefit from learning to outsmart and outmaneuver their foes rather than just overpower them. Even out of combat, lore wardens have a quick wit and a surprising breadth of knowledge that can often grant them significant advantages over enemies even before a battle begins. Indeed, for many lore wardens, a fight that can be won without a single weapon being drawn is the best kind of victory.",
+    "zhCN": "依靠快速思考和决定常能渡过难关，而轻率运用武力却不能。学识守卫是寻路者协会的保镖、守卫以及士兵。他们被称为“学识守卫”不仅仅是因为他们保护和看管着寻路者协会各个重要的知识库，更因为他们自己就是拥有各种知识的令人敬佩的学者。学识守卫是知道靠智慧和计谋战胜敌人而非仅靠力量行事的战士。就算没有处在战斗之中，学识守卫的急智和令人惊讶的宽广知识面也常常令他们在战役开始之前就取得了战术优势。事实上，对许多学识守卫来说，不战而屈人之兵才是胜利的极致。"
+  },
+
+  {
+    "Key": "LoreWardenProficiencies.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Scholastic",
+    "zhCN": "学术"
+  },
+
+  {
+    "Key": "LoreWardenProficiencies.Description",
+    "enGB": "Lore wardens gain 2 additional skill ranks each level. All Intelligence-based skills are class skills for lore wardens. This ability replaces the lore warden’s proficiency with medium armor, heavy armor, and shields.",
+    "zhCN": "学识守卫每级会获得2点额外技能点。此外，所有基于智力的技能都是学识守卫的本职技能。这个能力替换学识守卫对于中甲、重甲以及盾牌的擅长。"
+  },
+
+  {
+    "Key": "LoreWardenSwordsSecret.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Swords Secret",
+    "zhCN": "剑之秘技"
+  },
+
+  {
+    "Key": "LoreWardenSwordsSecret.Description",
+    "enGB": "A lore warden learns specialized techniques that help her to quickly analyze and defeat her foes. At 3rd level, a lore warden gains one swords secret, and she gains an additional swords secret for every 4 fighter levels gained after 3rd. Except where noted, a lore warden cannot select the same swords secret more than once.",
+    "zhCN": "学识守卫知晓那些能够帮助她分析并击败敌人的特殊技艺。在3级时，学识守卫获得一项剑之秘技，在3级之后每有4个战士等级，她额外获得一项剑之秘技。除非另有说明，学识守卫不能重复选择同一个剑之秘技。"
+  },
+
+  {
+    "Key": "LoreWardenManeuverMastery.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Maneuver Mastery",
+    "zhCN": "战技大师"
+  },
+
+  {
+    "Key": "LoreWardenManeuverMastery.Description",
+    "enGB": "The lore warden gains a +2 bonus on all CMB checks and to his CMD. This bonus increases to +4 at 7th level, +6 at 11th level, and +8 at 15th level. This ability replaces armor training 1.",
+    "zhCN": "学识守卫在所有CMB和CMD检定上获得+2加值。这个加值在7级提升至+4，在11级提升至+6，在15级提升至+8。"
+  },
+
+  {
+    "Key": "LoreWardenKnowThy.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Know Thy Enemy",
+    "zhCN": "看破汝敌"
+  },
+
+  {
+    "Key": "LoreWardenKnowThy.Description",
+    "enGB": "When the lore warden succeeds at a Knowledge check to identify a creature’s abilities and weaknesses, she can also use a standard action to grant herself a +2 insight bonus on all attack and weapon damage rolls made against that enemy. This bonus lasts for a number of rounds equal to half her class level (minimum 2 rounds), or until the lore warden uses this ability against a different creature. At 11th level, she also gains a +2 bonus to her AC against the creature when using this ability. At 19th level, the insight bonus increases to +3.",
+    "zhCN": "当学识守卫成功地通过一次知识检定分辨出生物的能力和弱点时，她能够使用一个标准动作授予自身对抗那个敌人的攻击和武器伤害骰+2的洞察加值。这个加值持续她1/2职业等级的轮数（至少为2轮），或持续到学识守卫使用这个能力对抗一名不同的生物。在11级时，她在使用这个能力时同样在她对抗这名生物的AC上获得+2的洞察加值。在19级时，这个洞察加值提升到+3。"
+  },
+
+  {
+    "Key": "LoreWardenSwiftAssessment.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Swift Assessment",
+    "zhCN": "快速评估"
+  },
+
+  {
+    "Key": "LoreWardenSwiftAssessment.Description",
+    "enGB": "The lore warden can now use her know thy enemy swords secret as a move action. At 15th level, she can use this ability as a swift action. She must have the know thy enemy swords secret before choosing this swords secret.",
+    "zhCN": "学识守卫现在能够以一个移动动作来使用她的看破汝敌剑之秘技。在15级时，她能够以迅捷动作使用这个能力。在选择这项剑之秘技之前，她必须已经拥有看破汝敌剑之秘技。"
+  },
+
+  {
+    "Key": "LoreWardenExploitWeakness.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Exploit Weakness",
+    "zhCN": "趁虚而入"
+  },
+
+  {
+    "Key": "LoreWardenExploitWeakness.Description",
+    "enGB": "The lore warden adds one-third her class level on attack rolls to confirm critical hits. At 11th level, whenever she confirms a critical hit, her weapon attacks ignore the first 5 points of damage reduction or hardness the target has for a round. At 19th level, the lore warden can automatically confirm a critical hit once per round when she threatens a critical hit.",
+    "zhCN": "学识守卫将她1/3的职业等级加到确认重击的攻击骰上。在11级时，无论何时学识守卫确认了一次重击，她的武器攻击都能够忽略目标所具有的5点伤害减免或者硬度，持续一轮。在19级时，每轮一次，学识守卫能够在一次她造成的重击威胁中自动确认重击。"
+  },
+
+  {
+    "Key": "LoreWardenHair.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Hair’s Breadth",
+    "zhCN": "毫厘之差"
+  },
+
+  {
+    "Key": "LoreWardenHair.Description",
+    "enGB": "Once per day when subject to a critical hit, the lore warden can attempt an Mobility check to reduce the damage. If the result of this Mobility check is greater than the opponent’s confirmation roll, she negates the critical hit; the attack still hits and deals normal damage. The lore warden must be at least 11th level to select this swords secret. At 15th level she can use this secret one additional time per day.",
+    "zhCN": "每天一次，当学识守卫遭受重击时，她能够尝试一次灵巧检定来减少伤害。如果这次灵巧检定的结果比对手的确认骰要高，那么她不视作被重击；这次攻击仍然视作命中并造成普通的伤害。学识守卫必须至少11级才能够选择这项剑之秘技。在15级时，她每天能够额外使用一次这项秘技。"
   }
 ]

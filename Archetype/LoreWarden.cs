@@ -81,8 +81,8 @@ namespace PrestigePlus.Archetype
         private const string SwordsSecret = "LoreWarden.SwordsSecret";
         private static readonly string SwordsSecretGuid = "{4E43252C-8C8B-4C7A-A8A3-C666711E0EC5}";
 
-        internal const string SwordsSecretDisplayName = "SwordsSecret.Name";
-        private const string SwordsSecretDescription = "SwordsSecret.Description";
+        internal const string SwordsSecretDisplayName = "LoreWardenSwordsSecret.Name";
+        private const string SwordsSecretDescription = "LoreWardenSwordsSecret.Description";
 
         public static BlueprintFeatureSelection SwordsSecretFeat()
         {
@@ -326,7 +326,7 @@ namespace PrestigePlus.Archetype
               .SetDescription(ExploitWeaknessDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().ApplyBuff(Buff2, ContextDuration.Fixed(1)).Build(), true, criticalHit: true)
+              .AddInitiatorAttackRollTrigger(ActionsBuilder.New().ApplyBuff(Buff2, ContextDuration.Fixed(1)).Build(), onOwner: true, criticalHit: true)
               .Configure();
 
             var feat3 = FeatureConfigurator.New(ExploitWeakness3, ExploitWeaknessGuid3)
