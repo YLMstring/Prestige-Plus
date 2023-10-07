@@ -461,8 +461,8 @@ namespace PrestigePlus.Archetype
               .SetIsClassFeature(true)
               .SetClasses(BlueprintTool.GetRef<BlueprintCharacterClassReference>(CharacterClassRefs.FighterClass.ToString()))
               .SetGiveFeaturesForPreviousLevels(true)
-              .AddPrerequisiteClassLevel(CharacterClassRefs.FighterClass.ToString(), 11)
-              .AddToLevelEntry(11, feat2)
+              //.AddPrerequisiteClassLevel(CharacterClassRefs.FighterClass.ToString(), 11)
+              .AddToLevelEntry(3, feat2)
               .AddToLevelEntry(15, feat3)
               .Configure();
         }

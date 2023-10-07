@@ -1,6 +1,8 @@
 ﻿using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.References;
+using BlueprintCore.Utils;
 using BlueprintCore.Utils.Types;
+using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.EntitySystem.Stats;
@@ -43,6 +45,10 @@ namespace PrestigePlus.Archetype
               .AddToClassSkills(StatType.SkillPersuasion)
               .SetReplaceClassSkills(true)
               .Configure();
+
+            ProgressionConfigurator.For(ProgressionRefs.FighterProgression)
+                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { BattleBravadoGuid, EvasiveDuelingGuid, BronzedSkinGuid })
+                .Configure();
         }
 
         private const string Proficiencies = "Warlord.Proficiencies";
@@ -71,7 +77,7 @@ namespace PrestigePlus.Archetype
         }
 
         private const string BattleBravado = "Warlord.BattleBravado";
-        private static readonly string BattleBravadoGuid = "{11CE494F-69A7-4B36-8A22-A6C6F6C3089E}";
+        private static readonly string BattleBravadoGuid = "{22B70FE9-DFFE-4799-A5C5-BEAAD08BC90C}";
 
         private const string BattleBravado0 = "Warlord.BattleBravado0";
         private static readonly string BattleBravadoGuid0 = "{3B40ABCD-3CD8-4129-BB4F-98424ECDC192}";
@@ -80,7 +86,7 @@ namespace PrestigePlus.Archetype
         private const string BattleBravadoDescription = "WarlordBattleBravado.Description";
         private static BlueprintFeature CreateBattleBravado()
         {
-            var icon = FeatureSelectionRefs.AnimalCompanionSelectionDruid.Reference.Get().Icon;
+            var icon = FeatureRefs.DisplayWeaponProwess.Reference.Get().Icon;
 
             var feat = FeatureConfigurator.New(BattleBravado0, BattleBravadoGuid0)
               .SetDisplayName(BattleBravadoDisplayName)
@@ -105,7 +111,7 @@ namespace PrestigePlus.Archetype
 
         private static BlueprintFeature CreateBronzedSkin()
         {
-            var icon = FeatureRefs.ArmyStoneSkinFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.BloodragerDamageReduction.Reference.Get().Icon;
 
             return FeatureConfigurator.New(BronzedSkin, BronzedSkinGuid)
               .SetDisplayName(BronzedSkinDisplayName)
@@ -123,7 +129,7 @@ namespace PrestigePlus.Archetype
 
         private static BlueprintFeature CreateEvasiveDueling()
         {
-            var icon = FeatureRefs.ReflexiveDodgeFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.Dodge.Reference.Get().Icon;
 
             return FeatureConfigurator.New(EvasiveDueling, EvasiveDuelingGuid)
               .SetDisplayName(EvasiveDuelingDisplayName)

@@ -3560,8 +3560,8 @@
 
   {
     "Key": "LoreWardenHair.Description",
-    "enGB": "Once per day when subject to a critical hit, the lore warden can attempt an Mobility check to reduce the damage. If the result of this Mobility check is greater than the opponent’s confirmation roll, she negates the critical hit; the attack still hits and deals normal damage. The lore warden must be at least 11th level to select this swords secret. At 15th level she can use this secret one additional time per day.",
-    "zhCN": "每天一次，当学识守卫遭受重击时，她能够尝试一次灵巧检定来减少伤害。如果这次灵巧检定的结果比对手的确认骰要高，那么她不视作被重击；这次攻击仍然视作命中并造成普通的伤害。学识守卫必须至少11级才能够选择这项剑之秘技。在15级时，她每天能够额外使用一次这项秘技。"
+    "enGB": "Once per day when subject to a critical hit, the lore warden can attempt an Mobility check to reduce the damage. If the result of this Mobility check is greater than the opponent’s confirmation roll, she negates the critical hit; the attack still hits and deals normal damage. At 15th level she can use this secret one additional time per day.",
+    "zhCN": "每天一次，当学识守卫遭受重击时，她能够尝试一次灵巧检定来减少伤害。如果这次灵巧检定的结果比对手的确认骰要高，那么她不视作被重击；这次攻击仍然视作命中并造成普通的伤害。在15级时，她每天能够额外使用一次这项秘技。"
   },
 
   {
@@ -3584,14 +3584,14 @@
     // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
     // links to encycolpedia pages.
     "ProcessTemplates": false,
-    "enGB": "Weapon and Armor Proﬁciency",
+    "enGB": "Weapon and Armor Proficiency",
     "zhCN": "战争领主擅长"
   },
 
   {
     "Key": "WarlordProficiencies.Description",
-    "enGB": "At 1st level, and at every even level thereafter, warlord can add a +1 dodge bonus to his Armor Class instead of taking a bonus feat. A warlord is proﬁcient with the halberd. radium pistol, rapier, radium riﬂe, longspear, longsword, shortspear, spear, Thark riﬂe, trident, and whip. Warlords are not proﬁcient with armor or shields.",
-    "zhCN": "At 1st level, and at every even level thereafter, warlord can add a +1 dodge bonus to his Armor Class instead of taking a bonus feat. A warlord is proﬁcient with the halberd. radium pistol, rapier, radium riﬂe, longspear, longsword, shortspear, spear, Thark riﬂe, trident, and whip. Warlords are not proﬁcient with armor or shields."
+    "enGB": "At 1st level, and at every even level thereafter, warlord can add a +1 dodge bonus to his Armor Class instead of taking a bonus feat. A warlord is proficient with rapier, longspear, longsword, shortspear, spear, trident, and whip. Warlords are not proficient with armor or shields.",
+    "zhCN": "At 1st level, and at every even level thereafter, warlord can add a +1 dodge bonus to his Armor Class instead of taking a bonus feat. A warlord is proficient with rapier, longspear, longsword, shortspear, spear, trident, and whip. Warlords are not proficient with armor or shields."
   },
 
   {
@@ -3605,8 +3605,8 @@
 
   {
     "Key": "WarlordBattleBravado.Description",
-    "enGB": "At 3rd level. the warlord's self conﬁdence and force of will make him more difﬁcult to hit. When unarmored and unencumbered. the warlord adds his Charisma bonus(if any)to his AC and his CMD. In addition, the warlord gains a +1 dodge bonus at 7th, 11th, and 15th levels. He loses these bonuses when he wears any armor, when he carries a shield, or when he carries a medium or heavy load.",
-    "zhCN": "At 3rd level. the warlord's self conﬁdence and force of will make him more difﬁcult to hit. When unarmored and unencumbered. the warlord adds his Charisma bonus(if any)to his AC and his CMD. In addition, the warlord gains a +1 dodge bonus at 7th, 11th, and 15th levels. He loses these bonuses when he wears any armor, when he carries a shield, or when he carries a medium or heavy load."
+    "enGB": "At 3rd level. the warlord's self confidence and force of will make him more difficult to hit. When unarmored and unencumbered. the warlord adds his Charisma bonus (if any) to his AC and his CMD. In addition, the warlord gains a +1 dodge bonus at 7th, 11th, and 15th levels. He loses these bonuses when he wears any armor, when he carries a shield, or when he carries a medium or heavy load.",
+    "zhCN": "At 3rd level. the warlord's self confidence and force of will make him more difficult to hit. When unarmored and unencumbered. the warlord adds his Charisma bonus (if any) to his AC and his CMD. In addition, the warlord gains a +1 dodge bonus at 7th, 11th, and 15th levels. He loses these bonuses when he wears any armor, when he carries a shield, or when he carries a medium or heavy load."
   },
 
   {
