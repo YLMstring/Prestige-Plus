@@ -37,6 +37,7 @@ using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.RuleSystem.Rules.Abilities;
 using Kingmaker.Blueprints.Root;
 using PrestigePlus.Modify;
+using PrestigePlus.Maneuvers;
 
 namespace PrestigePlus.Grapple
 {
@@ -46,6 +47,7 @@ namespace PrestigePlus.Grapple
         {
             TickForTarget(unit);
             TickForInitiator(unit);
+            TickForKiThrow(unit);
         }
 
         // Token: 0x0600A6AE RID: 42670 RVA: 0x002B6B08 File Offset: 0x002B4D08s
@@ -89,6 +91,20 @@ namespace PrestigePlus.Grapple
             if (value == null || UnitPartGrappleTargetPP == null || UnitPartGrappleTargetPP.Initiator != unit || !value.Descriptor.State.IsConscious)
             {
                 unit.Remove<UnitPartGrappleInitiatorPP>();
+            }
+        }
+
+        private static void TickForKiThrow(UnitEntityData unit)
+        {
+            UnitPartKiThrow UnitPartGrappleInitiatorPP = unit.Get<UnitPartKiThrow>();
+            if (UnitPartGrappleInitiatorPP == null)
+            {
+                return;
+            }
+            if (UnitPartGrappleInitiatorPP.HasMoved)
+            {
+                unit.Remove<UnitPartKiThrow>();
+                return;
             }
         }
 
