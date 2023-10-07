@@ -3562,5 +3562,80 @@
     "Key": "LoreWardenHair.Description",
     "enGB": "Once per day when subject to a critical hit, the lore warden can attempt an Mobility check to reduce the damage. If the result of this Mobility check is greater than the opponent’s confirmation roll, she negates the critical hit; the attack still hits and deals normal damage. The lore warden must be at least 11th level to select this swords secret. At 15th level she can use this secret one additional time per day.",
     "zhCN": "每天一次，当学识守卫遭受重击时，她能够尝试一次灵巧检定来减少伤害。如果这次灵巧检定的结果比对手的确认骰要高，那么她不视作被重击；这次攻击仍然视作命中并造成普通的伤害。学识守卫必须至少11级才能够选择这项剑之秘技。在15级时，她每天能够额外使用一次这项秘技。"
+  },
+
+  {
+    "Key": "Warlord.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Warlord",
+    "zhCN": "战争领主"
+  },
+
+  {
+    "Key": "Warlord.Description",
+    "enGB": "Honorable, fearless experts in gun and blade, warlords roam the dried seabeds of time-worn Mars, warring in great tribes for supremacy over a dying planet. Capable of relentless brutality and quick to ﬂare into open hostilities, warlords cloak their violent ways with paens to great noble houses or honored ancient traditions, bringing an air of respectability and etiquette to the butchery of brazen blades against bare skin. Warlords eschew armor as impractical to their harsh and often desert-like environment, preferring the free movement of near- nakedness. Warlords tend to specialize in the traditional weapons of Barsoom, leaving them ignorant of even simple Weapons common on other worlds. The same impulse that guides a warlord to stick to the traditional garb and gear of his culture can lead to a single-mindedness of purpose that can propel him far within his tribe or noble house. Even warlords of low status in Martian society claim a connection— no matter how ancient—with some great chieftain or emperor, seeing in the glorious past a path to a more hopeful future. Barsoom confers noble status upon its warlords through ritual combat in the case of green Martians or on merit and upon great achievement or heroics in the case of red Martians, so climbing the ladder ofstatus is an important part of a warlord’s journey through life.",
+    "zhCN": "Honorable, fearless experts in gun and blade, warlords roam the dried seabeds of time-worn Mars, warring in great tribes for supremacy over a dying planet. Capable of relentless brutality and quick to ﬂare into open hostilities, warlords cloak their violent ways with paens to great noble houses or honored ancient traditions, bringing an air of respectability and etiquette to the butchery of brazen blades against bare skin. Warlords eschew armor as impractical to their harsh and often desert-like environment, preferring the free movement of near- nakedness. Warlords tend to specialize in the traditional weapons of Barsoom, leaving them ignorant of even simple Weapons common on other worlds. The same impulse that guides a warlord to stick to the traditional garb and gear of his culture can lead to a single-mindedness of purpose that can propel him far within his tribe or noble house. Even warlords of low status in Martian society claim a connection— no matter how ancient—with some great chieftain or emperor, seeing in the glorious past a path to a more hopeful future. Barsoom confers noble status upon its warlords through ritual combat in the case of green Martians or on merit and upon great achievement or heroics in the case of red Martians, so climbing the ladder ofstatus is an important part of a warlord’s journey through life."
+  },
+
+  {
+    "Key": "WarlordProficiencies.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Weapon and Armor Proﬁciency",
+    "zhCN": "战争领主擅长"
+  },
+
+  {
+    "Key": "WarlordProficiencies.Description",
+    "enGB": "At 1st level, and at every even level thereafter, warlord can add a +1 dodge bonus to his Armor Class instead of taking a bonus feat. A warlord is proﬁcient with the halberd. radium pistol, rapier, radium riﬂe, longspear, longsword, shortspear, spear, Thark riﬂe, trident, and whip. Warlords are not proﬁcient with armor or shields.",
+    "zhCN": "At 1st level, and at every even level thereafter, warlord can add a +1 dodge bonus to his Armor Class instead of taking a bonus feat. A warlord is proﬁcient with the halberd. radium pistol, rapier, radium riﬂe, longspear, longsword, shortspear, spear, Thark riﬂe, trident, and whip. Warlords are not proﬁcient with armor or shields."
+  },
+
+  {
+    "Key": "WarlordBattleBravado.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Battle Bravado",
+    "zhCN": "Battle Bravado"
+  },
+
+  {
+    "Key": "WarlordBattleBravado.Description",
+    "enGB": "At 3rd level. the warlord's self conﬁdence and force of will make him more difﬁcult to hit. When unarmored and unencumbered. the warlord adds his Charisma bonus(if any)to his AC and his CMD. In addition, the warlord gains a +1 dodge bonus at 7th, 11th, and 15th levels. He loses these bonuses when he wears any armor, when he carries a shield, or when he carries a medium or heavy load.",
+    "zhCN": "At 3rd level. the warlord's self conﬁdence and force of will make him more difﬁcult to hit. When unarmored and unencumbered. the warlord adds his Charisma bonus(if any)to his AC and his CMD. In addition, the warlord gains a +1 dodge bonus at 7th, 11th, and 15th levels. He loses these bonuses when he wears any armor, when he carries a shield, or when he carries a medium or heavy load."
+  },
+
+  {
+    "Key": "WarlordBronzedSkin.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Sun-Bronzed Skin",
+    "zhCN": "Sun-Bronzed Skin"
+  },
+
+  {
+    "Key": "WarlordBronzedSkin.Description",
+    "enGB": "At 19th level, the warlord gains DR 5/-.",
+    "zhCN": "At 19th level, the warlord gains DR 5/-."
+  },
+
+  {
+    "Key": "WarlordEvasiveDueling.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Evasive Dueling",
+    "zhCN": "Evasive Dueling"
+  },
+
+  {
+    "Key": "WarlordEvasiveDueling.Description",
+    "enGB": "At 1st level, and at every even level thereafter, warlord can add a +1 dodge bonus to his Armor Class instead of taking a bonus feat.",
+    "zhCN": "At 1st level, and at every even level thereafter, warlord can add a +1 dodge bonus to his Armor Class instead of taking a bonus feat."
   }
 ]
