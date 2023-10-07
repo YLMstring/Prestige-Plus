@@ -1,4 +1,4 @@
-# Prestige Plus v1.3.0 for WoTR 
+# Prestige Plus v1.4.0 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - Add Grapple Mechanic!
@@ -10,7 +10,7 @@
 
 ### Combat Maneuver+
 - You can Disarm, Sunder, or Trip in lieu of an melee attack, like on tabletop!
-- [Seize the Opportunity](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/seize-the-opportunity-combat/)
+- [Seize the Opportunity](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/seize-the-opportunity-combat/): From Path of War
 - [Strength Surge](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/strength-surge-ex/)
 - More coming soon!
 ### [Grapple Mechanic](https://www.d20pfsrd.com/gamemastering/Combat/#Grapple)
@@ -81,12 +81,18 @@
 - Shadow Jump: You can choose any feat from the dimentional feat chain instead! This requires [Microscopic Content Expansion mod](https://github.com/alterasc/MicroscopicContentExpansion/), which requires [TabletopTweaks-Core](https://github.com/Vek17/TabletopTweaks-Core). If you don't want these feats, my mod doesn't require anything, as the original feature will still be there.
 - Extra Shadow Jump: This is a homebrew feat that gives you 4 extra uses of Shadow Jump ability and you can take it as soon as umbral agent level 1!
   
+### New Archetypes
+#### Fighter:  
+- [Eldritch Guardian](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Eldritch%20Guardian)
+- Share Training with your pets!
+- [Lore Warden](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Lore%20Warden) (preserving pros of [this version](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Lore%20Warden%20(PFS%20Field%20Guide)))
+- [Warlord](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Warlord)
+
 ### New Style Feats
 
-- [Black Seraph Style](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/black-seraph-style-combat-style/)
+- [Black Seraph Style](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/black-seraph-style-combat-style/): From Path of War
 - [Black Seraph’s Malevolence](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/black-seraphs-malevolence-combat/)
 - [Black Seraph Annihilation](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/black-seraph-annihilation-combat/)
-- From Path of War, Make them Fear!
 - [Grabbing Style](https://www.d20pfsrd.com/feats/combat-feats/grabbing-style-combat-style/)
 - Grabbing Drag (homebrew: drag effect)
 - Grabbing Master (homebrew: bypass immunity)
@@ -102,7 +108,7 @@
 - Use Kraken Style Feats as prerequisites since they are all tentacle-like.
 ### New Feats
 
-- [Ripple in Still Water](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/ripple-in-still-water-combat/)
+- [Ripple in Still Water](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/ripple-in-still-water-combat/): From Path of War
 - [Lesser Spell Synthesis](https://www.d20pfsrd.com/feats/general-feats/lesser-spell-synthesis/)
 - Where is Spell Synthesis? In [Mystical Mayhem](https://gitgud.io/Kreaddy/mysticalmayhem/)!
 ### New Rogue Talents
