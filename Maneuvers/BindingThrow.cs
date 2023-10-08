@@ -20,19 +20,19 @@ namespace PrestigePlus.Maneuvers
     internal class BindingThrow
     {
         private static readonly string DragName = "BindingThrow";
-        public static readonly string DragGuid = "{D4583C87-10C9-468D-8413-B58638FE31EF}";
+        public static readonly string DragGuid = "{B39490B1-5BF5-40E4-B2CB-3CBEA44FBC1C}";
 
         private static readonly string DragDisplayName = "BindingThrow.Name";
         private static readonly string DragDescription = "BindingThrow.Description";
 
         private const string StyleAbility = "BindingThrow.StyleAbility";
-        private static readonly string StyleAbilityGuid = "{50C570BA-7454-40D6-BD8A-BE3F653CAD0B}";
+        private static readonly string StyleAbilityGuid = "{52C990D0-BCB3-4AAD-8007-AB398043E26F}";
 
         private const string StyleBuff = "BindingThrow.StyleBuff";
-        private static readonly string StyleBuffGuid = "{98558112-717B-456D-838F-EFF5061F4D38}";
+        private static readonly string StyleBuffGuid = "{F57450C7-C684-489B-ACCE-31FD37E2324C}";
         public static void DragConfigure()
         {
-            var icon = FeatureRefs.FlurryOfBlows.Reference.Get().Icon;
+            var icon = AbilityRefs.ArmyShifterGrabAbility.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(StyleBuff, StyleBuffGuid)
                 .SetDisplayName(DragDisplayName)
@@ -44,7 +44,7 @@ namespace PrestigePlus.Maneuvers
                 .SetDisplayName(DragDisplayName)
                 .SetDescription(DragDescription)
                 .SetIcon(icon)
-                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1)))
+                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1)).Build())
                 .SetType(AbilityType.Physical)
                 .SetRange(AbilityRange.Personal)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)

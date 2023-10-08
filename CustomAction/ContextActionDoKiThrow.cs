@@ -19,6 +19,7 @@ using Kingmaker.Enums;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
 using PrestigePlus.Feats;
+using Kingmaker.Designers;
 
 namespace PrestigePlus.CustomAction
 {
@@ -62,20 +63,23 @@ namespace PrestigePlus.CustomAction
                 var target = maybeCaster.Get<UnitPartKiThrow>().Target;
                 if (target != null)
                 {
+                    target.Value.CombatState.PreventAttacksOfOpporunityNextFrame = true;
                     target.Value.Position = point;
                     if (maybeCaster.HasFact(Grapple))
                     {
-                        RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(maybeCaster, Target.Unit, CombatManeuver.Grapple, null);
-                        ruleCombatManeuver = (Target.Unit.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
+                        GameHelper.RemoveBuff(maybeCaster, Grapple);
+                        RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(maybeCaster, target.Value, CombatManeuver.Grapple, null);
+                        ruleCombatManeuver = (target.Value.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
                         if (ruleCombatManeuver.Success)
                         {
-                            maybeCaster.Ensure<UnitPartGrappleInitiatorPP>().Init(target, CasterBuff, Target.Unit.Context);
-                            Target.Unit.Ensure<UnitPartGrappleTargetPP>().Init(maybeCaster, TargetBuff, maybeCaster.Context);
+                            maybeCaster.Ensure<UnitPartGrappleInitiatorPP>().Init(target.Value, CasterBuff, target.Value.Context);
+                            target.Value.Ensure<UnitPartGrappleTargetPP>().Init(maybeCaster, TargetBuff, maybeCaster.Context);
                         }
                     }
                     if (maybeCaster.HasFact(Hit))
                     {
-                        RunAttackRule(maybeCaster, Target.Unit);
+                        GameHelper.RemoveBuff(maybeCaster, Hit);
+                        RunAttackRule(maybeCaster, target.Value);
                     }
                 }
                 maybeCaster.Remove<UnitPartKiThrow>();
@@ -99,7 +103,7 @@ namespace PrestigePlus.CustomAction
             };
             maybeCaster.Context.TriggerRule(ruleAttackWithWeapon);
         }
-        private static BlueprintBuffReference Grapple = BlueprintTool.GetRef<BlueprintBuffReference>("{98558112-717B-456D-838F-EFF5061F4D38}");
+        private static BlueprintBuffReference Grapple = BlueprintTool.GetRef<BlueprintBuffReference>("{F57450C7-C684-489B-ACCE-31FD37E2324C}");
         private static BlueprintBuffReference Hit = BlueprintTool.GetRef<BlueprintBuffReference>("{36DD4519-6A34-4A90-85A5-D77A2309A20D}");
 
         private static BlueprintBuffReference CasterBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{D6D08842-8E03-4A9D-81B8-1D9FB2245649}");

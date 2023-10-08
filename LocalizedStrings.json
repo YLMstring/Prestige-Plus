@@ -3637,5 +3637,65 @@
     "Key": "WarlordEvasiveDueling.Description",
     "enGB": "At 1st level, and at every even level thereafter, warlord can add a +1 dodge bonus to his Armor Class instead of taking a bonus feat.",
     "zhCN": "At 1st level, and at every even level thereafter, warlord can add a +1 dodge bonus to his Armor Class instead of taking a bonus feat."
+  },
+
+  {
+    "Key": "KiThrow.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Ki Throw",
+    "zhCN": "太极拳"
+  },
+
+  {
+    "Key": "KiThrow.Description",
+    "enGB": "Your physical control and mastery of momentum allows you to throw enemies. On a successful unarmed trip attack against a target, before moving elsewhere you may throw the target prone in any square you threaten rather than its own square. This movement does not provoke attacks of opportunity, and you cannot throw the creature into a space occupied by other creatures. A monk may gain Ki Throw as a bonus feat at 10th level.",
+    "zhCN": "你的身体控制能力以及对动量的掌握能够将敌人摔飞出去。当你成功对目标进行徒手绊摔攻击，在走动之前你能够让目标摔倒在任何你正在威胁的方格内，而非他原本占据的方格。这个移动不会引发藉机攻击，你也无法将该名生物摔进有其他生物占据的空间内。10级起，武僧能够将“太极拳”作为奖励专长选取。"
+  },
+
+  {
+    "Key": "ImprovedKiThrow.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Improved Ki Throw",
+    "zhCN": "太极-揽雀尾"
+  },
+
+  {
+    "Key": "ImprovedKiThrow.Description",
+    "enGB": "Your enemies are living weapons in your hands. When using the Ki Throw feat, you may throw your target into any square you threaten that is occupied by another creature. Make a bull rush combat maneuver check with a –4 penalty against the secondary target. If this check succeeds, the thrown creature lands prone in the secondary target’s square, while the secondary target is pushed back and knocked prone in an adjacent square. If the check fails, the thrown creature lands prone in the nearest square you threaten adjacent to the secondary target. A monk may take this as a bonus feat at 10th level.",
+    "zhCN": "敌人在你手中就是活生生的武器。当你使用“太极拳”专长时，你能够将你的目标丢至任何处于你威胁范围的方格内，并且该方格被任何其他生物所占据。你需要对次要目标进行受到-4减值的冲撞战技检定。如果检定成功，被投掷的生物会倒在次要目标所在的方格，而次要目标会被推开，并且倒在相邻的方格内。如果检定失败，被投掷的生物会倒地，他的位置会与次要目标相邻并且在你威胁范围内的最近的方格。10级起，武僧能够将“太极-揽雀尾”作为奖励专长选取。"
+  },
+
+  {
+    "Key": "BindingThrow.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Binding Throw",
+    "zhCN": "太极-抱虎归山"
+  },
+
+  {
+    "Key": "BindingThrow.Description",
+    "enGB": "You can strike your enemy and use the blow as an opportunity to grab and hold him. Before you use the Ki Throw feat on an opponent, you can use a swift action to attempt a grapple combat maneuver against that opponent. A monk may take this as a bonus feat at 10th level.",
+    "zhCN": "你攻击你的敌人，并顺势捕获和擒住他。当你成功的对一个敌人使用了“太极拳”前，你可以用一次迅捷动作对其进行一次战技检定以尝试擒抱他。10级起，武僧能够将“太极-抱虎归山”作为奖励专长选取。"
+  },
+
+  {
+    "Key": "EnhancedThrow.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Enhanced Ki Throw",
+    "zhCN": "太极-倒撵猴"
+  },
+
+  {
+    "Key": "EnhancedThrow.Description",
+    "enGB": "You enhance the force of your ki throws, enabling you to devastate your opponents as you slam them to the ground. Before using the Ki Throw feat, you can expend 1 ki point to amplify the force of your attack. If your ki throw succeeds, when the target hits the ground, it takes damage as if you had hit it with an unarmed strike.",
+    "zhCN": "You enhance the force of your ki throws, enabling you to devastate your opponents as you slam them to the ground. Before using the Ki Throw feat, you can expend 1 ki point to amplify the force of your attack. If your ki throw succeeds, when the target hits the ground, it takes damage as if you had hit it with an unarmed strike."
   }
 ]

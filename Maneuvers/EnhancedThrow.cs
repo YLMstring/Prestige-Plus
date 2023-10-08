@@ -31,7 +31,7 @@ namespace PrestigePlus.Maneuvers
         private static readonly string StyleBuffGuid = "{36DD4519-6A34-4A90-85A5-D77A2309A20D}";
         public static void DragConfigure()
         {
-            var icon = FeatureRefs.FlurryOfBlows.Reference.Get().Icon;
+            var icon = AbilityRefs.KiExtraAttack.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(StyleBuff, StyleBuffGuid)
                 .SetDisplayName(DragDisplayName)
@@ -43,7 +43,7 @@ namespace PrestigePlus.Maneuvers
                 .SetDisplayName(DragDisplayName)
                 .SetDescription(DragDescription)
                 .SetIcon(icon)
-                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1)))
+                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1)).Build())
                 .SetType(AbilityType.Physical)
                 .SetRange(AbilityRange.Personal)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
