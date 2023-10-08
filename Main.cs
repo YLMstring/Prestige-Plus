@@ -185,7 +185,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("umbral"))) { UmbralAgent.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("biggg"))) { MammothRider.Configure(); GiganticAssault.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("asavir"))) { Asavir.Configure(); BondGenie.Configure(); TrampleMythic.Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("maneuver"))) { ReplaceAttack.DisarmConfigure(); ReplaceAttack.SunderConfigure(); ReplaceAttack.TripConfigure(); StrengthSurge.StrengthSurgeFeat(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("maneuver"))) { ReplaceAttack.DisarmConfigure(); ReplaceAttack.SunderConfigure(); ReplaceAttack.TripConfigure(); StrengthSurge.StrengthSurgeFeat(); KiThrow.DragConfigure(); ImprovedKiThrow.DragConfigure(); EnhancedThrow.DragConfigure(); BindingThrow.DragConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("halfling"))) { HalflingOpportunist.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("enhance"))) { SwiftDeath.Configure(); SwiftDeath.Configure2(); UnbreakableDefance.Configure(); MythicWings.Configure(); MythicWings.Configure2(); MythicRiposte.Configure(); MetaphysicalSneak.Configure(); LesserSpellSynthesis.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fightereg"))) { EldritchGuardian.Configure(); }
