@@ -86,9 +86,9 @@
 - [Eldritch Guardian](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Eldritch%20Guardian)
 - Share Training with your pets!
 - [Lore Warden](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Lore%20Warden) (preserving pros of [this version](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Lore%20Warden%20(PFS%20Field%20Guide)))
-- Require TTT-base Armor Training
+- Require [TTT-base](https://github.com/Vek17/TabletopTweaks-Base) Armor Training
 - [Warlord](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Warlord)
-- Require TTT-base Armor Training
+- Require [TTT-base](https://github.com/Vek17/TabletopTweaks-Base) Armor Training
 
 ### New Style Feats
 
