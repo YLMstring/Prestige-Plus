@@ -368,18 +368,30 @@ namespace PrestigePlus.PrestigeClasses
         private static readonly string spelllistguid = "{72869416-FA1F-4864-BB0A-AAAFD05D7177}";
 
         private static readonly BlueprintSpellList WizardNecromancySpells = SpellListRefs.WizardNecromancySpellList.Reference.Get();
+
+        internal const string ChillTouchSpell = "3f184aa1-610d-498d-bdaf-41eec77b1319";
+        internal const string DesecrateSpell = "ba47baf2-982a-4c4c-82fc-af65dab915af";
+        internal const string StrickenHeartSpell = "8e4e9469-8fa1-42a9-8cfc-44ad05ff8c91";
+        internal const string TouchOfBlindnessSpell = "6177af1b-a096-4f58-a0a0-c02778e95483";
         private static BlueprintFeature CreateSecretDeath()
         {
             var icon = AbilityRefs.AnimateDead.Reference.Get().Icon;
 
+            string AccursedGlareAbility = "724e11ad-1e2d-4ee8-899f-eccde86b2d24";
+            string SpellCurseAbility = "f602da89-a634-4b11-b91b-268e59a9f2b2";
+            string ScourgeOfTheHorsemenAbility = "dafdc0ee-f437-4785-aa82-7bf5b2059bf0";
+            string DeadlyJuggernaut = "8eff5234-d066-448c-821b-5b14e11951c2";
+
             var firstLevelSpells = new SpellLevelList(1)
             {
                 m_Spells =
-          WizardNecromancySpells.GetSpells(1)
-            .Select(s => s.ToReference<BlueprintAbilityReference>())
-            .Append(AbilityRefs.Doom.Cast<BlueprintAbilityReference>().Reference)
-            .Append(AbilityRefs.InflictLightWoundsCast.Cast<BlueprintAbilityReference>().Reference)
-            .ToList()
+                WizardNecromancySpells.GetSpells(1)
+                    .Select(s => s.ToReference<BlueprintAbilityReference>())
+                    .Append(AbilityRefs.Doom.Cast<BlueprintAbilityReference>().Reference)
+                    .Append(AbilityRefs.InflictLightWoundsCast.Cast<BlueprintAbilityReference>().Reference)
+                    .Append(BlueprintTool.GetRef<BlueprintAbilityReference>(ChillTouchSpell))
+                    .Append(BlueprintTool.GetRef<BlueprintAbilityReference>(TouchOfBlindnessSpell))
+                    .ToList()
             };
 
             var secondLevelSpells = new SpellLevelList(2)
@@ -389,6 +401,8 @@ namespace PrestigePlus.PrestigeClasses
                   .Select(s => s.ToReference<BlueprintAbilityReference>())
                   .Append(AbilityRefs.BoneFists.Cast<BlueprintAbilityReference>().Reference)
                   .Append(AbilityRefs.InflictModerateWoundsCast.Cast<BlueprintAbilityReference>().Reference)
+                  .Append(BlueprintTool.GetRef<BlueprintAbilityReference>(DesecrateSpell))
+                  .Append(BlueprintTool.GetRef<BlueprintAbilityReference>(StrickenHeartSpell))
                   .ToList()
             };
 
@@ -401,6 +415,9 @@ namespace PrestigePlus.PrestigeClasses
                   .Append(AbilityRefs.BestowCurse.Cast<BlueprintAbilityReference>().Reference)
                   .Append(AbilityRefs.Contagion.Cast<BlueprintAbilityReference>().Reference)
                   .Append(AbilityRefs.InflictSeriousWoundsCast.Cast<BlueprintAbilityReference>().Reference)
+                  .Append(BlueprintTool.GetRef<BlueprintAbilityReference>(DeadlyJuggernaut))
+                  .Append(BlueprintTool.GetRef<BlueprintAbilityReference>(SpellCurseAbility))
+                  .Append(BlueprintTool.GetRef<BlueprintAbilityReference>(AccursedGlareAbility))
                   .ToList()
             };
 
@@ -460,6 +477,7 @@ namespace PrestigePlus.PrestigeClasses
                 m_Spells =
                 WizardNecromancySpells.GetSpells(9)
                   .Select(s => s.ToReference<BlueprintAbilityReference>())
+                  .Append(BlueprintTool.GetRef<BlueprintAbilityReference>(ScourgeOfTheHorsemenAbility))
                   .ToList()
             };
 

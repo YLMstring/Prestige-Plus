@@ -1,7 +1,9 @@
 ﻿using BlueprintCore.Blueprints.CustomConfigurators.Classes;
+using BlueprintCore.Blueprints.ModReferences;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using BlueprintCore.Utils.Types;
+using HarmonyLib;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
@@ -21,17 +23,23 @@ namespace PrestigePlus.Archetype
         private static readonly string ArchetypeGuid = "{E1C0D1F2-52D2-4251-901E-92C26463A921}";
         internal const string ArchetypeDisplayName = "Warlord.Name";
         private const string ArchetypeDescription = "Warlord.Description";
+
+        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
+        //[HarmonyBefore(new string[] { "TabletopTweaks-Base" })]
         public static void Configure()
         {
-            ArchetypeConfigurator.New(ArchetypeName, ArchetypeGuid, CharacterClassRefs.FighterClass)
+            var arc = ArchetypeConfigurator.New(ArchetypeName, ArchetypeGuid, CharacterClassRefs.FighterClass)
               .SetLocalizedName(ArchetypeDisplayName)
               .SetLocalizedDescription(ArchetypeDescription)
-            .AddToRemoveFeatures(1, FeatureRefs.FighterProficiencies.ToString())
-            .AddToRemoveFeatures(3, FeatureRefs.ArmorTraining.ToString())
-            .AddToRemoveFeatures(7, FeatureRefs.ArmorTraining.ToString())
-            .AddToRemoveFeatures(11, FeatureRefs.ArmorTraining.ToString())
-            .AddToRemoveFeatures(15, FeatureRefs.ArmorTraining.ToString())
-            .AddToRemoveFeatures(19, FeatureRefs.ArmorMastery.ToString())
+            .SetRemoveFeaturesEntry(1, FeatureRefs.FighterProficiencies.ToString())
+            .SetRemoveFeaturesEntry(3, FeatureRefs.ArmorTraining.ToString())
+            .SetRemoveFeaturesEntry(7, FeatureRefs.ArmorTraining.ToString())
+            .SetRemoveFeaturesEntry(11, FeatureRefs.ArmorTraining.ToString())
+            .SetRemoveFeaturesEntry(15, FeatureRefs.ArmorTraining.ToString())
+            //.SetRemoveFeaturesEntry(7, ModFeatureSelectionRefs.ArmorTrainingSelection.ToString())
+            //.SetRemoveFeaturesEntry(11, ModFeatureSelectionRefs.ArmorTrainingSelection.ToString())
+            //.SetRemoveFeaturesEntry(15, ModFeatureSelectionRefs.ArmorTrainingSelection.ToString())
+            .SetRemoveFeaturesEntry(19, FeatureRefs.ArmorMastery.ToString())
             .AddToAddFeatures(1, CreateProficiencies())
             .AddToAddFeatures(3, CreateBattleBravado())
             .AddToAddFeatures(7, CreateEvasiveDueling())

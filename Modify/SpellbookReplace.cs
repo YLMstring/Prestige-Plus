@@ -48,7 +48,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(AccursedWitchDescription)
                 .SetSpellbook(SpellbookRefs.AccursedWitchSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.AccursedWitchSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string AlchemistName = "2Alchemist";
@@ -64,7 +64,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(AlchemistDescription)
                 .SetSpellbook(SpellbookRefs.AlchemistSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.AlchemistSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string AngelfireApostleName = "2AngelfireApostle";
@@ -80,7 +80,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(AngelfireApostleDescription)
                 .SetSpellbook(SpellbookRefs.AngelfireApostleSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.AngelfireApostleSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string ArcanistName = "2Arcanist";
@@ -96,7 +96,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(ArcanistDescription)
                 .SetSpellbook(SpellbookRefs.ArcanistSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.ArcanistSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string ArmagsBladeName = "2ArmagsBlade";
@@ -112,7 +112,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(ArmagsBladeDescription)
                 .SetSpellbook(SpellbookRefs.ArmagsBladeSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.ArmagsBladeSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string BardName = "2Bard";
@@ -128,7 +128,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(BardDescription)
                 .SetSpellbook(SpellbookRefs.BardSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.BardSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string BloodragerName = "2Bloodrager";
@@ -144,7 +144,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(BloodragerDescription)
                 .SetSpellbook(SpellbookRefs.BloodragerSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.BloodragerSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string ClericName = "2Cleric";
@@ -160,7 +160,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(ClericDescription)
                 .SetSpellbook(SpellbookRefs.ClericSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.ClericSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string CrossbloodedName = "2Crossblooded";
@@ -176,7 +176,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(CrossbloodedDescription)
                 .SetSpellbook(SpellbookRefs.CrossbloodedSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.CrossbloodedSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string CrusaderName = "2Crusader";
@@ -192,7 +192,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(CrusaderDescription)
                 .SetSpellbook(SpellbookRefs.CrusaderSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.CrusaderSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string DruidName = "2Druid";
@@ -208,7 +208,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(DruidDescription)
                 .SetSpellbook(SpellbookRefs.DruidSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.DruidSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string EldritchFontName = "2EldritchFont";
@@ -224,7 +224,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(EldritchFontDescription)
                 .SetSpellbook(SpellbookRefs.EldritchFontSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.EldritchFontSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string EldritchScionName = "2EldritchScion";
@@ -240,7 +240,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(EldritchScionDescription)
                 .SetSpellbook(SpellbookRefs.EldritchScionSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.EldritchScionSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string EldritchScoundrelName = "2EldritchScoundrel";
@@ -256,7 +256,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(EldritchScoundrelDescription)
                 .SetSpellbook(SpellbookRefs.EldritchScoundrelSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.EldritchScoundrelSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string EmpyrealName = "2Empyreal";
@@ -272,7 +272,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(EmpyrealDescription)
                 .SetSpellbook(SpellbookRefs.EmpyrealSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.EmpyrealSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string ExploiterWizardName = "2ExploiterWizard";
@@ -288,7 +288,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(ExploiterWizardDescription)
                 .SetSpellbook(SpellbookRefs.ExploiterWizardSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.ExploiterWizardSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string FeyspeakerName = "2Feyspeaker";
@@ -304,7 +304,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(FeyspeakerDescription)
                 .SetSpellbook(SpellbookRefs.FeyspeakerSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.FeyspeakerSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string HunterName = "2Hunter";
@@ -320,7 +320,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(HunterDescription)
                 .SetSpellbook(SpellbookRefs.HunterSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.HunterSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string InquisitorName = "2Inquisitor";
@@ -336,7 +336,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(InquisitorDescription)
                 .SetSpellbook(SpellbookRefs.InquisitorSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.InquisitorSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string LeyLineGuardianWitchName = "2LeyLineGuardianWitch";
@@ -352,7 +352,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(LeyLineGuardianWitchDescription)
                 .SetSpellbook(SpellbookRefs.LeyLineGuardianWitchSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.LeyLineGuardianWitchSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string MagusName = "2Magus";
@@ -368,7 +368,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(MagusDescription)
                 .SetSpellbook(SpellbookRefs.MagusSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.MagusSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string MasterSpyName = "2MasterSpy";
@@ -384,7 +384,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(MasterSpyDescription)
                 .SetSpellbook(SpellbookRefs.MasterSpySpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.MasterSpySpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string NatureMageName = "2NatureMage";
@@ -400,7 +400,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(NatureMageDescription)
                 .SetSpellbook(SpellbookRefs.NatureMageSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.NatureMageSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string OracleName = "2Oracle";
@@ -416,7 +416,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(OracleDescription)
                 .SetSpellbook(SpellbookRefs.OracleSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.OracleSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string PaladinName = "2Paladin";
@@ -432,7 +432,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(PaladinDescription)
                 .SetSpellbook(SpellbookRefs.PaladinSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.PaladinSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string RangerName = "2Ranger";
@@ -448,7 +448,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(RangerDescription)
                 .SetSpellbook(SpellbookRefs.RangerSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.RangerSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string SageName = "2Sage";
@@ -464,7 +464,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(SageDescription)
                 .SetSpellbook(SpellbookRefs.SageSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.SageSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string ShamanName = "2Shaman";
@@ -480,7 +480,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(ShamanDescription)
                 .SetSpellbook(SpellbookRefs.ShamanSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.ShamanSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string SkaldName = "2Skald";
@@ -496,7 +496,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(SkaldDescription)
                 .SetSpellbook(SpellbookRefs.SkaldSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.SkaldSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string SorcererName = "2Sorcerer";
@@ -513,7 +513,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(SorcererDescription)
                 .SetSpellbook(SpellbookRefs.SorcererSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.SorcererSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string SwordSaintName = "2SwordSaint";
@@ -529,7 +529,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(SwordSaintDescription)
                 .SetSpellbook(SpellbookRefs.SwordSaintSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.SwordSaintSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string ThassilonianAbjurationName = "2ThassilonianAbjuration";
@@ -545,7 +545,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(ThassilonianAbjurationDescription)
                 .SetSpellbook(SpellbookRefs.ThassilonianAbjurationSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.ThassilonianAbjurationSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string ThassilonianConjurationName = "2ThassilonianConjuration";
@@ -561,7 +561,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(ThassilonianConjurationDescription)
                 .SetSpellbook(SpellbookRefs.ThassilonianConjurationSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.ThassilonianConjurationSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string ThassilonianEnchantmentName = "2ThassilonianEnchantment";
@@ -577,7 +577,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(ThassilonianEnchantmentDescription)
                 .SetSpellbook(SpellbookRefs.ThassilonianEnchantmentSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.ThassilonianEnchantmentSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string ThassilonianEvocationName = "2ThassilonianEvocation";
@@ -593,7 +593,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(ThassilonianEvocationDescription)
                 .SetSpellbook(SpellbookRefs.ThassilonianEvocationSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.ThassilonianEvocationSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string ThassilonianIllusionName = "2ThassilonianIllusion";
@@ -609,7 +609,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(ThassilonianIllusionDescription)
                 .SetSpellbook(SpellbookRefs.ThassilonianIllusionSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.ThassilonianIllusionSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string ThassilonianNecromancyName = "2ThassilonianNecromancy";
@@ -625,7 +625,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(ThassilonianNecromancyDescription)
                 .SetSpellbook(SpellbookRefs.ThassilonianNecromancySpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.ThassilonianNecromancySpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string ThassilonianTransmutationName = "2ThassilonianTransmutation";
@@ -641,7 +641,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(ThassilonianTransmutationDescription)
                 .SetSpellbook(SpellbookRefs.ThassilonianTransmutationSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.ThassilonianTransmutationSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string UnletteredArcanistName = "2UnletteredArcanist";
@@ -657,7 +657,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(UnletteredArcanistDescription)
                 .SetSpellbook(SpellbookRefs.UnletteredArcanistSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.UnletteredArcanistSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string WarpriestName = "2Warpriest";
@@ -673,7 +673,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(WarpriestDescription)
                 .SetSpellbook(SpellbookRefs.WarpriestSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.WarpriestSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string WitchName = "2Witch";
@@ -689,7 +689,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(WitchDescription)
                 .SetSpellbook(SpellbookRefs.WitchSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.WitchSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
 
         public static readonly string WizardName = "2Wizard";
@@ -705,7 +705,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(WizardDescription)
                 .SetSpellbook(SpellbookRefs.WizardSpellbook.ToString()).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SpellbookRefs.WizardSpellbook.ToString(); })
-                .Configure();
+                .SetRanks(20).Configure();
         }
         //expanded content
         public static readonly string DreadKnightSpellbook = "FDA83B75-D1B8-4858-9F3E-87A251560FF9";
@@ -737,7 +737,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(DreadKnightDescription)
                 .SetSpellbook(DreadKnightSpellbook).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = DreadKnightSpellbook; })
-                .Configure(delayed: true);
+                .SetRanks(20).Configure(delayed: true);
         }
 
         public static readonly string ClawOfTheFalseWyrmName = "2ClawOfTheFalseWyrm";
@@ -753,7 +753,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(ClawOfTheFalseWyrmDescription)
                 .SetSpellbook(ClawOfTheFalseWyrmSpellbook).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = ClawOfTheFalseWyrmSpellbook; })
-                .Configure(delayed: true);
+                .SetRanks(20).Configure(delayed: true);
         }
 
         public static readonly string SilverChampionName = "2SilverChampion";
@@ -769,7 +769,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(SilverChampionDescription)
                 .SetSpellbook(SilverChampionSpellbook).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SilverChampionSpellbook; })
-                .Configure(delayed: true);
+                .SetRanks(20).Configure(delayed: true);
         }
 
         public static readonly string RavenerHunterName = "2RavenerHunter";
@@ -785,7 +785,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(RavenerHunterDescription)
                 .SetSpellbook(RavenerHunterSpellbook).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = RavenerHunterSpellbook; })
-                .Configure(delayed: true);
+                .SetRanks(20).Configure(delayed: true);
         }
 
         public static readonly string LivingScriptureName = "2LivingScripture";
@@ -801,7 +801,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(LivingScriptureDescription)
                 .SetSpellbook(LivingScriptureSpellbook).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = LivingScriptureSpellbook; })
-                .Configure(delayed: true);
+                .SetRanks(20).Configure(delayed: true);
         }
 
         public static readonly string SkulkingHunterName = "2SkulkingHunter";
@@ -817,7 +817,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(SkulkingHunterDescription)
                 .SetSpellbook(SkulkingHunterSpellbook).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SkulkingHunterSpellbook; })
-                .Configure(delayed: true);
+                .SetRanks(20).Configure(delayed: true);
         }
 
         public static readonly string SwornOfTheEldestName = "2SwornOfTheEldest";
@@ -833,7 +833,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(SwornOfTheEldestDescription)
                 .SetSpellbook(SwornOfTheEldestSpellbook).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = SwornOfTheEldestSpellbook; })
-                .Configure(delayed: true);
+                .SetRanks(20).Configure(delayed: true);
         }
 
         public static readonly string ArrowsongMinstrelName = "2ArrowsongMinstrel";
@@ -849,7 +849,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(ArrowsongMinstrelDescription)
                 .SetSpellbook(ArrowsongMinstrelSpellbook).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = ArrowsongMinstrelSpellbook; })
-                .Configure(delayed: true);
+                .SetRanks(20).Configure(delayed: true);
         }
 
         public static readonly string AntipaladinName = "2Antipaladin";
@@ -866,7 +866,7 @@ namespace PrestigePlus.Modify
                 .SetSpellbook(AntipaladinSpellbook)
                 .SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = AntipaladinSpellbook; })
-                .Configure(delayed: true);
+                .SetRanks(20).Configure(delayed: true);
         }
 
         public static readonly string ChannelerOfTheUnknownName = "2ChannelerOfTheUnknown";
@@ -882,7 +882,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(ChannelerOfTheUnknownDescription)
                 .SetSpellbook(ChannelerOfTheUnknownSpellbook).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = ChannelerOfTheUnknownSpellbook; })
-                .Configure(delayed: true);
+                .SetRanks(20).Configure(delayed: true);
         }
 
         public static readonly string MyrmidarchName = "2Myrmidarch";
@@ -898,7 +898,7 @@ namespace PrestigePlus.Modify
                 .SetDescription(MyrmidarchDescription)
                 .SetSpellbook(MyrmidarchSpellbook).SetHideNotAvailibleInUI(true)
                 .AddComponent<PrerequisiteSpellBook>(c => { c.Book = MyrmidarchSpellbook; })
-                .Configure(delayed: true);
+                .SetRanks(20).Configure(delayed: true);
         }
     }
 }

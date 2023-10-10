@@ -74,16 +74,14 @@ namespace PrestigePlus.Feats
                 .SetIsOnByDefault(true)
                 .Configure();
 
-            FeatureSelectionConfigurator.For(FeatureSelectionRefs.RogueTalentSelection)
-                .AddToAllFeatures(FeatureConfigurator.New(FeatName, FeatGuid)
+                FeatureConfigurator.New(FeatName, FeatGuid, Kingmaker.Blueprints.Classes.FeatureGroup.RogueTalent)
                     .SetDisplayName(DisplayName)
                     .SetDescription(Description)
                     .SetIcon(icon)
                     .AddPrerequisiteFeature(FeatureRefs.AdvanceTalents.ToString())
                     .AddFacts(new() { ability })
                     .AddAbilityResources(resource: Scarabilityresourse, restoreAmount: true)
-                    .Configure())
-                .Configure(delayed: true);
+                    .Configure();
         }
     }
 }

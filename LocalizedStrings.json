@@ -2436,7 +2436,7 @@
 
   {
     "Key": "UmbralAgentTenebrous.Description",
-    "enGB": "An Umbral agent receives a metamagic feat of her choice as a bonus feat at 1st level. In addition, whenever she casts a spell of the illusion school, in 1d4 rounds her spells' effective caster level and any associated save DCs are increased by 2.",
+    "enGB": "An Umbral agent receives a metamagic feat of her choice as a bonus feat at 1st level. In addition, whenever she casts a spell of the illusion school, all spells of any school she casts for the next 1d4 rounds have their effective caster level and save DC increased by 2. This increase does not apply to the original illusion spell.",
     "zhCN": "阴影代理人在1级时自选一个额外超魔专长，施放幻术系法术后的1d4轮内，施法者等级+2，法术DC+2。"
   },
 
@@ -3697,5 +3697,116 @@
     "Key": "EnhancedThrow.Description",
     "enGB": "You enhance the force of your ki throws, enabling you to devastate your opponents as you slam them to the ground. Before using the Ki Throw feat, you can expend 1 ki point to amplify the force of your attack. If your ki throw succeeds, when the target hits the ground, it takes damage as if you had hit it with an unarmed strike.",
     "zhCN": "You enhance the force of your ki throws, enabling you to devastate your opponents as you slam them to the ground. Before using the Ki Throw feat, you can expend 1 ki point to amplify the force of your attack. If your ki throw succeeds, when the target hits the ground, it takes damage as if you had hit it with an unarmed strike."
+  },
+
+  {
+    "Key": "DragonFury.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dragon Fury",
+    "zhCN": "龙怒狂徒"
+  },
+  {
+    "Key": "DragonFury.Description",
+    "enGB": "The disciple of the Thrashing Dragon discipline knows the controlled fury of the dragon’s rage on the battlefield, the sinuous twists and the lashing claws of that savage beast are engraved in the body of its student. By devoting one’s self to the vicious style, the disciple learns many things on how best to emulate the dragon and its fighting style. The ferocity and grace in each twist of the blade and each leap that he makes hides a fierce power and determination to win. These specialists are known as dragon furies, and a dragon’s deep well of wrath lives within their hearts and pumps its fury to every inch of their body.",
+    "zhCN": "蟠龙派武术家懂得在战场上模拟愤怒龙族的张牙舞爪盘旋腾跃，把那野兽般的残暴深深地刻进肉体之中。全心投入此般凶残流派的武术家可以学会龙族的战斗方式。他们的每招每式都既优雅又凶猛，每次轻巧的跨步都藏着刚力以及求胜决心。这些专门家被称为龙怒狂徒，而他们内心深埋的龙族狂怒随着每次心跳流淌在他们的血管之中。"
+  },
+  {
+    "Key": "FuryTraining.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dragon Fury Training",
+    "zhCN": "龙怒训练"
+  },
+  {
+    "Key": "FuryTraining.Description",
+    "enGB": "The path of the dragon fury has semi-mystical roots in several different traditions and schools of thought, allowing divergent paths to come together as one in the hands of its practitioners. If the character possesses one of the following abilities: bardic performance, ki pool, or rage; the character may add his class level to the class that offers that ability to determine the number of bardic performance rounds, ki points, or rounds of rage that he may use per day. This does not improve their effectiveness; this only increases the number of uses per day.",
+    "zhCN": "龙怒之道的神秘源流中参杂了数个宗门学派的思想，集数家之大成。若该角色持有下列的能力：吟游表演、气池、狂暴；该角色可以将龙怒狂徒加入提供该些能力的职业等级上来计算每日表演轮数、气点、狂暴轮数。这此能力并不会使该些能力变强，仅仅是提升了每日可用的轮数/点数。"
+  },
+  {
+    "Key": "DualFangFocus.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dual Fang Focus",
+    "zhCN": "双牙专攻"
+  },
+  {
+    "Key": "DualFangFocus.Description",
+    "enGB": "The dragon fury is a practitioner of two-weapon fighting styles and suffers fewer penalties when fighting with two weapons or a double weapon. He adds a +1 competence bonus to attack and damage rolls while two-weapon fighting with these weapons at 1st level. This bonus increases by +1 at 4th level, and again at 7th and 10th levels.",
+    "zhCN": "龙怒狂徒精通双武器战斗风格，在双持或使用双头武器时受到比常人少的减值。1级起，当他双武器战斗时龙怒狂徒在攻击骰及伤害骰上获得+1表现加值，此加值在4级、7级、10级时再成长+1。"
+  },
+  {
+    "Key": "SharpFang.Name",
+    "ProcessTemplates": false,
+    "enGB": "Sharp Fang",
+    "zhCN": "锐牙"
+  },
+  {
+    "Key": "SharpFang.Description",
+    "enGB": "The dragon fury gains the Power Attack feat (even if he does not meet the prerequisites for this feat), and when fighting with two weapons in his hands (or when wielding a double weapon), he treats these weapons as if he were wielding both weapons as main hand weapons for the purposes of calculating the damage bonuses.",
+    "zhCN": "龙怒获得猛力攻击专长(无视先决条件)，且当他双持武器(或是装备双头武器)时，他在计算来自猛力攻击的额外伤害时将两把/头武器都视为主手武器。"
+  },
+  {
+    "Key": "FuryDefense.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dragon Fury Defense",
+    "zhCN": "龙怒护体"
+  },
+  {
+    "Key": "FuryDefense.Description",
+    "enGB": "Mastering the art of fighting with two weapons in his hands or when wielding a double weapon, the dragon fury learns how to better defend himself with his dual weapons. He gains a +1 shield bonus to his Armor Class at 3rd level. This increases to +2 at 6th level, and to +3 at 9th level. To gain this bonus to his Armor Class, the dragon fury must be fighting with two weapons or a double weapon.",
+    "zhCN": "精通了双持武器或是使用双头武器战斗风格的龙怒狂徒，也学会了怎么用双武保护自己。3级起，当龙怒狂徒双持着武器或装备着双头武器时，他在AC上获得+1盾牌加值，此加值再6级和9级时再成长+1。"
+  },
+  {
+    "Key": "ViciousFang.Name",
+    "ProcessTemplates": false,
+    "enGB": "Vicious Fang",
+    "zhCN": "凶牙"
+  },
+  {
+    "Key": "ViciousFang.Description",
+    "enGB": "At 5th level, the dragon fury uses Sharp Fang as if both of his wielded weapons were wielded as two-handed weapons (gaining a damage bonus equal to +3 per point of attack bonus subtracted).",
+    "zhCN": "5级起，在发动锐牙的效果时，龙怒狂徒可以将两把/头武器都视为以双手持握的武器(因此从猛力攻击上获得每减1点攻击加值换得+3伤害加值)。"
+  },
+  {
+    "Key": "DragonWarDance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dragon Warrior’s Talons (Stance)",
+    "zhCN": "龙兵爪（架势）"
+  },
+  {
+    "Key": "DragonWarDance.Description",
+    "enGB": "With mastery of the Thrashing Dragon’s dance comes supremacy in effectiveness and efficiency with the arms that emulate the weapons of the dragon race. His mien is that of a ferocious, implacable dragon and his blades, hands and feet represent the deadly weapons of the wyrms that inspired the style in their deadly prowess. When wielding two weapons in this stance, all attacks ignore a target’s damage reduction and inflict bleeding wounds on foes, inflicting 2d6 points of bleed damage per round. An application of any effect that cures hit point damage will stop the bleeding.",
+    "zhCN": "精通盘龙战舞即是理解如何模拟巨龙。身为龙躯，兵为龙爪。维持此架式且装备两把武器时，所有攻击无视DR且额外造成2d6出血伤害，出血可以被魔法治疗停止。"
+  },
+  {
+    "Key": "BendwithWind.Name",
+    "ProcessTemplates": false,
+    "enGB": "Bend with the Wind (Stance)",
+    "zhCN": "随风步（架势）"
+  },
+  {
+    "Key": "BendwithWind.Description",
+    "enGB": "The graceful, flowing movements of the Thrashing Dragon’s dance helps defend the disciple in combat while providing him the ability to move through danger unscathed. While in this stance, for each attack that misses the disciple, he may back off 5 ft.",
+    "zhCN": "蟠龙派的优雅战武让武术家可以在战场上来去自如。维持此架式时，每当敌人对武术家的攻击失手，武术家后退5尺。"
+  },
+  {
+    "Key": "OuterSphereStance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Outer Sphere Stance",
+    "zhCN": "外玉势"
+  },
+  {
+    "Key": "OuterSphereStance.Description",
+    "enGB": "The Thrashing Dragon disciple flips both of his blades down and concentrates solely on slaying his foe without heed to his own life. When wielding two weapons while in this stance, the disciple gains +1d6 points of damage with his weapons and suffers a -2 penalty to AC. ",
+    "zhCN": "舞动双刀，以命换命。维持此架式且装备两把武器时，武术家在武器伤害骰上获得1d6额外伤害，但是AC-2。"
+  },
+  {
+    "Key": "InnerSphereStance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Inner Sphere Stance",
+    "zhCN": "内玉势"
+  },
+  {
+    "Key": "InnerSphereStance.Description",
+    "enGB": "Stances are initiated as a swift action. A stance remains in effect indefinitely and is never expended. The benefit of your chosen stance continues until you change to another stance you know as a swift action. You can also change to this default stance as a swift action.",
+    "zhCN": "进入架势需要一个迅捷动作，启用后永久生效，增益持续到你使用迅捷动作切换成另外一个架势为止。你也可以以迅捷动作切换到这个默认架势。"
   }
 ]

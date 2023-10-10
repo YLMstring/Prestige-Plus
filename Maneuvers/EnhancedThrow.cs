@@ -31,7 +31,7 @@ namespace PrestigePlus.Maneuvers
         private static readonly string StyleBuffGuid = "{36DD4519-6A34-4A90-85A5-D77A2309A20D}";
         public static void DragConfigure()
         {
-            var icon = AbilityRefs.KiExtraAttack.Reference.Get().Icon;
+            var icon = AbilityRefs.StunningFistAbility.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(StyleBuff, StyleBuffGuid)
                 .SetDisplayName(DragDisplayName)

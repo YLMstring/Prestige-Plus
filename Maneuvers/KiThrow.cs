@@ -32,7 +32,7 @@ namespace PrestigePlus.Maneuvers
         private static readonly string StyleBuffGuid = "{98558112-717B-456D-838F-EFF5061F4D38}";
         public static void DragConfigure()
         {
-            var icon = FeatureRefs.FlurryOfBlows.Reference.Get().Icon;
+            var icon = FeatureRefs.CraneStyleFeat.Reference.Get().Icon;
 
             var SetThrow = ActionsBuilder.New()
                 .Add<ContextActionSetKiThrow>()
@@ -73,7 +73,7 @@ namespace PrestigePlus.Maneuvers
                     .SetDescription(DragDescription)
                     .SetIcon(icon)
                     .AddPrerequisiteFeature(FeatureRefs.ImprovedUnarmedStrike.ToString())
-                    .AddPrerequisiteFeature(FeatureRefs.ImprovedTrip.ToString())
+                    //.AddPrerequisiteFeature(FeatureRefs.ImprovedTrip.ToString())
                     .AddManeuverTrigger(SetThrow, Kingmaker.RuleSystem.Rules.CombatManeuver.Trip, true)
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .AddToFeatureSelection(FeatureSelectionRefs.MonkBonusFeatSelectionLevel10.ToString())

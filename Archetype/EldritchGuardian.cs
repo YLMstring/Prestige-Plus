@@ -29,6 +29,7 @@ namespace PrestigePlus.Archetype
               .AddToRemoveFeatures(6, FeatureRefs.Bravery.ToString())
               .AddToRemoveFeatures(10, FeatureRefs.Bravery.ToString())
               .AddToRemoveFeatures(14, FeatureRefs.Bravery.ToString())
+              .AddToRemoveFeatures(18, FeatureRefs.Bravery.ToString())
               .AddToAddFeatures(1, FeatureSelectionRefs.Familiar.ToString())
               .AddToAddFeatures(2, CreateShareTraining(), CreateSteelWill())
               .AddToAddFeatures(6, SteelWillGuid)

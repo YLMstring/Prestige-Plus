@@ -6,6 +6,7 @@ using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
+using BlueprintCore.Blueprints.ModReferences;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Conditions.Builder.ContextEx;
@@ -40,13 +41,16 @@ namespace PrestigePlus.Archetype
             ArchetypeConfigurator.New(ArchetypeName, ArchetypeGuid, CharacterClassRefs.FighterClass)
               .SetLocalizedName(ArchetypeDisplayName)
               .SetLocalizedDescription(ArchetypeDescription)
-            .AddToRemoveFeatures(1, FeatureRefs.FighterProficiencies.ToString())
-            .AddToRemoveFeatures(2, FeatureRefs.Bravery.ToString())
-            .AddToRemoveFeatures(3, FeatureRefs.ArmorTraining.ToString())
-            .AddToRemoveFeatures(7, FeatureRefs.ArmorTraining.ToString())
-            .AddToRemoveFeatures(11, FeatureRefs.ArmorTraining.ToString())
-            .AddToRemoveFeatures(15, FeatureRefs.ArmorTraining.ToString())
-            .AddToRemoveFeatures(19, FeatureRefs.ArmorMastery.ToString())
+            .SetRemoveFeaturesEntry(1, FeatureRefs.FighterProficiencies.ToString())
+            .SetRemoveFeaturesEntry(2, FeatureRefs.Bravery.ToString())
+            .SetRemoveFeaturesEntry(3, FeatureRefs.ArmorTraining.ToString())
+            .SetRemoveFeaturesEntry(7, FeatureRefs.ArmorTraining.ToString())
+            .SetRemoveFeaturesEntry(11, FeatureRefs.ArmorTraining.ToString())
+            .SetRemoveFeaturesEntry(15, FeatureRefs.ArmorTraining.ToString())
+            //.SetRemoveFeaturesEntry(7, ModFeatureSelectionRefs.ArmorTrainingSelection.ToString())
+            //.SetRemoveFeaturesEntry(11, ModFeatureSelectionRefs.ArmorTrainingSelection.ToString())
+            //.SetRemoveFeaturesEntry(15, ModFeatureSelectionRefs.ArmorTrainingSelection.ToString())
+            .SetRemoveFeaturesEntry(19, FeatureRefs.ArmorMastery.ToString())
             .AddToAddFeatures(1, CreateProficiencies())
             .AddToAddFeatures(2, FeatureRefs.CombatExpertiseFeature.ToString())
             .AddToAddFeatures(3, SwordsSecretFeat())

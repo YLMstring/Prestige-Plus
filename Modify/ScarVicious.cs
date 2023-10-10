@@ -17,7 +17,7 @@ namespace PrestigePlus.Modify
     {
         void IRulebookHandler<RuleCalculateWeaponStats>.OnEventAboutToTrigger(RuleCalculateWeaponStats evt)
         {
-            if (Owner.HasFact(Buff))
+            if (!checkBuff || Owner.HasFact(BlueprintTool.GetRef<BlueprintBuffReference>(Buff)))
             {
                 DamageDescription item = new DamageDescription
                 {
@@ -26,7 +26,7 @@ namespace PrestigePlus.Modify
                         Type = DamageType.Energy,
                         Energy = Kingmaker.Enums.Damage.DamageEnergyType.Magic
                     },
-                    Dice = new DiceFormula(2, DiceType.D6),
+                    Dice = new DiceFormula(num, type),
                     SourceFact = base.Fact
                 };
                 evt.DamageDescription.Add(item);
@@ -37,6 +37,10 @@ namespace PrestigePlus.Modify
         {
 
         }
-        private static BlueprintBuffReference Buff = BlueprintTool.GetRef<BlueprintBuffReference>("{DAE72E0A-9F44-4CD3-A26E-3D48DFEB23A1}");
+        //private static BlueprintBuffReference Buff = BlueprintTool.GetRef<BlueprintBuffReference>("{DAE72E0A-9F44-4CD3-A26E-3D48DFEB23A1}");
+        public string Buff = "{DAE72E0A-9F44-4CD3-A26E-3D48DFEB23A1}";
+        public bool checkBuff = true;
+        public int num = 2;
+        public DiceType type = DiceType.D6;
     }
 }

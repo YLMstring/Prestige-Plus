@@ -27,7 +27,7 @@ namespace PrestigePlus.Maneuvers
 
         public static void DragConfigure()
         {
-            var icon = FeatureRefs.ImprovedBullRush.Reference.Get().Icon;
+            var icon = FeatureRefs.CraneStyleRiposteFeat.Reference.Get().Icon;
 
             var DoThrow = ActionsBuilder.New()
                 .Add<ContextActionDoKiThrow>()

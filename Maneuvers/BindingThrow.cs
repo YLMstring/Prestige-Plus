@@ -56,7 +56,7 @@ namespace PrestigePlus.Maneuvers
                     .SetIcon(icon)
                     .AddPrerequisiteFeature(ImprovedGrapple.StyleGuid)
                     .AddPrerequisiteFeature(FeatureRefs.ImprovedUnarmedStrike.ToString())
-                    .AddPrerequisiteFeature(FeatureRefs.ImprovedTrip.ToString())
+                    //.AddPrerequisiteFeature(FeatureRefs.ImprovedTrip.ToString())
                     .AddPrerequisiteFeature(KiThrow.DragGuid)
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .AddToFeatureSelection(FeatureSelectionRefs.MonkBonusFeatSelectionLevel10.ToString())

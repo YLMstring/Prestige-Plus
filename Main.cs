@@ -69,6 +69,7 @@ namespace PrestigePlus
       private static bool Initialized = false;
 
       [HarmonyPriority(Priority.First)]
+      [HarmonyBefore(new string[] { "TabletopTweaks-Base" })]
       [HarmonyPatch(nameof(BlueprintsCache.Init)), HarmonyPostfix]
 
       static void Init()
@@ -137,6 +138,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("warlord"), defaultValue: true, Helpers.CreateString("toggle-desc25", "Warlord"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("ragonury"), defaultValue: true, Helpers.CreateString("toggle-desc26", "Dragon Fury (Path of War)"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("seraph"), defaultValue: true, Helpers.CreateString("toggle-desc11", "Black Seraph Style (Path of War)"))
               .ShowVisualConnection())
           .AddToggle(
@@ -191,6 +195,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fightereg"))) { EldritchGuardian.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("lorew"))) { LoreWarden.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("warlord"))) { Warlord.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("ragonury"))) { DragonFury.Configure(); }
                 }
                 catch (Exception e)
         {

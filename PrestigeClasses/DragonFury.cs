@@ -24,6 +24,8 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 using PrestigePlus.Grapple;
 using PrestigePlus.Maneuvers;
 using BlueprintCore.Actions.Builder.ContextEx;
+using PrestigePlus.Modify;
+using TabletopTweaks.Core.NewComponents;
 
 namespace PrestigePlus.PrestigeClasses
 {
@@ -49,7 +51,7 @@ namespace PrestigePlus.PrestigeClasses
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, FuryTrainingFeature(), DualFangFocusFeature(), SharpFangFeature())
+                .AddToLevelEntry(1, SharpFangFeature(), DualFangFocusFeature(), FuryTrainingFeature())
                 .AddToLevelEntry(2, OuterSphereStanceConfigure())
                 .AddToLevelEntry(3, FuryDefenseFeature())
                 .AddToLevelEntry(4, DualFangFocusGuid)
@@ -60,7 +62,7 @@ namespace PrestigePlus.PrestigeClasses
                 .AddToLevelEntry(9, FuryDefenseGuid)
                 .AddToLevelEntry(10, DragonWarDanceConfigure(), DualFangFocusGuid)
                 .SetUIGroups(UIGroupBuilder.New()
-                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { FuryTrainingGuid }))
+                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { SharpFangGuid }))
                 ///.AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { SeekerArrowGuid, PhaseArrowGuid, HailArrowGuid, DeathArrowGuid }))
                 .SetRanks(1)
                 .SetIsClassFeature(true)
@@ -112,7 +114,7 @@ namespace PrestigePlus.PrestigeClasses
         private const string FuryTrainingDescription = "FuryTraining.Description";
         public static BlueprintFeature FuryTrainingFeature()
         {
-            var icon = FeatureRefs.ImbueArrowFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.NatureSense.Reference.Get().Icon;
             return FeatureConfigurator.New(FuryTraining, FuryTrainingGuid)
               .SetDisplayName(FuryTrainingDisplayName)
               .SetDescription(FuryTrainingDescription)
@@ -135,23 +137,24 @@ namespace PrestigePlus.PrestigeClasses
         private const string DualFangFocusDescription = "DualFangFocus.Description";
         public static BlueprintFeature DualFangFocusFeature()
         {
-            var icon = FeatureRefs.ImbueArrowFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.ShifterClawsFeatureAddLevel1.Reference.Get().Icon;
             return FeatureConfigurator.New(DualFangFocus, DualFangFocusGuid)
               .SetDisplayName(DualFangFocusDisplayName)
               .SetDescription(DualFangFocusDescription)
               .SetIcon(icon)
+              .AddComponent<DualFangFocus>()
               .SetRanks(10)
               .Configure();
         }
 
         private const string SharpFang = "SharpFang";
-        private static readonly string SharpFangGuid = "{68504AA7-C18E-4EB5-A6F0-BBC26EEA5AB7}";
+        public static readonly string SharpFangGuid = "{68504AA7-C18E-4EB5-A6F0-BBC26EEA5AB7}";
 
         internal const string SharpFangDisplayName = "SharpFang.Name";
         private const string SharpFangDescription = "SharpFang.Description";
         public static BlueprintFeature SharpFangFeature()
         {
-            var icon = FeatureRefs.ImbueArrowFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.ShiftersEdgeFeature.Reference.Get().Icon;
             return FeatureConfigurator.New(SharpFang, SharpFangGuid)
               .SetDisplayName(SharpFangDisplayName)
               .SetDescription(SharpFangDescription)
@@ -167,23 +170,24 @@ namespace PrestigePlus.PrestigeClasses
         private const string FuryDefenseDescription = "FuryDefense.Description";
         public static BlueprintFeature FuryDefenseFeature()
         {
-            var icon = FeatureRefs.ImbueArrowFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.ShifterACBonusUnlock.Reference.Get().Icon;
             return FeatureConfigurator.New(FuryDefense, FuryDefenseGuid)
               .SetDisplayName(FuryDefenseDisplayName)
               .SetDescription(FuryDefenseDescription)
               .SetIcon(icon)
+              .AddComponent<DragonFuryDefense>()
               .SetRanks(10)
               .Configure();
         }
 
         private const string ViciousFang = "ViciousFang";
-        private static readonly string ViciousFangGuid = "{7737F897-1EDD-4631-9101-26AE64974743}";
+        public static readonly string ViciousFangGuid = "{7737F897-1EDD-4631-9101-26AE64974743}";
 
         internal const string ViciousFangDisplayName = "ViciousFang.Name";
         private const string ViciousFangDescription = "ViciousFang.Description";
         public static BlueprintFeature ViciousFangFeature()
         {
-            var icon = FeatureRefs.ImbueArrowFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.ShiftersEdgeFeature.Reference.Get().Icon;
             return FeatureConfigurator.New(ViciousFang, ViciousFangGuid)
               .SetDisplayName(ViciousFangDisplayName)
               .SetDescription(ViciousFangDescription)
@@ -204,20 +208,21 @@ namespace PrestigePlus.PrestigeClasses
         private static readonly string WarDanceBuffGuid = "{899AAA9A-0E9E-4331-86DB-97C6E41C9104}";
         public static BlueprintFeature DragonWarDanceConfigure()
         {
-            var icon = AbilityRefs.ArmyShifterGrabAbility.Reference.Get().Icon;
+            var icon = FeatureRefs.ShifterDragonFormFeature.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(WarDanceBuff, WarDanceBuffGuid)
                 .SetDisplayName(DragonWarDanceDisplayName)
                 .SetDescription(DragonWarDanceDescription)
                 .SetIcon(icon)
+                .AddPartialDRIgnore(checkWeaponCategories: false, reductionReduction: 1000, useContextValue: false)
+                .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().ApplyBuffPermanent(BuffRefs.Bleed2d6Buff.ToString()).Build(), false, onlyHit: true)
                 .Configure();
 
             var ability = AbilityConfigurator.New(WarDanceAbility, WarDanceAbilityGuid)
                 .SetDisplayName(DragonWarDanceDisplayName)
                 .SetDescription(DragonWarDanceDescription)
                 .SetIcon(icon)
-                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Variable(ContextValues.Rank())).Build())
-                .AddContextRankConfig(ContextRankConfigs.StatBonus(StatType.Constitution).WithBonusValueProgression(5, false))
+                .AddAbilityEffectRunAction(ActionsBuilder.New().RemoveBuff(OuterStanceBuffGuid).RemoveBuff(BendWindBuffGuid).ApplyBuffPermanent(buff).Build())
                 .SetType(AbilityType.Physical)
                 .SetRange(AbilityRange.Personal)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
@@ -244,20 +249,20 @@ namespace PrestigePlus.PrestigeClasses
         private static readonly string BendWindBuffGuid = "{77915AA7-1B48-4E2E-A4B0-9806B80AB807}";
         public static BlueprintFeature BendwithWindConfigure()
         {
-            var icon = AbilityRefs.ArmyShifterGrabAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.FeatherStep.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(BendWindBuff, BendWindBuffGuid)
                 .SetDisplayName(BendwithWindDisplayName)
                 .SetDescription(BendwithWindDescription)
                 .SetIcon(icon)
+                .AddComponent<DFbindwind>()
                 .Configure();
 
             var ability = AbilityConfigurator.New(BendWindAbility, BendWindAbilityGuid)
                 .SetDisplayName(BendwithWindDisplayName)
                 .SetDescription(BendwithWindDescription)
                 .SetIcon(icon)
-                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Variable(ContextValues.Rank())).Build())
-                .AddContextRankConfig(ContextRankConfigs.StatBonus(StatType.Constitution).WithBonusValueProgression(5, false))
+                .AddAbilityEffectRunAction(ActionsBuilder.New().RemoveBuff(OuterStanceBuffGuid).RemoveBuff(WarDanceBuffGuid).ApplyBuffPermanent(buff).Build())
                 .SetType(AbilityType.Physical)
                 .SetRange(AbilityRange.Personal)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
@@ -282,22 +287,40 @@ namespace PrestigePlus.PrestigeClasses
 
         private const string OuterStanceBuff = "OuterSphereStance.OuterStanceBuff";
         private static readonly string OuterStanceBuffGuid = "{F1182AFE-66DC-4FA5-83AD-018D958DFC92}";
+
+        private static readonly string InnerSphereStanceDisplayName = "InnerSphereStance.Name";
+        private static readonly string InnerSphereStanceDescription = "InnerSphereStance.Description";
+
+        private const string InnerStanceAbility = "InnerSphereStance.InnerStanceAbility";
+        private static readonly string InnerStanceAbilityGuid = "{38C39F01-EB3E-4FF9-A318-5D76E5D2BB29}";
         public static BlueprintFeature OuterSphereStanceConfigure()
         {
-            var icon = AbilityRefs.ArmyShifterGrabAbility.Reference.Get().Icon;
+            var icon = FeatureSelectionRefs.SlayerTalentSelection2.Reference.Get().Icon;
+            var icon2 = AbilityRefs.WildShapeTurnBackAbility.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(OuterStanceBuff, OuterStanceBuffGuid)
                 .SetDisplayName(OuterSphereStanceDisplayName)
                 .SetDescription(OuterSphereStanceDescription)
                 .SetIcon(icon)
+                .AddStatBonus(ModifierDescriptor.Penalty, false, StatType.AC, -2)
+                .AddComponent<ScarVicious>(c => { c.num = 1; c.checkBuff = false; })
                 .Configure();
 
             var ability = AbilityConfigurator.New(OuterStanceAbility, OuterStanceAbilityGuid)
                 .SetDisplayName(OuterSphereStanceDisplayName)
                 .SetDescription(OuterSphereStanceDescription)
                 .SetIcon(icon)
-                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Variable(ContextValues.Rank())).Build())
-                .AddContextRankConfig(ContextRankConfigs.StatBonus(StatType.Constitution).WithBonusValueProgression(5, false))
+                .AddAbilityEffectRunAction(ActionsBuilder.New().RemoveBuff(BendWindBuffGuid).RemoveBuff(WarDanceBuffGuid).ApplyBuffPermanent(buff).Build())
+                .SetType(AbilityType.Physical)
+                .SetRange(AbilityRange.Personal)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(InnerStanceAbility, InnerStanceAbilityGuid)
+                .SetDisplayName(InnerSphereStanceDisplayName)
+                .SetDescription(InnerSphereStanceDescription)
+                .SetIcon(icon2)
+                .AddAbilityEffectRunAction(ActionsBuilder.New().RemoveBuff(OuterStanceBuffGuid).RemoveBuff(BendWindBuffGuid).RemoveBuff(WarDanceBuffGuid).Build())
                 .SetType(AbilityType.Physical)
                 .SetRange(AbilityRange.Personal)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
@@ -307,7 +330,7 @@ namespace PrestigePlus.PrestigeClasses
                     .SetDisplayName(OuterSphereStanceDisplayName)
                     .SetDescription(OuterSphereStanceDescription)
                     .SetIcon(icon)
-                    .AddFacts(new() { ability })
+                    .AddFacts(new() { ability, ability2 })
                     .Configure();
         }
     }
