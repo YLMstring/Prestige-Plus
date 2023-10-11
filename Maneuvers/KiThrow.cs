@@ -73,12 +73,31 @@ namespace PrestigePlus.Maneuvers
                     .SetDescription(DragDescription)
                     .SetIcon(icon)
                     .AddPrerequisiteFeature(FeatureRefs.ImprovedUnarmedStrike.ToString())
-                    //.AddPrerequisiteFeature(FeatureRefs.ImprovedTrip.ToString())
                     .AddManeuverTrigger(SetThrow, Kingmaker.RuleSystem.Rules.CombatManeuver.Trip, true)
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .AddToFeatureSelection(FeatureSelectionRefs.MonkBonusFeatSelectionLevel10.ToString())
                     .AddFacts(new() { ability })
                     .Configure();
+
+            FeatureConfigurator.New(DragName2, DragGuid2, FeatureGroup.MythicAbility)
+                    .SetDisplayName(DragDisplayName2)
+                    .SetDescription(DragDescription2)
+                    .SetIcon(icon)
+                    .AddPrerequisiteFeature(DragGuid, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                    .AddPrerequisiteFeature(FeatureRefs.KiPowerFeature.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                    .AddManeuverTrigger(SetThrow, Kingmaker.RuleSystem.Rules.CombatManeuver.DirtyTrickBlind, true)
+                    .AddManeuverTrigger(SetThrow, Kingmaker.RuleSystem.Rules.CombatManeuver.DirtyTrickEntangle, true)
+                    .AddManeuverTrigger(SetThrow, Kingmaker.RuleSystem.Rules.CombatManeuver.DirtyTrickSickened, true)
+                    .AddManeuverTrigger(SetThrow, Kingmaker.RuleSystem.Rules.CombatManeuver.Disarm, true)
+                    .AddManeuverTrigger(SetThrow, Kingmaker.RuleSystem.Rules.CombatManeuver.SunderArmor, true)
+                    .AddComponent<MythicKiThrowBonus>()
+                    .Configure();
         }
+
+        private static readonly string DragName2 = "MythicKiThrow";
+        public static readonly string DragGuid2 = "{D2FF8435-DB27-4EE6-AC0A-3AEE7863909A}";
+
+        private static readonly string DragDisplayName2 = "MythicKiThrow.Name";
+        private static readonly string DragDescription2 = "MythicKiThrow.Description";
     }
 }

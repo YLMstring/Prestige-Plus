@@ -3655,6 +3655,21 @@
   },
 
   {
+    "Key": "MythicKiThrow.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Ki Throw Mastery",
+    "zhCN": "太极-四两拨千斤"
+  },
+
+  {
+    "Key": "MythicKiThrow.Description",
+    "enGB": "You can use Dirty Trick, Disarm or Sunder for Ki Throw. Additionally, you gain +2 bonus to CMB for each size category that the target is larger than you.",
+    "zhCN": "你能通过阴招，缴械或击破来使用太极拳。另外，你的目标每比你大一个体型，你的战技检定就获得+2加值。"
+  },
+
+  {
     "Key": "ImprovedKiThrow.Name",
     // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
     // links to encycolpedia pages.
@@ -3708,7 +3723,7 @@
   {
     "Key": "DragonFury.Description",
     "enGB": "The disciple of the Thrashing Dragon discipline knows the controlled fury of the dragon’s rage on the battlefield, the sinuous twists and the lashing claws of that savage beast are engraved in the body of its student. By devoting one’s self to the vicious style, the disciple learns many things on how best to emulate the dragon and its fighting style. The ferocity and grace in each twist of the blade and each leap that he makes hides a fierce power and determination to win. These specialists are known as dragon furies, and a dragon’s deep well of wrath lives within their hearts and pumps its fury to every inch of their body.",
-    "zhCN": "蟠龙派武术家懂得在战场上模拟愤怒龙族的张牙舞爪盘旋腾跃，把那野兽般的残暴深深地刻进肉体之中。全心投入此般凶残流派的武术家可以学会龙族的战斗方式。他们的每招每式都既优雅又凶猛，每次轻巧的跨步都藏着刚力以及求胜决心。这些专门家被称为龙怒狂徒，而他们内心深埋的龙族狂怒随着每次心跳流淌在他们的血管之中。"
+    "zhCN": "盘龙派武术家懂得在战场上模拟愤怒龙族的张牙舞爪盘旋腾跃，把那野兽般的残暴深深地刻进肉体之中。全心投入此般凶残流派的武术家可以学会龙族的战斗方式。他们的每招每式都既优雅又凶猛，每次轻巧的跨步都藏着刚力以及求胜决心。这些专门家被称为龙怒狂徒，而他们内心深埋的龙族狂怒随着每次心跳流淌在他们的血管之中。"
   },
   {
     "Key": "FuryTraining.Name",
@@ -3785,7 +3800,7 @@
   {
     "Key": "BendwithWind.Description",
     "enGB": "The graceful, flowing movements of the Thrashing Dragon’s dance helps defend the disciple in combat while providing him the ability to move through danger unscathed. While in this stance, for each attack that misses the disciple, he may back off 5 ft.",
-    "zhCN": "蟠龙派的优雅战武让武术家可以在战场上来去自如。维持此架式时，每当敌人对武术家的攻击失手，武术家后退5尺。"
+    "zhCN": "盘龙派的优雅战武让武术家可以在战场上来去自如。维持此架式时，每当敌人对武术家的攻击失手，武术家后退5尺。"
   },
   {
     "Key": "OuterSphereStance.Name",

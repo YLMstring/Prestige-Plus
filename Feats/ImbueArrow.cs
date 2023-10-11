@@ -66,7 +66,7 @@ namespace PrestigePlus.Feats
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                     .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(ImbueArrowGuidBuff).Build(), 
                     ifFalse: ActionsBuilder.New()
-                        .ApplyBuff(Buff1, ContextDuration.Fixed(1))
+                        .ApplyBuffPermanent(Buff1)
                         .Build(),
                     ifTrue: ActionsBuilder.New()
                         .RemoveBuff(Buff1)

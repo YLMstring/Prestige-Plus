@@ -1,4 +1,5 @@
-﻿using Kingmaker;
+﻿using BlueprintCore.Utils;
+using Kingmaker;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic;
@@ -20,10 +21,13 @@ namespace PrestigePlus.Modify
             
         }
 
+        //private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         void IRulebookHandler<RuleAttackRoll>.OnEventDidTrigger(RuleAttackRoll evt)
         {
+            //Logger.Info("check");
             if (evt.Result == AttackResult.Miss)
             {
+                //Logger.Info("start");
                 Feet feet = 5.Feet();
                 Vector3 normalized = (evt.Target.Position - evt.Initiator.Position).normalized;
                 evt.Target.Ensure<UnitPartForceMove>().Push(normalized, feet.Meters, false);
