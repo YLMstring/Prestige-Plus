@@ -1,10 +1,9 @@
-# Prestige Plus v1.4.0 for WoTR 
+# Prestige Plus v1.5.0 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - Add Grapple Mechanic!
-- Add Agent of the Grave, Arcane Archer, Asavir, Deadeye Devotee, Chevalier, Halfling Opportunist, Hinterlander, Horizon Walker, Inheritor’s Crusader, Mammoth Rider, Sanguine Angel, Scar Seeker, Shadowdancer, Umbral Agent prestige class. More coming soon!
+- Add Agent of the Grave, Arcane Archer, Deadeye Devotee, Asavir, Chevalier, Halfling Opportunist, Hinterlander, Horizon Walker, Inheritor’s Crusader, Mammoth Rider, Sanguine Angel, Scar Seeker, Shadowdancer, Umbral Agent, Dragon Fury prestige class.
 - Apart from some minor tweaks, all the homebrew stuff are optional.
-- And they are togglable now!
 
 ## Featuring
 
@@ -12,6 +11,10 @@
 - You can Disarm, Sunder, or Trip in lieu of an melee attack, like on tabletop!
 - [Seize the Opportunity](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/seize-the-opportunity-combat/): From Path of War
 - [Strength Surge](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/strength-surge-ex/)
+- [Ki Throw](https://www.d20pfsrd.com/feats/combat-feats/ki-throw-combat/) and its mythic version!
+- [Improved Ki Throw](https://www.d20pfsrd.com/feats/combat-feats/improved-ki-throw-combat/)
+- [Binding Throw](https://www.d20pfsrd.com/feats/combat-feats/binding-throw-combat/)
+- [Enhanced Ki Throw](https://www.d20pfsrd.com/feats/combat-feats/enhanced-ki-throw-combat/)
 - More coming soon!
 ### [Grapple Mechanic](https://www.d20pfsrd.com/gamemastering/Combat/#Grapple)
 - This is how I implement it:
@@ -80,7 +83,11 @@
 - Endless Gaze: a mythic ability to use Unnerving Gaze for free!
 - Shadow Jump: You can choose any feat from the dimentional feat chain instead! This requires [Microscopic Content Expansion mod](https://github.com/alterasc/MicroscopicContentExpansion/), which requires [TabletopTweaks-Core](https://github.com/Vek17/TabletopTweaks-Core). If you don't want these feats, my mod doesn't require anything, as the original feature will still be there.
 - Extra Shadow Jump: This is a homebrew feat that gives you 4 extra uses of Shadow Jump ability and you can take it as soon as umbral agent level 1!
-  
+### [Dragon Fury Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/scar-seeker/)   
+- Learn 3 Thrashing Dragon stances!
+- The class has more stuff on tabletop but it's enough of a power house atm :)
+- From Path of War
+
 ### New Archetypes
 #### Fighter:  
 - [Eldritch Guardian](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Eldritch%20Guardian)
