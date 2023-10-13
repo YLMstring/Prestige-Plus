@@ -14,13 +14,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Kingmaker.Utility;
+using HarmonyLib;
 
 namespace PrestigePlus.Maneuvers
 {
     internal class UnitPartKiThrow : UnitPartGrappleBase
     {
         [JsonProperty]
-        public UnitReference Target { get; private set; }
+        public UnitReference[] Target = new UnitReference[0];
 
         // Token: 0x0600BBD3 RID: 48083 RVA: 0x00311110 File Offset: 0x0030F310
         public void Init(UnitReference target, BlueprintBuff buff, MechanicsContext parentContext)
@@ -32,7 +33,7 @@ namespace PrestigePlus.Maneuvers
             }
             this.m_Initialized = true;
             base.InitializeStartPosition();
-            this.Target = target;
+            Target.AddItem(target);
             if (buff)
             {
                 var duration = new Rounds?(1.Rounds());

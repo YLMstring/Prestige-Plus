@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PrestigePlus.Maneuvers;
+using HarmonyLib;
 
 namespace PrestigePlus.CustomAction
 {
@@ -42,7 +43,7 @@ namespace PrestigePlus.CustomAction
             }
             if (maybeCaster.Get<UnitPartKiThrow>())
             {
-                maybeCaster.Remove<UnitPartKiThrow>();
+                maybeCaster.Get<UnitPartKiThrow>().Target.AddItem(unit);
             }
             maybeCaster.Ensure<UnitPartKiThrow>().Init(unit, CasterBuff, base.Context);
         }

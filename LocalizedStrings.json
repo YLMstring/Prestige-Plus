@@ -1,31 +1,5 @@
 [
   {
-    "Key": "MyFeat.Name",
-    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
-    // links to encycolpedia pages.
-    "ProcessTemplates": false,
-    "enGB": "My Feat"
-  },
-
-  {
-    "Key": "MyFeat.Description",
-    "enGB": "This is my feat, not your feat."
-  },
-  {
-    "Key": "MagicalAptitude.Name",
-    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
-    // links to encycolpedia pages.
-    "ProcessTemplates": false,
-    "enGB": "Magical Aptitude",
-    "zhCN": "Magische Begabung"
-  },
-
-  {
-    "Key": "MagicalAptitude.Description",
-    "enGB": "You get a +2 bonus on all Spellcraft and Use Magic Device skill checks. If you have 10 or more ranks in one of these skills, the bonus increases to +4 for that skill."
-  },
-
-  {
     "Key": "ShadowDancer.Name",
     // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
     // links to encycolpedia pages.
@@ -3600,13 +3574,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Battle Bravado",
-    "zhCN": "Battle Bravado"
+    "zhCN": "勇猛作战"
   },
 
   {
     "Key": "WarlordBattleBravado.Description",
     "enGB": "At 3rd level. the warlord's self confidence and force of will make him more difficult to hit. When unarmored and unencumbered. the warlord adds his Charisma bonus (if any) to his AC and his CMD. In addition, the warlord gains a +1 dodge bonus at 7th, 11th, and 15th levels. He loses these bonuses when he wears any armor, when he carries a shield, or when he carries a medium or heavy load.",
-    "zhCN": "At 3rd level. the warlord's self confidence and force of will make him more difficult to hit. When unarmored and unencumbered. the warlord adds his Charisma bonus (if any) to his AC and his CMD. In addition, the warlord gains a +1 dodge bonus at 7th, 11th, and 15th levels. He loses these bonuses when he wears any armor, when he carries a shield, or when he carries a medium or heavy load."
+    "zhCN": "从3级起，战争领主的自信心和意志力让他更难被命中。当他不穿戴护甲且不受拖累时，战争领主将他的魅力加值（如有）加到AC和CMD上，且之后每过4级，他都会额外获得+1闪避加值。这些加值在他穿甲，持盾或者达到中载后都会失去。"
   },
 
   {
@@ -3615,13 +3589,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Sun-Bronzed Skin",
-    "zhCN": "Sun-Bronzed Skin"
+    "zhCN": "日晒铜皮"
   },
 
   {
     "Key": "WarlordBronzedSkin.Description",
     "enGB": "At 19th level, the warlord gains DR 5/-.",
-    "zhCN": "At 19th level, the warlord gains DR 5/-."
+    "zhCN": "从19级起，战争领主获得DR 5/-."
   },
 
   {
@@ -3630,13 +3604,13 @@
     // links to encycolpedia pages.
     "ProcessTemplates": false,
     "enGB": "Evasive Dueling",
-    "zhCN": "Evasive Dueling"
+    "zhCN": "决斗闪躲"
   },
 
   {
     "Key": "WarlordEvasiveDueling.Description",
     "enGB": "At 1st level, and at every even level thereafter, warlord can add a +1 dodge bonus to his Armor Class instead of taking a bonus feat.",
-    "zhCN": "At 1st level, and at every even level thereafter, warlord can add a +1 dodge bonus to his Armor Class instead of taking a bonus feat."
+    "zhCN": "从1级起，以及以后每个偶数级，战争领主可以放弃战士额外专长来获得+1闪避加值。"
   },
 
   {

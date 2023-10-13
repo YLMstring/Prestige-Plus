@@ -61,28 +61,36 @@ namespace PrestigePlus.CustomAction
             if (maybeCaster.Get<UnitPartKiThrow>())
             {
                 var target = maybeCaster.Get<UnitPartKiThrow>().Target;
-                if (target != null)
+                if (target != null && target.Length > 0)
                 {
-                    target.Value.CombatState.PreventAttacksOfOpporunityNextFrame = true;
-                    target.Value.Position = point;
-                    if (maybeCaster.HasFact(Grapple))
+                    foreach (var Target in target)
                     {
-                        GameHelper.RemoveBuff(maybeCaster, Grapple);
-                        RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(maybeCaster, target.Value, CombatManeuver.Grapple, null);
-                        ruleCombatManeuver = (target.Value.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
-                        if (ruleCombatManeuver.Success)
-                        {
-                            maybeCaster.Ensure<UnitPartGrappleInitiatorPP>().Init(target.Value, CasterBuff, target.Value.Context);
-                            target.Value.Ensure<UnitPartGrappleTargetPP>().Init(maybeCaster, TargetBuff, maybeCaster.Context);
-                        }
-                    }
-                    if (maybeCaster.HasFact(Hit))
-                    {
-                        GameHelper.RemoveBuff(maybeCaster, Hit);
-                        RunAttackRule(maybeCaster, target.Value);
+                        ThrowTarget(maybeCaster, Target, point);
                     }
                 }
                 maybeCaster.Remove<UnitPartKiThrow>();
+            }
+        }
+
+        private static void ThrowTarget(UnitEntityData maybeCaster, UnitReference target, Vector3 point)
+        {
+            target.Value.CombatState.PreventAttacksOfOpporunityNextFrame = true;
+            target.Value.Position = point;
+            if (maybeCaster.HasFact(Grapple))
+            {
+                GameHelper.RemoveBuff(maybeCaster, Grapple);
+                RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(maybeCaster, target.Value, CombatManeuver.Grapple, null);
+                ruleCombatManeuver = (target.Value.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
+                if (ruleCombatManeuver.Success && !maybeCaster.Get<UnitPartGrappleInitiatorPP>() && !target.Value.Get<UnitPartGrappleTargetPP>())
+                {
+                    maybeCaster.Ensure<UnitPartGrappleInitiatorPP>().Init(target.Value, CasterBuff, target.Value.Context);
+                    target.Value.Ensure<UnitPartGrappleTargetPP>().Init(maybeCaster, TargetBuff, maybeCaster.Context);
+                }
+            }
+            if (maybeCaster.HasFact(Hit))
+            {
+                GameHelper.RemoveBuff(maybeCaster, Hit);
+                RunAttackRule(maybeCaster, target.Value);
             }
         }
 
