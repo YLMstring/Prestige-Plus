@@ -50,7 +50,7 @@ namespace PrestigePlus.Maneuvers
                 if (caster.HasFact(Sunder1) || caster.HasFact(Sunder2))
                 {
                     GameHelper.RemoveBuff(caster, Sunder1);
-                    if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.SunderArmorBuff)) { return true; }
+                    if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.SunderArmorBuff) && !caster.HasFact(SunderReal)) { return true; }
                     RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.SunderArmor, AttackBonusRule);
                     ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
                     return false;
@@ -103,5 +103,7 @@ namespace PrestigePlus.Maneuvers
 
         private static BlueprintFeatureReference TWF = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.TwoWeaponFighting.ToString());
         private static BlueprintFeatureReference Mythic = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.TwoWeaponFightingMythicFeat.ToString());
+
+        private static BlueprintFeatureReference SunderReal = BlueprintTool.GetRef<BlueprintFeatureReference>(GreaterSunderTabletop.GreaterSunderTabletopGuid);
     }
 }

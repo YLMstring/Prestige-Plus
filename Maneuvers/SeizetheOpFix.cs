@@ -90,7 +90,7 @@ namespace PrestigePlus.Maneuvers
                 }
                 else if (caster.HasFact(Sunder) && caster.HasFact(SunderFeat))
                 {
-                    if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.SunderArmorBuff)) { return true; }
+                    if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.SunderArmorBuff) && !caster.HasFact(SunderReal)) { return true; }
                     maneuver = CombatManeuver.SunderArmor;
                 }
                 else if (caster.HasFact(Trip) && caster.HasFact(TripFeat))
@@ -172,33 +172,35 @@ namespace PrestigePlus.Maneuvers
         private const string SeizetheGrapplebuff = "SeizetheGrapple.SeizetheGrapplebuff";
         private static readonly string SeizetheGrapplebuffGuid = "{55BD97E6-84AB-4E2A-9F0D-EF8A730DC7CF}";
 
-        private static BlueprintBuffReference BullRush = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheBullRushbuffGuid);
-        private static BlueprintBuffReference DirtyBlind = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheDirtyBlindbuffGuid);
-        private static BlueprintBuffReference DirtyEntangle = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheDirtyEntanglebuffGuid);
-        private static BlueprintBuffReference DirtySicken = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheDirtySickenbuffGuid);
-        private static BlueprintBuffReference Disarm = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheDisarmbuffGuid);
-        private static BlueprintBuffReference Grapple = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheGrapplebuffGuid);
-        private static BlueprintBuffReference Sunder = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheSunderbuffGuid);
-        private static BlueprintBuffReference Trip = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheTripbuffGuid);
-        private static BlueprintBuffReference Vital = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheOpportunitybuffGuid);
+        private static readonly BlueprintBuffReference BullRush = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheBullRushbuffGuid);
+        private static readonly BlueprintBuffReference DirtyBlind = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheDirtyBlindbuffGuid);
+        private static readonly BlueprintBuffReference DirtyEntangle = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheDirtyEntanglebuffGuid);
+        private static readonly BlueprintBuffReference DirtySicken = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheDirtySickenbuffGuid);
+        private static readonly BlueprintBuffReference Disarm = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheDisarmbuffGuid);
+        private static readonly BlueprintBuffReference Grapple = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheGrapplebuffGuid);
+        private static readonly BlueprintBuffReference Sunder = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheSunderbuffGuid);
+        private static readonly BlueprintBuffReference Trip = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheTripbuffGuid);
+        private static readonly BlueprintBuffReference Vital = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheOpportunitybuffGuid);
 
-        private static BlueprintBuffReference CasterBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{D6D08842-8E03-4A9D-81B8-1D9FB2245649}");
-        private static BlueprintBuffReference TargetBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{F505D659-0610-41B1-B178-E767CCB9292E}");
+        private static readonly BlueprintBuffReference CasterBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{D6D08842-8E03-4A9D-81B8-1D9FB2245649}");
+        private static readonly BlueprintBuffReference TargetBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{F505D659-0610-41B1-B178-E767CCB9292E}");
 
-        private static BlueprintFeatureReference BullRushFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ImprovedBullRush.ToString());
-        private static BlueprintFeatureReference DirtyFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ImprovedDirtyTrick.ToString());
-        private static BlueprintFeatureReference DisarmFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ImprovedDisarm.ToString());
-        private static BlueprintFeatureReference GrappleFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(ImprovedGrapple.StyleGuid);
-        private static BlueprintFeatureReference SunderFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ImprovedSunder.ToString());
-        private static BlueprintFeatureReference TripFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ImprovedTrip.ToString());
-        private static BlueprintFeatureReference VitalFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.VitalStrikeFeature.ToString());
+        private static readonly BlueprintFeatureReference BullRushFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ImprovedBullRush.ToString());
+        private static readonly BlueprintFeatureReference DirtyFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ImprovedDirtyTrick.ToString());
+        private static readonly BlueprintFeatureReference DisarmFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ImprovedDisarm.ToString());
+        private static readonly BlueprintFeatureReference GrappleFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(ImprovedGrapple.StyleGuid);
+        private static readonly BlueprintFeatureReference SunderFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ImprovedSunder.ToString());
+        private static readonly BlueprintFeatureReference TripFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ImprovedTrip.ToString());
+        private static readonly BlueprintFeatureReference VitalFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.VitalStrikeFeature.ToString());
 
-        private static BlueprintFeatureReference VitalFeat2 = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.VitalStrikeFeatureImproved.ToString());
-        private static BlueprintFeatureReference VitalFeat3 = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.VitalStrikeFeatureGreater.ToString());
+        private static readonly BlueprintFeatureReference VitalFeat2 = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.VitalStrikeFeatureImproved.ToString());
+        private static readonly BlueprintFeatureReference VitalFeat3 = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.VitalStrikeFeatureGreater.ToString());
 
-        private static BlueprintFeatureReference VitalFeat4 = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.VitalStrikeMythicFeat.ToString());
-        private static BlueprintFeatureReference VitalFeat5 = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.RowdyVitalDamage.ToString());
+        private static readonly BlueprintFeatureReference VitalFeat4 = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.VitalStrikeMythicFeat.ToString());
+        private static readonly BlueprintFeatureReference VitalFeat5 = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.RowdyVitalDamage.ToString());
 
-        private static BlueprintAbilityReference VitalAbility = BlueprintTool.GetRef<BlueprintAbilityReference>(AbilityRefs.VitalStrikeAbility.ToString());
+        private static readonly BlueprintAbilityReference VitalAbility = BlueprintTool.GetRef<BlueprintAbilityReference>(AbilityRefs.VitalStrikeAbility.ToString());
+
+        private static readonly BlueprintFeatureReference SunderReal = BlueprintTool.GetRef<BlueprintFeatureReference>(GreaterSunderTabletop.GreaterSunderTabletopGuid);
     }
 }
