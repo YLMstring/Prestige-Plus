@@ -23,8 +23,8 @@ namespace PrestigePlus.Maneuvers
             if (maybeCaster == null || evt.AttackType.IsTouch()) { return; }
             int penalty = maybeCaster.Progression.MythicLevel * Buff.Rank / 2;
             int bonus = CalculateNatureAndShieldBonuses(Owner);
+            if (penalty < 1) { penalty = 1; }
             if (penalty > bonus) { penalty = bonus; }
-            if (penalty < 1) { return; }
             evt.AddModifier(-penalty, base.Fact, Kingmaker.Enums.ModifierDescriptor.Penalty);
         }
         private static int CalculateNatureAndShieldBonuses(UnitEntityData unit)
@@ -35,6 +35,9 @@ namespace PrestigePlus.Maneuvers
             int num4 = 0;
             int num5 = 0;
             int num6 = 0;
+            int num7 = 0;
+            int num8 = 0;
+            int num9 = 0;
             foreach (ModifiableValue.Modifier modifier in unit.Stats.AC.Modifiers)
             {
                 num += ((modifier.ModDescriptor == ModifierDescriptor.NaturalArmor) ? modifier.ModValue : 0);
@@ -43,8 +46,11 @@ namespace PrestigePlus.Maneuvers
                 num4 += ((modifier.ModDescriptor == ModifierDescriptor.Shield) ? modifier.ModValue : 0);
                 num5 += ((modifier.ModDescriptor == ModifierDescriptor.ShieldEnhancement) ? modifier.ModValue : 0);
                 num6 += ((modifier.ModDescriptor == ModifierDescriptor.Focus) ? modifier.ModValue : 0);
+                num7 += ((modifier.ModDescriptor == ModifierDescriptor.Armor) ? modifier.ModValue : 0);
+                num8 += ((modifier.ModDescriptor == ModifierDescriptor.ArmorEnhancement) ? modifier.ModValue : 0);
+                num9 += ((modifier.ModDescriptor == ModifierDescriptor.ArmorFocus) ? modifier.ModValue : 0);
             }
-            return num + num2 + num3 + num4 + num5 + num6;
+            return num + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9;
         }
         void IRulebookHandler<RuleCalculateAC>.OnEventDidTrigger(RuleCalculateAC evt)
         {

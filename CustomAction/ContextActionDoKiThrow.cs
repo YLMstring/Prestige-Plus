@@ -29,51 +29,54 @@ namespace PrestigePlus.CustomAction
         {
             return "Throw";
         }
-
+        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         // Token: 0x0600CBFF RID: 52223 RVA: 0x0034ECD0 File Offset: 0x0034CED0
         public override void RunAction()
         {
-            UnitEntityData maybeCaster = base.Context.MaybeCaster;
-            if (maybeCaster == null)
+            try
             {
-                PFLog.Default.Error("Caster is missing", Array.Empty<object>());
-                return;
-            }
-            if (Target == null) return;
-            Vector3 point = Target.Point;
-            if (Target.Unit != null)
-            { 
-                point = Target.Unit.Position;
-                var AttackBonusRule = new RuleCalculateAttackBonus(maybeCaster, Target.Unit, maybeCaster.Body.EmptyHandWeapon, 0) { };
-                int penalty = -4;
-                AttackBonusRule.AddModifier(penalty, descriptor: ModifierDescriptor.Penalty);
-                RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(maybeCaster, Target.Unit, CombatManeuver.BullRush, AttackBonusRule);
-                ruleCombatManeuver = (Target.Unit.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
-                if (ruleCombatManeuver.Success && Target.Unit.CanBeKnockedOff())
+                UnitEntityData maybeCaster = base.Context.MaybeCaster;
+                if (maybeCaster == null)
                 {
-                    Target.Unit.Descriptor.State.Prone.ShouldBeActive = true;
-                    EventBus.RaiseEvent(delegate (IKnockOffHandler h)
-                    {
-                        h.HandleKnockOff(maybeCaster, Target.Unit);
-                    }, true);
+                    PFLog.Default.Error("Caster is missing", Array.Empty<object>());
+                    return;
                 }
-            }
-            if (maybeCaster.Get<UnitPartKiThrow>())
-            {
-                var target = maybeCaster.Get<UnitPartKiThrow>().Target;
-                if (target != null && target.Length > 0)
+                if (Target == null || !maybeCaster.Get<UnitPartKiThrow>()) return;
+                Vector3 point = Target.Point;
+                if (Target.Unit != null)
                 {
-                    foreach (var Target in target)
+                    point = Target.Unit.Position;
+                    var AttackBonusRule = new RuleCalculateAttackBonus(maybeCaster, Target.Unit, maybeCaster.Body.EmptyHandWeapon, 0) { };
+                    int penalty = -4;
+                    AttackBonusRule.AddModifier(penalty, descriptor: ModifierDescriptor.Penalty);
+                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(maybeCaster, Target.Unit, CombatManeuver.BullRush, AttackBonusRule);
+                    ruleCombatManeuver = (Target.Unit.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
+                    if (ruleCombatManeuver.Success && Target.Unit.CanBeKnockedOff())
                     {
-                        ThrowTarget(maybeCaster, Target, point);
+                        Target.Unit.Descriptor.State.Prone.ShouldBeActive = true;
+                        EventBus.RaiseEvent(delegate (IKnockOffHandler h)
+                        {
+                            h.HandleKnockOff(maybeCaster, Target.Unit);
+                        }, true);
+                    }
+                }
+                var target = maybeCaster.Get<UnitPartKiThrow>().Target;
+                //Logger.Info("prepare throw");
+                if (target != null && target.Count > 0)
+                {
+                    foreach (var TargetforThrow in target)
+                    {
+                        ThrowTarget(maybeCaster, TargetforThrow, point);
                     }
                 }
                 maybeCaster.Remove<UnitPartKiThrow>();
             }
+            catch (Exception ex) { Logger.Error("Failed to throw.", ex); }
         }
 
         private static void ThrowTarget(UnitEntityData maybeCaster, UnitReference target, Vector3 point)
         {
+            //Logger.Info("throw");
             target.Value.CombatState.PreventAttacksOfOpporunityNextFrame = true;
             target.Value.Position = point;
             if (maybeCaster.HasFact(Grapple))

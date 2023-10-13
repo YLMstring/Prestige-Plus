@@ -27,7 +27,7 @@ namespace PrestigePlus.Maneuvers
             if (!evt.Success) return;
             if (evt.Type != starter) return;
             RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(evt.Initiator, evt.Target, effect, null);
-            ruleCombatManeuver.OverrideBonus = new int?(evt.TotalBonusValue);
+            ruleCombatManeuver.OverrideBonus = new int?(evt.InitiatorCMB);
             Rulebook.Trigger(ruleCombatManeuver);
         }
         public CombatManeuver starter = CombatManeuver.SunderArmor;

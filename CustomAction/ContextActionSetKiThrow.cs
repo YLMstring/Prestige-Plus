@@ -43,7 +43,7 @@ namespace PrestigePlus.CustomAction
             }
             if (maybeCaster.Get<UnitPartKiThrow>())
             {
-                maybeCaster.Get<UnitPartKiThrow>().Target.AddItem(unit);
+                maybeCaster.Get<UnitPartKiThrow>().Target.Add(unit);
             }
             maybeCaster.Ensure<UnitPartKiThrow>().Init(unit, CasterBuff, base.Context);
         }

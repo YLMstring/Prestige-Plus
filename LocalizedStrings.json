@@ -3797,5 +3797,61 @@
     "Key": "InnerSphereStance.Description",
     "enGB": "Stances are initiated as a swift action. A stance remains in effect indefinitely and is never expended. The benefit of your chosen stance continues until you change to another stance you know as a swift action. You can also change to this default stance as a swift action.",
     "zhCN": "进入架势需要一个迅捷动作，启用后永久生效，增益持续到你使用迅捷动作切换成另外一个架势为止。你也可以以迅捷动作切换到这个默认架势。"
+  },
+  {
+    "Key": "SurprisingStrategy.Name",
+    "ProcessTemplates": false,
+    "enGB": "Surprising Strategy",
+    "zhCN": "出奇制胜"
+  },
+  {
+    "Key": "SurprisingStrategy.Description",
+    "enGB": "Your quick swordsmanship leaves your opponents struggling to predict your moves. In addition to the attack of opportunity you can make when you successfully parry an attack, you can attempt a dirty trick, disarm, or sunder combat maneuver with a +2 morale bonus without provoking an attack of opportunity against the creature whose attack you parry, so long as the creature is within reach.",
+    "zhCN": "你的快剑让敌人难以预料你的剑路。当你成功格挡后，除了借机攻击以外，你还能额外发起一次阴招，缴械或击破战技，且带有+2士气加值，只要目标在触及范围内，该战技不会引起借机攻击。"
+  },
+  {
+    "Key": "WeaponTrickCrushArmor.Name",
+    "ProcessTemplates": false,
+    "enGB": "Crush Armor",
+    "zhCN": "碎甲"
+  },
+  {
+    "Key": "WeaponTrickCrushArmor.Description",
+    "enGB": "When you deal damage to a foe’s armor with a successful sunder combat maneuver check, the foe is fatigued for 1 round. The foe cannot become exhausted this way.",
+    "zhCN": "当你成功使用击破战技对敌人的盔甲造成伤害后，该敌人疲劳一轮，但不会因此力竭。"
+  },
+  {
+    "Key": "SmashingStyle.Name",
+    "ProcessTemplates": false,
+    "enGB": "Smashing Style",
+    "zhCN": "大力金刚掌"
+  },
+  {
+    "Key": "SmashingStyle.Description",
+    "enGB": "Your hammer blows dent armor, hampering your opponent. While using this style, when you succeed at a sunder combat maneuver check against a suit of armor worn by an opponent, you can immediately attempt a bull rush or trip combat maneuver against that target with the same combat maneuver bonus. This maneuver does not provoke attacks of opportunity.",
+    "zhCN": "你的重锤损伤盔甲，阻碍对手。使用这个流派时，当你成功使用击破战技对敌人的盔甲造成伤害后，你可以立即用相同的战技加值尝试冲撞或者绊摔，不引起借机攻击。"
+  },
+  {
+    "Key": "MythicSunderStorm.Name",
+    "ProcessTemplates": false,
+    "enGB": "Sunder Storm",
+    "zhCN": "闪破风暴"
+  },
+  {
+    "Key": "MythicSunderStorm.Description",
+    "enGB": "When you succeed at a sunder combat maneuver check, you drive the shattered pieces of the item into the flesh of its wearer, dealing 1d6 + a number of points equal to your tier of divine damage. Additionally, as a full-round action, you can attempt a sunder combat maneuver against each opponent within reach.",
+    "zhCN": "当你成功使用击破战技，你将打碎的物品碎片轰入穿戴着血肉之中，造成1d6+神话等级点神力伤害。此外，你可以用一个整轮动作向武器范围内所有敌人尝试击破战技。"
+  },
+  {
+    "Key": "FeatGreaterSunderTabletop.Name",
+    "ProcessTemplates": false,
+    "enGB": "Tear Apart",
+    "zhCN": "血肉撕扯"
+  },
+  {
+    "Key": "FeatGreaterSunderTabletop.Description",
+    "enGB": "Your sunder combat maneuver no longer disables armor, but rends it. If the check is successful, deal your weapon damage to the target and reduce the target’s armor bonus, natural armor bonus, or shield bonus by half your tier (minimum 1). If the creature has an enhancement bonus to the bonus you chose, reduce the normal bonus first, then apply any leftover reduction to the enhancement bonus. You can’t reduce the bonus below 0.",
+    "zhCN": "你的击破战技不再禁用对手的盔甲，二是直接撕裂它。如果战技检定成功，你造成武器攻击伤害并在对手的盔甲，天生护甲或者盾牌加值中减少等同于神话等级1/2的加值（至少为1），如果对手在上述加值中有增强加值，也可以扣减，但不能扣减成负值。"
   }
+
 ]

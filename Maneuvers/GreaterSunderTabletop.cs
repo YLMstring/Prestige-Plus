@@ -10,6 +10,7 @@ using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.UnitLogic.Buffs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,15 +31,18 @@ namespace PrestigePlus.Maneuvers
             var icon = FeatureRefs.Manyshot.Reference.Get().Icon;
 
             var shoot = ActionsBuilder.New()
+                .ApplyBuffPermanent(SunderStorm.SunderStormBuffGuid)
+                .RemoveBuff(BuffRefs.SunderArmorBuff.ToString())
                 .Conditional(ConditionsBuilder.New().TargetInMeleeRange().Build(), ifTrue: ActionsBuilder.New().MeleeAttack(autoHit: true).Build())
                 .Build();
 
-            return FeatureConfigurator.New(GreaterSunderTabletopFeat, GreaterSunderTabletopGuid)
+            return FeatureConfigurator.New(GreaterSunderTabletopFeat, GreaterSunderTabletopGuid, FeatureGroup.MythicAbility)
               .SetDisplayName(GreaterSunderTabletopDisplayName)
               .SetDescription(GreaterSunderTabletopDescription)
               .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.GreaterSunder.ToString())
               .AddManeuverTrigger(shoot, Kingmaker.RuleSystem.Rules.CombatManeuver.SunderArmor, true)
-              .AddCMBBonusForManeuver(maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.SunderArmor }, value: ContextValues.Constant(2))
+              //.AddCMBBonusForManeuver(maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.SunderArmor }, value: ContextValues.Constant(2))
               .Configure();
         }
     }

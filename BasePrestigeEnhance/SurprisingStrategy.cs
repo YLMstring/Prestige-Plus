@@ -55,7 +55,7 @@ namespace PrestigePlus.BasePrestigeEnhance
 
         public static void Configure()
         {
-            var icon = FeatureRefs.VitalStrikeFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.HuntersSurprise.Reference.Get().Icon;
 
             var BuffSurprisingDirtyBlind = BuffConfigurator.New(SurprisingDirtyBlindbuff, SurprisingDirtyBlindbuffGuid)
               .SetDisplayName(DisplayName)
