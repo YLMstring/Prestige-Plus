@@ -28,7 +28,7 @@ namespace PrestigePlus.Maneuvers
 
         public static BlueprintFeature CreateGreaterSunderTabletop()
         {
-            var icon = FeatureRefs.Manyshot.Reference.Get().Icon;
+            var icon = AbilityRefs.BeastShapeIII.Reference.Get().Icon;
 
             var shoot = ActionsBuilder.New()
                 .ApplyBuffPermanent(SunderStorm.SunderStormBuffGuid)

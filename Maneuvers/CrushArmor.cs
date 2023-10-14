@@ -25,7 +25,7 @@ namespace PrestigePlus.Maneuvers
 
         public static void Configure()
         {
-            var icon = FeatureRefs.PummelingStyle.Reference.Get().Icon;
+            var icon = FeatureRefs.PenetratingStrike.Reference.Get().Icon;
 
             FeatureConfigurator.New(FeatName, FeatGuid, Kingmaker.Blueprints.Classes.FeatureGroup.Feat)
                     .SetDisplayName(DisplayName)

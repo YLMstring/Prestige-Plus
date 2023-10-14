@@ -1,4 +1,6 @@
-﻿using Kingmaker.Blueprints.Items.Ecnchantments;
+﻿using BlueprintCore.Utils;
+using Kingmaker.Blueprints.Items.Ecnchantments;
+using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
@@ -15,17 +17,18 @@ using System.Threading.Tasks;
 
 namespace PrestigePlus.Maneuvers
 {
-    internal class TearApartSunder : UnitBuffComponentDelegate, IInitiatorRulebookHandler<RuleCalculateAC>, IRulebookHandler<RuleCalculateAC>, ISubscriber, ITargetRulebookSubscriber
+    internal class TearApartSunder : UnitBuffComponentDelegate<ACBonusAgainstAttacks.RuntimeData>, ITargetRulebookHandler<RuleAttackRoll>, IRulebookHandler<RuleAttackRoll>, ISubscriber, ITargetRulebookSubscriber, ITargetRulebookHandler<RuleCalculateAC>, IRulebookHandler<RuleCalculateAC>
     {
+        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         void IRulebookHandler<RuleCalculateAC>.OnEventAboutToTrigger(RuleCalculateAC evt)
         {
-            UnitEntityData maybeCaster = base.Buff.Context.MaybeCaster;
-            if (maybeCaster == null || evt.AttackType.IsTouch()) { return; }
-            int penalty = maybeCaster.Progression.MythicLevel * Buff.Rank / 2;
-            int bonus = CalculateNatureAndShieldBonuses(Owner);
-            if (penalty < 1) { penalty = 1; }
-            if (penalty > bonus) { penalty = bonus; }
-            evt.AddModifier(-penalty, base.Fact, Kingmaker.Enums.ModifierDescriptor.Penalty);
+            if (base.Data.Initiator != null && evt.Initiator == base.Data.Initiator)
+            {
+                int bonus = CalculateNatureAndShieldBonuses(Owner);
+                int penalty = Math.Min(bonus, Data.ACModifier);
+                if (penalty < 1) return;
+                evt.AddModifier(-penalty, base.Fact, ModifierDescriptor.Penalty);
+            }
         }
         private static int CalculateNatureAndShieldBonuses(UnitEntityData unit)
         {
@@ -55,6 +58,20 @@ namespace PrestigePlus.Maneuvers
         void IRulebookHandler<RuleCalculateAC>.OnEventDidTrigger(RuleCalculateAC evt)
         {
             
+        }
+
+        void IRulebookHandler<RuleAttackRoll>.OnEventAboutToTrigger(RuleAttackRoll evt)
+        {
+            UnitEntityData maybeCaster = base.Buff.Context.MaybeCaster;
+            if (maybeCaster == null || evt.AttackType.IsTouch()) { return; }
+            int penalty = Math.Max(maybeCaster.Progression.MythicLevel / 2, 1) * Buff.Rank;
+            base.Data.ACModifier = penalty;
+            base.Data.Initiator = evt.Initiator;
+        }
+
+        void IRulebookHandler<RuleAttackRoll>.OnEventDidTrigger(RuleAttackRoll evt)
+        {
+            base.Data.Clear();
         }
     }
 }

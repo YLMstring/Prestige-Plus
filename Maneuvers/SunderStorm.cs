@@ -37,21 +37,26 @@ namespace PrestigePlus.Maneuvers
         private const string SunderStormBuff = "Mythic.UseSunderStormBuff";
         public static readonly string SunderStormBuffGuid = "{1242A045-E81D-4CCB-BD81-9AC3BF99C119}";
 
+        private const string SunderStormAblity2 = "Mythic.UseSunderStorm2";
+        private static readonly string SunderStormAblityGuid2 = "{03F1AFBA-2890-4FB5-B5F1-BBDE8DDDB22E}";
+
         public static BlueprintFeature CreateSunderStorm()
         {
-            var icon = FeatureRefs.Manyshot.Reference.Get().Icon;
+            var icon = FeatureRefs.CoordinatedManeuvers.Reference.Get().Icon;
 
             var Buff = BuffConfigurator.New(SunderStormBuff, SunderStormBuffGuid)
               .SetDisplayName(SunderStormDisplayName)
               .SetDescription(SunderStormDescription)
               .SetIcon(icon)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddComponent<TearApartSunder>()
               .SetStacking(Kingmaker.UnitLogic.Buffs.Blueprints.StackingType.Rank)
+              .SetRanks(20)
               .AddRestTrigger(ActionsBuilder.New().RemoveSelf().Build())
               .Configure();
 
             var action = ActionsBuilder.New()
-                .DealDamage(value: ContextDice.Value(DiceType.D6, bonus: ContextValues.Rank(), diceCount: 1), damageType: DamageTypes.Energy(type: Kingmaker.Enums.Damage.DamageEnergyType.Divine))
+                .DealDamage(value: ContextDice.Value(DiceType.D6, bonus: ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.MythicLevel, toCaster: true), diceCount: 1), damageType: DamageTypes.Energy(type: Kingmaker.Enums.Damage.DamageEnergyType.Divine))
                 .Build();
 
             var shoot = ActionsBuilder.New()
@@ -68,6 +73,25 @@ namespace PrestigePlus.Maneuvers
                 .AddAbilityTargetsAround(includeDead: false, radius: 100.Feet(), targetType: TargetType.Enemy)
                 .AddAbilityCasterMainWeaponIsMelee()
                 .SetIsFullRoundAction(true)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
+                .Configure();
+
+            var cast = ActionsBuilder.New()
+                .CastSpell(ability)
+                .Build();
+
+            var ability2 = AbilityConfigurator.New(SunderStormAblity2, SunderStormAblityGuid2)
+                .AddAbilityEffectRunAction(ActionsBuilder.New().OnContextCaster(cast).Build())
+                .SetType(AbilityType.Physical)
+                .SetDisplayName(SunderStormDisplayName)
+                .SetDescription(SunderStormDescription)
+                .SetIcon(icon)
+                .SetRange(AbilityRange.Weapon)
+                .SetCanTargetEnemies(true)
+                .SetCanTargetFriends(false)
+                .SetCanTargetSelf(false)
+                .AddAbilityCasterMainWeaponIsMelee()
+                .SetIsFullRoundAction(true)
                 .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.BreathWeapon)
                 .Configure();
 
@@ -76,9 +100,8 @@ namespace PrestigePlus.Maneuvers
               .SetDescription(SunderStormDescription)
               .SetIcon(icon)
               .AddPrerequisiteFeature(FeatureRefs.ImprovedSunder.ToString())
-              .AddFacts(new() { ability })
+              .AddFacts(new() { ability2 })
               .AddManeuverTrigger(action, Kingmaker.RuleSystem.Rules.CombatManeuver.SunderArmor, true)
-              .AddContextRankConfig(ContextRankConfigs.MythicLevel())
               .Configure();
         }
     }

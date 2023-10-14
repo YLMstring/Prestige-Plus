@@ -60,7 +60,7 @@ namespace PrestigePlus.CustomAction
                     var range = maybeCaster.GetThreatRange(hand);
                     if (range != null && range.HasValue)
                     {
-                        radius = range.Value + maybeCaster.View.Corpulence / 2f + unit.View.Corpulence / 2f;
+                        radius = range.Value + maybeCaster.View.Corpulence + unit.View.Corpulence;
                         Logger.Info(radius.ToString());
                     }
                 }

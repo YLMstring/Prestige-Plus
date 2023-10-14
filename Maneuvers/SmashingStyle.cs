@@ -36,7 +36,7 @@ namespace PrestigePlus.Maneuvers
         private static readonly string StyleActivatableAbilityGuid2 = "{ABA76A50-74F3-4C66-BD37-0631A63437A9}";
         public static void StyleConfigure()
         {
-            var icon = FeatureRefs.ImprovedSunder.Reference.Get().Icon;
+            var icon = FeatureRefs.KiDiamondBodyFeature.Reference.Get().Icon;
 
             var Buff = BuffConfigurator.New(Stylebuff, StylebuffGuid)
               .SetDisplayName(StyleDisplayName)
@@ -48,7 +48,7 @@ namespace PrestigePlus.Maneuvers
             var ability = ActivatableAbilityConfigurator.New(StyleActivatableAbility, StyleActivatableAbilityGuid)
                 .SetDisplayName(StyleDisplayName)
                 .SetDescription(StyleDescription)
-                .SetIcon(FeatureRefs.ImprovedBullRush.Reference.Get().Icon)
+                .SetIcon(FeatureRefs.KiDiamondSoulFeature.Reference.Get().Icon)
                 .SetBuff(Buff)
                 .SetDeactivateImmediately(true)
                 .SetActivationType(AbilityActivationType.Immediately)
@@ -67,7 +67,7 @@ namespace PrestigePlus.Maneuvers
             var ability2 = ActivatableAbilityConfigurator.New(StyleActivatableAbility2, StyleActivatableAbilityGuid2)
                 .SetDisplayName(StyleDisplayName)
                 .SetDescription(StyleDescription)
-                .SetIcon(FeatureRefs.ImprovedTrip.Reference.Get().Icon)
+                .SetIcon(FeatureRefs.KiDiamondBodyFeature.Reference.Get().Icon)
                 .SetBuff(Buff2)
                 .SetDeactivateImmediately(true)
                 .SetActivationType(AbilityActivationType.Immediately)
