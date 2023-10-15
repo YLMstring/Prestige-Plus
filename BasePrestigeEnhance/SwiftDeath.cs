@@ -66,10 +66,10 @@ namespace PrestigePlus.BasePrestigeEnhance
                     .SetDisplayName(DisplayName2)
                     .SetDescription(Description2)
                     .SetIcon(icon)
-                    .AddComponent<ChangeActionSpell>(a => { a.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>(AbilityRefs.AssassinDeathAttackAbilityStandard.ToString()); a.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift; })
-                    .AddComponent<ChangeActionSpell>(a => { a.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>(AbilityRefs.AssassinDeathAttackAbilityKillStandard.ToString()); a.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift; })
-                    .AddComponent<ChangeActionSpell>(a => { a.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>(AbilityRefs.AssassinDeathAttackAbilityParalyzeStandard.ToString()); a.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift; })
-                    .AddRemoveFeatureOnApply(Feat0Guid)
+                    .AddComponent<ChangeActionSpell>(a => { a.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>(AbilityRefs.AssassinDeathAttackAbility.ToString()); a.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift; })
+                    .AddComponent<ChangeActionSpell>(a => { a.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>(AbilityRefs.AssassinDeathAttackAbilityKill.ToString()); a.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift; })
+                    .AddComponent<ChangeActionSpell>(a => { a.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>(AbilityRefs.AssassinDeathAttackAbilityParalyze.ToString()); a.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift; })
+                    .AddFacts(new() { AbilityRefs.AssassinDeathAttackAbility.ToString() })
                     .Configure();
 
             var feat4 = FeatureConfigurator.New(Feat4Name, Feat4Guid)
