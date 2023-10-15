@@ -134,6 +134,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
               .AddToAllFeatures("bdaf6052-e215-4eec-9ad5-c1b3f380cae0")
+              .AddToAllFeatures(FeatureRefs.AugmentSummoning.ToString())
               .Configure(delayed: true);
         }
 
@@ -264,7 +265,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetIcon(icon)
               .Configure();
 
-            var action = ActionsBuilder.New().ApplyBuff(Buff5, durationValue: ContextDuration.Fixed(3)).Build();
+            var action = ActionsBuilder.New().ApplyBuff(Buff5, durationValue: ContextDuration.Fixed(2)).Build();
 
             return FeatureConfigurator.New(SolarInvocation, SolarInvocationGuid)
               .SetDisplayName(FreeInvocationDisplayName)
@@ -369,17 +370,17 @@ namespace PrestigePlus.PrestigeClasses
               .Configure();
         }
 
-        private const string Dawn = "Anchorite.Dawn";
+        private const string Dawn = "Anchorite.DawnInvocation";
         private static readonly string DawnGuid = "{DD8D398C-A81C-4E7F-A5EB-291787FAF4B0}";
 
-        private const string DawnAblity = "Anchorite.UseDawn";
+        private const string DawnAblity = "Anchorite.UseDawnInvocation";
         private static readonly string DawnAblityGuid = "{BBE7E7B3-A634-42FF-B31F-4FD997BE848B}";
 
-        private const string DawnAblityRes = "Anchorite.UseDawnRes";
+        private const string DawnAblityRes = "Anchorite.UseDawnInvocationRes";
         private static readonly string DawnAblityResGuid = "{8C824C12-30C4-412B-9ED1-1011FFD0C385}";
 
-        internal const string DawnDisplayName = "AnchoriteDawn.Name";
-        private const string DawnDescription = "AnchoriteDawn.Description";
+        internal const string DawnDisplayName = "AnchoriteDawnInvocation.Name";
+        private const string DawnDescription = "AnchoriteDawnInvocation.Description";
         public static BlueprintFeature DawnFeat()
         {
             var icon = FeatureRefs.DawnOfLifeFeature.Reference.Get().Icon;
@@ -409,7 +410,214 @@ namespace PrestigePlus.PrestigeClasses
               .SetIsClassFeature(true)
               .AddFacts(new() { ability })
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
-              .AddAutoMetamagic(new() { ability }, metamagic: Kingmaker.UnitLogic.Abilities.Metamagic.Quicken)
+              .AddAutoMetamagic(new() { ability }, metamagic: Metamagic.Quicken)
+              .Configure();
+        }
+
+        private const string DivineLight = "Anchorite.DivineLight";
+        private static readonly string DivineLightGuid = "{D04D760F-C282-4E09-AD5F-8BCBD5EA864D}";
+
+        internal const string AnchoriteDivineLightDisplayName = "AnchoriteDivineLight.Name";
+        private const string AnchoriteDivineLightDescription = "AnchoriteDivineLight.Description";
+        public static BlueprintFeature SADivineLight()
+        {
+            var icon = FeatureRefs.AngelHaloArchonsAuraFeature.Reference.Get().Icon;
+            return FeatureConfigurator.New(DivineLight, DivineLightGuid)
+              .SetDisplayName(AnchoriteDivineLightDisplayName)
+              .SetDescription(AnchoriteDivineLightDescription)
+              .SetIcon(icon)
+              .AddAuraFeatureComponent(SolarBuffGuid5)
+              .AddIncreaseResourceAmount(SolarAbilityResGuid, 2)
+              .Configure();
+        }
+
+        private const string ExtraInvocations = "Anchorite.ExtraInvocations";
+        private static readonly string ExtraInvocationsGuid = "{B6BC18B5-AD61-4F65-B11C-069090DB3378}";
+
+        internal const string AnchoriteExtraInvocationsDisplayName = "AnchoriteExtraInvocations.Name";
+        private const string AnchoriteExtraInvocationsDescription = "AnchoriteExtraInvocations.Description";
+        public static BlueprintFeature SAExtraInvocations()
+        {
+            var icon = FeatureRefs.AngelHaloArchonsAuraFeature.Reference.Get().Icon;
+            return FeatureConfigurator.New(ExtraInvocations, ExtraInvocationsGuid)
+              .SetDisplayName(AnchoriteExtraInvocationsDisplayName)
+              .SetDescription(AnchoriteExtraInvocationsDescription)
+              .SetIcon(icon)
+              .AddIncreaseResourceAmountBySharedValue(false, SolarAbilityResGuid, ContextValues.Rank(type: AbilityRankType.StatBonus))
+              .AddIncreaseResourceAmountBySharedValue(false, SolarAbilityResGuid, ContextValues.Rank(type: AbilityRankType.ProjectilesCount))
+              .AddContextRankConfig(ContextRankConfigs.StatBonus(StatType.Charisma, type: AbilityRankType.StatBonus))
+              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }, type: AbilityRankType.ProjectilesCount).WithBonusValueProgression(0, true))
+              .Configure();
+        }
+
+        private const string FocusedAnimalCompanion = "Anchorite.FocusedAnimalCompanion";
+        private static readonly string FocusedAnimalCompanionGuid = "{BE30F67B-D2D5-4257-92FB-60032E534792}";
+
+        internal const string AnchoriteFocusedAnimalCompanionDisplayName = "AnchoriteFocusedAnimalCompanion.Name";
+        private const string AnchoriteFocusedAnimalCompanionDescription = "AnchoriteFocusedAnimalCompanion.Description";
+
+        private const string ClassProgressName2 = "AnchoritePrestige2";
+        private static readonly string ClassProgressGuid2 = "{9C0DE5B2-09F3-432B-8CE9-6EFEC58D1BF8}";
+        public static BlueprintFeature SAFocusedAnimalCompanion()
+        {
+            var progression =
+                ProgressionConfigurator.New(ClassProgressName2, ClassProgressGuid2)
+                .CopyFrom(ProgressionRefs.SylvanSorcererAnimalCompanionProgression, typeof(LevelEntry), typeof(UIGroup))
+                .SetClasses(ArchetypeGuid)
+                .Configure();
+
+            return FeatureSelectionConfigurator.New(FocusedAnimalCompanion, FocusedAnimalCompanionGuid)
+              .CopyFrom(
+                FeatureSelectionRefs.AnimalCompanionSelectionSylvanSorcerer)
+              .SetDisplayName(AnchoriteFocusedAnimalCompanionDisplayName)
+              .SetDescription(AnchoriteFocusedAnimalCompanionDescription)
+              .AddPrerequisitePet(type: PetType.AnimalCompanion)
+              .AddFeatureOnApply(progression)
+              .AddFeatureOnApply(FeatureRefs.AnimalCompanionRank.ToString())
+              .AddFeatureOnApply(FeatureRefs.MountTargetFeature.ToString())
+              .AddFeatureOnApply(FeatureSelectionRefs.AnimalCompanionArchetypeSelection.ToString())
+              .Configure(delayed: true); 
+        }
+
+        private const string SunBlade = "Anchorite.SunBlade";
+        private static readonly string SunBladeGuid = "{A406BEDD-E65B-47C3-90A0-883B6352430E}";
+
+        internal const string AnchoriteSunBladeDisplayName = "AnchoriteSunBlade.Name";
+        private const string AnchoriteSunBladeDescription = "AnchoriteSunBlade.Description";
+        public static BlueprintFeature SASunBlade()
+        {
+            var icon = FeatureRefs.AngelHaloArchonsAuraFeature.Reference.Get().Icon;
+            return FeatureConfigurator.New(SunBlade, SunBladeGuid)
+              .SetDisplayName(AnchoriteSunBladeDisplayName)
+              .SetDescription(AnchoriteSunBladeDescription)
+              .SetIcon(icon)
+              .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.BaneUndead.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.PrimaryHand)
+              .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.BaneUndead.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.SecondaryHand)
+              .AddAuraFeatureComponent(BuffRefs.MageLightBuff.ToString())
+              .Configure();
+        }
+
+        private const string FocusedBane = "Anchorite.FocusedBane";
+        private static readonly string FocusedBaneGuid = "{3DEDACFA-06C3-42DE-A930-6B0093159EE8}";
+
+        internal const string FocusedBaneDisplayName = "AnchoriteFocusedBane.Name";
+        private const string FocusedBaneDescription = "AnchoriteFocusedBane.Description";
+        public static BlueprintProgression FocusedBaneFeat()
+        {
+            var icon = FeatureRefs.BullRushMythicFeat.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(FocusedBane, FocusedBaneGuid)
+              .SetDisplayName(FocusedBaneDisplayName)
+              .SetDescription(FocusedBaneDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .SetGiveFeaturesForPreviousLevels(false)
+              .AddPrerequisiteClassLevel(CharacterClassRefs.InquisitorClass.ToString(), 1)
+              .AddToClasses(CharacterClassRefs.InquisitorClass.ToString())
+              .AddToClasses(ArchetypeGuid)
+              .AddToLevelEntry(5, FeatureRefs.InquisitorBaneNormalFeatureAdd.ToString())
+              .AddToLevelEntry(12, FeatureRefs.InquisitorBaneGreaterFeature.ToString())
+              .Configure();
+        }
+
+        private const string FocusedRagingSong = "Anchorite.FocusedRagingSong";
+        private static readonly string FocusedRagingSongGuid = "{CEA73061-1C07-48B1-A069-FB5B698219F7}";
+
+        internal const string FocusedRagingSongDisplayName = "AnchoriteFocusedRagingSong.Name";
+        private const string FocusedRagingSongDescription = "AnchoriteFocusedRagingSong.Description";
+        public static BlueprintProgression FocusedRagingSongFeat()
+        {
+            var icon = FeatureRefs.BullRushMythicFeat.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(FocusedRagingSong, FocusedRagingSongGuid)
+              .SetDisplayName(FocusedRagingSongDisplayName)
+              .SetDescription(FocusedRagingSongDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .SetGiveFeaturesForPreviousLevels(false)
+              .AddPrerequisiteClassLevel(CharacterClassRefs.SkaldClass.ToString(), 1)
+              .AddToClasses(CharacterClassRefs.SkaldClass.ToString())
+              .AddToClasses(ArchetypeGuid)
+              .AddIncreaseResourceAmountBySharedValue(decrease: false, resource: AbilityResourceRefs.RagingSongResource.ToString(), value: ContextValues.Rank())
+              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new[] { ArchetypeGuid }).WithBonusValueProgression(0, true))
+              .AddToLevelEntry(6, FeatureRefs.SongOfStrength.ToString())
+              .AddToLevelEntry(7, FeatureRefs.SKaldMovePerformance.ToString())
+              .AddToLevelEntry(10, FeatureRefs.DirgeOfDoom.ToString())
+              .AddToLevelEntry(13, FeatureRefs.SkaldSwiftPerformance.ToString())
+              .AddToLevelEntry(14, FeatureRefs.SongOfTheFallen.ToString())
+              .Configure();
+        }
+
+        private const string FocusedSacredWeapon = "Anchorite.FocusedSacredWeapon";
+        private static readonly string FocusedSacredWeaponGuid = "{46879D7A-0384-4305-BE93-774BFAE80931}";
+
+        internal const string FocusedSacredWeaponDisplayName = "AnchoriteFocusedSacredWeapon.Name";
+        private const string FocusedSacredWeaponDescription = "AnchoriteFocusedSacredWeapon.Description";
+
+        private const string FocusedSacredWeapon1 = "Anchorite.FocusedSacredWeapon1";
+        private static readonly string FocusedSacredWeaponGuid1 = "{071B69C1-AD72-499A-9AD2-3A8A3E7EC235}";
+
+        private const string FocusedSacredWeapon2 = "Anchorite.FocusedSacredWeapon2";
+        private static readonly string FocusedSacredWeaponGuid2 = "{77AE9B7D-2050-4968-ACA1-D660F32BDC88}";
+
+        private const string FocusedSacredWeapon3 = "Anchorite.FocusedSacredWeapon3";
+        private static readonly string FocusedSacredWeaponGuid3 = "{2862910F-BC27-41CD-96E1-03DDF7EBE137}";
+
+        private const string FocusedSacredWeapon4 = "Anchorite.FocusedSacredWeapon4";
+        private static readonly string FocusedSacredWeaponGuid4 = "{191B8C30-3ACF-4BBA-96B4-1D7F2A087DE0}";
+        public static BlueprintProgression FocusedSacredWeaponFeat()
+        {
+            var icon = FeatureRefs.BullRushMythicFeat.Reference.Get().Icon;
+
+            var feat = FeatureConfigurator.New(FocusedSacredWeapon1, FocusedSacredWeaponGuid1)
+              .SetDisplayName(FocusedSacredWeaponDisplayName)
+              .SetDescription(FocusedSacredWeaponDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddAuraFeatureComponent(BuffRefs.WarpriestSacredWeaponBuff1d8.ToString())
+              .Configure();
+
+            var feat2 = FeatureConfigurator.New(FocusedSacredWeapon2, FocusedSacredWeaponGuid2)
+              .SetDisplayName(FocusedSacredWeaponDisplayName)
+              .SetDescription(FocusedSacredWeaponDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddAuraFeatureComponent(BuffRefs.WarpriestSacredWeaponBuff1d10.ToString())
+              .Configure();
+
+            var feat3 = FeatureConfigurator.New(FocusedSacredWeapon3, FocusedSacredWeaponGuid3)
+              .SetDisplayName(FocusedSacredWeaponDisplayName)
+              .SetDescription(FocusedSacredWeaponDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddAuraFeatureComponent(BuffRefs.WarpriestSacredWeaponBuff2d6.ToString())
+              .Configure();
+
+            var feat4 = FeatureConfigurator.New(FocusedSacredWeapon4, FocusedSacredWeaponGuid4)
+              .SetDisplayName(FocusedSacredWeaponDisplayName)
+              .SetDescription(FocusedSacredWeaponDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddAuraFeatureComponent(BuffRefs.WarpriestSacredWeaponBuff2d8.ToString())
+              .Configure();
+
+            return ProgressionConfigurator.New(FocusedSacredWeapon, FocusedSacredWeaponGuid)
+              .SetDisplayName(FocusedSacredWeaponDisplayName)
+              .SetDescription(FocusedSacredWeaponDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .SetGiveFeaturesForPreviousLevels(false)
+              .AddPrerequisiteClassLevel(CharacterClassRefs.WarpriestClass.ToString(), 1)
+              .AddToClasses(CharacterClassRefs.WarpriestClass.ToString())
+              .AddToClasses(ArchetypeGuid)
+              .AddToLevelEntry(4, FeatureRefs.SacredWeaponEnchantFeature.ToString())
+              .AddToLevelEntry(5, feat)
+              .AddToLevelEntry(8, FeatureRefs.SacredWeaponEnchantPlus2.ToString())
+              .AddToLevelEntry(10, feat2)
+              .AddToLevelEntry(12, FeatureRefs.SacredWeaponEnchantPlus3.ToString())
+              .AddToLevelEntry(15, feat3)
+              .AddToLevelEntry(16, FeatureRefs.SacredWeaponEnchantPlus4.ToString())
+              .AddToLevelEntry(20, feat4, FeatureRefs.SacredWeaponEnchantPlus5.ToString())
               .Configure();
         }
     }
