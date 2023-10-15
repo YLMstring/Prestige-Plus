@@ -147,7 +147,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetIcon(icon)
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
-              .AddAbilityUseTrigger(action: action, checkSpellSchool: true, isSpellSchool: SpellSchool.Illusion)
+              
               .AddToAllFeatures(FeatureRefs.BolsteredSpellFeat.ToString())
               .AddToAllFeatures(FeatureRefs.EmpowerSpellFeat.ToString())
               .AddToAllFeatures(FeatureRefs.ExtendSpellFeat.ToString())
@@ -170,7 +170,7 @@ namespace PrestigePlus.PrestigeClasses
         private const string AnchoriteofDawnSolarInvocationDescription = "AnchoriteofDawnSolarInvocation.Description";
 
         internal const string FreeInvocationDisplayName = "FreeSolarInvocation.Name";
-        private const string FreeInvocationDescription = "FreeInvocation.Description";
+        private const string FreeInvocationDescription = "FreeSolarInvocation.Description";
 
         private const string SolarAbility = "AnchoriteStyle.SolarAbility";
         private static readonly string SolarAbilityGuid = "{A915B1BF-FF14-4A82-B0A7-7BED9CF6D032}";
@@ -195,6 +195,9 @@ namespace PrestigePlus.PrestigeClasses
 
         private const string SolarBuff4 = "AnchoriteStyle.Gazebuff4";
         public static readonly string SolarBuffGuid4 = "{04803783-BFC4-4C4D-B1F5-A76A2C2ACE90}";
+
+        private const string SolarBuff5 = "AnchoriteStyle.Gazebuff5";
+        public static readonly string SolarBuffGuid5 = "{04803783-BFC4-4C4D-B1F5-A76A2C2ACE90}";
 
         private const string GazeAura = "AnchoriteStyle.GazeAura";
         private static readonly string GazeAuraGuid = "{AF072518-2232-457B-8E2F-1026B16EE910}";
@@ -237,13 +240,25 @@ namespace PrestigePlus.PrestigeClasses
               .SetFlags(BlueprintBuff.Flags.HiddenInUi)
               .Configure();
 
+            var Buff5 = BuffConfigurator.New(SolarBuff5, SolarBuffGuid5)
+              .SetDisplayName(AnchoriteofDawnSolarInvocationDisplayName)
+              .SetDescription(AnchoriteofDawnSolarInvocationDescription)
+              .SetIcon(icon)
+              .Configure();
+
             var Buff1 = BuffConfigurator.New(SolarBuff, SolarBuffGuid)
               .SetDisplayName(AnchoriteofDawnSolarInvocationDisplayName)
               .SetDescription(AnchoriteofDawnSolarInvocationDescription)
               .SetIcon(icon)
               .AddComponent<SolarInvocationComp>()
               .AddIncreaseAllSpellsDC(spellsOnly: true, value: 1)
-              .AddBuffActions(activated: ActionsBuilder.New().OnPets(givebuff).Build(), deactivated: ActionsBuilder.New().OnPets(retrivebuff).Build())
+              .AddBuffActions(activated: ActionsBuilder.New()
+                .OnPets(givebuff)
+                .Conditional(ConditionsBuilder.New()
+                    .HasBuff(Buff5).Build(),
+                    ifFalse: ActionsBuilder.New().RemoveSelf().Build())
+                .Build(),
+                deactivated: ActionsBuilder.New().OnPets(retrivebuff).Build())
               .AddAuraFeatureComponent(Buff3)
               .Configure();
 
@@ -253,7 +268,10 @@ namespace PrestigePlus.PrestigeClasses
               .SetIcon(icon)
               .AddComponent<SolarInvocationComp>()
               .AddIncreaseAllSpellsDC(spellsOnly: true, value: 1)
-              .AddBuffActions(activated: ActionsBuilder.New().OnPets(givebuff).Build(), deactivated: ActionsBuilder.New().OnPets(retrivebuff).Build())
+              .AddBuffActions(activated: ActionsBuilder.New()
+                .OnPets(givebuff)
+                .Build(), 
+                deactivated: ActionsBuilder.New().OnPets(retrivebuff).Build())
               .AddAuraFeatureComponent(Buff3)
               .Configure();
 
@@ -299,12 +317,15 @@ namespace PrestigePlus.PrestigeClasses
               .SetIcon(icon)
               .Configure();
 
+            var action = ActionsBuilder.New().ApplyBuff(Buff5, durationValue: ContextDuration.Fixed(3)).Build();
+
             return FeatureConfigurator.New(SolarInvocation, SolarInvocationGuid)
               .SetDisplayName(FreeInvocationDisplayName)
               .SetDescription(FreeInvocationDescription)
               .SetIcon(icon)
               .AddFacts(new() { ability })
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .AddAbilityUseTrigger(action: action, checkSpellSchool: true, isSpellSchool: SpellSchool.Evocation)
               .Configure();
         }
 
