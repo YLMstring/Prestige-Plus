@@ -641,6 +641,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddAuraFeatureComponent(BuffRefs.WarpriestSacredWeaponBuff1d8.ToString())
+              .AddRemoveFeatureOnApply(FeatureRefs.WarpriestSacredWeaponBaseDamageFeature.ToString())
               .Configure();
 
             var feat2 = FeatureConfigurator.New(FocusedSacredWeapon2, FocusedSacredWeaponGuid2)
@@ -684,6 +685,8 @@ namespace PrestigePlus.PrestigeClasses
               .AddToLevelEntry(15, feat3)
               .AddToLevelEntry(16, FeatureRefs.SacredWeaponEnchantPlus4.ToString())
               .AddToLevelEntry(20, feat4, FeatureRefs.SacredWeaponEnchantPlus5.ToString())
+              .AddIncreaseResourceAmountBySharedValue(decrease: false, resource: AbilityResourceRefs.SacredWeaponEnchantResource.ToString(), value: ContextValues.Rank())
+              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new[] { ArchetypeGuid }).WithBonusValueProgression(0, false))
               .Configure();
         }
 
