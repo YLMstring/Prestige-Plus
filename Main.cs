@@ -90,6 +90,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("grave"), defaultValue: true, Helpers.CreateString("toggle-desc1", "Agent of the Grave"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("dawnflower"), defaultValue: true, Helpers.CreateString("toggle-desc27", "Anchorite of Dawn"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("archer"), defaultValue: true, Helpers.CreateString("toggle-desc6", "Arcane Archer"))
               .ShowVisualConnection())
           .AddToggle(
@@ -196,6 +199,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("lorew"))) { LoreWarden.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("warlord"))) { Warlord.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("ragonury"))) { DragonFury.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("dawnflower"))) { AnchoriteofDawn.Configure(); }
                 }
                 catch (Exception e)
         {

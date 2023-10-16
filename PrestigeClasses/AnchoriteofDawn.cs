@@ -34,6 +34,8 @@ using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Conditions.Builder.ContextEx;
 using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.Abilities;
+using Pathfinding.Voxels;
+using Kingmaker.UnitLogic.FactLogic;
 
 namespace PrestigePlus.PrestigeClasses
 {
@@ -61,7 +63,7 @@ namespace PrestigePlus.PrestigeClasses
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, spellupgradeGuid, SASolarInvocation())
+                .AddToLevelEntry(1, SASolarInvocation(), spellupgradeGuid)
                 .AddToLevelEntry(2, CredenceGuid)
                 .AddToLevelEntry(3, SABaskRadiance())
                 .AddToLevelEntry(4, CredenceGuid)
@@ -127,6 +129,7 @@ namespace PrestigePlus.PrestigeClasses
         {
             var icon = AbilityRefs.Thoughtsense.Reference.Get().Icon;
             //"DervishDance": "bdaf6052-e215-4eec-9ad5-c1b3f380cae0",
+            FocusedFeat1Feat(); 
             FeatureSelectionConfigurator.New(Credence, CredenceGuid)
               .SetDisplayName(CredenceDisplayName)
               .SetDescription(CredenceDescription)
@@ -134,7 +137,13 @@ namespace PrestigePlus.PrestigeClasses
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
               .AddToAllFeatures("bdaf6052-e215-4eec-9ad5-c1b3f380cae0")
+              .AddToAllFeatures(SADivineLight())
+              .AddToAllFeatures(SAExtraInvocations())
+              .AddToAllFeatures(FocusedFeat1Guid)
               .AddToAllFeatures(FeatureRefs.AugmentSummoning.ToString())
+              .AddToAllFeatures(SASolarDefense1())
+              .AddToAllFeatures(SASolarDefense2())
+              .AddToAllFeatures(SASunBlade())
               .Configure(delayed: true);
         }
 
@@ -152,6 +161,12 @@ namespace PrestigePlus.PrestigeClasses
 
         private const string SolarAbility = "AnchoriteStyle.SolarAbility";
         private static readonly string SolarAbilityGuid = "{45FA4862-FC2B-40E3-9688-90F3F7ABE8EC}";
+
+        private const string SolarAbility2 = "AnchoriteStyle.SolarAbility2";
+        private static readonly string SolarAbilityGuid2 = "{F334A8AD-138B-4E42-B728-1B8DF461DC5F}";
+
+        private const string SolarAbility3 = "AnchoriteStyle.SolarAbility3";
+        private static readonly string SolarAbilityGuid3 = "{EEE1CADE-7B70-4B79-9CCE-D2D3488BA9A4}";
 
         private const string SolarAbilityRes = "AnchoriteStyle.SolarAbilityRes";
         private static readonly string SolarAbilityResGuid = "{04B41671-24D9-4598-BF98-4928F118F3E2}";
@@ -201,7 +216,7 @@ namespace PrestigePlus.PrestigeClasses
                 .SetAffectDead(false)
                 .SetShape(AreaEffectShape.Cylinder)
                 .SetSize(FeetExtension.Feet(33))
-                .AddAbilityAreaEffectBuff(Buff2, condition: ConditionsBuilder.New().CasterHasFact(BaskRadianceGuid).Build())
+                .AddAbilityAreaEffectBuff(Buff2, condition: ConditionsBuilder.New().CasterHasFact(BaskRadianceGuid).IsCaster(false).Build())
                 .Configure();
 
             var Buff3 = BuffConfigurator.New(SolarBuff3, SolarBuffGuid3)
@@ -216,6 +231,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetDisplayName(AnchoriteofDawnSolarInvocationDisplayName)
               .SetDescription(AnchoriteofDawnSolarInvocationDescription)
               .SetIcon(icon)
+              .SetStacking(StackingType.Summ)
               .Configure();
 
             var Buff1 = BuffConfigurator.New(SolarBuff, SolarBuffGuid)
@@ -259,17 +275,41 @@ namespace PrestigePlus.PrestigeClasses
                 .SetDeactivateImmediately()
                 .Configure();
 
+            ActivatableAbilityConfigurator.New(SolarAbility2, SolarAbilityGuid2)
+                .SetDisplayName(AnchoriteSolarMoveDisplayName)
+                .SetDescription(AnchoriteSolarMoveDescription)
+                .SetIcon(icon)
+                .SetBuff(Buff1)
+                .SetDeactivateIfCombatEnded(true)
+                .SetActivationType(AbilityActivationType.WithUnitCommand)
+                .SetActivateWithUnitCommand(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move)
+                .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound, freeBlueprint: FreeSolarInvocationGuid)
+                .SetDeactivateImmediately()
+                .Configure();
+
+            ActivatableAbilityConfigurator.New(SolarAbility3, SolarAbilityGuid3)
+                .SetDisplayName(AnchoriteSolarSwiftDisplayName)
+                .SetDescription(AnchoriteSolarSwiftDescription)
+                .SetIcon(icon)
+                .SetBuff(Buff1)
+                .SetDeactivateIfCombatEnded(true)
+                .SetActivationType(AbilityActivationType.WithUnitCommand)
+                .SetActivateWithUnitCommand(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+                .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound, freeBlueprint: FreeSolarInvocationGuid)
+                .SetDeactivateImmediately()
+                .Configure();
+
             FeatureConfigurator.New(FreeSolarInvocation, FreeSolarInvocationGuid)
-              .SetDisplayName(AnchoriteofDawnSolarInvocationDisplayName)
-              .SetDescription(AnchoriteofDawnSolarInvocationDescription)
+              .SetDisplayName(FreeInvocationDisplayName)
+              .SetDescription(FreeInvocationDescription)
               .SetIcon(icon)
               .Configure();
 
             var action = ActionsBuilder.New().ApplyBuff(Buff5, durationValue: ContextDuration.Fixed(2)).Build();
 
             return FeatureConfigurator.New(SolarInvocation, SolarInvocationGuid)
-              .SetDisplayName(FreeInvocationDisplayName)
-              .SetDescription(FreeInvocationDescription)
+              .SetDisplayName(AnchoriteofDawnSolarInvocationDisplayName)
+              .SetDescription(AnchoriteofDawnSolarInvocationDescription)
               .SetIcon(icon)
               .AddFacts(new() { ability })
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
@@ -284,7 +324,7 @@ namespace PrestigePlus.PrestigeClasses
         private const string AnchoriteBaskRadianceDescription = "AnchoriteBaskRadiance.Description";
         public static BlueprintFeature SABaskRadiance()
         {
-            var icon = FeatureRefs.AngelHaloArchonsAuraFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.Sunbeam.Reference.Get().Icon;
             return FeatureConfigurator.New(BaskRadiance, BaskRadianceGuid)
               .SetDisplayName(AnchoriteBaskRadianceDisplayName)
               .SetDescription(AnchoriteBaskRadianceDescription)
@@ -304,9 +344,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetDisplayName(AnchoriteSolarMoveDisplayName)
               .SetDescription(AnchoriteSolarMoveDescription)
               .SetIcon(icon)
-              .AddAbilityResources(resource: SolarAbilityResGuid, restoreAmount: true)
-              .AddComponent<ChangeActionSpell>(a => { a.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>(SolarAbilityGuid); a.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move; })
-              .AddRemoveFeatureOnApply(SolarInvocationGuid)
+              .AddFacts(new() { SolarAbilityGuid2 })
               .Configure();
         }
 
@@ -322,7 +360,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetDisplayName(AnchoriteSolarSwiftDisplayName)
               .SetDescription(AnchoriteSolarSwiftDescription)
               .SetIcon(icon)
-              .AddAutoMetamagic(new() { SolarAbilityGuid }, metamagic: Metamagic.Quicken)
+              .AddFacts(new() { SolarAbilityGuid3 })
               .Configure();
         }
 
@@ -339,7 +377,7 @@ namespace PrestigePlus.PrestigeClasses
 
         private static BlueprintFeature CreateSunbeam()
         {
-            var icon = AbilityRefs.Sunbeam.Reference.Get().Icon;
+            var icon = AbilityRefs.SunbeamAbility.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(SunbeamAblityRes, SunbeamAblityResGuid)
                 .SetMaxAmount(
@@ -350,7 +388,7 @@ namespace PrestigePlus.PrestigeClasses
                 .Configure();
             var ability = AbilityConfigurator.New(SunbeamAblity, SunbeamAblityGuid)
                 .CopyFrom(
-                AbilityRefs.Sunbeam,
+                AbilityRefs.SunbeamAbility,
                 typeof(AbilityEffectRunAction),
                 typeof(SpellComponent))
                 .SetType(AbilityType.SpellLike)
@@ -383,7 +421,7 @@ namespace PrestigePlus.PrestigeClasses
         private const string DawnDescription = "AnchoriteDawnInvocation.Description";
         public static BlueprintFeature DawnFeat()
         {
-            var icon = FeatureRefs.DawnOfLifeFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.SunDomainGreaterFeature.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(DawnAblityRes, DawnAblityResGuid)
                 .SetMaxAmount(
@@ -421,7 +459,7 @@ namespace PrestigePlus.PrestigeClasses
         private const string AnchoriteDivineLightDescription = "AnchoriteDivineLight.Description";
         public static BlueprintFeature SADivineLight()
         {
-            var icon = FeatureRefs.AngelHaloArchonsAuraFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.Bless.Reference.Get().Icon;
             return FeatureConfigurator.New(DivineLight, DivineLightGuid)
               .SetDisplayName(AnchoriteDivineLightDisplayName)
               .SetDescription(AnchoriteDivineLightDescription)
@@ -438,7 +476,7 @@ namespace PrestigePlus.PrestigeClasses
         private const string AnchoriteExtraInvocationsDescription = "AnchoriteExtraInvocations.Description";
         public static BlueprintFeature SAExtraInvocations()
         {
-            var icon = FeatureRefs.AngelHaloArchonsAuraFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.DomainMastery.Reference.Get().Icon;
             return FeatureConfigurator.New(ExtraInvocations, ExtraInvocationsGuid)
               .SetDisplayName(AnchoriteExtraInvocationsDisplayName)
               .SetDescription(AnchoriteExtraInvocationsDescription)
@@ -456,44 +494,45 @@ namespace PrestigePlus.PrestigeClasses
         internal const string AnchoriteFocusedAnimalCompanionDisplayName = "AnchoriteFocusedAnimalCompanion.Name";
         private const string AnchoriteFocusedAnimalCompanionDescription = "AnchoriteFocusedAnimalCompanion.Description";
 
-        private const string ClassProgressName2 = "AnchoritePrestige2";
-        private static readonly string ClassProgressGuid2 = "{9C0DE5B2-09F3-432B-8CE9-6EFEC58D1BF8}";
         public static BlueprintFeature SAFocusedAnimalCompanion()
         {
-            var progression =
-                ProgressionConfigurator.New(ClassProgressName2, ClassProgressGuid2)
-                .CopyFrom(ProgressionRefs.SylvanSorcererAnimalCompanionProgression, typeof(LevelEntry), typeof(UIGroup))
-                .SetClasses(ArchetypeGuid)
-                .Configure();
-
-            return FeatureSelectionConfigurator.New(FocusedAnimalCompanion, FocusedAnimalCompanionGuid)
-              .CopyFrom(
-                FeatureSelectionRefs.AnimalCompanionSelectionSylvanSorcerer)
+            var icon = FeatureRefs.AnimalBlessingFeature.Reference.Get().Icon;
+            return FeatureConfigurator.New(FocusedAnimalCompanion, FocusedAnimalCompanionGuid)
               .SetDisplayName(AnchoriteFocusedAnimalCompanionDisplayName)
               .SetDescription(AnchoriteFocusedAnimalCompanionDescription)
+              .SetIcon(icon)
               .AddPrerequisitePet(type: PetType.AnimalCompanion)
-              .AddFeatureOnApply(progression)
-              .AddFeatureOnApply(FeatureRefs.AnimalCompanionRank.ToString())
-              .AddFeatureOnApply(FeatureRefs.MountTargetFeature.ToString())
-              .AddFeatureOnApply(FeatureSelectionRefs.AnimalCompanionArchetypeSelection.ToString())
-              .Configure(delayed: true); 
+              .AddComponent<CompanionBoonClassLevel>(c => { c.m_RankFeature = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.AnimalCompanionRank.ToString()); })
+              .SetReapplyOnLevelUp(true)
+              .Configure();
         }
 
         private const string SunBlade = "Anchorite.SunBlade";
         private static readonly string SunBladeGuid = "{A406BEDD-E65B-47C3-90A0-883B6352430E}";
 
+        private const string SunBladeBuff = "Anchorite.SunBladeBuff";
+        private static readonly string SunBladeBuffGuid = "{BDA0B3EA-10A8-4A6A-BBD4-6EA6B043BCAD}";
+
         internal const string AnchoriteSunBladeDisplayName = "AnchoriteSunBlade.Name";
         private const string AnchoriteSunBladeDescription = "AnchoriteSunBlade.Description";
         public static BlueprintFeature SASunBlade()
         {
-            var icon = FeatureRefs.AngelHaloArchonsAuraFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.Flare.Reference.Get().Icon;
+
+            var Buff = BuffConfigurator.New(SunBladeBuff, SunBladeBuffGuid)
+                .CopyFrom(
+                BuffRefs.MageLightBuff,
+                typeof(UniqueBuff))
+              .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+              .Configure();
+
             return FeatureConfigurator.New(SunBlade, SunBladeGuid)
               .SetDisplayName(AnchoriteSunBladeDisplayName)
               .SetDescription(AnchoriteSunBladeDescription)
               .SetIcon(icon)
               .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.BaneUndead.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.PrimaryHand)
               .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.BaneUndead.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.SecondaryHand)
-              .AddAuraFeatureComponent(BuffRefs.MageLightBuff.ToString())
+              .AddAuraFeatureComponent(Buff)
               .Configure();
         }
 
@@ -504,7 +543,7 @@ namespace PrestigePlus.PrestigeClasses
         private const string FocusedBaneDescription = "AnchoriteFocusedBane.Description";
         public static BlueprintProgression FocusedBaneFeat()
         {
-            var icon = FeatureRefs.BullRushMythicFeat.Reference.Get().Icon;
+            var icon = FeatureRefs.InquisitorBaneGreaterFeature.Reference.Get().Icon;
 
             return ProgressionConfigurator.New(FocusedBane, FocusedBaneGuid)
               .SetDisplayName(FocusedBaneDisplayName)
@@ -517,6 +556,8 @@ namespace PrestigePlus.PrestigeClasses
               .AddToClasses(ArchetypeGuid)
               .AddToLevelEntry(5, FeatureRefs.InquisitorBaneNormalFeatureAdd.ToString())
               .AddToLevelEntry(12, FeatureRefs.InquisitorBaneGreaterFeature.ToString())
+              .AddIncreaseResourceAmountBySharedValue(decrease: false, resource: AbilityResourceRefs.InquisitorBaneResource.ToString(), value: ContextValues.Rank())
+              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new[] { ArchetypeGuid }).WithBonusValueProgression(0, false))
               .Configure();
         }
 
@@ -527,7 +568,7 @@ namespace PrestigePlus.PrestigeClasses
         private const string FocusedRagingSongDescription = "AnchoriteFocusedRagingSong.Description";
         public static BlueprintProgression FocusedRagingSongFeat()
         {
-            var icon = FeatureRefs.BullRushMythicFeat.Reference.Get().Icon;
+            var icon = FeatureRefs.RagingSong.Reference.Get().Icon;
 
             return ProgressionConfigurator.New(FocusedRagingSong, FocusedRagingSongGuid)
               .SetDisplayName(FocusedRagingSongDisplayName)
@@ -567,7 +608,7 @@ namespace PrestigePlus.PrestigeClasses
         private static readonly string FocusedSacredWeaponGuid4 = "{191B8C30-3ACF-4BBA-96B4-1D7F2A087DE0}";
         public static BlueprintProgression FocusedSacredWeaponFeat()
         {
-            var icon = FeatureRefs.BullRushMythicFeat.Reference.Get().Icon;
+            var icon = FeatureRefs.SacredWeaponEnchantFeature.Reference.Get().Icon;
 
             var feat = FeatureConfigurator.New(FocusedSacredWeapon1, FocusedSacredWeaponGuid1)
               .SetDisplayName(FocusedSacredWeaponDisplayName)
@@ -628,7 +669,7 @@ namespace PrestigePlus.PrestigeClasses
         private const string AnchoriteFavoredEnemyDescription = "AnchoriteAnchoriteFavoredEnemy.Description";
         public static BlueprintProgression AnchoriteFavoredEnemyFeat()
         {
-            var icon = FeatureRefs.BullRushMythicFeat.Reference.Get().Icon;
+            var icon = FeatureSelectionRefs.FavoriteEnemySelection.Reference.Get().Icon;
 
             return ProgressionConfigurator.New(AnchoriteFavoredEnemy, AnchoriteFavoredEnemyGuid)
               .SetDisplayName(AnchoriteFavoredEnemyDisplayName)
@@ -652,45 +693,29 @@ namespace PrestigePlus.PrestigeClasses
         public static void FocusedFeat1Feat()
         {
             var icon = AbilityRefs.Thoughtsense.Reference.Get().Icon;
-            //"DervishDance": "bdaf6052-e215-4eec-9ad5-c1b3f380cae0",
             FeatureSelectionConfigurator.New(FocusedFeat1, FocusedFeat1Guid)
               .SetDisplayName(FocusedFeatDisplayName)
               .SetDescription(FocusedFeatDescription)
-              .SetIcon(icon)
+              //.SetIcon(icon)
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
-              .AddToAllFeatures("bdaf6052-e215-4eec-9ad5-c1b3f380cae0")
-              .AddToAllFeatures(FeatureRefs.AugmentSummoning.ToString())
+              .AddToAllFeatures(SAFocusedAnimalCompanion())
+              .AddToAllFeatures(FocusedBaneFeat())
+              .AddToAllFeatures(FocusedRagingSongFeat())
+              .AddToAllFeatures(AnchoriteFavoredEnemyFeat())
+              .AddToAllFeatures(FocusedSacredWeaponFeat())
               .Configure();
         }
 
-        private const string FocusedFeat2 = "AnchoriteofDawn.FocusedFeat2";
-        private static readonly string FocusedFeat2Guid = "{0E7CDB8E-1EFE-4D77-AAFD-D7998CF1C9B1}";
-
-        public static void FocusedFeat2Feat()
-        {
-            var icon = AbilityRefs.Thoughtsense.Reference.Get().Icon;
-            //"DervishDance": "bdaf6052-e215-4eec-9ad5-c1b3f380cae0",
-            FeatureSelectionConfigurator.New(FocusedFeat2, FocusedFeat2Guid)
-              .SetDisplayName(FocusedFeatDisplayName)
-              .SetDescription(FocusedFeatDescription)
-              .SetIcon(icon)
-              .SetIgnorePrerequisites(false)
-              .SetObligatory(false)
-              .AddToAllFeatures("bdaf6052-e215-4eec-9ad5-c1b3f380cae0")
-              .AddToAllFeatures(FeatureRefs.AugmentSummoning.ToString())
-              .Configure();
-        }
-
-        private const string SolarDefense1 = "Anchorite.SolarDefense1";
-        private static readonly string SolarDefense1Guid = "{288619F4-7A85-4C07-B8F2-D2D67FCE15C2}";
+        private const string SolarDefense1Feat = "Anchorite.SolarDefense1";
+        public static readonly string SolarDefense1Guid = "{288619F4-7A85-4C07-B8F2-D2D67FCE15C2}";
 
         internal const string AnchoriteSolarDefenseDisplayName = "AnchoriteSolarDefense.Name";
         private const string AnchoriteSolarDefenseDescription = "AnchoriteSolarDefense.Description";
         public static BlueprintFeature SASolarDefense1()
         {
             var icon = FeatureRefs.AngelHaloArchonsAuraFeature.Reference.Get().Icon;
-            return FeatureConfigurator.New(SolarDefense1, SolarDefense1Guid)
+            return FeatureConfigurator.New(SolarDefense1Feat, SolarDefense1Guid)
               .SetDisplayName(AnchoriteSolarDefenseDisplayName)
               .SetDescription(AnchoriteSolarDefenseDescription)
               .SetIcon(icon)
@@ -698,7 +723,7 @@ namespace PrestigePlus.PrestigeClasses
         }
 
         private const string SolarDefense2 = "Anchorite.SolarDefense2";
-        private static readonly string SolarDefense2Guid = "{E8851BCE-4A3B-4C4A-BA59-95CDAD6EB33A}";
+        public static readonly string SolarDefense2Guid = "{E8851BCE-4A3B-4C4A-BA59-95CDAD6EB33A}";
         public static BlueprintFeature SASolarDefense2()
         {
             var icon = FeatureRefs.AngelHaloArchonsAuraFeature.Reference.Get().Icon;
@@ -706,6 +731,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetDisplayName(AnchoriteSolarDefenseDisplayName)
               .SetDescription(AnchoriteSolarDefenseDescription)
               .SetIcon(icon)
+              .AddPrerequisiteFeature(SolarDefense1Guid)
               .Configure();
         }
     }

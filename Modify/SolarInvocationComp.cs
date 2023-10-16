@@ -1,4 +1,5 @@
-﻿using BlueprintCore.Utils;
+﻿using BlueprintCore.Blueprints.References;
+using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
 using Kingmaker.Enums;
 using Kingmaker.PubSubSystem;
@@ -16,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace PrestigePlus.Modify
 {
-    internal class SolarInvocationComp : UnitBuffComponentDelegate, IInitiatorRulebookHandler<RuleCalculateAttackBonus>, IRulebookHandler<RuleCalculateAttackBonus>, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleAttackWithWeapon>, IRulebookHandler<RuleAttackWithWeapon>
+    internal class SolarInvocationComp : UnitBuffComponentDelegate, IInitiatorRulebookHandler<RuleCalculateAttackBonus>, IRulebookHandler<RuleCalculateAttackBonus>, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleAttackWithWeapon>, IRulebookHandler<RuleAttackWithWeapon>, ITargetRulebookHandler<RuleCalculateAC>, IRulebookHandler<RuleCalculateAC>, ITargetRulebookSubscriber, IInitiatorRulebookHandler<RuleSavingThrow>, IRulebookHandler<RuleSavingThrow>
     {
         void IRulebookHandler<RuleCalculateAttackBonus>.OnEventAboutToTrigger(RuleCalculateAttackBonus evt)
         {
@@ -54,5 +55,34 @@ namespace PrestigePlus.Modify
             else if (level >= 1) num += 1;
             return num;
         }
+
+        void IRulebookHandler<RuleCalculateAC>.OnEventAboutToTrigger(RuleCalculateAC evt)
+        {
+            var caster = Buff?.Context?.MaybeCaster;
+            if (caster == null || !caster.HasFact(Def1) || (!caster.HasFact(Def2) && caster != Owner)) return;
+            int bonus = GetBonus();
+            evt.AddModifier(bonus, base.Fact, ModifierDescriptor.Sacred);
+        }
+
+        void IRulebookHandler<RuleCalculateAC>.OnEventDidTrigger(RuleCalculateAC evt)
+        {
+            
+        }
+
+        void IRulebookHandler<RuleSavingThrow>.OnEventAboutToTrigger(RuleSavingThrow evt)
+        {
+            var caster = Buff?.Context?.MaybeCaster;
+            if (caster == null || !caster.HasFact(Def1) || (!caster.HasFact(Def2) && caster != Owner)) return;
+            int bonus = GetBonus();
+            evt.AddTemporaryModifier(evt.Initiator.Stats.SaveReflex.AddModifier(bonus, base.Runtime, ModifierDescriptor.Dodge));
+        }
+
+        void IRulebookHandler<RuleSavingThrow>.OnEventDidTrigger(RuleSavingThrow evt)
+        {
+            
+        }
+
+        private static BlueprintFeatureReference Def1 = BlueprintTool.GetRef<BlueprintFeatureReference>(AnchoriteofDawn.SolarDefense1Guid);
+        private static BlueprintFeatureReference Def2 = BlueprintTool.GetRef<BlueprintFeatureReference>(AnchoriteofDawn.SolarDefense2Guid);
     }
 }
