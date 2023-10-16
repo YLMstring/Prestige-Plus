@@ -36,6 +36,7 @@ using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.Abilities;
 using Pathfinding.Voxels;
 using Kingmaker.UnitLogic.FactLogic;
+using Kingmaker.UnitLogic.Mechanics.Components;
 
 namespace PrestigePlus.PrestigeClasses
 {
@@ -143,6 +144,8 @@ namespace PrestigePlus.PrestigeClasses
               .AddToAllFeatures(FeatureRefs.AugmentSummoning.ToString())
               .AddToAllFeatures(SASolarDefense1())
               .AddToAllFeatures(SASolarDefense2())
+              .AddToAllFeatures(SolarWeaponsFeat())
+              .AddToAllFeatures(SolarWeapons4Guid)
               .AddToAllFeatures(SASunBlade())
               .Configure(delayed: true);
         }
@@ -199,12 +202,27 @@ namespace PrestigePlus.PrestigeClasses
                         .IncreaseByStat(StatType.Charisma))
                 .Configure();
 
+            var solarweaponremove = ActionsBuilder.New().RemoveBuff(SolarWeaponsBuffGuid).RemoveBuff(SolarWeaponsBuffplusGuid).Build();
+            var solarweapongive2 = ActionsBuilder.New()
+                .ApplyBuffPermanent(SolarWeaponsBuffplusGuid)
+                .Build();
+            var solarweapongive = ActionsBuilder.New()
+                .ApplyBuffPermanent(SolarWeaponsBuffGuid)
+                .Conditional(ConditionsBuilder.New().CasterHasFact(SolarWeapons4Guid).Build(), ifTrue: solarweapongive2)
+                .Build();
+            var solarweapon = ActionsBuilder.New()
+                .Conditional(ConditionsBuilder.New().HasFact(SolarWeapons1BuffGuid).Build(), ifTrue: solarweapongive)
+                .Conditional(ConditionsBuilder.New().HasFact(SolarWeapons2BuffGuid).Build(), ifTrue: solarweapongive)
+                .Conditional(ConditionsBuilder.New().HasFact(SolarWeapons3BuffGuid).Build(), ifTrue: solarweapongive)
+                .Build();
+
             var Buff2 = BuffConfigurator.New(SolarBuff2, SolarBuffGuid2)
               .SetDisplayName(AnchoriteofDawnSolarInvocationDisplayName)
               .SetDescription(AnchoriteofDawnSolarInvocationDescription)
               .SetIcon(icon)
               .AddComponent<SolarInvocationComp>()
               .AddIncreaseAllSpellsDC(spellsOnly: true, value: 1)
+              .AddBuffActions(deactivated: solarweaponremove, activated: solarweapon)
               .Configure();
 
             var givebuff = ActionsBuilder.New().ApplyBuffPermanent(Buff2).Build();
@@ -216,7 +234,7 @@ namespace PrestigePlus.PrestigeClasses
                 .SetAffectDead(false)
                 .SetShape(AreaEffectShape.Cylinder)
                 .SetSize(FeetExtension.Feet(33))
-                .AddAbilityAreaEffectBuff(Buff2, condition: ConditionsBuilder.New().CasterHasFact(BaskRadianceGuid).IsCaster(false).Build())
+                .AddAbilityAreaEffectBuff(Buff2, condition: ConditionsBuilder.New().CasterHasFact(BaskRadianceGuid).IsCaster(true).Build())
                 .Configure();
 
             var Buff3 = BuffConfigurator.New(SolarBuff3, SolarBuffGuid3)
@@ -242,11 +260,14 @@ namespace PrestigePlus.PrestigeClasses
               .AddIncreaseAllSpellsDC(spellsOnly: true, value: 1)
               .AddBuffActions(activated: ActionsBuilder.New()
                 .OnPets(givebuff)
+                .Conditional(ConditionsBuilder.New().HasFact(SolarWeapons1BuffGuid).Build(), ifTrue: solarweapongive)
+                .Conditional(ConditionsBuilder.New().HasFact(SolarWeapons2BuffGuid).Build(), ifTrue: solarweapongive)
+                .Conditional(ConditionsBuilder.New().HasFact(SolarWeapons3BuffGuid).Build(), ifTrue: solarweapongive)
                 .Conditional(ConditionsBuilder.New()
                     .HasBuff(Buff5).Build(),
                     ifFalse: ActionsBuilder.New().RemoveSelf().Build())
                 .Build(),
-                deactivated: ActionsBuilder.New().OnPets(retrivebuff).Build())
+                deactivated: ActionsBuilder.New().OnPets(retrivebuff).RemoveBuff(SolarWeaponsBuffGuid).RemoveBuff(SolarWeaponsBuffplusGuid).Build())
               .AddAuraFeatureComponent(Buff3)
               .Configure();
 
@@ -258,8 +279,11 @@ namespace PrestigePlus.PrestigeClasses
               .AddIncreaseAllSpellsDC(spellsOnly: true, value: 1)
               .AddBuffActions(activated: ActionsBuilder.New()
                 .OnPets(givebuff)
+                .Conditional(ConditionsBuilder.New().HasFact(SolarWeapons1BuffGuid).Build(), ifTrue: solarweapongive)
+                .Conditional(ConditionsBuilder.New().HasFact(SolarWeapons2BuffGuid).Build(), ifTrue: solarweapongive)
+                .Conditional(ConditionsBuilder.New().HasFact(SolarWeapons3BuffGuid).Build(), ifTrue: solarweapongive)
                 .Build(), 
-                deactivated: ActionsBuilder.New().OnPets(retrivebuff).Build())
+                deactivated: ActionsBuilder.New().OnPets(retrivebuff).RemoveBuff(SolarWeaponsBuffGuid).RemoveBuff(SolarWeaponsBuffplusGuid).Build())
               .AddAuraFeatureComponent(Buff3)
               .Configure();
 
@@ -299,10 +323,11 @@ namespace PrestigePlus.PrestigeClasses
                 .SetDeactivateImmediately()
                 .Configure();
 
-            FeatureConfigurator.New(FreeSolarInvocation, FreeSolarInvocationGuid)
+            FeatureConfigurator.New(FreeSolarInvocation, FreeSolarInvocationGuid, FeatureGroup.MythicAbility)
               .SetDisplayName(FreeInvocationDisplayName)
               .SetDescription(FreeInvocationDescription)
               .SetIcon(icon)
+              .AddPrerequisiteFeature(ExtraInvocationsGuid)
               .Configure();
 
             var action = ActionsBuilder.New().ApplyBuff(Buff5, durationValue: ContextDuration.Fixed(2)).Build();
@@ -377,7 +402,7 @@ namespace PrestigePlus.PrestigeClasses
 
         private static BlueprintFeature CreateSunbeam()
         {
-            var icon = AbilityRefs.SunbeamAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.Sunbeam.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(SunbeamAblityRes, SunbeamAblityResGuid)
                 .SetMaxAmount(
@@ -388,12 +413,12 @@ namespace PrestigePlus.PrestigeClasses
                 .Configure();
             var ability = AbilityConfigurator.New(SunbeamAblity, SunbeamAblityGuid)
                 .CopyFrom(
-                AbilityRefs.SunbeamAbility,
+                AbilityRefs.Sunbeam,
                 typeof(AbilityEffectRunAction),
+                typeof(AbilityDeliverProjectile),
+                typeof(ContextRankConfig),
                 typeof(SpellComponent))
                 .SetType(AbilityType.SpellLike)
-                .AddAbilityCasterInCombat(true)
-                .AddContextRankConfig(ContextRankConfigs.CharacterLevel())
                 .AddReplaceAbilityDC(stat: StatType.Charisma)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: SunbeamAblityResGuid)
                 .Configure();
@@ -448,7 +473,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetIsClassFeature(true)
               .AddFacts(new() { ability })
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
-              .AddAutoMetamagic(new() { ability }, metamagic: Metamagic.Quicken)
+              .AddAutoMetamagic(new() { ability }, metamagic: Metamagic.Quicken, allowedAbilities: Kingmaker.Designers.Mechanics.Facts.AutoMetamagic.AllowedType.Any)
               .Configure();
         }
 
@@ -496,7 +521,7 @@ namespace PrestigePlus.PrestigeClasses
 
         public static BlueprintFeature SAFocusedAnimalCompanion()
         {
-            var icon = FeatureRefs.AnimalBlessingFeature.Reference.Get().Icon;
+            var icon = FeatureSelectionRefs.AnimalCompanionSelectionDruid.Reference.Get().Icon;
             return FeatureConfigurator.New(FocusedAnimalCompanion, FocusedAnimalCompanionGuid)
               .SetDisplayName(AnchoriteFocusedAnimalCompanionDisplayName)
               .SetDescription(AnchoriteFocusedAnimalCompanionDescription)
@@ -714,7 +739,7 @@ namespace PrestigePlus.PrestigeClasses
         private const string AnchoriteSolarDefenseDescription = "AnchoriteSolarDefense.Description";
         public static BlueprintFeature SASolarDefense1()
         {
-            var icon = FeatureRefs.AngelHaloArchonsAuraFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.InspiringRecovery.Reference.Get().Icon;
             return FeatureConfigurator.New(SolarDefense1Feat, SolarDefense1Guid)
               .SetDisplayName(AnchoriteSolarDefenseDisplayName)
               .SetDescription(AnchoriteSolarDefenseDescription)
@@ -726,12 +751,208 @@ namespace PrestigePlus.PrestigeClasses
         public static readonly string SolarDefense2Guid = "{E8851BCE-4A3B-4C4A-BA59-95CDAD6EB33A}";
         public static BlueprintFeature SASolarDefense2()
         {
-            var icon = FeatureRefs.AngelHaloArchonsAuraFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.InspiringRecovery.Reference.Get().Icon;
             return FeatureConfigurator.New(SolarDefense2, SolarDefense2Guid)
               .SetDisplayName(AnchoriteSolarDefenseDisplayName)
               .SetDescription(AnchoriteSolarDefenseDescription)
               .SetIcon(icon)
               .AddPrerequisiteFeature(SolarDefense1Guid)
+              .Configure();
+        }
+
+        private const string SolarWeaponspro = "Anchorite.SolarWeaponspro";
+        private static readonly string SolarWeaponsproGuid = "{B42E313D-E2C2-4318-A643-16DE6F039B39}";
+
+        private const string SolarWeapons = "Anchorite.SolarWeapons";
+        private static readonly string SolarWeaponsGuid = "{C84FC245-EBCC-4FEA-B11F-EFA4BBDC9293}";
+
+        private const string SolarWeapons2 = "Anchorite.SolarWeapons2";
+        private static readonly string SolarWeapons2Guid = "{EA533457-8B2D-4E77-8CAB-016E1755480E}";
+
+        private const string SolarWeapons3 = "Anchorite.SolarWeapons3";
+        private static readonly string SolarWeapons3Guid = "{9CE6A893-E2B9-423C-8872-2437BDEE339B}";
+
+        private const string SolarWeapons4 = "Anchorite.SolarWeapons4";
+        private static readonly string SolarWeapons4Guid = "{27A12886-91E9-486C-ACE8-B8D0C224C1FB}";
+
+        internal const string SolarWeaponsDisplayName = "AnchoriteSolarWeapons.Name";
+        private const string SolarWeaponsDescription = "AnchoriteSolarWeapons.Description";
+
+        private const string SolarWeaponsBuff = "Anchorite.SolarWeaponsBuff";
+        private static readonly string SolarWeaponsBuffGuid = "{847C0D5B-645B-44DD-BAA4-4394B4E70745}";
+
+        private const string SolarWeaponsBuffplus = "Anchorite.SolarWeaponsBuffplus";
+        private static readonly string SolarWeaponsBuffplusGuid = "{6AB7B3D4-92BC-4329-85A1-C732A2E60760}";
+
+        private const string SolarWeapons1Buff = "Anchorite.SolarWeapons1Buff";
+        private static readonly string SolarWeapons1BuffGuid = "{7BE7C008-F328-4171-9260-4B9160D3E734}";
+
+        private const string SolarWeapons2Buff = "Anchorite.SolarWeapons2Buff";
+        private static readonly string SolarWeapons2BuffGuid = "{6036FE18-493D-43FD-969F-34AA1DC2439F}";
+
+        private const string SolarWeaponsAblity = "Anchorite.UseSolarWeapons";
+        private static readonly string SolarWeaponsAblityGuid = "{F8023F5E-3E4A-46E9-AD70-4F156A2DE8F5}";
+
+        private const string SolarWeapons2Ablity = "Anchorite.UseSolarWeapons2";
+        private static readonly string SolarWeapons2AblityGuid = "{14531E1A-59AC-4A62-BBD6-B574899D0772}";
+
+        private const string SolarWeapons3Ablity = "Anchorite.UseSolarWeapons3";
+        private static readonly string SolarWeapons3AblityGuid = "{2F935ABE-3D11-40DE-A35A-AFE774B848C3}";
+
+        private const string SolarWeapons3Buff = "Anchorite.SolarWeapons3Buff";
+        private static readonly string SolarWeapons3BuffGuid = "{3E2C82A8-F523-4AD9-830D-AC17479E1128}";
+
+        public static BlueprintProgression SolarWeaponsFeat()
+        {
+            var icon = AbilityRefs.Heroism.Reference.Get().Icon;
+
+            var Buff = BuffConfigurator.New(SolarWeaponsBuff, SolarWeaponsBuffGuid)
+             .SetDisplayName(SolarWeaponsDisplayName)
+             .SetDescription(SolarWeaponsDescription)
+             .SetIcon(icon)
+             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Flaming.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.PrimaryHand)
+             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Flaming.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.SecondaryHand)
+             .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+             .Configure();
+
+            var Buffplus = BuffConfigurator.New(SolarWeaponsBuffplus, SolarWeaponsBuffplusGuid)
+             .SetDisplayName(SolarWeaponsDisplayName)
+             .SetDescription(SolarWeaponsDescription)
+             .SetIcon(icon)
+             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.FlamingBurst.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.PrimaryHand)
+             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.FlamingBurst.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.SecondaryHand)
+             .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+             .Configure();
+
+            var Buff1 = BuffConfigurator.New(SolarWeapons1Buff, SolarWeapons1BuffGuid)
+             .SetDisplayName(SolarWeaponsDisplayName)
+             .SetDescription(SolarWeaponsDescription)
+             .SetIcon(icon)
+             .AddUniqueBuff()
+             .Configure();
+
+            var Buff2 = BuffConfigurator.New(SolarWeapons2Buff, SolarWeapons2BuffGuid)
+             .SetDisplayName(SolarWeaponsDisplayName)
+             .SetDescription(SolarWeaponsDescription)
+             .SetIcon(icon)
+             .AddUniqueBuff()
+             .Configure();
+
+            var Buff3 = BuffConfigurator.New(SolarWeapons3Buff, SolarWeapons3BuffGuid)
+             .SetDisplayName(SolarWeaponsDisplayName)
+             .SetDescription(SolarWeaponsDescription)
+             .SetIcon(icon)
+             .AddUniqueBuff()
+             .Configure();
+
+            var ability = AbilityConfigurator.New(SolarWeaponsAblity, SolarWeaponsAblityGuid)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Point)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                    .Conditional(conditions: ConditionsBuilder.New().HasFact(Buff1).Build(),
+                    ifFalse: ActionsBuilder.New()
+                        .ApplyBuffPermanent(Buff1)
+                        .Build(),
+                    ifTrue: ActionsBuilder.New()
+                        .RemoveBuff(Buff1)
+                        .Build())
+                    .Build())
+                .SetDisplayName(SolarWeaponsDisplayName)
+                .SetDescription(SolarWeaponsDescription)
+                .SetIcon(icon)
+                .SetRange(AbilityRange.Close)
+                .SetType(AbilityType.Special)
+                .SetCanTargetEnemies(false)
+                .SetCanTargetFriends(true)
+                .SetCanTargetPoint(false)
+                .SetCanTargetSelf(true)
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(SolarWeapons2Ablity, SolarWeapons2AblityGuid)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Point)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                    .Conditional(conditions: ConditionsBuilder.New().HasFact(Buff2).Build(),
+                    ifFalse: ActionsBuilder.New()
+                        .ApplyBuffPermanent(Buff2)
+                        .Build(),
+                    ifTrue: ActionsBuilder.New()
+                        .RemoveBuff(Buff2)
+                        .Build())
+                    .Build())
+                .SetDisplayName(SolarWeaponsDisplayName)
+                .SetDescription(SolarWeaponsDescription)
+                .SetIcon(icon)
+                .SetRange(AbilityRange.Close)
+                .SetType(AbilityType.Special)
+                .SetCanTargetEnemies(false)
+                .SetCanTargetFriends(true)
+                .SetCanTargetPoint(false)
+                .SetCanTargetSelf(true)
+                .Configure();
+
+            var ability3 = AbilityConfigurator.New(SolarWeapons3Ablity, SolarWeapons3AblityGuid)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Point)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                    .Conditional(conditions: ConditionsBuilder.New().HasFact(Buff3).Build(),
+                    ifFalse: ActionsBuilder.New()
+                        .ApplyBuffPermanent(Buff3)
+                        .Build(),
+                    ifTrue: ActionsBuilder.New()
+                        .RemoveBuff(Buff3)
+                        .Build())
+                    .Build())
+                .SetDisplayName(SolarWeaponsDisplayName)
+                .SetDescription(SolarWeaponsDescription)
+                .SetIcon(icon)
+                .SetRange(AbilityRange.Close)
+                .SetType(AbilityType.Special)
+                .SetCanTargetEnemies(false)
+                .SetCanTargetFriends(true)
+                .SetCanTargetPoint(false)
+                .SetCanTargetSelf(true)
+                .Configure();
+
+            var feat1 = FeatureConfigurator.New(SolarWeapons, SolarWeaponsGuid)
+              .SetDisplayName(SolarWeaponsDisplayName)
+              .SetDescription(SolarWeaponsDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddFacts(new List<Blueprint<BlueprintUnitFactReference>>() { ability })
+              .Configure();
+
+            var feat2 = FeatureConfigurator.New(SolarWeapons2, SolarWeapons2Guid)
+              .SetDisplayName(SolarWeaponsDisplayName)
+              .SetDescription(SolarWeaponsDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddFacts(new List<Blueprint<BlueprintUnitFactReference>>() { ability2 })
+              .Configure();
+
+            var feat3 = FeatureConfigurator.New(SolarWeapons3, SolarWeapons3Guid)
+              .SetDisplayName(SolarWeaponsDisplayName)
+              .SetDescription(SolarWeaponsDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddFacts(new List<Blueprint<BlueprintUnitFactReference>>() { ability3 })
+              .Configure();
+
+            FeatureConfigurator.New(SolarWeapons4, SolarWeapons4Guid)
+              .SetDisplayName(SolarWeaponsDisplayName)
+              .SetDescription(SolarWeaponsDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddPrerequisiteFeature(SolarWeaponsGuid)
+              .Configure();
+
+            return ProgressionConfigurator.New(SolarWeaponspro, SolarWeaponsproGuid)
+              .SetDisplayName(SolarWeaponsDisplayName)
+              .SetDescription(SolarWeaponsDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToClasses(ArchetypeGuid)
+              .AddToLevelEntry(1, feat1)
+              .AddToLevelEntry(5, feat2)
+              .AddToLevelEntry(10, feat3)
               .Configure();
         }
     }
