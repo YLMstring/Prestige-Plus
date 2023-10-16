@@ -511,7 +511,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetDescription(FocusedBaneDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .SetGiveFeaturesForPreviousLevels(false)
+              .SetGiveFeaturesForPreviousLevels(true)
               .AddPrerequisiteClassLevel(CharacterClassRefs.InquisitorClass.ToString(), 1)
               .AddToClasses(CharacterClassRefs.InquisitorClass.ToString())
               .AddToClasses(ArchetypeGuid)
@@ -534,7 +534,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetDescription(FocusedRagingSongDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .SetGiveFeaturesForPreviousLevels(false)
+              .SetGiveFeaturesForPreviousLevels(true)
               .AddPrerequisiteClassLevel(CharacterClassRefs.SkaldClass.ToString(), 1)
               .AddToClasses(CharacterClassRefs.SkaldClass.ToString())
               .AddToClasses(ArchetypeGuid)
@@ -606,7 +606,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetDescription(FocusedSacredWeaponDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .SetGiveFeaturesForPreviousLevels(false)
+              .SetGiveFeaturesForPreviousLevels(true)
               .AddPrerequisiteClassLevel(CharacterClassRefs.WarpriestClass.ToString(), 1)
               .AddToClasses(CharacterClassRefs.WarpriestClass.ToString())
               .AddToClasses(ArchetypeGuid)
@@ -618,6 +618,94 @@ namespace PrestigePlus.PrestigeClasses
               .AddToLevelEntry(15, feat3)
               .AddToLevelEntry(16, FeatureRefs.SacredWeaponEnchantPlus4.ToString())
               .AddToLevelEntry(20, feat4, FeatureRefs.SacredWeaponEnchantPlus5.ToString())
+              .Configure();
+        }
+
+        private const string AnchoriteFavoredEnemy = "Anchorite.AnchoriteFavoredEnemy";
+        private static readonly string AnchoriteFavoredEnemyGuid = "{4937E730-03C3-43A5-BD36-F1AF2B5280F1}";
+
+        internal const string AnchoriteFavoredEnemyDisplayName = "AnchoriteAnchoriteFavoredEnemy.Name";
+        private const string AnchoriteFavoredEnemyDescription = "AnchoriteAnchoriteFavoredEnemy.Description";
+        public static BlueprintProgression AnchoriteFavoredEnemyFeat()
+        {
+            var icon = FeatureRefs.BullRushMythicFeat.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(AnchoriteFavoredEnemy, AnchoriteFavoredEnemyGuid)
+              .SetDisplayName(AnchoriteFavoredEnemyDisplayName)
+              .SetDescription(AnchoriteFavoredEnemyDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddPrerequisiteClassLevel(CharacterClassRefs.RangerClass.ToString(), 1)
+              .AddToClasses(ArchetypeGuid)
+              .AddToLevelEntry(4, FeatureSelectionRefs.FavoriteEnemySelection.ToString(), FeatureSelectionRefs.FavoriteEnemyRankUp.ToString())
+              .AddToLevelEntry(9, FeatureSelectionRefs.FavoriteEnemySelection.ToString(), FeatureSelectionRefs.FavoriteEnemyRankUp.ToString())
+              .Configure();
+        }
+
+        private const string FocusedFeat1 = "AnchoriteofDawn.FocusedFeat1";
+        private static readonly string FocusedFeat1Guid = "{64F6953E-9F78-4245-A6B4-9950CED96AB0}";
+
+        internal const string FocusedFeatDisplayName = "AnchoriteofDawnFocusedFeat.Name";
+        private const string FocusedFeatDescription = "AnchoriteofDawnFocusedFeat.Description";
+
+        public static void FocusedFeat1Feat()
+        {
+            var icon = AbilityRefs.Thoughtsense.Reference.Get().Icon;
+            //"DervishDance": "bdaf6052-e215-4eec-9ad5-c1b3f380cae0",
+            FeatureSelectionConfigurator.New(FocusedFeat1, FocusedFeat1Guid)
+              .SetDisplayName(FocusedFeatDisplayName)
+              .SetDescription(FocusedFeatDescription)
+              .SetIcon(icon)
+              .SetIgnorePrerequisites(false)
+              .SetObligatory(false)
+              .AddToAllFeatures("bdaf6052-e215-4eec-9ad5-c1b3f380cae0")
+              .AddToAllFeatures(FeatureRefs.AugmentSummoning.ToString())
+              .Configure();
+        }
+
+        private const string FocusedFeat2 = "AnchoriteofDawn.FocusedFeat2";
+        private static readonly string FocusedFeat2Guid = "{0E7CDB8E-1EFE-4D77-AAFD-D7998CF1C9B1}";
+
+        public static void FocusedFeat2Feat()
+        {
+            var icon = AbilityRefs.Thoughtsense.Reference.Get().Icon;
+            //"DervishDance": "bdaf6052-e215-4eec-9ad5-c1b3f380cae0",
+            FeatureSelectionConfigurator.New(FocusedFeat2, FocusedFeat2Guid)
+              .SetDisplayName(FocusedFeatDisplayName)
+              .SetDescription(FocusedFeatDescription)
+              .SetIcon(icon)
+              .SetIgnorePrerequisites(false)
+              .SetObligatory(false)
+              .AddToAllFeatures("bdaf6052-e215-4eec-9ad5-c1b3f380cae0")
+              .AddToAllFeatures(FeatureRefs.AugmentSummoning.ToString())
+              .Configure();
+        }
+
+        private const string SolarDefense1 = "Anchorite.SolarDefense1";
+        private static readonly string SolarDefense1Guid = "{288619F4-7A85-4C07-B8F2-D2D67FCE15C2}";
+
+        internal const string AnchoriteSolarDefenseDisplayName = "AnchoriteSolarDefense.Name";
+        private const string AnchoriteSolarDefenseDescription = "AnchoriteSolarDefense.Description";
+        public static BlueprintFeature SASolarDefense1()
+        {
+            var icon = FeatureRefs.AngelHaloArchonsAuraFeature.Reference.Get().Icon;
+            return FeatureConfigurator.New(SolarDefense1, SolarDefense1Guid)
+              .SetDisplayName(AnchoriteSolarDefenseDisplayName)
+              .SetDescription(AnchoriteSolarDefenseDescription)
+              .SetIcon(icon)
+              .Configure();
+        }
+
+        private const string SolarDefense2 = "Anchorite.SolarDefense2";
+        private static readonly string SolarDefense2Guid = "{E8851BCE-4A3B-4C4A-BA59-95CDAD6EB33A}";
+        public static BlueprintFeature SASolarDefense2()
+        {
+            var icon = FeatureRefs.AngelHaloArchonsAuraFeature.Reference.Get().Icon;
+            return FeatureConfigurator.New(SolarDefense2, SolarDefense2Guid)
+              .SetDisplayName(AnchoriteSolarDefenseDisplayName)
+              .SetDescription(AnchoriteSolarDefenseDescription)
+              .SetIcon(icon)
               .Configure();
         }
     }
