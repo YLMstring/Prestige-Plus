@@ -1,4 +1,4 @@
-# Prestige Plus v1.5.0 for WoTR 
+# Prestige Plus v1.6.0 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - Add Grapple Mechanic!
@@ -15,7 +15,9 @@
 - [Improved Ki Throw](https://www.d20pfsrd.com/feats/combat-feats/improved-ki-throw-combat/)
 - [Binding Throw](https://www.d20pfsrd.com/feats/combat-feats/binding-throw-combat/)
 - [Enhanced Ki Throw](https://www.d20pfsrd.com/feats/combat-feats/enhanced-ki-throw-combat/)
-- More coming soon!
+- [Smashing Style](https://www.d20pfsrd.com/feats/combat-feats/smashing-style-combat-style/)
+- [Crush Armor](https://www.d20pfsrd.com/feats/combat-feats/weapon-trick-combat/)
+- [Sunder Storm](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/champion/champion-path-abilities/sunder-storm-ex/)
 ### [Grapple Mechanic](https://www.d20pfsrd.com/gamemastering/Combat/#Grapple)
 - This is how I implement it:
 1. There are 3 kinds of grapples in the game. My Grapple Mechanic is very close to tabletop. Shifter grapples stay owlcat-brew but once the shifter takes Grapple (Improved Grapple) feat, their grapple mechanics would be turned into mine. Finally, monster grapples stay the way it is in vanilla.
@@ -33,6 +35,10 @@
 - At level 5 you can learn all necromancy spells (require 13 int, full caster)
 - Or become a ghoul! (you're undead so incompatible with lichdom)
 - Or become a vampire! (require blood drinker, incompatible with lichdom)
+### [Anchorite of Dawn Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/a-b/anchorite/)
+- Focused Sacred Weapon can't be turned off once chosen (it will become very complicated for me otherwise)
+#### Homebrew Options:  
+- Blossoming Light: a mythic ability to use Solar Invocation for free!
 ### [Arcane Archer Class](https://www.d20pfsrd.com/classes/prestige-classes/core-rulebook/arcane-archer/)   
 - A True Imbue Arrow is always with a quickened spell XD
 - And we have [Deadeye Devotee](https://aonprd.com/ArchetypeDisplay.aspx?FixedName=Arcane%20Archer%20Deadeye%20Devotee)!
@@ -118,6 +124,7 @@
 - [Ripple in Still Water](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/ripple-in-still-water-combat/): From Path of War
 - [Lesser Spell Synthesis](https://www.d20pfsrd.com/feats/general-feats/lesser-spell-synthesis/)
 - Where is Spell Synthesis? In [Mystical Mayhem](https://gitgud.io/Kreaddy/mysticalmayhem/)!
+- [Surprising Strategy](https://www.d20pfsrd.com/feats/combat-feats/surprising-strategy-combat/)
 ### New Rogue Talents
 
 - [Another Day](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-advanced-talents/another-day-ex/)
