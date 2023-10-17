@@ -37,6 +37,7 @@ using Kingmaker.UnitLogic.Abilities;
 using Pathfinding.Voxels;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
+using Kingmaker.UnitLogic.Buffs.Components;
 
 namespace PrestigePlus.PrestigeClasses
 {
@@ -591,6 +592,7 @@ namespace PrestigePlus.PrestigeClasses
 
         internal const string FocusedRagingSongDisplayName = "AnchoriteFocusedRagingSong.Name";
         private const string FocusedRagingSongDescription = "AnchoriteFocusedRagingSong.Description";
+
         public static BlueprintProgression FocusedRagingSongFeat()
         {
             var icon = FeatureRefs.RagingSong.Reference.Get().Icon;
