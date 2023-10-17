@@ -738,6 +738,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetDescription(AnchoriteDomainPlusDescription)
               .SetIsClassFeature(true)
               .SetRanks(10)
+              .SetHideInUI(true)
               .Configure();
 
             return ProgressionConfigurator.New(AnchoriteDomainPlus, AnchoriteDomainPlusGuid)

@@ -4000,13 +4000,13 @@
   {
     "Key": "AnchoriteAnchoriteDomainPlus.Name",
     "ProcessTemplates": false,
-    "enGB": "Focused Domain",
-    "zhCN": "领域专攻"
+    "enGB": "Anchorite Domain",
+    "zhCN": "隐者领域"
   },
   {
     "Key": "AnchoriteAnchoriteDomainPlus.Description",
-    "enGB": "The character adds his anchorite of dawn class levels to his effective class level in one class of his choice for the purpose of determining the effects of the chosen class feature.",
-    "zhCN": "角色将晨花隐者职业等级加到他所选择的一个职业的有效职业等级上，并以此来判断被选择的职业能力的效果。"
+    "enGB": "The character adds his anchorite of dawn class levels to all his domains, but it only grants new abilities, without improving old ones or gaining feats.",
+    "zhCN": "角色将晨花隐者职业等级加到他的所有领域等级上，但只能用来获取新能力，不会加强已有能力或是获取专长。"
   },
   {
     "Key": "AnchoriteFocusedBane.Name",
