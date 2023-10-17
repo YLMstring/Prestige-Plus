@@ -17,7 +17,8 @@
 - [Enhanced Ki Throw](https://www.d20pfsrd.com/feats/combat-feats/enhanced-ki-throw-combat/)
 - [Smashing Style](https://www.d20pfsrd.com/feats/combat-feats/smashing-style-combat-style/)
 - [Crush Armor](https://www.d20pfsrd.com/feats/combat-feats/weapon-trick-combat/)
-- [Sunder Storm](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/champion/champion-path-abilities/sunder-storm-ex/)
+- [Sunder Storm](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/champion/champion-path-abilities/sunder-storm-ex/): When you succeed at a sunder combat maneuver check, you drive the shattered pieces of the item into the flesh of its wearer, dealing 1d6 + a number of points equal to your tier of divine damage. Additionally, as a full-round action, you can attempt a sunder combat maneuver against each opponent within reach.
+- [Tear Apart](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/champion/champion-path-abilities/tear-apart-ex/): Your sunder combat maneuver no longer disables armor, but rends it. If the check is successful, deal your weapon damage to the target and reduce the target’s armor bonus, natural armor bonus, or shield bonus by half your tier (minimum 1). If the creature has an enhancement bonus to the bonus you chose, reduce the normal bonus first, then apply any leftover reduction to the enhancement bonus. You can’t reduce the bonus below 0.
 ### [Grapple Mechanic](https://www.d20pfsrd.com/gamemastering/Combat/#Grapple)
 - This is how I implement it:
 1. There are 3 kinds of grapples in the game. My Grapple Mechanic is very close to tabletop. Shifter grapples stay owlcat-brew but once the shifter takes Grapple (Improved Grapple) feat, their grapple mechanics would be turned into mine. Finally, monster grapples stay the way it is in vanilla.
