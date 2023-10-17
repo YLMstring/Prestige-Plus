@@ -17,6 +17,7 @@ namespace PrestigePlus.Modify
 {
     internal class DawnRagingSongComp : UnitBuffComponentDelegate, IInitiatorRulebookHandler<RuleCalculateAttackBonus>, IRulebookHandler<RuleCalculateAttackBonus>, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleAttackWithWeapon>, IRulebookHandler<RuleAttackWithWeapon>, ITargetRulebookSubscriber, IInitiatorRulebookHandler<RuleSavingThrow>, IRulebookHandler<RuleSavingThrow>
     {
+        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         void IRulebookHandler<RuleCalculateAttackBonus>.OnEventAboutToTrigger(RuleCalculateAttackBonus evt)
         {
             var type = evt.Weapon?.Blueprint?.AttackType;
@@ -45,10 +46,11 @@ namespace PrestigePlus.Modify
 
         private int GetBonus()
         {
+            //Logger.Info("start");
             var caster = Buff?.Context?.MaybeCaster;
-            if (caster == null) return 0;
+            if (caster == null) { return 0; }
             var progression = caster.Progression.GetProgression(BlueprintTool.GetRef<BlueprintProgressionReference>(AnchoriteofDawn.FocusedRagingSongGuid));
-            if (progression == null) return 0;
+            if (progression == null) { return 0; }
             int level = progression.Level;
             int num = 0;
             if (level >= 20) num += 6;
@@ -56,6 +58,7 @@ namespace PrestigePlus.Modify
             else if (level >= 12) num += 4;
             else if (level >= 8) num += 3;
             else if (level >= 4) num += 2;
+            //Logger.Info(num.ToString());
             return num;
         }
 
@@ -67,15 +70,15 @@ namespace PrestigePlus.Modify
             if (progression == null) return 0;
             int level = progression.Level;
             int num = 0;
-            if (level >= 16) num += 3;
-            else if (level >= 12) num += 2;
+            if (level >= 16) num += 2;
+            else if (level >= 8) num += 1;
             return num;
         }
 
         void IRulebookHandler<RuleSavingThrow>.OnEventAboutToTrigger(RuleSavingThrow evt)
         {
             int bonus = GetBonus();
-            evt.AddTemporaryModifier(evt.Initiator.Stats.SaveReflex.AddModifier(bonus, base.Runtime, ModifierDescriptor.Rage));
+            evt.AddTemporaryModifier(evt.Initiator.Stats.SaveWill.AddModifier(bonus, base.Runtime, ModifierDescriptor.Rage));
         }
 
         void IRulebookHandler<RuleSavingThrow>.OnEventDidTrigger(RuleSavingThrow evt)
