@@ -588,7 +588,7 @@ namespace PrestigePlus.PrestigeClasses
         }
 
         private const string FocusedRagingSong = "Anchorite.FocusedRagingSong";
-        private static readonly string FocusedRagingSongGuid = "{CEA73061-1C07-48B1-A069-FB5B698219F7}";
+        public static readonly string FocusedRagingSongGuid = "{CEA73061-1C07-48B1-A069-FB5B698219F7}";
 
         internal const string FocusedRagingSongDisplayName = "AnchoriteFocusedRagingSong.Name";
         private const string FocusedRagingSongDescription = "AnchoriteFocusedRagingSong.Description";
@@ -596,6 +596,10 @@ namespace PrestigePlus.PrestigeClasses
         public static BlueprintProgression FocusedRagingSongFeat()
         {
             var icon = FeatureRefs.RagingSong.Reference.Get().Icon;
+
+            BuffConfigurator.For(BuffRefs.InspiredRageEffectBuff)
+                .AddComponent<DawnRagingSongComp>()
+                .Configure();
 
             return ProgressionConfigurator.New(FocusedRagingSong, FocusedRagingSongGuid)
               .SetDisplayName(FocusedRagingSongDisplayName)
