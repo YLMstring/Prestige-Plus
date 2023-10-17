@@ -2,7 +2,7 @@
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - Add Grapple Mechanic!
-- Add Agent of the Grave, Arcane Archer, Deadeye Devotee, Asavir, Chevalier, Halfling Opportunist, Hinterlander, Horizon Walker, Inheritor’s Crusader, Mammoth Rider, Sanguine Angel, Scar Seeker, Shadowdancer, Umbral Agent, Dragon Fury prestige class.
+- Add a bunch of prestige classes!
 - Apart from some minor tweaks, all the homebrew stuff are optional.
 
 ## Featuring
