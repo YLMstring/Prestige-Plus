@@ -17,6 +17,7 @@ using Kingmaker.GameModes;
 using PrestigePlus.Maneuvers;
 using PrestigePlus.BasePrestigeEnhance;
 using PrestigePlus.Archetype;
+using PrestigePlus.Patch;
 
 namespace PrestigePlus
 {
@@ -223,7 +224,7 @@ namespace PrestigePlus
             Logger.Info("Already configured delayed blueprints.");
             return;
           }
-          Initialized = true;
+          Initialized = true; PatchDomain.Patch();
 
           RootConfigurator.ConfigureDelayedBlueprints();
         }

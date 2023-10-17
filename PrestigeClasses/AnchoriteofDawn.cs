@@ -38,6 +38,7 @@ using Pathfinding.Voxels;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Buffs.Components;
+using System.Drawing;
 
 namespace PrestigePlus.PrestigeClasses
 {
@@ -340,6 +341,7 @@ namespace PrestigePlus.PrestigeClasses
               .AddFacts(new() { ability })
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .AddAbilityUseTrigger(action: action, checkSpellSchool: true, isSpellSchool: SpellSchool.Evocation)
+              .AddComponent<DomainProgressionContinue>()
               .Configure();
         }
 
@@ -718,6 +720,46 @@ namespace PrestigePlus.PrestigeClasses
               .Configure();
         }
 
+        private const string AnchoriteDomainPlus = "Anchorite.AnchoriteDomainPlus";
+        private static readonly string AnchoriteDomainPlusGuid = "{3A51D6BA-38E5-4D58-B60B-19DDB4EC131F}";
+
+        private const string AnchoriteDomainPlusfeat = "Anchorite.AnchoriteDomainPlusfeat";
+        public static readonly string AnchoriteDomainPlusfeatGuid = "{9E2EFBD5-9595-4645-B719-30A8C52F7B88}";
+
+        internal const string AnchoriteDomainPlusDisplayName = "AnchoriteAnchoriteDomainPlus.Name";
+        private const string AnchoriteDomainPlusDescription = "AnchoriteAnchoriteDomainPlus.Description";
+
+        public static BlueprintProgression AnchoriteDomainPlusFeat()
+        {
+            //var icon = FeatureSelectionRefs.FavoriteEnemySelection.Reference.Get().Icon;
+
+            var feat1 = FeatureConfigurator.New(AnchoriteDomainPlusfeat, AnchoriteDomainPlusfeatGuid)
+              .SetDisplayName(AnchoriteDomainPlusDisplayName)
+              .SetDescription(AnchoriteDomainPlusDescription)
+              .SetIsClassFeature(true)
+              .SetRanks(10)
+              .Configure();
+
+            return ProgressionConfigurator.New(AnchoriteDomainPlus, AnchoriteDomainPlusGuid)
+              .SetDisplayName(AnchoriteDomainPlusDisplayName)
+              .SetDescription(AnchoriteDomainPlusDescription)
+              //.SetIcon(icon)
+              .SetIsClassFeature(true)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToClasses(ArchetypeGuid)
+              .AddToLevelEntry(1, feat1)
+              .AddToLevelEntry(2, feat1)
+                .AddToLevelEntry(3, feat1)
+                .AddToLevelEntry(4, feat1)
+                .AddToLevelEntry(5, feat1)
+                .AddToLevelEntry(6, feat1)
+                .AddToLevelEntry(7, feat1)
+                .AddToLevelEntry(8, feat1)
+                .AddToLevelEntry(9, feat1)
+                .AddToLevelEntry(10, feat1)
+              .Configure();
+        }
+
         private const string FocusedFeat1 = "AnchoriteofDawn.FocusedFeat1";
         private static readonly string FocusedFeat1Guid = "{64F6953E-9F78-4245-A6B4-9950CED96AB0}";
 
@@ -736,6 +778,7 @@ namespace PrestigePlus.PrestigeClasses
               .AddToAllFeatures(SAFocusedAnimalCompanion())
               .AddToAllFeatures(FocusedBaneFeat())
               .AddToAllFeatures(FocusedRagingSongFeat())
+              .AddToAllFeatures(AnchoriteDomainPlusFeat())
               .AddToAllFeatures(AnchoriteFavoredEnemyFeat())
               .AddToAllFeatures(FocusedSacredWeaponFeat())
               .Configure();

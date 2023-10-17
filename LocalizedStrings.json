@@ -3998,6 +3998,17 @@
     "zhCN": "角色将晨花隐者职业等级加到他所选择的一个职业的有效职业等级上，并以此来判断被选择的职业能力的效果。"
   },
   {
+    "Key": "AnchoriteAnchoriteDomainPlus.Name",
+    "ProcessTemplates": false,
+    "enGB": "Focused Domain",
+    "zhCN": "领域专攻"
+  },
+  {
+    "Key": "AnchoriteAnchoriteDomainPlus.Description",
+    "enGB": "The character adds his anchorite of dawn class levels to his effective class level in one class of his choice for the purpose of determining the effects of the chosen class feature.",
+    "zhCN": "角色将晨花隐者职业等级加到他所选择的一个职业的有效职业等级上，并以此来判断被选择的职业能力的效果。"
+  },
+  {
     "Key": "AnchoriteFocusedBane.Name",
     "ProcessTemplates": false,
     "enGB": "Focused Bane",

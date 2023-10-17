@@ -23,7 +23,16 @@ namespace PrestigePlus.Modify
             {
                 TryUpdateProgression(f);
             }
-            
+            var list2 = FeatureSelectionRefs.SecondDomainsSelection.Reference.Get().m_AllFeatures;
+            foreach (var f in list2)
+            {
+                TryUpdateProgression(f);
+            }
+            var list3 = FeatureSelectionRefs.DruidDomainSelection.Reference.Get().m_AllFeatures;
+            foreach (var f in list3)
+            {
+                TryUpdateProgression(f);
+            }
 
             void TryUpdateProgression(BlueprintFeatureReference fref)
             {
