@@ -160,7 +160,8 @@ namespace PrestigePlus.PrestigeClasses
               .SetDescription(ExploitiveDescription2)
               .SetIcon(icon)
               .AddPrerequisiteClassLevel(ArchetypeGuid, 5)
-              .AddPrerequisiteFeature(SeizetheOpportunity.FeatGuid)
+              .AddFacts(new() { SeizetheOpportunity.ManeuverGuid })
+              //.AddPrerequisiteFeature(SeizetheOpportunity.FeatGuid)
               .AddToFeatureSelection("0d3a3619-9d99-47af-8e47-cb6cc4d26821") //ttt
               .Configure();
 

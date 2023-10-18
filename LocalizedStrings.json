@@ -3119,7 +3119,7 @@
   },
 
   {
-    "Key": "SeizetheOpportunity.Name",
+    "Key": "SeizetheOpportunityFeat.Name",
     // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
     // links to encycolpedia pages.
     "ProcessTemplates": false,
@@ -3128,9 +3128,24 @@
   },
 
   {
-    "Key": "SeizetheOpportunity.Description",
+    "Key": "SeizetheOpportunityFeat.Description",
     "enGB": "You possess an exceptional knack for exploiting sudden openings by your opponents. When you make an attack of opportunity, you can activate Vital Strike or attempt a learned combat maneuver (such as a bull rush, disarm or dirty trick) in place of your attack of opportunity. This feat does not allow you to move when it isn’t your turn.",
     "zhCN": "你非常擅长利用对手稍瞬即逝的破绽。当你进行借机攻击时，你可以使用要害打击或尝试一个已学会的战技（如冲撞、卸武或阴招）来代替借机攻击。这个专长不允许你在回合外移动。"
+  },
+
+  {
+    "Key": "SeizetheOpportunity.Name",
+    // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
+    // links to encycolpedia pages.
+    "ProcessTemplates": false,
+    "enGB": "Attempt Maneuver",
+    "zhCN": "发起战技"
+  },
+
+  {
+    "Key": "SeizetheOpportunity.Description",
+    "enGB": "Attempt the selected combat maneuver if possible.",
+    "zhCN": "尽可能发起选定的战技。"
   },
 
   {

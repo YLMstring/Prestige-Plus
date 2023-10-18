@@ -88,7 +88,6 @@ namespace PrestigePlus.Maneuvers
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .AddToGroups(FeatureGroup.StyleFeat)
                     .Configure();
-
         }
     }
 }

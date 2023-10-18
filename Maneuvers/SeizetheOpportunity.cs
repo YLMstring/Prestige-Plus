@@ -3,10 +3,12 @@ using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using Kingmaker.EntitySystem.Stats;
+using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using PrestigePlus.Grapple;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,8 +20,14 @@ namespace PrestigePlus.Maneuvers
         private static readonly string FeatName = "SeizetheOpportunity";
         public static readonly string FeatGuid = "{14BA3865-0457-4008-AB94-B01D4C430FDF}";
 
+        private static readonly string ManeuverName = "SeizetheOpportunityManeuver";
+        public static readonly string ManeuverGuid = "{7790D065-4BC1-4C55-89F8-B5D82ED8E265}";
+
         private static readonly string DisplayName = "SeizetheOpportunity.Name";
         private static readonly string Description = "SeizetheOpportunity.Description";
+
+        private static readonly string DisplayName2 = "SeizetheOpportunityFeat.Name";
+        private static readonly string Description2 = "SeizetheOpportunityFeat.Description";
 
         private const string SeizetheAbility = "SeizetheOpportunity.SeizetheOpportunityAbility2";
         private static readonly string SeizetheAbilityGuid = "{0AAE0748-42B6-404B-84B5-8F6745E28701}";
@@ -244,13 +252,24 @@ namespace PrestigePlus.Maneuvers
                 .AddActivatableAbilityVariants(variants: new() { abilityBullRush, abilityDirtyBlind, abilityDirtyEntangle, abilityDirtySicken, abilityDisarm, abilityGrapple, abilitySunder, abilityTrip, abilityOpportunity })
                 .Configure();
 
-            FeatureConfigurator.New(FeatName, FeatGuid, Kingmaker.Blueprints.Classes.FeatureGroup.Feat)
+            FeatureConfigurator.New(ManeuverName, ManeuverGuid)
                     .SetDisplayName(DisplayName)
                     .SetDescription(Description)
                     .SetIcon(icon)
+                    .AddFacts(new() { ability, abilityBullRush, abilityDirtyBlind, abilityDirtyEntangle, abilityDirtySicken, abilityDisarm, abilityGrapple, abilitySunder, abilityTrip, abilityOpportunity })
+                    .Configure();
+        }
+
+        public static void FeatConfigure()
+        {
+            var icon = FeatureRefs.VitalStrikeFeature.Reference.Get().Icon;
+            FeatureConfigurator.New(FeatName, FeatGuid, Kingmaker.Blueprints.Classes.FeatureGroup.Feat)
+                    .SetDisplayName(DisplayName2)
+                    .SetDescription(Description2)
+                    .SetIcon(icon)
                     .AddPrerequisiteStatValue(StatType.BaseAttackBonus, 1)
                     .AddPrerequisiteFeature(FeatureRefs.CombatReflexes.ToString())
-                    .AddFacts(new() { ability, abilityBullRush, abilityDirtyBlind, abilityDirtyEntangle, abilityDirtySicken, abilityDisarm, abilityGrapple, abilitySunder, abilityTrip, abilityOpportunity })
+                    .AddFacts(new() { ManeuverGuid })
                     .AddToGroups(Kingmaker.Blueprints.Classes.FeatureGroup.CombatFeat)
                     .Configure();
         }
