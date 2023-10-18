@@ -11,15 +11,20 @@ using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Class.LevelUp;
 using Kingmaker.UnitLogic.Class.LevelUp.Actions;
 using BlueprintCore.Blueprints.References;
+using static Kingmaker.UI.CanvasScalerWorkaround;
 
 namespace PrestigePlus.Modify
 {
-    internal class DomainProgressionContinue : UnitFactComponentDelegate, IUnitLevelUpHandler
+    internal class DomainProgressionContinue : UnitFactComponentDelegate, IUnitSubscriber, ISubscriber
     {
-        public void HandleUnitAfterLevelUp(UnitEntityData unit, LevelUpController controller)
+
+        public override void OnActivate()
         {
+            LevelUpController controller = Kingmaker.Game.Instance?.LevelUpController;
+            if (controller == null) { return; }
+            var unit = Owner;
             var list = FeatureSelectionRefs.DomainsSelection.Reference.Get().m_AllFeatures;
-            foreach ( var f in list )
+            foreach (var f in list)
             {
                 TryUpdateProgression(f);
             }
@@ -41,7 +46,6 @@ namespace PrestigePlus.Modify
                     LevelUpHelper.UpdateProgression(controller.State, unit, prog);
             }
         }
-        public void HandleUnitBeforeLevelUp(UnitEntityData unit) { }
     }
 }
 

@@ -35,7 +35,7 @@ namespace PrestigePlus.Maneuvers
                 var caster = __instance.Executor;
                 var target = __instance.Target;
                 var maneuver = CombatManeuver.None;
-                if (target.Descriptor.State.IsDead) { return true; }
+                if (target.Descriptor.State.IsDead || !caster.HasFact(TheFeat)) { return true; }
                 if (caster.HasFact(Vital) && caster.HasFact(VitalFeat))
                 {
                     AbilityCustomVitalStrike.VitalStrikePart vitalStrikePart = caster.Ensure<AbilityCustomVitalStrike.VitalStrikePart>();
@@ -184,6 +184,8 @@ namespace PrestigePlus.Maneuvers
 
         private static readonly BlueprintBuffReference CasterBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{D6D08842-8E03-4A9D-81B8-1D9FB2245649}");
         private static readonly BlueprintBuffReference TargetBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{F505D659-0610-41B1-B178-E767CCB9292E}");
+
+        private static readonly BlueprintFeatureReference TheFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(SeizetheOpportunity.FeatGuid);
 
         private static readonly BlueprintFeatureReference BullRushFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ImprovedBullRush.ToString());
         private static readonly BlueprintFeatureReference DirtyFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ImprovedDirtyTrick.ToString());

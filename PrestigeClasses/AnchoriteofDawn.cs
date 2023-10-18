@@ -341,7 +341,7 @@ namespace PrestigePlus.PrestigeClasses
               .AddFacts(new() { ability })
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .AddAbilityUseTrigger(action: action, checkSpellSchool: true, isSpellSchool: SpellSchool.Evocation)
-              .AddComponent<DomainProgressionContinue>()
+              //.AddComponent<DomainProgressionContinue>()
               .Configure();
         }
 
@@ -739,6 +739,7 @@ namespace PrestigePlus.PrestigeClasses
               .SetIsClassFeature(true)
               .SetRanks(10)
               .SetHideInUI(true)
+              .AddComponent<DomainProgressionContinue>()
               .Configure();
 
             return ProgressionConfigurator.New(AnchoriteDomainPlus, AnchoriteDomainPlusGuid)

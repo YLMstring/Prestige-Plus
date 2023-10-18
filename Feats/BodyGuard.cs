@@ -19,7 +19,7 @@ namespace PrestigePlus.Feats
 
         public static void Configure()
         {
-            var icon = FeatureRefs.DruidNatureBond.Reference.Get().Icon;
+            var icon = ActivatableAbilityRefs.DivineGuardianBodyguardAbility.Reference.Get().Icon;
 
             FeatureConfigurator.New(FeatName, FeatGuid, Kingmaker.Blueprints.Classes.FeatureGroup.Feat)
                     .SetDisplayName(DisplayName)
@@ -27,6 +27,7 @@ namespace PrestigePlus.Feats
                     .SetIcon(icon)
                     .AddPrerequisiteFeature(FeatureRefs.CombatReflexes.ToString())
                     .AddFacts(new() { FeatureRefs.MythicIgnoreAlignmentRestrictions.ToString(), AbilityRefs.DivineGuardianTrothAbility.ToString(), ActivatableAbilityRefs.DivineGuardianBodyguardAbility.ToString() })
+                    .AddAbilityResources(resource: AbilityResourceRefs.DivineGuardianTrothResource.ToString(), restoreAmount: true)
                     .AddToGroups(Kingmaker.Blueprints.Classes.FeatureGroup.CombatFeat)
                     .Configure();
         }
@@ -39,14 +40,14 @@ namespace PrestigePlus.Feats
 
         public static void Configure2()
         {
-            var icon = FeatureRefs.PoisonImmunity.Reference.Get().Icon;
+            var icon = ActivatableAbilityRefs.DivineGuardianInHarmsWayAbility.Reference.Get().Icon;
 
             FeatureConfigurator.New(Feat2Name, Feat2Guid, Kingmaker.Blueprints.Classes.FeatureGroup.Feat)
                     .SetDisplayName(DisplayName2)
                     .SetDescription(Description2)
                     .SetIcon(icon)
                     .AddPrerequisiteFeature(FeatGuid)
-                    .AddFacts(new() { ActivatableAbilityRefs.DivineGuardianInHarmsWayAbility.ToString() })
+                    .AddFacts(new() { FeatureRefs.MythicIgnoreAlignmentRestrictions.ToString(), AbilityRefs.DivineGuardianTrothAbility.ToString(), ActivatableAbilityRefs.DivineGuardianInHarmsWayAbility.ToString() })
                     .AddToGroups(Kingmaker.Blueprints.Classes.FeatureGroup.CombatFeat)
                     .Configure();
         }

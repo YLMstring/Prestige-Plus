@@ -109,6 +109,10 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DalaoStuff\" />
+  </ItemGroup>
+
   <!-- Generates Assembly-CSharp_public.dll -->
   <Target Name="Publicize" AfterTargets="Clean">
     <ItemGroup>
