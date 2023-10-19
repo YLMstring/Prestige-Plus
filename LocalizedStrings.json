@@ -130,8 +130,8 @@
 
   {
     "Key": "DefensiveRoll.Description",
-    "enGB": "Once per day, when the rogue would be reduced to 0 or fewer hit points by a melee attack, she takes no damage from the attack. The rogue is staggered for 1 round on her next turn.",
-    "zhCN": "每日限一次，当盗贼即将被近战攻击伤害到0血或以下，她可以不受这次攻击的伤害，但恍惚一轮。"
+    "enGB": "Once per day, when the rogue would be reduced to 0 or fewer hit points by a melee attack, she may back off 5 ft and take no damage from the attack. The rogue is staggered for 1 round on her next turn.",
+    "zhCN": "每日限一次，当盗贼即将被近战攻击伤害到0血或以下，她可以后退5尺且不受这次攻击的伤害，但恍惚一轮。"
   },
 
   {

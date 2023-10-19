@@ -1,10 +1,18 @@
-﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
+﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
+using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
+using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
+using BlueprintCore.Conditions.Builder;
+using BlueprintCore.Conditions.Builder.ContextEx;
+using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.EntitySystem.Stats;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.ActivatableAbilities;
+using PrestigePlus.CustomAction;
 using PrestigePlus.Grapple;
 using PrestigePlus.Modify;
 using System;
@@ -88,6 +96,80 @@ namespace PrestigePlus.Maneuvers
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .AddToGroups(FeatureGroup.StyleFeat)
                     .Configure();
+        }
+
+        private static readonly string CounterName = "SmashingCounter";
+        public static readonly string CounterGuid = "{8DC58AE1-34EA-486A-81C0-1707568D5F4F}";
+
+        private static readonly string CounterDisplayName = "SmashingCounter.Name";
+        private static readonly string CounterDescription = "SmashingCounter.Description";
+
+        private const string CounterBuff = "SmashingCounter.CounterBuff";
+        public static readonly string CounterBuffGuid = "{F903AE2C-BDBD-4B61-9E4F-2BCD8CB0DFBB}";
+
+        public static void CounterConfigure()
+        {
+            var icon = FeatureRefs.FlurryOfBlows.Reference.Get().Icon;
+
+            var buff = BuffConfigurator.New(CounterBuff, CounterBuffGuid)
+                .SetDisplayName(CounterDisplayName)
+                .SetDescription(CounterDescription)
+                .SetIcon(icon)
+                .Configure();
+
+            var prepare = ActionsBuilder.New()
+                .ApplyBuff(buff, ContextDuration.Fixed(1))
+                .Build();
+
+            var action = ActionsBuilder.New()
+                .Conditional(ConditionsBuilder.New().CasterHasFact(BuffRefs.FightDefensivelyBuff.ToString()).Build(),
+                ifTrue: prepare)
+                .Build();
+
+            FeatureConfigurator.New(CounterName, CounterGuid, FeatureGroup.Feat)
+                    .SetDisplayName(CounterDisplayName)
+                    .SetDescription(CounterDescription)
+                    .SetIcon(icon)
+                    .AddPrerequisiteStatValue(StatType.BaseAttackBonus, 4)
+                    .AddPrerequisiteFeature(StyleGuid, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                    .AddPrerequisiteFeature(ParametrizedFeatureRefs.WeaponFocus.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                    .AddInitiatorAttackWithWeaponTrigger(action, category: Kingmaker.Enums.WeaponCategory.Quarterstaff, checkWeaponCategory: true, triggerBeforeAttack: true)
+                    .AddInitiatorAttackWithWeaponTrigger(action, category: Kingmaker.Enums.WeaponCategory.Club, checkWeaponCategory: true, triggerBeforeAttack: true)
+                    .AddComponent<StickFightingCounter>()
+                    .AddToGroups(FeatureGroup.CombatFeat)
+                    .AddToGroups(FeatureGroup.StyleFeat)
+                    .Configure();
+        }
+
+        private static readonly string MasterName = "SmashingMaster";
+        public static readonly string MasterGuid = "{9D5BFD60-6061-4A0B-A14C-EC3EFA08D6CD}";
+
+        private static readonly string MasterDisplayName = "SmashingMaster.Name";
+        private static readonly string MasterDescription = "SmashingMaster.Description";
+
+        public static void MasterConfigure()
+        {
+            var icon = FeatureRefs.FlurryOfBlows.Reference.Get().Icon;
+
+            var action = ActionsBuilder.New()
+                .Add<StickFightingManeuver>()
+                .Build();
+
+            FeatureConfigurator.New(MasterName, MasterGuid, FeatureGroup.Feat)
+                    .SetDisplayName(MasterDisplayName)
+                    .SetDescription(MasterDescription)
+                    .SetIcon(icon)
+                    .AddPrerequisiteStatValue(StatType.BaseAttackBonus, 6)
+                    .AddPrerequisiteFeature(StyleGuid, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                    .AddPrerequisiteFeature(ParametrizedFeatureRefs.WeaponFocus.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                    .AddPrerequisiteFeature(CounterGuid)
+                    .AddFacts(new() { SeizetheOpportunity.ManeuverGuid })
+                    .AddInitiatorAttackWithWeaponTrigger(action, category: Kingmaker.Enums.WeaponCategory.Quarterstaff, checkWeaponCategory: true, triggerBeforeAttack: true, onlyOnFullAttack: true, onlyOnFirstAttack: true)
+                    .AddInitiatorAttackWithWeaponTrigger(action, category: Kingmaker.Enums.WeaponCategory.Club, checkWeaponCategory: true, triggerBeforeAttack: true, onlyOnFullAttack: true, onlyOnFirstAttack: true)
+                    .AddToGroups(FeatureGroup.CombatFeat)
+                    .AddToGroups(FeatureGroup.StyleFeat)
+                    .Configure();
+
         }
     }
 }

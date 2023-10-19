@@ -1,0 +1,57 @@
+﻿using Kingmaker.PubSubSystem;
+using Kingmaker.RuleSystem.Rules;
+using Kingmaker.UnitLogic.Parts;
+using Kingmaker.UnitLogic;
+using Kingmaker.Utility;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using BlueprintCore.Blueprints.References;
+using BlueprintCore.Utils;
+using Kingmaker.Blueprints;
+using PrestigePlus.Maneuvers;
+using static Kingmaker.EntitySystem.EntityDataBase;
+using static Pathfinding.Util.RetainedGizmos;
+using Kingmaker.Designers.Mechanics.Facts;
+using Newtonsoft.Json;
+using Kingmaker;
+
+namespace PrestigePlus.CustomAction
+{
+    public class StickData
+    {
+        // Token: 0x040095D2 RID: 38354
+        [JsonProperty]
+        public TimeSpan LastUseTime;
+    }
+    internal class StickFightingCounter : UnitFactComponentDelegate<StickData>, ITargetRulebookHandler<RuleAttackRoll>, IRulebookHandler<RuleAttackRoll>, ISubscriber, ITargetRulebookSubscriber
+    {
+        void IRulebookHandler<RuleAttackRoll>.OnEventAboutToTrigger(RuleAttackRoll evt)
+        {
+
+        }
+
+        //private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
+        void IRulebookHandler<RuleAttackRoll>.OnEventDidTrigger(RuleAttackRoll evt)
+        {
+            if (base.Data.LastUseTime + 1.Rounds().Seconds > Game.Instance.TimeController.GameTime)
+            {
+                return;
+            }
+            if (evt.Target.HasFact(Feat) && evt.Initiator.HasFact(TargetBuff) && evt.Result == AttackResult.Miss && evt.AttackType == Kingmaker.RuleSystem.AttackType.Melee && Owner.CombatState.EngagedUnits.Contains(evt.Initiator))
+            {
+                var bp = evt.Target.GetThreatHand()?.Weapon?.Blueprint;
+                if (bp != null && (bp.Category == Kingmaker.Enums.WeaponCategory.Club || bp.Category == Kingmaker.Enums.WeaponCategory.Quarterstaff))
+                {
+                    Game.Instance.CombatEngagementController.ForceAttackOfOpportunity(base.Owner, evt.Initiator, false);
+                    base.Data.LastUseTime = Game.Instance.TimeController.GameTime;
+                }
+            }
+        }
+
+        private static BlueprintBuffReference TargetBuff = BlueprintTool.GetRef<BlueprintBuffReference>(SmashingStyle.CounterBuffGuid);
+        private static BlueprintFeatureReference Feat = BlueprintTool.GetRef<BlueprintFeatureReference>(SmashingStyle.CounterGuid);
+    }
+}

@@ -19,6 +19,9 @@ using Mono.Cecil;
 using BlueprintCore.Actions.Builder.ContextEx;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.RuleSystem;
+using static Kingmaker.EntitySystem.EntityDataBase;
+using static Pathfinding.Util.RetainedGizmos;
+using Kingmaker.Items;
 
 namespace PrestigePlus.CustomAction
 {
@@ -51,29 +54,28 @@ namespace PrestigePlus.CustomAction
                     PFLog.Default.Error("Unit can't sunder themselves", Array.Empty<object>());
                     return;
                 }
-                float radius = 5.Feet().Meters;
-                var hand = maybeCaster.GetThreatHandMelee();
-                Logger.Info("get hand");
-                if (hand != null)
-                {
-                    Logger.Info("get range");
-                    var range = maybeCaster.GetThreatRange(hand);
-                    if (range != null && range.HasValue)
-                    {
-                        radius = range.Value + maybeCaster.View.Corpulence + unit.View.Corpulence;
-                        Logger.Info(radius.ToString());
-                    }
-                }
-                Logger.Info(unit.DistanceTo(maybeCaster).ToString());
-                if (unit.DistanceTo(maybeCaster) > radius)
+                if (!maybeCaster.CombatState.EngagedUnits.Contains(unit))
                 {
                     return;
                 }
-                Logger.Info("sunder");
-                RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(maybeCaster, unit, CombatManeuver.SunderArmor, null);
+                ItemEntityWeapon weapon;
+                if (UseWeapon)
+                {
+                    weapon = maybeCaster.GetThreatHand()?.Weapon;
+                    if (weapon == null) { weapon = maybeCaster.Body.EmptyHandWeapon; }
+                }
+                else
+                {
+                    weapon = maybeCaster.Body.EmptyHandWeapon;
+                }
+                var AttackBonusRule = new RuleCalculateAttackBonus(maybeCaster, unit, weapon, 0) { };
+                RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(maybeCaster, unit, type, AttackBonusRule);
                 Rulebook.Trigger(ruleCombatManeuver);
             }
             catch (Exception ex) { Logger.Error("Failed to storm.", ex); }
         }
+
+        public CombatManeuver type = CombatManeuver.SunderArmor;
+        public bool UseWeapon = false;
     }
 }

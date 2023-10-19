@@ -1,125 +1,106 @@
-﻿using BlueprintCore.Utils;
-using Kingmaker.Blueprints;
-using Kingmaker.EntitySystem.Entities;
+﻿using BlueprintCore.Blueprints.References;
+using BlueprintCore.Utils;
 using Kingmaker;
+using Kingmaker.Blueprints;
+using Kingmaker.Designers;
+using Kingmaker.Designers.EventConditionActionSystem.Evaluators;
+using Kingmaker.EntitySystem.Entities;
+using Kingmaker.Items;
+using Kingmaker.RuleSystem;
+using Kingmaker.RuleSystem.Rules;
+using Kingmaker.UnitLogic;
+using Kingmaker.UnitLogic.Buffs;
+using Kingmaker.UnitLogic.Mechanics.Actions;
+using Kingmaker.Utility;
 using PrestigePlus.Grapple;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Kingmaker.UnitLogic.Mechanics.Actions;
-using Kingmaker.Blueprints.Root;
-using Kingmaker.Designers.EventConditionActionSystem.Evaluators;
-using Kingmaker.RuleSystem.Rules;
-using Kingmaker.RuleSystem;
-using Kingmaker.UnitLogic.Abilities.Components;
-using Kingmaker.UnitLogic.Commands.Base;
-using Kingmaker.UnitLogic;
-using BlueprintCore.Blueprints.References;
-using Kingmaker.Designers;
-using Kingmaker.Utility;
-using Kingmaker.ElementsSystem;
-using Kingmaker.UnitLogic.Mechanics;
-using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
+using static Kingmaker.Controllers.Combat.UnitCombatState;
+using static Kingmaker.UI.CanvasScalerWorkaround;
 
 namespace PrestigePlus.CustomAction
 {
-    internal class ExploitiveManeuver : ContextAction
+    internal class StickFightingManeuver : ContextAction
     {
         public override string GetCaption()
         {
-            return "ExploitiveManeuver";
+            return "StickFightingManeuver";
         }
 
-        // Token: 0x0600CBFF RID: 52223 RVA: 0x0034ECD0 File Offset: 0x0034CED0
         public override void RunAction()
         {
-            UnitEntityData target = base.Target.Unit;
+            ActManeuver(Context.MaybeCaster, Target.Unit, true);
+        }
+
+        public static void ActManeuver(UnitEntityData caster, UnitEntityData target, bool UseWeapon)
+        {
             if (target == null)
             {
                 PFLog.Default.Error("Target unit is missing", Array.Empty<object>());
                 return;
             }
-            UnitEntityData caster = base.Context.MaybeCaster;
             if (caster == null)
             {
                 PFLog.Default.Error("Caster is missing", Array.Empty<object>());
                 return;
             }
-            if (target == caster)
+            var maneuver = CombatManeuver.None;
+            if (caster.HasFact(BullRush) && caster.HasFact(BullRushFeat))
             {
-                PFLog.Default.Error("Unit can't grapple themselves", Array.Empty<object>());
-                return;
+                maneuver = CombatManeuver.BullRush;
             }
-            var maneuver = CombatManeuver.Pull;
-            if (target.Descriptor.State.IsDead || caster.HasFact(CoolDown)) { return; }
-            if (caster.HasFact(MythicFeat))
+            else if (caster.HasFact(DirtyBlind) && caster.HasFact(DirtyFeat))
             {
-                if (caster.HasFact(BullRush) && caster.HasFact(BullRushFeat))
-                {
-                    maneuver = CombatManeuver.BullRush;
-                }
-                else if (caster.HasFact(DirtyBlind) && caster.HasFact(DirtyFeat))
-                {
-                    maneuver = CombatManeuver.DirtyTrickBlind;
-                }
-                else if (caster.HasFact(DirtyEntangle) && caster.HasFact(DirtyFeat))
-                {
-                    maneuver = CombatManeuver.DirtyTrickEntangle;
-                }
-                else if (caster.HasFact(DirtySicken) && caster.HasFact(DirtyFeat))
-                {
-                    maneuver = CombatManeuver.DirtyTrickSickened;
-                }
-                else if (caster.HasFact(Disarm) && caster.HasFact(DisarmFeat))
-                {
-                    maneuver = CombatManeuver.Disarm;
-                }
-                else if (caster.HasFact(Sunder) && caster.HasFact(SunderFeat))
-                {
-                    maneuver = CombatManeuver.SunderArmor;
-                }
-                else if (caster.HasFact(Trip) && caster.HasFact(TripFeat))
-                {
-                    maneuver = CombatManeuver.Trip;
-                }
-                else if (caster.HasFact(Grapple) && caster.HasFact(GrappleFeat))
-                {
-                    maneuver = CombatManeuver.Grapple;
-                }
+                maneuver = CombatManeuver.DirtyTrickBlind;
             }
-            RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, maneuver, null);
-            if (caster.Descriptor.Stats.Dexterity > caster.Descriptor.Stats.Strength)
+            else if (caster.HasFact(DirtyEntangle) && caster.HasFact(DirtyFeat))
             {
-                ruleCombatManeuver.ReplaceBaseStat = Kingmaker.EntitySystem.Stats.StatType.Dexterity;
+                maneuver = CombatManeuver.DirtyTrickEntangle;
             }
+            else if (caster.HasFact(DirtySicken) && caster.HasFact(DirtyFeat))
+            {
+                maneuver = CombatManeuver.DirtyTrickSickened;
+            }
+            else if (caster.HasFact(Disarm) && caster.HasFact(DisarmFeat))
+            {
+                maneuver = CombatManeuver.Disarm;
+            }
+            else if (caster.HasFact(Sunder) && caster.HasFact(SunderFeat))
+            {
+                maneuver = CombatManeuver.SunderArmor;
+            }
+            else if (caster.HasFact(Trip) && caster.HasFact(TripFeat))
+            {
+                maneuver = CombatManeuver.Trip;
+            }
+            else if (caster.HasFact(Grapple) && caster.HasFact(GrappleFeat))
+            {
+                maneuver = CombatManeuver.Grapple;
+            }
+            if (maneuver == CombatManeuver.None) { return; }
+            ItemEntityWeapon weapon;
+            if (UseWeapon)
+            {
+                weapon = caster.GetThreatHand()?.Weapon;
+                if (weapon == null) { weapon = caster.Body.EmptyHandWeapon; }
+            }
+            else
+            {
+                weapon = caster.Body.EmptyHandWeapon;
+            }
+            var AttackBonusRule = new RuleCalculateAttackBonus(caster, target, weapon, 0) { };
+            RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, maneuver, AttackBonusRule);
             ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
-            var duration = new Rounds?(1.Rounds());
-            GameHelper.ApplyBuff(caster, CoolDown, duration);
             if (ruleCombatManeuver.Success)
             {
-                TimeSpan? duration2 = (duration != null) ? new TimeSpan?(duration.Value.Seconds) : null;
-                target.AddBuff(DeBuff, caster, duration2);
-                if (maneuver == CombatManeuver.Pull)
-                {
-                    caster.AddBuff(Buff, caster, duration2);
-                }
                 if (maneuver != CombatManeuver.Grapple || caster.Get<UnitPartGrappleInitiatorPP>() || target.Get<UnitPartGrappleTargetPP>() || !ConditionTwoFreeHand.CheckCondition2(caster)) { return; }
                 caster.Ensure<UnitPartGrappleInitiatorPP>().Init(target, CasterBuff, target.Context);
                 target.Ensure<UnitPartGrappleTargetPP>().Init(caster, TargetBuff, caster.Context);
             }
         }
-
-        // Token: 0x040087CF RID: 34767
-
-        //public BlueprintBuff CasterBuff;
-
-        // Token: 0x040087D0 RID: 34768
-
-        private static BlueprintBuffReference Buff = BlueprintTool.GetRef<BlueprintBuffReference>("{1F58B574-C1D0-4D95-9888-2F765FBA7669}");
-        private static BlueprintBuffReference DeBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{7838922C-2131-42C5-824F-587AE3626D9D}");
-        private static BlueprintBuffReference CoolDown = BlueprintTool.GetRef<BlueprintBuffReference>("{3952D4EF-8136-48ED-BA4A-8CFE13325B2D}");
 
         private static readonly string SeizetheBullRushbuffGuid = "{FDD7D762-A448-48FB-B72C-709D14285FF6}";
 
@@ -155,7 +136,5 @@ namespace PrestigePlus.CustomAction
         private static BlueprintFeatureReference GrappleFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(ImprovedGrapple.StyleGuid);
         private static BlueprintFeatureReference SunderFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ImprovedSunder.ToString());
         private static BlueprintFeatureReference TripFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ImprovedTrip.ToString());
-
-        private static BlueprintFeatureReference MythicFeat = BlueprintTool.GetRef<BlueprintFeatureReference>("{BCCD43B4-D897-4604-9957-5429ACDFB22C}");
     }
 }

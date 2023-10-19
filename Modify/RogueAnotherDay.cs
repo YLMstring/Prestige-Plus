@@ -10,6 +10,7 @@ using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem;
 using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UnitLogic;
+using Kingmaker.UnitLogic.Parts;
 using Kingmaker.Utility;
 using System;
 using System.Collections.Generic;
@@ -42,6 +43,9 @@ namespace PrestigePlus.Modify
                     Rulebook.Trigger(new RuleHealDamage(base.Owner, base.Owner, evt.Result));
                 }
                 GameHelper.ApplyBuff(Owner, stagger, new Rounds?(1.Rounds()));
+                Feet feet = 5.Feet();
+                Vector3 normalized = (evt.Target.Position - evt.Initiator.Position).normalized;
+                evt.Target.Ensure<UnitPartForceMove>().Push(normalized, feet.Meters, false);
                 Fact.RunActionInContext(Action, evt.Target);
                 GameHelper.RemoveBuff(Owner, Cooldown);
             }
