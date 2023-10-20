@@ -18,12 +18,13 @@ using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
 using PrestigePlus.Maneuvers;
 using Kingmaker.Designers;
+using Kingmaker.Utility;
 
 namespace PrestigePlus.CustomAction
 {
     internal class ContextActionDomino : ContextAction
     {
-        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
+        //private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         public override string GetCaption()
         {
             return "StickFightingManeuver";
@@ -51,7 +52,6 @@ namespace PrestigePlus.CustomAction
             var AttackBonusRule = new RuleCalculateAttackBonus(caster, target, weapon, 0) { };
             int penalty;
             var rank = caster.GetFact(CasterBuff);
-            Logger.Info("start domi");
             if (rank == null) 
             {
                 penalty = - 4; 
@@ -60,22 +60,26 @@ namespace PrestigePlus.CustomAction
             {
                 penalty = - 4 - 4 * rank.GetRank();
             }
-            Logger.Info(penalty.ToString());
             AttackBonusRule.AddModifier(penalty, descriptor: Kingmaker.Enums.ModifierDescriptor.Penalty);
             Rulebook.Trigger(AttackBonusRule);
             RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, maneuver, AttackBonusRule);
             ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
-            int num = (caster.Progression.MythicLevel / 2) + 1;
-            if (ruleCombatManeuver.Success && penalty + 4 * num >= 0)
+            int num = caster.Progression.MythicLevel / 2;
+            if (ruleCombatManeuver.Success)
             {
-                GameHelper.ApplyBuff(caster, CasterBuff2);
-                Logger.Info("continue");
+                GameHelper.ApplyBuff(caster, CasterBuff2, new Rounds?(1.Rounds()));
+                caster.CombatState.PreventAttacksOfOpporunityNextFrame = true;
+                caster.Position = target.Position;
             }
             else
             {
                 GameHelper.RemoveBuff(caster, CasterBuff2);
                 GameHelper.RemoveBuff(caster, CasterBuffCore);
-                Logger.Info("end");
+            }
+            if (penalty + 4 * num < 0)
+            {
+                GameHelper.RemoveBuff(caster, CasterBuff2);
+                GameHelper.RemoveBuff(caster, CasterBuffCore);
             }
         }
 

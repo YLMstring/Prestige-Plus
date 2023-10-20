@@ -71,6 +71,7 @@ namespace PrestigePlus.Maneuvers
                .SetIcon(icon)
                .SetRanks(10)
                .SetStacking(Kingmaker.UnitLogic.Buffs.Blueprints.StackingType.Rank)
+               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
                .Configure();
 
             var action = ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).Build();

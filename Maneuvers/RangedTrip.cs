@@ -106,7 +106,7 @@ namespace PrestigePlus.Maneuvers
             var icon = FeatureRefs.AgileManeuvers.Reference.Get().Icon;
 
             var shoot = ActionsBuilder.New()
-                .Add<ContextActionAceTrip>()
+                .KnockdownTarget()
                 .Build();
 
             var ability = AbilityConfigurator.New(VindictiveFallAblity, VindictiveFallAblityGuid)

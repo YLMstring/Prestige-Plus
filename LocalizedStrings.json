@@ -4197,8 +4197,8 @@
   },
   {
     "Key": "DownLikeDominoes.Description",
-    "enGB": "When you successfully trip a foe, as a free action you can attempt an additional trip attack against an adjacent creature at a –4 penalty. If this second trip is successful, you can continue to attempt to trip other creatures, taking a cumulative –4 penalty on each trip attempt after the first. In a round, you can trip a number of creatures equal to 1 + half your tier in this way.",
-    "zhCN": "当你成功绊摔一个敌人时，你可以用自由动作再绊摔一个附近的敌人，但有-4减值。如果这次绊摔也成功，你可以继续绊摔，获得累计的-4减值，以此类推。一轮内你最多能如此额外绊摔的生物数量等于1+你一半的神话阶级。"
+    "enGB": "When you successfully trip a foe, as a free action you can attempt an additional trip attack against an adjacent creature at a –4 penalty. If this second trip is successful, you immediately move to its square and may continue to attempt to trip other creatures, taking a cumulative –4 penalty on each trip attempt after the first. In a round, you can trip a number of creatures equal to 1 + half your tier in this way.",
+    "zhCN": "当你成功绊摔一个敌人时，你可以用自由动作再绊摔一个附近的敌人，但有-4减值。如果这次绊摔也成功，你立刻移动至其方格并可以继续绊摔，获得累计的-4减值，以此类推。一轮内你最多能如此额外绊摔的生物数量等于1+你一半的神话阶级。"
   }
 
 ]

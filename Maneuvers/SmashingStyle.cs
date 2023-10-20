@@ -109,7 +109,7 @@ namespace PrestigePlus.Maneuvers
 
         public static void CounterConfigure()
         {
-            var icon = FeatureRefs.FlurryOfBlows.Reference.Get().Icon;
+            var icon = FeatureRefs.Evasion.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(CounterBuff, CounterBuffGuid)
                 .SetDisplayName(CounterDisplayName)
@@ -149,7 +149,7 @@ namespace PrestigePlus.Maneuvers
 
         public static void MasterConfigure()
         {
-            var icon = FeatureRefs.FlurryOfBlows.Reference.Get().Icon;
+            var icon = FeatureRefs.Evasion.Reference.Get().Icon;
 
             var action = ActionsBuilder.New()
                 .Add<StickFightingManeuver>()

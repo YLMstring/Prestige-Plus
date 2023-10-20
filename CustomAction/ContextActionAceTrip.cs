@@ -15,6 +15,7 @@ using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using Kingmaker.PubSubSystem;
+using Kingmaker.UnitLogic;
 
 namespace PrestigePlus.CustomAction
 {
@@ -42,7 +43,7 @@ namespace PrestigePlus.CustomAction
                 PFLog.Default.Error("Caster is missing", Array.Empty<object>());
                 return;
             }
-            if (target.Descriptor.State.Prone.Active || (target.View != null && target.View.IsGetUp)) { return; }
+            if (target.Descriptor.State.Prone.Active || (target.View != null && target.View.IsGetUp) || !target.Descriptor.State.HasConditionImmunity(UnitCondition.Prone)) { return; }
             target.Descriptor.State.Prone.ShouldBeActive = true;
             EventBus.RaiseEvent(delegate (IKnockOffHandler h)
             {
