@@ -49,6 +49,7 @@ namespace PrestigePlus.CustomAction
                     var AttackBonusRule = new RuleCalculateAttackBonus(maybeCaster, Target.Unit, maybeCaster.Body.EmptyHandWeapon, 0) { };
                     int penalty = -4;
                     AttackBonusRule.AddModifier(penalty, descriptor: ModifierDescriptor.Penalty);
+                    Rulebook.Trigger(AttackBonusRule);
                     RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(maybeCaster, Target.Unit, CombatManeuver.BullRush, AttackBonusRule);
                     ruleCombatManeuver = (Target.Unit.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
                     if (ruleCombatManeuver.Success && Target.Unit.CanBeKnockedOff())

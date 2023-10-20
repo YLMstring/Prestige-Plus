@@ -69,6 +69,7 @@ namespace PrestigePlus.CustomAction
                     weapon = maybeCaster.Body.EmptyHandWeapon;
                 }
                 var AttackBonusRule = new RuleCalculateAttackBonus(maybeCaster, unit, weapon, 0) { };
+                Rulebook.Trigger(AttackBonusRule);
                 RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(maybeCaster, unit, type, AttackBonusRule);
                 Rulebook.Trigger(ruleCombatManeuver);
             }

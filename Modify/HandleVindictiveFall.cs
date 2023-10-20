@@ -50,7 +50,8 @@ namespace PrestigePlus.Modify
             }
             var maneuver = CombatManeuver.Trip;
             ItemEntityWeapon weapon = caster.Body.EmptyHandWeapon;
-            var AttackBonusRule = new RuleCalculateAttackBonus(caster, target, weapon, 0) { };          
+            var AttackBonusRule = new RuleCalculateAttackBonus(caster, target, weapon, 0) { };
+            Rulebook.Trigger(AttackBonusRule);
             RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, maneuver, AttackBonusRule);
             ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);           
         }

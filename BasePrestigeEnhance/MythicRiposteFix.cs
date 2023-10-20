@@ -88,6 +88,7 @@ namespace PrestigePlus.BasePrestigeEnhance
             if (maneuver == CombatManeuver.None) { return true; }
             var AttackBonusRule = new RuleCalculateAttackBonus(caster, target, caster.Body.EmptyHandWeapon, 0) { };
             AttackBonusRule.AddModifier(2, descriptor: ModifierDescriptor.Morale);
+            Rulebook.Trigger(AttackBonusRule);
             RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, maneuver, AttackBonusRule);
             ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
             return true;

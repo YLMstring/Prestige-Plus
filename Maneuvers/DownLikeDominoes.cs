@@ -32,6 +32,9 @@ namespace PrestigePlus.Maneuvers
         private const string StyleBuff = "DownLikeDominoes.StyleBuff";
         public static readonly string StyleBuffGuid = "{3B4CE92D-3F13-49CC-8778-03EBD4334403}";
 
+        private const string StyleBuff2 = "DownLikeDominoes.StyleBuff2";
+        public static readonly string StyleBuff2Guid = "{22567904-75DC-415F-94E4-1329D44DE111}";
+
         public static void DragConfigure()
         {
             var icon = FeatureRefs.TandemTrip.Reference.Get().Icon;
@@ -60,22 +63,23 @@ namespace PrestigePlus.Maneuvers
                .SetDescription(DragDescription)
                .SetIcon(icon)
                .AddFacts(new() { ability })
+               .Configure();
+            
+            BuffConfigurator.New(StyleBuff2, StyleBuff2Guid)
+               .SetDisplayName(DragDisplayName)
+               .SetDescription(DragDescription)
+               .SetIcon(icon)
                .SetRanks(10)
                .SetStacking(Kingmaker.UnitLogic.Buffs.Blueprints.StackingType.Rank)
                .Configure();
 
             var action = ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true).Build();
 
-            var action0 = ActionsBuilder.New()
-                .Conditional(ConditionsBuilder.New().HasFact(buff).Build(),
-                ifFalse: action)
-                .Build();
-
             FeatureConfigurator.New(DragName, DragGuid, FeatureGroup.MythicAbility)
                     .SetDisplayName(DragDisplayName)
                     .SetDescription(DragDescription)
                     .SetIcon(icon)
-                    .AddManeuverTrigger(action0, Kingmaker.RuleSystem.Rules.CombatManeuver.Trip, true)
+                    .AddManeuverTrigger(action, Kingmaker.RuleSystem.Rules.CombatManeuver.Trip, true)
                     .Configure();
         }
     }

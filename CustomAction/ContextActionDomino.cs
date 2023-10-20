@@ -23,6 +23,7 @@ namespace PrestigePlus.CustomAction
 {
     internal class ContextActionDomino : ContextAction
     {
+        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         public override string GetCaption()
         {
             return "StickFightingManeuver";
@@ -48,23 +49,38 @@ namespace PrestigePlus.CustomAction
             var maneuver = CombatManeuver.Trip;
             ItemEntityWeapon weapon = caster.Body.EmptyHandWeapon;
             var AttackBonusRule = new RuleCalculateAttackBonus(caster, target, weapon, 0) { };
+            int penalty;
             var rank = caster.GetFact(CasterBuff);
-            if (rank == null) { return; }
-            AttackBonusRule.AddModifier(-4 * rank.GetRank(), descriptor: Kingmaker.Enums.ModifierDescriptor.Penalty);
+            Logger.Info("start domi");
+            if (rank == null) 
+            {
+                penalty = - 4; 
+            }
+            else
+            {
+                penalty = - 4 - 4 * rank.GetRank();
+            }
+            Logger.Info(penalty.ToString());
+            AttackBonusRule.AddModifier(penalty, descriptor: Kingmaker.Enums.ModifierDescriptor.Penalty);
+            Rulebook.Trigger(AttackBonusRule);
             RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, maneuver, AttackBonusRule);
             ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
             int num = (caster.Progression.MythicLevel / 2) + 1;
-            if (ruleCombatManeuver.Success && rank.GetRank() < num)
+            if (ruleCombatManeuver.Success && penalty + 4 * num >= 0)
             {
                 GameHelper.ApplyBuff(caster, CasterBuff2);
+                Logger.Info("continue");
             }
             else
             {
                 GameHelper.RemoveBuff(caster, CasterBuff2);
+                GameHelper.RemoveBuff(caster, CasterBuffCore);
+                Logger.Info("end");
             }
         }
 
-        private static BlueprintUnitFactReference CasterBuff = BlueprintTool.GetRef<BlueprintUnitFactReference>(DownLikeDominoes.StyleBuffGuid);
-        private static BlueprintBuffReference CasterBuff2 = BlueprintTool.GetRef<BlueprintBuffReference>(DownLikeDominoes.StyleBuffGuid);
+        private static BlueprintUnitFactReference CasterBuff = BlueprintTool.GetRef<BlueprintUnitFactReference>(DownLikeDominoes.StyleBuff2Guid);
+        private static BlueprintBuffReference CasterBuff2 = BlueprintTool.GetRef<BlueprintBuffReference>(DownLikeDominoes.StyleBuff2Guid);
+        private static BlueprintBuffReference CasterBuffCore = BlueprintTool.GetRef<BlueprintBuffReference>(DownLikeDominoes.StyleBuffGuid);
     }
 }

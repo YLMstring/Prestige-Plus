@@ -28,23 +28,27 @@ namespace PrestigePlus.CustomAction
     }
     internal class StickFightingCounter : UnitFactComponentDelegate<StickData>, ITargetRulebookHandler<RuleAttackRoll>, IRulebookHandler<RuleAttackRoll>, ISubscriber, ITargetRulebookSubscriber
     {
+        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         void IRulebookHandler<RuleAttackRoll>.OnEventAboutToTrigger(RuleAttackRoll evt)
         {
 
         }
 
-        //private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         void IRulebookHandler<RuleAttackRoll>.OnEventDidTrigger(RuleAttackRoll evt)
         {
+            Logger.Info("start counter");
             if (base.Data.LastUseTime + 1.Rounds().Seconds > Game.Instance.TimeController.GameTime)
             {
+                Logger.Info("cooldown");
                 return;
             }
             if (evt.Target.HasFact(Feat) && evt.Initiator.HasFact(TargetBuff) && evt.Result == AttackResult.Miss && evt.AttackType == Kingmaker.RuleSystem.AttackType.Melee && Owner.CombatState.EngagedUnits.Contains(evt.Initiator))
             {
+                Logger.Info("start2");
                 var bp = evt.Target.GetThreatHand()?.Weapon?.Blueprint;
                 if (bp != null && (bp.Category == Kingmaker.Enums.WeaponCategory.Club || bp.Category == Kingmaker.Enums.WeaponCategory.Quarterstaff))
                 {
+                    Logger.Info("start3");
                     Game.Instance.CombatEngagementController.ForceAttackOfOpportunity(base.Owner, evt.Initiator, false);
                     base.Data.LastUseTime = Game.Instance.TimeController.GameTime;
                 }

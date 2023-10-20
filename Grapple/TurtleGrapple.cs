@@ -55,6 +55,7 @@ namespace PrestigePlus.Grapple
             }
             var AttackBonusRule = new RuleCalculateAttackBonus(maybeCaster, unit, maybeCaster.Body.EmptyHandWeapon, 0) { };
             AttackBonusRule.AddModifier(-2, descriptor: Kingmaker.Enums.ModifierDescriptor.Penalty);
+            Rulebook.Trigger(AttackBonusRule);
             RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(maybeCaster, unit, CombatManeuver.Grapple, AttackBonusRule);
             ruleCombatManeuver = (Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
             GameHelper.ApplyBuff(maybeCaster, TurtleCoolDown, duration: new Rounds?(1.Rounds()));
