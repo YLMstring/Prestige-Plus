@@ -70,7 +70,7 @@ namespace PrestigePlus
       private static bool Initialized = false;
 
       [HarmonyPriority(Priority.First)]
-      [HarmonyBefore(new string[] { "TabletopTweaks-Base" })]
+      //[HarmonyBefore(new string[] { "TabletopTweaks-Base" })]
       [HarmonyPatch(nameof(BlueprintsCache.Init)), HarmonyPostfix]
 
       static void Init()

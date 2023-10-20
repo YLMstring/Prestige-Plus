@@ -151,7 +151,7 @@ namespace PrestigePlus.Maneuvers
                 .SetCanTargetEnemies(true)
                 .SetCanTargetFriends(false)
                 .SetCanTargetSelf(false)
-                .AddAbilityCasterMainWeaponIsMelee()
+                .AddAbilityCasterMainWeaponCheck(new WeaponCategory[] { WeaponCategory.Greataxe })
                 .SetIsFullRoundAction(true)
                 .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.BreathWeapon)
                 .Configure();
@@ -166,6 +166,7 @@ namespace PrestigePlus.Maneuvers
               .AddPrerequisiteParametrizedWeaponFeature(ParametrizedFeatureRefs.WeaponFocus.ToString(), WeaponCategory.Greataxe)
               .AddPrerequisiteStatValue(Kingmaker.EntitySystem.Stats.StatType.BaseAttackBonus, 11)
               .AddFacts(new() { ability2 })
+              .AddToGroups(FeatureGroup.CombatFeat)
               .Configure();
         }
     }

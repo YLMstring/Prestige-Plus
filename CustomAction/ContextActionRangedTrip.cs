@@ -49,7 +49,7 @@ namespace PrestigePlus.CustomAction
                 return;
             }
             var maneuver = CombatManeuver.Trip;
-            ItemEntityWeapon weapon = caster.GetThreatHand()?.Weapon;
+            ItemEntityWeapon weapon = caster.Body.PrimaryHand.Weapon;
             if (weapon == null) { weapon = caster.Body.EmptyHandWeapon; }
             var AttackBonusRule = new RuleCalculateAttackBonus(caster, target, weapon, 0) { };
             int penalty = -2;

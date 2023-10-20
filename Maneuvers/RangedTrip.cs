@@ -29,7 +29,7 @@ namespace PrestigePlus.Maneuvers
         private const string AceTripDescription = "AceTrip.Description";
         public static BlueprintFeature AceTripFeature()
         {
-            var icon = FeatureRefs.ImbueArrowFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.SnapShot.Reference.Get().Icon;
 
             var shoot = ActionsBuilder.New()
                 .Add<ContextActionAceTrip>()
@@ -47,6 +47,7 @@ namespace PrestigePlus.Maneuvers
               .AddPrerequisiteFeature(FeatureRefs.WeaponTrainingCrossbows.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
               .AddPrerequisiteFeature(FeatureRefs.WeaponTrainingThrown.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
               .AddManeuverTrigger(shoot, Kingmaker.RuleSystem.Rules.CombatManeuver.Trip, true)
+              .AddToGroups(FeatureGroup.CombatFeat)
               .Configure();
         }
 
@@ -60,7 +61,7 @@ namespace PrestigePlus.Maneuvers
 
         public static BlueprintFeature CreateTripRanged()
         {
-            var icon = FeatureRefs.PointBlankShot.Reference.Get().Icon;
+            var icon = FeatureRefs.SnapShot.Reference.Get().Icon;
 
             var shoot = ActionsBuilder.New()
                 .Add<ContextActionRangedTrip>()
@@ -102,7 +103,7 @@ namespace PrestigePlus.Maneuvers
 
         public static BlueprintFeature CreateVindictiveFall()
         {
-            var icon = FeatureRefs.PointBlankShot.Reference.Get().Icon;
+            var icon = FeatureRefs.AgileManeuvers.Reference.Get().Icon;
 
             var shoot = ActionsBuilder.New()
                 .Add<ContextActionAceTrip>()

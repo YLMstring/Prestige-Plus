@@ -34,7 +34,7 @@ namespace PrestigePlus.Maneuvers
 
         public static void DragConfigure()
         {
-            var icon = FeatureRefs.FurysFall.Reference.Get().Icon;
+            var icon = FeatureRefs.TandemTrip.Reference.Get().Icon;
 
             var DoThrow = ActionsBuilder.New()
                 .Add<ContextActionDomino>()
