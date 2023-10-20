@@ -4099,6 +4099,106 @@
     "Key": "AnchoriteSunBlade.Description",
     "enGB": "Any weapon wielded by the anchorite of dawn is treated having the undead bane special ability. Ranged weapons impart this ability to any ammunition fired from the weapon. All weapons wielded by the anchorite of dawn shed light as per a sunrod.",
     "zhCN": "任何由晨花隐者所持用的武器视为具有破敌不死生物武器特殊能力。远程武器所发射出的弹药都会被该能力强化。所有由晨花隐者持用的武器都会如同照明杖一般散发出光芒。"
+  },
+
+  {
+    "Key": "FeatBodyGuard.Name",
+    "ProcessTemplates": false,
+    "enGB": "Bodyguard",
+    "zhCN": "保镖"
+  },
+  {
+    "Key": "FeatBodyGuard.Description",
+    "enGB": "Your swift strikes ward off enemies attacking nearby allies. You gain divine guardian (paladin) Bodyguard ability.",
+    "zhCN": "你的快速攻击能够格挡开敌人对附近盟友的攻击。你获得圣洁守卫（圣武士）的保镖能力。"
+  },
+  {
+    "Key": "FeatHarmWay.Name",
+    "ProcessTemplates": false,
+    "enGB": "In Harm’s Way",
+    "zhCN": "抵御侵害"
+  },
+  {
+    "Key": "FeatHarmWay.Description",
+    "enGB": "You put yourself in danger’s path to save your allies. You gain divine guardian (paladin) In Harm’s Way ability.",
+    "zhCN": "为了保护盟友，你将自身置于危险之中。你获得圣洁守卫（圣武士）的抵御侵害能力。"
+  },
+  {
+    "Key": "SmashingCounter.Name",
+    "ProcessTemplates": false,
+    "enGB": "Stick-Fighting Counter",
+    "zhCN": "韦陀杵"
+  },
+  {
+    "Key": "SmashingCounter.Description",
+    "enGB": "Using stick-fighting techniques both defensively and offensively, you can turn your parries into counterattacks. While you are fighting defensively, you can prepare yourself to counter opponents you have attacked on that turn. Once per round, when that opponent attempts a melee attack against you and the attack misses, the attacker provokes an attack of opportunity from you, provided that it is within your threatened area. You must use a club, quarterstaff, dan bong, sap, or tonfa to perform the attack of opportunity.",
+    "zhCN": "韦陀杵势大力沉，刚猛霸道，招架之时可顺势进攻。当你进行防御式攻击时，可以准备反击本回合攻击过的敌人，每轮限一次，当其对你的近战攻击失手时，会引起你的借机攻击。你需要处于能威胁他的范围，且持用棍棒类武器。"
+  },
+  {
+    "Key": "SmashingMaster.Name",
+    "ProcessTemplates": false,
+    "enGB": "Stick-Fighting Maneuver",
+    "zhCN": "伏魔杖"
+  },
+  {
+    "Key": "SmashingMaster.Description",
+    "enGB": "Your attacks with sticks have become blindingly fast, and you can throw in a combat maneuver between your attacks. When making a full attack using only clubs, a quarterstaff, dan bongs, saps, or tonfas, you can perform a combat maneuver as an extra attack using your full base attack bonus.",
+    "zhCN": "伏魔杖出手凌厉，又快又狠，进攻之际另有诸般变化。当你使用棍棒类武器全回合攻击时，你可以以最高攻击加值使用一次额外的战技。"
+  },
+  {
+    "Key": "TripFeatVindictiveFall.Name",
+    "ProcessTemplates": false,
+    "enGB": "Vindictive Fall",
+    "zhCN": "剪刀脚"
+  },
+  {
+    "Key": "TripFeatVindictiveFall.Description",
+    "enGB": "When a creature causes you to fall prone, such as with an effect or a spell (such as grease) or by succeeding at a combat maneuver to trip you, you can attempt a combat maneuver check to trip the closest enemy within your melee reach.",
+    "zhCN": "当一个生物令你倒地，比如法术（油腻术）或成功的绊摔战技，你可以对你近战武器范围内最近的一名敌人尝试绊摔战技。"
+  },
+  {
+    "Key": "TripFeatTripRanged.Name",
+    "ProcessTemplates": false,
+    "enGB": "Ranged Trip",
+    "zhCN": "远距绊摔"
+  },
+  {
+    "Key": "TripFeatTripRanged.Description",
+    "enGB": "A shot to the leg causes your foe to fall prone. As a full-round action, you can attempt to perform a trip combat maneuver with any ranged weapon at a –2 penalty. Add your Dexterity modifier to your CMB in place of your Strength modifier. If your target is more than 30 feet away, you take an additional –2 penalty. If the trip attempt is successful, the target also takes damage as if you had made a successful attack with that weapon.",
+    "zhCN": "对手膝盖中箭，跌倒在地。以一个全回合动作，你可以用你的远程武器进行一次-2减值的绊摔，使用你的敏捷加值，而不是力量加值。如果目标距离30尺以上，额外获得-2减值。如果绊摔成功，目标还会受到你的武器攻击的伤害。"
+  },
+  {
+    "Key": "AceTrip.Name",
+    "ProcessTemplates": false,
+    "enGB": "Ace Trip",
+    "zhCN": "王牌绊摔"
+  },
+  {
+    "Key": "AceTrip.Description",
+    "enGB": "You don’t take the –2 penalty for making trip attempts with a ranged weapon using Ranged Trip, and you can attempt trip combat maneuver checks against anyone, even if the creature is immune to trip.",
+    "zhCN": "你的远距绊摔不会有减值，且你可以绊摔任何目标，即使它对其免疫。"
+  },
+  {
+    "Key": "MythicCleavingSweep.Name",
+    "ProcessTemplates": false,
+    "enGB": "Cleaving Sweep",
+    "zhCN": "下三路顺劈"
+  },
+  {
+    "Key": "MythicCleavingSweep.Description",
+    "enGB": "You can sweep multiple foes to the ground with a single blow of your axe. As a full-round action, you can attempt a trip combat maneuver at your highest base attack bonus against each opponent within reach. You must attempt a separate combat maneuver check against each opponent.",
+    "zhCN": "你一斧就能把众多敌人扫倒在地。以一个全回合动作，你可以对所有触及内的敌人尝试绊摔，对每个敌人单独掷骰。"
+  },
+  {
+    "Key": "DownLikeDominoes.Name",
+    "ProcessTemplates": false,
+    "enGB": "Down Like Dominoes",
+    "zhCN": "多米诺牌手"
+  },
+  {
+    "Key": "DownLikeDominoes.Description",
+    "enGB": "When you successfully trip a foe, as a free action you can attempt an additional trip attack against an adjacent creature at a –4 penalty. If this second trip is successful, you can continue to attempt to trip other creatures, taking a cumulative –4 penalty on each trip attempt after the first. In a round, you can trip a number of creatures equal to 1 + half your tier in this way.",
+    "zhCN": "当你成功绊摔一个敌人时，你可以用自由动作再绊摔一个附近的敌人，但有-4减值。如果这次绊摔也成功，你可以继续绊摔，获得累计的-4减值，以此类推。一轮内你最多能如此额外绊摔的生物数量等于1+你一半的神话阶级。"
   }
 
 ]
