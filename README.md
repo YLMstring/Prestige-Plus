@@ -1,4 +1,4 @@
-# Prestige Plus v1.6.0 for WoTR 
+# Prestige Plus v1.6.1 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - Add Grapple Mechanic!
@@ -15,7 +15,11 @@
 - [Improved Ki Throw](https://www.d20pfsrd.com/feats/combat-feats/improved-ki-throw-combat/)
 - [Binding Throw](https://www.d20pfsrd.com/feats/combat-feats/binding-throw-combat/)
 - [Enhanced Ki Throw](https://www.d20pfsrd.com/feats/combat-feats/enhanced-ki-throw-combat/)
-- [Smashing Style](https://www.d20pfsrd.com/feats/combat-feats/smashing-style-combat-style/)
+- [Vindictive Fall](https://www.d20pfsrd.com/feats/general-feats/vindictive-fall/)
+- [Ranged Trip](https://www.d20pfsrd.com/feats/combat-feats/ranged-trip-combat-targeting)
+- [Ace Trip](https://www.d20pfsrd.com/feats/weapon-mastery-feats/ace-trip-targeting-weapon-mastery/): You don’t take the –2 penalty for making trip attempts with a ranged weapon using Ranged Trip, and you can attempt trip combat maneuver checks against anyone, even if the creature is immune to trip.
+- [Cleaving Sweep](https://www.d20pfsrd.com/feats/combat-feats/cleaving-sweep-combat/)
+- [Down Like Dominoes](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/trickster/): When you successfully trip a foe, as a free action you can attempt an additional trip attack against an adjacent creature at a –4 penalty. If this second trip is successful, you immediately move to its square and may continue to attempt to trip other creatures, taking a cumulative –4 penalty on each trip attempt after the first. In a round, you can trip a number of creatures equal to 1 + half your tier in this way.
 - [Crush Armor](https://www.d20pfsrd.com/feats/combat-feats/weapon-trick-combat/)
 - [Sunder Storm](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/champion/champion-path-abilities/sunder-storm-ex/): When you succeed at a sunder combat maneuver check, you drive the shattered pieces of the item into the flesh of its wearer, dealing 1d6 + a number of points equal to your tier of divine damage. Additionally, as a full-round action, you can attempt a sunder combat maneuver against each opponent within reach.
 - [Tear Apart](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/champion/champion-path-abilities/tear-apart-ex/): Your sunder combat maneuver no longer disables armor, but rends it. If the check is successful, deal your weapon damage to the target and reduce the target’s armor bonus, natural armor bonus, or shield bonus by half your tier (minimum 1). If the creature has an enhancement bonus to the bonus you chose, reduce the normal bonus first, then apply any leftover reduction to the enhancement bonus. You can’t reduce the bonus below 0.
@@ -108,8 +112,8 @@
 - [Black Seraph’s Malevolence](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/black-seraphs-malevolence-combat/)
 - [Black Seraph Annihilation](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/black-seraph-annihilation-combat/)
 - [Grabbing Style](https://www.d20pfsrd.com/feats/combat-feats/grabbing-style-combat-style/)
-- Grabbing Drag (homebrew: drag effect)
-- Grabbing Master (homebrew: bypass immunity)
+- Grabbing Drag (homebrew): You can use a move action to attempt a grapple combat maneuver against a creature within 30 feet to pull it towards you. This movement as well as the ability itself provoke attack of opportunity.
+- Grabbing Master (homebrew): Your grapple may target anyone, even if the creature is immune to grapple.
 - [Charging Stag Style](https://www.d20pfsrd.com/feats/combat-feats/charging-stag-style-combat-style/)
 - [Stag Horns](https://www.d20pfsrd.com/feats/combat-feats/stag-horns-combat-style/)
 - [Stag Submission](https://www.d20pfsrd.com/feats/combat-feats/stag-submission-combat-style/)
@@ -120,12 +124,17 @@
 - [Kraken Wrack](https://www.d20pfsrd.com/feats/combat-feats/kraken-wrack-combat-style/)
 - [Medusa’s Wrath](https://www.d20pfsrd.com/feats/combat-feats/medusa-s-wrath-combat/)
 - Use Kraken Style Feats as prerequisites since they are all tentacle-like.
+- [Smashing Style](https://www.d20pfsrd.com/feats/combat-feats/smashing-style-combat-style/)
+- [Stick-Fighting Counter](https://www.d20pfsrd.com/feats/combat-feats/stick-fighting-counter-combat/)
+- [Stick-Fighting Maneuver](https://www.d20pfsrd.com/feats/combat-feats/stick-fighting-maneuver-combat/)
 ### New Feats
 
 - [Ripple in Still Water](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/ripple-in-still-water-combat/): From Path of War
 - [Lesser Spell Synthesis](https://www.d20pfsrd.com/feats/general-feats/lesser-spell-synthesis/)
 - Where is Spell Synthesis? In [Mystical Mayhem](https://gitgud.io/Kreaddy/mysticalmayhem/)!
 - [Surprising Strategy](https://www.d20pfsrd.com/feats/combat-feats/surprising-strategy-combat/)
+- [Bodyguard](https://www.d20pfsrd.com/feats/combat-feats/bodyguard-combat) (owlcat-brew)
+- [In Harm’s Way](https://www.d20pfsrd.com/feats/combat-feats/in-harm-s-way-combat/) (owlcat-brew)
 ### New Rogue Talents
 
 - [Another Day](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-advanced-talents/another-day-ex/)
