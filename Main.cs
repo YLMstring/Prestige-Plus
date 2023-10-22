@@ -228,7 +228,7 @@ namespace PrestigePlus
             Logger.Info("Already configured delayed blueprints.");
             return;
           }
-          Initialized = true; PatchDomain.Patch();
+          Initialized = true; PatchDomain.Patch(); //PatchHolyVindicator.Patch();
 
           RootConfigurator.ConfigureDelayedBlueprints();
         }
