@@ -3998,8 +3998,8 @@
   },
   {
     "Key": "AnchoriteofDawnFocusedFeat.Description",
-    "enGB": "Choose one of the following class features: animal companion, bane, bardic performance (raging song), favored enemy, or sacred weapon. This credence can be selected twice, but the anchorite of dawn must select a different class feature each time.",
-    "zhCN": "从后述职业能力中选择一项：动物伙伴，破敌，吟游表演（战怒之歌），宿敌，或神圣武器。这项信念能够选取2次，不过晨花隐者每次都必须选择不同的职业能力。"
+    "enGB": "Choose one of the following class features: animal companion, bane, bardic performance (skald), favored enemy, or sacred weapon. This credence can be selected twice, but the anchorite of dawn must select a different class feature each time.",
+    "zhCN": "从后述职业能力中选择一项：动物伙伴，破敌，吟游表演（歌者），宿敌，或神圣武器。这项信念能够选取2次，不过晨花隐者每次都必须选择不同的职业能力。"
   },
   {
     "Key": "AnchoriteFocusedAnimalCompanion.Name",
@@ -4020,8 +4020,8 @@
   },
   {
     "Key": "AnchoriteAnchoriteDomainPlus.Description",
-    "enGB": "The character adds his anchorite of dawn class levels to all his domains, but it only grants new abilities or feats without improving old ones.",
-    "zhCN": "角色将晨花隐者职业等级加到他的所有领域等级上，但只能用来获取新能力或专长，不会加强已有能力。"
+    "enGB": "The character adds his anchorite of dawn class levels to all his domains.",
+    "zhCN": "角色将晨花隐者职业等级加到他的所有领域等级上。"
   },
   {
     "Key": "AnchoriteFocusedBane.Name",
