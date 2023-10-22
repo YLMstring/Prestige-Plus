@@ -18,6 +18,7 @@ using Kingmaker.PubSubSystem;
 using Kingmaker.UnitLogic;
 using PrestigePlus.PrestigeClasses;
 using Kingmaker.RuleSystem.Rules;
+using Kingmaker.Items;
 
 namespace PrestigePlus.Modify
 {
@@ -26,33 +27,39 @@ namespace PrestigePlus.Modify
         private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         void IRulebookHandler<RuleCalculateAbilityParams>.OnEventAboutToTrigger(RuleCalculateAbilityParams evt)
         {
-            Logger.Info("start");
+            //Logger.Info("start");
             var Ability = BlueprintTool.GetRef<BlueprintAbilityReference>(ability);
             if (evt.Spell == Ability.Get())
             {
-                Logger.Info("start2");
+                //Logger.Info("start2");
                 var spellbook = Owner.GetSpellbook(holy);
                 if (spellbook == null) { return; }
-                Logger.Info("start3");
+                //Logger.Info("start3");
                 var stat = spellbook.Blueprint.CastingAttribute;
                 int dc = Owner.Stats.GetStat<ModifiableValueAttributeStat>(stat).Bonus + level;
-                Logger.Info(dc.ToString());
-                var slot = Owner.GetThreatHand();
-                if (slot != null && slot.MaybeWeapon != null)
+                //Logger.Info(dc.ToString());
+                var slot = Owner.Body.PrimaryHand;
+                ItemEntityWeapon weapon;
+                if (slot.MaybeWeapon != null)
                 {
-                    var rule = new RuleCalculateWeaponStats(Owner, slot.MaybeWeapon, null, null);
-                    Rulebook.Trigger(rule);
-                    if (rule.CriticalMultiplier >= 3)
-                    {
-                        dc += 2;
-                    }
-                    if (rule.CriticalMultiplier >= 4)
-                    {
-                        dc += 2;
-                    }
+                    weapon = slot.MaybeWeapon;
                 }
-                Logger.Info(dc.ToString());
-                Logger.Info(spellbook.EffectiveCasterLevel.ToString());
+                else
+                {
+                    weapon = Owner.Body.EmptyHandWeapon;
+                }
+                var rule = new RuleCalculateWeaponStats(Owner, weapon, null, null);
+                Rulebook.Trigger(rule);
+                if (rule.CriticalMultiplier >= 3)
+                {
+                    dc += 2;
+                }
+                if (rule.CriticalMultiplier >= 4)
+                {
+                    dc += 2;
+                }
+                //Logger.Info(dc.ToString());
+                //Logger.Info(spellbook.EffectiveCasterLevel.ToString());
                 evt.ReplaceDC = dc;
                 evt.ReplaceCasterLevel = spellbook.EffectiveCasterLevel;
             }

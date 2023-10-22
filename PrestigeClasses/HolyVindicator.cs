@@ -46,7 +46,7 @@ namespace PrestigePlus.PrestigeClasses
         private static readonly string holy = "b5daf66532f5425aa22df5372c57d766";
         public static BlueprintFeature DivineWrathFeat()
         {
-            var icon = AbilityRefs.Doom.Reference.Get().Icon;
+            var icon = AbilityRefs.CallLightning.Reference.Get().Icon;
 
             var ability2 = AbilityConfigurator.New(DivineWrathAblity2, DivineWrathAblity2Guid)
                 .CopyFrom(
@@ -85,12 +85,14 @@ namespace PrestigePlus.PrestigeClasses
                 .SetType(AbilityType.Special)
                 .Configure();
 
+            var holder = holy;
+
             return FeatureConfigurator.New(DivineWrath, DivineWrathGuid)
               .SetDisplayName(DivineWrathDisplayName)
               .SetDescription(DivineWrathDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddSpontaneousSpellConversion(holy, new() { null, ability, null, null, null, null, null, null, null, null })
+              .AddSpontaneousSpellConversion(holy, new() { holder, ability, holder, holder, holder, holder, holder, holder, holder, holder })
               .AddComponent<HolyVindicatorSpellDC>()
               .Configure();
         }
@@ -115,7 +117,7 @@ namespace PrestigePlus.PrestigeClasses
 
         public static BlueprintFeature DivineJudgmentFeat()
         {
-            var icon = AbilityRefs.JudgementAuraAbility.Reference.Get().Icon;
+            var icon = FeatureRefs.JudgmentAdditionalUse.Reference.Get().Icon;
 
             var knell = ActionsBuilder.New()
                 .ConditionalSaved(failed: ActionsBuilder.New()
@@ -149,7 +151,7 @@ namespace PrestigePlus.PrestigeClasses
              .SetDisplayName(DivineJudgmentDisplayName)
              .SetDescription(DivineJudgmentDescription)
              .SetIcon(icon)
-             .AddInitiatorAttackWithWeaponTrigger(action: VicousSelf, onlyHit: true, reduceHPToZero: true)
+             .AddInitiatorAttackWithWeaponTrigger(action: VicousSelf, onlyHit: true, reduceHPToZero: true, rangeType: WeaponRangeType.Melee, checkWeaponRangeType: true)
              .AddRestTrigger(ActionsBuilder.New().RemoveSelf().Build())
              .Configure();
 
@@ -160,6 +162,7 @@ namespace PrestigePlus.PrestigeClasses
              .AddStatBonus(ModifierDescriptor.Enhancement, stat: StatType.Strength, value: 2)
              .AddTemporaryHitPointsRandom(0, dice: new DiceFormula(1, DiceType.D8))
              .AddIncreaseCasterLevel(value: ContextValues.Constant(1))
+             .SetStacking(Kingmaker.UnitLogic.Buffs.Blueprints.StackingType.Prolong)
              .Configure();
 
             var ability = AbilityConfigurator.New(DivineJudgmentAblity, DivineJudgmentAblityGuid)
@@ -174,12 +177,14 @@ namespace PrestigePlus.PrestigeClasses
                 .SetType(AbilityType.Special)
                 .Configure();
 
+            var holder = holy;
+
             return FeatureConfigurator.New(DivineJudgment, DivineJudgmentGuid)
               .SetDisplayName(DivineJudgmentDisplayName)
               .SetDescription(DivineJudgmentDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddSpontaneousSpellConversion(holy, new() { null, null, ability, null, null, null, null, null, null, null })
+              .AddSpontaneousSpellConversion(holy, new() { holder, holder, ability, holder, holder, holder, holder, holder, holder, holder })
               .AddComponent<HolyVindicatorSpellDC>(c => { c.level = 12; c.ability = DivineJudgmentAblity2Guid; })
               .Configure();
         }
@@ -201,7 +206,7 @@ namespace PrestigePlus.PrestigeClasses
 
         public static BlueprintFeature DivineRetributionFeat()
         {
-            var icon = AbilityRefs.BestowCurseDeterioration.Reference.Get().Icon;
+            var icon = FeatureSelectionRefs.FavoriteEnemySelection.Reference.Get().Icon;
 
             var ability2 = AbilityConfigurator.New(DivineRetributionAblity2, DivineRetributionAblity2Guid)
                 .CopyFrom(
@@ -239,12 +244,14 @@ namespace PrestigePlus.PrestigeClasses
                 .SetType(AbilityType.Special)
                 .Configure();
 
+            var holder = holy;
+
             return FeatureConfigurator.New(DivineRetribution, DivineRetributionGuid)
               .SetDisplayName(DivineRetributionDisplayName)
               .SetDescription(DivineRetributionDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddSpontaneousSpellConversion(holy, new() { null, null, null, ability, null, null, null, null, null, null })
+              .AddSpontaneousSpellConversion(holy, new() { holder, holder, holder, ability, holder, holder, holder, holder, holder, holder })
               .AddComponent<HolyVindicatorSpellDC>(c => { c.level = 13; c.ability = DivineRetributionAblity2Guid; })
               .Configure();
         }

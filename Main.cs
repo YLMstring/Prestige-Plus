@@ -205,6 +205,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("ragonury"))) { DragonFury.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("dawnflower"))) { AnchoriteofDawn.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("bodyguard"))) { BodyGuard.Configure(); BodyGuard.Configure2(); }
+                    HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat();
                 }
                 catch (Exception e)
         {
@@ -228,7 +229,7 @@ namespace PrestigePlus
             Logger.Info("Already configured delayed blueprints.");
             return;
           }
-          Initialized = true; PatchDomain.Patch(); //PatchHolyVindicator.Patch();
+          Initialized = true; PatchDomain.Patch(); PatchArmorTraining.Patch();
 
           RootConfigurator.ConfigureDelayedBlueprints();
         }
@@ -238,5 +239,30 @@ namespace PrestigePlus
         }
       }
     }
-  }
+
+        [HarmonyPatch(typeof(StartGameLoader))]
+        static class StartGameLoader_Patch2
+        {
+            private static bool Initialized = false;
+
+            [HarmonyAfter(new string[] { "HolyVindicator" })]
+            [HarmonyPatch(nameof(StartGameLoader.LoadAllJson)), HarmonyPostfix]
+            static void LoadAllJson()
+            {
+                try
+                {
+                    if (Initialized)
+                    {
+                        Logger.Info("Already configured Holy Vindicator.");
+                        return;
+                    }
+                    Initialized = true; PatchHolyVindicator.Patch();
+                }
+                catch (Exception e)
+                {
+                    Logger.Error("Failed to configure Holy Vindicator.", e);
+                }
+            }
+        }
+    }
 }
