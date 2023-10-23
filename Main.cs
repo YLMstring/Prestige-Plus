@@ -18,10 +18,11 @@ using PrestigePlus.Maneuvers;
 using PrestigePlus.BasePrestigeEnhance;
 using PrestigePlus.Archetype;
 using PrestigePlus.Patch;
+using PrestigePlus.RogueTalent;
 
 namespace PrestigePlus
 {
-  public static class Main
+    public static class Main
   {
     public static bool Enabled;
     private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");

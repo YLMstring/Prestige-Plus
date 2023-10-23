@@ -17,6 +17,8 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using Kingmaker.EntitySystem.Stats;
 using PrestigePlus.CustomAction;
 using PrestigePlus.Modify;
+using Kingmaker.Designers.Mechanics.Facts;
+using TabletopTweaks.Core.Utilities;
 
 namespace PrestigePlus.Maneuvers
 {
@@ -34,6 +36,13 @@ namespace PrestigePlus.Maneuvers
             var shoot = ActionsBuilder.New()
                 .Add<ContextActionAceTrip>()
                 .Build();
+
+            var greater = FeatureRefs.GreaterTrip.Reference.Get();
+            if (greater)
+            {
+                greater.RemoveComponents<ManeuverProvokeAttack>();
+                greater.AddComponent<ManeuverTrigger>(c => { c.Action = ActionsBuilder.New().Add<FixedGreaterTrip>().Build(); c.ManeuverType = Kingmaker.RuleSystem.Rules.CombatManeuver.Trip; c.OnlySuccess = true; });
+            }
 
             return FeatureConfigurator.New(AceTrip, AceTripGuid, FeatureGroup.Feat)
               .SetDisplayName(AceTripDisplayName)
