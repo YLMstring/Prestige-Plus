@@ -18,7 +18,7 @@ using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Designers.Mechanics.Facts;
 using TabletopTweaks.Core.Utilities;
 using PrestigePlus.CustomAction.OtherManeuver;
-using PrestigePlus.CustomComponent.Feat;
+using PrestigePlus.CustomComponent.OtherManeuver;
 
 namespace PrestigePlus.Maneuvers
 {

@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 using Kingmaker.Designers.EventConditionActionSystem.Evaluators;
 using static Pathfinding.Util.RetainedGizmos;
 
-namespace PrestigePlus.CustomComponent.Feat
+namespace PrestigePlus.CustomComponent.OtherManeuver
 {
     internal class HandleVindictiveFall : UnitFactComponentDelegate, IKnockOffHandler, IUnitSubscriber, ISubscriber
     {

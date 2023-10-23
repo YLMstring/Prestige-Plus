@@ -28,6 +28,7 @@ using Kingmaker.UI.MVVM._VM.Other;
 using PrestigePlus.Modify;
 using Kingmaker.ElementsSystem;
 using static UnityEngine.UI.Extensions.ImageExtended;
+using PrestigePlus.CustomAction;
 
 namespace PrestigePlus.Blueprint.RogueTalent
 {

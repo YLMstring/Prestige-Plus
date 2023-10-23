@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BlueprintCore.Actions.Builder;
+using PrestigePlus.CustomAction.OtherFeatRelated;
 
 namespace PrestigePlus.Blueprint.RogueTalent
 {
@@ -27,6 +28,7 @@ namespace PrestigePlus.Blueprint.RogueTalent
             var icon = FeatureRefs.Evasion.Reference.Get().Icon;
 
             var action = ActionsBuilder.New()
+                .Add<ContextActionQuickShot>()
                 .Build();
 
             FeatureConfigurator.New(FeatName, FeatGuid, Kingmaker.Blueprints.Classes.FeatureGroup.RogueTalent)
@@ -34,6 +36,7 @@ namespace PrestigePlus.Blueprint.RogueTalent
                 .SetDescription(Description)
                 .SetIcon(icon)
                 .AddPrerequisiteFeature(FeatureRefs.AdvanceTalents.ToString())
+                .AddCombatStateTrigger(combatStartActions: action)
                 .Configure();
         }
     }
