@@ -3,17 +3,20 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
+using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.ElementsSystem;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules.Abilities;
 using Kingmaker.UnitLogic;
 using PrestigePlus.Blueprint.PrestigeClass;
 using PrestigePlus.Blueprint.RogueTalent;
+using PrestigePlus.GrappleMechanic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Kingmaker.UI.CanvasScalerWorkaround;
 
 namespace PrestigePlus.CustomComponent.Feat
 {
@@ -70,6 +73,8 @@ namespace PrestigePlus.CustomComponent.Feat
             if (iscloy)
             {
                 Fact.RunActionInContext(Actions);
+                Owner.Remove<UnitPartKiThrow>();
+                Owner.Ensure<UnitPartKiThrow>().Init(Owner, CasterBuff, Context);
             }
         }
 
@@ -89,9 +94,11 @@ namespace PrestigePlus.CustomComponent.Feat
         private static BlueprintAbilityReference Display8 = BlueprintTool.GetRef<BlueprintAbilityReference>("80920565-edff-4e87-b060-1151dffd0fe2");
         private static BlueprintAbilityReference Display9 = BlueprintTool.GetRef<BlueprintAbilityReference>("aac36b12-c3d0-4a4c-84f2-4c014a09b858");
 
+        private static BlueprintBuffReference CasterBuff = BlueprintTool.GetRef<BlueprintBuffReference>(CloyingShades.CloyingShadesBuffGuid);
+
         private static ActionList Actions = ActionsBuilder.New()
             .CastSpell(CloyingShades.CloyingShadesAbilityGuid)
-            .ApplyBuffWithDurationSeconds(CloyingShades.CloyingShadesBuffGuid, (float)0.5, toCaster: true)
+            //.ApplyBuffWithDurationSeconds(CloyingShades.CloyingShadesBuffGuid, (float)0.5, toCaster: true)
             .Build();
     }
 }
