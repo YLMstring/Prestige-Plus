@@ -4,7 +4,7 @@ using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
 using Kingmaker.Utility;
-using PrestigePlus.PrestigeClasses;
+using PrestigePlus.Blueprint.PrestigeClass;
 using System;
 using System.Collections.Generic;
 using System.Linq;

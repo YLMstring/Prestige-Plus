@@ -1,5 +1,4 @@
 using PrestigePlus.Feats;
-using PrestigePlus.PrestigeClasses;
 using BlueprintCore.Blueprints.Configurators.Root;
 using BlueprintCore.Utils;
 using HarmonyLib;
@@ -11,14 +10,21 @@ using ModMenu.Settings;
 using PrestigePlus.Menu;
 using System.Globalization;
 using System.Text;
-using PrestigePlus.Grapple;
 using Kingmaker.Controllers.Units;
 using Kingmaker.GameModes;
 using PrestigePlus.Maneuvers;
 using PrestigePlus.BasePrestigeEnhance;
-using PrestigePlus.Archetype;
 using PrestigePlus.Patch;
-using PrestigePlus.RogueTalent;
+using PrestigePlus.Blueprint.Archetype;
+using PrestigePlus.Blueprint.PrestigeClass;
+using PrestigePlus.Blueprint.RogueTalent;
+using PrestigePlus.Blueprint.CombatStyle;
+using PrestigePlus.Blueprint.Feat;
+using PrestigePlus.Blueprint.GrappleFeat;
+using PrestigePlus.Blueprint.MythicGrapple;
+using PrestigePlus.Blueprint.MythicFeat;
+using PrestigePlus.Blueprint.ManeuverFeat;
+using PrestigePlus.Blueprint;
 
 namespace PrestigePlus
 {

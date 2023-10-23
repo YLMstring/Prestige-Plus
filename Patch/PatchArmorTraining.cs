@@ -3,7 +3,6 @@ using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
 using Kingmaker.Utility;
-using PrestigePlus.PrestigeClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;

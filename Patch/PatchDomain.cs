@@ -8,7 +8,7 @@ using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.Components;
-using PrestigePlus.PrestigeClasses;
+using PrestigePlus.Blueprint.PrestigeClass;
 using System;
 using System.Collections.Generic;
 using System.Linq;
