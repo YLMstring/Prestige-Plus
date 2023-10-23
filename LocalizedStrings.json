@@ -4199,6 +4199,106 @@
     "Key": "DownLikeDominoes.Description",
     "enGB": "When you successfully trip a foe, as a free action you can attempt an additional trip attack against an adjacent creature at a –4 penalty. If this second trip is successful, you immediately move to its square and may continue to attempt to trip other creatures, taking a cumulative –4 penalty on each trip attempt after the first. In a round, you can trip a number of creatures equal to 1 + half your tier in this way.",
     "zhCN": "当你成功绊摔一个敌人时，你可以用自由动作再绊摔一个附近的敌人，但有-4减值。如果这次绊摔也成功，你立刻移动至其方格并可以继续绊摔，获得累计的-4减值，以此类推。一轮内你最多能如此额外绊摔的生物数量等于1+你一半的神话阶级。"
+  },
+
+  {
+    "Key": "HolyVindicatorDivineWrath.Name",
+    "ProcessTemplates": false,
+    "enGB": "Divine Wrath",
+    "zhCN": "神怒"
+  },
+  {
+    "Key": "HolyVindicatorDivineWrath.Description",
+    "enGB": "At 4th level, a vindicator may sacrifice a prepared 1st-level spell or available 1st-level spell slot as a swift action, the next time he confirms a critical hit,  he invokes doom upon the target (using the vindicator’s caster level). The save DC is increased by +2 if his weapon has a ×3 damage multiplier, or by +4 if it is ×4. The vindicator can also use this ability in response to being critically hit, even if the attack incapacitates or kills the vindicator.",
+    "zhCN": "4级时，辩护者可以牺牲一个已准备好的1级法术或可用1级法术位，这是一个迅捷动作。下次辩护者确认重击命中时，对目标造成“丧志术”效果（使用辩护者的施法者等级）。若武器拥有×3重击伤害倍率则豁免DC+2，×4倍率则改为+4。辩护者也可以在被重击命中时使用本能力，即使该攻击使辩护者失去意识或致命。"
+  },
+  {
+    "Key": "HolyVindicatorDivineJudgment.Name",
+    "ProcessTemplates": false,
+    "enGB": "Divine Judgment",
+    "zhCN": "神裁"
+  },
+  {
+    "Key": "HolyVindicatorDivineJudgment.Description",
+    "enGB": "At 7th level, a vindicator may sacrifice a prepared 2nd-level spell or available 2nd-level spell slot as a swift action, the next time he confirms a critical hit,  he invokes death knell upon the target (using the vindicator’s caster level). The save DC is increased by +2 if his weapon has a ×3 damage multiplier, or by +4 if it is ×4. (If the subject fails its saving throw, it dies, and you gain 1d8 temporary hit points and a +2 enhancement bonus to Strength. Additionally, your effective caster level goes up by +1, improving spell effects dependent on caster level. This increase in effective caster level does not grant you access to more spells. These effects last for 10 minutes per HD of the subject creature)",
+    "zhCN": "7级时，辩护者可以牺牲一个已准备好的2级法术或可用2级法术位，这是一个迅捷动作。下次辩护者确认重击命中时，对目标造成“死亡丧钟”效果（使用辩护者的施法者等级）。若武器拥有×3重击伤害倍率则豁免DC+2，×4倍率则改为+4。（若该受术者的豁免检定失败则死亡，同时你可获得1d8点临时HP，并且力量获得+2增强加值。另外，你的有效CL也+1, 从而增强与CL相关的法术效果。这种有效CL的提升不会使你获得更多的法术。受术生物的每个HD可以使这些效果持续10分钟）"
+  },
+  {
+    "Key": "HolyVindicatorDivineRetribution.Name",
+    "ProcessTemplates": false,
+    "enGB": "Divine Retribution",
+    "zhCN": "神罚"
+  },
+  {
+    "Key": "HolyVindicatorDivineRetribution.Description",
+    "enGB": "At 10th level, a vindicator may sacrifice a prepared 3rd-level spell or available 3rd-level spell slot as a swift action, the next time he confirms a critical hit,  he invokes bestow curse - deterioration upon the target (using the vindicator’s caster level). The save DC is increased by +2 if his weapon has a ×3 damage multiplier, or by +4 if it is ×4. The vindicator can also use this ability in response to being critically hit, even if the attack incapacitates or kills the vindicator.",
+    "zhCN": "10级时，辩护者可以牺牲一个已准备好的3级法术或可用3级法术位，这是一个迅捷动作。下次辩护者确认重击命中时，对目标造成“降咒-恶化”效果（使用辩护者的施法者等级）。若武器拥有×3重击伤害倍率则豁免DC+2，×4倍率则改为+4。辩护者也可以在被重击命中时使用本能力，即使该攻击使辩护者失去意识或致命。"
+  },
+  {
+    "Key": "DivineDefianceStyle.Name",
+    "ProcessTemplates": false,
+    "enGB": "Divine Defiance",
+    "zhCN": "违逆神意"
+  },
+  {
+    "Key": "DivineDefianceStyle.Description",
+    "enGB": "You distrust, disrespect, or doubt the gods, which helps you fight off their power. You gain a +2 bonus on saving throws against divine casters and mythic creatures.",
+    "zhCN": "你对于神祇的不信任，不恭敬或者怀疑帮助你排斥他们的力量。你在对抗神术施法者或神话生物时，豁免检定获得+2加值。"
+  },
+  {
+    "Key": "DivineDefianceIconoclast.Name",
+    "ProcessTemplates": false,
+    "enGB": "Iconoclast",
+    "zhCN": "偶像破坏者"
+  },
+  {
+    "Key": "DivineDefianceIconoclast.Description",
+    "enGB": "When you succeed at a sunder combat maneuver against a creature covered by the Divine Defiance feat, you can attempt an Intimidate check to demoralize as a free action. This demoralization affects all enemies within 30 feet.",
+    "zhCN": "当你成功对违逆神意中所提及的生物使用破武战技，你可以用一个自由动作尝试一次威吓检定来挫败士气。这次挫败士气会影响在30尺内所有敌人。"
+  },
+  {
+    "Key": "RogueSurpriseManeuver.Name",
+    "ProcessTemplates": false,
+    "enGB": "Surprise Maneuver",
+    "zhCN": "战技突袭"
+  },
+  {
+    "Key": "RogueSurpriseManeuver.Description",
+    "enGB": "Your maneuvers are devastating against disadvantaged foes. If you have sneak attack, when you attempt a combat maneuver check against a creature that you are flanking or that is denied its Dexterity bonus to AC against your attack, you gain a bonus on the combat maneuver check that’s equal to the number of sneak attack dice you roll.",
+    "zhCN": "你的战技对处于劣势的敌人效果显著。如果你拥有偷袭骰，当你对一个正在被你夹击或者对你的攻击失去敏捷加值的生物使用战技时，你的战技获得等同于偷袭骰数量的加值。"
+  },
+  {
+    "Key": "RogueSneakyManeuver.Name",
+    "ProcessTemplates": false,
+    "enGB": "Sneaky Maneuver",
+    "zhCN": "战技偷袭"
+  },
+  {
+    "Key": "RogueSneakyManeuver.Description",
+    "enGB": "Anytime a rogue with this talent makes a melee attack against an opponent that she is flanking or that is denied its Dexterity bonus to AC against her attack, she may take a –2 penalty on the attack roll. If the attack succeeds, the rogue deals damage as normal and then instead of dealing sneak attack damage, she can attempt a dirty trick, disarm, sunder, or trip combat maneuver check as a swift action this turn.",
+    "zhCN": "每当具有该天赋的游荡者近战攻击一个正在被她夹击或者对她的攻击失去敏捷加值的生物，她可以在本次攻击中获得-2减值，如果攻击命中，她放弃偷袭伤害，正常造成其余伤害，并可以在本回合用迅捷动作尝试阴招，缴械，击破或绊摔战技。"
+  },
+  {
+    "Key": "RogueCloyingShades.Name",
+    "ProcessTemplates": false,
+    "enGB": "Cloying Shades",
+    "zhCN": "密集暗影"
+  },
+  {
+    "Key": "RogueCloyingShades.Description",
+    "enGB": "When a rogue with this talent uses dimension door as a spell or spell-like ability, including the abundant step or shadow jump class feature, then all creatures adjacent to the rogue at the start and end of her teleportation are entangled by grasping shadows for 1 round (although the creatures are not anchored in place). A successful Reflex saving throw negates this effect. The DC of this saving throw is equal to 10 + 1/2 the rogue’s level + the rogue’s Intelligence or Charisma modifier (whichever is higher).",
+    "zhCN": "每当具有该天赋的游荡者使用次元门法术或类法术能力，包括无相挪移或者阴影跳跃能力，所有在传送开始和结束时临近她的生物被纠缠一轮，通过反射检定可以豁免此效果，豁免dc为10+1/2游荡者+智力或者魅力加值取高。"
+  },
+  {
+    "Key": "RogueQuickShot.Name",
+    "ProcessTemplates": false,
+    "enGB": "Quick Shot",
+    "zhCN": "疾速射击"
+  },
+  {
+    "Key": "RogueQuickShot.Description",
+    "enGB": "Whenever the rogue rolls initiative, she can also make a single attack against the closest enemy with a ranged weapon.",
+    "zhCN": "每当游荡者骰先攻时，她可以用远程武器攻击距离最近的敌人。"
   }
 
 ]

@@ -30,7 +30,7 @@ namespace PrestigePlus.HarmonyFix
             try
             {
                 int damage = damageBonus;
-                if (!__instance.PowerAttackScaling) { Logger.Info("not power"); return true; }
+                if (!__instance.PowerAttackScaling) { return true; }
                 var secondaryHand = __instance.Owner.Body.CurrentHandsEquipmentSet.SecondaryHand;
                 //fix secondary weapon damage not half bug
                 if (secondaryHand.HasWeapon && secondaryHand.MaybeWeapon != __instance.Owner.Body.EmptyHandWeapon && secondaryHand.MaybeWeapon == evt.Weapon)

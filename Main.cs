@@ -134,7 +134,7 @@ namespace PrestigePlus
             Toggle.New(GetKey("scar"), defaultValue: true, Helpers.CreateString("toggle-desc8", "Scar Seeker"))
               .ShowVisualConnection())
           .AddToggle(
-            Toggle.New(GetKey("dancer"), defaultValue: true, Helpers.CreateString("toggle-desc4", "Shadowdancer (Another Day)"))
+            Toggle.New(GetKey("dancer"), defaultValue: true, Helpers.CreateString("toggle-desc4", "Shadowdancer"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("umbral"), defaultValue: true, Helpers.CreateString("toggle-desc17", "Umbral Agent"))
@@ -170,7 +170,13 @@ namespace PrestigePlus
             Toggle.New(GetKey("enhance"), defaultValue: true, Helpers.CreateString("toggle-desc22", "Mythic Prestige Class Features"))
               .ShowVisualConnection())
           .AddToggle(
-            Toggle.New(GetKey("bodyguard"), defaultValue: true, Helpers.CreateString("toggle-desc28", "Bodyguard Feat"))
+            Toggle.New(GetKey("rogue"), defaultValue: true, Helpers.CreateString("toggle-desc30", "Rogue Talents"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("atheism"), defaultValue: true, Helpers.CreateString("toggle-desc29", "Atheism Feats"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("bodyguard"), defaultValue: true, Helpers.CreateString("toggle-desc28", "Bodyguard Feats"))
               .ShowVisualConnection()));
 
                 try
@@ -194,7 +200,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("walker"))) HorizonWalker.Configure();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("angel"))) { SanguineAngel.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("scar"))) { ScarSeeker.Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("dancer"))) { ShadowDancer.Configure(); DefensiveRoll.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("dancer"))) { ShadowDancer.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("seraph"))) { BlackSeraphStyle.StyleConfigure(); BlackSeraphStyle.MalevolenceConfigure(); BlackSeraphStyle.AnnihilationConfigure(); RippleWater.Configure(); SeizetheOpportunity.FeatConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("grabbing"))) { GrabbingStyle.StyleConfigure(); GrabbingStyle.DragConfigure(); GrabbingStyle.MasterConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("stag"))) { StagStyle.StyleConfigure(); StagStyle.HornsConfigure(); StagStyle.SubmissionConfigure(); }
@@ -212,6 +218,8 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("ragonury"))) { DragonFury.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("dawnflower"))) { AnchoriteofDawn.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("bodyguard"))) { BodyGuard.Configure(); BodyGuard.Configure2(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("atheism"))) { DivineDefiance.StyleConfigure(); DivineDefiance.IconoclastConfigure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("rogue"))) { QuickShot.Configure(); CloyingShades.CloyingShadesFeat(); DefensiveRoll.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat();
                 }
                 catch (Exception e)

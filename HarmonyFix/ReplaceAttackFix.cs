@@ -20,6 +20,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static Kingmaker.UI.CanvasScalerWorkaround;
+using static Kingmaker.Visual.CharacterSystem.CharacterStudio;
 
 namespace PrestigePlus.HarmonyFix
 {
@@ -60,7 +61,8 @@ namespace PrestigePlus.HarmonyFix
                 if (caster.HasFact(Trip1) || caster.HasFact(Trip2))
                 {
                     GameHelper.RemoveBuff(caster, Trip1);
-                    if (!target.CanBeKnockedOff()) { return true; }
+                    if (target.Descriptor.State.Prone.Active) { return true; }
+                    if (!target.CanBeKnockedOff() && !caster.HasFact(Ace)) { return true; }
                     RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.Trip, AttackBonusRule);
                     ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
                     return false;
@@ -103,9 +105,10 @@ namespace PrestigePlus.HarmonyFix
             return num3;
         }
 
-        private static BlueprintFeatureReference TWF = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.TwoWeaponFighting.ToString());
-        private static BlueprintFeatureReference Mythic = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.TwoWeaponFightingMythicFeat.ToString());
+        private static readonly BlueprintFeatureReference TWF = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.TwoWeaponFighting.ToString());
+        private static readonly BlueprintFeatureReference Mythic = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.TwoWeaponFightingMythicFeat.ToString());
 
-        private static BlueprintFeatureReference SunderReal = BlueprintTool.GetRef<BlueprintFeatureReference>(GreaterSunderTabletop.GreaterSunderTabletopGuid);
+        private static readonly BlueprintFeatureReference SunderReal = BlueprintTool.GetRef<BlueprintFeatureReference>(GreaterSunderTabletop.GreaterSunderTabletopGuid);
+        private static readonly BlueprintFeatureReference Ace = BlueprintTool.GetRef<BlueprintFeatureReference>(RangedTrip.AceTripGuid);
     }
 }

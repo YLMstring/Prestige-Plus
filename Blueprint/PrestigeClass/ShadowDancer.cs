@@ -52,7 +52,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
     internal class ShadowDancer
     {
         private const string ArchetypeName = "ShadowDancer";
-        private static readonly string ArchetypeGuid = "C15B5F6E-E37B-47DA-B382-EF15F585B35F";
+        public static readonly string ArchetypeGuid = "C15B5F6E-E37B-47DA-B382-EF15F585B35F";
         internal const string ArchetypeDisplayName = "ShadowDancer.Name";
         private const string ArchetypeDescription = "ShadowDancer.Description";
 
@@ -143,7 +143,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string ShadowJumpDescription = "ShadowDancerShadowJump.Description";
 
         private const string ShadowJumpAblity = "ShadowDancer.UseShadowJump";
-        private static readonly string ShadowJumpAblityGuid = "E1A86DF3-38E6-4E78-82B9-4EF7A6436BA8";
+        public static readonly string ShadowJumpAblityGuid = "E1A86DF3-38E6-4E78-82B9-4EF7A6436BA8";
 
         private const string ShadowJumpAblity2 = "ShadowDancer.UseShadowJump2";
         private static readonly string ShadowJumpAblityGuid2 = "{8ED8B86D-A5DB-46FE-B88A-05098198041A}";

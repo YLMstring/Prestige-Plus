@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using Kingmaker.Blueprints.Classes.Selection;
 
 namespace PrestigePlus.CustomComponent.Archetype
 {
@@ -43,12 +44,12 @@ namespace PrestigePlus.CustomComponent.Archetype
             {
                 if (feat.Blueprint.HasGroup(FeatureGroup.CombatFeat))
                 {
-                    TryAdd(feat.Blueprint);
+                    TryAdd(feat.Blueprint, feat.Param);
                 }
             }
         }
         // Token: 0x0600E0DB RID: 57563 RVA: 0x0039C794 File Offset: 0x0039A994
-        private void TryAdd(BlueprintFeature feat)
+        private void TryAdd(BlueprintFeature feat, FeatureParam param)
         {
             foreach (EntityPartRef<UnitEntityData, UnitPartPet> entityPartRef in Owner.Pets)
             {
@@ -56,7 +57,7 @@ namespace PrestigePlus.CustomComponent.Archetype
                 UnitPartPet unitPartPet = entity?.Get<UnitPartPet>();
                 if (unitPartPet != null && !entityPartRef.Entity.Descriptor.Progression.Features.HasFact(feat))
                 {
-                    entityPartRef.Entity.Descriptor.Progression.Features.AddFact(feat, null);
+                    entityPartRef.Entity.Descriptor.AddFact(feat, null, param);
                 }
             }
         }

@@ -19,6 +19,7 @@ using Kingmaker.UnitLogic.Mechanics.Properties;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.JsonSystem;
+using PrestigePlus.Blueprint.PrestigeClass;
 
 namespace PrestigePlus.Modify
 {
@@ -41,18 +42,34 @@ namespace PrestigePlus.Modify
 
         private AbilityParams MyCalculate([CanBeNull] MechanicsContext context, [NotNull] BlueprintScriptableObject blueprint, [NotNull] UnitEntityData caster, [CanBeNull] AbilityData ability)
         {
-            //StatType value = StatType.Charisma;
             StatType value = Property;
             RuleCalculateAbilityParams ruleCalculateAbilityParams = (ability != null) ? new RuleCalculateAbilityParams(caster, ability) : new RuleCalculateAbilityParams(caster, blueprint, null);
             ruleCalculateAbilityParams.ReplaceStat = new StatType?(value);
+            if (Property2 != StatType.Unknown)
+            {
+                if (caster.Stats.GetStat<ModifiableValueAttributeStat>(Property2) > caster.Stats.GetStat<ModifiableValueAttributeStat>(Property))
+                {
+                    ruleCalculateAbilityParams.ReplaceStat = new StatType?(Property2);
+                }
+            }
             if (this.StatTypeFromCustomProperty)
             {
                 ruleCalculateAbilityParams.ReplaceStatBonusModifier = new int?(this.m_CustomProperty.Get().GetInt(caster));
             }
-            //var guid = "{A9827D49-8599-4525-B763-0E4554DCC1A0}";
             var archetype = BlueprintTool.GetRef<BlueprintCharacterClassReference>(classguid);
-            ruleCalculateAbilityParams.ReplaceCasterLevel = new int?(caster.Descriptor.Progression.GetClassLevel(archetype));
-            ruleCalculateAbilityParams.ReplaceSpellLevel = new int?(caster.Descriptor.Progression.GetClassLevel(archetype));
+            int level = caster.Descriptor.Progression.GetClassLevel(archetype);
+            if (isRogue)
+            {
+                level += caster.Descriptor.Progression.GetClassLevel(BlueprintTool.GetRef<BlueprintCharacterClassReference>(CharacterClassRefs.SlayerClass.ToString()));
+                level += caster.Descriptor.Progression.GetClassLevel(BlueprintTool.GetRef<BlueprintCharacterClassReference>(ShadowDancer.ArchetypeGuid));
+            }
+            ruleCalculateAbilityParams.ReplaceCasterLevel = new int?(level);
+            ruleCalculateAbilityParams.ReplaceSpellLevel = new int?(level);
+            if (halfed)
+            {
+                ruleCalculateAbilityParams.ReplaceCasterLevel /= 2;
+                ruleCalculateAbilityParams.ReplaceSpellLevel /= 2;
+            }
             if (context != null)
             {
                 return context.TriggerRule<RuleCalculateAbilityParams>(ruleCalculateAbilityParams).Result;
@@ -62,6 +79,10 @@ namespace PrestigePlus.Modify
 
         public string classguid;
         public StatType Property;
+
+        public bool halfed = false;
+        public StatType Property2 = StatType.Unknown;
+        public bool isRogue = false;
 
     }
 }

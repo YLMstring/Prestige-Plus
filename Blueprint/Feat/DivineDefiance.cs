@@ -29,7 +29,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static void StyleConfigure()
         {
-            var icon = FeatureRefs.FlurryOfBlows.Reference.Get().Icon;
+            var icon = FeatureRefs.AtheismFeature.Reference.Get().Icon;
 
             FeatureConfigurator.New(StyleName, StyleGuid, FeatureGroup.Feat)
                     .SetDisplayName(StyleDisplayName)
@@ -49,7 +49,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static void IconoclastConfigure()
         {
-            var icon = FeatureRefs.FlurryOfBlows.Reference.Get().Icon;
+            var icon = FeatureRefs.AtheismFeature.Reference.Get().Icon;
 
             var action = ActionsBuilder.New().Add<ContextActionIconoclast>().Build();
 

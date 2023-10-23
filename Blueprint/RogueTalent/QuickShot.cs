@@ -18,14 +18,14 @@ namespace PrestigePlus.Blueprint.RogueTalent
 {
     internal class QuickShot
     {
-        private static readonly string FeatName = "QuickShot";
+        private static readonly string FeatName = "RogueQuickShot";
         private static readonly string FeatGuid = "{55A4FBA2-D6F4-4528-8635-EA10D4F851AC}";
 
-        private static readonly string DisplayName = "QuickShot.Name";
-        private static readonly string Description = "QuickShot.Description";
+        private static readonly string DisplayName = "RogueQuickShot.Name";
+        private static readonly string Description = "RogueQuickShot.Description";
         public static void Configure()
         {
-            var icon = FeatureRefs.Evasion.Reference.Get().Icon;
+            var icon = FeatureRefs.RapidShotFeature.Reference.Get().Icon;
 
             var action = ActionsBuilder.New()
                 .Add<ContextActionQuickShot>()

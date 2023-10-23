@@ -98,7 +98,8 @@ namespace PrestigePlus.HarmonyFix
                 }
                 else if (caster.HasFact(Trip) && caster.HasFact(TripFeat))
                 {
-                    if (!target.CanBeKnockedOff()) { return true; }
+                    if (target.Descriptor.State.Prone.Active) { return true; }
+                    if (!target.CanBeKnockedOff() && !caster.HasFact(Ace)) { return true; }
                     maneuver = CombatManeuver.Trip;
                 }
                 else if (caster.HasFact(Grapple) && caster.HasFact(GrappleFeat))
@@ -207,5 +208,6 @@ namespace PrestigePlus.HarmonyFix
         private static readonly BlueprintAbilityReference VitalAbility = BlueprintTool.GetRef<BlueprintAbilityReference>(AbilityRefs.VitalStrikeAbility.ToString());
 
         private static readonly BlueprintFeatureReference SunderReal = BlueprintTool.GetRef<BlueprintFeatureReference>(GreaterSunderTabletop.GreaterSunderTabletopGuid);
+        private static readonly BlueprintFeatureReference Ace = BlueprintTool.GetRef<BlueprintFeatureReference>(RangedTrip.AceTripGuid);
     }
 }

@@ -6,6 +6,7 @@ using Kingmaker.Designers;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.UnitLogic;
 using Kingmaker.Utility;
+using PrestigePlus.Blueprint.RogueTalent;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,7 @@ namespace PrestigePlus.GrappleMechanic
     {
         public override void TickOnUnit(UnitEntityData unit)
         {
+            //GameHelper.RemoveBuff(unit, Buff);
             if (!unit.HasFact(Base)) return;
             UnitEntityData mount = unit.GetSaddledUnit();
             if (mount == null)
@@ -34,7 +36,7 @@ namespace PrestigePlus.GrappleMechanic
 
         }
 
-        //private static BlueprintBuffReference Buff = BlueprintTool.GetRef<BlueprintBuffReference>("{27519583-B18E-4491-B18A-2AA1698FFBAC}");
+        //private static BlueprintBuffReference Buff = BlueprintTool.GetRef<BlueprintBuffReference>(CloyingShades.CloyingShadesBuffGuid);
         private static BlueprintFeatureReference Base = BlueprintTool.GetRef<BlueprintFeatureReference>("{D47DC15C-3A96-4358-A652-DB9E632009A7}");
     }
 }
