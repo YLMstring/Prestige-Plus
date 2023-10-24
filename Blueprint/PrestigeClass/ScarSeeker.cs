@@ -289,7 +289,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         private const string BloodImproved = "ScarSeeker.BloodImproved";
         private static readonly string BloodImprovedGuid = "{0655DD6E-DE33-4CA1-A8F8-5EF4C0B32A08}";
-
         public static BlueprintFeature BloodImprovedFeat()
         {
             var icon = FeatureRefs.BleedingInfusionFeature.Reference.Get().Icon;
@@ -306,8 +305,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         private const string BloodGreater = "ScarSeeker.BloodGreater";
         private static readonly string BloodGreaterGuid = "{987EC280-2304-413D-8809-274B1E5C9557}";
-
-
         public static BlueprintFeature BloodGreaterFeat()
         {
             var icon = FeatureRefs.BleedingInfusionFeature.Reference.Get().Icon;
