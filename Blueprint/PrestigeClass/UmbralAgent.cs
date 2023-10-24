@@ -44,6 +44,7 @@ using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities;
 using PrestigePlus.CustomAction.GrappleThrow;
 using PrestigePlus.CustomComponent.PrestigeClass;
+using TabletopTweaks.Core.NewComponents.Prerequisites;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -108,10 +109,9 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddPrerequisiteStatValue(StatType.SkillKnowledgeWorld, 7)
                 .AddPrerequisiteStatValue(StatType.SkillLoreReligion, 7)
                 .AddPrerequisiteStatValue(StatType.SkillPersuasion, 5)
-                .AddPrerequisiteAlignment(AlignmentMaskType.Evil, checkInProgression: true)
+                .AddPrerequisiteAlignment(AlignmentMaskType.Evil)
                 .AddPrerequisiteFeature(FeatureRefs.ScribingScrolls.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.All)
-                .AddPrerequisiteCasterTypeSpellLevel(true, false, 2, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
-                .AddPrerequisiteCasterTypeSpellLevel(false, false, 2, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .AddComponent<PrerequisiteCasterLevel>(c => { c.RequiredCasterLevel = 2; })
                 .Configure();
 
             Action<ProgressionRoot> act = delegate (ProgressionRoot i)

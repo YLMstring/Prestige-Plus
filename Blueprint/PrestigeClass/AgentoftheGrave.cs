@@ -102,12 +102,10 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddPrerequisiteStatValue(StatType.SkillKnowledgeArcana, 5)
                 .AddPrerequisiteStatValue(StatType.SkillLoreReligion, 5)
                 .AddComponent<PrerequisiteSpellKnown>(c => { c.m_Spell = BlueprintTool.GetRef<BlueprintAbilityReference>(AbilityRefs.AnimateDead.ToString()); c.RequireSpellbook = true; })
-                .AddPrerequisiteAlignment(AlignmentMaskType.Evil, true, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
-                .AddPrerequisiteAlignment(AlignmentMaskType.LawfulNeutral, true, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
-                .AddPrerequisiteAlignment(AlignmentMaskType.TrueNeutral, true, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
-                .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticNeutral, true, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
-                //.AddPrerequisiteCasterTypeSpellLevel(true, false, 3, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
-                //.AddPrerequisiteCasterTypeSpellLevel(false, false, 3, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .AddPrerequisiteAlignment(AlignmentMaskType.Evil, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .AddPrerequisiteAlignment(AlignmentMaskType.LawfulNeutral, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .AddPrerequisiteAlignment(AlignmentMaskType.TrueNeutral, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticNeutral, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                 .Configure();
 
             Action<ProgressionRoot> act = delegate (ProgressionRoot i)

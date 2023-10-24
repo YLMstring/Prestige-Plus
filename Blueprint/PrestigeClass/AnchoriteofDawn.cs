@@ -41,6 +41,7 @@ using Kingmaker.UnitLogic.Buffs.Components;
 using System.Drawing;
 using PrestigePlus.CustomComponent.PrestigeClass;
 using PrestigePlus.Patch;
+using TabletopTweaks.Core.NewComponents.Prerequisites;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -102,9 +103,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetClassSkills(new StatType[] { StatType.SkillKnowledgeWorld, StatType.SkillLoreNature, StatType.SkillLoreReligion, StatType.SkillAthletics, StatType.SkillMobility, StatType.SkillPerception })
                 .AddPrerequisiteStatValue(StatType.SkillLoreNature, 5)
                 .AddPrerequisiteStatValue(StatType.SkillLoreReligion, 5)
-                .AddPrerequisiteAlignment(AlignmentMaskType.Good, checkInProgression: true)
-                .AddPrerequisiteCasterTypeSpellLevel(true, false, 2, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
-                .AddPrerequisiteCasterTypeSpellLevel(false, false, 2, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .AddPrerequisiteAlignment(AlignmentMaskType.Good)
+                .AddComponent<PrerequisiteCasterLevel>(c => { c.RequiredCasterLevel = 2; })
                 .Configure();
 
             Action<ProgressionRoot> act = delegate (ProgressionRoot i)

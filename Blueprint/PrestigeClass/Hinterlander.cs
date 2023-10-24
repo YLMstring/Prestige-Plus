@@ -26,6 +26,8 @@ using Kingmaker.UnitLogic.Abilities.Components.TargetCheckers;
 using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.FactLogic;
 using PrestigePlus.Blueprint.RogueTalent;
+using TabletopTweaks.Core.NewComponents.Prerequisites;
+using Kingmaker.UnitLogic.Alignments;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -89,8 +91,11 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddPrerequisiteStatValue(StatType.SkillPerception, 5)
                 .AddPrerequisiteFeature(FeatureRefs.Endurance.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.All)
                 .AddPrerequisiteParametrizedWeaponFeature(ParametrizedFeatureRefs.WeaponFocus.ToString(), WeaponCategory.Longbow, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.All)
-                .AddPrerequisiteCasterTypeSpellLevel(true, false, 1, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
-                .AddPrerequisiteCasterTypeSpellLevel(false, false, 1, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .AddComponent<PrerequisiteCasterLevel>(c => { c.RequiredCasterLevel = 1; })
+                .AddPrerequisiteAlignment(AlignmentMaskType.Good, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .AddPrerequisiteAlignment(AlignmentMaskType.LawfulNeutral, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .AddPrerequisiteAlignment(AlignmentMaskType.TrueNeutral, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticNeutral, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                 .Configure();
 
             Action<ProgressionRoot> act = delegate (ProgressionRoot i)
