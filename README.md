@@ -52,7 +52,6 @@
 #### Homebrew Options:  
 - Storm of Arrows: a mythic ability to increase the number of uses of Hail of Arrows!
 ### [Asavir Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/a-b/asavir/)   
-- Thanks to bittercranberry for his aid another and camaraderie (in [Expanded Content](https://github.com/ka-dyn/ExpandedContent) which it requires)!
 - Share your pet with Djinni’s Blessing!
 - Trample (Mythic): a mythic feat inspired by tabletop abilities of the same name! (notice that owlcat trample works differently from tabletop)
 #### Homebrew Options:  
@@ -60,7 +59,6 @@
 ### [Chevalier Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/c-d/chevalier/)
 - The class has only 3 levels.
 ### [Halfling Opportunist Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/halfling-opportunist/)
-- Thanks to bittercranberry for his aid another and Excellent Aid (in next update of [Expanded Content](https://github.com/ka-dyn/ExpandedContent) which it requires)!
 #### Homebrew Options:  
 - Alternative access to the class for non-halflings!
 - A mythic feat to use another combat maneuver with Exploitive Maneuver.
@@ -137,6 +135,8 @@
 - [Surprising Strategy](https://www.d20pfsrd.com/feats/combat-feats/surprising-strategy-combat/)
 - [Bodyguard](https://www.d20pfsrd.com/feats/combat-feats/bodyguard-combat) (owlcat-brew)
 - [In Harm’s Way](https://www.d20pfsrd.com/feats/combat-feats/in-harm-s-way-combat/) (owlcat-brew)
+- [Divine Defiance](https://www.d20pfsrd.com/feats/general-feats/divine-defiance) 
+- [Iconoclast](https://www.d20pfsrd.com/feats/combat-feats/iconoclast-combat/) 
 ### New Rogue Talents
 
 - [Another Day](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-advanced-talents/another-day-ex/)
