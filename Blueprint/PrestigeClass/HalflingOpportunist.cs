@@ -149,6 +149,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(ExploitiveDescription)
               .SetIcon(icon)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New().RemoveSelf().Build())
               .Configure();
 
             var action = ActionsBuilder.New()
@@ -171,7 +172,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddTargetAttackWithWeaponTrigger(actionsOnAttacker: action, onlyMelee: true, triggerBeforeAttack: true)
-              .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New().RemoveBuff(cooldownbuff, toCaster: true).Build())
+              //.AddNewRoundTrigger(newRoundActions: ActionsBuilder.New().RemoveBuff(cooldownbuff, toCaster: true).Build())
               .Configure();
         }
         private const string SummonSmall0 = "HalflingOpportunist.SummonSmall0";

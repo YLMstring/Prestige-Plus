@@ -20,7 +20,7 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string Description = "RogueSurpriseManeuver.Description";
         public static void Configure()
         {
-            var icon = FeatureRefs.RapidShotFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.JumpUp.Reference.Get().Icon;
 
             FeatureConfigurator.New(FeatName, FeatGuid, Kingmaker.Blueprints.Classes.FeatureGroup.Feat)
                 .SetDisplayName(DisplayName)

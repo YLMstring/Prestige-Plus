@@ -68,6 +68,8 @@ namespace PrestigePlus.CustomComponent.Archetype
             {
                 if (feat.Blueprint.HasGroup(FeatureGroup.CombatFeat))
                 {
+                    var para = feat.Blueprint as BlueprintParametrizedFeature;
+                    if (para?.ParameterType == FeatureParameterType.WeaponCategory) { continue; }
                     TryRemove(feat.Blueprint);
                 }
             }

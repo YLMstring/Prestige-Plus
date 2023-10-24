@@ -41,7 +41,7 @@ namespace PrestigePlus.Blueprint.RogueTalent
 
         public static BlueprintFeature SneakyManeuverFeat()
         {
-            var icon = AbilityRefs.WavesOfExhaustion.Reference.Get().Icon;
+            var icon = ActivatableAbilityRefs.DebilitatingInjuryBewilderedAbility.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(SneakyManeuverBuff, SneakyManeuverBuffGuid)
               .SetDisplayName(SneakyManeuverDisplayName)
@@ -63,9 +63,10 @@ namespace PrestigePlus.Blueprint.RogueTalent
               .SetDisplayName(SneakyManeuverDisplayName)
               .SetDescription(SneakyManeuverDescription)
               .SetIcon(icon)
-              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              //.SetFlags(BlueprintBuff.Flags.HiddenInUi)
               .AddAutoMetamagic(new() { AbilityRefs.DirtyTrickBlindnessAction.ToString(), AbilityRefs.DirtyTrickEntangleAction.ToString(), AbilityRefs.DirtyTrickSickenedAction.ToString(), AbilityRefs.DisarmAction.ToString(), AbilityRefs.SunderAction.ToString(), AbilityRefs.TripAction.ToString() }, 
               metamagic: Metamagic.Quicken, allowedAbilities: Kingmaker.Designers.Mechanics.Facts.AutoMetamagic.AllowedType.Any, once: true)
+              //.AddNewRoundTrigger(newRoundActions: ActionsBuilder.New().RemoveSelf().Build())
               .Configure();
 
             return FeatureConfigurator.New(SneakyManeuverPower, SneakyManeuverGuid)

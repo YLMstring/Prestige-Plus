@@ -1,4 +1,6 @@
-﻿using Kingmaker.PubSubSystem;
+﻿using Kingmaker.Enums;
+using Kingmaker.PubSubSystem;
+using Kingmaker.RuleSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic;
 using System;
@@ -13,15 +15,15 @@ namespace PrestigePlus.CustomComponent.Feat
     {
         void IRulebookHandler<RuleCalculateCMD>.OnEventAboutToTrigger(RuleCalculateCMD evt)
         {
-            
+            if (evt.Target.CombatState.IsFlanked || Rulebook.Trigger(new RuleCheckTargetFlatFooted(evt.Initiator, evt.Target)).IsFlatFooted)
+            {
+                evt.AddModifier(-evt.Initiator.Descriptor.Stats.SneakAttack, Fact, ModifierDescriptor.Penalty);
+            }
         }
 
         void IRulebookHandler<RuleCalculateCMD>.OnEventDidTrigger(RuleCalculateCMD evt)
         {
-            if (evt.IsTargetFlatFooted || evt.Target.CombatState.IsFlanked)
-            {
-                evt.Result -= Owner.Descriptor.Stats.SneakAttack;
-            }
+            
         }
     }
 }
