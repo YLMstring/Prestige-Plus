@@ -4264,8 +4264,8 @@
   },
   {
     "Key": "RogueSurpriseManeuver.Description",
-    "enGB": "Your maneuvers are devastating against disadvantaged foes. If you have sneak attack, when you attempt a combat maneuver check against a creature that you are flanking or that is denied its Dexterity bonus to AC against your attack, you gain a bonus on the combat maneuver check that’s equal to the number of sneak attack dice you roll.",
-    "zhCN": "你的战技对处于劣势的敌人效果显著。如果你拥有偷袭骰，当你对一个正在被你夹击或者对你的攻击失去敏捷加值的生物使用战技时，你的战技获得等同于偷袭骰数量的加值。"
+    "enGB": "Your maneuvers are devastating against disadvantaged foes. If you have sneak attack, when you attempt a combat maneuver check against a creature that you are flanking or that is denied its Dexterity bonus to AC against your attack, you opponent gain a penalty on the CMD check that’s equal to the number of sneak attack dice you roll.",
+    "zhCN": "你的战技对处于劣势的敌人效果显著。如果你拥有偷袭骰，当你对一个正在被你夹击或者对你的攻击失去敏捷加值的生物使用战技时，你对手的CMD获得等同于偷袭骰数量的减值。"
   },
   {
     "Key": "RogueSneakyManeuver.Name",

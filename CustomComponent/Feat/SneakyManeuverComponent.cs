@@ -26,6 +26,7 @@ namespace PrestigePlus.CustomComponent.Feat
         void IRulebookHandler<RuleAttackRoll>.OnEventDidTrigger(RuleAttackRoll evt)
         {
             if (Owner.HasFact(maneuver)) { return; }
+            if (evt.AttackType != Kingmaker.RuleSystem.AttackType.Melee && evt.AttackType != Kingmaker.RuleSystem.AttackType.Touch) { return; }
             if (!evt.IsTargetFlatFooted && !evt.TargetIsFlanked) { return; }
             if (evt.Result != AttackResult.Hit && evt.Result != AttackResult.CriticalHit) { return; }
             if (evt.D20 + evt.AttackBonus < evt.TargetAC + 2 && evt.D20 != 20) { return; }
