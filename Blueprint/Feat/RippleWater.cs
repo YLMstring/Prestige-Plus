@@ -5,7 +5,9 @@ using BlueprintCore.Utils;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints;
 using Kingmaker.EntitySystem.Stats;
+using PrestigePlus.Blueprint.PrestigeClass;
 using PrestigePlus.Grapple;
+using PrestigePlus.Patch;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +24,9 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string FeatNamePro = "RippleWaterPro";
         public static readonly string FeatGuidPro = "{F2675BE8-0E12-4D43-B485-708DA87A972F}";
 
+        private static readonly string FeatNamePro2 = "RippleWaterPro2";
+        public static readonly string FeatGuidPro2 = "{D9DBF5C4-642C-475B-9C9A-C99361E172BF}";
+
         private static readonly string DisplayName = "RippleWater.Name";
         private static readonly string Description = "RippleWater.Description";
 
@@ -29,32 +34,46 @@ namespace PrestigePlus.Blueprint.Feat
         {
             var icon = AbilityRefs.DeathWard.Reference.Get().Icon;
 
+            var featreal = FeatureConfigurator.New(FeatNamePro2, FeatGuidPro2)
+                    .SetDisplayName(DisplayName)
+                    .SetDescription(Description)
+                    .SetIcon(icon)
+                    .AddComponent<KineticProgressionContinue>()
+                    .SetRanks(20)
+                    .SetHideInUI(true)
+                    .Configure();
+
+            ProgressionConfigurator.For(ProgressionRefs.KineticBlastProgression)
+                .AddToFeaturesRankIncrease(featreal)
+                .SetGiveFeaturesForPreviousLevels(true)
+                .Configure();
+
             var pro = ProgressionConfigurator.New(FeatNamePro, FeatGuidPro)
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
               .SetClasses(BlueprintTool.GetRef<BlueprintCharacterClassReference>(CharacterClassRefs.MonkClass.ToString()))
               .SetGiveFeaturesForPreviousLevels(true)
-              .AddToLevelEntry(1, FeatureRefs.KineticBlastFeature.ToString())
-              .AddToLevelEntry(2)
-              .AddToLevelEntry(3, FeatureRefs.KineticBlastFeature.ToString())
-              .AddToLevelEntry(4)
-              .AddToLevelEntry(5, FeatureRefs.KineticBlastFeature.ToString())
-              .AddToLevelEntry(6)
-              .AddToLevelEntry(7, FeatureRefs.KineticBlastFeature.ToString())
-              .AddToLevelEntry(8)
-              .AddToLevelEntry(9, FeatureRefs.KineticBlastFeature.ToString())
-              .AddToLevelEntry(10)
-              .AddToLevelEntry(11, FeatureRefs.KineticBlastFeature.ToString())
-              .AddToLevelEntry(12)
-              .AddToLevelEntry(13, FeatureRefs.KineticBlastFeature.ToString())
-              .AddToLevelEntry(14)
-              .AddToLevelEntry(15, FeatureRefs.KineticBlastFeature.ToString())
-              .AddToLevelEntry(16)
-              .AddToLevelEntry(17, FeatureRefs.KineticBlastFeature.ToString())
-              .AddToLevelEntry(18)
-              .AddToLevelEntry(19, FeatureRefs.KineticBlastFeature.ToString())
-              .AddToLevelEntry(20)
+              .AddToLevelEntry(1, featreal)
+              .AddToLevelEntry(2, featreal)
+              .AddToLevelEntry(3, featreal)
+              .AddToLevelEntry(4, featreal)
+              .AddToLevelEntry(5, featreal)
+              .AddToLevelEntry(6, featreal)
+              .AddToLevelEntry(7, featreal)
+              .AddToLevelEntry(8, featreal)
+              .AddToLevelEntry(9, featreal)
+              .AddToLevelEntry(10, featreal)
+              .AddToLevelEntry(11, featreal)
+              .AddToLevelEntry(12, featreal)
+              .AddToLevelEntry(13, featreal)
+              .AddToLevelEntry(14, featreal)
+              .AddToLevelEntry(15, featreal)
+              .AddToLevelEntry(16, featreal)
+              .AddToLevelEntry(17, featreal)
+              .AddToLevelEntry(18, featreal)
+              .AddToLevelEntry(19, featreal)
+              .AddToLevelEntry(20, featreal)
               .Configure();
 
             var feat = FeatureSelectionConfigurator.New(FeatName, FeatGuid)
@@ -64,20 +83,9 @@ namespace PrestigePlus.Blueprint.Feat
                     .AddPrerequisiteClassLevel(CharacterClassRefs.KineticistClass.ToString(), 1)
                     .AddPrerequisiteFeature(FeatureRefs.KiPowerFeature.ToString())
                     .AddToAllFeatures(pro)
-                    //.AddToAllFeatures(FeatureRefs.ImprovedBullRush.ToString())
-                    //.AddToAllFeatures(FeatureRefs.ImprovedTrip.ToString())
-                    //.AddFacts(new() { pro })
                     .AddPointBlankMaster(Kingmaker.Enums.WeaponCategory.KineticBlast)
                     .AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.KiPowerResource.ToString(), ContextValues.Rank())
                     .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.KineticistClass.ToString() }).WithOnePlusDiv2Progression())
-                    //.AddToGroups(Kingmaker.Blueprints.Classes.FeatureGroup.Feat)
-                    //.AddToGroups(Kingmaker.Blueprints.Classes.FeatureGroup.CombatFeat)
-                    //.AddToFeatureSelection(FeatureSelectionRefs.BasicFeatSelection.ToString())
-                    //.AddToFeatureSelection(FeatureSelectionRefs.FighterFeatSelection.ToString())
-                    //.AddToFeatureSelection(FeatureSelectionRefs.CombatTrick.ToString())
-                    //.AddToFeatureSelection(FeatureSelectionRefs.LoremasterCombatFeatSelection.ToString())
-                    //.AddToFeatureSelection(FeatureSelectionRefs.LoremasterTricksterCombatFeatSelection.ToString())
-                    //.AddToFeatureSelection(FeatureSelectionRefs.StudentOfWarCombatFeatSelection.ToString())
                     .Configure();
 
             FeatureSelectionConfigurator.For(FeatureSelectionRefs.BasicFeatSelection)
