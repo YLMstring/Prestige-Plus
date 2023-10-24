@@ -4275,8 +4275,8 @@
   },
   {
     "Key": "RogueSneakyManeuver.Description",
-    "enGB": "Anytime a rogue with this talent makes a melee attack against an opponent that she is flanking or that is denied its Dexterity bonus to AC against her attack, she may take a –2 penalty on the attack roll. If the attack succeeds, the rogue deals damage as normal and then instead of dealing sneak attack damage, she can attempt a dirty trick, disarm, sunder, or trip combat maneuver check as a swift action this turn.",
-    "zhCN": "每当具有该天赋的游荡者近战攻击一个正在被她夹击或者对她的攻击失去敏捷加值的生物，她可以在本次攻击中获得-2减值，如果攻击命中，她放弃偷袭伤害，正常造成其余伤害，并可以在本回合用迅捷动作尝试阴招，缴械，击破或绊摔战技。"
+    "enGB": "Anytime a rogue with this talent attempts a melee sneak attack against an opponent that she is flanking or that is denied its Dexterity bonus to AC against her attack, she may take a –2 penalty on the attack roll. If the attack succeeds, the rogue deals damage as normal and then instead of dealing sneak attack damage, she can attempt a dirty trick, disarm, sunder, or trip combat maneuver check as a swift action this turn.",
+    "zhCN": "每当具有该天赋的游荡者尝试近战偷袭一个正在被她夹击或者对她的攻击失去敏捷加值的生物，她可以在本次攻击中获得-2减值，如果攻击命中，她放弃偷袭伤害，正常造成其余伤害，并可以在本回合用迅捷动作尝试阴招，缴械，击破或绊摔战技。"
   },
   {
     "Key": "RogueCloyingShades.Name",

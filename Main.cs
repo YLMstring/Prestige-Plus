@@ -219,7 +219,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("dawnflower"))) { AnchoriteofDawn.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("bodyguard"))) { BodyGuard.Configure(); BodyGuard.Configure2(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("atheism"))) { DivineDefiance.StyleConfigure(); DivineDefiance.IconoclastConfigure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("rogue"))) { QuickShot.Configure(); CloyingShades.CloyingShadesFeat(); DefensiveRoll.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("rogue"))) { QuickShot.Configure(); CloyingShades.CloyingShadesFeat(); DefensiveRoll.Configure(); SneakyManeuver.SneakyManeuverFeat(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat();
                 }
                 catch (Exception e)
