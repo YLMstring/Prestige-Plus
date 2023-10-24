@@ -1,4 +1,4 @@
-# Prestige Plus v1.6.1 for WoTR 
+# Prestige Plus v1.6.2 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - Add Grapple Mechanic!
@@ -10,6 +10,7 @@
 ### Combat Maneuver+
 - You can Disarm, Sunder, or Trip in lieu of an melee attack, like on tabletop!
 - [Seize the Opportunity](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/seize-the-opportunity-combat/): From Path of War
+- [Surprise Maneuver](https://www.d20pfsrd.com/feats/general-feats/surprise-maneuver/)
 - [Strength Surge](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/strength-surge-ex/)
 - [Ki Throw](https://www.d20pfsrd.com/feats/combat-feats/ki-throw-combat/) and its mythic version!
 - [Improved Ki Throw](https://www.d20pfsrd.com/feats/combat-feats/improved-ki-throw-combat/)
@@ -42,6 +43,7 @@
 - Or become a vampire! (require blood drinker, incompatible with lichdom)
 ### [Anchorite of Dawn Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/a-b/anchorite/)
 - Focused Sacred Weapon can't be turned off once chosen (it will become very complicated for me otherwise)
+- Credence gives access to [Dervish in TTT](https://github.com/Vek17/TabletopTweaks-Base).
 #### Homebrew Options:  
 - Blossoming Light: a mythic ability to use Solar Invocation for free!
 ### [Arcane Archer Class](https://www.d20pfsrd.com/classes/prestige-classes/core-rulebook/arcane-archer/)   
@@ -138,6 +140,9 @@
 ### New Rogue Talents
 
 - [Another Day](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-advanced-talents/another-day-ex/)
+- [Cloying Shades](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-talents/cloying-shades-su)
+- [Quick Shot](https://www.d20pfsrd.com/classes/unchained-classes/rogue-unchained/rogue-talents-advanced/paizo-rogue-talents-advanced/quick-shot)
+- [Sneaky Maneuver](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-talents/sneaky-maneuver-ex/)
 ### New Mythic Prestige Class Features
 
 - Swift Death: Your Death Attack becomes a standard action. At 10th assassin level, it becomes a move action.
@@ -148,6 +153,14 @@
 - Riposte (Mythic): The duelist adds her mythic tier as a bonus on her attack roll when attempting a parry and riposte. This bonus does not stack with Ever Ready mythic feat.
 - Metaphysical Sneak Attack: If the student of war deals sneak attack damage to a target, he can study that target, allowing him to apply his Know Your Enemy effects. Additionally, his sneak attack no longer deals precision damage.
 - Mystic Catalyst: You can use Lesser Spell Synthesis ability at will.
+
+## Mod Combo
+
+### [Expanded Content](https://github.com/ka-dyn/ExpandedContent)
+- Bitter adds [aid another](https://www.aonprd.com/Rules.aspx?Name=Aid%20Another&Category=Special%20Attacks) related stuff to my Asavir and Halfling Opportunist!
+### [Holy Vindicator](https://github.com/SpencerMycek/WoTR-HolyVindicator)
+- Spellbook Progression - Fixed
+- Divine Wrath, Divine Judgment, Divine Retribution!
 
 ## Thanks to  
 -   WittleWolfie for his [Blueprint-Core](https://wittlewolfie.github.io/WW-Blueprint-Core/index.html), which makes modding easy and enjoyable.
