@@ -32,6 +32,8 @@ using System.Text;
 using System.Threading.Tasks;
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Utils;
+using PrestigePlus.CustomAction.ClassRelated;
+using PrestigePlus.CustomComponent.PrestigeClass;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -442,6 +444,184 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddSpontaneousSpellConversion(holder, new() { holder, holder, holder, ability2, holder, holder, holder, holder, holder, holder })
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string PsychicRage = "EsotericKnight.PsychicRage";
+        public static readonly string PsychicRageGuid = "{279288A3-F361-416B-B2C9-287BB436D273}";
+
+        private const string PsychicRageAblity = "EsotericKnight.UsePsychicRage";
+        private static readonly string PsychicRageAblityGuid = "{A7FE50E5-B247-40FD-8575-7C166A1240D9}";
+
+        private const string PsychicRageAblity2 = "EsotericKnight.UsePsychicRage2";
+        public static readonly string PsychicRageAblity2Guid = "{994FBCA3-A3A9-462C-B399-A65A52673CB0}";
+
+        internal const string PsychicRageDisplayName = "EsotericKnightPsychicRage.Name";
+        private const string PsychicRageDescription = "EsotericKnightPsychicRage.Description";
+
+        public static BlueprintFeature PsychicRageFeat()
+        {
+            var icon = AbilityRefs.CallLightning.Reference.Get().Icon;
+
+            var ability2 = AbilityConfigurator.New(PsychicRageAblity2, PsychicRageAblity2Guid)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .Add<SpellSlotToRes>(c => { c.ResGuid = AbilityResourceRefs.RageResourse.ToString(); })
+                        .Add<SpellSlotToRes>(c => { c.ResGuid = AbilityResourceRefs.RageshaperShifterResource.ToString(); })
+                        .Add<SpellSlotToRes>(c => { c.ResGuid = AbilityResourceRefs.BloodragerRageResource.ToString(); })
+                        .Add<SpellSlotToRes>(c => { c.ResGuid = AbilityResourceRefs.FocusedRageResourse.ToString(); })
+                        .Add<SpellSlotToRes>(c => { c.ResGuid = AbilityResourceRefs.DemonRageResource.ToString(); })
+                        .Build())
+                .SetDisplayName(PsychicRageDisplayName)
+                .SetDescription(PsychicRageDescription)
+                .SetIcon(icon)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Special)
+                .Configure();
+
+            var ability = AbilityConfigurator.New(PsychicRageAblity, PsychicRageAblityGuid)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .RestoreResource(AbilityResourceRefs.RageResourse.ToString(), 4)
+                        .RestoreResource(AbilityResourceRefs.BloodragerRageResource.ToString(), 4)
+                        .RestoreResource(AbilityResourceRefs.FocusedRageResourse.ToString(), 4)
+                        .RestoreResource(AbilityResourceRefs.DemonRageResource.ToString(), 4)
+                        .RestoreResource(AbilityResourceRefs.RageshaperShifterResource.ToString(), 4)
+                        .Build())
+                .SetDisplayName(PsychicRageDisplayName)
+                .SetDescription(PsychicRageDescription)
+                .SetIcon(icon)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .AddAbilityKineticist(2, wildTalentBurnCost: 2)
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Special)
+                .Configure();
+
+            var holder = ArchetypeGuid;
+
+            return FeatureConfigurator.New(PsychicRage, PsychicRageGuid)
+              .SetDisplayName(PsychicRageDisplayName)
+              .SetDescription(PsychicRageDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddSpontaneousSpellConversion(holder, new() { holder, ability2, ability2, ability2, ability2, ability2, ability2, ability2, ability2, ability2 })
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string PsychicDaring = "EsotericKnight.PsychicDaring";
+        public static readonly string PsychicDaringGuid = "{A40C8449-7751-4072-94A4-2A6227C90B1B}";
+
+        private const string PsychicDaringAblity = "EsotericKnight.UsePsychicDaring";
+        private static readonly string PsychicDaringAblityGuid = "{03D83F58-1656-45D7-BB95-94E188546396}";
+
+        private const string PsychicDaringAblity2 = "EsotericKnight.UsePsychicDaring2";
+        public static readonly string PsychicDaringAblity2Guid = "{5F11D0BD-0DD3-4101-BBB3-78E81DB17501}";
+
+        internal const string PsychicDaringDisplayName = "EsotericKnightPsychicDaring.Name";
+        private const string PsychicDaringDescription = "EsotericKnightPsychicDaring.Description";
+
+        public static BlueprintFeature PsychicDaringFeat()
+        {
+            var icon = AbilityRefs.CallLightning.Reference.Get().Icon;
+            var swashres = "AC63BFCF-EC31-43DC-A5CE-04617A3BC854";
+
+            var ability2 = AbilityConfigurator.New(PsychicDaringAblity2, PsychicDaringAblity2Guid)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .Add<SpellSlotToRes>(c => { c.ResGuid = swashres; })
+                        .Build())
+                .SetDisplayName(PsychicDaringDisplayName)
+                .SetDescription(PsychicDaringDescription)
+                .SetIcon(icon)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Special)
+                .Configure();
+
+            var ability = AbilityConfigurator.New(PsychicDaringAblity, PsychicDaringAblityGuid)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .RestoreResource(swashres, 4)
+                        .Build())
+                .SetDisplayName(PsychicDaringDisplayName)
+                .SetDescription(PsychicDaringDescription)
+                .SetIcon(icon)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .AddAbilityKineticist(2, wildTalentBurnCost: 2)
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Special)
+                .Configure();
+
+            var holder = ArchetypeGuid;
+
+            return FeatureConfigurator.New(PsychicDaring, PsychicDaringGuid)
+              .SetDisplayName(PsychicDaringDisplayName)
+              .SetDescription(PsychicDaringDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddSpontaneousSpellConversion(holder, new() { holder, ability2, ability2, ability2, ability2, ability2, ability2, ability2, ability2, ability2 })
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string PhantomArmory = "EsotericKnight.PhantomArmory";
+        public static readonly string PhantomArmoryGuid = "{3ED4BC97-F870-485B-9087-63D20A033885}";
+
+        private const string PhantomArmoryAblity = "EsotericKnight.UsePhantomArmory";
+        private static readonly string PhantomArmoryAblityGuid = "{A2D08649-80CE-456D-8E73-972327997102}";
+
+        private const string PhantomArmoryAblity2 = "EsotericKnight.UsePhantomArmory2";
+        public static readonly string PhantomArmoryAblity2Guid = "{F8D140DA-63F0-4DAA-AC26-28A6227F475C}";
+
+        private const string PhantomArmoryBuff2 = "EsotericKnight.PhantomArmoryBuff2";
+        private static readonly string PhantomArmoryBuff2Guid = "{851D405A-BE48-4E81-84A6-9F101986499E}";
+
+        internal const string PhantomArmoryDisplayName = "EsotericKnightPhantomArmory.Name";
+        private const string PhantomArmoryDescription = "EsotericKnightPhantomArmory.Description";
+
+        public static BlueprintFeature PhantomArmoryFeat()
+        {
+            var icon = AbilityRefs.CallLightning.Reference.Get().Icon;
+
+            var Buff2 = BuffConfigurator.New(PhantomArmoryBuff2, PhantomArmoryBuff2Guid)
+             .SetDisplayName(PhantomArmoryDisplayName)
+             .SetDescription(PhantomArmoryDescription)
+             .SetIcon(icon)
+             .AddComponent<GhostArmorComponent>()
+             .Configure();
+
+            var ability2 = AbilityConfigurator.New(PhantomArmoryAblity2, PhantomArmoryAblity2Guid)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .ApplyBuff(Buff2, ContextDuration.Fixed(10))
+                        .Build())
+                .SetDisplayName(PhantomArmoryDisplayName)
+                .SetDescription(PhantomArmoryDescription)
+                .SetIcon(icon)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Supernatural)
+                .Configure();
+
+            var ability = AbilityConfigurator.New(PhantomArmoryAblity, PhantomArmoryAblityGuid)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .ApplyBuff(Buff2, ContextDuration.Fixed(10))
+                        .Build())
+                .SetDisplayName(PhantomArmoryDisplayName)
+                .SetDescription(PhantomArmoryDescription)
+                .SetIcon(icon)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .AddAbilityKineticist(2, wildTalentBurnCost: 2)
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Supernatural)
+                .Configure();
+
+            var holder = ArchetypeGuid;
+
+            return FeatureConfigurator.New(PhantomArmory, PhantomArmoryGuid)
+              .SetDisplayName(PhantomArmoryDisplayName)
+              .SetDescription(PhantomArmoryDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddSpontaneousSpellConversion(holder, new() { holder, holder, ability2, holder, holder, holder, holder, holder, holder, holder })
               .AddFacts(new() { ability })
               .Configure();
         }

@@ -472,22 +472,22 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private static readonly string SummonShadowAblityResGuid = "{9A0859B4-FCB2-4ABD-AF62-79051C006909}";
 
         private const string SummonPool = "ShadowDancer.SummonPool";
-        private static readonly string SummonPoolGuid = "{EE0B8E46-A28F-4913-82A3-D3E9DDFE8A37}";
+        public static readonly string SummonPoolGuid = "{EE0B8E46-A28F-4913-82A3-D3E9DDFE8A37}";
 
         private const string ShadowEnhanceBuff = "ShadowEnhanceBuff";
-        private static readonly string ShadowEnhanceGuidBuff = "{A9ADB781-2778-421F-8078-5AAB2FC906DC}";
+        public static readonly string ShadowEnhanceGuidBuff = "{A9ADB781-2778-421F-8078-5AAB2FC906DC}";
 
         private const string ShadowEnhanceBuff2 = "ShadowEnhanceBuff2";
-        private static readonly string ShadowEnhanceGuidBuff2 = "{C83A900B-35C2-4ABA-9D6F-FC661AC07802}";
+        public static readonly string ShadowEnhanceGuidBuff2 = "{C83A900B-35C2-4ABA-9D6F-FC661AC07802}";
 
         private const string ShadowEnhanceBuff3 = "ShadowEnhanceBuff3";
-        private static readonly string ShadowEnhanceGuidBuff3 = "{15DFA947-288C-4FD4-A0B2-C7C518A791C6}";
+        public static readonly string ShadowEnhanceGuidBuff3 = "{15DFA947-288C-4FD4-A0B2-C7C518A791C6}";
 
         private const string ShadowEnhanceBuff4 = "ShadowEnhanceBuff4";
-        private static readonly string ShadowEnhanceGuidBuff4 = "{855A8B79-12FC-47D2-AA57-80D6103DBBBC}";
+        public static readonly string ShadowEnhanceGuidBuff4 = "{855A8B79-12FC-47D2-AA57-80D6103DBBBC}";
 
         private const string ShadowEnhanceBuff5 = "ShadowEnhanceBuff5";
-        private static readonly string ShadowEnhanceGuidBuff5 = "{9D56C8F1-25DF-493E-9949-36B6BB9B8D13}";
+        public static readonly string ShadowEnhanceGuidBuff5 = "{9D56C8F1-25DF-493E-9949-36B6BB9B8D13}";
         private static BlueprintFeature CreateSummonShadow()
         {
             var icon = AbilityRefs.SummonElvenSpirits.Reference.Get().Icon;
