@@ -113,6 +113,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("chevalier"), defaultValue: true, Helpers.CreateString("toggle-desc2", "Chevalier"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("kineticknight"), defaultValue: true, Helpers.CreateString("toggle-desc30", "Esoteric Knight"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("halfling"), defaultValue: true, Helpers.CreateString("toggle-desc21", "Halfling Opportunist"))
               .ShowVisualConnection())
           .AddToggle(
@@ -220,6 +223,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("bodyguard"))) { BodyGuard.Configure(); BodyGuard.Configure2(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("atheism"))) { DivineDefiance.StyleConfigure(); DivineDefiance.IconoclastConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("rogue"))) { QuickShot.Configure(); CloyingShades.CloyingShadesFeat(); DefensiveRoll.Configure(); SneakyManeuver.SneakyManeuverFeat(); SurpriseManeuver.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("kineticknight"))) { EsotericKnight.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat();
                 }
                 catch (Exception e)
@@ -244,7 +248,7 @@ namespace PrestigePlus
             Logger.Info("Already configured delayed blueprints.");
             return;
           }
-          Initialized = true; PatchDomain.Patch(); PatchArmorTraining.Patch();
+          Initialized = true; PatchDomain.Patch(); PatchArmorTraining.Patch(); PatchKinetic.Patch();
 
           RootConfigurator.ConfigureDelayedBlueprints();
         }

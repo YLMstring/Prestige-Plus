@@ -70,6 +70,10 @@ namespace PrestigePlus.CustomComponent.Feat
             {
                 iscloy = true;
             }
+            if (Display10.Get() && SpellBlue == Display10.Get())
+            {
+                iscloy = true;
+            }
             if (iscloy)
             {
                 Fact.RunActionInContext(Actions);
@@ -93,6 +97,7 @@ namespace PrestigePlus.CustomComponent.Feat
         private static BlueprintAbilityReference Display7 = BlueprintTool.GetRef<BlueprintAbilityReference>("ff24e8b8-3a73-47cd-aa52-c956251c6129");
         private static BlueprintAbilityReference Display8 = BlueprintTool.GetRef<BlueprintAbilityReference>("80920565-edff-4e87-b060-1151dffd0fe2");
         private static BlueprintAbilityReference Display9 = BlueprintTool.GetRef<BlueprintAbilityReference>("aac36b12-c3d0-4a4c-84f2-4c014a09b858");
+        private static BlueprintAbilityReference Display10 = BlueprintTool.GetRef<BlueprintAbilityReference>(EsotericKnight.StepthroughRealityAblity2Guid);
 
         private static BlueprintBuffReference CasterBuff = BlueprintTool.GetRef<BlueprintBuffReference>(CloyingShades.CloyingShadesBuffGuid);
 
