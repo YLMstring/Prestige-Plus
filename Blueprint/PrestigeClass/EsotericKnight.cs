@@ -34,6 +34,7 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Utils;
 using PrestigePlus.CustomAction.ClassRelated;
 using PrestigePlus.CustomComponent.PrestigeClass;
+using Kingmaker.AreaLogic.SummonPool;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -122,12 +123,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(ProficienciesDescription)
               .SetIsClassFeature(true)
               .AddComponent(assProficiencies.GetComponent<AddFacts>())
-              .AddProficiencies(
-                armorProficiencies:
-                  new ArmorProficiencyGroup[]
-                  {
-              ArmorProficiencyGroup.TowerShield,
-                  })
+              .AddFacts(new() { FeatureRefs.TowerShieldProficiency.ToString()})
               .Configure();
         }
 
@@ -164,7 +160,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static void KineticSelectionFeat()
         {
-            var icon = AbilityRefs.BloodBoilerAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.KnowledgeDomainGreaterAbility.Reference.Get().Icon;
 
             FeatureSelectionConfigurator.New(KineticSelection, KineticSelectionGuid)
               .SetDisplayName(KineticSelectionDisplayName)
@@ -188,7 +184,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         public static readonly string FeatGuidPro2 = "{AD71F26B-E83E-424F-9129-D7F38DFCB6CC}";
         public static BlueprintProgression KineticEsotericaFeat()
         {
-            var icon = FeatureSelectionRefs.WildTalentSelection.Reference.Get().Icon;
+            var icon = AbilityRefs.KnowledgeDomainGreaterAbility.Reference.Get().Icon;
 
             var featreal = FeatureConfigurator.New(FeatNamePro2, FeatGuidPro2)
                     .SetDisplayName(KineticEsotericaDisplayName)
@@ -229,7 +225,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static void KnightSelectionFeat()
         {
-            var icon = AbilityRefs.BloodBoilerAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.KnowledgeDomainGreaterAbility.Reference.Get().Icon;
 
             FeatureSelectionConfigurator.New(KnightSelection, KnightSelectionGuid)
               .SetDisplayName(KnightSelectionDisplayName)
@@ -238,8 +234,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
               .AddToAllFeatures(MartialEsotericaFeat())
-              .AddToAllFeatures(spellupgradeGuid)
               .AddToAllFeatures(KineticEsotericaFeat())
+              .AddToAllFeatures(spellupgradeGuid)
               .Configure();
         }
 
@@ -251,7 +247,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static void MentalSelectionFeat()
         {
-            var icon = AbilityRefs.BloodBoilerAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.LifeBubble.Reference.Get().Icon;
 
             FeatureSelectionConfigurator.New(MentalSelection, MentalSelectionGuid)
               .SetDisplayName(MentalSelectionDisplayName)
@@ -277,7 +273,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static void PsychicEsotericaFeat()
         {
-            var icon = AbilityRefs.BloodBoilerAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.LifeBubble.Reference.Get().Icon;
 
             FeatureSelectionConfigurator.New(PsychicEsoterica, PsychicEsotericaGuid)
               .SetDisplayName(PsychicEsotericaDisplayName)
@@ -286,7 +282,12 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
               .AddToAllFeatures(MentalSelectionGuid)
+              .AddToAllFeatures(PsychicDaringFeat())
+              .AddToAllFeatures(PsychicRageFeat())
               .AddToAllFeatures(ConfoundingProjectionFeat())
+              .AddToAllFeatures(PhantomArmoryFeat())
+              .AddToAllFeatures(ShadowProjectionFeat())
+              .AddToAllFeatures(StepthroughRealityFeat())
               .Configure();
         }
 
@@ -330,7 +331,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintFeature ConfoundingProjectionFeat()
         {
-            var icon = AbilityRefs.CallLightning.Reference.Get().Icon;
+            var icon = AbilityRefs.MirrorImage.Reference.Get().Icon;
 
             var Buff2 = BuffConfigurator.New(ConfoundingProjectionBuff2, ConfoundingProjectionBuff2Guid)
              .SetDisplayName(ConfoundingProjectionDisplayName)
@@ -365,7 +366,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
             var ability = AbilityConfigurator.New(ConfoundingProjectionAblity, ConfoundingProjectionAblityGuid)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-                        .ApplyBuffPermanent(Buff2)
+                        .ApplyBuff(Buff2, ContextDuration.Fixed(1))
                         .Build())
                 .SetDisplayName(ConfoundingProjectionDisplayName)
                 .SetDescription(ConfoundingProjectionDescription)
@@ -405,7 +406,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintFeature StepthroughRealityFeat()
         {
-            var icon = AbilityRefs.CallLightning.Reference.Get().Icon;
+            var icon = AbilityRefs.DimensionDoorCasterOnly.Reference.Get().Icon;
 
             var Buff2 = BuffConfigurator.New(StepthroughRealityBuff2, StepthroughRealityBuff2Guid)
              .SetDisplayName(StepthroughRealityDisplayName)
@@ -418,14 +419,15 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
             var ability2 = AbilityConfigurator.New(StepthroughRealityAblity2, StepthroughRealityAblity2Guid)
                 .CopyFrom(
-                AbilityRefs.DimensionDoor,
+                AbilityRefs.DimensionDoorCasterOnly,
                 typeof(SpellComponent),
                 typeof(AbilityCustomDimensionDoor))
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
                 .Configure();
 
             var ability = AbilityConfigurator.New(StepthroughRealityAblity, StepthroughRealityAblityGuid)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-                        .ApplyBuffPermanent(Buff2)
+                        .ApplyBuff(Buff2, ContextDuration.Fixed(1))
                         .Build())
                 .SetDisplayName(StepthroughRealityDisplayName)
                 .SetDescription(StepthroughRealityDescription)
@@ -462,7 +464,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintFeature PsychicRageFeat()
         {
-            var icon = AbilityRefs.CallLightning.Reference.Get().Icon;
+            var icon = FeatureRefs.FocusedRageFeature.Reference.Get().Icon;
 
             var ability2 = AbilityConfigurator.New(PsychicRageAblity2, PsychicRageAblity2Guid)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
@@ -523,7 +525,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintFeature PsychicDaringFeat()
         {
-            var icon = AbilityRefs.CallLightning.Reference.Get().Icon;
+            var icon = AbilityRefs.Heroism.Reference.Get().Icon;
             var swashres = "AC63BFCF-EC31-43DC-A5CE-04617A3BC854";
 
             var ability2 = AbilityConfigurator.New(PsychicDaringAblity2, PsychicDaringAblity2Guid)
@@ -580,7 +582,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintFeature PhantomArmoryFeat()
         {
-            var icon = AbilityRefs.CallLightning.Reference.Get().Icon;
+            var icon = FeatureRefs.DestructionDomainBaseFeature.Reference.Get().Icon;
 
             var Buff2 = BuffConfigurator.New(PhantomArmoryBuff2, PhantomArmoryBuff2Guid)
              .SetDisplayName(PhantomArmoryDisplayName)
@@ -596,7 +598,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDisplayName(PhantomArmoryDisplayName)
                 .SetDescription(PhantomArmoryDescription)
                 .SetIcon(icon)
-                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
                 .SetRange(AbilityRange.Personal)
                 .SetType(AbilityType.Supernatural)
                 .Configure();
@@ -608,7 +610,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDisplayName(PhantomArmoryDisplayName)
                 .SetDescription(PhantomArmoryDescription)
                 .SetIcon(icon)
-                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
                 .AddAbilityKineticist(2, wildTalentBurnCost: 2)
                 .SetRange(AbilityRange.Personal)
                 .SetType(AbilityType.Supernatural)
@@ -622,6 +624,83 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddSpontaneousSpellConversion(holder, new() { holder, holder, ability2, holder, holder, holder, holder, holder, holder, holder })
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string ShadowProjection = "EsotericKnight.ShadowProjection";
+        public static readonly string ShadowProjectionGuid = "{C72C31B1-E202-49AC-B742-D1E572EA48DA}";
+
+        private const string ShadowProjectionAblity = "EsotericKnight.UseShadowProjection";
+        private static readonly string ShadowProjectionAblityGuid = "{953B5DEB-393C-4BCB-B992-548152CD14A2}";
+
+        private const string ShadowProjectionAblity2 = "EsotericKnight.UseShadowProjection2";
+        public static readonly string ShadowProjectionAblity2Guid = "{E711BC72-802B-4D8A-8255-8118327B5787}";
+
+        private const string ShadowProjectionBuff2 = "EsotericKnight.ShadowProjectionBuff2";
+        private static readonly string ShadowProjectionBuff2Guid = "{D391CB63-1FE8-4C61-8B46-63CD47189F2B}";
+
+        internal const string ShadowProjectionDisplayName = "EsotericKnightShadowProjection.Name";
+        private const string ShadowProjectionDescription = "EsotericKnightShadowProjection.Description";
+
+        public static BlueprintFeature ShadowProjectionFeat()
+        {
+            var icon = AbilityRefs.Scare.Reference.Get().Icon;
+
+            var Buff2 = BuffConfigurator.New(ShadowProjectionBuff2, ShadowProjectionBuff2Guid)
+             .SetDisplayName(ShadowProjectionDisplayName)
+             .SetDescription(ShadowProjectionDescription)
+             .SetIcon(icon)
+             .AddFacts(new() { ShadowProjectionAblity2Guid })
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+             .AddRestTrigger(ActionsBuilder.New().RemoveSelf().Build())
+             .Configure();
+
+            var ability2 = AbilityConfigurator.New(ShadowProjectionAblity2, ShadowProjectionAblity2Guid)
+                .SetDisplayName(ShadowProjectionDisplayName)
+                .SetDescription(ShadowProjectionDescription)
+                .SetIcon(icon)
+                .SetType(AbilityType.Supernatural)
+                .SetRange(AbilityRange.Close)
+                .SetCanTargetPoint(true)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard)
+                .AddContextRankConfig(ContextRankConfigs.ClassLevel(new[] { ArchetypeGuid }))
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                    .ClearSummonPool(ShadowDancer.SummonPoolGuid)
+                    .SpawnMonsterUsingSummonPool(countValue: ContextDice.Value(DiceType.One),
+                        durationValue: ContextDuration.Variable(ContextValues.Rank(), Kingmaker.UnitLogic.Mechanics.DurationRate.Minutes),
+                        monster: UnitRefs.CR3_Shadow.ToString(),
+                        summonPool: ShadowDancer.SummonPoolGuid,
+                        afterSpawn: ActionsBuilder.New()
+                            .ApplyBuffPermanent(ShadowDancer.ShadowEnhanceGuidBuff)
+                            .ApplyBuffPermanent(ShadowDancer.ShadowEnhanceGuidBuff2)
+                            .ApplyBuffPermanent(ShadowDancer.ShadowEnhanceGuidBuff3)
+                            .ApplyBuffPermanent(ShadowDancer.ShadowEnhanceGuidBuff4)
+                            .ApplyBuffPermanent(ShadowDancer.ShadowEnhanceGuidBuff5)
+                            .Build()))
+                .Configure();
+
+            var ability = AbilityConfigurator.New(ShadowProjectionAblity, ShadowProjectionAblityGuid)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .ApplyBuff(Buff2, ContextDuration.Fixed(1))
+                        .Build())
+                .SetDisplayName(ShadowProjectionDisplayName)
+                .SetDescription(ShadowProjectionDescription)
+                .SetIcon(icon)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .AddAbilityKineticist(2, wildTalentBurnCost: 2)
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Special)
+                .Configure();
+
+            var holder = ArchetypeGuid;
+
+            return FeatureConfigurator.New(ShadowProjection, ShadowProjectionGuid)
+              .SetDisplayName(ShadowProjectionDisplayName)
+              .SetDescription(ShadowProjectionDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddSpontaneousSpellConversion(holder, new() { holder, holder, holder, ability2, holder, holder, holder, holder, holder, holder })
               .AddFacts(new() { ability })
               .Configure();
         }

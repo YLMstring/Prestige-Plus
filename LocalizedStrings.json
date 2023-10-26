@@ -4320,8 +4320,8 @@
   },
   {
     "Key": "PsychicEsoterica.Description",
-    "enGB": "As an esoteric knight gains experience, she learns a number of psychic esoterica that enhance her offensive and defensive capabilities. At 2nd level and every 2 levels thereafter, an esoteric knight gains one psychic esoterica. Each esoterica can be selected only once. Some esoterica require a character to expend one or more spell slots to activate. A character with the burn class feature (such as a kineticist) can accept burn instead of expending spell slots. She can accept 1 point of burn instead of expending a 1st-level or lower spell slot, or 2 points of burn instead of expending a 3rd-level or lower spell slot.",
-    "zhCN": "随着秘契骑士增长经验，她将习得诸多增强她攻防能力的心之秘传。在2级以及之后的每个偶数等级，秘契骑士获得一个心之秘传。每个心之秘传只能被选取一次。部分秘传需要角色消耗一个或更多法术位来启动。具有超载职业能力的角色（如操念者）可以承受1点超载来取代消耗一个1环或更低的法术位，或承受2点超载来取代消耗一个3环或更低的法术位。"
+    "enGB": "As an esoteric knight gains experience, she learns a number of psychic esoterica that enhance her offensive and defensive capabilities. At 2nd level and every 2 levels thereafter, an esoteric knight gains one psychic esoterica. Each esoterica can be selected only once. Some esoterica require a character to expend one or more spell slots to activate. A character with the burn class feature (such as a kineticist) can accept burn instead of expending spell slots. She can accept 1 point of burn instead of expending a 1st-level or lower spell slot, or 2 points of burn instead of expending a 4th-level or lower spell slot.",
+    "zhCN": "随着秘契骑士增长经验，她将习得诸多增强她攻防能力的心之秘传。在2级以及之后的每个偶数等级，秘契骑士获得一个心之秘传。每个心之秘传只能被选取一次。部分秘传需要角色消耗一个或更多法术位来启动。具有超载职业能力的角色（如操念者）可以承受1点超载来取代消耗一个1环或更低的法术位，或承受2点超载来取代消耗一个4环或更低的法术位。"
   },
   {
     "Key": "EsotericMentalSelection.Name",
@@ -4331,8 +4331,8 @@
   },
   {
     "Key": "EsotericMentalSelection.Description",
-    "enGB": "The esoteric knight gains one of the following feats as a bonus feat: Combat Casting, Extra Rage, Point-Blank Shot, Precise Shot, Spell Focus, or Spell Penetration. This psychic esoterica can be selected more than once, each time granting a new bonus feat.",
-    "zhCN": "秘契骑士获得以下一个额外专长：战斗施法，额外狂暴，近程射击，精准射击，法术专攻，法术穿透。该信念秘传可以多次选择，每次获得一个新专长。"
+    "enGB": "The esoteric knight gains one of the following feats as a bonus feat. This psychic esoterica can be selected more than once, each time granting a new bonus feat.",
+    "zhCN": "秘契骑士获得以下一个额外专长。该信念秘传可以多次选择，每次获得一个新专长。"
   },
   {
     "Key": "EsotericKnightPsychicDaring.Name",
@@ -4342,8 +4342,8 @@
   },
   {
     "Key": "EsotericKnightPsychicDaring.Description",
-    "enGB": "As a free action, an esoteric knight can recover grit or panache points by sacrificing a spell slot; this grants her a number of grit or panache points equal to the level of the spell slot used.",
-    "zhCN": "以一个自由动作，秘契骑士可以牺牲一个法术位来恢复等同于法术环阶的勇毅值或时髦值。"
+    "enGB": "As a free action, an esoteric knight can recover grit or panache points by sacrificing a spell slot; this grants her a number of grit or panache points equal to the level of the spell slot used. (2 burn)",
+    "zhCN": "以一个自由动作，秘契骑士可以牺牲一个法术位来恢复等同于法术环阶的勇毅值或时髦值。（2点超载）"
   },
   {
     "Key": "EsotericKnightConfoundingProjection.Name",
@@ -4375,8 +4375,8 @@
   },
   {
     "Key": "EsotericKnightShadowProjection.Description",
-    "enGB": "By expending a 3rd-level spell slot as a standard action, the esoteric knight can summon a phantom ally resembling herself. This ability functions as the shadowdancer’s summon shadow ability except that the summoned creature remains for 1 minute per esoteric knight level, and there is no penalty for the creature’s death or dismissal.",
-    "zhCN": "通过标准动作消耗一个3环法术位，秘契骑士可以召唤一个与她相似的幽影盟友。除却召唤生物持续每秘契骑士等级1分钟且该生物的死亡与遣退不会产生惩罚外，此能力如同影舞者的召唤幽影能力一般生效。"
+    "enGB": "By expending a 3rd-level spell slot as a standard action, the esoteric knight can summon a phantom ally resembling herself. This ability functions as the shadowdancer’s summon shadow ability except that the summoned creature remains for 1 minute per esoteric knight level.",
+    "zhCN": "通过标准动作消耗一个3环法术位，秘契骑士可以召唤一个与她相似的幽影盟友。除却召唤生物持续每秘契骑士等级1分钟，此能力如同影舞者的召唤幽影能力一般生效。"
   },
   {
     "Key": "EsotericKnightStepthroughReality.Name",
@@ -4454,6 +4454,18 @@
     "Key": "EsotericKnightSelection.Description",
     "enGB": "Choose 2 of the following progressions: Martial Esoterica, Kinetic Esoterica, Spell Casting Progression (level 2, 4, 6, 8, 10)",
     "zhCN": "选择两项成长：武学秘传，操念秘传，施法能力成长（2，4，6，8，10级）"
+  },
+  {
+    "Key": "EsotericKnightPsychicRage.Name",
+    "ProcessTemplates": false,
+    "enGB": "Psychic Rage",
+    "zhCN": "心念狂怒"
+  },
+  {
+    "Key": "EsotericKnightPsychicRage.Description",
+    "enGB": "As a free action, an esoteric knight can extend the duration of her rage by sacrificing a spell slot; this prolongs the duration of her rage for a number of rounds equal to the level of the spell slot used. This also applies to Demon Rage. (2 burn)",
+    "zhCN": "以一个自由动作，秘契骑士可以牺牲一个法术位来恢复等同于法术环阶的狂暴轮数，包括恶魔狂怒。（2点超载）"
   }
+
 
 ]

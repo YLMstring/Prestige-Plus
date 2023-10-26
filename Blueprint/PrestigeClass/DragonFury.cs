@@ -124,7 +124,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.RageResourse.ToString(), ContextValues.Rank(AbilityRankType.ProjectilesCount))
               .AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.BloodragerRageResource.ToString(), ContextValues.Rank(AbilityRankType.ProjectilesCount))
               .AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.FocusedRageResourse.ToString(), ContextValues.Rank(AbilityRankType.ProjectilesCount))
-              .AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.DemonRageResource.ToString(), ContextValues.Rank(AbilityRankType.ProjectilesCount))
+              //.AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.DemonRageResource.ToString(), ContextValues.Rank(AbilityRankType.ProjectilesCount))
               .AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.RageshaperShifterResource.ToString(), ContextValues.Rank(AbilityRankType.ProjectilesCount))
               .AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.BardicPerformanceResource.ToString(), ContextValues.Rank(AbilityRankType.ProjectilesCount))
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new[] { ArchetypeGuid }, type: AbilityRankType.DamageDice).WithOnePlusDiv2Progression())

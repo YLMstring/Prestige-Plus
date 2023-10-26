@@ -94,9 +94,9 @@ namespace PrestigePlus.Patch
         private static bool isConfigClassBased(ContextRankConfig crc)
         {
             if (crc == null || crc.m_FeatureList == null || crc.m_FeatureList.Length == 0) { return false; }
-            if (crc.m_BaseValueType == ContextRankBaseValueType.ClassLevel) { return true; }
-            if (crc.m_BaseValueType == ContextRankBaseValueType.MaxClassLevelWithArchetype) { return true; }
-            if (crc.m_BaseValueType == ContextRankBaseValueType.OwnerSummClassLevelWithArchetype) { return true; }
+            if (crc.m_BaseValueType == ContextRankBaseValueType.ClassLevel) { crc.m_BaseValueType = ContextRankBaseValueType.SummClassLevelWithArchetype; return true; }
+            if (crc.m_BaseValueType == ContextRankBaseValueType.MaxClassLevelWithArchetype) { crc.m_BaseValueType = ContextRankBaseValueType.SummClassLevelWithArchetype; return true; }
+            if (crc.m_BaseValueType == ContextRankBaseValueType.OwnerSummClassLevelWithArchetype) { crc.m_BaseValueType = ContextRankBaseValueType.SummClassLevelWithArchetype; return true; }
             if (crc.m_BaseValueType == ContextRankBaseValueType.SummClassLevelWithArchetype) { return true; }
             return false;
         }

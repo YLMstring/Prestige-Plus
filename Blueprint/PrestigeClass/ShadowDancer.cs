@@ -490,7 +490,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         public static readonly string ShadowEnhanceGuidBuff5 = "{9D56C8F1-25DF-493E-9949-36B6BB9B8D13}";
         private static BlueprintFeature CreateSummonShadow()
         {
-            var icon = AbilityRefs.SummonElvenSpirits.Reference.Get().Icon;
+            var icon = AbilityRefs.Scare.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(SummonShadowAblityRes, SummonShadowAblityResGuid)
                 .SetMaxAmount(ResourceAmountBuilder.New(1))

@@ -28,6 +28,7 @@ namespace PrestigePlus.Blueprint.RogueTalent
                     .SetIcon(icon)
                     .AddCMBBonusForManeuver(maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple }, value: ContextValues.Constant(2))
                     .AddToFeatureSelection(FeatureSelectionRefs.Familiar.ToString())
+                    .AddToFeatureSelection(FeatureSelectionRefs.ElementalWhispersSelection.ToString())
                     .Configure();
         }
 
