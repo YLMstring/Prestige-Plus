@@ -1,4 +1,4 @@
-# Prestige Plus v1.6.2 for WoTR 
+# Prestige Plus v1.7.0 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - Add Grapple Mechanic!
@@ -58,6 +58,10 @@
 - Bond of Genies: a mythic ability to mount any party member!
 ### [Chevalier Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/c-d/chevalier/)
 - The class has only 3 levels.
+### [Esoteric Knight Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/esoteric-knight/)
+#### Homebrew Options:  
+- Dvine Psychic: continue divine spellcasting progression every 2 levels!
+- Kinetic Esoterica: more versatile kineticist progression!
 ### [Halfling Opportunist Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/halfling-opportunist/)
 #### Homebrew Options:  
 - Alternative access to the class for non-halflings!
