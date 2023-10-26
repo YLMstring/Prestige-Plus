@@ -20,16 +20,19 @@ using Kingmaker.Blueprints.Classes.Selection;
 using System.Windows.Documents;
 using Epic.OnlineServices;
 using Kingmaker.Designers.Mechanics.Facts;
+using Kingmaker.Cheats;
+using Pathfinding.Voxels;
+using Kingmaker.Blueprints.Root;
 
 namespace PrestigePlus.Patch
 {
     internal class PatchKinetic
     {
         private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
+        private static BlueprintFeatureReference feat = BlueprintTool.GetRef<BlueprintFeatureReference>(EsotericKnight.FeatGuidPro2);
         public static void PatchDomains(string fref)
         {
             var feature = BlueprintTool.GetRef<BlueprintFeatureBaseReference>(fref).Get();
-            var feat = BlueprintTool.GetRef<BlueprintFeatureReference>(EsotericKnight.FeatGuidPro2);
             try
             {
                 var select = feature as BlueprintFeatureSelection;
@@ -40,18 +43,19 @@ namespace PrestigePlus.Patch
                         PatchDomains(domain.Guid.ToString());
                     }
                 }
+                var prog = feature as BlueprintProgression;
+                if (prog != null)
+                {
+                    PatchProgression(feature.AssetGuid.ToString());
+                }
                     IEnumerable<ContextRankConfig> crcs = feature.GetComponents<ContextRankConfig>();
-                    //Logger.Info("start2");
                     if (crcs != null && crcs.Any())
                     {
                         foreach (ContextRankConfig crc in crcs)
                         {
-                            if (isConfigClassBased(crc))
+                            if (PatchConfig(crc))
                             {
-                                Logger.Info(feature.ToString());
-                                if (crc.m_FeatureList.Any() && crc.m_FeatureList.Contains(feat)) { continue; }
-                                Logger.Info(feature.ToString());
-                                crc.m_FeatureList = crc.m_FeatureList.AddToArray(feat);
+                                Logger.Info(feature.NameSafe());
                             }
                         }
                     }
@@ -67,7 +71,6 @@ namespace PrestigePlus.Patch
         {
             try
             {
-                var feat = BlueprintTool.GetRef<BlueprintFeatureReference>(EsotericKnight.FeatGuidPro2);
                 var actions = ability.Get().GetComponent<AbilityEffectRunAction>()?.Actions?.Actions;
                 if (actions != null)
                 {
@@ -76,13 +79,16 @@ namespace PrestigePlus.Patch
                         var action2 = action as ContextActionApplyBuff;
                         if (action2?.m_Buff != null)
                         {
-                            ContextRankConfig config = action2.m_Buff.Get().GetComponent<ContextRankConfig>();
-                            if (isConfigClassBased(config))
+                            IEnumerable<ContextRankConfig> crcs = action2.m_Buff.Get().GetComponents<ContextRankConfig>();
+                            if (crcs != null && crcs.Any())
                             {
-                                Logger.Info(action2.m_Buff.ToString());
-                                if (config.m_FeatureList.Any() && config.m_FeatureList.Contains(feat)) { continue; }
-                                Logger.Info(action2.m_Buff.ToString());
-                                config.m_FeatureList = config.m_FeatureList.AddToArray(feat);
+                                foreach (ContextRankConfig crc in crcs)
+                                {
+                                    if (PatchConfig(crc))
+                                    {
+                                        Logger.Info(action2.m_Buff.NameSafe());
+                                    }
+                                }
                             }
                         }
                     }
@@ -91,20 +97,31 @@ namespace PrestigePlus.Patch
             catch (Exception e) { Logger.Error("Failed to edit buff.", e); }
         }
 
-        public static void PatchVariant(BlueprintUnitFactReference ability)
+        public static void PatchVariant(BlueprintUnitFactReference abilityBase)
         {
             try
             {
-                var feat = BlueprintTool.GetRef<BlueprintFeatureReference>(EsotericKnight.FeatGuidPro2);
-                var variants = ability.Get().GetComponent<AbilityVariants>()?.m_Variants;
+                var variants = abilityBase.Get().GetComponent<AbilityVariants>()?.m_Variants;
                 if (variants != null)
                 {
-                    var abilities = new BlueprintUnitFactReference[0];
-                    foreach (var stuff in variants)
+                    Logger.Info(abilityBase.NameSafe() + " detected");
+                    foreach (BlueprintAbilityReference ability in variants)
                     {
-                        abilities = abilities.AddToArray(BlueprintTool.GetRef<BlueprintUnitFactReference>(stuff.Guid.ToString()));
+                        if (ability == null) { continue; }
+                        Logger.Info(ability.NameSafe() + " detected");
+                        var crcs = ability.Get().GetComponents<ContextRankConfig>();
+                        if (crcs != null && crcs.Any())
+                        {
+                            foreach (ContextRankConfig crc in crcs)
+                            {
+                                if (PatchConfig(crc))
+                                {
+                                    Logger.Info(ability.NameSafe());
+                                }
+                            }
+                        }
+                        PatchBuff(BlueprintTool.GetRef<BlueprintUnitFactReference>(ability.Guid.ToString()));
                     }
-                    PatchAbility(abilities);
                 }
             }
             catch (Exception e) { Logger.Error("Failed to edit variant.", e); }
@@ -115,20 +132,23 @@ namespace PrestigePlus.Patch
             try
             {
                 if (abilities == null) { return; }
-                var feat = BlueprintTool.GetRef<BlueprintFeatureReference>(EsotericKnight.FeatGuidPro2);
                     foreach (BlueprintUnitFactReference ability in abilities)
                     {
                         if (ability == null) { continue; }
-                        ContextRankConfig crc = ability.Get().GetComponent<ContextRankConfig>();
-                        if (isConfigClassBased(crc))
+                        //Logger.Info(ability.NameSafe() + " detected");
+                        var crcs = ability.Get().GetComponents<ContextRankConfig>();
+                    if (crcs != null && crcs.Any())
+                    {
+                        foreach (ContextRankConfig crc in crcs)
                         {
-                            Logger.Info(ability.ToString());
-                            if (crc.m_FeatureList.Any() && crc.m_FeatureList.Contains(feat)) { PatchBuff(ability); PatchVariant(ability); continue; }
-                            Logger.Info(ability.ToString());
-                            crc.m_FeatureList = crc.m_FeatureList.AddToArray(feat);
+                            if (PatchConfig(crc))
+                            {
+                                Logger.Info(ability.NameSafe());
+                            }
                         }
-                        PatchBuff(ability);
-                        PatchVariant(ability);
+                    }
+                    PatchBuff(ability);
+                    PatchVariant(ability);
                     }
                 
             }
@@ -140,24 +160,19 @@ namespace PrestigePlus.Patch
             try
             {
                 var progress = BlueprintTool.GetRef<BlueprintProgressionReference>(fref).Get();
-                if (progress?.LevelEntries?.Length > 0) { Logger.Info("no entry"); return; }
-                foreach (LevelEntry entry in progress.LevelEntries)
+                if (progress?.LevelEntries?.Length > 0) 
                 {
-                    foreach (BlueprintFeatureBase feature in entry.Features)
+                    Logger.Info(progress.NameSafe());
+                    foreach (LevelEntry entry in progress.LevelEntries)
                     {
-                        var pro = feature as BlueprintProgression;
-                        if (pro.LevelEntries?.Length > 0)
-                        {
-                            PatchProgression(feature.AssetGuid.ToString());
-                        }
-                        else
+                        foreach (BlueprintFeatureBase feature in entry.Features)
                         {
                             PatchDomains(feature.AssetGuid.ToString());
                         }
                     }
                 }
             }
-            catch (Exception e) { Logger.Error("Failed to edit progression.", e); }
+            catch (Exception e) { Logger.Error("Failed to edit progression" + fref, e); }
         }
         private static bool isConfigClassBased(ContextRankConfig crc)
         {
@@ -175,12 +190,25 @@ namespace PrestigePlus.Patch
                 if (crc.m_BaseValueType == ContextRankBaseValueType.MaxClassLevelWithArchetype) { crc.m_BaseValueType = ContextRankBaseValueType.SummClassLevelWithArchetype; return true; }
                 if (crc.m_BaseValueType == ContextRankBaseValueType.OwnerSummClassLevelWithArchetype) { crc.m_BaseValueType = ContextRankBaseValueType.SummClassLevelWithArchetype; return true; }
                 if (crc.m_BaseValueType == ContextRankBaseValueType.SummClassLevelWithArchetype) { return true; }
-                //Logger.Info("start15");
                 return false;
             }
             catch { Logger.Error("Failed to get isConfigClassBased."); return false; }
         }
 
+        public static bool PatchConfig(ContextRankConfig crc)
+        {
+            try
+            {
+                if (isConfigClassBased(crc))
+                {
+                    if (crc.m_FeatureList.Any() && crc.m_FeatureList.Contains(feat)) { return false; }
+                    crc.m_FeatureList = crc.m_FeatureList.AddToArray(feat);
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception e) { Logger.Error("Failed to edit config", e); return false; }
+        }
         public static void Patch()
         {
             var list = FeatureSelectionRefs.InfusionSelection.Reference.Get().m_AllFeatures;
@@ -192,11 +220,6 @@ namespace PrestigePlus.Patch
             foreach (var domain in list2)
             {
                 PatchDomains(domain.Guid.ToString());
-            }
-            var list3 = FeatureSelectionRefs.ElementalFocusSelection.Reference.Get().m_AllFeatures;
-            foreach (var domain in list3)
-            {
-                PatchProgression(domain.Guid.ToString());
             }
         }
     }

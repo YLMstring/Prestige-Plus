@@ -35,13 +35,14 @@ using BlueprintCore.Utils;
 using PrestigePlus.CustomAction.ClassRelated;
 using PrestigePlus.CustomComponent.PrestigeClass;
 using Kingmaker.AreaLogic.SummonPool;
+using PrestigePlus.HarmonyFix;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
     internal class EsotericKnight
     {
         private const string ArchetypeName = "EsotericKnight";
-        private static readonly string ArchetypeGuid = "{0829A992-9641-49ED-BE17-47E6BA023716}";
+        public static readonly string ArchetypeGuid = "{0829A992-9641-49ED-BE17-47E6BA023716}";
         internal const string ArchetypeDisplayName = "EsotericKnight.Name";
         private const string ArchetypeDescription = "EsotericKnight.Description";
 
@@ -422,6 +423,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 AbilityRefs.DimensionDoorCasterOnly,
                 typeof(SpellComponent),
                 typeof(AbilityCustomDimensionDoor))
+                .SetDisplayName(StepthroughRealityDisplayName)
+                .SetDescription(StepthroughRealityDescription)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
                 .Configure();
 
