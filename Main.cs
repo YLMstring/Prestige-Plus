@@ -113,7 +113,7 @@ namespace PrestigePlus
             Toggle.New(GetKey("chevalier"), defaultValue: true, Helpers.CreateString("toggle-desc2", "Chevalier"))
               .ShowVisualConnection())
           .AddToggle(
-            Toggle.New(GetKey("kineticknight"), defaultValue: true, Helpers.CreateString("toggle-desc30", "Esoteric Knight"))
+            Toggle.New(GetKey("kineticknight"), defaultValue: true, Helpers.CreateString("toggle-desc31", "Esoteric Knight"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("halfling"), defaultValue: true, Helpers.CreateString("toggle-desc21", "Halfling Opportunist"))
@@ -150,6 +150,12 @@ namespace PrestigePlus
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("warlord"), defaultValue: true, Helpers.CreateString("toggle-desc25", "Warlord"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("spire"), defaultValue: true, Helpers.CreateString("toggle-desc33", "Spire Defender"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("whitehair"), defaultValue: true, Helpers.CreateString("toggle-desc32", "White-Haired Witch"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("ragonury"), defaultValue: true, Helpers.CreateString("toggle-desc26", "Dragon Fury (Path of War)"))
@@ -224,6 +230,8 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("atheism"))) { DivineDefiance.StyleConfigure(); DivineDefiance.IconoclastConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("rogue"))) { QuickShot.Configure(); CloyingShades.CloyingShadesFeat(); DefensiveRoll.Configure(); SneakyManeuver.SneakyManeuverFeat(); SurpriseManeuver.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("kineticknight"))) { EsotericKnight.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("whitehair"))) { WhiteHairedWitch.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("spire"))) { SpireDefender.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat();
                 }
                 catch (Exception e)

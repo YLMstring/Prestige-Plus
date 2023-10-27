@@ -33,7 +33,7 @@ namespace PrestigePlus.Blueprint.RogueTalent
         }
 
         private static readonly string Feat2Name = "Tentacle";
-        private static readonly string Feat2Guid = "{2C36C615-58FF-4C1A-B9E9-F0261B6006A1}";
+        public static readonly string Feat2Guid = "{2C36C615-58FF-4C1A-B9E9-F0261B6006A1}";
 
         private static readonly string DisplayName2 = "TentacleGrab.Name";
         private static readonly string Description2 = "TentacleGrab.Description";
