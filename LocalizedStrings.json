@@ -4500,8 +4500,7 @@
   {
     "Key": "WhiteHairedWitchWhiteHair.Description",
     "enGB": "At 1st level, a white-haired witch gains the ability to use her hair as a weapon. This functions as a primary gore attack. The hair deals 1d4 points of damage (1d3 for a Small witch) plus the witch’s Intelligence modifier. In addition, whenever the hair strikes a foe, the witch can attempt to grapple that foe with her hair as a free action without provoking an attack of opportunity. She uses her Intelligence modifier in place of her Strength modifier when grappling. When a white-haired witch grapples a foe in this way, she does not gain the grappled condition.",
-    "zhCN": "1级起，白发魔女学会将她的头发当作武器使用。她的头发的功能有如一个抵刺主要天生武器，造成1d4（小型1d3）加上智力调整值的伤害，此外，当她用头发击中目标的时候，可以使用自由动作擒抱对方，且不引发借机攻击。在计算擒抱战技加值时，以她的智力加值取代她的力量加值。当白发魔女使用这个方式进行擒抱的时候，她并不会进入擒抱状态。,,
-    "
+    "zhCN": "1级起，白发魔女学会将她的头发当作武器使用。她的头发的功能有如一个抵刺主要天生武器，造成1d4（小型1d3）加上智力调整值的伤害，此外，当她用头发击中目标的时候，可以使用自由动作擒抱对方，且不引发借机攻击。在计算擒抱战技加值时，以她的智力加值取代她的力量加值。当白发魔女使用这个方式进行擒抱的时候，她并不会进入擒抱状态。"
   },
   {
     "Key": "WhiteHairedWitchHairConstrict.Name",
@@ -4567,8 +4566,7 @@
   {
     "Key": "SpireDefender.Description",
     "enGB": "Spire defenders are magi who train themselves to accompany sages and archaeologists who venture from the Mordant Spire, acting as aids and bodyguards. Because they often operate in difficult terrain—narrow trenches in dig sites, flooded dungeons, and tight corridors in ancient ruins—spire defenders place mobility and agility at a premium. As a result, they eschew armor entirely. Most spire defenders are elves—it’s exceptionally rare for a non-elf to be granted access to the training required to take this archetype.",
-    "zhCN": "尖塔防卫者是一群魔剑士，他们训练自己成为辅助者和保镳，保护那些在曼德特石塔探查的贤者与考古学家。由于他们常常在诸如挖掘处的壕沟、被淹没的地下城、古老废墟和狭长走道之类的困难地形中作战，因此他们将机动性和灵巧视为第一要务，完全舍弃了护甲。绝大多数的尖塔防卫者都是精灵，对非精灵种族而言接受与此变体相关的培训是非常罕见的事情。,,
-    "
+    "zhCN": "尖塔防卫者是一群魔剑士，他们训练自己成为辅助者和保镳，保护那些在曼德特石塔探查的贤者与考古学家。由于他们常常在诸如挖掘处的壕沟、被淹没的地下城、古老废墟和狭长走道之类的困难地形中作战，因此他们将机动性和灵巧视为第一要务，完全舍弃了护甲。绝大多数的尖塔防卫者都是精灵，对非精灵种族而言接受与此变体相关的培训是非常罕见的事情。"
   },
   {
     "Key": "SpireDefenderProficiencies.Name",
@@ -4578,8 +4576,8 @@
   },
   {
     "Key": "SpireDefenderProficiencies.Description",
-    "enGB": "A spire defender is proficient with the rapier, longsword, scimitar, kukri, sai and nunchaku. This replaces the magus’s normal weapon and armor proficiencies.",
-    "zhCN": "尖塔防卫者擅长刺剑，长剑，弯刀，反曲刀以及两种带有缴械特性的异种武器。此特性取代一般魔剑士的武器和护甲擅长。"
+    "enGB": "A spire defender is proficient with the rapier, longsword, scimitar, kukri, sai and nunchaku. He does not have the magus' ability to ignore arcane spell failure from armor, but if the spire defender becomes proficient in armor, he automatically gains the magus’s ability to ignore the arcane spell failure chance of armor. This replaces the magus’s normal weapon and armor proficiencies.",
+    "zhCN": "尖塔防卫者擅长刺剑，长剑，弯刀，反曲刀以及两种带有缴械特性的异种武器。他没有魔战士的穿甲施法能力，可他一旦擅长盔甲，就会自动获得相应的魔战士能力。此特性取代一般魔剑士的武器和护甲擅长。"
   },
   {
     "Key": "SpireDefenderArcaneAugmentation.Name",

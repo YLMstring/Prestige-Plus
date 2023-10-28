@@ -21,6 +21,10 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.RuleSystem;
 using Kingmaker.Enums.Damage;
+using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.UnitLogic.Abilities.Components;
+using Kingmaker.UnitLogic;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -70,6 +74,9 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string WhiteHair = "WhiteHairedWitch.WhiteHair";
         private static readonly string WhiteHairGuid = "{64E7BE0E-B19E-4378-BAA3-EF261322A815}";
 
+        private const string WhiteHairAbility = "WhiteHairedWitch.WhiteHairAbility";
+        private static readonly string WhiteHairAbilityGuid = "{592470DA-B336-4B03-BF72-D40899058514}";
+
         internal const string WhiteHairDisplayName = "WhiteHairedWitchWhiteHair.Name";
         private const string WhiteHairDescription = "WhiteHairedWitchWhiteHair.Description";
 
@@ -81,6 +88,21 @@ namespace PrestigePlus.Blueprint.Archetype
                 .Add<KnotGrapple>(c => { c.isHair = true; })
                 .Build();
 
+            var abilityunlimited = AbilityConfigurator.New(WhiteHairAbility, WhiteHairAbilityGuid)
+                .CopyFrom(
+                AbilityRefs.MagicMissile,
+                typeof(AbilityDeliverProjectile))
+                .SetDisplayName(WhiteHairDisplayName)
+                .SetDescription(WhiteHairDescription)
+                .SetIcon(icon)
+                .SetCanTargetEnemies(true)
+                .SetCanTargetSelf(false)
+                .SetType(AbilityType.Physical)
+                .SetSpellResistance(false)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
+                .SetRange(AbilityRange.Long)
+                .Configure();
+
             return FeatureConfigurator.New(WhiteHair, WhiteHairGuid)
               .SetDisplayName(WhiteHairDisplayName)
               .SetDescription(WhiteHairDescription)
@@ -91,6 +113,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddReplaceSingleCombatManeuverStat(statType: StatType.Intelligence, type: Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple)
               .AddFacts(new() { PinAbilityGuid1, TieUpAbilityGuid, ReadyAbilityGuid, ReleaseAbilityGuid })
               .AddComponent<AddInitiatorAttackWithWeaponTrigger>(c => { c.Action = grapple; c.OnlyHit = true; c.CheckWeaponCategory = true; c.Category = WeaponCategory.Gore; c.TriggerBeforeAttack = false; c.IgnoreAutoHit = true; })
+              .AddManeuverTrigger(ActionsBuilder.New().CastSpell(abilityunlimited).Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple, false)
               .Configure();
         }
 

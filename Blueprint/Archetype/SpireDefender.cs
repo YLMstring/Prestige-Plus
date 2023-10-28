@@ -19,6 +19,7 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components;
 using BlueprintCore.Actions.Builder.ContextEx;
 using Kingmaker.Designers.Mechanics.Facts;
+using Kingmaker.Blueprints.Items.Armors;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -39,6 +40,8 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetLocalizedDescription(ArchetypeDescription)
             .SetRemoveFeaturesEntry(1, FeatureRefs.MagusProficiencies.ToString())
             .SetRemoveFeaturesEntry(4, FeatureRefs.MagusSpellRecallFeature.ToString())
+            .SetRemoveFeaturesEntry(7, FeatureRefs.ArcaneMediumArmor.ToString())
+            .SetRemoveFeaturesEntry(13, FeatureRefs.ArcaneHeavyArmor.ToString())
             .AddToAddFeatures(1, CreateProficiencies(), FeatureRefs.CombatExpertiseFeature.ToString(), FeatureRefs.Dodge.ToString())
             .AddToAddFeatures(4, ArcaneAugmentationFeat())
               .Configure();
@@ -56,12 +59,10 @@ namespace PrestigePlus.Blueprint.Archetype
         public static BlueprintFeature CreateProficiencies()
         {
             return FeatureConfigurator.New(Proficiencies, ProficienciesGuid)
-                .CopyFrom(
-                FeatureRefs.MagusProficiencies,
-                typeof(ArcaneArmorProficiency))
               .SetDisplayName(ProficienciesDisplayName)
               .SetDescription(ProficienciesDescription)
               .SetIsClassFeature(true)
+              .AddArcaneArmorProficiency(new ArmorProficiencyGroup[] { ArmorProficiencyGroup.Light, ArmorProficiencyGroup.Medium, ArmorProficiencyGroup.Heavy } )
               .AddProficiencies(
                 weaponProficiencies:
                   new WeaponCategory[]
