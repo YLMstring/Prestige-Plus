@@ -1438,13 +1438,26 @@
     "Key": "Grappled.Name",
     "ProcessTemplates": false,
     "enGB": "Grappled",
-    "zhCN": "擒抱"
+    "zhCN": "擒抱中"
   },
 
   {
     "Key": "Grappled.Description",
     "enGB": "You are grappled.",
     "zhCN": "你陷入擒抱"
+  },
+
+  {
+    "Key": "Grappled2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Not Grappled",
+    "zhCN": "不在擒抱中"
+  },
+
+  {
+    "Key": "Grappled2.Description",
+    "enGB": "You are not grappled.",
+    "zhCN": "你没有陷入擒抱"
   },
 
   {
@@ -4465,7 +4478,130 @@
     "Key": "EsotericKnightPsychicRage.Description",
     "enGB": "As a free action, an esoteric knight can extend the duration of her rage by sacrificing a spell slot; this prolongs the duration of her rage for a number of rounds equal to the level of the spell slot used. This also applies to Demon Rage. (2 burn)",
     "zhCN": "以一个自由动作，秘契骑士可以牺牲一个法术位来恢复等同于法术环阶的狂暴轮数，包括恶魔狂怒。（2点超载）"
-  }
+  },
 
+  {
+    "Key": "WhiteHairedWitch.Name",
+    "ProcessTemplates": false,
+    "enGB": "White-Haired Witch",
+    "zhCN": "白发魔女"
+  },
+  {
+    "Key": "WhiteHairedWitch.Description",
+    "enGB": "A white-haired witch concentrates her mysterious powers on improving her prowess in melee, using feats of agility and her prehensile hair to deal extreme damage.",
+    "zhCN": "白发魔女使用自己的神秘力量强化她在混战中的实力，运用敏捷的战术和擅长抓握的头发来造成巨大的伤害。"
+  },
+  {
+    "Key": "WhiteHairedWitchWhiteHair.Name",
+    "ProcessTemplates": false,
+    "enGB": "White Hair",
+    "zhCN": "白发"
+  },
+  {
+    "Key": "WhiteHairedWitchWhiteHair.Description",
+    "enGB": "At 1st level, a white-haired witch gains the ability to use her hair as a weapon. This functions as a primary gore attack. The hair deals 1d4 points of damage (1d3 for a Small witch) plus the witch’s Intelligence modifier. In addition, whenever the hair strikes a foe, the witch can attempt to grapple that foe with her hair as a free action without provoking an attack of opportunity. She uses her Intelligence modifier in place of her Strength modifier when grappling. When a white-haired witch grapples a foe in this way, she does not gain the grappled condition.",
+    "zhCN": "1级起，白发魔女学会将她的头发当作武器使用。她的头发的功能有如一个抵刺主要天生武器，造成1d4（小型1d3）加上智力调整值的伤害，此外，当她用头发击中目标的时候，可以使用自由动作擒抱对方，且不引发借机攻击。在计算擒抱战技加值时，以她的智力加值取代她的力量加值。当白发魔女使用这个方式进行擒抱的时候，她并不会进入擒抱状态。,,
+    "
+  },
+  {
+    "Key": "WhiteHairedWitchHairConstrict.Name",
+    "ProcessTemplates": false,
+    "enGB": "Constrict",
+    "zhCN": "勒紧"
+  },
+  {
+    "Key": "WhiteHairedWitchHairConstrict.Description",
+    "enGB": "At 2nd level, when the white-haired witch’s hair successfully grapples an opponent, it can begin constricting her victim as a free action, dealing damage equal to that of its attack.",
+    "zhCN": "2级起，只要她用头发成功擒抱一个目标，她就可以用一个迅捷动作勒紧她的目标，造成相当于头发攻击的伤害。"
+  },
+  {
+    "Key": "WhiteHairedWitchHairTrip.Name",
+    "ProcessTemplates": false,
+    "enGB": "Trip",
+    "zhCN": "绊摔"
+  },
+  {
+    "Key": "WhiteHairedWitchHairTrip.Description",
+    "enGB": "At 4th level, a white-haired witch who successfully strikes a foe with her hair can attempt a combat maneuver check to trip the creature as a free action.",
+    "zhCN": "4级起，用头发击中目标的白发魔女也可以尝试用一个迅捷动作发动战技，绊摔她的目标。"
+  },
+  {
+    "Key": "WhiteHairedWitchHairPull.Name",
+    "ProcessTemplates": false,
+    "enGB": "Pull",
+    "zhCN": "拉近"
+  },
+  {
+    "Key": "WhiteHairedWitchHairPull.Description",
+    "enGB": "At 6th level, a white-haired witch gains Grabbing Drag as a bonus feat.",
+    "zhCN": "6级起，白发魔女获得擒拿手-擒龙控鹤作为奖励专长。"
+  },
+  {
+    "Key": "WhiteHairedWitchHairStrangle.Name",
+    "ProcessTemplates": false,
+    "enGB": "Strangle",
+    "zhCN": "绞杀"
+  },
+  {
+    "Key": "WhiteHairedWitchHairStrangle.Description",
+    "enGB": "At 8th level, when the white-haired witch’s hair is grappling with an opponent, that creature is strangled. This functions as the alchemist’s Teneacle discovery.",
+    "zhCN": "8级起，被白发魔女用头发擒拿的目标是同被锁喉。本能力如同炼金术士的触手科研发现。"
+  },
+  {
+    "Key": "WhiteHairedWitchHairReach.Name",
+    "ProcessTemplates": false,
+    "enGB": "Reach",
+    "zhCN": "触及"
+  },
+  {
+    "Key": "WhiteHairedWitchHairReach.Description",
+    "enGB": "At 4th level and every four levels thereafter, a white-haired witch’s hair adds 5 feet to her reach, to a maximum of 30 feet at 20th level.",
+    "zhCN": "在4级和之后的每4级，白发魔女的头发令她的触及范围增加5尺，在20级达到最大的30尺。"
+  },
+  {
+    "Key": "SpireDefender.Name",
+    "ProcessTemplates": false,
+    "enGB": "Spire Defender",
+    "zhCN": "尖塔防卫者"
+  },
+  {
+    "Key": "SpireDefender.Description",
+    "enGB": "Spire defenders are magi who train themselves to accompany sages and archaeologists who venture from the Mordant Spire, acting as aids and bodyguards. Because they often operate in difficult terrain—narrow trenches in dig sites, flooded dungeons, and tight corridors in ancient ruins—spire defenders place mobility and agility at a premium. As a result, they eschew armor entirely. Most spire defenders are elves—it’s exceptionally rare for a non-elf to be granted access to the training required to take this archetype.",
+    "zhCN": "尖塔防卫者是一群魔剑士，他们训练自己成为辅助者和保镳，保护那些在曼德特石塔探查的贤者与考古学家。由于他们常常在诸如挖掘处的壕沟、被淹没的地下城、古老废墟和狭长走道之类的困难地形中作战，因此他们将机动性和灵巧视为第一要务，完全舍弃了护甲。绝大多数的尖塔防卫者都是精灵，对非精灵种族而言接受与此变体相关的培训是非常罕见的事情。,,
+    "
+  },
+  {
+    "Key": "SpireDefenderProficiencies.Name",
+    "ProcessTemplates": false,
+    "enGB": "Weapon Proficiency",
+    "zhCN": "尖塔防卫者擅长"
+  },
+  {
+    "Key": "SpireDefenderProficiencies.Description",
+    "enGB": "A spire defender is proficient with the rapier, longsword, scimitar, kukri, sai and nunchaku. This replaces the magus’s normal weapon and armor proficiencies.",
+    "zhCN": "尖塔防卫者擅长刺剑，长剑，弯刀，反曲刀以及两种带有缴械特性的异种武器。此特性取代一般魔剑士的武器和护甲擅长。"
+  },
+  {
+    "Key": "SpireDefenderArcaneAugmentation.Name",
+    "ProcessTemplates": false,
+    "enGB": "Arcane Augmentation",
+    "zhCN": "奥法强身"
+  },
+  {
+    "Key": "SpireDefenderArcaneAugmentation.Description",
+    "enGB": "At 4th level, a magus can expend 1 point from his arcane pool as a swift action to grant himself a +5 competence bonus for 1 minute to Athletics and Mobility skill check. For every three levels beyond 4th, the magus gains another +1 enhancement bonus, to a maximum of +10 at 19th level.",
+    "zhCN": "4级起，尖塔防卫者可以通过迅捷动作花费一点奥术池，在一分钟内让自己的运动和灵巧技能得到+5的环境加值。此后每三级，他会额外得到一点增强加值，直到十九级的+10。"
+  },
+  {
+    "Key": "SpireDefenderManeuverMastery.Name",
+    "ProcessTemplates": false,
+    "enGB": "Maneuver Mastery",
+    "zhCN": "战技掌控"
+  },
+  {
+    "Key": "SpireDefenderManeuverMastery.Description",
+    "enGB": "The magus has mastered combat maneuvers. Whenever he attempts a combat maneuver, he uses his magus level in place of his base attack bonus (in addition to any base attack bonus gained from other classes).",
+    "zhCN": "魔战士已经掌握了战技的奥秘，当他尝试战技时，用他的魔战士等级作为其基本攻击加值（与其他职业带来的基本攻击加值合计）。"
+  }
 
 ]

@@ -42,6 +42,9 @@ namespace PrestigePlus.Blueprint.GrappleFeat
         private static readonly string DisplayName = "Grappled.Name";
         private static readonly string Description = "Grappled.Description";
 
+        private static readonly string DisplayName2 = "Grappled2.Name";
+        private static readonly string Description2 = "Grappled2.Description";
+
         private const string Stylebuff = "ImprovedGrapple.Stylebuff";  //normal grapple
         private static readonly string StylebuffGuid = "{D6D08842-8E03-4A9D-81B8-1D9FB2245649}";
 
@@ -110,8 +113,8 @@ namespace PrestigePlus.Blueprint.GrappleFeat
               .Configure();
 
             var Buff3 = BuffConfigurator.New(Stylebuff3, StylebuffGuid3)
-              .SetDisplayName(DisplayName)
-              .SetDescription(Description)
+              .SetDisplayName(DisplayName2)
+              .SetDescription(Description2)
               .SetIcon(icon)
               .AddComponent<PPGrabInitiatorFree>()
               .Configure();
@@ -226,17 +229,7 @@ namespace PrestigePlus.Blueprint.GrappleFeat
                 .AddPrerequisiteFeature(StyleGuid, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                 .Configure();
 
-            var grab2 = ActionsBuilder.New()
-                .ApplyBuffPermanent(BuffRefs.GrapplingInfusionEffectBuff.ToString(), true)
-                .Build();
-
-            var grapple2 = ActionsBuilder.New()
-                .CombatManeuver(onSuccess: grab2, type: Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple)
-                .Build();
-
-            //BuffConfigurator.For(BuffRefs.GrapplingInfusionBuff)
-            //.EditComponent<AddKineticistInfusionDamageTrigger>(a => a.Actions.Actions = grapple2.Actions)
-            //.Configure();
+            
 
         }
     }

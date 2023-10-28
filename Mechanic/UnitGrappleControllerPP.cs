@@ -38,6 +38,8 @@ using Kingmaker.RuleSystem.Rules.Abilities;
 using Kingmaker.Blueprints.Root;
 using PrestigePlus.Modify;
 using PrestigePlus.GrappleMechanic;
+using PrestigePlus.Feats;
+using static Kingmaker.UI.CanvasScalerWorkaround;
 
 namespace PrestigePlus.Grapple
 {
@@ -173,7 +175,7 @@ namespace PrestigePlus.Grapple
                             h.HandleKnockOff(grappleInitiator, value);
                         }, true);
                     }
-                    else
+                    else if (grappleInitiator.HasFact(StagSub2))
                     {
                         RunAttackRule(grappleInitiator, value);
                     }
@@ -186,7 +188,7 @@ namespace PrestigePlus.Grapple
                 UnitPartGrappleInitiatorPP.TryClearPinning();
                 return false;
             }
-            if (grappleInitiator.HasFact(FreeBuff))
+            if (grappleInitiator.HasFact(FreeBuff) && !grappleInitiator.CombatState.EngagedUnits.Contains(value))
             {
                 return false;
             }
@@ -303,6 +305,7 @@ namespace PrestigePlus.Grapple
         private static BlueprintBuffReference FreeBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{D4DD258E-B9F1-42D1-9BD0-ADBD217AFE23}");
         private static BlueprintBuffReference StagBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{21F094D4-1D59-400B-9CEB-558E6218FB0C}");
         private static BlueprintBuffReference StagSub = BlueprintTool.GetRef<BlueprintBuffReference>("{166DF6CC-25B6-4864-9F1D-C9EFF2AA6869}");
+        private static BlueprintFeatureReference StagSub2 = BlueprintTool.GetRef<BlueprintFeatureReference>(StagStyle.SubmissionGuid);
         private static BlueprintBuffReference Kraken = BlueprintTool.GetRef<BlueprintBuffReference>("{E355834F-3B1F-4790-A8CA-01F66683550A}");
 
         private static BlueprintFeatureReference Base = BlueprintTool.GetRef<BlueprintFeatureReference>("{D74F645A-D0F2-470B-B68B-E76EC083A6D8}");

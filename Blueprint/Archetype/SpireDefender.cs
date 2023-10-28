@@ -18,6 +18,7 @@ using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components;
 using BlueprintCore.Actions.Builder.ContextEx;
+using Kingmaker.Designers.Mechanics.Facts;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -55,6 +56,9 @@ namespace PrestigePlus.Blueprint.Archetype
         public static BlueprintFeature CreateProficiencies()
         {
             return FeatureConfigurator.New(Proficiencies, ProficienciesGuid)
+                .CopyFrom(
+                FeatureRefs.MagusProficiencies,
+                typeof(ArcaneArmorProficiency))
               .SetDisplayName(ProficienciesDisplayName)
               .SetDescription(ProficienciesDescription)
               .SetIsClassFeature(true)
@@ -86,7 +90,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature ArcaneAugmentationFeat()
         {
-            var icon = AbilityRefs.DimensionDoorCasterOnly.Reference.Get().Icon;
+            var icon = AbilityRefs.Transformation.Reference.Get().Icon;
 
             var Buff2 = BuffConfigurator.New(ArcaneAugmentationBuff2, ArcaneAugmentationBuff2Guid)
              .SetDisplayName(ArcaneAugmentationDisplayName)
@@ -129,7 +133,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         private static BlueprintFeature CreateManeuverMastery()
         {
-            var icon = FeatureRefs.BloodragerDamageReduction.Reference.Get().Icon;
+            var icon = FeatureRefs.MagusSpellRecallFeature.Reference.Get().Icon;
 
             return FeatureConfigurator.New(ManeuverMastery, ManeuverMasteryGuid, FeatureGroup.MagusArcana)
               .SetDisplayName(ManeuverMasteryDisplayName)

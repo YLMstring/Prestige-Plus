@@ -18,6 +18,9 @@ using Kingmaker.UnitLogic.Mechanics.Components;
 using BlueprintCore.Actions.Builder;
 using PrestigePlus.CustomAction.GrappleThrow;
 using BlueprintCore.Actions.Builder.ContextEx;
+using Kingmaker.UnitLogic.Abilities;
+using Kingmaker.RuleSystem;
+using Kingmaker.Enums.Damage;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -35,7 +38,7 @@ namespace PrestigePlus.Blueprint.Archetype
             var arc = ArchetypeConfigurator.New(ArchetypeName, ArchetypeGuid, CharacterClassRefs.WitchClass)
               .SetLocalizedName(ArchetypeDisplayName)
               .SetLocalizedDescription(ArchetypeDescription)
-            .SetRemoveFeaturesEntry(1, FeatureSelectionRefs.WitchHexSelection.ToString())
+            .SetRemoveFeaturesEntry(1, FeatureSelectionRefs.WitchHexSelection.ToString(), ProgressionRefs.WitchBetterHexProgression.ToString())
             .SetRemoveFeaturesEntry(2, FeatureSelectionRefs.WitchHexSelection.ToString())
             .SetRemoveFeaturesEntry(4, FeatureSelectionRefs.WitchHexSelection.ToString())
             .SetRemoveFeaturesEntry(6, FeatureSelectionRefs.WitchHexSelection.ToString())
@@ -60,7 +63,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .Configure();
 
             ProgressionConfigurator.For(ProgressionRefs.WitchProgression)
-                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { HairPullGuid })
+                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { WhiteHairGuid, HairReachGuid })
                 .Configure();
         }
 
@@ -72,7 +75,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         private static BlueprintFeature CreateWhiteHair()
         {
-            var icon = FeatureRefs.BloodragerDamageReduction.Reference.Get().Icon;
+            var icon = AbilityRefs.MagicMissile.Reference.Get().Icon;
 
             var grapple = ActionsBuilder.New()
                 .Add<KnotGrapple>(c => { c.isHair = true; })
@@ -82,12 +85,19 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(WhiteHairDisplayName)
               .SetDescription(WhiteHairDescription)
               .SetIcon(icon)
-              .AddAdditionalLimb(ItemWeaponRefs.SmallGore1d4.ToString())
+              .AddAdditionalLimb(ItemWeaponRefs.Gore1d6.ToString())
+              .AddWeaponDamageOverride(formula: new DiceFormula(1, DiceType.D4), overrideDice: true, weaponTypes: new() { WeaponTypeRefs.GoreType.Cast<BlueprintWeaponTypeReference>() })
               .AddComponent<HairExtraDamage>()
               .AddReplaceSingleCombatManeuverStat(statType: StatType.Intelligence, type: Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple)
-              .AddComponent<AddInitiatorAttackWithWeaponTrigger>(c => { c.Action = grapple; c.OnlyHit = true; c.CheckWeaponCategory = true; c.Category = WeaponCategory.Gore; c.TriggerBeforeAttack = false; })
+              .AddFacts(new() { PinAbilityGuid1, TieUpAbilityGuid, ReadyAbilityGuid, ReleaseAbilityGuid })
+              .AddComponent<AddInitiatorAttackWithWeaponTrigger>(c => { c.Action = grapple; c.OnlyHit = true; c.CheckWeaponCategory = true; c.Category = WeaponCategory.Gore; c.TriggerBeforeAttack = false; c.IgnoreAutoHit = true; })
               .Configure();
         }
+
+        private static readonly string PinAbilityGuid1 = "{531632AA-0E0F-402C-8A07-18E8E0D35C80}";
+        private static readonly string TieUpAbilityGuid = "{DB453CF7-8799-4FDD-941B-FA33EFF5771A}";
+        private static readonly string ReadyAbilityGuid = "{A5057A11-9D24-46D8-9BE6-F5C7D605EDC5}";
+        private static readonly string ReleaseAbilityGuid = "{A75ED2DD-7F0D-4367-9953-4179F3E531D2}";
 
         private const string HairConstrict = "WhiteHairedWitch.HairConstrict";
         private static readonly string HairConstrictGuid = "{0221B55C-CEAE-4551-A6CA-94EAFC5803F7}";
@@ -97,7 +107,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         private static BlueprintFeature CreateHairConstrict()
         {
-            var icon = FeatureRefs.BloodragerDamageReduction.Reference.Get().Icon;
+            var icon = AbilityRefs.MagicMissile.Reference.Get().Icon;
 
             return FeatureConfigurator.New(HairConstrict, HairConstrictGuid)
               .SetDisplayName(HairConstrictDisplayName)
@@ -115,7 +125,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         private static BlueprintFeature CreateHairTrip()
         {
-            var icon = FeatureRefs.BloodragerDamageReduction.Reference.Get().Icon;
+            var icon = AbilityRefs.MagicMissile.Reference.Get().Icon;
 
             var grapple = ActionsBuilder.New()
                 .CombatManeuver(ActionsBuilder.New().Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.Trip)
@@ -125,7 +135,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(HairTripDisplayName)
               .SetDescription(HairTripDescription)
               .SetIcon(icon)
-              .AddComponent<AddInitiatorAttackWithWeaponTrigger>(c => { c.Action = grapple; c.OnlyHit = true; c.CheckWeaponCategory = true; c.Category = WeaponCategory.Gore; c.TriggerBeforeAttack = false; })
+              .AddComponent<AddInitiatorAttackWithWeaponTrigger>(c => { c.Action = grapple; c.OnlyHit = true; c.CheckWeaponCategory = true; c.Category = WeaponCategory.Gore; c.TriggerBeforeAttack = false; c.IgnoreAutoHit = true; })
               .Configure();
         }
 
@@ -137,7 +147,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         private static BlueprintFeature CreateHairPull()
         {
-            var icon = FeatureRefs.BloodragerDamageReduction.Reference.Get().Icon;
+            var icon = AbilityRefs.MagicMissile.Reference.Get().Icon;
 
             return FeatureConfigurator.New(HairPull, HairPullGuid)
               .SetDisplayName(HairPullDisplayName)
@@ -155,7 +165,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         private static BlueprintFeature CreateHairStrangle()
         {
-            var icon = FeatureRefs.BloodragerDamageReduction.Reference.Get().Icon;
+            var icon = AbilityRefs.MagicMissile.Reference.Get().Icon;
 
             return FeatureConfigurator.New(HairStrangle, HairStrangleGuid)
               .SetDisplayName(HairStrangleDisplayName)
@@ -173,7 +183,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         private static BlueprintFeature CreateHairReach()
         {
-            var icon = FeatureRefs.BloodragerDamageReduction.Reference.Get().Icon;
+            var icon = AbilityRefs.MagicMissile.Reference.Get().Icon;
 
             return FeatureConfigurator.New(HairReach, HairReachGuid)
               .SetDisplayName(HairReachDisplayName)
