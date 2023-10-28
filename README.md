@@ -1,4 +1,4 @@
-# Prestige Plus v1.7.0 for WoTR 
+# Prestige Plus v1.7.1 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - Add Grapple Mechanic!
