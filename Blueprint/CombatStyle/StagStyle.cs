@@ -23,6 +23,8 @@ using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Conditions.Builder.ContextEx;
 using PrestigePlus.CustomAction.GrappleThrow;
 using PrestigePlus.CustomComponent.Feat;
+using PrestigePlus.CustomComponent.Charge;
+using PrestigePlus.Blueprint.MythicGrapple;
 
 namespace PrestigePlus.Feats
 {
@@ -42,24 +44,6 @@ namespace PrestigePlus.Feats
         public static void StyleConfigure()
         {
             var icon = FeatureRefs.WildShapeIWolfFeature.Reference.Get().Icon;
-
-            var ability2 = AbilityConfigurator.New(StyleAbility, StyleAbilityGuid)
-                .CopyFrom(
-                AbilityRefs.ChargeAbility,
-                typeof(AbilityCasterHasNoFacts),
-                typeof(AbilityIsFullRoundInTurnBased),
-                typeof(AbilityRequirementCanMove))
-                .AddAbilityRequirementHasCondition(conditions: new Kingmaker.UnitLogic.UnitCondition[] {Kingmaker.UnitLogic.UnitCondition.Entangled, Kingmaker.UnitLogic.UnitCondition.Fatigued}, not: true)
-                .AddComponent<StagCharge>()
-                .SetDisplayName(StyleDisplayName)
-                .SetDescription(StyleDescription)
-                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard)
-                .SetCanTargetEnemies(true)
-                .SetCanTargetSelf(false)
-                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
-                .SetRange(AbilityRange.DoubleMove)
-                .SetType(AbilityType.Physical)
-                .Configure();
 
             var Buff = BuffConfigurator.New(Stylebuff, StylebuffGuid)
               .SetDisplayName(StyleDisplayName)
@@ -88,7 +72,7 @@ namespace PrestigePlus.Feats
                     .AddPrerequisiteFeature(FeatureRefs.ImprovedUnarmedStrike.ToString())
                     .AddPrerequisiteFeature(FeatureRefs.Dodge.ToString())
                     .AddPrerequisiteFeature(FeatureRefs.Mobility.ToString())
-                    .AddFacts(new() { ability, ability2 })
+                    .AddFacts(new() { ability, AerialAssault.ReleaseAbilityGuid })
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .AddToGroups(FeatureGroup.StyleFeat)
                     .Configure();
@@ -101,8 +85,6 @@ namespace PrestigePlus.Feats
         private static readonly string HornsDisplayName = "StagHorns.Name";
         private static readonly string HornsDescription = "StagHorns.Description";
 
-        private const string StyleAbility = "StagStyle.StyleAbility";
-        private static readonly string StyleAbilityGuid = "{C1D508C9-8474-41F0-8116-CCF7343B69E0}";
         public static void HornsConfigure()
         {
             var icon = FeatureRefs.WildShapeIWolfFeature.Reference.Get().Icon;

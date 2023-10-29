@@ -26,7 +26,7 @@ using Kingmaker.UnitLogic;
 using UnityEngine;
 using Owlcat.Runtime.Core.Utils;
 
-namespace PrestigePlus.CustomComponent.Feat
+namespace PrestigePlus.CustomComponent.Charge
 {
     internal class StagCharge : AbilityCustomLogic, IAbilityTargetRestriction, IAbilityMinRangeProvider
     {

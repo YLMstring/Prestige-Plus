@@ -40,6 +40,8 @@ using PrestigePlus.Modify;
 using PrestigePlus.GrappleMechanic;
 using PrestigePlus.Feats;
 using static Kingmaker.UI.CanvasScalerWorkaround;
+using Kingmaker.Visual.Animation.Kingmaker;
+using static Pathfinding.Util.RetainedGizmos;
 
 namespace PrestigePlus.Grapple
 {
@@ -281,6 +283,8 @@ namespace PrestigePlus.Grapple
             {
                 return; 
             }
+            var attackAnimation = maybeCaster.View.AnimationManager.CreateHandle(UnitAnimationType.SpecialAttack);
+            maybeCaster.View.AnimationManager.Execute(attackAnimation);
             RuleAttackWithWeapon ruleAttackWithWeapon = new RuleAttackWithWeapon(maybeCaster, unit, weapon.Weapon, 0)
             {
                 Reason = maybeCaster.Context,

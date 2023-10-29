@@ -31,11 +31,16 @@ using Kingmaker.RuleSystem;
 using static Kingmaker.UI.CanvasScalerWorkaround;
 using System.Runtime.Remoting.Contexts;
 using PrestigePlus.Grapple;
+using PrestigePlus.Blueprint.MythicGrapple;
+using PrestigePlus.Blueprint.Feat;
+using Kingmaker.Designers;
+using Kingmaker.UnitLogic.Parts;
 
 namespace PrestigePlus.CustomComponent.Charge
 {
     internal class TryAboveAttack : AbilityCustomLogic, IAbilityTargetRestriction, IAbilityMinRangeProvider
     {
+        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         public override bool IsEngageUnit
         {
             get
@@ -50,13 +55,13 @@ namespace PrestigePlus.CustomComponent.Charge
             UnitEntityData target = targetWrapper.Unit;
             if (target == null)
             {
-                PFLog.Default.Error("Target unit is missing", Array.Empty<object>());
+                Logger.Info("Target unit is missing");
                 yield break;
             }
             UnitEntityData caster = context.Caster;
             if (caster.GetThreatHandMelee(true) == null)
             {
-                PFLog.Default.Error("Invalid caster's weapon", Array.Empty<object>());
+                Logger.Info("Invalid caster's weapon");
                 yield break;
             }
             Vector3 position = caster.Position;
@@ -69,10 +74,18 @@ namespace PrestigePlus.CustomComponent.Charge
                 endPoint
             }), true);
             caster.Descriptor.AddBuff(BlueprintRoot.Instance.SystemMechanics.ChargeBuff, context, new TimeSpan?(1.Rounds().Seconds));
-            caster.Descriptor.AddBuff(CastBuff, context, new TimeSpan?(1.Rounds().Seconds));
+            if (caster.HasFact(AerialBuff))
+            {
+                caster.Descriptor.AddBuff(CastBuff, context, new TimeSpan?(1.Rounds().Seconds));
+            }  
             caster.Descriptor.State.IsCharging = true;
-            UnitAttack attack = new UnitAttack(target, null);
+            UnitAttack attack = new UnitAttack(target, null)
+            {
+                ReactionAction = true
+            };
             attack.Init(caster);
+            attack.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free;
+            //attack.ReactionAction = true;
             IEnumerator turnBasedRoutine = null;
             IEnumerator runtimeRoutine = null;
             for (; ; )
@@ -80,11 +93,11 @@ namespace PrestigePlus.CustomComponent.Charge
                 IEnumerator enumerator;
                 if (CombatController.IsInTurnBasedCombat())
                 {
-                    enumerator = turnBasedRoutine = turnBasedRoutine ?? TurnBasesRoutine(caster, target, attack);
+                    enumerator = turnBasedRoutine ??= TurnBasesRoutine(caster, target, attack);
                 }
                 else
                 {
-                    enumerator = runtimeRoutine = runtimeRoutine ?? RuntimeRoutine(caster, target, attack, endPoint);
+                    enumerator = runtimeRoutine ??= RuntimeRoutine(caster, target, attack, endPoint);
                 }
                 if (!enumerator.MoveNext())
                 {
@@ -101,39 +114,44 @@ namespace PrestigePlus.CustomComponent.Charge
             UnitEntityData mount = caster.GetSaddledUnit();
             if (mount == null)
             {
+                //Logger.Info("start charge2");
                 UnitMovementAgent agentASP = caster.View.AgentASP;
                 float timeSinceStart = 0f;
                 while (attack.ShouldUnitApproach)
                 {
+                    //Logger.Info("start charge3");
                     if (Game.Instance.TurnBasedCombatController.WaitingForUI)
                     {
                         yield return null;
                     }
                     else
                     {
+                        //Logger.Info("start charge4");
                         timeSinceStart += Game.Instance.TimeController.GameDeltaTime;
                         if (timeSinceStart > 6f)
                         {
-                            PFLog.TBM.Log("Charge: timeSinceStart > 6f", Array.Empty<object>());
+                            Logger.Info("Charge: timeSinceStart > 6f");
                             break;
                         }
                         if (caster.GetThreatHand() == null)
                         {
-                            PFLog.TBM.Log("Charge: caster.GetThreatHand() == null", Array.Empty<object>());
+                            Logger.Info("Charge: caster.GetThreatHand() == null");
                             break;
                         }
-                        if (!caster.Descriptor.State.CanMove)
+                        if (!caster.Descriptor.State.CanMove && !caster.Get<UnitPartForceMove>())
                         {
-                            PFLog.TBM.Log("Charge: !caster.Descriptor.State.CanMove", Array.Empty<object>());
+                            Logger.Info("Charge: !caster.Descriptor.State.CanMove");
                             break;
                         }
                         if (!agentASP)
                         {
-                            PFLog.TBM.Log("Charge: !(bool)caster.View.AgentASP", Array.Empty<object>());
+                            Logger.Info("Charge: !(bool)caster.View.AgentASP");
                             break;
                         }
+                        //Logger.Info("start charge5");
                         if (!agentASP.IsReallyMoving)
                         {
+                            //Logger.Info("start charge6");
                             agentASP.ForcePath(new ForcedPath(new List<Vector3>
                             {
                                 caster.Position,
@@ -141,7 +159,7 @@ namespace PrestigePlus.CustomComponent.Charge
                             }), true);
                             if (!agentASP.IsReallyMoving)
                             {
-                                PFLog.TBM.Log("Charge: !caster.View.AgentASP.IsReallyMoving", Array.Empty<object>());
+                                Logger.Info("Charge: !caster.View.AgentASP.IsReallyMoving");
                                 break;
                             }
                         }
@@ -149,7 +167,6 @@ namespace PrestigePlus.CustomComponent.Charge
                         yield return null;
                     }
                 }
-                agentASP = null;
             }
             else
             {
@@ -158,20 +175,48 @@ namespace PrestigePlus.CustomComponent.Charge
                     yield return null;
                 }
             }
+            //Logger.Info("start charge8");
             caster.View.StopMoving();
             if (!attack.ShouldUnitApproach)
             {
                 attack.IgnoreCooldown(null);
                 attack.IsCharge = true;
-                RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.Grapple, null);
-                ruleCombatManeuver = (caster.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
-                if (ruleCombatManeuver.Success)
+                //GameHelper.RemoveBuff(target, RhinoBuff);
+                //Logger.Info("start charge9");
+                if (caster.HasFact(AerialBuff))
                 {
-                    if (caster != null && target != null && caster.Get<UnitPartGrappleInitiatorPP>() == null && target.Get<UnitPartGrappleTargetPP>() == null)
+                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.Grapple, null);
+                    ruleCombatManeuver = (caster.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
+                    if (ruleCombatManeuver.Success)
                     {
-                        caster.Ensure<UnitPartGrappleInitiatorPP>().Init(target, CasterBuff, caster.Context);
-                        target.Ensure<UnitPartGrappleTargetPP>().Init(caster, TargetBuff, target.Context);
+                        if (caster != null && target != null && caster.Get<UnitPartGrappleInitiatorPP>() == null && target.Get<UnitPartGrappleTargetPP>() == null)
+                        {
+                            caster.Ensure<UnitPartGrappleInitiatorPP>().Init(target, CasterBuff, caster.Context);
+                            target.Ensure<UnitPartGrappleTargetPP>().Init(caster, TargetBuff, target.Context);
+                        }
                     }
+                }
+                else
+                {
+                    UnitEntityData rider = caster.GetRider();
+                    if (rider != null)
+                    {
+                        if (rider.Commands.Attack != null)
+                        {
+                            attack.AddRiderCommand(rider.Commands.Attack);
+                            rider.Commands.Attack.AddMountCommand(attack);
+                        }
+                    }
+                    else if (mount != null && mount.Commands.Attack != null)
+                    {
+                        attack.AddMountCommand(mount.Commands.Attack);
+                        mount.Commands.Attack.AddRiderCommand(attack);
+                    }
+                    caster.Commands.AddToQueueFirst(attack);
+                    attack.IgnoreCooldown();
+                    //caster.Commands.Run(attack);
+                    //attack.StartInTbm();
+                    Logger.Info("start charge10");
                 }
             }
             yield break;
@@ -192,18 +237,18 @@ namespace PrestigePlus.CustomComponent.Charge
                     passedDistance += (caster.Position - caster.PreviousPosition).magnitude;
                     if (passedDistance > maxDistance || !attack.ShouldUnitApproach)
                     {
-                        PFLog.Default.Log("Charge: passedDistance > maxDistance || !attack.ShouldUnitApproach", Array.Empty<object>());
+                        PFLog.Default.Log("Charge: passedDistance > maxDistance || !attack.ShouldUnitApproach");
                         break;
                     }
                     if (caster.GetThreatHand() == null)
                     {
-                        PFLog.Default.Log("Charge: caster.GetThreatHand() == null", Array.Empty<object>());
+                        PFLog.Default.Log("Charge: caster.GetThreatHand() == null");
                         break;
                     }
                     Vector3 position = target.Position;
                     if (ObstacleAnalyzer.TraceAlongNavmesh(caster.Position, position) != position && !caster.HasFact(StagBuff))
                     {
-                        PFLog.Default.Log("Charge: obstacle != newEndPoint", Array.Empty<object>());
+                        PFLog.Default.Log("Charge: obstacle != newEndPoint");
                         break;
                     }
                     if (position != endPoint)
@@ -219,7 +264,7 @@ namespace PrestigePlus.CustomComponent.Charge
                 }
                 if (!caster.View.MovementAgent.IsReallyMoving)
                 {
-                    PFLog.Default.Log("Charge: !caster.View.MovementAgent.IsReallyMoving", Array.Empty<object>());
+                    PFLog.Default.Log("Charge: !caster.View.MovementAgent.IsReallyMoving");
                 }
             }
             else
@@ -234,15 +279,37 @@ namespace PrestigePlus.CustomComponent.Charge
                 attack.IgnoreCooldown(null);
                 attack.IsCharge = true;
             }
-            RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.Grapple, null);
-            ruleCombatManeuver = (caster.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
-            if (ruleCombatManeuver.Success)
+            //GameHelper.RemoveBuff(target, RhinoBuff);
+            if (caster.HasFact(AerialBuff))
             {
-                if (caster != null && target != null && caster.Get<UnitPartGrappleInitiatorPP>() == null && target.Get<UnitPartGrappleTargetPP>() == null)
+                RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.Grapple, null);
+                ruleCombatManeuver = (caster.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
+                if (ruleCombatManeuver.Success)
                 {
-                    caster.Ensure<UnitPartGrappleInitiatorPP>().Init(target, CasterBuff, caster.Context);
-                    target.Ensure<UnitPartGrappleTargetPP>().Init(caster, TargetBuff, target.Context);
+                    if (caster != null && target != null && caster.Get<UnitPartGrappleInitiatorPP>() == null && target.Get<UnitPartGrappleTargetPP>() == null)
+                    {
+                        caster.Ensure<UnitPartGrappleInitiatorPP>().Init(target, CasterBuff, caster.Context);
+                        target.Ensure<UnitPartGrappleTargetPP>().Init(caster, TargetBuff, target.Context);
+                    }
                 }
+            }
+            else
+            {
+                UnitEntityData rider = caster.GetRider();
+                if (rider != null)
+                {
+                    if (rider.Commands.Attack != null)
+                    {
+                        attack.AddRiderCommand(rider.Commands.Attack);
+                        rider.Commands.Attack.AddMountCommand(attack);
+                    }
+                }
+                else if (mount != null && mount.Commands.Attack != null)
+                {
+                    attack.AddMountCommand(mount.Commands.Attack);
+                    mount.Commands.Attack.AddRiderCommand(attack);
+                }
+                caster.Commands.AddToQueueFirst(attack);
             }
             yield break;
         }
@@ -306,9 +373,9 @@ namespace PrestigePlus.CustomComponent.Charge
         }
 
         // Token: 0x0600CFAC RID: 53164 RVA: 0x0035CB54 File Offset: 0x0035AD54
-        private bool CheckTargetRestriction(UnitEntityData caster, TargetWrapper targetWrapper, [CanBeNull] out LocalizedString failReason)
+        public static bool CheckTargetRestriction(UnitEntityData caster, TargetWrapper targetWrapper, [CanBeNull] out LocalizedString failReason, UnitEntityData target = null)
         {
-            UnitEntityData unitEntityData = targetWrapper != null ? targetWrapper.Unit : null;
+            UnitEntityData unitEntityData = targetWrapper != null ? targetWrapper.Unit : target;
             if (unitEntityData == null)
             {
                 failReason = BlueprintRoot.Instance.LocalizedTexts.Reasons.TargetIsInvalid;
@@ -353,7 +420,7 @@ namespace PrestigePlus.CustomComponent.Charge
             }
             UnitEntityData unitEntityData3 = caster.GetSaddledUnit() ?? caster;
             bool flag = caster.State.IsCharging || saddledUnit != null && saddledUnit.State.IsCharging || unitEntityData3 != null && unitEntityData3.State.IsCharging;
-            if (CombatController.IsInTurnBasedCombat() && caster.IsCurrentUnit() && !flag && unitEntityData3.CombatState.TBM.TimeMoved > 0f)
+            if (CombatController.IsInTurnBasedCombat() && caster.IsCurrentUnit() && !flag && unitEntityData3.CombatState.TBM.TimeMoved > 0f && target == null)
             {
                 failReason = BlueprintRoot.Instance.LocalizedTexts.Reasons.AlreadyMovedThisTurn;
                 return false;
@@ -366,6 +433,9 @@ namespace PrestigePlus.CustomComponent.Charge
         private static BlueprintBuffReference TargetBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{F505D659-0610-41B1-B178-E767CCB9292E}");
 
         private static BlueprintBuffReference CastBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{E78853A3-7B2C-40B6-831F-824B1423F7F6}");
+        private static BlueprintBuffReference AerialBuff = BlueprintTool.GetRef<BlueprintBuffReference>(AerialAssault.Stylebuff2Guid);
         private static BlueprintBuffReference StagBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{21F094D4-1D59-400B-9CEB-558E6218FB0C}");
+
+        private static BlueprintBuffReference RhinoBuff = BlueprintTool.GetRef<BlueprintBuffReference>(RhinoCharge.RhinoChargebuffGuid);
     }
 }
