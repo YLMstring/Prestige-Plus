@@ -74,18 +74,18 @@ namespace PrestigePlus.CustomComponent.Charge
                 endPoint
             }), true);
             caster.Descriptor.AddBuff(BlueprintRoot.Instance.SystemMechanics.ChargeBuff, context, new TimeSpan?(1.Rounds().Seconds));
+            caster.Descriptor.State.IsCharging = true;
             if (caster.HasFact(AerialBuff))
             {
                 caster.Descriptor.AddBuff(CastBuff, context, new TimeSpan?(1.Rounds().Seconds));
             }  
-            caster.Descriptor.State.IsCharging = true;
-            UnitAttack attack = new UnitAttack(target, null)
-            {
-                ReactionAction = true
-            };
+            UnitAttack attack = new UnitAttack(target, null);
             attack.Init(caster);
-            attack.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free;
-            //attack.ReactionAction = true;
+            if (CombatController.IsInTurnBasedCombat())
+            {
+                attack.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free;
+                attack.ReactionAction = true;
+            }
             IEnumerator turnBasedRoutine = null;
             IEnumerator runtimeRoutine = null;
             for (; ; )
@@ -181,7 +181,6 @@ namespace PrestigePlus.CustomComponent.Charge
             {
                 attack.IgnoreCooldown(null);
                 attack.IsCharge = true;
-                //GameHelper.RemoveBuff(target, RhinoBuff);
                 //Logger.Info("start charge9");
                 if (caster.HasFact(AerialBuff))
                 {
@@ -206,6 +205,14 @@ namespace PrestigePlus.CustomComponent.Charge
                             attack.AddRiderCommand(rider.Commands.Attack);
                             rider.Commands.Attack.AddMountCommand(attack);
                         }
+                        Logger.Info("rider start");
+                        //UnitAttack attack2 = new UnitAttack(target, null);
+                        //attack2.Init(rider);
+                        //attack2.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free;
+                        //attack2.ReactionAction = true;
+                        //attack2.IgnoreCooldown(null);
+                        //attack2.IsCharge = true;
+                        //rider.Commands.AddToQueueFirst(attack2);
                     }
                     else if (mount != null && mount.Commands.Attack != null)
                     {
@@ -213,9 +220,6 @@ namespace PrestigePlus.CustomComponent.Charge
                         mount.Commands.Attack.AddRiderCommand(attack);
                     }
                     caster.Commands.AddToQueueFirst(attack);
-                    attack.IgnoreCooldown();
-                    //caster.Commands.Run(attack);
-                    //attack.StartInTbm();
                     Logger.Info("start charge10");
                 }
             }
@@ -279,7 +283,6 @@ namespace PrestigePlus.CustomComponent.Charge
                 attack.IgnoreCooldown(null);
                 attack.IsCharge = true;
             }
-            //GameHelper.RemoveBuff(target, RhinoBuff);
             if (caster.HasFact(AerialBuff))
             {
                 RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.Grapple, null);
@@ -323,6 +326,11 @@ namespace PrestigePlus.CustomComponent.Charge
                 return false;
             }
             UnitUseAbility unitUseAbility = saddledUnit.Commands.Standard as UnitUseAbility;
+            if (CombatController.IsInTurnBasedCombat())
+            {
+                unitUseAbility.ReactionAction = true;
+                unitUseAbility.IgnoreCooldown();
+            }
             return unitUseAbility != null && unitUseAbility.Ability.Blueprint.GetComponent<TryAboveAttack>();
         }
 
