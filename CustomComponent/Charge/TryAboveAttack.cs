@@ -35,6 +35,7 @@ using PrestigePlus.Blueprint.MythicGrapple;
 using PrestigePlus.Blueprint.Feat;
 using Kingmaker.Designers;
 using Kingmaker.UnitLogic.Parts;
+using PrestigePlus.GrappleMechanic;
 
 namespace PrestigePlus.CustomComponent.Charge
 {
@@ -64,6 +65,7 @@ namespace PrestigePlus.CustomComponent.Charge
                 Logger.Info("Invalid caster's weapon");
                 yield break;
             }
+            //if (caster.GetSaddledUnit() != null) { caster.GetSaddledUnit().Descriptor.AddBuff(BlueprintRoot.Instance.SystemMechanics.ChargeBuff, context, new TimeSpan?(1.Rounds().Seconds)); }
             Vector3 position = caster.Position;
             Vector3 endPoint = target.Position;
             caster.View.StopMoving();
@@ -75,11 +77,7 @@ namespace PrestigePlus.CustomComponent.Charge
             }), true);
             caster.Descriptor.AddBuff(BlueprintRoot.Instance.SystemMechanics.ChargeBuff, context, new TimeSpan?(1.Rounds().Seconds));
             caster.Descriptor.State.IsCharging = true;
-            if (caster.HasFact(AerialBuff))
-            {
-                caster.Descriptor.AddBuff(CastBuff, context, new TimeSpan?(1.Rounds().Seconds));
-            }  
-            UnitAttack attack = new UnitAttack(target, null);
+            UnitAttack attack = new(target, null);
             attack.Init(caster);
             if (CombatController.IsInTurnBasedCombat())
             {
@@ -168,60 +166,13 @@ namespace PrestigePlus.CustomComponent.Charge
                     }
                 }
             }
-            else
-            {
-                while (IsMountCharging(caster))
-                {
-                    yield return null;
-                }
-            }
-            //Logger.Info("start charge8");
             caster.View.StopMoving();
             if (!attack.ShouldUnitApproach)
             {
                 attack.IgnoreCooldown(null);
                 attack.IsCharge = true;
-                //Logger.Info("start charge9");
-                if (caster.HasFact(AerialBuff))
-                {
-                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.Grapple, null);
-                    ruleCombatManeuver = (caster.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
-                    if (ruleCombatManeuver.Success)
-                    {
-                        if (caster != null && target != null && caster.Get<UnitPartGrappleInitiatorPP>() == null && target.Get<UnitPartGrappleTargetPP>() == null)
-                        {
-                            caster.Ensure<UnitPartGrappleInitiatorPP>().Init(target, CasterBuff, caster.Context);
-                            target.Ensure<UnitPartGrappleTargetPP>().Init(caster, TargetBuff, target.Context);
-                        }
-                    }
-                }
-                else
-                {
-                    UnitEntityData rider = caster.GetRider();
-                    if (rider != null)
-                    {
-                        if (rider.Commands.Attack != null)
-                        {
-                            attack.AddRiderCommand(rider.Commands.Attack);
-                            rider.Commands.Attack.AddMountCommand(attack);
-                        }
-                        Logger.Info("rider start");
-                        //UnitAttack attack2 = new UnitAttack(target, null);
-                        //attack2.Init(rider);
-                        //attack2.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free;
-                        //attack2.ReactionAction = true;
-                        //attack2.IgnoreCooldown(null);
-                        //attack2.IsCharge = true;
-                        //rider.Commands.AddToQueueFirst(attack2);
-                    }
-                    else if (mount != null && mount.Commands.Attack != null)
-                    {
-                        attack.AddMountCommand(mount.Commands.Attack);
-                        mount.Commands.Attack.AddRiderCommand(attack);
-                    }
-                    caster.Commands.AddToQueueFirst(attack);
-                    Logger.Info("start charge10");
-                }
+                caster.Commands.AddToQueueFirst(attack);
+                Logger.Info("start charge10");
             }
             yield break;
         }
@@ -271,67 +222,13 @@ namespace PrestigePlus.CustomComponent.Charge
                     PFLog.Default.Log("Charge: !caster.View.MovementAgent.IsReallyMoving");
                 }
             }
-            else
-            {
-                while (IsMountCharging(caster))
-                {
-                    yield return null;
-                }
-            }
             if (!attack.ShouldUnitApproach)
             {
                 attack.IgnoreCooldown(null);
                 attack.IsCharge = true;
             }
-            if (caster.HasFact(AerialBuff))
-            {
-                RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.Grapple, null);
-                ruleCombatManeuver = (caster.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
-                if (ruleCombatManeuver.Success)
-                {
-                    if (caster != null && target != null && caster.Get<UnitPartGrappleInitiatorPP>() == null && target.Get<UnitPartGrappleTargetPP>() == null)
-                    {
-                        caster.Ensure<UnitPartGrappleInitiatorPP>().Init(target, CasterBuff, caster.Context);
-                        target.Ensure<UnitPartGrappleTargetPP>().Init(caster, TargetBuff, target.Context);
-                    }
-                }
-            }
-            else
-            {
-                UnitEntityData rider = caster.GetRider();
-                if (rider != null)
-                {
-                    if (rider.Commands.Attack != null)
-                    {
-                        attack.AddRiderCommand(rider.Commands.Attack);
-                        rider.Commands.Attack.AddMountCommand(attack);
-                    }
-                }
-                else if (mount != null && mount.Commands.Attack != null)
-                {
-                    attack.AddMountCommand(mount.Commands.Attack);
-                    mount.Commands.Attack.AddRiderCommand(attack);
-                }
-                caster.Commands.AddToQueueFirst(attack);
-            }
+            caster.Commands.AddToQueueFirst(attack);
             yield break;
-        }
-
-        // Token: 0x0600CFA5 RID: 53157 RVA: 0x0035C9EC File Offset: 0x0035ABEC
-        private static bool IsMountCharging(UnitEntityData rider)
-        {
-            UnitEntityData saddledUnit = rider.GetSaddledUnit();
-            if (saddledUnit == null)
-            {
-                return false;
-            }
-            UnitUseAbility unitUseAbility = saddledUnit.Commands.Standard as UnitUseAbility;
-            if (CombatController.IsInTurnBasedCombat())
-            {
-                unitUseAbility.ReactionAction = true;
-                unitUseAbility.IgnoreCooldown();
-            }
-            return unitUseAbility != null && unitUseAbility.Ability.Blueprint.GetComponent<TryAboveAttack>();
         }
 
         // Token: 0x0600CFA6 RID: 53158 RVA: 0x0035CA38 File Offset: 0x0035AC38
@@ -440,10 +337,9 @@ namespace PrestigePlus.CustomComponent.Charge
         private static BlueprintBuffReference CasterBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{C5F4DDFE-CA2E-4309-90BB-1BB5C0F32E78}");
         private static BlueprintBuffReference TargetBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{F505D659-0610-41B1-B178-E767CCB9292E}");
 
-        private static BlueprintBuffReference CastBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{E78853A3-7B2C-40B6-831F-824B1423F7F6}");
         private static BlueprintBuffReference AerialBuff = BlueprintTool.GetRef<BlueprintBuffReference>(AerialAssault.Stylebuff2Guid);
         private static BlueprintBuffReference StagBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{21F094D4-1D59-400B-9CEB-558E6218FB0C}");
 
-        private static BlueprintBuffReference RhinoBuff = BlueprintTool.GetRef<BlueprintBuffReference>(RhinoCharge.RhinoChargebuffGuid);
+        //private static BlueprintBuffReference RhinoBuff = BlueprintTool.GetRef<BlueprintBuffReference>(RhinoCharge.RhinoChargebuffGuid);
     }
 }

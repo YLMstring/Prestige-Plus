@@ -26,9 +26,9 @@ namespace PrestigePlus.CustomComponent.Feat
         {
             if (evt.Target == null) return;
             if (!evt.Success) return;
-            if (evt.Type != CombatManeuver.Grapple) return;
-            int damage = Owner.Stats.Wisdom.Bonus;
-            if (Owner.HasFact(Wrack))
+            if (evt.Type != type) return;
+            int damage = Owner.Stats.GetStat<ModifiableValueAttributeStat>(stat).Bonus;
+            if (Owner.HasFact(Wrack) && stat == StatType.Wisdom)
             {
                 damage += 4;
                 ForceDamage Damage2 = new(new ModifiableDiceFormula(new DiceFormula(damage, DiceType.One)), 0);
@@ -42,6 +42,7 @@ namespace PrestigePlus.CustomComponent.Feat
         }
 
         private static BlueprintFeatureReference Wrack = BlueprintTool.GetRef<BlueprintFeatureReference>("{527797B0-A313-453B-8558-A3F30C657623}");
-        //private static BlueprintFeatureReference Shadow = BlueprintTool.GetRef<BlueprintFeatureReference>("{8146D8AA-C4CA-4924-BE9D-999BF59A139E}");
+        public CombatManeuver type = CombatManeuver.Grapple;
+        public StatType stat = StatType.Wisdom;
     }
 }

@@ -74,11 +74,12 @@ namespace PrestigePlus.GrappleMechanic
                     //Logger.Info("charge2");
                     if (mount != null)
                     {
-                        Logger.Info("charge3");
-                        CastCharge(mount, unit);
-                        normalized2 = (unit.Position - mount.Position).normalized;
-                        distance = unit.DistanceTo(mount) - unit.Corpulence - mount.Corpulence;
-                        mount.Ensure<UnitPartForceMove>().Push(normalized2, distance, true);
+                        GameHelper.RemoveBuff(unit, Buff);
+                        return;
+                        //CastCharge(mount, unit);
+                        //normalized2 = (unit.Position - mount.Position).normalized;
+                        //distance = unit.DistanceTo(mount) - unit.Corpulence - mount.Corpulence;
+                        //mount.Ensure<UnitPartForceMove>().Push(normalized2, distance, true);
                     }
                     else
                     {
@@ -93,7 +94,7 @@ namespace PrestigePlus.GrappleMechanic
 
         }
 
-        private static void CastCharge(UnitEntityData caster, UnitEntityData target)
+        public static void CastCharge(UnitEntityData caster, UnitEntityData target)
         {
             AbilityData spellData = new(Charge, caster.Descriptor);
             if (!spellData.CanTarget(target))

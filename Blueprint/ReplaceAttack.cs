@@ -1,8 +1,12 @@
-﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
+﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
+using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
+using BlueprintCore.Utils.Types;
 using Kingmaker.UnitLogic.ActivatableAbilities;
+using PrestigePlus.CustomComponent.Feat;
 using PrestigePlus.Grapple;
 using System;
 using System.Collections.Generic;
@@ -186,6 +190,152 @@ namespace PrestigePlus.Blueprint
             FeatureConfigurator.For(FeatureRefs.ImprovedTrip)
                     .AddFacts(new() { abilityTrick, abilityTrick2 })
                     .Configure();
+        }
+
+        private const string BullRushAbility = "BullRush.BullRushAbility";
+        private static readonly string BullRushAbilityGuid = "{5DD99370-2845-4B1A-A4EE-7DD3C10B0E3D}";
+
+        private const string BullRushbuff = "BullRush.BullRushbuff";
+        public static readonly string BullRushbuffGuid = "{AFBE010F-82C8-4ABD-84D6-78F584928399}";
+
+        private const string BullRush2Ability = "BullRush.BullRush2Ability";
+        private static readonly string BullRush2AbilityGuid = "{5FEFC722-45AB-4CA3-A860-462669EC8CEA}";
+
+        private const string BullRush2buff = "BullRush.BullRush2buff";
+        public static readonly string BullRush2buffGuid = "{E78853A3-7B2C-40B6-831F-824B1423F7F6}";
+
+        private static readonly string BullRushDisplayName = "BullRush.Name";
+        private static readonly string BullRushDescription = "BullRush.Description";
+
+        private static readonly string BullRush2DisplayName = "BullRush2.Name";
+        private static readonly string BullRush2Description = "BullRush2.Description";
+        public static void BullRushConfigure()
+        {
+            var icon = FeatureRefs.ImprovedBullRush.Reference.Get().Icon;
+
+            var BuffBullRush = BuffConfigurator.New(BullRushbuff, BullRushbuffGuid)
+              .SetDisplayName(BullRushDisplayName)
+              .SetDescription(BullRushDescription)
+              .SetIcon(icon)
+              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .Configure();
+
+            var abilityTrick = ActivatableAbilityConfigurator.New(BullRushAbility, BullRushAbilityGuid)
+                .SetDisplayName(BullRushDisplayName)
+                .SetDescription(BullRushDescription)
+                .SetIcon(icon)
+                .SetBuff(BuffBullRush)
+                .SetDeactivateImmediately()
+                .SetIsOnByDefault(false)
+                .Configure();
+
+            var BuffBullRush2 = BuffConfigurator.New(BullRush2buff, BullRush2buffGuid)
+              .SetDisplayName(BullRushDisplayName)
+              .SetDescription(BullRushDescription)
+              .SetIcon(icon)
+              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddBuffActions(newRound: ActionsBuilder.New().ApplyBuffPermanent(BuffBullRush).Build())
+              .Configure();
+
+            var abilityTrick2 = ActivatableAbilityConfigurator.New(BullRush2Ability, BullRush2AbilityGuid)
+                .SetDisplayName(BullRush2DisplayName)
+                .SetDescription(BullRush2Description)
+                .SetIcon(icon)
+                .SetBuff(BuffBullRush2)
+                .SetDeactivateImmediately()
+                .SetIsOnByDefault(false)
+                .Configure();
+
+            FeatureConfigurator.For(FeatureRefs.ImprovedBullRush)
+                    .AddFacts(new() { abilityTrick, abilityTrick2 })
+                    .Configure();
+        }
+
+        private const string BullRushQuickAbility = "BullRushQuick.BullRushQuickAbility";
+        public static readonly string BullRushQuickAbilityGuid = "{36B7B5DB-43B6-4ECA-B939-61B612D4F479}";
+
+        private const string BullRushQuickbuff = "BullRushQuick.BullRushQuickbuff";
+        public static readonly string BullRushQuickbuffGuid = "{D059FCDE-0119-4C94-83B5-F41076C95187}";
+
+        private const string BullRushQuick2Ability = "BullRushQuick.BullRushQuick2Ability";
+        public static readonly string BullRushQuick2AbilityGuid = "{3B615307-DBBE-445E-BA8B-13F5388207F3}";
+
+        private const string BullRushQuick2buff = "BullRushQuick.BullRushQuick2buff";
+        public static readonly string BullRushQuick2buffGuid = "{6082D84D-808A-4596-AE98-983A54CEC05F}";
+
+        private static readonly string BullRushQuickDisplayName = "BullRushQuick.Name";
+        private static readonly string BullRushQuickDescription = "BullRushQuick.Description";
+
+        private static readonly string BullRushQuick2DisplayName = "BullRushQuick2.Name";
+        private static readonly string BullRushQuick2Description = "BullRushQuick2.Description";
+        public static void BullRushQuickConfigure()
+        {
+            var icon = FeatureRefs.ImprovedBullRush.Reference.Get().Icon;
+
+            var BuffBullRushQuick = BuffConfigurator.New(BullRushQuickbuff, BullRushQuickbuffGuid)
+              .SetDisplayName(BullRushQuickDisplayName)
+              .SetDescription(BullRushQuickDescription)
+              .SetIcon(icon)
+              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .Configure();
+
+            ActivatableAbilityConfigurator.New(BullRushQuickAbility, BullRushQuickAbilityGuid)
+                .SetDisplayName(BullRushQuickDisplayName)
+                .SetDescription(BullRushQuickDescription)
+                .SetIcon(icon)
+                .SetBuff(BuffBullRushQuick)
+                .SetDeactivateImmediately()
+                .SetIsOnByDefault(false)
+                .Configure();
+
+            var BuffBullRushQuick2 = BuffConfigurator.New(BullRushQuick2buff, BullRushQuick2buffGuid)
+              .SetDisplayName(BullRushQuickDisplayName)
+              .SetDescription(BullRushQuickDescription)
+              .SetIcon(icon)
+              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddBuffActions(newRound: ActionsBuilder.New().ApplyBuffPermanent(BuffBullRushQuick).Build())
+              .Configure();
+
+            ActivatableAbilityConfigurator.New(BullRushQuick2Ability, BullRushQuick2AbilityGuid)
+                .SetDisplayName(BullRushQuick2DisplayName)
+                .SetDescription(BullRushQuick2Description)
+                .SetIcon(icon)
+                .SetBuff(BuffBullRushQuick2)
+                .SetDeactivateImmediately()
+                .SetIsOnByDefault(false)
+                .Configure();
+        }
+
+        private const string BullRushAngrybuff = "BullRushAngry.BullRushAngrybuff";
+        public static readonly string BullRushAngrybuffGuid = "{0C9B7561-E15E-4F86-9C60-0D347ED6FD50}";
+
+        private const string BullRushAngry2buff = "BullRushAngry.BullRushAngry2buff";
+        public static readonly string BullRushAngry2buffGuid = "{04F5EBF5-9ACB-4750-8C90-E37E365EFBB8}";
+
+        private static readonly string BullRushAngryDisplayName = "BullRushAngry.Name";
+        private static readonly string BullRushAngryDescription = "BullRushAngry.Description";
+
+        private static readonly string BullRushAngry2DisplayName = "BullRushAngry2.Name";
+        private static readonly string BullRushAngry2Description = "BullRushAngry2.Description";
+        public static void BullRushAngryConfigure()
+        {
+            var icon = FeatureRefs.ImprovedBullRush.Reference.Get().Icon;
+
+            var BuffBullRushAngry = BuffConfigurator.New(BullRushAngrybuff, BullRushAngrybuffGuid)
+              .SetDisplayName(BullRushAngryDisplayName)
+              .SetDescription(BullRushAngryDescription)
+              .SetIcon(icon)
+              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .Configure();
+
+            BuffConfigurator.New(BullRushAngry2buff, BullRushAngry2buffGuid)
+              .SetDisplayName(BullRushAngry2DisplayName)
+              .SetDescription(BullRushAngry2Description)
+              .SetIcon(icon)
+              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddBuffActions(newRound: ActionsBuilder.New().ApplyBuffPermanent(BuffBullRushAngry).Build())
+              .AddComponent<KrakenDamage>(c => { c.type = Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush; c.stat = Kingmaker.EntitySystem.Stats.StatType.Strength; })
+              .Configure();
         }
 
     }

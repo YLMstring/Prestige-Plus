@@ -22,6 +22,8 @@ using Kingmaker.RuleSystem;
 using static Kingmaker.EntitySystem.EntityDataBase;
 using static Pathfinding.Util.RetainedGizmos;
 using Kingmaker.Items;
+using Kingmaker.Visual.Animation.Kingmaker;
+using PrestigePlus.Blueprint.GrappleFeat;
 
 namespace PrestigePlus.CustomAction.OtherManeuver
 {
@@ -58,6 +60,10 @@ namespace PrestigePlus.CustomAction.OtherManeuver
                 {
                     return;
                 }
+                if (HitFirst && !RunAttackRule(maybeCaster, unit))
+                {
+                    return;
+                }
                 ItemEntityWeapon weapon;
                 if (UseWeapon)
                 {
@@ -78,5 +84,27 @@ namespace PrestigePlus.CustomAction.OtherManeuver
 
         public CombatManeuver type = CombatManeuver.SunderArmor;
         public bool UseWeapon = false;
+        public bool HitFirst = false;
+
+        private static bool RunAttackRule(UnitEntityData maybeCaster, UnitEntityData unit)
+        {
+            var weapon = maybeCaster.GetThreatHandMelee();
+            if (weapon == null) { return false; }
+            var attackAnimation = maybeCaster.View.AnimationManager.CreateHandle(UnitAnimationType.SpecialAttack);
+            maybeCaster.View.AnimationManager.Execute(attackAnimation);
+            RuleAttackWithWeapon ruleAttackWithWeapon = new RuleAttackWithWeapon(maybeCaster, unit, weapon.Weapon, 0)
+            {
+                Reason = maybeCaster.Context,
+                AutoHit = false,
+                AutoCriticalThreat = false,
+                AutoCriticalConfirmation = false,
+                ExtraAttack = true,
+                IsFullAttack = false,
+                AttackNumber = 0,
+                AttacksCount = 1
+            };
+            maybeCaster.Context.TriggerRule(ruleAttackWithWeapon);
+            return ruleAttackWithWeapon.AttackRoll.IsHit;
+        }
     }
 }

@@ -22,6 +22,7 @@ using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using PrestigePlus.Modify;
 using PrestigePlus.CustomAction.OtherManeuver;
 using PrestigePlus.CustomComponent.OtherManeuver;
+using Kingmaker.UnitLogic.Abilities.Components.Base;
 
 namespace PrestigePlus.Maneuvers
 {
@@ -82,6 +83,9 @@ namespace PrestigePlus.Maneuvers
                 .Build();
 
             var ability2 = AbilityConfigurator.New(SunderStormAblity2, SunderStormAblityGuid2)
+                .CopyFrom(
+                AbilityRefs.DazzlingDisplayAction,
+                typeof(AbilitySpawnFx))
                 .AddAbilityEffectRunAction(ActionsBuilder.New().OnContextCaster(cast).Build())
                 .SetType(AbilityType.Physical)
                 .SetDisplayName(SunderStormDisplayName)
@@ -93,7 +97,6 @@ namespace PrestigePlus.Maneuvers
                 .SetCanTargetSelf(false)
                 .AddAbilityCasterMainWeaponIsMelee()
                 .SetIsFullRoundAction(true)
-                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.BreathWeapon)
                 .Configure();
 
             return FeatureConfigurator.New(SunderStormFeat, SunderStormGuid, FeatureGroup.MythicAbility)
@@ -143,6 +146,9 @@ namespace PrestigePlus.Maneuvers
                 .Build();
 
             var ability2 = AbilityConfigurator.New(CleavingSweepAblity2, CleavingSweepAblityGuid2)
+                .CopyFrom(
+                AbilityRefs.DazzlingDisplayAction,
+                typeof(AbilitySpawnFx))
                 .AddAbilityEffectRunAction(ActionsBuilder.New().OnContextCaster(cast).Build())
                 .SetType(AbilityType.Physical)
                 .SetDisplayName(CleavingSweepDisplayName)
@@ -154,7 +160,6 @@ namespace PrestigePlus.Maneuvers
                 .SetCanTargetSelf(false)
                 .AddAbilityCasterMainWeaponCheck(new WeaponCategory[] { WeaponCategory.Greataxe })
                 .SetIsFullRoundAction(true)
-                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.BreathWeapon)
                 .Configure();
 
             return FeatureConfigurator.New(CleavingSweepFeat, CleavingSweepGuid, FeatureGroup.Feat)
@@ -168,6 +173,104 @@ namespace PrestigePlus.Maneuvers
               .AddPrerequisiteStatValue(Kingmaker.EntitySystem.Stats.StatType.BaseAttackBonus, 11)
               .AddFacts(new() { ability2 })
               .AddToGroups(FeatureGroup.CombatFeat)
+              .Configure();
+        }
+
+        private const string DriveBackFeat = "Mythic.DriveBack";
+        private static readonly string DriveBackGuid = "{210FB0A5-8DF4-47F0-ACB4-F43960487EBC}";
+        internal const string DriveBackDisplayName = "MythicDriveBack.Name";
+        private const string DriveBackDescription = "MythicDriveBack.Description";
+
+        private const string DriveBackAblity = "Mythic.UseDriveBack";
+        private static readonly string DriveBackAblityGuid = "{C1D508C9-8474-41F0-8116-CCF7343B69E0}";
+
+        private const string DriveBackAblity2 = "Mythic.UseDriveBack2";
+        private static readonly string DriveBackAblityGuid2 = "{BE344D8F-A1CA-4054-8AC4-B70FDF706B82}";
+
+        public static BlueprintFeature CreateDriveBack()
+        {
+            var icon = FeatureRefs.CleavingFinish.Reference.Get().Icon;
+
+            var shoot = ActionsBuilder.New()
+                .Add<ContextActionSunderStorm>(c => { c.type = Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush; c.UseWeapon = true; c.HitFirst = true; })
+                .Build();
+
+            var ability = AbilityConfigurator.New(DriveBackAblity, DriveBackAblityGuid)
+                .AddAbilityEffectRunAction(shoot)
+                .SetType(AbilityType.Physical)
+                .SetDisplayName(DriveBackDisplayName)
+                .SetDescription(DriveBackDescription)
+                .SetIcon(icon)
+                .SetRange(AbilityRange.Personal)
+                .AddAbilityTargetsAround(includeDead: false, radius: 50.Feet(), targetType: TargetType.Enemy)
+                .AddAbilityCasterMainWeaponIsMelee()
+                .SetIsFullRoundAction(true)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
+                .Configure();
+
+            var cast = ActionsBuilder.New()
+                .CastSpell(ability)
+                .Build();
+
+            var ability2 = AbilityConfigurator.New(DriveBackAblity2, DriveBackAblityGuid2)
+                .CopyFrom(
+                AbilityRefs.DazzlingDisplayAction,
+                typeof(AbilitySpawnFx))
+                .AddAbilityEffectRunAction(ActionsBuilder.New().OnContextCaster(cast).Build())
+                .SetType(AbilityType.Physical)
+                .SetDisplayName(DriveBackDisplayName)
+                .SetDescription(DriveBackDescription)
+                .SetIcon(icon)
+                .SetRange(AbilityRange.Weapon)
+                .SetCanTargetEnemies(true)
+                .SetCanTargetFriends(false)
+                .SetCanTargetSelf(false)
+                .AddAbilityCasterMainWeaponIsMelee()
+                .SetIsFullRoundAction(true)
+                .Configure();
+
+            return FeatureConfigurator.New(DriveBackFeat, DriveBackGuid, FeatureGroup.MythicFeat)
+              .SetDisplayName(DriveBackDisplayName)
+              .SetDescription(DriveBackDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.Mobility.ToString())
+              .AddToFeatureSelection("0d3a3619-9d99-47af-8e47-cb6cc4d26821") //ttt
+              .AddFacts(new() { ability2 })
+              .Configure();
+        }
+
+        private const string CombatTrickeryFeat = "Mythic.CombatTrickery";
+        private static readonly string CombatTrickeryGuid = "{DF34E004-39DA-4663-987C-1B4B0AA16CC6}";
+        internal const string CombatTrickeryDisplayName = "MythicCombatTrickery.Name";
+        private const string CombatTrickeryDescription = "MythicCombatTrickery.Description";
+
+        private const string CombatTrickeryAblity = "Mythic.UseCombatTrickery";
+        private static readonly string CombatTrickeryAblityGuid = "{43E9FED2-AE57-4050-83B6-C14FD9F21611}";
+
+        public static BlueprintFeature CreateCombatTrickery()
+        {
+            var icon = FeatureRefs.TrickeryDomainBaseFeature.Reference.Get().Icon;
+
+            var shoot = ActionsBuilder.New()
+                .Add<ContextActionCombatTrickery>()
+                .Build();
+
+            var ability = AbilityConfigurator.New(CombatTrickeryAblity, CombatTrickeryAblityGuid)
+                .AddAbilityEffectRunAction(shoot)
+                .SetType(AbilityType.Physical)
+                .SetDisplayName(CombatTrickeryDisplayName)
+                .SetDescription(CombatTrickeryDescription)
+                .SetIcon(icon)
+                .SetRange(AbilityRange.Personal)
+                .AddAbilityTargetsAround(includeDead: false, radius: 5.Feet(), targetType: TargetType.Enemy)
+                .Configure();
+
+            return FeatureConfigurator.New(CombatTrickeryFeat, CombatTrickeryGuid, FeatureGroup.MythicAbility)
+              .SetDisplayName(CombatTrickeryDisplayName)
+              .SetDescription(CombatTrickeryDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFullStatValue(stat: Kingmaker.EntitySystem.Stats.StatType.SneakAttack, value: 2)
+              .AddFacts(new() { ability })
               .Configure();
         }
     }

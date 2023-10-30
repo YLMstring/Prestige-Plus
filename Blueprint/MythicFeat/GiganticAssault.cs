@@ -41,6 +41,14 @@ namespace PrestigePlus.Blueprint.MythicFeat
                     .AddComponent<GiganticLimit>()
                     .Configure();
         }
+
+        public static void Configure2()
+        {
+            BuffConfigurator.For(BuffRefs.ChargeBuff)
+                    //.AddComponent<GiganticLimit>()
+                    .AddCMBBonus(value: 2)
+                    .Configure();
+        }
     }
 }
 

@@ -4,6 +4,7 @@ using HarmonyLib;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Root;
 using Kingmaker.Designers;
+using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.Enums;
 using Kingmaker.Items;
@@ -13,6 +14,11 @@ using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Commands;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Parts;
+using PrestigePlus.Blueprint;
+using PrestigePlus.Blueprint.Feat;
+using PrestigePlus.Blueprint.MythicGrapple;
+using PrestigePlus.CustomComponent.Grapple;
+using PrestigePlus.Grapple;
 using PrestigePlus.Maneuvers;
 using System;
 using System.Collections.Generic;
@@ -34,13 +40,50 @@ namespace PrestigePlus.HarmonyFix
             {
                 var caster = __instance.Executor;
                 var target = __instance.Target;
-                if (!__instance.IsAttackFull || !attack.Weapon.Blueprint.IsMelee) { return true; }
-                //Logger.Info(attack.AttackBonusPenalty.ToString());
+                if (!attack.Weapon.Blueprint.IsMelee) { return true; }
                 if (caster.Body?.EmptyHandWeapon == null) { return true; }
                 var AttackBonusRule = new RuleCalculateAttackBonus(caster, target, caster.Body.EmptyHandWeapon, 0) { };
                 int penalty = -attack.AttackBonusPenalty + DualPenalty(caster, attack);
                 AttackBonusRule.AddModifier(penalty, descriptor: ModifierDescriptor.Penalty);
                 Rulebook.Trigger(AttackBonusRule);
+                if (caster.HasFact(AerialBuff) && __instance.IsCharge)
+                {
+                    GameHelper.RemoveBuff(caster, AerialBuff);
+                    if (caster.Get<UnitPartGrappleInitiatorPP>() || target.Get<UnitPartGrappleTargetPP>() || !ConditionTwoFreeHand.CheckCondition2(caster)) { return true; }
+                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.Grapple, AttackBonusRule);
+                    ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
+                    if (ruleCombatManeuver.Success)
+                    {
+                        caster.Ensure<UnitPartGrappleInitiatorPP>().Init(target, CasterBuff, target.Context);
+                        target.Ensure<UnitPartGrappleTargetPP>().Init(caster, TargetBuff, caster.Context);
+                    }
+                    return false;
+                }
+                if (caster.HasFact(BullRush1) && __instance.IsCharge)
+                {
+                    GameHelper.RemoveBuff(caster, BullRush1);
+                    if (target.State.HasCondition(UnitCondition.ForceMove)) { return true; }
+                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.BullRush, AttackBonusRule);
+                    ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
+                    return false;
+                }
+                if (!__instance.IsAttackFull) { return true; }
+                if (caster.HasFact(BullRush2))
+                {
+                    GameHelper.RemoveBuff(caster, BullRush2);
+                    if (target.State.HasCondition(UnitCondition.ForceMove)) { return true; }
+                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.BullRush, AttackBonusRule);
+                    ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
+                    return false;
+                }
+                if (caster.HasFact(BullRush3))
+                {
+                    GameHelper.RemoveBuff(caster, BullRush3);
+                    if (target.State.HasCondition(UnitCondition.ForceMove)) { return true; }
+                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.BullRush, AttackBonusRule);
+                    ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
+                    return false;
+                }
                 if (caster.HasFact(Disarm1) || caster.HasFact(Disarm2))
                 {
                     GameHelper.RemoveBuff(caster, Disarm1);
@@ -80,6 +123,15 @@ namespace PrestigePlus.HarmonyFix
 
         private static BlueprintBuffReference Trip1 = BlueprintTool.GetRef<BlueprintBuffReference>("{8C577D9F-BA5B-4974-B91D-F94FF28A8501}");
         private static BlueprintBuffReference Trip2 = BlueprintTool.GetRef<BlueprintBuffReference>("{43ADBC25-7972-45D6-A3AB-356F16199D50}");
+
+        private static BlueprintBuffReference BullRush1 = BlueprintTool.GetRef<BlueprintBuffReference>(ReplaceAttack.BullRushbuffGuid);
+        private static BlueprintBuffReference BullRush2 = BlueprintTool.GetRef<BlueprintBuffReference>(ReplaceAttack.BullRushQuickbuffGuid);
+        private static BlueprintBuffReference BullRush3 = BlueprintTool.GetRef<BlueprintBuffReference>(ReplaceAttack.BullRushAngrybuffGuid);
+
+        private static BlueprintBuffReference AerialBuff = BlueprintTool.GetRef<BlueprintBuffReference>(AerialAssault.Stylebuff2Guid);
+        //private static BlueprintBuffReference AerialBuff2 = BlueprintTool.GetRef<BlueprintBuffReference>(AerialAssault.Stylebuff3Guid);
+        private static readonly BlueprintBuffReference CasterBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{D6D08842-8E03-4A9D-81B8-1D9FB2245649}");
+        private static readonly BlueprintBuffReference TargetBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{F505D659-0610-41B1-B178-E767CCB9292E}");
 
         public static int DualPenalty(UnitEntityData unit, AttackHandInfo attack)
         {
