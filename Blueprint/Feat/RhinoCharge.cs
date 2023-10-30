@@ -53,6 +53,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetCanTargetFriends(false)
                 .SetCanTargetEnemies(true)
                 .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
+                .AddAbilityCasterHasNoFacts(new() { BuffRefs.MountedBuff.Reference.Get() })
                 .SetRange(AbilityRange.Unlimited)
                 .SetType(AbilityType.Physical)
                 .Configure();

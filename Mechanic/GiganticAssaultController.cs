@@ -57,33 +57,20 @@ namespace PrestigePlus.GrappleMechanic
             {
                 try 
                 {
-                    //Logger.Info("charge0");
                     if (CombatController.IsInTurnBasedCombat())
                     {
-                        Logger.Info("charge01");
+                        //Logger.Info("charge01");
                         var turn = Game.Instance.TurnBasedCombatController?.CurrentTurn;
                         if (turn == null) { Logger.Info("wait"); return; }
                         if (!turn.IsActing && !turn.IsMoving) { return; }
                         if (turn.Rider == rhino) { turn.ForceToEnd(); return; }
                     }
-                    //Logger.Info("charge");
-                    //CastCharge(rhino, unit);
                     Vector3 normalized2 = (unit.Position - rhino.Position).normalized;
                     float distance = unit.DistanceTo(rhino) - unit.Corpulence - rhino.Corpulence;
-                    UnitEntityData mount = rhino.GetSaddledUnit();
-                    //Logger.Info("charge2");
-                    if (mount != null)
+                    UnitEntityData mount = rhino.GetSaddledUnit();;
+                    if (mount == null)
                     {
-                        GameHelper.RemoveBuff(unit, Buff);
-                        return;
-                        //CastCharge(mount, unit);
-                        //normalized2 = (unit.Position - mount.Position).normalized;
-                        //distance = unit.DistanceTo(mount) - unit.Corpulence - mount.Corpulence;
-                        //mount.Ensure<UnitPartForceMove>().Push(normalized2, distance, true);
-                    }
-                    else
-                    {
-                        Logger.Info("charge4");
+                        //Logger.Info("charge4");
                         CastCharge(rhino, unit);
                         rhino.Ensure<UnitPartForceMove>().Push(normalized2, distance, true);
                     }
