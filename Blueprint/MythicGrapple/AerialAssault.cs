@@ -56,6 +56,9 @@ namespace PrestigePlus.Blueprint.MythicGrapple
         private static readonly string DisplayName3 = "BasicImprovedCharge3.Name";
         private static readonly string Description3 = "BasicImprovedCharge3.Description";
 
+        private static readonly string DisplayName4 = "BasicImprovedCharge4.Name";
+        private static readonly string Description4 = "BasicImprovedCharge4.Description";
+
         public static void ConfigureAbility()
         {
             var icon = FeatureRefs.ArmyChargeAbilityFeature.Reference.Get().Icon;
@@ -84,14 +87,14 @@ namespace PrestigePlus.Blueprint.MythicGrapple
             var icon = FeatureRefs.ArmyChargeAbilityFeature.Reference.Get().Icon;
 
             var Buff = BuffConfigurator.New(Stylebuff2, Stylebuff2Guid)
-              .SetDisplayName(DisplayName)
-              .SetDescription(Description)
+              .SetDisplayName(DisplayName4)
+              .SetDescription(Description4)
               .SetIcon(icon)
               .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(StyleActivatableAbility, StyleActivatableAbilityGuid)
-                .SetDisplayName(DisplayName)
-                .SetDescription(Description)
+                .SetDisplayName(DisplayName4)
+                .SetDescription(Description4)
                 .SetIcon(icon)
                 .SetBuff(Buff)
                 .SetDeactivateImmediately(true)

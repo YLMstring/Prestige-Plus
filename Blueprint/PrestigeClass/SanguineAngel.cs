@@ -21,6 +21,7 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Alignments;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
+using PrestigePlus.Blueprint.Feat;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -169,6 +170,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddToAllFeatures(SAErinyesFury())
               .AddToAllFeatures(SAFuriousHuntress())
               .AddToAllFeatures(SAKinslayer())
+              .AddToAllFeatures(BullRushFeats.AngelGuid)
               .Configure();
         }
 

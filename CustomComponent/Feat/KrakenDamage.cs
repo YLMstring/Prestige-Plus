@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace PrestigePlus.CustomComponent.Feat
 {
-    internal class KrakenDamage : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleCombatManeuver>, IRulebookHandler<RuleCombatManeuver>, ISubscriber, ITargetRulebookSubscriber
+    internal class KrakenDamage : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleCombatManeuver>, IRulebookHandler<RuleCombatManeuver>, ISubscriber, IInitiatorRulebookSubscriber
     {
         void IRulebookHandler<RuleCombatManeuver>.OnEventAboutToTrigger(RuleCombatManeuver evt)
         {
