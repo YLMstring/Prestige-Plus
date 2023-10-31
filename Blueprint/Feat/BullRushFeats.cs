@@ -2,6 +2,7 @@
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
+using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Conditions.Builder;
@@ -11,8 +12,11 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Abilities;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using PrestigePlus.Blueprint.GrappleFeat;
+using PrestigePlus.CustomAction.GrappleThrow;
+using PrestigePlus.CustomAction.OtherFeatRelated;
 using PrestigePlus.CustomComponent.Feat;
 using System;
 using System.Collections.Generic;
@@ -148,7 +152,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(AngelDisplayName)
               .SetDescription(AngelDescription)
               .SetIcon(icon)
-              .AddInitiatorAttackWithWeaponTrigger(action, actionsOnInitiator: true, checkWeaponRangeType: true, rangeType: Kingmaker.Enums.WeaponRangeType.Melee, onlyOnFullAttack: true, onlyOnFirstAttack: true, triggerBeforeAttack: true)
+              .AddInitiatorAttackWithWeaponTrigger(action, actionsOnInitiator: true, checkWeaponRangeType: true, rangeType: WeaponRangeType.Melee, onlyOnFullAttack: true, onlyOnFirstAttack: true, triggerBeforeAttack: true)
               .Configure();
 
             var action2 = ActionsBuilder.New()
@@ -161,7 +165,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddAttackBonusConditional(bonus: ContextValues.Constant(-2), descriptor: ModifierDescriptor.Penalty)
               .AddCMBBonusForManeuver(maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush }, value: ContextValues.Constant(2))
-              .AddInitiatorAttackWithWeaponTrigger(action2, checkWeaponRangeType: true, rangeType: Kingmaker.Enums.WeaponRangeType.Melee, onlyOnFullAttack: true, onlyOnFirstHit: true, onlyHit: true)
+              .AddInitiatorAttackWithWeaponTrigger(action2, checkWeaponRangeType: true, rangeType: WeaponRangeType.Melee, onlyOnFullAttack: true, onlyOnFirstHit: true, onlyHit: true)
               .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(AngelActivatableAbility, AngelActivatableAbilityGuid)
@@ -210,6 +214,93 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetActivationType(AbilityActivationType.Immediately)
                 .SetIsOnByDefault(true)
                 .Configure();
+        }
+
+        private static readonly string MonsterName = "DrivingAssaultMonster";
+        public static readonly string MonsterGuid = "{9516B0D1-ABE1-4994-9B27-C4A8D15EEB2C}";
+
+        private static readonly string MonsterDisplayName = "DrivingAssaultMonster.Name";
+        private static readonly string MonsterDescription = "DrivingAssaultMonster.Description";
+
+        private const string Monsterbuff = "DrivingAssaultMonster.Monsterbuff";
+        private static readonly string MonsterbuffGuid = "{98DC9E8F-E5DA-4F8A-A17E-0DB01CABB2F7}";
+
+        private const string MonsterActivatableAbility = "DrivingAssaultMonster.MonsterActivatableAbility";
+        private static readonly string MonsterActivatableAbilityGuid = "{DCE8709E-0B4D-41F5-AD05-268405DBFC76}";
+        public static void MonsterConfigure()
+        {
+            var icon = FeatureRefs.FlurryOfBlows.Reference.Get().Icon;
+
+            var action = ActionsBuilder.New()
+                        .CombatManeuver(ActionsBuilder.New().Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush)
+                        .Build();
+
+            var Buff = BuffConfigurator.New(Monsterbuff, MonsterbuffGuid)
+              .SetDisplayName(MonsterDisplayName)
+              .SetDescription(MonsterDescription)
+              .SetIcon(icon)
+              .AddInitiatorAttackWithWeaponTrigger(action, checkWeaponRangeType: true, rangeType: WeaponRangeType.Melee, onlyHit: true, onCharge: true)
+              .AddComponent<BullRushMonster>()
+              .Configure();
+
+            var ability = ActivatableAbilityConfigurator.New(MonsterActivatableAbility, MonsterActivatableAbilityGuid)
+                .SetDisplayName(MonsterDisplayName)
+                .SetDescription(MonsterDescription)
+                .SetIcon(icon)
+                .SetBuff(Buff)
+                .SetDeactivateImmediately(true)
+                .SetActivationType(AbilityActivationType.Immediately)
+                .SetIsOnByDefault(true)
+                .Configure();
+
+            FeatureConfigurator.New(MonsterName, MonsterGuid, FeatureGroup.Feat)
+                    .SetDisplayName(MonsterDisplayName)
+                    .SetDescription(MonsterDescription)
+                    .SetIcon(icon)
+                    .AddPrerequisiteStatValue(StatType.Strength, 13)
+                    .AddPrerequisiteFeature(FeatureRefs.ImprovedBullRush.ToString())
+                    .AddPrerequisiteFeature(RhinoCharge.FeatGuid)
+                    .AddFacts(new() { ability })
+                    .Configure();
+        }
+
+        private static readonly string DragName = "AngelDrag";
+        public static readonly string DragGuid = "{A9BF0D47-08BD-4FEE-9CA2-1B329E1DCBD4}";
+
+        private static readonly string DragDisplayName = "AngelDrag.Name";
+        private static readonly string DragDescription = "AngelDrag.Description";
+
+        private const string StyleAbility = "AngelDrag.StyleAbility";
+        private static readonly string StyleAbilityGuid = "{93359A78-51FD-4B3A-846F-C4405E6D3F69}";
+        public static void DragConfigure()
+        {
+            var icon = FeatureRefs.FlurryOfBlows.Reference.Get().Icon;
+
+            var grab = ActionsBuilder.New()
+                .Add<ContextActionCastling>()
+                .Build();
+
+            var ability = AbilityConfigurator.New(StyleAbility, StyleAbilityGuid)
+                .SetDisplayName(DragDisplayName)
+                .SetDescription(DragDescription)
+                .SetIcon(icon)
+                .AddAbilityEffectRunAction(grab)
+                .SetType(AbilityType.Physical)
+                .SetCanTargetEnemies(false)
+                .SetCanTargetSelf(false)
+                .SetCanTargetFriends(true)
+                .SetRange(AbilityRange.Custom)
+                .SetCustomRange(5)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .Configure();
+
+            FeatureConfigurator.New(DragName, DragGuid)
+                    .SetDisplayName(DragDisplayName)
+                    .SetDescription(DragDescription)
+                    .SetIcon(icon)
+                    .AddFacts(new() { ability })
+                    .Configure();
         }
     }
 }

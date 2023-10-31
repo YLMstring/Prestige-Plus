@@ -25,6 +25,7 @@ using PrestigePlus.Blueprint.MythicGrapple;
 using PrestigePlus.Blueprint.MythicFeat;
 using PrestigePlus.Blueprint.ManeuverFeat;
 using PrestigePlus.Blueprint;
+using PrestigePlus.CustomComponent.Feat;
 
 namespace PrestigePlus
 {
@@ -207,7 +208,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("crusader"))) InheritorCrusader.Configure();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("lander"))) Hinterlander.Configure();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("walker"))) HorizonWalker.Configure();
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("angel"))) { SanguineAngel.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("angel"))) { SanguineAngel.Configure(); BullRushFeats.DragConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("scar"))) { ScarSeeker.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("dancer"))) { ShadowDancer.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("seraph"))) { BlackSeraphStyle.StyleConfigure(); BlackSeraphStyle.MalevolenceConfigure(); BlackSeraphStyle.AnnihilationConfigure(); RippleWater.Configure(); SeizetheOpportunity.FeatConfigure(); }
@@ -223,7 +224,7 @@ namespace PrestigePlus
                         SmashingStyle.StyleConfigure(); SmashingStyle.CounterConfigure(); SmashingStyle.MasterConfigure(); CrushArmor.Configure(); SunderStorm.CreateSunderStorm(); GreaterSunderTabletop.CreateGreaterSunderTabletop(); 
                         DownLikeDominoes.DragConfigure(); SunderStorm.CreateCleavingSweep(); RangedTrip.CreateTripRanged(); RangedTrip.AceTripFeature(); RangedTrip.CreateVindictiveFall();
                         RhinoCharge.Configure(); SunderStorm.CreateDriveBack(); SunderStorm.CreateCombatTrickery(); 
-                        BullRushFeats.Configure(); BullRushFeats.Configure2(); BullRushFeats.StyleConfigure(); BullRushFeats.FollowConfigure(); BullRushFeats.AngelConfigure(); }
+                        BullRushFeats.Configure(); BullRushFeats.Configure2(); BullRushFeats.StyleConfigure(); BullRushFeats.FollowConfigure(); BullRushFeats.AngelConfigure(); BullRushFeats.MonsterConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("halfling"))) { HalflingOpportunist.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("enhance"))) { SwiftDeath.Configure(); SwiftDeath.Configure2(); UnbreakableDefance.Configure(); MythicWings.Configure(); MythicWings.Configure2(); MythicRiposte.Configure(); MetaphysicalSneak.Configure(); LesserSpellSynthesis.Configure(); SurprisingStrategy.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fightereg"))) { EldritchGuardian.Configure(); }

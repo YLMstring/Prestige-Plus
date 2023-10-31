@@ -17,6 +17,7 @@ using Kingmaker.UnitLogic.Parts;
 using PrestigePlus.Blueprint;
 using PrestigePlus.Blueprint.Feat;
 using PrestigePlus.Blueprint.MythicGrapple;
+using PrestigePlus.CustomAction.OtherManeuver;
 using PrestigePlus.CustomComponent.Grapple;
 using PrestigePlus.Grapple;
 using PrestigePlus.Maneuvers;
@@ -45,7 +46,8 @@ namespace PrestigePlus.HarmonyFix
                 var AttackBonusRule = new RuleCalculateAttackBonus(caster, target, caster.Body.EmptyHandWeapon, 0) { };
                 int penalty = -attack.AttackBonusPenalty + DualPenalty(caster, attack);
                 AttackBonusRule.AddModifier(penalty, descriptor: ModifierDescriptor.Penalty);
-                Rulebook.Trigger(AttackBonusRule);
+                //Rulebook.Trigger(AttackBonusRule);
+                ContextActionCombatTrickery.TriggerMRule(ref AttackBonusRule);
                 if (caster.HasFact(AerialBuff) && __instance.IsCharge)
                 {
                     GameHelper.RemoveBuff(caster, AerialBuff);
@@ -129,8 +131,8 @@ namespace PrestigePlus.HarmonyFix
         private static BlueprintBuffReference BullRush3 = BlueprintTool.GetRef<BlueprintBuffReference>(ReplaceAttack.BullRushAngrybuffGuid);
 
         private static BlueprintBuffReference AerialBuff = BlueprintTool.GetRef<BlueprintBuffReference>(AerialAssault.Stylebuff2Guid);
-        //private static BlueprintBuffReference AerialBuff2 = BlueprintTool.GetRef<BlueprintBuffReference>(AerialAssault.Stylebuff3Guid);
-        private static readonly BlueprintBuffReference CasterBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{D6D08842-8E03-4A9D-81B8-1D9FB2245649}");
+
+        private static readonly BlueprintBuffReference CasterBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{C5F4DDFE-CA2E-4309-90BB-1BB5C0F32E78}");
         private static readonly BlueprintBuffReference TargetBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{F505D659-0610-41B1-B178-E767CCB9292E}");
 
         public static int DualPenalty(UnitEntityData unit, AttackHandInfo attack)

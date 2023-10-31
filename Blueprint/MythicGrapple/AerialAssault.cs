@@ -30,7 +30,7 @@ namespace PrestigePlus.Blueprint.MythicGrapple
     internal class AerialAssault
     {
         private static readonly string FeatName = "AerialAssault";
-        private static readonly string FeatGuid = "{96E7DFF8-63D5-4846-920B-0D5C7E7DB823}";
+        public static readonly string FeatGuid = "{96E7DFF8-63D5-4846-920B-0D5C7E7DB823}";
 
         private static readonly string DisplayName = "AerialAssault.Name";
         private static readonly string Description = "AerialAssault.Description";
@@ -117,7 +117,7 @@ namespace PrestigePlus.Blueprint.MythicGrapple
               .SetDescription(Description3)
               .SetIcon(icon)
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-              .AddBuffActions(newRound: ActionsBuilder.New().ApplyBuffPermanent(Buff).Build())
+              .AddBuffActions(newRound: ActionsBuilder.New().ApplyBuff(Buff, ContextDuration.Fixed(1)).Build())
               .Configure();
 
             FeatureConfigurator.New(FeatName, FeatGuid, Kingmaker.Blueprints.Classes.FeatureGroup.MythicAbility)

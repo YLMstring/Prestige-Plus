@@ -167,10 +167,11 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(SanguineAngelTyrantDisciplineDescription)
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
+              .AddToAllFeatures(BullRushFeats.DragGuid)
+              .AddToAllFeatures(BullRushFeats.AngelGuid)
               .AddToAllFeatures(SAErinyesFury())
               .AddToAllFeatures(SAFuriousHuntress())
               .AddToAllFeatures(SAKinslayer())
-              .AddToAllFeatures(BullRushFeats.AngelGuid)
               .Configure();
         }
 

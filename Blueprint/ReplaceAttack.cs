@@ -6,6 +6,7 @@ using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.UnitLogic.ActivatableAbilities;
+using Kingmaker.UnitLogic.Buffs;
 using PrestigePlus.CustomComponent.Feat;
 using PrestigePlus.Grapple;
 using System;
@@ -234,7 +235,7 @@ namespace PrestigePlus.Blueprint
               .SetDescription(BullRushDescription)
               .SetIcon(icon)
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-              .AddBuffActions(newRound: ActionsBuilder.New().ApplyBuffPermanent(BuffBullRush).Build())
+              .AddBuffActions(newRound: ActionsBuilder.New().ApplyBuff(BuffBullRush, ContextDuration.Fixed(1)).Build())
               .Configure();
 
             var abilityTrick2 = ActivatableAbilityConfigurator.New(BullRush2Ability, BullRush2AbilityGuid)
@@ -293,7 +294,7 @@ namespace PrestigePlus.Blueprint
               .SetDescription(BullRushQuickDescription)
               .SetIcon(icon)
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-              .AddBuffActions(newRound: ActionsBuilder.New().ApplyBuffPermanent(BuffBullRushQuick).Build())
+              .AddBuffActions(newRound: ActionsBuilder.New().ApplyBuff(BuffBullRushQuick, ContextDuration.Fixed(1)).Build())
               .Configure();
 
             ActivatableAbilityConfigurator.New(BullRushQuick2Ability, BullRushQuick2AbilityGuid)
@@ -333,7 +334,7 @@ namespace PrestigePlus.Blueprint
               .SetDescription(BullRushAngry2Description)
               .SetIcon(icon)
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-              .AddBuffActions(newRound: ActionsBuilder.New().ApplyBuffPermanent(BuffBullRushAngry).Build())
+              .AddBuffActions(newRound: ActionsBuilder.New().ApplyBuff(BuffBullRushAngry, ContextDuration.Fixed(1)).Build())
               .AddComponent<KrakenDamage>(c => { c.type = Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush; c.stat = Kingmaker.EntitySystem.Stats.StatType.Strength; })
               .Configure();
         }

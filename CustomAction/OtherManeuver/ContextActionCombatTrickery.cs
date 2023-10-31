@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.Designers;
+using Kingmaker.Enums;
 
 namespace PrestigePlus.CustomAction.OtherManeuver
 {
@@ -69,5 +70,20 @@ namespace PrestigePlus.CustomAction.OtherManeuver
         }
 
         public bool UseWeapon = false;
+        public static void TriggerMRule(ref RuleCalculateAttackBonus AttackBonusRule)
+        {
+            var rule = AttackBonusRule.m_InnerRule; 
+            if (rule != null) 
+            {
+                bool flag = rule.Weapon.Blueprint.IsNatural && rule.Initiator.Descriptor.State.Features.MythicDemonNaturalAttacksNoSecondary;
+                if (rule.WeaponStats.IsSecondary && !flag)
+                {
+                    int bonus = (rule.Weapon.Blueprint.IsNatural && rule.Initiator.State.Features.ReduceSecondaryNaturalAttackPenalty) ? -2 : -5;
+                    AttackBonusRule.AddModifier(bonus, descriptor: ModifierDescriptor.UntypedStackable);
+                }
+            }
+            Rulebook.Trigger(AttackBonusRule);
+        }
+
     }
 }
