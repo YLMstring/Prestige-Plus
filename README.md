@@ -23,8 +23,6 @@
 - [Crush Armor](https://www.d20pfsrd.com/feats/combat-feats/weapon-trick-combat/)
 - [Sunder Storm](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/champion/champion-path-abilities/sunder-storm-ex/): When you succeed at a sunder combat maneuver check, you drive the shattered pieces of the item into the flesh of its wearer, dealing 1d6 + a number of points equal to your tier of divine damage. Additionally, as a full-round action, you can attempt a sunder combat maneuver against each opponent within reach.
 - [Tear Apart](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/champion/champion-path-abilities/tear-apart-ex/): Your sunder combat maneuver no longer disables armor, but rends it. If the check is successful, deal your weapon damage to the target and reduce the target’s armor bonus, natural armor bonus, or shield bonus by half your tier (minimum 1). If the creature has an enhancement bonus to the bonus you chose, reduce the normal bonus first, then apply any leftover reduction to the enhancement bonus. You can’t reduce the bonus below 0.
-- [Rhino Charge](https://www.d20pfsrd.com/feats/combat-feats/rhino-charge-combat/)
-- [Minotaur’s Charge](https://www.d20pfsrd.com/feats/general-feats/minotaur-s-charge/)
 - [Quick Bull Rush](https://www.d20pfsrd.com/feats/combat-feats/quick-bull-rush-combat/)
 - [Raging Throw](https://www.d20pfsrd.com/feats/general-feats/raging-throw/)
 - [Hurricane Punch](https://www.d20pfsrd.com/feats/combat-feats/hurricane-punch-combat/)
@@ -153,7 +151,9 @@
 - [Bodyguard](https://www.d20pfsrd.com/feats/combat-feats/bodyguard-combat) (owlcat-brew)
 - [In Harm’s Way](https://www.d20pfsrd.com/feats/combat-feats/in-harm-s-way-combat/) (owlcat-brew)
 - [Divine Defiance](https://www.d20pfsrd.com/feats/general-feats/divine-defiance) 
-- [Iconoclast](https://www.d20pfsrd.com/feats/combat-feats/iconoclast-combat/) 
+- [Iconoclast](https://www.d20pfsrd.com/feats/combat-feats/iconoclast-combat/)
+- [Rhino Charge](https://www.d20pfsrd.com/feats/combat-feats/rhino-charge-combat/)
+- [Minotaur’s Charge](https://www.d20pfsrd.com/feats/general-feats/minotaur-s-charge/)
 ### New Rogue Talents
 
 - [Another Day](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-advanced-talents/another-day-ex/)
