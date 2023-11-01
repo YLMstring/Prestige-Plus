@@ -191,7 +191,7 @@ namespace PrestigePlus.Maneuvers
 
         public static BlueprintFeature CreateDriveBack()
         {
-            var icon = FeatureRefs.CleavingFinish.Reference.Get().Icon;
+            var icon = FeatureRefs.IndomitableWill.Reference.Get().Icon;
 
             var shoot = ActionsBuilder.New()
                 .Add<ContextActionSunderStorm>(c => { c.type = Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush; c.UseWeapon = true; c.HitFirst = true; })

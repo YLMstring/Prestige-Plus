@@ -50,6 +50,6 @@ namespace PrestigePlus.CustomComponent.Feat
         public CombatManeuver type = CombatManeuver.Grapple;
         public StatType stat = StatType.Wisdom;
 
-        private static BlueprintFeatureReference Throw = BlueprintTool.GetRef<BlueprintFeatureReference>(StrengthSurge.RagingThrowGuid);
+        private static BlueprintBuffReference Throw = BlueprintTool.GetRef<BlueprintBuffReference>(StrengthSurge.RagingThrowBuffGuid);
     }
 }

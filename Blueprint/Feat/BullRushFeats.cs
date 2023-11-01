@@ -14,6 +14,7 @@ using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.ActivatableAbilities;
+using Kingmaker.UnitLogic.Buffs;
 using PrestigePlus.Blueprint.GrappleFeat;
 using PrestigePlus.CustomAction.GrappleThrow;
 using PrestigePlus.CustomAction.OtherFeatRelated;
@@ -46,7 +47,7 @@ namespace PrestigePlus.Blueprint.Feat
                     .AddPrerequisiteFeature(FeatureRefs.ImprovedBullRush.ToString())
                     .AddPrerequisiteFeature(FeatureRefs.PowerAttackFeature.ToString())
                     .AddPrerequisiteStatValue(StatType.BaseAttackBonus, 6)
-                    .AddFacts(new() { ReplaceAttack.BullRushQuickAbilityGuid, ReplaceAttack.BullRushQuick2AbilityGuid })
+                    .AddFacts(new() { ReplaceAttack.BullRushQuick2AbilityGuid })
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .Configure();
         }
@@ -57,9 +58,32 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string DisplayName2 = "FeatKnockback.Name";
         private static readonly string Description2 = "FeatKnockback.Description";
 
+        private const string Knockbackbuff = "Feat.Knockbackbuff";
+        public static readonly string KnockbackbuffGuid = "{4C70A10B-BF79-4926-B02E-40A968086D0F}";
+
+        private const string KnockbackActivatableAbility = "Feat.KnockbackActivatableAbility";
+        private static readonly string KnockbackActivatableAbilityGuid = "{29CC9F1D-1600-45EC-B712-88B0844CB77C}";
+
         public static void Configure2()
         {
-            var icon = ActivatableAbilityRefs.DivinationSchoolForetellAidToggleAbility.Reference.Get().Icon;
+            var icon = FeatureRefs.PowerfulStanceFeature.Reference.Get().Icon;
+
+            var Buff = BuffConfigurator.New(Knockbackbuff, KnockbackbuffGuid)
+              .SetDisplayName(DisplayName2)
+              .SetDescription(Description2)
+              .SetIcon(icon)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .Configure();
+
+            var ability = ActivatableAbilityConfigurator.New(KnockbackActivatableAbility, KnockbackActivatableAbilityGuid)
+                .SetDisplayName(DisplayName2)
+                .SetDescription(Description2)
+                .SetIcon(icon)
+                .SetBuff(Buff)
+                .SetDeactivateImmediately(true)
+                .SetActivationType(AbilityActivationType.Immediately)
+                .SetIsOnByDefault(true)
+                .Configure();
 
             FeatureConfigurator.New(Feat2Name, Feat2Guid, FeatureGroup.RagePower)
                     .SetDisplayName(DisplayName2)
@@ -68,6 +92,7 @@ namespace PrestigePlus.Blueprint.Feat
                     .AddBuffExtraEffects(BuffRefs.BloodragerStandartRageBuff.ToString(), extraEffectBuff: ReplaceAttack.BullRushAngry2buffGuid)
                     .AddBuffExtraEffects(BuffRefs.StandartFocusedRageBuff.ToString(), extraEffectBuff: ReplaceAttack.BullRushAngry2buffGuid)
                     .AddBuffExtraEffects(BuffRefs.StandartRageBuff.ToString(), extraEffectBuff: ReplaceAttack.BullRushAngry2buffGuid)
+                    .AddFacts(new() { ability })
                     .Configure();
         }
 
@@ -142,7 +167,7 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string AngelActivatableAbilityGuid = "{C46D9760-C6BC-4188-A013-1E979E6453C5}";
         public static void AngelConfigure()
         {
-            var icon = FeatureRefs.FlurryOfBlows.Reference.Get().Icon;
+            var icon = FeatureRefs.DisplayWeaponProwess.Reference.Get().Icon;
 
             var action = ActionsBuilder.New()
                         .ApplyBuff(Angelbuff2Guid, ContextDuration.Fixed(1))
@@ -196,7 +221,7 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string FollowActivatableAbilityGuid = "{880334EA-D852-49AB-AB41-2574DF79CCEB}";
         public static void FollowConfigure()
         {
-            var icon = FeatureRefs.FlurryOfBlows.Reference.Get().Icon;
+            var icon = FeatureRefs.FastMovement.Reference.Get().Icon;
 
             var Buff = BuffConfigurator.New(Followbuff, FollowbuffGuid)
               .SetDisplayName(FollowDisplayName)

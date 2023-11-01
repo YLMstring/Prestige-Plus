@@ -34,6 +34,6 @@ namespace PrestigePlus.CustomComponent.Feat
             Rulebook.Trigger(new RuleDealDamage(Owner, evt.Target, Damage));
         }
 
-        private static BlueprintFeatureReference Throw = BlueprintTool.GetRef<BlueprintFeatureReference>(ReplaceAttack.BullRushAngry2buffGuid);
+        private static BlueprintBuffReference Throw = BlueprintTool.GetRef<BlueprintBuffReference>(ReplaceAttack.BullRushAngry2buffGuid);
     }
 }

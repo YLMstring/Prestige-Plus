@@ -79,7 +79,7 @@ namespace PrestigePlus.HarmonyFix
                     ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
                     return false;
                 }
-                if (caster.HasFact(BullRush3))
+                if (caster.HasFact(BullRush3) && caster.HasFact(BullRush4))
                 {
                     GameHelper.RemoveBuff(caster, BullRush3);
                     if (target.State.HasCondition(UnitCondition.ForceMove)) { return true; }
@@ -130,6 +130,7 @@ namespace PrestigePlus.HarmonyFix
         private static BlueprintBuffReference BullRush1 = BlueprintTool.GetRef<BlueprintBuffReference>(ReplaceAttack.BullRushbuffGuid);
         private static BlueprintBuffReference BullRush2 = BlueprintTool.GetRef<BlueprintBuffReference>(ReplaceAttack.BullRushQuickbuffGuid);
         private static BlueprintBuffReference BullRush3 = BlueprintTool.GetRef<BlueprintBuffReference>(ReplaceAttack.BullRushAngrybuffGuid);
+        private static BlueprintBuffReference BullRush4 = BlueprintTool.GetRef<BlueprintBuffReference>(BullRushFeats.KnockbackbuffGuid);
 
         private static BlueprintBuffReference AerialBuff = BlueprintTool.GetRef<BlueprintBuffReference>(AerialAssault.Stylebuff2Guid);
 

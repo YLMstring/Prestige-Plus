@@ -56,14 +56,11 @@ namespace PrestigePlus.CustomAction.OtherManeuver
                 {
                     weapon = maybeCaster.Body.EmptyHandWeapon;
                 }
+                var bluff = new RuleSkillCheck(maybeCaster, Kingmaker.EntitySystem.Stats.StatType.CheckBluff, 0);
                 var AttackBonusRule = new RuleCalculateAttackBonus(maybeCaster, unit, weapon, 0) { };
                 ContextActionCombatTrickery.TriggerMRule(ref AttackBonusRule);
                 RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(maybeCaster, unit, CombatManeuver.BullRush, AttackBonusRule);
-                int bluff = GameHelper.TriggerSkillCheck(new RuleSkillCheck(maybeCaster, Kingmaker.EntitySystem.Stats.StatType.CheckBluff, 0)
-                {
-                    IgnoreDifficultyBonusToDC = maybeCaster.IsPlayersEnemy
-                }, maybeCaster.Context, true).RollResult;
-                ruleCombatManeuver.OverrideBonus = new int?(bluff);
+                ruleCombatManeuver.OverrideBonus = new int?(bluff.TotalBonus);
                 Rulebook.Trigger(ruleCombatManeuver);
             }
             catch (Exception ex) { Logger.Error("Failed to storm.", ex); }

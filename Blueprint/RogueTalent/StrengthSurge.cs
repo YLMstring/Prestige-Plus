@@ -125,19 +125,19 @@ namespace PrestigePlus.Blueprint.RogueTalent
         private static readonly string RagingThrowAbilityGuid = "{158083ED-DA80-4B40-A517-BF35A2D5F617}";
 
         private const string RagingThrowBuff = "Barbarian.RagingThrowBuff";
-        private static readonly string RagingThrowBuffGuid = "{44AFDB84-40D8-49A4-8FE9-B6630C057F5F}";
+        public static readonly string RagingThrowBuffGuid = "{44AFDB84-40D8-49A4-8FE9-B6630C057F5F}";
 
         public static BlueprintFeature RagingThrowFeat()
         {
-            var icon = FeatureRefs.GreaterRageFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.MightyRage.Reference.Get().Icon;
 
             var Buff = BuffConfigurator.New(RagingThrowBuff, RagingThrowBuffGuid)
               .SetDisplayName(RagingThrowDisplayName)
               .SetDescription(RagingThrowDescription)
               .SetIcon(icon)
               .AddComponent<RagingThrowDamage>()
-              .AddCMBBonusForManeuver(value: ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatConstitution), maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush })
-              //.AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.BarbarianClass.ToString(), CharacterClassRefs.BloodragerClass.ToString() }))
+              .AddCMBBonusForManeuver(value: ContextValues.Rank(), maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush })
+              .AddContextRankConfig(ContextRankConfigs.StatBonus(StatType.Constitution))
               .AddManeuverTrigger(ActionsBuilder.New()
                     .RemoveBuff(RagingThrowBuffGuid, toCaster: true)
                     .Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush, false)
