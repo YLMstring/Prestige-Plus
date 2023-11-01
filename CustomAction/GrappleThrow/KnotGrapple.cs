@@ -21,6 +21,7 @@ using Kingmaker.Designers;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.Blueprints.Items.Weapons;
 using PrestigePlus.Grapple;
+using PrestigePlus.CustomAction.OtherManeuver;
 
 namespace PrestigePlus.CustomAction.GrappleThrow
 {
@@ -72,7 +73,7 @@ namespace PrestigePlus.CustomAction.GrappleThrow
                     AttackBonusRule.AddModifier(5, descriptor: Kingmaker.Enums.ModifierDescriptor.UntypedStackable);
                 }
             }
-            Rulebook.Trigger(AttackBonusRule);
+            ContextActionCombatTrickery.TriggerMRule(ref AttackBonusRule);
             RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(maybeCaster, unit, CombatManeuver.Grapple, AttackBonusRule);
             ruleCombatManeuver = (Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
             if (ruleCombatManeuver.Success)

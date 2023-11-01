@@ -39,7 +39,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                 return;
             }
             if (!CombatController.IsInTurnBasedCombat() || Game.Instance.TurnBasedCombatController?.CurrentTurn == null) { return; }
-            if (Game.Instance.TurnBasedCombatController.CurrentTurn.HasFiveFootStep(caster)) { return; }
+            if (!Game.Instance.TurnBasedCombatController.CurrentTurn.HasFiveFootStep(caster) || !target.IsAlly(caster)) { return; }
             caster.CombatState.PreventAttacksOfOpporunityNextFrame = true;
             target.CombatState.PreventAttacksOfOpporunityNextFrame = true;
             var position = caster.Position;

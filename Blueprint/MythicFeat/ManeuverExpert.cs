@@ -27,7 +27,7 @@ namespace PrestigePlus.Blueprint.MythicFeat
                     .SetDisplayName(DisplayName)
                     .SetDescription(Description)
                     .SetIcon(icon)
-                    .AddBuffAllSavesBonus(Kingmaker.Enums.ModifierDescriptor.Penalty, -1)
+                    .AddBuffAllSavesBonus(Kingmaker.Enums.ModifierDescriptor.Penalty, -2)
                     .AddFacts(new() { FeatureRefs.ImprovedBullRush.ToString(), FeatureRefs.ImprovedDirtyTrick.ToString(), FeatureRefs.ImprovedDisarm.ToString(), FeatureRefs.ImprovedSunder.ToString(), FeatureRefs.ImprovedTrip.ToString(),
                     FeatureRefs.GreaterBullRush.ToString(), FeatureRefs.GreaterDirtyTrick.ToString(), FeatureRefs.GreaterDisarm.ToString(), FeatureRefs.GreaterSunder.ToString(), FeatureRefs.GreaterTrip.ToString(), ImprovedGrapple.StyleGuid, GreaterGrapple.FeatGuid,
                     FeatureRefs.ImprovedOverrun.ToString(), AbilityRefs.OverrunAbility.ToString()})

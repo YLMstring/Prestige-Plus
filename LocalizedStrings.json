@@ -1547,8 +1547,8 @@
 
   {
     "Key": "ManeuverExpert.Description",
-    "enGB": "You always takes a –1 penalty on all saves, as you expend your mythic power whenever you attempt a combat maneuver check to gain the benefits of the Improved and Greater feats tied to that maneuver.",
-    "zhCN": "你的所有豁免-1，因为你将这部分神话之力用于在尝试战技检定时，获取对应战技的精通和高等专长效果。"
+    "enGB": "You always takes a –2 penalty on all saves, as you expend your mythic power whenever you attempt a combat maneuver check to gain the benefits of the Improved and Greater feats tied to that maneuver.",
+    "zhCN": "你的所有豁免-2，因为你将这部分神话之力用于在尝试战技检定时，获取对应战技的精通和高等专长效果。"
   },
 
   {
@@ -4600,6 +4600,205 @@
     "Key": "SpireDefenderManeuverMastery.Description",
     "enGB": "The magus has mastered combat maneuvers. Whenever he attempts a combat maneuver, he uses his magus level in place of his base attack bonus (in addition to any base attack bonus gained from other classes).",
     "zhCN": "魔战士已经掌握了战技的奥秘，当他尝试战技时，用他的魔战士等级作为其基本攻击加值（与其他职业带来的基本攻击加值合计）。"
+  },
+
+  {
+    "Key": "RhinoCharge.Name",
+    "ProcessTemplates": false,
+    "enGB": "Rhino Charge",
+    "zhCN": "犀牛冲锋"
+  },
+  {
+    "Key": "RhinoCharge.Description",
+    "enGB": "Your charges are both violent and unpredictable. You may ready a charge as a standard action when not mounted, though you may only move up to your speed on the charge.",
+    "zhCN": "你的冲锋凶猛而难以预测。未骑乘时你能以标准动作准备一次冲锋，但只能移动等同于你速度的距离。"
+  },
+  {
+    "Key": "DrivingAssaultMonster.Name",
+    "ProcessTemplates": false,
+    "enGB": "Minotaur’s Charge",
+    "zhCN": "牛头冲锋"
+  },
+  {
+    "Key": "DrivingAssaultMonster.Description",
+    "enGB": "Your charge sends foes reeling away, knocking them to the ground. When you hit an opponent with a charge attack, you might also initiate a bull rush as a free action. If you successfully push your opponent 15 feet or more, he is also knocked prone.",
+    "zhCN": "你的冲锋把敌人撞飞倒地。每当你的冲锋攻击命中敌人，你可以用自由动作冲撞，如果冲撞距离达到15尺以上，目标还会倒地。"
+  },
+  {
+    "Key": "BasicImprovedCharge.Name",
+    "ProcessTemplates": false,
+    "enGB": "Improved Charge",
+    "zhCN": "精通冲锋"
+  },
+  {
+    "Key": "BasicImprovedCharge.Description",
+    "enGB": "You have learned a few ways to improve your charge.",
+    "zhCN": "你学会了一些更好的冲锋技巧。"
+  },
+  {
+    "Key": "FeatQuickBullRush.Name",
+    "ProcessTemplates": false,
+    "enGB": "Quick Bull Rush",
+    "zhCN": "快速冲撞"
+  },
+  {
+    "Key": "FeatQuickBullRush.Description",
+    "enGB": "You can barrel into your opponent and follow this with an attack. On your turn, you can perform a single bull rush combat maneuver in place of the next one of your melee full attacks.",
+    "zhCN": "你可以在攻击中迅速地撞击对手。当你行动时，你可以用一次单独的冲撞战技检定来代替你的全回合的一次近战攻击。"
+  },
+  {
+    "Key": "FeatKnockback.Name",
+    "ProcessTemplates": false,
+    "enGB": "Knockback",
+    "zhCN": "一击震退"
+  },
+  {
+    "Key": "FeatKnockback.Description",
+    "enGB": "Once per round, the barbarian can make a bull rush attempt against one target in place of the next one of your melee full attacks. If successful, the target takes damage equal to the barbarian’s Strength modifier and is moved back as normal.",
+    "zhCN": "每轮限一次，野蛮人可以用一次单独的冲撞战技检定来代替你的全回合的一次近战攻击，成功的话，目标如常被击退且受到等同于野蛮人力量加值的伤害。"
+  },
+  {
+    "Key": "FeatRagingThrow.Name",
+    "ProcessTemplates": false,
+    "enGB": "Raging Throw",
+    "zhCN": "狂暴投技"
+  },
+  {
+    "Key": "FeatRagingThrow.Description",
+    "enGB": "You expend some of your rage to throw one opponent at another. While raging, when you attempt a bull rush combat maneuver, you can spend 1 additional round of your rage as a swift action to add your Constitution bonus on your combat maneuver check to the bull rush. Further, if you successfully bull rush an opponent, the creature takes bludgeoning damage equal to your Strength modifier + your Constitution modifier.",
+    "zhCN": "当你在狂暴中尝试使用冲撞战技时，你能以迅捷动作消耗1轮每日狂暴轮数，来将体质修正添加到冲撞战技检定上。此外，当你冲撞成功，对手受到等同于你的“力量修正+体质修正”钝击伤害。"
+  },
+  {
+    "Key": "HurricanePunchStyle.Name",
+    "ProcessTemplates": false,
+    "enGB": "Hurricane Punch",
+    "zhCN": "飓风神拳"
+  },
+  {
+    "Key": "HurricanePunchStyle.Description",
+    "enGB": "Your fast strikes hit with the force of a hurricane, pushing your foes away. When you hit the same creature with unarmed strikes at least twice in the same round, you can attempt a bull rush combat maneuver against that creature as a swift action. Additionally, you can move with your bull rush target.",
+    "zhCN": "你的快拳有着飓风之力，能轻易推飞你的敌人。当你一轮内用徒手击打命中同一生物两次时，你可以用迅捷动作进行推撞。另外，你可以随冲撞目标一起移动。"
+  },
+  {
+    "Key": "DrivingAssaultAngel.Name",
+    "ProcessTemplates": false,
+    "enGB": "Driving Assault",
+    "zhCN": "退散斩"
+  },
+  {
+    "Key": "DrivingAssaultAngel.Description",
+    "enGB": "When making a full attack, the sanguine angel can take a -2 penalty on melee attack rolls for 1 round. If she does, the first time in that round that she hits a creature with a melee attack, she can attempt a bull rush combat maneuver to push the creature. She gains a +2 bonus on this combat maneuver check. Additionally, she can move with her bull rush target.",
+    "zhCN": "当进行全力攻击时，血色天使可以在一轮内所有近战攻击骰上承受-2的罚值。若她如此做，在该轮内她第一次用近战攻击命中时，她可以尝试进行一次冲撞战技检定以将这个生物向后推动。她在这次战技检定上获得+2的加值。另外，她可以随冲撞目标一起移动。"
+  },
+  {
+    "Key": "MythicCombatTrickery.Name",
+    "ProcessTemplates": false,
+    "enGB": "Combat Trickery",
+    "zhCN": "战斗诡术"
+  },
+  {
+    "Key": "MythicCombatTrickery.Description",
+    "enGB": "Through buffoonery and deceit, you can trick opponents into moving where you want them. You can make a bull rush combat maneuver check to all adjacent opponents as a standard action, using your Bluff check modifier in place of your CMB.",
+    "zhCN": "通过吹嘘与欺骗，你能将敌人骗到任何你想要他们出现的地方。你可以用标准动作对所有邻接敌人进行冲撞，用唬骗技能加值代替你的CMB进行战技检定。"
+  },
+  {
+    "Key": "AngelDrag.Name",
+    "ProcessTemplates": false,
+    "enGB": "Castling",
+    "zhCN": "王车易位"
+  },
+  {
+    "Key": "AngelDrag.Description",
+    "enGB": "When the sanguine angel takes a 5-foot step, she can step into the space of a willing, adjacent ally. If she does, that ally immediately takes a 5-foot step into the sanguine angel’s former space without spending an action to do so.",
+    "zhCN": "当血色天使进行五尺快步时，她能以此和范围内一名自愿友军交换位置，不消耗友军的行动机会。"
+  },
+  {
+    "Key": "MythicDriveBack.Name",
+    "ProcessTemplates": false,
+    "enGB": "Drive Back",
+    "zhCN": "一夫当关"
+  },
+  {
+    "Key": "MythicDriveBack.Description",
+    "enGB": "As a full-round action, you can make one melee attack at your highest base attack bonus against each opponent within reach. You must make a separate attack roll against each opponent, then attempt a free bull rush combat maneuver check against each foe that you hit.",
+    "zhCN": "你可以用全回合动作对触及范围内所有敌人进行一次最高攻击加值的攻击，然后对每个你击中的敌人尝试推撞。"
+  },
+  {
+    "Key": "BullRush.Name",
+    "ProcessTemplates": false,
+    "enGB": "Bull Rush (Next)",
+    "zhCN": "冲撞（一次）"
+  },
+  {
+    "Key": "BullRush.Description",
+    "enGB": "You can attempt to Bull Rush your opponent as part of a charge, in place of the melee attack.",
+    "zhCN": "你冲锋时可以把近战攻击换成冲撞。"
+  },
+  {
+    "Key": "BullRush2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Bull Rush (Always)",
+    "zhCN": "冲撞（总是）"
+  },
+  {
+    "Key": "BullRush2.Description",
+    "enGB": "You can attempt to Bull Rush your opponent as part of a charge, in place of the melee attack.",
+    "zhCN": "你冲锋时可以把近战攻击换成冲撞。"
+  },
+  {
+    "Key": "BasicImprovedCharge3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Grapple (Always)",
+    "zhCN": "擒抱（一次）"
+  },
+  {
+    "Key": "BasicImprovedCharge3.Description",
+    "enGB": "You can attempt to Grapple your opponent as part of a charge, in place of the melee attack.",
+    "zhCN": "你冲锋时可以把近战攻击换成擒抱。"
+  },
+  {
+    "Key": "BasicImprovedCharge4.Name",
+    "ProcessTemplates": false,
+    "enGB": "Grapple (Next)",
+    "zhCN": "擒抱（总是）"
+  },
+  {
+    "Key": "BasicImprovedCharge4.Description",
+    "enGB": "You can attempt to Grapple your opponent as part of a charge, in place of the melee attack.",
+    "zhCN": "你冲锋时可以把近战攻击换成擒抱。"
+  },
+  {
+    "Key": "DrivingAssaultFollow.Name",
+    "ProcessTemplates": false,
+    "enGB": "Step Up",
+    "zhCN": "跟进"
+  },
+  {
+    "Key": "DrivingAssaultFollow.Description",
+    "enGB": "You can move with your bull rush target.",
+    "zhCN": "你可以跟随你的冲撞目标一起移动。"
+  },
+  {
+    "Key": "BullRushQuick.Name",
+    "ProcessTemplates": false,
+    "enGB": "Bull Rush (Next)",
+    "zhCN": "冲撞（一次）"
+  },
+  {
+    "Key": "BullRushQuick.Description",
+    "enGB": "You can attempt to Bull Rush your opponent in place of your next melee attack in a full-round attack.",
+    "zhCN": "你全回合攻击时可以把下一次近战攻击换成冲撞。"
+  },
+  {
+    "Key": "BullRushQuick2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Bull Rush (Always)",
+    "zhCN": "冲撞（总是）"
+  },
+  {
+    "Key": "BullRushQuick2.Description",
+    "enGB": "You can attempt to Bull Rush your opponent in place of your next melee attack in a full-round attack.",
+    "zhCN": "你全回合攻击时可以把下一次近战攻击换成冲撞。"
   }
 
 ]

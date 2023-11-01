@@ -61,7 +61,7 @@ namespace PrestigePlus.CustomAction.OtherManeuver
                 penalty = -4 - 4 * rank.GetRank();
             }
             AttackBonusRule.AddModifier(penalty, descriptor: Kingmaker.Enums.ModifierDescriptor.Penalty);
-            Rulebook.Trigger(AttackBonusRule);
+            ContextActionCombatTrickery.TriggerMRule(ref AttackBonusRule);
             RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, maneuver, AttackBonusRule);
             ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
             int num = caster.Progression.MythicLevel / 2;

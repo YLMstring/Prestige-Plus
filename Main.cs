@@ -224,7 +224,7 @@ namespace PrestigePlus
                         SmashingStyle.StyleConfigure(); SmashingStyle.CounterConfigure(); SmashingStyle.MasterConfigure(); CrushArmor.Configure(); SunderStorm.CreateSunderStorm(); GreaterSunderTabletop.CreateGreaterSunderTabletop(); 
                         DownLikeDominoes.DragConfigure(); SunderStorm.CreateCleavingSweep(); RangedTrip.CreateTripRanged(); RangedTrip.AceTripFeature(); RangedTrip.CreateVindictiveFall();
                         RhinoCharge.Configure(); SunderStorm.CreateDriveBack(); SunderStorm.CreateCombatTrickery(); 
-                        BullRushFeats.Configure(); BullRushFeats.Configure2(); BullRushFeats.StyleConfigure(); BullRushFeats.FollowConfigure(); BullRushFeats.AngelConfigure(); BullRushFeats.MonsterConfigure(); }
+                        BullRushFeats.Configure(); BullRushFeats.Configure2(); BullRushFeats.StyleConfigure(); BullRushFeats.FollowConfigure(); BullRushFeats.AngelConfigure(); BullRushFeats.MonsterConfigure(); StrengthSurge.RagingThrowFeat(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("halfling"))) { HalflingOpportunist.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("enhance"))) { SwiftDeath.Configure(); SwiftDeath.Configure2(); UnbreakableDefance.Configure(); MythicWings.Configure(); MythicWings.Configure2(); MythicRiposte.Configure(); MetaphysicalSneak.Configure(); LesserSpellSynthesis.Configure(); SurprisingStrategy.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fightereg"))) { EldritchGuardian.Configure(); }

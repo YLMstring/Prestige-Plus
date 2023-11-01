@@ -36,18 +36,18 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static void Configure()
         {
-            var icon = ActivatableAbilityRefs.DivinationSchoolForetellAidToggleAbility.Reference.Get().Icon;
+            var icon = FeatureRefs.PummelingCharge.Reference.Get().Icon;
 
-            FeatureConfigurator.New(FeatName, FeatGuid, Kingmaker.Blueprints.Classes.FeatureGroup.Feat)
+            FeatureConfigurator.New(FeatName, FeatGuid, FeatureGroup.Feat)
                     .SetDisplayName(DisplayName)
                     .SetDescription(Description)
                     .SetIcon(icon)
-                    .AddPrerequisiteStatValue(Kingmaker.EntitySystem.Stats.StatType.Strength, 13)
+                    .AddPrerequisiteStatValue(StatType.Strength, 13)
                     .AddPrerequisiteFeature(FeatureRefs.ImprovedBullRush.ToString())
                     .AddPrerequisiteFeature(FeatureRefs.PowerAttackFeature.ToString())
-                    .AddPrerequisiteStatValue(Kingmaker.EntitySystem.Stats.StatType.BaseAttackBonus, 6)
+                    .AddPrerequisiteStatValue(StatType.BaseAttackBonus, 6)
                     .AddFacts(new() { ReplaceAttack.BullRushQuickAbilityGuid, ReplaceAttack.BullRushQuick2AbilityGuid })
-                    .AddToGroups(Kingmaker.Blueprints.Classes.FeatureGroup.CombatFeat)
+                    .AddToGroups(FeatureGroup.CombatFeat)
                     .Configure();
         }
 
@@ -61,7 +61,7 @@ namespace PrestigePlus.Blueprint.Feat
         {
             var icon = ActivatableAbilityRefs.DivinationSchoolForetellAidToggleAbility.Reference.Get().Icon;
 
-            FeatureConfigurator.New(Feat2Name, Feat2Guid, Kingmaker.Blueprints.Classes.FeatureGroup.RagePower)
+            FeatureConfigurator.New(Feat2Name, Feat2Guid, FeatureGroup.RagePower)
                     .SetDisplayName(DisplayName2)
                     .SetDescription(Description2)
                     .SetIcon(icon)
@@ -229,7 +229,7 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string MonsterActivatableAbilityGuid = "{DCE8709E-0B4D-41F5-AD05-268405DBFC76}";
         public static void MonsterConfigure()
         {
-            var icon = FeatureRefs.FlurryOfBlows.Reference.Get().Icon;
+            var icon = FeatureRefs.ShifterAspectElephant.Reference.Get().Icon;
 
             var action = ActionsBuilder.New()
                         .CombatManeuver(ActionsBuilder.New().Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush)
@@ -259,7 +259,7 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetIcon(icon)
                     .AddPrerequisiteStatValue(StatType.Strength, 13)
                     .AddPrerequisiteFeature(FeatureRefs.ImprovedBullRush.ToString())
-                    .AddPrerequisiteFeature(RhinoCharge.FeatGuid)
+                    .AddPrerequisiteFeature(FeatureRefs.Endurance.ToString())
                     .AddFacts(new() { ability })
                     .Configure();
         }
@@ -274,7 +274,7 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string StyleAbilityGuid = "{93359A78-51FD-4B3A-846F-C4405E6D3F69}";
         public static void DragConfigure()
         {
-            var icon = FeatureRefs.FlurryOfBlows.Reference.Get().Icon;
+            var icon = FeatureRefs.Outflank.Reference.Get().Icon;
 
             var grab = ActionsBuilder.New()
                 .Add<ContextActionCastling>()

@@ -13,6 +13,7 @@ using Kingmaker.UnitLogic.Buffs;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.Utility;
 using PrestigePlus.Blueprint.GrappleFeat;
+using PrestigePlus.CustomAction.OtherManeuver;
 using PrestigePlus.CustomComponent.Grapple;
 using PrestigePlus.Grapple;
 using System;
@@ -94,7 +95,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                 weapon = caster.Body.EmptyHandWeapon;
             }
             var AttackBonusRule = new RuleCalculateAttackBonus(caster, target, weapon, 0) { };
-            Rulebook.Trigger(AttackBonusRule);
+            ContextActionCombatTrickery.TriggerMRule(ref AttackBonusRule);
             RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, maneuver, AttackBonusRule);
             ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
             if (ruleCombatManeuver.Success)

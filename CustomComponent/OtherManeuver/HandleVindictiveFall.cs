@@ -14,6 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Kingmaker.Designers.EventConditionActionSystem.Evaluators;
 using static Pathfinding.Util.RetainedGizmos;
+using PrestigePlus.CustomAction.OtherManeuver;
 
 namespace PrestigePlus.CustomComponent.OtherManeuver
 {
@@ -51,7 +52,7 @@ namespace PrestigePlus.CustomComponent.OtherManeuver
             var maneuver = CombatManeuver.Trip;
             ItemEntityWeapon weapon = caster.Body.EmptyHandWeapon;
             var AttackBonusRule = new RuleCalculateAttackBonus(caster, target, weapon, 0) { };
-            Rulebook.Trigger(AttackBonusRule);
+            ContextActionCombatTrickery.TriggerMRule(ref AttackBonusRule);
             RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, maneuver, AttackBonusRule);
             ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
         }

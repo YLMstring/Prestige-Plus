@@ -34,7 +34,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static void Configure()
         {
-            var icon = FeatureRefs.FinalShifterAspectFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.ShifterWoodlandGraceFeature.Reference.Get().Icon;
 
             var BuffRhinoCharge = BuffConfigurator.New(RhinoChargebuff, RhinoChargebuffGuid)
               .SetDisplayName(DisplayName)

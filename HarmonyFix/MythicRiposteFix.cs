@@ -15,6 +15,7 @@ using Kingmaker.UnitLogic.Abilities.Components.TargetCheckers;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Utility;
 using PrestigePlus.Blueprint.Feat;
+using PrestigePlus.CustomAction.OtherManeuver;
 using PrestigePlus.Grapple;
 using System;
 using System.Collections.Generic;
@@ -89,7 +90,7 @@ namespace PrestigePlus.HarmonyFix
             if (maneuver == CombatManeuver.None) { return true; }
             var AttackBonusRule = new RuleCalculateAttackBonus(caster, target, caster.Body.EmptyHandWeapon, 0) { };
             AttackBonusRule.AddModifier(2, descriptor: ModifierDescriptor.Morale);
-            Rulebook.Trigger(AttackBonusRule);
+            ContextActionCombatTrickery.TriggerMRule(ref AttackBonusRule);
             RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, maneuver, AttackBonusRule);
             ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
             return true;

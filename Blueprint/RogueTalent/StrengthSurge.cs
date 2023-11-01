@@ -21,6 +21,8 @@ using BlueprintCore.Conditions.Builder.ContextEx;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
 using BlueprintCore.Utils;
 using Kingmaker.UnitLogic.Mechanics.Components;
+using Kingmaker.EntitySystem.Stats;
+using PrestigePlus.CustomComponent.Feat;
 
 namespace PrestigePlus.Blueprint.RogueTalent
 {
@@ -109,6 +111,77 @@ namespace PrestigePlus.Blueprint.RogueTalent
               .SetIcon(icon)
               .AddToGroups(FeatureGroup.RagePower)
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string RagingThrowPower = "Barbarian.RagingThrow";
+        public static readonly string RagingThrowGuid = "{EC769C88-80CC-4246-8F62-6DBB7AC8AA06}";
+
+        internal const string RagingThrowDisplayName = "FeatRagingThrow.Name";
+        private const string RagingThrowDescription = "FeatRagingThrow.Description";
+
+        private const string RagingThrowAbility = "Barbarian.RagingThrowAbility";
+        private static readonly string RagingThrowAbilityGuid = "{158083ED-DA80-4B40-A517-BF35A2D5F617}";
+
+        private const string RagingThrowBuff = "Barbarian.RagingThrowBuff";
+        private static readonly string RagingThrowBuffGuid = "{44AFDB84-40D8-49A4-8FE9-B6630C057F5F}";
+
+        public static BlueprintFeature RagingThrowFeat()
+        {
+            var icon = FeatureRefs.GreaterRageFeature.Reference.Get().Icon;
+
+            var Buff = BuffConfigurator.New(RagingThrowBuff, RagingThrowBuffGuid)
+              .SetDisplayName(RagingThrowDisplayName)
+              .SetDescription(RagingThrowDescription)
+              .SetIcon(icon)
+              .AddComponent<RagingThrowDamage>()
+              .AddCMBBonusForManeuver(value: ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatConstitution), maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush })
+              //.AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.BarbarianClass.ToString(), CharacterClassRefs.BloodragerClass.ToString() }))
+              .AddManeuverTrigger(ActionsBuilder.New()
+                    .RemoveBuff(RagingThrowBuffGuid, toCaster: true)
+                    .Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush, false)
+              .AddBuffActions(activated: ActionsBuilder.New()
+                    .Conditional(ConditionsBuilder.New()
+                        .UseOr()
+                        .CasterHasFact(BuffRefs.StandartRageBuff.ToString())
+                        .CasterHasFact(BuffRefs.StandartFocusedRageBuff.ToString())
+                        .CasterHasFact(BuffRefs.BloodragerStandartRageBuff.ToString())
+                        .Build(), 
+                    ifFalse: ActionsBuilder.New()
+                        .RemoveSelf()
+                        .Build())
+                    .Build())
+              .Configure();
+
+            var ability = AbilityConfigurator.New(RagingThrowAbility, RagingThrowAbilityGuid)
+                .CopyFrom(
+                AbilityRefs.DemonRageActivateAbility,
+                typeof(AbilitySpawnFx))
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                    .ContextSpendResource(AbilityResourceRefs.RageResourse.ToString(), 1)
+                    .ContextSpendResource(AbilityResourceRefs.BloodragerRageResource.ToString(), 1)
+                    .ContextSpendResource(AbilityResourceRefs.FocusedRageResourse.ToString(), 1)
+                    .ApplyBuff(Buff, ContextDuration.Fixed(1))
+                    .Build())
+                .SetDisplayName(RagingThrowDisplayName)
+                .SetDescription(RagingThrowDescription)
+                .SetIcon(icon)
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Special)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+                .Configure();
+
+            return FeatureConfigurator.New(RagingThrowPower, RagingThrowGuid, FeatureGroup.Feat)
+              .SetDisplayName(RagingThrowDisplayName)
+              .SetDescription(RagingThrowDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteStatValue(StatType.Strength, 13)
+              .AddPrerequisiteStatValue(StatType.Constitution, 13)
+              .AddPrerequisiteFeature(FeatureRefs.ImprovedBullRush.ToString())
+              .AddPrerequisiteFeature(FeatureRefs.PowerAttackFeature.ToString())
+              .AddPrerequisiteStatValue(StatType.BaseAttackBonus, 6)
               .AddFacts(new() { ability })
               .Configure();
         }

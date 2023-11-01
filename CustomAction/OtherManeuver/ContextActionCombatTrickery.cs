@@ -57,7 +57,7 @@ namespace PrestigePlus.CustomAction.OtherManeuver
                     weapon = maybeCaster.Body.EmptyHandWeapon;
                 }
                 var AttackBonusRule = new RuleCalculateAttackBonus(maybeCaster, unit, weapon, 0) { };
-                Rulebook.Trigger(AttackBonusRule);
+                ContextActionCombatTrickery.TriggerMRule(ref AttackBonusRule);
                 RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(maybeCaster, unit, CombatManeuver.BullRush, AttackBonusRule);
                 int bluff = GameHelper.TriggerSkillCheck(new RuleSkillCheck(maybeCaster, Kingmaker.EntitySystem.Stats.StatType.CheckBluff, 0)
                 {
@@ -72,18 +72,22 @@ namespace PrestigePlus.CustomAction.OtherManeuver
         public bool UseWeapon = false;
         public static void TriggerMRule(ref RuleCalculateAttackBonus AttackBonusRule)
         {
+            Rulebook.Trigger(AttackBonusRule);
             var rule = AttackBonusRule.m_InnerRule; 
             if (rule != null) 
             {
-                bool flag = rule.Weapon.Blueprint.IsNatural && rule.Initiator.Descriptor.State.Features.MythicDemonNaturalAttacksNoSecondary;
-                if (rule.WeaponStats.IsSecondary && !flag)
+                int bonus = 0;
+                foreach (var mod in rule.m_ModifiableBonus.Modifiers)
                 {
-                    int bonus = (rule.Weapon.Blueprint.IsNatural && rule.Initiator.State.Features.ReduceSecondaryNaturalAttackPenalty) ? -2 : -5;
-                    AttackBonusRule.AddModifier(bonus, descriptor: ModifierDescriptor.UntypedStackable);
+                    if (mod.Type == BonusType.SecondaryWeapon)
+                    {
+                        bonus -= mod.Value; 
+                        break;
+                    }
                 }
-            }
-            Rulebook.Trigger(AttackBonusRule);
+                AttackBonusRule.AddModifier(bonus, BonusType.SecondaryWeapon, ModifierDescriptor.UntypedStackable);
+                AttackBonusRule.Result += bonus;
+            }    
         }
-
     }
 }

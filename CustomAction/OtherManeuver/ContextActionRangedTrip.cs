@@ -61,7 +61,7 @@ namespace PrestigePlus.CustomAction.OtherManeuver
             {
                 AttackBonusRule.AddModifier(penalty, descriptor: Kingmaker.Enums.ModifierDescriptor.Penalty);
             }
-            Rulebook.Trigger(AttackBonusRule);
+            ContextActionCombatTrickery.TriggerMRule(ref AttackBonusRule);
             RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, maneuver, AttackBonusRule);
             ruleCombatManeuver.ReplaceBaseStat = Kingmaker.EntitySystem.Stats.StatType.Dexterity;
             ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);

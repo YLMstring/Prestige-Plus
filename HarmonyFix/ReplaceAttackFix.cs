@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Kingmaker.EntitySystem.EntityDataBase;
 using static Kingmaker.UI.CanvasScalerWorkaround;
 using static Kingmaker.Visual.CharacterSystem.CharacterStudio;
 
@@ -46,7 +47,7 @@ namespace PrestigePlus.HarmonyFix
                 var AttackBonusRule = new RuleCalculateAttackBonus(caster, target, caster.Body.EmptyHandWeapon, 0) { };
                 int penalty = -attack.AttackBonusPenalty + DualPenalty(caster, attack);
                 AttackBonusRule.AddModifier(penalty, descriptor: ModifierDescriptor.Penalty);
-                //Rulebook.Trigger(AttackBonusRule);
+                //ContextActionCombatTrickery.TriggerMRule(ref AttackBonusRule);
                 ContextActionCombatTrickery.TriggerMRule(ref AttackBonusRule);
                 if (caster.HasFact(AerialBuff) && __instance.IsCharge)
                 {
@@ -141,9 +142,18 @@ namespace PrestigePlus.HarmonyFix
             ItemEntityWeapon maybeWeapon2 = unit.Body.SecondaryHand.MaybeWeapon;
             bool flag2 = unit.Descriptor.State.AdditionalFeatures.ShieldMaster;
             bool flag3 = maybeWeapon != null && maybeWeapon.IsShield || maybeWeapon2 != null && maybeWeapon2.IsShield;
+            int second = 0;
+            bool flag = attack.Weapon.Blueprint.IsNatural && unit.Descriptor.State.Features.MythicDemonNaturalAttacksNoSecondary;
+            var rule = new RuleCalculateWeaponStats(unit, attack.Weapon, null, null);
+            Rulebook.Trigger(rule);
+            if (rule.IsSecondary && !flag)
+            {
+                int bonus2 = (attack.Weapon.Blueprint.IsNatural && unit.State.Features.ReduceSecondaryNaturalAttackPenalty) ? -2 : -5;
+                second += bonus2;
+            }
             if (attack.Weapon == null || maybeWeapon == null || maybeWeapon2 == null || maybeWeapon.Blueprint.IsNatural || maybeWeapon2.Blueprint.IsNatural || maybeWeapon == unit.Body.EmptyHandWeapon || maybeWeapon2 == unit.Body.EmptyHandWeapon || maybeWeapon != attack.Weapon && maybeWeapon2 != attack.Weapon || flag2 && flag3)
             {
-                return 0;
+                return second;
             }
             int rank = 0;
             if (unit.HasFact(TWF)) { rank = 2; }
@@ -156,7 +166,7 @@ namespace PrestigePlus.HarmonyFix
             {
                 num3 -= 2;
             }
-            return num3;
+            return num3 + second;
         }
 
         private static readonly BlueprintFeatureReference TWF = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.TwoWeaponFighting.ToString());

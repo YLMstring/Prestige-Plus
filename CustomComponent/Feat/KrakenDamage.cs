@@ -7,6 +7,7 @@ using Kingmaker.RuleSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.UnitLogic;
+using PrestigePlus.Blueprint.RogueTalent;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,10 @@ namespace PrestigePlus.CustomComponent.Feat
             if (!evt.Success) return;
             if (evt.Type != type) return;
             int damage = Owner.Stats.GetStat<ModifiableValueAttributeStat>(stat).Bonus;
+            if (Owner.HasFact(Throw) && stat == StatType.Strength)
+            {
+                damage += Owner.Stats.Strength.Bonus + Owner.Stats.Constitution.Bonus;
+            }
             if (Owner.HasFact(Wrack) && stat == StatType.Wisdom)
             {
                 damage += 4;
@@ -44,5 +49,7 @@ namespace PrestigePlus.CustomComponent.Feat
         private static BlueprintFeatureReference Wrack = BlueprintTool.GetRef<BlueprintFeatureReference>("{527797B0-A313-453B-8558-A3F30C657623}");
         public CombatManeuver type = CombatManeuver.Grapple;
         public StatType stat = StatType.Wisdom;
+
+        private static BlueprintFeatureReference Throw = BlueprintTool.GetRef<BlueprintFeatureReference>(StrengthSurge.RagingThrowGuid);
     }
 }

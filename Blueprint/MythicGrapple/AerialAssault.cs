@@ -90,6 +90,7 @@ namespace PrestigePlus.Blueprint.MythicGrapple
               .SetDisplayName(DisplayName4)
               .SetDescription(Description4)
               .SetIcon(icon)
+              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(StyleActivatableAbility, StyleActivatableAbilityGuid)
@@ -112,12 +113,14 @@ namespace PrestigePlus.Blueprint.MythicGrapple
                 .SetIsOnByDefault(true)
                 .Configure();
 
+            var action = ActionsBuilder.New().ApplyBuff(Buff, ContextDuration.Fixed(1)).Build();
+
             BuffConfigurator.New(Stylebuff3, Stylebuff3Guid)
               .SetDisplayName(DisplayName3)
               .SetDescription(Description3)
               .SetIcon(icon)
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-              .AddBuffActions(newRound: ActionsBuilder.New().ApplyBuff(Buff, ContextDuration.Fixed(1)).Build())
+              .AddBuffActions(newRound: action, activated: action)
               .Configure();
 
             FeatureConfigurator.New(FeatName, FeatGuid, Kingmaker.Blueprints.Classes.FeatureGroup.MythicAbility)

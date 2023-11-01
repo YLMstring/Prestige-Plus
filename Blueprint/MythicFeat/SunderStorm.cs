@@ -97,6 +97,7 @@ namespace PrestigePlus.Maneuvers
                 .SetCanTargetSelf(false)
                 .AddAbilityCasterMainWeaponIsMelee()
                 .SetIsFullRoundAction(true)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
                 .Configure();
 
             return FeatureConfigurator.New(SunderStormFeat, SunderStormGuid, FeatureGroup.MythicAbility)
@@ -160,6 +161,7 @@ namespace PrestigePlus.Maneuvers
                 .SetCanTargetSelf(false)
                 .AddAbilityCasterMainWeaponCheck(new WeaponCategory[] { WeaponCategory.Greataxe })
                 .SetIsFullRoundAction(true)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
                 .Configure();
 
             return FeatureConfigurator.New(CleavingSweepFeat, CleavingSweepGuid, FeatureGroup.Feat)
@@ -227,14 +229,17 @@ namespace PrestigePlus.Maneuvers
                 .SetCanTargetSelf(false)
                 .AddAbilityCasterMainWeaponIsMelee()
                 .SetIsFullRoundAction(true)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
                 .Configure();
 
-            return FeatureConfigurator.New(DriveBackFeat, DriveBackGuid, FeatureGroup.MythicFeat)
+            return FeatureConfigurator.New(DriveBackFeat, DriveBackGuid, FeatureGroup.MythicAbility)
               .SetDisplayName(DriveBackDisplayName)
               .SetDescription(DriveBackDescription)
               .SetIcon(icon)
+              .AddPrerequisiteStatValue(Kingmaker.EntitySystem.Stats.StatType.Dexterity, 13)
+              .AddPrerequisiteStatValue(Kingmaker.EntitySystem.Stats.StatType.Intelligence, 13)
+              .AddPrerequisiteFeature(FeatureRefs.Dodge.ToString())
               .AddPrerequisiteFeature(FeatureRefs.Mobility.ToString())
-              .AddToFeatureSelection("0d3a3619-9d99-47af-8e47-cb6cc4d26821") //ttt
               .AddFacts(new() { ability2 })
               .Configure();
         }
@@ -249,7 +254,7 @@ namespace PrestigePlus.Maneuvers
 
         public static BlueprintFeature CreateCombatTrickery()
         {
-            var icon = FeatureRefs.TrickeryDomainBaseFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.BestJokes.Reference.Get().Icon;
 
             var shoot = ActionsBuilder.New()
                 .Add<ContextActionCombatTrickery>()
@@ -263,6 +268,7 @@ namespace PrestigePlus.Maneuvers
                 .SetIcon(icon)
                 .SetRange(AbilityRange.Personal)
                 .AddAbilityTargetsAround(includeDead: false, radius: 5.Feet(), targetType: TargetType.Enemy)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.SelfTouch)
                 .Configure();
 
             return FeatureConfigurator.New(CombatTrickeryFeat, CombatTrickeryGuid, FeatureGroup.MythicAbility)
