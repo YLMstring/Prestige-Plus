@@ -1,4 +1,4 @@
-# Prestige Plus v1.7.1 for WoTR 
+# Prestige Plus v1.7.2 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - Add grapple mechanic and a bunch of prestige classes!
@@ -23,6 +23,14 @@
 - [Crush Armor](https://www.d20pfsrd.com/feats/combat-feats/weapon-trick-combat/)
 - [Sunder Storm](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/champion/champion-path-abilities/sunder-storm-ex/): When you succeed at a sunder combat maneuver check, you drive the shattered pieces of the item into the flesh of its wearer, dealing 1d6 + a number of points equal to your tier of divine damage. Additionally, as a full-round action, you can attempt a sunder combat maneuver against each opponent within reach.
 - [Tear Apart](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/champion/champion-path-abilities/tear-apart-ex/): Your sunder combat maneuver no longer disables armor, but rends it. If the check is successful, deal your weapon damage to the target and reduce the target’s armor bonus, natural armor bonus, or shield bonus by half your tier (minimum 1). If the creature has an enhancement bonus to the bonus you chose, reduce the normal bonus first, then apply any leftover reduction to the enhancement bonus. You can’t reduce the bonus below 0.
+- [Rhino Charge](https://www.d20pfsrd.com/feats/combat-feats/rhino-charge-combat/)
+- [Minotaur’s Charge](https://www.d20pfsrd.com/feats/general-feats/minotaur-s-charge/)
+- [Quick Bull Rush](https://www.d20pfsrd.com/feats/combat-feats/quick-bull-rush-combat/)
+- [Raging Throw](https://www.d20pfsrd.com/feats/general-feats/raging-throw/)
+- [Hurricane Punch](https://www.d20pfsrd.com/feats/combat-feats/hurricane-punch-combat/)
+- [Knockback](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/knockback-ex/)
+- [Drive Back](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/guardian/): As a full-round action, you can make one melee attack at your highest base attack bonus against each opponent within reach. You must make a separate attack roll against each opponent, then attempt a free bull rush combat maneuver check against each foe that you hit.
+- [Combat Trickery](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/trickster/): Through buffoonery and deceit, you can trick opponents into moving where you want them. You can make a bull rush combat maneuver check to all adjacent opponents as a standard action, using your Bluff check modifier in place of your CMB.
 ### [Grapple Mechanic](https://www.d20pfsrd.com/gamemastering/Combat/#Grapple)
 - This is how I implement it:
 1. There are 3 kinds of grapples in the game. My Grapple Mechanic is very close to tabletop. Shifter grapples stay owlcat-brew but once the shifter takes Grapple (Improved Grapple) feat, their grapple mechanics would be turned into mine. Finally, monster grapples stay the way it is in vanilla.
