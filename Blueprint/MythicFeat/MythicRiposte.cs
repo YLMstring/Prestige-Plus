@@ -4,6 +4,7 @@ using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
+using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,8 @@ namespace PrestigePlus.BasePrestigeEnhance
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
-              .AddAttackBonusConditional(bonus: ContextValues.Rank(), descriptor: ModifierDescriptor.UntypedStackable)
+              //.AddAttackBonusConditional(bonus: ContextValues.Rank(), descriptor: ModifierDescriptor.UntypedStackable)
+              .AddContextStatBonus(StatType.AdditionalAttackBonus, ContextValues.Rank())
               .AddCMBBonus(value: ContextValues.Rank(), descriptor: ModifierDescriptor.UntypedStackable)
               .AddContextRankConfig(ContextRankConfigs.MythicLevel())
               .AddInitiatorAttackRollTrigger(ActionsBuilder.New().RemoveBuff(ExploitiveGuidBuff, toCaster: true).Build(), onOwner: true)

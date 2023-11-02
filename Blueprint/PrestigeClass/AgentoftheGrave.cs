@@ -248,9 +248,11 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(DesecrateDisplayName)
               .SetDescription(DesecrateDescription)
               .SetIcon(icon)
-              .AddAttackBonusConditional(bonus: ContextValues.Constant(1), descriptor: ModifierDescriptor.Profane)
+              //.AddAttackBonusConditional(bonus: ContextValues.Constant(1), descriptor: ModifierDescriptor.Profane)
+              .AddContextStatBonus(StatType.AdditionalAttackBonus, 1, ModifierDescriptor.Profane)
               .AddDamageBonusConditional(bonus: ContextValues.Constant(1), descriptor: ModifierDescriptor.Profane)
-              .AddSavingThrowBonusAgainstAbilityType(bonus: ContextValues.Constant(1), modifierDescriptor: ModifierDescriptor.Profane)
+              //.AddSavingThrowBonusAgainstAbilityType(bonus: ContextValues.Constant(1), modifierDescriptor: ModifierDescriptor.Profane)
+              .AddBuffAllSavesBonus(ModifierDescriptor.Profane, 1)
               .Configure();
 
             var Buff2 = BuffConfigurator.New(DesecrateBuff2, DesecrateGuidBuff2)

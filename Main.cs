@@ -34,7 +34,7 @@ namespace PrestigePlus
     public static bool Enabled;
     private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         private static readonly string RootKey = "mod-menu.test-settings";
-        private static string GetKey(string partialKey)
+        public static string GetKey(string partialKey)
         {
             return $"{RootKey}.{partialKey}";
         }
@@ -89,6 +89,9 @@ namespace PrestigePlus
           .AddButton(
             Button.New(
               Helpers.CreateString("button-desc", "Restart the game to apply changes!"), Helpers.CreateString("button-text", "Do Not Turn Any Chosen Features Off"), onclick))
+          .AddToggle(
+            Toggle.New(GetKey("thc"), defaultValue: false, Helpers.CreateString("toggle-desc34", "Show THC"))
+              .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("grapple"), defaultValue: true, Helpers.CreateString("toggle-desc12", "Grapple Mechanic"))
               .ShowVisualConnection())

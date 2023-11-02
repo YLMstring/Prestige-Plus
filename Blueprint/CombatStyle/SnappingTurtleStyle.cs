@@ -126,7 +126,6 @@ namespace PrestigePlus.Feats
                     .AddPrerequisiteFeature(ImprovedGrapple.StyleGuid)
                     .AddPrerequisiteFeature(StyleGuid)
                     .AddPrerequisiteFeature(ClutchGuid)
-                    //.AddCriticalConfirmationACBonus(4)
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .AddToGroups(FeatureGroup.StyleFeat)
                     .Configure();

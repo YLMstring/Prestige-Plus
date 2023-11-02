@@ -18,6 +18,7 @@ using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Blueprints.Root;
 using Kingmaker.EntitySystem.Stats;
+using Kingmaker.Enums;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.ActivatableAbilities;
@@ -221,7 +222,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(RuggedSteedDisplayName)
               .SetDescription(RuggedSteedDescription)
               .SetIcon(icon)
-              .AddACBonusAgainstFactOwner(bonus: 1, descriptor: Kingmaker.Enums.ModifierDescriptor.NaturalArmor, noFact: true)
+              //.AddACBonusAgainstFactOwner(bonus: 1, descriptor: Kingmaker.Enums.ModifierDescriptor.NaturalArmor, noFact: true)
+              .AddContextStatBonus(StatType.AC, value: 1, descriptor: ModifierDescriptor.NaturalArmor)
               .SetRanks(10)
               .Configure();
 
