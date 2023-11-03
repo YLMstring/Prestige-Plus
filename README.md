@@ -91,6 +91,7 @@
 - The class has 10 levels, but I only implement the first 3 levels because it doesn't have good stuff at higher levels.
 #### Homebrew Options:  
 - Become an Angel of Death early! (require precise shot)
+- Feat: Extra Tyrant’s Discipline
 ### [Scar Seeker Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/scar-seeker/)   
 - Gain spell progression at level 2, 4, 6, 8, 10.
 ### [Shadowdancer Class](https://www.d20pfsrd.com/classes/prestige-classes/core-rulebook/shadowdancer/)   
