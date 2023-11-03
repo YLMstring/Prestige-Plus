@@ -221,13 +221,7 @@ namespace PrestigePlus.Blueprint
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .Configure();
 
-            var abilityTrick = ActivatableAbilityConfigurator.New(BullRushAbility, BullRushAbilityGuid)
-                .SetDisplayName(BullRushDisplayName)
-                .SetDescription(BullRushDescription)
-                .SetIcon(icon)
-                .SetBuff(BuffBullRush)
-                .SetDeactivateImmediately()
-                .SetIsOnByDefault(false)
+            ActivatableAbilityConfigurator.New(BullRushAbility, BullRushAbilityGuid)
                 .Configure();
 
             var action = ActionsBuilder.New().ApplyBuff(BuffBullRush, ContextDuration.Fixed(1)).Build();
@@ -284,12 +278,6 @@ namespace PrestigePlus.Blueprint
               .Configure();
 
             ActivatableAbilityConfigurator.New(BullRushQuickAbility, BullRushQuickAbilityGuid)
-                .SetDisplayName(BullRushQuickDisplayName)
-                .SetDescription(BullRushQuickDescription)
-                .SetIcon(icon)
-                .SetBuff(BuffBullRushQuick)
-                .SetDeactivateImmediately()
-                .SetIsOnByDefault(false)
                 .Configure();
 
             var action = ActionsBuilder.New().ApplyBuff(BuffBullRushQuick, ContextDuration.Fixed(1)).Build();

@@ -162,11 +162,12 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string SanguineAngelTyrantDisciplineDescription = "SanguineAngelTyrantDiscipline.Description";
         public static BlueprintFeatureSelection SATyrantDiscipline()
         {
-            return FeatureSelectionConfigurator.New(TyrantDiscipline, TyrantDisciplineGuid)
+            return FeatureSelectionConfigurator.New(TyrantDiscipline, TyrantDisciplineGuid, FeatureGroup.Feat)
               .SetDisplayName(SanguineAngelTyrantDisciplineDisplayName)
               .SetDescription(SanguineAngelTyrantDisciplineDescription)
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
+              .AddPrerequisiteClassLevel(ArchetypeGuid, 3)
               .AddToAllFeatures(BullRushFeats.DragGuid)
               .AddToAllFeatures(BullRushFeats.AngelGuid)
               .AddToAllFeatures(SAErinyesFury())
@@ -226,17 +227,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         {
             var icon = FeatureRefs.HellsSealFeature.Reference.Get().Icon;
 
-            var ability = AbilityConfigurator.New(AngelDeathbuff, AngelDeathbuffGuid)
-                .SetDisplayName(SanguineAngelAngelDeathDisplayName)
-                .SetDescription(SanguineAngelAngelDeathDescription)
-                .SetIcon(icon)
-                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
-                .SetRange(AbilityRange.Personal)
-                .SetType(AbilityType.Special)
-                .AddAbilityEffectRunAction(ActionsBuilder.New()
-                    .ApplyBuffPermanent(BuffRefs.SeeInvisibilitytBuff.ToString())
-                    .ApplyBuffPermanent(BuffRefs.WingsAngelBlack.ToString())
-                    .Build())
+            AbilityConfigurator.New(AngelDeathbuff, AngelDeathbuffGuid)
                 .Configure();
 
             return FeatureConfigurator.New(AngelDeath, AngelDeathGuid)
@@ -245,6 +236,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .AddFacts(new() { FeatureRefs.OutsiderType.ToString(), FeatureRefs.SubtypeEvil.ToString(), FeatureRefs.SubtypeLawful.ToString(), BuffRefs.WingsAngelBlack.ToString() })
               .AddBuffMovementSpeed(value: 20)
+              .AddCondition(Kingmaker.UnitLogic.UnitCondition.SeeInvisibility)
               .AddAuraFeatureComponent(BuffRefs.SeeInvisibilitytBuff.ToString())
               .AddDamageResistanceEnergy(healOnDamage: false, value: ContextValues.Constant(30), type: Kingmaker.Enums.Damage.DamageEnergyType.Fire)
               .AddPrerequisiteFeature(FeatureRefs.PreciseShot.ToString())
