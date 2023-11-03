@@ -90,7 +90,10 @@ namespace PrestigePlus
             Button.New(
               Helpers.CreateString("button-desc", "Restart the game to apply changes!"), Helpers.CreateString("button-text", "Do Not Turn Any Chosen Features Off"), onclick))
           .AddToggle(
-            Toggle.New(GetKey("thc"), defaultValue: false, Helpers.CreateString("toggle-desc34", "Show THC"))
+            Toggle.New(GetKey("thc"), defaultValue: false, Helpers.CreateString("toggle-desc34", "Estimated THC (not precise)"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("autoheal"), defaultValue: true, Helpers.CreateString("toggle-desc35", "Auto Heal"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("grapple"), defaultValue: true, Helpers.CreateString("toggle-desc12", "Grapple Mechanic"))
@@ -241,6 +244,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("kineticknight"))) { EsotericKnight.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("whitehair"))) { WhiteHairedWitch.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("spire"))) { SpireDefender.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("autoheal"))) { AutoHeal.StyleConfigure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)

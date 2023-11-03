@@ -4799,6 +4799,16 @@
     "Key": "BullRushQuick2.Description",
     "enGB": "You can attempt to Bull Rush your opponent in place of your next melee attack in a full-round attack.",
     "zhCN": "你全回合攻击时可以把下一次近战攻击换成冲撞。"
+  },
+  {
+    "Key": "AutoHeal.Name",
+    "ProcessTemplates": false,
+    "enGB": "Infernal Healing",
+    "zhCN": "炼狱治愈"
+  },
+  {
+    "Key": "AutoHeal.Description",
+    "enGB": "You can fully heal outside of combat by spending gold, as if you buy a wand of infernal healing and use it.",
+    "zhCN": "你在战斗外可以花钱回满血，如同购买并使用炼狱治愈魔杖一般。"
   }
-
 ]
