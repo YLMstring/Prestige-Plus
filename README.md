@@ -1,4 +1,4 @@
-# Prestige Plus v1.7.2 for WoTR 
+# Prestige Plus v1.7.3 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - Add grapple mechanic and a bunch of prestige classes!
@@ -170,6 +170,10 @@
 - Riposte (Mythic): The duelist adds her mythic tier as a bonus on her attack roll when attempting a parry and riposte. This bonus does not stack with Ever Ready mythic feat.
 - Metaphysical Sneak Attack: If the student of war deals sneak attack damage to a target, he can study that target, allowing him to apply his Know Your Enemy effects. Additionally, his sneak attack no longer deals precision damage.
 - Mystic Catalyst: You can use Lesser Spell Synthesis ability at will.
+### Quality of Life Features
+
+- Estimated THC: Show hit chance and spell (not) saved chance in turn based mode. This is not precise because it doesn't take into consideration certain effects such as concealment, spell penetration or conditional save bonus, but still better than nothing, eh? (default off)
+- Infernal Healing: You can fully heal outside of combat by spending gold, as if you buy a wand of infernal healing and use it! (gold : hp = 3:2)
 
 ## Mod Combo
 
