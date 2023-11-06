@@ -296,7 +296,7 @@ namespace PrestigePlus
                         Logger.Info("Already configured Holy Vindicator.");
                         return;
                     }
-                    Initialized = true; PatchHolyVindicator.Patch();
+                    Initialized = true; PatchHolyVindicator.Patch(); PrerequisitePatch.Patch();
                 }
                 catch (Exception e)
                 {

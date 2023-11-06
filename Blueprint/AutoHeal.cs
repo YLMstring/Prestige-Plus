@@ -82,10 +82,12 @@ namespace PrestigePlus.Blueprint
         {
 
             AbilityConfigurator.New(StyleAbility, StyleAbilityGuid)
+                .SetHidden(true)
                 .SetActionBarAutoFillIgnored(true)
                 .Configure();
 
             AbilityConfigurator.New(StyleName, StyleGuid)
+                .SetHidden(true)
                 .SetActionBarAutoFillIgnored(true)
                 .Configure();
 
