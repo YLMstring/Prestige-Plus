@@ -25,19 +25,18 @@ namespace PrestigePlus.CustomAction.ClassRelated
         public override void RunAction()
         {
             var caster = Context.MaybeCaster;
-            if (caster == null || Target.Point == null) { return; }
+            if (caster == null || Target.Point == null || !caster.HasSwiftAction()) { return; }
             if (caster.HasFact(TargetBuff)) { return; }
             var ally = caster;
-            foreach (UnitGroupMemory.UnitInfo unitInfo in caster.Memory.UnitsList)
+            foreach (var unit in caster.Group)
             {
-                UnitEntityData unit = unitInfo.Unit;
                 if (unit.GetFact(TargetBuff)?.MaybeContext?.MaybeCaster == caster)
                 {
                     ally = unit;
                     break;
                 }
             }
-            if (ally != caster && ally.DistanceTo(Target.Point) <= 10.Feet().Meters && caster.DistanceTo(Target.Point) <= caster.CombatSpeedMps) 
+            if (ally != caster && ally.DistanceTo(Target.Point) <= 10.Feet().Meters && caster.DistanceTo(Target.Point) <= caster.CombatSpeedMps * 3f) 
             {
                 var mount = caster.Get<UnitPartRider>()?.SaddledUnit;
                 if (mount != null)

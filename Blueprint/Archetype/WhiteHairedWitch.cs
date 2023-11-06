@@ -120,18 +120,11 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string RogueTraining = "WhiteHairedWitch.RogueTraining";
         private static readonly string RogueTrainingGuid = "{EDE601D1-BB61-4F95-8FEF-665B8A6C0825}";
 
-        internal const string RogueTrainingDisplayName = "WhiteHairedWitchRogueTraining.Name";
-        private const string RogueTrainingDescription = "WhiteHairedWitchRogueTraining.Description";
-
         private static BlueprintFeature CreateRogueTraining()
         {
-            var icon = FeatureRefs.SneakAttack.Reference.Get().Icon;
-
             return FeatureConfigurator.New(RogueTraining, RogueTrainingGuid)
-              .SetDisplayName(RogueTrainingDisplayName)
-              .SetDescription(RogueTrainingDescription)
-              .SetIcon(icon)
-              .AddClassLevelsForPrerequisites(actualClass: ArchetypeGuid, fakeClass: CharacterClassRefs.RogueClass.ToString(), modifier: 1, summand: 0)
+              .AddClassLevelsForPrerequisites(actualClass: CharacterClassRefs.WitchClass.ToString(), fakeClass: CharacterClassRefs.SlayerClass.ToString(), modifier: 1, summand: 0)
+              .SetHideInUI(true)
               .Configure();
         }
 

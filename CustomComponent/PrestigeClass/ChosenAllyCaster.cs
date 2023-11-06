@@ -1,4 +1,5 @@
-﻿using BlueprintCore.Utils;
+﻿using BlueprintCore.Blueprints.References;
+using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.PubSubSystem;
@@ -22,10 +23,9 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
     {
         void IRulebookHandler<RuleCalculateAC>.OnEventAboutToTrigger(RuleCalculateAC evt)
         {
-            if (Owner.HasFact(TargetBuff)) { return; }
-            foreach (UnitGroupMemory.UnitInfo unitInfo in Owner.Memory.UnitsList)
+            if (Owner.HasFact(TargetBuff) || !Owner.HasFact(RageBuff)) { return; }
+            foreach (var unit in Owner.Group)
             {
-                UnitEntityData unit = unitInfo.Unit;
                 if (unit.GetFact(TargetBuff)?.MaybeContext?.MaybeCaster == Owner)
                 {
                     if (unit.DistanceTo(Owner) <= 8.Feet().Meters)
@@ -42,5 +42,6 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
 
         }
         private static readonly BlueprintBuffReference TargetBuff = BlueprintTool.GetRef<BlueprintBuffReference>(FuriousGuardian.ChosenAllyBuffGuid);
+        private static readonly BlueprintBuffReference RageBuff = BlueprintTool.GetRef<BlueprintBuffReference>(BuffRefs.StandartRageBuff.ToString());
     }
 }

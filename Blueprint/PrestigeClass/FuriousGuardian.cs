@@ -109,7 +109,11 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static void DedicationsFeat()
         {
-            var icon = AbilityRefs.LifeBubble.Reference.Get().Icon;
+            var icon = AbilityRefs.HeroicInvocation.Reference.Get().Icon;
+
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.TeamworkFeat)
+                .SetRanks(10)
+                .Configure();
 
             FeatureSelectionConfigurator.New(Dedications, DedicationsGuid)
               .SetDisplayName(DedicationsDisplayName)
@@ -136,7 +140,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string FuriousGuardianClothedCivilizationDescription = "FuriousGuardianClothedCivilization.Description";
         public static BlueprintFeature SAClothedCivilization()
         {
-            var icon = FeatureRefs.IntimidatingProwess.Reference.Get().Icon;
+            var icon = FeatureRefs.ArmorMastery.Reference.Get().Icon;
             return FeatureConfigurator.New(ClothedCivilization, ClothedCivilizationGuid)
               .SetDisplayName(FuriousGuardianClothedCivilizationDisplayName)
               .SetDescription(FuriousGuardianClothedCivilizationDescription)
@@ -162,7 +166,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintFeature DeflectArrowsFeat()
         {
-            var icon = AbilityRefs.MirrorImage.Reference.Get().Icon;
+            var icon = FeatureRefs.DeflectArrows.Reference.Get().Icon;
 
             BuffConfigurator.New(DeflectArrowsBuff, DeflectArrowsBuffGuid)
              .SetDisplayName(DeflectArrowsDisplayName)
@@ -176,7 +180,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(DeflectArrowsDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddDeflectArrows(restriction: Kingmaker.UnitLogic.FactLogic.DeflectArrows.RestrictionType.EmptyHand)
+              .AddFacts(new() { FeatureRefs.DeflectArrows.ToString() })
               .Configure();
         }
 
@@ -191,7 +195,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintFeature UncannyDodge3Feat()
         {
-            var icon = AbilityRefs.MirrorImage.Reference.Get().Icon;
+            var icon = FeatureRefs.UncannyDodge.Reference.Get().Icon;
 
             BuffConfigurator.New(UncannyDodge3Buff, UncannyDodge3BuffGuid)
              .SetDisplayName(UncannyDodge3DisplayName)
@@ -217,7 +221,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string FuriousGuardianUncannyDodge2Description = "FuriousGuardianUncannyDodge2.Description";
         public static BlueprintFeature SAUncannyDodge2()
         {
-            var icon = FeatureRefs.IntimidatingProwess.Reference.Get().Icon;
+            var icon = FeatureRefs.UncannyDodge.Reference.Get().Icon;
             return FeatureConfigurator.New(UncannyDodge2, UncannyDodge2Guid)
               .SetDisplayName(FuriousGuardianUncannyDodge2DisplayName)
               .SetDescription(FuriousGuardianUncannyDodge2Description)
@@ -225,6 +229,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddFacts(new() { FeatureRefs.ImprovedUncannyDodge.ToString() })
               .AddPrerequisiteFeature(FeatureRefs.UncannyDodge.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
               .AddPrerequisiteFeature(FeatureRefs.UncannyDodgeTalent.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+              .AddPrerequisiteNoFeature(FeatureRefs.ImprovedUncannyDodge.ToString())
+              .AddPrerequisiteNoFeature(FeatureRefs.ImprovedUncannyDodgeTalent.ToString())
               .Configure();
         }
 
@@ -235,12 +241,14 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string FuriousGuardianUncannyDodge1Description = "FuriousGuardianUncannyDodge1.Description";
         public static BlueprintFeature SAUncannyDodge1()
         {
-            var icon = FeatureRefs.IntimidatingProwess.Reference.Get().Icon;
+            var icon = FeatureRefs.UncannyDodge.Reference.Get().Icon;
             return FeatureConfigurator.New(UncannyDodge1, UncannyDodge1Guid)
               .SetDisplayName(FuriousGuardianUncannyDodge1DisplayName)
               .SetDescription(FuriousGuardianUncannyDodge1Description)
               .SetIcon(icon)
               .AddFacts(new() { FeatureRefs.UncannyDodge.ToString() })
+              .AddPrerequisiteNoFeature(FeatureRefs.UncannyDodge.ToString())
+              .AddPrerequisiteNoFeature(FeatureRefs.UncannyDodgeTalent.ToString())
               .Configure();
         }
 
@@ -252,7 +260,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintFeatureSelection FormalTrainingFeat()
         {
-            var icon = AbilityRefs.LifeBubble.Reference.Get().Icon;
+            var icon = FeatureRefs.EldritchKnightDiverseTraining.Reference.Get().Icon;
 
             return FeatureSelectionConfigurator.New(FormalTraining, FormalTrainingGuid)
                 .CopyFrom(
@@ -273,7 +281,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintFeatureSelection RagePowerFeat()
         {
-            var icon = AbilityRefs.LifeBubble.Reference.Get().Icon;
+            var icon = FeatureRefs.RenewedVigorFeature.Reference.Get().Icon;
 
             return FeatureSelectionConfigurator.New(RagePower, RagePowerGuid)
                 .CopyFrom(
@@ -293,7 +301,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string FuriousGuardianGreaterRageDescription = "FuriousGuardianGreaterRage.Description";
         public static BlueprintFeature SAGreaterRage()
         {
-            var icon = FeatureRefs.IntimidatingProwess.Reference.Get().Icon;
+            var icon = FeatureRefs.GreaterRageFeature.Reference.Get().Icon;
             return FeatureConfigurator.New(GreaterRage, GreaterRageGuid)
               .SetDisplayName(FuriousGuardianGreaterRageDisplayName)
               .SetDescription(FuriousGuardianGreaterRageDescription)
@@ -310,7 +318,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string FuriousGuardianGuardianRageDescription = "FuriousGuardianGuardianRage.Description";
         public static BlueprintFeature SAGuardianRage()
         {
-            var icon = FeatureRefs.IntimidatingProwess.Reference.Get().Icon;
+            var icon = FeatureRefs.RageFeature.Reference.Get().Icon;
             return FeatureConfigurator.New(GuardianRage, GuardianRageGuid)
               .SetDisplayName(FuriousGuardianGuardianRageDisplayName)
               .SetDescription(FuriousGuardianGuardianRageDescription)
@@ -336,7 +344,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintFeature ChosenAllyFeat()
         {
-            var icon = AbilityRefs.MirrorImage.Reference.Get().Icon;
+            var icon = AbilityRefs.DivineGuardianTrothAbility.Reference.Get().Icon;
 
             var Buff1 = BuffConfigurator.New(ChosenAllyBuff, ChosenAllyBuffGuid)
              .SetDisplayName(ChosenAllyDisplayName)
@@ -346,11 +354,11 @@ namespace PrestigePlus.Blueprint.PrestigeClass
              .AddComponent<ChosenAllyTarget>()
              .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New()
                     .Conditional(ConditionsBuilder.New().CasterHasFact(DeflectArrowsGuid),
-                        ifFalse: ActionsBuilder.New()
+                        ifTrue: ActionsBuilder.New()
                         .ApplyBuff(DeflectArrowsBuffGuid, ContextDuration.Fixed(1))
                         .Build())
                     .Conditional(ConditionsBuilder.New().CasterHasFact(UncannyDodge3Guid),
-                        ifFalse: ActionsBuilder.New()
+                        ifTrue: ActionsBuilder.New()
                         .ApplyBuff(UncannyDodge3BuffGuid, ContextDuration.Fixed(1))
                         .Build())
                     .Build())
@@ -360,7 +368,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                     .Conditional(ConditionsBuilder.New().CasterHasFact(BuffRefs.StandartRageBuff.ToString()),
                         ifFalse: ActionsBuilder.New()
-                        .ApplyBuff(Buff1, ContextDuration.Fixed(1))
+                        .ApplyBuffPermanent(Buff1)
                         .Build())
                     .Build())
                 .SetDisplayName(ChosenAllyDisplayName)
@@ -391,7 +399,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string FuriousGuardianUnbreakableDefenderDescription = "FuriousGuardianUnbreakableDefender.Description";
         public static BlueprintFeature SAUnbreakableDefender()
         {
-            var icon = FeatureRefs.IntimidatingProwess.Reference.Get().Icon;
+            var icon = FeatureRefs.IndomitableWill.Reference.Get().Icon;
             return FeatureConfigurator.New(UnbreakableDefender, UnbreakableDefenderGuid)
               .SetDisplayName(FuriousGuardianUnbreakableDefenderDisplayName)
               .SetDescription(FuriousGuardianUnbreakableDefenderDescription)
@@ -408,7 +416,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string FuriousGuardianGuardedThoughtsDescription = "FuriousGuardianGuardedThoughts.Description";
         public static BlueprintFeature SAGuardedThoughts()
         {
-            var icon = FeatureRefs.IntimidatingProwess.Reference.Get().Icon;
+            var icon = AbilityRefs.MindBlank.Reference.Get().Icon;
             return FeatureConfigurator.New(GuardedThoughts, GuardedThoughtsGuid)
               .SetDisplayName(FuriousGuardianGuardedThoughtsDisplayName)
               .SetDescription(FuriousGuardianGuardedThoughtsDescription)
@@ -429,13 +437,13 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintFeature AdaptableGuardian4Feat()
         {
-            var icon = AbilityRefs.MirrorImage.Reference.Get().Icon;
+            var icon = ActivatableAbilityRefs.DivineGuardianBodyguardAbility.Reference.Get().Icon;
 
             var ability2 = AbilityConfigurator.New(AdaptableGuardian4Ablity2, AdaptableGuardian4Ablity2Guid)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                     .Conditional(ConditionsBuilder.New().CasterHasFact(BuffRefs.StandartRageBuff.ToString()),
                         ifTrue: ActionsBuilder.New()
-                        .ApplyBuff(ChosenAllyBuffGuid, ContextDuration.Fixed(1))
+                        .ApplyBuffPermanent(ChosenAllyBuffGuid)
                         .Build())
                     .Build())
                 .SetDisplayName(AdaptableGuardian4DisplayName)
@@ -469,13 +477,13 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintFeature AdaptableGuardian8Feat()
         {
-            var icon = AbilityRefs.MirrorImage.Reference.Get().Icon;
+            var icon = ActivatableAbilityRefs.DivineGuardianBodyguardAbility.Reference.Get().Icon;
 
             var ability2 = AbilityConfigurator.New(AdaptableGuardian8Ablity2, AdaptableGuardian8Ablity2Guid)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                     .Conditional(ConditionsBuilder.New().CasterHasFact(BuffRefs.StandartRageBuff.ToString()),
                         ifTrue: ActionsBuilder.New()
-                        .ApplyBuff(ChosenAllyBuffGuid, ContextDuration.Fixed(1))
+                        .ApplyBuffPermanent(ChosenAllyBuffGuid)
                         .Build())
                     .Build())
                 .SetDisplayName(AdaptableGuardian8DisplayName)
@@ -509,7 +517,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintFeature TightFollowerFeat()
         {
-            var icon = AbilityRefs.MirrorImage.Reference.Get().Icon;
+            var icon = ActivatableAbilityRefs.DivineGuardianInHarmsWayAbility.Reference.Get().Icon;
 
             var ability2 = AbilityConfigurator.New(TightFollowerAblity2, TightFollowerAblity2Guid)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
@@ -547,7 +555,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintFeature ReactiveStrikeFeat()
         {
-            var icon = AbilityRefs.MirrorImage.Reference.Get().Icon;
+            var icon = FeatureRefs.Opportunist.Reference.Get().Icon;
 
             var Buff1 = BuffConfigurator.New(ReactiveStrikeBuff, ReactiveStrikeBuffGuid)
              .SetDisplayName(ReactiveStrikeDisplayName)

@@ -1,4 +1,5 @@
-﻿using BlueprintCore.Utils;
+﻿using BlueprintCore.Blueprints.References;
+using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules;
@@ -22,7 +23,7 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
         void IRulebookHandler<RuleCalculateAC>.OnEventAboutToTrigger(RuleCalculateAC evt)
         {
             var caster = Buff.Context?.MaybeCaster;
-            if (caster == null || caster.DistanceTo(Owner) > 8.Feet().Meters) return;
+            if (caster == null || !caster.HasFact(RageBuff) || caster.DistanceTo(Owner) > 8.Feet().Meters) return;
             int bonus = 1;
             if (caster.Progression.GetClassLevel(guard) >= 5)
             {
@@ -43,7 +44,7 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
         void IRulebookHandler<RuleSavingThrow>.OnEventAboutToTrigger(RuleSavingThrow evt)
         {
             var caster = Buff.Context?.MaybeCaster;
-            if (caster == null || caster.DistanceTo(Owner) > 8.Feet().Meters || !caster.Memory.Contains(Owner)) return;
+            if (caster == null || !caster.HasFact(RageBuff) || caster.DistanceTo(Owner) > 8.Feet().Meters) return;
             int bonus = 1;
             if (caster.Progression.GetClassLevel(guard) >= 5)
             {
@@ -62,6 +63,6 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
         }
 
         private static readonly BlueprintCharacterClassReference guard = BlueprintTool.GetRef<BlueprintCharacterClassReference>(FuriousGuardian.ArchetypeGuid);
-
+        private static readonly BlueprintBuffReference RageBuff = BlueprintTool.GetRef<BlueprintBuffReference>(BuffRefs.StandartRageBuff.ToString());
     }
 }
