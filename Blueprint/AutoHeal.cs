@@ -77,5 +77,18 @@ namespace PrestigePlus.Blueprint
                     .Configure();
 
         }
+
+        public static void DisableConfigure()
+        {
+
+            AbilityConfigurator.New(StyleAbility, StyleAbilityGuid)
+                .SetActionBarAutoFillIgnored(true)
+                .Configure();
+
+            AbilityConfigurator.New(StyleName, StyleGuid)
+                .SetActionBarAutoFillIgnored(true)
+                .Configure();
+
+        }
     }
 }

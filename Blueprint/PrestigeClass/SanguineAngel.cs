@@ -162,7 +162,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string SanguineAngelTyrantDisciplineDescription = "SanguineAngelTyrantDiscipline.Description";
         public static BlueprintFeatureSelection SATyrantDiscipline()
         {
-            return FeatureSelectionConfigurator.New(TyrantDiscipline, TyrantDisciplineGuid, FeatureGroup.Feat)
+            var feat = FeatureSelectionConfigurator.New(TyrantDiscipline, TyrantDisciplineGuid)
               .SetDisplayName(SanguineAngelTyrantDisciplineDisplayName)
               .SetDescription(SanguineAngelTyrantDisciplineDescription)
               .SetIgnorePrerequisites(false)
@@ -174,6 +174,12 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddToAllFeatures(SAFuriousHuntress())
               .AddToAllFeatures(SAKinslayer())
               .Configure();
+
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.BasicFeatSelection)
+                .AddToAllFeatures(feat)
+                .Configure();
+
+            return feat;
         }
 
         private const string ArmoredAngel = "SanguineAngel.ArmoredAngel";

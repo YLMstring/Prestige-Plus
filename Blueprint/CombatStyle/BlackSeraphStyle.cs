@@ -88,6 +88,7 @@ namespace PrestigePlus.Feats
                     .AddFacts(new() { ability })
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .AddToGroups(FeatureGroup.StyleFeat)
+                    .AddToIsPrerequisiteFor(MalevolenceGuid)
                     .Configure();
 
         }
@@ -116,6 +117,7 @@ namespace PrestigePlus.Feats
                             .EnchantWornItem(ContextDuration.Fixed(1), WeaponEnchantmentRefs.Holy.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.SecondaryHand)
                             .Build())
                         .Build())
+                    .AddToIsPrerequisiteFor(AnnihilationGuid)
                     .Configure();
 
         }

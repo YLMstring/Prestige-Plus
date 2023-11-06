@@ -24,6 +24,7 @@ using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.Items;
 using BlueprintCore.Blueprints.References;
 using Kingmaker.Localization;
+using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 
 namespace PrestigePlus.HarmonyFix
 {
@@ -36,7 +37,7 @@ namespace PrestigePlus.HarmonyFix
         {
             try
             {
-                if (!ModMenu.ModMenu.GetSettingValue<bool>(Main.GetKey("thc"))) { return; }
+                if (!ModMenu.ModMenu.GetSettingValue<bool>(Main.GetKey("thc")) || !CombatController.IsInTurnBasedCombat()) { return; }
                 var caster = CombatController.SelectedUnit;
                 if (cursorType == CursorRoot.CursorType.AttackCursor || cursorType == CursorRoot.CursorType.RangeAttackCursor) 
                 {
@@ -50,7 +51,7 @@ namespace PrestigePlus.HarmonyFix
                     int chance = 105 - 5 * (ac - ab);
                     chance = Math.Max(5, chance);
                     chance = Math.Min(95, chance);
-                    string thc = chance.ToString() + "%";
+                    string thc = chance.ToString() + "% ";
                     if (text == null)
                     {
                         text = thc;
@@ -67,29 +68,14 @@ namespace PrestigePlus.HarmonyFix
                     if (ability == null || target == null) { return; }
                     int chance = 100;
                     int Touchchance = 100;
-                    string save = ability.Blueprint.LocalizedSavingThrow?.LoadString(LocalizationManager.CurrentPack, Kingmaker.Localization.Shared.Locale.enGB);
-                    if (save != null)
+                    var save = ability.Blueprint.LocalizedSavingThrow;
+                    int stat = GetSavestat(save, target);
+                    if (stat != 100)
                     {
-                        int stat = 100;
-                        if (save.StartsWith("F"))
-                        {
-                            stat = target.Stats.SaveFortitude;
-                        }
-                        else if (save.StartsWith("R"))
-                        {
-                            stat = target.Stats.SaveReflex;
-                        }
-                        else if (save.StartsWith("W"))
-                        {
-                            stat = target.Stats.SaveWill;
-                        }
-                        if (stat != 100)
-                        {
-                            int dc = ability.CalculateParams().DC;
-                            chance = 5 * (dc - stat) - 5;
-                            chance = Math.Max(5, chance);
-                            chance = Math.Min(95, chance);
-                        }
+                        int dc = ability.CalculateParams().DC;
+                        chance = 5 * (dc - stat) - 5;
+                        chance = Math.Max(5, chance);
+                        chance = Math.Min(95, chance);
                     }
                     ItemEntityWeapon weapon = null;
                     if (ability.Blueprint.GetComponent<AbilityEffectStickyTouch>() || ability.Blueprint.GetComponent<AbilityDeliverTouch>())
@@ -114,6 +100,7 @@ namespace PrestigePlus.HarmonyFix
                         Touchchance = 105 - 5 * (ac - ab);
                         Touchchance = Math.Max(5, Touchchance);
                         Touchchance = Math.Min(95, Touchchance);
+                        weapon.Dispose();
                     }
                     string thc = "";
                     if (chance < 100)
@@ -135,6 +122,25 @@ namespace PrestigePlus.HarmonyFix
                 }              
             }
             catch (Exception ex) { Logger.Error("fail THC" + cursorType.ToString(), ex); }
+        }
+
+        private static int GetSavestat(LocalizedString save, UnitEntityData target)
+        {
+            if (save == null || save == "") { return 100; }
+            var saveStr = save.ToString().First();
+            if (saveStr == AbilityRefs.FlareBurst.Reference.Get().LocalizedSavingThrow.ToString().First())
+            {
+                return target.Stats.SaveFortitude;
+            }
+            else if (saveStr == AbilityRefs.Grease.Reference.Get().LocalizedSavingThrow.ToString().First())
+            {
+                return target.Stats.SaveReflex;
+            }
+            else if (saveStr == AbilityRefs.Daze.Reference.Get().LocalizedSavingThrow.ToString().First())
+            {
+                return target.Stats.SaveWill;
+            }
+            return 100;
         }
     }
 }
