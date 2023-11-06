@@ -123,6 +123,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("kineticknight"), defaultValue: true, Helpers.CreateString("toggle-desc31", "Esoteric Knight"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("furious"), defaultValue: true, Helpers.CreateString("toggle-desc36", "Furious Guardian"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("halfling"), defaultValue: true, Helpers.CreateString("toggle-desc21", "Halfling Opportunist"))
               .ShowVisualConnection())
           .AddToggle(
@@ -245,6 +248,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("whitehair"))) { WhiteHairedWitch.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("spire"))) { SpireDefender.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("autoheal"))) { AutoHeal.StyleConfigure(); } else { AutoHeal.DisableConfigure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("furious"))) { FuriousGuardian.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)

@@ -58,7 +58,7 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToAddFeatures(4, CreateHairTrip(), CreateHairReach())
             .AddToAddFeatures(6, CreateHairPull())
             .AddToAddFeatures(8, CreateHairStrangle(), HairReachGuid)
-            .AddToAddFeatures(10, FeatureSelectionRefs.RogueTalentSelection.ToString())
+            .AddToAddFeatures(10, FeatureSelectionRefs.RogueTalentSelection.ToString(), CreateRogueTraining())
             .AddToAddFeatures(12, FeatureSelectionRefs.RogueTalentSelection.ToString(), HairReachGuid)
             .AddToAddFeatures(14, FeatureSelectionRefs.RogueTalentSelection.ToString())
             .AddToAddFeatures(16, FeatureSelectionRefs.RogueTalentSelection.ToString(), HairReachGuid)
@@ -114,6 +114,24 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddFacts(new() { PinAbilityGuid1, TieUpAbilityGuid, ReadyAbilityGuid, ReleaseAbilityGuid })
               .AddComponent<AddInitiatorAttackWithWeaponTrigger>(c => { c.Action = grapple; c.OnlyHit = true; c.CheckWeaponCategory = true; c.Category = WeaponCategory.Gore; c.TriggerBeforeAttack = false; c.IgnoreAutoHit = true; })
               .AddManeuverTrigger(ActionsBuilder.New().CastSpell(abilityunlimited).Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple, false)
+              .Configure();
+        }
+
+        private const string RogueTraining = "WhiteHairedWitch.RogueTraining";
+        private static readonly string RogueTrainingGuid = "{EDE601D1-BB61-4F95-8FEF-665B8A6C0825}";
+
+        internal const string RogueTrainingDisplayName = "WhiteHairedWitchRogueTraining.Name";
+        private const string RogueTrainingDescription = "WhiteHairedWitchRogueTraining.Description";
+
+        private static BlueprintFeature CreateRogueTraining()
+        {
+            var icon = FeatureRefs.SneakAttack.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(RogueTraining, RogueTrainingGuid)
+              .SetDisplayName(RogueTrainingDisplayName)
+              .SetDescription(RogueTrainingDescription)
+              .SetIcon(icon)
+              .AddClassLevelsForPrerequisites(actualClass: ArchetypeGuid, fakeClass: CharacterClassRefs.RogueClass.ToString(), modifier: 1, summand: 0)
               .Configure();
         }
 

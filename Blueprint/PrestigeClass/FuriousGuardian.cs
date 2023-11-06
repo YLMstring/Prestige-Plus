@@ -12,9 +12,11 @@ using BlueprintCore.Conditions.Builder.ContextEx;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Blueprints.Root;
 using Kingmaker.EntitySystem.Stats;
+using Kingmaker.Enums;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using PrestigePlus.CustomAction.ClassRelated;
@@ -47,14 +49,16 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             BlueprintProgression progression =
             ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
             .SetClasses(ArchetypeGuid)
-            .AddToLevelEntry(1)
-            .AddToLevelEntry(2)
-            .AddToLevelEntry(3, GuardianRageGuid)
-            .AddToLevelEntry(4)
-            .AddToLevelEntry(6)
-            .AddToLevelEntry(8)
-            .AddToLevelEntry(9, GuardianRageGuid)
-            .AddToLevelEntry(10)
+            .AddToLevelEntry(1, ChosenAllyFeat(), DedicationsGuid, SAGuardianRage())
+            .AddToLevelEntry(2, SAGuardedThoughts())
+            .AddToLevelEntry(3, DedicationsGuid)
+            .AddToLevelEntry(4, AdaptableGuardian4Feat())
+            .AddToLevelEntry(5, DedicationsGuid)
+            .AddToLevelEntry(6, TightFollowerFeat())
+            .AddToLevelEntry(7, DedicationsGuid)
+            .AddToLevelEntry(8, AdaptableGuardian8Feat(), ReactiveStrikeFeat())
+            .AddToLevelEntry(9, DedicationsGuid)
+            .AddToLevelEntry(10, SAUnbreakableDefender())
             .SetRanks(1)
             .SetIsClassFeature(true)
             .SetDisplayName("")
@@ -113,13 +117,189 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
-              .AddToAllFeatures(FeatureRefs.CombatCasting.ToString())
-              .AddToAllFeatures(FeatureRefs.ExtraRage.ToString())
-              .AddToAllFeatures(FeatureRefs.ExtraRageInstinctualWarrior.ToString())
-              .AddToAllFeatures(FeatureRefs.PointBlankShot.ToString())
-              .AddToAllFeatures(FeatureRefs.PreciseShot.ToString())
-              .AddToAllFeatures(ParametrizedFeatureRefs.SpellFocus.ToString())
-              .AddToAllFeatures(FeatureRefs.SpellPenetration.ToString())
+              .AddToAllFeatures(SAClothedCivilization())
+              .AddToAllFeatures(DeflectArrowsFeat())
+              .AddToAllFeatures(FormalTrainingFeat())
+              .AddToAllFeatures(SAGreaterRage())
+              .AddToAllFeatures(RagePowerFeat())
+              .AddToAllFeatures(FeatureSelectionRefs.TeamworkFeat.ToString())
+              .AddToAllFeatures(SAUncannyDodge1())
+              .AddToAllFeatures(SAUncannyDodge2())
+              .AddToAllFeatures(UncannyDodge3Feat())
+              .Configure();
+        }
+
+        private const string ClothedCivilization = "FuriousGuardian.ClothedCivilization";
+        private static readonly string ClothedCivilizationGuid = "{CFB68B78-0BC8-46AD-AAF4-1FA5555D8D13}";
+
+        internal const string FuriousGuardianClothedCivilizationDisplayName = "FuriousGuardianClothedCivilization.Name";
+        private const string FuriousGuardianClothedCivilizationDescription = "FuriousGuardianClothedCivilization.Description";
+        public static BlueprintFeature SAClothedCivilization()
+        {
+            var icon = FeatureRefs.IntimidatingProwess.Reference.Get().Icon;
+            return FeatureConfigurator.New(ClothedCivilization, ClothedCivilizationGuid)
+              .SetDisplayName(FuriousGuardianClothedCivilizationDisplayName)
+              .SetDescription(FuriousGuardianClothedCivilizationDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteClassLevel(ArchetypeGuid, 5)
+              .AddPrerequisiteFeature(FeatureRefs.FastMovement.ToString())
+              .AddSpeedBonusInArmorCategory(10, new Kingmaker.Blueprints.Items.Armors.ArmorProficiencyGroup[] { Kingmaker.Blueprints.Items.Armors.ArmorProficiencyGroup.Heavy }, Kingmaker.Enums.ModifierDescriptor.UntypedStackable, false)
+              .AddFacts(new() { FeatureRefs.HeavyArmorProficiency.ToString() })
+              .AddContextStatBonus(stat: StatType.CheckDiplomacy, value: ContextValues.Rank(), descriptor: ModifierDescriptor.UntypedStackable)
+              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new[] { ArchetypeGuid }))
+              .SetReapplyOnLevelUp(true)
+              .Configure();
+        }
+
+        private const string DeflectArrows = "FuriousGuardian.DeflectArrows";
+        public static readonly string DeflectArrowsGuid = "{F67A55D9-8458-4E47-97B6-757F904D33EE}";
+
+        private const string DeflectArrowsBuff = "FuriousGuardian.DeflectArrowsBuff";
+        public static readonly string DeflectArrowsBuffGuid = "{B1B7D9E0-1776-4D49-A600-BB6B2EAB031E}";
+
+        internal const string DeflectArrowsDisplayName = "FuriousGuardianDeflectArrows.Name";
+        private const string DeflectArrowsDescription = "FuriousGuardianDeflectArrows.Description";
+
+        public static BlueprintFeature DeflectArrowsFeat()
+        {
+            var icon = AbilityRefs.MirrorImage.Reference.Get().Icon;
+
+            BuffConfigurator.New(DeflectArrowsBuff, DeflectArrowsBuffGuid)
+             .SetDisplayName(DeflectArrowsDisplayName)
+             .SetDescription(DeflectArrowsDescription)
+             .SetIcon(icon)
+             .AddDeflectArrows(restriction: Kingmaker.UnitLogic.FactLogic.DeflectArrows.RestrictionType.EmptyHand)
+             .Configure();
+
+            return FeatureConfigurator.New(DeflectArrows, DeflectArrowsGuid)
+              .SetDisplayName(DeflectArrowsDisplayName)
+              .SetDescription(DeflectArrowsDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddDeflectArrows(restriction: Kingmaker.UnitLogic.FactLogic.DeflectArrows.RestrictionType.EmptyHand)
+              .Configure();
+        }
+
+        private const string UncannyDodge3 = "FuriousGuardian.UncannyDodge3";
+        public static readonly string UncannyDodge3Guid = "{7BA3D31B-9A8A-430C-83FB-808B44617349}";
+
+        private const string UncannyDodge3Buff = "FuriousGuardian.UncannyDodge3Buff";
+        public static readonly string UncannyDodge3BuffGuid = "{72BED8B4-5E6B-4CC0-BC95-73F4948FC2C5}";
+
+        internal const string UncannyDodge3DisplayName = "FuriousGuardianUncannyDodge3.Name";
+        private const string UncannyDodge3Description = "FuriousGuardianUncannyDodge3.Description";
+
+        public static BlueprintFeature UncannyDodge3Feat()
+        {
+            var icon = AbilityRefs.MirrorImage.Reference.Get().Icon;
+
+            BuffConfigurator.New(UncannyDodge3Buff, UncannyDodge3BuffGuid)
+             .SetDisplayName(UncannyDodge3DisplayName)
+             .SetDescription(UncannyDodge3Description)
+             .SetIcon(icon)
+             .AddMechanicsFeature(Kingmaker.UnitLogic.FactLogic.AddMechanicsFeature.MechanicsFeatureType.CannotBeFlanked)
+             .Configure();
+
+            return FeatureConfigurator.New(UncannyDodge3, UncannyDodge3Guid)
+              .SetDisplayName(UncannyDodge3DisplayName)
+              .SetDescription(UncannyDodge3Description)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddPrerequisiteFeature(FeatureRefs.ImprovedUncannyDodge.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+              .AddPrerequisiteFeature(FeatureRefs.ImprovedUncannyDodgeTalent.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+              .Configure();
+        }
+
+        private const string UncannyDodge2 = "FuriousGuardian.UncannyDodge2";
+        private static readonly string UncannyDodge2Guid = "{C136C02B-5841-4007-86C6-945E120932A2}";
+
+        internal const string FuriousGuardianUncannyDodge2DisplayName = "FuriousGuardianUncannyDodge2.Name";
+        private const string FuriousGuardianUncannyDodge2Description = "FuriousGuardianUncannyDodge2.Description";
+        public static BlueprintFeature SAUncannyDodge2()
+        {
+            var icon = FeatureRefs.IntimidatingProwess.Reference.Get().Icon;
+            return FeatureConfigurator.New(UncannyDodge2, UncannyDodge2Guid)
+              .SetDisplayName(FuriousGuardianUncannyDodge2DisplayName)
+              .SetDescription(FuriousGuardianUncannyDodge2Description)
+              .SetIcon(icon)
+              .AddFacts(new() { FeatureRefs.ImprovedUncannyDodge.ToString() })
+              .AddPrerequisiteFeature(FeatureRefs.UncannyDodge.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+              .AddPrerequisiteFeature(FeatureRefs.UncannyDodgeTalent.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+              .Configure();
+        }
+
+        private const string UncannyDodge1 = "FuriousGuardian.UncannyDodge1";
+        private static readonly string UncannyDodge1Guid = "{09266838-FD48-4F12-8568-0761D22E90F6}";
+
+        internal const string FuriousGuardianUncannyDodge1DisplayName = "FuriousGuardianUncannyDodge1.Name";
+        private const string FuriousGuardianUncannyDodge1Description = "FuriousGuardianUncannyDodge1.Description";
+        public static BlueprintFeature SAUncannyDodge1()
+        {
+            var icon = FeatureRefs.IntimidatingProwess.Reference.Get().Icon;
+            return FeatureConfigurator.New(UncannyDodge1, UncannyDodge1Guid)
+              .SetDisplayName(FuriousGuardianUncannyDodge1DisplayName)
+              .SetDescription(FuriousGuardianUncannyDodge1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { FeatureRefs.UncannyDodge.ToString() })
+              .Configure();
+        }
+
+        private const string FormalTraining = "FuriousGuardian.FormalTraining";
+        private static readonly string FormalTrainingGuid = "{C3977719-0C91-449C-9F69-B3DA14579FA0}";
+
+        internal const string FormalTrainingDisplayName = "GuardianFormalTraining.Name";
+        private const string FormalTrainingDescription = "GuardianFormalTraining.Description";
+
+        public static BlueprintFeatureSelection FormalTrainingFeat()
+        {
+            var icon = AbilityRefs.LifeBubble.Reference.Get().Icon;
+
+            return FeatureSelectionConfigurator.New(FormalTraining, FormalTrainingGuid)
+                .CopyFrom(
+                FeatureSelectionRefs.CombatTrick)
+              .SetDisplayName(FormalTrainingDisplayName)
+              .SetDescription(FormalTrainingDescription)
+              .SetIcon(icon)
+              .AddClassLevelsForPrerequisites(actualClass: ArchetypeGuid, fakeClass: CharacterClassRefs.FighterClass.ToString(), modifier: 1, summand: 0)
+              .AddPrerequisiteClassLevel(ArchetypeGuid, 3)
+              .Configure(delayed: true);
+        }
+
+        private const string RagePower = "FuriousGuardian.RagePower";
+        private static readonly string RagePowerGuid = "{7A4CEFF3-564F-4A6E-9072-A142ABBAC954}";
+
+        internal const string RagePowerDisplayName = "GuardianRagePower.Name";
+        private const string RagePowerDescription = "GuardianRagePower.Description";
+
+        public static BlueprintFeatureSelection RagePowerFeat()
+        {
+            var icon = AbilityRefs.LifeBubble.Reference.Get().Icon;
+
+            return FeatureSelectionConfigurator.New(RagePower, RagePowerGuid)
+                .CopyFrom(
+                FeatureSelectionRefs.RagePowerSelection)
+              .SetDisplayName(RagePowerDisplayName)
+              .SetDescription(RagePowerDescription)
+              .SetIcon(icon)
+              .AddClassLevelsForPrerequisites(actualClass: ArchetypeGuid, fakeClass: CharacterClassRefs.BarbarianClass.ToString(), modifier: 1, summand: 0)
+              .SetRanks(3)
+              .Configure(delayed: true);
+        }
+
+        private const string GreaterRage = "FuriousGuardian.GreaterRage";
+        private static readonly string GreaterRageGuid = "{F0D055C1-D0EE-4AB7-B1C7-15C89AA4F13F}";
+
+        internal const string FuriousGuardianGreaterRageDisplayName = "FuriousGuardianGreaterRage.Name";
+        private const string FuriousGuardianGreaterRageDescription = "FuriousGuardianGreaterRage.Description";
+        public static BlueprintFeature SAGreaterRage()
+        {
+            var icon = FeatureRefs.IntimidatingProwess.Reference.Get().Icon;
+            return FeatureConfigurator.New(GreaterRage, GreaterRageGuid)
+              .SetDisplayName(FuriousGuardianGreaterRageDisplayName)
+              .SetDescription(FuriousGuardianGreaterRageDescription)
+              .SetIcon(icon)
+              .AddFacts(new() { FeatureRefs.GreaterRageFeature.ToString() })
+              .AddPrerequisiteClassLevel(ArchetypeGuid, 7)
               .Configure();
         }
 
@@ -164,6 +344,16 @@ namespace PrestigePlus.Blueprint.PrestigeClass
              .SetIcon(icon)
              .AddUniqueBuff()
              .AddComponent<ChosenAllyTarget>()
+             .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New()
+                    .Conditional(ConditionsBuilder.New().CasterHasFact(DeflectArrowsGuid),
+                        ifFalse: ActionsBuilder.New()
+                        .ApplyBuff(DeflectArrowsBuffGuid, ContextDuration.Fixed(1))
+                        .Build())
+                    .Conditional(ConditionsBuilder.New().CasterHasFact(UncannyDodge3Guid),
+                        ifFalse: ActionsBuilder.New()
+                        .ApplyBuff(UncannyDodge3BuffGuid, ContextDuration.Fixed(1))
+                        .Build())
+                    .Build())
              .Configure();
 
             var ability2 = AbilityConfigurator.New(ChosenAllyAblity2, ChosenAllyAblity2Guid)
@@ -343,6 +533,37 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddFacts(new() { ability2 })
+              .Configure();
+        }
+
+        private const string ReactiveStrike = "FuriousGuardian.ReactiveStrike";
+        public static readonly string ReactiveStrikeGuid = "{B9874134-791F-45F9-9626-E1100A5D4EAE}";
+
+        private const string ReactiveStrikeBuff = "FuriousGuardian.ReactiveStrikeBuff";
+        public static readonly string ReactiveStrikeBuffGuid = "{EDE1D29E-E2FE-4803-8347-05E841628BA5}";
+
+        internal const string ReactiveStrikeDisplayName = "FuriousGuardianReactiveStrike.Name";
+        private const string ReactiveStrikeDescription = "FuriousGuardianReactiveStrike.Description";
+
+        public static BlueprintFeature ReactiveStrikeFeat()
+        {
+            var icon = AbilityRefs.MirrorImage.Reference.Get().Icon;
+
+            var Buff1 = BuffConfigurator.New(ReactiveStrikeBuff, ReactiveStrikeBuffGuid)
+             .SetDisplayName(ReactiveStrikeDisplayName)
+             .SetDescription(ReactiveStrikeDescription)
+             .SetIcon(icon)
+             .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New().RemoveSelf().Build())
+             .Configure();
+
+            return FeatureConfigurator.New(ReactiveStrike, ReactiveStrikeGuid)
+              .SetDisplayName(ReactiveStrikeDisplayName)
+              .SetDescription(ReactiveStrikeDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddInitiatorAttackWithWeaponTrigger(onAttackOfOpportunity: true, triggerBeforeAttack: true, 
+                    actionsOnInitiator: true, action: ActionsBuilder.New().ApplyBuff(Buff1, ContextDuration.Fixed(1)).Build())
+              .AddComponent<ReactiveStrikeOpp>()
               .Configure();
         }
     }
