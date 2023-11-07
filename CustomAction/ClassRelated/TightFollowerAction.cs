@@ -1,4 +1,5 @@
-﻿using BlueprintCore.Utils;
+﻿using BlueprintCore.Blueprints.References;
+using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.UnitLogic;
@@ -25,7 +26,7 @@ namespace PrestigePlus.CustomAction.ClassRelated
         public override void RunAction()
         {
             var caster = Context.MaybeCaster;
-            if (caster == null || Target.Point == null || !caster.HasSwiftAction()) { return; }
+            if (caster == null || Target.Point == null || !caster.HasSwiftAction() || !caster.HasFact(RageBuff)) { return; }
             if (caster.HasFact(TargetBuff)) { return; }
             var ally = caster;
             foreach (var unit in caster.Group)
@@ -51,5 +52,6 @@ namespace PrestigePlus.CustomAction.ClassRelated
             }
         }
         private static readonly BlueprintBuffReference TargetBuff = BlueprintTool.GetRef<BlueprintBuffReference>(FuriousGuardian.ChosenAllyBuffGuid);
+        private static readonly BlueprintBuffReference RageBuff = BlueprintTool.GetRef<BlueprintBuffReference>(BuffRefs.StandartRageBuff.ToString());
     }
 }

@@ -4810,5 +4810,204 @@
     "Key": "AutoHeal.Description",
     "enGB": "You can fully heal outside of combat by spending gold, as if you buy a wand of infernal healing and use it.",
     "zhCN": "你在战斗外可以花钱回满血，如同购买并使用炼狱治愈魔杖一般。"
+  },
+  {
+    "Key": "FuriousGuardian.Name",
+    "ProcessTemplates": false,
+    "enGB": "Furious Guardian",
+    "zhCN": "狂怒卫士"
+  },
+  {
+    "Key": "FuriousGuardian.Description",
+    "enGB": "After centuries of raiding and pillaging throughout Avistan, the Ulfen have earned their reputation for ferocity and fearlessness. Though seemingly at odds with this perception of barbarism, Ulfen are also known for their staunch loyalty, strong sense of honor, and unyielding resolve. The combination of these reputations is in large part why they have become desired as bodyguards throughout the region.",
+    "zhCN": "在遍及阿维斯坦的地域劫掠了一个世纪之后，乌尔芬人赢得了残暴与无畏的声誉。尽管看起来与这种野蛮的认知不太符合，不过乌尔芬人确实也因为坚定的忠诚、强烈的荣誉感和不屈的决心而闻名于世。这些名气结合在一起，很大程度解释了为何乌尔芬人成了内海地区内最为理想的保镖人选。"
+  },
+  {
+    "Key": "GuardianDedications.Name",
+    "ProcessTemplates": false,
+    "enGB": "Guard Dedications",
+    "zhCN": "护卫奉献"
+  },
+  {
+    "Key": "GuardianDedications.Description",
+    "enGB": "At 1st level, and at every 2 levels thereafter, a furious guardian chooses a guard dedication from the list below. A furious guardian cannot choose a guard dedication more than once unless the dedication specifies otherwise.",
+    "zhCN": "1级起以及之后的每2个等级，狂怒卫士都能从下面的列表中选择一种护卫奉献。除非另有说明，否则狂怒卫士选择相同护卫奉献的次数不能超过1次。"
+  },
+  {
+    "Key": "FuriousGuardianClothedCivilization.Name",
+    "ProcessTemplates": false,
+    "enGB": "Clothed in Civilization",
+    "zhCN": "文明外衣"
+  },
+  {
+    "Key": "FuriousGuardianClothedCivilization.Description",
+    "enGB": "The furious guardian’s peculiar nature makes her an object of intrigue. Civilized people are fascinated by the “tamed” barbarian, while more barbaric cultures are fascinated by her choice to turn her back on her heritage. The furious guardian gains a bonus equal to her class level on Diplomacy checks, gains proficiency in heavy armor and may use her fast movement ability while wearing heavy armor.",
+    "zhCN": "狂怒卫士那独特的本质使得自身成为了易于吸引人的对象。文明人着迷于被驯服的蛮人，而更为野蛮的族群则会好奇她为何背弃传统的道路。狂怒卫士的交涉检定获得等同于其职业等级的加值，获得重甲擅长并可以穿重甲来使用野蛮人的快速移动能力。"
+  },
+  {
+    "Key": "FuriousGuardianDeflectArrows.Name",
+    "ProcessTemplates": false,
+    "enGB": "Deflect Arrows",
+    "zhCN": "拨挡飞箭"
+  },
+  {
+    "Key": "FuriousGuardianDeflectArrows.Description",
+    "enGB": "The furious guardian gains Deflect Arrows as a bonus feat, her chosen ally also gains the benefit of the feat. The furious guardian does not need to meet the prerequisites for this bonus feat.",
+    "zhCN": "狂怒卫士获得拨挡飞箭作为奖励专长。她护卫盟友的目标也能够使用该能力。狂怒卫士不需要满足这个奖励专长的先决条件。"
+  },
+  {
+    "Key": "FuriousGuardianUncannyDodge3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Uncanny Dodge",
+    "zhCN": "直觉闪避"
+  },
+  {
+    "Key": "FuriousGuardianUncannyDodge3.Description",
+    "enGB": "If she already has improved uncanny dodge, taking this dedication grants the effects of improved uncanny dodge to her chosen ally.",
+    "zhCN": "若她已经具有了精通直觉闪避，并且再选择了该项护卫奉献，她护卫盟友的目标也会获得精通直觉闪避的效果。"
+  },
+  {
+    "Key": "FuriousGuardianUncannyDodge2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Uncanny Dodge",
+    "zhCN": "直觉闪避"
+  },
+  {
+    "Key": "FuriousGuardianUncannyDodge2.Description",
+    "enGB": "If the guard already has uncanny dodge from another source (or a previous instance of this dedication), she instead gains improved uncanny dodge.",
+    "zhCN": "若狂怒卫士已经从其他来源获得了直觉闪避（或者先前已经选择了该项护卫奉献），那么她就会获得精通直觉闪避作为替代。"
+  },
+  {
+    "Key": "FuriousGuardianUncannyDodge1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Uncanny Dodge",
+    "zhCN": "直觉闪避"
+  },
+  {
+    "Key": "FuriousGuardianUncannyDodge1.Description",
+    "enGB": "The furious guardian gains uncanny dodge, as the barbarian class feature of the same name.",
+    "zhCN": "狂怒卫士获得直觉闪避，就如同野蛮人同名职业能力一般。"
+  },
+  {
+    "Key": "GuardianFormalTraining.Name",
+    "ProcessTemplates": false,
+    "enGB": "Formal Training",
+    "zhCN": "正规训练"
+  },
+  {
+    "Key": "GuardianFormalTraining.Description",
+    "enGB": "When selecting this dedication, the furious guardian gains a bonus feat. She must select this feat from the list of fighter bonus feats. Additionally, the furious guardian adds her level to any levels of fighter she has for the purpose of meeting the prerequisites for feats (if she has no fighter levels, treat her furious guardian levels as fighter levels). The furious guardian must be at least 3rd level to select this dedication.",
+    "zhCN": "在选择该项护卫奉献时，狂怒卫士获得一个奖励专长。她必须在战士奖励专长列表中选择这项专长。此外，狂怒卫士将她的等级加到她所具有的战士等级之上，并依此来判断是否满足专长的先决条件（若她不具有战士等级，则将狂怒卫士等级作为战士等级来判断）。狂怒卫士必须至少达到3级才能选择该项护卫奉献。"
+  },
+  {
+    "Key": "GuardianRagePower.Name",
+    "ProcessTemplates": false,
+    "enGB": "Rage Power",
+    "zhCN": "狂暴之力"
+  },
+  {
+    "Key": "GuardianRagePower.Description",
+    "enGB": "The furious guardian can select a barbarian rage power for which she qualifies, adding her furious guardian level to her barbarian level to determine access. This guard dedication can be chosen up to three times.",
+    "zhCN": "狂怒卫士能够选择她有资格选取的野蛮人狂暴之力，将她的狂怒卫士等级加到她的野蛮人等级之上以判断是否满足狂暴之力的先决条件。该项护卫奉献至多选取三次。"
+  },
+  {
+    "Key": "FuriousGuardianGreaterRage.Name",
+    "ProcessTemplates": false,
+    "enGB": "Greater Rage",
+    "zhCN": "高等狂暴"
+  },
+  {
+    "Key": "FuriousGuardianGreaterRage.Description",
+    "enGB": "The furious guardian gains greater rage; this works as the barbarian ability of the same name. The furious guardian must be at least 7th level to select this dedication.",
+    "zhCN": "狂怒卫士获得高等狂暴；该能力如同野蛮人的同名能力一般。狂怒卫士必须至少达到7级才能选择该项护卫奉献。"
+  },
+  {
+    "Key": "FuriousGuardianGuardianRage.Name",
+    "ProcessTemplates": false,
+    "enGB": "Rage",
+    "zhCN": "狂暴"
+  },
+  {
+    "Key": "FuriousGuardianGuardianRage.Description",
+    "enGB": "A furious guardian is trained to harness her brutish nature while in combat in the defense of her charge. This works as the barbarian ability of the same name. A furious guardian’s class levels stack with any other classes granting this ability for determining the effects of rage powers and the number of rounds per day the guard can rage.",
+    "zhCN": "狂怒卫士经受过在防御性作战中驾驭自身兽性的训练。该能力如同野蛮人的同名能力一般作用。狂怒卫士的职业等级与任何其他获得该能力的职业叠加，以判断狂暴之力的效果以及每日狂暴轮数。"
+  },
+  {
+    "Key": "FuriousGuardianChosenAlly.Name",
+    "ProcessTemplates": false,
+    "enGB": "Chosen Ally",
+    "zhCN": "护卫盟友"
+  },
+  {
+    "Key": "FuriousGuardianChosenAlly.Description",
+    "enGB": "At 1st level, before entering a rage, a furious guardian can choose an ally to protect as a free action. The furious guardian must make this choice when beginning her rage and cannot change her designated ally while raging. Whenever the furious guardian is adjacent to her chosen ally, she can choose to take a –1 penalty to her AC to grant her ally a +1 dodge bonus to AC and Reflex saves. This bonus increases by 1 at 5th and 10th level.",
+    "zhCN": "1级起，在进入狂暴状态前，狂怒卫士能够以自由动作选择一名意欲保护的盟友。狂怒卫士必须在她的狂暴开始时进行此次选择，而且在狂暴期间无法变更她所作出的决定。每当狂怒卫士与她选择的盟友相邻时，她能够选择AC承受-1减值来让她的盟友的AC与反射豁免获得+1闪避加值。这个加值在5级和10级都会再增加1点。"
+  },
+  {
+    "Key": "FuriousGuardianUnbreakableDefender.Name",
+    "ProcessTemplates": false,
+    "enGB": "Unbreakable Defender",
+    "zhCN": "不屈卫士"
+  },
+  {
+    "Key": "FuriousGuardianUnbreakableDefender.Description",
+    "enGB": "At 10th level, the furious guardian gains Die Hard as a bonus feat and no longer becomes fatigued.",
+    "zhCN": "10级起，狂怒卫士获得顽强专长，且免疫疲劳。"
+  },
+  {
+    "Key": "FuriousGuardianGuardedThoughts.Name",
+    "ProcessTemplates": false,
+    "enGB": "Guarded Thoughts",
+    "zhCN": "思想防护"
+  },
+  {
+    "Key": "FuriousGuardianGuardedThoughts.Description",
+    "enGB": "At 2nd level, if the furious guardian gains a +5 circumstance bonus to saving throw against a charm or compulsion effect.",
+    "zhCN": "2级起，狂怒卫士在对抗魅惑或胁迫效果的豁免检定中获得+5环境加值。"
+  },
+  {
+    "Key": "FuriousGuardianAdaptableGuardian4.Name",
+    "ProcessTemplates": false,
+    "enGB": "Adaptable Guardian",
+    "zhCN": "随机应变"
+  },
+  {
+    "Key": "FuriousGuardianAdaptableGuardian4.Description",
+    "enGB": "At 4th level, the furious guardian can change her chosen ally during a rage as a move action.",
+    "zhCN": "4级起，狂怒卫士能够在狂暴中以移动动作来变更她的护卫盟友所选择的目标。"
+  },
+  {
+    "Key": "FuriousGuardianAdaptableGuardian8.Name",
+    "ProcessTemplates": false,
+    "enGB": "Adaptable Guardian",
+    "zhCN": "随机应变"
+  },
+  {
+    "Key": "FuriousGuardianAdaptableGuardian8.Description",
+    "enGB": "At 8th level, the furious guardian can change her chosen ally as a swift action.",
+    "zhCN": "8级起，她能够以迅捷动作变更护卫盟友所选择的目标。"
+  },
+  {
+    "Key": "FuriousGuardianTightFollower.Name",
+    "ProcessTemplates": false,
+    "enGB": "Tight Follower",
+    "zhCN": "紧随其后"
+  },
+  {
+    "Key": "FuriousGuardianTightFollower.Description",
+    "enGB": "At 6th level, the furious guardian can teleport up to her speed as an swift action so long as she ends within 10 feet of her chosen ally.",
+    "zhCN": "6级起，狂怒卫士能以迅捷动作传送至多等同于其速度的距离，只要目标落点位于护卫盟友目标10尺内。"
+  },
+  {
+    "Key": "FuriousGuardianReactiveStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Reactive Strike",
+    "zhCN": "后发制人"
+  },
+  {
+    "Key": "FuriousGuardianReactiveStrike.Description",
+    "enGB": "At 8th level, a furious guardian can make an attack of opportunity against an enemy that attacks the furious guardian’s chosen ally. The furious guardian cannot make a reactive strike against a creature she has already made an attack of opportunity against during the round.",
+    "zhCN": "8级起，若有敌人对狂怒卫士的护卫盟友目标进行攻击，她就能够对该名敌人进行借机攻击。若狂怒卫士在该轮内已经对一个生物进行过借机攻击，那么她就无法对其进行后发制人。"
   }
+
 ]

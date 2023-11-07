@@ -111,10 +111,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         {
             var icon = AbilityRefs.HeroicInvocation.Reference.Get().Icon;
 
-            FeatureSelectionConfigurator.For(FeatureSelectionRefs.TeamworkFeat)
-                .SetRanks(10)
-                .Configure();
-
             FeatureSelectionConfigurator.New(Dedications, DedicationsGuid)
               .SetDisplayName(DedicationsDisplayName)
               .SetDescription(DedicationsDescription)
@@ -126,6 +122,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddToAllFeatures(FormalTrainingFeat())
               .AddToAllFeatures(SAGreaterRage())
               .AddToAllFeatures(RagePowerFeat())
+              .AddToAllFeatures(RagePower2Feat())
+              .AddToAllFeatures(RagePower3Feat())
               .AddToAllFeatures(FeatureSelectionRefs.TeamworkFeat.ToString())
               .AddToAllFeatures(SAUncannyDodge1())
               .AddToAllFeatures(SAUncannyDodge2())
@@ -173,6 +171,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
              .SetDescription(DeflectArrowsDescription)
              .SetIcon(icon)
              .AddDeflectArrows(restriction: Kingmaker.UnitLogic.FactLogic.DeflectArrows.RestrictionType.EmptyHand)
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
              .Configure();
 
             return FeatureConfigurator.New(DeflectArrows, DeflectArrowsGuid)
@@ -202,6 +201,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
              .SetDescription(UncannyDodge3Description)
              .SetIcon(icon)
              .AddMechanicsFeature(Kingmaker.UnitLogic.FactLogic.AddMechanicsFeature.MechanicsFeatureType.CannotBeFlanked)
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
              .Configure();
 
             return FeatureConfigurator.New(UncannyDodge3, UncannyDodge3Guid)
@@ -211,6 +211,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIsClassFeature(true)
               .AddPrerequisiteFeature(FeatureRefs.ImprovedUncannyDodge.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
               .AddPrerequisiteFeature(FeatureRefs.ImprovedUncannyDodgeTalent.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+              .SetHideNotAvailibleInUI(true)
               .Configure();
         }
 
@@ -231,6 +232,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddPrerequisiteFeature(FeatureRefs.UncannyDodgeTalent.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
               .AddPrerequisiteNoFeature(FeatureRefs.ImprovedUncannyDodge.ToString())
               .AddPrerequisiteNoFeature(FeatureRefs.ImprovedUncannyDodgeTalent.ToString())
+              .SetHideNotAvailibleInUI(true)
               .Configure();
         }
 
@@ -249,6 +251,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddFacts(new() { FeatureRefs.UncannyDodge.ToString() })
               .AddPrerequisiteNoFeature(FeatureRefs.UncannyDodge.ToString())
               .AddPrerequisiteNoFeature(FeatureRefs.UncannyDodgeTalent.ToString())
+              .SetHideNotAvailibleInUI(true)
               .Configure();
         }
 
@@ -270,6 +273,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .AddClassLevelsForPrerequisites(actualClass: ArchetypeGuid, fakeClass: CharacterClassRefs.FighterClass.ToString(), modifier: 1, summand: 0)
               .AddPrerequisiteClassLevel(ArchetypeGuid, 3)
+              .AddPrerequisiteNoFeature(FormalTrainingGuid)
+              //.SetHideNotAvailibleInUI(true)
               .Configure(delayed: true);
         }
 
@@ -290,7 +295,46 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(RagePowerDescription)
               .SetIcon(icon)
               .AddClassLevelsForPrerequisites(actualClass: ArchetypeGuid, fakeClass: CharacterClassRefs.BarbarianClass.ToString(), modifier: 1, summand: 0)
-              .SetRanks(3)
+              .AddPrerequisiteNoFeature(RagePowerGuid)
+              .SetHideNotAvailibleInUI(true)
+              .Configure(delayed: true);
+        }
+
+        private const string RagePower2 = "FuriousGuardian.RagePower2";
+        private static readonly string RagePower2Guid = "{3E9136F2-CCB4-45A3-8458-B9D04855A14A}";
+
+        public static BlueprintFeatureSelection RagePower2Feat()
+        {
+            var icon = FeatureRefs.RenewedVigorFeature.Reference.Get().Icon;
+
+            return FeatureSelectionConfigurator.New(RagePower2, RagePower2Guid)
+                .CopyFrom(
+                FeatureSelectionRefs.RagePowerSelection)
+              .SetDisplayName(RagePowerDisplayName)
+              .SetDescription(RagePowerDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(RagePowerGuid)
+              .AddPrerequisiteNoFeature(RagePower2Guid)
+              .SetHideNotAvailibleInUI(true)
+              .Configure(delayed: true);
+        }
+
+        private const string RagePower3 = "FuriousGuardian.RagePower3";
+        private static readonly string RagePower3Guid = "{901C41B3-FE67-44DD-9AC6-2955E98940D0}";
+
+        public static BlueprintFeatureSelection RagePower3Feat()
+        {
+            var icon = FeatureRefs.RenewedVigorFeature.Reference.Get().Icon;
+
+            return FeatureSelectionConfigurator.New(RagePower3, RagePower3Guid)
+                .CopyFrom(
+                FeatureSelectionRefs.RagePowerSelection)
+              .SetDisplayName(RagePowerDisplayName)
+              .SetDescription(RagePowerDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(RagePower2Guid)
+              .AddPrerequisiteNoFeature(RagePower3Guid)
+              .SetHideNotAvailibleInUI(true)
               .Configure(delayed: true);
         }
 
@@ -346,13 +390,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         {
             var icon = AbilityRefs.DivineGuardianTrothAbility.Reference.Get().Icon;
 
-            var Buff1 = BuffConfigurator.New(ChosenAllyBuff, ChosenAllyBuffGuid)
-             .SetDisplayName(ChosenAllyDisplayName)
-             .SetDescription(ChosenAllyDescription)
-             .SetIcon(icon)
-             .AddUniqueBuff()
-             .AddComponent<ChosenAllyTarget>()
-             .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New()
+            var action = ActionsBuilder.New()
                     .Conditional(ConditionsBuilder.New().CasterHasFact(DeflectArrowsGuid),
                         ifTrue: ActionsBuilder.New()
                         .ApplyBuff(DeflectArrowsBuffGuid, ContextDuration.Fixed(1))
@@ -361,7 +399,16 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                         ifTrue: ActionsBuilder.New()
                         .ApplyBuff(UncannyDodge3BuffGuid, ContextDuration.Fixed(1))
                         .Build())
-                    .Build())
+                    .Build();
+
+            var Buff1 = BuffConfigurator.New(ChosenAllyBuff, ChosenAllyBuffGuid)
+             .SetDisplayName(ChosenAllyDisplayName)
+             .SetDescription(ChosenAllyDescription)
+             .SetIcon(icon)
+             .AddUniqueBuff()
+             .AddComponent<ChosenAllyTarget>()
+             .AddNewRoundTrigger(newRoundActions: action)
+             .AddCombatStateTrigger(combatStartActions: action)
              .Configure();
 
             var ability2 = AbilityConfigurator.New(ChosenAllyAblity2, ChosenAllyAblity2Guid)
