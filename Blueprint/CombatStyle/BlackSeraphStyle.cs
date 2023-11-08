@@ -102,6 +102,13 @@ namespace PrestigePlus.Feats
         {
             var icon = AbilityRefs.Destruction.Reference.Get().Icon;
 
+            var action = ActionsBuilder.New()
+                        .Conditional(ConditionsBuilder.New().Add<MalevolenceEnchant>().Build(), ifTrue: ActionsBuilder.New()
+                            .EnchantWornItem(ContextDuration.Fixed(1), WeaponEnchantmentRefs.Holy.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.PrimaryHand)
+                            .EnchantWornItem(ContextDuration.Fixed(1), WeaponEnchantmentRefs.Holy.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.SecondaryHand)
+                            .Build())
+                        .Build();
+
             FeatureConfigurator.New(MalevolenceName, MalevolenceGuid, FeatureGroup.Feat)
                     .SetDisplayName(MalevolenceDisplayName)
                     .SetDescription(MalevolenceDescription)
@@ -110,12 +117,8 @@ namespace PrestigePlus.Feats
                     .AddPrerequisiteFeature(StyleGuid)
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .AddToGroups(FeatureGroup.StyleFeat)
-                    .AddBuffActions(newRound: ActionsBuilder.New()
-                        .Conditional(ConditionsBuilder.New().Add<MalevolenceEnchant>().Build(), ifTrue: ActionsBuilder.New()
-                            .EnchantWornItem(ContextDuration.Fixed(1), WeaponEnchantmentRefs.Holy.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.PrimaryHand)
-                            .EnchantWornItem(ContextDuration.Fixed(1), WeaponEnchantmentRefs.Holy.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.SecondaryHand)
-                            .Build())
-                        .Build())
+                    .AddBuffActions(newRound: action)
+                    .AddCombatStateTrigger(combatStartActions: action)
                     .Configure();
 
         }

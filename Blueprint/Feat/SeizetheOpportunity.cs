@@ -263,15 +263,25 @@ namespace PrestigePlus.Maneuvers
         public static void FeatConfigure()
         {
             var icon = FeatureRefs.VitalStrikeFeature.Reference.Get().Icon;
-            FeatureConfigurator.New(FeatName, FeatGuid, Kingmaker.Blueprints.Classes.FeatureGroup.Feat)
+            var feat = FeatureConfigurator.New(FeatName, FeatGuid)
                     .SetDisplayName(DisplayName2)
                     .SetDescription(Description2)
                     .SetIcon(icon)
                     .AddPrerequisiteStatValue(StatType.BaseAttackBonus, 1)
                     .AddPrerequisiteFeature(FeatureRefs.CombatReflexes.ToString())
-                    .AddFacts(new() { ManeuverGuid })
-                    .AddToGroups(Kingmaker.Blueprints.Classes.FeatureGroup.CombatFeat)
-                    .Configure();
+                    .AddFacts(new() { ManeuverGuid });
+
+            if (ModMenu.ModMenu.GetSettingValue<bool>(Main.GetKey("nerfsop"))) 
+            {
+                feat = feat.AddToGroups(Kingmaker.Blueprints.Classes.FeatureGroup.MythicFeat)
+                    .AddToFeatureSelection("0d3a3619-9d99-47af-8e47-cb6cc4d26821");
+            }
+            else
+            {
+                feat = feat.AddToGroups(Kingmaker.Blueprints.Classes.FeatureGroup.Feat)
+                    .AddToGroups(Kingmaker.Blueprints.Classes.FeatureGroup.CombatFeat);
+            }
+            feat.Configure();
         }
     }
 }

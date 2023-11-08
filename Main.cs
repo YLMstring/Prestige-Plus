@@ -96,6 +96,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("autoheal"), defaultValue: true, Helpers.CreateString("toggle-desc35", "Auto Heal"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("weakencrit"), defaultValue: false, Helpers.CreateString("toggle-desc37", "Weak Crits against Enemies"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("grapple"), defaultValue: true, Helpers.CreateString("toggle-desc12", "Grapple Mechanic"))
               .ShowVisualConnection())
           .AddToggle(
@@ -196,6 +199,9 @@ namespace PrestigePlus
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("bodyguard"), defaultValue: true, Helpers.CreateString("toggle-desc28", "Bodyguard Feats"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("nerfsop"), defaultValue: false, Helpers.CreateString("toggle-desc38", "(Nerf) Seize the Opportunity as a Mythic Feat"))
               .ShowVisualConnection()));
 
                 try
@@ -273,9 +279,8 @@ namespace PrestigePlus
             Logger.Info("Already configured delayed blueprints.");
             return;
           }
-          Initialized = true; PatchDomain.Patch(); PatchArmorTraining.Patch(); PatchKinetic.Patch();
-
-          RootConfigurator.ConfigureDelayedBlueprints();
+            Initialized = true; PatchDomain.Patch(); PatchArmorTraining.Patch(); PatchKinetic.Patch(); 
+            RootConfigurator.ConfigureDelayedBlueprints();
         }
         catch (Exception e)
         {
