@@ -180,6 +180,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("stag"), defaultValue: true, Helpers.CreateString("toggle-desc14", "Charging Stag Style"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("jabbing"), defaultValue: true, Helpers.CreateString("toggle-desc40", "Jabbing Style"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("grabbing"), defaultValue: true, Helpers.CreateString("toggle-desc13", "Grabbing Style"))
               .ShowVisualConnection())
            .AddToggle(
@@ -259,6 +262,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("autoheal"))) { AutoHeal.StyleConfigure(); } else { AutoHeal.DisableConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("furious"))) { FuriousGuardian.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("magehand"))) { MageHandTrick.ConfigureMageHandMain(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("jabbing"))) { JabbingStyle.StyleConfigure(); JabbingStyle.DancerConfigure(); JabbingStyle.MasterConfigure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
