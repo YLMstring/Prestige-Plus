@@ -1,5 +1,8 @@
-﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
+﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
+using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
+using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
@@ -9,6 +12,7 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Mechanics;
 using PrestigePlus.CustomComponent.Feat;
@@ -32,7 +36,7 @@ namespace PrestigePlus.Blueprint.Feat
         public static void ConfigureMageHandMain()
         {
             var icon = AbilityRefs.DispelMagic.Reference.Get().Icon;
-
+            ReachingHandConfigure(); ConfigureMageHandMythic();
             FeatureConfigurator.New(MageHandMainFeatName, MageHandMainFeatGuid, FeatureGroup.Feat)
                     .SetDisplayName(MageHandMainDisplayName)
                     .SetDescription(MageHandMainDescription)
@@ -41,6 +45,33 @@ namespace PrestigePlus.Blueprint.Feat
                     .AddFeatureIfHasFact(FeatureRefs.ImprovedDirtyTrick.ToString(), ConfigureDirtyMagicTrick(), false)
                     .AddFeatureOnSkill(new() { ConfigureRangedAid() }, 1, StatType.BaseAttackBonus)
                     .AddFeatureIfHasFact(FeatureRefs.ImprovedUnarmedStrike.ToString(), ConfigureThrowPunch(), false)
+                    .AddFeatureIfHasFact(FeatureRefs.PreciseShot.ToString(), FeatGuid, false)
+                    .AddFeatureIfHasFact(FeatureRefs.ReachSpellFeat.ToString(), FeatGuid, false)
+                    .AddToIsPrerequisiteFor(DirtyMagicTrickFeatGuid)
+                    .AddToIsPrerequisiteFor(RangedAidFeatGuid)
+                    .AddToIsPrerequisiteFor(ThrowPunchFeatGuid)
+                    .AddToIsPrerequisiteFor(FeatGuid)
+                    .SetReapplyOnLevelUp(true)
+                    .Configure();
+        }
+
+        private static readonly string MageHandMythicFeatName = "MageHandMageHandMythic";
+        public static readonly string MageHandMythicFeatGuid = "{FFA0C7DA-1BA2-43C8-9242-05228125F664}";
+
+        private static readonly string MageHandMythicDisplayName = "MageHandMageHandMythic.Name";
+        private static readonly string MageHandMythicDescription = "MageHandMageHandMythic.Description";
+
+        public static void ConfigureMageHandMythic()
+        {
+            var icon = AbilityRefs.DispelMagic.Reference.Get().Icon;
+
+            FeatureConfigurator.New(MageHandMythicFeatName, MageHandMythicFeatGuid, FeatureGroup.MythicFeat)
+                    .SetDisplayName(MageHandMythicDisplayName)
+                    .SetDescription(MageHandMythicDescription)
+                    .SetIcon(icon)
+                    .AddPrerequisiteFeature(MageHandMainFeatGuid)
+                    .AddPrerequisiteFeature(FeatureRefs.ImprovedUnarmedStrike.ToString())
+                    .AddToFeatureSelection("0d3a3619-9d99-47af-8e47-cb6cc4d26821") //ttt
                     .Configure();
         }
 
@@ -128,6 +159,52 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetDescription(ThrowPunchDescription)
                     .SetIcon(icon)
                     .AddFacts(new() { ability })
+                    .Configure();
+        }
+
+        private static readonly string FeatName = "ReachingHand";
+        public static readonly string FeatGuid = "{F9223ADC-494C-4EF3-B5D9-08DE2D186700}";
+
+        private static readonly string DisplayName = "ReachingHand.Name";
+        private static readonly string Description = "ReachingHand.Description";
+
+        private const string ReachingHandAbility = "ReachingHand.ReachingHandAbility";
+        private static readonly string ReachingHandAbilityGuid = "{C1E96CC4-ECA3-4B80-815C-7E593020DFB2}";
+
+        private const string ReachingHandbuff = "ReachingHand.ReachingHandbuff";
+        public static readonly string ReachingHandbuffGuid = "{672728F0-0DE2-4A3B-9500-D8CD25B6B035}";
+
+        public static void ReachingHandConfigure()
+        {
+            var icon = FeatureRefs.ReachSpellFeat.Reference.Get().Icon;
+
+            var BuffReachingHand = BuffConfigurator.New(ReachingHandbuff, ReachingHandbuffGuid)
+              .SetDisplayName(DisplayName)
+              .SetDescription(Description)
+              .SetIcon(icon)
+              .Configure();
+
+            var abilityTrick = AbilityConfigurator.New(ReachingHandAbility, ReachingHandAbilityGuid)
+                .SetDisplayName(DisplayName)
+                .SetDescription(Description)
+                .SetIcon(icon)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .ApplyBuff(BuffReachingHand, ContextDuration.Fixed(1))
+                        .Build())
+                .SetCanTargetSelf(true)
+                .SetCanTargetFriends(false)
+                .SetCanTargetEnemies(false)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Special)
+                .Configure();
+
+            FeatureConfigurator.New(FeatName, FeatGuid)
+                    .SetDisplayName(DisplayName)
+                    .SetDescription(Description)
+                    .SetIcon(icon)
+                    .AddFacts(new() { abilityTrick })
                     .Configure();
         }
     }

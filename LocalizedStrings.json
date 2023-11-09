@@ -5008,6 +5008,138 @@
     "Key": "FuriousGuardianReactiveStrike.Description",
     "enGB": "At 8th level, a furious guardian can make an attack of opportunity against an enemy that attacks the furious guardian’s chosen ally. The furious guardian cannot make a reactive strike against a creature she has already made an attack of opportunity against during the round.",
     "zhCN": "8级起，若有敌人对狂怒卫士的护卫盟友目标进行攻击，她就能够对该名敌人进行借机攻击。若狂怒卫士在该轮内已经对一个生物进行过借机攻击，那么她就无法对其进行后发制人。"
+  },
+  {
+    "Key": "JabbingStyle.Name",
+    "ProcessTemplates": false,
+    "enGB": "Jabbing Style",
+    "zhCN": "散花掌"
+  },
+  {
+    "Key": "JabbingStyle.Description",
+    "enGB": "A cluster of quick strikes deals more damage than a single roundhouse swing. When you hit a target with an unarmed strike and you have hit that target with an unarmed strike previously that round, you deal an extra 1d6 points of damage to that target.",
+    "zhCN": "一连串的攻击会比单次大力攻击伤害更高。当你徒手攻击命中一名单位时，若本轮你之前也用徒手攻击命中过该单位，则你本次徒手攻击额外造成1d6点伤害。"
+  },
+  {
+    "Key": "JabbingDancer.Name",
+    "ProcessTemplates": false,
+    "enGB": "Jabbing Dancer",
+    "zhCN": "一苇渡江"
+  },
+  {
+    "Key": "JabbingDancer.Description",
+    "enGB": "You’ve learned to bend and shift your body to avoid attacks and reposition yourself advantageously. While using Jabbing Style, you can move an additional 5 feet when making a 5-foot step.",
+    "zhCN": "你已经学会如何控制你的身体，从而避免攻击以及重新占据优势。在使用散花掌流派时，你在进行五尺快步时可以额外移动五尺距离。"
+  },
+  {
+    "Key": "JabbingMaster.Name",
+    "ProcessTemplates": false,
+    "enGB": "Jabbing Master",
+    "zhCN": "如来千叶手"
+  },
+  {
+    "Key": "JabbingMaster.Description",
+    "enGB": "Your quick punches become even more lethal. While using Jabbing Style, the extra damage you deal when you hit a single target with two unarmed strikes increases to 2d6, and the extra damage when you hit a single target with three or more unarmed strikes increases to 4d6.",
+    "zhCN": "你的快速攻击将会更加致命。在使用散花掌流派时，你同一轮两次徒手击打命中造成的额外伤害提升到2d6。三次或以上徒手击打命中造成的额外伤害提升到4d6。"
+  },
+  {
+    "Key": "MageHandMageHandMain.Name",
+    "ProcessTemplates": false,
+    "enGB": "Magic Trick (mage hand)",
+    "zhCN": "魔法技艺（法师之手）"
+  },
+  {
+    "Key": "MageHandMageHandMain.Description",
+    "enGB": "You are able to manipulate mage hand beyond its typical uses. You can use any magic tricks relating to mage hand so long as you meet the appropriate requirements, including Dirty Magic Trick (Improved Dirty Trick), Ranged Aid (base attack bonus +1), Throw Punch (Improved Unarmed Strike), Reaching Hand (Precise Shot or Reach Spell).",
+    "zhCN": "你能够操弄法师之手，超越其传统用法。只要你符合相应要求即可施展法师之手的任何魔法技艺，包括魔法阴招（精通阴招），远程协助（基础攻击加值+1），劈空掌（精通徒手打击），弹指神通（精准射击或法术及远）。"
+  },
+  {
+    "Key": "MageHandDirtyMagicTrick.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dirty Magic Trick",
+    "zhCN": "魔法阴招"
+  },
+  {
+    "Key": "MageHandDirtyMagicTrick.Description",
+    "enGB": "(Improved Dirty Trick): You can manipulate a target’s clothing or a nearby object to attempt a dirty trick combat maneuver against a single opponent within close range, using your combat maneuver bonus for the check.",
+    "zhCN": "（精通阴招）：你可以操纵目标的衣服或附近的物品，以你的CMB对近距内的一个对手使用阴招战技。"
+  },
+  {
+    "Key": "MageHandRangedAid.Name",
+    "ProcessTemplates": false,
+    "enGB": "Ranged Aid",
+    "zhCN": "远程协助"
+  },
+  {
+    "Key": "MageHandRangedAid.Description",
+    "enGB": "(base attack bonus +1): You’ve learned to use your mage hand to tug at an opponent’s hair, clothing, and equipment. You can use the aid another action within close range.",
+    "zhCN": "（基础攻击加值+1）：你已经学会了使用法师之手去拉扯对手的头发、衣服和装备。你可以在近距内远程使用援助他人动作。"
+  },
+  {
+    "Key": "MageHandThrowPunch.Name",
+    "ProcessTemplates": false,
+    "enGB": "Throw Punch",
+    "zhCN": "劈空掌"
+  },
+  {
+    "Key": "MageHandThrowPunch.Description",
+    "enGB": "(Improved Unarmed Strike): You can use mage hand to strike an opponent within close range. This is a melee unarmed strike that always deals 1d3 points of force damage. The mage hand has an attack bonus equal to your caster level plus your Intelligence, Wisdom, or Charisma modifier, whichever is highest. Spell resistance applies against this ability. You can't full attack with this since casting or maintaining mage hand is a standard action.",
+    "zhCN": "（精通徒手打击）：你可以用法师之手在近距内打击对手。这被视为近战徒手击打，且总造成1D3点力场伤害。法师之手的攻击加成等于你的施法者等级加上感知、智力或魅力调整值，取最高值。法术抗力对该技艺生效。你不能以此全回合攻击，因为施放或维持法师之手是一个标准动作。"
+  },
+  {
+    "Key": "ReachingHand.Name",
+    "ProcessTemplates": false,
+    "enGB": "Reaching Hand",
+    "zhCN": "弹指神通"
+  },
+  {
+    "Key": "ReachingHand.Description",
+    "enGB": "(Precise Shot or Reach Spell): You can focus as a swift action to increase Throw Punch range to medium.",
+    "zhCN": "（精准射击或法术及远）：你能以迅捷动作集中注意力，将劈空掌距离增加至中距。"
+  },
+  {
+    "Key": "PantherStyle.Name",
+    "ProcessTemplates": false,
+    "enGB": "Panther Style",
+    "zhCN": "豹尾脚"
+  },
+  {
+    "Key": "PantherStyle.Description",
+    "enGB": "You can strike back at enemies who attack you when you move. While using this style, when an opponent makes an attack of opportunity against you for moving through a threatened square, you can spend a swift action to make a retaliatory unarmed strike attack against that opponent. Your attack is resolved after the triggering attack of opportunity.",
+    "zhCN": "你可以反击那些趁你移步而进犯的敌人。当你使用豹尾脚流派时，当你在穿过威胁区域而引发借机攻击时，你能以迅捷动作用徒手攻击你的对手。这次攻击在诱发对方借机攻击后才能发动。"
+  },
+  {
+    "Key": "PantherClaw.Name",
+    "ProcessTemplates": false,
+    "enGB": "Panther Claw",
+    "zhCN": "鸳鸯连环"
+  },
+  {
+    "Key": "PantherClaw.Description",
+    "enGB": "You unleash a rapid series of blows on foes that attempt to attack you when you move. While using Panther Style, you can spend a free action, instead of spending a swift action, to make a retaliatory unarmed strike. You can make a number of retaliatory unarmed strikes on your turn equal to your Wisdom modifier.",
+    "zhCN": "你在移动中以眼花缭乱之势反击攻向你的敌人。你使用豹尾脚流派时，你可以用自由动作进行对借机攻击的反击。你在你的行动轮中可以做出等同你感知修正次数的反击。"
+  },
+  {
+    "Key": "PantherParry.Name",
+    "ProcessTemplates": false,
+    "enGB": "Panther Parry",
+    "zhCN": "神龙摆尾"
+  },
+  {
+    "Key": "PantherParry.Description",
+    "enGB": "Your vicious strikes impair your foe’s ability to attack you when you move. While using Panther Style, your retaliatory unarmed strikes are resolved before the triggering attacks. If your retaliatory unarmed strike deals damage to an opponent, that opponent takes a –2 penalty on attack and damage rolls with the triggering attack of opportunity.",
+    "zhCN": "你的猛恶攻击削弱了敌人趁你移动时袭击的能力。你使用豹尾脚流派时，你的反击可以在对方进行借机攻击前作出，如果你的这次反击对对手造成伤害，对手对你的借机攻击在攻击骰和伤害骰都有-2罚值。"
+  },
+  {
+    "Key": "MageHandMageHandMythic.Name",
+    "ProcessTemplates": false,
+    "enGB": "Throw Punch (Mythic)",
+    "zhCN": "奇门五转"
+  },
+  {
+    "Key": "MageHandMageHandMythic.Description",
+    "enGB": "Your mage hand tricks are unmatched. You can effortlessly concentrate on your mage hand, allowing you to full attack with it.",
+    "zhCN": "你的法师之手技巧无人能及。你能够轻易专注于你的法师之手，可以用它进行全回合攻击。"
   }
 
 ]

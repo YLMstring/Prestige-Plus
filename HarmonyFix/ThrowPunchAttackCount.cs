@@ -48,5 +48,6 @@ namespace PrestigePlus.HarmonyFix
         }
         private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         private static BlueprintBuffReference Buff = BlueprintTool.GetRef<BlueprintBuffReference>(MageHandTrick.ThrowPunchbuffGuid);
+        //private static BlueprintBuffReference Buff2 = BlueprintTool.GetRef<BlueprintBuffReference>(MageHandTrick.MageHandMythicFeatGuid);
     }
 }

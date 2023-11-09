@@ -1,24 +1,31 @@
-﻿using Kingmaker.EntitySystem.Entities;
+﻿using BlueprintCore.Blueprints.References;
+using BlueprintCore.Utils;
+using Kingmaker.Blueprints;
+using Kingmaker.EntitySystem.Entities;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.RuleSystem.Rules.Damage;
+using Kingmaker.UI.MVVM._VM.ServiceWindows.Spellbook.KnownSpells;
 using Kingmaker.UnitLogic;
+using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Parts;
 using Owlcat.Runtime.Core.Utils;
+using PrestigePlus.Blueprint.Feat;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using static Pathfinding.Util.RetainedGizmos;
 
 namespace PrestigePlus.CustomComponent.Feat
 {
-    internal class ThrowPunchStuff : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleAttackWithWeaponResolve>, IRulebookHandler<RuleAttackWithWeaponResolve>, ISubscriber, IInitiatorRulebookSubscriber, IUnitSubscriber, IInitiatorRulebookHandler<RuleCalculateAttackBonusWithoutTarget>, IRulebookHandler<RuleCalculateAttackBonusWithoutTarget>
+    internal class ThrowPunchStuff : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleAttackWithWeaponResolve>, IRulebookHandler<RuleAttackWithWeaponResolve>, ISubscriber, IInitiatorRulebookSubscriber, IUnitSubscriber, IInitiatorRulebookHandler<RuleCalculateAttackBonusWithoutTarget>, IRulebookHandler<RuleCalculateAttackBonusWithoutTarget>, IInitiatorRulebookHandler<RuleCalculateAttacksCount>, IRulebookHandler<RuleCalculateAttacksCount>
     {
         void IRulebookHandler<RuleAttackWithWeaponResolve>.OnEventAboutToTrigger(RuleAttackWithWeaponResolve evt)
         {
@@ -30,6 +37,9 @@ namespace PrestigePlus.CustomComponent.Feat
                     list.Add(this.ChangeType(damage));
                 }
                 evt.Damage.Remove((BaseDamage _) => true);
+                var abilitydata = new AbilityData(AbilityRefs.Jolt.Reference.Get(), Owner);
+                var cont = abilitydata.CreateExecutionContext(Owner, null);
+                if (Rulebook.Trigger(new RuleSpellResistanceCheck(cont, evt.Target)).IsSpellResisted) { return; }
                 foreach (BaseDamage damage2 in list)
                 {
                     evt.Damage.Add(damage2);
@@ -67,20 +77,33 @@ namespace PrestigePlus.CustomComponent.Feat
                 des = ModifierDescriptor.Penalty;
             }
             evt.AddModifier(num, base.Fact, des);
-            ModifiableValueAttributeStat modifiableValueAttributeStat = base.Owner.Stats.GetStat(evt.AttackBonusStat) as ModifiableValueAttributeStat;
             CharacterStats stats = Owner.Stats;
             var value = ((stats.Charisma >= stats.Intelligence && stats.Charisma >= stats.Wisdom) ? StatType.Charisma : ((stats.Wisdom > stats.Intelligence) ? StatType.Wisdom : StatType.Intelligence));
-            ModifiableValueAttributeStat modifiableValueAttributeStat2 = base.Owner.Stats.GetStat(value) as ModifiableValueAttributeStat;
-            bool flag = modifiableValueAttributeStat2 != null && modifiableValueAttributeStat != null && modifiableValueAttributeStat2.Bonus >= modifiableValueAttributeStat.Bonus;
-            if (flag)
-            {
-                evt.AttackBonusStat = value;
-            }
+            evt.AttackBonusStat = value;
         }
 
         void IRulebookHandler<RuleCalculateAttackBonusWithoutTarget>.OnEventDidTrigger(RuleCalculateAttackBonusWithoutTarget evt)
         {
             
         }
+
+        void IRulebookHandler<RuleCalculateAttacksCount>.OnEventAboutToTrigger(RuleCalculateAttacksCount evt)
+        {
+            
+        }
+
+        void IRulebookHandler<RuleCalculateAttacksCount>.OnEventDidTrigger(RuleCalculateAttacksCount evt)
+        {
+            if (Owner.HasFact(Buff2)) { return; }
+            RuleCalculateAttacksCount.AttacksCount primaryHand = evt.Result.PrimaryHand;
+            RuleCalculateAttacksCount.AttacksCount secondaryHand = evt.Result.SecondaryHand;
+            primaryHand.PenalizedAttacks = 0;
+            primaryHand.HasteAttacks = 0;
+            primaryHand.AdditionalAttacks = Math.Min(primaryHand.AdditionalAttacks, 1);
+            secondaryHand.PenalizedAttacks = 0;
+            secondaryHand.HasteAttacks = 0;
+            secondaryHand.AdditionalAttacks = 0;
+        }
+        private static BlueprintBuffReference Buff2 = BlueprintTool.GetRef<BlueprintBuffReference>(MageHandTrick.MageHandMythicFeatGuid);
     }
 }

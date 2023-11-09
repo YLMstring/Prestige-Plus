@@ -33,7 +33,14 @@ namespace PrestigePlus.HarmonyFix
                 }
                 if (__instance.HasFact(Buff) && weapon.Category == Kingmaker.Enums.WeaponCategory.UnarmedStrike)
                 {
-                    __result = 30.Feet();
+                    if (__instance.HasFact(Buff2))
+                    {
+                        __result = 40.Feet();
+                    }
+                    else
+                    {
+                        __result = 30.Feet();
+                    }
                 }
             }
             catch (Exception ex) { Logger.Error("Failed to AAdistanceFix.", ex); }
@@ -41,5 +48,6 @@ namespace PrestigePlus.HarmonyFix
         private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         private static BlueprintFeatureReference Arcane = BlueprintTool.GetRef<BlueprintFeatureReference>("{1DA01231-4001-46F3-8A31-E748AE8DFBF3}");
         private static BlueprintBuffReference Buff = BlueprintTool.GetRef<BlueprintBuffReference>(MageHandTrick.ThrowPunchbuffGuid);
+        private static BlueprintBuffReference Buff2 = BlueprintTool.GetRef<BlueprintBuffReference>(MageHandTrick.ReachingHandbuffGuid);
     }
 }
