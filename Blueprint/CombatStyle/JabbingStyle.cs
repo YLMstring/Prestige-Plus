@@ -122,9 +122,19 @@ namespace PrestigePlus.Blueprint.CombatStyle
         private static readonly string DancerDisplayName = "JabbingDancer.Name";
         private static readonly string DancerDescription = "JabbingDancer.Description";
 
+        private const string Stylebuff3 = "JabbingStyle.Stylebuff3";
+        public static readonly string Stylebuff3Guid = "{0F0B5D3F-AED8-4D21-9697-FF8CF6434948}";
+
         public static void DancerConfigure()
         {
             var icon = FeatureRefs.SnapShot.Reference.Get().Icon;
+
+            var buff = BuffConfigurator.New(Stylebuff3, Stylebuff3Guid)
+              .SetDisplayName(DancerDisplayName)
+              .SetDescription(DancerDescription)
+              .SetIcon(icon)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .Configure();
 
             FeatureConfigurator.New(DancerName, DancerGuid, FeatureGroup.Feat)
                     .SetDisplayName(DancerDisplayName)
@@ -136,6 +146,7 @@ namespace PrestigePlus.Blueprint.CombatStyle
                     .AddPrerequisiteFeature(StyleGuid)
                     .AddPrerequisiteFeature(FeatureRefs.Dodge.ToString())
                     .AddPrerequisiteFeature(FeatureRefs.Mobility.ToString())
+                    .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1)))
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .AddToGroups(FeatureGroup.StyleFeat)
                     .Configure();

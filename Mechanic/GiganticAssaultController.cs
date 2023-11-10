@@ -31,6 +31,7 @@ using BlueprintCore.Blueprints.References;
 using Kingmaker.UnitLogic.Parts;
 using UnityEngine;
 using TurnBased.Controllers;
+using PrestigePlus.Blueprint.CombatStyle;
 
 namespace PrestigePlus.GrappleMechanic
 {
@@ -39,6 +40,15 @@ namespace PrestigePlus.GrappleMechanic
         private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         public override void TickOnUnit(UnitEntityData unit)
         {
+            var turn = Game.Instance.TurnBasedCombatController?.CurrentTurn;
+            if (unit.HasFact(Dancer) && turn?.HasFiveFootStep(unit) == false)
+            {
+                Logger.Info("charge4");
+                GameHelper.RemoveBuff(unit, Dancer);
+                turn.m_RiderMovementStats.TimeMovedByFiveFootStep = 0;
+                turn.m_RiderMovementStats.MetersMovedByFiveFootStep = 0;
+                turn.m_RiderMovementStats.TimeMoved = 0;
+            }
             if (unit.HasFact(Base)) 
             {
                 UnitEntityData mount = unit.GetSaddledUnit();
@@ -59,8 +69,6 @@ namespace PrestigePlus.GrappleMechanic
                 {
                     if (CombatController.IsInTurnBasedCombat())
                     {
-                        //Logger.Info("charge01");
-                        var turn = Game.Instance.TurnBasedCombatController?.CurrentTurn;
                         if (turn == null) { Logger.Info("wait"); return; }
                         if (!turn.IsActing && !turn.IsMoving) { return; }
                         if (turn.Rider == rhino) { turn.ForceToEnd(); return; }
@@ -70,7 +78,6 @@ namespace PrestigePlus.GrappleMechanic
                     UnitEntityData mount = rhino.GetSaddledUnit();;
                     if (mount == null)
                     {
-                        //Logger.Info("charge4");
                         CastCharge(rhino, unit);
                         rhino.Ensure<UnitPartForceMove>().Push(normalized2, distance, true);
                     }
@@ -100,5 +107,6 @@ namespace PrestigePlus.GrappleMechanic
         private static BlueprintAbilityReference Charge = BlueprintTool.GetRef<BlueprintAbilityReference>(AerialAssault.ReleaseAbilityGuid);
         private static BlueprintFeatureReference Base = BlueprintTool.GetRef<BlueprintFeatureReference>("{D47DC15C-3A96-4358-A652-DB9E632009A7}");
 
+        private static BlueprintBuffReference Dancer = BlueprintTool.GetRef<BlueprintBuffReference>(JabbingStyle.DancerGuid);
     }
 }
