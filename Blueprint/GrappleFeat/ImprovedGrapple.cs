@@ -154,6 +154,7 @@ namespace PrestigePlus.Blueprint.GrappleFeat
               .SetDescription(Description)
               .SetIcon(icon)
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var abilityPin = ActivatableAbilityConfigurator.New(PinAbility, PinAbilityGuid)
@@ -170,6 +171,7 @@ namespace PrestigePlus.Blueprint.GrappleFeat
               .SetDescription(Description)
               .SetIcon(icon)
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var abilityTieUp = ActivatableAbilityConfigurator.New(TieUpAbility, TieUpAbilityGuid)
@@ -186,6 +188,7 @@ namespace PrestigePlus.Blueprint.GrappleFeat
               .SetDescription(Description)
               .SetIcon(icon)
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var abilityReady = ActivatableAbilityConfigurator.New(ReadyAbility, ReadyAbilityGuid)

@@ -35,7 +35,7 @@ namespace PrestigePlus.CustomComponent.Feat
                         num = 4;
                     }
                 }
-                EnergyDamage Damage = new(new DiceFormula(num, DiceType.D6), DamageEnergyType.Magic);
+                PhysicalDamage Damage = new(new ModifiableDiceFormula(new DiceFormula(num, DiceType.D6)), 0, PhysicalDamageForm.Bludgeoning);
                 evt.Damage.Add(Damage);
             }
         }

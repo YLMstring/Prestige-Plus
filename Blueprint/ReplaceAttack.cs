@@ -45,6 +45,7 @@ namespace PrestigePlus.Blueprint
               .SetDescription(DisarmDescription)
               .SetIcon(icon)
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var abilityTrick = ActivatableAbilityConfigurator.New(DisarmAbility, DisarmAbilityGuid)
@@ -61,6 +62,7 @@ namespace PrestigePlus.Blueprint
               .SetDescription(DisarmDescription)
               .SetIcon(icon)
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var abilityTrick2 = ActivatableAbilityConfigurator.New(Disarm2Ability, Disarm2AbilityGuid)
@@ -103,6 +105,7 @@ namespace PrestigePlus.Blueprint
               .SetDescription(SunderDescription)
               .SetIcon(icon)
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var abilityTrick = ActivatableAbilityConfigurator.New(SunderAbility, SunderAbilityGuid)
@@ -119,6 +122,7 @@ namespace PrestigePlus.Blueprint
               .SetDescription(SunderDescription)
               .SetIcon(icon)
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var abilityTrick2 = ActivatableAbilityConfigurator.New(Sunder2Ability, Sunder2AbilityGuid)
@@ -161,6 +165,7 @@ namespace PrestigePlus.Blueprint
               .SetDescription(TripDescription)
               .SetIcon(icon)
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var abilityTrick = ActivatableAbilityConfigurator.New(TripAbility, TripAbilityGuid)
@@ -177,6 +182,7 @@ namespace PrestigePlus.Blueprint
               .SetDescription(TripDescription)
               .SetIcon(icon)
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var abilityTrick2 = ActivatableAbilityConfigurator.New(Trip2Ability, Trip2AbilityGuid)
@@ -219,6 +225,7 @@ namespace PrestigePlus.Blueprint
               .SetDescription(BullRushDescription)
               .SetIcon(icon)
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             ActivatableAbilityConfigurator.New(BullRushAbility, BullRushAbilityGuid)
@@ -232,6 +239,7 @@ namespace PrestigePlus.Blueprint
               .SetDescription(BullRush2Description)
               .SetIcon(icon)
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .AddBuffActions(newRound: action, activated: action, deactivated: action2)
               .Configure();
 
@@ -275,6 +283,7 @@ namespace PrestigePlus.Blueprint
               .SetDescription(BullRushQuickDescription)
               .SetIcon(icon)
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             ActivatableAbilityConfigurator.New(BullRushQuickAbility, BullRushQuickAbilityGuid)
@@ -288,6 +297,7 @@ namespace PrestigePlus.Blueprint
               .SetDescription(BullRushQuick2Description)
               .SetIcon(icon)
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .AddBuffActions(newRound: action, activated: action, deactivated: action2)
               .Configure();
 

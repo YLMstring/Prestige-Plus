@@ -43,6 +43,7 @@ namespace PrestigePlus.Feats
               .SetDescription(StyleDescription)
               .SetIcon(icon)
               .AddComponent<TurtleSpecialAC>()
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(StyleActivatableAbility, StyleActivatableAbilityGuid)

@@ -46,6 +46,7 @@ namespace PrestigePlus.Feats
               .SetDisplayName(StyleDisplayName)
               .SetDescription(StyleDescription)
               .SetIcon(icon)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(StyleActivatableAbility, StyleActivatableAbilityGuid)

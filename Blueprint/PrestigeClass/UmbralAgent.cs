@@ -327,6 +327,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDescription(UmbralAgentShadowChains2Description)
                 .SetIcon(icon)
                 .SetFlags(BlueprintBuff.Flags.HiddenInUi)
+                .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
                 .AddReplaceSingleCombatManeuverStat(statType: StatType.Wisdom, type: Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple)
                 .Configure();
 
@@ -451,6 +452,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .AddAreaEffect(area)
               .SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var abilityresourse = AbilityResourceConfigurator.New(GazeAbilityRes, GazeAbilityResGuid)

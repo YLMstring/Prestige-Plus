@@ -56,6 +56,7 @@ namespace PrestigePlus.Blueprint.RogueTalent
               .SetDescription(Description)
               .SetIcon(icon)
               .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .AddComponent<RogueAnotherDay>()
               .Configure();
 

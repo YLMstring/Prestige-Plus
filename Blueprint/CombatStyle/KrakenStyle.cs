@@ -48,6 +48,7 @@ namespace PrestigePlus.Feats
               .SetDescription(StyleDescription)
               .SetIcon(icon)
               .AddComponent<KrakenDamage>()
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(StyleActivatableAbility, StyleActivatableAbilityGuid)
@@ -147,6 +148,7 @@ namespace PrestigePlus.Feats
               .SetDescription(PinDescription)
               .SetIcon(icon)
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var abilityPin = ActivatableAbilityConfigurator.New(PinAbility, PinAbilityGuid)

@@ -94,7 +94,7 @@ namespace PrestigePlus.CustomComponent.Feat
 
         void IRulebookHandler<RuleCalculateAttacksCount>.OnEventDidTrigger(RuleCalculateAttacksCount evt)
         {
-            if (Owner.HasFact(Buff2)) { return; }
+            if (Owner.HasFact(Mythic)) { return; }
             RuleCalculateAttacksCount.AttacksCount primaryHand = evt.Result.PrimaryHand;
             RuleCalculateAttacksCount.AttacksCount secondaryHand = evt.Result.SecondaryHand;
             primaryHand.PenalizedAttacks = 0;
@@ -104,6 +104,6 @@ namespace PrestigePlus.CustomComponent.Feat
             secondaryHand.HasteAttacks = 0;
             secondaryHand.AdditionalAttacks = 0;
         }
-        private static BlueprintBuffReference Buff2 = BlueprintTool.GetRef<BlueprintBuffReference>(MageHandTrick.MageHandMythicFeatGuid);
+        private static BlueprintFeatureReference Mythic = BlueprintTool.GetRef<BlueprintFeatureReference>(MageHandTrick.MageHandMythicFeatGuid);
     }
 }

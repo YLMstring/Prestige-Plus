@@ -60,6 +60,7 @@ namespace PrestigePlus.Blueprint.CombatStyle
               .SetDisplayName(StyleDisplayName)
               .SetDescription(StyleDescription)
               .SetIcon(icon)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .AddInitiatorAttackWithWeaponTrigger(action, category: Kingmaker.Enums.WeaponCategory.UnarmedStrike, checkWeaponCategory: true, onlyHit: true)
               .Configure();
 
@@ -96,7 +97,7 @@ namespace PrestigePlus.Blueprint.CombatStyle
 
         public static void MasterConfigure()
         {
-            var icon = FeatureRefs.Evasion.Reference.Get().Icon;
+            var icon = FeatureRefs.ImprovedUnarmedStrike.Reference.Get().Icon;
 
             FeatureConfigurator.New(MasterName, MasterGuid, FeatureGroup.Feat)
                     .SetDisplayName(MasterDisplayName)
@@ -123,7 +124,7 @@ namespace PrestigePlus.Blueprint.CombatStyle
 
         public static void DancerConfigure()
         {
-            var icon = FeatureRefs.Evasion.Reference.Get().Icon;
+            var icon = FeatureRefs.SnapShot.Reference.Get().Icon;
 
             FeatureConfigurator.New(DancerName, DancerGuid, FeatureGroup.Feat)
                     .SetDisplayName(DancerDisplayName)
@@ -138,7 +139,6 @@ namespace PrestigePlus.Blueprint.CombatStyle
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .AddToGroups(FeatureGroup.StyleFeat)
                     .Configure();
-
         }
     }
 }

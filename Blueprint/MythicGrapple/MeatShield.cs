@@ -45,6 +45,7 @@ namespace PrestigePlus.Blueprint.MythicGrapple
               .SetIcon(icon)
               .AddComponent<MeatShieldMechanic>(c => { c.CooldownBuff = BuffMeatShield2; })
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var abilityTrick = ActivatableAbilityConfigurator.New(MeatShieldAbility, MeatShieldAbilityGuid)

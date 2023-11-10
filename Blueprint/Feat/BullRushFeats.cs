@@ -73,6 +73,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDescription(Description2)
               .SetIcon(icon)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(KnockbackActivatableAbility, KnockbackActivatableAbilityGuid)
@@ -177,6 +178,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(AngelDisplayName)
               .SetDescription(AngelDescription)
               .SetIcon(icon)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .AddInitiatorAttackWithWeaponTrigger(action, actionsOnInitiator: true, checkWeaponRangeType: true, rangeType: WeaponRangeType.Melee, onlyOnFullAttack: true, onlyOnFirstAttack: true, triggerBeforeAttack: true)
               .Configure();
 
@@ -229,6 +231,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDescription(FollowDescription)
               .SetIcon(icon)
               .AddComponent<BullRushFollower>()
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             ActivatableAbilityConfigurator.New(FollowActivatableAbility, FollowActivatableAbilityGuid)
@@ -267,6 +270,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddInitiatorAttackWithWeaponTrigger(action, checkWeaponRangeType: true, rangeType: WeaponRangeType.Melee, onlyHit: true, onCharge: true)
               .AddComponent<BullRushMonster>()
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(MonsterActivatableAbility, MonsterActivatableAbilityGuid)

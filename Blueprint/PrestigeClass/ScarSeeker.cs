@@ -342,6 +342,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDisplayName(HealingDisplayName)
                 .SetDescription(HealingDescription)
                 .SetIcon(icon)
+                .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
                 .AddComponent<AddAbilityResourceDepletedTrigger>(c => { c.m_Resource = BlueprintTool.GetRef<BlueprintAbilityResourceReference>("{CDE7679C-3AE2-48E6-8103-7ECCAF3EB9BC}"); c.Action = ActionsBuilder.New().RemoveSelf().Build(); c.Cost = 1; })
                 .Configure();
 
@@ -393,6 +394,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDisplayName(MartyrDisplayName)
                 .SetDescription(MartyrDescription)
                 .SetIcon(icon)
+                .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
                 .AddComponent<AddAbilityResourceDepletedTrigger>(c => { c.m_Resource = AbilityResourceRefs.LayOnHandsResource.Reference.Get().ToReference<BlueprintAbilityResourceReference>(); c.Action = ActionsBuilder.New().RemoveSelf().Build(); c.Cost = 1; })
                 .Configure();
 
@@ -551,6 +553,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDisplayName(SacrificeDisplayName)
                 .SetDescription(SacrificeDescription)
                 .SetIcon(icon)
+                .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
                 .AddComponent<AddAbilityResourceDepletedTrigger>(c => { c.m_Resource = BlueprintTool.GetRef<BlueprintAbilityResourceReference>("{CDE7679C-3AE2-48E6-8103-7ECCAF3EB9BC}"); c.Action = ActionsBuilder.New().RemoveSelf().Build(); c.Cost = 1; })
                 .Configure();
 
@@ -772,6 +775,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddContextRankConfig(ContextRankConfigs.StatBonus(stat: StatType.Charisma, min: 1))
                 .AddComponent<AddAbilityResourceDepletedTrigger>(c => { c.m_Resource = BlueprintTool.GetRef<BlueprintAbilityResourceReference>("{CDE7679C-3AE2-48E6-8103-7ECCAF3EB9BC}"); c.Action = ActionsBuilder.New().RemoveSelf().Build(); c.Cost = 1; })
                 .AddComponent<ScarTenacity>(a => { a.ActionOnSelf = action; })
+                .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
                 .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(TenacityAblity, TenacityAblityGuid)

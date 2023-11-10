@@ -53,6 +53,7 @@ namespace PrestigePlus.Feats
               .SetDisplayName(StyleDisplayName)
               .SetDescription(StyleDescription)
               .SetIcon(icon)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
                     .AddACContextBonusAgainstFactOwner(bonus: ContextValues.Rank(), checkedFact: BuffRefs.Shaken.ToString(), descriptor: ModifierDescriptor.Profane)
                     .AddACContextBonusAgainstFactOwner(bonus: ContextValues.Rank(), checkedFact: BuffRefs.ShakenSystemCondition.ToString(), descriptor: ModifierDescriptor.Profane)
                     .AddACContextBonusAgainstFactOwner(bonus: ContextValues.Rank(), checkedFact: BuffRefs.Frightened.ToString(), descriptor: ModifierDescriptor.Profane)

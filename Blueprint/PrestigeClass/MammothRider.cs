@@ -366,6 +366,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(ReachSteedDescription)
               .SetIcon(icon)
               .SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .AddStatBonus(stat: StatType.Reach, value: 4)
               .Configure();
 

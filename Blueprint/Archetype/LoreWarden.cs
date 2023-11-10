@@ -429,6 +429,7 @@ namespace PrestigePlus.Blueprint.Archetype
              .SetDescription(HairDescription)
              .SetIcon(icon)
              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
              .AddComponent<LoreWardenHair>()
              .Configure();
 

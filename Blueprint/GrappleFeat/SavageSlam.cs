@@ -33,6 +33,7 @@ namespace PrestigePlus.Blueprint.GrappleFeat
               .SetDescription(Description)
               .SetIcon(icon)
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var abilityTrick = ActivatableAbilityConfigurator.New(SavageSlamAbility, SavageSlamAbilityGuid)

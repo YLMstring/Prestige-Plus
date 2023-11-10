@@ -43,6 +43,7 @@ namespace PrestigePlus.Blueprint.GrappleFeat
               //.AddInitiatorAttackWithWeaponTrigger(action: grapple, onlyHit: true)
               .AddComponent<AddInitiatorAttackWithWeaponTrigger>(c => { c.Action = grapple; c.OnlyHit = true; c.CheckWeaponRangeType = true; c.RangeType = Kingmaker.Enums.WeaponRangeType.Melee; c.TriggerBeforeAttack = false; })
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var abilityTrick = ActivatableAbilityConfigurator.New(HamatulaStrikeAbility, HamatulaStrikeAbilityGuid)

@@ -48,6 +48,7 @@ namespace PrestigePlus.Blueprint.RogueTalent
               .SetDescription(SneakyManeuverDescription)
               .SetIcon(icon)
               .AddComponent<SneakyManeuverComponent>()
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var abilityTrick = ActivatableAbilityConfigurator.New(SneakyManeuverAbility, SneakyManeuverAbilityGuid)

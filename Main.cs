@@ -188,6 +188,9 @@ namespace PrestigePlus
            .AddToggle(
             Toggle.New(GetKey("kraken"), defaultValue: true, Helpers.CreateString("toggle-desc16", "Kraken Style"))
               .ShowVisualConnection())
+           .AddToggle(
+            Toggle.New(GetKey("panther"), defaultValue: true, Helpers.CreateString("toggle-desc41", "Panther Style"))
+              .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("turtle"), defaultValue: true, Helpers.CreateString("toggle-desc15", "Snapping Turtle Style"))
               .ShowVisualConnection())
@@ -263,6 +266,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("furious"))) { FuriousGuardian.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("magehand"))) { MageHandTrick.ConfigureMageHandMain(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("jabbing"))) { JabbingStyle.StyleConfigure(); JabbingStyle.DancerConfigure(); JabbingStyle.MasterConfigure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("panther"))) { PantherStyle.StyleConfigure(); PantherStyle.ClawConfigure(); PantherStyle.ParryConfigure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)

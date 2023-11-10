@@ -53,6 +53,7 @@ namespace PrestigePlus.Blueprint.CombatStyle
               .SetDescription(StyleDescription)
               .SetIcon(icon)
               .AddComponent<SmashingComponent>(c => { c.effect = Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush; })
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(StyleActivatableAbility, StyleActivatableAbilityGuid)
@@ -72,6 +73,7 @@ namespace PrestigePlus.Blueprint.CombatStyle
               .SetDescription(StyleDescription)
               .SetIcon(icon)
               .AddComponent<SmashingComponent>(c => { c.effect = Kingmaker.RuleSystem.Rules.CombatManeuver.Trip; })
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var ability2 = ActivatableAbilityConfigurator.New(StyleActivatableAbility2, StyleActivatableAbilityGuid2)

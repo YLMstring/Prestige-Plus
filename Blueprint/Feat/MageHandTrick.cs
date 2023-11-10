@@ -63,7 +63,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static void ConfigureMageHandMythic()
         {
-            var icon = AbilityRefs.DispelMagic.Reference.Get().Icon;
+            var icon = AbilityRefs.DispelMagicGreater.Reference.Get().Icon;
 
             FeatureConfigurator.New(MageHandMythicFeatName, MageHandMythicFeatGuid, FeatureGroup.MythicFeat)
                     .SetDisplayName(MageHandMythicDisplayName)
@@ -142,6 +142,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddWeaponDamageOverride(formula: new DiceFormula(1, DiceType.D3), overrideDice: true, weaponTypes: new() { WeaponTypeRefs.Unarmed.Cast<BlueprintWeaponTypeReference>() })
               .AddComponent<ThrowPunchStuff>()
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(ThrowPunchActivatableAbility, ThrowPunchActivatableAbilityGuid)

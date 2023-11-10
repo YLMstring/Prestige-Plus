@@ -91,6 +91,7 @@ namespace PrestigePlus.Blueprint.MythicGrapple
               .SetDescription(Description4)
               .SetIcon(icon)
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(StyleActivatableAbility, StyleActivatableAbilityGuid)
@@ -121,6 +122,7 @@ namespace PrestigePlus.Blueprint.MythicGrapple
               .SetDescription(Description3)
               .SetIcon(icon)
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .AddBuffActions(newRound: action, activated: action, deactivated: action2)
               .Configure();
 
