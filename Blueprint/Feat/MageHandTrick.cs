@@ -51,6 +51,7 @@ namespace PrestigePlus.Blueprint.Feat
                     .AddToIsPrerequisiteFor(RangedAidFeatGuid)
                     .AddToIsPrerequisiteFor(ThrowPunchFeatGuid)
                     .AddToIsPrerequisiteFor(FeatGuid)
+                    .AddToIsPrerequisiteFor(MageHandMythicFeatGuid)
                     .SetReapplyOnLevelUp(true)
                     .Configure();
         }

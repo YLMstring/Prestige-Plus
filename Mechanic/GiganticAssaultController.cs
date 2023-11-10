@@ -41,13 +41,12 @@ namespace PrestigePlus.GrappleMechanic
         public override void TickOnUnit(UnitEntityData unit)
         {
             var turn = Game.Instance.TurnBasedCombatController?.CurrentTurn;
-            if (unit.HasFact(Dancer) && turn?.HasFiveFootStep(unit) == false)
+            if (turn?.Rider == unit && !unit.View.IsMoving() && unit.HasFact(Jab) && unit.HasFact(Dancer) && turn.HasFiveFootStep(unit) == false && turn.m_RiderMovementStats.MetersMovedByFiveFootStep > 0)
             {
-                Logger.Info("charge4");
                 GameHelper.RemoveBuff(unit, Dancer);
-                turn.m_RiderMovementStats.TimeMovedByFiveFootStep = 0;
-                turn.m_RiderMovementStats.MetersMovedByFiveFootStep = 0;
-                turn.m_RiderMovementStats.TimeMoved = 0;
+                //turn.m_RiderMovementStats.TimeMovedByFiveFootStep = 0;
+                turn.m_RiderMovementStats.MetersMovedByFiveFootStep = 0.1f;
+                //turn.m_RiderMovementStats.TimeMoved = 0;
             }
             if (unit.HasFact(Base)) 
             {
@@ -107,6 +106,7 @@ namespace PrestigePlus.GrappleMechanic
         private static BlueprintAbilityReference Charge = BlueprintTool.GetRef<BlueprintAbilityReference>(AerialAssault.ReleaseAbilityGuid);
         private static BlueprintFeatureReference Base = BlueprintTool.GetRef<BlueprintFeatureReference>("{D47DC15C-3A96-4358-A652-DB9E632009A7}");
 
-        private static BlueprintBuffReference Dancer = BlueprintTool.GetRef<BlueprintBuffReference>(JabbingStyle.DancerGuid);
+        private static BlueprintBuffReference Jab = BlueprintTool.GetRef<BlueprintBuffReference>(JabbingStyle.StylebuffGuid);
+        private static BlueprintBuffReference Dancer = BlueprintTool.GetRef<BlueprintBuffReference>(JabbingStyle.Stylebuff3Guid);
     }
 }

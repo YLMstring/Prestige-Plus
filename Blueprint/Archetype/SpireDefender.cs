@@ -20,6 +20,7 @@ using Kingmaker.UnitLogic.Abilities.Components;
 using BlueprintCore.Actions.Builder.ContextEx;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.Blueprints.Items.Armors;
+using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -135,6 +136,10 @@ namespace PrestigePlus.Blueprint.Archetype
         private static BlueprintFeature CreateManeuverMastery()
         {
             var icon = FeatureRefs.MagusSpellRecallFeature.Reference.Get().Icon;
+
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.MagusArcanaSelection)
+                .AddToAllFeatures(FeatureSelectionRefs.WitchFamiliarSelection.ToString())
+                .Configure();
 
             return FeatureConfigurator.New(ManeuverMastery, ManeuverMasteryGuid, FeatureGroup.MagusArcana)
               .SetDisplayName(ManeuverMasteryDisplayName)

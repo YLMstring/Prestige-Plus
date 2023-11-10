@@ -17,6 +17,7 @@ using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
 using PrestigePlus.Blueprint.CombatStyle;
 using Kingmaker.Designers;
+using Kingmaker.Controllers.Units;
 
 namespace PrestigePlus.CustomAction.OtherFeatRelated
 {
@@ -56,6 +57,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                     if (AttackHit(caster, target) && isparry)
                     {
                         GameHelper.ApplyBuff(target, TargetBuff, new Rounds?(1.Rounds()));
+                        UnitLifeController.ForceTickOnUnit(target);
                     }
                     return;
                 }
@@ -66,6 +68,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                 if (AttackHit(caster, target) && isparry)
                 {
                     GameHelper.ApplyBuff(target, TargetBuff, new Rounds?(1.Rounds()));
+                    UnitLifeController.ForceTickOnUnit(target);
                 }
             }
         }
