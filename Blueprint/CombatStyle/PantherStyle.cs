@@ -49,8 +49,8 @@ namespace PrestigePlus.Blueprint.CombatStyle
               .SetDisplayName(StyleDisplayName)
               .SetDescription(StyleDescription)
               .SetIcon(icon)
-              .AddTargetAttackWithWeaponTrigger(actionsOnAttacker: action, onAttackOfOpportunity: true, waitForAttackResolve: true)
-              .AddTargetAttackWithWeaponTrigger(actionsOnAttacker: action2, onAttackOfOpportunity: true, triggerBeforeAttack: true)
+              .AddTargetAttackWithWeaponTrigger(actionsOnAttacker: action, onAttackOfOpportunity: true, waitForAttackResolve: true, onlyHit: false)
+              .AddTargetAttackWithWeaponTrigger(actionsOnAttacker: action2, onAttackOfOpportunity: true, triggerBeforeAttack: true, onlyHit: false)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 

@@ -39,7 +39,6 @@ namespace PrestigePlus.GrappleMechanic
         private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         public override void TickOnUnit(UnitEntityData unit)
         {
-            Logger.Info(TurnController.FiveFootStep.Value.ToString());
             if (unit.HasFact(Base)) 
             {
                 UnitEntityData mount = unit.GetSaddledUnit();
