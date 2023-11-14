@@ -1,4 +1,4 @@
-# Prestige Plus v1.8.0 for WoTR 
+# Prestige Plus v1.8.1 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - Add grapple mechanic and a bunch of prestige classes!
@@ -9,9 +9,10 @@
 ### Combat Maneuver+
 - You can Disarm, Sunder, or Trip in lieu of an melee attack, like on tabletop!
 - [Seize the Opportunity](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/seize-the-opportunity-combat/): From Path of War
+- Kinda OP so you can make it a mythic feat instead of combat feat if you like (default off)
 - [Surprise Maneuver](https://www.d20pfsrd.com/feats/general-feats/surprise-maneuver/)
 - [Strength Surge](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/strength-surge-ex/)
-- [Ki Throw](https://www.d20pfsrd.com/feats/combat-feats/ki-throw-combat/) and its mythic version!
+- [Ki Throw](https://www.d20pfsrd.com/feats/combat-feats/ki-throw-combat/) and its mythic feat!
 - [Improved Ki Throw](https://www.d20pfsrd.com/feats/combat-feats/improved-ki-throw-combat/)
 - [Binding Throw](https://www.d20pfsrd.com/feats/combat-feats/binding-throw-combat/)
 - [Enhanced Ki Throw](https://www.d20pfsrd.com/feats/combat-feats/enhanced-ki-throw-combat/)
@@ -120,6 +121,7 @@
 #### Magus:  
 - [Spire Defender](https://www.d20pfsrd.com/classes/base-classes/magus/archetypes/paizo-magus-archetypes/spire-defender/)
 - New Magus Arcana: [Maneuver Mastery](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/maneuver-mastery-ex)
+- New Magus Arcana: [Familiar](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/familiar-ex)
 #### Witch:  
 - [White-Haired Witch](https://www.d20pfsrd.com/classes/base-classes/witch/archetypes/paizo-witch-archetypes/white-haired-witch/)
 - This is absolutely my favorite.
@@ -145,6 +147,12 @@
 - [Smashing Style](https://www.d20pfsrd.com/feats/combat-feats/smashing-style-combat-style/)
 - [Stick-Fighting Counter](https://www.d20pfsrd.com/feats/combat-feats/stick-fighting-counter-combat/)
 - [Stick-Fighting Maneuver](https://www.d20pfsrd.com/feats/combat-feats/stick-fighting-maneuver-combat/)
+- [Jabbing Style](https://www.d20pfsrd.com/feats/combat-feats/jabbing-style-combat-style/)
+- [Jabbing Dancer](https://www.d20pfsrd.com/feats/combat-feats/jabbing-dancer-combat/): Pointless in wotr due to how full attack is implemented, so I use [Outslug Sprint](https://www.d20pfsrd.com/feats/combat-feats/outslug-sprint-combat/) effect.
+- [Jabbing Master](https://www.d20pfsrd.com/feats/combat-feats/jabbing-master-combat/)
+- [Panther Style](https://www.d20pfsrd.com/feats/combat-feats/panther-style-combat-style/)
+- [Panther Claw](https://www.d20pfsrd.com/feats/combat-feats/panther-claw-combat/)
+- [Panther Parry](https://www.d20pfsrd.com/feats/combat-feats/panther-parry-combat/)
 ### New Feats
 
 - [Ripple in Still Water](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/ripple-in-still-water-combat/): From Path of War
@@ -157,6 +165,7 @@
 - [Iconoclast](https://www.d20pfsrd.com/feats/combat-feats/iconoclast-combat/)
 - [Rhino Charge](https://www.d20pfsrd.com/feats/combat-feats/rhino-charge-combat/)
 - [Minotaur’s Charge](https://www.d20pfsrd.com/feats/general-feats/minotaur-s-charge/)
+- [Magic Trick (mage hand)](https://www.d20pfsrd.com/feats/general-feats/magic-trick-2/) and its mythic feat!
 ### New Rogue Talents
 
 - [Another Day](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-advanced-talents/another-day-ex/)
@@ -177,6 +186,7 @@
 
 - Estimated THC: Show hit chance and spell (not) saved chance in turn based mode. This is not precise because it doesn't take into consideration certain effects such as concealment, spell penetration or conditional save bonus, but still better than nothing, eh? (default off)
 - Infernal Healing: You can fully heal outside of combat by spending gold, as if you buy a wand of infernal healing and use it! (gold : hp = 3:2)
+- Weak Crits against Enemies: Symmetrical with owlcat weak crits settings, making it fair (default off)
 
 ## Mod Combo
 
