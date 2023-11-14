@@ -77,6 +77,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
         {
             var weapon = maybeCaster.Body.EmptyHandWeapon;
             if (weapon == null) { return false; }
+            maybeCaster.ForceLookAt(unit.Position);
             var attackAnimation = maybeCaster.View.AnimationManager.CreateHandle(UnitAnimationType.SpecialAttack);
             maybeCaster.View.AnimationManager.Execute(attackAnimation);
             RuleAttackWithWeapon ruleAttackWithWeapon = new RuleAttackWithWeapon(maybeCaster, unit, weapon, 0)

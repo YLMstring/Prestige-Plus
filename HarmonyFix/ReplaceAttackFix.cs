@@ -17,6 +17,7 @@ using Kingmaker.UnitLogic.Parts;
 using PrestigePlus.Blueprint;
 using PrestigePlus.Blueprint.Feat;
 using PrestigePlus.Blueprint.MythicGrapple;
+using PrestigePlus.Blueprint.SpecificManeuver;
 using PrestigePlus.CustomAction.OtherManeuver;
 using PrestigePlus.CustomComponent.Grapple;
 using PrestigePlus.Grapple;
@@ -90,8 +91,11 @@ namespace PrestigePlus.HarmonyFix
                 if (caster.HasFact(Disarm1) || caster.HasFact(Disarm2))
                 {
                     GameHelper.RemoveBuff(caster, Disarm1);
-                    var threat = target.GetThreatHandMelee();
-                    if (threat == null || threat.MaybeWeapon == null || threat.MaybeWeapon.Blueprint.IsNatural || threat.MaybeWeapon.Blueprint.IsUnarmed) { return true; }
+                    if (!caster.HasFact(Steal) && !caster.HasFact(Arm))
+                    {
+                        var threat = target.GetThreatHandMelee();
+                        if (threat == null || threat.MaybeWeapon == null || threat.MaybeWeapon.Blueprint.IsNatural || threat.MaybeWeapon.Blueprint.IsUnarmed) { return true; }
+                    }
                     RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.Disarm, AttackBonusRule);
                     ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
                     return false;
@@ -175,5 +179,8 @@ namespace PrestigePlus.HarmonyFix
 
         private static readonly BlueprintFeatureReference SunderReal = BlueprintTool.GetRef<BlueprintFeatureReference>(GreaterSunderTabletop.GreaterSunderTabletopGuid);
         private static readonly BlueprintFeatureReference Ace = BlueprintTool.GetRef<BlueprintFeatureReference>(RangedTrip.AceTripGuid);
+
+        private static readonly BlueprintFeatureReference Steal = BlueprintTool.GetRef<BlueprintFeatureReference>(RangedDisarm.AceDisarmGuid);
+        private static readonly BlueprintFeatureReference Arm = BlueprintTool.GetRef<BlueprintFeatureReference>(RangedDisarm.ArmBindGuid);
     }
 }

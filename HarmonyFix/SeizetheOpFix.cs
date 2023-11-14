@@ -24,6 +24,7 @@ using Kingmaker.EntitySystem.Entities;
 using PrestigePlus.CustomComponent.Grapple;
 using PrestigePlus.Blueprint.GrappleFeat;
 using PrestigePlus.Maneuvers;
+using PrestigePlus.Blueprint.SpecificManeuver;
 
 namespace PrestigePlus.HarmonyFix
 {
@@ -87,8 +88,11 @@ namespace PrestigePlus.HarmonyFix
                 }
                 else if (caster.HasFact(Disarm) && caster.HasFact(DisarmFeat))
                 {
-                    var threat = target.GetThreatHandMelee();
-                    if (threat == null || threat.MaybeWeapon == null || threat.MaybeWeapon.Blueprint.IsNatural || threat.MaybeWeapon.Blueprint.IsUnarmed) { return true; }
+                    if (!caster.HasFact(Steal) && !caster.HasFact(Arm))
+                    {
+                        var threat = target.GetThreatHandMelee();
+                        if (threat == null || threat.MaybeWeapon == null || threat.MaybeWeapon.Blueprint.IsNatural || threat.MaybeWeapon.Blueprint.IsUnarmed) { return true; }
+                    }
                     maneuver = CombatManeuver.Disarm;
                 }
                 else if (caster.HasFact(Sunder) && caster.HasFact(SunderFeat))
@@ -209,5 +213,8 @@ namespace PrestigePlus.HarmonyFix
 
         private static readonly BlueprintFeatureReference SunderReal = BlueprintTool.GetRef<BlueprintFeatureReference>(GreaterSunderTabletop.GreaterSunderTabletopGuid);
         private static readonly BlueprintFeatureReference Ace = BlueprintTool.GetRef<BlueprintFeatureReference>(RangedTrip.AceTripGuid);
+
+        private static readonly BlueprintFeatureReference Steal = BlueprintTool.GetRef<BlueprintFeatureReference>(RangedDisarm.AceDisarmGuid);
+        private static readonly BlueprintFeatureReference Arm = BlueprintTool.GetRef<BlueprintFeatureReference>(RangedDisarm.ArmBindGuid);
     }
 }

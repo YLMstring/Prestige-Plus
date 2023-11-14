@@ -753,10 +753,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddBuffAllSavesBonus(value: 1)
                 .AddBuffAllSkillsBonus(descriptor: ModifierDescriptor.Morale, value: 1, multiplier: ContextValues.Constant(1))
                 .AddBuffAllSkillsBonus(value: 1, multiplier: ContextValues.Constant(1))
-                //.AddBuffAbilityRollsBonus(affectAllStats: true, descriptor: ModifierDescriptor.Morale, value: 1, multiplier: ContextValues.Constant(1))
-                //.AddBuffAbilityRollsBonus(affectAllStats: true, value: 1, multiplier: ContextValues.Constant(1))
-                //.AddAttackBonusConditional(bonus: ContextValues.Constant(1), descriptor: ModifierDescriptor.Morale)
-                //.AddAttackBonusConditional(bonus: ContextValues.Constant(1))
                 .AddContextStatBonus(StatType.AdditionalAttackBonus, 1, ModifierDescriptor.Morale)
                 .AddContextStatBonus(StatType.AdditionalAttackBonus, 1)
                 .Configure();
