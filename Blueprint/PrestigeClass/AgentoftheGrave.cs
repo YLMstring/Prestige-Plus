@@ -49,13 +49,14 @@ using Kingmaker.Designers.Mechanics.Facts;
 using PrestigePlus.Feats;
 using TabletopTweaks.Core.NewComponents.Prerequisites;
 using PrestigePlus.CustomComponent.PrestigeClass;
+using PrestigePlus.Patch;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
     internal class AgentoftheGrave
     {
         private const string ArchetypeName = "AgentoftheGrave";
-        private static readonly string ArchetypeGuid = "{36FF0597-88F2-4FE1-9BC9-7FDDCB546CF8}";
+        public static readonly string ArchetypeGuid = "{36FF0597-88F2-4FE1-9BC9-7FDDCB546CF8}";
         internal const string ArchetypeDisplayName = "AgentoftheGrave.Name";
         private const string ArchetypeDescription = "AgentoftheGrave.Description";
 
@@ -359,170 +360,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .Configure();
         }
 
-        private const string SecretDeath = "AgentoftheGrave.SecretDeath";
-        private static readonly string SecretDeathGuid = "{406A2DD4-AF4D-45F9-BD96-D78E218DD3AC}";
-        internal const string SecretDeathDisplayName = "AgentoftheGraveSecretDeath.Name";
-        private const string SecretDeathDescription = "AgentoftheGraveSecretDeath.Description";
-
-        private const string spelllist = "AgentoftheGrave.spelllist";
-        private static readonly string spelllistguid = "{72869416-FA1F-4864-BB0A-AAAFD05D7177}";
-
-        private static readonly BlueprintSpellList WizardNecromancySpells = SpellListRefs.WizardNecromancySpellList.Reference.Get();
-
-        internal const string ChillTouchSpell = "3f184aa1-610d-498d-bdaf-41eec77b1319";
-        internal const string DesecrateSpell = "ba47baf2-982a-4c4c-82fc-af65dab915af";
-        internal const string StrickenHeartSpell = "8e4e9469-8fa1-42a9-8cfc-44ad05ff8c91";
-        internal const string TouchOfBlindnessSpell = "6177af1b-a096-4f58-a0a0-c02778e95483";
-        private static BlueprintFeature CreateSecretDeath()
-        {
-            var icon = AbilityRefs.AnimateDead.Reference.Get().Icon;
-
-            string AccursedGlareAbility = "724e11ad-1e2d-4ee8-899f-eccde86b2d24";
-            string SpellCurseAbility = "f602da89-a634-4b11-b91b-268e59a9f2b2";
-            string ScourgeOfTheHorsemenAbility = "dafdc0ee-f437-4785-aa82-7bf5b2059bf0";
-            string DeadlyJuggernaut = "8eff5234-d066-448c-821b-5b14e11951c2";
-
-            var firstLevelSpells = new SpellLevelList(1)
-            {
-                m_Spells =
-                WizardNecromancySpells.GetSpells(1)
-                    .Select(s => s.ToReference<BlueprintAbilityReference>())
-                    .Append(AbilityRefs.Doom.Cast<BlueprintAbilityReference>().Reference)
-                    .Append(AbilityRefs.InflictLightWoundsCast.Cast<BlueprintAbilityReference>().Reference)
-                    .Append(BlueprintTool.GetRef<BlueprintAbilityReference>(ChillTouchSpell))
-                    .Append(BlueprintTool.GetRef<BlueprintAbilityReference>(TouchOfBlindnessSpell))
-                    .ToList()
-            };
-
-            var secondLevelSpells = new SpellLevelList(2)
-            {
-                m_Spells =
-                WizardNecromancySpells.GetSpells(2)
-                  .Select(s => s.ToReference<BlueprintAbilityReference>())
-                  .Append(AbilityRefs.BoneFists.Cast<BlueprintAbilityReference>().Reference)
-                  .Append(AbilityRefs.InflictModerateWoundsCast.Cast<BlueprintAbilityReference>().Reference)
-                  .Append(BlueprintTool.GetRef<BlueprintAbilityReference>(DesecrateSpell))
-                  .Append(BlueprintTool.GetRef<BlueprintAbilityReference>(StrickenHeartSpell))
-                  .ToList()
-            };
-
-            var thirdLevelSpells = new SpellLevelList(3)
-            {
-                m_Spells =
-                WizardNecromancySpells.GetSpells(3)
-                  .Select(s => s.ToReference<BlueprintAbilityReference>())
-                  .Append(AbilityRefs.Blindness.Cast<BlueprintAbilityReference>().Reference)
-                  .Append(AbilityRefs.BestowCurse.Cast<BlueprintAbilityReference>().Reference)
-                  .Append(AbilityRefs.Contagion.Cast<BlueprintAbilityReference>().Reference)
-                  .Append(AbilityRefs.InflictSeriousWoundsCast.Cast<BlueprintAbilityReference>().Reference)
-                  .Append(BlueprintTool.GetRef<BlueprintAbilityReference>(DeadlyJuggernaut))
-                  .Append(BlueprintTool.GetRef<BlueprintAbilityReference>(SpellCurseAbility))
-                  .Append(BlueprintTool.GetRef<BlueprintAbilityReference>(AccursedGlareAbility))
-                  .ToList()
-            };
-
-            var fourthLevelSpells = new SpellLevelList(4)
-            {
-                m_Spells =
-                WizardNecromancySpells.GetSpells(4)
-                  .Select(s => s.ToReference<BlueprintAbilityReference>())
-                  .Append(AbilityRefs.DeathWardCast.Cast<BlueprintAbilityReference>().Reference)
-                  .Append(AbilityRefs.InflictCriticalWoundsCast.Cast<BlueprintAbilityReference>().Reference)
-                  .ToList()
-            };
-
-            var fifthLevelSpells = new SpellLevelList(5)
-            {
-                m_Spells =
-                WizardNecromancySpells.GetSpells(5)
-                  .Select(s => s.ToReference<BlueprintAbilityReference>())
-                  .Append(AbilityRefs.Boneshatter.Cast<BlueprintAbilityReference>().Reference)
-                  .Append(AbilityRefs.InflictLightWoundsMass.Cast<BlueprintAbilityReference>().Reference)
-                  .Append(AbilityRefs.SlayLivingCast.Cast<BlueprintAbilityReference>().Reference)
-                  .ToList()
-            };
-
-            var sixthLevelSpells = new SpellLevelList(6)
-            {
-                m_Spells =
-                WizardNecromancySpells.GetSpells(6)
-                  .Select(s => s.ToReference<BlueprintAbilityReference>())
-                  .Append(AbilityRefs.HarmCast.Cast<BlueprintAbilityReference>().Reference)
-                  .Append(AbilityRefs.InflictModerateWoundsMass.Cast<BlueprintAbilityReference>().Reference)
-                  .ToList()
-            };
-
-            var seventhLevelSpells = new SpellLevelList(7)
-            {
-                m_Spells =
-                WizardNecromancySpells.GetSpells(7)
-                  .Select(s => s.ToReference<BlueprintAbilityReference>())
-                  .Append(AbilityRefs.Destruction.Cast<BlueprintAbilityReference>().Reference)
-                  .Append(AbilityRefs.BestowCurseGreater.Cast<BlueprintAbilityReference>().Reference)
-                  .Append(AbilityRefs.InflictSeriousWoundsMass.Cast<BlueprintAbilityReference>().Reference)
-                  .ToList()
-            };
-
-            var eighthLevelSpells = new SpellLevelList(8)
-            {
-                m_Spells =
-                WizardNecromancySpells.GetSpells(8)
-                  .Select(s => s.ToReference<BlueprintAbilityReference>())
-                  .Append(AbilityRefs.InflictCriticalWoundsMass.Cast<BlueprintAbilityReference>().Reference)
-                  .ToList()
-            };
-
-            var ninthLevelSpells = new SpellLevelList(9)
-            {
-                m_Spells =
-                WizardNecromancySpells.GetSpells(9)
-                  .Select(s => s.ToReference<BlueprintAbilityReference>())
-                  .Append(BlueprintTool.GetRef<BlueprintAbilityReference>(ScourgeOfTheHorsemenAbility))
-                  .ToList()
-            };
-
-            SpellListConfigurator.New(spelllist, spelllistguid)
-              .SetFilterBySchool(true)
-              .SetIsMythic(false)
-              .SetFilterByMaxLevel(9)
-              .SetFilterByDescriptor(false)
-              .SetDescriptor(SpellDescriptor.None)
-              .SetExcludeFilterSchool(true)
-              .SetFilterSchool(SpellSchool.Necromancy)
-              .SetFilterSchool2(SpellSchool.None)
-              .SetFilteredList(SpellListRefs.ClericSpellList.Reference.Get())
-              .AddToSpellsByLevel(
-                new(0),
-                firstLevelSpells,
-                secondLevelSpells,
-                thirdLevelSpells,
-                fourthLevelSpells,
-                fifthLevelSpells,
-                sixthLevelSpells,
-                seventhLevelSpells,
-                eighthLevelSpells,
-                ninthLevelSpells)
-              .Configure(delayed: true);
-
-            var feat = FeatureConfigurator.New(SecretDeath, SecretDeathGuid)
-              .SetDisplayName(SecretDeathDisplayName)
-              .SetDescription(SecretDeathDescription)
-              .SetIcon(icon)
-              .SetIsClassFeature(true)
-              .AddPrerequisiteStatValue(StatType.Intelligence, 13)
-              .AddLearnSpellList(spellList: spelllistguid, characterClass: CharacterClassRefs.ClericClass.ToString())
-              .AddLearnSpellList(spellList: spelllistguid, characterClass: CharacterClassRefs.OracleClass.ToString())
-              .AddLearnSpellList(spellList: spelllistguid, characterClass: CharacterClassRefs.ShamanClass.ToString())
-              .AddLearnSpellList(spellList: spelllistguid, characterClass: CharacterClassRefs.DruidClass.ToString())
-              .AddLearnSpellList(spellList: spelllistguid, characterClass: CharacterClassRefs.WizardClass.ToString())
-              .AddLearnSpellList(spellList: spelllistguid, characterClass: CharacterClassRefs.SorcererClass.ToString())
-              .AddLearnSpellList(spellList: spelllistguid, characterClass: CharacterClassRefs.ArcanistClass.ToString())
-              .AddLearnSpellList(spellList: spelllistguid, characterClass: CharacterClassRefs.WitchClass.ToString())
-              .Configure();
-
-            return feat;
-        }
-
         private const string UndeathInitiate = "UndeathInitiate";
         private static readonly string UndeathInitiateGuid = "{522579B1-2041-4A91-8C44-BB42D066B40C}";
 
@@ -558,10 +395,10 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
-              .AddToAllFeatures(CreateSecretDeath())
+              .AddToAllFeatures(GraveSpellList.SecretDeathGuid)
               .AddToAllFeatures(CreateGhoul())
               .AddToAllFeatures(CreateVampire())
-              .Configure();
+              .Configure(delayed: true);
         }
     }
 }

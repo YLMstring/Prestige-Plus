@@ -74,7 +74,10 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                     weapon ??= maybeCaster.Body.EmptyHandWeapon;
                     break;
                 case 2:
-                    weapon = maybeCaster.Body.CurrentHandsEquipmentSet.SecondaryHand?.Weapon;
+                    var prime = maybeCaster.Body.PrimaryHand?.Weapon;
+                    if (prime == null || prime.Blueprint.IsNatural) { return false; }
+                    weapon = maybeCaster.Body.SecondaryHand?.Weapon;
+                    if (weapon?.Blueprint.IsNatural == true) { return false; }
                     break;
             }
             if (weapon == null || !weapon.Blueprint.IsMelee) { return false; }

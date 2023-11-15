@@ -51,6 +51,7 @@ namespace PrestigePlus.Blueprint
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
                 .AddAbilityCasterInCombat(true)
                 .SetActionBarAutoFillIgnored(true)
+                .AddHideFeatureInInspect()
                 .Configure();
 
             var ability2 = AbilityConfigurator.New(StyleName, StyleGuid)
@@ -70,6 +71,7 @@ namespace PrestigePlus.Blueprint
                 .AddAbilityTargetsAround(radius: 30.Feet(), targetType: Kingmaker.UnitLogic.Abilities.Components.TargetType.Ally)
                 .AddAbilityCasterInCombat(true)
                 .SetActionBarAutoFillIgnored(true)
+                .AddHideFeatureInInspect()
                 .Configure();
 
             FeatureConfigurator.For(FeatureRefs.SkillAbilities)
@@ -83,11 +85,13 @@ namespace PrestigePlus.Blueprint
 
             AbilityConfigurator.New(StyleAbility, StyleAbilityGuid)
                 .SetHidden(true)
+                .AddHideFeatureInInspect()
                 .SetActionBarAutoFillIgnored(true)
                 .Configure();
 
             AbilityConfigurator.New(StyleName, StyleGuid)
                 .SetHidden(true)
+                .AddHideFeatureInInspect()
                 .SetActionBarAutoFillIgnored(true)
                 .Configure();
 

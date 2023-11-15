@@ -37,7 +37,7 @@ namespace PrestigePlus.CustomComponent.Feat
                     list.Add(this.ChangeType(damage));
                 }
                 evt.Damage.Remove((BaseDamage _) => true);
-                var abilitydata = new AbilityData(AbilityRefs.Jolt.Reference.Get(), Owner);
+                var abilitydata = new AbilityData(AbilityRefs.Flare.Reference.Get(), Owner);
                 var cont = abilitydata.CreateExecutionContext(Owner, null);
                 if (Rulebook.Trigger(new RuleSpellResistanceCheck(cont, evt.Target)).IsSpellResisted) { return; }
                 foreach (BaseDamage damage2 in list)

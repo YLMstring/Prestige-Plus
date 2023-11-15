@@ -32,7 +32,7 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
         private const string AceDisarmDescription = "AceDisarm.Description";
         public static BlueprintFeature AceDisarmFeature()
         {
-            var icon = FeatureRefs.SnapShot.Reference.Get().Icon;
+            var icon = FeatureRefs.ThrowAnything.Reference.Get().Icon;
 
             var shoot = ActionsBuilder.New()
                 .Add<StealAction>()
@@ -64,7 +64,7 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
 
         public static BlueprintFeature CreateRangeDisarm()
         {
-            var icon = FeatureRefs.SnapShot.Reference.Get().Icon;
+            var icon = FeatureRefs.ThrowAnything.Reference.Get().Icon;
 
             var shoot = ActionsBuilder.New()
                 .Add<ContextActionRangedTrip>(c => { c.maneuver = Kingmaker.RuleSystem.Rules.CombatManeuver.Disarm; c.Ace = AceDisarmGuid; })
@@ -103,7 +103,7 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
 
         public static BlueprintFeature CreateMythicDisarm()
         {
-            var icon = FeatureRefs.AgileManeuvers.Reference.Get().Icon;
+            var icon = FeatureRefs.ThrowAnything.Reference.Get().Icon;
 
             return FeatureConfigurator.New(MythicDisarm, MythicDisarmGuid, FeatureGroup.MythicFeat)
               .SetDisplayName(MythicDisarmDisplayName)
@@ -130,6 +130,7 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
                 .SetDisplayName(SweepingDisarmDisplayName)
                 .SetDescription(SweepingDisarmDescription)
                 .SetIcon(icon)
+                .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New().RemoveSelf().Build())
                 .Configure();
 
             var shoot = ActionsBuilder.New()
@@ -145,7 +146,6 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
               .AddPrerequisiteFeature(FeatureRefs.ImprovedDisarm.ToString())
               .AddPrerequisiteStatValue(StatType.BaseAttackBonus, 1)
               .AddManeuverTrigger(shoot, Kingmaker.RuleSystem.Rules.CombatManeuver.Disarm, true)
-              .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New().RemoveBuff(buff).Build())
               .AddToGroups(FeatureGroup.CombatFeat)
               .Configure();
         }
@@ -160,7 +160,7 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
         private const string ArmBindDescription = "ArmBind.Description";
         public static BlueprintFeature ArmBindFeature()
         {
-            var icon = FeatureRefs.CleaveFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.ArmyShifterGrabAbility.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(ArmBindBuff, ArmBindBuffGuid)
                 .SetDisplayName(ArmBindDisplayName)
@@ -169,18 +169,22 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
                 .SetRanks(10)
                 .SetStacking(Kingmaker.UnitLogic.Buffs.Blueprints.StackingType.Rank)
                 .AddComponent<ArmBindAutoParry>()
+                .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
                 .Configure();
 
             var shoot = ActionsBuilder.New()
                 .ApplyBuff(buff, ContextDuration.Fixed(1))
                 .Build();
 
+            //"TwoWeaponDefenseFeature": "3eee7471-39f9-4b1d-8d67-2c8bb63137d7",
+
             return FeatureConfigurator.New(ArmBind, ArmBindGuid, FeatureGroup.Feat)
               .SetDisplayName(ArmBindDisplayName)
               .SetDescription(ArmBindDescription)
               .SetIcon(icon)
               .AddPrerequisiteFeature(FeatureRefs.TwoWeaponFighting.ToString())
-              .AddPrerequisiteFeature(FeatureRefs.DoubleSlice.ToString())
+              .AddPrerequisiteFeature("3eee7471-39f9-4b1d-8d67-2c8bb63137d7", group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+              .AddPrerequisiteFeature(FeatureRefs.DoubleSlice.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
               .AddPrerequisiteStatValue(StatType.BaseAttackBonus, 1)
               .AddManeuverTrigger(shoot, Kingmaker.RuleSystem.Rules.CombatManeuver.Disarm, true)
               .AddToGroups(FeatureGroup.CombatFeat)
@@ -200,7 +204,7 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
         private static readonly string FollowUpStrikebuffGuid = "{F5F134A7-E113-4351-B35D-784D11B158A8}";
         public static BlueprintFeature FollowUpStrikeFeature()
         {
-            var icon = FeatureRefs.CleaveFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.PummelingBully.Reference.Get().Icon;
 
             var shoot = ActionsBuilder.New()
                 .Add<DisarmExtraAttack>()
@@ -221,7 +225,7 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
                 .SetIcon(icon)
                 .SetBuff(BuffFollowUpStrike)
                 .SetDeactivateImmediately()
-                .SetIsOnByDefault(false)
+                .SetIsOnByDefault(true)
                 .Configure();
 
             return FeatureConfigurator.New(FollowUpStrike, FollowUpStrikeGuid, FeatureGroup.Feat)
@@ -252,7 +256,7 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
         private static readonly string BreakGuardbuffGuid = "{10C96991-DFF2-4178-AE18-5F8C4F4F2FD4}";
         public static BlueprintFeature BreakGuardFeature()
         {
-            var icon = FeatureRefs.CleaveFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.CriticalFocus.Reference.Get().Icon;
 
             var shoot = ActionsBuilder.New()
                 .Add<DisarmExtraAttack>(c => { c.attacktype = 2; })
@@ -273,7 +277,7 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
                 .SetIcon(icon)
                 .SetBuff(BuffBreakGuard)
                 .SetDeactivateImmediately()
-                .SetIsOnByDefault(false)
+                .SetIsOnByDefault(true)
                 .Configure();
 
             return FeatureConfigurator.New(BreakGuard, BreakGuardGuid, FeatureGroup.Feat)
@@ -297,7 +301,7 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
         private const string StrikeSeizeDescription = "StrikeSeize.Description";
         public static BlueprintFeature StrikeSeizeFeature()
         {
-            var icon = FeatureRefs.CleaveFeature.Reference.Get().Icon;
+            var icon = ParametrizedFeatureRefs.FencingGrace.Reference.Get().Icon;
 
             var shoot = ActionsBuilder.New()
                 .Add<DisarmExtraAttack>(c => { c.attacktype = 1; c.isSwift = false; })
@@ -310,6 +314,72 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
               .AddPrerequisiteFeature(FeatureRefs.ImprovedDisarm.ToString())
               .AddPrerequisiteStatValue(StatType.BaseAttackBonus, 6)
               .AddAbilityUseTrigger(ability: AbilityRefs.DisarmAction.ToString(), action: shoot, actionsOnTarget: true, forOneSpell: true)
+              .AddToGroups(FeatureGroup.CombatFeat)
+              .Configure();
+        }
+
+        private const string HoldtheBlade = "HoldtheBlade";
+        public static readonly string HoldtheBladeGuid = "{B77275CD-6483-48F2-AF95-8A0BDD03629A}";
+
+        internal const string HoldtheBladeDisplayName = "HoldtheBlade.Name";
+        private const string HoldtheBladeDescription = "HoldtheBlade.Description";
+
+        private const string HoldtheBladebuff = "HoldtheBlade.HoldtheBladebuff";
+        public static readonly string HoldtheBladebuffGuid = "{311D1CF3-CAF7-4C2F-B798-7CDA6743CA0A}";
+        public static BlueprintFeature HoldtheBladeFeature()
+        {
+            var icon = FeatureRefs.DeflectArrows.Reference.Get().Icon;
+
+            BuffConfigurator.New(HoldtheBladebuff, HoldtheBladebuffGuid)
+              .SetDisplayName(HoldtheBladeDisplayName)
+              .SetDescription(HoldtheBladeDescription)
+              .SetIcon(icon)
+              .AddStatBonus(ModifierDescriptor.Penalty, false, StatType.AC, -4)
+              .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New().RemoveSelf().Build())
+              .Configure();
+
+            return FeatureConfigurator.New(HoldtheBlade, HoldtheBladeGuid, FeatureGroup.Feat)
+              .SetDisplayName(HoldtheBladeDisplayName)
+              .SetDescription(HoldtheBladeDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.ImprovedDisarm.ToString())
+              .AddPrerequisiteStatValue(StatType.BaseAttackBonus, 10)
+              .AddComponent<HoldtheBladeManeuver>()
+              .AddToGroups(FeatureGroup.CombatFeat)
+              .Configure();
+        }
+
+        private const string WristGrab = "WristGrab";
+        public static readonly string WristGrabGuid = "{563DF661-CDEB-475E-A4CA-B82D73E8F2FD}";
+
+        internal const string WristGrabDisplayName = "WristGrab.Name";
+        private const string WristGrabDescription = "WristGrab.Description";
+
+        private const string WristGrabbuff = "WristGrab.WristGrabbuff";
+        public static readonly string WristGrabbuffGuid = "{76CAC645-869A-4E42-BB43-EA3AF1695E30}";
+        public static BlueprintFeature WristGrabFeature()
+        {
+            var icon = FeatureRefs.DeflectArrows.Reference.Get().Icon;
+
+            BuffConfigurator.New(WristGrabbuff, WristGrabbuffGuid)
+              .SetDisplayName(WristGrabDisplayName)
+              .SetDescription(WristGrabDescription)
+              .SetIcon(icon)
+              .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New().RemoveSelf().Build())
+              .Configure();
+
+            return FeatureConfigurator.New(WristGrab, WristGrabGuid, FeatureGroup.Feat)
+              .SetDisplayName(WristGrabDisplayName)
+              .SetDescription(WristGrabDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteStatValue(StatType.Dexterity, 13)
+              .AddPrerequisiteStatValue(StatType.Intelligence, 13)
+              .AddPrerequisiteFeature(FeatureRefs.CombatExpertiseFeature.ToString())
+              .AddPrerequisiteFeature(FeatureRefs.CombatReflexes.ToString())
+              .AddPrerequisiteFeature(FeatureRefs.ImprovedUnarmedStrike.ToString())
+              .AddPrerequisiteFeature(FeatureRefs.ImprovedDisarm.ToString())
+              .AddPrerequisiteStatValue(StatType.BaseAttackBonus, 6)
+              .AddComponent<WristGrabManeuver>()
               .AddToGroups(FeatureGroup.CombatFeat)
               .Configure();
         }

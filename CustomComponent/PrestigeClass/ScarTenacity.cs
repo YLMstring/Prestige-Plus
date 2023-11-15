@@ -22,15 +22,12 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
         public ActionList ActionOnSelf;
         void IRulebookHandler<RuleAttackRoll>.OnEventDidTrigger(RuleAttackRoll evt)
         {
-            if (evt.IsCriticalConfirmed && !evt.FortificationNegatesCriticalHit || evt.IsSneakAttack)
+            if ((evt.IsCriticalConfirmed && !evt.FortificationNegatesCriticalHit) || evt.IsSneakAttack)
             {
                 using (ContextData<ContextAttackData>.Request().Setup(evt, null, 0, 0))
                 {
                     IFactContextOwner factContextOwner2 = Fact as IFactContextOwner;
-                    if (factContextOwner2 != null)
-                    {
-                        factContextOwner2.RunActionInContext(ActionOnSelf, evt.Target);
-                    }
+                    factContextOwner2?.RunActionInContext(ActionOnSelf, evt.Target);
                 }
             }
         }

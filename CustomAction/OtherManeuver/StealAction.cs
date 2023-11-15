@@ -18,6 +18,7 @@ using System.Threading.Tasks;
 using Kingmaker.UnitLogic;
 using Kingmaker.Items.Slots;
 using Kingmaker.Designers;
+using Kingmaker.PubSubSystem;
 
 namespace PrestigePlus.CustomAction.OtherManeuver
 {
@@ -45,12 +46,13 @@ namespace PrestigePlus.CustomAction.OtherManeuver
                 PFLog.Default.Error("Caster is missing", Array.Empty<object>());
                 return;
             }
-            if (target.GetThreatHand()?.Weapon.Blueprint.IsNatural == true)
+            var weapon = target.GetThreatHand();
+            if (weapon?.Weapon.Blueprint.IsNatural == true && weapon.Weapon.Blueprint.Category != Kingmaker.Enums.WeaponCategory.UnarmedStrike)
             {
                 List<ItemSlot> list = new();
                 foreach (var slot in target.Body.EquipmentSlots)
                 {
-                    if (slot.Item != null)
+                    if (slot.HasItem)
                     {
                         list.Add(slot);
                     }
@@ -58,9 +60,19 @@ namespace PrestigePlus.CustomAction.OtherManeuver
                 if (list.Count > 0)
                 {
                     var stolen = list.Random();
-                    stolen.Item.Identify();
-                    GameHelper.GetPlayerCharacter().Inventory.Add(stolen.Item);
-                    stolen.Item.Collection.Remove(stolen.Item);
+                    stolen.MaybeItem.Identify();
+                    GameHelper.GetPlayerCharacter().Inventory.Add(stolen.MaybeItem);
+                    if (stolen.Active)
+                    {
+                        stolen.MaybeItem.OnWillUnequip();
+                    }
+                    stolen.MaybeItem.HoldingSlot = null;
+                    stolen.m_ItemRef = null;
+                    stolen.Owner.Body.OnItemRemoved(stolen.MaybeItem);
+                    EventBus.RaiseEvent(delegate (IRemoveItemFromSlotHandler h)
+                    {
+                        h.HandleItemRemovedFromSlot(stolen, stolen.MaybeItem);
+                    }, true);
                 }
             }
         }

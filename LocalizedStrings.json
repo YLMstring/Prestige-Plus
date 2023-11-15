@@ -5140,6 +5140,127 @@
     "Key": "MageHandMageHandMythic.Description",
     "enGB": "Your mage hand tricks are unmatched. You can effortlessly concentrate on your mage hand, allowing you to full attack with it.",
     "zhCN": "你的法师之手技巧无人能及。你能够轻易专注于你的法师之手，可以用它进行全回合攻击。"
+  },
+  {
+    "Key": "SweepingDisarm.Name",
+    "ProcessTemplates": false,
+    "enGB": "Sweeping Disarm",
+    "zhCN": "顺势缴械"
+  },
+  {
+    "Key": "SweepingDisarm.Description",
+    "enGB": "When you knock a weapon from an opponent’s grasp, the errant weapon may disarm another foe. Whenever you succeed at a combat maneuver check to disarm an opponent, you can attempt a second disarm at a –5 penalty against an opponent adjacent to the original target. You need not be threatening the second target. You can attempt only one additional disarm combat maneuver check per round with this feat.",
+    "zhCN": "当你打飞敌人的武器，这把掉落的武器有可能缴械另一个敌人。当你成功进行缴械检定时，你可以受到-5减值对原本目标邻接的一个目标再进行一次缴械检定。你不需要威胁第二个目标。你每轮只能用这个专长进行一次卸武战技检定。"
+  },
+  {
+    "Key": "ShieldSnag.Name",
+    "ProcessTemplates": false,
+    "enGB": "Shield Snag",
+    "zhCN": "盾牌缠陷"
+  },
+  {
+    "Key": "ShieldSnag.Description",
+    "enGB": "You know how to navigate your shield around weapons and can use it to keep your balance. Any opponents hit by your shield bash are also targeted by a free disarm attempt. This disarm attempt does not provoke an attack of opportunity.",
+    "zhCN": "你明白如何引导你的盾牌来应对武器并以此保持平衡。任何被你的盾击命中的敌人也会成为你的一次自由动作缴械的目标，该战技不引发借机攻击。"
+  },
+  {
+    "Key": "BreakGuard.Name",
+    "ProcessTemplates": false,
+    "enGB": "Break Guard",
+    "zhCN": "突破防御"
+  },
+  {
+    "Key": "BreakGuard.Description",
+    "enGB": "You can use one of your two weapons to occupy your opponent’s defenses while attacking with the other. While wielding two weapons, whenever you successfully disarm an opponent, you can spend a swift action to attack the opponent you attempted to disarm using your off-hand weapon.",
+    "zhCN": "你用你两把武器的其中之一打乱了对方的防御，随之用另一把武器进行攻击。当你装备两把武器，你成功卸除敌人的武器后可以消耗一次迅捷动作来用副手武器立刻对其进行一次攻击。"
+  },
+  {
+    "Key": "FollowUpStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Follow-Up Strike",
+    "zhCN": "跟进追击"
+  },
+  {
+    "Key": "FollowUpStrike.Description",
+    "enGB": "You bat away an opponent’s weapon, creating an opening for a punch or kick. Whenever you succeed at a combat maneuver check to disarm an opponent, you can spend a swift action to make an unarmed strike attack at your highest base attack bonus against the target you disarmed.",
+    "zhCN": "你拍开对手的武器，制造出一次拳击或踢击的空档。每当你成功用战技缴械对手，你可以使用迅捷动作，以最高攻击加值向其发动一次徒手击打。"
+  },
+  {
+    "Key": "HoldtheBlade.Name",
+    "ProcessTemplates": false,
+    "enGB": "Hold the Blade",
+    "zhCN": "空手入白刃"
+  },
+  {
+    "Key": "HoldtheBlade.Description",
+    "enGB": "You can take your opponent’s weapon after being stabbed in the back. Whenever an enemy deals damage to you with a melee weapon as part of a flanking attack or sneak attack, you can make a combat maneuver check to disarm against that opponent as an immediate action. You must have at least one hand free when you use this feat. When you use this feat, you take a –4 penalty to your AC until your next turn. You can only use this feat once per round.",
+    "zhCN": "你可以在被偷袭时夺下对手手中的武器。当你受到手持近战武器的敌人的夹击或偷袭伤害时，你可以进行一次战技检定以卸除对方的武器。你必须至少有一手空闲才能使用此专长。你使出空手入白刃之后，将在下一回合开始之前承受-4AC的惩罚，你一轮只能使用此专长一次。"
+  },
+  {
+    "Key": "WristGrab.Name",
+    "ProcessTemplates": false,
+    "enGB": "Wrist Grab",
+    "zhCN": "擒肘拿腕"
+  },
+  {
+    "Key": "WristGrab.Description",
+    "enGB": "When an enemy overextends to attack you, you quickly catch its arm and knock its weapon loose. When an opponent’s attack misses you by 5 or more, you can attempt a disarm combat maneuver check against that foe. You can only use this feat once per round.",
+    "zhCN": "当敌人伸手攻击你时，你迅速抓住其手臂并击落其武器。当对手的攻击失手的差值达到5或以上，你可以尝试缴械战技。你一轮只能使用此专长一次。"
+  },
+  {
+    "Key": "DisarmFeatRangeDisarm.Name",
+    "ProcessTemplates": false,
+    "enGB": "Ranged Disarm",
+    "zhCN": "远程缴械"
+  },
+  {
+    "Key": "DisarmFeatRangeDisarm.Description",
+    "enGB": "A well-placed shot disarms your foe. As a full-round action, you can attempt to perform a disarm combat maneuver with any ranged weapon at a –2 penalty. Add your Dexterity modifier to your CMB in place of your Strength modifier. If your target is more than 30 feet away, you take an additional –2 penalty. If the disarm attempt is successful, the target also takes damage as if you had made a successful attack with that weapon.",
+    "zhCN": "一次精准的射击即可卸除敌人的武器。以一个全回合动作，你可以使用远程武器对目标尝试一次受-2罚值的卸除武器战技。使用敏捷调整值代替力量调整值来计算该次战技修正。若目标在30尺外，还会额外承受-2罚值。若卸武战技检定成功，目标会承受1次伤害，如同你通过武器成功命中目标一样。"
+  },
+  {
+    "Key": "AceDisarm.Name",
+    "ProcessTemplates": false,
+    "enGB": "Ace Disarm",
+    "zhCN": "王牌缴械"
+  },
+  {
+    "Key": "AceDisarm.Description",
+    "enGB": "You catch objects with your ranged attacks and drag them along with you. You don’t take the –2 penalty for attempting disarm combat maneuver checks with a ranged weapon using Ranged Disarm, and you can steal a random equipment on a successful disarm combat maneuver check if the target uses natural weapons.",
+    "zhCN": "当你使用远程卸武专长以远程武器发动缴械战技攻击时，你不会在攻击检定上承受-2减值。除此之外，如果目标使用的是天生武器，你可以偷窃一件随机装备。"
+  },
+  {
+    "Key": "DisarmFeatMythicDisarm.Name",
+    "ProcessTemplates": false,
+    "enGB": "Ranged Disarm (Mythic)",
+    "zhCN": "远程缴械（神话）"
+  },
+  {
+    "Key": "DisarmFeatMythicDisarm.Description",
+    "enGB": "You can effortlessly use ranged attacks to disarm an opponent. Add your tier to the Ranged Disarm roll. If the disarm attempt is successful, make a second disarm attempt.",
+    "zhCN": "你可以轻松使用远程攻击缴械对手。在远程缴械时增加等同于神话等级的加值，如果该缴械成功，再尝试一次额外的缴械。"
+  },
+  {
+    "Key": "ArmBind.Name",
+    "ProcessTemplates": false,
+    "enGB": "Arm Bind",
+    "zhCN": "缠臂锁肩"
+  },
+  {
+    "Key": "ArmBind.Description",
+    "enGB": "You can attempt a combat maneuver check to disarm a foe even if the foe uses natural weapons. This functions as the disarm combat maneuver. If you succeed and the foe uses natural, you ensnare an arm of your choice, preventing your foe from hitting with his next attack before the end of your next turn.",
+    "zhCN": "你能够尝试一次战技检定来卸除敌人的武器，即便该名敌人使用的是天生武器。该战技视为缴械战技。若你的检定成功，而且敌人使用的是天生武器，则可以选择限制住敌人的一只手臂，直至你的下个回合结束为止阻止该名敌人下一次攻击命中。"
+  },
+  {
+    "Key": "StrikeSeize.Name",
+    "ProcessTemplates": false,
+    "enGB": "Strike and Seize",
+    "zhCN": "连抓带打"
+  },
+  {
+    "Key": "StrikeSeize.Description",
+    "enGB": "As a standard action, you can make a single attack with your weapon and attempt to perform a disarm combat maneuver with your free hand, taking no penalties for two-weapon fighting.",
+    "zhCN": "以标准动作，你能够用武器做出单次攻击，并且用空着的手尝试一次缴械战技且无需承受双武器战斗的惩罚。"
   }
 
 ]

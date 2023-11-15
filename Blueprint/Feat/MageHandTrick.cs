@@ -41,7 +41,7 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetDisplayName(MageHandMainDisplayName)
                     .SetDescription(MageHandMainDescription)
                     .SetIcon(icon)
-                    .AddComponent<PrerequisiteSpellKnown>(c => { c.m_Spell = BlueprintTool.GetRef<BlueprintAbilityReference>(AbilityRefs.Jolt.ToString()); c.RequireSpellbook = true; })
+                    .AddComponent<PrerequisiteSpellKnown>(c => { c.m_Spell = BlueprintTool.GetRef<BlueprintAbilityReference>(AbilityRefs.Flare.ToString()); c.RequireSpellbook = true; })
                     .AddFeatureIfHasFact(FeatureRefs.ImprovedDirtyTrick.ToString(), ConfigureDirtyMagicTrick(), false)
                     .AddFeatureOnSkill(new() { ConfigureRangedAid() }, 1, StatType.BaseAttackBonus)
                     .AddFeatureIfHasFact(FeatureRefs.ImprovedUnarmedStrike.ToString(), ConfigureThrowPunch(), false)

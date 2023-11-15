@@ -25,7 +25,7 @@ namespace PrestigePlus.Modify
         void IRulebookHandler<RuleAttackRoll>.OnEventDidTrigger(RuleAttackRoll evt)
         {
             //Logger.Info("check");
-            if (evt.Result == AttackResult.Miss)
+            if (!evt.IsHit && evt.Result != AttackResult.MirrorImage && evt.Result != AttackResult.Concealment)
             {
                 //Logger.Info("start");
                 Feet feet = 5.Feet();

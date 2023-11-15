@@ -14,7 +14,7 @@ namespace PrestigePlus.CustomComponent.OtherManeuver
     {
         void IRulebookHandler<RuleAttackRoll>.OnEventAboutToTrigger(RuleAttackRoll evt)
         {
-            if (evt.Weapon?.Blueprint.IsNatural == true)
+            if (evt.Weapon?.Blueprint.IsNatural == true && evt.Weapon.Blueprint.Category != Kingmaker.Enums.WeaponCategory.UnarmedStrike && !evt.IsFake)
             {
                 evt.AutoMiss = true;
                 if (Buff.Rank > 1)

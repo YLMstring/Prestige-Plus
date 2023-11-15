@@ -26,6 +26,7 @@ using PrestigePlus.Blueprint.MythicFeat;
 using PrestigePlus.Blueprint.ManeuverFeat;
 using PrestigePlus.Blueprint;
 using PrestigePlus.CustomComponent.Feat;
+using PrestigePlus.Blueprint.SpecificManeuver;
 
 namespace PrestigePlus
 {
@@ -103,6 +104,9 @@ namespace PrestigePlus
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("maneuver"), defaultValue: true, Helpers.CreateString("toggle-desc20", "Combat Maneuver+"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("disarm"), defaultValue: true, Helpers.CreateString("toggle-desc42", "Disarm Feats"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("grave"), defaultValue: true, Helpers.CreateString("toggle-desc1", "Agent of the Grave"))
@@ -267,6 +271,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("magehand"))) { MageHandTrick.ConfigureMageHandMain(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("jabbing"))) { JabbingStyle.StyleConfigure(); JabbingStyle.DancerConfigure(); JabbingStyle.MasterConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("panther"))) { PantherStyle.StyleConfigure(); PantherStyle.ClawConfigure(); PantherStyle.ParryConfigure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("disarm"))) { RangedDisarm.AceDisarmFeature(); RangedDisarm.ArmBindFeature(); RangedDisarm.BreakGuardFeature(); RangedDisarm.CreateMythicDisarm(); RangedDisarm.CreateRangeDisarm(); RangedDisarm.FollowUpStrikeFeature(); RangedDisarm.StrikeSeizeFeature(); RangedDisarm.SweepingDisarmFeature(); RangedDisarm.WristGrabFeature(); RangedDisarm.HoldtheBladeFeature(); ShieldSnag.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
@@ -291,7 +296,7 @@ namespace PrestigePlus
             Logger.Info("Already configured delayed blueprints.");
             return;
           }
-            Initialized = true; PatchDomain.Patch(); PatchArmorTraining.Patch(); PatchKinetic.Patch(); 
+            Initialized = true; PatchDomain.Patch(); PatchArmorTraining.Patch(); PatchKinetic.Patch(); GraveSpellList.CreateSecretDeath();
             RootConfigurator.ConfigureDelayedBlueprints();
         }
         catch (Exception e)

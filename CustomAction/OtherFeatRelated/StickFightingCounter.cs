@@ -42,7 +42,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                 //Logger.Info("cooldown");
                 return;
             }
-            if (evt.Target.HasFact(Feat) && evt.Initiator.HasFact(TargetBuff) && evt.Result == AttackResult.Miss && evt.AttackType == Kingmaker.RuleSystem.AttackType.Melee && Owner.CombatState.EngagedUnits.Contains(evt.Initiator))
+            if (evt.Target.HasFact(Feat) && evt.Initiator.HasFact(TargetBuff) && !evt.IsHit && evt.Result != AttackResult.MirrorImage && evt.Result != AttackResult.Concealment && evt.AttackType == Kingmaker.RuleSystem.AttackType.Melee && Owner.CombatState.EngagedUnits.Contains(evt.Initiator))
             {
                 //Logger.Info("start2");
                 var bp = evt.Target.GetThreatHand()?.Weapon?.Blueprint;
