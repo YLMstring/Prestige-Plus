@@ -459,8 +459,8 @@
 
   {
     "Key": "AgentoftheGraveSecretDeath.Description",
-    "enGB": "The Agent of the Grave gains new insights into the dark arts of necromancy. At the time he gains this ability, the character add all cleric and wizard necromancy spells to a full caster's spell list.",
-    "zhCN": "墓穴使徒借由默语魔道把持的秘密洞悉了死灵术的奥妙。当他获得这个能力时，角色将牧师和法师法术列表上的死灵学派法术添加到九环施法者的法术列表中。"
+    "enGB": "The Agent of the Grave gains new insights into the dark arts of necromancy. At the time he gains this ability, the character add all cleric and wizard necromancy spells to his spell list.",
+    "zhCN": "墓穴使徒借由默语魔道把持的秘密洞悉了死灵术的奥妙。当他获得这个能力时，角色将牧师和法师法术列表上的死灵学派法术添加到法术列表中。"
   },
 
   {

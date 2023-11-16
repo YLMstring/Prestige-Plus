@@ -224,6 +224,9 @@ namespace PrestigePlus
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("nerfsop"), defaultValue: false, Helpers.CreateString("toggle-desc38", "(Nerf) Seize the Opportunity as a Mythic Feat"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("duplicate"), defaultValue: false, Helpers.CreateString("toggle-desc46", "Remove Duplicate Feats from Other MODs"))
               .ShowVisualConnection()));
 
                 try
@@ -331,7 +334,8 @@ namespace PrestigePlus
                         Logger.Info("Already configured Holy Vindicator.");
                         return;
                     }
-                    Initialized = true; PatchHolyVindicator.Patch(); PrerequisitePatch.Patch();
+                    Initialized = true; PatchHolyVindicator.Patch(); PrerequisitePatch.Patch(); 
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("duplicate"))) { RemoveFeats.Patch(); }
                 }
                 catch (Exception e)
                 {

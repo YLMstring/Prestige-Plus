@@ -46,6 +46,7 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
                     .SetIcon(Icon)
                     .SetDeactivateImmediately()
                     .SetBuff(buff)
+                    .SetIsOnByDefault(true)
                     .Configure();
 
             FeatureConfigurator.New(FeatName, FeatGuid, FeatureGroup.CombatFeat, FeatureGroup.Feat, FeatureGroup.RangerStyle)
