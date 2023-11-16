@@ -30,18 +30,18 @@
 - [Knockback](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/knockback-ex/)
 - [Drive Back](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/guardian/): As a full-round action, you can make one melee attack at your highest base attack bonus against each opponent within reach. You must make a separate attack roll against each opponent, then attempt a free bull rush combat maneuver check against each foe that you hit.
 - [Combat Trickery](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/trickster/): Through buffoonery and deceit, you can trick opponents into moving where you want them. You can make a bull rush combat maneuver check to all adjacent opponents as a standard action, using your Bluff check modifier in place of your CMB.
-- [Sweeping Disarm](https://www.d20pfsrd.com/feats/combat-feats/quick-bull-rush-combat/)
-- [Break Guard](https://www.d20pfsrd.com/feats/general-feats/raging-throw/)
-- [Follow-Up Strike](https://www.d20pfsrd.com/feats/combat-feats/hurricane-punch-combat/)
-- [Hold the Blade](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/knockback-ex/)
-- [Wrist Grab](https://www.d20pfsrd.com/feats/combat-feats/quick-bull-rush-combat/)
-- [Ranged Disarm](https://www.d20pfsrd.com/feats/general-feats/raging-throw/)
-- [Ace Disarm](https://www.d20pfsrd.com/feats/combat-feats/hurricane-punch-combat/)
-- [Arm Bind](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/knockback-ex/)
-- [Strike and Seize](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/knockback-ex/)
+- [Sweeping Disarm](https://www.d20pfsrd.com/feats/combat-feats/sweeping-disarm-combat/)
+- [Break Guard](https://www.d20pfsrd.com/feats/combat-feats/break-guard-combat/)
+- [Follow-Up Strike](https://www.d20pfsrd.com/feats/combat-feats/follow-up-strike-combat/)
+- [Hold the Blade](https://www.d20pfsrd.com/feats/combat-feats/hold-the-blade-combat/)
+- [Wrist Grab](https://www.d20pfsrd.com/feats/combat-feats/wrist-grab-combat/)
+- [Ranged Disarm](https://www.d20pfsrd.com/feats/combat-feats/ranged-disarm-combat-targeting)
+- [Ace Disarm](https://www.d20pfsrd.com/feats/weapon-mastery-feats/ace-disarm-targeting-weapon-mastery/)
+- [Arm Bind](https://www.d20pfsrd.com/feats/combat-feats/weapon-trick-combat/)
+- [Strike and Seize](https://www.d20pfsrd.com/feats/combat-feats/weapon-trick-combat/)
 - [Shield Slam](https://www.d20pfsrd.com/feats/combat-feats/shield-slam-combat/)
 - [Shield Snag](https://www.d20pfsrd.com/feats/combat-feats/shield-snag-combat/)
-- [Drive Back](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/guardian/): As a full-round action, you can make one melee attack at your highest base attack bonus against each opponent within reach. You must make a separate attack roll against each opponent, then attempt a free bull rush combat maneuver check against each foe that you hit.
+- [Ranged Disarm (Mythic)](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/guardian/): You can effortlessly use ranged attacks to disarm an opponent. Add your tier to the Ranged Disarm roll. If the disarm attempt is successful, make a second disarm attempt.
 ### [Grapple Mechanic](https://www.d20pfsrd.com/gamemastering/Combat/#Grapple)
 - This is how I implement it:
 1. There are 3 kinds of grapples in the game. My Grapple Mechanic is very close to tabletop. Shifter grapples stay owlcat-brew but once the shifter takes Grapple (Improved Grapple) feat, their grapple mechanics would be turned into mine. Finally, monster grapples stay the way it is in vanilla.
