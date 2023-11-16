@@ -100,13 +100,22 @@ namespace PrestigePlus
             Toggle.New(GetKey("weakencrit"), defaultValue: false, Helpers.CreateString("toggle-desc37", "Weak Crits against Enemies"))
               .ShowVisualConnection())
           .AddToggle(
-            Toggle.New(GetKey("grapple"), defaultValue: true, Helpers.CreateString("toggle-desc12", "Grapple Mechanic"))
-              .ShowVisualConnection())
-          .AddToggle(
             Toggle.New(GetKey("maneuver"), defaultValue: true, Helpers.CreateString("toggle-desc20", "Combat Maneuver+"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("bullrush"), defaultValue: true, Helpers.CreateString("toggle-desc43", "Bull Rush Feats"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("disarm"), defaultValue: true, Helpers.CreateString("toggle-desc42", "Disarm Feats"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("grapple"), defaultValue: true, Helpers.CreateString("toggle-desc12", "Grapple Feats"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("sunder"), defaultValue: true, Helpers.CreateString("toggle-desc44", "Sunder Feats"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("trip"), defaultValue: true, Helpers.CreateString("toggle-desc45", "Trip Feats"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("grave"), defaultValue: true, Helpers.CreateString("toggle-desc1", "Agent of the Grave"))
@@ -249,10 +258,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("asavir"))) { Asavir.Configure(); BondGenie.Configure(); TrampleMythic.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("maneuver"))) { ReplaceAttack.BullRushQuickConfigure(); ReplaceAttack.BullRushAngryConfigure(); ReplaceAttack.BullRushConfigure(); ReplaceAttack.DisarmConfigure(); ReplaceAttack.SunderConfigure(); ReplaceAttack.TripConfigure(); 
                         StrengthSurge.StrengthSurgeFeat(); KiThrow.DragConfigure(); ImprovedKiThrow.DragConfigure(); EnhancedThrow.DragConfigure(); BindingThrow.DragConfigure(); 
-                        SmashingStyle.StyleConfigure(); SmashingStyle.CounterConfigure(); SmashingStyle.MasterConfigure(); CrushArmor.Configure(); SunderStorm.CreateSunderStorm(); GreaterSunderTabletop.CreateGreaterSunderTabletop(); 
-                        DownLikeDominoes.DragConfigure(); SunderStorm.CreateCleavingSweep(); RangedTrip.CreateTripRanged(); RangedTrip.AceTripFeature(); RangedTrip.CreateVindictiveFall();
-                        RhinoCharge.Configure(); SunderStorm.CreateDriveBack(); SunderStorm.CreateCombatTrickery(); 
-                        BullRushFeats.Configure(); BullRushFeats.Configure2(); BullRushFeats.StyleConfigure(); BullRushFeats.FollowConfigure(); BullRushFeats.AngelConfigure(); BullRushFeats.MonsterConfigure(); StrengthSurge.RagingThrowFeat(); }
+                        RhinoCharge.Configure();  SunderStorm.CreateCombatTrickery(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("halfling"))) { HalflingOpportunist.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("enhance"))) { SwiftDeath.Configure(); SwiftDeath.Configure2(); UnbreakableDefance.Configure(); MythicWings.Configure(); MythicWings.Configure2(); MythicRiposte.Configure(); MetaphysicalSneak.Configure(); LesserSpellSynthesis.Configure(); SurprisingStrategy.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fightereg"))) { EldritchGuardian.Configure(); }
@@ -272,6 +278,9 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("jabbing"))) { JabbingStyle.StyleConfigure(); JabbingStyle.DancerConfigure(); JabbingStyle.MasterConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("panther"))) { PantherStyle.StyleConfigure(); PantherStyle.ClawConfigure(); PantherStyle.ParryConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("disarm"))) { RangedDisarm.AceDisarmFeature(); RangedDisarm.ArmBindFeature(); RangedDisarm.BreakGuardFeature(); RangedDisarm.CreateMythicDisarm(); RangedDisarm.CreateRangeDisarm(); RangedDisarm.FollowUpStrikeFeature(); RangedDisarm.StrikeSeizeFeature(); RangedDisarm.SweepingDisarmFeature(); RangedDisarm.WristGrabFeature(); RangedDisarm.HoldtheBladeFeature(); ShieldSnag.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("bullrush"))) { BullRushFeats.Configure(); BullRushFeats.Configure2(); BullRushFeats.StyleConfigure(); BullRushFeats.FollowConfigure(); BullRushFeats.AngelConfigure(); BullRushFeats.MonsterConfigure(); StrengthSurge.RagingThrowFeat(); ShieldSlam.Configure(); SunderStorm.CreateDriveBack(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("sunder"))) { SmashingStyle.StyleConfigure(); SmashingStyle.CounterConfigure(); SmashingStyle.MasterConfigure(); CrushArmor.Configure(); SunderStorm.CreateSunderStorm(); GreaterSunderTabletop.CreateGreaterSunderTabletop(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("trip"))) { DownLikeDominoes.DragConfigure(); SunderStorm.CreateCleavingSweep(); RangedTrip.CreateTripRanged(); RangedTrip.AceTripFeature(); RangedTrip.CreateVindictiveFall(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)

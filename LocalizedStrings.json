@@ -5160,8 +5160,19 @@
   },
   {
     "Key": "ShieldSnag.Description",
-    "enGB": "You know how to navigate your shield around weapons and can use it to keep your balance. Any opponents hit by your shield bash are also targeted by a free disarm attempt. This disarm attempt does not provoke an attack of opportunity.",
-    "zhCN": "你明白如何引导你的盾牌来应对武器并以此保持平衡。任何被你的盾击命中的敌人也会成为你的一次自由动作缴械的目标，该战技不引发借机攻击。"
+    "enGB": "You know how to navigate your shield around weapons and can use it to keep your balance. Any opponents hit by your shield bash are also targeted by a free disarm attempt, substituting your attack roll for the combat maneuver roll. This disarm attempt does not provoke an attack of opportunity.",
+    "zhCN": "你明白如何引导你的盾牌来应对武器并以此保持平衡。任何被你的盾击命中的敌人也会成为你的一次自由动作缴械的目标，和盾击采用相同掷骰。该战技不引发借机攻击。"
+  },
+  {
+    "Key": "ShieldSlam.Name",
+    "ProcessTemplates": false,
+    "enGB": "Shield Slam",
+    "zhCN": "盾牌猛击"
+  },
+  {
+    "Key": "ShieldSlam.Description",
+    "enGB": "In the right position, your shield can be used to send opponents flying. Any opponents hit by your shield bash are also targeted by a free bull rush attempt, substituting your attack roll for the combat maneuver roll. This bull rush attempt does not provoke an attack of opportunity.",
+    "zhCN": "只要把握合适的方位，你的盾击可以便击飞敌人。任何被你的盾击命中的敌人也会成为你的一次自由动作冲撞的目标，和盾击采用相同掷骰。该战技不引发借机攻击。"
   },
   {
     "Key": "BreakGuard.Name",

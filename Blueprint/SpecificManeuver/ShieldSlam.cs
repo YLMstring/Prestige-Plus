@@ -1,6 +1,4 @@
-﻿using BlueprintCore.Actions.Builder;
-using BlueprintCore.Actions.Builder.ContextEx;
-using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
+﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
@@ -17,18 +15,18 @@ using UnityEngine;
 
 namespace PrestigePlus.Blueprint.SpecificManeuver
 {
-    internal class ShieldSnag
+    internal class ShieldSlam
     {
-        private static readonly string FeatName = "ShieldSnagFeat";
-        private static readonly string FeatBuffName = "ShieldSnagFeatBuff";
-        private static readonly string FeatAbilityName = "ShieldSnagFeatAbility";
+        private static readonly string FeatName = "ShieldSlamFeat";
+        private static readonly string FeatBuffName = "ShieldSlamFeatBuff";
+        private static readonly string FeatAbilityName = "ShieldSlamFeatAbility";
 
-        private static readonly string FeatGuid = "{1CDFAC84-CC97-4B02-B2ED-5E8E56448494}";
-        private static readonly string FeatBuffGuid = "{54531F74-8C51-4F4E-BF76-F91867D60F00}";
-        private static readonly string FeatAbilityGuid = "{4ECFD361-62C0-4757-B718-74D9DB08909E}";
+        private static readonly string FeatGuid = "{4ED73B13-9F74-44D9-BC82-27AB8660A8AF}";
+        private static readonly string FeatBuffGuid = "{FE2B3014-3809-4028-8B7B-C10DDF4747E3}";
+        private static readonly string FeatAbilityGuid = "{A32FE799-07FA-416B-B655-6DD1059FFCFA}";
 
-        internal const string DisplayName = "ShieldSnag.Name";
-        private static readonly string Description = "ShieldSnag.Description";
+        internal const string DisplayName = "ShieldSlam.Name";
+        private static readonly string Description = "ShieldSlam.Description";
         private static readonly Sprite Icon = FeatureRefs.ShieldBashFeature.Reference.Get().Icon;
 
         public static void Configure()
@@ -38,7 +36,7 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
                     .SetDisplayName(DisplayName)
                     .SetDescription(Description)
                     .SetIcon(Icon)
-                    .AddComponent<ShieldSnagComponent>()
+                    .AddComponent<ShieldSnagComponent>(c => { c.type = Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush; })
                     .Configure();
 
             var ability =
