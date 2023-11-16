@@ -1,4 +1,4 @@
-# Prestige Plus v1.8.1 for WoTR 
+# Prestige Plus v1.8.2 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - Add grapple mechanic and a bunch of prestige classes!
@@ -30,6 +30,18 @@
 - [Knockback](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/knockback-ex/)
 - [Drive Back](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/guardian/): As a full-round action, you can make one melee attack at your highest base attack bonus against each opponent within reach. You must make a separate attack roll against each opponent, then attempt a free bull rush combat maneuver check against each foe that you hit.
 - [Combat Trickery](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/trickster/): Through buffoonery and deceit, you can trick opponents into moving where you want them. You can make a bull rush combat maneuver check to all adjacent opponents as a standard action, using your Bluff check modifier in place of your CMB.
+- [Sweeping Disarm](https://www.d20pfsrd.com/feats/combat-feats/quick-bull-rush-combat/)
+- [Break Guard](https://www.d20pfsrd.com/feats/general-feats/raging-throw/)
+- [Follow-Up Strike](https://www.d20pfsrd.com/feats/combat-feats/hurricane-punch-combat/)
+- [Hold the Blade](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/knockback-ex/)
+- [Wrist Grab](https://www.d20pfsrd.com/feats/combat-feats/quick-bull-rush-combat/)
+- [Ranged Disarm](https://www.d20pfsrd.com/feats/general-feats/raging-throw/)
+- [Ace Disarm](https://www.d20pfsrd.com/feats/combat-feats/hurricane-punch-combat/)
+- [Arm Bind](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/knockback-ex/)
+- [Strike and Seize](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/knockback-ex/)
+- [Shield Slam](https://www.d20pfsrd.com/feats/combat-feats/shield-slam-combat/)
+- [Shield Snag](https://www.d20pfsrd.com/feats/combat-feats/shield-snag-combat/)
+- [Drive Back](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/guardian/): As a full-round action, you can make one melee attack at your highest base attack bonus against each opponent within reach. You must make a separate attack roll against each opponent, then attempt a free bull rush combat maneuver check against each foe that you hit.
 ### [Grapple Mechanic](https://www.d20pfsrd.com/gamemastering/Combat/#Grapple)
 - This is how I implement it:
 1. There are 3 kinds of grapples in the game. My Grapple Mechanic is very close to tabletop. Shifter grapples stay owlcat-brew but once the shifter takes Grapple (Improved Grapple) feat, their grapple mechanics would be turned into mine. Finally, monster grapples stay the way it is in vanilla.
