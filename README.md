@@ -36,7 +36,7 @@
 - [Hold the Blade](https://www.d20pfsrd.com/feats/combat-feats/hold-the-blade-combat/)
 - [Wrist Grab](https://www.d20pfsrd.com/feats/combat-feats/wrist-grab-combat/)
 - [Ranged Disarm](https://www.d20pfsrd.com/feats/combat-feats/ranged-disarm-combat-targeting)
-- [Ace Disarm](https://www.d20pfsrd.com/feats/weapon-mastery-feats/ace-disarm-targeting-weapon-mastery/)
+- [Ace Disarm](https://www.d20pfsrd.com/feats/weapon-mastery-feats/ace-disarm-targeting-weapon-mastery/): You don’t take the –2 penalty for attempting disarm combat maneuver checks with a ranged weapon using Ranged Disarm, and you can steal a random equipment on a successful disarm combat maneuver check if the target uses natural weapons.
 - [Arm Bind](https://www.d20pfsrd.com/feats/combat-feats/weapon-trick-combat/)
 - [Strike and Seize](https://www.d20pfsrd.com/feats/combat-feats/weapon-trick-combat/)
 - [Shield Slam](https://www.d20pfsrd.com/feats/combat-feats/shield-slam-combat/)
