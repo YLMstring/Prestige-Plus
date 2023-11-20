@@ -169,6 +169,12 @@ namespace PrestigePlus
             Toggle.New(GetKey("umbral"), defaultValue: true, Helpers.CreateString("toggle-desc17", "Umbral Agent"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("construct"), defaultValue: true, Helpers.CreateString("toggle-desc49", "Construct Rider"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("scientist"), defaultValue: true, Helpers.CreateString("toggle-desc50", "Mad Scientist"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("fightereg"), defaultValue: true, Helpers.CreateString("toggle-desc23", "Eldritch Guardian"))
               .ShowVisualConnection())
           .AddToggle(
@@ -179,6 +185,12 @@ namespace PrestigePlus
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("spire"), defaultValue: true, Helpers.CreateString("toggle-desc33", "Spire Defender"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("marksman"), defaultValue: true, Helpers.CreateString("toggle-desc47", "Divine Marksman"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("witchguard"), defaultValue: true, Helpers.CreateString("toggle-desc48", "Witchguard"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("whitehair"), defaultValue: true, Helpers.CreateString("toggle-desc32", "White-Haired Witch"))
@@ -238,7 +250,7 @@ namespace PrestigePlus
           }
           Initialized = true;
 
-                    Logger.Info("Configuring blueprints."); 
+                    Logger.Info("Configuring blueprints!"); 
                     SpellbookReplace.Select(); SpellbookLevelUp.Select(); ImbueArrow.Configure(); ShadowDancer.CreateProficiencies(); ShadowDancer.ExtraShadowJump(); ShadowDancer.ExtraFeat(); SeizetheOpportunity.Configure(); AerialAssault.ConfigureAbility();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("grapple"))) { ImprovedGrapple.StyleConfigure(); ImprovedGrappleMythic.Configure(); GreaterGrapple.Configure(); ManeuverExpert.Configure(); RapidGrappler.Configure(); UnfairGrip.Configure(); PinningKnockout.Configure(); PinningRend.Configure(); SavageSlam.Configure(); UncannyGrapple.Configure(); HamatulaStrike.Configure(); DramaticSlam.Configure(); KnotExpert.Configure(); AerialAssault.Configure(); MeatShield.Configure(); ThroatSlicer.Configure(); CrabKing.Configure(); CrabKing.Configure2(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("grave"))) AgentoftheGrave.Configure();
@@ -284,6 +296,10 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("bullrush"))) { BullRushFeats.Configure(); BullRushFeats.Configure2(); BullRushFeats.StyleConfigure(); BullRushFeats.FollowConfigure(); BullRushFeats.AngelConfigure(); BullRushFeats.MonsterConfigure(); StrengthSurge.RagingThrowFeat(); ShieldSlam.Configure(); SunderStorm.CreateDriveBack(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("sunder"))) { SmashingStyle.StyleConfigure(); SmashingStyle.CounterConfigure(); SmashingStyle.MasterConfigure(); CrushArmor.Configure(); SunderStorm.CreateSunderStorm(); GreaterSunderTabletop.CreateGreaterSunderTabletop(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("trip"))) { DownLikeDominoes.DragConfigure(); SunderStorm.CreateCleavingSweep(); RangedTrip.CreateTripRanged(); RangedTrip.AceTripFeature(); RangedTrip.CreateVindictiveFall(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("marksman"))) { DivineMarksman.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("witchguard"))) { Witchguard.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("construct"))) {  }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("scientist"))) {  }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)

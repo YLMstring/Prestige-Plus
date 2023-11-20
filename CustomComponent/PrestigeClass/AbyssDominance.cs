@@ -16,7 +16,7 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
     internal class AbyssDominance : FavoredEnemy
     {
 
-        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
+        //private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         public override void OnTurnOn()
         {
             var guid = "{59352D08-B18B-45B8-B2BB-528479DAFC8F}";

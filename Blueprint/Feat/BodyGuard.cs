@@ -12,7 +12,7 @@ namespace PrestigePlus.Blueprint.Feat
     internal class BodyGuard
     {
         private static readonly string FeatName = "FeatBodyGuard";
-        private static readonly string FeatGuid = "{E1C5FEBC-7D2C-445D-A452-8A77C340E14F}";
+        public static readonly string FeatGuid = "{E1C5FEBC-7D2C-445D-A452-8A77C340E14F}";
 
         private static readonly string DisplayName = "FeatBodyGuard.Name";
         private static readonly string Description = "FeatBodyGuard.Description";
@@ -33,7 +33,7 @@ namespace PrestigePlus.Blueprint.Feat
         }
 
         private static readonly string Feat2Name = "FeatHarmWay";
-        private static readonly string Feat2Guid = "{F0611E7B-A68C-49E4-8BEC-97A1173AD609}";
+        public static readonly string Feat2Guid = "{F0611E7B-A68C-49E4-8BEC-97A1173AD609}";
 
         private static readonly string DisplayName2 = "FeatHarmWay.Name";
         private static readonly string Description2 = "FeatHarmWay.Description";
