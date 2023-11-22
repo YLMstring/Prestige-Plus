@@ -113,7 +113,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(SanguineAngelHardenedHeartDisplayName)
               .SetDescription(SanguineAngelHardenedHeartDescription)
               .SetIcon(icon)
-              .AddContextStatBonus(stat: StatType.CheckIntimidate, value: ContextValues.Rank(), descriptor: ModifierDescriptor.UntypedStackable)
+              //.AddContextStatBonus(stat: StatType.CheckIntimidate, value: ContextValues.Rank(), descriptor: ModifierDescriptor.UntypedStackable)
+              .AddComponent<AddContextStatBonus>(c => { c.Stat = StatType.CheckIntimidate; c.Value = ContextValues.Rank(); })
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new[] { ArchetypeGuid }).WithCustomProgression((1, 2), (2, 4), (3, 6)))
               .SetReapplyOnLevelUp(true)
               .Configure();

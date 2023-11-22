@@ -15,6 +15,7 @@ using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs;
+using Kingmaker.UnitLogic.FactLogic;
 using PrestigePlus.Blueprint.GrappleFeat;
 using PrestigePlus.CustomAction.GrappleThrow;
 using PrestigePlus.CustomAction.OtherFeatRelated;
@@ -191,7 +192,8 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDescription(AngelDescription)
               .SetIcon(icon)
               //.AddAttackBonusConditional(bonus: ContextValues.Constant(-2), descriptor: ModifierDescriptor.Penalty)
-              .AddContextStatBonus(StatType.AdditionalAttackBonus, -2, ModifierDescriptor.Penalty)
+              //.AddContextStatBonus(StatType.AdditionalAttackBonus, -2, ModifierDescriptor.Penalty)
+              .AddComponent<AddContextStatBonus>(c => { c.Stat = StatType.AdditionalAttackBonus; c.Value = -2; c.Descriptor = ModifierDescriptor.Penalty; })
               .AddCMBBonusForManeuver(maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush }, value: ContextValues.Constant(2))
               .AddInitiatorAttackWithWeaponTrigger(action2, checkWeaponRangeType: true, rangeType: WeaponRangeType.Melee, onlyOnFullAttack: true, onlyOnFirstHit: true, onlyHit: true)
               .Configure();

@@ -15,7 +15,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PrestigePlus.Blueprint.Archetype
+namespace PrestigePlus.CustomComponent.Archetype
 {
     internal class WitchGuardPatron : UnitFactComponentDelegate, ILevelUpCompleteUIHandler, IGlobalSubscriber, ISubscriber
     {
@@ -30,7 +30,7 @@ namespace PrestigePlus.Blueprint.Archetype
         }
         private void AddSpell(int SpellLevel, BlueprintAbility Spell)
         {
-            ClassData classData = base.Owner.Progression.GetClassData(CharacterClassRefs.RangerClass.Reference);
+            ClassData classData = Owner.Progression.GetClassData(CharacterClassRefs.RangerClass.Reference);
             if (classData == null || SpellLevel == 0 || Spell == null)
             {
                 return;
@@ -40,10 +40,10 @@ namespace PrestigePlus.Blueprint.Archetype
             {
                 return;
             }
-            foreach (Spellbook spellbook2 in base.Owner.Spellbooks)
+            foreach (Spellbook spellbook2 in Owner.Spellbooks)
             {
                 bool flag = spellbook2.Blueprint == spellbook;
-                bool flag2 = spellbook2.GetKnownSpells(SpellLevel).Any((AbilityData p) => p.Blueprint == Spell);
+                bool flag2 = spellbook2.GetKnownSpells(SpellLevel).Any((p) => p.Blueprint == Spell);
                 bool flag3 = spellbook2.MaxSpellLevel >= SpellLevel;
                 if (flag && !flag2 && flag3)
                 {

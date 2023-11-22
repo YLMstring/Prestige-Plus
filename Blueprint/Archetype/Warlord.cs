@@ -9,6 +9,7 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
+using Kingmaker.UnitLogic.FactLogic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -146,7 +147,8 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddPrerequisiteArchetypeLevel(ArchetypeGuid, CharacterClassRefs.FighterClass.ToString())
               .SetHideNotAvailibleInUI(true)
               //.AddACBonusAgainstFactOwner(bonus: 1, descriptor: ModifierDescriptor.Dodge, noFact: true)
-              .AddContextStatBonus(StatType.AC, value: ContextValues.Rank(), descriptor: ModifierDescriptor.Dodge)
+              //.AddContextStatBonus(StatType.AC, value: ContextValues.Rank(), descriptor: ModifierDescriptor.Dodge)
+              .AddComponent<AddContextStatBonus>(c => { c.Stat = StatType.AC; c.Value = ContextValues.Rank(); c.Descriptor = ModifierDescriptor.Dodge; })
               .AddContextRankConfig(ContextRankConfigs.FeatureRank(EvasiveDuelingGuid))
               .SetRanks(20)
               .AddToFeatureSelection(FeatureSelectionRefs.FighterFeatSelection.ToString())

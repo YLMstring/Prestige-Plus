@@ -21,6 +21,7 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.Blueprints.Items.Armors;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
+using Kingmaker.UnitLogic.FactLogic;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -98,10 +99,14 @@ namespace PrestigePlus.Blueprint.Archetype
              .SetDisplayName(ArcaneAugmentationDisplayName)
              .SetDescription(ArcaneAugmentationDescription)
              .SetIcon(icon)
-             .AddContextStatBonus(StatType.SkillAthletics, 5, ModifierDescriptor.Competence)
-             .AddContextStatBonus(StatType.SkillMobility, 5, ModifierDescriptor.Competence)
-             .AddContextStatBonus(StatType.SkillAthletics, ContextValues.Rank(), ModifierDescriptor.Enhancement)
-             .AddContextStatBonus(StatType.SkillMobility, ContextValues.Rank(), ModifierDescriptor.Enhancement)
+             .AddComponent<AddContextStatBonus>(c => { c.Stat = StatType.SkillAthletics; c.Value = 5; c.Descriptor = ModifierDescriptor.Competence; })
+             .AddComponent<AddContextStatBonus>(c => { c.Stat = StatType.SkillMobility; c.Value = 5; c.Descriptor = ModifierDescriptor.Competence; })
+             .AddComponent<AddContextStatBonus>(c => { c.Stat = StatType.SkillAthletics; c.Value = ContextValues.Rank(); c.Descriptor = ModifierDescriptor.Enhancement; })
+             .AddComponent<AddContextStatBonus>(c => { c.Stat = StatType.SkillMobility; c.Value = ContextValues.Rank(); c.Descriptor = ModifierDescriptor.Enhancement; })
+             //.AddContextStatBonus(StatType.SkillAthletics, 5, ModifierDescriptor.Competence)
+             //.AddContextStatBonus(StatType.SkillMobility, 5, ModifierDescriptor.Competence)
+             //.AddContextStatBonus(StatType.SkillAthletics, ContextValues.Rank(), ModifierDescriptor.Enhancement)
+             //.AddContextStatBonus(StatType.SkillMobility, ContextValues.Rank(), ModifierDescriptor.Enhancement)
              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.MagusClass.ToString() }).WithStartPlusDivStepProgression(3, 7, true))
              .Configure();
 

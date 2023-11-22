@@ -36,6 +36,7 @@ using Kingmaker.UnitLogic;
 using BlueprintCore.Blueprints.CustomConfigurators;
 using Pathfinding.Voxels;
 using PrestigePlus.CustomComponent.PrestigeClass;
+using Kingmaker.UnitLogic.FactLogic;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -414,10 +415,10 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(ControllChargeDisplayName)
               .SetDescription(ControllChargeDescription)
               .SetIcon(icon)
-              //.AddAttackBonusConditional(bonus: ContextValues.Constant(2), descriptor: ModifierDescriptor.UntypedStackable)
-              .AddContextStatBonus(StatType.AdditionalAttackBonus, 2)
-              //.AddACBonusAgainstAttacks(armorClassBonus: 2)
-              .AddContextStatBonus(StatType.AC, value: 2)
+              //.AddContextStatBonus(StatType.AdditionalAttackBonus, 2)
+              //.AddContextStatBonus(StatType.AC, value: 2)
+              .AddComponent<AddContextStatBonus>(c => { c.Stat = StatType.AdditionalAttackBonus; c.Value = 2; })
+              .AddComponent<AddContextStatBonus>(c => { c.Stat = StatType.AC; c.Value = 2; })
               .Configure();
 
             var feat = FeatureConfigurator.New(ControllCharge, ControllChargeGuid)

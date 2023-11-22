@@ -25,6 +25,8 @@ using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic;
+using Kingmaker.Designers.Mechanics.Facts;
+using Kingmaker.UnitLogic.FactLogic;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -110,7 +112,8 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddAdditionalLimb(ItemWeaponRefs.Gore1d6.ToString())
               .AddWeaponDamageOverride(formula: new DiceFormula(1, DiceType.D4), overrideDice: true, weaponTypes: new() { WeaponTypeRefs.GoreType.Cast<BlueprintWeaponTypeReference>() })
               .AddComponent<HairExtraDamage>()
-              .AddReplaceSingleCombatManeuverStat(statType: StatType.Intelligence, type: Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple)
+              .AddComponent<ReplaceSingleCombatManeuverStat>(c => { c.Type = Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple; c.StatType = StatType.Intelligence; })
+              //.AddReplaceSingleCombatManeuverStat(statType: StatType.Intelligence, type: Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple)
               .AddFacts(new() { PinAbilityGuid1, TieUpAbilityGuid, ReadyAbilityGuid, ReleaseAbilityGuid })
               .AddComponent<AddInitiatorAttackWithWeaponTrigger>(c => { c.Action = grapple; c.OnlyHit = true; c.CheckWeaponCategory = true; c.Category = WeaponCategory.Gore; c.TriggerBeforeAttack = false; c.IgnoreAutoHit = true; })
               .AddManeuverTrigger(ActionsBuilder.New().CastSpell(abilityunlimited).Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple, false)
@@ -224,7 +227,8 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDescription(HairReachDescription)
               .SetIcon(icon)
               .SetRanks(10)
-              .AddContextStatBonus(Kingmaker.EntitySystem.Stats.StatType.Reach, ContextValues.Rank())
+              //.AddContextStatBonus(Kingmaker.EntitySystem.Stats.StatType.Reach, ContextValues.Rank())
+              .AddComponent<AddContextStatBonus>(c => { c.Stat = StatType.Reach; c.Value = ContextValues.Rank(); })
               .AddContextRankConfig(ContextRankConfigs.FeatureRank(HairReachGuid).WithMultiplyByModifierProgression(5))
               .Configure();
         }
