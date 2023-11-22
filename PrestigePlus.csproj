@@ -47,9 +47,6 @@
     <Reference Include="AstarPathfindingProject">
       <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure\Wrath_Data\Managed\AstarPathfindingProject.dll</HintPath>
     </Reference>
-    <Reference Include="MicroscopicContentExpansion">
-      <HintPath>MicroscopicContentExpansion.dll</HintPath>
-    </Reference>
     <Reference Include="ModMenu">
       <HintPath>ModMenu.dll</HintPath>
     </Reference>
