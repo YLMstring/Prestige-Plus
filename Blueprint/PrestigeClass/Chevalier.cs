@@ -118,8 +118,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(RecklessDisplayName)
               .SetDescription(RecklessDescription)
               .SetIcon(icon)
-              //.AddContextStatBonus(StatType.AdditionalAttackBonus, ContextValues.Rank(), ModifierDescriptor.Morale)
-              .AddComponent<AddContextStatBonus>(c => { c.Stat = StatType.AdditionalAttackBonus; c.Value = ContextValues.Rank(); c.Descriptor = ModifierDescriptor.Morale; })
+              //.AddAttackBonusConditional(ContextValues.Rank(), descriptor: ModifierDescriptor.Morale)
+              .AddContextStatBonus(StatType.AdditionalAttackBonus, ContextValues.Rank(), ModifierDescriptor.Morale)
               .AddDamageBonusConditional(ContextValues.Rank(), descriptor: ModifierDescriptor.Morale)
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }))
               .Configure();
@@ -153,8 +153,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(ControllChargeDisplayName)
               .SetDescription(ControllChargeDescription)
               .SetIcon(icon)
-              //.AddContextStatBonus(StatType.AC, value: 2)
-              .AddComponent<AddContextStatBonus>(c => { c.Stat = StatType.AC; c.Value = 2; })
+              //.AddACBonusAgainstAttacks(armorClassBonus: 2)
+              .AddContextStatBonus(StatType.AC, value: 2)
               .Configure();
 
             var feat = FeatureConfigurator.New(ControllCharge, ControllChargeGuid)

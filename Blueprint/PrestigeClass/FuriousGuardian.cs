@@ -19,7 +19,6 @@ using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.UnitLogic.FactLogic;
 using PrestigePlus.CustomAction.ClassRelated;
 using PrestigePlus.CustomComponent.PrestigeClass;
 using System;
@@ -148,8 +147,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddPrerequisiteFeature(FeatureRefs.FastMovement.ToString())
               .AddSpeedBonusInArmorCategory(10, new Kingmaker.Blueprints.Items.Armors.ArmorProficiencyGroup[] { Kingmaker.Blueprints.Items.Armors.ArmorProficiencyGroup.Heavy }, Kingmaker.Enums.ModifierDescriptor.UntypedStackable, false)
               .AddFacts(new() { FeatureRefs.HeavyArmorProficiency.ToString() })
-              //.AddContextStatBonus(stat: StatType.CheckDiplomacy, value: ContextValues.Rank(), descriptor: ModifierDescriptor.UntypedStackable)
-              .AddComponent<AddContextStatBonus>(c => { c.Stat = StatType.CheckDiplomacy; c.Value = ContextValues.Rank(); })
+              .AddContextStatBonus(stat: StatType.CheckDiplomacy, value: ContextValues.Rank(), descriptor: ModifierDescriptor.UntypedStackable)
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new[] { ArchetypeGuid }))
               .SetReapplyOnLevelUp(true)
               .Configure();

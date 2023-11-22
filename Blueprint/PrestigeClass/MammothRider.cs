@@ -17,15 +17,12 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Blueprints.Root;
-using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
-using Kingmaker.UnitLogic.FactLogic;
-using Kingmaker.UnitLogic.Mechanics.Conditions;
 using Kingmaker.Utility;
 using PrestigePlus.Modify;
 using System;
@@ -225,8 +222,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(RuggedSteedDisplayName)
               .SetDescription(RuggedSteedDescription)
               .SetIcon(icon)
-              //.AddContextStatBonus(StatType.AC, value: 1, descriptor: ModifierDescriptor.NaturalArmor)
-              .AddComponent<AddContextStatBonus>(c => { c.Stat = StatType.AC; c.Value = 1; c.Descriptor = ModifierDescriptor.NaturalArmor; })
+              //.AddACBonusAgainstFactOwner(bonus: 1, descriptor: Kingmaker.Enums.ModifierDescriptor.NaturalArmor, noFact: true)
+              .AddContextStatBonus(StatType.AC, value: 1, descriptor: ModifierDescriptor.NaturalArmor)
               .SetRanks(10)
               .Configure();
 
@@ -254,29 +251,21 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(ColossusHunterDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddComponent<AttackBonusAgainstSize>(c => { c.Size = Kingmaker.Enums.Size.Large; c.Value = 1; })
-              .AddComponent<AttackBonusAgainstSize>(c => { c.Size = Kingmaker.Enums.Size.Huge; c.Value = 1; })
-              .AddComponent<AttackBonusAgainstSize>(c => { c.Size = Kingmaker.Enums.Size.Gargantuan; c.Value = 2; })
-              .AddComponent<AttackBonusAgainstSize>(c => { c.Size = Kingmaker.Enums.Size.Colossal; c.Value = 2; })
-              //.AddAttackBonusAgainstSize(size: Kingmaker.Enums.Size.Large, value: ContextValues.Constant(1))
-              //.AddAttackBonusAgainstSize(size: Kingmaker.Enums.Size.Huge, value: ContextValues.Constant(1))
-              //.AddAttackBonusAgainstSize(size: Kingmaker.Enums.Size.Gargantuan, value: ContextValues.Constant(2))
-              //.AddAttackBonusAgainstSize(size: Kingmaker.Enums.Size.Colossal, value: ContextValues.Constant(2))
+              .AddAttackBonusAgainstSize(size: Kingmaker.Enums.Size.Large, value: ContextValues.Constant(1))
+              .AddAttackBonusAgainstSize(size: Kingmaker.Enums.Size.Huge, value: ContextValues.Constant(1))
+              .AddAttackBonusAgainstSize(size: Kingmaker.Enums.Size.Gargantuan, value: ContextValues.Constant(2))
+              .AddAttackBonusAgainstSize(size: Kingmaker.Enums.Size.Colossal, value: ContextValues.Constant(2))
               .AddDamageBonusConditional(checkWielder: false, conditions: ConditionsBuilder.New()
-                    //.Size(size: Kingmaker.Enums.Size.Large, exactlyEquals: true)
-                    .Add<ContextConditionSize>(c => { c.Size = Kingmaker.Enums.Size.Large; c.ExactlyEquals = true; })
+                    .Size(size: Kingmaker.Enums.Size.Large, exactlyEquals: true)
                     .Build(), bonus: ContextValues.Constant(1))
               .AddDamageBonusConditional(checkWielder: false, conditions: ConditionsBuilder.New()
-                    //.Size(size: Kingmaker.Enums.Size.Huge, exactlyEquals: true)
-                    .Add<ContextConditionSize>(c => { c.Size = Kingmaker.Enums.Size.Huge; c.ExactlyEquals = true; })
+                    .Size(size: Kingmaker.Enums.Size.Huge, exactlyEquals: true)
                     .Build(), bonus: ContextValues.Constant(1))
               .AddDamageBonusConditional(checkWielder: false, conditions: ConditionsBuilder.New()
-                    //.Size(size: Kingmaker.Enums.Size.Gargantuan, exactlyEquals: true)
-                    .Add<ContextConditionSize>(c => { c.Size = Kingmaker.Enums.Size.Gargantuan; c.ExactlyEquals = true; })
+                    .Size(size: Kingmaker.Enums.Size.Gargantuan, exactlyEquals: true)
                     .Build(), bonus: ContextValues.Constant(2))
               .AddDamageBonusConditional(checkWielder: false, conditions: ConditionsBuilder.New()
-                    //.Size(size: Kingmaker.Enums.Size.Colossal, exactlyEquals: true)
-                    .Add<ContextConditionSize>(c => { c.Size = Kingmaker.Enums.Size.Colossal; c.ExactlyEquals = true; })
+                    .Size(size: Kingmaker.Enums.Size.Colossal, exactlyEquals: true)
                     .Build(), bonus: ContextValues.Constant(2))
               .Configure();
         }

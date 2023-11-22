@@ -508,8 +508,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .SetFlags(BlueprintBuff.Flags.HiddenInUi)
               .AddContextRankConfig(ContextRankConfigs.BaseStat(StatType.BaseAttackBonus).WithLinearProgression(1, -2, minProgressionValue: 0))
-              //.AddContextStatBonus(stat: StatType.BaseAttackBonus, value: ContextValues.Rank())
-              .AddComponent<AddContextStatBonus>(c => { c.Stat = StatType.BaseAttackBonus; c.Value = ContextValues.Rank(); })
+              .AddContextStatBonus(stat: StatType.BaseAttackBonus, value: ContextValues.Rank())
               .Configure();
 
             var Buff2 = BuffConfigurator.New(ShadowEnhanceBuff2, ShadowEnhanceGuidBuff2)
@@ -518,8 +517,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .SetFlags(BlueprintBuff.Flags.HiddenInUi)
               .AddContextRankConfig(ContextRankConfigs.BaseStat(StatType.HitPoints).WithLinearProgression(1, -20, minProgressionValue: 0))
-              //.AddContextStatBonus(stat: StatType.HitPoints, value: ContextValues.Rank())
-              .AddComponent<AddContextStatBonus>(c => { c.Stat = StatType.HitPoints; c.Value = ContextValues.Rank(); })
+              .AddContextStatBonus(stat: StatType.HitPoints, value: ContextValues.Rank())
               .Configure();
 
             var Buff3 = BuffConfigurator.New(ShadowEnhanceBuff3, ShadowEnhanceGuidBuff3)
@@ -528,8 +526,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .SetFlags(BlueprintBuff.Flags.HiddenInUi)
               .AddContextRankConfig(ContextRankConfigs.BaseStat(StatType.SaveFortitude).WithLinearProgression(1, -1, minProgressionValue: 0))
-              //.AddContextStatBonus(stat: StatType.SaveFortitude, value: ContextValues.Rank())
-              .AddComponent<AddContextStatBonus>(c => { c.Stat = StatType.SaveFortitude; c.Value = ContextValues.Rank(); })
+              .AddContextStatBonus(stat: StatType.SaveFortitude, value: ContextValues.Rank())
               .Configure();
 
             var Buff4 = BuffConfigurator.New(ShadowEnhanceBuff4, ShadowEnhanceGuidBuff4)
@@ -538,8 +535,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .SetFlags(BlueprintBuff.Flags.HiddenInUi)
               .AddContextRankConfig(ContextRankConfigs.BaseStat(StatType.SaveReflex).WithLinearProgression(1, -1, minProgressionValue: 0))
-              //.AddContextStatBonus(stat: StatType.SaveReflex, value: ContextValues.Rank())
-              .AddComponent<AddContextStatBonus>(c => { c.Stat = StatType.SaveReflex; c.Value = ContextValues.Rank(); })
+              .AddContextStatBonus(stat: StatType.SaveReflex, value: ContextValues.Rank())
               .Configure();
 
             var Buff5 = BuffConfigurator.New(ShadowEnhanceBuff5, ShadowEnhanceGuidBuff5)
@@ -549,8 +545,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetFlags(BlueprintBuff.Flags.HiddenInUi)
               .AddFacts(new() { FeatureRefs.ChannelResistance4.ToString() })
               .AddContextRankConfig(ContextRankConfigs.BaseStat(StatType.SaveWill).WithLinearProgression(1, -3, minProgressionValue: 0))
-              //.AddContextStatBonus(stat: StatType.SaveWill, value: ContextValues.Rank())
-              .AddComponent<AddContextStatBonus>(c => { c.Stat = StatType.SaveWill; c.Value = ContextValues.Rank(); })
+              .AddContextStatBonus(stat: StatType.SaveWill, value: ContextValues.Rank())
               .Configure();
 
             var ability = AbilityConfigurator.New(SummonShadowAblity, SummonShadowAblityGuid)
