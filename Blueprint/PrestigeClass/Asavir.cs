@@ -149,10 +149,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetClasses(ArchetypeGuid)
                 .Configure();
 
-            //FeatureSelectionConfigurator.For(FeatureSelectionRefs.DeitySelection.ToString())
-            //.AddFacts(new() { FeatureRefs.MountTargetFeature.ToString() })
-            //.Configure();
-
             return FeatureSelectionConfigurator.New(SummonBigAnimal2, SummonBigAnimalGuid2)
               .CopyFrom(
                 FeatureSelectionRefs.AnimalCompanionSelectionSylvanSorcerer)

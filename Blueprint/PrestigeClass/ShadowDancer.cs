@@ -442,7 +442,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddFeatureOnApply(progression)
               .AddFeatureOnApply(FeatureRefs.AnimalCompanionRank.ToString())
               .AddFeatureOnApply(FeatureRefs.MountTargetFeature.ToString())
-              .AddFeatureToPet(FeatureRefs.UndeadType.ToString())
+              .AddFeatureToPet(FeatureRefs.UndeadType.ToString(), PetType.AnimalCompanion)
               .AddFeatureOnApply(FeatureSelectionRefs.AnimalCompanionArchetypeSelection.ToString())
               .Configure(delayed: true);
         }

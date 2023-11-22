@@ -298,7 +298,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("trip"))) { DownLikeDominoes.DragConfigure(); SunderStorm.CreateCleavingSweep(); RangedTrip.CreateTripRanged(); RangedTrip.AceTripFeature(); RangedTrip.CreateVindictiveFall(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("marksman"))) { DivineMarksman.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("witchguard"))) { Witchguard.Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("construct"))) {  }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("construct"))) { ConstructRider.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("scientist"))) {  }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
