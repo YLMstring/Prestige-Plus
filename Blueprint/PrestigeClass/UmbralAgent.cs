@@ -45,6 +45,7 @@ using Kingmaker.UnitLogic.Abilities;
 using PrestigePlus.CustomAction.GrappleThrow;
 using PrestigePlus.CustomComponent.PrestigeClass;
 using TabletopTweaks.Core.NewComponents.Prerequisites;
+using Kingmaker.Designers.Mechanics.Facts;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -328,7 +329,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetIcon(icon)
                 .SetFlags(BlueprintBuff.Flags.HiddenInUi)
                 .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
-                .AddReplaceSingleCombatManeuverStat(statType: StatType.Wisdom, type: Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple)
+                .AddComponent<ReplaceSingleCombatManeuverStat>(c => { c.Type = Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple; c.StatType = StatType.Wisdom; })
+                //.AddReplaceSingleCombatManeuverStat(statType: StatType.Wisdom, type: Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple)
                 .Configure();
 
             var ability3 = ActivatableAbilityConfigurator.New(ShadowChains2Ability, ShadowChains2AbilityGuid)
