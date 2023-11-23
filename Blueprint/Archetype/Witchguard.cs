@@ -23,6 +23,7 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Utils.Types;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
 using Kingmaker.Blueprints.Classes.Selection;
+using BlueprintCore.Blueprints.Configurators.Classes;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -34,6 +35,10 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string ArchetypeDescription = "Witchguard.Description";
         public static void Configure()
         {
+            ProgressionConfigurator.For(ProgressionRefs.RangerProgression)
+                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { BodyGuard.FeatGuid, DefendChargeGuid, BodyGuard.Feat2Guid })
+                .Configure();
+
             ArchetypeConfigurator.New(ArchetypeName, ArchetypeGuid, CharacterClassRefs.RangerClass)
               .SetLocalizedName(ArchetypeDisplayName)
               .SetLocalizedDescription(ArchetypeDescription)
