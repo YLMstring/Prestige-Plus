@@ -152,6 +152,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddToAllFeatures(FeatureRefs.PointBlankShot.ToString())
               .AddToAllFeatures(FeatureRefs.PreciseShot.ToString())
               .AddToAllFeatures(FeatureRefs.RapidShotFeature.ToString())
+              .AddToAllFeatures(FeatureRefs.FocusedShot.ToString())
               .AddToAllFeatures("53e8dde5-8986-4f6b-abc5-c7e5e39b1b9d") ///Deadeye’s Blessing from ttt
               .Configure(delayed: true);
         }
@@ -169,6 +170,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddToAllFeatures(FeatureRefs.PointBlankShot.ToString())
               .AddToAllFeatures(FeatureRefs.PreciseShot.ToString())
               .AddToAllFeatures(FeatureRefs.RapidShotFeature.ToString())
+              .AddToAllFeatures(FeatureRefs.FocusedShot.ToString())
               .AddToAllFeatures("53e8dde5-8986-4f6b-abc5-c7e5e39b1b9d") ///Deadeye’s Blessing from ttt
               .AddToAllFeatures(FeatureRefs.ImprovedPreciseShot.ToString())
               .AddToAllFeatures(FeatureSelectionRefs.ZenArcherPointBlankMasterSelection.ToString())
@@ -189,6 +191,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddToAllFeatures(FeatureRefs.PointBlankShot.ToString())
               .AddToAllFeatures(FeatureRefs.PreciseShot.ToString())
               .AddToAllFeatures(FeatureRefs.RapidShotFeature.ToString())
+              .AddToAllFeatures(FeatureRefs.FocusedShot.ToString())
               .AddToAllFeatures("53e8dde5-8986-4f6b-abc5-c7e5e39b1b9d") ///Deadeye’s Blessing from ttt
               .AddToAllFeatures(FeatureRefs.ImprovedPreciseShot.ToString())
               .AddToAllFeatures(FeatureSelectionRefs.ZenArcherPointBlankMasterSelection.ToString())
