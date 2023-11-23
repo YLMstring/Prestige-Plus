@@ -4033,8 +4033,8 @@
   },
   {
     "Key": "AnchoriteAnchoriteDomainPlus.Description",
-    "enGB": "The character adds his anchorite of dawn class levels to all his domains.",
-    "zhCN": "角色将晨花隐者职业等级加到他的所有领域等级上。"
+    "enGB": "The character adds his anchorite of dawn class levels to all his domains. (If he is a separatist, treat his domain the way it essentially is)",
+    "zhCN": "角色将晨花隐者职业等级加到他的所有领域等级上。（如果他是一名异见先驱，按照他领域的本质进行处理）"
   },
   {
     "Key": "AnchoriteFocusedBane.Name",
