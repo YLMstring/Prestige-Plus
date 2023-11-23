@@ -38,6 +38,11 @@ namespace PrestigePlus.Patch
             {
                 TryUpdateProgression(f);
             }
+            var list4 = FeatureSelectionRefs.SecondDomainsSeparatistSelection.Reference.Get().m_AllFeatures;
+            foreach (var f in list4)
+            {
+                TryUpdateProgression(f);
+            }
 
             void TryUpdateProgression(BlueprintFeatureReference fref)
             {

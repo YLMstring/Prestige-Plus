@@ -118,6 +118,11 @@ namespace PrestigePlus.Patch
             {
                 PatchDomains(domain.Guid.ToString());
             }
+            var list4 = FeatureSelectionRefs.SecondDomainsSeparatistSelection.Reference.Get().m_AllFeatures;
+            foreach (var domain in list4)
+            {
+                PatchDomains(domain.Guid.ToString());
+            }
         }
     }
 }

@@ -37,13 +37,6 @@ namespace PrestigePlus.Maneuvers
                 .Add<ContextActionAceTrip>()
                 .Build();
 
-            var greater = FeatureRefs.GreaterTrip.Reference.Get();
-            if (greater)
-            {
-                greater.RemoveComponents<ManeuverProvokeAttack>();
-                greater.AddComponent<ManeuverTrigger>(c => { c.Action = ActionsBuilder.New().Add<FixedGreaterTrip>().Build(); c.ManeuverType = Kingmaker.RuleSystem.Rules.CombatManeuver.Trip; c.OnlySuccess = true; });
-            }
-
             return FeatureConfigurator.New(AceTrip, AceTripGuid, FeatureGroup.Feat)
               .SetDisplayName(AceTripDisplayName)
               .SetDescription(AceTripDescription)
