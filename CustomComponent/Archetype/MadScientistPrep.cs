@@ -18,7 +18,7 @@ namespace PrestigePlus.CustomComponent.Archetype
     {
         void ISpellBookRest.OnSpellBookRestHandler(UnitEntityData unit)
         {
-            if (unit.Spellbooks?.Count() == 0) return;
+            if (unit != Owner || unit.Spellbooks?.Count() == 0) return;
             foreach (var book in unit.Spellbooks)
             {
                 if (book.Blueprint.CharacterClass == CharacterClassRefs.AlchemistClass.Reference.Get())
