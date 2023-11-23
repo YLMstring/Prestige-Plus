@@ -57,7 +57,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string MadMutagenDescription = "MadScientistMadMutagen.Description";
         public static BlueprintFeature MadMutagenFeat()
         {
-            var icon = FeatureRefs.MutagenFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.GrandCognatogenFeature.Reference.Get().Icon;
 
             var hour = new IntConstant
             {
@@ -94,11 +94,11 @@ namespace PrestigePlus.Blueprint.Archetype
         internal const string MadGeniusDisplayName = "MadScientistMadGenius.Name";
         private const string MadGeniusDescription = "MadScientistMadGenius.Description";
 
-        private static BlueprintFeatureSelection CreateMadGenius()
+        private static BlueprintFeature CreateMadGenius()
         {
-            var icon = FeatureRefs.MaddeningBuzzFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.JoyfulRapture.Reference.Get().Icon;
 
-            return FeatureSelectionConfigurator.New(MadGenius, MadGeniusGuid)
+            return FeatureConfigurator.New(MadGenius, MadGeniusGuid)
               .SetDisplayName(MadGeniusDisplayName)
               .SetDescription(MadGeniusDescription)
               .SetIcon(icon)

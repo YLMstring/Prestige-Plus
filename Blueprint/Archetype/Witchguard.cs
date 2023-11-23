@@ -96,6 +96,7 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetRange(AbilityRange.Touch)
                 .SetType(AbilityType.Special)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .SetCanTargetEnemies(false)
                 .SetCanTargetFriends(true)
                 .SetCanTargetPoint(false)
