@@ -17,7 +17,6 @@ namespace PrestigePlus.Patch
         public static void Patch()
         {
             Remove("c0d00f98-0a49-4088-8b5b-4da84b1274bc");//slam
-            Remove("63CC35E0-71C4-4CD3-92EF-2DCB8B5855CF");//opp
         }
 
         private static void Remove(string guid)

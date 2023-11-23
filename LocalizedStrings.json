@@ -5272,6 +5272,138 @@
     "Key": "StrikeSeize.Description",
     "enGB": "As a standard action, you can make a single attack with your weapon and attempt to perform a disarm combat maneuver with your free hand, taking no penalties for two-weapon fighting.",
     "zhCN": "以标准动作，你能够用武器做出单次攻击，并且用空着的手尝试一次缴械战技且无需承受双武器战斗的惩罚。"
+  },
+  {
+    "Key": "DivineMarksman.Name",
+    "ProcessTemplates": false,
+    "enGB": "Divine Marksman",
+    "zhCN": "神射手"
+  },
+  {
+    "Key": "DivineMarksman.Description",
+    "enGB": "Divine marksmen are masters of archery and touched by Light of the Sword.",
+    "zhCN": "神射手是蒙受剑之光芒抚顶的弓术大师。"
+  },
+  {
+    "Key": "DivineMarksmanViciousAim.Name",
+    "ProcessTemplates": false,
+    "enGB": "Vicious Aim",
+    "zhCN": "杀戮瞄准"
+  },
+  {
+    "Key": "DivineMarksmanViciousAim.Description",
+    "enGB": "At 4th level, a divine marksman adds half his highest favored enemy bonus to all attack rolls and damage rolls for attacks made with ranged weapons. This does not stack with his normal favored enemy bonus when targeting a creature that qualifies as a favored enemy. This ability replaces all spellcasting, and the marksman is not considered to have a caster level.",
+    "zhCN": "神射手可以将他的宿敌加值中最高的那项加值数量的一半加到他使用远程武器攻击时的攻击检定和伤害检定上。最高效果和他已经拥有的宿敌加值不能叠加作用在已经被神射手视为宿敌的生物身上。本能力代游侠的法术，并且神射手不会拥有施法者等级。"
+  },
+  {
+    "Key": "Witchguard.Name",
+    "ProcessTemplates": false,
+    "enGB": "Witchguard",
+    "zhCN": "守巫人"
+  },
+  {
+    "Key": "Witchguard.Description",
+    "enGB": "Witchguards are the sworn defenders of the witches of the north. Although the witches are spellcasters of immense power, even they cannot defend themselves against every attack. Witchguards dedicate their lives to protecting their charges, and they gain some arcane knowledge in return. They are trained to work closely with witches and defend their charges from harm. Witchguards learn magical abilities from the same patrons that grant witches their powers, though they can use their abilities to protect any kind of spellcaster, not just a witch. A witchguard is ready to face any foe that might threaten his charge, and he is ever prepared to lay down his life to protect the life of the person he is sworn to defend.",
+    "zhCN": "守巫人是北地女巫忠实的保护者。毕竟就算那些女巫们是威力强大的施法者，他们仍没办法替自己挡下每一次攻击。守巫人用自己的性命守卫雇主，也得到相对应的奥术知识作为报偿。他们受的训练要他们尽可能地贴近他们的女巫，并保护她们免受伤害。守巫人从保护女巫的庇护主那边得到了一些能力，不过他们可以用此能力保护各式各样的施法者，而不仅是女巫。守巫人已经准备好面对任何威胁他们雇主的势力，且永远准备舍命去保护那些他宣誓守护之人的生命。"
+  },
+  {
+    "Key": "WitchguardDefendCharge.Name",
+    "ProcessTemplates": false,
+    "enGB": "Defend Charge",
+    "zhCN": "护主"
+  },
+  {
+    "Key": "WitchguardDefendCharge.Description",
+    "enGB": "At 4th level, a witchguard forms a bond with a spellcaster he has sworn to defend. Once per day, this bond allows the witchguard to spend a move action to grant an adjacent spellcaster a +2 dodge bonus to AC and a +2 circumstance bonus on concentration checks. At 5th level and every 5 levels thereafter, these bonuses increase by 2. The bonuses last for a number of rounds equal to the witchguard’s Wisdom modifier (minimum 1). At 4th level and every 3 levels thereafter, the witchguard can use this ability one additional time per day.",
+    "zhCN": "4级起，守巫人可以和他保护的施法者建立连结，每日一次，守巫人可以花费一个移动等效动作来保护一个与他邻接的施法者，让该施法的AC得到+2闪避加值，且专注检定+2。5级和之后的每5级此加值提升2，此加值持续的轮数等于守巫人的感知调整值。4级之后的每3级他可以多使用此能力一次。"
+  },
+  {
+    "Key": "WitchguardPatron.Name",
+    "ProcessTemplates": false,
+    "enGB": "Patron",
+    "zhCN": "庇护主"
+  },
+  {
+    "Key": "WitchguardPatron.Description",
+    "enGB": "A witchguard learns something of arcane magic from the witches he defends. At 4th level, when a witchguard gains the ability to cast spells, he must also select a patron, as the witch class feature. This patron is usually the same as the patron of the witch he is sworn to protect, but the witchguard may choose any patron. The witchguard adds the first four spells from his patron’s spell list to his ranger spell list. The witchguard cannot cast patron spells of a level he is unable to cast.",
+    "zhCN": "守巫人从他保护的女巫那边学到了一些奥术知识。当四级，守巫人获得施法能力的时候，他可以像女巫一样选择一个庇护主。此庇护主通常和他的女巫选择的相同，不过实际上守巫人可以选择任何的庇护主。守巫人将该庇护主的一到四级法术加入游侠法术列表，守巫人无法施展超过他能施展等级的庇护主法术。"
+  },
+  {
+    "Key": "ConstructRider.Name",
+    "ProcessTemplates": false,
+    "enGB": "Construct Rider",
+    "zhCN": "构装骑士"
+  },
+  {
+    "Key": "ConstructRider.Description",
+    "enGB": "A construct rider creates arcane devices to emulate and surpass weak flesh.",
+    "zhCN": "构装骑士通过创造奥能装置来模仿并超越软弱的肉体。"
+  },
+  {
+    "Key": "ConstructRiderCraftMount.Name",
+    "ProcessTemplates": false,
+    "enGB": "Craft Mount",
+    "zhCN": "制造坐骑"
+  },
+  {
+    "Key": "ConstructRiderCraftMount.Description",
+    "enGB": "A construct rider assembles a construct mount shaped like a riding animal. This construct mount acts in most ways as a cavalier mount, using the character’s alchemist level as his effective cavalier level. A construct mount is a construct, but uses the appropriate animal companion’s statistics, gaining Hit Dice, skills, feats, and Strength and Dexterity adjustments as the alchemist advances in level. A construct mount has no Constitution score, and instead gains bonus hit points appropriate for a construct of its size. The mount has all the immunities of a construct (except immunity to mind-affecting effects, since it has a mind).",
+    "zhCN": "构装骑士为自己组装了一个外形如同骑乘动物的构装坐骑，她可以选择出现在骑将坐骑列表中适合她体型的坐骑。构装坐骑在大部分方面如同德鲁伊的动物伙伴，使用构装骑士的职业等级作为她的有效德鲁伊等级。构装坐骑是构装体，但使用对应生物的数据，并如常获得自然纽带所带来的提升。构装坐骑没有体质，但是会获得基于体型的构装体额外生命值。构装坐骑拥有构装体的一切免疫效果（除了免疫心灵，因为它有心智）。"
+  },
+  {
+    "Key": "ConstructRiderDiminishedExtracts.Name",
+    "ProcessTemplates": false,
+    "enGB": "Diminished Extracts",
+    "zhCN": "化合炼成削减"
+  },
+  {
+    "Key": "ConstructRiderDiminishedExtracts.Description",
+    "enGB": "A construct rider may prepare one fewer extract of each level than normal. If this reduces the number to 0, he may prepare extracts of that level only if his Intelligence allows bonus extracts of that level. To create a construct with a mind and body that are constantly changing and improving, the construct rider must manufacture vast quantities of clockwork or animating reagents. As such, the construct rider can never gain new spells from a prestige class.",
+    "zhCN": "构装骑士在每个环位可准备的化合炼成减少一个，如果该环位可准备化合炼成数量减少到0，她必须通过智力调整奖励的环位来准备该环位的化合炼成。要制作一个不断调整进步，身心和谐的构装体，构装骑士必须发明制作出大量的齿轮或反应剂，因此，她不能从进阶职业中获取新法术。"
+  },
+  {
+    "Key": "MadScientist.Name",
+    "ProcessTemplates": false,
+    "enGB": "Mad Scientist",
+    "zhCN": "科学狂人"
+  },
+  {
+    "Key": "MadScientist.Description",
+    "enGB": "The mad scientist’s colleagues laughed at her insights, mocked her theories, and hounded her from the halls of academia, simply because they were too weak and frightened to understand her work. They thought she was finished. They were wrong.",
+    "zhCN": "科学狂人的同事嘲笑她的见解，讥讽她的理论，并将她驱逐出了学术界，这仅仅是因为他们太软弱，太害怕，以至于无法理解她的工作。他们以为她已经完蛋了，但他们错了。"
+  },
+  {
+    "Key": "MadScientistMadGenius.Name",
+    "ProcessTemplates": false,
+    "enGB": "Mad Genius",
+    "zhCN": "疯狂天才"
+  },
+  {
+    "Key": "MadScientistMadGenius.Description",
+    "enGB": "At 2nd level, a mad scientist can deal 1d3 points of Wisdom damage to herself to create a genius extract as one of her daily 1st-, 2nd-, 3rd-, 4th-, or 5th-level extracts. This otherwise takes the same amount of time and effort as creating a normal extract of its level, but instead of her choosing a formula she knows for it to grant, a genius extract has an unpredictable result. Before the alchemist (or an ally, if she has the infusion discovery) drinks the extract, she gives it a random effect from the list of alchemist formulae of 1 spell level higher than the extract’s spell level.",
+    "zhCN": "2级起，科学狂人可以通过对自己造成1d3点的感知伤害，创造一份天才化合炼成作为她每日化合炼成的其中一份。 此炼成需要花费的时间和精力与制造同等级的正常化合炼成一样，但并不是选择她所知的公式来制造，天才化合炼成具有不可预测的结果。当炼金术士（或者盟友，如果她有灌注炼成）喝下化合炼成前，她从高于该化和炼成环级1环的炼金术公式列表中给予其一个随机效果。"
+  },
+  {
+    "Key": "MadScientistMadMutagen.Name",
+    "ProcessTemplates": false,
+    "enGB": "Mad Mutagen",
+    "zhCN": "疯狂突变剂"
+  },
+  {
+    "Key": "MadScientistMadMutagen.Description",
+    "enGB": "At 4th level, a mad scientist can brew a mad mutagen in place of a normal mutagen. When the mad scientist drinks her mad mutagen, she can brew one more, but she also takes 1d4 points of Wisdom damage. It takes 1 hour to brew a dose of mad mutagen.",
+    "zhCN": "4级起，科学狂人可以调制出疯狂突变剂取代正常的突变药剂。当疯狂科学家喝下她的疯狂突变药剂时，她可以继续调制突变剂，但她也会受到1d4点的感知伤害。调制疯狂突变剂耗时一小时。"
+  },
+  {
+    "Key": "DivineMarksmanIomedaeInfluence.Name",
+    "ProcessTemplates": false,
+    "enGB": "Iomedae’s Influence",
+    "zhCN": "艾奥梅黛之剑"
+  },
+  {
+    "Key": "DivineMarksmanIomedaeInfluence.Description",
+    "enGB": "At 8th level, an Ilsurian archer gains Weapon Focus with the longsword as a bonus feat, due to the influence the church of Iomedae has over Ilsurian causes.",
+    "zhCN": "在8级时，神射手在艾奥梅黛教会的影响下练习了使用长剑的武艺，他获得武器专攻（长剑）作为奖励专长。"
   }
 
 ]
