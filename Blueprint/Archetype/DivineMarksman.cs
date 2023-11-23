@@ -73,7 +73,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         private static BlueprintFeature CreateIomedaeInfluence()
         {
-            var icon = FeatureRefs.SwordlordDisarmingStrike.Reference.Get().Icon;
+            var icon = FeatureRefs.DeftStrike.Reference.Get().Icon;
 
             var feat = FeatureConfigurator.New(IomedaeInfluence, IomedaeInfluenceGuid)
                 .CopyFrom(
