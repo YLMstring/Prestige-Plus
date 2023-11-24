@@ -37,13 +37,13 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToRemoveFeatures(14, FeatureRefs.PersistantMutagen.ToString())
             .AddToAddFeatures(1, SummonAnimalSelection(), CreateDiminishedExtracts())
             .AddToAddFeatures(4, FeatureSelectionRefs.FighterFeatSelection.ToString())
-              .AddToClassSkills(Kingmaker.EntitySystem.Stats.StatType.SkillKnowledgeArcana)
-              .AddToClassSkills(Kingmaker.EntitySystem.Stats.StatType.SkillKnowledgeWorld)
-              .AddToClassSkills(Kingmaker.EntitySystem.Stats.StatType.SkillLoreNature)
-              .AddToClassSkills(Kingmaker.EntitySystem.Stats.StatType.SkillPerception)
-              .AddToClassSkills(Kingmaker.EntitySystem.Stats.StatType.SkillUseMagicDevice)
-              .AddToClassSkills(Kingmaker.EntitySystem.Stats.StatType.SkillThievery)
-              .AddToClassSkills(Kingmaker.EntitySystem.Stats.StatType.SkillMobility)
+              .AddToClassSkills(StatType.SkillKnowledgeArcana)
+              .AddToClassSkills(StatType.SkillKnowledgeWorld)
+              .AddToClassSkills(StatType.SkillLoreNature)
+              .AddToClassSkills(StatType.SkillPerception)
+              .AddToClassSkills(StatType.SkillUseMagicDevice)
+              .AddToClassSkills(StatType.SkillThievery)
+              .AddToClassSkills(StatType.SkillMobility)
               .SetReplaceClassSkills(true)
               .Configure();
         }
@@ -120,15 +120,6 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetSpontaneous(false)
               .SetIsArcane(false)
               .Configure(delayed: true);
-
-            var Alchemist = CharacterClassRefs.AlchemistClass.ToString();
-
-            // Update references to the Alchemist spellbook to include the new spellbook
-            FeatureConfigurator.For(FeatureRefs.DLC3_ArcaneModFeature)
-              .EditComponent<AddAbilityUseTrigger>(
-                c =>
-                  c.m_Spellbooks = CommonTool.Append(c.m_Spellbooks, spellbook.ToReference<BlueprintSpellbookReference>()))
-              .Configure();
 
             return spellbook;
         }
