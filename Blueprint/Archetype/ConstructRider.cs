@@ -89,7 +89,7 @@ namespace PrestigePlus.Blueprint.Archetype
             var progression =
                 ProgressionConfigurator.New(ClassProgressName2, ClassProgressGuid2)
                 .CopyFrom(ProgressionRefs.CavalierMountProgression, typeof(RemoveFeatureOnApply), typeof(LevelEntry), typeof(UIGroup))
-                .SetClasses(ArchetypeGuid)
+                .SetClasses(CharacterClassRefs.AlchemistClass.ToString())
                 .Configure();
 
             return FeatureSelectionConfigurator.New(SummonBigAnimal2, SummonBigAnimalGuid2)
@@ -116,9 +116,9 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetSpellsKnown(SpellsTableRefs.AlchemistSpellLevels.ToString())
               .SetSpellList(SpellListRefs.AlchemistSpellList.ToString())
               .SetCharacterClass(CharacterClassRefs.AlchemistClass.ToString())
-              .SetCastingAttribute(StatType.Charisma)
-              .SetSpontaneous(true)
-              .SetIsArcane(true)
+              .SetCastingAttribute(StatType.Intelligence)
+              .SetSpontaneous(false)
+              .SetIsArcane(false)
               .Configure(delayed: true);
 
             var Alchemist = CharacterClassRefs.AlchemistClass.ToString();

@@ -28,9 +28,9 @@ namespace PrestigePlus.CustomComponent.Archetype
                         var slots = book.GetMemorizedSpellSlots(i);
                         foreach (var slot in slots)
                         {
-                            if (slot.SpellShell == null)
+                            if (slot.SpellShell == null || !book.IsKnownOnLevel(slot.SpellShell.Blueprint, i))
                             {
-                                var spell = book.Blueprint.SpellList.SpellsByLevel[slot.SpellLevel + 1]?.Spells?.Random();
+                                var spell = book.Blueprint.SpellList.SpellsByLevel[i + 1]?.Spells?.Random();
                                 slot.SpellShell = new Kingmaker.UnitLogic.Abilities.AbilityData(spell, book, i)
                                 {
                                     IsTemporary = true

@@ -67,7 +67,7 @@ namespace PrestigePlus.Blueprint.Archetype
             var ability = AbilityConfigurator.New(MadMutagenAbility, MadMutagenAbilityGuid)
                 .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Potion)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-                        .TimeSkip(type: Kingmaker.Designers.EventConditionActionSystem.Actions.TimeSkip.SkipType.Minutes, minutesToSkip: hour, noFatigue: true, matchTimeOfDay: true)
+                        .TimeSkip(type: Kingmaker.Designers.EventConditionActionSystem.Actions.TimeSkip.SkipType.Minutes, minutesToSkip: hour, silent: false, matchTimeOfDay: true)
                         .DealDamageToAbility(Kingmaker.EntitySystem.Stats.StatType.Wisdom, ContextDice.Value(Kingmaker.RuleSystem.DiceType.D4, 1, 0))
                         .RestoreResource(AbilityResourceRefs.MutagenResource.ToString(), 1)
                         .Build())
