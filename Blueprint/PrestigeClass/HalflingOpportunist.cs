@@ -80,6 +80,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddPrerequisiteFeature(FeatureRefs.DefensiveCombatTraining.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                 .AddPrerequisiteStatValue(StatType.SkillPerception, 5)
                 .AddPrerequisiteStatValue(StatType.SkillStealth, 5)
+                .AddPrerequisiteClassLevel(ArchetypeGuid, 5, not: true)
                 .Configure();
 
             Action<ProgressionRoot> act = delegate (ProgressionRoot i)

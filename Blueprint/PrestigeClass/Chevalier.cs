@@ -83,6 +83,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddPrerequisiteStatValue(StatType.SkillPersuasion, 1)
                 .AddPrerequisiteStatValue(StatType.SkillKnowledgeWorld, 1)
                 .AddPrerequisiteAlignment(AlignmentMaskType.Good)
+                .AddPrerequisiteClassLevel(ArchetypeGuid, 3, not: true)
                 .Configure();
 
             Action<ProgressionRoot> act = delegate (ProgressionRoot i)

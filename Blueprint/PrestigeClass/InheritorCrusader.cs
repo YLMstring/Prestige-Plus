@@ -94,6 +94,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddPrerequisiteProficiency(weaponProficiencies: new WeaponCategory[] { WeaponCategory.Longsword }, armorProficiencies: new ArmorProficiencyGroup[] { })
                 .AddPrerequisiteFeature(FeatureRefs.IronWill.ToString(), group: Prerequisite.GroupType.All)
                 .AddPrerequisiteAlignment(AlignmentMaskType.Lawful, checkInProgression: true)
+                .AddPrerequisiteClassLevel(ArchetypeGuid, 3, not: true)
                 .AddPrerequisiteFeature(FeatureRefs.ChannelEnergyFeature.ToString(), group: Prerequisite.GroupType.Any)
                 .AddPrerequisiteFeature(FeatureRefs.ChannelEnergyHospitalerFeature.ToString(), group: Prerequisite.GroupType.Any)
                 .AddPrerequisiteFeature(FeatureRefs.ChannelEnergyPaladinFeature.ToString(), group: Prerequisite.GroupType.Any)

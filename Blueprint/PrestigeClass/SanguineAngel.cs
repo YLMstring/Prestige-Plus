@@ -74,6 +74,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetProgression(progression)
                 .SetClassSkills(new StatType[] { StatType.SkillKnowledgeWorld, StatType.SkillPerception, StatType.SkillPersuasion })
                 .AddPrerequisiteStatValue(StatType.BaseAttackBonus, 5, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.All)
+                .AddPrerequisiteClassLevel(ArchetypeGuid, 3, not: true)
                 .AddPrerequisiteProficiency(weaponProficiencies: new WeaponCategory[] { }, armorProficiencies: new ArmorProficiencyGroup[] { ArmorProficiencyGroup.Heavy })
                 .AddPrerequisiteFeature(FeatureRefs.ShieldBashFeature.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.All)
                 .AddPrerequisiteFeature(FeatureRefs.IronWill.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.All)
