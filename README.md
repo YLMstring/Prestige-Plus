@@ -56,9 +56,9 @@
 - Agent of the Grave lose spell progression at level 1. I have no idea why my code can make you lose spell progression, but it just works.
 - Hide your alignment!
 #### Homebrew Options:  
-- At level 5 you can learn all necromancy spells (require 13 int, full caster)
+- At level 5 you can learn all necromancy spells (requires 13 int, full caster)
 - Or become a ghoul! (you're undead so incompatible with lichdom)
-- Or become a vampire! (require blood drinker, incompatible with lichdom)
+- Or become a vampire! (requires blood drinker, incompatible with lichdom)
 ### [Anchorite of Dawn Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/a-b/anchorite/)
 - Focused Sacred Weapon can't be turned off once chosen (it will become very complicated for me otherwise)
 - Credence gives access to [Dervish in TTT](https://github.com/Vek17/TabletopTweaks-Base).
@@ -102,10 +102,10 @@
 #### Homebrew Options:  
 - Gigantic Assault: a mythic ability to charge like a beast!
 ### [Sanguine Angel Class (Lite)](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/sanguine-angel/)
-- Require [Dark Codex](https://github.com/Truinto/DarkCodex), or you won't gain Prodigious Two-Weapon Fighting.
+- Requires [Dark Codex](https://github.com/Truinto/DarkCodex), or you won't gain Prodigious Two-Weapon Fighting.
 - The class has 10 levels, but I only implement the first 3 levels because it doesn't have good stuff at higher levels.
 #### Homebrew Options:  
-- Become an Angel of Death early! (require precise shot)
+- Become an Angel of Death early! (requires precise shot)
 - Feat: Extra Tyrant’s Discipline
 ### [Scar Seeker Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/scar-seeker/)   
 - Gain spell progression at level 2, 4, 6, 8, 10.
@@ -140,7 +140,7 @@
 - New Magus Arcana: [Familiar](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/familiar-ex)
 #### Ranger:  
 - [Divine Marksman](https://www.d20pfsrd.com/classes/core-classes/ranger/archetypes/paizo-ranger-archetypes/divine-marksman-ranger-archetype/)
-- Require [Expanded Content](https://github.com/ka-dyn/ExpandedContent), or you won't gain the bonus feats!
+- Requires [Expanded Content](https://github.com/ka-dyn/ExpandedContent), or you won't gain the bonus feats!
 - [Witchguard](https://www.d20pfsrd.com/classes/core-classes/ranger/archetypes/paizo-ranger-archetypes/witchguard/)
 #### Witch:  
 - [White-Haired Witch](https://www.d20pfsrd.com/classes/base-classes/witch/archetypes/paizo-witch-archetypes/white-haired-witch/)
