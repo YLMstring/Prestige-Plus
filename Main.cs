@@ -238,6 +238,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("nerfsop"), defaultValue: false, Helpers.CreateString("toggle-desc38", "(Nerf) Seize the Opportunity as a Mythic Feat"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("cmdminus"), defaultValue: true, Helpers.CreateString("toggle-desc51", "Fix Difficulty CMD Tripple-Dipped"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("duplicate"), defaultValue: false, Helpers.CreateString("toggle-desc46", "Remove Duplicate Feats from Other MODs"))
               .ShowVisualConnection()));
 
@@ -300,6 +303,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("witchguard"))) { Witchguard.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("construct"))) { ConstructRider.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("scientist"))) { MadScientist.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("cmdminus"))) { CMDPatch.Patch(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
