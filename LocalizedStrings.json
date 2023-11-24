@@ -5380,8 +5380,8 @@
   },
   {
     "Key": "MadScientistMadGenius.Description",
-    "enGB": "At 2nd level, a mad scientist can deal 1d3 points of Wisdom damage to herself to create a genius extract as one of her daily 1st-, 2nd-, 3rd-, 4th-, or 5th-level extracts. This otherwise takes the same amount of time and effort as creating a normal extract of its level, but instead of her choosing a formula she knows for it to grant, a genius extract has an unpredictable result. Before the alchemist (or an ally, if she has the infusion discovery) drinks the extract, she gives it a random effect from the list of alchemist formulae of 1 spell level higher than the extract’s spell level.",
-    "zhCN": "2级起，科学狂人可以通过对自己造成1d3点的感知伤害，创造一份天才化合炼成作为她每日化合炼成的其中一份。 此炼成需要花费的时间和精力与制造同等级的正常化合炼成一样，但并不是选择她所知的公式来制造，天才化合炼成具有不可预测的结果。当炼金术士（或者盟友，如果她有灌注炼成）喝下化合炼成前，她从高于该化和炼成环级1环的炼金术公式列表中给予其一个随机效果。"
+    "enGB": "At 2nd level, a mad scientist can deal 1d3 points of Wisdom damage to herself to create a genius extract as one of her daily 1st-, 2nd-, 3rd-, 4th-, or 5th-level extracts. This otherwise takes the same amount of time and effort as creating a normal extract of its level, but instead of her choosing a formula she knows for it to grant, a genius extract has an unpredictable result. When the alchemist brews the extract, she gives it a random effect from the list of alchemist formulae of 1 spell level higher than the extract’s spell level.",
+    "zhCN": "2级起，科学狂人可以通过对自己造成1d3点的感知伤害，创造一份天才化合炼成作为她每日化合炼成的其中一份。 此炼成需要花费的时间和精力与制造同等级的正常化合炼成一样，但并不是选择她所知的公式来制造，天才化合炼成具有不可预测的结果。当炼金术士炼制化合炼成时，她从高于该化合炼成环级1环的炼金术公式列表中给予其一个随机效果。"
   },
   {
     "Key": "MadScientistMadMutagen.Name",
