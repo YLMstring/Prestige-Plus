@@ -16,6 +16,7 @@ using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.EntitySystem.Stats;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
 using Kingmaker.Blueprints.Classes.Selection;
+using Kingmaker.Designers.Mechanics.Facts;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -34,7 +35,7 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToRemoveFeatures(1, FeatureRefs.BrewPotions.ToString(), FeatureRefs.MutagenFeature.ToString())
             .AddToRemoveFeatures(4, FeatureSelectionRefs.DiscoverySelection.ToString())
             .AddToRemoveFeatures(14, FeatureRefs.PersistantMutagen.ToString())
-            .AddToAddFeatures(1, CreateDiminishedExtracts())
+            .AddToAddFeatures(1, SummonAnimalSelection(), CreateDiminishedExtracts())
             .AddToAddFeatures(4, FeatureSelectionRefs.FighterFeatSelection.ToString())
               .AddToClassSkills(Kingmaker.EntitySystem.Stats.StatType.SkillKnowledgeArcana)
               .AddToClassSkills(Kingmaker.EntitySystem.Stats.StatType.SkillKnowledgeWorld)
@@ -57,26 +58,17 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string DiminishedExtractsDescription = "ConstructRiderDiminishedExtracts.Description";
         private static BlueprintFeature CreateDiminishedExtracts()
         {
-            var feat = FeatureConfigurator.New(DiminishedExtracts2, DiminishedExtracts2Guid)
-              .SetDisplayName(DiminishedExtractsDisplayName)
-              .SetDescription(DiminishedExtractsDescription)
-              .AddConstructHealth()
-              .AddBuffDescriptorImmunity(false, descriptor: SpellDescriptor.Bleed)
-              .AddFacts(new() { FeatureRefs.ImmunityToSleep.ToString(), FeatureRefs.ImmunityToParalysis.ToString(), FeatureRefs.ImmunityToDeathEffects.ToString(), FeatureRefs.ImmunityToPoison.ToString(), FeatureRefs.ImmunityToAbilityDamage.ToString(), FeatureRefs.ImmunityToStun.ToString() })
-              .Configure();
-
             return FeatureConfigurator.New(DiminishedExtracts, DiminishedExtractsGuid)
               .SetDisplayName(DiminishedExtractsDisplayName)
               .SetDescription(DiminishedExtractsDescription)
-              .AddFeatureToPet(feat, Kingmaker.Enums.PetType.AnimalCompanion)
               .Configure();
         }
 
         private const string SummonBigAnimal2 = "ConstructRider.SummonBigAnimal2";
-        private static readonly string SummonBigAnimalGuid2 = "{AD8FEBAE-20B0-4BB7-AC78-4156D204B301}";
+        private static readonly string SummonBigAnimalGuid2 = "{12E58DC4-5F14-4DF8-8364-17C957136B70}";
 
         private const string ClassProgressName2 = "ConstructRiderPrestige2";
-        private static readonly string ClassProgressGuid2 = "{C15E3E4A-3A5C-4752-B0D0-D0D6F4558C17}";
+        private static readonly string ClassProgressGuid2 = "{C71976D0-2106-4B52-A8B5-313C5555295A}";
 
         internal const string CraftMountDisplayName = "ConstructRiderCraftMount.Name";
         private const string CraftMountDescription = "ConstructRiderCraftMount.Description";
@@ -84,9 +76,19 @@ namespace PrestigePlus.Blueprint.Archetype
         {
             var icon = FeatureRefs.ArmorMastery.Reference.Get().Icon;
 
+            var feat = FeatureConfigurator.New(DiminishedExtracts2, DiminishedExtracts2Guid)
+              .SetDisplayName(DiminishedExtractsDisplayName)
+              .SetDescription(DiminishedExtractsDescription)
+              .AddHideFeatureInInspect()
+              .SetHideInCharacterSheetAndLevelUp()
+              .AddConstructHealth()
+              .AddBuffDescriptorImmunity(false, descriptor: SpellDescriptor.Bleed)
+              .AddFacts(new() { FeatureRefs.ImmunityToSleep.ToString(), FeatureRefs.ImmunityToParalysis.ToString(), FeatureRefs.ImmunityToDeathEffects.ToString(), FeatureRefs.ImmunityToPoison.ToString(), FeatureRefs.ImmunityToAbilityDamage.ToString(), FeatureRefs.ImmunityToStun.ToString() })
+              .Configure();
+
             var progression =
                 ProgressionConfigurator.New(ClassProgressName2, ClassProgressGuid2)
-                .CopyFrom(ProgressionRefs.CavalierMountProgression, typeof(LevelEntry), typeof(UIGroup))
+                .CopyFrom(ProgressionRefs.CavalierMountProgression, typeof(RemoveFeatureOnApply), typeof(LevelEntry), typeof(UIGroup))
                 .SetClasses(ArchetypeGuid)
                 .Configure();
 
@@ -100,6 +102,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddFeatureOnApply(FeatureRefs.AnimalCompanionRank.ToString())
               .AddFeatureOnApply(FeatureRefs.MountTargetFeature.ToString())
               .AddFeatureOnApply(FeatureSelectionRefs.AnimalCompanionArchetypeSelection.ToString())
+              .AddFeatureToPet(feat, Kingmaker.Enums.PetType.AnimalCompanion)
               .Configure(delayed: true);
         }
 
