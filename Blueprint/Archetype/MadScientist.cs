@@ -23,6 +23,8 @@ using Kingmaker.ElementsSystem;
 using Kingmaker.Designers.EventConditionActionSystem.Evaluators;
 using BlueprintCore.Actions.Builder.ContextEx;
 using PrestigePlus.CustomAction.ClassRelated;
+using Kingmaker.Enums;
+using Kingmaker.EntitySystem.Stats;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -56,23 +58,29 @@ namespace PrestigePlus.Blueprint.Archetype
 
         internal const string MadMutagenDisplayName = "MadScientistMadMutagen.Name";
         private const string MadMutagenDescription = "MadScientistMadMutagen.Description";
+
+        private const string MadMutagenBuff = "MadScientist.MadMutagenBuff";
+        private static readonly string MadMutagenBuffGuid = "{80A57B8A-5B05-4544-87F2-544FE4EE59FA}";
         public static BlueprintFeature MadMutagenFeat()
         {
             var icon = FeatureRefs.GrandCognatogenFeature.Reference.Get().Icon;
 
-            var hour = new IntConstant
-            {
-                Value = 60
-            };
+            var action = ActionsBuilder.New()
+                        .DealDamageToAbility(StatType.Wisdom, ContextDice.Value(Kingmaker.RuleSystem.DiceType.D4, 1, 0))
+                        .RestoreResource(AbilityResourceRefs.MutagenResource.ToString(), 1)
+                        .Build();
+
+            var Buff = BuffConfigurator.New(MadMutagenBuff, MadMutagenBuffGuid)
+             .SetDisplayName(MadMutagenDisplayName)
+             .SetDescription(MadMutagenDescription)
+             .SetIcon(icon)
+             .AddBuffActions(deactivated: action)
+             .SetStacking(Kingmaker.UnitLogic.Buffs.Blueprints.StackingType.Prolong)
+             .Configure();
 
             var ability = AbilityConfigurator.New(MadMutagenAbility, MadMutagenAbilityGuid)
                 .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Potion)
-                .AddAbilityEffectRunAction(ActionsBuilder.New()
-                        //.TimeSkip(type: Kingmaker.Designers.EventConditionActionSystem.Actions.TimeSkip.SkipType.Minutes, minutesToSkip: hour, silent: false, matchTimeOfDay: true)
-                        //.DealDamageToAbility(Kingmaker.EntitySystem.Stats.StatType.Wisdom, ContextDice.Value(Kingmaker.RuleSystem.DiceType.D4, 1, 0))
-                        //.RestoreResource(AbilityResourceRefs.MutagenResource.ToString(), 1)
-                        .Add<MadBrew>()
-                        .Build())
+                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(Buff, ContextDuration.Fixed(1, Kingmaker.UnitLogic.Mechanics.DurationRate.Hours)).Build())
                 .SetDisplayName(MadMutagenDisplayName)
                 .SetDescription(MadMutagenDescription)
                 .SetIcon(icon)

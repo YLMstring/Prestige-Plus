@@ -36,7 +36,7 @@ namespace PrestigePlus.CustomComponent
             }
             int cr = num4 ?? base.Owner.CR;
             value = DifficultyStatAdvancement.ApplyBonusProgression(adjustmentPreset, cr, value, true);
-            evt.AddModifier(- 2 * value, Fact, Kingmaker.Enums.ModifierDescriptor.Penalty);
+            evt.AddModifier(-value, Fact, Kingmaker.Enums.ModifierDescriptor.Penalty);
         }
 
         public void OnEventDidTrigger(RuleCalculateCMD evt)
