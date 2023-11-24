@@ -31,7 +31,11 @@ namespace PrestigePlus.CustomComponent.Archetype
                             if (slot.SpellShell == null)
                             {
                                 var spell = book.Blueprint.SpellList.SpellsByLevel[slot.SpellLevel + 1]?.Spells?.Random();
-                                slot.SpellShell = new Kingmaker.UnitLogic.Abilities.AbilityData(spell, unit);
+                                slot.SpellShell = new Kingmaker.UnitLogic.Abilities.AbilityData(spell, book, i)
+                                {
+                                    IsTemporary = true
+                                };
+                                slot.Available = true;
                                 var action = ActionsBuilder.New().DealDamageToAbility(Kingmaker.EntitySystem.Stats.StatType.Wisdom, ContextDice.Value(Kingmaker.RuleSystem.DiceType.D3, 1, 0)).Build();
                                 Fact.RunActionInContext(action);
                             }
