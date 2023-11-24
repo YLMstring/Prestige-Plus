@@ -5391,8 +5391,8 @@
   },
   {
     "Key": "MadScientistMadMutagen.Description",
-    "enGB": "At 4th level, a mad scientist can brew a mad mutagen in place of a normal mutagen. When the mad scientist drinks her mad mutagen, she can brew one more, but she also takes 1d4 points of Wisdom damage. It takes 1 hour to brew a dose of mad mutagen.",
-    "zhCN": "4级起，科学狂人可以调制出疯狂突变剂取代正常的突变药剂。当疯狂科学家喝下她的疯狂突变药剂时，她可以继续调制突变剂，但她也会受到1d4点的感知伤害。调制疯狂突变剂耗时一小时。"
+    "enGB": "At 4th level, a mad scientist can brew a mad mutagen in place of a normal mutagen. When the mad scientist drinks her mad mutagen, she can brew one more if has the leisure, but she also takes 1d4 points of Wisdom damage. It takes 1 hour to brew a dose of mad mutagen.",
+    "zhCN": "4级起，科学狂人可以调制出疯狂突变剂取代正常的突变药剂。当疯狂科学家喝下她的疯狂突变药剂时，如果时间充裕她可以调制更多突变剂，但她也会受到1d4点的感知伤害。调制疯狂突变剂耗时一小时。"
   },
   {
     "Key": "DivineMarksmanIomedaeInfluence.Name",
