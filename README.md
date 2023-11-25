@@ -128,6 +128,7 @@
 #### Alchemist:  
 - [Construct Rider](https://www.d20pfsrd.com/classes/base-classes/alchemist/archetypes/paizo-alchemist-archetypes/construct-rider-alchemist-archetype/)
 - [Mad Scientist](https://www.d20pfsrd.com/classes/base-classes/alchemist/archetypes/paizo-alchemist-archetypes/mad-scientist-alchemist-archetype/)
+- For Lv2 discovery, Left spell slot blank to create genius extracts. For Lv4 discovery, start brewing and wait for an hour.
 - This is absolutely my favorite.
 #### Fighter:  
 - [Eldritch Guardian](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Eldritch%20Guardian)
