@@ -28,7 +28,7 @@ namespace PrestigePlus.CustomComponent.Feat
 
         void IRulebookHandler<RuleCombatManeuver>.OnEventDidTrigger(RuleCombatManeuver evt)
         {
-            if (!evt.Success || !ConditionTwoFreeHand.CheckCondition2(Owner)) return;
+            if (!evt.Success || !ConditionTwoFreeHand.HasFreeHand(Owner)) return;
             if (evt.Type != CombatManeuver.DirtyTrickBlind && evt.Type != CombatManeuver.DirtyTrickSickened) return;
             Rounds rounds = evt.IncreasedDuration ? (evt.SuccessMargin / 5 + RulebookEvent.Dice.D4).Rounds() : (evt.SuccessMargin / 5 + 1).Rounds();
             evt.Target.Descriptor.AddBuff(BlueprintRoot.Instance.SystemMechanics.DirtyTrickEntangledBuff, evt.Initiator, new TimeSpan?(rounds.Seconds));

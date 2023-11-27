@@ -45,7 +45,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                 PFLog.Default.Error("Caster is missing", Array.Empty<object>());
                 return;
             }
-            if (attacktype == 1 && !ConditionTwoFreeHand.CheckCondition2(caster))
+            if (attacktype == 1 && !ConditionTwoFreeHand.HasFreeHand(caster))
             {
                 return;
             }

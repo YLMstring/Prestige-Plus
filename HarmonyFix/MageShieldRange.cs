@@ -24,12 +24,46 @@ namespace PrestigePlus.HarmonyFix
     {
         static void Postfix(ref AbilityData __instance, ref AbilityRange __result)
         {
-            if (__instance.Blueprint == AbilityRefs.MageShield.Reference.Get() && __instance.Caster.HasFact(Ace) && __result == AbilityRange.Personal)
+            //Logger.Info("bababa");
+            if (__instance.Blueprint == AbilityRefs.MageShield.Reference.Get())
             {
-                __result = AbilityRange.Touch;
+                //Logger.Info("bababa1");
+                if (__instance.Caster.HasFact(Ace))
+                {
+                    //Logger.Info("bababa2");
+                    if (__result == AbilityRange.Personal)
+                    {
+                        //Logger.Info("bababa3");
+                        __result = AbilityRange.Touch;
+                    }
+                }
             }
         }
+        //private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
+        private static BlueprintFeatureReference Ace = BlueprintTool.GetRef<BlueprintFeatureReference>(MageHandTrick.ShieldMainFeatGuid);
+    }
 
+    [HarmonyPatch(typeof(AbilityData), nameof(AbilityData.TargetAnchor), MethodType.Getter)]
+    internal class MageShieldRange2
+    {
+        static void Postfix(ref AbilityData __instance, ref AbilityTargetAnchor __result)
+        {
+            //Logger.Info("bababa");
+            if (__instance.Blueprint == AbilityRefs.MageShield.Reference.Get())
+            {
+                //Logger.Info("bababa1");
+                if (__instance.Caster.HasFact(Ace))
+                {
+                    //Logger.Info("bababa2");
+                    if (__result == AbilityTargetAnchor.Owner)
+                    {
+                        //Logger.Info("bababa3");
+                        __result = AbilityTargetAnchor.Unit;
+                    }
+                }
+            }
+        }
+        //private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         private static BlueprintFeatureReference Ace = BlueprintTool.GetRef<BlueprintFeatureReference>(MageHandTrick.ShieldMainFeatGuid);
     }
 }

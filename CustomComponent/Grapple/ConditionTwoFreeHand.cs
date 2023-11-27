@@ -39,7 +39,7 @@ namespace PrestigePlus.CustomComponent.Grapple
             return hasFreeHand;
         }
 
-        public static bool CheckCondition2(UnitEntityData unit)
+        public static bool HasFreeHand(UnitEntityData unit)
         {
             var secondaryHand = unit.Body.CurrentHandsEquipmentSet.SecondaryHand;
             var primaryHand = unit.Body.CurrentHandsEquipmentSet.PrimaryHand;

@@ -100,7 +100,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
             ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
             if (ruleCombatManeuver.Success)
             {
-                if (maneuver != CombatManeuver.Grapple || caster.Get<UnitPartGrappleInitiatorPP>() || target.Get<UnitPartGrappleTargetPP>() || !ConditionTwoFreeHand.CheckCondition2(caster)) { return; }
+                if (maneuver != CombatManeuver.Grapple || caster.Get<UnitPartGrappleInitiatorPP>() || target.Get<UnitPartGrappleTargetPP>() || !ConditionTwoFreeHand.HasFreeHand(caster)) { return; }
                 caster.Ensure<UnitPartGrappleInitiatorPP>().Init(target, CasterBuff, target.Context);
                 target.Ensure<UnitPartGrappleTargetPP>().Init(caster, TargetBuff, caster.Context);
             }

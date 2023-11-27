@@ -109,7 +109,7 @@ namespace PrestigePlus.HarmonyFix
                 else if (caster.HasFact(Grapple) && caster.HasFact(GrappleFeat))
                 {
                     //Logger.Info("start grapple");
-                    if (caster.Get<UnitPartGrappleInitiatorPP>() || target.Get<UnitPartGrappleTargetPP>() || !ConditionTwoFreeHand.CheckCondition2(caster)) { return true; }
+                    if (caster.Get<UnitPartGrappleInitiatorPP>() || target.Get<UnitPartGrappleTargetPP>() || !ConditionTwoFreeHand.HasFreeHand(caster)) { return true; }
                     maneuver = CombatManeuver.Grapple;
                 }
                 if (maneuver == CombatManeuver.None) { return true; }

@@ -52,7 +52,7 @@ namespace PrestigePlus.HarmonyFix
                 if (caster.HasFact(AerialBuff) && __instance.IsCharge)
                 {
                     GameHelper.RemoveBuff(caster, AerialBuff);
-                    if (caster.Get<UnitPartGrappleInitiatorPP>() || target.Get<UnitPartGrappleTargetPP>() || !ConditionTwoFreeHand.CheckCondition2(caster)) { return true; }
+                    if (caster.Get<UnitPartGrappleInitiatorPP>() || target.Get<UnitPartGrappleTargetPP>() || !ConditionTwoFreeHand.HasFreeHand(caster)) { return true; }
                     RuleCombatManeuver ruleCombatManeuver = new(caster, target, CombatManeuver.Grapple, AttackBonusRule);
                     ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
                     if (ruleCombatManeuver.Success)

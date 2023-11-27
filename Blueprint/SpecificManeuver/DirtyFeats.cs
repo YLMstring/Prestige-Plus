@@ -36,7 +36,7 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
 
         public static void Configure()
         {
-            var icon = FeatureRefs.OracleRevelationManeuverMasteryDirtyTrick.Reference.Get().Icon;
+            var icon = AbilityRefs.DirtyTrickEntangleAction.Reference.Get().Icon;
 
             FeatureConfigurator.New(FeatName, FeatGuid, FeatureGroup.Feat)
                     .SetDisplayName(DisplayName)
@@ -58,7 +58,7 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
         private static readonly string StyleDescription = "DirtyTrickMaster.Description";
         public static void StyleConfigure()
         {
-            var icon = FeatureRefs.FlurryOfBlows.Reference.Get().Icon;
+            var icon = FeatureRefs.DarkLurkerBladeFromShadowsFeature.Reference.Get().Icon;
 
             var action = ActionsBuilder.New()
                     .Add<DirtyTrickMaster>(c => { c.buffold = BlueprintRoot.Instance.SystemMechanics.DirtyTrickEntangledBuff; c.buffnew = BuffRefs.Daze.Reference.Get(); })
@@ -88,12 +88,12 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
         private static readonly string LadderDescription = "LadderLock.Description";
         public static void LadderConfigure()
         {
-            //var icon = FeatureRefs.FlurryOfBlows.Reference.Get().Icon;
+            var icon = AbilityRefs.DirtyTrickBlindnessAction.Reference.Get().Icon;
 
             FeatureConfigurator.New(LadderName, LadderGuid, FeatureGroup.Feat)
                     .SetDisplayName(LadderDisplayName)
                     .SetDescription(LadderDescription)
-                    //.SetIcon(icon)
+                    .SetIcon(icon)
                     .AddComponent<LadderLock>()
                     .AddPrerequisiteStatValue(StatType.BaseAttackBonus, 1)
                     .AddPrerequisiteFeature(FeatureRefs.ImprovedDirtyTrick.ToString())

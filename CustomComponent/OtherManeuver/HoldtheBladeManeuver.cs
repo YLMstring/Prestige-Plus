@@ -32,7 +32,7 @@ namespace PrestigePlus.CustomComponent.OtherManeuver
         {
             if (evt.RuleAttackWithWeapon?.Weapon?.Blueprint.IsMelee == true && evt.IsHit && (Owner.CombatState.IsFlanked || evt.IsSneakAttack))
             {
-                if (Owner.HasFact(CasterBuff) || !ConditionTwoFreeHand.CheckCondition2(Owner)) { return; }
+                if (Owner.HasFact(CasterBuff) || !ConditionTwoFreeHand.HasFreeHand(Owner)) { return; }
                 SweepManeuver.ActManeuver(Owner, evt.Initiator, 0);
                 GameHelper.ApplyBuff(Owner, CasterBuff, new Rounds?(1.Rounds()));
             }

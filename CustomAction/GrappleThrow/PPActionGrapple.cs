@@ -56,7 +56,7 @@ namespace PrestigePlus.CustomAction.GrappleThrow
                 PFLog.Default.Error("Target already grappled", Array.Empty<object>());
                 return;
             }
-            if (!ConditionTwoFreeHand.CheckCondition2(maybeCaster))
+            if (!ConditionTwoFreeHand.HasFreeHand(maybeCaster))
             {
                 return;
             }
