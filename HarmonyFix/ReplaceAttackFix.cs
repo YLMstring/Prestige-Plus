@@ -15,7 +15,6 @@ using Kingmaker.UnitLogic.Commands;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Parts;
 using PrestigePlus.Blueprint;
-using PrestigePlus.Blueprint.Feat;
 using PrestigePlus.Blueprint.MythicGrapple;
 using PrestigePlus.Blueprint.SpecificManeuver;
 using PrestigePlus.CustomAction.OtherManeuver;

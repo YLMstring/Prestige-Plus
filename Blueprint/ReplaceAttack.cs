@@ -341,5 +341,139 @@ namespace PrestigePlus.Blueprint
               .Configure();
         }
 
+        private const string DirtyBlindQuickbuff = "DirtyBlindQuick.DirtyBlindQuickbuff";
+        public static readonly string DirtyBlindQuickbuffGuid = "{156F5B52-FDDF-4A55-98BE-B8D40EA86BE4}";
+
+        private const string DirtyBlindQuick2Ability = "DirtyBlindQuick.DirtyBlindQuick2Ability";
+        public static readonly string DirtyBlindQuick2AbilityGuid = "{DB84735E-5424-45D5-8DCE-7C771930BCE5}";
+
+        private const string DirtyBlindQuick2buff = "DirtyBlindQuick.DirtyBlindQuick2buff";
+        public static readonly string DirtyBlindQuick2buffGuid = "{799A2499-622B-4291-B4AB-D5B1B0CA56F6}";
+
+        private static readonly string DirtyBlindQuickDisplayName = "DirtyBlindQuick.Name";
+        private static readonly string DirtyBlindQuickDescription = "DirtyBlindQuick.Description";
+        public static void DirtyBlindQuickConfigure()
+        {
+            var icon = AbilityRefs.DirtyTrickBlindnessAction.Reference.Get().Icon;
+
+            var BuffDirtyBlindQuick = BuffConfigurator.New(DirtyBlindQuickbuff, DirtyBlindQuickbuffGuid)
+              .SetDisplayName(DirtyBlindQuickDisplayName)
+              .SetDescription(DirtyBlindQuickDescription)
+              .SetIcon(icon)
+              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
+              .Configure();
+
+            var action = ActionsBuilder.New().ApplyBuff(BuffDirtyBlindQuick, ContextDuration.Fixed(1)).Build();
+            var action2 = ActionsBuilder.New().RemoveBuff(BuffDirtyBlindQuick).Build();
+
+            var BuffDirtyBlindQuick2 = BuffConfigurator.New(DirtyBlindQuick2buff, DirtyBlindQuick2buffGuid)
+              .SetDisplayName(DirtyBlindQuickDisplayName)
+              .SetDescription(DirtyBlindQuickDescription)
+              .SetIcon(icon)
+              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
+              .AddBuffActions(newRound: action, activated: action, deactivated: action2)
+              .Configure();
+
+            ActivatableAbilityConfigurator.New(DirtyBlindQuick2Ability, DirtyBlindQuick2AbilityGuid)
+                .SetDisplayName(DirtyBlindQuickDisplayName)
+                .SetDescription(DirtyBlindQuickDescription)
+                .SetIcon(icon)
+                .SetBuff(BuffDirtyBlindQuick2)
+                .SetDeactivateImmediately()
+                .SetIsOnByDefault(false)
+                .Configure();
+        }
+
+        private const string DirtyEntangleQuickbuff = "DirtyEntangleQuick.DirtyEntangleQuickbuff";
+        public static readonly string DirtyEntangleQuickbuffGuid = "{743752B5-FBD4-4AFB-B4C2-07153AD5DBB4}";
+
+        private const string DirtyEntangleQuick2Ability = "DirtyEntangleQuick.DirtyEntangleQuick2Ability";
+        public static readonly string DirtyEntangleQuick2AbilityGuid = "{549DAC35-04B4-4327-8B6E-3E0738FDA72D}";
+
+        private const string DirtyEntangleQuick2buff = "DirtyEntangleQuick.DirtyEntangleQuick2buff";
+        public static readonly string DirtyEntangleQuick2buffGuid = "{02C3BDEE-0535-403C-A6C8-55065FCEEB65}";
+
+        private static readonly string DirtyEntangleQuickDisplayName = "DirtyEntangleQuick.Name";
+        private static readonly string DirtyEntangleQuickDescription = "DirtyEntangleQuick.Description";
+        public static void DirtyEntangleQuickConfigure()
+        {
+            var icon = AbilityRefs.DirtyTrickEntangleAction.Reference.Get().Icon;
+
+            var BuffDirtyEntangleQuick = BuffConfigurator.New(DirtyEntangleQuickbuff, DirtyEntangleQuickbuffGuid)
+              .SetDisplayName(DirtyEntangleQuickDisplayName)
+              .SetDescription(DirtyEntangleQuickDescription)
+              .SetIcon(icon)
+              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
+              .Configure();
+
+            var action = ActionsBuilder.New().ApplyBuff(BuffDirtyEntangleQuick, ContextDuration.Fixed(1)).Build();
+            var action2 = ActionsBuilder.New().RemoveBuff(BuffDirtyEntangleQuick).Build();
+
+            var BuffDirtyEntangleQuick2 = BuffConfigurator.New(DirtyEntangleQuick2buff, DirtyEntangleQuick2buffGuid)
+              .SetDisplayName(DirtyEntangleQuickDisplayName)
+              .SetDescription(DirtyEntangleQuickDescription)
+              .SetIcon(icon)
+              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
+              .AddBuffActions(newRound: action, activated: action, deactivated: action2)
+              .Configure();
+
+            ActivatableAbilityConfigurator.New(DirtyEntangleQuick2Ability, DirtyEntangleQuick2AbilityGuid)
+                .SetDisplayName(DirtyEntangleQuickDisplayName)
+                .SetDescription(DirtyEntangleQuickDescription)
+                .SetIcon(icon)
+                .SetBuff(BuffDirtyEntangleQuick2)
+                .SetDeactivateImmediately()
+                .SetIsOnByDefault(false)
+                .Configure();
+        }
+
+        private const string DirtySickenQuickbuff = "DirtySickenQuick.DirtySickenQuickbuff";
+        public static readonly string DirtySickenQuickbuffGuid = "{E840EA2E-F90D-463E-90E7-B0F2392B5FC6}";
+
+        private const string DirtySickenQuick2Ability = "DirtySickenQuick.DirtySickenQuick2Ability";
+        public static readonly string DirtySickenQuick2AbilityGuid = "{412A12A1-218C-4E2E-BA63-B31D6D68DDB7}";
+
+        private const string DirtySickenQuick2buff = "DirtySickenQuick.DirtySickenQuick2buff";
+        public static readonly string DirtySickenQuick2buffGuid = "{A34BB99F-40C8-40C0-AC1E-885B9330BCF7}";
+
+        private static readonly string DirtySickenQuickDisplayName = "DirtySickenQuick.Name";
+        private static readonly string DirtySickenQuickDescription = "DirtySickenQuick.Description";
+        public static void DirtySickenQuickConfigure()
+        {
+            var icon = AbilityRefs.DirtyTrickSickenedAction.Reference.Get().Icon;
+
+            var BuffDirtySickenQuick = BuffConfigurator.New(DirtySickenQuickbuff, DirtySickenQuickbuffGuid)
+              .SetDisplayName(DirtySickenQuickDisplayName)
+              .SetDescription(DirtySickenQuickDescription)
+              .SetIcon(icon)
+              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
+              .Configure();
+
+            var action = ActionsBuilder.New().ApplyBuff(BuffDirtySickenQuick, ContextDuration.Fixed(1)).Build();
+            var action2 = ActionsBuilder.New().RemoveBuff(BuffDirtySickenQuick).Build();
+
+            var BuffDirtySickenQuick2 = BuffConfigurator.New(DirtySickenQuick2buff, DirtySickenQuick2buffGuid)
+              .SetDisplayName(DirtySickenQuickDisplayName)
+              .SetDescription(DirtySickenQuickDescription)
+              .SetIcon(icon)
+              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
+              .AddBuffActions(newRound: action, activated: action, deactivated: action2)
+              .Configure();
+
+            ActivatableAbilityConfigurator.New(DirtySickenQuick2Ability, DirtySickenQuick2AbilityGuid)
+                .SetDisplayName(DirtySickenQuickDisplayName)
+                .SetDescription(DirtySickenQuickDescription)
+                .SetIcon(icon)
+                .SetBuff(BuffDirtySickenQuick2)
+                .SetDeactivateImmediately()
+                .SetIsOnByDefault(false)
+                .Configure();
+        }
     }
 }

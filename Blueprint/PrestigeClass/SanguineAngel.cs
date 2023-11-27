@@ -21,7 +21,7 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Alignments;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
-using PrestigePlus.Blueprint.Feat;
+using PrestigePlus.Blueprint.SpecificManeuver;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.UnitLogic.Parts;
+using Kingmaker.RuleSystem;
 
 namespace PrestigePlus.CustomComponent
 {
@@ -36,6 +37,10 @@ namespace PrestigePlus.CustomComponent
             }
             int cr = num4 ?? base.Owner.CR;
             value = DifficultyStatAdvancement.ApplyBonusProgression(adjustmentPreset, cr, value, true);
+            if (Rulebook.Trigger(new RuleCheckTargetFlatFooted(evt.Initiator, evt.Target)).IsFlatFooted)
+            {
+                value /= 2;
+            }
             evt.AddModifier(-value, Fact, Kingmaker.Enums.ModifierDescriptor.Penalty);
         }
 
