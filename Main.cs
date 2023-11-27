@@ -106,6 +106,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("bullrush"), defaultValue: true, Helpers.CreateString("toggle-desc43", "Bull Rush Feats"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("dirty"), defaultValue: true, Helpers.CreateString("toggle-desc52", "Dirty Trick Feats"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("disarm"), defaultValue: true, Helpers.CreateString("toggle-desc42", "Disarm Feats"))
               .ShowVisualConnection())
           .AddToggle(
@@ -304,6 +307,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("construct"))) { ConstructRider.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("scientist"))) { MadScientist.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("cmdminus"))) { CMDPatch.Patch(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("dirty"))) { DirtyFeats.Configure(); DirtyFeats.StyleConfigure(); DirtyFeats.LadderConfigure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)

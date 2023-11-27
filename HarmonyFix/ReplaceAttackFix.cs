@@ -53,7 +53,7 @@ namespace PrestigePlus.HarmonyFix
                 {
                     GameHelper.RemoveBuff(caster, AerialBuff);
                     if (caster.Get<UnitPartGrappleInitiatorPP>() || target.Get<UnitPartGrappleTargetPP>() || !ConditionTwoFreeHand.CheckCondition2(caster)) { return true; }
-                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.Grapple, AttackBonusRule);
+                    RuleCombatManeuver ruleCombatManeuver = new(caster, target, CombatManeuver.Grapple, AttackBonusRule);
                     ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
                     if (ruleCombatManeuver.Success)
                     {
@@ -66,7 +66,7 @@ namespace PrestigePlus.HarmonyFix
                 {
                     GameHelper.RemoveBuff(caster, BullRush1);
                     if (target.State.HasCondition(UnitCondition.ForceMove)) { return true; }
-                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.BullRush, AttackBonusRule);
+                    RuleCombatManeuver ruleCombatManeuver = new(caster, target, CombatManeuver.BullRush, AttackBonusRule);
                     ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
                     return false;
                 }
@@ -75,7 +75,7 @@ namespace PrestigePlus.HarmonyFix
                 {
                     GameHelper.RemoveBuff(caster, BullRush2);
                     if (target.State.HasCondition(UnitCondition.ForceMove)) { return true; }
-                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.BullRush, AttackBonusRule);
+                    RuleCombatManeuver ruleCombatManeuver = new(caster, target, CombatManeuver.BullRush, AttackBonusRule);
                     ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
                     return false;
                 }
@@ -83,7 +83,7 @@ namespace PrestigePlus.HarmonyFix
                 {
                     GameHelper.RemoveBuff(caster, BullRush3);
                     if (target.State.HasCondition(UnitCondition.ForceMove)) { return true; }
-                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.BullRush, AttackBonusRule);
+                    RuleCombatManeuver ruleCombatManeuver = new(caster, target, CombatManeuver.BullRush, AttackBonusRule);
                     ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
                     return false;
                 }
@@ -95,7 +95,7 @@ namespace PrestigePlus.HarmonyFix
                         var threat = target.GetThreatHandMelee();
                         if (threat == null || threat.MaybeWeapon == null || threat.MaybeWeapon.Blueprint.IsNatural || threat.MaybeWeapon.Blueprint.IsUnarmed) { return true; }
                     }
-                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.Disarm, AttackBonusRule);
+                    RuleCombatManeuver ruleCombatManeuver = new(caster, target, CombatManeuver.Disarm, AttackBonusRule);
                     ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
                     return false;
                 }
@@ -103,7 +103,7 @@ namespace PrestigePlus.HarmonyFix
                 {
                     GameHelper.RemoveBuff(caster, Sunder1);
                     if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.SunderArmorBuff) && !caster.HasFact(SunderReal)) { return true; }
-                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.SunderArmor, AttackBonusRule);
+                    RuleCombatManeuver ruleCombatManeuver = new(caster, target, CombatManeuver.SunderArmor, AttackBonusRule);
                     ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
                     return false;
                 }
@@ -112,7 +112,28 @@ namespace PrestigePlus.HarmonyFix
                     GameHelper.RemoveBuff(caster, Trip1);
                     if (target.Descriptor.State.Prone.Active) { return true; }
                     if (!target.CanBeKnockedOff() && !caster.HasFact(Ace)) { return true; }
-                    RuleCombatManeuver ruleCombatManeuver = new RuleCombatManeuver(caster, target, CombatManeuver.Trip, AttackBonusRule);
+                    RuleCombatManeuver ruleCombatManeuver = new(caster, target, CombatManeuver.Trip, AttackBonusRule);
+                    ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
+                    return false;
+                }
+                if (caster.HasFact(DirtyTrick1))
+                {
+                    GameHelper.RemoveBuff(caster, DirtyTrick1);
+                    RuleCombatManeuver ruleCombatManeuver = new(caster, target, CombatManeuver.DirtyTrickBlind, AttackBonusRule);
+                    ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
+                    return false;
+                }
+                if (caster.HasFact(DirtyTrick2))
+                {
+                    GameHelper.RemoveBuff(caster, DirtyTrick2);
+                    RuleCombatManeuver ruleCombatManeuver = new(caster, target, CombatManeuver.DirtyTrickEntangle, AttackBonusRule);
+                    ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
+                    return false;
+                }
+                if (caster.HasFact(DirtyTrick3))
+                {
+                    GameHelper.RemoveBuff(caster, DirtyTrick3);
+                    RuleCombatManeuver ruleCombatManeuver = new(caster, target, CombatManeuver.DirtyTrickSickened, AttackBonusRule);
                     ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
                     return false;
                 }
@@ -140,6 +161,9 @@ namespace PrestigePlus.HarmonyFix
         private static readonly BlueprintBuffReference CasterBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{C5F4DDFE-CA2E-4309-90BB-1BB5C0F32E78}");
         private static readonly BlueprintBuffReference TargetBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{F505D659-0610-41B1-B178-E767CCB9292E}");
 
+        private static BlueprintBuffReference DirtyTrick1 = BlueprintTool.GetRef<BlueprintBuffReference>(ReplaceAttack.DirtyBlindQuickbuffGuid);
+        private static BlueprintBuffReference DirtyTrick2 = BlueprintTool.GetRef<BlueprintBuffReference>(ReplaceAttack.DirtyEntangleQuickbuffGuid);
+        private static BlueprintBuffReference DirtyTrick3 = BlueprintTool.GetRef<BlueprintBuffReference>(ReplaceAttack.DirtySickenQuickbuffGuid);
         public static int DualPenalty(UnitEntityData unit, AttackHandInfo attack)
         {
             ItemEntityWeapon maybeWeapon = unit.Body.PrimaryHand.MaybeWeapon;
