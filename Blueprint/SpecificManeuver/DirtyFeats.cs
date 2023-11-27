@@ -21,6 +21,8 @@ using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Blueprints.Classes;
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Conditions.Builder.BasicEx;
+using PrestigePlus.CustomAction.OtherManeuver;
+using Kingmaker.Blueprints.Root;
 
 namespace PrestigePlus.Blueprint.SpecificManeuver
 {
@@ -50,7 +52,7 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
         }
 
         private static readonly string StyleName = "DirtyTrickMaster";
-        public static readonly string StyleGuid = "{B36A5D42-BD74-4A0F-9F40-9D202B67D783}";
+        public static readonly string StyleGuid = "{031EA33B-689C-4200-A160-3F375D220FEE}";
 
         private static readonly string StyleDisplayName = "DirtyTrickMaster.Name";
         private static readonly string StyleDescription = "DirtyTrickMaster.Description";
@@ -59,7 +61,11 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
             var icon = FeatureRefs.FlurryOfBlows.Reference.Get().Icon;
 
             var action = ActionsBuilder.New()
-                
+                    .Add<DirtyTrickMaster>(c => { c.buffold = BlueprintRoot.Instance.SystemMechanics.DirtyTrickEntangledBuff; c.buffnew = BuffRefs.Daze.Reference.Get(); })
+                    .Build();
+
+            var action2 = ActionsBuilder.New()
+                    .Add<DirtyTrickMaster>(c => { c.buffold = BlueprintRoot.Instance.SystemMechanics.DirtyTrickSickenedBuff; c.buffnew = BuffRefs.Nauseated.Reference.Get(); })
                     .Build();
 
             FeatureConfigurator.New(StyleName, StyleGuid, FeatureGroup.Feat)
@@ -67,7 +73,7 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
                     .SetDescription(StyleDescription)
                     .SetIcon(icon)
                     .AddManeuverTrigger(action, Kingmaker.RuleSystem.Rules.CombatManeuver.DirtyTrickEntangle, true)
-                    .AddManeuverTrigger(action, Kingmaker.RuleSystem.Rules.CombatManeuver.DirtyTrickSickened, true)
+                    .AddManeuverTrigger(action2, Kingmaker.RuleSystem.Rules.CombatManeuver.DirtyTrickSickened, true)
                     .AddPrerequisiteStatValue(StatType.BaseAttackBonus, 11)
                     .AddPrerequisiteFeature(FeatureRefs.ImprovedDirtyTrick.ToString())
                     .AddPrerequisiteFeature(FeatureRefs.GreaterDirtyTrick.ToString())

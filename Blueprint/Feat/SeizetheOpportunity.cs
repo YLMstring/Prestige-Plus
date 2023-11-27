@@ -1,7 +1,10 @@
-﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
+﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
+using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
+using BlueprintCore.Utils.Types;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.ActivatableAbilities;
@@ -129,6 +132,10 @@ namespace PrestigePlus.Maneuvers
               .SetIcon(AbilityRefs.VitalStrikeAbility.Reference.Get().Icon)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
+              .AddBuffActions(activated: ActionsBuilder.New()
+                .RemoveBuff(SeizetheDirtyEntanglebuffGuid)
+                .RemoveBuff(SeizetheDirtySickenbuffGuid)
+                .Build())
               .Configure();
 
             var abilityDirtyBlind = ActivatableAbilityConfigurator.New(SeizetheDirtyBlindAbility, SeizetheDirtyBlindAbilityGuid)
@@ -146,6 +153,10 @@ namespace PrestigePlus.Maneuvers
               .SetIcon(AbilityRefs.VitalStrikeAbility.Reference.Get().Icon)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
+              .AddBuffActions(activated: ActionsBuilder.New()
+                .RemoveBuff(SeizetheDirtyBlindbuffGuid)
+                .RemoveBuff(SeizetheDirtySickenbuffGuid)
+                .Build())
               .Configure();
 
             var abilityDirtyEntangle = ActivatableAbilityConfigurator.New(SeizetheDirtyEntangleAbility, SeizetheDirtyEntangleAbilityGuid)
@@ -163,6 +174,10 @@ namespace PrestigePlus.Maneuvers
               .SetIcon(AbilityRefs.VitalStrikeAbility.Reference.Get().Icon)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
+              .AddBuffActions(activated: ActionsBuilder.New()
+                .RemoveBuff(SeizetheDirtyEntanglebuffGuid)
+                .RemoveBuff(SeizetheDirtyBlindbuffGuid)
+                .Build())
               .Configure();
 
             var abilityDirtySicken = ActivatableAbilityConfigurator.New(SeizetheDirtySickenAbility, SeizetheDirtySickenAbilityGuid)

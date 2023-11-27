@@ -44,7 +44,7 @@ namespace PrestigePlus.Blueprint
               .SetDisplayName(DisarmDisplayName)
               .SetDescription(DisarmDescription)
               .SetIcon(icon)
-              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
@@ -61,7 +61,7 @@ namespace PrestigePlus.Blueprint
               .SetDisplayName(DisarmDisplayName)
               .SetDescription(DisarmDescription)
               .SetIcon(icon)
-              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
@@ -104,7 +104,7 @@ namespace PrestigePlus.Blueprint
               .SetDisplayName(SunderDisplayName)
               .SetDescription(SunderDescription)
               .SetIcon(icon)
-              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
@@ -121,7 +121,7 @@ namespace PrestigePlus.Blueprint
               .SetDisplayName(SunderDisplayName)
               .SetDescription(SunderDescription)
               .SetIcon(icon)
-              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
@@ -164,7 +164,7 @@ namespace PrestigePlus.Blueprint
               .SetDisplayName(TripDisplayName)
               .SetDescription(TripDescription)
               .SetIcon(icon)
-              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
@@ -181,7 +181,7 @@ namespace PrestigePlus.Blueprint
               .SetDisplayName(TripDisplayName)
               .SetDescription(TripDescription)
               .SetIcon(icon)
-              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
@@ -224,7 +224,7 @@ namespace PrestigePlus.Blueprint
               .SetDisplayName(BullRushDisplayName)
               .SetDescription(BullRushDescription)
               .SetIcon(icon)
-              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
@@ -238,7 +238,7 @@ namespace PrestigePlus.Blueprint
               .SetDisplayName(BullRush2DisplayName)
               .SetDescription(BullRush2Description)
               .SetIcon(icon)
-              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .AddBuffActions(newRound: action, activated: action, deactivated: action2)
               .Configure();
@@ -282,7 +282,7 @@ namespace PrestigePlus.Blueprint
               .SetDisplayName(BullRushQuickDisplayName)
               .SetDescription(BullRushQuickDescription)
               .SetIcon(icon)
-              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
@@ -296,7 +296,7 @@ namespace PrestigePlus.Blueprint
               .SetDisplayName(BullRushQuick2DisplayName)
               .SetDescription(BullRushQuick2Description)
               .SetIcon(icon)
-              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .AddBuffActions(newRound: action, activated: action, deactivated: action2)
               .Configure();
@@ -325,7 +325,7 @@ namespace PrestigePlus.Blueprint
               .SetDisplayName(BullRushQuickDisplayName)
               .SetDescription(BullRushQuickDescription)
               .SetIcon(icon)
-              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .Configure();
 
             var action = ActionsBuilder.New().ApplyBuff(BuffBullRushAngry, ContextDuration.Fixed(1)).Build();
@@ -335,7 +335,7 @@ namespace PrestigePlus.Blueprint
               .SetDisplayName(BullRushQuick2DisplayName)
               .SetDescription(BullRushQuick2Description)
               .SetIcon(icon)
-              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddBuffActions(newRound: action, activated: action, deactivated: action2)
               .AddComponent<KrakenDamage>(c => { c.type = Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush; c.stat = Kingmaker.EntitySystem.Stats.StatType.Strength; })
               .Configure();
@@ -360,18 +360,22 @@ namespace PrestigePlus.Blueprint
               .SetDisplayName(DirtyBlindQuickDisplayName)
               .SetDescription(DirtyBlindQuickDescription)
               .SetIcon(icon)
-              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
-            var action = ActionsBuilder.New().ApplyBuff(BuffDirtyBlindQuick, ContextDuration.Fixed(1)).Build();
+            var action = ActionsBuilder.New()
+                .ApplyBuff(BuffDirtyBlindQuick, ContextDuration.Fixed(1))
+                .RemoveBuff(DirtyEntangleQuick2buffGuid)
+                .RemoveBuff(DirtySickenQuick2buffGuid)
+                .Build();
             var action2 = ActionsBuilder.New().RemoveBuff(BuffDirtyBlindQuick).Build();
 
             var BuffDirtyBlindQuick2 = BuffConfigurator.New(DirtyBlindQuick2buff, DirtyBlindQuick2buffGuid)
               .SetDisplayName(DirtyBlindQuickDisplayName)
               .SetDescription(DirtyBlindQuickDescription)
               .SetIcon(icon)
-              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .AddBuffActions(newRound: action, activated: action, deactivated: action2)
               .Configure();
@@ -405,18 +409,22 @@ namespace PrestigePlus.Blueprint
               .SetDisplayName(DirtyEntangleQuickDisplayName)
               .SetDescription(DirtyEntangleQuickDescription)
               .SetIcon(icon)
-              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
-            var action = ActionsBuilder.New().ApplyBuff(BuffDirtyEntangleQuick, ContextDuration.Fixed(1)).Build();
+            var action = ActionsBuilder.New()
+                .ApplyBuff(BuffDirtyEntangleQuick, ContextDuration.Fixed(1))
+                .RemoveBuff(DirtyBlindQuick2buffGuid)
+                .RemoveBuff(DirtySickenQuick2buffGuid)
+                .Build();
             var action2 = ActionsBuilder.New().RemoveBuff(BuffDirtyEntangleQuick).Build();
 
             var BuffDirtyEntangleQuick2 = BuffConfigurator.New(DirtyEntangleQuick2buff, DirtyEntangleQuick2buffGuid)
               .SetDisplayName(DirtyEntangleQuickDisplayName)
               .SetDescription(DirtyEntangleQuickDescription)
               .SetIcon(icon)
-              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .AddBuffActions(newRound: action, activated: action, deactivated: action2)
               .Configure();
@@ -450,18 +458,22 @@ namespace PrestigePlus.Blueprint
               .SetDisplayName(DirtySickenQuickDisplayName)
               .SetDescription(DirtySickenQuickDescription)
               .SetIcon(icon)
-              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
-            var action = ActionsBuilder.New().ApplyBuff(BuffDirtySickenQuick, ContextDuration.Fixed(1)).Build();
+            var action = ActionsBuilder.New()
+                .ApplyBuff(BuffDirtySickenQuick, ContextDuration.Fixed(1))
+                .RemoveBuff(DirtyBlindQuick2buffGuid)
+                .RemoveBuff(DirtyEntangleQuick2buffGuid)
+                .Build();
             var action2 = ActionsBuilder.New().RemoveBuff(BuffDirtySickenQuick).Build();
 
             var BuffDirtySickenQuick2 = BuffConfigurator.New(DirtySickenQuick2buff, DirtySickenQuick2buffGuid)
               .SetDisplayName(DirtySickenQuickDisplayName)
               .SetDescription(DirtySickenQuickDescription)
               .SetIcon(icon)
-              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .AddBuffActions(newRound: action, activated: action, deactivated: action2)
               .Configure();
