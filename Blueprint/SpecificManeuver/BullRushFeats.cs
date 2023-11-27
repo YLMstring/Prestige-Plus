@@ -25,7 +25,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PrestigePlus.Blueprint.Feat
+namespace PrestigePlus.Blueprint.SpecificManeuver
 {
     internal class BullRushFeats
     {
@@ -146,7 +146,7 @@ namespace PrestigePlus.Blueprint.Feat
                     .AddPrerequisiteFeature(FeatureRefs.ImprovedBullRush.ToString())
                     .AddPrerequisiteFeature(FeatureRefs.ImprovedUnarmedStrike.ToString())
                     .AddPrerequisiteFeature(FeatureRefs.PowerAttackFeature.ToString())
-                    .AddInitiatorAttackWithWeaponTrigger(action, category: Kingmaker.Enums.WeaponCategory.UnarmedStrike, checkWeaponCategory: true, onlyHit: true, actionsOnInitiator: true)
+                    .AddInitiatorAttackWithWeaponTrigger(action, category: WeaponCategory.UnarmedStrike, checkWeaponCategory: true, onlyHit: true, actionsOnInitiator: true)
                     .AddFacts(new() { FollowActivatableAbilityGuid })
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .Configure();

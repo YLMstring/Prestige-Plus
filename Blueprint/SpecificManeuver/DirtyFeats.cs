@@ -19,130 +19,58 @@ using System.Text;
 using System.Threading.Tasks;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Blueprints.Classes;
+using BlueprintCore.Actions.Builder.ContextEx;
+using BlueprintCore.Conditions.Builder.BasicEx;
 
 namespace PrestigePlus.Blueprint.SpecificManeuver
 {
     internal class DirtyFeats
     {
-        private static readonly string FeatName = "FeatQuickBullRush";
-        private static readonly string FeatGuid = "{15C0B67C-9CB7-47D4-A763-0D494840C767}";
+        private static readonly string FeatName = "FeatQuickDirtyTrick";
+        private static readonly string FeatGuid = "{75E92D69-1A88-4B7A-A679-5FAF954CE690}";
 
-        private static readonly string DisplayName = "FeatQuickBullRush.Name";
-        private static readonly string Description = "FeatQuickBullRush.Description";
+        private static readonly string DisplayName = "FeatQuickDirtyTrick.Name";
+        private static readonly string Description = "FeatQuickDirtyTrick.Description";
 
         public static void Configure()
         {
-            var icon = FeatureRefs.PummelingCharge.Reference.Get().Icon;
+            var icon = FeatureRefs.OracleRevelationManeuverMasteryDirtyTrick.Reference.Get().Icon;
 
             FeatureConfigurator.New(FeatName, FeatGuid, FeatureGroup.Feat)
                     .SetDisplayName(DisplayName)
                     .SetDescription(Description)
                     .SetIcon(icon)
-                    .AddPrerequisiteStatValue(StatType.Strength, 13)
-                    .AddPrerequisiteFeature(FeatureRefs.ImprovedBullRush.ToString())
-                    .AddPrerequisiteFeature(FeatureRefs.PowerAttackFeature.ToString())
+                    .AddPrerequisiteStatValue(StatType.Intelligence, 13)
+                    .AddPrerequisiteFeature(FeatureRefs.ImprovedDirtyTrick.ToString())
+                    .AddPrerequisiteFeature(FeatureRefs.CombatExpertiseFeature.ToString())
                     .AddPrerequisiteStatValue(StatType.BaseAttackBonus, 6)
-                    .AddFacts(new() { ReplaceAttack.BullRushQuick2AbilityGuid })
+                    .AddFacts(new() { ReplaceAttack.DirtyBlindQuick2AbilityGuid, ReplaceAttack.DirtyEntangleQuick2AbilityGuid, ReplaceAttack.DirtySickenQuick2AbilityGuid })
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .Configure();
         }
 
-        private static readonly string Feat2Name = "FeatKnockback";
-        private static readonly string Feat2Guid = "{55DA148B-C5DA-42C2-9F29-30F2EEB75C9D}";
-
-        private static readonly string DisplayName2 = "FeatKnockback.Name";
-        private static readonly string Description2 = "FeatKnockback.Description";
-
-        private const string Knockbackbuff = "Feat.Knockbackbuff";
-        public static readonly string KnockbackbuffGuid = "{4C70A10B-BF79-4926-B02E-40A968086D0F}";
-
-        private const string KnockbackActivatableAbility = "Feat.KnockbackActivatableAbility";
-        private static readonly string KnockbackActivatableAbilityGuid = "{29CC9F1D-1600-45EC-B712-88B0844CB77C}";
-
-        public static void Configure2()
-        {
-            var icon = FeatureRefs.PowerfulStanceFeature.Reference.Get().Icon;
-
-            var Buff = BuffConfigurator.New(Knockbackbuff, KnockbackbuffGuid)
-              .SetDisplayName(DisplayName2)
-              .SetDescription(Description2)
-              .SetIcon(icon)
-              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
-              .Configure();
-
-            var ability = ActivatableAbilityConfigurator.New(KnockbackActivatableAbility, KnockbackActivatableAbilityGuid)
-                .SetDisplayName(DisplayName2)
-                .SetDescription(Description2)
-                .SetIcon(icon)
-                .SetBuff(Buff)
-                .SetDeactivateImmediately(true)
-                .SetActivationType(AbilityActivationType.Immediately)
-                .SetIsOnByDefault(true)
-                .Configure();
-
-            FeatureConfigurator.New(Feat2Name, Feat2Guid, FeatureGroup.RagePower)
-                    .SetDisplayName(DisplayName2)
-                    .SetDescription(Description2)
-                    .SetIcon(icon)
-                    .AddBuffExtraEffects(BuffRefs.BloodragerStandartRageBuff.ToString(), extraEffectBuff: ReplaceAttack.BullRushAngry2buffGuid)
-                    .AddBuffExtraEffects(BuffRefs.StandartFocusedRageBuff.ToString(), extraEffectBuff: ReplaceAttack.BullRushAngry2buffGuid)
-                    .AddBuffExtraEffects(BuffRefs.StandartRageBuff.ToString(), extraEffectBuff: ReplaceAttack.BullRushAngry2buffGuid)
-                    .AddFacts(new() { ability })
-                    .Configure();
-        }
-
-        private static readonly string StyleName = "HurricanePunchStyle";
+        private static readonly string StyleName = "DirtyTrickMaster";
         public static readonly string StyleGuid = "{B36A5D42-BD74-4A0F-9F40-9D202B67D783}";
 
-        private static readonly string StyleDisplayName = "HurricanePunchStyle.Name";
-        private static readonly string StyleDescription = "HurricanePunchStyle.Description";
-
-        private const string Stylebuff = "HurricanePunchStyle.Stylebuff";
-        private static readonly string StylebuffGuid = "{8F0F5E11-A4F0-4DEC-9731-292756B545D7}";
-
-        private const string Stylebuff2 = "HurricanePunchStyle.Stylebuff2";
-        private static readonly string Stylebuff2Guid = "{70D9D508-53D2-4662-844F-D2425B445F71}";
+        private static readonly string StyleDisplayName = "DirtyTrickMaster.Name";
+        private static readonly string StyleDescription = "DirtyTrickMaster.Description";
         public static void StyleConfigure()
         {
             var icon = FeatureRefs.FlurryOfBlows.Reference.Get().Icon;
 
-            var Buff = BuffConfigurator.New(Stylebuff, StylebuffGuid)
-              .SetDisplayName(StyleDisplayName)
-              .SetDescription(StyleDescription)
-              .SetIcon(icon)
-              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-              .Configure();
-
-            var Buff2 = BuffConfigurator.New(Stylebuff2, Stylebuff2Guid)
-              .SetDisplayName(StyleDisplayName)
-              .SetDescription(StyleDescription)
-              .SetIcon(icon)
-              .AddAutoMetamagic(new() { AbilityRefs.BullRushAction.ToString() },
-              metamagic: Metamagic.Quicken, allowedAbilities: Kingmaker.Designers.Mechanics.Facts.AutoMetamagic.AllowedType.Any, once: true)
-              .Configure();
-
             var action = ActionsBuilder.New()
-                .Conditional(conditions: ConditionsBuilder.New().HasFact(Buff).Build(),
-                    ifFalse: ActionsBuilder.New()
-                        .ApplyBuff(Buff, ContextDuration.Fixed(1))
-                        .Build(),
-                    ifTrue: ActionsBuilder.New()
-                        .RemoveBuff(Buff)
-                        .ApplyBuff(Buff2, ContextDuration.Fixed(1))
-                        .Build())
+                
                     .Build();
 
             FeatureConfigurator.New(StyleName, StyleGuid, FeatureGroup.Feat)
                     .SetDisplayName(StyleDisplayName)
                     .SetDescription(StyleDescription)
                     .SetIcon(icon)
-                    .AddPrerequisiteStatValue(StatType.Strength, 13)
-                    .AddPrerequisiteFeature(FeatureRefs.ImprovedBullRush.ToString())
-                    .AddPrerequisiteFeature(FeatureRefs.ImprovedUnarmedStrike.ToString())
-                    .AddPrerequisiteFeature(FeatureRefs.PowerAttackFeature.ToString())
-                    .AddInitiatorAttackWithWeaponTrigger(action, category: WeaponCategory.UnarmedStrike, checkWeaponCategory: true, onlyHit: true, actionsOnInitiator: true)
-                    .AddFacts(new() { FollowActivatableAbilityGuid })
+                    .AddManeuverTrigger(action, Kingmaker.RuleSystem.Rules.CombatManeuver.DirtyTrickEntangle, true)
+                    .AddManeuverTrigger(action, Kingmaker.RuleSystem.Rules.CombatManeuver.DirtyTrickSickened, true)
+                    .AddPrerequisiteStatValue(StatType.BaseAttackBonus, 11)
+                    .AddPrerequisiteFeature(FeatureRefs.ImprovedDirtyTrick.ToString())
+                    .AddPrerequisiteFeature(FeatureRefs.GreaterDirtyTrick.ToString())
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .Configure();
         }
@@ -178,7 +106,7 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
               .Configure();
 
             var action2 = ActionsBuilder.New()
-                        .CombatManeuver(ActionsBuilder.New().Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush)
+                        .CombatManeuver(ActionsBuilder.New().Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.DirtyTrick)
                         .Build();
 
             BuffConfigurator.New(Angelbuff2, Angelbuff2Guid)
@@ -187,7 +115,7 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
               .SetIcon(icon)
               //.AddAttackBonusConditional(bonus: ContextValues.Constant(-2), descriptor: ModifierDescriptor.Penalty)
               .AddContextStatBonus(StatType.AdditionalAttackBonus, -2, ModifierDescriptor.Penalty)
-              .AddCMBBonusForManeuver(maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush }, value: ContextValues.Constant(2))
+              .AddCMBBonusForManeuver(maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.DirtyTrick }, value: ContextValues.Constant(2))
               .AddInitiatorAttackWithWeaponTrigger(action2, checkWeaponRangeType: true, rangeType: WeaponRangeType.Melee, onlyOnFullAttack: true, onlyOnFirstHit: true, onlyHit: true)
               .Configure();
 
@@ -225,7 +153,7 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
               .SetDisplayName(FollowDisplayName)
               .SetDescription(FollowDescription)
               .SetIcon(icon)
-              .AddComponent<BullRushFollower>()
+              .AddComponent<DirtyTrickFollower>()
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
@@ -256,7 +184,7 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
             var icon = FeatureRefs.ShifterAspectElephant.Reference.Get().Icon;
 
             var action = ActionsBuilder.New()
-                        .CombatManeuver(ActionsBuilder.New().Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush)
+                        .CombatManeuver(ActionsBuilder.New().Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.DirtyTrick)
                         .Build();
 
             var Buff = BuffConfigurator.New(Monsterbuff, MonsterbuffGuid)
@@ -264,7 +192,7 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
               .SetDescription(MonsterDescription)
               .SetIcon(icon)
               .AddInitiatorAttackWithWeaponTrigger(action, checkWeaponRangeType: true, rangeType: WeaponRangeType.Melee, onlyHit: true, onCharge: true)
-              .AddComponent<BullRushMonster>()
+              .AddComponent<DirtyTrickMonster>()
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
@@ -283,7 +211,7 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
                     .SetDescription(MonsterDescription)
                     .SetIcon(icon)
                     .AddPrerequisiteStatValue(StatType.Strength, 13)
-                    .AddPrerequisiteFeature(FeatureRefs.ImprovedBullRush.ToString())
+                    .AddPrerequisiteFeature(FeatureRefs.ImprovedDirtyTrick.ToString())
                     .AddPrerequisiteFeature(FeatureRefs.Endurance.ToString())
                     .AddFacts(new() { ability })
                     .Configure();
