@@ -149,5 +149,24 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.MagusClass.ToString() }).WithStartPlusDivStepProgression(4, 1, true))
               .Configure();
         }
+
+        private const string ReachSpellstrike = "SpireDefender.ReachSpellstrike";
+        public static readonly string ReachSpellstrikeGuid = "{31FE5B08-D5FA-46ED-8718-707CEC057B93}";
+
+        internal const string ReachSpellstrikeDisplayName = "SpireDefenderReachSpellstrike.Name";
+        private const string ReachSpellstrikeDescription = "SpireDefenderReachSpellstrike.Description";
+
+        public static BlueprintFeature CreateReachSpellstrike()
+        {
+            var icon = FeatureRefs.EldritchArcherRangedSpellStrike.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(ReachSpellstrike, ReachSpellstrikeGuid, FeatureGroup.MagusArcana)
+              .SetDisplayName(ReachSpellstrikeDisplayName)
+              .SetDescription(ReachSpellstrikeDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.EldritchArcherRangedSpellStrike.ToString())
+              .AddPrerequisiteClassLevel(CharacterClassRefs.MagusClass.ToString(), 9)
+              .Configure();
+        }
     }
 }

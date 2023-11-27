@@ -56,6 +56,24 @@ namespace PrestigePlus.Blueprint.Feat
                     .Configure();
         }
 
+        private static readonly string ShieldMainFeatName = "ShieldShieldMain";
+        public static readonly string ShieldMainFeatGuid = "{2428F730-3BF9-42DC-B591-FAEC7229A4D2}";
+
+        private static readonly string ShieldMainDisplayName = "ShieldShieldMain.Name";
+        private static readonly string ShieldMainDescription = "ShieldShieldMain.Description";
+
+        public static void ConfigureShieldMain()
+        {
+            var icon = AbilityRefs.MageShield.Reference.Get().Icon;
+            FeatureConfigurator.New(ShieldMainFeatName, ShieldMainFeatGuid, FeatureGroup.Feat)
+                    .SetDisplayName(ShieldMainDisplayName)
+                    .SetDescription(ShieldMainDescription)
+                    .SetIcon(icon)
+                    .AddComponent<PrerequisiteSpellKnown>(c => { c.m_Spell = BlueprintTool.GetRef<BlueprintAbilityReference>(AbilityRefs.MageShield.ToString()); c.RequireSpellbook = true; })
+                    .AddPrerequisiteFeature(BodyGuard.FeatGuid)
+                    .Configure();
+        }
+
         private static readonly string MageHandMythicFeatName = "MageHandMageHandMythic";
         public static readonly string MageHandMythicFeatGuid = "{FFA0C7DA-1BA2-43C8-9242-05228125F664}";
 

@@ -292,10 +292,10 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("rogue"))) { QuickShot.Configure(); CloyingShades.CloyingShadesFeat(); DefensiveRoll.Configure(); SneakyManeuver.SneakyManeuverFeat(); SurpriseManeuver.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("kineticknight"))) { EsotericKnight.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("whitehair"))) { WhiteHairedWitch.Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("spire"))) { SpireDefender.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("spire"))) { SpireDefender.Configure(); SpireDefender.CreateReachSpellstrike(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("autoheal"))) { AutoHeal.StyleConfigure(); } else { AutoHeal.DisableConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("furious"))) { FuriousGuardian.Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("magehand"))) { MageHandTrick.ConfigureMageHandMain(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("magehand"))) { MageHandTrick.ConfigureMageHandMain(); MageHandTrick.ConfigureShieldMain(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("jabbing"))) { JabbingStyle.StyleConfigure(); JabbingStyle.DancerConfigure(); JabbingStyle.MasterConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("panther"))) { PantherStyle.StyleConfigure(); PantherStyle.ClawConfigure(); PantherStyle.ParryConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("disarm"))) { RangedDisarm.AceDisarmFeature(); RangedDisarm.ArmBindFeature(); RangedDisarm.BreakGuardFeature(); RangedDisarm.CreateMythicDisarm(); RangedDisarm.CreateRangeDisarm(); RangedDisarm.FollowUpStrikeFeature(); RangedDisarm.StrikeSeizeFeature(); RangedDisarm.SweepingDisarmFeature(); RangedDisarm.WristGrabFeature(); RangedDisarm.HoldtheBladeFeature(); ShieldSnag.Configure(); }
