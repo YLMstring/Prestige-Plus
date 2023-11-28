@@ -57,8 +57,9 @@ namespace PrestigePlus.CustomAction.OtherManeuver
             ActManeuver(Context.MaybeCaster, list.First(), -5);
         }
 
-        public static void ActManeuver(UnitEntityData caster, UnitEntityData target, int penalty, CombatManeuver maneuver = CombatManeuver.Disarm, ItemEntityWeapon weapon = null, RuleRollD20 roll = null)
+        public static bool ActManeuver(UnitEntityData caster, UnitEntityData target, int penalty, CombatManeuver maneuver = CombatManeuver.Disarm, ItemEntityWeapon weapon = null, RuleRollD20 roll = null)
         {
+            if (maneuver == CombatManeuver.None) { return false; }
             weapon ??= caster.Body.EmptyHandWeapon;
             var AttackBonusRule = new RuleCalculateAttackBonus(caster, target, weapon, 0) { };
             AttackBonusRule.AddModifier(penalty, descriptor: Kingmaker.Enums.ModifierDescriptor.Penalty);
@@ -68,7 +69,8 @@ namespace PrestigePlus.CustomAction.OtherManeuver
             {
                 ruleCombatManeuver.OverrideRoll = roll;
             }
-            _ = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
+            var rule = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
+            return rule.Success;
         }
         private static readonly BlueprintBuffReference CasterBuff = BlueprintTool.GetRef<BlueprintBuffReference>(RangedDisarm.SweepingDisarmBuffGuid);
     }
