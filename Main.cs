@@ -282,7 +282,7 @@ namespace PrestigePlus
                         RhinoCharge.Configure();  SunderStorm.CreateCombatTrickery(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("halfling"))) { HalflingOpportunist.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("enhance"))) { SwiftDeath.Configure(); SwiftDeath.Configure2(); UnbreakableDefance.Configure(); MythicWings.Configure(); MythicWings.Configure2(); MythicRiposte.Configure(); MetaphysicalSneak.Configure(); LesserSpellSynthesis.Configure(); SurprisingStrategy.Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fightereg"))) { EldritchGuardian.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fightereg"))) { EldritchGuardian.Configure(); EldritchAssault.EldritchAssaultFeatFeat(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("lorew"))) { LoreWarden.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("warlord"))) { Warlord.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("ragonury"))) { DragonFury.Configure(); }

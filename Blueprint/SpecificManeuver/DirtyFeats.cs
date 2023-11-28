@@ -60,20 +60,11 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
         {
             var icon = FeatureRefs.DarkLurkerBladeFromShadowsFeature.Reference.Get().Icon;
 
-            var action = ActionsBuilder.New()
-                    .Add<DirtyTrickMaster>(c => { c.buffold = BlueprintRoot.Instance.SystemMechanics.DirtyTrickEntangledBuff; c.buffnew = BuffRefs.Daze.Reference.Get(); })
-                    .Build();
-
-            var action2 = ActionsBuilder.New()
-                    .Add<DirtyTrickMaster>(c => { c.buffold = BlueprintRoot.Instance.SystemMechanics.DirtyTrickSickenedBuff; c.buffnew = BuffRefs.Nauseated.Reference.Get(); })
-                    .Build();
-
             FeatureConfigurator.New(StyleName, StyleGuid, FeatureGroup.Feat)
                     .SetDisplayName(StyleDisplayName)
                     .SetDescription(StyleDescription)
                     .SetIcon(icon)
-                    .AddManeuverTrigger(action, Kingmaker.RuleSystem.Rules.CombatManeuver.DirtyTrickEntangle, true)
-                    .AddManeuverTrigger(action2, Kingmaker.RuleSystem.Rules.CombatManeuver.DirtyTrickSickened, true)
+                    .AddComponent<DirtyTrickPlus>()
                     .AddPrerequisiteStatValue(StatType.BaseAttackBonus, 11)
                     .AddPrerequisiteFeature(FeatureRefs.ImprovedDirtyTrick.ToString())
                     .AddPrerequisiteFeature(FeatureRefs.GreaterDirtyTrick.ToString())
