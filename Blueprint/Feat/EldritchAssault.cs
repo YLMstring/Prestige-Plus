@@ -36,7 +36,7 @@ namespace PrestigePlus.Blueprint.Feat
              .SetIcon(icon)
              .AddComponent<EldritchAssaultCheck>()
              .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().RemoveSelf().Build(), true, criticalHit: true)
-             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+             //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
              .Configure();
 
             FeatureConfigurator.New(EldritchAssaultFeat3, EldritchAssaultFeatGuid3, FeatureGroup.Feat)

@@ -4,6 +4,7 @@ using HarmonyLib;
 using Kingmaker;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Root;
+using Kingmaker.Designers;
 using Kingmaker.Designers.EventConditionActionSystem.Evaluators;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.EntitySystem.Stats;
@@ -14,6 +15,7 @@ using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Abilities.Components.TargetCheckers;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Utility;
+using PrestigePlus.BasePrestigeEnhance;
 using PrestigePlus.Blueprint.Feat;
 using PrestigePlus.CustomAction.OtherManeuver;
 using PrestigePlus.Grapple;
@@ -51,13 +53,20 @@ namespace PrestigePlus.HarmonyFix
                 RuleAttackRoll.ParryData parry2 = evt.Parry;
                 if (parry2 == null || parry2.IsTriggered)
                 {
-                    if (evt.Result == AttackResult.Parried && __instance.Owner.State.Features.DuelistRiposte)
+                    if (evt.Result == AttackResult.Parried)
                     {
-                        SurprisingStrategy1(__instance.Owner, evt.Initiator);
-                        if (!__instance.Owner.HasFact(Mythic) || __instance.Owner.HasFact(Mythic2)) { return true; }
                         var duration = new Rounds?(1.Rounds());
                         TimeSpan? duration2 = duration != null ? new TimeSpan?(duration.Value.Seconds) : null;
-                        __instance.Owner.AddBuff(Buff, __instance.Owner, duration2);
+                        if (__instance.Owner.HasFact(Parryplus))
+                        {
+                            evt.Initiator.AddBuff(DeBuff, __instance.Owner, duration2);
+                        }
+                        if (__instance.Owner.State.Features.DuelistRiposte)
+                        {
+                            SurprisingStrategy1(__instance.Owner, evt.Initiator);
+                            if (!__instance.Owner.HasFact(Mythic) || __instance.Owner.HasFact(Mythic2)) { return true; }
+                            __instance.Owner.AddBuff(Buff, __instance.Owner, duration2);
+                        }
                     }
                 }
             }
@@ -104,5 +113,8 @@ namespace PrestigePlus.HarmonyFix
         private static BlueprintBuffReference DirtySicken = BlueprintTool.GetRef<BlueprintBuffReference>(SurprisingStrategy.SurprisingDirtySickenbuffGuid);
         private static BlueprintBuffReference Disarm = BlueprintTool.GetRef<BlueprintBuffReference>(SurprisingStrategy.SurprisingDisarmbuffGuid);
         private static BlueprintBuffReference Sunder = BlueprintTool.GetRef<BlueprintBuffReference>(SurprisingStrategy.SurprisingSunderbuffGuid);
+
+        private static BlueprintBuffReference DeBuff = BlueprintTool.GetRef<BlueprintBuffReference>(MythicRiposte.ExploitiveGuidBuff2);
+        private static BlueprintFeatureReference Parryplus = BlueprintTool.GetRef<BlueprintFeatureReference>(MythicRiposte.Feat2Guid);
     }
 }
