@@ -205,6 +205,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("seraph"), defaultValue: true, Helpers.CreateString("toggle-desc11", "Black Seraph Style (Path of War)"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("cloak"), defaultValue: true, Helpers.CreateString("toggle-desc53", "Cloak and Dagger Style"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("stag"), defaultValue: true, Helpers.CreateString("toggle-desc14", "Charging Stag Style"))
               .ShowVisualConnection())
           .AddToggle(
@@ -308,6 +311,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("scientist"))) { MadScientist.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("cmdminus"))) { CMDPatch.Patch(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("dirty"))) { DirtyFeats.Configure(); DirtyFeats.StyleConfigure(); DirtyFeats.LadderConfigure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("cloak"))) { CloakDaggerStyle.StyleConfigure(); CloakDaggerStyle.SubterfugeConfigure(); CloakDaggerStyle.TacticsConfigure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
