@@ -18,7 +18,7 @@ namespace PrestigePlus.CustomComponent.Feat
     {
         void IRulebookHandler<RuleAttackWithWeapon>.OnEventAboutToTrigger(RuleAttackWithWeapon evt)
         {
-            if (evt.Initiator == Buff.Context?.MaybeCaster)
+            if (evt.Initiator == Buff.Context?.MaybeCaster && evt.Weapon.Blueprint.IsMelee)
             {
                 evt.ForceFlatFooted = true;
                 Buff.Remove();
