@@ -64,7 +64,7 @@ namespace PrestigePlus.BasePrestigeEnhance
 
         public static void Configure2()
         {
-            var icon = FeatureRefs.DuelistParryFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.SavingSlash.Reference.Get().Icon;
 
             BuffConfigurator.New(ExploitiveBuff2, ExploitiveGuidBuff2)
               .SetDisplayName(DisplayName2)

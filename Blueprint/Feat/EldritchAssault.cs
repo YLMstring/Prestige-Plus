@@ -28,7 +28,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string EldritchAssaultFeatDescription = "FeatEldritchAssaultFeat.Description";
         public static void EldritchAssaultFeatFeat()
         {
-            var icon = AbilityRefs.SenseVitals.Reference.Get().Icon;
+            var icon = AbilityRefs.InvisibilityGreater.Reference.Get().Icon;
 
             var Buff1 = BuffConfigurator.New(EldritchAssaultFeatBuff, EldritchAssaultFeatBuffGuid)
              .SetDisplayName(EldritchAssaultFeatDisplayName)
@@ -36,7 +36,7 @@ namespace PrestigePlus.Blueprint.Feat
              .SetIcon(icon)
              .AddComponent<EldritchAssaultCheck>()
              .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().RemoveSelf().Build(), true, criticalHit: true)
-             //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
              .Configure();
 
             FeatureConfigurator.New(EldritchAssaultFeat3, EldritchAssaultFeatGuid3, FeatureGroup.Feat)
