@@ -26,7 +26,7 @@ namespace PrestigePlus.CustomComponent.Feat
             if (evt.Type == CombatManeuver.DirtyTrickEntangle && evt.Target.HasFact(BlueprintRoot.Instance.SystemMechanics.DirtyTrickEntangledBuff))
             {
                 oldbuff = BlueprintRoot.Instance.SystemMechanics.DirtyTrickEntangledBuff;
-                newbuff = BuffRefs.Daze.Reference.Get();
+                newbuff = BuffRefs.Staggered.Reference.Get();
             }
             else if (evt.Type == CombatManeuver.DirtyTrickSickened && evt.Target.HasFact(BlueprintRoot.Instance.SystemMechanics.DirtyTrickSickenedBuff))
             {
