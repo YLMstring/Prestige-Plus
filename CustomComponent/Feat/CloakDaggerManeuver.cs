@@ -24,7 +24,7 @@ namespace PrestigePlus.CustomComponent.Feat
     {
         void IRulebookHandler<RuleAttackWithWeapon>.OnEventAboutToTrigger(RuleAttackWithWeapon evt)
         {
-            if (IsChosenWeapon(Owner))
+            if (IsChosenWeapon(Owner) && Rulebook.Trigger(new RuleCheckTargetFlatFooted(evt.Initiator, evt.Target)).IsFlatFooted && !evt.IsAttackOfOpportunity)
             {
                 var maneuver = CombatManeuver.None;
                 var caster = Owner;
