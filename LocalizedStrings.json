@@ -5404,6 +5404,149 @@
     "Key": "DivineMarksmanIomedaeInfluence.Description",
     "enGB": "At 8th level, a divine marksman gains Weapon Focus with the longsword as a bonus feat, due to the influence the church of Iomedae has over Ilsurian causes.",
     "zhCN": "在8级时，神射手在艾奥梅黛教会的影响下练习了使用长剑的武艺，他获得武器专攻（长剑）作为奖励专长。"
+  },
+  {
+    "Key": "FeatQuickDirtyTrick.Name",
+    "ProcessTemplates": false,
+    "enGB": "Quick Dirty Trick",
+    "zhCN": "快速阴招"
+  },
+  {
+    "Key": "FeatQuickDirtyTrick.Description",
+    "enGB": "You can perpetrate a dirty trick and deliver an attack before your opponent is the wiser. On your turn, you can perform a single dirty trick combat maneuver in place of one of your melee attacks. ",
+    "zhCN": "你在攻击中夹杂一些阴险下流的伎俩，让你的对手来不及反应。当你行动时，你可以用一次单独的阴招战技检定来代替你的一次近战攻击。"
+  },
+  {
+    "Key": "DirtyBlindQuick.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dirty Trick Blinded (Always)",
+    "zhCN": "阴招-目盲（总是）"
+  },
+  {
+    "Key": "DirtyBlindQuick.Description",
+    "enGB": "You can attempt to perform a single dirty trick against your opponent in place of your next melee attack in a full-round attack.",
+    "zhCN": "你全回合攻击时可以把下一次近战攻击换成阴招。"
+  },
+  {
+    "Key": "DirtyEntangleQuick.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dirty Trick Entangled (Always)",
+    "zhCN": "阴招-纠缠（总是）"
+  },
+  {
+    "Key": "DirtyEntangleQuick.Description",
+    "enGB": "You can attempt to perform a single dirty trick against your opponent in place of your next melee attack in a full-round attack.",
+    "zhCN": "你全回合攻击时可以把下一次近战攻击换成阴招。"
+  },
+  {
+    "Key": "DirtySickenQuick.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dirty Trick Sickened (Always)",
+    "zhCN": "阴招-恶心（总是）"
+  },
+  {
+    "Key": "DirtySickenQuick.Description",
+    "enGB": "You can attempt to perform a single dirty trick against your opponent in place of your next melee attack in a full-round attack.",
+    "zhCN": "你全回合攻击时可以把下一次近战攻击换成阴招。"
+  },
+  {
+    "Key": "DirtyTrickMaster.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dirty Trick Master",
+    "zhCN": "阴招大师"
+  },
+  {
+    "Key": "DirtyTrickMaster.Description",
+    "enGB": "You are adept at stifling your enemies and can expertly make a bad situation even worse. Whenever you successfully perform a dirty trick combat maneuver against an opponent who is still affected by a condition inflicted by a previous dirty trick (whether your own or another creature’s), you can cause the condition to worsen. In addition to increasing the duration of the condition as normal, you cause an opponent who is entangled to become staggered, and sickened to become nauseated. This worsened condition replaces the previous dirty trick condition, and lasts for the duration of the dirty trick.",
+    "zhCN": "你善于膈应你的敌人，让状况雪上加霜。每当你对一名已经被阴招带来的状态影响的敌人（不论此前是谁施展的阴招）成功施展阴招时，你能让状态进一步恶化。除了正常延长状态持续时间之外，你令受到纠缠的对手恍惚，感到恶心的对手反胃。恶化的状态会取代原本的状态，持续时间保持不变。"
+  },
+  {
+    "Key": "LadderLock.Name",
+    "ProcessTemplates": false,
+    "enGB": "Ladder Lock",
+    "zhCN": "梯锁"
+  },
+  {
+    "Key": "LadderLock.Description",
+    "enGB": "When you successfully perform a dirty trick combat maneuver against an adjacent opponent with at least one hand free, you can trap your target’s limbs between the rungs of a ladder. Your target gains the entangled condition in addition to the normal condition imposed by your dirty trick, and for the same duration.",
+    "zhCN": "当你空出至少一只手，并且成功对一名相邻的敌人使用了阴招战技，你可以用梯子的踏板卡住目标的肢体，除了正常阴招所施加的效果，你的目标还会陷入纠缠，持续相同的时间。"
+  },
+  {
+    "Key": "CloakDaggerStyle.Name",
+    "ProcessTemplates": false,
+    "enGB": "Cloak and Dagger Style",
+    "zhCN": "蓬匕流"
+  },
+  {
+    "Key": "CloakDaggerStyle.Description",
+    "enGB": "Your attacks effortlessly inflict debilitating conditions on unaware opponents. Choose one light melee weapon. While using this style, the first time you attack an opponent that is denied its Dexterity bonus to AC with your chosen weapon during the turn you enter a battle, you can attempt a dirty trick combat maneuver check against that opponent as a free action.",
+    "zhCN": "你的攻击能轻易对未察觉的对手造成不良状态。选择一种轻型近战武器。当你开启该流派时，你用所选的武器在你进入战斗的第一回合中首次攻击一个失去AC上的敏捷加值的敌人时，你可以用自由动作对该敌人进行一次阴招战技检定。"
+  },
+  {
+    "Key": "CloakDaggerSubterfuge.Name",
+    "ProcessTemplates": false,
+    "enGB": "Cloak and Dagger Subterfuge",
+    "zhCN": "蓬匕诈"
+  },
+  {
+    "Key": "CloakDaggerSubterfuge.Description",
+    "enGB": "Your increased martial skill allows you to take advantage of distracted foes to easily impose conditions, and even steal items without being noticed. While you are using Cloak and Dagger Style and wielding your chosen weapon, whenever you make an attack of opportunity against a target, you can attempt a free dirty trick combat maneuver check against the target as a free action as well. Additionally, whenever you successfully perform a dirty trick maneuver against a target, you can immediately attempt a disarm combat maneuver check against the target as a free action.",
+    "zhCN": "你越发精湛的武艺让你能让分心的对手更易遭受各类效果，甚至能不被发现地窃取物品。当你开启蓬匕流并持用你所选的武器时，每当你对一个敌人进行借机攻击时，你同时还能用一个自由动作对他进行一次额外的阴招战技检定。另外。每当你成功对一个敌人进行阴招战技时，你能立刻以一个自由动作对他进行一次缴械战技检定。"
+  },
+  {
+    "Key": "CloakDaggerTactics.Name",
+    "ProcessTemplates": false,
+    "enGB": "Cloak and Dagger Tactics",
+    "zhCN": "蓬匕策"
+  },
+  {
+    "Key": "CloakDaggerTactics.Description",
+    "enGB": "You devastate enemies that you catch off-guard. While you are using Cloak and Dagger Style and wielding your chosen weapon, whenever you hit an opponent that is denied its Dexterity bonus to AC or that you are flanking, or make an attack using Vital Strike (or its improved or greater versions), you can attempt a dirty trick combat maneuver check against that opponent as a free action. If you succeed, the target must succeed at a Fortitude save (DC = 10 + 1/2 your base attack bonus + your Intelligence modifier) or gain the confused condition, if immune, gain the staggered condition, if immune, gain the exhausted condition, if immune, anchored in place and unable to move. This additional penalty lasts only 1 round, regardless of how long the dirty trick’s normal penalty lasts. You can only attempt one free dirty trick combat maneuver check per round using this feat.",
+    "zhCN": "你蹂躏那些措手不及的敌人。当你开启蓬匕流并持用你所选的武器时，每当你击中一个失去AC上的敏捷加值或被你夹击的敌人，或是使用要害打击（以及其精通和高等版本）进行一次攻击时，你可以用自由动作对该敌人进行一次阴招战技检定。如果你成功了，该目标必须成功通过强韧检定（DC=10+1/2你的BAB+你的智力调整），否则就会困惑，如果免疫则会恍惚，如果免疫则会力竭，如果免疫则会被钉在原地不能移动。无论阴招造成的普通惩罚持续多久，该额外的惩罚只持续一轮。你每轮只能使用该专长一次来以进行额外的阴招战技检定。"
+  },
+  {
+    "Key": "FeatEldritchAssaultFeat.Name",
+    "ProcessTemplates": false,
+    "enGB": "Eldritch Assault",
+    "zhCN": "奥法强袭"
+  },
+  {
+    "Key": "FeatEldritchAssaultFeat.Description",
+    "enGB": "You make deadly strikes when magic cloaks your location. Whenever you attack from total concealment provided by a magical source (such as the displacement or invisibility spells), the first attack roll you make each round that is a critical threat is automatically confirmed as a critical hit.",
+    "zhCN": "当魔法掩盖你的位置时，你能造成致命一击。每当你在魔法来源的全掩蔽效果中（例如移位术或者隐形术）攻击，你每轮第一个造成重击的攻击骰自动确认重击。"
+  },
+  {
+    "Key": "ImprovedParry.Name",
+    "ProcessTemplates": false,
+    "enGB": "Improved Parry",
+    "zhCN": "精通招架"
+  },
+  {
+    "Key": "ImprovedParry.Description",
+    "enGB": "A flick of the wrist binds your opponent’s weapon. When you successfully parry a foe’s melee attack, your next melee attack against the target does not allow the enemy to apply its Dexterity bonus to AC (if any). This attack must be made before the end of your next turn.",
+    "zhCN": "轻巧抖腕，锁住对手的兵刃。当你成功招架敌人的近战攻击时，你的下一次近战攻击不允许敌人将敏捷加值加到防御等级上（若有），但该攻击需要在你的下回合结束前进行。"
+  },
+  {
+    "Key": "SpireDefenderReachSpellstrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Reach Spellstrike",
+    "zhCN": "及远法术打击"
+  },
+  {
+    "Key": "SpireDefenderReachSpellstrike.Description",
+    "enGB": "The magus can deliver spells with a range of touch with ranged spellstrike.",
+    "zhCN": "魔战士可以使用近战接触法术来进行远程法术打击。"
+  },
+  {
+    "Key": "ShieldShieldMain.Name",
+    "ProcessTemplates": false,
+    "enGB": "Magic Trick (shield)",
+    "zhCN": "魔法技艺（护盾术）"
+  },
+  {
+    "Key": "ShieldShieldMain.Description",
+    "enGB": "You can grant your ally the benefit of your shield spell. You lose the spell’s benefits and your ally gains these benefits for the spell’s duration.",
+    "zhCN": "你可以让你的盟友获得你的护盾术的好处。你失去其好处，你的盟友在法术持续时间内获得其好处。"
   }
 
 ]
