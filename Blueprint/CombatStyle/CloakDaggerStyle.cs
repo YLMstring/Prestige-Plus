@@ -221,7 +221,7 @@ namespace PrestigePlus.Blueprint.CombatStyle
               .SetDescription(TacticsDescription)
               .SetIcon(icon)
               .AddComponent<CloakDaggerTac>()
-              //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .Configure();
 
             FeatureConfigurator.New(TacticsName, TacticsGuid, FeatureGroup.Feat)

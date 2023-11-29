@@ -2,11 +2,13 @@
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
 using Kingmaker.Designers;
+using Kingmaker.EntitySystem.Entities;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Abilities.Components;
+using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.Utility;
 using PrestigePlus.Blueprint.CombatStyle;
@@ -48,16 +50,13 @@ namespace PrestigePlus.CustomComponent.Feat
                     }, evt.Target.Context, true).Success;
                     if (!pass)
                     {
-                        GameHelper.ApplyBuff(evt.Target, BuffRefs.Confusion.Reference.Get(), new Rounds?(1.Rounds()));
-                        if (!evt.Target.HasFact(BuffRefs.Confusion.Reference.Get()))
+                        if (GiveNextBuff(evt.Target, BuffRefs.Confusion.Reference.Get()))
                         {
-                            GameHelper.ApplyBuff(evt.Target, BuffRefs.Staggered.Reference.Get(), new Rounds?(1.Rounds()));
-                            if (!evt.Target.HasFact(BuffRefs.Staggered.Reference.Get()))
+                            if (GiveNextBuff(evt.Target, BuffRefs.Staggered.Reference.Get()))
                             {
-                                GameHelper.ApplyBuff(evt.Target, BuffRefs.Exhausted.Reference.Get(), new Rounds?(1.Rounds()));
-                                if (!evt.Target.HasFact(BuffRefs.Exhausted.Reference.Get()))
+                                if (GiveNextBuff(evt.Target, BuffRefs.Exhausted.Reference.Get()))
                                 {
-                                    GameHelper.ApplyBuff(evt.Target, BuffRefs.CantMove.Reference.Get(), new Rounds?(1.Rounds()));
+                                    GiveNextBuff(evt.Target, BuffRefs.CantMove.Reference.Get());
                                 }
                             }
                         }
@@ -94,22 +93,36 @@ namespace PrestigePlus.CustomComponent.Feat
                     }, evt.Target.Context, true).Success;
                     if (!pass)
                     {
-                        GameHelper.ApplyBuff(evt.Target, BuffRefs.Confusion.Reference.Get(), new Rounds?(1.Rounds()));
-                        if (!evt.Target.HasFact(BuffRefs.Confusion.Reference.Get()))
+                        if (GiveNextBuff(evt.Target, BuffRefs.Confusion.Reference.Get()))
                         {
-                            GameHelper.ApplyBuff(evt.Target, BuffRefs.Staggered.Reference.Get(), new Rounds?(1.Rounds()));
-                            if (!evt.Target.HasFact(BuffRefs.Staggered.Reference.Get()))
+                            if (GiveNextBuff(evt.Target, BuffRefs.Staggered.Reference.Get()))
                             {
-                                GameHelper.ApplyBuff(evt.Target, BuffRefs.Exhausted.Reference.Get(), new Rounds?(1.Rounds()));
-                                if (!evt.Target.HasFact(BuffRefs.Exhausted.Reference.Get()))
+                                if (GiveNextBuff(evt.Target, BuffRefs.Exhausted.Reference.Get()))
                                 {
-                                    GameHelper.ApplyBuff(evt.Target, BuffRefs.CantMove.Reference.Get(), new Rounds?(1.Rounds()));
+                                    GiveNextBuff(evt.Target, BuffRefs.CantMove.Reference.Get());
                                 }
                             }
                         }
                     }
                 }
                 Buff.Remove();
+            }
+        }
+
+        private static bool GiveNextBuff(UnitEntityData target, BlueprintBuff buff)
+        {
+            if (target.HasFact(buff))
+            {
+                return true;
+            }
+            else
+            {
+                GameHelper.ApplyBuff(target, buff, new Rounds?(1.Rounds()));
+                if (target.HasFact(buff))
+                {
+                    return false;
+                }
+                return true;
             }
         }
 
