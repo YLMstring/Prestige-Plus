@@ -3427,8 +3427,8 @@
 
   {
     "Key": "EldritchGuardianShareTraining.Description",
-    "enGB": "At 2nd level, when the familiar can see and hear its master, an eldritch guardian's animal companions can use any combat feat possessed by the eldritch guardian without meeting the feat’s prerequisites.",
-    "zhCN": "2级起，奥法卫士的魔宠能看到和听到主人时，她的动物伙伴可以使用任何她拥有的战斗专长，无需满足前置条件。"
+    "enGB": "At 2nd level, when her pet (of any kind) can see and hear its master, it can use any combat feat possessed by the eldritch guardian without meeting the feat’s prerequisites.",
+    "zhCN": "2级起，奥法卫士的宠物（任意种类）能看到和听到主人时，可以使用任何她拥有的战斗专长，无需满足前置条件。"
   },
 
   {

@@ -128,7 +128,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddCompanionBoon(2, FeatureRefs.AnimalCompanionRank.ToString())
-              .AddFeatureToPet(FeatureRefs.LightBardingProficiency.ToString())
+              .AddFeatureToPet(FeatureRefs.LightBardingProficiency.ToString(), PetType.AnimalCompanion)
               .AddFacts(new() { "272aa4cc-a738-4a69-92da-395f4fae3d22" }) ///ttt
               .Configure();
         }
@@ -182,7 +182,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(ShaitanDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddFeatureToPet(feat4)
+              .AddFeatureToPet(feat4, PetType.AnimalCompanion)
               .Configure();
         }
 
@@ -207,7 +207,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(ShaitanDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddFeatureToPet(feat5)
+              .AddFeatureToPet(feat5, PetType.AnimalCompanion)
               .SetHideInUI(true)
               .Configure();
         }
@@ -273,7 +273,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(DjinniDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddFeatureToPet(feat6)
+              .AddFeatureToPet(feat6, PetType.AnimalCompanion)
               .AddFacts(new() { ability })
               .Configure();
         }
@@ -299,7 +299,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(DjinniDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddFeatureToPet(feat7)
+              .AddFeatureToPet(feat7, PetType.AnimalCompanion)
               .SetHideInUI(true)
               .Configure();
         }
@@ -328,7 +328,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(MaridDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddFeatureToPet(feat8)
+              .AddFeatureToPet(feat8, PetType.AnimalCompanion)
               .AddConcentrationBonus(false, value: ContextValues.Constant(2))
               .Configure();
         }
@@ -360,7 +360,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(EfreetiDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddFeatureToPet(feat9)
+              .AddFeatureToPet(feat9, PetType.AnimalCompanion)
               .Configure();
         }
 
@@ -388,7 +388,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(JanniDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddFeatureToPet(feat1)
+              .AddFeatureToPet(feat1, PetType.AnimalCompanion)
               .AddFacts(new() { FeatureRefs.PerfectStrikeFeature.ToString() })
               .AddBuffAllSavesBonus(ModifierDescriptor.Luck, 1)
               .Configure();
@@ -718,7 +718,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddPrerequisiteFeature(FeatureRefs.Trample.ToString())
-              .AddFeatureToPet(feat1)
+              .AddFeatureToPet(feat1, PetType.AnimalCompanion)
               .Configure();
 
             return FeatureSelectionConfigurator.New(SummonBigTrample2, SummonBigTrampleGuid2)

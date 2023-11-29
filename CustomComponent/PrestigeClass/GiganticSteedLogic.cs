@@ -51,7 +51,7 @@ namespace PrestigePlus.Modify
                 int level = Owner.Descriptor.Progression.GetClassLevel(rider);
                 UnitEntityData entity = entityPartRef.Entity;
                 UnitPartPet unitPartPet = (entity != null) ? entity.Get<UnitPartPet>() : null;
-                if (unitPartPet != null)
+                if (unitPartPet != null && unitPartPet.Type == PetType.AnimalCompanion)
                 {
                     if (level >= 9)
                     {

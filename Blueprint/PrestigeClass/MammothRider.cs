@@ -153,7 +153,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(GiganticSteedDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddFeatureToPet(feat)
+              .AddFeatureToPet(feat, PetType.AnimalCompanion)
               .AddComponent<GiganticSteedLogic>()
               .Configure();
         }
@@ -232,8 +232,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(RuggedSteedDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              //.AddFeatureToPet(feat4)
-              //.AddFeatureToPet(GiganticSteed2Guid)
               .Configure();
         }
 
@@ -314,7 +312,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(ValiantDevotionDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddFeatureToPet(feat6)
+              .AddFeatureToPet(feat6, PetType.AnimalCompanion)
               .Configure();
         }
 
@@ -393,7 +391,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(ReachSteedDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddFeatureToPet(feat5)
+              .AddFeatureToPet(feat5, PetType.AnimalCompanion)
               .Configure();
         }
 
@@ -469,7 +467,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(PulverizingAssaultDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddFeatureToPet(feat)
+              .AddFeatureToPet(feat, PetType.AnimalCompanion)
               //.AddFeatureToPet(GiganticSteed3Guid)
               .Configure();
         }
@@ -536,7 +534,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddConditionImmunity(UnitCondition.Stunned)
               .AddEvasion(SavingThrowType.Fortitude)
               .AddEvasion(SavingThrowType.Will)
-              .AddFeatureToPet(feat)
+              .AddFeatureToPet(feat, PetType.AnimalCompanion)
               .AddComponent<RiderMammothLord>()
               .Configure();
         }
