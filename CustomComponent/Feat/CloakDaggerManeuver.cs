@@ -41,12 +41,13 @@ namespace PrestigePlus.CustomComponent.Feat
                     maneuver = CombatManeuver.DirtyTrickSickened;
                 }
                 SweepManeuver.ActManeuver(caster, evt.Target, 0, maneuver);
+                Buff.Remove();
             }
         }
 
         void IRulebookHandler<RuleAttackWithWeapon>.OnEventDidTrigger(RuleAttackWithWeapon evt)
         {
-            Buff.Remove();
+            
         }
 
         public static bool IsChosenWeapon(UnitEntityData unit)

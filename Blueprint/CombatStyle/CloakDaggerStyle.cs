@@ -208,6 +208,7 @@ namespace PrestigePlus.Blueprint.CombatStyle
               .SetDisplayName(TacticsDisplayName)
               .SetDescription(TacticsDescription)
               .SetIcon(icon)
+              .AddComponent<CloakDaggerTac>()
               //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .Configure();
 
