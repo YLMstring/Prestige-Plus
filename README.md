@@ -1,4 +1,4 @@
-# Prestige Plus v1.9.0 for WoTR 
+# Prestige Plus v1.9.1 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - Add grapple mechanic and a bunch of prestige classes!
@@ -42,6 +42,9 @@
 - [Shield Slam](https://www.d20pfsrd.com/feats/combat-feats/shield-slam-combat/)
 - [Shield Snag](https://www.d20pfsrd.com/feats/combat-feats/shield-snag-combat/)
 - [Ranged Disarm (Mythic)](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/guardian/): You can effortlessly use ranged attacks to disarm an opponent. Add your tier to the Ranged Disarm roll. If the disarm attempt is successful, make a second disarm attempt.
+- [Quick Dirty Trick](https://www.d20pfsrd.com/feats/combat-feats/quick-dirty-trick-combat/)
+- [Dirty Trick Master](https://www.d20pfsrd.com/feats/combat-feats/dirty-trick-master-combat/)
+- [Ladder Lock](https://www.d20pfsrd.com/feats/combat-feats/equipment-trick-combat/)
 ### [Grapple Mechanic](https://www.d20pfsrd.com/gamemastering/Combat/#Grapple)
 - This is how I implement it:
 1. There are 3 kinds of grapples in the game. My Grapple Mechanic is very close to tabletop. Shifter grapples stay owlcat-brew but once the shifter takes Grapple (Improved Grapple) feat, their grapple mechanics would be turned into mine. Finally, monster grapples stay the way it is in vanilla.
@@ -139,6 +142,7 @@
 - [Spire Defender](https://www.d20pfsrd.com/classes/base-classes/magus/archetypes/paizo-magus-archetypes/spire-defender/)
 - New Magus Arcana: [Maneuver Mastery](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/maneuver-mastery-ex)
 - New Magus Arcana: [Familiar](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/familiar-ex)
+- New Magus Arcana: [Reach Spellstrike](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/reach-spellstrike-su/)
 #### Ranger:  
 - [Divine Marksman](https://www.d20pfsrd.com/classes/core-classes/ranger/archetypes/paizo-ranger-archetypes/divine-marksman-ranger-archetype/)
 - Requires [Expanded Content](https://github.com/ka-dyn/ExpandedContent), or you won't gain the bonus feats!
@@ -174,6 +178,9 @@
 - [Panther Style](https://www.d20pfsrd.com/feats/combat-feats/panther-style-combat-style/)
 - [Panther Claw](https://www.d20pfsrd.com/feats/combat-feats/panther-claw-combat/)
 - [Panther Parry](https://www.d20pfsrd.com/feats/combat-feats/panther-parry-combat/)
+- [Cloak and Dagger Style](https://www.d20pfsrd.com/feats/combat-feats/cloak-and-dagger-style-combat-style)
+- [Cloak and Dagger Subterfuge](https://www.d20pfsrd.com/feats/combat-feats/cloak-and-dagger-subterfuge-combat)
+- [Cloak and Dagger Tactics](https://www.d20pfsrd.com/feats/combat-feats/cloak-and-dagger-tactics-combat/)
 ### New Feats
 
 - [Ripple in Still Water](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/ripple-in-still-water-combat/): From Path of War
@@ -187,6 +194,9 @@
 - [Rhino Charge](https://www.d20pfsrd.com/feats/combat-feats/rhino-charge-combat/)
 - [Minotaur’s Charge](https://www.d20pfsrd.com/feats/general-feats/minotaur-s-charge/)
 - [Magic Trick (mage hand)](https://www.d20pfsrd.com/feats/general-feats/magic-trick-2/) and its mythic feat!
+- [Magic Trick (shield)](https://www.d20pfsrd.com/feats/general-feats/magic-trick-2/)
+- [Eldritch Assault](https://www.d20pfsrd.com/feats/general-feats/eldritch-assault/)
+- [Improved Parry](https://www.d20pfsrd.com/feats/combat-feats/improved-parry-combat/)
 ### New Rogue Talents
 
 - [Another Day](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-advanced-talents/another-day-ex/)
