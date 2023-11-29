@@ -1,4 +1,6 @@
-﻿using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
+﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
+using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
@@ -61,6 +63,10 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(AbilityRefs.VitalStrikeAbility.Reference.Get().Icon)
+              .AddBuffActions(activated: ActionsBuilder.New()
+                .RemoveBuff(SurprisingDirtyEntanglebuffGuid)
+                .RemoveBuff(SurprisingDirtySickenbuffGuid)
+                .Build())
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
@@ -78,6 +84,10 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(AbilityRefs.VitalStrikeAbility.Reference.Get().Icon)
+              .AddBuffActions(activated: ActionsBuilder.New()
+                .RemoveBuff(SurprisingDirtyBlindbuffGuid)
+                .RemoveBuff(SurprisingDirtySickenbuffGuid)
+                .Build())
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
@@ -95,6 +105,10 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(AbilityRefs.VitalStrikeAbility.Reference.Get().Icon)
+              .AddBuffActions(activated: ActionsBuilder.New()
+                .RemoveBuff(SurprisingDirtyBlindbuffGuid)
+                .RemoveBuff(SurprisingDirtyEntanglebuffGuid)
+                .Build())
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();

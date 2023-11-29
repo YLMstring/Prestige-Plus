@@ -61,6 +61,10 @@ namespace PrestigePlus.Blueprint.CombatStyle
               .SetDisplayName(StyleDisplayName)
               .SetDescription(StyleDescription)
               .SetIcon(AbilityRefs.VitalStrikeAbility.Reference.Get().Icon)
+              .AddBuffActions(activated: ActionsBuilder.New()
+                .RemoveBuff(CloakDaggerStyleEntanglebuffGuid)
+                .RemoveBuff(CloakDaggerStyleSickenbuffGuid)
+                .Build())
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
@@ -78,6 +82,10 @@ namespace PrestigePlus.Blueprint.CombatStyle
               .SetDisplayName(StyleDisplayName)
               .SetDescription(StyleDescription)
               .SetIcon(AbilityRefs.VitalStrikeAbility.Reference.Get().Icon)
+              .AddBuffActions(activated: ActionsBuilder.New()
+                .RemoveBuff(CloakDaggerStyleBlindbuffGuid)
+                .RemoveBuff(CloakDaggerStyleSickenbuffGuid)
+                .Build())
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
@@ -95,6 +103,10 @@ namespace PrestigePlus.Blueprint.CombatStyle
               .SetDisplayName(StyleDisplayName)
               .SetDescription(StyleDescription)
               .SetIcon(AbilityRefs.VitalStrikeAbility.Reference.Get().Icon)
+              .AddBuffActions(activated: ActionsBuilder.New()
+                .RemoveBuff(CloakDaggerStyleBlindbuffGuid)
+                .RemoveBuff(CloakDaggerStyleEntanglebuffGuid)
+                .Build())
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
