@@ -7,7 +7,7 @@
 ## Featuring
 
 ### Combat Maneuver+
-- You can Disarm, Sunder, or Trip in lieu of an melee attack, like on tabletop!
+- You can Disarm, Sunder, or Trip in lieu of a melee attack, and Bull Rush in lieu of a charge attack, like on tabletop!
 - [Seize the Opportunity](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/seize-the-opportunity-combat/): From Path of War
 - Kinda OP so you can make it a mythic feat instead of combat feat if you like (default off)
 - [Surprise Maneuver](https://www.d20pfsrd.com/feats/general-feats/surprise-maneuver/)
