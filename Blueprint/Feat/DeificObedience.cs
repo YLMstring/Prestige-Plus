@@ -20,6 +20,14 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using Kingmaker.Enums;
 using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Conditions.Builder.ContextEx;
+using BlueprintCore.Actions.Builder.StoryEx;
+using Kingmaker.ElementsSystem;
+using Kingmaker.Designers.EventConditionActionSystem.Evaluators;
+using Kingmaker.Blueprints.Classes.Spells;
+using Kingmaker.UnitLogic.Abilities.Components;
+using PrestigePlus.Blueprint.Spell;
+using PrestigePlus.CustomComponent.Feat;
+using Kingmaker.UnitLogic.Abilities.Components.Base;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -78,75 +86,172 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteFeature("F79778D7-281C-4B9D-8E77-8F86812707AA", group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
               .AddPrerequisiteAlignment(Kingmaker.UnitLogic.Alignments.AlignmentMaskType.LawfulGood, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
               .SetGiveFeaturesForPreviousLevels(true)
-              .AddToLevelEntry(1, Ragathiel0Feat())
-              .AddToLevelEntry(2, FeatureSelectionRefs.SelectionMercy.ToString())
-              .AddToLevelEntry(6, FeatureSelectionRefs.SelectionMercy.ToString())
-              .AddToLevelEntry(10, FeatureSelectionRefs.SelectionMercy.ToString())
+              .AddToLevelEntry(3, Ragathiel0Feat())
+              .AddToLevelEntry(12, CreateRagathiel1())
+              .AddToLevelEntry(16, Ragathiel2Feat())
+              .AddToLevelEntry(20, Ragathiel3Feat())
               .Configure();
         }
 
         private const string Ragathiel0 = "DeificObedience.Ragathiel0";
         private static readonly string Ragathiel0Guid = "{D0086A74-0DCE-42D3-A82C-047CD6777731}";
 
-        private const string Ragathiel0Ability = "DeificObedience.Ragathiel0Ability";
-        private static readonly string Ragathiel0AbilityGuid = "{B4980C7F-DDB6-4A85-87AC-8F44AC1F37A9}";
-
         internal const string Ragathiel0DisplayName = "DeificObedienceRagathiel0.Name";
         private const string Ragathiel0Description = "DeificObedienceRagathiel0.Description";
 
         private const string Ragathiel0Buff = "DeificObedience.Ragathiel0Buff";
-        private static readonly string Ragathiel0BuffGuid = "{FB52A6B6-D5A2-47D9-9184-6E05A3F30049}";
-
-        private const string Ragathiel0Buff2 = "DeificObedience.Ragathiel0Buff2";
-        private static readonly string Ragathiel0Buff2Guid = "{02A4850E-8E1A-48D2-8EEF-13CA34543DB4}";
+        private static readonly string Ragathiel0BuffGuid = "{02A4850E-8E1A-48D2-8EEF-13CA34543DB4}";
         public static BlueprintFeature Ragathiel0Feat()
         {
             var icon = AbilityRefs.Angel3BoltOfJusticeAbility.Reference.Get().Icon;
-
-            var Buff2 = BuffConfigurator.New(Ragathiel0Buff2, Ragathiel0Buff2Guid)
-             .SetDisplayName(Ragathiel0DisplayName)
-             .SetDescription(Ragathiel0Description)
-             .SetIcon(icon)
-             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
-             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.RemoveOnRest)
-             .AddSavingThrowBonusAgainstAlignment(AlignmentComponent.Evil, 4, ModifierDescriptor.Sacred)
-             .Configure();
-
-            var action = ActionsBuilder.New()
-                        .ApplyBuffPermanent(Buff2)
-                        .Build();
 
             var Buff = BuffConfigurator.New(Ragathiel0Buff, Ragathiel0BuffGuid)
              .SetDisplayName(Ragathiel0DisplayName)
              .SetDescription(Ragathiel0Description)
              .SetIcon(icon)
-             .AddBuffActions(deactivated: action)
-             .SetStacking(Kingmaker.UnitLogic.Buffs.Blueprints.StackingType.Prolong)
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
+             .AddSavingThrowBonusAgainstAlignment(AlignmentComponent.Evil, 4, ModifierDescriptor.Sacred)
              .Configure();
-
-            var ability = AbilityConfigurator.New(Ragathiel0Ability, Ragathiel0AbilityGuid)
-                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.SelfTouch)
-                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(Buff, ContextDuration.Fixed(1, Kingmaker.UnitLogic.Mechanics.DurationRate.Hours)).Build())
-                .SetDisplayName(Ragathiel0DisplayName)
-                .SetDescription(Ragathiel0Description)
-                .SetIcon(icon)
-                .SetRange(AbilityRange.Personal)
-                .SetType(AbilityType.Special)
-                .AddAbilityCasterInCombat(true)
-                .Configure();
-
-            var action2 = ActionsBuilder.New()
-                        .Conditional(ConditionsBuilder.New().Alignment(AlignmentComponent.Evil).Build(), 
-                        ifTrue: ActionsBuilder.New()
-                            .OnContextCaster(action)
-                            .Build())
-                        .Build();
 
             return FeatureConfigurator.New(Ragathiel0, Ragathiel0Guid)
               .SetDisplayName(Ragathiel0DisplayName)
               .SetDescription(Ragathiel0Description)
               .SetIcon(icon)
-              .AddInitiatorAttackWithWeaponTrigger(action: action2, onlyHit: true, reduceHPToZero: true)
+              .AddRestTrigger(ActionsBuilder.New().ApplyBuff(Buff, ContextDuration.Fixed(1, Kingmaker.UnitLogic.Mechanics.DurationRate.Days)).Build())
+              .Configure();
+        }
+
+        private const string Ragathiel1 = "SpellPower.Ragathiel1";
+        private static readonly string Ragathiel1Guid = "{71FF444A-0247-4EDA-984F-0834A543118B}";
+        internal const string Ragathiel1DisplayName = "SpellPowerRagathiel1.Name";
+        private const string Ragathiel1Description = "SpellPowerRagathiel1.Description";
+
+        private const string Ragathiel1Ablity = "SpellPower.UseRagathiel1";
+        private static readonly string Ragathiel1AblityGuid = "{017CEA4D-D232-4393-9D3B-290DA4817D04}";
+
+        private const string Ragathiel1Ablity2 = "SpellPower.UseRagathiel12";
+        private static readonly string Ragathiel1Ablity2Guid = "{DE7C5484-6EE6-42C8-A536-82C9233AAB73}";
+
+        private const string Ragathiel1Ablity3 = "SpellPower.UseRagathiel13";
+        private static readonly string Ragathiel1Ablity3Guid = "{20541493-3B03-4E89-AF94-2D90DCCB1915}";
+
+        private static BlueprintFeature CreateRagathiel1()
+        {
+            var ability = AbilityConfigurator.New(Ragathiel1Ablity, Ragathiel1AblityGuid)
+                .CopyFrom(
+                AbilityRefs.BlessWeaponCast,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilityEffectStickyTouch))
+                .AddAbilityResourceLogic(2, true, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(Ragathiel1Ablity2, Ragathiel1Ablity2Guid)
+                .CopyFrom(
+                LitanyRighteousness.LitanyRighteousnessAbilityGuid,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilityEffectStickyTouch))
+                .AddAbilityResourceLogic(3, true, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .Configure();
+
+            var ability3 = AbilityConfigurator.New(Ragathiel1Ablity3, Ragathiel1Ablity3Guid)
+                .CopyFrom(
+                AbilityRefs.MagicalVestment,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilityVariants))
+                .AddAbilityResourceLogic(6, true, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .Configure();
+
+            return FeatureConfigurator.New(Ragathiel1, Ragathiel1Guid)
+              .SetDisplayName(Ragathiel1DisplayName)
+              .SetDescription(Ragathiel1Description)
+              .AddFacts(new() { ability, ability2, ability3 })
+              .Configure();
+        }
+
+        private const string Ragathiel2 = "DeificObedience.Ragathiel2";
+        private static readonly string Ragathiel2Guid = "{201A980B-8B20-4F6D-95FD-45EB312A2BC9}";
+
+        internal const string Ragathiel2DisplayName = "DeificObedienceRagathiel2.Name";
+        private const string Ragathiel2Description = "DeificObedienceRagathiel2.Description";
+
+        private const string Ragathiel2Buff = "DeificObedience.Ragathiel2Buff";
+        private static readonly string Ragathiel2BuffGuid = "{480E3197-84B0-4688-859B-83A698270DE5}";
+        public static BlueprintFeature Ragathiel2Feat()
+        {
+            var icon = AbilityRefs.VengefulComets.Reference.Get().Icon;
+
+            var Buff = BuffConfigurator.New(Ragathiel2Buff, Ragathiel2BuffGuid)
+             .SetDisplayName(Ragathiel2DisplayName)
+             .SetDescription(Ragathiel2Description)
+             .SetIcon(icon)
+             .AddUniqueBuff()
+             .AddComponent<RagathielRetribution>()
+             .Configure();
+
+            var action = ActionsBuilder.New().ApplyBuff(Buff, ContextDuration.Fixed(1, Kingmaker.UnitLogic.Mechanics.DurationRate.Days)).Build();
+
+            return FeatureConfigurator.New(Ragathiel2, Ragathiel2Guid)
+              .SetDisplayName(Ragathiel2DisplayName)
+              .SetDescription(Ragathiel2Description)
+              .SetIcon(icon)
+              .AddTargetAttackWithWeaponTrigger(actionsOnAttacker: action, onlyHit: true)
+              .Configure();
+        }
+
+        private const string Ragathiel3 = "DeificObedience.Ragathiel3";
+        private static readonly string Ragathiel3Guid = "{81F099E2-AE6A-402C-A7EE-46A22F9A7CFE}";
+
+        internal const string Ragathiel3DisplayName = "DeificObedienceRagathiel3.Name";
+        private const string Ragathiel3Description = "DeificObedienceRagathiel3.Description";
+
+        private const string Ragathiel3Buff = "DeificObedience.Ragathiel3Buff";
+        private static readonly string Ragathiel3BuffGuid = "{4C22DFD8-EBAA-4809-A23C-D838D4A98DFE}";
+
+        private const string Ragathiel3Res = "DeificObedience.Ragathiel3Res";
+        private static readonly string Ragathiel3ResGuid = "{9D7F9008-4F6F-4151-B2D7-857A8429DEF0}";
+
+        private const string Ragathiel3Ability = "DeificObedience.Ragathiel3Ability";
+        private static readonly string Ragathiel3AbilityGuid = "{8DD276F2-A592-48B0-B316-53BEE2919AAC}";
+        public static BlueprintFeature Ragathiel3Feat()
+        {
+            var icon = AbilityRefs.HolyAura.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(Ragathiel3Res, Ragathiel3ResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var ability = AbilityConfigurator.New(Ragathiel3Ability, Ragathiel3AbilityGuid)
+                .CopyFrom(
+                AbilityRefs.HolyAura,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(AbilitySpawnFx),
+                typeof(ContextRankConfigs))
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .Configure();
+
+            var Buff = BuffConfigurator.New(Ragathiel3Buff, Ragathiel3BuffGuid)
+             .SetDisplayName(Ragathiel3DisplayName)
+             .SetDescription(Ragathiel3Description)
+             .SetIcon(icon)
+             .AddDamageResistancePhysical(Kingmaker.Enums.Damage.DamageAlignment.Good, bypassedByAlignment: true, isStackable: true, value: ContextValues.Constant(10), material: Kingmaker.Enums.Damage.PhysicalDamageMaterial.ColdIron, bypassedByMaterial: true)
+             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Holy.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.PrimaryHand)
+             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Holy.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.SecondaryHand)
+             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Enhancement5.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.PrimaryHand)
+             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Enhancement5.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.SecondaryHand)
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+             .Configure();
+
+            return FeatureConfigurator.New(Ragathiel3, Ragathiel3Guid)
+              .SetDisplayName(Ragathiel3DisplayName)
+              .SetDescription(Ragathiel3Description)
+              .SetIcon(icon)
+              .AddBuffExtraEffects(BuffRefs.HolyAuraBuff.ToString(), null, Buff, true)
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .AddFacts(new() { ability })
               .Configure();
         }
