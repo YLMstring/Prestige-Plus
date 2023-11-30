@@ -41,6 +41,9 @@ namespace PrestigePlus.Blueprint.Feat
 
         private const string DeificObedienceAblityRes = "DeificObedienceAblityRes";
         private static readonly string DeificObedienceAblityResGuid = "{751BD21A-A532-4939-9DC9-EE26E7FCE6BB}";
+
+        private const string DeificObedienceAblity = "DeificObedienceAblity";
+        private static readonly string DeificObedienceAblityGuid = "{7D26E0B2-7E4B-4F03-933F-33863F32058C}";
         public static void DeificObedienceConfigure()
         {
             var icon = AbilityRefs.HolyAura.Reference.Get().Icon;
@@ -50,17 +53,26 @@ namespace PrestigePlus.Blueprint.Feat
                     ResourceAmountBuilder.New(6))
                 .Configure();
 
+            AbilityConfigurator.New(DeificObedienceAblity, DeificObedienceAblityGuid)
+                .CopyFrom(
+                AbilityRefs.CommunityDomainGreaterAbility,
+                typeof(AbilitySpawnFx))
+                .SetDisplayName(DeificObedienceDisplayName)
+                .SetDescription(DeificObedienceDescription)
+                .Configure();
+
             var feat = FeatureSelectionConfigurator.New(DeificObedienceFeat, DeificObedienceGuid)
               .SetDisplayName(DeificObedienceDisplayName)
               .SetDescription(DeificObedienceDescription)
               .SetIcon(icon)
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
-              //.AddToAllFeatures(BloodFeat())
+              .AddToAllFeatures(RagathielFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteStatValue(StatType.SkillLoreReligion, 3)
               .AddAbilityResources(resource: resourse, restoreAmount: true)
+              .AddRestTrigger(ActionsBuilder.New().CastSpell(DeificObedienceAblityGuid).Build())
               .Configure();
 
             FeatureSelectionConfigurator.For(FeatureSelectionRefs.BasicFeatSelection)
@@ -99,30 +111,20 @@ namespace PrestigePlus.Blueprint.Feat
         internal const string Ragathiel0DisplayName = "DeificObedienceRagathiel0.Name";
         private const string Ragathiel0Description = "DeificObedienceRagathiel0.Description";
 
-        private const string Ragathiel0Buff = "DeificObedience.Ragathiel0Buff";
-        private static readonly string Ragathiel0BuffGuid = "{02A4850E-8E1A-48D2-8EEF-13CA34543DB4}";
         public static BlueprintFeature Ragathiel0Feat()
         {
             var icon = AbilityRefs.Angel3BoltOfJusticeAbility.Reference.Get().Icon;
-
-            var Buff = BuffConfigurator.New(Ragathiel0Buff, Ragathiel0BuffGuid)
-             .SetDisplayName(Ragathiel0DisplayName)
-             .SetDescription(Ragathiel0Description)
-             .SetIcon(icon)
-             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
-             .AddSavingThrowBonusAgainstAlignment(AlignmentComponent.Evil, 4, ModifierDescriptor.Sacred)
-             .Configure();
 
             return FeatureConfigurator.New(Ragathiel0, Ragathiel0Guid)
               .SetDisplayName(Ragathiel0DisplayName)
               .SetDescription(Ragathiel0Description)
               .SetIcon(icon)
-              .AddRestTrigger(ActionsBuilder.New().ApplyBuff(Buff, ContextDuration.Fixed(1, Kingmaker.UnitLogic.Mechanics.DurationRate.Days)).Build())
+              .AddSavingThrowBonusAgainstAlignment(AlignmentComponent.Evil, 4, ModifierDescriptor.Sacred)
               .Configure();
         }
 
         private const string Ragathiel1 = "SpellPower.Ragathiel1";
-        private static readonly string Ragathiel1Guid = "{71FF444A-0247-4EDA-984F-0834A543118B}";
+        public static readonly string Ragathiel1Guid = "{71FF444A-0247-4EDA-984F-0834A543118B}";
         internal const string Ragathiel1DisplayName = "SpellPowerRagathiel1.Name";
         private const string Ragathiel1Description = "SpellPowerRagathiel1.Description";
 
@@ -172,7 +174,7 @@ namespace PrestigePlus.Blueprint.Feat
         }
 
         private const string Ragathiel2 = "DeificObedience.Ragathiel2";
-        private static readonly string Ragathiel2Guid = "{201A980B-8B20-4F6D-95FD-45EB312A2BC9}";
+        public static readonly string Ragathiel2Guid = "{201A980B-8B20-4F6D-95FD-45EB312A2BC9}";
 
         internal const string Ragathiel2DisplayName = "DeificObedienceRagathiel2.Name";
         private const string Ragathiel2Description = "DeificObedienceRagathiel2.Description";
@@ -202,7 +204,7 @@ namespace PrestigePlus.Blueprint.Feat
         }
 
         private const string Ragathiel3 = "DeificObedience.Ragathiel3";
-        private static readonly string Ragathiel3Guid = "{81F099E2-AE6A-402C-A7EE-46A22F9A7CFE}";
+        public static readonly string Ragathiel3Guid = "{81F099E2-AE6A-402C-A7EE-46A22F9A7CFE}";
 
         internal const string Ragathiel3DisplayName = "DeificObedienceRagathiel3.Name";
         private const string Ragathiel3Description = "DeificObedienceRagathiel3.Description";

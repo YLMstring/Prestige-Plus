@@ -27,6 +27,7 @@ using PrestigePlus.Blueprint.ManeuverFeat;
 using PrestigePlus.Blueprint;
 using PrestigePlus.CustomComponent.Feat;
 using PrestigePlus.Blueprint.SpecificManeuver;
+using PrestigePlus.Blueprint.Spell;
 
 namespace PrestigePlus
 {
@@ -130,13 +131,16 @@ namespace PrestigePlus
             Toggle.New(GetKey("archer"), defaultValue: true, Helpers.CreateString("toggle-desc6", "Arcane Archer"))
               .ShowVisualConnection())
           .AddToggle(
-            Toggle.New(GetKey("asavir"), defaultValue: true, Helpers.CreateString("toggle-desc19", "Asavir"))
-              .ShowVisualConnection())
-          .AddToggle(
             Toggle.New(GetKey("devotee"), defaultValue: true, Helpers.CreateString("toggle-desc7", "Deadeye Devotee (Arcane Archer archetype)"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("asavir"), defaultValue: true, Helpers.CreateString("toggle-desc19", "Asavir"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("chevalier"), defaultValue: true, Helpers.CreateString("toggle-desc2", "Chevalier"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("templar"), defaultValue: true, Helpers.CreateString("toggle-desc56", "Crimson Templar"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("kineticknight"), defaultValue: true, Helpers.CreateString("toggle-desc31", "Esoteric Knight"))
@@ -238,7 +242,13 @@ namespace PrestigePlus
             Toggle.New(GetKey("bodyguard"), defaultValue: true, Helpers.CreateString("toggle-desc28", "Bodyguard Feats"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("obedience"), defaultValue: true, Helpers.CreateString("toggle-desc55", "Deific Obedience"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("magehand"), defaultValue: true, Helpers.CreateString("toggle-desc39", "Magic Trick Feats"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("spell"), defaultValue: true, Helpers.CreateString("toggle-desc54", "New Spells"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("nerfsop"), defaultValue: false, Helpers.CreateString("toggle-desc38", "(Nerf) Seize the Opportunity as a Mythic Feat"))
@@ -312,6 +322,9 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("cmdminus"))) { CMDPatch.Patch(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("dirty"))) { DirtyFeats.Configure(); DirtyFeats.StyleConfigure(); DirtyFeats.LadderConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("cloak"))) { CloakDaggerStyle.StyleConfigure(); CloakDaggerStyle.SubterfugeConfigure(); CloakDaggerStyle.TacticsConfigure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("spell"))) { LitanyRighteousness.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("obedience"))) { DeificObedience.DeificObedienceConfigure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("templar"))) { CrimsonTemplar.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
