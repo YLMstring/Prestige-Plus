@@ -28,6 +28,7 @@ using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.Utility;
 using PrestigePlus.Blueprint.Feat;
 using PrestigePlus.Blueprint.GrappleFeat;
+using PrestigePlus.CustomComponent.Archetype;
 using PrestigePlus.CustomComponent.PrestigeClass;
 using PrestigePlus.Modify;
 using System;
@@ -57,16 +58,16 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             BlueprintProgression progression =
             ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
             .SetClasses(ArchetypeGuid)
-            .AddToLevelEntry(1, ObedienceFeatFeat(), ShieldWingsFeat())
-            .AddToLevelEntry(2, RuthlessnessFeat(), FeatureRefs.SneakAttack.ToString())
+            .AddToLevelEntry(1, FiendishStudiesFeat(), ObedienceFeatFeat(), ShieldWingsFeat())
+            .AddToLevelEntry(2, FiendishStudies2Feat(), RuthlessnessFeat(), FeatureRefs.SneakAttack.ToString())
             .AddToLevelEntry(3, BonusFeatGuid, ShieldWings3Feat())
             .AddToLevelEntry(4, DeificObedience.Ragathiel1Guid, HeavenlyFireConfigure())
-            .AddToLevelEntry(5, FeatureRefs.SneakAttack.ToString())
+            .AddToLevelEntry(5, FiendishStudies5Feat(), FeatureRefs.SneakAttack.ToString())
             .AddToLevelEntry(6, BonusFeatGuid, ShieldWings6Feat())
             .AddToLevelEntry(7, DeificObedience.Ragathiel2Guid)
             .AddToLevelEntry(8, FeatureRefs.SneakAttack.ToString())
             .AddToLevelEntry(9, BonusFeatGuid, ShieldWings9Feat())
-            .AddToLevelEntry(10, DeificObedience.Ragathiel3Guid)
+            .AddToLevelEntry(10, DeificObedience.Ragathiel3Guid, FiendishStudies10Feat())
             .SetRanks(1)
             .SetIsClassFeature(true)
             .SetDisplayName("")
@@ -141,8 +142,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(ObedienceFeatDisplayName)
               .SetDescription(ObedienceFeatDescription)
               .SetIgnorePrerequisites(false)
-              .SetObligatory(false)
-              .AddToAllFeatures(DeificObedience.Ragathiel0Guid)
+              .SetObligatory(true)
+              .AddToAllFeatures(DeificObedience.RagathielGuid)
               .AddToAllFeatures(BonusFeatFeat())
               .AddFacts(new() { DeificObedience.DeificObedienceGuid })
               .Configure();
@@ -308,7 +309,118 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                     .AddFacts(new() { ability })
                     .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
                     .Configure();
+        }
 
+        private const string FiendishStudies = "CrimsonTemplar.FiendishStudies";
+        private static readonly string FiendishStudiesGuid = "{57692F7F-9719-4C9F-AA5F-36A05942C27C}";
+
+        private const string FiendishStudiesAbility1 = "CrimsonTemplar.UseFiendishStudies1";
+        private static readonly string FiendishStudiesAbilityGuid1 = "{9EBF85AC-D49B-4EDF-9FC5-4A8037E57D24}";
+
+        private const string FiendishStudiesAbility2 = "CrimsonTemplar.UseFiendishStudies2";
+        private static readonly string FiendishStudiesAbilityGuid2 = "{EB7BBF99-DFB4-4111-B1B8-BF4BCD44FFF2}";
+
+        private const string FiendishStudiesBuff = "CrimsonTemplar.FiendishStudiesBuff";
+        public static readonly string FiendishStudiesBuffGuid = "{0E676E84-BCA3-4437-9CEB-D63751BBA2DD}";
+
+        internal const string FiendishStudiesDisplayName = "CrimsonTemplarFiendishStudies.Name";
+        private const string FiendishStudiesDescription = "CrimsonTemplarFiendishStudies.Description";
+        public static BlueprintFeature FiendishStudiesFeat()
+        {
+            var icon = AbilityRefs.SlayerStudyTargetAbility.Reference.Get().Icon;
+
+            var Buff1 = BuffConfigurator.New(FiendishStudiesBuff, FiendishStudiesBuffGuid)
+             .SetDisplayName(FiendishStudiesDisplayName)
+             .SetDescription(FiendishStudiesDescription)
+             .SetIcon(icon)
+             .Configure();
+
+            var action = ActionsBuilder.New()
+                        .ApplyBuffPermanent(Buff1)
+                        .Build();
+
+            var ability1 = AbilityConfigurator.New(FiendishStudiesAbility1, FiendishStudiesAbilityGuid1)
+                .CopyFrom(
+                AbilityRefs.SlayerStudyTargetAbility)
+                .AddAbilityEffectRunAction(action)
+                .SetDisplayName(FiendishStudiesDisplayName)
+                .SetDescription(FiendishStudiesDescription)
+                .SetIcon(icon)
+                .AddAbilityTargetHasFact(new() { FeatureRefs.SubtypeEvil.ToString() })
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move)
+                .Configure();
+
+            AbilityConfigurator.New(FiendishStudiesAbility2, FiendishStudiesAbilityGuid2)
+                .CopyFrom(
+                AbilityRefs.SlayerStudyTargetAbility)
+                .AddAbilityEffectRunAction(action)
+                .SetDisplayName(FiendishStudiesDisplayName)
+                .SetDescription(FiendishStudiesDescription)
+                .SetIcon(icon)
+                .AddAbilityTargetHasFact(new() { FeatureRefs.SubtypeEvil.ToString() })
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+                .Configure();
+
+            return FeatureConfigurator.New(FiendishStudies, FiendishStudiesGuid)
+              .SetDisplayName(FiendishStudiesDisplayName)
+              .SetDescription(FiendishStudiesDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddFacts(new() { ability1 })
+              .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().CastSpell(ability1).Build(), onlyHit: true, onlySneakAttack: true)
+              .AddAttackBonusAgainstFactOwner(2, checkedFact: Buff1)
+              .AddDamageBonusAgainstFactOwner(2, checkedFact: Buff1)
+              .Configure();
+        }
+
+        private const string FiendishStudies5 = "CrimsonTemplar.FiendishStudies5";
+        private static readonly string FiendishStudies5Guid = "{96012AA0-3497-4D78-9892-8DAEC8E03F61}";
+
+        internal const string CrimsonTemplarFiendishStudies5DisplayName = "CrimsonTemplarFiendishStudies5.Name";
+        private const string CrimsonTemplarFiendishStudies5Description = "CrimsonTemplarFiendishStudies5.Description";
+        public static BlueprintFeature FiendishStudies5Feat()
+        {
+            var icon = AbilityRefs.SlayerStudyTargetAbility.Reference.Get().Icon;
+            return FeatureConfigurator.New(FiendishStudies5, FiendishStudies5Guid)
+              .SetDisplayName(CrimsonTemplarFiendishStudies5DisplayName)
+              .SetDescription(CrimsonTemplarFiendishStudies5Description)
+              .SetIcon(icon)
+              .AddAttackBonusAgainstFactOwner(2, checkedFact: FiendishStudiesBuffGuid)
+              .AddDamageBonusAgainstFactOwner(2, checkedFact: FiendishStudiesBuffGuid)
+              .Configure();
+        }
+
+        private const string FiendishStudies10 = "CrimsonTemplar.FiendishStudies10";
+        private static readonly string FiendishStudies10Guid = "{C0B7F3B8-4974-43B8-A699-E5516D5350EF}";
+
+        internal const string CrimsonTemplarFiendishStudies10DisplayName = "CrimsonTemplarFiendishStudies10.Name";
+        private const string CrimsonTemplarFiendishStudies10Description = "CrimsonTemplarFiendishStudies10.Description";
+        public static BlueprintFeature FiendishStudies10Feat()
+        {
+            var icon = AbilityRefs.SlayerStudyTargetAbility.Reference.Get().Icon;
+            return FeatureConfigurator.New(FiendishStudies10, FiendishStudies10Guid)
+              .SetDisplayName(CrimsonTemplarFiendishStudies10DisplayName)
+              .SetDescription(CrimsonTemplarFiendishStudies10Description)
+              .SetIcon(icon)
+              .AddAttackBonusAgainstFactOwner(2, checkedFact: FiendishStudiesBuffGuid)
+              .AddDamageBonusAgainstFactOwner(2, checkedFact: FiendishStudiesBuffGuid)
+              .Configure();
+        }
+
+        private const string FiendishStudies2 = "CrimsonTemplar.FiendishStudies2";
+        private static readonly string FiendishStudies2Guid = "{C6241715-6ACB-4486-ABA2-0CE3D5BB16DC}";
+
+        internal const string CrimsonTemplarFiendishStudies2DisplayName = "CrimsonTemplarFiendishStudies2.Name";
+        private const string CrimsonTemplarFiendishStudies2Description = "CrimsonTemplarFiendishStudies2.Description";
+        public static BlueprintFeature FiendishStudies2Feat()
+        {
+            var icon = AbilityRefs.SlayerStudyTargetAbility.Reference.Get().Icon;
+            return FeatureConfigurator.New(FiendishStudies2, FiendishStudies2Guid)
+              .SetDisplayName(CrimsonTemplarFiendishStudies2DisplayName)
+              .SetDescription(CrimsonTemplarFiendishStudies2Description)
+              .SetIcon(icon)
+              .AddFacts(new() { FiendishStudiesAbilityGuid2 })
+              .Configure();
         }
     }
 }

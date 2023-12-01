@@ -81,7 +81,7 @@ namespace PrestigePlus.Blueprint.Feat
         }
 
         private const string Ragathiel = "DeificObedience.Ragathiel";
-        private static readonly string RagathielGuid = "{4DCA067D-8EEF-405A-95E7-9687742603D9}";
+        public static readonly string RagathielGuid = "{4DCA067D-8EEF-405A-95E7-9687742603D9}";
 
         internal const string RagathielDisplayName = "DeificObedienceRagathiel.Name";
         private const string RagathielDescription = "DeificObedienceRagathiel.Description";
