@@ -300,7 +300,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("warlord"))) { Warlord.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("ragonury"))) { DragonFury.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("dawnflower"))) { AnchoriteofDawn.Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("bodyguard"))) { BodyGuard.Configure(); BodyGuard.Configure2(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("bodyguard"))) { BodyGuard.Configure(); BodyGuard.Configure2(); BodyGuard.NinjaTrickConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("atheism"))) { DivineDefiance.StyleConfigure(); DivineDefiance.IconoclastConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("rogue"))) { QuickShot.Configure(); CloyingShades.CloyingShadesFeat(); DefensiveRoll.Configure(); SneakyManeuver.SneakyManeuverFeat(); SurpriseManeuver.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("kineticknight"))) { EsotericKnight.Configure(); }
