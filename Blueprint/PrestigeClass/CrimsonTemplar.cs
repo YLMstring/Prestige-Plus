@@ -115,7 +115,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string BonusFeat = "CrimsonTemplar.BonusFeat";
         private static readonly string BonusFeatGuid = "{AD9CEF5D-AB20-440C-A0E9-98D52322544A}";
 
-        internal const string BonusFeatDisplayName = "CrimsonTemplar.Name";
+        internal const string BonusFeatDisplayName = "CrimsonTemplarBonusFeat.Name";
         private const string BonusFeatDescription = "CrimsonTemplarBonusFeat.Description";
 
         public static BlueprintFeatureSelection BonusFeatFeat()
@@ -133,7 +133,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string ObedienceFeat = "CrimsonTemplar.ObedienceFeat";
         private static readonly string ObedienceFeatGuid = "{AD9CEF5D-AB20-440C-A0E9-98D52322544A}";
 
-        internal const string ObedienceFeatDisplayName = "CrimsonTemplar.Name";
+        internal const string ObedienceFeatDisplayName = "CrimsonTemplarObedienceFeat.Name";
         private const string ObedienceFeatDescription = "CrimsonTemplarObedienceFeat.Description";
 
         public static BlueprintFeatureSelection ObedienceFeatFeat()
@@ -168,14 +168,12 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string ShieldWings3 = "CrimsonTemplar.ShieldWings3";
         private static readonly string ShieldWings3Guid = "{14821ECC-B4EB-4114-98FF-476553C8BB75}";
 
-        internal const string CrimsonTemplarShieldWings3DisplayName = "CrimsonTemplarShieldWings3.Name";
-        private const string CrimsonTemplarShieldWings3Description = "CrimsonTemplarShieldWings3.Description";
         public static BlueprintFeature ShieldWings3Feat()
         {
             var icon = FeatureRefs.Diehard.Reference.Get().Icon;
             return FeatureConfigurator.New(ShieldWings3, ShieldWings3Guid)
-              .SetDisplayName(CrimsonTemplarShieldWings3DisplayName)
-              .SetDescription(CrimsonTemplarShieldWings3Description)
+              .SetDisplayName(CrimsonTemplarShieldWingsDisplayName)
+              .SetDescription(CrimsonTemplarShieldWingsDescription)
               .SetIcon(icon)
               .AddDamageResistanceEnergy(healOnDamage: false, value: ContextValues.Constant(10), type: Kingmaker.Enums.Damage.DamageEnergyType.Fire)
               .Configure();
@@ -183,15 +181,12 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         private const string ShieldWings6 = "CrimsonTemplar.ShieldWings6";
         private static readonly string ShieldWings6Guid = "{829D76AD-4582-4D44-83EF-C365A47F55C8}";
-
-        internal const string CrimsonTemplarShieldWings6DisplayName = "CrimsonTemplarShieldWings6.Name";
-        private const string CrimsonTemplarShieldWings6Description = "CrimsonTemplarShieldWings6.Description";
         public static BlueprintFeature ShieldWings6Feat()
         {
             var icon = FeatureRefs.Diehard.Reference.Get().Icon;
             return FeatureConfigurator.New(ShieldWings6, ShieldWings6Guid)
-              .SetDisplayName(CrimsonTemplarShieldWings6DisplayName)
-              .SetDescription(CrimsonTemplarShieldWings6Description)
+              .SetDisplayName(CrimsonTemplarShieldWingsDisplayName)
+              .SetDescription(CrimsonTemplarShieldWingsDescription)
               .SetIcon(icon)
               .AddDamageResistanceEnergy(healOnDamage: false, value: ContextValues.Constant(30), type: Kingmaker.Enums.Damage.DamageEnergyType.Fire)
               .Configure();
@@ -199,15 +194,12 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         private const string ShieldWings9 = "CrimsonTemplar.ShieldWings9";
         private static readonly string ShieldWings9Guid = "{CC8B78BA-B6FB-4BBF-855D-46CD867BD3C5}";
-
-        internal const string CrimsonTemplarShieldWings9DisplayName = "CrimsonTemplarShieldWings9.Name";
-        private const string CrimsonTemplarShieldWings9Description = "CrimsonTemplarShieldWings9.Description";
         public static BlueprintFeature ShieldWings9Feat()
         {
             var icon = FeatureRefs.Diehard.Reference.Get().Icon;
             return FeatureConfigurator.New(ShieldWings9, ShieldWings9Guid)
-              .SetDisplayName(CrimsonTemplarShieldWings9DisplayName)
-              .SetDescription(CrimsonTemplarShieldWings9Description)
+              .SetDisplayName(CrimsonTemplarShieldWingsDisplayName)
+              .SetDescription(CrimsonTemplarShieldWingsDescription)
               .SetIcon(icon)
               .AddEnergyDamageImmunity(Kingmaker.Enums.Damage.DamageEnergyType.Fire, false)
               .Configure();
@@ -296,7 +288,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDescription(HeavenlyFireDescription)
                 .SetIcon(icon)
                 .SetBuff(Buff1)
-                .SetIsOnByDefault(true)
+                //.SetIsOnByDefault(true)
                 .SetActivationType(AbilityActivationType.Immediately)
                 .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.Never)
                 .SetDeactivateImmediately()
