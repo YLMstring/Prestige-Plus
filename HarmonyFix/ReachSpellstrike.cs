@@ -31,4 +31,19 @@ namespace PrestigePlus.HarmonyFix
 
         private static BlueprintFeatureReference Ace = BlueprintTool.GetRef<BlueprintFeatureReference>(SpireDefender.ReachSpellstrikeGuid);
     }
+
+    [HarmonyPatch(typeof(AbilityData), nameof(AbilityData.IsMagusSpell))]
+    internal class CloseSpellStrike
+    {
+        static void Postfix(ref AbilityData __instance, ref bool isMagus)
+        {
+            var unitPartMagus = __instance.Caster.Get<UnitPartMagus>();
+            if (__instance.Caster.HasFact(Ace) && unitPartMagus?.IsSuitableForEldritchArcherSpellStrike(__instance) == true && unitPartMagus.Spellstrike.Active)
+            {
+                isMagus = true;
+            }
+        }
+
+        private static BlueprintFeatureReference Ace = BlueprintTool.GetRef<BlueprintFeatureReference>(SpireDefender.CloseRangeGuid);
+    }
 }

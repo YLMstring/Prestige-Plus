@@ -168,5 +168,23 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddPrerequisiteClassLevel(CharacterClassRefs.MagusClass.ToString(), 9)
               .Configure();
         }
+
+        private const string CloseRange = "SpireDefender.CloseRange";
+        public static readonly string CloseRangeGuid = "{B4507A54-B704-46D7-A755-A6EF953E14A6}";
+
+        internal const string CloseRangeDisplayName = "SpireDefenderCloseRange.Name";
+        private const string CloseRangeDescription = "SpireDefenderCloseRange.Description";
+
+        public static BlueprintFeature CreateCloseRange()
+        {
+            var icon = FeatureRefs.SpellStrikeFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(CloseRange, CloseRangeGuid, FeatureGroup.MagusArcana)
+              .SetDisplayName(CloseRangeDisplayName)
+              .SetDescription(CloseRangeDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.SpellStrikeFeature.ToString())
+              .Configure();
+        }
     }
 }
