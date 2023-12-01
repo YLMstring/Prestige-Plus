@@ -34,7 +34,7 @@ namespace PrestigePlus.Blueprint.Feat
     internal class DeificObedience
     {
         private const string DeificObedienceFeat = "DeificObedience.DeificObedience";
-        private static readonly string DeificObedienceGuid = "{E017281A-7AA3-4C6D-AC27-2D57C45B4A81}";
+        public static readonly string DeificObedienceGuid = "{E017281A-7AA3-4C6D-AC27-2D57C45B4A81}";
 
         internal const string DeificObedienceDisplayName = "DeificObedience.Name";
         private const string DeificObedienceDescription = "DeificObedience.Description";
@@ -106,7 +106,7 @@ namespace PrestigePlus.Blueprint.Feat
         }
 
         private const string Ragathiel0 = "DeificObedience.Ragathiel0";
-        private static readonly string Ragathiel0Guid = "{D0086A74-0DCE-42D3-A82C-047CD6777731}";
+        public static readonly string Ragathiel0Guid = "{D0086A74-0DCE-42D3-A82C-047CD6777731}";
 
         internal const string Ragathiel0DisplayName = "DeificObedienceRagathiel0.Name";
         private const string Ragathiel0Description = "DeificObedienceRagathiel0.Description";

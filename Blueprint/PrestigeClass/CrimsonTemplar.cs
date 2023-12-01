@@ -1,13 +1,35 @@
-﻿using BlueprintCore.Blueprints.Configurators.Classes;
+﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
+using BlueprintCore.Blueprints.Configurators.Classes;
 using BlueprintCore.Blueprints.Configurators.Root;
+using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
+using BlueprintCore.Blueprints.CustomConfigurators;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
+using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
+using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
+using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
+using BlueprintCore.Conditions.Builder;
+using BlueprintCore.Conditions.Builder.ContextEx;
+using BlueprintCore.Utils;
+using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Classes.Selection;
+using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Blueprints.Root;
 using Kingmaker.EntitySystem.Stats;
+using Kingmaker.Enums;
 using Kingmaker.RuleSystem;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.UnitLogic.Abilities.Components;
+using Kingmaker.UnitLogic.ActivatableAbilities;
+using Kingmaker.UnitLogic.Buffs.Blueprints;
+using Kingmaker.Utility;
 using PrestigePlus.Blueprint.Feat;
+using PrestigePlus.Blueprint.GrappleFeat;
+using PrestigePlus.CustomComponent.PrestigeClass;
+using PrestigePlus.Modify;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,15 +57,15 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             BlueprintProgression progression =
             ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
             .SetClasses(ArchetypeGuid)
-            .AddToLevelEntry(1)
-            .AddToLevelEntry(2, FeatureRefs.SneakAttack.ToString())
-            .AddToLevelEntry(3, FeatureSelectionRefs.FighterFeatSelection.ToString())
-            .AddToLevelEntry(4, DeificObedience.Ragathiel1Guid)
+            .AddToLevelEntry(1, ObedienceFeatFeat(), ShieldWingsFeat())
+            .AddToLevelEntry(2, RuthlessnessFeat(), FeatureRefs.SneakAttack.ToString())
+            .AddToLevelEntry(3, BonusFeatGuid, ShieldWings3Feat())
+            .AddToLevelEntry(4, DeificObedience.Ragathiel1Guid, HeavenlyFireConfigure())
             .AddToLevelEntry(5, FeatureRefs.SneakAttack.ToString())
-            .AddToLevelEntry(6, FeatureSelectionRefs.FighterFeatSelection.ToString())
+            .AddToLevelEntry(6, BonusFeatGuid, ShieldWings6Feat())
             .AddToLevelEntry(7, DeificObedience.Ragathiel2Guid)
             .AddToLevelEntry(8, FeatureRefs.SneakAttack.ToString())
-            .AddToLevelEntry(9, FeatureSelectionRefs.FighterFeatSelection.ToString())
+            .AddToLevelEntry(9, BonusFeatGuid, ShieldWings9Feat())
             .AddToLevelEntry(10, DeificObedience.Ragathiel3Guid)
             .SetRanks(1)
             .SetIsClassFeature(true)
@@ -87,6 +109,206 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             RootConfigurator.For(RootRefs.BlueprintRoot)
                 .ModifyProgression(act)
                 .Configure(delayed: true);
+        }
+
+        private const string BonusFeat = "CrimsonTemplar.BonusFeat";
+        private static readonly string BonusFeatGuid = "{AD9CEF5D-AB20-440C-A0E9-98D52322544A}";
+
+        internal const string BonusFeatDisplayName = "CrimsonTemplar.Name";
+        private const string BonusFeatDescription = "CrimsonTemplarBonusFeat.Description";
+
+        public static BlueprintFeatureSelection BonusFeatFeat()
+        {
+            return FeatureSelectionConfigurator.New(BonusFeat, BonusFeatGuid)
+              .SetDisplayName(BonusFeatDisplayName)
+              .SetDescription(BonusFeatDescription)
+              .SetIgnorePrerequisites(false)
+              .SetObligatory(false)
+              .AddPrerequisiteFeature(DeificObedience.Ragathiel0Guid)
+              .SetGroup(FeatureGroup.CombatFeat)
+              .Configure();
+        }
+
+        private const string ObedienceFeat = "CrimsonTemplar.ObedienceFeat";
+        private static readonly string ObedienceFeatGuid = "{AD9CEF5D-AB20-440C-A0E9-98D52322544A}";
+
+        internal const string ObedienceFeatDisplayName = "CrimsonTemplar.Name";
+        private const string ObedienceFeatDescription = "CrimsonTemplarObedienceFeat.Description";
+
+        public static BlueprintFeatureSelection ObedienceFeatFeat()
+        {
+            return FeatureSelectionConfigurator.New(ObedienceFeat, ObedienceFeatGuid)
+              .SetDisplayName(ObedienceFeatDisplayName)
+              .SetDescription(ObedienceFeatDescription)
+              .SetIgnorePrerequisites(false)
+              .SetObligatory(false)
+              .AddToAllFeatures(DeificObedience.Ragathiel0Guid)
+              .AddToAllFeatures(BonusFeatFeat())
+              .AddFacts(new() { DeificObedience.DeificObedienceGuid })
+              .Configure();
+        }
+
+        private const string ShieldWings = "CrimsonTemplar.ShieldWings";
+        private static readonly string ShieldWingsGuid = "{C0C8E7B3-1813-45F2-9FD0-F734FA8A9E17}";
+
+        internal const string CrimsonTemplarShieldWingsDisplayName = "CrimsonTemplarShieldWings.Name";
+        private const string CrimsonTemplarShieldWingsDescription = "CrimsonTemplarShieldWings.Description";
+        public static BlueprintFeature ShieldWingsFeat()
+        {
+            var icon = FeatureRefs.Diehard.Reference.Get().Icon;
+            return FeatureConfigurator.New(ShieldWings, ShieldWingsGuid)
+              .SetDisplayName(CrimsonTemplarShieldWingsDisplayName)
+              .SetDescription(CrimsonTemplarShieldWingsDescription)
+              .SetIcon(icon)
+              .AddDamageResistanceEnergy(healOnDamage: false, value: ContextValues.Constant(5), type: Kingmaker.Enums.Damage.DamageEnergyType.Fire)
+              .Configure();
+        }
+
+        private const string ShieldWings3 = "CrimsonTemplar.ShieldWings3";
+        private static readonly string ShieldWings3Guid = "{14821ECC-B4EB-4114-98FF-476553C8BB75}";
+
+        internal const string CrimsonTemplarShieldWings3DisplayName = "CrimsonTemplarShieldWings3.Name";
+        private const string CrimsonTemplarShieldWings3Description = "CrimsonTemplarShieldWings3.Description";
+        public static BlueprintFeature ShieldWings3Feat()
+        {
+            var icon = FeatureRefs.Diehard.Reference.Get().Icon;
+            return FeatureConfigurator.New(ShieldWings3, ShieldWings3Guid)
+              .SetDisplayName(CrimsonTemplarShieldWings3DisplayName)
+              .SetDescription(CrimsonTemplarShieldWings3Description)
+              .SetIcon(icon)
+              .AddDamageResistanceEnergy(healOnDamage: false, value: ContextValues.Constant(10), type: Kingmaker.Enums.Damage.DamageEnergyType.Fire)
+              .Configure();
+        }
+
+        private const string ShieldWings6 = "CrimsonTemplar.ShieldWings6";
+        private static readonly string ShieldWings6Guid = "{829D76AD-4582-4D44-83EF-C365A47F55C8}";
+
+        internal const string CrimsonTemplarShieldWings6DisplayName = "CrimsonTemplarShieldWings6.Name";
+        private const string CrimsonTemplarShieldWings6Description = "CrimsonTemplarShieldWings6.Description";
+        public static BlueprintFeature ShieldWings6Feat()
+        {
+            var icon = FeatureRefs.Diehard.Reference.Get().Icon;
+            return FeatureConfigurator.New(ShieldWings6, ShieldWings6Guid)
+              .SetDisplayName(CrimsonTemplarShieldWings6DisplayName)
+              .SetDescription(CrimsonTemplarShieldWings6Description)
+              .SetIcon(icon)
+              .AddDamageResistanceEnergy(healOnDamage: false, value: ContextValues.Constant(30), type: Kingmaker.Enums.Damage.DamageEnergyType.Fire)
+              .Configure();
+        }
+
+        private const string ShieldWings9 = "CrimsonTemplar.ShieldWings9";
+        private static readonly string ShieldWings9Guid = "{CC8B78BA-B6FB-4BBF-855D-46CD867BD3C5}";
+
+        internal const string CrimsonTemplarShieldWings9DisplayName = "CrimsonTemplarShieldWings9.Name";
+        private const string CrimsonTemplarShieldWings9Description = "CrimsonTemplarShieldWings9.Description";
+        public static BlueprintFeature ShieldWings9Feat()
+        {
+            var icon = FeatureRefs.Diehard.Reference.Get().Icon;
+            return FeatureConfigurator.New(ShieldWings9, ShieldWings9Guid)
+              .SetDisplayName(CrimsonTemplarShieldWings9DisplayName)
+              .SetDescription(CrimsonTemplarShieldWings9Description)
+              .SetIcon(icon)
+              .AddEnergyDamageImmunity(Kingmaker.Enums.Damage.DamageEnergyType.Fire, false)
+              .Configure();
+        }
+
+        private static readonly string RuthlessnessFeatName = "Ruthlessness";
+        public static readonly string RuthlessnessFeatGuid = "{2CDA0A2A-725F-4C3B-AC0D-4E69C9E8982D}";
+
+        private static readonly string RuthlessnessDisplayName = "CrimsonTemplarRuthlessness.Name";
+        private static readonly string RuthlessnessDescription = "CrimsonTemplarRuthlessness.Description";
+
+        private const string RuthlessnessAbility = "CrimsonTemplar.RuthlessnessAbility";
+        private static readonly string RuthlessnessAbilityGuid = "{9F227FC3-8C09-4AFF-B47E-8D22D501CC16}";
+
+        public static BlueprintFeature RuthlessnessFeat()
+        {
+            var icon = FeatureRefs.MadDogThroatCutter.Reference.Get().Icon;
+
+            var sword = ActionsBuilder.New()
+                .Conditional(ConditionsBuilder.New().CasterHasFact(ThroatSlicer.FeatGuid).Build(), ifTrue: ActionsBuilder.New()
+                        .ApplyBuff(ThroatSlicer.ThroatSlicerbuffGuid, ContextDuration.Fixed(1), toCaster: true)
+                        .Build())
+                .CastSpell(AbilityRefs.CoupDeGraceAbility.ToString())
+                .Build();
+
+            var abilityTrick = AbilityConfigurator.New(RuthlessnessAbility, RuthlessnessAbilityGuid)
+                .SetDisplayName(RuthlessnessDisplayName)
+                .SetDescription(RuthlessnessDescription)
+                .SetIcon(icon)
+                .AddAbilityEffectRunAction(sword)
+                .SetType(AbilityType.Physical)
+                .SetCanTargetEnemies(true)
+                .SetCanTargetSelf(false)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.CoupDeGrace)
+                .SetRange(AbilityRange.Weapon)
+                .AddAbilityCasterMainWeaponCheck(new WeaponCategory[] { WeaponCategory.BastardSword })
+                .Configure();
+
+            return FeatureConfigurator.New(RuthlessnessFeatName, RuthlessnessFeatGuid)
+                    .SetDisplayName(RuthlessnessDisplayName)
+                    .SetDescription(RuthlessnessDescription)
+                    .SetIcon(icon)
+                    .AddFacts(new() { abilityTrick })
+                    .Configure();
+        }
+
+        private static readonly string HeavenlyFireName = "CrimsonTemplarHeavenlyFire";
+        public static readonly string HeavenlyFireGuid = "{2314BD61-13F9-46B6-9A4C-CFA406E4F7E3}";
+
+        private static readonly string HeavenlyFireDisplayName = "CrimsonTemplarHeavenlyFire.Name";
+        private static readonly string HeavenlyFireDescription = "CrimsonTemplarHeavenlyFire.Description";
+
+        private const string HeavenlyFireBuff = "CrimsonTemplarStyle.HeavenlyFirebuff";
+        private static readonly string HeavenlyFireBuffGuid = "{AF5CF3D3-E4B4-40D8-8954-08A03FEEC6AF}";
+
+        private const string HeavenlyFireAbility = "CrimsonTemplarStyle.HeavenlyFireAbility";
+        private static readonly string HeavenlyFireAbilityGuid = "{1247797E-0A66-4C2F-B49D-1F7618F7424B}";
+
+        private const string HeavenlyFireAbilityRes = "CrimsonTemplarStyle.HeavenlyFireAbilityRes";
+        public static readonly string HeavenlyFireAbilityResGuid = "{7735FCE6-B80C-486A-96FA-1C4A414382A5}";
+
+        public static BlueprintFeature HeavenlyFireConfigure()
+        {
+            var icon = AbilityRefs.ArmyMarkOfHeaven.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(HeavenlyFireAbilityRes, HeavenlyFireAbilityResGuid)
+                .SetMaxAmount(
+                    ResourceAmountBuilder.New(0)
+                        .IncreaseByLevel(classes: new string[] { ArchetypeGuid }))
+                .SetUseMax()
+                .SetMax(10)
+                .Configure();
+
+            var Buff1 = BuffConfigurator.New(HeavenlyFireBuff, HeavenlyFireBuffGuid)
+              .SetDisplayName(HeavenlyFireDisplayName)
+              .SetDescription(HeavenlyFireDescription)
+              .SetIcon(icon)
+              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+              .AddComponent<TemplarHeavenlyFire>()
+              .AddComponent<AddAbilityResourceDepletedTrigger>(c => { c.m_Resource = abilityresourse.ToReference<BlueprintAbilityResourceReference>(); c.Action = ActionsBuilder.New().RemoveSelf().Build(); c.Cost = 1; })
+              .Configure();
+
+            var ability = ActivatableAbilityConfigurator.New(HeavenlyFireAbility, HeavenlyFireAbilityGuid)
+                .SetDisplayName(HeavenlyFireDisplayName)
+                .SetDescription(HeavenlyFireDescription)
+                .SetIcon(icon)
+                .SetBuff(Buff1)
+                .SetIsOnByDefault(true)
+                .SetActivationType(AbilityActivationType.Immediately)
+                .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.Never)
+                .SetDeactivateImmediately()
+                .Configure();
+
+            return FeatureConfigurator.New(HeavenlyFireName, HeavenlyFireGuid)
+                    .SetDisplayName(HeavenlyFireDisplayName)
+                    .SetDescription(HeavenlyFireDescription)
+                    .SetIcon(icon)
+                    .AddFacts(new() { ability })
+                    .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+                    .Configure();
+
         }
     }
 }

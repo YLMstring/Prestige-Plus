@@ -33,7 +33,7 @@ namespace PrestigePlus.Blueprint.GrappleFeat
         private static readonly string ThroatSlicerAbilityGuid = "{D3E807DF-3C92-4621-BF34-CDC1E426C509}";
 
         private const string ThroatSlicerbuff = "ThroatSlicer.ThroatSlicerbuff";
-        private static readonly string ThroatSlicerbuffGuid = "{2D59E73D-3E3A-448A-9ECB-0EAB89AD4009}";
+        public static readonly string ThroatSlicerbuffGuid = "{2D59E73D-3E3A-448A-9ECB-0EAB89AD4009}";
         public static void Configure()
         {
             var icon = FeatureRefs.MadDogThroatCutter.Reference.Get().Icon;
