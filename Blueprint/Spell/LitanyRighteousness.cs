@@ -22,6 +22,7 @@ using static Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCas
 using BlueprintCore.Actions.Builder.ContextEx;
 using Kingmaker.EntitySystem.Stats;
 using PrestigePlus.CustomComponent.Spell;
+using PrestigePlus.CustomComponent;
 
 namespace PrestigePlus.Blueprint.Spell
 {
@@ -38,7 +39,7 @@ namespace PrestigePlus.Blueprint.Spell
 
         public static void Configure()
         {
-            var icon = AbilityRefs.SlayerStudyTargetAbility.Reference.Get().Icon;
+            var icon = FeatureRefs.AuraOfJusticeFeature.Reference.Get().Icon;
             var buff = BuffConfigurator.New(LitanyRighteousnessBuff, LitanyRighteousnessBuffGuid)
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
@@ -62,6 +63,7 @@ namespace PrestigePlus.Blueprint.Spell
               .AddToSpellLists(level: 2, SpellList.Paladin)
               .AddToSpellLists(level: 3, SpellList.Inquisitor)
               .SetSpellDescriptor(SpellDescriptor.Good)
+              .SetSpellResistance()
               .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
                   .ConditionalSaved(failed: ActionsBuilder.New()

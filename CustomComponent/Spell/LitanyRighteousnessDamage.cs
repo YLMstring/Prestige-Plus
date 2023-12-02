@@ -2,6 +2,7 @@
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
+using Kingmaker.ElementsSystem;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules;
@@ -16,30 +17,29 @@ using System.Threading.Tasks;
 
 namespace PrestigePlus.CustomComponent.Spell
 {
-    internal class LitanyRighteousnessDamage : UnitFactComponentDelegate, ITargetRulebookHandler<RuleDealDamage>, IRulebookHandler<RuleDealDamage>, ISubscriber, ITargetRulebookSubscriber
+    internal class LitanyRighteousnessDamage : UnitFactComponentDelegate, ITargetRulebookHandler<RuleCalculateDamage>, IRulebookHandler<RuleCalculateDamage>, ISubscriber, ITargetRulebookSubscriber
     {
-        void IRulebookHandler<RuleDealDamage>.OnEventAboutToTrigger(RuleDealDamage evt)
+        void IRulebookHandler<RuleCalculateDamage>.OnEventAboutToTrigger(RuleCalculateDamage evt)
         {
-            if (HasGoodAura(evt.AttackRoll?.Initiator))
+            if (HasGoodAura(evt.ParentRule?.AttackRoll?.Initiator))
             {
                 var list = new List<BaseDamage>();
-                foreach (BaseDamage dmg in evt.DamageBundle)
+                foreach (BaseDamage dmg in evt.ParentRule.DamageBundle)
                 {
                     list.Add(dmg);
                 }
                 foreach (BaseDamage dmg in list)
                 {
-                    evt.Add(dmg);
+                    evt.ParentRule.Add(dmg);
                 }
                 if (Owner.HasFact(FeatureRefs.SubtypeEvil.Reference.Get()))
                 {
-                    var Actions = ActionsBuilder.New().ApplyBuff(BuffRefs.DazzledBuff.ToString(), ContextDuration.VariableDice(Kingmaker.RuleSystem.DiceType.D4, 1, 0)).Build();
                     Fact.RunActionInContext(Actions);
                 }
             }
         }
-
-        void IRulebookHandler<RuleDealDamage>.OnEventDidTrigger(RuleDealDamage evt)
+        public ActionList Actions = ActionsBuilder.New().ApplyBuff(BuffRefs.DazzledBuff.ToString(), ContextDuration.VariableDice(Kingmaker.RuleSystem.DiceType.D4, 1, 0)).Build();
+        void IRulebookHandler<RuleCalculateDamage>.OnEventDidTrigger(RuleCalculateDamage evt)
         {
             
         }

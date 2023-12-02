@@ -68,6 +68,10 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             .AddToLevelEntry(8, FeatureRefs.SneakAttack.ToString())
             .AddToLevelEntry(9, BonusFeatGuid, ShieldWings9Feat())
             .AddToLevelEntry(10, DeificObedience.Ragathiel3Guid, FiendishStudies10Feat())
+            .SetUIGroups(UIGroupBuilder.New()
+                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { FiendishStudiesGuid, FiendishStudies5Guid, FiendishStudies10Guid })
+                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { ShieldWings3Guid, ShieldWings6Guid, ShieldWings9Guid, ShieldWingsGuid })
+                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { DeificObedience.Ragathiel1Guid, DeificObedience.Ragathiel2Guid, DeificObedience.Ragathiel3Guid, FiendishStudies2Guid }))
             .SetRanks(1)
             .SetIsClassFeature(true)
             .SetDisplayName("")
@@ -113,7 +117,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         }
 
         private const string BonusFeat = "CrimsonTemplar.BonusFeat";
-        private static readonly string BonusFeatGuid = "{AD9CEF5D-AB20-440C-A0E9-98D52322544A}";
+        private static readonly string BonusFeatGuid = "{5E204547-AE37-49DF-BFAB-3A9FDC626133}";
 
         internal const string BonusFeatDisplayName = "CrimsonTemplarBonusFeat.Name";
         private const string BonusFeatDescription = "CrimsonTemplarBonusFeat.Description";
@@ -121,26 +125,30 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         public static BlueprintFeatureSelection BonusFeatFeat()
         {
             return FeatureSelectionConfigurator.New(BonusFeat, BonusFeatGuid)
+                .CopyFrom(
+                FeatureSelectionRefs.FighterFeatSelection)
               .SetDisplayName(BonusFeatDisplayName)
               .SetDescription(BonusFeatDescription)
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
               .AddPrerequisiteFeature(DeificObedience.Ragathiel0Guid)
-              .SetGroup(FeatureGroup.CombatFeat)
-              .Configure();
+              .Configure(delayed: true);
         }
 
         private const string ObedienceFeat = "CrimsonTemplar.ObedienceFeat";
-        private static readonly string ObedienceFeatGuid = "{AD9CEF5D-AB20-440C-A0E9-98D52322544A}";
+        private static readonly string ObedienceFeatGuid = "{CD166C59-36D0-4834-8B7F-9CCBDC2F3901}";
 
         internal const string ObedienceFeatDisplayName = "CrimsonTemplarObedienceFeat.Name";
         private const string ObedienceFeatDescription = "CrimsonTemplarObedienceFeat.Description";
 
         public static BlueprintFeatureSelection ObedienceFeatFeat()
         {
+            var icon = AbilityRefs.InstantEnemy.Reference.Get().Icon;
+
             return FeatureSelectionConfigurator.New(ObedienceFeat, ObedienceFeatGuid)
               .SetDisplayName(ObedienceFeatDisplayName)
               .SetDescription(ObedienceFeatDescription)
+              .SetIcon(icon)
               .SetIgnorePrerequisites(false)
               .SetObligatory(true)
               .AddToAllFeatures(DeificObedience.RagathielGuid)
@@ -216,7 +224,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintFeature RuthlessnessFeat()
         {
-            var icon = FeatureRefs.MadDogThroatCutter.Reference.Get().Icon;
+            var icon = AbilityRefs.CoupDeGraceAbility.Reference.Get().Icon;
 
             var sword = ActionsBuilder.New()
                 .Conditional(ConditionsBuilder.New().CasterHasFact(ThroatSlicer.FeatGuid).Build(), ifTrue: ActionsBuilder.New()
@@ -263,7 +271,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintFeature HeavenlyFireConfigure()
         {
-            var icon = AbilityRefs.ArmyMarkOfHeaven.Reference.Get().Icon;
+            var icon = AbilityRefs.FlameStrike.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(HeavenlyFireAbilityRes, HeavenlyFireAbilityResGuid)
                 .SetMaxAmount(
@@ -359,7 +367,9 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddFacts(new() { ability1 })
-              .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().CastSpell(ability1).Build(), onlyHit: true, onlySneakAttack: true)
+              .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New()
+                    .CastSpell(ability1)
+                    .Build(), onlyHit: true, onlySneakAttack: true)
               .AddAttackBonusAgainstFactOwner(2, checkedFact: Buff1)
               .AddDamageBonusAgainstFactOwner(2, checkedFact: Buff1)
               .Configure();

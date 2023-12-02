@@ -28,6 +28,8 @@ using Kingmaker.UnitLogic.Abilities.Components;
 using PrestigePlus.Blueprint.Spell;
 using PrestigePlus.CustomComponent.Feat;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
+using PrestigePlus.CustomComponent;
+using Kingmaker.UnitLogic.Abilities.Components.TargetCheckers;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -59,6 +61,7 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(AbilitySpawnFx))
                 .SetDisplayName(DeificObedienceDisplayName)
                 .SetDescription(DeificObedienceDescription)
+                .AllowTargeting(self: true)
                 .Configure();
 
             var feat = FeatureSelectionConfigurator.New(DeificObedienceFeat, DeificObedienceGuid)
@@ -88,7 +91,7 @@ namespace PrestigePlus.Blueprint.Feat
         public static BlueprintProgression RagathielFeat()
         {
             //"RagathielFeature": "F79778D7-281C-4B9D-8E77-8F86812707AA",
-            var icon = AbilityRefs.Angel3BoltOfJusticeAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.InstantEnemy.Reference.Get().Icon;
 
             return ProgressionConfigurator.New(Ragathiel, RagathielGuid)
               .SetDisplayName(RagathielDisplayName)
@@ -108,16 +111,13 @@ namespace PrestigePlus.Blueprint.Feat
         private const string Ragathiel0 = "DeificObedience.Ragathiel0";
         public static readonly string Ragathiel0Guid = "{D0086A74-0DCE-42D3-A82C-047CD6777731}";
 
-        internal const string Ragathiel0DisplayName = "DeificObedienceRagathiel0.Name";
-        private const string Ragathiel0Description = "DeificObedienceRagathiel0.Description";
-
         public static BlueprintFeature Ragathiel0Feat()
         {
-            var icon = AbilityRefs.Angel3BoltOfJusticeAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.InstantEnemy.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Ragathiel0, Ragathiel0Guid)
-              .SetDisplayName(Ragathiel0DisplayName)
-              .SetDescription(Ragathiel0Description)
+              .SetDisplayName(RagathielDisplayName)
+              .SetDescription(RagathielDescription)
               .SetIcon(icon)
               .AddSavingThrowBonusAgainstAlignment(AlignmentComponent.Evil, 4, ModifierDescriptor.Sacred)
               .Configure();
@@ -139,13 +139,15 @@ namespace PrestigePlus.Blueprint.Feat
 
         private static BlueprintFeature CreateRagathiel1()
         {
+            var icon = AbilityRefs.BlessWeaponCast.Reference.Get().Icon;
+
             var ability = AbilityConfigurator.New(Ragathiel1Ablity, Ragathiel1AblityGuid)
                 .CopyFrom(
                 AbilityRefs.BlessWeaponCast,
                 typeof(AbilityEffectRunAction),
                 typeof(SpellComponent),
                 typeof(AbilityEffectStickyTouch))
-                .AddAbilityResourceLogic(2, true, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
                 .Configure();
 
             var ability2 = AbilityConfigurator.New(Ragathiel1Ablity2, Ragathiel1Ablity2Guid)
@@ -153,8 +155,8 @@ namespace PrestigePlus.Blueprint.Feat
                 LitanyRighteousness.LitanyRighteousnessAbilityGuid,
                 typeof(AbilityEffectRunAction),
                 typeof(SpellComponent),
-                typeof(AbilityEffectStickyTouch))
-                .AddAbilityResourceLogic(3, true, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                typeof(AbilityTargetAlignment))
+                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
                 .Configure();
 
             var ability3 = AbilityConfigurator.New(Ragathiel1Ablity3, Ragathiel1Ablity3Guid)
@@ -163,12 +165,13 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(AbilityEffectRunAction),
                 typeof(SpellComponent),
                 typeof(AbilityVariants))
-                .AddAbilityResourceLogic(6, true, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .AddAbilityResourceLogic(6, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
                 .Configure();
 
             return FeatureConfigurator.New(Ragathiel1, Ragathiel1Guid)
               .SetDisplayName(Ragathiel1DisplayName)
               .SetDescription(Ragathiel1Description)
+              .SetIcon(icon)
               .AddFacts(new() { ability, ability2, ability3 })
               .Configure();
         }
@@ -233,6 +236,8 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(SpellDescriptorComponent),
                 typeof(AbilitySpawnFx),
                 typeof(ContextRankConfigs))
+                .SetDisplayName(Ragathiel3DisplayName)
+                .SetDescription(Ragathiel3Description)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .Configure();
 

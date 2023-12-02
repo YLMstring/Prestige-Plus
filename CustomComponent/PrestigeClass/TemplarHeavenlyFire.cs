@@ -46,17 +46,20 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
             {
                 int level = Owner.Progression.GetClassLevel(BlueprintTool.GetRef<BlueprintCharacterClassReference>(CrimsonTemplar.ArchetypeGuid));
                 int dc = 10 + level + Owner.Stats.Charisma.Bonus;
-                if (level >= 10)
+                if (evt.Target.HasFact(FeatureRefs.SubtypeEvil.Reference))
                 {
-                    dc += 6;
-                }
-                else if (level >= 5)
-                {
-                    dc += 4;
-                }
-                else
-                {
-                    dc += 2;
+                    if (level >= 10)
+                    {
+                        dc += 6;
+                    }
+                    else if (level >= 5)
+                    {
+                        dc += 4;
+                    }
+                    else
+                    {
+                        dc += 2;
+                    }
                 }
                 bool pass = GameHelper.TriggerSkillCheck(new RuleSkillCheck(evt.Target, Kingmaker.EntitySystem.Stats.StatType.SaveFortitude, dc)
                 {

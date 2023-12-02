@@ -5475,7 +5475,7 @@
     "Key": "CloakDaggerStyle.Name",
     "ProcessTemplates": false,
     "enGB": "Cloak and Dagger Style",
-    "zhCN": "蓬匕流"
+    "zhCN": "美人三招-贵妃回眸"
   },
   {
     "Key": "CloakDaggerStyle.Description",
@@ -5486,23 +5486,23 @@
     "Key": "CloakDaggerSubterfuge.Name",
     "ProcessTemplates": false,
     "enGB": "Cloak and Dagger Subterfuge",
-    "zhCN": "蓬匕诈"
+    "zhCN": "美人三招-小怜横陈"
   },
   {
     "Key": "CloakDaggerSubterfuge.Description",
     "enGB": "Your increased martial skill allows you to take advantage of distracted foes to easily impose conditions, and even steal items without being noticed. While you are using Cloak and Dagger Style and wielding your chosen weapon, whenever you make an attack of opportunity against a target, you can attempt a free dirty trick combat maneuver check against the target as a free action as well. Additionally, whenever you successfully perform a dirty trick maneuver against a target, you can immediately attempt a disarm combat maneuver check against the target as a free action.",
-    "zhCN": "你越发精湛的武艺让你能让分心的对手更易遭受各类效果，甚至能不被发现地窃取物品。当你开启蓬匕流并持用你所选的武器时，每当你对一个敌人进行借机攻击时，你同时还能用一个自由动作对他进行一次额外的阴招战技检定。另外。每当你成功对一个敌人进行阴招战技时，你能立刻以一个自由动作对他进行一次缴械战技检定。"
+    "zhCN": "你越发精湛的武艺让你能让分心的对手更易遭受各类效果，甚至能不被发现地窃取物品。当你开启美人三招并持用你所选的武器时，每当你对一个敌人进行借机攻击时，你同时还能用一个自由动作对他进行一次额外的阴招战技检定。另外。每当你成功对一个敌人进行阴招战技时，你能立刻以一个自由动作对他进行一次缴械战技检定。"
   },
   {
     "Key": "CloakDaggerTactics.Name",
     "ProcessTemplates": false,
     "enGB": "Cloak and Dagger Tactics",
-    "zhCN": "蓬匕策"
+    "zhCN": "美人三招-飞燕回翔"
   },
   {
     "Key": "CloakDaggerTactics.Description",
     "enGB": "You devastate enemies that you catch off-guard. While you are using Cloak and Dagger Style and wielding your chosen weapon, whenever you hit an opponent that is denied its Dexterity bonus to AC or that you are flanking, or make an attack using Vital Strike (or its improved or greater versions), you can attempt a dirty trick combat maneuver check against that opponent as a free action. If you succeed, the target must succeed at a Fortitude save (DC = 10 + 1/2 your base attack bonus + your Intelligence modifier) or gain the confused condition, if immune, gain the staggered condition, if immune, gain the exhausted condition, if immune, anchored in place and unable to move. This additional penalty lasts only 1 round, regardless of how long the dirty trick’s normal penalty lasts. You can only attempt one free dirty trick combat maneuver check per round using this feat.",
-    "zhCN": "你蹂躏那些措手不及的敌人。当你开启蓬匕流并持用你所选的武器时，每当你击中一个失去AC上的敏捷加值或被你夹击的敌人，或是使用要害打击（以及其精通和高等版本）进行一次攻击时，你可以用自由动作对该敌人进行一次阴招战技检定。如果你成功了，该目标必须成功通过强韧检定（DC=10+1/2你的BAB+你的智力调整），否则就会困惑，如果免疫则会恍惚，如果免疫则会力竭，如果免疫则会被钉在原地不能移动。无论阴招造成的普通惩罚持续多久，该额外的惩罚只持续一轮。你每轮只能使用该专长一次来以进行额外的阴招战技检定。"
+    "zhCN": "你蹂躏那些措手不及的敌人。当你开启美人三招并持用你所选的武器时，每当你击中一个失去AC上的敏捷加值或被你夹击的敌人，或是使用要害打击（以及其精通和高等版本）进行一次攻击时，你可以用自由动作对该敌人进行一次阴招战技检定。如果你成功了，该目标必须成功通过强韧检定（DC=10+1/2你的BAB+你的智力调整），否则就会困惑，如果免疫则会恍惚，如果免疫则会力竭，如果免疫则会被钉在原地不能移动。无论阴招造成的普通惩罚持续多久，该额外的惩罚只持续一轮。你每轮只能使用该专长一次来以进行额外的阴招战技检定。"
   },
   {
     "Key": "FeatEldritchAssaultFeat.Name",
@@ -5582,35 +5582,35 @@
     "zhCN": "以拉贾瑟尔之名斩杀一名作恶者。仅仅拥有邪恶的内心或意图是不够的，确实犯下违法或邪恶的罪行才能作为祭品。对抗邪恶生物的法术与效果时豁免得到+4神圣加值。"
   },
   {
-    "Key": "DeificObedienceRagathiel0.Name",
+    "Key": "SpellPowerRagathiel1.Name",
     "ProcessTemplates": false,
     "enGB": "Virtuous Combat",
     "zhCN": "义战"
   },
   {
-    "Key": "DeificObedienceRagathiel0.Description",
+    "Key": "SpellPowerRagathiel1.Description",
     "enGB": "bless weapon 3/day, litany of righteousness 2/day, or magic vestment 1/day",
     "zhCN": "祝福武器3次/天，正义祷言2次/天，或魔化防具1次/天"
   },
   {
-    "Key": "DeificObedienceRagathiel1.Name",
+    "Key": "DeificObedienceRagathiel2.Name",
     "ProcessTemplates": false,
     "enGB": "Retribution",
     "zhCN": "正义复仇"
   },
   {
-    "Key": "DeificObedienceRagathiel1.Description",
+    "Key": "DeificObedienceRagathiel2.Description",
     "enGB": "You gain a sacred bonus equal to half your HD on damage rolls made with slashing weapons against the last creature to have physically wounded you within the last 24 hours.",
     "zhCN": "当你用挥砍武器攻击24小时内最后一个物理伤害过你的生物时，造成的伤害获得等同生命骰一半的神圣加值。"
   },
   {
-    "Key": "DeificObedienceRagathiel2.Name",
+    "Key": "DeificObedienceRagathiel3.Name",
     "ProcessTemplates": false,
     "enGB": "Pure Soul",
     "zhCN": "纯洁之魂"
   },
   {
-    "Key": "DeificObedienceRagathiel2.Description",
+    "Key": "DeificObedienceRagathiel3.Description",
     "enGB": "You can cast holy aura on yourself once per day. In addition to the effects of the spell, you gain DR 10/good and cold iron and you treat any weapon in hand as a +5 holy weapon for the duration of the effect.",
     "zhCN": "每天一次，你可以向自己施展神圣灵光，在持续期间除了既有法术效果，你还获得 DR 10/善良与寒铁，并将手中持握的任何武器视为+5神圣武器。"
   },
@@ -5688,8 +5688,8 @@
   },
   {
     "Key": "CrimsonTemplarFiendishStudies.Description",
-    "enGB": "As a move action, a crimson templar can study an outsider with the evil subtype he can see. The crimson templar then gains a +2 bonus on weapon attack rolls and weapon damage rolls against it. The DC of Heavenly Fire against that opponent increase by 2. If a crimson templar deals sneak attack damage to an evil outsider, he can study that target as a free action, allowing him to apply his fiendish studies bonuses against that target (including to the weapon damage roll).",
-    "zhCN": "绯红圣教军能够以移动动作研究一名他看得到且具有邪恶亚种的异界生物。在对抗该名异界生物时，绯红圣教军对抗它的武器攻击检定和武器伤害检定会获得+2加值。在对抗该名敌人时，天堂圣焰的DC也会提高2点。若绯红圣教军对邪恶异界生物造成偷袭攻击伤害，便可以用自由动作研究该目标，这让他可以将研究邪异的加值应用至该目标（包括武器伤害检定）。"
+    "enGB": "As a move action, a crimson templar can study an outsider with the evil subtype he can see. The crimson templar then gains a +2 bonus on weapon attack rolls and weapon damage rolls against it. The DC of Heavenly Fire against that opponent increase by 2. If a crimson templar deals sneak attack damage to an evil outsider, he can study that target as a free action, allowing him to apply his fiendish studies bonuses against that target.",
+    "zhCN": "绯红圣教军能够以移动动作研究一名他看得到且具有邪恶亚种的异界生物。在对抗该名异界生物时，绯红圣教军对抗它的武器攻击检定和武器伤害检定会获得+2加值。在对抗该名敌人时，天堂圣焰的DC也会提高2点。若绯红圣教军对邪恶异界生物造成偷袭攻击伤害，便可以用自由动作研究该目标，这让他可以将研究邪异的加值应用至该目标。"
   },
   {
     "Key": "CrimsonTemplarFiendishStudies5.Name",
