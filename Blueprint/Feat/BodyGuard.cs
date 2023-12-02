@@ -110,6 +110,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(UnarmedCombatDisplayName)
               .SetDescription(UnarmedCombatDescription)
               .SetIcon(icon)
+              .AddPrerequisiteNoFeature(FeatureRefs.ImprovedUnarmedStrike.ToString())
               .AddFacts(new() { FeatureRefs.ImprovedUnarmedStrike.ToString() })
               .Configure();
         }
@@ -129,6 +130,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDescription(ArrowSnatchDescription)
               .SetIcon(icon)
               .AddPrerequisiteFeature(FeatureRefs.ImprovedUnarmedStrike.ToString())
+              .AddPrerequisiteNoFeature(FeatureRefs.DeflectArrows.ToString())
               .AddFacts(new() { FeatureRefs.DeflectArrows.ToString() })
               .Configure();
         }

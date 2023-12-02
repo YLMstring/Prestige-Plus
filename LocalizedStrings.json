@@ -5547,6 +5547,226 @@
     "Key": "ShieldShieldMain.Description",
     "enGB": "You can grant your ally the benefit of your shield spell. You lose the spell’s benefits and your ally gains these benefits for the spell’s duration.",
     "zhCN": "你可以让你的盟友获得你的护盾术的好处。你失去其好处，你的盟友在法术持续时间内获得其好处。"
+  },
+  {
+    "Key": "NewSpellLitanyRighteousness.Name",
+    "ProcessTemplates": false,
+    "enGB": "Litany of Righteousness",
+    "zhCN": "正义祷言"
+  },
+  {
+    "Key": "NewSpellLitanyRighteousness.Description",
+    "enGB": "Calling down a litany of anathema, you make an evil more susceptible to the attacks of good creatures. If the target is evil, it takes double damage from attacks made by creatures with a good aura (from a class feature or as a creature with the good subtype). If the target also has the evil subtype; when it is hit with attacks made by creatures with a good aura, it is also dazzled for 1d4 rounds.",
+    "zhCN": "念诵降罚之祷言，你令邪物面对善良生物的攻击更为脆弱。如果目标是邪恶阵营，拥有善良灵光的生物（通过职业特性或者善良亚种获得）的攻击对其造成双倍伤害。如果目标同时拥有邪恶亚种，它还会目眩1d4轮。"
+  },
+  {
+    "Key": "DeificObedience.Name",
+    "ProcessTemplates": false,
+    "enGB": "Deific Obedience",
+    "zhCN": "崇神仪典"
+  },
+  {
+    "Key": "DeificObedience.Description",
+    "enGB": "Your reverence for a deity is so great that daily prayer and minor sacrifices grant you special boons. Each deity requires a different daily obedience, but all obediences take no more than 1 hour per day to perform. Once you’ve performed the obedience, you gain the benefit of a special ability or resistance as indicated in the Obedience entry for the god to whom you performed the obedience. If you have at least 12 Hit Dice, you also gain the first boon granted by your deity upon undertaking your obedience. If you have at least 16 Hit Dice, you also gain the second boon. If you have 20 Hit Dice or more, you also gain the third boon. Unless a specific duration or number of uses per day is listed, a boon’s effects are constant.",
+    "zhCN": "每一位神祇都有其特定的日常服从仪典，不过这些仪典每天最多只需要一小时来完成。每天当你完成服从仪典以后，你将获得你所崇拜的神祇所拥有的服从仪典项目所列出的特殊能力与抗力奖励。 如果你拥有至少12个HD，你获得你所信仰神祇的第一神恩；在16HD时，你获得祂的第二神恩；在20HD时，你获得最终的第三神恩。除非特别提及其持续时间，否则神恩在一经获得后是永久生效的。"
+  },
+  {
+    "Key": "DeificObedienceRagathiel.Name",
+    "ProcessTemplates": false,
+    "enGB": "Ragathiel Obedience",
+    "zhCN": "拉贾瑟尔仪典"
+  },
+  {
+    "Key": "DeificObedienceRagathiel.Description",
+    "enGB": "Slay a proven wrongdoer in Ragathiel’s name. It is not enough for the sacrifice to have an evil heart or evil intentions; the sacrifice must have committed evil or unlawful deeds. Gain a +4 sacred bonus on saving throws against spells and effects cast by evil creatures.",
+    "zhCN": "以拉贾瑟尔之名斩杀一名作恶者。仅仅拥有邪恶的内心或意图是不够的，确实犯下违法或邪恶的罪行才能作为祭品。对抗邪恶生物的法术与效果时豁免得到+4神圣加值。"
+  },
+  {
+    "Key": "DeificObedienceRagathiel0.Name",
+    "ProcessTemplates": false,
+    "enGB": "Virtuous Combat",
+    "zhCN": "义战"
+  },
+  {
+    "Key": "DeificObedienceRagathiel0.Description",
+    "enGB": "bless weapon 3/day, litany of righteousness 2/day, or magic vestment 1/day",
+    "zhCN": "祝福武器3次/天，正义祷言2次/天，或魔化防具1次/天"
+  },
+  {
+    "Key": "DeificObedienceRagathiel1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Retribution",
+    "zhCN": "正义复仇"
+  },
+  {
+    "Key": "DeificObedienceRagathiel1.Description",
+    "enGB": "You gain a sacred bonus equal to half your HD on damage rolls made with slashing weapons against the last creature to have physically wounded you within the last 24 hours.",
+    "zhCN": "当你用挥砍武器攻击24小时内最后一个物理伤害过你的生物时，造成的伤害获得等同生命骰一半的神圣加值。"
+  },
+  {
+    "Key": "DeificObedienceRagathiel2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Pure Soul",
+    "zhCN": "纯洁之魂"
+  },
+  {
+    "Key": "DeificObedienceRagathiel2.Description",
+    "enGB": "You can cast holy aura on yourself once per day. In addition to the effects of the spell, you gain DR 10/good and cold iron and you treat any weapon in hand as a +5 holy weapon for the duration of the effect.",
+    "zhCN": "每天一次，你可以向自己施展神圣灵光，在持续期间除了既有法术效果，你还获得 DR 10/善良与寒铁，并将手中持握的任何武器视为+5神圣武器。"
+  },
+  {
+    "Key": "CrimsonTemplar.Name",
+    "ProcessTemplates": false,
+    "enGB": "Crimson Templar",
+    "zhCN": "绯红圣教军"
+  },
+  {
+    "Key": "CrimsonTemplar.Description",
+    "enGB": "Even the most devout followers of good can recognize the need for ruthlessness when opposing true evil. The crimson templars are taught that mercy is a virtue reserved for only those capable of accepting redemption. They must learn this lesson well, for they are trained to face the heartless legions of Hell. These women and men are Heaven’s assassins, and they tread a bloody path so the oaths of others remain untarnished. Their mission is a thankless one, as righteous allies often view them as just a step away from corruption.",
+    "zhCN": "哪怕是对善良理念最为虔诚的信徒也会意识到，在对抗真正的邪恶时需要冷酷无情。而这也正是拉贾瑟尔的绯红圣教军所受的教导：宽恕的美德只应留给那些能够接受救赎的存在。他们必须好好领会这些教导，因为他们所要面对的是来自地狱的军团。这些巾帼须眉们是天堂的杀手，他们走上血腥之路，如此其他人的誓言才能免于玷污。他们的使命不会得到感谢，因为在她们正义的盟友们看来，她们与腐化仅有一步之遥。"
+  },
+  {
+    "Key": "CrimsonTemplarBonusFeat.Name",
+    "ProcessTemplates": false,
+    "enGB": "Bonus Feat",
+    "zhCN": "额外专长"
+  },
+  {
+    "Key": "CrimsonTemplarBonusFeat.Description",
+    "enGB": "The crimson templar gains a bonus combat feat. He must still meet any prerequisites for these bonus feats.",
+    "zhCN": "绯红圣教军获得一个额外战斗专长。他必须满足专长的先决条件才能选取。"
+  },
+  {
+    "Key": "CrimsonTemplarObedienceFeat.Name",
+    "ProcessTemplates": false,
+    "enGB": "Obedience",
+    "zhCN": "崇神仪典"
+  },
+  {
+    "Key": "CrimsonTemplarObedienceFeat.Description",
+    "enGB": "At 1st level, a crimson templar gains Deific Obedience as a bonus feat. If the crimson templar already has this feat or Celestial Obedience, he instead gains a bonus combat feat.",
+    "zhCN": "在1级时，绯红圣教军获得崇神仪典作为奖励专长。若绯红圣教军已经具有该专长，他会获得一个奖励战斗专长作为替代。"
+  },
+  {
+    "Key": "CrimsonTemplarShieldWings.Name",
+    "ProcessTemplates": false,
+    "enGB": "Shield of Wings",
+    "zhCN": "护体羽翼"
+  },
+  {
+    "Key": "CrimsonTemplarShieldWings.Description",
+    "enGB": "At 1st level, a crimson templar gains fire resistance 5. This increases to fire resistance 10 at 3rd level, increases to fire resistance 30 at 6th level, and becomes immunity to fire at 9th level.",
+    "zhCN": "在1级时，绯红圣教军获得火焰抗力5点。由此获得的火焰抗力会在3级时增加至10点，6级时增加至30点，并最终在9级时变为火焰免疫。"
+  },
+  {
+    "Key": "CrimsonTemplarRuthlessness.Name",
+    "ProcessTemplates": false,
+    "enGB": "Ruthlessness",
+    "zhCN": "无情处决"
+  },
+  {
+    "Key": "CrimsonTemplarRuthlessness.Description",
+    "enGB": "At 2nd level, a crimson templar can use a bastard sword to deliver a coup de grace to a helpless opponent as a standard action.",
+    "zhCN": "2级起，绯红圣教军能够以标准动作来使用重剑对无助的敌人进行致命一击。"
+  },
+  {
+    "Key": "CrimsonTemplarHeavenlyFire.Name",
+    "ProcessTemplates": false,
+    "enGB": "Heavenly Fire",
+    "zhCN": "天堂圣焰"
+  },
+  {
+    "Key": "CrimsonTemplarHeavenlyFire.Description",
+    "enGB": "At 4th level, the crimson templar can incinerate unaware evil foes with pure celestial flame. If the crimson templar deals sneak attack damage to a creature, the sneak attack wreathes the target in crimson fire. The target must attempt a Fortitude saving throw (DC = 10 + the crimson templar’s class level + his Charisma modifier). If the target fails this save, it takes an additional 1d6 points of damage per class level the crimson templar has. Half of this damage is fire damage, but the other half results directly from divine power and is therefore not subject to being reduced by resistance or immunity to fire-based attacks. On a successful save, the target takes the sneak attack damage as normal but does not take any of the heavenly fire damage. A crimson templar can use heavenly fire a number of times per day equal to his crimson templar level.",
+    "zhCN": "绯红圣教军能够以纯净的天界圣焰焚化那些缺乏防备的邪恶敌人。绯红圣教军对敌人造成了偷袭伤害时，绯红之炎将吞没目标。目标必须尝试一次强韧豁免检定（DC = 10 + 绯红圣教军的等级 + 他的魅力调整值）。若目标豁免失败，便会额外受到每个绯红圣教军职业等级1d6点伤害。该伤害一半为火焰伤害，另一半则源自神力，因此抵抗或免疫基于火焰攻击的能力无法减轻神力这部分伤害。若目标成功通过豁免，则会如常承受偷袭伤害，且不会受到任何天堂圣炎的灼烧。绯红圣教军每日可以使用天堂圣炎的次数等同于他的绯红圣教军等级。"
+  },
+  {
+    "Key": "CrimsonTemplarFiendishStudies.Name",
+    "ProcessTemplates": false,
+    "enGB": "Fiendish Studies",
+    "zhCN": "研究邪异"
+  },
+  {
+    "Key": "CrimsonTemplarFiendishStudies.Description",
+    "enGB": "As a move action, a crimson templar can study an outsider with the evil subtype he can see. The crimson templar then gains a +2 bonus on weapon attack rolls and weapon damage rolls against it. The DC of Heavenly Fire against that opponent increase by 2. If a crimson templar deals sneak attack damage to an evil outsider, he can study that target as a free action, allowing him to apply his fiendish studies bonuses against that target (including to the weapon damage roll).",
+    "zhCN": "绯红圣教军能够以移动动作研究一名他看得到且具有邪恶亚种的异界生物。在对抗该名异界生物时，绯红圣教军对抗它的武器攻击检定和武器伤害检定会获得+2加值。在对抗该名敌人时，天堂圣焰的DC也会提高2点。若绯红圣教军对邪恶异界生物造成偷袭攻击伤害，便可以用自由动作研究该目标，这让他可以将研究邪异的加值应用至该目标（包括武器伤害检定）。"
+  },
+  {
+    "Key": "CrimsonTemplarFiendishStudies5.Name",
+    "ProcessTemplates": false,
+    "enGB": "Fiendish Studies",
+    "zhCN": "研究邪异"
+  },
+  {
+    "Key": "CrimsonTemplarFiendishStudies5.Description",
+    "enGB": "At 5th level, the bonuses on weapon attack rolls, damage rolls, and skill checks and to the DC of Heavenly Fire against an evil outsider increase by 2.",
+    "zhCN": "从第5级起，武器攻击检定、伤害检定、技能检定以及天堂圣焰的DC在对抗邪恶异界生物时的加值分别增加2点。"
+  },
+  {
+    "Key": "CrimsonTemplarFiendishStudies10.Name",
+    "ProcessTemplates": false,
+    "enGB": "Fiendish Studies",
+    "zhCN": "研究邪异"
+  },
+  {
+    "Key": "CrimsonTemplarFiendishStudies10.Description",
+    "enGB": "At 10th level, the bonuses on weapon attack rolls, damage rolls, and skill checks and to the DC of Heavenly Fire against an evil outsider increase by 2.",
+    "zhCN": "从第10级起，武器攻击检定、伤害检定、技能检定以及天堂圣焰的DC在对抗邪恶异界生物时的加值分别增加2点。"
+  },
+  {
+    "Key": "CrimsonTemplarFiendishStudies2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Fiendish Studies",
+    "zhCN": "研究邪异"
+  },
+  {
+    "Key": "CrimsonTemplarFiendishStudies2.Description",
+    "enGB": "At 2nd level, a crimson templar can study an evil outsider as a move or swift action.",
+    "zhCN": "从第2级起，绯红圣教军能够以移动或迅捷动作研究一名邪恶异界生物。"
+  },
+  {
+    "Key": "SpireDefenderCloseRange.Name",
+    "ProcessTemplates": false,
+    "enGB": "Close Range",
+    "zhCN": "近程法术打击"
+  },
+  {
+    "Key": "SpireDefenderCloseRange.Description",
+    "enGB": "The magus can deliver ray spells that feature a ranged touch attack as melee touch spells. He can use a ranged touch attack spell that targets more than one creature (such as scorching ray), but he makes only one melee touch attack to deliver one of these ranged touch effects; additional ranged touch attacks from that spell are wasted and have no effect. These spells can only be used with the spellstrike class feature.",
+    "zhCN": "选择本奥能的魔战士可以将需要远程接触攻击的射线法术以近战接触攻击方式传递。他可利用此奥能施放目标多于一个的远程接触法术（如灼热射线），但他只能用一次近战攻击传递一个远程接触效果，该法术额外的远程接触攻击则被浪费掉且没有效果。这些法术只能用于法术打击职业能力。"
+  },
+  {
+    "Key": "NinjaTrick.Name",
+    "ProcessTemplates": false,
+    "enGB": "Ninja Trick",
+    "zhCN": "忍术"
+  },
+  {
+    "Key": "NinjaTrick.Description",
+    "enGB": "A rogue with this talent can choose a trick from the ninja trick list. She can pick this talent more than once.",
+    "zhCN": "具有此项天赋的游荡者可以从忍者的忍术列表中选择一项，她能够多次选择该天赋。"
+  },
+  {
+    "Key": "NinjaTrickUnarmedCombat.Name",
+    "ProcessTemplates": false,
+    "enGB": "Taijutsu",
+    "zhCN": "体术"
+  },
+  {
+    "Key": "NinjaTrickUnarmedCombat.Description",
+    "enGB": "A ninja who selects this ninja trick gains Improved Unarmed Strike as a bonus feat.",
+    "zhCN": "选择此忍术的忍者获得“精通徒手击打”作为奖励专长。"
+  },
+  {
+    "Key": "NinjaTrickArrowSnatch.Name",
+    "ProcessTemplates": false,
+    "enGB": "Tatami Gaeshi",
+    "zhCN": "叠返之术"
+  },
+  {
+    "Key": "NinjaTrickArrowSnatch.Description",
+    "enGB": "A ninja who selects this ninja trick gains the Deflect Arrows feat as a bonus feat.",
+    "zhCN": "选择此忍术的忍者获得“拨挡飞箭”作为奖励专长。"
   }
 
 ]
