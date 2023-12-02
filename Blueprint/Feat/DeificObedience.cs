@@ -48,7 +48,7 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string DeificObedienceAblityGuid = "{7D26E0B2-7E4B-4F03-933F-33863F32058C}";
         public static void DeificObedienceConfigure()
         {
-            var icon = AbilityRefs.HolyAura.Reference.Get().Icon;
+            var icon = AbilityRefs.Prayer.Reference.Get().Icon;
 
             var resourse = AbilityResourceConfigurator.New(DeificObedienceAblityRes, DeificObedienceAblityResGuid)
                 .SetMaxAmount(
@@ -61,6 +61,7 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(AbilitySpawnFx))
                 .SetDisplayName(DeificObedienceDisplayName)
                 .SetDescription(DeificObedienceDescription)
+                .SetIcon(icon)
                 .AllowTargeting(self: true)
                 .Configure();
 
@@ -147,6 +148,7 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(AbilityEffectRunAction),
                 typeof(SpellComponent),
                 typeof(AbilityEffectStickyTouch))
+                .AddPretendSpellLevel(spellLevel: 1)
                 .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
                 .Configure();
 
@@ -156,6 +158,7 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(AbilityEffectRunAction),
                 typeof(SpellComponent),
                 typeof(AbilityTargetAlignment))
+                .AddPretendSpellLevel(spellLevel: 2)
                 .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
                 .Configure();
 
@@ -165,6 +168,7 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(AbilityEffectRunAction),
                 typeof(SpellComponent),
                 typeof(AbilityVariants))
+                .AddPretendSpellLevel(spellLevel: 3)
                 .AddAbilityResourceLogic(6, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
                 .Configure();
 
