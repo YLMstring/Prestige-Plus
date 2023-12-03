@@ -240,7 +240,7 @@
 ## Mod Combo
 
 ### [Expanded Content](https://github.com/ka-dyn/ExpandedContent)
-- Bitter adds [aid another](https://www.aonprd.com/Rules.aspx?Name=Aid%20Another&Category=Special%20Attacks) related stuff to my Asavir and Halfling Opportunist!
+- Thanks bitter for adding [aid another](https://www.aonprd.com/Rules.aspx?Name=Aid%20Another&Category=Special%20Attacks) related stuff to my Asavir and Halfling Opportunist!
 ### [Holy Vindicator](https://github.com/SpencerMycek/WoTR-HolyVindicator)
 - Spellbook Progression - Fixed
 - Divine Wrath, Divine Judgment, Divine Retribution!
