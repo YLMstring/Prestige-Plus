@@ -179,7 +179,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string CloseRangeDescription = "SpireDefenderCloseRange.Description";
 
         private const string CloseRangeAblity2 = "SpireDefender.UseCloseRange2";
-        public static readonly string CloseRangeAblity2Guid = "{6020BA13-BF55-4820-9C2B-B0EF5BCE554E}";
+        public static readonly string CloseRangeAblity2Guid = "6020BA13BF5548209C2BB0EF5BCE554E";
 
         private const string CloseRangeAblity = "SpireDefender.UseCloseRange";
         public static readonly string CloseRangeAblityGuid = "{41C3B953-A357-4311-8641-33CF4B6F1627}";
@@ -197,7 +197,7 @@ namespace PrestigePlus.Blueprint.Archetype
              .AddComponent<MagusCheatRay>()
              .AddPointBlankMaster(WeaponCategory.Ray)
              .SetRanks(2)
-             //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
              .Configure();
 
             var ability = AbilityConfigurator.New(CloseRangeAblity, CloseRangeAblityGuid)
@@ -220,6 +220,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetType(AbilityType.Spell)
               .AddAbilityEffectStickyTouch(touchDeliveryAbility: ability)
               .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Touch)
+              .AddToAvailableMetamagic(Metamagic.Quicken)
                 .SetDisplayName(CloseRangeDisplayName)
                 .SetDescription(CloseRangeDescription)
                 .SetIcon(icon)
