@@ -181,6 +181,9 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string CloseRangeAblity2 = "SpireDefender.UseCloseRange2";
         public static readonly string CloseRangeAblity2Guid = "{6020BA13-BF55-4820-9C2B-B0EF5BCE554E}";
 
+        private const string CloseRangeAblity = "SpireDefender.UseCloseRange";
+        public static readonly string CloseRangeAblityGuid = "{41C3B953-A357-4311-8641-33CF4B6F1627}";
+
         private const string CloseRangeBuff2 = "SpireDefender.CloseRangeBuff2";
         public static readonly string CloseRangeBuff2Guid = "{6E7757FD-BFAB-44DD-8E17-0B8A158A98D5}";
         public static BlueprintFeature CreateCloseRange()
@@ -197,7 +200,7 @@ namespace PrestigePlus.Blueprint.Archetype
              //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
              .Configure();
 
-            var ability2 = AbilityConfigurator.New(CloseRangeAblity2, CloseRangeAblity2Guid)
+            var ability = AbilityConfigurator.New(CloseRangeAblity, CloseRangeAblityGuid)
               .AllowTargeting(enemies: true)
               .SetEffectOnEnemy(AbilityEffectOnUnit.Harmful)
               .SetRange(AbilityRange.Touch)
@@ -205,7 +208,18 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddAbilityDeliverTouch(touchWeapon: ItemWeaponRefs.TouchItem.ToString())
               .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Touch)
               .AddAbilityEffectRunAction(ActionsBuilder.New().Add<MagusCloseRange>().Build())
-              .AddToSpellLists(level: 0, SpellList.Magus)
+                .SetDisplayName(CloseRangeDisplayName)
+                .SetDescription(CloseRangeDescription)
+                .SetIcon(icon)
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(CloseRangeAblity2, CloseRangeAblity2Guid)
+              .AllowTargeting(enemies: true)
+              .SetEffectOnEnemy(AbilityEffectOnUnit.Harmful)
+              .SetRange(AbilityRange.Touch)
+              .SetType(AbilityType.Spell)
+              .AddAbilityEffectStickyTouch(touchDeliveryAbility: ability)
+              .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Touch)
                 .SetDisplayName(CloseRangeDisplayName)
                 .SetDescription(CloseRangeDescription)
                 .SetIcon(icon)

@@ -30,7 +30,7 @@ namespace PrestigePlus.CustomAction.ClassRelated
 
         public override void RunAction()
         {
-            var ability = Context.SourceAbilityContext.Ability?.ConvertedFrom;
+            var ability = Context.SourceAbilityContext.Ability?.StickyTouch?.ConvertedFrom;
             if (Context.MaybeCaster == null || ability?.AbilityDeliverProjectile.NeedAttackRoll != true) { return; }
             AbilityExecutionContext abilityContext3 = base.AbilityContext;
             bool isDuplicateSpellApplied = abilityContext3 != null && abilityContext3.IsDuplicateSpellApplied;
