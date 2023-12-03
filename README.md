@@ -1,4 +1,4 @@
-# Prestige Plus v1.9.1 for WoTR 
+# Prestige Plus v2.0.0 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - Add grapple mechanic and a bunch of prestige classes!
@@ -54,6 +54,9 @@
 - Added Mythic Feats and Abilities (inspired by tabletop abilities of the same name): Grapple (Mythic), Uncanny Grapple, Aerial Assault, Knot Expert, Meat Shield, Maneuver Expert
 - Added Familiar: Crab King
 - Added Alchemist Discovery: Tentacle
+### [Deific Obedience](https://www.d20pfsrd.com/feats/general-feats/deific-obedience)
+- [Ragathiel](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Ragathiel): requires worshipping Ragathiel (Expanded Content) or Lawful Good
+- More coming soon!
 ### [Agent of the Grave Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/a-b/agent-of-the-grave/)
 - The class has only 5 levels.
 - Agent of the Grave lose spell progression at level 1. I have no idea why my code can make you lose spell progression, but it just works.
@@ -79,6 +82,8 @@
 - Bond of Genies: a mythic ability to mount any party member!
 ### [Chevalier Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/c-d/chevalier/)
 - The class has only 3 levels.
+### [Crimson Templar Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/c-d/crimson-templar/)
+- Requires worshipping Ragathiel (Expanded Content) or Lawful Good.
 ### [Esoteric Knight Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/esoteric-knight/)
 #### Homebrew Options:  
 - Dvine Psychic: continue divine spellcasting progression every 2 levels!
@@ -143,6 +148,7 @@
 - New Magus Arcana: [Maneuver Mastery](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/maneuver-mastery-ex)
 - New Magus Arcana: [Familiar](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/familiar-ex)
 - New Magus Arcana: [Reach Spellstrike](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/reach-spellstrike-su/)
+- New Magus Arcana: [Close Range](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/close-range-ex/)
 #### Ranger:  
 - [Divine Marksman](https://www.d20pfsrd.com/classes/core-classes/ranger/archetypes/paizo-ranger-archetypes/divine-marksman-ranger-archetype/)
 - Requires [Expanded Content](https://github.com/ka-dyn/ExpandedContent), or you won't gain the bonus feats!
@@ -203,6 +209,7 @@
 - [Cloying Shades](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-talents/cloying-shades-su)
 - [Quick Shot](https://www.d20pfsrd.com/classes/unchained-classes/rogue-unchained/rogue-talents-advanced/paizo-rogue-talents-advanced/quick-shot)
 - [Sneaky Maneuver](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-talents/sneaky-maneuver-ex/)
+- [Ninja Trick](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-talents/ninja-trick-ex/): Deflect Arrows, Unarmed Combat Training
 ### New Mythic Prestige Class Features
 
 - Swift Death: Your Death Attack becomes a standard action. At 10th assassin level, it becomes a move action.
