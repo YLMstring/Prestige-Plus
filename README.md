@@ -16,35 +16,6 @@
 - [Improved Ki Throw](https://www.d20pfsrd.com/feats/combat-feats/improved-ki-throw-combat/)
 - [Binding Throw](https://www.d20pfsrd.com/feats/combat-feats/binding-throw-combat/)
 - [Enhanced Ki Throw](https://www.d20pfsrd.com/feats/combat-feats/enhanced-ki-throw-combat/)
-- [Vindictive Fall](https://www.d20pfsrd.com/feats/general-feats/vindictive-fall/)
-- [Ranged Trip](https://www.d20pfsrd.com/feats/combat-feats/ranged-trip-combat-targeting)
-- [Ace Trip](https://www.d20pfsrd.com/feats/weapon-mastery-feats/ace-trip-targeting-weapon-mastery/): You don’t take the –2 penalty for making trip attempts with a ranged weapon using Ranged Trip, and you can attempt trip combat maneuver checks against anyone, even if the creature is immune to trip.
-- [Cleaving Sweep](https://www.d20pfsrd.com/feats/combat-feats/cleaving-sweep-combat/)
-- [Down Like Dominoes](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/trickster/): When you successfully trip a foe, as a free action you can attempt an additional trip attack against an adjacent creature at a –4 penalty. If this second trip is successful, you immediately move to its square and may continue to attempt to trip other creatures, taking a cumulative –4 penalty on each trip attempt after the first. In a round, you can trip a number of creatures equal to 1 + half your tier in this way.
-- [Crush Armor](https://www.d20pfsrd.com/feats/combat-feats/weapon-trick-combat/)
-- [Sunder Storm](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/champion/champion-path-abilities/sunder-storm-ex/): When you succeed at a sunder combat maneuver check, you drive the shattered pieces of the item into the flesh of its wearer, dealing 1d6 + a number of points equal to your tier of divine damage. Additionally, as a full-round action, you can attempt a sunder combat maneuver against each opponent within reach.
-- [Tear Apart](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/champion/champion-path-abilities/tear-apart-ex/): Your sunder combat maneuver no longer disables armor, but rends it. If the check is successful, deal your weapon damage to the target and reduce the target’s armor bonus, natural armor bonus, or shield bonus by half your tier (minimum 1). If the creature has an enhancement bonus to the bonus you chose, reduce the normal bonus first, then apply any leftover reduction to the enhancement bonus. You can’t reduce the bonus below 0.
-- [Quick Bull Rush](https://www.d20pfsrd.com/feats/combat-feats/quick-bull-rush-combat/)
-- [Raging Throw](https://www.d20pfsrd.com/feats/general-feats/raging-throw/)
-- [Hurricane Punch](https://www.d20pfsrd.com/feats/combat-feats/hurricane-punch-combat/)
-- [Knockback](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/knockback-ex/)
-- [Drive Back](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/guardian/): As a full-round action, you can make one melee attack at your highest base attack bonus against each opponent within reach. You must make a separate attack roll against each opponent, then attempt a free bull rush combat maneuver check against each foe that you hit.
-- [Combat Trickery](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/trickster/): Through buffoonery and deceit, you can trick opponents into moving where you want them. You can make a bull rush combat maneuver check to all adjacent opponents as a standard action, using your Bluff check modifier in place of your CMB.
-- [Sweeping Disarm](https://www.d20pfsrd.com/feats/combat-feats/sweeping-disarm-combat/)
-- [Break Guard](https://www.d20pfsrd.com/feats/combat-feats/break-guard-combat/)
-- [Follow-Up Strike](https://www.d20pfsrd.com/feats/combat-feats/follow-up-strike-combat/)
-- [Hold the Blade](https://www.d20pfsrd.com/feats/combat-feats/hold-the-blade-combat/)
-- [Wrist Grab](https://www.d20pfsrd.com/feats/combat-feats/wrist-grab-combat/)
-- [Ranged Disarm](https://www.d20pfsrd.com/feats/combat-feats/ranged-disarm-combat-targeting)
-- [Ace Disarm](https://www.d20pfsrd.com/feats/weapon-mastery-feats/ace-disarm-targeting-weapon-mastery/): You don’t take the –2 penalty for attempting disarm combat maneuver checks with a ranged weapon using Ranged Disarm, and you can steal a random equipment on a successful disarm combat maneuver check if the target uses natural weapons.
-- [Arm Bind](https://www.d20pfsrd.com/feats/combat-feats/weapon-trick-combat/)
-- [Strike and Seize](https://www.d20pfsrd.com/feats/combat-feats/weapon-trick-combat/)
-- [Shield Slam](https://www.d20pfsrd.com/feats/combat-feats/shield-slam-combat/)
-- [Shield Snag](https://www.d20pfsrd.com/feats/combat-feats/shield-snag-combat/)
-- [Ranged Disarm (Mythic)](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/guardian/): You can effortlessly use ranged attacks to disarm an opponent. Add your tier to the Ranged Disarm roll. If the disarm attempt is successful, make a second disarm attempt.
-- [Quick Dirty Trick](https://www.d20pfsrd.com/feats/combat-feats/quick-dirty-trick-combat/)
-- [Dirty Trick Master](https://www.d20pfsrd.com/feats/combat-feats/dirty-trick-master-combat/)
-- [Ladder Lock](https://www.d20pfsrd.com/feats/combat-feats/equipment-trick-combat/)
 ### [Grapple Mechanic](https://www.d20pfsrd.com/gamemastering/Combat/#Grapple)
 - This is how I implement it:
 1. There are 3 kinds of grapples in the game. My Grapple Mechanic is very close to tabletop. Shifter grapples stay owlcat-brew but once the shifter takes Grapple (Improved Grapple) feat, their grapple mechanics would be turned into mine. Finally, monster grapples stay the way it is in vanilla.
@@ -203,6 +174,40 @@
 - [Magic Trick (shield)](https://www.d20pfsrd.com/feats/general-feats/magic-trick-2/)
 - [Eldritch Assault](https://www.d20pfsrd.com/feats/general-feats/eldritch-assault/)
 - [Improved Parry](https://www.d20pfsrd.com/feats/combat-feats/improved-parry-combat/)
+- [Shield Slam](https://www.d20pfsrd.com/feats/combat-feats/shield-slam-combat/)
+- [Shield Snag](https://www.d20pfsrd.com/feats/combat-feats/shield-snag-combat/)
+### Trip Feats
+- [Vindictive Fall](https://www.d20pfsrd.com/feats/general-feats/vindictive-fall/)
+- [Ranged Trip](https://www.d20pfsrd.com/feats/combat-feats/ranged-trip-combat-targeting)
+- [Ace Trip](https://www.d20pfsrd.com/feats/weapon-mastery-feats/ace-trip-targeting-weapon-mastery/): You don’t take the –2 penalty for making trip attempts with a ranged weapon using Ranged Trip, and you can attempt trip combat maneuver checks against anyone, even if the creature is immune to trip.
+- [Cleaving Sweep](https://www.d20pfsrd.com/feats/combat-feats/cleaving-sweep-combat/)
+- [Down Like Dominoes](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/trickster/): When you successfully trip a foe, as a free action you can attempt an additional trip attack against an adjacent creature at a –4 penalty. If this second trip is successful, you immediately move to its square and may continue to attempt to trip other creatures, taking a cumulative –4 penalty on each trip attempt after the first. In a round, you can trip a number of creatures equal to 1 + half your tier in this way.
+### Sunder Feats
+- [Crush Armor](https://www.d20pfsrd.com/feats/combat-feats/weapon-trick-combat/)
+- [Sunder Storm](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/champion/champion-path-abilities/sunder-storm-ex/): When you succeed at a sunder combat maneuver check, you drive the shattered pieces of the item into the flesh of its wearer, dealing 1d6 + a number of points equal to your tier of divine damage. Additionally, as a full-round action, you can attempt a sunder combat maneuver against each opponent within reach.
+- [Tear Apart](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/champion/champion-path-abilities/tear-apart-ex/): Your sunder combat maneuver no longer disables armor, but rends it. If the check is successful, deal your weapon damage to the target and reduce the target’s armor bonus, natural armor bonus, or shield bonus by half your tier (minimum 1). If the creature has an enhancement bonus to the bonus you chose, reduce the normal bonus first, then apply any leftover reduction to the enhancement bonus. You can’t reduce the bonus below 0.
+### Bull Rush Feats
+- [Quick Bull Rush](https://www.d20pfsrd.com/feats/combat-feats/quick-bull-rush-combat/)
+- [Raging Throw](https://www.d20pfsrd.com/feats/general-feats/raging-throw/)
+- [Hurricane Punch](https://www.d20pfsrd.com/feats/combat-feats/hurricane-punch-combat/)
+- [Knockback](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/knockback-ex/)
+- [Drive Back](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/guardian/): As a full-round action, you can make one melee attack at your highest base attack bonus against each opponent within reach. You must make a separate attack roll against each opponent, then attempt a free bull rush combat maneuver check against each foe that you hit.
+- [Combat Trickery](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/trickster/): Through buffoonery and deceit, you can trick opponents into moving where you want them. You can make a bull rush combat maneuver check to all adjacent opponents as a standard action, using your Bluff check modifier in place of your CMB.
+### Disarm Feats
+- [Sweeping Disarm](https://www.d20pfsrd.com/feats/combat-feats/sweeping-disarm-combat/)
+- [Break Guard](https://www.d20pfsrd.com/feats/combat-feats/break-guard-combat/)
+- [Follow-Up Strike](https://www.d20pfsrd.com/feats/combat-feats/follow-up-strike-combat/)
+- [Hold the Blade](https://www.d20pfsrd.com/feats/combat-feats/hold-the-blade-combat/)
+- [Wrist Grab](https://www.d20pfsrd.com/feats/combat-feats/wrist-grab-combat/)
+- [Ranged Disarm](https://www.d20pfsrd.com/feats/combat-feats/ranged-disarm-combat-targeting)
+- [Ace Disarm](https://www.d20pfsrd.com/feats/weapon-mastery-feats/ace-disarm-targeting-weapon-mastery/): You don’t take the –2 penalty for attempting disarm combat maneuver checks with a ranged weapon using Ranged Disarm, and you can steal a random equipment on a successful disarm combat maneuver check if the target uses natural weapons.
+- [Arm Bind](https://www.d20pfsrd.com/feats/combat-feats/weapon-trick-combat/)
+- [Strike and Seize](https://www.d20pfsrd.com/feats/combat-feats/weapon-trick-combat/)
+- [Ranged Disarm (Mythic)](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-heroes/mythic-paths-paizo-inc/guardian/): You can effortlessly use ranged attacks to disarm an opponent. Add your tier to the Ranged Disarm roll. If the disarm attempt is successful, make a second disarm attempt.
+### Dirty Trick Feats
+- [Quick Dirty Trick](https://www.d20pfsrd.com/feats/combat-feats/quick-dirty-trick-combat/)
+- [Dirty Trick Master](https://www.d20pfsrd.com/feats/combat-feats/dirty-trick-master-combat/)
+- [Ladder Lock](https://www.d20pfsrd.com/feats/combat-feats/equipment-trick-combat/)
 ### New Rogue Talents
 
 - [Another Day](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-advanced-talents/another-day-ex/)
