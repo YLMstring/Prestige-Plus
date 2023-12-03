@@ -1,8 +1,8 @@
 # Prestige Plus v2.0.0 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
-- Add grapple mechanic and a bunch of prestige classes!
-- Apart from some minor tweaks, all the homebrew stuff are optional.
+- This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
+- All features are toggleable.
 
 ## Featuring
 
@@ -210,6 +210,11 @@
 - [Quick Shot](https://www.d20pfsrd.com/classes/unchained-classes/rogue-unchained/rogue-talents-advanced/paizo-rogue-talents-advanced/quick-shot)
 - [Sneaky Maneuver](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-talents/sneaky-maneuver-ex/)
 - [Ninja Trick](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-talents/ninja-trick-ex/): Deflect Arrows, Unarmed Combat Training
+### New Spells
+
+- [Litany of Righteousness](https://www.d20pfsrd.com/magic/all-spells/l/litany-of-righteousness/)
+- You have a good aura if and only if, you are a cleric/warpriest worshipping a good deity, a paladin or a good subtype outsider.
+- It has nothing to do with your own alignment, or any other auras you might have.
 ### New Mythic Prestige Class Features
 
 - Swift Death: Your Death Attack becomes a standard action. At 10th assassin level, it becomes a move action.
