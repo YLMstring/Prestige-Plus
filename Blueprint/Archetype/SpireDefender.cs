@@ -21,6 +21,9 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.Blueprints.Items.Armors;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
+using Kingmaker.UnitLogic.Abilities;
+using PrestigePlus.CustomAction.ClassRelated;
+using PrestigePlus.CustomComponent.Archetype;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -175,14 +178,44 @@ namespace PrestigePlus.Blueprint.Archetype
         internal const string CloseRangeDisplayName = "SpireDefenderCloseRange.Name";
         private const string CloseRangeDescription = "SpireDefenderCloseRange.Description";
 
+        private const string CloseRangeAblity2 = "SpireDefender.UseCloseRange2";
+        public static readonly string CloseRangeAblity2Guid = "{6020BA13-BF55-4820-9C2B-B0EF5BCE554E}";
+
+        private const string CloseRangeBuff2 = "SpireDefender.CloseRangeBuff2";
+        public static readonly string CloseRangeBuff2Guid = "{6E7757FD-BFAB-44DD-8E17-0B8A158A98D5}";
         public static BlueprintFeature CreateCloseRange()
         {
             var icon = FeatureRefs.SpellStrikeFeature.Reference.Get().Icon;
+
+            BuffConfigurator.New(CloseRangeBuff2, CloseRangeBuff2Guid)
+             .SetDisplayName(CloseRangeDisplayName)
+             .SetDescription(CloseRangeDescription)
+             .SetIcon(icon)
+             .AddComponent<MagusCheatRay>()
+             .AddPointBlankMaster(WeaponCategory.Ray)
+             .SetRanks(2)
+             //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+             .Configure();
+
+            var ability2 = AbilityConfigurator.New(CloseRangeAblity2, CloseRangeAblity2Guid)
+              .AllowTargeting(enemies: true)
+              .SetEffectOnEnemy(AbilityEffectOnUnit.Harmful)
+              .SetRange(AbilityRange.Touch)
+              .SetType(AbilityType.Spell)
+              .AddAbilityDeliverTouch(touchWeapon: ItemWeaponRefs.TouchItem.ToString())
+              .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Touch)
+              .AddAbilityEffectRunAction(ActionsBuilder.New().Add<MagusCloseRange>().Build())
+              .AddToSpellLists(level: 0, SpellList.Magus)
+                .SetDisplayName(CloseRangeDisplayName)
+                .SetDescription(CloseRangeDescription)
+                .SetIcon(icon)
+                .Configure();
 
             return FeatureConfigurator.New(CloseRange, CloseRangeGuid, FeatureGroup.MagusArcana)
               .SetDisplayName(CloseRangeDisplayName)
               .SetDescription(CloseRangeDescription)
               .SetIcon(icon)
+              .AddSpontaneousSpellConversion(CharacterClassRefs.MagusClass.ToString(), new() { ability2, ability2, ability2, ability2, ability2, ability2, ability2, ability2, ability2, ability2 })
               .AddPrerequisiteFeature(FeatureRefs.SpellStrikeFeature.ToString())
               .Configure();
         }

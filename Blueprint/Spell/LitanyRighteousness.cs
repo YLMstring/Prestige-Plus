@@ -55,7 +55,7 @@ namespace PrestigePlus.Blueprint.Spell
               .AllowTargeting(enemies: true)
               .SetEffectOnEnemy(AbilityEffectOnUnit.Harmful)
               .AddAbilityTargetAlignment(Kingmaker.UnitLogic.Alignments.AlignmentMaskType.Evil)
-              .SetAnimation(CastAnimationStyle.Point)
+              .SetAnimation(CastAnimationStyle.Directional)
               .SetActionType(CommandType.Swift)
               .SetRange(AbilityRange.Close)
               .SetType(AbilityType.Spell)
