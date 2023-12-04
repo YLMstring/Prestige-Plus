@@ -17,7 +17,8 @@ namespace PrestigePlus.CustomComponent.Archetype
         {
             var spellbook = Owner.GetSpellbook(CharacterClassRefs.OracleClass.Reference);
             var spelllist = SpellListRefs.ClericSpellList.Reference.Get();
-            if (spellbook != null && evt.Spellbook == spellbook && !spelllist.Contains(evt.Spell))
+            var spell = evt.AbilityData?.ConvertedFrom?.Blueprint ?? evt.Spell;
+            if (spellbook != null && evt.Spellbook == spellbook && !spelllist.Contains(spell))
             {
                 evt.AddBonusCasterLevel(4, Kingmaker.Enums.ModifierDescriptor.UntypedStackable);
             }
