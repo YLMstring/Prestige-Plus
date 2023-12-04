@@ -40,6 +40,7 @@ namespace PrestigePlus.Blueprint.Archetype
             .SetRemoveFeaturesEntry(8, FeatureSelectionRefs.FavoriteTerrainSelection.ToString(), FeatureSelectionRefs.FavoriteTerrainSelectionRankUp.ToString())
             .SetRemoveFeaturesEntry(13, FeatureSelectionRefs.FavoriteTerrainSelection.ToString(), FeatureSelectionRefs.FavoriteTerrainSelectionRankUp.ToString())
             .SetRemoveFeaturesEntry(18, FeatureSelectionRefs.FavoriteTerrainSelection.ToString(), FeatureSelectionRefs.FavoriteTerrainSelectionRankUp.ToString())
+            .SetRemoveFeaturesEntry(12, FeatureRefs.Camouflage.ToString())
             .AddToAddFeatures(3, CreateAdaptation())
             .AddToAddFeatures(8, AdaptationGuid)
             .AddToAddFeatures(13, AdaptationGuid)
@@ -110,7 +111,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
             var ability = AbilityConfigurator.New(AdaptationDragonAblity, AdaptationDragonAblityGuid)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-                        .ApplyBuff(Buff2, ContextDuration.Fixed(100))
+                        .ApplyBuff(Buff2, ContextDuration.Fixed(10))
                         .Build())
                 .SetDisplayName(AdaptationDragonDisplayName)
                 .SetDescription(AdaptationDragonDescription)
@@ -156,7 +157,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
             var ability = AbilityConfigurator.New(AdaptationOutsiderAblity, AdaptationOutsiderAblityGuid)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-                        .ApplyBuff(Buff2, ContextDuration.Fixed(100))
+                        .ApplyBuff(Buff2, ContextDuration.Fixed(10))
                         .Build())
                 .SetDisplayName(AdaptationOutsiderDisplayName)
                 .SetDescription(AdaptationOutsiderDescription)
@@ -207,7 +208,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
             var ability = AbilityConfigurator.New(AdaptationHalflingAblity, AdaptationHalflingAblityGuid)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-                        .ApplyBuff(Buff2, ContextDuration.Fixed(100))
+                        .ApplyBuff(Buff2, ContextDuration.Fixed(10))
                         .Build())
                 .SetDisplayName(AdaptationHalflingDisplayName)
                 .SetDescription(AdaptationHalflingDescription)
@@ -253,7 +254,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
             var ability = AbilityConfigurator.New(AdaptationDwarfsAblity, AdaptationDwarfsAblityGuid)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-                        .ApplyBuff(Buff2, ContextDuration.Fixed(100))
+                        .ApplyBuff(Buff2, ContextDuration.Fixed(10))
                         .Build())
                 .SetDisplayName(AdaptationDwarfsDisplayName)
                 .SetDescription(AdaptationDwarfsDescription)
@@ -299,7 +300,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
             var ability = AbilityConfigurator.New(AdaptationElfsAblity, AdaptationElfsAblityGuid)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-                        .ApplyBuff(Buff2, ContextDuration.Fixed(100))
+                        .ApplyBuff(Buff2, ContextDuration.Fixed(10))
                         .Build())
                 .SetDisplayName(AdaptationElfsDisplayName)
                 .SetDescription(AdaptationElfsDescription)
@@ -345,7 +346,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
             var ability = AbilityConfigurator.New(AdaptationGnomeAblity, AdaptationGnomeAblityGuid)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-                        .ApplyBuff(Buff2, ContextDuration.Fixed(100))
+                        .ApplyBuff(Buff2, ContextDuration.Fixed(10))
                         .Build())
                 .SetDisplayName(AdaptationGnomeDisplayName)
                 .SetDescription(AdaptationGnomeDescription)
@@ -391,7 +392,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
             var ability = AbilityConfigurator.New(AdaptationAnimalsAblity, AdaptationAnimalsAblityGuid)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-                        .ApplyBuff(Buff2, ContextDuration.Fixed(100))
+                        .ApplyBuff(Buff2, ContextDuration.Fixed(10))
                         .Build())
                 .SetDisplayName(AdaptationAnimalsDisplayName)
                 .SetDescription(AdaptationAnimalsDescription)
@@ -441,7 +442,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
             var ability = AbilityConfigurator.New(AdaptationGoblinsAblity, AdaptationGoblinsAblityGuid)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-                        .ApplyBuff(Buff2, ContextDuration.Fixed(100))
+                        .ApplyBuff(Buff2, ContextDuration.Fixed(10))
                         .Build())
                 .SetDisplayName(AdaptationGoblinsDisplayName)
                 .SetDescription(AdaptationGoblinsDescription)
@@ -492,7 +493,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
             var ability = AbilityConfigurator.New(AdaptationGiantsAblity, AdaptationGiantsAblityGuid)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-                        .ApplyBuff(Buff2, ContextDuration.Fixed(100))
+                        .ApplyBuff(Buff2, ContextDuration.Fixed(10))
                         .Build())
                 .SetDisplayName(AdaptationGiantsDisplayName)
                 .SetDescription(AdaptationGiantsDescription)
@@ -539,7 +540,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
             var ability = AbilityConfigurator.New(AdaptationVerminAblity, AdaptationVerminAblityGuid)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-                        .ApplyBuff(Buff2, ContextDuration.Fixed(100))
+                        .ApplyBuff(Buff2, ContextDuration.Fixed(10))
                         .Build())
                 .SetDisplayName(AdaptationVerminDisplayName)
                 .SetDescription(AdaptationVerminDescription)
