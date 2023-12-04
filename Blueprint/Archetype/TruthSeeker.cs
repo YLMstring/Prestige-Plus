@@ -43,7 +43,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         private static BlueprintFeature CreateSeekerLore()
         {
-            var icon = FeatureRefs.BardLoreMaster.Reference.Get().Icon;
+            var icon = FeatureSelectionRefs.ExtraDiscoverySelection.Reference.Get().Icon;
 
             return FeatureConfigurator.New(SeekerLore, SeekerLoreGuid)
               .SetDisplayName(SeekerLoreDisplayName)
@@ -61,7 +61,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         private static BlueprintFeature CreateSeekerMagic()
         {
-            var icon = FeatureSelectionRefs.FavoriteMetamagicSelection.Reference.Get().Icon;
+            var icon = FeatureRefs.SelectiveSpellFeat.Reference.Get().Icon;
 
             return FeatureConfigurator.New(SeekerMagic, SeekerMagicGuid)
               .SetDisplayName(SeekerMagicDisplayName)

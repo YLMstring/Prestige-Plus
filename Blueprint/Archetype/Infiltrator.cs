@@ -467,7 +467,7 @@ namespace PrestigePlus.Blueprint.Archetype
         public static readonly string AdaptationGiantsGuid = "{298A61DF-1449-405C-ACE8-46885A002D20}";
 
         private const string AdaptationGiantsAblity = "Infiltrator.UseAdaptationGiants";
-        private static readonly string AdaptationGiantsAblityGuid = "{298A61DF-1449-405C-ACE8-46885A002D20}";
+        private static readonly string AdaptationGiantsAblityGuid = "{5D8083E0-E9A0-48D0-855A-6FF609331EF5}";
 
         private const string AdaptationGiantsBuff2 = "Infiltrator.AdaptationGiantsBuff2";
         private static readonly string AdaptationGiantsBuff2Guid = "{2213112F-0B88-4E7D-9841-B5E34C420253}";
