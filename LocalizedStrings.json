@@ -5767,6 +5767,171 @@
     "Key": "NinjaTrickArrowSnatch.Description",
     "enGB": "A ninja who selects this ninja trick gains the Deflect Arrows feat as a bonus feat.",
     "zhCN": "选择此忍术的忍者获得“拨挡飞箭”作为奖励专长。"
+  },
+  {
+    "Key": "TruthSeeker.Name",
+    "ProcessTemplates": false,
+    "enGB": "Truth Seeker",
+    "zhCN": "真理追寻者"
+  },
+  {
+    "Key": "TruthSeeker.Description",
+    "enGB": "Oracles gain their magical powers through strange and mysterious ways, be they chosen by fate or blood. While most might be content with their strange powers, some oracles join the Pathfinders specifically to find out more about their mysteries and determine the genesis and history of their eldritch talents. These spellcasters are known among the Spells as seekers, after their obsession with researching ancient texts and obscure ruins for any clues they can find about their heritage and histories.",
+    "zhCN": "被命运和血脉所选中的先知透过神秘又奇异的方式获得他的魔法。虽然大多数的先知满足于自身的神秘力量，但是有些先知加入了探索者组织，以确认其诡异背景的起源和历史。这些施法者广为人知的名称就是追寻者，他们研究古代典籍和晦涩的废墟，痴迷于任何可以协助他们找到过去遗产和历史的线索。"
+  },
+  {
+    "Key": "TruthSeekerSeekerLore.Name",
+    "ProcessTemplates": false,
+    "enGB": "Seeker Lore",
+    "zhCN": "追寻者学识"
+  },
+  {
+    "Key": "TruthSeekerSeekerLore.Description",
+    "enGB": "By 3rd level, a seeker has already learned much about his mystery, and is more comfortable using the bonus spells. He gains a +4 bonus on concentration checks and caster level checks when casting an oracle spell that is not on the oracle spell list.",
+    "zhCN": "3级起，追寻者对于自身启示的掌握逐渐加深，施放不在先知法表上的先知法术时，他的专注检定、施法者等级检定得到+4加值。"
+  },
+  {
+    "Key": "TruthSeekerSeekerMagic.Name",
+    "ProcessTemplates": false,
+    "enGB": "Seeker Magic",
+    "zhCN": "追寻者魔法"
+  },
+  {
+    "Key": "TruthSeekerSeekerMagic.Description",
+    "enGB": "At 15th level, a seeker becomes skilled at modifying his mystery spells with metamagic. When a seeker applies a metamagic feat to an oracle spell that is not on the oracle spell list, he reduces the metamagic feat’s spell level adjustment by 1. Thus, applying a Metamagic feat like Still Spell to a spell does not change its effective spell level at all, while applying Quicken Spell only increases the spell’s effective spell level by 3 instead of by 4.",
+    "zhCN": "15级起，追寻者对于其启示的掌握炉火纯青，当追寻者将超魔专长用于不在先知法表上的先知法术时，其所需提高的法术等级降低一级，因此，应用法术定发超魔专长不会改变它的等效法术环位，应用法术瞬发只会令该法术的等效法术环位+3而不是+4。"
+  },
+  {
+    "Key": "Infiltrator.Name",
+    "ProcessTemplates": false,
+    "enGB": "Infiltrator",
+    "zhCN": "渗透者"
+  },
+  {
+    "Key": "Infiltrator.Description",
+    "enGB": "Some rangers study their favored enemies and learn their ways, applying this knowledge to their own abilities and using their foes’ strengths against them. Infiltrators are willing to walk a mile in an enemy’s shoes so as to learn everything there is to know about their foes in order to more effectively hunt and kill them.",
+    "zhCN": "一部分游侠深入钻研自己的宿敌、学习它们的习性，并将其学以致用、以彼之道还施彼身。渗透者为了能够更方便地追逐并猎杀敌人，设身处地推敲宿敌的立场与行动模式，借此获得一切有关于它们的知识。"
+  },
+  {
+    "Key": "InfiltratorAdaptation.Name",
+    "ProcessTemplates": false,
+    "enGB": "Adaptation",
+    "zhCN": "模仿术"
+  },
+  {
+    "Key": "InfiltratorAdaptation.Description",
+    "enGB": "At 3rd, 8th, 13th, and 15th-level, an infiltrator learns how to copy the unusual abilities of his prey. He chooses one type of creature he has selected as a favored enemy. The Ranger gains all features from the adaptation list for that type when adapting. A Ranger can use adaptations for 1 minute per day per Ranger level he possesses. This duration does not need to be consecutive, but it must be used in 1-minute increments.",
+    "zhCN": "在3、8、13、15级时，渗透者学到如何复制狩猎对象身上那些不可思议的能力。他从自己选作宿敌的生物种类中选取一种。游侠在模仿时获得该类生物的适应列表中所有特性。渗透者每天可以使用此能力的时间为每个游侠等级1分钟，这些时间无须连续，但必须以1分钟为单位使用。"
+  },
+  {
+    "Key": "InfiltratorAdaptationDragon.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dragon",
+    "zhCN": "龙类"
+  },
+  {
+    "Key": "InfiltratorAdaptationDragon.Description",
+    "enGB": "Dragon: Great Fortitude, Iron Will, Lightning Reflexes, Lunge.",
+    "zhCN": "龙类：强韧加强，钢铁意志，闪电反射，突刺"
+  },
+  {
+    "Key": "InfiltratorAdaptationOutsider.Name",
+    "ProcessTemplates": false,
+    "enGB": "Outsider",
+    "zhCN": "异界生物"
+  },
+  {
+    "Key": "InfiltratorAdaptationOutsider.Description",
+    "enGB": "Outsider: Great Fortitude, Iron Will, Lightning Reflexes",
+    "zhCN": "异界生物：强韧加强，钢铁意志，闪电反射"
+  },
+  {
+    "Key": "InfiltratorAdaptationHalfling.Name",
+    "ProcessTemplates": false,
+    "enGB": "Halfling",
+    "zhCN": "半身人"
+  },
+  {
+    "Key": "InfiltratorAdaptationHalfling.Description",
+    "enGB": "Humanoid (halfling): fearless, halfling luck, keen senses, sure-footed",
+    "zhCN": "类人生物（半身人）：无畏，半身人幸运，敏锐感知，锐足"
+  },
+  {
+    "Key": "InfiltratorAdaptationDwarfs.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dwarfs",
+    "zhCN": "矮人"
+  },
+  {
+    "Key": "InfiltratorAdaptationDwarfs.Description",
+    "enGB": "Humanoid (dwarf): defensive training, hatred, hardy, stability",
+    "zhCN": "类人生物（矮人）：防御训练，憎恨，下盘稳固，坚韧"
+  },
+  {
+    "Key": "InfiltratorAdaptationElfs.Name",
+    "ProcessTemplates": false,
+    "enGB": "Elfs",
+    "zhCN": "精灵"
+  },
+  {
+    "Key": "InfiltratorAdaptationElfs.Description",
+    "enGB": "Humanoid (elf): elven immunities, elven magic, keen senses, elven arcane focus",
+    "zhCN": "类人生物（精灵）：精灵免疫，精灵魔法，敏锐感知，精灵奥术专攻"
+  },
+  {
+    "Key": "InfiltratorAdaptationGnome.Name",
+    "ProcessTemplates": false,
+    "enGB": "Gnome",
+    "zhCN": "侏儒"
+  },
+  {
+    "Key": "InfiltratorAdaptationGnome.Description",
+    "enGB": "Humanoid (gnome): defensive training, gnome magic, hatred, illusion resistance, keen senses, obsessive",
+    "zhCN": "类人生物（侏儒）：防御训练，侏儒魔法，憎恨，幻术抗力，敏锐感知，痴迷"
+  },
+  {
+    "Key": "InfiltratorAdaptationAnimals.Name",
+    "ProcessTemplates": false,
+    "enGB": "Animals",
+    "zhCN": "动物"
+  },
+  {
+    "Key": "InfiltratorAdaptationAnimals.Description",
+    "enGB": "Animal: ferocity, intimidating",
+    "zhCN": "动物：凶暴，可怖"
+  },
+  {
+    "Key": "InfiltratorAdaptationGoblins.Name",
+    "ProcessTemplates": false,
+    "enGB": "Goblins",
+    "zhCN": "地精"
+  },
+  {
+    "Key": "InfiltratorAdaptationGoblins.Description",
+    "enGB": "Humanoid (goblinoid): goblin fast, natural armor (+2).",
+    "zhCN": "类人生物（地精）：地精迅捷，天生护甲AC+2"
+  },
+  {
+    "Key": "InfiltratorAdaptationGiants.Name",
+    "ProcessTemplates": false,
+    "enGB": "Giants",
+    "zhCN": "巨人"
+  },
+  {
+    "Key": "InfiltratorAdaptationGiants.Description",
+    "enGB": "Humanoid (giant): Lunge, natural armor +2, resist energy 5 (choose cold, electricity, and fire), Throw Anything.",
+    "zhCN": "类人生物（巨人）：突刺，天生护甲AC+2，能量抗力5（火焰，电击和寒冷），随手投掷。"
+  },
+  {
+    "Key": "InfiltratorAdaptationVermin.Name",
+    "ProcessTemplates": false,
+    "enGB": "Vermin",
+    "zhCN": "虫类"
+  },
+  {
+    "Key": "InfiltratorAdaptationVermin.Description",
+    "enGB": "Vermin: Great Fortitude, Iron Will, natural armor (+2)",
+    "zhCN": "虫类：强韧加强，钢铁意志，天生护甲AC+2"
   }
 
 ]
