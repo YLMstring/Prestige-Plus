@@ -194,9 +194,9 @@ namespace PrestigePlus.Blueprint.Archetype
              .SetDisplayName(CloseRangeDisplayName)
              .SetDescription(CloseRangeDescription)
              .SetIcon(icon)
-             .AddComponent<MagusCheatRay>()
              .AddPointBlankMaster(WeaponCategory.Ray)
-             .SetRanks(2)
+             .AddComponent<MagusCheatRay>()
+             .SetRanks(3)
              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
              .Configure();
 

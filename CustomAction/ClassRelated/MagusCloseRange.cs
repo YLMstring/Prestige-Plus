@@ -18,6 +18,9 @@ using Kingmaker.Designers;
 using BlueprintCore.Blueprints.References;
 using PrestigePlus.Blueprint.Archetype;
 using Kingmaker.Utility;
+using Kingmaker.RuleSystem.Rules;
+using Kingmaker.UnitLogic.Mechanics.ContextData;
+using Kingmaker.ElementsSystem;
 
 namespace PrestigePlus.CustomAction.ClassRelated
 {
@@ -30,6 +33,7 @@ namespace PrestigePlus.CustomAction.ClassRelated
 
         public override void RunAction()
         {
+            bool isCrit = ContextData<ContextAttackData>.Current?.AttackRoll?.IsCriticalConfirmed ?? false;
             var ability = Context.SourceAbilityContext.Ability?.StickyTouch?.ConvertedFrom;
             if (Context.MaybeCaster == null || ability?.AbilityDeliverProjectile.NeedAttackRoll != true) { return; }
             AbilityExecutionContext abilityContext3 = base.AbilityContext;
@@ -39,7 +43,11 @@ namespace PrestigePlus.CustomAction.ClassRelated
                 IsDuplicateSpellApplied = isDuplicateSpellApplied
             });
             GameHelper.ApplyBuff(Context.MaybeCaster, CloseBuff, new Rounds?(1.Rounds()));
-            Context.MaybeCaster.CombatState.PreventAttacksOfOpporunityNextFrame = true;
+            if (isCrit)
+            {
+                GameHelper.ApplyBuff(Context.MaybeCaster, CloseBuff, new Rounds?(1.Rounds()));
+            }
+            
         }
 
         private static readonly BlueprintBuffReference CloseBuff = BlueprintTool.GetRef<BlueprintBuffReference>(SpireDefender.CloseRangeBuff2Guid);

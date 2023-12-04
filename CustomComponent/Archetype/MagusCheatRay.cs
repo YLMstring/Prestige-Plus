@@ -2,6 +2,7 @@
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.RuleSystem.Rules.Abilities;
 using Kingmaker.UnitLogic;
+using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Buffs.Components;
 using System;
 using System.Collections.Generic;
@@ -11,8 +12,13 @@ using System.Threading.Tasks;
 
 namespace PrestigePlus.CustomComponent.Archetype
 {
-    internal class MagusCheatRay : UnitBuffComponentDelegate, IInitiatorRulebookHandler<RuleAttackRoll>, IRulebookHandler<RuleAttackRoll>, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleCastSpell>, IRulebookHandler<RuleCastSpell>
+    internal class MagusCheatRay : UnitBuffComponentDelegate, IInitiatorRulebookHandler<RuleAttackRoll>, IRulebookHandler<RuleAttackRoll>, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleCastSpell>, IRulebookHandler<RuleCastSpell>, IUnitTryCastingDefensivelyHandler, IUnitSubscriber
     {
+        void IUnitTryCastingDefensivelyHandler.HandleUnitTryCastingDefensively(AbilityData ability, ref bool forcedSuccess)
+        {
+            forcedSuccess = true;
+        }
+
         void IRulebookHandler<RuleCastSpell>.OnEventAboutToTrigger(RuleCastSpell evt)
         {
             Buff.Remove();
@@ -22,10 +28,15 @@ namespace PrestigePlus.CustomComponent.Archetype
         {
             if (evt.AttackType == Kingmaker.RuleSystem.AttackType.RangedTouch && !evt.IsFake)
             {
-                if (Buff.GetRank() == 1)
+                if (Buff.GetRank() < 3)
                 {
                     evt.AutoHit = true;
-                    Buff.SetRank(2);
+                    if (Buff.GetRank() == 2)
+                    {
+                        evt.AutoCriticalThreat = true;
+                        evt.AutoCriticalConfirmation = true;
+                    }
+                    Buff.SetRank(3);
                 }
                 else
                 {
