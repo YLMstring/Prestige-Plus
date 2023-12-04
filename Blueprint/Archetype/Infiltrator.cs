@@ -44,7 +44,7 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToAddFeatures(3, CreateAdaptation())
             .AddToAddFeatures(8, AdaptationGuid)
             .AddToAddFeatures(13, AdaptationGuid)
-            .AddToAddFeatures(18, AdaptationGuid)
+            .AddToAddFeatures(15, AdaptationGuid)
               .Configure();
         }
 
