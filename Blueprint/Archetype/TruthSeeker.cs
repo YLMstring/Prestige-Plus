@@ -6,6 +6,7 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using PrestigePlus.Blueprint.Feat;
+using PrestigePlus.CustomComponent.Archetype;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,7 +49,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(SeekerLoreDisplayName)
               .SetDescription(SeekerLoreDescription)
               .SetIcon(icon)
-              .AddCasterLevelForSpellbook()
+              .AddComponent<TruthSeekerLore>()
               .Configure();
         }
 
@@ -60,13 +61,13 @@ namespace PrestigePlus.Blueprint.Archetype
 
         private static BlueprintFeature CreateSeekerMagic()
         {
-            var icon = FeatureRefs.BardLoreMaster.Reference.Get().Icon;
+            var icon = FeatureSelectionRefs.FavoriteMetamagicSelection.Reference.Get().Icon;
 
             return FeatureConfigurator.New(SeekerMagic, SeekerMagicGuid)
               .SetDisplayName(SeekerMagicDisplayName)
               .SetDescription(SeekerMagicDescription)
               .SetIcon(icon)
-
+              .AddComponent<TruthSeekerMagic>()
               .Configure();
         }
     }

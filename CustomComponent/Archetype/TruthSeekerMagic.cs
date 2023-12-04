@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static TabletopTweaks.Core.NewUnitParts.UnitPartAgeTTT;
 
 namespace PrestigePlus.CustomComponent.Archetype
 {
@@ -19,13 +20,14 @@ namespace PrestigePlus.CustomComponent.Archetype
 
         void IRulebookHandler<RuleApplyMetamagic>.OnEventDidTrigger(RuleApplyMetamagic evt)
         {
-            if (evt.Result.SpellLevelCost > 0)
+            var spellbook = Owner.GetSpellbook(CharacterClassRefs.OracleClass.Reference);
+            var spelllist = SpellListRefs.ClericSpellList.Reference.Get();
+            if (spellbook != null && evt.Spellbook == spellbook && !spelllist.Contains(evt.Spell))
             {
-                var spellbook = Owner.GetSpellbook(CharacterClassRefs.OracleClass.Reference);
-                var spelllist = SpellListRefs.ClericSpellList.Reference.Get();
-                if (spellbook != null && evt.Spellbook == spellbook && !spelllist.Contains(evt.Spell))
+                evt.Result.SpellLevelCost -= evt.AppliedMetamagics.Count;
+                if (evt.BaseLevel + evt.Result.SpellLevelCost < 0)
                 {
-                    evt.Result.SpellLevelCost -= 1;
+                    evt.Result.SpellLevelCost = -evt.BaseLevel;
                 }
             }
         }
