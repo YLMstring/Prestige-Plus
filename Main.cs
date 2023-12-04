@@ -191,10 +191,16 @@ namespace PrestigePlus
             Toggle.New(GetKey("warlord"), defaultValue: true, Helpers.CreateString("toggle-desc25", "Warlord"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("seeker"), defaultValue: true, Helpers.CreateString("toggle-desc58", "Truth Seeker"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("spire"), defaultValue: true, Helpers.CreateString("toggle-desc33", "Spire Defender"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("marksman"), defaultValue: true, Helpers.CreateString("toggle-desc47", "Divine Marksman"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("infil"), defaultValue: true, Helpers.CreateString("toggle-desc57", "Infiltrator"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("witchguard"), defaultValue: true, Helpers.CreateString("toggle-desc48", "Witchguard"))
@@ -325,6 +331,8 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("spell"))) { LitanyRighteousness.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("obedience"))) { DeificObedience.DeificObedienceConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("templar"))) { CrimsonTemplar.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("seeker"))) { TruthSeeker.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("infil"))) { Infiltrator.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
