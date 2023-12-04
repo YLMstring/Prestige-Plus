@@ -103,6 +103,7 @@ namespace PrestigePlus.Blueprint.Archetype
             var icon = FeatureRefs.FavoriteEnemyDragons.Reference.Get().Icon;
 
             var Buff2 = BuffConfigurator.New(AdaptationDragonBuff2, AdaptationDragonBuff2Guid)
+                .SetStacking(Kingmaker.UnitLogic.Buffs.Blueprints.StackingType.Summ)
              .SetDisplayName(AdaptationDragonDisplayName)
              .SetDescription(AdaptationDragonDescription)
              .SetIcon(icon)
@@ -149,6 +150,7 @@ namespace PrestigePlus.Blueprint.Archetype
             var icon = FeatureRefs.FavoriteEnemyOutsider.Reference.Get().Icon;
 
             var Buff2 = BuffConfigurator.New(AdaptationOutsiderBuff2, AdaptationOutsiderBuff2Guid)
+                .SetStacking(Kingmaker.UnitLogic.Buffs.Blueprints.StackingType.Summ)
              .SetDisplayName(AdaptationOutsiderDisplayName)
              .SetDescription(AdaptationOutsiderDescription)
              .SetIcon(icon)
@@ -200,6 +202,7 @@ namespace PrestigePlus.Blueprint.Archetype
             var icon = FeatureRefs.FavoriteEnemyHalfling.Reference.Get().Icon;
 
             var Buff2 = BuffConfigurator.New(AdaptationHalflingBuff2, AdaptationHalflingBuff2Guid)
+                .SetStacking(Kingmaker.UnitLogic.Buffs.Blueprints.StackingType.Summ)
              .SetDisplayName(AdaptationHalflingDisplayName)
              .SetDescription(AdaptationHalflingDescription)
              .SetIcon(icon)
@@ -246,6 +249,7 @@ namespace PrestigePlus.Blueprint.Archetype
             var icon = FeatureRefs.FavoriteEnemyDwarfs.Reference.Get().Icon;
 
             var Buff2 = BuffConfigurator.New(AdaptationDwarfsBuff2, AdaptationDwarfsBuff2Guid)
+                .SetStacking(Kingmaker.UnitLogic.Buffs.Blueprints.StackingType.Summ)
              .SetDisplayName(AdaptationDwarfsDisplayName)
              .SetDescription(AdaptationDwarfsDescription)
              .SetIcon(icon)
@@ -292,6 +296,7 @@ namespace PrestigePlus.Blueprint.Archetype
             var icon = FeatureRefs.FavoriteEnemyElfs.Reference.Get().Icon;
 
             var Buff2 = BuffConfigurator.New(AdaptationElfsBuff2, AdaptationElfsBuff2Guid)
+                .SetStacking(Kingmaker.UnitLogic.Buffs.Blueprints.StackingType.Summ)
              .SetDisplayName(AdaptationElfsDisplayName)
              .SetDescription(AdaptationElfsDescription)
              .SetIcon(icon)
@@ -338,6 +343,7 @@ namespace PrestigePlus.Blueprint.Archetype
             var icon = FeatureRefs.FavoriteEnemyGnome.Reference.Get().Icon;
 
             var Buff2 = BuffConfigurator.New(AdaptationGnomeBuff2, AdaptationGnomeBuff2Guid)
+                .SetStacking(Kingmaker.UnitLogic.Buffs.Blueprints.StackingType.Summ)
              .SetDisplayName(AdaptationGnomeDisplayName)
              .SetDescription(AdaptationGnomeDescription)
              .SetIcon(icon)
@@ -384,6 +390,7 @@ namespace PrestigePlus.Blueprint.Archetype
             var icon = FeatureRefs.FavoriteEnemyAnimals.Reference.Get().Icon;
 
             var Buff2 = BuffConfigurator.New(AdaptationAnimalsBuff2, AdaptationAnimalsBuff2Guid)
+                .SetStacking(Kingmaker.UnitLogic.Buffs.Blueprints.StackingType.Summ)
              .SetDisplayName(AdaptationAnimalsDisplayName)
              .SetDescription(AdaptationAnimalsDescription)
              .SetIcon(icon)
@@ -433,6 +440,7 @@ namespace PrestigePlus.Blueprint.Archetype
             var icon = FeatureRefs.FavoriteEnemyGoblins.Reference.Get().Icon;
 
             var Buff2 = BuffConfigurator.New(AdaptationGoblinsBuff2, AdaptationGoblinsBuff2Guid)
+                .SetStacking(Kingmaker.UnitLogic.Buffs.Blueprints.StackingType.Summ)
              .SetDisplayName(AdaptationGoblinsDisplayName)
              .SetDescription(AdaptationGoblinsDescription)
              .SetIcon(icon)
@@ -481,6 +489,7 @@ namespace PrestigePlus.Blueprint.Archetype
             var icon = FeatureRefs.FavoriteEnemyGiants.Reference.Get().Icon;
 
             var Buff2 = BuffConfigurator.New(AdaptationGiantsBuff2, AdaptationGiantsBuff2Guid)
+                .SetStacking(Kingmaker.UnitLogic.Buffs.Blueprints.StackingType.Summ)
              .SetDisplayName(AdaptationGiantsDisplayName)
              .SetDescription(AdaptationGiantsDescription)
              .SetIcon(icon)
@@ -531,6 +540,7 @@ namespace PrestigePlus.Blueprint.Archetype
             var icon = FeatureRefs.FavoriteEnemyVermin.Reference.Get().Icon;
 
             var Buff2 = BuffConfigurator.New(AdaptationVerminBuff2, AdaptationVerminBuff2Guid)
+                .SetStacking(Kingmaker.UnitLogic.Buffs.Blueprints.StackingType.Summ)
              .SetDisplayName(AdaptationVerminDisplayName)
              .SetDescription(AdaptationVerminDescription)
              .SetIcon(icon)
