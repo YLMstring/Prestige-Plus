@@ -15,17 +15,18 @@ namespace PrestigePlus.Patch
 {
     internal class StyleMasterPatch
     {
+        //private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         public static void Patch()
         {
             var target = BlueprintTool.GetRef<BlueprintFeatureSelectionReference>(BodyGuard.StyleMasterGuid)?.Get();
             if (target == null) { return; }
-            target.m_Features ??= new BlueprintFeatureReference[] { };
+            target.m_AllFeatures ??= new BlueprintFeatureReference[] { };
             var feats = FeatureSelectionRefs.FighterFeatSelection.Reference.Get();
-            foreach (var feat in feats.m_Features)
+            foreach (var feat in feats.m_AllFeatures)
             {
-                if (feat.Get().Groups.Contains(Kingmaker.Blueprints.Classes.FeatureGroup.StyleFeat))
+                if (feat.NameSafe().Contains("Style"))
                 {
-                    target.m_Features.AddToArray(feat);
+                    target.m_AllFeatures = CommonTool.Append(target.m_AllFeatures, feat);
                 }
             }
         }

@@ -55,7 +55,7 @@ namespace PrestigePlus.Patch
                         {
                             if (PatchConfig(crc))
                             {
-                                Logger.Info(feature.NameSafe());
+                                //Logger.Info(feature.NameSafe());
                             }
                         }
                     }
@@ -86,7 +86,7 @@ namespace PrestigePlus.Patch
                                 {
                                     if (PatchConfig(crc))
                                     {
-                                        Logger.Info(action2.m_Buff.NameSafe());
+                                        //Logger.Info(action2.m_Buff.NameSafe());
                                     }
                                 }
                             }
@@ -104,11 +104,11 @@ namespace PrestigePlus.Patch
                 var variants = abilityBase.Get().GetComponent<AbilityVariants>()?.m_Variants;
                 if (variants != null)
                 {
-                    Logger.Info(abilityBase.NameSafe() + " detected");
+                    //Logger.Info(abilityBase.NameSafe() + " detected");
                     foreach (BlueprintAbilityReference ability in variants)
                     {
                         if (ability == null) { continue; }
-                        Logger.Info(ability.NameSafe() + " detected");
+                        //Logger.Info(ability.NameSafe() + " detected");
                         var crcs = ability.Get().GetComponents<ContextRankConfig>();
                         if (crcs != null && crcs.Any())
                         {
@@ -116,7 +116,7 @@ namespace PrestigePlus.Patch
                             {
                                 if (PatchConfig(crc))
                                 {
-                                    Logger.Info(ability.NameSafe());
+                                    //Logger.Info(ability.NameSafe());
                                 }
                             }
                         }
@@ -143,7 +143,7 @@ namespace PrestigePlus.Patch
                         {
                             if (PatchConfig(crc))
                             {
-                                Logger.Info(ability.NameSafe());
+                                //Logger.Info(ability.NameSafe());
                             }
                         }
                     }
@@ -162,7 +162,7 @@ namespace PrestigePlus.Patch
                 var progress = BlueprintTool.GetRef<BlueprintProgressionReference>(fref).Get();
                 if (progress?.LevelEntries?.Length > 0) 
                 {
-                    Logger.Info(progress.NameSafe());
+                    //Logger.Info(progress.NameSafe());
                     foreach (LevelEntry entry in progress.LevelEntries)
                     {
                         foreach (BlueprintFeatureBase feature in entry.Features)

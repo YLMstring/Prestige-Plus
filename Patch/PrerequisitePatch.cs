@@ -13,7 +13,7 @@ namespace PrestigePlus.Patch
 {
     internal class PrerequisitePatch
     {
-        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
+        //private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         public static void Patch()
         {
             List<BlueprintFeatureReference> list = new() { };

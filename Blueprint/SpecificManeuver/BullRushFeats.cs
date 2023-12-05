@@ -97,7 +97,7 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
                     .Configure();
         }
 
-        private static readonly string StyleName = "HurricanePunchStyle";
+        private static readonly string StyleName = "HurricanePunchStyl";
         public static readonly string StyleGuid = "{B36A5D42-BD74-4A0F-9F40-9D202B67D783}";
 
         private static readonly string StyleDisplayName = "HurricanePunchStyle.Name";
