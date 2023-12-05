@@ -3578,7 +3578,7 @@
   {
     "Key": "Warlord.Description",
     "enGB": "Honorable, fearless experts in gun and blade, warlords roam the dried seabeds of time-worn Mars, warring in great tribes for supremacy over a dying planet. Capable of relentless brutality and quick to flare into open hostilities, warlords cloak their violent ways with paens to great noble houses or honored ancient traditions, bringing an air of respectability and etiquette to the butchery of brazen blades against bare skin. Warlords eschew armor as impractical to their harsh and often desert-like environment, preferring the free movement of near-nakedness. Warlords tend to specialize in the traditional weapons of Barsoom, leaving them ignorant of even simple Weapons common on other worlds. The same impulse that guides a warlord to stick to the traditional garb and gear of his culture can lead to a single-mindedness of purpose that can propel him far within his tribe or noble house. Even warlords of low status in Martian society claim a connection— no matter how ancient—with some great chieftain or emperor, seeing in the glorious past a path to a more hopeful future. Barsoom confers noble status upon its warlords through ritual combat in the case of green Martians or on merit and upon great achievement or heroics in the case of red Martians, so climbing the ladder ofstatus is an important part of a warlord’s journey through life.",
-    "zhCN": "尊敬、无畏的枪刃专家们，战争领主漫游于岁月久远的火星干涸的海床，为了对一个垂死的星球的至高统治而在伟大的部落中展开战争。战争领主以无情的残忍和迅速爆发的开放敌意为特点，他们以赞美伟大贵族家族或古老传统来掩饰他们的暴力行为，给光秃秃的刀剑对裸露的皮肤进行屠戮带来一种体面和礼仪的氛围。在他们严酷而常常类似沙漠的环境中，战争领主避免穿戴盔甲，更倾向于接近赤裸的自由活动。战争领主通常专精于巴若姆传统武器，使他们对其他世界上甚至简单的武器一无所知。引导战争领主坚持文化传统服饰和装备的冲动，可能导致他在部落或贵族家族中取得巨大成就的单一目标性。即使在火星社会中地位较低的战争领主也声称与某位伟大的酋长或皇帝有某种联系，看到在光辉的过去中通往更加充满希望的未来的道路。巴若姆通过绿色火星人进行仪式性战斗，或通过红色火星人的功绩以及在英雄事迹方面授予其战争领主的贵族地位，因此攀登地位阶梯是战争领主人生旅程的重要组成部分（CHATGPT翻译，水平挺拉的，差评）"
+    "zhCN": "荣耀而无畏，持枪执剑的专家，战争领主们游荡在被时间摧残的火星干涸海床上，在庞大的部落中为了争夺这个垂死星球的霸权而战。战争领主有着无情的残暴，且瞬息之间就会进入公开的敌对状态，但他们以献身于伟大的贵族世家或尊敬的古老传统来掩盖他们的暴力行事作风，为以刀剑斩向裸肤的屠杀带来了一丝尊贵和礼仪的气息。战争领主们摒弃盔甲，因为盔甲对他们恶劣的、常常是沙漠般的环境来说不切实际，他们更喜欢近乎赤裸带来的行动自由。战争领主倾向于专攻巴松（Barsoom，当地火星人对火星的称呼）的传统武器，让他们甚至对其他世界常见的简单武器也一无所知。引导战争领主坚持着他文化的传统服装和装备的冲动同样令他一心一意专注于目的，使他在部落或贵族家系中走得更远。即使是在火星社会中地位低下的战争领主，也声称与某个——无论多么古老的——伟大首领或皇帝有联系，他们在光荣的过去中看到了一条通往更有希望的未来的道路。巴松人通过祭祀战斗赋予绿火星人战争领主高贵的地位，而对红火星人，则是根据才赋，伟大的功绩或英雄事迹，所以攀登地位的阶梯是战争领主生涯的重要部分。"
   },
 
   {
@@ -3593,7 +3593,7 @@
   {
     "Key": "WarlordProficiencies.Description",
     "enGB": "At 1st level, and at every even level thereafter, warlord can add a +1 dodge bonus to his Armor Class instead of taking a bonus feat. A warlord is proficient with rapier, longspear, longsword, shortspear, spear, trident, and whip. Warlords are not proficient with armor or shields.",
-    "zhCN": "At 1st level, and at every even level thereafter, warlord can add a +1 dodge bonus to his Armor Class instead of taking a bonus feat. A warlord is proficient with rapier, longspear, longsword, shortspear, spear, trident, and whip. Warlords are not proficient with armor or shields."
+    "zhCN": "在1级以及此后每一个偶数等级，战争领主可以放弃额外专长，获取防御等级的+1闪避加值。战争领主擅长使用刺剑、长矛、长剑、短矛、矛、三叉戟和鞭子，不擅长任何护甲或盾牌。"
   },
 
   {

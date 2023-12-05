@@ -21,8 +21,8 @@ namespace PrestigePlus.Blueprint.Archetype
             ArchetypeConfigurator.New(ArchetypeName, ArchetypeGuid, CharacterClassRefs.SorcererClass)
               .SetLocalizedName(ArchetypeDisplayName)
               .SetLocalizedDescription(ArchetypeDescription)
-            .SetRemoveFeaturesEntry(7, FeatureSelectionRefs.SorcererFeatSelection.ToString())
-            .SetRemoveFeaturesEntry(13, FeatureSelectionRefs.SorcererFeatSelection.ToString())
+            .SetRemoveFeaturesEntry(1, FeatureSelectionRefs.SorcererBloodlineSelection.ToString())
+            .AddToAddFeatures(1, FeatureSelectionRefs.SeekerBloodlineSelection.ToString())
             .AddToAddFeatures(3, CreateSookerLore())
             .AddToAddFeatures(4, CreateSookerMagic())
               .Configure();
