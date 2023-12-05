@@ -924,8 +924,8 @@
 
   {
     "Key": "ScarSeekerChampionHonor.Description",
-    "enGB": "A scar seeker can smite evil once (or once more) per day. A crusader’s class levels stack with paladin class levels for the purpose of determining the damage of the paladin’s smite evil ability, but the scar seeker’s effective paladin level equals his class level–3.",
-    "zhCN": "负痕求道者可每日使用一次（或额外使用一次）制裁邪恶能力。在决定制裁邪恶能力的伤害时，将远征骑士的等级与圣武士职业等级叠加后-3计算。"
+    "enGB": "A scar seeker can smite evil once (or once more) per day. A scar seeker’s class levels stack with paladin class levels for the purpose of determining the damage of the paladin’s smite evil ability, but the scar seeker’s effective paladin level equals his class level–3.",
+    "zhCN": "负痕求道者可每日使用一次（或额外使用一次）制裁邪恶能力。在决定制裁邪恶能力的伤害时，将负痕求道者的等级与圣武士职业等级叠加后-3计算。"
   },
 
   {
