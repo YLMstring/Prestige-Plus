@@ -5932,6 +5932,94 @@
     "Key": "InfiltratorAdaptationVermin.Description",
     "enGB": "Vermin: Great Fortitude, Iron Will, natural armor (+2)",
     "zhCN": "虫类：强韧加强，钢铁意志，天生护甲AC+2"
+  },
+  {
+    "Key": "TruthSooker.Name",
+    "ProcessTemplates": false,
+    "enGB": "Truth Seeker",
+    "zhCN": "真理追寻者"
+  },
+  {
+    "Key": "TruthSooker.Description",
+    "enGB": "Sorcerers gain their magical powers through strange and mysterious ways. While most might be content with their strange powers, some adventure far and wide in search of a greater understanding of the genesis and history of their eldritch talents. These spellcasters are known as seekers, after their obsession with researching ancient texts and obscure ruins for any clues they can find about their heritage and histories.",
+    "zhCN": "术士透过神秘又奇异的方式获得他的魔法。虽然大多数的术士满足于自身的神秘力量，但有些术士对于其神秘的过去和起源探索得更远且更广。这些施法者被称为追寻者，他们研究古代典籍和晦涩的废墟，痴迷于任何可以协助他们找到过去遗产和历史的线索。"
+  },
+  {
+    "Key": "TruthSookerSookerLore.Name",
+    "ProcessTemplates": false,
+    "enGB": "Seeker Lore",
+    "zhCN": "追寻者学识"
+  },
+  {
+    "Key": "TruthSookerSookerLore.Description",
+    "enGB": "By 3rd level, a seeker has already learned much about his bloodline, and is more comfortable using the bonus spells gained by that bloodline. He gains a +4 bonus on concentration checks and caster level checks when casting his seeker bloodline spells. This ability replaces the bloodline power gained at 3rd level.",
+    "zhCN": "3级起，追寻者对于自身血脉的掌握逐渐加深，施放追寻者血脉的额外法术时，他的专注检定、施法者等级检定得到+4加值。该能力取代3级的血脉能力。"
+  },
+  {
+    "Key": "TruthSookerSookerMagic.Name",
+    "ProcessTemplates": false,
+    "enGB": "Seeker Magic",
+    "zhCN": "追寻者魔法"
+  },
+  {
+    "Key": "TruthSookerSookerMagic.Description",
+    "enGB": "At 15th level, a seeker becomes skilled at modifying his bloodline spells with metamagic. When a seeker applies a metamagic feat to any bonus spells granted by his seeker bloodline, he reduces the metamagic feat’s spell level adjustment by 1. Thus, applying a Metamagic feat like Still Spell to a spell does not change its effective spell level at all, while applying Quicken Spell only increases the spell’s effective spell level by 3 instead of by 4. This ability replaces the bloodline power gained at 15th level.",
+    "zhCN": "15级起，追寻者对于其血脉的掌握炉火纯青，当追寻者将超魔专长用于追寻者血脉的额外法术时，其所需提高的法术等级降低一级，因此，应用法术定发超魔专长不会改变它的等效法术环位，应用法术瞬发只会令该法术的等效法术环位+3而不是+4。该能力取代15级的血脉能力。"
+  },
+  {
+    "Key": "NinjaTrickBloodDebt.Name",
+    "ProcessTemplates": false,
+    "enGB": "Blood Debt",
+    "zhCN": "血债"
+  },
+  {
+    "Key": "NinjaTrickBloodDebt.Description",
+    "enGB": "A ninja with this ability gains In Harm’s Way as a bonus feat, even if she doesn’t meet the prerequisites.",
+    "zhCN": "选择此忍术的忍者获得抵御侵害作为额外专长，即使她不满足先决条件。"
+  },
+  {
+    "Key": "NinjaTrickKamiWarden.Name",
+    "ProcessTemplates": false,
+    "enGB": "Kami Warden",
+    "zhCN": "神灵守护"
+  },
+  {
+    "Key": "NinjaTrickKamiWarden.Description",
+    "enGB": "A ninja with this trick gains Bodyguard and In Harm’s Way as bonus feats, ignoring their prerequisites.",
+    "zhCN": "选择此忍术的忍者获得保镖和抵御侵害作为额外专长，即使她不满足先决条件。"
+  },
+  {
+    "Key": "NinjaTrickGreaterUnarmedStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Greater Unarmed Strike",
+    "zhCN": "高等徒手击打"
+  },
+  {
+    "Key": "NinjaTrickGreaterUnarmedStrike.Description",
+    "enGB": "Your unarmed attacks show a master’s skill. Your unarmed strikes have their base damage increased to 1d8 (for a Medium size creature). At character level 10th, this increases to 1d10 base damage.",
+    "zhCN": "你的徒手武艺尽显宗师气度。你的徒手击打的基础伤害提升至1d8（中等体型），角色等级10级起，该基础伤害提升到1d10。"
+  },
+  {
+    "Key": "StyleMaster.Name",
+    "ProcessTemplates": false,
+    "enGB": "Style Master",
+    "zhCN": "流派宗师"
+  },
+  {
+    "Key": "StyleMaster.Description",
+    "enGB": "A ninja who selects this ninja trick gains a style feat that she qualifies for as a bonus feat.",
+    "zhCN": "选择此忍术的忍者获得一个她满足先决条件的流派专长作为奖励专长。"
+  },
+  {
+    "Key": "GreaterName.Name",
+    "ProcessTemplates": false,
+    "enGB": "Nintaijutsu",
+    "zhCN": "忍体术"
+  },
+  {
+    "Key": "GreaterName.Description",
+    "enGB": "A ninja who selects this ninja trick gains Greater Unarmed Strike as a bonus feat.",
+    "zhCN": "选择此忍术的忍者获得高等徒手击打作为奖励专长。"
   }
 
 ]
