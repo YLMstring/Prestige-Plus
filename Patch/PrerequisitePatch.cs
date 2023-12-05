@@ -16,7 +16,7 @@ namespace PrestigePlus.Patch
         private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         public static void Patch()
         {
-            List<BlueprintFeatureReference> list = new List<BlueprintFeatureReference> { };
+            List<BlueprintFeatureReference> list = new() { };
             var feats = FeatureSelectionRefs.BasicFeatSelection.Reference.Get();
             var mabilities = FeatureSelectionRefs.MythicAbilitySelection.Reference.Get();
             var mfeats = FeatureSelectionRefs.MythicFeatSelection.Reference.Get();
