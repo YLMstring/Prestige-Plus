@@ -38,7 +38,7 @@ namespace PrestigePlus.CustomComponent.Archetype
 
         public override void OnActivate()
         {
-            var list = FeatureSelectionRefs.SorcererBloodlineSelection.Reference.Get().m_AllFeatures;
+            var list = FeatureSelectionRefs.SeekerBloodlineSelection.Reference.Get().m_AllFeatures;
             foreach (var blood in list)
             {
                 if (!Owner.HasFact(blood)) { continue; }
