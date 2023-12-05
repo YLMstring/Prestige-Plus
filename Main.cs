@@ -383,7 +383,7 @@ namespace PrestigePlus
                         Logger.Info("Already configured Holy Vindicator.");
                         return;
                     }
-                    Initialized = true; PatchHolyVindicator.Patch(); PrerequisitePatch.Patch(); 
+                    Initialized = true; PatchHolyVindicator.Patch(); PrerequisitePatch.Patch(); StyleMasterPatch.Patch();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("duplicate"))) { RemoveFeats.Patch(); }
                 }
                 catch (Exception e)

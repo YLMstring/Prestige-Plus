@@ -236,6 +236,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDescription(GreaterNameDescription)
               .SetIcon(icon)
               .AddPrerequisiteFeature(FeatureRefs.ImprovedUnarmedStrike.ToString())
+              .AddPrerequisiteNoFeature(GreaterUnarmedStrikeGuid)
               .SetIgnorePrerequisites(true)
               .SetObligatory(false)
               .AddToAllFeatures(GreaterUnarmedStrikeFeat())
