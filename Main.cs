@@ -331,7 +331,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("spell"))) { LitanyRighteousness.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("obedience"))) { DeificObedience.DeificObedienceConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("templar"))) { CrimsonTemplar.Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("seeker"))) { TruthSeeker.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("seeker"))) { TruthSeeker.Configure(); TruthSooker.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("infil"))) { Infiltrator.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }

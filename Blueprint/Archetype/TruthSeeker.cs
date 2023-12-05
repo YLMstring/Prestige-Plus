@@ -23,13 +23,11 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string ArchetypeDescription = "TruthSeeker.Description";
         public static void Configure()
         {
-
             ArchetypeConfigurator.New(ArchetypeName, ArchetypeGuid, CharacterClassRefs.OracleClass)
               .SetLocalizedName(ArchetypeDisplayName)
               .SetLocalizedDescription(ArchetypeDescription)
             .SetRemoveFeaturesEntry(3, FeatureSelectionRefs.OracleRevelationSelection.ToString())
             .SetRemoveFeaturesEntry(15, FeatureSelectionRefs.OracleRevelationSelection.ToString())
-            .AddToAddFeatures(1, FeatureRefs.SeekerTrapfinding.ToString())
             .AddToAddFeatures(3, CreateSeekerLore())
             .AddToAddFeatures(15, CreateSeekerMagic())
               .Configure();
