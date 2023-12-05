@@ -288,7 +288,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("angel"))) { SanguineAngel.Configure(); BullRushFeats.DragConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("scar"))) { ScarSeeker.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("dancer"))) { ShadowDancer.Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("seraph"))) { BlackSeraphStyle.StyleConfigure(); BlackSeraphStyle.MalevolenceConfigure(); BlackSeraphStyle.AnnihilationConfigure(); RippleWater.Configure(); SeizetheOpportunity.FeatConfigure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("seraph"))) { BlackSeraphStyle.StyleConfigure(); BlackSeraphStyle.MalevolenceConfigure(); BlackSeraphStyle.AnnihilationConfigure(); RippleWater.Configure(); SeizetheOpportunity.FeatConfigure(); BodyGuard.GreaterNameConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("grabbing"))) { GrabbingStyle.StyleConfigure(); GrabbingStyle.DragConfigure(); GrabbingStyle.MasterConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("stag"))) { StagStyle.StyleConfigure(); StagStyle.HornsConfigure(); StagStyle.SubmissionConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("turtle"))) { SnappingTurtleStyle.StyleConfigure(); SnappingTurtleStyle.ClutchConfigure(); SnappingTurtleStyle.ShellConfigure(); }

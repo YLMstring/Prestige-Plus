@@ -81,7 +81,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(ArrowSnatchFeat())
               .AddToAllFeatures(BloodDebtFeat())
               .AddToAllFeatures(KamiWardenFeat())
-              .AddToAllFeatures(GreaterNameConfigure())
+              .AddToAllFeatures(GreaterNameGuid)
               .AddToAllFeatures(StyleMasterConfigure())
               .Configure();
 
