@@ -30,7 +30,7 @@ namespace PrestigePlus.Blueprint.Feat
         {
             var icon = ActivatableAbilityRefs.DivineGuardianBodyguardAbility.Reference.Get().Icon;
 
-            FeatureConfigurator.New(FeatName, FeatGuid, Kingmaker.Blueprints.Classes.FeatureGroup.Feat)
+            FeatureConfigurator.New(FeatName, FeatGuid, FeatureGroup.Feat)
                     .SetDisplayName(DisplayName)
                     .SetDescription(Description)
                     .SetIcon(icon)
@@ -51,12 +51,13 @@ namespace PrestigePlus.Blueprint.Feat
         {
             var icon = ActivatableAbilityRefs.DivineGuardianInHarmsWayAbility.Reference.Get().Icon;
 
-            FeatureConfigurator.New(Feat2Name, Feat2Guid, Kingmaker.Blueprints.Classes.FeatureGroup.Feat)
+            FeatureConfigurator.New(Feat2Name, Feat2Guid, FeatureGroup.Feat)
                     .SetDisplayName(DisplayName2)
                     .SetDescription(Description2)
                     .SetIcon(icon)
                     .AddPrerequisiteFeature(FeatGuid)
                     .AddFacts(new() { FeatureRefs.MythicIgnoreAlignmentRestrictions.ToString(), AbilityRefs.DivineGuardianTrothAbility.ToString(), ActivatableAbilityRefs.DivineGuardianInHarmsWayAbility.ToString() })
+                    .AddAbilityResources(resource: AbilityResourceRefs.DivineGuardianTrothResource.ToString(), restoreAmount: true)
                     .AddToGroups(Kingmaker.Blueprints.Classes.FeatureGroup.CombatFeat)
                     .Configure();
         }
@@ -187,7 +188,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string GreaterUnarmedStrikeDescription = "NinjaTrickGreaterUnarmedStrike.Description";
         public static BlueprintProgression GreaterUnarmedStrikeFeat()
         {
-            var icon = FeatureRefs.ImprovedUnarmedStrikeMythicFeat.Reference.Get().Icon;
+            var icon = FeatureRefs.KiQuiveringPalmFeature.Reference.Get().Icon;
             var feat = ProgressionConfigurator.New(GreaterUnarmedStrike, GreaterUnarmedStrikeGuid)
               .SetDisplayName(GreaterUnarmedStrikeDisplayName)
               .SetDescription(GreaterUnarmedStrikeDescription)
@@ -228,7 +229,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string GreaterNameDescription = "GreaterName.Description";
         public static BlueprintFeatureSelection GreaterNameConfigure()
         {
-            var icon = FeatureRefs.ImprovedUnarmedStrikeMythicFeat.Reference.Get().Icon;
+            var icon = FeatureRefs.KiQuiveringPalmFeature.Reference.Get().Icon;
 
             return FeatureSelectionConfigurator.New(GreaterNameFeat, GreaterNameGuid)
               .SetDisplayName(GreaterNameDisplayName)

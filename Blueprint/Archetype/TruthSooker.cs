@@ -24,7 +24,7 @@ namespace PrestigePlus.Blueprint.Archetype
             .SetRemoveFeaturesEntry(1, FeatureSelectionRefs.SorcererBloodlineSelection.ToString())
             .AddToAddFeatures(1, FeatureSelectionRefs.SeekerBloodlineSelection.ToString())
             .AddToAddFeatures(3, CreateSookerLore())
-            .AddToAddFeatures(4, CreateSookerMagic())
+            .AddToAddFeatures(15, CreateSookerMagic())
               .Configure();
         }
 
