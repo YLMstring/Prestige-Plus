@@ -25,7 +25,7 @@ namespace PrestigePlus.Patch
             {
                 if (feat.Get().Groups.Contains(Kingmaker.Blueprints.Classes.FeatureGroup.StyleFeat))
                 {
-                    target.m_Features.AddItem(feat);
+                    target.m_Features.AddToArray(feat);
                 }
             }
         }

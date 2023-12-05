@@ -52,6 +52,11 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
+              .AddPrerequisiteClassLevel(CharacterClassRefs.KineticistClass.ToString(), 1)
+              .AddPrerequisiteFeature(FeatureRefs.KiPowerFeature.ToString())
+              .AddPointBlankMaster(Kingmaker.Enums.WeaponCategory.KineticBlast)
+              .AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.KiPowerResource.ToString(), ContextValues.Rank())
+              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.KineticistClass.ToString() }).WithOnePlusDiv2Progression())
               .SetClasses(BlueprintTool.GetRef<BlueprintCharacterClassReference>(CharacterClassRefs.MonkClass.ToString()))
               .SetGiveFeaturesForPreviousLevels(true)
               .AddToLevelEntry(1, featreal)
@@ -76,35 +81,26 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToLevelEntry(20, featreal)
               .Configure();
 
-            var feat = FeatureSelectionConfigurator.New(FeatName, FeatGuid)
-                    .SetDisplayName(DisplayName)
-                    .SetDescription(Description)
-                    .SetIcon(icon)
-                    .AddPrerequisiteClassLevel(CharacterClassRefs.KineticistClass.ToString(), 1)
-                    .AddPrerequisiteFeature(FeatureRefs.KiPowerFeature.ToString())
-                    .AddToAllFeatures(pro)
-                    .AddPointBlankMaster(Kingmaker.Enums.WeaponCategory.KineticBlast)
-                    .AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.KiPowerResource.ToString(), ContextValues.Rank())
-                    .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.KineticistClass.ToString() }).WithOnePlusDiv2Progression())
+            FeatureSelectionConfigurator.New(FeatName, FeatGuid)
                     .Configure();
 
             FeatureSelectionConfigurator.For(FeatureSelectionRefs.BasicFeatSelection)
-                .AddToAllFeatures(feat)
+                .AddToAllFeatures(pro)
                 .Configure();
             FeatureSelectionConfigurator.For(FeatureSelectionRefs.FighterFeatSelection)
-                .AddToAllFeatures(feat)
+                .AddToAllFeatures(pro)
                 .Configure();
             FeatureSelectionConfigurator.For(FeatureSelectionRefs.CombatTrick)
-                .AddToAllFeatures(feat)
+                .AddToAllFeatures(pro)
                 .Configure();
             FeatureSelectionConfigurator.For(FeatureSelectionRefs.LoremasterCombatFeatSelection)
-                .AddToAllFeatures(feat)
+                .AddToAllFeatures(pro)
                 .Configure();
             FeatureSelectionConfigurator.For(FeatureSelectionRefs.LoremasterTricksterCombatFeatSelection)
-                .AddToAllFeatures(feat)
+                .AddToAllFeatures(pro)
                 .Configure();
             FeatureSelectionConfigurator.For(FeatureSelectionRefs.StudentOfWarCombatFeatSelection)
-                .AddToAllFeatures(feat)
+                .AddToAllFeatures(pro)
                 .Configure();
         }
     }
