@@ -5787,8 +5787,8 @@
   },
   {
     "Key": "TruthSeekerSeekerLore.Description",
-    "enGB": "By 3rd level, a seeker has already learned much about his mystery, and is more comfortable using the bonus spells. He gains a +4 bonus on concentration checks and caster level checks when casting any bonus spells granted by his current mystery.",
-    "zhCN": "3级起，追寻者对于自身启示的掌握逐渐加深，施放当前秘示域的奖励法术时，他的专注检定、施法者等级检定得到+4加值。"
+    "enGB": "By 3rd level, a seeker has already learned much about his mystery, and is more comfortable using the bonus spells. He gains a +4 bonus on concentration checks and his caster level gains a +4 bonus when casting any bonus spells granted by his current mystery.",
+    "zhCN": "3级起，追寻者对于自身启示的掌握逐渐加深，施放当前秘示域的奖励法术时，他的专注检定、施法者等级得到+4加值。"
   },
   {
     "Key": "TruthSeekerSeekerMagic.Name",
@@ -5952,8 +5952,8 @@
   },
   {
     "Key": "TruthSookerSookerLore.Description",
-    "enGB": "By 3rd level, a seeker has already learned much about his bloodline, and is more comfortable using the bonus spells gained by that bloodline. He gains a +4 bonus on concentration checks and caster level checks when casting his seeker bloodline spells. This ability replaces the bloodline power gained at 3rd level.",
-    "zhCN": "3级起，追寻者对于自身血脉的掌握逐渐加深，施放追寻者血脉的额外法术时，他的专注检定、施法者等级检定得到+4加值。该能力取代3级的血脉能力。"
+    "enGB": "By 3rd level, a seeker has already learned much about his bloodline, and is more comfortable using the bonus spells gained by that bloodline. He gains a +4 bonus on concentration checks and his caster level gains a +4 bonus when casting his seeker bloodline spells. This ability replaces the bloodline power gained at 3rd level.",
+    "zhCN": "3级起，追寻者对于自身血脉的掌握逐渐加深，施放追寻者血脉的额外法术时，他的专注检定、施法者等级得到+4加值。该能力取代3级的血脉能力。"
   },
   {
     "Key": "TruthSookerSookerMagic.Name",

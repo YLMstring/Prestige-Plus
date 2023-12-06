@@ -26,6 +26,8 @@ using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
 using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.Abilities.Components.TargetCheckers;
+using Kingmaker.UnitLogic.Alignments;
+using Kingmaker.Blueprints.Classes.Prerequisites;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -151,6 +153,10 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(SentinelSymbolicWeaponDisplayName)
               .SetDescription(SentinelSymbolicWeaponDescription)
               .SetIcon(icon)
+              .AddPrerequisiteAlignment(AlignmentMaskType.Good, group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.LawfulNeutral, group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.TrueNeutral, group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticNeutral, group: Prerequisite.GroupType.Any)
               .AddComponent<SymbolicWeaponBonus>()
               .Configure();
         }
@@ -167,6 +173,10 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(SentinelEvilWeaponDisplayName)
               .SetDescription(SentinelEvilWeaponDescription)
               .SetIcon(icon)
+              .AddPrerequisiteAlignment(AlignmentMaskType.Evil, group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.LawfulNeutral, group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.TrueNeutral, group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticNeutral, group: Prerequisite.GroupType.Any)
               .AddComponent<SymbolicWeaponBonus>(c => { c.Des = Kingmaker.Enums.ModifierDescriptor.Profane; })
               .Configure();
         }
