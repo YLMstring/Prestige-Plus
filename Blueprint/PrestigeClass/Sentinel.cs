@@ -50,11 +50,11 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             BlueprintProgression progression =
             ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
             .SetClasses(ArchetypeGuid)
-            .AddToLevelEntry(1, BonusFeatFeat(), ChooseGoodEvilFeat(), FeatureRefs.RangerProficiencies.ToString())
+            .AddToLevelEntry(1, BonusFeatFeat(), FeatureRefs.RangerProficiencies.ToString(), ChooseGoodEvilFeat())
             .AddToLevelEntry(2, FeatureSelectionRefs.FighterFeatSelection.ToString())
             .AddToLevelEntry(3, DivineBoon1Feat())
             .AddToLevelEntry(4, DivineQuicknessFeat())
-            .AddToLevelEntry(5, AlignedStrikeFeat(), StalwartFeat())
+            .AddToLevelEntry(5, StalwartFeat(), AlignedStrikeFeat())
             .AddToLevelEntry(6, DivineBoon2Feat())
             .AddToLevelEntry(7, FeatureSelectionRefs.FighterFeatSelection.ToString(), PracticedCombatantFeat())
             .AddToLevelEntry(8, FeatureSelectionRefs.FighterFeatSelection.ToString())
@@ -378,8 +378,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 typeof(AbilitySpawnFx),
                 typeof(ContextRankConfigs),
                 typeof(AbilityTargetHasFact))
-                .SetDisplayName(UnstoppableWarriorDisplayName)
-                .SetDescription(UnstoppableWarriorDescription)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
                 .SetRange(Kingmaker.UnitLogic.Abilities.Blueprints.AbilityRange.Personal)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
