@@ -63,7 +63,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             .SetUIGroups(UIGroupBuilder.New()
                     //.AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { FiendishStudiesGuid, FiendishStudies5Guid, FiendishStudies10Guid })
                     //.AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { SymbolicWeapon3Guid, SymbolicWeapon6Guid, SymbolicWeapon9Guid, SymbolicWeaponGuid })
-                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { DeificObedience.Ragathiel1Guid, DeificObedience.Ragathiel2Guid, DeificObedience.Ragathiel3Guid }))
+                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { DivineBoon1Guid, DivineBoon2Guid, DivineBoon3Guid }))
             .SetRanks(1)
             .SetIsClassFeature(true)
             .SetDisplayName("")
@@ -113,9 +113,11 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintFeatureSelection BonusFeatFeat()
         {
+            var icon = AbilityRefs.Prayer.Reference.Get().Icon;
             return FeatureSelectionConfigurator.New(BonusFeat, BonusFeatGuid)
               .SetDisplayName(BonusFeatDisplayName)
               .SetDescription(BonusFeatDescription)
+              .SetIcon(icon)
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
               .AddToAllFeatures(DeificObedience.ShelynSentinelGuid)
@@ -131,9 +133,11 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintFeatureSelection ChooseGoodEvilFeat()
         {
+            var icon = AbilityRefs.BlessWeapon.Reference.Get().Icon;
             return FeatureSelectionConfigurator.New(ChooseGoodEvil, ChooseGoodEvilGuid)
               .SetDisplayName(ChooseGoodEvilDisplayName)
               .SetDescription(ChooseGoodEvilDescription)
+              .SetIcon(icon)
               .SetIgnorePrerequisites(false)
               .SetObligatory(true)
               .AddToAllFeatures(SymbolicWeaponFeat())
@@ -148,7 +152,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string SentinelSymbolicWeaponDescription = "SentinelSymbolicWeapon.Description";
         public static BlueprintFeature SymbolicWeaponFeat()
         {
-            var icon = FeatureRefs.WeaponBondFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.BlessWeapon.Reference.Get().Icon;
             return FeatureConfigurator.New(SymbolicWeapon, SymbolicWeaponGuid)
               .SetDisplayName(SentinelSymbolicWeaponDisplayName)
               .SetDescription(SentinelSymbolicWeaponDescription)
@@ -168,7 +172,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string SentinelEvilWeaponDescription = "SentinelEvilWeapon.Description";
         public static BlueprintFeature EvilWeaponFeat()
         {
-            var icon = FeatureRefs.WeaponBondFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.InflictLightWounds.Reference.Get().Icon;
             return FeatureConfigurator.New(EvilWeapon, EvilWeaponGuid)
               .SetDisplayName(SentinelEvilWeaponDisplayName)
               .SetDescription(SentinelEvilWeaponDescription)
@@ -255,7 +259,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string SentinelStalwartDescription = "SentinelStalwart.Description";
         public static BlueprintFeature StalwartFeat()
         {
-            var icon = FeatureRefs.Improved_Initiative.Reference.Get().Icon;
+            var icon = FeatureRefs.BloodFeaster.Reference.Get().Icon;
             return FeatureConfigurator.New(Stalwart, StalwartGuid)
               .SetDisplayName(SentinelStalwartDisplayName)
               .SetDescription(SentinelStalwartDescription)
@@ -272,7 +276,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string SentinelStalwartGoodDescription = "SentinelStalwartGood.Description";
         public static BlueprintFeature StalwartGoodFeat()
         {
-            var icon = FeatureRefs.Improved_Initiative.Reference.Get().Icon;
+            var icon = FeatureRefs.BloodFeaster.Reference.Get().Icon;
             return FeatureConfigurator.New(StalwartGood, StalwartGoodGuid)
               .SetDisplayName(SentinelStalwartGoodDisplayName)
               .SetDescription(SentinelStalwartGoodDescription)
@@ -288,7 +292,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string SentinelStalwartEvilDescription = "SentinelStalwartEvil.Description";
         public static BlueprintFeature StalwartEvilFeat()
         {
-            var icon = FeatureRefs.Improved_Initiative.Reference.Get().Icon;
+            var icon = FeatureRefs.BloodFeaster.Reference.Get().Icon;
             return FeatureConfigurator.New(StalwartEvil, StalwartEvilGuid)
               .SetDisplayName(SentinelStalwartEvilDisplayName)
               .SetDescription(SentinelStalwartEvilDescription)
@@ -304,7 +308,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string SentinelPracticedCombatantDescription = "SentinelPracticedCombatant.Description";
         public static BlueprintFeature PracticedCombatantFeat()
         {
-            var icon = FeatureRefs.Improved_Initiative.Reference.Get().Icon;
+            var icon = FeatureRefs.BullRushMythicFeat.Reference.Get().Icon;
             return FeatureConfigurator.New(PracticedCombatant, PracticedCombatantGuid)
               .SetDisplayName(SentinelPracticedCombatantDisplayName)
               .SetDescription(SentinelPracticedCombatantDescription)
@@ -321,7 +325,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string SentinelPracticedCombatantGoodDescription = "SentinelPracticedCombatantGood.Description";
         public static BlueprintFeature PracticedCombatantGoodFeat()
         {
-            var icon = FeatureRefs.Improved_Initiative.Reference.Get().Icon;
+            var icon = FeatureRefs.BullRushMythicFeat.Reference.Get().Icon;
             return FeatureConfigurator.New(PracticedCombatantGood, PracticedCombatantGoodGuid)
               .SetDisplayName(SentinelPracticedCombatantGoodDisplayName)
               .SetDescription(SentinelPracticedCombatantGoodDescription)
@@ -337,7 +341,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string SentinelPracticedCombatantEvilDescription = "SentinelPracticedCombatantEvil.Description";
         public static BlueprintFeature PracticedCombatantEvilFeat()
         {
-            var icon = FeatureRefs.Improved_Initiative.Reference.Get().Icon;
+            var icon = FeatureRefs.BullRushMythicFeat.Reference.Get().Icon;
             return FeatureConfigurator.New(PracticedCombatantEvil, PracticedCombatantEvilGuid)
               .SetDisplayName(SentinelPracticedCombatantEvilDisplayName)
               .SetDescription(SentinelPracticedCombatantEvilDescription)
@@ -398,7 +402,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string SentinelDivineBoon1Description = "SentinelDivineBoon1.Description";
         public static BlueprintFeature DivineBoon1Feat()
         {
-            var icon = FeatureRefs.BlessedWayFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.Virtue.Reference.Get().Icon;
             return FeatureConfigurator.New(DivineBoon1, DivineBoon1Guid)
               .SetDisplayName(SentinelDivineBoon1DisplayName)
               .SetDescription(SentinelDivineBoon1Description)
@@ -414,7 +418,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string SentinelDivineBoon2Description = "SentinelDivineBoon2.Description";
         public static BlueprintFeature DivineBoon2Feat()
         {
-            var icon = FeatureRefs.BlessedWayFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.Virtue.Reference.Get().Icon;
             return FeatureConfigurator.New(DivineBoon2, DivineBoon2Guid)
               .SetDisplayName(SentinelDivineBoon2DisplayName)
               .SetDescription(SentinelDivineBoon2Description)
@@ -430,7 +434,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string SentinelDivineBoon3Description = "SentinelDivineBoon3.Description";
         public static BlueprintFeature DivineBoon3Feat()
         {
-            var icon = FeatureRefs.BlessedWayFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.Virtue.Reference.Get().Icon;
             return FeatureConfigurator.New(DivineBoon3, DivineBoon3Guid)
               .SetDisplayName(SentinelDivineBoon3DisplayName)
               .SetDescription(SentinelDivineBoon3Description)

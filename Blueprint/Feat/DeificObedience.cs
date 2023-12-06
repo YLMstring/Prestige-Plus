@@ -145,7 +145,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         private static BlueprintFeature CreateShelynSentinel1()
         {
-            var icon = FeatureRefs.DuelistGrace.Reference.Get().Icon;
+            var icon = FeatureRefs.JumpUp.Reference.Get().Icon;
 
             var ability = AbilityConfigurator.New(ShelynSentinel1Ablity, ShelynSentinel1AblityGuid)
                 .CopyFrom(
