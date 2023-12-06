@@ -6020,6 +6020,270 @@
     "Key": "GreaterName.Description",
     "enGB": "A ninja who selects this ninja trick gains Greater Unarmed Strike as a bonus feat.",
     "zhCN": "选择此忍术的忍者获得高等徒手击打作为奖励专长。"
+  },
+  {
+    "Key": "DeificObedienceShelyn.Name",
+    "ProcessTemplates": false,
+    "enGB": "Shelyn",
+    "zhCN": "雪琳"
+  },
+  {
+    "Key": "DeificObedienceShelyn.Description",
+    "enGB": "Paint a small picture, compose a short poem or song, dance a scene from a ballet, or create another work of art, whispering praise to Shelyn’s beauty and grace as you do so. The art piece need be neither large nor complex, but heartfelt and made to the best of your ability. Gift the piece of art to a stranger and pay her a sincere compliment as you do so. If there are no suitable individuals around to receive the gift, leave it in an obvious place with a note praising Shelyn and asking whoever finds it to take it with your warmest wishes. Gain a +4 sacred bonus on Use Magic Device checks.",
+    "zhCN": "绘制一幅画，创作一首短诗或短歌，跳出舞剧中的一个场景，或者进行其他艺术创作，当你如此做的时候低声赞颂雪琳的美丽与优雅。这些艺术品不需要庞大或复杂，但是要尽你所能进行真挚的创作。将作品赠与一个陌生人，并且在这么做的时候向其致以真挚的赞美。若没有合适的人能够接受礼物，那么将它放置在明显的地方，并留下纸条，写有对雪琳的颂扬之词以及对找到作品并取走之人的热情祝福。你的使用魔法物品检定获得+4神圣加值。"
+  },
+  {
+    "Key": "DeificObedienceShelynSentinel.Name",
+    "ProcessTemplates": false,
+    "enGB": "Shelyn (Sentinel)",
+    "zhCN": "雪琳（信仰哨卫）"
+  },
+  {
+    "Key": "DeificObedienceShelynSentinel.Description",
+    "enGB": "Become a Sentinel to gain access to her boons, which will be granted at certain character or class levels.",
+    "zhCN": "成为信仰哨卫来获取她的神恩资格，你会在合适的角色或职业等级得到神恩。"
+  },
+  {
+    "Key": "SpellPowerShelynSentinel1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Graceful Warrior",
+    "zhCN": "优雅武者"
+  },
+  {
+    "Key": "SpellPowerShelynSentinel1.Description",
+    "enGB": "entangle 3/day, cat’s grace 2/ day, or haste 1/day",
+    "zhCN": "纠缠术 3次/日，猫之优雅 2次/日，或加速术 1次/日"
+  },
+  {
+    "Key": "DeificObedienceShelynSentinel2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Glorious Might",
+    "zhCN": "辉煌神力"
+  },
+  {
+    "Key": "DeificObedienceShelynSentinel2.Description",
+    "enGB": "Your passionate devotion to Shelyn grants you extra prowess in your battles against evil, allowing you to see and root out the ugliness at the heart of your foe. When you use your smite evil class feature, you gain double your Charisma bonus on attack rolls and your Charisma bonus + your paladin level on damage rolls. This replaces the normal bonuses for using smite evil. If you don’t have access to smite evil, you instead gain a +2 bonus on weapon attack rolls against evil targets.",
+    "zhCN": "你向雪琳献出狂热的信仰，而她赐予你斩杀邪恶的力量，这使得你能够看破并根除敌人心中的丑恶。当你使用制裁邪恶职业能力时，你能够将魅力加值的两倍加到攻击检定上，并且将你的魅力加值和你的圣武士等级相加之后加到伤害检定上。这会取代使用制裁邪恶时正常的加值。若你不具有制裁邪恶职业能力，那么你会在对抗邪恶目标时，攻击检定获得+2加值作为替代。"
+  },
+  {
+    "Key": "DeificObedienceShelynSentinel3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Cloak of Feathers",
+    "zhCN": "飞羽斗篷"
+  },
+  {
+    "Key": "DeificObedienceShelynSentinel3.Description",
+    "enGB": "An aura of colorful features, glowing with Shelyn’s holy grace, shields you against electricity attacks with a measure of the protection enjoyed by the azatas who serve her. You gain electricity resistance 15.",
+    "zhCN": "散发着雪琳恩典的多彩灵光使你免受闪电的攻击，正如侍奉雪琳的灵使所享有的那样。你获得15点闪电抗力。"
+  },
+  {
+    "Key": "Sentinel.Name",
+    "ProcessTemplates": false,
+    "enGB": "Sentinel",
+    "zhCN": "信仰哨卫"
+  },
+  {
+    "Key": "Sentinel.Description",
+    "enGB": "Every major deity boasts champions of some type, whether they are paladins sworn to The Inheritor or barbarians who channel their destructive rage from The Rough Beast. The sentinel is a warrior who receives special powers in exchange for his service to a deity, and often serves as a guard for the deity’s clergy. Some undergo official training, others experience visions leading them to their path, and some simply make the decision to pledge their lives to upholding their faith.",
+    "zhCN": "每个主要神祇都会以座下的各种勇士为荣，无论是向艾奥梅黛宣誓的圣武士，还是替洛瓦古格宣泄狂怒的野蛮人。信仰哨卫是通过贡献自身的武力从而向神祇交换力量的勇士，他们通常会成为神职人员的护卫。有的信仰哨卫受过教会的正式训练，其他人则是出于自身的经历和见闻走上这条道路，而有的人只是单纯做出用生命捍卫信仰的誓言。"
+  },
+  {
+    "Key": "SentinelBonusFeat.Name",
+    "ProcessTemplates": false,
+    "enGB": "Obedience",
+    "zhCN": "崇神仪典"
+  },
+  {
+    "Key": "SentinelBonusFeat.Description",
+    "enGB": "In order to maintain the abilities granted by this prestige class, a sentinel must perform a daily obedience to his chosen deity. Sentinel levels stack with fighter levels for the purpose of qualifying for feats with a fighter level prerequisite.",
+    "zhCN": "为了维持这个进阶职业获得的能力，信仰哨卫必须执行她所信仰神祇的日常服从仪典。在判断是否能够选择那些需要战士等级的专长时，将信仰哨卫等级与战士等级叠加计算是否满足先决条件。"
+  },
+  {
+    "Key": "SentinelChooseGoodEvil.Name",
+    "ProcessTemplates": false,
+    "enGB": "Symbolic Weapon",
+    "zhCN": "神赐武器"
+  },
+  {
+    "Key": "SentinelChooseGoodEvil.Description",
+    "enGB": "At 1st level, the sentinel chooses a holy (or unholy) symbol. An evil sentinel can't choose to gain sacred bonus, and a good sentinel can't choose to gain profane bonus.",
+    "zhCN": "1级时，信仰哨卫选择一枚圣徽或者邪徽。邪恶阵营的信仰哨卫不能选择获得神圣加值，善良阵营的信仰哨卫不能选择获得亵渎加值。"
+  },
+  {
+    "Key": "SentinelSymbolicWeapon.Name",
+    "ProcessTemplates": false,
+    "enGB": "Symbolic Weapon",
+    "zhCN": "神赐武器"
+  },
+  {
+    "Key": "SentinelSymbolicWeapon.Description",
+    "enGB": "When wielding his deity’s favored weapon, the sentinel gains a +1 sacred bonus on attack and damage rolls. These bonuses increase by 1 for every 3 levels he has in the sentinel prestige class (maximum +4).",
+    "zhCN": "当信仰哨卫持用他所信仰的神祇的偏好武器时，他会在攻击检定和伤害检定中获得+1神圣加值。每当他在信仰哨卫进阶职业中拥有3个等级，这些加值就会再增加1点（最高+4）。"
+  },
+  {
+    "Key": "SentinelEvilWeapon.Name",
+    "ProcessTemplates": false,
+    "enGB": "Symbolic Weapon",
+    "zhCN": "神赐武器"
+  },
+  {
+    "Key": "SentinelEvilWeapon.Description",
+    "enGB": "When wielding his deity’s favored weapon, the sentinel gains a +1 profane bonus on attack and damage rolls. These bonuses increase by 1 for every 3 levels he has in the sentinel prestige class (maximum +4).",
+    "zhCN": "当信仰哨卫持用他所信仰的神祇的偏好武器时，他会在攻击检定和伤害检定中获得+1亵渎加值。每当他在信仰哨卫进阶职业中拥有3个等级，这些加值就会再增加1点（最高+4）。"
+  },
+  {
+    "Key": "SentinelDivineQuickness.Name",
+    "ProcessTemplates": false,
+    "enGB": "Divine Quickness",
+    "zhCN": "神圣迅捷"
+  },
+  {
+    "Key": "SentinelDivineQuickness.Description",
+    "enGB": "Starting at 4th level, so long as the sentinel carries his deity’s favored weapon, he gains a +2 sacred or profane bonus on initiative checks. The weapon doesn’t need to be carried in hand, but must at least be on his person and accessible enough that he can wield it with no greater than a move action. At 8th level, this bonus increases to + 4.",
+    "zhCN": "4级起，只要信仰哨卫携带着他所信仰的神祇的偏好武器，他就会在先攻检定中获得+2神圣或亵渎加值。武器并不需要持握在他的手中，但是必须至少要随身携带或者放在不超过一个移动动作便能拿到手中的近处。8级起，这个加值增加至+4点。"
+  },
+  {
+    "Key": "SentinelDivineQuicknessGood.Name",
+    "ProcessTemplates": false,
+    "enGB": "Divine Quickness",
+    "zhCN": "神圣迅捷"
+  },
+  {
+    "Key": "SentinelDivineQuicknessGood.Description",
+    "enGB": "Starting at 4th level, so long as the sentinel carries his deity’s favored weapon, he gains a +2 sacred bonus on initiative checks. The weapon doesn’t need to be carried in hand, but must at least be on his person and accessible enough that he can wield it with no greater than a move action. At 8th level, this bonus increases to + 4.",
+    "zhCN": "4级起，只要信仰哨卫携带着他所信仰的神祇的偏好武器，他就会在先攻检定中获得+2神圣加值。武器并不需要持握在他的手中，但是必须至少要随身携带或者放在不超过一个移动动作便能拿到手中的近处。8级起，这个加值增加至+4点。"
+  },
+  {
+    "Key": "SentinelDivineQuicknessEvil.Name",
+    "ProcessTemplates": false,
+    "enGB": "Divine Quickness",
+    "zhCN": "神圣迅捷"
+  },
+  {
+    "Key": "SentinelDivineQuicknessEvil.Description",
+    "enGB": "Starting at 4th level, so long as the sentinel carries his deity’s favored weapon, he gains a +2 profane bonus on initiative checks. The weapon doesn’t need to be carried in hand, but must at least be on his person and accessible enough that he can wield it with no greater than a move action. At 8th level, this bonus increases to + 4.",
+    "zhCN": "4级起，只要信仰哨卫携带着他所信仰的神祇的偏好武器，他就会在先攻检定中获得+2亵渎加值。武器并不需要持握在他的手中，但是必须至少要随身携带或者放在不超过一个移动动作便能拿到手中的近处。8级起，这个加值增加至+4点。"
+  },
+  {
+    "Key": "SentinelAlignedStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Aligned Strike",
+    "zhCN": "阵营斩"
+  },
+  {
+    "Key": "SentinelAlignedStrike.Description",
+    "enGB": "The sentinel’s righteous fervor allows him to cut through certain types of damage reduction. This ability works like arcane archer 9th level enhance arrows, except that it affects any weapon wielded.",
+    "zhCN": "信仰哨卫那毋庸置疑的热诚使得自身能够击破某种类型的伤害减免。该能力如同魔射手9级的强化箭矢，但对持用的任何武器都有效。"
+  },
+  {
+    "Key": "SentinelStalwart.Name",
+    "ProcessTemplates": false,
+    "enGB": "Stalwart",
+    "zhCN": "坚定信仰"
+  },
+  {
+    "Key": "SentinelStalwart.Description",
+    "enGB": "At 5th level, the sentinel gains mental fortitude through his constant meditation and adherence to religious tenets. He gains a +2 sacred or profane bonus on saving throws to resist divine spells.",
+    "zhCN": "5级起，信仰哨卫通过不断的冥思与对教义的贯彻施行，获得了强韧的精神。他在对抗神术时，豁免检定获得+2神圣或亵渎加值。"
+  },
+  {
+    "Key": "SentinelStalwartGood.Name",
+    "ProcessTemplates": false,
+    "enGB": "Stalwart",
+    "zhCN": "坚定信仰"
+  },
+  {
+    "Key": "SentinelStalwartGood.Description",
+    "enGB": "At 5th level, the sentinel gains mental fortitude through his constant meditation and adherence to religious tenets. He gains a +2 sacred bonus on saving throws to resist divine spells.",
+    "zhCN": "5级起，信仰哨卫通过不断的冥思与对教义的贯彻施行，获得了强韧的精神。他在对抗神术时，豁免检定获得+2神圣加值。"
+  },
+  {
+    "Key": "SentinelStalwartEvil.Name",
+    "ProcessTemplates": false,
+    "enGB": "Stalwart",
+    "zhCN": "坚定信仰"
+  },
+  {
+    "Key": "SentinelStalwartEvil.Description",
+    "enGB": "At 5th level, the sentinel gains mental fortitude through his constant meditation and adherence to religious tenets. He gains a +2 profane bonus on saving throws to resist divine spells.",
+    "zhCN": "5级起，信仰哨卫通过不断的冥思与对教义的贯彻施行，获得了强韧的精神。他在对抗神术时，豁免检定获得+2亵渎加值。"
+  },
+  {
+    "Key": "SentinelPracticedCombatant.Name",
+    "ProcessTemplates": false,
+    "enGB": "Practiced Combatant",
+    "zhCN": "老练战士"
+  },
+  {
+    "Key": "SentinelPracticedCombatant.Description",
+    "enGB": "At 7th level, the sentinel displays increased combat ability thanks to his extensive training and experience. He gains a +2 sacred or profane bonus on combat maneuvers he performs.",
+    "zhCN": "7级起，得益于长期的训练和经验，信仰哨卫能够展现出更加强大的战斗能力。他在执行战技时，获得+2神圣或亵渎加值。"
+  },
+  {
+    "Key": "SentinelPracticedCombatantGood.Name",
+    "ProcessTemplates": false,
+    "enGB": "Practiced Combatant",
+    "zhCN": "老练战士"
+  },
+  {
+    "Key": "SentinelPracticedCombatantGood.Description",
+    "enGB": "At 7th level, the sentinel displays increased combat ability thanks to his extensive training and experience. He gains a +2 sacred bonus on combat maneuvers he performs.",
+    "zhCN": "7级起，得益于长期的训练和经验，信仰哨卫能够展现出更加强大的战斗能力。他在执行战技时，获得+2神圣加值。"
+  },
+  {
+    "Key": "SentinelPracticedCombatantEvil.Name",
+    "ProcessTemplates": false,
+    "enGB": "Practiced Combatant",
+    "zhCN": "老练战士"
+  },
+  {
+    "Key": "SentinelPracticedCombatantEvil.Description",
+    "enGB": "At 7th level, the sentinel displays increased combat ability thanks to his extensive training and experience. He gains a +2 profane bonus on combat maneuvers he performs.",
+    "zhCN": "7级起，得益于长期的训练和经验，信仰哨卫能够展现出更加强大的战斗能力。他在执行战技时，获得+2亵渎加值。"
+  },
+  {
+    "Key": "SentinelUnstoppableWarrior.Name",
+    "ProcessTemplates": false,
+    "enGB": "Unstoppable Warrior",
+    "zhCN": "无畏勇士"
+  },
+  {
+    "Key": "SentinelUnstoppableWarrior.Description",
+    "enGB": "At 10th level, the sentinel becomes a stalwart paragon demonstrating incredible combat prowess. He gains 5/-. In addition, the sentinel gains Diehard as a bonus feat. Once per day as a swift action, the sentinel can use cure critical wounds, but targeting only himself, with a caster level equal to his character level.",
+    "zhCN": "10级起，信仰哨卫成为了具有高超武艺的坚定典范。他获得伤害减免5/-，并获得顽强作为奖励专长。每天一次，信仰哨卫可使用迅捷动作对自己施放治疗致命伤，施法者等级等于角色等级。"
+  },
+  {
+    "Key": "SentinelDivineBoon1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Divine Boon",
+    "zhCN": "神恩"
+  },
+  {
+    "Key": "SentinelDivineBoon1.Description",
+    "enGB": "As the sentinel gains levels, he gains boons from his chosen deity. The nature of these boons varies depending on the sentinel’s chosen deity. Each deity grants three boons, each more powerful than the last. At 3rd level, the sentinel gains the first boon.",
+    "zhCN": "随着信仰哨卫的等级提升，他会获得自身信奉之神祇赋予的神恩。这些神恩的性质取决于信仰哨卫所信奉的神祇。每个神祇都会赋予他三个神恩，并且这些神恩会逐级加强。3级时，信仰哨卫会获得第一神恩。"
+  },
+  {
+    "Key": "SentinelDivineBoon2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Divine Boon",
+    "zhCN": "神恩"
+  },
+  {
+    "Key": "SentinelDivineBoon2.Description",
+    "enGB": "At 6th level, he gains the second boon.",
+    "zhCN": "6级时，信仰哨卫会获得第二神恩。"
+  },
+  {
+    "Key": "SentinelDivineBoon3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Divine Boon",
+    "zhCN": "神恩"
+  },
+  {
+    "Key": "SentinelDivineBoon3.Description",
+    "enGB": "At 9th level, he gains the third boon.",
+    "zhCN": "9级时，信仰哨卫会获得第三神恩。"
   }
 
 ]
