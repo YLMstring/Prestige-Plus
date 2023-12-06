@@ -357,7 +357,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         }
 
         private const string EnhanceArrows3 = "EnhanceArrows3";
-        private static readonly string EnhanceArrows3Guid = "{D59B7809-D002-414D-A09C-0374CD858A18}";
+        public static readonly string EnhanceArrows3Guid = "{D59B7809-D002-414D-A09C-0374CD858A18}";
 
         internal const string EnhanceArrows3DisplayName = "EnhanceArrows3.Name";
         private const string EnhanceArrows3Description = "EnhanceArrows3.Description";

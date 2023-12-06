@@ -66,16 +66,14 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
         public override void OnActivate()
         {
             cat = PrerequisiteDivineWeapon.GetFavoredWeapon(Owner);
-            Des = ModifierDescriptor.Sacred;
         }
 
         public override void OnDeactivate()
         {
             cat = null;
-            Des = ModifierDescriptor.Sacred;
         }
 
         private WeaponCategory? cat = null;
-        private ModifierDescriptor Des = ModifierDescriptor.Sacred;
+        public ModifierDescriptor Des = ModifierDescriptor.Sacred;
     }
 }
