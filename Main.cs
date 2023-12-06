@@ -251,6 +251,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("obedience"), defaultValue: true, Helpers.CreateString("toggle-desc55", "Deific Obedience"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("sentinel"), defaultValue: true, Helpers.CreateString("toggle-desc59", "Sentinel"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("magehand"), defaultValue: true, Helpers.CreateString("toggle-desc39", "Magic Trick Feats"))
               .ShowVisualConnection())
           .AddToggle(
@@ -333,6 +336,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("templar"))) { CrimsonTemplar.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("seeker"))) { TruthSeeker.Configure(); TruthSooker.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("infil"))) { Infiltrator.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("sentinel"))) { Sentinel.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)

@@ -50,13 +50,13 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             .SetClasses(ArchetypeGuid)
             .AddToLevelEntry(1, BonusFeatFeat(), ChooseGoodEvilFeat(), FeatureRefs.RangerProficiencies.ToString())
             .AddToLevelEntry(2, FeatureSelectionRefs.FighterFeatSelection.ToString())
-            .AddToLevelEntry(3)
+            .AddToLevelEntry(3, DivineBoon1Feat())
             .AddToLevelEntry(4, DivineQuicknessFeat())
             .AddToLevelEntry(5, AlignedStrikeFeat(), StalwartFeat())
-            .AddToLevelEntry(6)
+            .AddToLevelEntry(6, DivineBoon2Feat())
             .AddToLevelEntry(7, FeatureSelectionRefs.FighterFeatSelection.ToString(), PracticedCombatantFeat())
             .AddToLevelEntry(8, FeatureSelectionRefs.FighterFeatSelection.ToString())
-            .AddToLevelEntry(9)
+            .AddToLevelEntry(9, DivineBoon3Feat())
             .AddToLevelEntry(10, UnstoppableWarriorFeat())
             .SetUIGroups(UIGroupBuilder.New()
                     //.AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { FiendishStudiesGuid, FiendishStudies5Guid, FiendishStudies10Guid })
@@ -378,6 +378,54 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddDamageResistancePhysical(isStackable: true, value: ContextValues.Constant(5))
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .AddFacts(new() { FeatureRefs.Diehard.ToString(), ability })
+              .Configure();
+        }
+
+        private const string DivineBoon1 = "Sentinel.DivineBoon1";
+        private static readonly string DivineBoon1Guid = "{1CA3A398-D861-41BB-B713-9D2D3BDD6718}";
+
+        internal const string SentinelDivineBoon1DisplayName = "SentinelDivineBoon1.Name";
+        private const string SentinelDivineBoon1Description = "SentinelDivineBoon1.Description";
+        public static BlueprintFeature DivineBoon1Feat()
+        {
+            var icon = FeatureRefs.BlessedWayFeature.Reference.Get().Icon;
+            return FeatureConfigurator.New(DivineBoon1, DivineBoon1Guid)
+              .SetDisplayName(SentinelDivineBoon1DisplayName)
+              .SetDescription(SentinelDivineBoon1Description)
+              .SetIcon(icon)
+              .AddComponent<DivineBoon>(c => { c.level = 12; })
+              .Configure();
+        }
+
+        private const string DivineBoon2 = "Sentinel.DivineBoon2";
+        private static readonly string DivineBoon2Guid = "{575DC4FC-3703-428A-92AE-204812921BD1}";
+
+        internal const string SentinelDivineBoon2DisplayName = "SentinelDivineBoon2.Name";
+        private const string SentinelDivineBoon2Description = "SentinelDivineBoon2.Description";
+        public static BlueprintFeature DivineBoon2Feat()
+        {
+            var icon = FeatureRefs.BlessedWayFeature.Reference.Get().Icon;
+            return FeatureConfigurator.New(DivineBoon2, DivineBoon2Guid)
+              .SetDisplayName(SentinelDivineBoon2DisplayName)
+              .SetDescription(SentinelDivineBoon2Description)
+              .SetIcon(icon)
+              .AddComponent<DivineBoon>(c => { c.level = 16; })
+              .Configure();
+        }
+
+        private const string DivineBoon3 = "Sentinel.DivineBoon3";
+        private static readonly string DivineBoon3Guid = "{C4E8E721-3EEB-4984-9E66-EDCDD70D403C}";
+
+        internal const string SentinelDivineBoon3DisplayName = "SentinelDivineBoon3.Name";
+        private const string SentinelDivineBoon3Description = "SentinelDivineBoon3.Description";
+        public static BlueprintFeature DivineBoon3Feat()
+        {
+            var icon = FeatureRefs.BlessedWayFeature.Reference.Get().Icon;
+            return FeatureConfigurator.New(DivineBoon3, DivineBoon3Guid)
+              .SetDisplayName(SentinelDivineBoon3DisplayName)
+              .SetDescription(SentinelDivineBoon3Description)
+              .SetIcon(icon)
+              .AddComponent<DivineBoon>(c => { c.level = 20; })
               .Configure();
         }
     }
