@@ -30,6 +30,9 @@ using PrestigePlus.CustomComponent.Feat;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
 using PrestigePlus.CustomComponent;
 using Kingmaker.UnitLogic.Abilities.Components.TargetCheckers;
+using Kingmaker.Blueprints.Classes.Prerequisites;
+using Kingmaker.UnitLogic.Alignments;
+using Kingmaker.UnitLogic.Mechanics.Components;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -72,6 +75,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
               .AddToAllFeatures(RagathielFeat())
+              .AddToAllFeatures(ShelynFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteStatValue(StatType.SkillLoreReligion, 3)
@@ -82,6 +86,141 @@ namespace PrestigePlus.Blueprint.Feat
             FeatureSelectionConfigurator.For(FeatureSelectionRefs.BasicFeatSelection)
                 .AddToAllFeatures(feat)
                 .Configure();
+        }
+
+        private const string Shelyn = "DeificObedience.Shelyn";
+        public static readonly string ShelynGuid = "{780B47D4-6220-4239-A2DD-4204B2374850}";
+
+        internal const string ShelynDisplayName = "DeificObedienceShelyn.Name";
+        private const string ShelynDescription = "DeificObedienceShelyn.Description";
+        public static BlueprintFeature ShelynFeat()
+        {
+            var icon = FeatureRefs.ShelynFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Shelyn, ShelynGuid)
+              .SetDisplayName(ShelynDisplayName)
+              .SetDescription(ShelynDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.ShelynFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.NeutralGood, group: Prerequisite.GroupType.Any)
+              .AddToIsPrerequisiteFor(ShelynSentinelFeat())
+              .AddStatBonus(ModifierDescriptor.Sacred, false, StatType.SkillUseMagicDevice, 4)
+              .Configure();
+        }
+
+        private const string ShelynSentinel = "DeificObedience.ShelynSentinel";
+        public static readonly string ShelynSentinelGuid = "{6B1C38C3-D16D-4D04-8A0A-516E117791FE}";
+
+        internal const string ShelynSentinelDisplayName = "DeificObedienceShelynSentinel.Name";
+        private const string ShelynSentinelDescription = "DeificObedienceShelynSentinel.Description";
+        public static BlueprintProgression ShelynSentinelFeat()
+        {
+            var icon = FeatureRefs.ShelynFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(ShelynSentinel, ShelynSentinelGuid)
+              .SetDisplayName(ShelynSentinelDisplayName)
+              .SetDescription(ShelynSentinelDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(ShelynGuid)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(12, CreateShelynSentinel1())
+              .AddToLevelEntry(16, ShelynSentinel2Feat())
+              .AddToLevelEntry(20, ShelynSentinel3Feat())
+              .Configure();
+        }
+
+        private const string ShelynSentinel1 = "SpellPower.ShelynSentinel1";
+        public static readonly string ShelynSentinel1Guid = "{7ABBD953-BEB3-4344-BB5E-5BA5F20B945F}";
+        internal const string ShelynSentinel1DisplayName = "SpellPowerShelynSentinel1.Name";
+        private const string ShelynSentinel1Description = "SpellPowerShelynSentinel1.Description";
+
+        private const string ShelynSentinel1Ablity = "SpellPower.UseShelynSentinel1";
+        private static readonly string ShelynSentinel1AblityGuid = "{9CDA5D9C-3252-4EBD-91A3-52A4E2D9C140}";
+
+        private const string ShelynSentinel1Ablity2 = "SpellPower.UseShelynSentinel12";
+        private static readonly string ShelynSentinel1Ablity2Guid = "{770398F3-2919-4B75-B34F-F2473209E0B2}";
+
+        private const string ShelynSentinel1Ablity3 = "SpellPower.UseShelynSentinel13";
+        private static readonly string ShelynSentinel1Ablity3Guid = "{0DCFD954-2342-4005-8EFD-58A6DE272692}";
+
+        private static BlueprintFeature CreateShelynSentinel1()
+        {
+            var icon = FeatureRefs.DuelistGrace.Reference.Get().Icon;
+
+            var ability = AbilityConfigurator.New(ShelynSentinel1Ablity, ShelynSentinel1AblityGuid)
+                .CopyFrom(
+                AbilityRefs.Entangle,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilityAoERadius),
+                typeof(ContextRankConfig),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 1)
+                .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(ShelynSentinel1Ablity2, ShelynSentinel1Ablity2Guid)
+                .CopyFrom(
+                AbilityRefs.CatsGrace,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx))
+                .AddPretendSpellLevel(spellLevel: 2)
+                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .Configure();
+
+            var ability3 = AbilityConfigurator.New(ShelynSentinel1Ablity3, ShelynSentinel1Ablity3Guid)
+                .CopyFrom(
+                AbilityRefs.Haste,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx),
+                typeof(AbilityTargetsAround))
+                .AddPretendSpellLevel(spellLevel: 3)
+                .AddAbilityResourceLogic(6, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .Configure();
+
+            return FeatureConfigurator.New(ShelynSentinel1, ShelynSentinel1Guid)
+              .SetDisplayName(ShelynSentinel1DisplayName)
+              .SetDescription(ShelynSentinel1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability, ability2, ability3 })
+              .Configure();
+        }
+
+        private const string ShelynSentinel2 = "DeificObedience.ShelynSentinel2";
+        public static readonly string ShelynSentinel2Guid = "{0737982E-F3F6-4879-B1FA-68FA88DE626F}";
+
+        internal const string ShelynSentinel2DisplayName = "DeificObedienceShelynSentinel2.Name";
+        private const string ShelynSentinel2Description = "DeificObedienceShelynSentinel2.Description";
+
+        public static BlueprintFeature ShelynSentinel2Feat()
+        {
+            var icon = FeatureRefs.SmiteEvilFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(ShelynSentinel2, ShelynSentinel2Guid)
+              .SetDisplayName(ShelynSentinel2DisplayName)
+              .SetDescription(ShelynSentinel2Description)
+              .SetIcon(icon)
+              .AddComponent<ShelynGloriousMight>()
+              .Configure();
+        }
+
+        private const string ShelynSentinel3 = "DeificObedience.ShelynSentinel3";
+        public static readonly string ShelynSentinel3Guid = "{F1AE3BE7-99FE-49F6-9C5E-BAC9B7F80468}";
+
+        internal const string ShelynSentinel3DisplayName = "DeificObedienceShelynSentinel3.Name";
+        private const string ShelynSentinel3Description = "DeificObedienceShelynSentinel3.Description";
+        public static BlueprintFeature ShelynSentinel3Feat()
+        {
+            var icon = AbilityRefs.ResistElectricity.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(ShelynSentinel3, ShelynSentinel3Guid)
+              .SetDisplayName(ShelynSentinel3DisplayName)
+              .SetDescription(ShelynSentinel3Description)
+              .SetIcon(icon)
+              .AddDamageResistanceEnergy(healOnDamage: false, value: 15, type: Kingmaker.Enums.Damage.DamageEnergyType.Electricity)
+              .Configure();
         }
 
         private const string Ragathiel = "DeificObedience.Ragathiel";
@@ -98,9 +237,8 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(RagathielDisplayName)
               .SetDescription(RagathielDescription)
               .SetIcon(icon)
-              .SetIsClassFeature(true)
-              .AddPrerequisiteFeature("F79778D7-281C-4B9D-8E77-8F86812707AA", group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
-              .AddPrerequisiteAlignment(Kingmaker.UnitLogic.Alignments.AlignmentMaskType.LawfulGood, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+              .AddPrerequisiteFeature("F79778D7-281C-4B9D-8E77-8F86812707AA", group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.LawfulGood, group: Prerequisite.GroupType.Any)
               .SetGiveFeaturesForPreviousLevels(true)
               .AddToLevelEntry(3, Ragathiel0Feat())
               .AddToLevelEntry(12, CreateRagathiel1())
