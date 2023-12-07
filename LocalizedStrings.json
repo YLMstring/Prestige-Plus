@@ -6249,8 +6249,8 @@
   },
   {
     "Key": "SentinelUnstoppableWarrior.Description",
-    "enGB": "At 10th level, the sentinel becomes a stalwart paragon demonstrating incredible combat prowess. He gains 5/-. In addition, the sentinel gains Diehard as a bonus feat. Once per day as a swift action, the sentinel can use cure critical wounds, but targeting only himself, with a caster level equal to his character level.",
-    "zhCN": "10级起，信仰哨卫成为了具有高超武艺的坚定典范。他获得伤害减免5/-，并获得顽强作为奖励专长。每天一次，信仰哨卫可使用迅捷动作对自己施放治疗致命伤，施法者等级等于角色等级。"
+    "enGB": "At 10th level, the sentinel becomes a stalwart paragon demonstrating incredible combat prowess. He gains 5/-. In addition, the sentinel no longer falls unconscious when reduced to a negative hit point total, though he can take only a single standard or move action while at negative hit points. Once per day as a swift action, the sentinel can use cure critical wounds, but targeting only himself, with a caster level equal to his character level.",
+    "zhCN": "10级起，信仰哨卫成为了具有高超武艺的坚定典范。他获得伤害减免5/-，此外，卫道者不再会在生命值降至负值时陷入昏迷，不过他只能在生命值为负值时进行单个标准动作或移动动作。每天一次，信仰哨卫可使用迅捷动作对自己施放治疗致命伤，施法者等级等于角色等级。"
   },
   {
     "Key": "SentinelDivineBoon1.Name",

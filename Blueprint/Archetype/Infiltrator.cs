@@ -394,7 +394,7 @@ namespace PrestigePlus.Blueprint.Archetype
              .SetDisplayName(AdaptationAnimalsDisplayName)
              .SetDescription(AdaptationAnimalsDescription)
              .SetIcon(icon)
-             .AddFacts(new() { FeatureRefs.Intimidating.ToString(), FeatureRefs.HalfOrcFerocity.ToString() })
+             .AddFacts(new() { FeatureRefs.Intimidating.ToString(), UnitFactRefs.Ferocity.ToString() })
              .Configure();
 
             var ability = AbilityConfigurator.New(AdaptationAnimalsAblity, AdaptationAnimalsAblityGuid)

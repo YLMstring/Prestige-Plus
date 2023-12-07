@@ -217,6 +217,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .AddContextStatBonus(StatType.Initiative, ContextValues.Rank(), Kingmaker.Enums.ModifierDescriptor.Sacred)
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }).WithCustomProgression((7, 2), (20, 4)))
+              .SetReapplyOnLevelUp(true)
               .Configure();
         }
 
@@ -234,6 +235,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .AddContextStatBonus(StatType.Initiative, ContextValues.Rank(), Kingmaker.Enums.ModifierDescriptor.Profane)
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }).WithCustomProgression((7, 2), (20, 4)))
+              .SetReapplyOnLevelUp(true)
               .Configure();
         }
 
@@ -333,7 +335,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(SentinelPracticedCombatantGoodDisplayName)
               .SetDescription(SentinelPracticedCombatantGoodDescription)
               .SetIcon(icon)
-              .AddManeuverBonus(2, Kingmaker.Enums.ModifierDescriptor.Sacred)
+              .AddCMBBonus(checkFact: false, descriptor: Kingmaker.Enums.ModifierDescriptor.Sacred, value: 2)
               .Configure();
         }
 
@@ -349,7 +351,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(SentinelPracticedCombatantEvilDisplayName)
               .SetDescription(SentinelPracticedCombatantEvilDescription)
               .SetIcon(icon)
-              .AddManeuverBonus(2, Kingmaker.Enums.ModifierDescriptor.Profane)
+              .AddCMBBonus(checkFact: false, descriptor: Kingmaker.Enums.ModifierDescriptor.Profane, value: 2)
               .Configure();
         }
 
@@ -392,7 +394,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .AddDamageResistancePhysical(isStackable: true, value: ContextValues.Constant(5))
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
-              .AddFacts(new() { FeatureRefs.Diehard.ToString(), ability })
+              .AddFacts(new() { UnitFactRefs.Ferocity.ToString(), ability })
               .Configure();
         }
 
