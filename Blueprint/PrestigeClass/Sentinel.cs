@@ -199,6 +199,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .AddFeatureIfHasFact(SymbolicWeaponGuid, DivineQuicknessGoodFeat())
               .AddFeatureIfHasFact(EvilWeaponGuid, DivineQuicknessEvilFeat())
+              .SetHideInCharacterSheetAndLevelUp()
               .Configure();
         }
 
@@ -266,6 +267,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .AddFeatureIfHasFact(SymbolicWeaponGuid, StalwartGoodFeat())
               .AddFeatureIfHasFact(EvilWeaponGuid, StalwartEvilFeat())
+              .SetHideInCharacterSheetAndLevelUp()
               .Configure();
         }
 
@@ -315,6 +317,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .AddFeatureIfHasFact(SymbolicWeaponGuid, PracticedCombatantGoodFeat())
               .AddFeatureIfHasFact(EvilWeaponGuid, PracticedCombatantEvilFeat())
+              .SetHideInCharacterSheetAndLevelUp()
               .Configure();
         }
 
