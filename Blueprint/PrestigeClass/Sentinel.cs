@@ -411,6 +411,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(SentinelDivineBoon1Description)
               .SetIcon(icon)
               .AddComponent<DivineBoon>(c => { c.level = 12; })
+              .SetHideInCharacterSheetAndLevelUp()
               .Configure();
         }
 
@@ -427,6 +428,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(SentinelDivineBoon2Description)
               .SetIcon(icon)
               .AddComponent<DivineBoon>(c => { c.level = 16; })
+              .SetHideInCharacterSheetAndLevelUp()
               .Configure();
         }
 
@@ -443,6 +445,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(SentinelDivineBoon3Description)
               .SetIcon(icon)
               .AddComponent<DivineBoon>(c => { c.level = 20; })
+              .SetHideInCharacterSheetAndLevelUp()
               .Configure();
         }
     }
