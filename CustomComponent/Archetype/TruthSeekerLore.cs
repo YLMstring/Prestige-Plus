@@ -22,8 +22,8 @@ namespace PrestigePlus.CustomComponent.Archetype
         void IRulebookHandler<RuleCalculateAbilityParams>.OnEventAboutToTrigger(RuleCalculateAbilityParams evt)
         {
             var spellbook = Owner.GetSpellbook(CharacterClassRefs.OracleClass.Reference);
-            //var spelllist = SpellListRefs.ClericSpellList.Reference.Get();
             var spell = evt.AbilityData?.ConvertedFrom?.Blueprint ?? evt.Spell;
+            if (SpellList.Count == 0) { OnActivate(); }
             if (spellbook != null && evt.Spellbook == spellbook && SpellList.Contains(spell))
             {
                 evt.AddBonusCasterLevel(4, Kingmaker.Enums.ModifierDescriptor.UntypedStackable);

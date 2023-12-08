@@ -23,6 +23,7 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
     {
         void IRulebookHandler<RuleAttackWithWeapon>.OnEventAboutToTrigger(RuleAttackWithWeapon evt)
         {
+            cat ??= PrerequisiteDivineWeapon.GetFavoredWeapon(Owner);
             if (cat != null && cat == evt.Weapon.Blueprint.Category)
             {
                 evt.AddTemporaryModifier(evt.Initiator.Stats.AdditionalDamage.AddModifier(GetBonus(), base.Runtime, Des));

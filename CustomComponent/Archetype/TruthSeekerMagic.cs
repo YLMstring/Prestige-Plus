@@ -27,7 +27,7 @@ namespace PrestigePlus.CustomComponent.Archetype
         void IRulebookHandler<RuleApplyMetamagic>.OnEventDidTrigger(RuleApplyMetamagic evt)
         {
             var spellbook = Owner.GetSpellbook(CharacterClassRefs.OracleClass.Reference);
-            //var spelllist = SpellListRefs.ClericSpellList.Reference.Get();
+            if (SpellList.Count == 0) { OnActivate(); }
             if (spellbook != null && evt.Spellbook == spellbook && SpellList.Contains(evt.Spell))
             {
                 evt.Result.SpellLevelCost -= evt.AppliedMetamagics.Count;

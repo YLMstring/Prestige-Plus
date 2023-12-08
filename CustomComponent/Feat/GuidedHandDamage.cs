@@ -17,6 +17,7 @@ namespace PrestigePlus.CustomComponent.Feat
     {
         void IRulebookHandler<RuleCalculateWeaponStats>.OnEventAboutToTrigger(RuleCalculateWeaponStats evt)
         {
+            cat ??= PrerequisiteDivineWeapon.GetFavoredWeapon(Owner);
             if (cat != null && cat == evt.Weapon.Blueprint.Category)
             {
                 evt.OverrideDamageBonusStat(StatType.Wisdom);
