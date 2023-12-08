@@ -17,6 +17,8 @@ namespace PrestigePlus.Patch
         public static void Patch()
         {
             Remove("c0d00f98-0a49-4088-8b5b-4da84b1274bc");//slam
+            Remove("3ddce7711accaf144b33e9a6949bb61e");//hand
+            Remove("0408028da24dd0348848f00c7134d211");//mythic hand
         }
 
         private static void Remove(string guid)
