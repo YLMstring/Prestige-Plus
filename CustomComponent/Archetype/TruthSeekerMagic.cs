@@ -1,5 +1,6 @@
 ﻿using BlueprintCore.Blueprints.References;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.JsonSystem;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules;
@@ -15,6 +16,7 @@ using static TabletopTweaks.Core.NewUnitParts.UnitPartAgeTTT;
 
 namespace PrestigePlus.CustomComponent.Archetype
 {
+    [TypeId("{B353F7AB-919F-4C07-86CF-2C59BA365103}")]
     internal class TruthSeekerMagic : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleApplyMetamagic>, IRulebookHandler<RuleApplyMetamagic>, ISubscriber, IInitiatorRulebookSubscriber
     {
         void IRulebookHandler<RuleApplyMetamagic>.OnEventAboutToTrigger(RuleApplyMetamagic evt)

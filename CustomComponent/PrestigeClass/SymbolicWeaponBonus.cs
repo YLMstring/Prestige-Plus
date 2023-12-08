@@ -1,6 +1,7 @@
 ﻿using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.JsonSystem;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.Enums;
 using Kingmaker.PubSubSystem;
@@ -17,6 +18,7 @@ using System.Threading.Tasks;
 
 namespace PrestigePlus.CustomComponent.PrestigeClass
 {
+    [TypeId("{5722B4CC-BD83-45D6-A21E-5AEF7A537931}")]
     internal class SymbolicWeaponBonus : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleAttackWithWeapon>, IRulebookHandler<RuleAttackWithWeapon>, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleCalculateAttackBonus>, IRulebookHandler<RuleCalculateAttackBonus>
     {
         void IRulebookHandler<RuleAttackWithWeapon>.OnEventAboutToTrigger(RuleAttackWithWeapon evt)

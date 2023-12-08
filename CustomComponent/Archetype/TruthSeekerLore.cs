@@ -1,6 +1,7 @@
 ﻿using BlueprintCore.Blueprints.References;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes.Spells;
+using Kingmaker.Blueprints.JsonSystem;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules.Abilities;
@@ -15,6 +16,7 @@ using System.Threading.Tasks;
 
 namespace PrestigePlus.CustomComponent.Archetype
 {
+    [TypeId("{C53D7688-EF62-41C1-8AE8-F32F36C4050F}")]
     internal class TruthSeekerLore : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleCalculateAbilityParams>, IRulebookHandler<RuleCalculateAbilityParams>, ISubscriber, IInitiatorRulebookSubscriber
     {
         void IRulebookHandler<RuleCalculateAbilityParams>.OnEventAboutToTrigger(RuleCalculateAbilityParams evt)

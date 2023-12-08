@@ -1,4 +1,5 @@
-﻿using Kingmaker.EntitySystem.Stats;
+﻿using Kingmaker.Blueprints.JsonSystem;
+using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace PrestigePlus.CustomComponent.Feat
 {
+    [TypeId("{7A6AB932-67E6-49B5-B0D5-4C1E58C1082B}")]
     internal class GuidedHandDamage : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleCalculateWeaponStats>, IRulebookHandler<RuleCalculateWeaponStats>, ISubscriber, IInitiatorRulebookSubscriber
     {
         void IRulebookHandler<RuleCalculateWeaponStats>.OnEventAboutToTrigger(RuleCalculateWeaponStats evt)
@@ -18,6 +20,7 @@ namespace PrestigePlus.CustomComponent.Feat
             if (cat != null && cat == evt.Weapon.Blueprint.Category)
             {
                 evt.OverrideDamageBonusStat(StatType.Wisdom);
+                evt.TwoHandedStatReplacement = true;
             }
         }
 

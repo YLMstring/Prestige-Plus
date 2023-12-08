@@ -12,9 +12,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.JsonSystem;
 
 namespace PrestigePlus.CustomComponent.Archetype
 {
+    [TypeId("{A59DC783-C646-40BD-866F-3C1CFFBD0B3C}")]
     internal class TruthSookerMagic : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleApplyMetamagic>, IRulebookHandler<RuleApplyMetamagic>, ISubscriber, IInitiatorRulebookSubscriber
     {
         void IRulebookHandler<RuleApplyMetamagic>.OnEventAboutToTrigger(RuleApplyMetamagic evt)

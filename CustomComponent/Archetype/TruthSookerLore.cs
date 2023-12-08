@@ -13,9 +13,11 @@ using System.Threading.Tasks;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Utility;
+using Kingmaker.Blueprints.JsonSystem;
 
 namespace PrestigePlus.CustomComponent.Archetype
 {
+    [TypeId("{50DFB7EA-F736-4472-8691-BC6CD7A5233F}")]
     internal class TruthSookerLore : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleCalculateAbilityParams>, IRulebookHandler<RuleCalculateAbilityParams>, ISubscriber, IInitiatorRulebookSubscriber
     {
         void IRulebookHandler<RuleCalculateAbilityParams>.OnEventAboutToTrigger(RuleCalculateAbilityParams evt)
