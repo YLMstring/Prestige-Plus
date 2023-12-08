@@ -1,4 +1,4 @@
-# Prestige Plus v2.0.1 for WoTR 
+# Prestige Plus v2.1.0 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -27,7 +27,11 @@
 - Added Alchemist Discovery: Tentacle
 ### [Deific Obedience](https://www.d20pfsrd.com/feats/general-feats/deific-obedience)
 - [Ragathiel](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Ragathiel): requires worshipping Ragathiel (Expanded Content) or Lawful Good
+- [Shelyn](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Shelyn): requires worshipping Shelyn or Neutral Good
 - More coming soon!
+### [Sentinel](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/sentinel/)
+- The favored weapon is determined by your actual deity, not the deity of your obedience.
+- It should work for MOD deities as long as they support warpriest sacred weapon because I just read data of that one.
 ### [Agent of the Grave Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/a-b/agent-of-the-grave/)
 - The class has only 5 levels.
 - Agent of the Grave lose spell progression at level 1. I have no idea why my code can make you lose spell progression, but it just works.
