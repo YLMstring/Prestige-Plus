@@ -21,6 +21,10 @@ namespace PrestigePlus.CustomComponent.Feat
             {
                 evt.OverrideDamageBonusStat(StatType.Wisdom);
                 evt.TwoHandedStatReplacement = true;
+                if (evt.Weapon.HoldInTwoHands || (evt.SlotToInsert != null && evt.Weapon.ShouldHoldInTwoHands(evt.SlotToInsert)))
+                {
+                    evt.DamageBonusStatMultiplier = 1.5f;
+                }
             }
         }
 
