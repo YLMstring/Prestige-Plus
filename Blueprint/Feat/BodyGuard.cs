@@ -182,7 +182,7 @@ namespace PrestigePlus.Blueprint.Feat
         }
 
         private const string GreaterUnarmedStrike = "NinjaTrick.GreaterUnarmedStrike";
-        private static readonly string GreaterUnarmedStrikeGuid = "{C55DC946-E283-4414-AB3E-5510E593D1D4}";
+        public static readonly string GreaterUnarmedStrikeGuid = "{C55DC946-E283-4414-AB3E-5510E593D1D4}";
 
         internal const string GreaterUnarmedStrikeDisplayName = "NinjaTrickGreaterUnarmedStrike.Name";
         private const string GreaterUnarmedStrikeDescription = "NinjaTrickGreaterUnarmedStrike.Description";

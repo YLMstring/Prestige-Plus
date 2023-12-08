@@ -17,6 +17,8 @@ using System.Threading.Tasks;
 using BlueprintCore.Actions.Builder.ContextEx;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Blueprints.Classes.Spells;
+using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
+using PrestigePlus.Blueprint.Feat;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -31,6 +33,8 @@ namespace PrestigePlus.Blueprint.Archetype
             ProgressionConfigurator.For(ProgressionRefs.AlchemistProgression)
                 .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { DiseaseResistanceGuid, FeatureRefs.PurityOfBody.ToString() })
                 .Configure();
+
+            InternalBonusFeatConfigure();
 
             ArchetypeConfigurator.New(ArchetypeName, ArchetypeGuid, CharacterClassRefs.AlchemistClass)
               .SetLocalizedName(ArchetypeDisplayName)
@@ -63,5 +67,40 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetRanks(5)
               .Configure();
         }
+
+        private const string InternalBonusFeatFeat = "InternalAlchemist.InternalBonusFeat";
+        public static readonly string InternalBonusFeatGuid = "{A59966E9-A57B-4240-8104-691CF521EE48}";
+
+        internal const string InternalBonusFeatDisplayName = "InternalBonusFeat.Name";
+        private const string InternalBonusFeatDescription = "InternalBonusFeat.Description";
+        public static void InternalBonusFeatConfigure()
+        {
+            var icon = AbilityRefs.TrickeryBlessingMajorAbility.Reference.Get().Icon;
+
+            var feat = FeatureSelectionConfigurator.New(InternalBonusFeatFeat, InternalBonusFeatGuid)
+              .SetDisplayName(InternalBonusFeatDisplayName)
+              .SetDescription(InternalBonusFeatDescription)
+              .SetIcon(icon)
+              .SetIgnorePrerequisites(false)
+              .SetObligatory(false)
+              .AddPrerequisiteArchetypeLevel(ArchetypeGuid, CharacterClassRefs.AlchemistClass.ToString())
+              .AddToAllFeatures(FeatureRefs.Alertness.ToString())
+              .AddToAllFeatures(FeatureRefs.ExtraKi.ToString())
+              .AddToAllFeatures(FeatureRefs.GreatFortitude.ToString())
+              .AddToAllFeatures(ParametrizedFeatureRefs.ImprovedCritical.ToString())
+              .AddToAllFeatures(FeatureRefs.Improved_Initiative.ToString())
+              .AddToAllFeatures(FeatureRefs.ImprovedUnarmedStrike.ToString())
+              .AddToAllFeatures(BodyGuard.GreaterUnarmedStrikeGuid)
+              .AddToAllFeatures(FeatureRefs.IronWill.ToString())
+              .AddToAllFeatures(FeatureRefs.LightningReflexes.ToString())
+              .AddToAllFeatures(FeatureRefs.StunningFist.ToString())
+              .AddToAllFeatures(ParametrizedFeatureRefs.WeaponFocus.ToString())
+              .Configure();
+
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.DiscoverySelection)
+                .AddToAllFeatures(feat)
+                .Configure();
+        }
+
     }
 }

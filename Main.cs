@@ -179,6 +179,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("construct"), defaultValue: true, Helpers.CreateString("toggle-desc49", "Construct Rider"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("internal"), defaultValue: true, Helpers.CreateString("toggle-desc61", "Internal Alchemist"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("scientist"), defaultValue: true, Helpers.CreateString("toggle-desc50", "Mad Scientist"))
               .ShowVisualConnection())
           .AddToggle(
@@ -341,6 +344,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("infil"))) { Infiltrator.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("sentinel"))) { Sentinel.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("guided"))) { GuidedHand.GuidedHandConfigure(); GuidedHand.GuidedHandMythicFeat(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("internal"))) { InternalAlchemist.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
