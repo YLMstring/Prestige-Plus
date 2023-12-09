@@ -33,9 +33,6 @@ namespace PrestigePlus.Blueprint.Archetype
         private static readonly string ArchetypeGuid = "{2A2C6545-B3E5-4392-92BD-5A04DF4FF1FF}";
         internal const string ArchetypeDisplayName = "SpireDefender.Name";
         private const string ArchetypeDescription = "SpireDefender.Description";
-
-        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
-        //[HarmonyBefore(new string[] { "TabletopTweaks-Base" })]
         public static void Configure()
         {
             CreateManeuverMastery();
@@ -49,10 +46,6 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToAddFeatures(1, CreateProficiencies(), FeatureRefs.CombatExpertiseFeature.ToString(), FeatureRefs.Dodge.ToString())
             .AddToAddFeatures(4, ArcaneAugmentationFeat())
               .Configure();
-
-            ProgressionConfigurator.For(ProgressionRefs.MagusProgression)
-                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] {  })
-                .Configure();
         }
 
         private const string Proficiencies = "SpireDefender.Proficiencies";
