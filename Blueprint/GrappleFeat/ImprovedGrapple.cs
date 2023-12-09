@@ -231,9 +231,6 @@ namespace PrestigePlus.Blueprint.GrappleFeat
             FeatureConfigurator.For(FeatureRefs.AgileManeuvers)
                 .AddPrerequisiteFeature(StyleGuid, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                 .Configure();
-
-            
-
         }
     }
 }
