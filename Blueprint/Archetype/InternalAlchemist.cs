@@ -63,6 +63,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDescription(DiseaseResistanceDescription)
               .SetIcon(icon)
               .AddSavingThrowBonusAgainstDescriptor(value: 2, spellDescriptor: SpellDescriptor.Disease)
+              .SetIsPrerequisiteFor(InternalBonusFeatGuid)
               .SetRanks(5)
               .Configure();
         }

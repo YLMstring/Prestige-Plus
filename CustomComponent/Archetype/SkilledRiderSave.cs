@@ -17,7 +17,7 @@ namespace PrestigePlus.CustomComponent.Archetype
         void IRulebookHandler<RuleSavingThrow>.OnEventAboutToTrigger(RuleSavingThrow evt)
         {
             if (Owner.GetRider() == null) return;
-            var num = Owner.GetRider().Stats.Charisma.Bonus;
+            var num = Math.Max(Owner.GetRider().Stats.Charisma.Bonus, 0);
             evt.AddTemporaryModifier(evt.Initiator.Stats.SaveWill.AddModifier(num, base.Runtime));
             evt.AddTemporaryModifier(evt.Initiator.Stats.SaveReflex.AddModifier(num, base.Runtime));
             evt.AddTemporaryModifier(evt.Initiator.Stats.SaveFortitude.AddModifier(num, base.Runtime));
