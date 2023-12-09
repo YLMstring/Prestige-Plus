@@ -200,6 +200,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("spire"), defaultValue: true, Helpers.CreateString("toggle-desc33", "Spire Defender"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("shining"), defaultValue: true, Helpers.CreateString("toggle-desc62", "Shining Knight"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("marksman"), defaultValue: true, Helpers.CreateString("toggle-desc47", "Divine Marksman"))
               .ShowVisualConnection())
           .AddToggle(
@@ -345,6 +348,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("sentinel"))) { Sentinel.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("guided"))) { GuidedHand.GuidedHandConfigure(); GuidedHand.GuidedHandMythicFeat(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("internal"))) { InternalAlchemist.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("shining"))) { ShiningKnight.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
