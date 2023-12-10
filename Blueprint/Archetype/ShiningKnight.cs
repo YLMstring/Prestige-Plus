@@ -32,7 +32,7 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToRemoveFeatures(11, FeatureRefs.AuraOfJusticeFeature.ToString())
             .AddToAddFeatures(3, CreateSkilledRider())
             .AddToAddFeatures(5, FeatureSelectionRefs.PaladinDivineMountSelection.ToString())
-            .AddToAddFeatures(6, KnightChargeFeat())
+            .AddToAddFeatures(11, KnightChargeFeat())
               .Configure();
         }
 
@@ -88,7 +88,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetIcon(icon)
               .AddCondition(UnitCondition.ImmuneToAttackOfOpportunity)
               .AddComponent<ShiningKnightCharge>()
-              //.SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
               .Configure();
 
             var buff2 = BuffConfigurator.New(KnightChargeBuff2, KnightChargeBuff2Guid)
@@ -96,7 +96,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDescription(KnightChargeDescription)
               .SetIcon(icon)
               .AddCondition(UnitCondition.ImmuneToAttackOfOpportunity)
-              //.SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
               .Configure();
 
             var feat = FeatureConfigurator.New(KnightCharge2, KnightCharge2Guid)

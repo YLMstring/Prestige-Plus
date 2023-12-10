@@ -12,7 +12,7 @@ using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.ElementsSystem;
 using PrestigePlus.Grapple;
 
-namespace PrestigePlus.CustomAction.ClassRelated
+namespace PrestigePlus.CustomComponent.Archetype
 {
     internal class BloodReflexiveConduit : UnitFactComponentDelegate, ITargetRulebookHandler<RuleCalculateCMD>, IRulebookHandler<RuleCalculateCMD>, ISubscriber, ITargetRulebookSubscriber
     {
@@ -22,7 +22,7 @@ namespace PrestigePlus.CustomAction.ClassRelated
             if (evt.Type != CombatManeuver.None && evt.Type == ManeuverType)
             {
                 if (evt.Type == CombatManeuver.Grapple && evt.Initiator.Get<UnitPartGrappleTargetPP>()) { return; }
-                (base.Fact as IFactContextOwner)?.RunActionInContext(Action, Owner);
+                (Fact as IFactContextOwner)?.RunActionInContext(Action, Owner);
             }
         }
 

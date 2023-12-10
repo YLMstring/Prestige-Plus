@@ -6337,8 +6337,8 @@
   },
   {
     "Key": "InternalBonusFeat.Description",
-    "enGB": "An internal alchemist can select one of the following bonus feats in place of an alchemical discovery.",
-    "zhCN": "内修药师可以选择以下的奖励专长取代一个科研发现。"
+    "enGB": "An internal alchemist can select Alertness, Extra Ki, Great Fortitude, Improved Critical, Improved Initiative, Improved Unarmed Strike, Iron Will, Lighting Reflexes, Stunning Fist, or Weapon Focus in place of an alchemical discovery.",
+    "zhCN": "内修药师可以选择以下的奖励专长取代一个科研发现：警觉、额外气力、强韧加强、精通重击、精通先攻、精通徒手击打、钢铁意志、闪电反射、震慑拳、武器专攻。"
   },
   {
     "Key": "ShiningKnight.Name",

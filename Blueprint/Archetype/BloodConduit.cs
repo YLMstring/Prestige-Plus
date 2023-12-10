@@ -10,7 +10,6 @@ using Kingmaker.Blueprints.Items.Armors;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities;
-using PrestigePlus.CustomAction.ClassRelated;
 using PrestigePlus.CustomComponent.Archetype;
 using System;
 using System.Collections.Generic;
@@ -23,6 +22,7 @@ using PrestigePlus.Blueprint.GrappleFeat;
 using PrestigePlus.Blueprint.ManeuverFeat;
 using BlueprintCore.Actions.Builder.ContextEx;
 using Kingmaker.UnitLogic.Buffs;
+using PrestigePlus.CustomAction.ClassRelated;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -43,7 +43,7 @@ namespace PrestigePlus.Blueprint.Archetype
             .SetRemoveFeaturesEntry(14, FeatureRefs.BloodragerIndomitableWill.ToString())
             .AddToAddFeatures(1, BloodConduitBonusFeatConfigure())
             .AddToAddFeatures(5, CreateSpellConduit())
-            .AddToAddFeatures(6, CreateReflexiveConduit())
+            .AddToAddFeatures(14, CreateReflexiveConduit())
               .Configure();
         }
 
@@ -96,25 +96,25 @@ namespace PrestigePlus.Blueprint.Archetype
              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
              .Configure();
 
+            var buff = BuffConfigurator.New(SpellConduitBuff, SpellConduitBuffGuid)
+             .SetDisplayName(SpellConduitDisplayName)
+             .SetDescription(SpellConduitDescription)
+             .SetIcon(icon)
+             .Configure();
+
             var ability2 = AbilityConfigurator.New(SpellConduitAblity2, SpellConduitAblity2Guid)
               .AllowTargeting(enemies: true)
               .SetEffectOnEnemy(AbilityEffectOnUnit.Harmful)
               .SetRange(AbilityRange.Touch)
               .SetType(AbilityType.Spell)
-              .AddAbilityEffectRunAction(ActionsBuilder.New().Build())
+              .AddAbilityEffectRunAction(ActionsBuilder.New().Add<BloodSpellConduit>().Build())
+              .AddAbilityCasterHasFacts(facts: new() { buff })
               .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Touch)
               .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
                 .SetDisplayName(SpellConduitDisplayName)
                 .SetDescription(SpellConduitDescription)
                 .SetIcon(icon)
                 .Configure();
-
-            var buff = BuffConfigurator.New(SpellConduitBuff, SpellConduitBuffGuid)
-             .SetDisplayName(SpellConduitDisplayName)
-             .SetDescription(SpellConduitDescription)
-             .SetIcon(icon)
-             .AddSpontaneousSpellConversion(CharacterClassRefs.BloodragerClass.ToString(), new() { ability2, ability2, ability2, ability2, ability2, ability2, ability2, ability2, ability2, ability2 })
-             .Configure();
 
             var action = ActionsBuilder.New()
                     .ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true)
@@ -128,6 +128,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddManeuverTrigger(action, Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush, true)
               .AddManeuverTrigger(action, Kingmaker.RuleSystem.Rules.CombatManeuver.Trip, true)
               .AddInitiatorAttackWithWeaponTrigger(action, category: WeaponCategory.UnarmedStrike, checkWeaponCategory: true, onlyHit: true)
+              .AddSpontaneousSpellConversion(CharacterClassRefs.BloodragerClass.ToString(), new() { ability2, ability2, ability2, ability2, ability2, ability2, ability2, ability2, ability2, ability2 })
               .Configure();
         }
 
@@ -139,7 +140,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature CreateReflexiveConduit()
         {
-            var icon = AbilityRefs.DispelMagicGreater.Reference.Get().Icon;
+            var icon = AbilityRefs.ElementalBodyIAir.Reference.Get().Icon;
 
             var action = ActionsBuilder.New()
                     .ApplyBuff(SpellConduitBuffGuid, ContextDuration.Fixed(1), toCaster: true)

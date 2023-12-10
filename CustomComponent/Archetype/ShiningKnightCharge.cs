@@ -23,7 +23,7 @@ namespace PrestigePlus.CustomComponent.Archetype
 
         void IRulebookHandler<RuleAttackWithWeapon>.OnEventDidTrigger(RuleAttackWithWeapon evt)
         {
-            if (!evt.AttackRoll.IsHit || evt.Target == null || !evt.Target.HasFact(BuffRefs.SmiteEvilBuff.Reference)) { return; }
+            if (!evt.AttackRoll.IsHit || !evt.IsCharge || !evt.Target.HasFact(BuffRefs.SmiteEvilBuff.Reference)) { return; }
             int level = Owner.Progression.GetClassLevel(CharacterClassRefs.PaladinClass.Reference);
             int dc = Owner.Stats.Charisma.Bonus + 10 + level / 2;
             bool pass = GameHelper.TriggerSkillCheck(new RuleSkillCheck(evt.Target, Kingmaker.EntitySystem.Stats.StatType.SaveWill, dc)
