@@ -41,24 +41,24 @@ namespace PrestigePlus.Blueprint.Archetype
             .SetRemoveFeaturesEntry(2, FeatureRefs.UncannyDodgeChecker.ToString())
             .SetRemoveFeaturesEntry(5, FeatureRefs.ImprovedUncannyDodge.ToString())
             .SetRemoveFeaturesEntry(14, FeatureRefs.BloodragerIndomitableWill.ToString())
-            .AddToAddFeatures(1, BloodConduitInternalBonusFeatConfigure())
+            .AddToAddFeatures(1, BloodConduitBonusFeatConfigure())
             .AddToAddFeatures(5, CreateSpellConduit())
             .AddToAddFeatures(6, CreateReflexiveConduit())
               .Configure();
         }
 
-        private const string BloodConduitInternalBonusFeatFeat = "BloodConduit.BloodConduitInternalBonusFeat";
-        public static readonly string BloodConduitInternalBonusFeatGuid = "{A59966E9-A57B-4240-8104-691CF521EE48}";
+        private const string BloodConduitBonusFeatFeat = "BloodConduit.BloodConduitBonusFeat";
+        public static readonly string BloodConduitBonusFeatGuid = "{67422187-9865-4C49-8B26-8C0DB4A7B6AC}";
 
-        internal const string BloodConduitInternalBonusFeatDisplayName = "BloodConduitInternalBonusFeat.Name";
-        private const string BloodConduitInternalBonusFeatDescription = "BloodConduitInternalBonusFeat.Description";
-        public static BlueprintFeatureSelection BloodConduitInternalBonusFeatConfigure()
+        internal const string BloodConduitBonusFeatDisplayName = "BloodConduitBonusFeat.Name";
+        private const string BloodConduitBonusFeatDescription = "BloodConduitBonusFeat.Description";
+        public static BlueprintFeatureSelection BloodConduitBonusFeatConfigure()
         {
             var icon = AbilityRefs.TrickeryBlessingMajorAbility.Reference.Get().Icon;
 
-            return FeatureSelectionConfigurator.New(BloodConduitInternalBonusFeatFeat, BloodConduitInternalBonusFeatGuid)
-              .SetDisplayName(BloodConduitInternalBonusFeatDisplayName)
-              .SetDescription(BloodConduitInternalBonusFeatDescription)
+            return FeatureSelectionConfigurator.New(BloodConduitBonusFeatFeat, BloodConduitBonusFeatGuid)
+              .SetDisplayName(BloodConduitBonusFeatDisplayName)
+              .SetDescription(BloodConduitBonusFeatDescription)
               .SetIcon(icon)
               .SetIgnorePrerequisites(true)
               .SetObligatory(false)
@@ -113,7 +113,6 @@ namespace PrestigePlus.Blueprint.Archetype
              .SetDisplayName(SpellConduitDisplayName)
              .SetDescription(SpellConduitDescription)
              .SetIcon(icon)
-             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
              .AddSpontaneousSpellConversion(CharacterClassRefs.BloodragerClass.ToString(), new() { ability2, ability2, ability2, ability2, ability2, ability2, ability2, ability2, ability2, ability2 })
              .Configure();
 

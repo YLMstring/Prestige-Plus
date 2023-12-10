@@ -185,6 +185,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("scientist"), defaultValue: true, Helpers.CreateString("toggle-desc50", "Mad Scientist"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("conduit"), defaultValue: true, Helpers.CreateString("toggle-desc63", "Blood Conduit"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("fightereg"), defaultValue: true, Helpers.CreateString("toggle-desc23", "Eldritch Guardian"))
               .ShowVisualConnection())
           .AddToggle(
@@ -349,6 +352,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("guided"))) { GuidedHand.GuidedHandConfigure(); GuidedHand.GuidedHandMythicFeat(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("internal"))) { InternalAlchemist.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("shining"))) { ShiningKnight.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("conduit"))) { BloodConduit.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)

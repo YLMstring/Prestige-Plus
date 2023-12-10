@@ -37,10 +37,10 @@ namespace PrestigePlus.Blueprint.Archetype
         }
 
         private const string SkilledRider = "ShiningKnight.SkilledRider";
-        private static readonly string SkilledRiderGuid = "{11CE494F-69A7-4B36-8A22-A6C6F6C3089E}";
+        private static readonly string SkilledRiderGuid = "{9F3CB2BE-6774-44FE-9025-6C3E00DB5F25}";
 
         private const string SkilledRider2 = "ShiningKnight.SkilledRider2";
-        private static readonly string SkilledRider2Guid = "{0D6E66EC-0ABF-4371-B0C3-33BB1D31816B}";
+        private static readonly string SkilledRider2Guid = "{D63561FF-92EE-46FD-9CEB-EBD5CACA03EB}";
 
         internal const string SkilledRiderDisplayName = "ShiningKnightSkilledRider.Name";
         private const string SkilledRiderDescription = "ShiningKnightSkilledRider.Description";

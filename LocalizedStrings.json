@@ -6284,6 +6284,138 @@
     "Key": "SentinelDivineBoon3.Description",
     "enGB": "At 9th level, he gains the third boon.",
     "zhCN": "9级时，信仰哨卫会获得第三神恩。"
+  },
+  {
+    "Key": "FeatGuidedHand.Name",
+    "ProcessTemplates": false,
+    "enGB": "Guided Hand",
+    "zhCN": "神导之手"
+  },
+  {
+    "Key": "FeatGuidedHand.Description",
+    "enGB": "Your deity blesses any strike you make with that deity’s favored weapon. With your deity’s favored weapon, you can use your Wisdom modifier instead of your Strength or Dexterity modifier on attack rolls.",
+    "zhCN": "你用神祇的偏好武器施展的每一击都会获得神的祝福。当你使用偏好武器时，你在掷攻击骰时可以用你的感知修正代替力量或敏捷修正。"
+  },
+  {
+    "Key": "FeatGuidedHandMythic.Name",
+    "ProcessTemplates": false,
+    "enGB": "Guided Hand (Mythic)",
+    "zhCN": "神导之手（神话）"
+  },
+  {
+    "Key": "FeatGuidedHandMythic.Description",
+    "enGB": "Attacks made with your deity’s favored weapon are divinely inspired. When making attacks with your deity’s favored weapon, you can add your Wisdom modifier instead of your Strength or Dexterity modifier on damage rolls.",
+    "zhCN": "你用神祇的偏好武器施展的每一击都宛若天成。当你使用偏好武器时，你在掷武器伤害骰时可以用你的感知修正代替力量或敏捷修正。"
+  },
+  {
+    "Key": "InternalAlchemist.Name",
+    "ProcessTemplates": false,
+    "enGB": "Internal Alchemist",
+    "zhCN": "内修药师"
+  },
+  {
+    "Key": "InternalAlchemist.Description",
+    "enGB": "An internal alchemist studies medicine, diet, and the living body to purify the self in the hope of gaining immortality by means of alchemical concoctions and controlling vital energy. Internal alchemists develop unusual physical abilities from heightened knowledge of how their bodies work.",
+    "zhCN": "内修药师靠着对药物、饮食还有身体的研究，来净化自身以达到不朽并且调和体内的真气，由于提高了对于身体运作的认识，内修药师可以发挥超乎常人的体能。"
+  },
+  {
+    "Key": "InternalAlchemistDiseaseResistance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Disease Resistance",
+    "zhCN": "抵抗疾病"
+  },
+  {
+    "Key": "InternalAlchemistDiseaseResistance.Description",
+    "enGB": "At 3rd level, an internal alchemist gains a bonus on all saving throws against disease equal to his alchemist class bonus against poison. When he gains the poison immunity alchemist class ability, he becomes immune to disease as well.",
+    "zhCN": "3级时，你对抵抗疾病的豁免掷骰得到相当于在对抗毒素时候的加值，且在得到毒性免疫时也得到疾病免疫。"
+  },
+  {
+    "Key": "InternalBonusFeat.Name",
+    "ProcessTemplates": false,
+    "enGB": "Internal Feats",
+    "zhCN": "内修专长"
+  },
+  {
+    "Key": "InternalBonusFeat.Description",
+    "enGB": "An internal alchemist can select one of the following bonus feats in place of an alchemical discovery.",
+    "zhCN": "内修药师可以选择以下的奖励专长取代一个科研发现。"
+  },
+  {
+    "Key": "ShiningKnight.Name",
+    "ProcessTemplates": false,
+    "enGB": "Shining Knight",
+    "zhCN": "光耀骑士"
+  },
+  {
+    "Key": "ShiningKnight.Description",
+    "enGB": "While paladins often are seen mounted atop a loyal steed, the shining knight is the true symbol of mounted bravery. They are never far from their steeds and are always clad in brightly polished armor.",
+    "zhCN": "尽管许多圣骑士身边都有一匹忠诚的坐骑相伴，只有光耀骑士才称得上真正的精英骑兵。她们从来不会远离自己的坐骑，并且身上的铠甲永远光洁闪亮。"
+  },
+  {
+    "Key": "ShiningKnightSkilledRider.Name",
+    "ProcessTemplates": false,
+    "enGB": "Skilled Rider",
+    "zhCN": "精英骑手"
+  },
+  {
+    "Key": "ShiningKnightSkilledRider.Description",
+    "enGB": "At 3rd level, a shining knight does not take any penalty to her Ride skill due to her armor check penalty. In addition, any mount she is riding gains the benefit of her divine grace class feature, adding her Charisma bonus (if any) to its saving throws.",
+    "zhCN": "3级起，光耀骑士在进行骑术检定时不会因她的盔甲承受任何罚值。此外，任何在她骑乘下的坐骑获得神恩的职业能力，可以将她的魅力修正值（若为正）加到坐骑的所有豁免检定上。"
+  },
+  {
+    "Key": "ShiningKnightKnightCharge.Name",
+    "ProcessTemplates": false,
+    "enGB": "Knight’s Charge",
+    "zhCN": "骑士冲锋"
+  },
+  {
+    "Key": "ShiningKnightKnightCharge.Description",
+    "enGB": "At 11th level, whenever a shining knight charges a foe, her movement does not provoke attacks of opportunity, for either her or her mount. In addition, if her target is also the target of her smite evil ability and the charge attack hits, the target must make a Will save or be panicked for a number of rounds equal to 1/2 the shining knight’s level. The DC of this save is equal to 10 + 1/2 the shining knight’s level + the shining knight’s Charisma modifier.",
+    "zhCN": "11级起，当光耀骑士向敌人发动冲锋时，她和她的坐骑都不会因移动而触发借机攻击。此外，若被冲锋的目标同样是她制裁邪恶所选定的目标，并且冲锋命中，则目标必须通过一个意志豁免，否则会在等同于1/2光耀骑士等级的轮数内陷入恐慌状态。意志豁免的DC为“10+1/2光耀骑士等级+魅力修正值”。"
+  },
+  {
+    "Key": "BloodConduit.Name",
+    "ProcessTemplates": false,
+    "enGB": "Blood Conduit",
+    "zhCN": "狂血导魔者"
+  },
+  {
+    "Key": "BloodConduit.Description",
+    "enGB": "Blood conduits learn to channel their arcane might directly through their flesh, without the need for mystical words or gestures.",
+    "zhCN": "狂血导魔者学会了如何在不凭借任何神秘咒语和手势的情况下，直接通过自身的肉体传递奥术力量。"
+  },
+  {
+    "Key": "BloodConduitBonusFeat.Name",
+    "ProcessTemplates": false,
+    "enGB": "Contact Specialist",
+    "zhCN": "贴身战专家"
+  },
+  {
+    "Key": "BloodConduitBonusFeat.Description",
+    "enGB": "At 1st level, a blood conduit selects a bonus feat from the following. He does not need to meet the prerequisites to take this feat.",
+    "zhCN": "1级起，狂血导魔者从下表中选择一个额外专长。他不需要满足先决条件便能够选取该专长。"
+  },
+  {
+    "Key": "BloodConduitSpellConduit.Name",
+    "ProcessTemplates": false,
+    "enGB": "Spell Conduit",
+    "zhCN": "魔法传导"
+  },
+  {
+    "Key": "BloodConduitSpellConduit.Description",
+    "enGB": "At 5th level, as long as a blood conduit is wearing light or no armor, he can deliver bloodrager spells with a range of touch through bodily contact. When he succeeds at a combat maneuver check to bull rush, grapple, or trip an opponent, or makes an unarmed strike against an enemy, he can as a swift action cast a bloodrager touch spell, requiring no further touch attack roll.",
+    "zhCN": "5级起，只要狂血导魔者穿戴轻甲或者不穿甲，他便能够通过身体传导法术范围为接触的血脉狂怒者法术。当他成功对一个敌人进行一次冲撞、擒抱或摔绊战技检定，或者使用徒手打击命中一个敌人时，他就能够以迅捷动作施放一个血怒者接触法术，且不需要再投掷接触攻击检定。"
+  },
+  {
+    "Key": "BloodConduitReflexiveConduit.Name",
+    "ProcessTemplates": false,
+    "enGB": "Reflexive Conduit",
+    "zhCN": "反射传导"
+  },
+  {
+    "Key": "BloodConduitReflexiveConduit.Description",
+    "enGB": "At 14th level, a blood conduit can discharge his power into foes that attempt bodily contact with him. While wearing light or no armor, when the blood conduit is subject to a combat maneuver check made to bull rush, grapple, or trip him, he can as a swift action cast a bloodrager touch spell, requiring no further touch attack roll.",
+    "zhCN": "14级起，狂血导魔者能够对那些尝试碰触自身的敌人释放力量。当狂血导魔者穿戴轻甲或不穿甲，并且自身成为了冲撞、擒抱或摔绊战技检定的对象时，他能够以迅捷动作施放一个血怒者接触法术，且不需要再投掷接触攻击检定。"
   }
 
 ]
