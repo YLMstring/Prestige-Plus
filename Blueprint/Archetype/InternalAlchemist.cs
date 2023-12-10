@@ -56,12 +56,9 @@ namespace PrestigePlus.Blueprint.Archetype
 
         private static BlueprintFeature CreateDiseaseResistance()
         {
-            var icon = AbilityRefs.AngelWardOfDisease.Reference.Get().Icon;
-
             return FeatureConfigurator.New(DiseaseResistance, DiseaseResistanceGuid)
               .SetDisplayName(DiseaseResistanceDisplayName)
               .SetDescription(DiseaseResistanceDescription)
-              .SetIcon(icon)
               .AddSavingThrowBonusAgainstDescriptor(value: 2, spellDescriptor: SpellDescriptor.Disease)
               .SetIsPrerequisiteFor(InternalBonusFeatGuid)
               .SetRanks(5)
@@ -75,7 +72,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string InternalBonusFeatDescription = "InternalBonusFeat.Description";
         public static void InternalBonusFeatConfigure()
         {
-            var icon = AbilityRefs.TrickeryBlessingMajorAbility.Reference.Get().Icon;
+            var icon = FeatureSelectionRefs.MonkKiPowerSelection.Reference.Get().Icon;
 
             var feat = FeatureSelectionConfigurator.New(InternalBonusFeatFeat, InternalBonusFeatGuid)
               .SetDisplayName(InternalBonusFeatDisplayName)

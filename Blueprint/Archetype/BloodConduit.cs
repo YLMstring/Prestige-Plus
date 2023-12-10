@@ -54,7 +54,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string BloodConduitBonusFeatDescription = "BloodConduitBonusFeat.Description";
         public static BlueprintFeatureSelection BloodConduitBonusFeatConfigure()
         {
-            var icon = AbilityRefs.TrickeryBlessingMajorAbility.Reference.Get().Icon;
+            var icon = FeatureSelectionRefs.CombatTrick.Reference.Get().Icon;
 
             return FeatureSelectionConfigurator.New(BloodConduitBonusFeatFeat, BloodConduitBonusFeatGuid)
               .SetDisplayName(BloodConduitBonusFeatDisplayName)
@@ -86,7 +86,7 @@ namespace PrestigePlus.Blueprint.Archetype
         public static readonly string SpellConduitBuff2Guid = "{397318CC-FA14-4894-A0A3-360121493DD5}";
         public static BlueprintFeature CreateSpellConduit()
         {
-            var icon = FeatureRefs.SpellStrikeFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.DispelMagic.Reference.Get().Icon;
 
             BuffConfigurator.New(SpellConduitBuff2, SpellConduitBuff2Guid)
              .SetDisplayName(SpellConduitDisplayName)
@@ -139,7 +139,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature CreateReflexiveConduit()
         {
-            var icon = FeatureRefs.EldritchArcherRangedSpellStrike.Reference.Get().Icon;
+            var icon = AbilityRefs.DispelMagicGreater.Reference.Get().Icon;
 
             var action = ActionsBuilder.New()
                     .ApplyBuff(SpellConduitBuffGuid, ContextDuration.Fixed(1), toCaster: true)

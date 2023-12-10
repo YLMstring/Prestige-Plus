@@ -44,7 +44,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string GuidedHandMythicDescription = "FeatGuidedHandMythic.Description";
         public static void GuidedHandMythicFeat()
         {
-            var icon = AbilityRefs.BurningHandsElecricity.Reference.Get().Icon;
+            var icon = AbilityRefs.Heal.Reference.Get().Icon;
 
             FeatureConfigurator.New(GuidedHandMythic, GuidedHandMythicGuid, FeatureGroup.MythicFeat)
               .SetDisplayName(GuidedHandMythicDisplayName)

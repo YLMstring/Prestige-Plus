@@ -13,7 +13,7 @@ namespace PrestigePlus.Patch
 {
     internal class PrerequisitePatch
     {
-        //private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
+        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         public static void Patch()
         {
             List<BlueprintFeatureReference> list = new() { };
@@ -34,18 +34,22 @@ namespace PrestigePlus.Patch
             }
             foreach (var feat in list)
             {
-                foreach (var prerequisite in feat.Get().GetComponents<PrerequisiteFeature>())
+                try
                 {
-                    var pre = prerequisite?.Feature;
-                    if (pre != null)
+                    foreach (var prerequisite in feat.Get().GetComponents<PrerequisiteFeature>())
                     {
-                        pre.IsPrerequisiteFor ??= new List<BlueprintFeatureReference>();
-                    }
-                    if (!pre.IsPrerequisiteFor.Contains(feat))
-                    {
-                        pre.IsPrerequisiteFor.Add(feat);
+                        var pre = prerequisite?.Feature;
+                        if (pre != null)
+                        {
+                            pre.IsPrerequisiteFor ??= new List<BlueprintFeatureReference>();
+                            if (!pre.IsPrerequisiteFor.Contains(feat))
+                            {
+                                pre.IsPrerequisiteFor.Add(feat);
+                            }
+                        }
                     }
                 }
+                catch (Exception e) { Logger.Error("Failed to edit " + feat.NameSafe(), e); }
             }
         }
     }

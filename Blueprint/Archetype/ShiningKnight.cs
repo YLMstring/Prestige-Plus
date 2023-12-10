@@ -46,7 +46,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string SkilledRiderDescription = "ShiningKnightSkilledRider.Description";
         private static BlueprintFeature CreateSkilledRider()
         {
-            var icon = FeatureRefs.MountedCombat.Reference.Get().Icon;
+            var icon = FeatureRefs.SpiritedCharge.Reference.Get().Icon;
 
             var feat = FeatureConfigurator.New(SkilledRider2, SkilledRider2Guid)
               .SetDisplayName(SkilledRiderDisplayName)
