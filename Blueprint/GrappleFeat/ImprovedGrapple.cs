@@ -226,6 +226,8 @@ namespace PrestigePlus.Blueprint.GrappleFeat
                     .AddToFeatureSelection(FeatureSelectionRefs.MonkBonusFeatSelectionLevel1.ToString())
                     .AddToFeatureSelection(FeatureSelectionRefs.MonkBonusFeatSelectionLevel6.ToString())
                     .AddToFeatureSelection(FeatureSelectionRefs.MonkBonusFeatSelectionLevel10.ToString())
+                    .AddToFeatureSelection(FeatureSelectionRefs.UrbanHunterCaptorSelection6.ToString())
+                    .AddToFeatureSelection(FeatureSelectionRefs.UrbanHunterCaptorSelection12.ToString())
                     .Configure();
 
             FeatureConfigurator.For(FeatureRefs.AgileManeuvers)

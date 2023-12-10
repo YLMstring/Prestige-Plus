@@ -54,6 +54,7 @@ namespace PrestigePlus.Blueprint.GrappleFeat
                     .AddFacts(new() { abilityTrick })
                     .AddCMBBonusForManeuver(maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple }, value: ContextValues.Constant(2))
                     .AddToGroups(Kingmaker.Blueprints.Classes.FeatureGroup.CombatFeat)
+                    .AddToFeatureSelection(FeatureSelectionRefs.UrbanHunterCaptorSelection12.ToString())
                     .Configure();
         }
     }
