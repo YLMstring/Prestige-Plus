@@ -5835,15 +5835,15 @@
     "zhCN": "龙类：强韧加强，钢铁意志，闪电反射，突刺"
   },
   {
-    "Key": "InfiltratorAdaptationOutsider.Name",
+    "Key": "InfiltratorAdaptationFey.Name",
     "ProcessTemplates": false,
-    "enGB": "Outsider",
-    "zhCN": "异界生物"
+    "enGB": "Fey",
+    "zhCN": "精类"
   },
   {
-    "Key": "InfiltratorAdaptationOutsider.Description",
-    "enGB": "Outsider: Great Fortitude, Iron Will, Lightning Reflexes",
-    "zhCN": "异界生物：强韧加强，钢铁意志，闪电反射"
+    "Key": "InfiltratorAdaptationFey.Description",
+    "enGB": "Fey: Great Fortitude, Iron Will, Lightning Reflexes",
+    "zhCN": "精类：强韧加强，钢铁意志，闪电反射"
   },
   {
     "Key": "InfiltratorAdaptationHalfling.Name",

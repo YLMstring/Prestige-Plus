@@ -80,7 +80,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddToAllFeatures(AdaptationGnomeFeat())
               .AddToAllFeatures(AdaptationGoblinsFeat())
               .AddToAllFeatures(AdaptationHalflingFeat())
-              .AddToAllFeatures(AdaptationOutsiderFeat())
+              .AddToAllFeatures(AdaptationFeyFeat())
               .AddToAllFeatures(AdaptationVerminFeat())
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .Configure();
@@ -133,36 +133,36 @@ namespace PrestigePlus.Blueprint.Archetype
               .Configure();
         }
 
-        private const string AdaptationOutsider = "Infiltrator.AdaptationOutsider";
-        public static readonly string AdaptationOutsiderGuid = "{5DC80F65-5BCC-46E8-B9C4-CC210F36149A}";
+        private const string AdaptationFey = "Infiltrator.AdaptationFey";
+        public static readonly string AdaptationFeyGuid = "{5DC80F65-5BCC-46E8-B9C4-CC210F36149A}";
 
-        private const string AdaptationOutsiderAblity = "Infiltrator.UseAdaptationOutsider";
-        private static readonly string AdaptationOutsiderAblityGuid = "{A08E9085-F119-4C0F-A87F-A627A781E04B}";
+        private const string AdaptationFeyAblity = "Infiltrator.UseAdaptationFey";
+        private static readonly string AdaptationFeyAblityGuid = "{A08E9085-F119-4C0F-A87F-A627A781E04B}";
 
-        private const string AdaptationOutsiderBuff2 = "Infiltrator.AdaptationOutsiderBuff2";
-        private static readonly string AdaptationOutsiderBuff2Guid = "{73678AF1-59F0-42BA-846C-71554E392374}";
+        private const string AdaptationFeyBuff2 = "Infiltrator.AdaptationFeyBuff2";
+        private static readonly string AdaptationFeyBuff2Guid = "{73678AF1-59F0-42BA-846C-71554E392374}";
 
-        internal const string AdaptationOutsiderDisplayName = "InfiltratorAdaptationOutsider.Name";
-        private const string AdaptationOutsiderDescription = "InfiltratorAdaptationOutsider.Description";
+        internal const string AdaptationFeyDisplayName = "InfiltratorAdaptationFey.Name";
+        private const string AdaptationFeyDescription = "InfiltratorAdaptationFey.Description";
 
-        public static BlueprintFeature AdaptationOutsiderFeat()
+        public static BlueprintFeature AdaptationFeyFeat()
         {
-            var icon = FeatureRefs.FavoriteEnemyOutsider.Reference.Get().Icon;
+            var icon = FeatureRefs.FavoriteEnemyFey.Reference.Get().Icon;
 
-            var Buff2 = BuffConfigurator.New(AdaptationOutsiderBuff2, AdaptationOutsiderBuff2Guid)
+            var Buff2 = BuffConfigurator.New(AdaptationFeyBuff2, AdaptationFeyBuff2Guid)
                 .SetStacking(Kingmaker.UnitLogic.Buffs.Blueprints.StackingType.Summ)
-             .SetDisplayName(AdaptationOutsiderDisplayName)
-             .SetDescription(AdaptationOutsiderDescription)
+             .SetDisplayName(AdaptationFeyDisplayName)
+             .SetDescription(AdaptationFeyDescription)
              .SetIcon(icon)
              .AddFacts(new() { FeatureRefs.GreatFortitude.ToString(), FeatureRefs.IronWill.ToString(), FeatureRefs.LightningReflexes.ToString() })
              .Configure();
 
-            var ability = AbilityConfigurator.New(AdaptationOutsiderAblity, AdaptationOutsiderAblityGuid)
+            var ability = AbilityConfigurator.New(AdaptationFeyAblity, AdaptationFeyAblityGuid)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                         .ApplyBuff(Buff2, ContextDuration.Fixed(10))
                         .Build())
-                .SetDisplayName(AdaptationOutsiderDisplayName)
-                .SetDescription(AdaptationOutsiderDescription)
+                .SetDisplayName(AdaptationFeyDisplayName)
+                .SetDescription(AdaptationFeyDescription)
                 .SetIcon(icon)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: AdaptationAblityResGuid)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
@@ -170,17 +170,13 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetType(AbilityType.Supernatural)
                 .Configure();
 
-            return FeatureConfigurator.New(AdaptationOutsider, AdaptationOutsiderGuid)
-              .SetDisplayName(AdaptationOutsiderDisplayName)
-              .SetDescription(AdaptationOutsiderDescription)
+            return FeatureConfigurator.New(AdaptationFey, AdaptationFeyGuid)
+              .SetDisplayName(AdaptationFeyDisplayName)
+              .SetDescription(AdaptationFeyDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddPrerequisiteFeature(FeatureRefs.FavoriteEnemyOutsider.ToString(), group: Prerequisite.GroupType.Any)
-              .AddPrerequisiteFeature(FeatureRefs.FavoriteEnemyDemonOfMagic.ToString(), group: Prerequisite.GroupType.Any)
-              .AddPrerequisiteFeature(FeatureRefs.FavoriteEnemyDemonOfSlaughter.ToString(), group: Prerequisite.GroupType.Any)
-              .AddPrerequisiteFeature(FeatureRefs.FavoriteEnemyDemonOfStrength.ToString(), group: Prerequisite.GroupType.Any)
               .AddPrerequisiteFeature(FeatureRefs.FavoriteEnemyFey.ToString(), group: Prerequisite.GroupType.Any)
-              .AddPrerequisiteFeature(FeatureRefs.FavoriteEnemyHuman.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteFeature(FeatureRefs.FavoriteEnemyPlant.ToString(), group: Prerequisite.GroupType.Any)
               .AddFacts(new() { ability })
               .Configure();
         }
@@ -568,7 +564,6 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetIsClassFeature(true)
               .AddPrerequisiteFeature(FeatureRefs.FavoriteEnemyVermin.ToString(), group: Prerequisite.GroupType.Any)
               .AddPrerequisiteFeature(FeatureRefs.FavoriteEnemyConstructs.ToString(), group: Prerequisite.GroupType.Any)
-              .AddPrerequisiteFeature(FeatureRefs.FavoriteEnemyPlant.ToString(), group: Prerequisite.GroupType.Any)
               .AddPrerequisiteFeature(FeatureRefs.FavoriteEnemyUndead.ToString(), group: Prerequisite.GroupType.Any)
               .AddFacts(new() { ability })
               .Configure();
