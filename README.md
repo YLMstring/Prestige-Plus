@@ -1,4 +1,4 @@
-# Prestige Plus v2.1.0 for WoTR 
+# Prestige Plus v2.1.1 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -30,8 +30,10 @@
 - [Shelyn](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Shelyn): requires worshipping Shelyn or Neutral Good
 - More coming soon!
 ### [Sentinel](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/sentinel/)
+- [Guided Hand](https://www.d20pfsrd.com/feats/general-feats/guided-hand/)
+- [Guided Hand (Mythic)](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-feats/guided-hand-mythic/)
 - The favored weapon is determined by your actual deity, not the deity of your obedience.
-- It should work for MOD deities as long as they support warpriest sacred weapon because I just read data of that one.
+- It works for deities from other mods!
 ### [Agent of the Grave Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/a-b/agent-of-the-grave/)
 - The class has only 5 levels.
 - Agent of the Grave lose spell progression at level 1. I have no idea why my code can make you lose spell progression, but it just works.
@@ -52,6 +54,7 @@
 - Storm of Arrows: a mythic ability to increase the number of uses of Hail of Arrows!
 ### [Asavir Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/a-b/asavir/)   
 - Share your pet with Djinni’s Blessing!
+- Gain Cavalier Mobility if TTT-base installed.
 - Trample (Mythic): a mythic feat inspired by tabletop abilities of the same name! (notice that owlcat trample works differently from tabletop)
 #### Homebrew Options:  
 - Bond of Genies: a mythic ability to mount any party member!
@@ -110,9 +113,13 @@
 ### New Archetypes
 #### Alchemist:  
 - [Construct Rider](https://www.d20pfsrd.com/classes/base-classes/alchemist/archetypes/paizo-alchemist-archetypes/construct-rider-alchemist-archetype/)
+- [Internal Alchemist](https://www.d20pfsrd.com/classes/base-classes/alchemist/archetypes/paizo-alchemist-archetypes/internal-alchemist/)
+- Can select certain bonus feats in place of an alchemical discovery.
 - [Mad Scientist](https://www.d20pfsrd.com/classes/base-classes/alchemist/archetypes/paizo-alchemist-archetypes/mad-scientist-alchemist-archetype/)
 - For Lv2 discovery, Left spell slot blank to create genius extracts. For Lv4 discovery, start brewing and wait for an hour.
 - This is absolutely my favorite.
+#### Bloodrager:  
+- [Blood Conduit](https://www.d20pfsrd.com/classes/hybrid-classes/bloodrager/archetypes/paizo-bloodrager-archetypes/blood-conduit/)
 #### Fighter:  
 - [Eldritch Guardian](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Eldritch%20Guardian)
 - Share Training with your pets!
@@ -126,6 +133,9 @@
 - New Magus Arcana: [Close Range](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/close-range-ex/)
 #### Oracle:  
 - [Truth Seeker](https://www.d20pfsrd.com/classes/base-classes/oracle/archetypes/paizo-oracle-archetypes/seeker/)
+#### Paladin:  
+- [Shining Knight](https://www.d20pfsrd.com/classes/core-classes/paladin/archetypes/paizo-paladin-archetypes/shining-knight)
+- Gain Cavalier Mobility if TTT-base installed.
 #### Ranger:  
 - [Divine Marksman](https://www.d20pfsrd.com/classes/core-classes/ranger/archetypes/paizo-ranger-archetypes/divine-marksman-ranger-archetype/)
 - Requires [Expanded Content](https://github.com/ka-dyn/ExpandedContent), or you won't gain the bonus feats!
