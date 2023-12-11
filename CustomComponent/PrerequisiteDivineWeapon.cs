@@ -57,10 +57,14 @@ namespace PrestigePlus.CustomComponent
             {
                 if (unit.HasFact(deity.CheckedFact))
                 {
-                    var weapon = deity.Feature?.GetComponent<SacredWeaponFavoriteDamageOverride>()?.Category;
-                    if (weapon != null)
+                    var weapons = deity.Feature?.GetComponents<SacredWeaponFavoriteDamageOverride>();
+                    if (weapons != null)
                     {
-                        cat.Add((WeaponCategory)weapon);
+                        foreach (var weapon in weapons)
+                        {
+                            cat.Add(weapon.Category);
+                        }
+                        break;
                     }
                 }
             }
