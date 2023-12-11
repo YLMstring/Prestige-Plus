@@ -72,6 +72,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(AdaptationDisplayName)
               .SetDescription(AdaptationDescription)
               .SetIcon(icon)
+              .SetObligatory(false)
               .AddToAllFeatures(AdaptationAnimalsFeat())
               .AddToAllFeatures(AdaptationDragonFeat())
               .AddToAllFeatures(AdaptationDwarfsFeat())

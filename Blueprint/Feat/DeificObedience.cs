@@ -33,6 +33,11 @@ using Kingmaker.UnitLogic.Abilities.Components.TargetCheckers;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.UnitLogic.Alignments;
 using Kingmaker.UnitLogic.Mechanics.Components;
+using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
+using Kingmaker.RuleSystem;
+using Kingmaker.UnitLogic.ActivatableAbilities;
+using Kingmaker.UnitLogic.Buffs.Blueprints;
+using PrestigePlus.Modify;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -86,6 +91,210 @@ namespace PrestigePlus.Blueprint.Feat
             FeatureSelectionConfigurator.For(FeatureSelectionRefs.BasicFeatSelection)
                 .AddToAllFeatures(feat)
                 .Configure();
+        }
+
+        private const string Naderi = "DeificObedience.Naderi";
+        public static readonly string NaderiGuid = "{0941C876-4D62-496E-B0C8-EA953B230A6F}";
+
+        internal const string NaderiDisplayName = "DeificObedienceNaderi.Name";
+        private const string NaderiDescription = "DeificObedienceNaderi.Description";
+        public static BlueprintFeature NaderiFeat()
+        {
+            var icon = AbilityRefs.BlessingOfLuckAndResolve.Reference.Get().Icon;
+            //"NaderiFeature": "36d75d0c-41fb-497c-98bf-3e07a1fe8b2e",
+
+            return FeatureConfigurator.New(Naderi, NaderiGuid)
+              .SetDisplayName(NaderiDisplayName)
+              .SetDescription(NaderiDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature("36d75d0c-41fb-497c-98bf-3e07a1fe8b2e", group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.TrueNeutral, group: Prerequisite.GroupType.Any)
+              .AddToIsPrerequisiteFor(NaderiSentinelFeat())
+              .AddStatBonus(ModifierDescriptor.Sacred, false, StatType.SkillPersuasion, 2)
+              .AddStatBonus(ModifierDescriptor.Sacred, false, StatType.SkillUseMagicDevice, 2)
+              .Configure();
+        }
+
+        private const string NaderiSentinel = "DeificObedience.NaderiSentinel";
+        public static readonly string NaderiSentinelGuid = "{73D86F82-44D7-471E-A711-1F72F3B98644}";
+
+        internal const string NaderiSentinelDisplayName = "DeificObedienceNaderiSentinel.Name";
+        private const string NaderiSentinelDescription = "DeificObedienceNaderiSentinel.Description";
+        public static BlueprintProgression NaderiSentinelFeat()
+        {
+            var icon = AbilityRefs.BlessingOfLuckAndResolve.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(NaderiSentinel, NaderiSentinelGuid)
+              .SetDisplayName(NaderiSentinelDisplayName)
+              .SetDescription(NaderiSentinelDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(NaderiGuid)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(12, CreateNaderiSentinel1())
+              .AddToLevelEntry(16, NaderiSentinel2Feat())
+              .AddToLevelEntry(20, NaderiSentinel3Feat())
+              .Configure();
+        }
+
+        private const string NaderiSentinel1 = "SpellPower.NaderiSentinel1";
+        public static readonly string NaderiSentinel1Guid = "{62A55541-7FBC-45D2-85AB-1E757D5F4DDD}";
+        internal const string NaderiSentinel1DisplayName = "SpellPowerNaderiSentinel1.Name";
+        private const string NaderiSentinel1Description = "SpellPowerNaderiSentinel1.Description";
+
+        private const string NaderiSentinel1Ablity2 = "SpellPower.UseNaderiSentinel12";
+        private static readonly string NaderiSentinel1Ablity2Guid = "{0C3A2B3E-BD1E-42EA-ADBD-00A14DEB7A89}";
+
+        private static BlueprintFeature CreateNaderiSentinel1()
+        {
+            var icon = AbilityRefs.FrostBomb.Reference.Get().Icon;
+
+            var ability2 = AbilityConfigurator.New(NaderiSentinel1Ablity2, NaderiSentinel1Ablity2Guid)
+                .CopyFrom(
+                AbilityRefs.Castigate,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx),
+                typeof(AbilityTargetHasNoFactUnless),
+                typeof(AbilityTargetHasFact),
+                typeof(SpellDescriptorComponent),
+                typeof(ContextRankConfig))
+                .AddPretendSpellLevel(spellLevel: 2)
+                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .Configure();
+
+            return FeatureConfigurator.New(NaderiSentinel1, NaderiSentinel1Guid)
+              .SetDisplayName(NaderiSentinel1DisplayName)
+              .SetDescription(NaderiSentinel1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability2 })
+              .Configure();
+        }
+
+        private const string Naderi2 = "DeificObedience.Naderi2";
+        public static readonly string Naderi2Guid = "{CC567A04-40C7-4257-B23D-A4054CB0B0BD}";
+
+        internal const string Naderi2DisplayName = "DeificObedienceNaderi2.Name";
+        private const string Naderi2Description = "DeificObedienceNaderi2.Description";
+
+        private const string Naderi2Buff = "DeificObedience.Naderi2Buff";
+        private static readonly string Naderi2BuffGuid = "{202FD60C-3628-43BE-94ED-791D1150849B}";
+
+        private const string Naderi2Ability = "DeificObedience.Naderi2Ability";
+        private static readonly string Naderi2AbilityGuid = "{86C1A7A1-E263-42D0-8B4C-989D506153F2}";
+        public static BlueprintFeature NaderiSentinel2Feat()
+        {
+            var icon = AbilityRefs.HolyAura.Reference.Get().Icon;
+
+            var Buff = BuffConfigurator.New(Naderi2Buff, Naderi2BuffGuid)
+             .SetDisplayName(Naderi2DisplayName)
+             .SetDescription(Naderi2Description)
+             .SetIcon(icon)
+             .AddDamageResistancePhysical(Kingmaker.Enums.Damage.DamageAlignment.Good, bypassedByAlignment: true, isStackable: true, value: ContextValues.Constant(10), material: Kingmaker.Enums.Damage.PhysicalDamageMaterial.ColdIron, bypassedByMaterial: true)
+             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Holy.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.PrimaryHand)
+             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Holy.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.SecondaryHand)
+             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Enhancement5.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.PrimaryHand)
+             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Enhancement5.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.SecondaryHand)
+             .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+             .Configure();
+
+            var ability = AbilityConfigurator.New(Naderi2Ability, Naderi2AbilityGuid)
+                .CopyFrom(
+                AbilityRefs.HolyAura,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(AbilitySpawnFx),
+                typeof(ContextRankConfigs))
+                .SetDisplayName(Naderi2DisplayName)
+                .SetDescription(Naderi2Description)
+                .Configure();
+
+            return FeatureConfigurator.New(Naderi2, Naderi2Guid)
+              .SetDisplayName(Naderi2DisplayName)
+              .SetDescription(Naderi2Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private static readonly string Naderi3Name = "DeificObedienceNaderi3";
+        public static readonly string Naderi3Guid = "{44AE0CA2-464E-4200-9C67-24D0CFCBAE1F}";
+
+        private static readonly string Naderi3DisplayName = "DeificObedienceNaderi3.Name";
+        private static readonly string Naderi3Description = "DeificObedienceNaderi3.Description";
+
+        private const string AuraBuff = "DeificObedienceStyle.Naderi3buff";
+        private static readonly string AuraBuffGuid = "{3A701136-709B-4F06-9202-F30AF7369F28}";
+
+        private const string AuraBuff2 = "DeificObedienceStyle.Naderi3buff2";
+        private static readonly string AuraBuff2Guid = "{35E97B8C-B385-4AC4-9556-D54DEF11DF56}";
+
+        private const string Naderi3Aura = "DeificObedienceStyle.Naderi3Aura";
+        private static readonly string Naderi3AuraGuid = "{0D79B107-54C2-4439-BF31-CA3B1C4A0A74}";
+
+        private const string Naderi3Ability = "DeificObedienceStyle.Naderi3Ability";
+        private static readonly string Naderi3AbilityGuid = "{BDC2A287-8FA8-4722-9206-A8E131D64EC8}";
+
+        private const string Naderi3AbilityRes = "DeificObedienceStyle.Naderi3AbilityRes";
+        private static readonly string Naderi3AbilityResGuid = "{489136AD-7D46-44BD-979C-8633B294F324}";
+
+        public static BlueprintFeature NaderiSentinel3Feat()
+        {
+            var icon = AbilityRefs.BloodlineSerpentineScaledSoulCharmingGazeAbility.Reference.Get().Icon;
+
+            var Buff2 = BuffConfigurator.New(AuraBuff2, AuraBuff2Guid)
+              .SetDisplayName(Naderi3DisplayName)
+              .SetDescription(Naderi3Description)
+              .SetIcon(icon)
+              .Configure();
+
+            var area = AbilityAreaEffectConfigurator.New(Naderi3Aura, Naderi3AuraGuid)
+                .SetAggroEnemies(true)
+                .SetAffectEnemies(true)
+                .SetTargetType(BlueprintAbilityAreaEffect.TargetType.Enemy)
+                .SetAffectDead(false)
+                .SetShape(AreaEffectShape.Cylinder)
+                .SetSize(33.Feet())
+                .AddSpellDescriptorComponent(descriptor: SpellDescriptor.MindAffecting)
+                .AddSpellDescriptorComponent(descriptor: SpellDescriptor.Fear)
+                .Configure();
+
+            var Buff1 = BuffConfigurator.New(AuraBuff, AuraBuffGuid)
+              .SetDisplayName(Naderi3DisplayName)
+              .SetDescription(Naderi3Description)
+              .SetIcon(icon)
+              .AddAreaEffect(area)
+              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+              .Configure();
+
+            var abilityresourse = AbilityResourceConfigurator.New(Naderi3AbilityRes, Naderi3AbilityResGuid)
+                .SetMaxAmount(
+                    ResourceAmountBuilder.New(0)
+                        .IncreaseByLevel(classes: new string[] {  }))
+                .SetUseMax()
+                .SetMax(10)
+                .Configure();
+
+            var ability = ActivatableAbilityConfigurator.New(Naderi3Ability, Naderi3AbilityGuid)
+                .SetDisplayName(Naderi3DisplayName)
+                .SetDescription(Naderi3Description)
+                .SetIcon(icon)
+                .SetBuff(Buff1)
+                .SetDeactivateIfCombatEnded(true)
+                .SetActivationType(AbilityActivationType.WithUnitCommand)
+                .SetActivateWithUnitCommand(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+                .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound, freeBlueprint: Naderi34Guid)
+                .SetDeactivateImmediately()
+                .Configure();
+
+            return FeatureConfigurator.New(Naderi3Name, Naderi3Guid)
+                    .SetDisplayName(Naderi3DisplayName)
+                    .SetDescription(Naderi3Description)
+                    .SetIcon(icon)
+                    .AddFacts(new() { ability })
+                    .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+                    .Configure();
         }
 
         private const string Shelyn = "DeificObedience.Shelyn";

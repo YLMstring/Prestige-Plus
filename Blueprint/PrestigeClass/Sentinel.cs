@@ -121,6 +121,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
               .AddToAllFeatures(DeificObedience.ShelynSentinelGuid)
+              .AddToAllFeatures(DeificObedience.NaderiSentinelGuid)
               .AddClassLevelsForPrerequisites(actualClass: ArchetypeGuid, fakeClass: CharacterClassRefs.FighterClass.ToString(), modifier: 1, summand: 0)
               .Configure();
         }
