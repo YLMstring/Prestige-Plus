@@ -17,8 +17,11 @@ namespace PrestigePlus.CustomComponent.Feat
     {
         void IRulebookHandler<RuleCalculateWeaponStats>.OnEventAboutToTrigger(RuleCalculateWeaponStats evt)
         {
-            cat ??= PrerequisiteDivineWeapon.GetFavoredWeapon(Owner);
-            if (cat != null && cat == evt.Weapon.Blueprint.Category)
+            if (cat.Count() == 0)
+            {
+                cat = PrerequisiteDivineWeapon.GetFavoredWeapon(Owner);
+            }
+            if (cat.Contains(evt.Weapon.Blueprint.Category))
             {
                 evt.OverrideDamageBonusStat(StatType.Wisdom);
                 evt.TwoHandedStatReplacement = true;
@@ -41,9 +44,9 @@ namespace PrestigePlus.CustomComponent.Feat
 
         public override void OnDeactivate()
         {
-            cat = null;
+            cat = new() { };
         }
 
-        private WeaponCategory? cat = null;
+        private List<WeaponCategory> cat = new() { };
     }
 }

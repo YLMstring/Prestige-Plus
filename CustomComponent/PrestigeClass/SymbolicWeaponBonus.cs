@@ -23,8 +23,11 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
     {
         void IRulebookHandler<RuleAttackWithWeapon>.OnEventAboutToTrigger(RuleAttackWithWeapon evt)
         {
-            cat ??= PrerequisiteDivineWeapon.GetFavoredWeapon(Owner);
-            if (cat != null && cat == evt.Weapon.Blueprint.Category)
+            if (cat.Count() == 0)
+            {
+                cat = PrerequisiteDivineWeapon.GetFavoredWeapon(Owner);
+            }
+            if (cat.Contains(evt.Weapon.Blueprint.Category))
             {
                 evt.AddTemporaryModifier(evt.Initiator.Stats.AdditionalDamage.AddModifier(GetBonus(), base.Runtime, Des));
             }
@@ -32,7 +35,11 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
 
         void IRulebookHandler<RuleCalculateAttackBonus>.OnEventAboutToTrigger(RuleCalculateAttackBonus evt)
         {
-            if (cat != null && cat == evt.Weapon.Blueprint.Category)
+            if (cat.Count() == 0)
+            {
+                cat = PrerequisiteDivineWeapon.GetFavoredWeapon(Owner);
+            }
+            if (cat.Contains(evt.Weapon.Blueprint.Category))
             {
                 evt.AddModifier(GetBonus(), base.Fact, Des);
             }
@@ -73,10 +80,10 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
 
         public override void OnDeactivate()
         {
-            cat = null;
+            cat = new() { };
         }
 
-        private WeaponCategory? cat = null;
+        private List<WeaponCategory> cat = new() { };
         public ModifierDescriptor Des = ModifierDescriptor.Sacred;
     }
 }

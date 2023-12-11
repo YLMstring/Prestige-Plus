@@ -23,8 +23,11 @@ namespace PrestigePlus.CustomComponent.Feat
         // Token: 0x0600C2EE RID: 49902 RVA: 0x0032DE98 File Offset: 0x0032C098
         public void OnEventAboutToTrigger(RuleCalculateAttackBonusWithoutTarget evt)
         {
-            cat ??= PrerequisiteDivineWeapon.GetFavoredWeapon(Owner);
-            if (cat != null && cat == evt.Weapon.Blueprint.Category)
+            if (cat.Count() == 0)
+            {
+                cat = PrerequisiteDivineWeapon.GetFavoredWeapon(Owner);
+            }
+            if (cat.Contains(evt.Weapon.Blueprint.Category))
             {
                 evt.AttackBonusStat = StatType.Wisdom;
             }
@@ -42,10 +45,10 @@ namespace PrestigePlus.CustomComponent.Feat
 
         public override void OnDeactivate()
         {
-            cat = null;
+            cat = new() { };
         }
 
-        private WeaponCategory? cat = null;
+        private List<WeaponCategory> cat = new() { };
     }
 }
 

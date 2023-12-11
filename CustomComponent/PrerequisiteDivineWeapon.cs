@@ -26,15 +26,18 @@ namespace PrestigePlus.CustomComponent
             try
             {
                 var cat = GetFavoredWeapon(unit);
-                if (cat == null)
+                if (cat.Count() == 0)
                 {
                     return false;
                 }
-                else if (UnitHelper.GetFeature(unit, ParametrizedFeatureRefs.WeaponFocus.Reference, cat) == null)
+                foreach (var item in cat)
                 {
-                    return false;
+                    if (UnitHelper.GetFeature(unit, ParametrizedFeatureRefs.WeaponFocus.Reference, item) != null)
+                    {
+                        return true;
+                    }
                 }
-                return true;
+                return false;
             }
             catch (Exception ex) { Logger.Error("Failed to CheckInternal.", ex); return false; }
         }
@@ -46,18 +49,18 @@ namespace PrestigePlus.CustomComponent
         }
 
         // Token: 0x0400723A RID: 29242
-        public static WeaponCategory? GetFavoredWeapon(UnitDescriptor unit)
+        public static List<WeaponCategory> GetFavoredWeapon(UnitDescriptor unit)
         {
-            WeaponCategory? cat = null;
+            List<WeaponCategory> cat = new() { };
             var list = FeatureRefs.WarpriestDeitySacredWeaponFeature.Reference.Get().GetComponents<AddFeatureIfHasFact>();
             foreach (var deity in list)
             {
                 if (unit.HasFact(deity.CheckedFact))
                 {
-                    cat = deity.Feature?.GetComponent<SacredWeaponFavoriteDamageOverride>()?.Category;
-                    if (cat != null)
+                    var weapon = deity.Feature?.GetComponent<SacredWeaponFavoriteDamageOverride>()?.Category;
+                    if (weapon != null)
                     {
-                        break;
+                        cat.Add((WeaponCategory)weapon);
                     }
                 }
             }
