@@ -835,7 +835,7 @@
   {
     "Key": "ScarSeekerSacrifice.Description",
     "enGB": "Once per round, the scar seeker can share the damage from attacks taken by one ally he can see within 30 feet for the round. The subject gains a +1 deflection bonus to AC and a +1 resistance bonus on saves. The scar seeker must be 3rd level to select this scar.",
-    "zhCN": "每轮一次，负痕求道者可以分担盟友受到的伤害，该名盟友与他的距离不得超过30尺，并且能够被他看到。目标在 AC 上获得+1反射加值，并在豁免上获得 +1 抗力加值。负痕求道者必须达到3级才能选择该项圣痕。"
+    "zhCN": "每轮一次，负痕求道者可以分担盟友受到的伤害，该名盟友与他的距离不得超过30尺，并且能够被他看到。目标在AC上获得+1反射加值，并在豁免上获得+1抗力加值。负痕求道者必须达到3级才能选择该项圣痕。"
   },
 
   {
@@ -6416,6 +6416,160 @@
     "Key": "BloodConduitReflexiveConduit.Description",
     "enGB": "At 14th level, a blood conduit can discharge his power into foes that attempt bodily contact with him. While wearing light or no armor, when the blood conduit is subject to a combat maneuver check made to bull rush, grapple, or trip him, he can as a swift action cast a bloodrager touch spell, requiring no further touch attack roll.",
     "zhCN": "14级起，狂血导魔者能够对那些尝试碰触自身的敌人释放力量。当狂血导魔者穿戴轻甲或不穿甲，并且自身成为了冲撞、擒抱或摔绊战技检定的对象时，他能够以迅捷动作施放一个血怒者接触法术，且不需要再投掷接触攻击检定。"
+  },
+  {
+    "Key": "DeificObedienceNaderi.Name",
+    "ProcessTemplates": false,
+    "enGB": "Naderi",
+    "zhCN": "奈德丽"
+  },
+  {
+    "Key": "DeificObedienceNaderi.Description",
+    "enGB": "Collect two unblemished white rose blossoms, open to their fullest but without any wilted petals. Stand beside a river and cut the blossoms from the stems, then set them on the water to float downstream. Meditate upon the beautiful perfection of love and the imperfection of a life that would deny it to star-crossed lovers. You gain a +2 sacred bonus on Charismabased skill checks.",
+    "zhCN": "收集两朵洁白无瑕，正当盛放，没有枯萎花瓣的玫瑰花。站在河边，从茎上剪下花朵，然后将它们放在水上顺流而下。冥想美丽而圆满的爱情，和那从命运多舛的恋人们手中夺去这份爱情的充满缺憾的人生。你在基于魅力的技能检定中获得+2神圣加值。"
+  },
+  {
+    "Key": "DeificObedienceNaderiSentinel.Name",
+    "ProcessTemplates": false,
+    "enGB": "Naderi (Sentinel)",
+    "zhCN": "奈德丽（信仰哨卫）"
+  },
+  {
+    "Key": "DeificObedienceNaderiSentinel.Description",
+    "enGB": "Become a Sentinel to gain access to her boons, which will be granted at certain character or class levels.",
+    "zhCN": "成为信仰哨卫来获取她的神恩资格，你会在合适的角色或职业等级得到神恩。"
+  },
+  {
+    "Key": "SpellPowerNaderi1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Frozen Despair",
+    "zhCN": "冰封绝望"
+  },
+  {
+    "Key": "SpellPowerNaderi1.Description",
+    "enGB": "castigate 2/day",
+    "zhCN": "严加斥责 2/天"
+  },
+  {
+    "Key": "DeificObedienceNaderi2.Name",
+    "ProcessTemplates": false,
+    "enGB": "All Who Live Suffer Loss",
+    "zhCN": "众生皆有死别时"
+  },
+  {
+    "Key": "DeificObedienceNaderi2.Description",
+    "enGB": "You channel the despair and grief you have suffered into a cloud of sadness that saps the will of those who oppose you. All foes within a 30-foot, cone-shaped burst are staggered for a number of rounds equal to your Hit Dice, and take a –1 penalty on attack rolls, saving throws, skill checks, and weapon damage rolls. A successful Will saving throw (DC = 10 + 1/2 your Hit Dice + your Charisma modifier) negates this effect.",
+    "zhCN": "你可以引导自己受过的绝望和悲伤，形成一道愁云消磨你敌人的意志。所有30尺锥形爆发范围内的敌人在等同于你生命骰的轮数中陷入恍惚，且在攻击骰、豁免骰、技能检定和武器伤害骰中受到-1减值。成功通过意志豁免（DC=10+1/2生命骰+你的魅力调整值）可以避免这一效果。"
+  },
+  {
+    "Key": "DeificObedienceNaderi3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Mantle of Tragic Grace",
+    "zhCN": "潇湘夜雨泪湿衣"
+  },
+  {
+    "Key": "DeificObedienceNaderi3.Description",
+    "enGB": "You drape yourself in tragic glamor, and your longing for rest puts you beyond the reach of mortal harm for a lingering moment. As a standard action, you can activate this mantle, giving all creatures within 10 feet spell resistance equal to 12 + your Hit Dice. You may use this ability for a number of rounds each day equal to your Hit Dice. These rounds do not need to be consecutive, and you can dismiss this effect as a standard action that does not provoke attacks of opportunity.",
+    "zhCN": "你令自己浸满优雅的悲意，对安息的渴望再多保护了你一会儿，让你不受凡世的侵害。你可以一个标准动作激活该衣袍，给予10尺内所有生物12+你的生命骰数的法术抗力。你每天可以使用这一能力的轮数等于你的生命骰数。这些轮数不需要连续使用，你可以用标准动作解除该效果，不引起借机攻击。"
+  },
+  {
+    "Key": "DeificObedienceDesna.Name",
+    "ProcessTemplates": false,
+    "enGB": "Desna",
+    "zhCN": "德丝娜"
+  },
+  {
+    "Key": "DeificObedienceDesna.Description",
+    "enGB": "Dance in a random pattern beneath the light of the stars, trusting in the guidance of destiny. If no stars are currently visible, softly sing or chant all of the names of stars that you know as you perform your dance. Let your mind expand and turn your thoughts away from where your feet might land, allowing your steps to fall where chance wills. When the dance feels complete, cease dancing. Ponder the steps you took and the position in which you stopped, and consider what portents these subtle clues might hold for the future. Gain a +1 luck bonus on initiative checks.",
+    "zhCN": "在星光下随性舞动，相信命运的指引。如果无法看到星星，便要一边轻声颂唱所有你所知晓的星星的名字，一边舞蹈。让你的心灵扩展，让你的思维离开双脚所处的大地，让你的脚步在机缘的指引下踏落。在感觉舞蹈完成时停下。思索你所踏出的步伐和最终停下的方位，考虑这些微妙的线索可能预示着何种未来。你的先攻检定获得+1幸运加值。"
+  },
+  {
+    "Key": "SpellPowerDesna1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Traveler's Tricks",
+    "zhCN": "旅者戏法"
+  },
+  {
+    "Key": "SpellPowerDesna1.Description",
+    "enGB": "longstrider 3/day",
+    "zhCN": "大步奔行 3/天"
+  },
+  {
+    "Key": "DeificObedienceDesna2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Starlit Caster",
+    "zhCN": "星光术者"
+  },
+  {
+    "Key": "DeificObedienceDesna2.Description",
+    "enGB": "Over time you have learned to focus your magical power to better damage agents of evil. You add your Charisma bonus on your concentration checks, as well as on your caster level checks to overcome spell resistance. In addition, at night time, when you cast a spell that deals hit point damage, you can have it deal an extra 2d6 points of damage.",
+    "zhCN": "随着时间的流逝，你逐渐掌握了汇聚魔法能量对奸邪之徒造成更大损伤的方法。你将自身的魅力加值加到你的专注检定、以及用于克服法术抗力的施法者等级检定中。此外，当你在夜晚施放造成生命值伤害的法术时，你能够让它造成额外2d6点伤害。"
+  },
+  {
+    "Key": "DeificObedienceDesna3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Starry Eyes",
+    "zhCN": "繁星之眼"
+  },
+  {
+    "Key": "DeificObedienceDesna3.Description",
+    "enGB": "Your can deal an extra 2d6 points of damage even at day time with Starlit Caster.",
+    "zhCN": "即使在白天，你也能用星光术者造成额外2d6点伤害。"
+  },
+  {
+    "Key": "DeificObedienceErastil.Name",
+    "ProcessTemplates": false,
+    "enGB": "Erastil",
+    "zhCN": "艾若斯提"
+  },
+  {
+    "Key": "DeificObedienceErastil.Description",
+    "enGB": "Plant five seeds in fertile earth, spacing them out in the shape of an arrow. The seeds may be those of any plant that can potentially grow in the region, though edible plants are preferred. The seeds don’t need to be from a type of plant that could thrive in that soil—all they must have is a chance at survival. If no suitable earth exists, place a small bundle of seeds (again, those that grow edible plants are preferred), a small bundle of preserved food, or a quiver of arrows in a place where a passerby might see it. Mark your gifts with Erastil’s sign, and say a prayer for the health and safety of the communities in the area and those who may be in need of Erastil’s guidance. Gain a +4 sacred bonus on Knowledge (nature) checks.",
+    "zhCN": "在肥沃的土地中种下5颗种子，种植时将其摆成箭头的形状。这些种子是可以在当地环境生根发芽的任何植物种子，不过可种出食物的种子为首选。这些种子并不需要是某一类能够在本地的土壤中茁长成长的植物，不过它们都必须有概率成活。若没有合适的土地，则将一小堆种子（同样地，那些可种出食物的种子仍为首选）、一小捆腌制食品或者一袋箭放在路人可以看到的地方。在你的礼物上留下艾若斯提的标志，并为周边社区以及那些需要艾若斯提指引的人们祈祷，祝福他们健康安全。你的知识（自然）检定获得+4加值。"
+  },
+  {
+    "Key": "SpellPowerErastil1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Family's Bond",
+    "zhCN": "家庭纽带"
+  },
+  {
+    "Key": "SpellPowerErastil1.Description",
+    "enGB": "cure light wounds 3/day, shield other 2/day, or prayer 1/day",
+    "zhCN": "治疗轻伤 3次/日，护卫他人 2次/日，或祈祷术 1次/日"
+  },
+  {
+    "Key": "DeificObedienceErastil2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Twin Fang",
+    "zhCN": "双生獠牙"
+  },
+  {
+    "Key": "DeificObedienceErastil2.Description",
+    "enGB": "Once per day as a standard action, you can summon an exact double of your animal companion. Your animal companion deals double damage and takes half damage with it around. The double remains for 1 round for every Hit Die you possess, and then vanishes.",
+    "zhCN": "每日1次以标准动作，你能够召唤一个与自身的动物伙伴完全相同的复制体。它在场时你的动物伙伴造成双倍伤害，受到减半伤害。复制体存在的轮数与你具有的生命骰数相同，在之后便会消失不见。"
+  },
+  {
+    "Key": "DeificObedienceErastil3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Faithful Archer",
+    "zhCN": "虔信射手"
+  },
+  {
+    "Key": "DeificObedienceErastil3.Description",
+    "enGB": "You are particularly skilled at using Erastil’s favored weapon. When using a longbow, you add your Wisdom bonus on attack and damage rolls.",
+    "zhCN": "你十分擅长使用艾若斯提的偏好武器。你使用长弓时能够将你的感知加值加到攻击和伤害检定上。"
+  },
+  {
+    "Key": "NewSpellShieldOther.Name",
+    "ProcessTemplates": false,
+    "enGB": "Shield Other",
+    "zhCN": "护卫他人"
+  },
+  {
+    "Key": "NewSpellShieldOther.Description",
+    "enGB": "This spell wards the subject and creates a mystic connection between you and the subject so that some of its wounds are transferred to you. The subject gains a +1 deflection bonus to AC and a +1 resistance bonus on saves. Additionally, the subject takes only half damage from all wounds and attacks (including those dealt by special abilities) that deal hit point damage. The amount of damage not taken by the warded creature is taken by you. Forms of harm that do not involve hit points, such as charm effects, temporary ability damage, level draining, and death effects, are not affected. If the subject suffers a reduction of hit points from a lowered Constitution score, the reduction is not split with you because it is not hit point damage. When the spell ends, subsequent damage is no longer divided between the subject and you, but damage already split is not reassigned to the subject.",
+    "zhCN": "此法术在你和受术者之间形成某种神秘的联结，使得他遭受的部分伤害可以转移到你身上。受术者的AC获得+1偏斜加值，豁免检定获得+1抗力加值。另外受术者所受的任何造成HP损失的创伤和攻击均减半 (包括由特殊能力造成的)，剩下的部分则由施法者承受。不减少HP的伤害，比如魅惑、暂时性属性伤害、吸取等级及即死效果则不受影响。若受术者的HP因体质降低而减少，施法者亦不受影响，因为这不是HP伤害。法术结束后，后续的伤害不会再分给你与受术者，但已分配的伤害也不会转回受术者身上。"
   }
 
 ]

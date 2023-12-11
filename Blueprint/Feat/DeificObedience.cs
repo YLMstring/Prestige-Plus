@@ -139,8 +139,8 @@ namespace PrestigePlus.Blueprint.Feat
 
         private const string NaderiSentinel1 = "SpellPower.NaderiSentinel1";
         public static readonly string NaderiSentinel1Guid = "{62A55541-7FBC-45D2-85AB-1E757D5F4DDD}";
-        internal const string NaderiSentinel1DisplayName = "SpellPowerNaderiSentinel1.Name";
-        private const string NaderiSentinel1Description = "SpellPowerNaderiSentinel1.Description";
+        internal const string NaderiSentinel1DisplayName = "SpellPowerNaderi1.Name";
+        private const string NaderiSentinel1Description = "SpellPowerNaderi1.Description";
 
         private const string NaderiSentinel1Ablity2 = "SpellPower.UseNaderiSentinel12";
         private static readonly string NaderiSentinel1Ablity2Guid = "{0C3A2B3E-BD1E-42EA-ADBD-00A14DEB7A89}";

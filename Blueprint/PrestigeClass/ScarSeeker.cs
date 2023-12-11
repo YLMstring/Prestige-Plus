@@ -579,7 +579,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
              .SetDisplayName(SacrificeDisplayName)
              .SetDescription(SacrificeDescription)
              .SetIcon(icon)
-             //.AddACBonusAgainstAttacks(armorClassBonus: 1, descriptor: ModifierDescriptor.Deflection)
              .AddContextStatBonus(StatType.AC, value: 1, descriptor: ModifierDescriptor.Deflection)
              .AddBuffAllSavesBonus(descriptor: ModifierDescriptor.Resistance, value: 1)
              .Configure();
