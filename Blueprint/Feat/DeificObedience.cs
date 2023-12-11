@@ -38,6 +38,7 @@ using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using PrestigePlus.Modify;
+using Kingmaker.UnitLogic.Buffs;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -183,30 +184,39 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string Naderi2AbilityGuid = "{86C1A7A1-E263-42D0-8B4C-989D506153F2}";
         public static BlueprintFeature NaderiSentinel2Feat()
         {
-            var icon = AbilityRefs.HolyAura.Reference.Get().Icon;
+            var icon = AbilityRefs.CrushingDespair.Reference.Get().Icon;
 
-            var Buff = BuffConfigurator.New(Naderi2Buff, Naderi2BuffGuid)
+            var buff = BuffConfigurator.New(Naderi2Buff, Naderi2BuffGuid)
              .SetDisplayName(Naderi2DisplayName)
              .SetDescription(Naderi2Description)
              .SetIcon(icon)
-             .AddDamageResistancePhysical(Kingmaker.Enums.Damage.DamageAlignment.Good, bypassedByAlignment: true, isStackable: true, value: ContextValues.Constant(10), material: Kingmaker.Enums.Damage.PhysicalDamageMaterial.ColdIron, bypassedByMaterial: true)
-             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Holy.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.PrimaryHand)
-             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Holy.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.SecondaryHand)
-             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Enhancement5.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.PrimaryHand)
-             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Enhancement5.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.SecondaryHand)
-             .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+             .AddCondition(Kingmaker.UnitLogic.UnitCondition.Staggered)
+             .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.AdditionalAttackBonus, value: -1)
+             .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.AdditionalDamage, value: -1)
+             .AddBuffAllSavesBonus(ModifierDescriptor.Penalty, value: -1)
+             .AddBuffAllSkillsBonus(ModifierDescriptor.Penalty, value: -1)
+             .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting)
+             .AddSpellDescriptorComponent(SpellDescriptor.Emotion)
+             .AddSpellDescriptorComponent(SpellDescriptor.NegativeEmotion)
              .Configure();
 
             var ability = AbilityConfigurator.New(Naderi2Ability, Naderi2AbilityGuid)
-                .CopyFrom(
-                AbilityRefs.HolyAura,
-                typeof(AbilityEffectRunAction),
-                typeof(SpellComponent),
-                typeof(SpellDescriptorComponent),
-                typeof(AbilitySpawnFx),
-                typeof(ContextRankConfigs))
                 .SetDisplayName(Naderi2DisplayName)
                 .SetDescription(Naderi2Description)
+                .SetIcon(icon)
+                .SetType(AbilityType.Supernatural)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard)
+                .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.StarknifeCone30Feet00.ToString() }, type: AbilityProjectileType.Cone, length: 30.Feet(), lineWidth: 5.Feet(), needAttackRoll: false)
+                .AddAbilityEffectRunAction(
+                actions: ActionsBuilder.New()
+                  .ConditionalSaved(failed: ActionsBuilder.New()
+                        .ApplyBuff(buff, ContextDuration.Variable(ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.Level)))
+                        .Build())
+                  .Build(), savingThrowType: SavingThrowType.Will)
+                .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting)
+                .AddSpellDescriptorComponent(SpellDescriptor.Emotion)
+                .AddSpellDescriptorComponent(SpellDescriptor.NegativeEmotion)
+                .AddReplaceAbilityDC(Naderi2AbilityGuid, StatType.Charisma)
                 .Configure();
 
             return FeatureConfigurator.New(Naderi2, Naderi2Guid)
@@ -249,14 +259,13 @@ namespace PrestigePlus.Blueprint.Feat
               .Configure();
 
             var area = AbilityAreaEffectConfigurator.New(Naderi3Aura, Naderi3AuraGuid)
-                .SetAggroEnemies(true)
                 .SetAffectEnemies(true)
-                .SetTargetType(BlueprintAbilityAreaEffect.TargetType.Enemy)
+                .SetTargetType(BlueprintAbilityAreaEffect.TargetType.Any)
                 .SetAffectDead(false)
                 .SetShape(AreaEffectShape.Cylinder)
-                .SetSize(33.Feet())
-                .AddSpellDescriptorComponent(descriptor: SpellDescriptor.MindAffecting)
-                .AddSpellDescriptorComponent(descriptor: SpellDescriptor.Fear)
+                .SetSize(13.Feet())
+                .AddAbilityAreaEffectBuff(BuffRefs.SpellResistanceBuff.ToString())
+                .SetFx("20caf000cd4c3434da00a74f4a49dccc")
                 .Configure();
 
             var Buff1 = BuffConfigurator.New(AuraBuff, AuraBuffGuid)
@@ -270,10 +279,7 @@ namespace PrestigePlus.Blueprint.Feat
 
             var abilityresourse = AbilityResourceConfigurator.New(Naderi3AbilityRes, Naderi3AbilityResGuid)
                 .SetMaxAmount(
-                    ResourceAmountBuilder.New(0)
-                        .IncreaseByLevel(classes: new string[] {  }))
-                .SetUseMax()
-                .SetMax(10)
+                    ResourceAmountBuilder.New(0))
                 .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(Naderi3Ability, Naderi3AbilityGuid)
@@ -283,9 +289,9 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetBuff(Buff1)
                 .SetDeactivateIfCombatEnded(true)
                 .SetActivationType(AbilityActivationType.WithUnitCommand)
-                .SetActivateWithUnitCommand(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
-                .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound, freeBlueprint: Naderi34Guid)
-                .SetDeactivateImmediately()
+                .SetActivateWithUnitCommand(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard)
+                .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound)
+                .AddTurnOffImmediatelyWithUnitCommand(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard)
                 .Configure();
 
             return FeatureConfigurator.New(Naderi3Name, Naderi3Guid)
@@ -294,6 +300,7 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetIcon(icon)
                     .AddFacts(new() { ability })
                     .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+                    .AddIncreaseResourceAmountBySharedValue(false, abilityresourse, ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.Level))
                     .Configure();
         }
 

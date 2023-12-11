@@ -287,7 +287,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetType(AbilityType.SpellLike)
                 .AddAbilityCasterInCombat(true)
                 .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }, max: 10, min: 4))
-                .AddReplaceAbilityDC(stat: StatType.Charisma)
+                .AddReplaceAbilityDC(ShadowCallAblityGuid, StatType.Charisma)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: ShadowCallAblityResGuid)
                 .Configure();
 
@@ -315,7 +315,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetType(AbilityType.SpellLike)
                 .AddAbilityCasterInCombat(true)
                 .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }, max: 10, min: 4))
-                .AddReplaceAbilityDC(stat: StatType.Charisma)
+                .AddReplaceAbilityDC(ShadowCallAblityGuid2, StatType.Charisma)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: ShadowCallAblityResGuid)
                 .Configure();
 
@@ -361,7 +361,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetType(AbilityType.SpellLike)
                 .AddAbilityCasterInCombat(true)
                 .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }, max: 10, min: 8))
-                .AddReplaceAbilityDC(stat: StatType.Charisma)
+                .AddReplaceAbilityDC(ShadowPowerAblityGuid, StatType.Charisma)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: ShadowPowerAblityResGuid)
                 .Configure();
 
