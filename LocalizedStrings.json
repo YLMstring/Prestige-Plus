@@ -6469,8 +6469,8 @@
   },
   {
     "Key": "DeificObedienceNaderi3.Description",
-    "enGB": "You drape yourself in tragic glamor, and your longing for rest puts you beyond the reach of mortal harm for a lingering moment. As a standard action, you can activate this mantle, giving all creatures within 10 feet spell resistance equal to 12 + your Hit Dice. You may use this ability for a number of rounds each day equal to your Hit Dice. These rounds do not need to be consecutive, and you can dismiss this effect as a standard action that does not provoke attacks of opportunity.",
-    "zhCN": "你令自己浸满优雅的悲意，对安息的渴望再多保护了你一会儿，让你不受凡世的侵害。你可以一个标准动作激活该衣袍，给予10尺内所有生物12+你的生命骰数的法术抗力。你每天可以使用这一能力的轮数等于你的生命骰数。这些轮数不需要连续使用，你可以用标准动作解除该效果，不引起借机攻击。"
+    "enGB": "You drape yourself in tragic glamor, and your longing for rest puts you beyond the reach of mortal harm for a lingering moment. As a standard action, you can activate this mantle, giving all creatures within 10 feet spell resistance equal to 12 + your Hit Dice. You may use this ability for a number of rounds each day equal to your Hit Dice. These rounds do not need to be consecutive.",
+    "zhCN": "你令自己浸满优雅的悲意，对安息的渴望再多保护了你一会儿，让你不受凡世的侵害。你可以一个标准动作激活该衣袍，给予10尺内所有生物12+你的生命骰数的法术抗力。你每天可以使用这一能力的轮数等于你的生命骰数。这些轮数不需要连续使用。"
   },
   {
     "Key": "DeificObedienceDesna.Name",

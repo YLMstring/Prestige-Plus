@@ -134,9 +134,9 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddPrerequisiteFeature(NaderiGuid)
               .SetGiveFeaturesForPreviousLevels(true)
-              .AddToLevelEntry(2, CreateNaderiSentinel1())
-              .AddToLevelEntry(6, NaderiSentinel2Feat())
-              .AddToLevelEntry(10, NaderiSentinel3Feat())
+              .AddToLevelEntry(12, CreateNaderiSentinel1())
+              .AddToLevelEntry(16, NaderiSentinel2Feat())
+              .AddToLevelEntry(20, NaderiSentinel3Feat())
               .Configure();
         }
 
@@ -212,7 +212,8 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetRange(AbilityRange.Projectile)
                 .AllowTargeting(true, true, true, true)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard)
-                .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.AcidCone30Feet00Breath.ToString() }, type: AbilityProjectileType.Cone, length: 30.Feet(), lineWidth: 5.Feet(), needAttackRoll: false)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Directional)
+                .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.NecromancyCone30Feet00.ToString() }, type: AbilityProjectileType.Cone, length: 30.Feet(), lineWidth: 5.Feet(), needAttackRoll: false)
                 .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
                   .ConditionalSaved(failed: ActionsBuilder.New()
@@ -271,7 +272,6 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetSize(13.Feet())
                 .AddAbilityAreaEffectBuff(BuffRefs.SpellResistanceBuff.ToString())
                 .AddContextCalculateAbilityParams(replaceCasterLevel: true, casterLevel: ContextValues.Property(UnitProperty.Level))
-                .SetFx("20caf000cd4c3434da00a74f4a49dccc")
                 .Configure();
 
             var Buff1 = BuffConfigurator.New(AuraBuff, AuraBuffGuid)
@@ -281,7 +281,6 @@ namespace PrestigePlus.Blueprint.Feat
               .AddAreaEffect(area)
               .SetFlags(BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
-              .SetFxOnStart("39da71647ad4747468d41920d0edd721")
               .Configure();
 
             var abilityresourse = AbilityResourceConfigurator.New(Naderi3AbilityRes, Naderi3AbilityResGuid)
@@ -295,6 +294,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetIcon(icon)
                 .SetBuff(Buff1)
                 .SetDeactivateIfCombatEnded(true)
+                .SetDeactivateImmediately(true)
                 .SetActivationType(AbilityActivationType.WithUnitCommand)
                 .SetActivateWithUnitCommand(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard)
                 .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound)
