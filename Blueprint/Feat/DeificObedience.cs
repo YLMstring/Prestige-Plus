@@ -39,6 +39,7 @@ using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using PrestigePlus.Modify;
 using Kingmaker.UnitLogic.Buffs;
+using Kingmaker.UnitLogic.Mechanics.Properties;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -103,7 +104,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string NaderiDescription = "DeificObedienceNaderi.Description";
         public static BlueprintFeature NaderiFeat()
         {
-            var icon = AbilityRefs.BlessingOfLuckAndResolve.Reference.Get().Icon;
+            var icon = AbilityRefs.ShamanHexBeckoningChillAbility.Reference.Get().Icon;
             //"NaderiFeature": "36d75d0c-41fb-497c-98bf-3e07a1fe8b2e",
 
             return FeatureConfigurator.New(Naderi, NaderiGuid)
@@ -125,7 +126,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string NaderiSentinelDescription = "DeificObedienceNaderiSentinel.Description";
         public static BlueprintProgression NaderiSentinelFeat()
         {
-            var icon = AbilityRefs.BlessingOfLuckAndResolve.Reference.Get().Icon;
+            var icon = AbilityRefs.ShamanHexBeckoningChillAbility.Reference.Get().Icon;
 
             return ProgressionConfigurator.New(NaderiSentinel, NaderiSentinelGuid)
               .SetDisplayName(NaderiSentinelDisplayName)
@@ -133,9 +134,9 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddPrerequisiteFeature(NaderiGuid)
               .SetGiveFeaturesForPreviousLevels(true)
-              .AddToLevelEntry(12, CreateNaderiSentinel1())
-              .AddToLevelEntry(16, NaderiSentinel2Feat())
-              .AddToLevelEntry(20, NaderiSentinel3Feat())
+              .AddToLevelEntry(2, CreateNaderiSentinel1())
+              .AddToLevelEntry(6, NaderiSentinel2Feat())
+              .AddToLevelEntry(10, NaderiSentinel3Feat())
               .Configure();
         }
 
@@ -149,7 +150,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         private static BlueprintFeature CreateNaderiSentinel1()
         {
-            var icon = AbilityRefs.FrostBomb.Reference.Get().Icon;
+            var icon = AbilityRefs.Castigate.Reference.Get().Icon;
 
             var ability2 = AbilityConfigurator.New(NaderiSentinel1Ablity2, NaderiSentinel1Ablity2Guid)
                 .CopyFrom(
@@ -161,6 +162,7 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(AbilityTargetHasFact),
                 typeof(SpellDescriptorComponent),
                 typeof(ContextRankConfig))
+                .SetType(AbilityType.SpellLike)
                 .AddPretendSpellLevel(spellLevel: 2)
                 .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
                 .Configure();
@@ -196,7 +198,7 @@ namespace PrestigePlus.Blueprint.Feat
              .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.AdditionalAttackBonus, value: -1)
              .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.AdditionalDamage, value: -1)
              .AddBuffAllSavesBonus(ModifierDescriptor.Penalty, value: -1)
-             .AddBuffAllSkillsBonus(ModifierDescriptor.Penalty, value: -1)
+             .AddBuffAllSkillsBonus(ModifierDescriptor.Penalty, value: -1, multiplier: 1)
              .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting)
              .AddSpellDescriptorComponent(SpellDescriptor.Emotion)
              .AddSpellDescriptorComponent(SpellDescriptor.NegativeEmotion)
@@ -207,12 +209,13 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetDescription(Naderi2Description)
                 .SetIcon(icon)
                 .SetType(AbilityType.Supernatural)
+                .SetRange(AbilityRange.Projectile)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard)
-                .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.StarknifeCone30Feet00.ToString() }, type: AbilityProjectileType.Cone, length: 30.Feet(), lineWidth: 5.Feet(), needAttackRoll: false)
+                .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.AcidCone30Feet00Breath.ToString() }, type: AbilityProjectileType.Cone, length: 30.Feet(), lineWidth: 5.Feet(), needAttackRoll: false)
                 .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
                   .ConditionalSaved(failed: ActionsBuilder.New()
-                        .ApplyBuff(buff, ContextDuration.Variable(ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.Level)))
+                        .ApplyBuff(buff, ContextDuration.Variable(ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.Level, toCaster: true)))
                         .Build())
                   .Build(), savingThrowType: SavingThrowType.Will)
                 .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting)
@@ -252,7 +255,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static BlueprintFeature NaderiSentinel3Feat()
         {
-            var icon = AbilityRefs.BloodlineSerpentineScaledSoulCharmingGazeAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.IceBody.Reference.Get().Icon;
 
             var Buff2 = BuffConfigurator.New(AuraBuff2, AuraBuff2Guid)
               .SetDisplayName(Naderi3DisplayName)
@@ -267,6 +270,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetShape(AreaEffectShape.Cylinder)
                 .SetSize(13.Feet())
                 .AddAbilityAreaEffectBuff(BuffRefs.SpellResistanceBuff.ToString())
+                .AddContextCalculateAbilityParams(replaceCasterLevel: true, casterLevel: ContextValues.Property(UnitProperty.Level))
                 .SetFx("20caf000cd4c3434da00a74f4a49dccc")
                 .Configure();
 
@@ -277,6 +281,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddAreaEffect(area)
               .SetFlags(BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+              .SetFxOnStart("39da71647ad4747468d41920d0edd721")
               .Configure();
 
             var abilityresourse = AbilityResourceConfigurator.New(Naderi3AbilityRes, Naderi3AbilityResGuid)
@@ -375,6 +380,7 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(SpellDescriptorComponent))
                 .AddPretendSpellLevel(spellLevel: 1)
                 .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
                 .Configure();
 
             var ability2 = AbilityConfigurator.New(ShelynSentinel1Ablity2, ShelynSentinel1Ablity2Guid)
@@ -385,6 +391,7 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(AbilitySpawnFx))
                 .AddPretendSpellLevel(spellLevel: 2)
                 .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
                 .Configure();
 
             var ability3 = AbilityConfigurator.New(ShelynSentinel1Ablity3, ShelynSentinel1Ablity3Guid)
@@ -396,6 +403,7 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(AbilityTargetsAround))
                 .AddPretendSpellLevel(spellLevel: 3)
                 .AddAbilityResourceLogic(6, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
                 .Configure();
 
             return FeatureConfigurator.New(ShelynSentinel1, ShelynSentinel1Guid)
@@ -506,6 +514,7 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(AbilityEffectStickyTouch))
                 .AddPretendSpellLevel(spellLevel: 1)
                 .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
                 .Configure();
 
             var ability2 = AbilityConfigurator.New(Ragathiel1Ablity2, Ragathiel1Ablity2Guid)
@@ -516,6 +525,7 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(AbilityTargetAlignment))
                 .AddPretendSpellLevel(spellLevel: 2)
                 .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
                 .Configure();
 
             var ability3 = AbilityConfigurator.New(Ragathiel1Ablity3, Ragathiel1Ablity3Guid)
@@ -526,6 +536,7 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(AbilityVariants))
                 .AddPretendSpellLevel(spellLevel: 3)
                 .AddAbilityResourceLogic(6, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
                 .Configure();
 
             return FeatureConfigurator.New(Ragathiel1, Ragathiel1Guid)
@@ -680,6 +691,7 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(AbilitySpawnFx))
                 .AddPretendSpellLevel(spellLevel: 1)
                 .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
                 .Configure();
 
             return FeatureConfigurator.New(Desna1, Desna1Guid)
@@ -698,7 +710,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static BlueprintFeature Desna2Feat()
         {
-            var icon = AbilityRefs.StarbowAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.MageLight.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Desna2, Desna2Guid)
               .SetDisplayName(Desna2DisplayName)
@@ -707,6 +719,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddSpellPenetrationBonus(false, value: ContextValues.Rank())
               .AddConcentrationBonus(false, value: ContextValues.Rank())
               .AddContextRankConfig(ContextRankConfigs.StatBonus(StatType.Charisma))
+              .AddRecalculateOnStatChange(stat: StatType.Charisma)
               .AddComponent<DesnaStarSpell>()
               .Configure();
         }

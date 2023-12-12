@@ -6425,7 +6425,7 @@
   },
   {
     "Key": "DeificObedienceNaderi.Description",
-    "enGB": "Collect two unblemished white rose blossoms, open to their fullest but without any wilted petals. Stand beside a river and cut the blossoms from the stems, then set them on the water to float downstream. Meditate upon the beautiful perfection of love and the imperfection of a life that would deny it to star-crossed lovers. You gain a +2 sacred bonus on Charismabased skill checks.",
+    "enGB": "Collect two unblemished white rose blossoms, open to their fullest but without any wilted petals. Stand beside a river and cut the blossoms from the stems, then set them on the water to float downstream. Meditate upon the beautiful perfection of love and the imperfection of a life that would deny it to star-crossed lovers. You gain a +2 sacred bonus on Charisma-based skill checks.",
     "zhCN": "收集两朵洁白无瑕，正当盛放，没有枯萎花瓣的玫瑰花。站在河边，从茎上剪下花朵，然后将它们放在水上顺流而下。冥想美丽而圆满的爱情，和那从命运多舛的恋人们手中夺去这份爱情的充满缺憾的人生。你在基于魅力的技能检定中获得+2神圣加值。"
   },
   {
@@ -6502,8 +6502,8 @@
   },
   {
     "Key": "DeificObedienceDesna2.Description",
-    "enGB": "Over time you have learned to focus your magical power to better damage agents of evil. You add your Charisma bonus on your concentration checks, as well as on your caster level checks to overcome spell resistance. In addition, at night time, when you cast a spell that deals hit point damage, you can have it deal an extra 2d6 points of damage.",
-    "zhCN": "随着时间的流逝，你逐渐掌握了汇聚魔法能量对奸邪之徒造成更大损伤的方法。你将自身的魅力加值加到你的专注检定、以及用于克服法术抗力的施法者等级检定中。此外，当你在夜晚施放造成生命值伤害的法术时，你能够让它造成额外2d6点伤害。"
+    "enGB": "Over time you have learned to focus your magical power to better damage agents of evil. You add your Charisma bonus on your concentration checks, as well as on your caster level checks to overcome spell resistance. In addition, at night time, when you cast a spell that deals hit point damage, you can have it deal an extra 2d6 points of divine damage.",
+    "zhCN": "随着时间的流逝，你逐渐掌握了汇聚魔法能量对奸邪之徒造成更大损伤的方法。你将自身的魅力加值加到你的专注检定、以及用于克服法术抗力的施法者等级检定中。此外，当你在夜晚施放造成生命值伤害的法术时，你能够让它造成额外2d6点神圣伤害。"
   },
   {
     "Key": "DeificObedienceDesna3.Name",
@@ -6513,8 +6513,8 @@
   },
   {
     "Key": "DeificObedienceDesna3.Description",
-    "enGB": "Your can deal an extra 2d6 points of damage even at day time with Starlit Caster.",
-    "zhCN": "即使在白天，你也能用星光术者造成额外2d6点伤害。"
+    "enGB": "Your can deal an extra 2d6 points of divine damage even at day time with Starlit Caster.",
+    "zhCN": "即使在白天，你也能用星光术者造成额外2d6点神圣伤害。"
   },
   {
     "Key": "DeificObedienceErastil.Name",
