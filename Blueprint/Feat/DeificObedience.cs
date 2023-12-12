@@ -82,6 +82,8 @@ namespace PrestigePlus.Blueprint.Feat
               .SetObligatory(false)
               .AddToAllFeatures(RagathielFeat())
               .AddToAllFeatures(ShelynFeat())
+              .AddToAllFeatures(NaderiFeat())
+              .AddToAllFeatures(DesnaFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteStatValue(StatType.SkillLoreReligion, 3)
@@ -456,7 +458,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteFeature("F79778D7-281C-4B9D-8E77-8F86812707AA", group: Prerequisite.GroupType.Any)
               .AddPrerequisiteAlignment(AlignmentMaskType.LawfulGood, group: Prerequisite.GroupType.Any)
               .SetGiveFeaturesForPreviousLevels(true)
-              .AddToLevelEntry(3, Ragathiel0Feat())
+              .AddToLevelEntry(1, Ragathiel0Feat())
               .AddToLevelEntry(12, CreateRagathiel1())
               .AddToLevelEntry(16, Ragathiel2Feat())
               .AddToLevelEntry(20, Ragathiel3Feat())
@@ -618,6 +620,110 @@ namespace PrestigePlus.Blueprint.Feat
               .AddBuffExtraEffects(BuffRefs.HolyAuraBuff.ToString(), null, Buff, true)
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string Desna = "DeificObedience.Desna";
+        public static readonly string DesnaGuid = "{E9564E2B-5167-4EBC-B5B9-8226E9D31D91}";
+
+        internal const string DesnaDisplayName = "DeificObedienceDesna.Name";
+        private const string DesnaDescription = "DeificObedienceDesna.Description";
+        public static BlueprintProgression DesnaFeat()
+        {
+            var icon = FeatureRefs.DesnaFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(Desna, DesnaGuid)
+              .SetDisplayName(DesnaDisplayName)
+              .SetDescription(DesnaDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.DesnaFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticGood, group: Prerequisite.GroupType.Any)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(1, Desna0Feat())
+              .AddToLevelEntry(12, CreateDesna1())
+              .AddToLevelEntry(16, Desna2Feat())
+              .AddToLevelEntry(20, Desna3Feat())
+              .Configure();
+        }
+
+        private const string Desna0 = "DeificObedience.Desna0";
+        public static readonly string Desna0Guid = "{427BB85A-3868-40B8-9932-74D6970D84F5}";
+
+        public static BlueprintFeature Desna0Feat()
+        {
+            var icon = FeatureRefs.DesnaFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Desna0, Desna0Guid)
+              .SetDisplayName(DesnaDisplayName)
+              .SetDescription(DesnaDescription)
+              .SetIcon(icon)
+              .AddContextStatBonus(StatType.Initiative, 1, Kingmaker.Enums.ModifierDescriptor.Luck)
+              .Configure();
+        }
+
+        private const string Desna1 = "SpellPower.Desna1";
+        public static readonly string Desna1Guid = "{3239ED4A-30A1-4B5B-B62F-36290790657D}";
+        internal const string Desna1DisplayName = "SpellPowerDesna1.Name";
+        private const string Desna1Description = "SpellPowerDesna1.Description";
+
+        private const string Desna1Ablity = "SpellPower.UseDesna1";
+        private static readonly string Desna1AblityGuid = "{4437B4A9-D9C2-42D7-8ADC-09A99130E34D}";
+        private static BlueprintFeature CreateDesna1()
+        {
+            var icon = AbilityRefs.Longstrider.Reference.Get().Icon;
+
+            var ability = AbilityConfigurator.New(Desna1Ablity, Desna1AblityGuid)
+                .CopyFrom(
+                AbilityRefs.Longstrider,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx))
+                .AddPretendSpellLevel(spellLevel: 1)
+                .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .Configure();
+
+            return FeatureConfigurator.New(Desna1, Desna1Guid)
+              .SetDisplayName(Desna1DisplayName)
+              .SetDescription(Desna1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string Desna2 = "DeificObedience.Desna2";
+        public static readonly string Desna2Guid = "{50F9A384-882D-4514-B78A-ADA499DCBCAF}";
+
+        internal const string Desna2DisplayName = "DeificObedienceDesna2.Name";
+        private const string Desna2Description = "DeificObedienceDesna2.Description";
+
+        public static BlueprintFeature Desna2Feat()
+        {
+            var icon = AbilityRefs.StarbowAbility.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Desna2, Desna2Guid)
+              .SetDisplayName(Desna2DisplayName)
+              .SetDescription(Desna2Description)
+              .SetIcon(icon)
+              .AddSpellPenetrationBonus(false, value: ContextValues.Rank())
+              .AddConcentrationBonus(false, value: ContextValues.Rank())
+              .AddContextRankConfig(ContextRankConfigs.StatBonus(StatType.Charisma))
+              .AddComponent<DesnaStarSpell>()
+              .Configure();
+        }
+
+        private const string Desna3 = "DeificObedience.Desna3";
+        public static readonly string Desna3Guid = "{9AFB427F-E07F-49A8-9E04-E99D3510D9B8}";
+
+        internal const string Desna3DisplayName = "DeificObedienceDesna3.Name";
+        private const string Desna3Description = "DeificObedienceDesna3.Description";
+        public static BlueprintFeature Desna3Feat()
+        {
+            var icon = AbilityRefs.Starlight.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Desna3, Desna3Guid)
+              .SetDisplayName(Desna3DisplayName)
+              .SetDescription(Desna3Description)
+              .SetIcon(icon)
               .Configure();
         }
     }
