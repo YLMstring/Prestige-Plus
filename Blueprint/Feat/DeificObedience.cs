@@ -210,18 +210,18 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetIcon(icon)
                 .SetType(AbilityType.Supernatural)
                 .SetRange(AbilityRange.Projectile)
+                .AllowTargeting(true, true, true, true)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard)
                 .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.AcidCone30Feet00Breath.ToString() }, type: AbilityProjectileType.Cone, length: 30.Feet(), lineWidth: 5.Feet(), needAttackRoll: false)
                 .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
                   .ConditionalSaved(failed: ActionsBuilder.New()
-                        .ApplyBuff(buff, ContextDuration.Variable(ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.Level, toCaster: true)))
+                        .ApplyBuff(buff, ContextDuration.Variable(ContextValues.Property(UnitProperty.Level, toCaster: true)))
                         .Build())
                   .Build(), savingThrowType: SavingThrowType.Will)
                 .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting)
                 .AddSpellDescriptorComponent(SpellDescriptor.Emotion)
                 .AddSpellDescriptorComponent(SpellDescriptor.NegativeEmotion)
-                .AddReplaceAbilityDC(Naderi2AbilityGuid, StatType.Charisma)
                 .Configure();
 
             return FeatureConfigurator.New(Naderi2, Naderi2Guid)
@@ -298,7 +298,6 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetActivationType(AbilityActivationType.WithUnitCommand)
                 .SetActivateWithUnitCommand(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard)
                 .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound)
-                .AddTurnOffImmediatelyWithUnitCommand(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard)
                 .Configure();
 
             return FeatureConfigurator.New(Naderi3Name, Naderi3Guid)
@@ -307,7 +306,7 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetIcon(icon)
                     .AddFacts(new() { ability })
                     .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
-                    .AddIncreaseResourceAmountBySharedValue(false, abilityresourse, ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.Level))
+                    .AddIncreaseResourceAmountBySharedValue(false, abilityresourse, ContextValues.Property(UnitProperty.Level))
                     .Configure();
         }
 

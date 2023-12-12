@@ -424,7 +424,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 typeof(ContextRankConfig),
                 typeof(SpellComponent))
                 .SetType(AbilityType.SpellLike)
-                .AddReplaceAbilityDC(SunbeamAblityGuid, StatType.Charisma)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: SunbeamAblityResGuid)
                 .Configure();
 
