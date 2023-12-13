@@ -6570,6 +6570,83 @@
     "Key": "NewSpellShieldOther.Description",
     "enGB": "This spell wards the subject and creates a mystic connection between you and the subject so that some of its wounds are transferred to you. The subject gains a +1 deflection bonus to AC and a +1 resistance bonus on saves. Additionally, the subject takes only half damage from all wounds and attacks (including those dealt by special abilities) that deal hit point damage. The amount of damage not taken by the warded creature is taken by you. Forms of harm that do not involve hit points, such as charm effects, temporary ability damage, level draining, and death effects, are not affected. If the subject suffers a reduction of hit points from a lowered Constitution score, the reduction is not split with you because it is not hit point damage. When the spell ends, subsequent damage is no longer divided between the subject and you, but damage already split is not reassigned to the subject.",
     "zhCN": "此法术在你和受术者之间形成某种神秘的联结，使得他遭受的部分伤害可以转移到你身上。受术者的AC获得+1偏斜加值，豁免检定获得+1抗力加值。另外受术者所受的任何造成HP损失的创伤和攻击均减半 (包括由特殊能力造成的)，剩下的部分则由施法者承受。不减少HP的伤害，比如魅惑、暂时性属性伤害、吸取等级及即死效果则不受影响。若受术者的HP因体质降低而减少，施法者亦不受影响，因为这不是HP伤害。法术结束后，后续的伤害不会再分给你与受术者，但已分配的伤害也不会转回受术者身上。"
+  },
+  {
+    "Key": "DeificObedienceGorum.Name",
+    "ProcessTemplates": false,
+    "enGB": "Gorum Obedience",
+    "zhCN": "格鲁姆仪典"
+  },
+  {
+    "Key": "DeificObedienceGorum.Description",
+    "enGB": "Dress yourself in the heaviest set of metal armor you own. Shout your oath of loyalty to Gorum at the top of your lungs, punctuating each pause for breath by smashing your weapon against a shield or against your armor-clad body. After your oath is done, kneel on one knee with your weapon resting against your shoulder. Recite your victories in battle in a sonorous voice until the time for your obedience is done. If you should be attacked while conducting your obedience, slay the creature who dared test your might. (You may be assisted by allies, but you must strike the killing blow.) Gain a +4 profane bonus on Athletic checks.",
+    "zhCN": "穿上你所拥有的一套最重的铠甲。发自肺腑地大声咆哮出对格鲁姆的忠诚，在每一次停顿呼吸时，用武器敲打盾牌或你那铠甲披挂的躯体。在誓言结束之后，肩扛武器，单膝跪地。用洪亮的声音诵读你在战斗中取得的胜利，直至服从仪典结束为止。若你在执行服从仪典时遭受攻击，则屠杀那些胆敢挑战你的家伙（你可以得到盟友的辅助，但是必须由你完成击杀）。你在运动检定中获得+4亵渎加值。"
+  },
+  {
+    "Key": "DeificObedienceGorumSentinel.Name",
+    "ProcessTemplates": false,
+    "enGB": "Gorum (Sentinel)",
+    "zhCN": "格鲁姆（信仰哨卫）"
+  },
+  {
+    "Key": "DeificObedienceGorumSentinel.Description",
+    "enGB": "Become a Sentinel to gain access to his boons, which will be granted at certain character or class levels.",
+    "zhCN": "成为信仰哨卫来获取他的神恩资格，你会在合适的角色或职业等级得到神恩。"
+  },
+  {
+    "Key": "SpellPowerGorum1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Mighty Warrior",
+    "zhCN": "威猛战士"
+  },
+  {
+    "Key": "SpellPowerGorum1.Description",
+    "enGB": "enlarge person 3/day, bull’s strength 2/day, or beast shape I 1/day",
+    "zhCN": "变巨术 3次/日，牛之蛮力 2次/日，或动物之形1次/日"
+  },
+  {
+    "Key": "DeificObedienceGorum2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Two-Handed Smash",
+    "zhCN": "双手猛击"
+  },
+  {
+    "Key": "DeificObedienceGorum2.Description",
+    "enGB": "If you make a full attack while wielding a two-handed melee weapon, you may make a single unarmed strike in addition to your normal attacks. In essence, after you complete your two-handed weapon attacks, you smash with your elbow, kick out with a foot, or make some other unarmed strike against an opponent. This bonus attack is made at your highest base attack bonus, and the attack roll is subject to the normal penalties for two-weapon fighting unless you have the feats to reduce these penalties.",
+    "zhCN": "若你在持用双手近战武器时作出全回合攻击，那么除了正常的攻击之外，你还可以额外作出单次徒手打击。实质上，就是你完成双手武器攻击之后进行肘击、提脚踢踹、或者使用其他部位打击敌人。这次额外攻击使用你最高的基本攻击加值，且攻击检定会受到进行双武器战斗如常产生的惩罚，除非你具有相关专长来减少惩罚。"
+  },
+  {
+    "Key": "DeificObedienceGorum3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Devout Rage",
+    "zhCN": "虔信狂暴"
+  },
+  {
+    "Key": "DeificObedienceGorum3.Description",
+    "enGB": "You enter a holy or unholy frenzy whenever you rage, depending on your alignment. You gain a +2 bonus on your attack and damage rolls while raging.",
+    "zhCN": "每当你狂暴时，便会进入一种神圣或污邪的愤怒中，取决于你的阵营。当你狂暴时，你的攻击和伤害检定获得+2加值。"
+  },
+  {
+    "Key": "DeificObedienceMahathallah.Name",
+    "ProcessTemplates": false,
+    "enGB": "Mahathallah Obedience",
+    "zhCN": "玛哈萨拉仪典"
+  },
+  {
+    "Key": "DeificObedienceMahathallah.Description",
+    "enGB": "Spend an hour in deep meditation, reflecting on the nature of the cosmos and your exceptional place above all others in the multiversal scheme—preferably while under the effects of a perception-altering drug. The DC of all illusion spells you cast increases by +2 and you gain a +2 profane bonus on saving throws to resist mind-affecting effects.",
+    "zhCN": "花一个小时深度冥想，反思宇宙的本质和你在多宇宙计划中的特殊地位，在这个过程中最好使用会改变感知的药物。你施放的所有幻术系法术DC增加+2，并且你在针对影响心灵效果的豁免时获得+2亵渎加值。"
+  },
+  {
+    "Key": "DeificObedienceMahathallahSentinel.Name",
+    "ProcessTemplates": false,
+    "enGB": "Mahathallah (???)",
+    "zhCN": "玛哈萨拉（???）"
+  },
+  {
+    "Key": "DeificObedienceMahathallahSentinel.Description",
+    "enGB": "Become a ??? to gain access to his boons, which will be granted at certain character or class levels.",
+    "zhCN": "成为???来获取她的神恩资格，你会在合适的角色或职业等级得到神恩。"
   }
 
 ]
