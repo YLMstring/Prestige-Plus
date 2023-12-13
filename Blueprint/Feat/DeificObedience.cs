@@ -150,7 +150,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         private static BlueprintFeature CreateNaderiSentinel1()
         {
-            var icon = AbilityRefs.Castigate.Reference.Get().Icon;
+            var icon = AbilityRefs.IcyPrison.Reference.Get().Icon;
 
             var ability2 = AbilityConfigurator.New(NaderiSentinel1Ablity2, NaderiSentinel1Ablity2Guid)
                 .CopyFrom(
@@ -162,6 +162,7 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(AbilityTargetHasFact),
                 typeof(SpellDescriptorComponent),
                 typeof(ContextRankConfig))
+                .SetIcon(icon)
                 .SetType(AbilityType.SpellLike)
                 .AddPretendSpellLevel(spellLevel: 2)
                 .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
@@ -736,6 +737,179 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(Desna3DisplayName)
               .SetDescription(Desna3Description)
               .SetIcon(icon)
+              .Configure();
+        }
+
+        private const string Erastil = "DeificObedience.Erastil";
+        public static readonly string ErastilGuid = "{6C186C6C-869F-4C8B-A7DF-2E628F81BD57}";
+
+        internal const string ErastilDisplayName = "DeificObedienceErastil.Name";
+        private const string ErastilDescription = "DeificObedienceErastil.Description";
+        public static BlueprintProgression ErastilFeat()
+        {
+            var icon = FeatureRefs.ErastilFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(Erastil, ErastilGuid)
+              .SetDisplayName(ErastilDisplayName)
+              .SetDescription(ErastilDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.ErastilFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.LawfulGood, group: Prerequisite.GroupType.Any)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(1, Erastil0Feat())
+              .AddToLevelEntry(12, CreateErastil1())
+              .AddToLevelEntry(16, Erastil2Feat())
+              .AddToLevelEntry(20, Erastil3Feat())
+              .Configure();
+        }
+
+        private const string Erastil0 = "DeificObedience.Erastil0";
+        public static readonly string Erastil0Guid = "{A5221796-4BA3-482B-87B8-83DB1885D2A2}";
+
+        public static BlueprintFeature Erastil0Feat()
+        {
+            var icon = FeatureRefs.ErastilFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Erastil0, Erastil0Guid)
+              .SetDisplayName(ErastilDisplayName)
+              .SetDescription(ErastilDescription)
+              .SetIcon(icon)
+              .AddContextStatBonus(StatType.SkillLoreNature, 4, ModifierDescriptor.Sacred)
+              .Configure();
+        }
+
+        private const string Erastil1 = "SpellPower.Erastil1";
+        public static readonly string Erastil1Guid = "{9FDB4A8C-5891-4657-9813-C252B8FE4482}";
+        internal const string Erastil1DisplayName = "SpellPowerErastil1.Name";
+        private const string Erastil1Description = "SpellPowerErastil1.Description";
+
+        private const string Erastil1Ablity = "SpellPower.UseErastil1";
+        private static readonly string Erastil1AblityGuid = "{4EEDD042-96E3-40EE-AFEB-B7F2CC94F136}";
+
+        private const string Erastil1Ablity2 = "SpellPower.UseErastil12";
+        private static readonly string Erastil1Ablity2Guid = "{5C3A8274-FF2F-4429-9F3A-BCB384FB2DB3}";
+
+        private const string Erastil1Ablity3 = "SpellPower.UseErastil13";
+        private static readonly string Erastil1Ablity3Guid = "{B04AC216-8BA2-4F87-BF13-76B6E20F619B}";
+
+        private static BlueprintFeature CreateErastil1()
+        {
+            var icon = FeatureRefs.RangerBond.Reference.Get().Icon;
+
+            var ability = AbilityConfigurator.New(Erastil1Ablity, Erastil1AblityGuid)
+                .CopyFrom(
+                AbilityRefs.CureLightWoundsCast,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilityEffectStickyTouch),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 1)
+                .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(Erastil1Ablity2, Erastil1Ablity2Guid)
+                .CopyFrom(
+                AbilityRefs.CatsGrace,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx))
+                .AddPretendSpellLevel(spellLevel: 2)
+                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var ability3 = AbilityConfigurator.New(Erastil1Ablity3, Erastil1Ablity3Guid)
+                .CopyFrom(
+                AbilityRefs.Prayer,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx),
+                typeof(AbilityTargetsAround))
+                .AddPretendSpellLevel(spellLevel: 3)
+                .AddAbilityResourceLogic(6, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Erastil1, Erastil1Guid)
+              .SetDisplayName(Erastil1DisplayName)
+              .SetDescription(Erastil1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability, ability2, ability3 })
+              .Configure();
+        }
+
+        private const string Erastil2 = "DeificObedience.Erastil2";
+        public static readonly string Erastil2Guid = "{1C7A4B4B-8160-4A1A-8CBD-331F62CD9CFA}";
+
+        internal const string Erastil2DisplayName = "DeificObedienceErastil2.Name";
+        private const string Erastil2Description = "DeificObedienceErastil2.Description";
+
+        private const string Erastil2Buff = "DeificObedience.Erastil2Buff";
+        private static readonly string Erastil2BuffGuid = "{C09D214B-DFF2-455F-B902-3F1815AA0817}";
+
+        private const string Erastil2Ability = "DeificObedience.Erastil2Ability";
+        private static readonly string Erastil2AbilityGuid = "{F891098F-9580-41C1-816F-6937A98C85CD}";
+
+        private const string Erastil2Res = "DeificObedience.Erastil2Res";
+        private static readonly string Erastil2ResGuid = "{168B52DC-52D4-4ACB-AB68-6AF04A7D56A0}";
+        public static BlueprintFeature Erastil2Feat()
+        {
+            var icon = FeatureRefs.GreaterChimericAspectFeature.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(Erastil2Res, Erastil2ResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var buff = BuffConfigurator.New(Erastil2Buff, Erastil2BuffGuid)
+             .SetDisplayName(Erastil2DisplayName)
+             .SetDescription(Erastil2Description)
+             .SetIcon(icon)
+             .AddComponent<TwinFangDamage>()
+             .Configure();
+
+            var ability = AbilityConfigurator.New(Erastil2Ability, Erastil2AbilityGuid)
+                .SetDisplayName(Erastil2DisplayName)
+                .SetDescription(Erastil2Description)
+                .SetIcon(icon)
+                .SetType(AbilityType.Extraordinary)
+                .SetRange(AbilityRange.Personal)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Self)
+                .AddAbilityEffectRunAction(
+                actions: ActionsBuilder.New()
+                  .OnPets(actions: ActionsBuilder.New()
+                        .ApplyBuff(buff, ContextDuration.Variable(ContextValues.Property(UnitProperty.Level, toCaster: true)))
+                        .Build(), petType: PetType.AnimalCompanion)
+                  .Build())
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .Configure();
+
+            return FeatureConfigurator.New(Erastil2, Erastil2Guid)
+              .SetDisplayName(Erastil2DisplayName)
+              .SetDescription(Erastil2Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .Configure();
+        }
+
+        private const string Erastil3 = "DeificObedience.Erastil3";
+        public static readonly string Erastil3Guid = "{F743F8FB-2922-42C6-9783-9C363F77D176}";
+
+        internal const string Erastil3DisplayName = "DeificObedienceErastil3.Name";
+        private const string Erastil3Description = "DeificObedienceErastil3.Description";
+        public static BlueprintFeature Erastil3Feat()
+        {
+            var icon = FeatureRefs.ZenArcherZenArcheryFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Erastil3, Erastil3Guid)
+              .SetDisplayName(Erastil3DisplayName)
+              .SetDescription(Erastil3Description)
+              .SetIcon(icon)
+              .AddWeaponTypeDamageStatReplacement(WeaponCategory.Longbow, false, StatType.Wisdom, false)
+              .AddWeaponTypeDamageStatReplacement(WeaponCategory.Shortbow, false, StatType.Wisdom, false)
+              .AddFacts(new() { FeatureRefs.ZenArcherZenArcheryFeature.ToString() })
               .Configure();
         }
     }

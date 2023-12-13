@@ -2,53 +2,47 @@
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
-using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Craft;
-using Kingmaker.Enums;
+using Kingmaker.EntitySystem.Stats;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.Abilities;
-using Kingmaker.UnitLogic.Buffs.Blueprints;
-using Kingmaker.Utility;
+using PrestigePlus.CustomComponent.Spell;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static Kingmaker.UnitLogic.Commands.Base.UnitCommand;
 using static Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell;
+using static Kingmaker.UnitLogic.Commands.Base.UnitCommand;
 using BlueprintCore.Actions.Builder.ContextEx;
-using Kingmaker.EntitySystem.Stats;
-using PrestigePlus.CustomComponent.Spell;
-using PrestigePlus.CustomComponent;
 
 namespace PrestigePlus.Blueprint.Spell
 {
-    internal class LitanyRighteousness
+    internal class ShieldOther
     {
-        private const string LitanyRighteousnessAbility = "NewSpell.UseLitanyRighteousness";
-        public static readonly string LitanyRighteousnessAbilityGuid = "{42F00777-3689-4E27-A696-81F5F1CF1342}";
+        private const string ShieldOtherAbility = "NewSpell.UseShieldOther";
+        public static readonly string ShieldOtherAbilityGuid = "{42F00777-3689-4E27-A696-81F5F1CF1342}";
 
-        private const string LitanyRighteousnessBuff = "NewSpell.LitanyRighteousnessBuff";
-        private static readonly string LitanyRighteousnessBuffGuid = "{481F07A7-19D4-45DF-82F5-D377BCDCA2EE}";
+        private const string ShieldOtherBuff = "NewSpell.ShieldOtherBuff";
+        private static readonly string ShieldOtherBuffGuid = "{481F07A7-19D4-45DF-82F5-D377BCDCA2EE}";
 
-        internal const string DisplayName = "NewSpellLitanyRighteousness.Name";
-        private const string Description = "NewSpellLitanyRighteousness.Description";
+        internal const string DisplayName = "NewSpellShieldOther.Name";
+        private const string Description = "NewSpellShieldOther.Description";
 
         public static void Configure()
         {
             var icon = FeatureRefs.AuraOfJusticeFeature.Reference.Get().Icon;
-            var buff = BuffConfigurator.New(LitanyRighteousnessBuff, LitanyRighteousnessBuffGuid)
+            var buff = BuffConfigurator.New(ShieldOtherBuff, ShieldOtherBuffGuid)
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
-              .AddComponent<LitanyRighteousnessDamage>()
+
               .Configure();
 
             AbilityConfigurator.NewSpell(
-                LitanyRighteousnessAbility, LitanyRighteousnessAbilityGuid, SpellSchool.Evocation, canSpecialize: false)
+                ShieldOtherAbility, ShieldOtherAbilityGuid, SpellSchool.Evocation, canSpecialize: false)
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
@@ -59,7 +53,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetActionType(CommandType.Swift)
               .SetRange(AbilityRange.Close)
               .SetType(AbilityType.Spell)
-              .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Reach, Metamagic.Heighten, Metamagic.Persistent, Metamagic.Extend)
+              .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Reach, Metamagic.Heighten)
               .AddToSpellLists(level: 2, SpellList.Paladin)
               .AddToSpellLists(level: 3, SpellList.Inquisitor)
               .SetSpellDescriptor(SpellDescriptor.Good)
@@ -69,11 +63,11 @@ namespace PrestigePlus.Blueprint.Spell
                   .ConditionalSaved(failed: ActionsBuilder.New()
                         .ApplyBuff(buff, ContextDuration.Fixed(1))
                         .Build())
-                  .Build(), savingThrowType: SavingThrowType.Will)
+                  .Build())
               .AddCraftInfoComponent(
                 aOEType: CraftAOE.None,
-                savingThrow: CraftSavingThrow.Will,
-                spellType: CraftSpellType.Debuff)
+                savingThrow: CraftSavingThrow.None,
+                spellType: CraftSpellType.Buff)
               .Configure();
         }
     }
