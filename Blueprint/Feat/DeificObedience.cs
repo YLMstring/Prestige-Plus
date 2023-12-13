@@ -85,6 +85,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(ShelynFeat())
               .AddToAllFeatures(NaderiFeat())
               .AddToAllFeatures(DesnaFeat())
+              .AddToAllFeatures(ErastilFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteStatValue(StatType.SkillLoreReligion, 3)
@@ -757,9 +758,9 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteAlignment(AlignmentMaskType.LawfulGood, group: Prerequisite.GroupType.Any)
               .SetGiveFeaturesForPreviousLevels(true)
               .AddToLevelEntry(1, Erastil0Feat())
-              .AddToLevelEntry(12, CreateErastil1())
-              .AddToLevelEntry(16, Erastil2Feat())
-              .AddToLevelEntry(20, Erastil3Feat())
+              .AddToLevelEntry(2, CreateErastil1())
+              .AddToLevelEntry(6, Erastil2Feat())
+              .AddToLevelEntry(10, Erastil3Feat())
               .Configure();
         }
 
@@ -794,7 +795,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         private static BlueprintFeature CreateErastil1()
         {
-            var icon = FeatureRefs.RangerBond.Reference.Get().Icon;
+            var icon = FeatureRefs.HuntersBond.Reference.Get().Icon;
 
             var ability = AbilityConfigurator.New(Erastil1Ablity, Erastil1AblityGuid)
                 .CopyFrom(
@@ -810,7 +811,7 @@ namespace PrestigePlus.Blueprint.Feat
 
             var ability2 = AbilityConfigurator.New(Erastil1Ablity2, Erastil1Ablity2Guid)
                 .CopyFrom(
-                AbilityRefs.CatsGrace,
+                ShieldOther.ShieldOtherAbilityGuid,
                 typeof(AbilityEffectRunAction),
                 typeof(SpellComponent),
                 typeof(AbilitySpawnFx))
@@ -855,7 +856,7 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string Erastil2ResGuid = "{168B52DC-52D4-4ACB-AB68-6AF04A7D56A0}";
         public static BlueprintFeature Erastil2Feat()
         {
-            var icon = FeatureRefs.GreaterChimericAspectFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.FinalShifterAspectFeature.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(Erastil2Res, Erastil2ResGuid)
                 .SetMaxAmount(ResourceAmountBuilder.New(1))
@@ -901,7 +902,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string Erastil3Description = "DeificObedienceErastil3.Description";
         public static BlueprintFeature Erastil3Feat()
         {
-            var icon = FeatureRefs.ZenArcherZenArcheryFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.ErastilFeature.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Erastil3, Erastil3Guid)
               .SetDisplayName(Erastil3DisplayName)

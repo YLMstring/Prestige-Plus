@@ -57,7 +57,7 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
                 BlueprintBuffReference keepBuff = m_KeepBuff;
                 if (keepBuff == null)
                 {
-                    return null;
+                    return Buff.Blueprint;
                 }
                 return keepBuff.Get();
             }
@@ -68,8 +68,8 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
             UnitEntityData maybeCaster = Buff.Context.MaybeCaster;
             if (maybeCaster == null) { return false; }
             if (evt.Target == null) { return false; }
-            if (!evt.Target.Descriptor.HasFact(KeepBuff) && maybeCaster.Descriptor.HasFact(CooldownBuff)) { return false; }
-            if (!evt.Target.Descriptor.HasFact(KeepBuff) && !maybeCaster.Descriptor.HasFact(CheckBuff)) { return false; }
+            if (!evt.Target.Descriptor.HasFact(KeepBuff) && CooldownBuff != null && maybeCaster.Descriptor.HasFact(CooldownBuff)) { return false; }
+            if (!evt.Target.Descriptor.HasFact(KeepBuff) && CheckBuff != null && !maybeCaster.Descriptor.HasFact(CheckBuff)) { return false; }
             return maybeCaster.DistanceTo(Owner) <= 30.Feet().Meters && maybeCaster.Descriptor.State.CanAct && !maybeCaster.Descriptor.State.HasCondition(UnitCondition.Confusion);
         }
 
@@ -87,7 +87,7 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
                 {
                     evt.RedirectionTarget = maybeCaster;
                     evt.RedirectedPercent = 50;
-                    if (!maybeCaster.Descriptor.HasFact(CooldownBuff))
+                    if (!maybeCaster.Descriptor.HasFact(CooldownBuff) && CooldownBuff != null)
                     {
                         GameHelper.ApplyBuff(maybeCaster, CooldownBuff, new Rounds?(1.Rounds()));
                         GameHelper.ApplyBuff(evt.Target, KeepBuff, new Rounds?(1.Rounds()));

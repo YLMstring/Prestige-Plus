@@ -6024,8 +6024,8 @@
   {
     "Key": "DeificObedienceShelyn.Name",
     "ProcessTemplates": false,
-    "enGB": "Shelyn",
-    "zhCN": "雪琳"
+    "enGB": "Shelyn Obedience",
+    "zhCN": "雪琳仪典"
   },
   {
     "Key": "DeificObedienceShelyn.Description",
@@ -6420,8 +6420,8 @@
   {
     "Key": "DeificObedienceNaderi.Name",
     "ProcessTemplates": false,
-    "enGB": "Naderi",
-    "zhCN": "奈德丽"
+    "enGB": "Naderi Obedience",
+    "zhCN": "奈德丽仪典"
   },
   {
     "Key": "DeificObedienceNaderi.Description",
@@ -6475,8 +6475,8 @@
   {
     "Key": "DeificObedienceDesna.Name",
     "ProcessTemplates": false,
-    "enGB": "Desna",
-    "zhCN": "德丝娜"
+    "enGB": "Desna Obedience",
+    "zhCN": "德丝娜仪典"
   },
   {
     "Key": "DeificObedienceDesna.Description",
@@ -6519,8 +6519,8 @@
   {
     "Key": "DeificObedienceErastil.Name",
     "ProcessTemplates": false,
-    "enGB": "Erastil",
-    "zhCN": "艾若斯提"
+    "enGB": "Erastil Obedience",
+    "zhCN": "艾若斯提仪典"
   },
   {
     "Key": "DeificObedienceErastil.Description",
