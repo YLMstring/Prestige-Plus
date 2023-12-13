@@ -758,9 +758,9 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteAlignment(AlignmentMaskType.LawfulGood, group: Prerequisite.GroupType.Any)
               .SetGiveFeaturesForPreviousLevels(true)
               .AddToLevelEntry(1, Erastil0Feat())
-              .AddToLevelEntry(2, CreateErastil1())
-              .AddToLevelEntry(6, Erastil2Feat())
-              .AddToLevelEntry(10, Erastil3Feat())
+              .AddToLevelEntry(12, CreateErastil1())
+              .AddToLevelEntry(16, Erastil2Feat())
+              .AddToLevelEntry(20, Erastil3Feat())
               .Configure();
         }
 
@@ -795,7 +795,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         private static BlueprintFeature CreateErastil1()
         {
-            var icon = FeatureRefs.HuntersBond.Reference.Get().Icon;
+            var icon = FeatureSelectionRefs.HuntersBondSelection.Reference.Get().Icon;
 
             var ability = AbilityConfigurator.New(Erastil1Ablity, Erastil1AblityGuid)
                 .CopyFrom(
