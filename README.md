@@ -1,4 +1,4 @@
-# Prestige Plus v2.1.1 for WoTR 
+# Prestige Plus v2.1.2 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -28,6 +28,10 @@
 ### [Deific Obedience](https://www.d20pfsrd.com/feats/general-feats/deific-obedience)
 - [Ragathiel](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Ragathiel): requires worshipping Ragathiel (Expanded Content) or Lawful Good
 - [Shelyn](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Shelyn): requires worshipping Shelyn or Neutral Good
+- [Naderi](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Naderi): requires worshipping Naderi (Expanded Content) or Neutral
+- [Dsena](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Desna): requires worshipping Desna or Chaotic Good
+- [Erastil](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Erastil): requires worshipping Erastil or Lawful Good
+- [Gorum](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Gorum): requires worshipping Gorum or Chaotic Neutral
 - More coming soon!
 ### [Sentinel](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/sentinel/)
 - [Guided Hand](https://www.d20pfsrd.com/feats/general-feats/guided-hand/)
