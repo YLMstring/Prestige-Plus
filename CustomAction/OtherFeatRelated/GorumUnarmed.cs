@@ -54,10 +54,10 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
             {
                 var attackAnimation = maybeCaster.View.AnimationManager.CreateHandle(UnitAnimationType.SpecialAttack);
                 maybeCaster.View.AnimationManager.Execute(attackAnimation);
-                int penalty = -8;
+                int penalty = 8;
                 if (maybeCaster.HasFact(FeatureRefs.TwoWeaponFighting.Reference))
                 {
-                    penalty = -2;
+                    penalty = 2;
                 }
                 if (maybeCaster.HasFact(FeatureRefs.TwoWeaponFightingMythicFeat.Reference))
                 {

@@ -953,9 +953,9 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddPrerequisiteFeature(GorumGuid)
               .SetGiveFeaturesForPreviousLevels(true)
-              .AddToLevelEntry(2, CreateGorum1())
-              .AddToLevelEntry(6, Gorum2Feat())
-              .AddToLevelEntry(10, Gorum3Feat())
+              .AddToLevelEntry(12, CreateGorum1())
+              .AddToLevelEntry(16, Gorum2Feat())
+              .AddToLevelEntry(20, Gorum3Feat())
               .Configure();
         }
 
@@ -975,7 +975,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         private static BlueprintFeature CreateGorum1()
         {
-            var icon = FeatureRefs.JumpUp.Reference.Get().Icon;
+            var icon = FeatureRefs.ArmorMastery.Reference.Get().Icon;
 
             var ability = AbilityConfigurator.New(Gorum1Ablity, Gorum1AblityGuid)
                 .CopyFrom(
@@ -1002,7 +1002,7 @@ namespace PrestigePlus.Blueprint.Feat
 
             var ability3 = AbilityConfigurator.New(Gorum1Ablity3, Gorum1Ablity3Guid)
                 .CopyFrom(
-                AbilityRefs.Haste,
+                AbilityRefs.BeastShapeI,
                 typeof(AbilityEffectRunAction),
                 typeof(SpellComponent),
                 typeof(SpellDescriptorComponent),
@@ -1031,7 +1031,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static BlueprintFeature Gorum2Feat()
         {
-            var icon = FeatureRefs.SmiteEvilFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.StunningFistSickenedFeature.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Gorum2, Gorum2Guid)
               .SetDisplayName(Gorum2DisplayName)
@@ -1051,7 +1051,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string Gorum3Description = "DeificObedienceGorum3.Description";
         public static BlueprintFeature Gorum3Feat()
         {
-            var icon = AbilityRefs.ChannelRageCommunal.Reference.Get().Icon;
+            var icon = AbilityRefs.ChannelRage.Reference.Get().Icon;
 
             var Buff = BuffConfigurator.New(Gorum3Buff, Gorum3BuffGuid)
              .SetDisplayName(Gorum3DisplayName)
