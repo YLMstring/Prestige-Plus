@@ -40,6 +40,7 @@ using Kingmaker.UnitLogic.Buffs.Blueprints;
 using PrestigePlus.Modify;
 using Kingmaker.UnitLogic.Buffs;
 using Kingmaker.UnitLogic.Mechanics.Properties;
+using Kingmaker.Blueprints.Items.Armors;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -911,6 +912,147 @@ namespace PrestigePlus.Blueprint.Feat
               .AddWeaponTypeDamageStatReplacement(WeaponCategory.Longbow, false, StatType.Wisdom, false)
               .AddWeaponTypeDamageStatReplacement(WeaponCategory.Shortbow, false, StatType.Wisdom, false)
               .AddFacts(new() { FeatureRefs.ZenArcherZenArcheryFeature.ToString() })
+              .Configure();
+        }
+
+        private const string Gorum = "DeificObedience.Gorum";
+        public static readonly string GorumGuid = "{9F501833-C90A-400A-8F45-3D5D9545F472}";
+
+        internal const string GorumDisplayName = "DeificObedienceGorum.Name";
+        private const string GorumDescription = "DeificObedienceGorum.Description";
+        public static BlueprintFeature GorumFeat()
+        {
+            var icon = FeatureRefs.GorumFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Gorum, GorumGuid)
+              .SetDisplayName(GorumDisplayName)
+              .SetDescription(GorumDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.GorumFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteProficiency(armorProficiencies: new ArmorProficiencyGroup[] { ArmorProficiencyGroup.Heavy }, new WeaponCategory[] {})
+              .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticNeutral, group: Prerequisite.GroupType.Any)
+              .AddToIsPrerequisiteFor(GorumSentinelFeat())
+              .AddStatBonus(ModifierDescriptor.Profane, false, StatType.SkillAthletics, 4)
+              .Configure();
+        }
+
+        private const string GorumSentinel = "DeificObedience.GorumSentinel";
+        public static readonly string GorumSentinelGuid = "{785C6F05-3E5B-40FB-B3DC-4AE122A32B69}";
+
+        internal const string GorumSentinelDisplayName = "DeificObedienceGorumSentinel.Name";
+        private const string GorumSentinelDescription = "DeificObedienceGorumSentinel.Description";
+        public static BlueprintProgression GorumSentinelFeat()
+        {
+            var icon = FeatureRefs.GorumFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(GorumSentinel, GorumSentinelGuid)
+              .SetDisplayName(GorumSentinelDisplayName)
+              .SetDescription(GorumSentinelDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(GorumGuid)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(2, CreateGorum1())
+              .AddToLevelEntry(6, Gorum2Feat())
+              .AddToLevelEntry(10, Gorum3Feat())
+              .Configure();
+        }
+
+        private const string Gorum1 = "SpellPower.Gorum1";
+        public static readonly string Gorum1Guid = "{76E9B76D-0713-4F45-82FB-45C1BB04A79E}";
+        internal const string Gorum1DisplayName = "SpellPowerGorum1.Name";
+        private const string Gorum1Description = "SpellPowerGorum1.Description";
+
+        private const string Gorum1Ablity = "SpellPower.UseGorum1";
+        private static readonly string Gorum1AblityGuid = "{1C296E11-81EF-4A30-A900-44B643607368}";
+
+        private const string Gorum1Ablity2 = "SpellPower.UseGorum12";
+        private static readonly string Gorum1Ablity2Guid = "{3BD4D94D-4556-4A9C-BCFC-9217CD4266A8}";
+
+        private const string Gorum1Ablity3 = "SpellPower.UseGorum13";
+        private static readonly string Gorum1Ablity3Guid = "{2273A436-C5B6-44AD-968E-E6DCD87B8934}";
+
+        private static BlueprintFeature CreateGorum1()
+        {
+            var icon = FeatureRefs.JumpUp.Reference.Get().Icon;
+
+            var ability = AbilityConfigurator.New(Gorum1Ablity, Gorum1AblityGuid)
+                .CopyFrom(
+                AbilityRefs.EnlargePerson,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilityTargetHasFact),
+                typeof(AbilitySpawnFx))
+                .AddPretendSpellLevel(spellLevel: 1)
+                .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(Gorum1Ablity2, Gorum1Ablity2Guid)
+                .CopyFrom(
+                AbilityRefs.BullsStrength,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx))
+                .AddPretendSpellLevel(spellLevel: 2)
+                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var ability3 = AbilityConfigurator.New(Gorum1Ablity3, Gorum1Ablity3Guid)
+                .CopyFrom(
+                AbilityRefs.Haste,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(AbilitySpawnFx),
+                typeof(AbilityExecuteActionOnCast),
+                typeof(AbilityTargetHasFact),
+                typeof(ContextRankConfig))
+                .AddPretendSpellLevel(spellLevel: 3)
+                .AddAbilityResourceLogic(6, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Gorum1, Gorum1Guid)
+              .SetDisplayName(Gorum1DisplayName)
+              .SetDescription(Gorum1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability, ability2, ability3 })
+              .Configure();
+        }
+
+        private const string Gorum2 = "DeificObedience.Gorum2";
+        public static readonly string Gorum2Guid = "{0737982E-F3F6-4879-B1FA-68FA88DE626F}";
+
+        internal const string Gorum2DisplayName = "DeificObedienceGorum2.Name";
+        private const string Gorum2Description = "DeificObedienceGorum2.Description";
+
+        public static BlueprintFeature Gorum2Feat()
+        {
+            var icon = FeatureRefs.SmiteEvilFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Gorum2, Gorum2Guid)
+              .SetDisplayName(Gorum2DisplayName)
+              .SetDescription(Gorum2Description)
+              .SetIcon(icon)
+              .AddComponent<GorumGloriousMight>()
+              .Configure();
+        }
+
+        private const string Gorum3 = "DeificObedience.Gorum3";
+        public static readonly string Gorum3Guid = "{F1AE3BE7-99FE-49F6-9C5E-BAC9B7F80468}";
+
+        internal const string Gorum3DisplayName = "DeificObedienceGorum3.Name";
+        private const string Gorum3Description = "DeificObedienceGorum3.Description";
+        public static BlueprintFeature Gorum3Feat()
+        {
+            var icon = AbilityRefs.ResistElectricity.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Gorum3, Gorum3Guid)
+              .SetDisplayName(Gorum3DisplayName)
+              .SetDescription(Gorum3Description)
+              .SetIcon(icon)
+              .AddDamageResistanceEnergy(healOnDamage: false, value: 15, type: Kingmaker.Enums.Damage.DamageEnergyType.Electricity)
               .Configure();
         }
     }

@@ -6602,7 +6602,7 @@
   {
     "Key": "SpellPowerGorum1.Description",
     "enGB": "enlarge person 3/day, bull’s strength 2/day, or beast shape I 1/day",
-    "zhCN": "变巨术 3次/日，牛之蛮力 2次/日，或动物之形1次/日"
+    "zhCN": "变巨术 3次/日，牛之蛮力 2次/日，或野兽形态Ⅰ 1次/日"
   },
   {
     "Key": "DeificObedienceGorum2.Name",
@@ -6636,17 +6636,6 @@
     "Key": "DeificObedienceMahathallah.Description",
     "enGB": "Spend an hour in deep meditation, reflecting on the nature of the cosmos and your exceptional place above all others in the multiversal scheme—preferably while under the effects of a perception-altering drug. The DC of all illusion spells you cast increases by +2 and you gain a +2 profane bonus on saving throws to resist mind-affecting effects.",
     "zhCN": "花一个小时深度冥想，反思宇宙的本质和你在多宇宙计划中的特殊地位，在这个过程中最好使用会改变感知的药物。你施放的所有幻术系法术DC增加+2，并且你在针对影响心灵效果的豁免时获得+2亵渎加值。"
-  },
-  {
-    "Key": "DeificObedienceMahathallahSentinel.Name",
-    "ProcessTemplates": false,
-    "enGB": "Mahathallah (???)",
-    "zhCN": "玛哈萨拉（???）"
-  },
-  {
-    "Key": "DeificObedienceMahathallahSentinel.Description",
-    "enGB": "Become a ??? to gain access to his boons, which will be granted at certain character or class levels.",
-    "zhCN": "成为???来获取她的神恩资格，你会在合适的角色或职业等级得到神恩。"
   }
 
 ]
