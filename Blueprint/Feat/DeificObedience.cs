@@ -41,6 +41,7 @@ using PrestigePlus.Modify;
 using Kingmaker.UnitLogic.Buffs;
 using Kingmaker.UnitLogic.Mechanics.Properties;
 using Kingmaker.Blueprints.Items.Armors;
+using PrestigePlus.CustomAction.OtherFeatRelated;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -87,6 +88,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(NaderiFeat())
               .AddToAllFeatures(DesnaFeat())
               .AddToAllFeatures(ErastilFeat())
+              .AddToAllFeatures(GorumFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteStatValue(StatType.SkillLoreReligion, 3)
@@ -1022,7 +1024,7 @@ namespace PrestigePlus.Blueprint.Feat
         }
 
         private const string Gorum2 = "DeificObedience.Gorum2";
-        public static readonly string Gorum2Guid = "{0737982E-F3F6-4879-B1FA-68FA88DE626F}";
+        public static readonly string Gorum2Guid = "{0DA54EE5-B9B3-40D4-B081-8B9DF62389E2}";
 
         internal const string Gorum2DisplayName = "DeificObedienceGorum2.Name";
         private const string Gorum2Description = "DeificObedienceGorum2.Description";
@@ -1035,24 +1037,39 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(Gorum2DisplayName)
               .SetDescription(Gorum2Description)
               .SetIcon(icon)
-              .AddComponent<GorumGloriousMight>()
+              .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().Add<GorumUnarmed>().Build(), onlyOnFullAttack: true, onlyOnFirstAttack: true)
               .Configure();
         }
 
         private const string Gorum3 = "DeificObedience.Gorum3";
-        public static readonly string Gorum3Guid = "{F1AE3BE7-99FE-49F6-9C5E-BAC9B7F80468}";
+        public static readonly string Gorum3Guid = "{EF71C768-795A-4B5D-B237-E45BBDC4C5DA}";
+
+        private const string Gorum3Buff = "DeificObedience.Gorum3Buff";
+        public static readonly string Gorum3BuffGuid = "{9973727D-4F1F-4287-8A91-670B4D130130}";
 
         internal const string Gorum3DisplayName = "DeificObedienceGorum3.Name";
         private const string Gorum3Description = "DeificObedienceGorum3.Description";
         public static BlueprintFeature Gorum3Feat()
         {
-            var icon = AbilityRefs.ResistElectricity.Reference.Get().Icon;
+            var icon = AbilityRefs.ChannelRageCommunal.Reference.Get().Icon;
+
+            var Buff = BuffConfigurator.New(Gorum3Buff, Gorum3BuffGuid)
+             .SetDisplayName(Gorum3DisplayName)
+             .SetDescription(Gorum3Description)
+             .SetIcon(icon)
+             .AddStatBonus(stat: StatType.AdditionalAttackBonus, value: 2)
+             .AddStatBonus(stat: StatType.AdditionalDamage, value: 2)
+             .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+             .Configure();
 
             return FeatureConfigurator.New(Gorum3, Gorum3Guid)
               .SetDisplayName(Gorum3DisplayName)
               .SetDescription(Gorum3Description)
               .SetIcon(icon)
-              .AddDamageResistanceEnergy(healOnDamage: false, value: 15, type: Kingmaker.Enums.Damage.DamageEnergyType.Electricity)
+              .AddBuffExtraEffects(checkedBuff: BuffRefs.StandartRageBuff.ToString(), extraEffectBuff: Buff)
+              .AddBuffExtraEffects(checkedBuff: BuffRefs.StandartFocusedRageBuff.ToString(), extraEffectBuff: Buff)
+              .AddBuffExtraEffects(checkedBuff: BuffRefs.BloodragerStandartRageBuff.ToString(), extraEffectBuff: Buff)
+              .AddBuffExtraEffects(checkedBuff: BuffRefs.DemonRageBuff.ToString(), extraEffectBuff: Buff)
               .Configure();
         }
     }
