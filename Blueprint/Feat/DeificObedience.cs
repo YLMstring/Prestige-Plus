@@ -42,6 +42,7 @@ using Kingmaker.UnitLogic.Buffs;
 using Kingmaker.UnitLogic.Mechanics.Properties;
 using Kingmaker.Blueprints.Items.Armors;
 using PrestigePlus.CustomAction.OtherFeatRelated;
+using PrestigePlus.Blueprint.Archetype;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -54,7 +55,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string DeificObedienceDescription = "DeificObedience.Description";
 
         private const string DeificObedienceAblityRes = "DeificObedienceAblityRes";
-        private static readonly string DeificObedienceAblityResGuid = "{751BD21A-A532-4939-9DC9-EE26E7FCE6BB}";
+        public static readonly string DeificObedienceAblityResGuid = "{751BD21A-A532-4939-9DC9-EE26E7FCE6BB}";
 
         private const string DeificObedienceAblity = "DeificObedienceAblity";
         private static readonly string DeificObedienceAblityGuid = "{7D26E0B2-7E4B-4F03-933F-33863F32058C}";
@@ -91,6 +92,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(GorumFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
+              .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
               .AddPrerequisiteStatValue(StatType.SkillLoreReligion, 3)
               .AddAbilityResources(resource: resourse, restoreAmount: true)
               .AddRestTrigger(ActionsBuilder.New().CastSpell(DeificObedienceAblityGuid).Build())

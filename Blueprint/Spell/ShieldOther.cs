@@ -40,6 +40,9 @@ namespace PrestigePlus.Blueprint.Spell
         internal const string DisplayName = "NewSpellShieldOther.Name";
         private const string Description = "NewSpellShieldOther.Description";
 
+        internal const string DisplayName2 = "NewSpellShieldOther2.Name";
+        private const string Description2 = "NewSpellShieldOther2.Description";
+
         public static void Configure()
         {
             var icon = AbilityRefs.ShieldOfLaw.Reference.Get().Icon;
@@ -56,12 +59,12 @@ namespace PrestigePlus.Blueprint.Spell
               .Configure();
 
             var ability = AbilityConfigurator.New(ShieldOtherAbility2, ShieldOtherAbility2Guid)
-                .SetDisplayName(DisplayName)
-                .SetDescription(Description)
+                .SetDisplayName(DisplayName2)
+                .SetDescription(Description2)
                 .SetIcon(icon)
                 .SetType(AbilityType.Special)
                 .SetRange(AbilityRange.Personal)
-                .SetActionType(CommandType.Free)
+                .SetActionType(CommandType.Move)
                 .SetAnimation(CastAnimationStyle.Self)
                 .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()

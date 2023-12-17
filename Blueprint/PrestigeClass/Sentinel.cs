@@ -106,7 +106,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         }
 
         private const string BonusFeat = "Sentinel.BonusFeat";
-        private static readonly string BonusFeatGuid = "{283F021D-C8A3-4D2B-ACAA-9DC46E77CD8E}";
+        public static readonly string BonusFeatGuid = "{283F021D-C8A3-4D2B-ACAA-9DC46E77CD8E}";
 
         internal const string BonusFeatDisplayName = "SentinelBonusFeat.Name";
         private const string BonusFeatDescription = "SentinelBonusFeat.Description";
@@ -401,7 +401,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         }
 
         private const string DivineBoon1 = "Sentinel.DivineBoon1";
-        private static readonly string DivineBoon1Guid = "{1CA3A398-D861-41BB-B713-9D2D3BDD6718}";
+        public static readonly string DivineBoon1Guid = "{1CA3A398-D861-41BB-B713-9D2D3BDD6718}";
 
         internal const string SentinelDivineBoon1DisplayName = "SentinelDivineBoon1.Name";
         private const string SentinelDivineBoon1Description = "SentinelDivineBoon1.Description";

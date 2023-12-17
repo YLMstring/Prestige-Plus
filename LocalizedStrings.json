@@ -6090,8 +6090,8 @@
   {
     "Key": "SentinelBonusFeat.Name",
     "ProcessTemplates": false,
-    "enGB": "Obedience",
-    "zhCN": "崇神仪典"
+    "enGB": "Sentinel Obedience",
+    "zhCN": "信仰哨卫仪典"
   },
   {
     "Key": "SentinelBonusFeat.Description",
@@ -6570,6 +6570,17 @@
     "Key": "NewSpellShieldOther.Description",
     "enGB": "This spell wards the subject and creates a mystic connection between you and the subject so that some of its wounds are transferred to you. The subject gains a +1 deflection bonus to AC and a +1 resistance bonus on saves. Additionally, the subject takes only half damage from all wounds and attacks (including those dealt by special abilities) that deal hit point damage. The amount of damage not taken by the warded creature is taken by you. Forms of harm that do not involve hit points, such as charm effects, temporary ability damage, level draining, and death effects, are not affected. If the subject suffers a reduction of hit points from a lowered Constitution score, the reduction is not split with you because it is not hit point damage. When the spell ends, subsequent damage is no longer divided between the subject and you, but damage already split is not reassigned to the subject.",
     "zhCN": "此法术在你和受术者之间形成某种神秘的联结，使得他遭受的部分伤害可以转移到你身上。受术者的AC获得+1偏斜加值，豁免检定获得+1抗力加值。另外受术者所受的任何造成HP损失的创伤和攻击均减半 (包括由特殊能力造成的)，剩下的部分则由施法者承受。不减少HP的伤害，比如魅惑、暂时性属性伤害、吸取等级及即死效果则不受影响。若受术者的HP因体质降低而减少，施法者亦不受影响，因为这不是HP伤害。法术结束后，后续的伤害不会再分给你与受术者，但已分配的伤害也不会转回受术者身上。"
+  },
+  {
+    "Key": "NewSpellShieldOther2.Name",
+    "ProcessTemplates": false,
+    "enGB": "End Shield",
+    "zhCN": "终止护卫"
+  },
+  {
+    "Key": "NewSpellShieldOther2.Description",
+    "enGB": "The subject can end the spell as a move action.",
+    "zhCN": "受术者能够以一个移动动作终止该法术。"
   },
   {
     "Key": "DeificObedienceGorum.Name",
