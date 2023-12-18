@@ -185,6 +185,12 @@ namespace PrestigePlus
             Toggle.New(GetKey("scientist"), defaultValue: true, Helpers.CreateString("toggle-desc50", "Mad Scientist"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("skymagic"), defaultValue: true, Helpers.CreateString("toggle-desc65", "Aeromancer"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("juggle"), defaultValue: true, Helpers.CreateString("toggle-desc64", "Juggler"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("conduit"), defaultValue: true, Helpers.CreateString("toggle-desc63", "Blood Conduit"))
               .ShowVisualConnection())
           .AddToggle(
@@ -213,6 +219,12 @@ namespace PrestigePlus
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("witchguard"), defaultValue: true, Helpers.CreateString("toggle-desc48", "Witchguard"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("kidnapper"), defaultValue: true, Helpers.CreateString("toggle-desc67", "Kidnapper"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("divinechamp"), defaultValue: true, Helpers.CreateString("toggle-desc66", "Divine Champion"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("whitehair"), defaultValue: true, Helpers.CreateString("toggle-desc32", "White-Haired Witch"))
@@ -353,6 +365,10 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("internal"))) { InternalAlchemist.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("shining"))) { ShiningKnight.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("conduit"))) { BloodConduit.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("kidnapper"))) { Kidnapper.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("juggle"))) { Juggler.Configure(); Juggler.CreateDeflectArrowsMythic(); BodyGuard.KatateDoriFeat(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("divinechamp"))) { DivineChampion.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("skymagic"))) {  }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)

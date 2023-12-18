@@ -121,7 +121,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         internal const string DeflectArrowsMythicDisplayName = "JugglerDeflectArrowsMythic.Name";
         private const string DeflectArrowsMythicDescription = "JugglerDeflectArrowsMythic.Description";
-        private static BlueprintFeature CreateDeflectArrowsMythic()
+        public static BlueprintFeature CreateDeflectArrowsMythic()
         {
             var icon = FeatureRefs.DeflectArrows.Reference.Get().Icon;
 
