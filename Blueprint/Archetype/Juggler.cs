@@ -1,4 +1,5 @@
 ﻿using BlueprintCore.Blueprints.CustomConfigurators.Classes;
+using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints;
@@ -64,13 +65,24 @@ namespace PrestigePlus.Blueprint.Archetype
         }
 
         private const string FastReactions = "Juggler.FastReactions";
-        private static readonly string FastReactionsGuid = "{A9173F19-2238-4D6A-8789-97A00DECDFF4}";
+        public static readonly string FastReactionsGuid = "{A9173F19-2238-4D6A-8789-97A00DECDFF4}";
+
+        private const string FastReactionsBuff = "Juggler.FastReactionsBuff";
+        public static readonly string FastReactionsBuffGuid = "{CAD15218-FAF3-4FB2-A9D3-F466FA599FA3}";
 
         internal const string FastReactionsDisplayName = "JugglerFastReactions.Name";
         private const string FastReactionsDescription = "JugglerFastReactions.Description";
         private static BlueprintFeature CreateFastReactions()
         {
             var icon = FeatureRefs.WarpriestFervorQuickenCast.Reference.Get().Icon;
+
+            BuffConfigurator.New(FastReactionsBuff, FastReactionsBuffGuid)
+              .SetDisplayName(FastReactionsDisplayName)
+              .SetDescription(FastReactionsDescription)
+              .SetIcon(icon)
+              .SetRanks(10)
+              //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .Configure();
 
             return FeatureConfigurator.New(FastReactions, FastReactionsGuid)
               .SetDisplayName(FastReactionsDisplayName)
