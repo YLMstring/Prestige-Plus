@@ -10,6 +10,7 @@ using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
+using PrestigePlus.Blueprint.Archetype;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -83,6 +84,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(KamiWardenFeat())
               .AddToAllFeatures(GreaterNameGuid)
               .AddToAllFeatures(StyleMasterConfigure())
+              .AddToAllFeatures(KatateDoriGuid)
               .Configure();
 
             FeatureSelectionConfigurator.For(FeatureSelectionRefs.RogueTalentSelection)
@@ -138,6 +140,27 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteFeature(FeatureRefs.ImprovedUnarmedStrike.ToString())
               .AddPrerequisiteNoFeature(FeatureRefs.DeflectArrows.ToString())
               .AddFacts(new() { FeatureRefs.DeflectArrows.ToString() })
+              .Configure();
+        }
+
+        private const string KatateDori = "NinjaTrick.KatateDori";
+        public static readonly string KatateDoriGuid = "{9CBB2D2C-4741-438A-BA21-5080D3DDA010}";
+
+        internal const string KatateDoriDisplayName = "NinjaTrickKatateDori.Name";
+        private const string KatateDoriDescription = "NinjaTrickKatateDori.Description";
+
+        public static BlueprintFeature KatateDoriFeat()
+        {
+            var icon = FeatureRefs.DeflectArrows.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(KatateDori, KatateDoriGuid)
+              .SetDisplayName(KatateDoriDisplayName)
+              .SetDescription(KatateDoriDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.DeflectArrows.ToString())
+              .AddPrerequisiteFeature(FeatureRefs.ImprovedUnarmedStrike.ToString())
+              .AddPrerequisiteNoFeature(Juggler.SnatchArrowsGuid)
+              .AddFacts(new() { Juggler.SnatchArrowsGuid })
               .Configure();
         }
 

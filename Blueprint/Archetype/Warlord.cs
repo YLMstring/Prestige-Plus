@@ -24,7 +24,7 @@ namespace PrestigePlus.Blueprint.Archetype
         internal const string ArchetypeDisplayName = "Warlord.Name";
         private const string ArchetypeDescription = "Warlord.Description";
 
-        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
+        //private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         //[HarmonyBefore(new string[] { "TabletopTweaks-Base" })]
         public static void Configure()
         {
