@@ -4852,8 +4852,8 @@
   },
   {
     "Key": "FuriousGuardianDeflectArrows.Description",
-    "enGB": "The furious guardian gains Deflect Arrows as a bonus feat, her chosen ally also gains the benefit of the feat. The furious guardian does not need to meet the prerequisites for this bonus feat.",
-    "zhCN": "狂怒卫士获得拨挡飞箭作为奖励专长。她护卫盟友的目标也能够使用该能力。狂怒卫士不需要满足这个奖励专长的先决条件。"
+    "enGB": "The furious guardian gains Deflect Arrows as a bonus feat. Her chosen ally also gains the benefit of the feat regardless of having a free hand. The furious guardian does not need to meet the prerequisites for this bonus feat.",
+    "zhCN": "狂怒卫士获得拨挡飞箭作为奖励专长。她护卫盟友的目标也能够使用该能力，且无需空出一只手。狂怒卫士不需要满足这个奖励专长的先决条件。"
   },
   {
     "Key": "FuriousGuardianUncannyDodge3.Name",

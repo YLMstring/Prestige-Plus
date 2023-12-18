@@ -81,7 +81,7 @@ namespace PrestigePlus.Blueprint.Archetype
         }
 
         private const string CombatJuggling = "Juggler.CombatJuggling";
-        private static readonly string CombatJugglingGuid = "{14D7C55D-05D5-44EB-96BB-4E0A79C4FB39}";
+        public static readonly string CombatJugglingGuid = "{14D7C55D-05D5-44EB-96BB-4E0A79C4FB39}";
 
         internal const string CombatJugglingDisplayName = "JugglerCombatJuggling.Name";
         private const string CombatJugglingDescription = "JugglerCombatJuggling.Description";

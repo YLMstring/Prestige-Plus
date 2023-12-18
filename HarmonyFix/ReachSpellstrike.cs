@@ -7,6 +7,7 @@ using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Parts;
 using PrestigePlus.Blueprint.Archetype;
 using PrestigePlus.Blueprint.Feat;
+using PrestigePlus.Blueprint.PrestigeClass;
 using System;
 using System.Collections.Generic;
 using System.Linq;
