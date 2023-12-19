@@ -368,7 +368,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("kidnapper"))) { Kidnapper.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("juggle"))) { Juggler.Configure(); Juggler.CreateDeflectArrowsMythic(); BodyGuard.KatateDoriFeat(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("divinechamp"))) { DivineChampion.Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("skymagic"))) {  }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("skymagic"))) { Aeromancer.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)

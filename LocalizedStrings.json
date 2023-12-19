@@ -6647,6 +6647,226 @@
     "Key": "DeificObedienceMahathallah.Description",
     "enGB": "Spend an hour in deep meditation, reflecting on the nature of the cosmos and your exceptional place above all others in the multiversal scheme—preferably while under the effects of a perception-altering drug. The DC of all illusion spells you cast increases by +2 and you gain a +2 profane bonus on saving throws to resist mind-affecting effects.",
     "zhCN": "花一个小时深度冥想，反思宇宙的本质和你在多宇宙计划中的特殊地位，在这个过程中最好使用会改变感知的药物。你施放的所有幻术系法术DC增加+2，并且你在针对影响心灵效果的豁免时获得+2亵渎加值。"
+  },
+  {
+    "Key": "DeificObedienceMahathallahExalted.Name",
+    "ProcessTemplates": false,
+    "enGB": "Mahathallah (Exalted)",
+    "zhCN": "玛哈萨拉（Exalted）"
+  },
+  {
+    "Key": "DeificObedienceMahathallahExalted.Description",
+    "enGB": "Become an exalted evangelist to gain access to his boons, which will be granted at certain character or class levels.",
+    "zhCN": "成为福音颂者来获取她的神恩资格，你会在合适的角色或职业等级得到神恩。"
+  },
+  {
+    "Key": "DivineChampion.Name",
+    "ProcessTemplates": false,
+    "enGB": "Divine Champion",
+    "zhCN": "神伐先勇"
+  },
+  {
+    "Key": "DivineChampion.Description",
+    "enGB": "Divine champions are unswervingly devoted to their causes, and specialize in bringing battle to the enemies of their faiths. They are similar to divine paragons in many ways, but tend to focus more on their deity’s combat prowess rather than seeking to become a physical manifestation of the deity’s will.",
+    "zhCN": "神伐先勇会坚定不移地为自己的事业鞠躬尽瘁，并精于把战火燃至信仰之敌的头上。他们在许多方面都和神圣典范有所相似，但比起寻求成为神祇意志的肉身显现，神伐先勇更倾向于关注其神祇的高超战技。"
+  },
+  {
+    "Key": "DivineChampionFerventBoon.Name",
+    "ProcessTemplates": false,
+    "enGB": "Fervent Boon",
+    "zhCN": "狂信恩赐"
+  },
+  {
+    "Key": "DivineChampionFerventBoon.Description",
+    "enGB": "Beginning at 9th level, a divine champion can call upon his deity for minor boons. By expending one or more uses of his fervor ability, he can restore one of the spell-like abilities included in his deity’s first sentinel boon. By expending one use of fervor, he can restore the spell-like ability that the boon normally grants three uses of per day; by expending two uses of fervor he can restore the spell-like ability that the boon normally grants twice per day; and by expending three uses of fervor, he can restore the spell-like ability that the boon normally grants once per day. These uses don’t count against any uses granted by the boon.",
+    "zhCN": "9级起，神伐先勇能唤来其神祇的次级恩典。通过消耗1次热诚使用次数，神伐先勇能恢复次级恩典每日可用3次的类法术能力一次。或者消耗2次热诚，恢复次级恩典每日可用2次的类法术能力一次。或者消耗3次热诚，恢复次级恩典每日可用1次的类法术能力一次。这些使用次数不算入次级恩典的正常使用次数。"
+  },
+  {
+    "Key": "Kidnapper.Name",
+    "ProcessTemplates": false,
+    "enGB": "Kidnapper",
+    "zhCN": "巴克雅尔绑匪"
+  },
+  {
+    "Key": "Kidnapper.Description",
+    "enGB": "A kidnapper is adept at hiding and quickly subduing prey.",
+    "zhCN": "巴克雅尔绑匪不仅能够熟练地在茂密的丛林中隐藏自身，还能够迅速地制服她的猎物。"
+  },
+  {
+    "Key": "KidnapperCleanCapture.Name",
+    "ProcessTemplates": false,
+    "enGB": "Clean Capture",
+    "zhCN": "轻松捕获"
+  },
+  {
+    "Key": "KidnapperCleanCapture.Description",
+    "enGB": "A kidnapper can take the feats Improved Grapple and Greater Grapple as rogue talents. She can ignore the Improved Unarmed Strike requirement when selecting these feats as rogue talents, but must meet all other prerequisites.",
+    "zhCN": "巴克雅尔绑匪能够将擒抱与高等擒抱专长作为盗贼天赋进行选取。在把这些专长作为盗贼天赋选取时，她可以忽略精通徒手打击的先决条件，但是必须满足所有其他先决条件。"
+  },
+  {
+    "Key": "KidnapperCleanCapture1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Clean Capture (Grapple)",
+    "zhCN": "轻松捕获（擒抱）"
+  },
+  {
+    "Key": "KidnapperCleanCapture1.Description",
+    "enGB": "You gain Improved Grapple as a bonus feat.",
+    "zhCN": "你获得擒抱作为额外专长。"
+  },
+  {
+    "Key": "KidnapperCleanCapture2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Clean Capture (Greater Grapple)",
+    "zhCN": "轻松捕获（高等擒抱）"
+  },
+  {
+    "Key": "KidnapperCleanCapture2.Description",
+    "enGB": "You gain Greater Grapple as a bonus feat.",
+    "zhCN": "你获得高等擒抱作为额外专长。"
+  },
+  {
+    "Key": "KidnapperAbductor.Name",
+    "ProcessTemplates": false,
+    "enGB": "Abductor",
+    "zhCN": "绑架者"
+  },
+  {
+    "Key": "KidnapperAbductor.Description",
+    "enGB": "At 3rd level, a kidnapper gains a +1 bonus on checks made to grapple a foe. She also receive a +1 bonus to her Combat Maneuver Defense when an opponent tries to grapple her, or when a grappled target attempts to break free of her grapple.. These bonuses increase by 1 for every 3 levels beyond 3rd.",
+    "zhCN": "3级起，巴克雅尔绑匪在擒抱敌人的战技检定中获得+1加值。此外，在敌人尝试擒抱巴克雅尔绑匪、或者巴克雅尔绑匪擒抱的目标尝试挣脱的时候，还将她的CMD视为比正常高1点。这些加值会在3级之后的每3个等级提高1点。"
+  },
+  {
+    "Key": "Juggler.Name",
+    "ProcessTemplates": false,
+    "enGB": "Juggler",
+    "zhCN": "杂耍者"
+  },
+  {
+    "Key": "Juggler.Description",
+    "enGB": "Jugglers are masters of manipulating objects, most famously by keeping multiple objects in the air simultaneously. They often incorporate this talent into acting, comedy, or dance. Adventuring jugglers find their abilities translate well into the use of thrown weapons.",
+    "zhCN": "杂耍者是操控物体的专家，特别擅长于同时在空中耍弄数个玩意儿。他们经常将该技艺融入进杂技、喜剧或舞蹈中。而参与冒险的杂耍者会发现，他们的技艺对于使用投掷武器十分有效。"
+  },
+  {
+    "Key": "JugglerProficiencies.Name",
+    "ProcessTemplates": false,
+    "enGB": "Weapon and Armor Proficiencies",
+    "zhCN": "杂耍者擅长"
+  },
+  {
+    "Key": "JugglerProficiencies.Description",
+    "enGB": "A juggler is proficient with all simple weapons, plus martial thrown weapons. This ability replaces his normal weapon proficiencies. A juggler is not proficient with shields.",
+    "zhCN": "杂耍者擅长所有简易武器和军用投掷武器，取代一般的武器擅长。杂耍者不擅长盾牌。"
+  },
+  {
+    "Key": "JugglerFastReactions.Name",
+    "ProcessTemplates": false,
+    "enGB": "Fast Reactions",
+    "zhCN": "快速反应"
+  },
+  {
+    "Key": "JugglerFastReactions.Description",
+    "enGB": "At 1st level, a juggler gains Deflect Arrows as a bonus feat. At 5th level, he gains Snatch Arrows as a bonus feat. The juggler can use the ability granted by these feats an additional time each round at 11th level and at 17th level.",
+    "zhCN": "1级时，杂耍者获得拨挡飞箭作为额外专长。5级时，获得抓取飞箭作为额外专长。他不需要满足这些专长的先决条件。在11级时杂耍者的这些专长可以获得1次额外使用次数，17级时再获得1次额外使用次数。"
+  },
+  {
+    "Key": "JugglerCombatJuggling.Name",
+    "ProcessTemplates": false,
+    "enGB": "Combat Juggling",
+    "zhCN": "战斗杂耍"
+  },
+  {
+    "Key": "JugglerCombatJuggling.Description",
+    "enGB": "At 2nd level, a juggler can hold and wield (in other words, “juggle”) up to three items or weapons in his hands. The juggler must be able to hold and wield an object in one hand in order to juggle it. This ability doesn’t grant the juggler additional attacks, though it does allow him to Deflect Arrows.",
+    "zhCN": "2级时，杂耍者可以同时在手中持用或叫抛接至多三个物体或武器。他必须能够持用一个物品，才能不断杂耍。该能力不会给予杂耍者额外的攻击次数，但允许他拨挡飞箭。"
+  },
+  {
+    "Key": "JugglerDeflectArrowsMythic.Name",
+    "ProcessTemplates": false,
+    "enGB": "Deflect Arrows (Mythic)",
+    "zhCN": "拨挡飞箭（神话）"
+  },
+  {
+    "Key": "JugglerDeflectArrowsMythic.Description",
+    "enGB": "You deflect projectiles and ray spells with uncanny skill. When using Deflect Arrows, you can deflect an additional number of ranged attacks per round equal to half your tier. You can also deflect a single ray from a ray spell or effect targeting you.",
+    "zhCN": "你能够以异乎寻常的技巧偏转弹丸与射线法术。当你使用拨挡飞箭专长时，每轮能够偏转远程攻击的次数增加等同于你的神话等级的一半。你也可以偏转以你为目标且来自射线法术或效果的单条射线。"
+  },
+  {
+    "Key": "JugglerSnatchArrows.Name",
+    "ProcessTemplates": false,
+    "enGB": "Snatch Arrows",
+    "zhCN": "抓取飞箭"
+  },
+  {
+    "Key": "JugglerSnatchArrows.Description",
+    "enGB": "Instead of knocking an arrow or ranged attack aside, you can catch it in mid-flight. When using the Deflect Arrows feat you may choose to catch the weapon instead of just deflecting it. The ranged weapon can immediately be thrown back as an attack against the original attacker.",
+    "zhCN": "你能够接住半空中的箭支或远程武器，而不是把它震到一旁。当使用“拨挡飞箭”专长时你可以选择抓住那武器而不仅仅只是偏转它。该远程武器可以立刻被扔回去，视为对原攻击者的一次攻击。"
+  },
+  {
+    "Key": "NinjaTrickKatateDori.Name",
+    "ProcessTemplates": false,
+    "enGB": "Katate Dori",
+    "zhCN": "片手取"
+  },
+  {
+    "Key": "NinjaTrickKatateDori.Description",
+    "enGB": "A ninja who selects this ninja trick gains the Snatch Arrows feat as a bonus feat.",
+    "zhCN": "选择此忍术的忍者获得“抓取飞箭”作为奖励专长。"
+  },
+  {
+    "Key": "Aeromancer.Name",
+    "ProcessTemplates": false,
+    "enGB": "Aeromancer",
+    "zhCN": "御天使"
+  },
+  {
+    "Key": "Aeromancer.Description",
+    "enGB": "Shory were the undisputed masters of wind and sky, and they unlocked numerous secrets of air magic. The vast majority of these secrets were lost when their civilization collapsed, but a few of their magical traditions have been preserved through the years. While the practice of aeromancy is rare, some arcanists today are able to rival the aerial mastery of the ancient aeromancers.",
+    "zhCN": "毫无争议，首理乃是流风与天穹的宗师，其解开了空气魔法中的诸多玄秘。而这些秘密大部分都已经随着首理文明的倾颓一同失落，但仍有部分魔法传统历经岁月仍得以保存。御天技艺的研习在当下已经颇为罕见，但部分奥能师却能在浮空的技艺上与古代首理的御天使一较长短。"
+  },
+  {
+    "Key": "AeromancerAirMastery.Name",
+    "ProcessTemplates": false,
+    "enGB": "Air Mastery",
+    "zhCN": "掌控天气"
+  },
+  {
+    "Key": "AeromancerAirMastery.Description",
+    "enGB": "Aeromancers specialize in magic that manipulates the wind and sky. Whenever an aeromancer expends a point from her arcane reservoir to increase the caster level of a spell with the air, cold, electricity, or sonic descriptor, she increases that bonus by an additional 1. At 5th level, and every 5 levels thereafter, the amount by which she increases the caster level of such spells further increases by an additional 1 (to a maximum additional caster level increase from this ability of 5 at 20th level). Alternatively, if the aeromancer expends a point from her arcane reservoir to increase the saving throw DC of a spell with the air, cold, electricity, or sonic descriptor, she increases it by an additional 1. At 10th level, she increases it by an additional 2 instead.",
+    "zhCN": "御天使专精操纵流风与天穹的魔法。当御天使在奥能源泉中消耗1点来增加具有气、寒冷、电或音波描述符法术的施法者等级时，该加值额外增加1。5级及之后的每5级，这些法术增加的施法者等级再增加1（最高在20级时从该能力中获得的额外施法者等级达到+5）。此外，当御天使在奥能源泉中消耗1点来增加具有气、寒冷、电或音波描述符法术的豁免DC时，该DC再额外增加1。而10级时，改为额外增加2。"
+  },
+  {
+    "Key": "AeromancerWindEmbrace.Name",
+    "ProcessTemplates": false,
+    "enGB": "Wind’s Embrace",
+    "zhCN": "流风之拥"
+  },
+  {
+    "Key": "AeromancerWindEmbrace.Description",
+    "enGB": "At 5th level, an aeromancer can expend 2 points from her arcane reservoir as a standard action, to call upon the winds to gently carry her through the air while protecting her from harm. She is affected as though by the spell freedom of movement and is surrounded by protective winds that function similarly to a protection from arrows, communal spell. Both of these effects last for 1 minute.",
+    "zhCN": "5级时，御天使能用标准动作从奥能源泉中消耗2点以唤来流风，在保护自身免受伤害的同时裹挟自身穿越天空。他将受到如同行动自如法术的影响，同时周围被作用如同共用防护箭矢的防护流风所环绕。这两个效果均持续1分钟。"
+  },
+  {
+    "Key": "AeromancerRebukingGale1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Rebuking Gale (Burst)",
+    "zhCN": "斥退怒风（爆发）"
+  },
+  {
+    "Key": "AeromancerRebukingGale1.Description",
+    "enGB": "At 11th level, by expending 3 points from her arcane reservoir as a standard action, an aeromancer can release a powerful blast of wind to push back her foes. This takes the form of a 20-foot-radius burst centered on the aeromancer. The area is filled with hurricane-force winds. This makes ranged attacks involving affected units impossible for 1 round.",
+    "zhCN": "11级时，御天使能从奥能源泉中消耗3点来释放一股强力的爆风来击退敌寇。以御天使为中心20尺半径的爆发，该区域内会吹起飓风。所有涉及被影响单位的远程攻击无法进行。该能力创造的强风持续1轮。"
+  },
+  {
+    "Key": "AeromancerRebukingGale2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Rebuking Gale (Cone)",
+    "zhCN": "斥退怒风（锥形）"
+  },
+  {
+    "Key": "AeromancerRebukingGale2.Description",
+    "enGB": "At 11th level, by expending 3 points from her arcane reservoir as a standard action, an aeromancer can release a powerful blast of wind to push back her foes. This takes the form a 40-foot cone originating from the aeromancer’s space. The area is filled with hurricane-force winds. This makes ranged attacks involving affected units impossible for 1 round.",
+    "zhCN": "11级时，御天使能从奥能源泉中消耗3点来释放一股强力的爆风来击退敌寇。以御天使所在空间为起点的40尺锥形，该区域内会吹起飓风。所有涉及被影响单位的远程攻击无法进行。该能力创造的强风持续1轮。"
   }
 
 ]
