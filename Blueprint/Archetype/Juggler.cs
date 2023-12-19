@@ -3,6 +3,7 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
+using BlueprintCore.Utils;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -27,24 +28,30 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string ArchetypeDescription = "Juggler.Description";
         public static void Configure()
         {
+            
             ArchetypeConfigurator.New(ArchetypeName, ArchetypeGuid, CharacterClassRefs.BardClass)
               .SetLocalizedName(ArchetypeDisplayName)
               .SetLocalizedDescription(ArchetypeDescription)
             .AddToRemoveFeatures(1, FeatureRefs.BardProficiencies.ToString(), FeatureRefs.BardicKnowledge.ToString())
-            .AddToRemoveFeatures(2, FeatureRefs.BardTalent.ToString(), FeatureRefs.BardWellVersed.ToString())
+            .AddToRemoveFeatures(2, FeatureSelectionRefs.BardTalentSelection_0.ToString(), FeatureRefs.BardWellVersed.ToString())
             .AddToRemoveFeatures(5, FeatureRefs.BardLoreMaster.ToString())
             .AddToRemoveFeatures(12, FeatureRefs.SoothingPerformanceFeature.ToString())
             .AddToAddFeatures(1, FeatureRefs.DeflectArrows.ToString(), CreateProficiencies())
             .AddToAddFeatures(2, FeatureRefs.Evasion.ToString(), CreateCombatJuggling())
             .AddToAddFeatures(5, CreateSnatchArrows())
-            .AddToAddFeatures(11, CreateFastReactions())
-            .AddToAddFeatures(12, FeatureRefs.ImprovedEvasion.ToString())
-            .AddToAddFeatures(17, FastReactionsGuid)
+            .AddToAddFeatures(6, CreateFastReactions())
+            .AddToAddFeatures(12, FeatureRefs.ImprovedEvasion_0.ToString())
+            .AddToAddFeatures(7, FastReactionsGuid)
               .Configure();
+
+            ProgressionConfigurator.For(ProgressionRefs.BardProgression)
+                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { FeatureRefs.DeflectArrows.ToString(), SnatchArrowsGuid, FastReactionsGuid, CombatJugglingGuid })
+                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { FeatureRefs.Evasion.ToString(), FeatureRefs.ImprovedEvasion_0.ToString() })
+                .Configure();
         }
 
         private const string Proficiencies = "Juggler.Proficiencies";
-        private static readonly string ProficienciesGuid = "{3486544B-AD52-436A-A0BE-E5B8C70FDE47}";
+        private static readonly string ProficienciesGuid = "{A41B2E74-C3F2-4070-8870-E4C062DC0BBF}";
         internal const string ProficienciesDisplayName = "JugglerProficiencies.Name";
         private const string ProficienciesDescription = "JugglerProficiencies.Description";
 
@@ -76,7 +83,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string FastReactionsDescription = "JugglerFastReactions.Description";
         private static BlueprintFeature CreateFastReactions()
         {
-            var icon = FeatureRefs.WarpriestFervorQuickenCast.Reference.Get().Icon;
+            var icon = FeatureRefs.DeflectArrows.Reference.Get().Icon;
 
             BuffConfigurator.New(FastReactionsBuff, FastReactionsBuffGuid)
               .SetDisplayName(FastReactionsDisplayName)
@@ -102,7 +109,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string CombatJugglingDescription = "JugglerCombatJuggling.Description";
         private static BlueprintFeature CreateCombatJuggling()
         {
-            var icon = FeatureRefs.WarpriestFervorQuickenCast.Reference.Get().Icon;
+            var icon = FeatureRefs.CombatReflexes.Reference.Get().Icon;
 
             return FeatureConfigurator.New(CombatJuggling, CombatJugglingGuid)
               .SetDisplayName(CombatJugglingDisplayName)

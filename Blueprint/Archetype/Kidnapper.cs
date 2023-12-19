@@ -42,7 +42,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string CleanCaptureDescription = "KidnapperCleanCapture.Description";
         private static BlueprintFeature CreateCleanCapture()
         {
-            var icon = FeatureRefs.WarpriestFervorQuickenCast.Reference.Get().Icon;
+            var icon = AbilityRefs.Sleep.Reference.Get().Icon;
 
             return FeatureConfigurator.New(CleanCapture, CleanCaptureGuid)
               .SetDisplayName(CleanCaptureDisplayName)
@@ -60,7 +60,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string CleanCapture1Description = "KidnapperCleanCapture1.Description";
         private static BlueprintFeature CreateCleanCapture1()
         {
-            var icon = FeatureRefs.WarpriestFervorQuickenCast.Reference.Get().Icon;
+            var icon = AbilityRefs.Sleep.Reference.Get().Icon;
 
             return FeatureConfigurator.New(CleanCapture1, CleanCapture1Guid, FeatureGroup.RogueTalent)
               .SetDisplayName(CleanCapture1DisplayName)
@@ -80,7 +80,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string CleanCapture2Description = "KidnapperCleanCapture2.Description";
         private static BlueprintFeature CreateCleanCapture2()
         {
-            var icon = FeatureRefs.WarpriestFervorQuickenCast.Reference.Get().Icon;
+            var icon = AbilityRefs.DeepSlumber.Reference.Get().Icon;
 
             return FeatureConfigurator.New(CleanCapture2, CleanCapture2Guid, FeatureGroup.RogueTalent)
               .SetDisplayName(CleanCapture2DisplayName)
@@ -102,7 +102,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string AbductorDescription = "KidnapperAbductor.Description";
         private static BlueprintFeature CreateAbductor()
         {
-            var icon = FeatureRefs.WarpriestFervorQuickenCast.Reference.Get().Icon;
+            var icon = FeatureRefs.FastStealth.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Abductor, AbductorGuid)
               .SetDisplayName(AbductorDisplayName)

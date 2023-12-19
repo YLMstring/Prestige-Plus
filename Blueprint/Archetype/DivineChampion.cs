@@ -56,7 +56,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string FerventBoonDescription = "DivineChampionFerventBoon.Description";
         private static BlueprintFeature CreateFerventBoon()
         {
-            var icon = FeatureRefs.WarpriestFervorQuickenCast.Reference.Get().Icon;
+            var icon = AbilityRefs.BlessingOfCourageAndLife.Reference.Get().Icon;
 
             var ability = AbilityConfigurator.New(FerventBoonAbility, FerventBoonAbilityGuid)
                 .SetDisplayName(FerventBoonDisplayName)
