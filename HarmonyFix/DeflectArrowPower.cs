@@ -3,6 +3,7 @@ using HarmonyLib;
 using Kingmaker.Blueprints;
 using Kingmaker.Controllers.Combat;
 using Kingmaker.Controllers.Projectiles;
+using Kingmaker.Designers;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.FactLogic;
@@ -23,12 +24,27 @@ namespace PrestigePlus.HarmonyFix
     {
         static void Postfix(ref UnitCombatState __instance, ref Projectile projectile, ref bool __result)
         {
-            
-            
-            
+            var maybeCaster = __instance.Unit;
+            if (__result && Buff != null)
+            {
+                GameHelper.ApplyBuff(maybeCaster, Buff);
+                int max = 1;
+                if (maybeCaster.HasFact(Fast))
+                {
+                    max += maybeCaster.GetFact(Fast).GetRank();
+                }
+                if (maybeCaster.HasFact(Mythic))
+                {
+                    max += maybeCaster.Progression.MythicLevel / 2;
+                }
+                int time = maybeCaster.GetFact(Buff).GetRank();
+                if (time < max)
+                {
+                    __instance.m_LastDeflectArrowTime = default;
+                }
+            }
             if (__result && __instance.Unit.HasFact(Ace) && projectile.AttackRoll?.Weapon != null)
             {
-                var maybeCaster = __instance.Unit;
                 RuleAttackWithWeapon ruleAttackWithWeapon = new(maybeCaster, projectile.Launcher.Unit, projectile.AttackRoll.Weapon, 0)
                 {
                     Reason = maybeCaster.Context,
@@ -45,7 +61,8 @@ namespace PrestigePlus.HarmonyFix
         }
 
         private static BlueprintFeatureReference Ace = BlueprintTool.GetRef<BlueprintFeatureReference>(Juggler.SnatchArrowsGuid);
-        private static BlueprintFeatureReference Buff = BlueprintTool.GetRef<BlueprintFeatureReference>(Juggler.FastReactionsBuffGuid);
+        private static BlueprintBuffReference Buff = BlueprintTool.GetRef<BlueprintBuffReference>(Juggler.FastReactionsBuffGuid);
         private static BlueprintFeatureReference Fast = BlueprintTool.GetRef<BlueprintFeatureReference>(Juggler.FastReactionsGuid);
+        private static BlueprintFeatureReference Mythic = BlueprintTool.GetRef<BlueprintFeatureReference>(Juggler.DeflectArrowsMythicGuid);
     }
 }

@@ -1,4 +1,6 @@
-﻿using BlueprintCore.Blueprints.CustomConfigurators.Classes;
+﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
+using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
@@ -81,6 +83,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDescription(FastReactionsDescription)
               .SetIcon(icon)
               .SetRanks(10)
+              .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New().RemoveSelf().Build())
               //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .Configure();
 
@@ -129,7 +132,7 @@ namespace PrestigePlus.Blueprint.Archetype
         }
 
         private const string DeflectArrowsMythic = "Juggler.DeflectArrowsMythic";
-        private static readonly string DeflectArrowsMythicGuid = "{56F1B86D-A970-4B57-A4C7-1AF95292424B}";
+        public static readonly string DeflectArrowsMythicGuid = "{56F1B86D-A970-4B57-A4C7-1AF95292424B}";
 
         internal const string DeflectArrowsMythicDisplayName = "JugglerDeflectArrowsMythic.Name";
         private const string DeflectArrowsMythicDescription = "JugglerDeflectArrowsMythic.Description";
