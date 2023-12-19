@@ -7,6 +7,7 @@ using Kingmaker.Designers;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.FactLogic;
+using Kingmaker.Utility;
 using PrestigePlus.Blueprint.Archetype;
 using PrestigePlus.Blueprint.PrestigeClass;
 using System;
@@ -27,7 +28,7 @@ namespace PrestigePlus.HarmonyFix
             var maybeCaster = __instance.Unit;
             if (__result && Buff != null)
             {
-                GameHelper.ApplyBuff(maybeCaster, Buff);
+                GameHelper.ApplyBuff(maybeCaster, Buff, new Rounds?(2.Rounds()));
                 int max = 1;
                 if (maybeCaster.HasFact(Fast))
                 {

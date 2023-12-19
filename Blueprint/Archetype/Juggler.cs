@@ -37,7 +37,7 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToRemoveFeatures(5, FeatureRefs.BardLoreMaster.ToString())
             .AddToRemoveFeatures(12, FeatureRefs.SoothingPerformanceFeature.ToString())
             .AddToAddFeatures(1, FeatureRefs.DeflectArrows.ToString(), CreateProficiencies())
-            .AddToAddFeatures(2, FeatureRefs.Evasion.ToString(), CreateCombatJuggling())
+            .AddToAddFeatures(2, CreateCombatJuggling())
             .AddToAddFeatures(5, CreateSnatchArrows())
             .AddToAddFeatures(6, CreateFastReactions())
             .AddToAddFeatures(12, FeatureRefs.ImprovedEvasion_0.ToString())
@@ -45,8 +45,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .Configure();
 
             ProgressionConfigurator.For(ProgressionRefs.BardProgression)
-                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { FeatureRefs.DeflectArrows.ToString(), SnatchArrowsGuid, FastReactionsGuid, CombatJugglingGuid })
-                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { FeatureRefs.Evasion.ToString(), FeatureRefs.ImprovedEvasion_0.ToString() })
+                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { FeatureRefs.DeflectArrows.ToString(), SnatchArrowsGuid, FastReactionsGuid, CombatJugglingGuid, FeatureRefs.ImprovedEvasion_0.ToString() })
                 .Configure();
         }
 
@@ -115,6 +114,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(CombatJugglingDisplayName)
               .SetDescription(CombatJugglingDescription)
               .SetIcon(icon)
+              .AddFacts(new() { FeatureRefs.Evasion.ToString() })
               .Configure();
         }
 
