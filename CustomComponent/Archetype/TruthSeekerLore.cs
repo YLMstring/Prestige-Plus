@@ -17,14 +17,14 @@ using System.Threading.Tasks;
 namespace PrestigePlus.CustomComponent.Archetype
 {
     [TypeId("{C53D7688-EF62-41C1-8AE8-F32F36C4050F}")]
-    internal class TruthSeekerLore : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleCalculateAbilityParams>, IRulebookHandler<RuleCalculateAbilityParams>, ISubscriber, IInitiatorRulebookSubscriber
+    internal class TruthSeekerLore : UnitFactComponentDelegate<TruthSeekerLore.ComponentData>, IInitiatorRulebookHandler<RuleCalculateAbilityParams>, IRulebookHandler<RuleCalculateAbilityParams>, ISubscriber, IInitiatorRulebookSubscriber
     {
         void IRulebookHandler<RuleCalculateAbilityParams>.OnEventAboutToTrigger(RuleCalculateAbilityParams evt)
         {
             var spellbook = Owner.GetSpellbook(CharacterClassRefs.OracleClass.Reference);
             var spell = evt.AbilityData?.ConvertedFrom?.Blueprint ?? evt.Spell;
-            if (SpellList.Count == 0) { OnActivate(); }
-            if (spellbook != null && evt.Spellbook == spellbook && SpellList.Contains(spell))
+            if (Data.SpellList.Count == 0) { OnActivate(); }
+            if (spellbook != null && evt.Spellbook == spellbook && Data.SpellList.Contains(spell))
             {
                 evt.AddBonusCasterLevel(4, Kingmaker.Enums.ModifierDescriptor.UntypedStackable);
             }
@@ -51,7 +51,7 @@ namespace PrestigePlus.CustomComponent.Archetype
                     foreach (var spell in spells)
                     {
                         if (spell.m_Spell == null) { continue; }
-                        SpellList.Add(spell.m_Spell);
+                        Data.SpellList.Add(spell.m_Spell);
                     }
                 }
             }
@@ -59,9 +59,12 @@ namespace PrestigePlus.CustomComponent.Archetype
 
         public override void OnDeactivate()
         {
-            SpellList = new() { };
+            Data.SpellList = new() { };
         }
 
-        private List<BlueprintAbility> SpellList = new() { };
+        public class ComponentData
+        {
+            public List<BlueprintAbility> SpellList = new() { };
+        }
     }
 }

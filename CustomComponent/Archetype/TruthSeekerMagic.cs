@@ -17,7 +17,7 @@ using static TabletopTweaks.Core.NewUnitParts.UnitPartAgeTTT;
 namespace PrestigePlus.CustomComponent.Archetype
 {
     [TypeId("{B353F7AB-919F-4C07-86CF-2C59BA365103}")]
-    internal class TruthSeekerMagic : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleApplyMetamagic>, IRulebookHandler<RuleApplyMetamagic>, ISubscriber, IInitiatorRulebookSubscriber
+    internal class TruthSeekerMagic : UnitFactComponentDelegate<TruthSeekerMagic.ComponentData>, IInitiatorRulebookHandler<RuleApplyMetamagic>, IRulebookHandler<RuleApplyMetamagic>, ISubscriber, IInitiatorRulebookSubscriber
     {
         void IRulebookHandler<RuleApplyMetamagic>.OnEventAboutToTrigger(RuleApplyMetamagic evt)
         {
@@ -27,8 +27,8 @@ namespace PrestigePlus.CustomComponent.Archetype
         void IRulebookHandler<RuleApplyMetamagic>.OnEventDidTrigger(RuleApplyMetamagic evt)
         {
             var spellbook = Owner.GetSpellbook(CharacterClassRefs.OracleClass.Reference);
-            if (SpellList.Count == 0) { OnActivate(); }
-            if (spellbook != null && evt.Spellbook == spellbook && SpellList.Contains(evt.Spell))
+            if (Data.SpellList.Count == 0) { OnActivate(); }
+            if (spellbook != null && evt.Spellbook == spellbook && Data.SpellList.Contains(evt.Spell))
             {
                 evt.Result.SpellLevelCost -= evt.AppliedMetamagics.Count;
                 if (evt.BaseLevel + evt.Result.SpellLevelCost < 0)
@@ -54,7 +54,7 @@ namespace PrestigePlus.CustomComponent.Archetype
                     foreach (var spell in spells)
                     {
                         if (spell.m_Spell == null) { continue; }
-                        SpellList.Add(spell.m_Spell);
+                        Data.SpellList.Add(spell.m_Spell);
                     }
                 }
             }
@@ -62,9 +62,12 @@ namespace PrestigePlus.CustomComponent.Archetype
 
         public override void OnDeactivate()
         {
-            SpellList = new() { };
+            Data.SpellList = new() { };
         }
 
-        private List<BlueprintAbility> SpellList = new() { };
+        public class ComponentData
+        {
+            public List<BlueprintAbility> SpellList = new() { };
+        }
     }
 }
