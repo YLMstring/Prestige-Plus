@@ -91,7 +91,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetIcon(icon)
               .SetRanks(10)
               .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New().RemoveSelf().Build())
-              //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .Configure();
 
             return FeatureConfigurator.New(FastReactions, FastReactionsGuid)

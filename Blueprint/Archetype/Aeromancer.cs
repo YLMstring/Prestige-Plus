@@ -5,9 +5,11 @@ using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
+using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components;
+using Kingmaker.UnitLogic.Abilities.Components.Base;
 using Kingmaker.Utility;
 using PrestigePlus.Blueprint.Feat;
 using PrestigePlus.Blueprint.PrestigeClass;
@@ -50,7 +52,8 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string WindEmbraceDescription = "AeromancerWindEmbrace.Description";
         private static BlueprintFeature CreateWindEmbrace()
         {
-            var icon = FeatureRefs.WindsOfTheFallFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.FragmentationInfusion.Reference.Get().Icon;
+            var fx = AbilityRefs.Haste.Reference.Get().GetComponent<AbilitySpawnFx>();
 
             var ability = AbilityConfigurator.New(WindEmbraceAbility, WindEmbraceAbilityGuid)
                 .SetDisplayName(WindEmbraceDisplayName)
@@ -58,6 +61,7 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetIcon(icon)
                 .SetType(AbilityType.Supernatural)
                 .SetRange(AbilityRange.Personal)
+                .AddComponent(fx)
                 .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Self)
                 .AddAbilityTargetsAround(includeDead: false, radius: 30.Feet(), spreadSpeed: 10.Feet(), targetType: TargetType.Ally)
                 .AddAbilityEffectRunAction(actions: ActionsBuilder.New()
@@ -88,7 +92,8 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string RebukingGale1Description = "AeromancerRebukingGale1.Description";
         private static BlueprintFeature CreateRebukingGale1()
         {
-            var icon = FeatureRefs.WindsOfTheFallFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.CycloneInfusion.Reference.Get().Icon;
+            var fx = AbilityRefs.Haste.Reference.Get().GetComponent<AbilitySpawnFx>();
 
             var buff = BuffConfigurator.New(RebukingGale1Buff, RebukingGale1BuffGuid)
               .SetDisplayName(RebukingGale1DisplayName)
@@ -103,6 +108,7 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetIcon(icon)
                 .SetType(AbilityType.Supernatural)
                 .SetRange(AbilityRange.Personal)
+                .AddComponent(fx)
                 .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Self)
                 .AddAbilityTargetsAround(includeDead: false, radius: 20.Feet(), spreadSpeed: 10.Feet(), targetType: Kingmaker.UnitLogic.Abilities.Components.TargetType.Any)
                 .AddAbilityEffectRunAction(actions: ActionsBuilder.New()
@@ -132,7 +138,8 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string RebukingGale2Description = "AeromancerRebukingGale2.Description";
         private static BlueprintFeature CreateRebukingGale2()
         {
-            var icon = FeatureRefs.WindsOfTheFallFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.CloudInfusion.Reference.Get().Icon;
+            var fx = AbilityRefs.Haste.Reference.Get().GetComponent<AbilitySpawnFx>();
 
             var buff = BuffConfigurator.New(RebukingGale2Buff, RebukingGale2BuffGuid)
               .SetDisplayName(RebukingGale2DisplayName)
@@ -147,10 +154,11 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetIcon(icon)
                 .SetType(AbilityType.Supernatural)
                 .SetRange(AbilityRange.Projectile)
+                .AddComponent(fx)
                 .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Self)
                 .AllowTargeting(true, true, true, true)
                 .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Directional)
-                .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.NecromancyCone30Feet00.ToString() }, type: AbilityProjectileType.Cone, length: 30.Feet(), lineWidth: 5.Feet(), needAttackRoll: false)
+                .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.AirCone30Feet00.ToString() }, type: AbilityProjectileType.Cone, length: 40.Feet(), lineWidth: 5.Feet(), needAttackRoll: false)
                 .AddAbilityEffectRunAction(actions: ActionsBuilder.New()
                   .ApplyBuff(buff, ContextDuration.Fixed(1))
                   .ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true)
@@ -179,14 +187,14 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string AirMasteryDescription = "AeromancerAirMastery.Description";
         private static BlueprintFeature CreateAirMastery()
         {
-            var icon = FeatureRefs.WindsOfTheFallFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.ArcanistExploitLightningLanceFeature.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(AirMasteryBuff, AirMasteryBuffGuid)
               .SetDisplayName(AirMasteryDisplayName)
               .SetDescription(AirMasteryDescription)
               .SetIcon(icon)
               .AddComponent<WindPlusCL>()
-              //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .Configure();
 
             var buff2 = BuffConfigurator.New(AirMasteryBuff2, AirMasteryBuff2Guid)
@@ -194,7 +202,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDescription(AirMasteryDescription)
               .SetIcon(icon)
               .AddComponent<WindPlusDC>()
-              //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .Configure();
 
             return FeatureConfigurator.New(AirMastery, AirMasteryGuid)
