@@ -12,6 +12,7 @@ using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.FactLogic;
 using PrestigePlus.Blueprint.GrappleFeat;
+using PrestigePlus.CustomComponent.Archetype;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -151,6 +152,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(DeflectArrowsMythicDisplayName)
               .SetDescription(DeflectArrowsMythicDescription)
               .SetIcon(icon)
+              .AddComponent<TryDeflectRay>()
               .AddPrerequisiteFeature(FeatureRefs.DeflectArrows.ToString())
               .AddToFeatureSelection("0d3a3619-9d99-47af-8e47-cb6cc4d26821") //ttt
               .Configure();
