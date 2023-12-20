@@ -20,6 +20,7 @@ using Kingmaker.Enums;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using PrestigePlus.CustomAction.ClassRelated;
+using PrestigePlus.CustomComponent.Archetype;
 using PrestigePlus.CustomComponent.PrestigeClass;
 using System;
 using System.Collections.Generic;
@@ -170,7 +171,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
              .SetDisplayName(DeflectArrowsDisplayName)
              .SetDescription(DeflectArrowsDescription)
              .SetIcon(icon)
-             .AddDeflectArrows(restriction: Kingmaker.UnitLogic.FactLogic.DeflectArrows.RestrictionType.EmptyHand)
+             .AddComponent<CombatJuggling>()
              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
              .Configure();
 

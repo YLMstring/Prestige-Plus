@@ -115,6 +115,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(CombatJugglingDisplayName)
               .SetDescription(CombatJugglingDescription)
               .SetIcon(icon)
+              .AddComponent<CombatJuggling>()
               .AddFacts(new() { FeatureRefs.Evasion.ToString() })
               .Configure();
         }
