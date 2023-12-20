@@ -254,6 +254,7 @@
 - [Litany of Righteousness](https://www.d20pfsrd.com/magic/all-spells/l/litany-of-righteousness/)
 - You have a good aura if and only if, you are a cleric/warpriest worshipping a good deity, a paladin or a good subtype outsider.
 - It has nothing to do with your own alignment, or any other auras you might have.
+- [Shield Other](https://www.d20pfsrd.com/magic/all-spells/s/shield-other/)
 ### New Mythic Prestige Class Features
 
 - Swift Death: Your Death Attack becomes a standard action. At 10th assassin level, it becomes a move action.
