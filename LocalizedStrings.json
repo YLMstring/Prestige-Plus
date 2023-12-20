@@ -6832,8 +6832,8 @@
   },
   {
     "Key": "AeromancerAirMastery.Description",
-    "enGB": "Aeromancers specialize in magic that manipulates the wind and sky. Whenever an aeromancer expends a point from her arcane reservoir to increase the caster level of a spell with the air, cold, electricity, or sonic descriptor, she increases that bonus by an additional 1. At 5th level, and every 5 levels thereafter, the amount by which she increases the caster level of such spells further increases by an additional 1 (to a maximum additional caster level increase from this ability of 5 at 20th level). Alternatively, if the aeromancer expends a point from her arcane reservoir to increase the saving throw DC of a spell with the air, cold, electricity, or sonic descriptor, she increases it by an additional 1. At 10th level, she increases it by an additional 2 instead.",
-    "zhCN": "御天使专精操纵流风与天穹的魔法。当御天使在奥能源泉中消耗1点来增加具有气、寒冷、电或音波描述符法术的施法者等级时，该加值额外增加1。5级及之后的每5级，这些法术增加的施法者等级再增加1（最高在20级时从该能力中获得的额外施法者等级达到+5）。此外，当御天使在奥能源泉中消耗1点来增加具有气、寒冷、电或音波描述符法术的豁免DC时，该DC再额外增加1。而10级时，改为额外增加2。"
+    "enGB": "Aeromancers specialize in magic that manipulates the wind and sky. Whenever an aeromancer expends a point from her arcane reservoir to increase the caster level of a spell with the cold, electricity, or sonic descriptor, she increases that bonus by an additional 1. At 5th level, and every 5 levels thereafter, the amount by which she increases the caster level of such spells further increases by an additional 1 (to a maximum additional caster level increase from this ability of 5 at 20th level). Alternatively, if the aeromancer expends a point from her arcane reservoir to increase the saving throw DC of a spell with the cold, electricity, or sonic descriptor, she increases it by an additional 1. At 10th level, she increases it by an additional 2 instead.",
+    "zhCN": "御天使专精操纵流风与天穹的魔法。当御天使在奥能源泉中消耗1点来增加具有寒冷、电或音波描述符法术的施法者等级时，该加值额外增加1。5级及之后的每5级，这些法术增加的施法者等级再增加1（最高在20级时从该能力中获得的额外施法者等级达到+5）。此外，当御天使在奥能源泉中消耗1点来增加具有寒冷、电或音波描述符法术的豁免DC时，该DC再额外增加1。而10级时，改为额外增加2。"
   },
   {
     "Key": "AeromancerWindEmbrace.Name",

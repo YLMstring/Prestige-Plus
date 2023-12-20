@@ -185,16 +185,16 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(AirMasteryDisplayName)
               .SetDescription(AirMasteryDescription)
               .SetIcon(icon)
-              
-              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddComponent<WindPlusCL>()
+              //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .Configure();
 
             var buff2 = BuffConfigurator.New(AirMasteryBuff2, AirMasteryBuff2Guid)
               .SetDisplayName(AirMasteryDisplayName)
               .SetDescription(AirMasteryDescription)
               .SetIcon(icon)
-
-              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddComponent<WindPlusDC>()
+              //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .Configure();
 
             return FeatureConfigurator.New(AirMastery, AirMasteryGuid)
