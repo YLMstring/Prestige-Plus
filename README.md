@@ -31,7 +31,7 @@
 - [Naderi (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Naderi): requires worshipping Naderi (Expanded Content) or Neutral
 - [Dsena](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Desna): requires worshipping Desna or Chaotic Good
 - [Erastil](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Erastil): requires worshipping Erastil or Lawful Good
-- [Gorum (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Gorum): requires worshipping Gorum or Chaotic Neutral
+- [Gorum (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Gorum): requires heavy armor proficiency, worshipping Gorum or Chaotic Neutral
 - More coming soon!
 ### [Sentinel](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/sentinel/)
 - [Guided Hand](https://www.d20pfsrd.com/feats/general-feats/guided-hand/)
@@ -255,6 +255,7 @@
 - You have a good aura if and only if, you are a cleric/warpriest worshipping a good deity, a paladin or a good subtype outsider.
 - It has nothing to do with your own alignment, or any other auras you might have.
 - [Shield Other](https://www.d20pfsrd.com/magic/all-spells/s/shield-other/)
+- Use a move action to end the spell instead of moving out of range, so that you won't lose it during cutscene, tavern etc.
 ### New Mythic Prestige Class Features
 
 - Swift Death: Your Death Attack becomes a standard action. At 10th assassin level, it becomes a move action.
