@@ -25,7 +25,7 @@ namespace PrestigePlus.CustomComponent.Archetype
     {
         void IRulebookHandler<RuleAttackRoll>.OnEventAboutToTrigger(RuleAttackRoll evt)
         {
-            if (evt.AttackType == AttackType.RangedTouch && !evt.IsFake && Buff != null)
+            if (evt.AttackType == AttackType.RangedTouch && !evt.IsFake && Buff != null && evt.Initiator.IsPlayersEnemy)
             {
                 if (Game.Instance.TimeController.GameTime - Owner.CombatState.m_LastDeflectArrowTime < 1.Rounds().Seconds || Rulebook.Trigger(new RuleCheckTargetFlatFooted(evt.Initiator, Owner)).IsFlatFooted)
                 {

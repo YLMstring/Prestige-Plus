@@ -40,9 +40,9 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToAddFeatures(1, FeatureRefs.DeflectArrows.ToString(), CreateProficiencies())
             .AddToAddFeatures(2, CreateCombatJuggling())
             .AddToAddFeatures(5, CreateSnatchArrows())
-            .AddToAddFeatures(6, CreateFastReactions())
+            .AddToAddFeatures(11, CreateFastReactions())
             .AddToAddFeatures(12, FeatureRefs.ImprovedEvasion_0.ToString())
-            .AddToAddFeatures(7, FastReactionsGuid)
+            .AddToAddFeatures(17, FastReactionsGuid)
               .Configure();
 
             ProgressionConfigurator.For(ProgressionRefs.BardProgression)
