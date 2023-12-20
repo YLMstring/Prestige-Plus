@@ -16,46 +16,50 @@ using Kingmaker.Designers;
 using Kingmaker.UnitLogic.Buffs;
 using Kingmaker;
 using static Pathfinding.Util.RetainedGizmos;
+using PrestigePlus.CustomComponent.Archetype;
 
 namespace PrestigePlus.CustomComponent.Feat
 {
-    internal class DirtyTrickPlus : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleCombatManeuver>, IRulebookHandler<RuleCombatManeuver>, ISubscriber, IInitiatorRulebookSubscriber
+    internal class DirtyTrickPlus : UnitFactComponentDelegate<DirtyTrickPlus.ComponentData>, IInitiatorRulebookHandler<RuleCombatManeuver>, IRulebookHandler<RuleCombatManeuver>, ISubscriber, IInitiatorRulebookSubscriber
     {
         void IRulebookHandler<RuleCombatManeuver>.OnEventAboutToTrigger(RuleCombatManeuver evt)
         {
             if (evt.Type == CombatManeuver.DirtyTrickEntangle && evt.Target.HasFact(BlueprintRoot.Instance.SystemMechanics.DirtyTrickEntangledBuff))
             {
-                oldbuff = BlueprintRoot.Instance.SystemMechanics.DirtyTrickEntangledBuff;
-                newbuff = BuffRefs.Staggered.Reference.Get();
+                Data.oldbuff = BlueprintRoot.Instance.SystemMechanics.DirtyTrickEntangledBuff;
+                Data.newbuff = BuffRefs.Staggered.Reference.Get();
             }
             else if (evt.Type == CombatManeuver.DirtyTrickSickened && evt.Target.HasFact(BlueprintRoot.Instance.SystemMechanics.DirtyTrickSickenedBuff))
             {
-                oldbuff = BlueprintRoot.Instance.SystemMechanics.DirtyTrickSickenedBuff;
-                newbuff = BuffRefs.Nauseated.Reference.Get();
+                Data.oldbuff = BlueprintRoot.Instance.SystemMechanics.DirtyTrickSickenedBuff;
+                Data.newbuff = BuffRefs.Nauseated.Reference.Get();
             }
         }
 
         void IRulebookHandler<RuleCombatManeuver>.OnEventDidTrigger(RuleCombatManeuver evt)
         {
-            if (!evt.Success || oldbuff == null) return;
+            if (!evt.Success || Data.oldbuff == null) return;
             var target = evt.Target;
             var caster = evt.Initiator;
-            if (target.HasFact(oldbuff) && !target.HasFact(newbuff))
+            if (target.HasFact(Data.oldbuff) && !target.HasFact(Data.newbuff))
             {
-                var buff = target.GetFact(oldbuff) as Buff;
+                var buff = target.GetFact(Data.oldbuff) as Buff;
                 if (buff == null) { return; }
                 var time = buff.EndTime - Game.Instance.TimeController.GameTime;
-                target.AddBuff(newbuff, caster, time);
-                if (target.HasFact(newbuff))
+                target.AddBuff(Data.newbuff, caster, time);
+                if (target.HasFact(Data.newbuff))
                 {
-                    GameHelper.RemoveBuff(target, oldbuff);
+                    GameHelper.RemoveBuff(target, Data.oldbuff);
                 }
             }
-            oldbuff = null;
-            newbuff = null;
+            Data.oldbuff = null;
+            Data.newbuff = null;
         }
 
-        private BlueprintBuff oldbuff = null;
-        private BlueprintBuff newbuff = null;
+        public class ComponentData
+        {
+            public BlueprintBuff oldbuff = null;
+            public BlueprintBuff newbuff = null;
+        }
     }
 }
