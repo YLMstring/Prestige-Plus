@@ -10,6 +10,7 @@ using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Parts;
+using PrestigePlus.CustomComponent.Archetype;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ using System.Threading.Tasks;
 
 namespace PrestigePlus.Modify
 {
-    internal class ForceSneakDamage : UnitFactComponentDelegate,
+    internal class ForceSneakDamage : UnitFactComponentDelegate<ForceSneakDamage.ComponentData>,
         IInitiatorRulebookHandler<RuleAttackRoll>,
         IRulebookHandler<RuleAttackRoll>,
         ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleAttackWithWeapon>, IRulebookHandler<RuleAttackWithWeapon>, IInitiatorRulebookHandler<RulePrepareDamage>,
@@ -31,7 +32,7 @@ namespace PrestigePlus.Modify
 
         void IRulebookHandler<RuleAttackRoll>.OnEventDidTrigger(RuleAttackRoll evt)
         {
-            if (opp)
+            if (Data.opp)
             {
                 evt.IsSneakAttack = true;
             }
@@ -41,13 +42,13 @@ namespace PrestigePlus.Modify
         {
             if (evt.IsAttackOfOpportunity)
             {
-                opp = true;
+                Data.opp = true;
             }
         }
 
         void IRulebookHandler<RuleAttackWithWeapon>.OnEventDidTrigger(RuleAttackWithWeapon evt)
         {
-            opp = false;
+            Data.opp = false;
         }
 
         void IRulebookHandler<RulePrepareDamage>.OnEventAboutToTrigger(RulePrepareDamage evt)
@@ -57,7 +58,7 @@ namespace PrestigePlus.Modify
 
         void IRulebookHandler<RulePrepareDamage>.OnEventDidTrigger(RulePrepareDamage evt)
         {
-            if (!opp) return;
+            if (!Data.opp) return;
             if (evt.ParentRule == null) return;
             if (evt.ParentRule.DamageBundle == null) return;
             foreach (var damage in evt.ParentRule.DamageBundle)
@@ -66,6 +67,9 @@ namespace PrestigePlus.Modify
             }
         }
 
-        private bool opp = false;
+        public class ComponentData
+        {
+            public bool opp = false;
+        } 
     }
 }

@@ -19,7 +19,7 @@ namespace PrestigePlus.CustomComponent.OtherManeuver
 {
     internal class TearApartSunder : UnitBuffComponentDelegate<ACBonusAgainstAttacks.RuntimeData>, ITargetRulebookHandler<RuleAttackRoll>, IRulebookHandler<RuleAttackRoll>, ISubscriber, ITargetRulebookSubscriber, ITargetRulebookHandler<RuleCalculateAC>, IRulebookHandler<RuleCalculateAC>
     {
-        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
+        //private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         void IRulebookHandler<RuleCalculateAC>.OnEventAboutToTrigger(RuleCalculateAC evt)
         {
             if (Data.Initiator != null && evt.Initiator == Data.Initiator)
