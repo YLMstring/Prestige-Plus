@@ -4,6 +4,7 @@ using Kingmaker.Enums;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic;
+using PrestigePlus.CustomComponent.Archetype;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,15 +14,15 @@ using System.Threading.Tasks;
 namespace PrestigePlus.CustomComponent.Feat
 {
     [TypeId("{7A6AB932-67E6-49B5-B0D5-4C1E58C1082B}")]
-    internal class GuidedHandDamage : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleCalculateWeaponStats>, IRulebookHandler<RuleCalculateWeaponStats>, ISubscriber, IInitiatorRulebookSubscriber
+    internal class GuidedHandDamage : UnitFactComponentDelegate<GuidedHandDamage.ComponentData>, IInitiatorRulebookHandler<RuleCalculateWeaponStats>, IRulebookHandler<RuleCalculateWeaponStats>, ISubscriber, IInitiatorRulebookSubscriber
     {
         void IRulebookHandler<RuleCalculateWeaponStats>.OnEventAboutToTrigger(RuleCalculateWeaponStats evt)
         {
-            if (cat.Count() == 0)
+            if (Data.cat.Count() == 0)
             {
-                cat = PrerequisiteDivineWeapon.GetFavoredWeapon(Owner);
+                Data.cat = PrerequisiteDivineWeapon.GetFavoredWeapon(Owner);
             }
-            if (cat.Contains(evt.Weapon.Blueprint.Category))
+            if (Data.cat.Contains(evt.Weapon.Blueprint.Category))
             {
                 evt.OverrideDamageBonusStat(StatType.Wisdom);
                 evt.TwoHandedStatReplacement = true;
@@ -39,14 +40,17 @@ namespace PrestigePlus.CustomComponent.Feat
 
         public override void OnActivate()
         {
-            cat = PrerequisiteDivineWeapon.GetFavoredWeapon(Owner);
+            Data.cat = PrerequisiteDivineWeapon.GetFavoredWeapon(Owner);
         }
 
         public override void OnDeactivate()
         {
-            cat = new() { };
+            Data.cat = new() { };
         }
 
-        private List<WeaponCategory> cat = new() { };
+        public class ComponentData
+        {
+            public List<WeaponCategory> cat = new() { };
+        }       
     }
 }
