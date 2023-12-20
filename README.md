@@ -1,4 +1,4 @@
-# Prestige Plus v2.1.2 for WoTR 
+# Prestige Plus v2.1.3 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -122,6 +122,10 @@
 - [Mad Scientist](https://www.d20pfsrd.com/classes/base-classes/alchemist/archetypes/paizo-alchemist-archetypes/mad-scientist-alchemist-archetype/)
 - For Lv2 discovery, Left spell slot blank to create genius extracts. For Lv4 discovery, start brewing and wait for an hour.
 - This is absolutely my favorite.
+#### Arcanist:  
+- [Aeromancer](https://www.d20pfsrd.com/classes/hybrid-classes/arcanist/archetypes/paizo-arcanist-archetypes/aeromancer-arcanist-archetype/)
+#### Bard:  
+- [Juggler](https://www.d20pfsrd.com/classes/core-classes/bard/archetypes/paizo-bard-archetypes/juggler-bard-archetype/)
 #### Bloodrager:  
 - [Blood Conduit](https://www.d20pfsrd.com/classes/hybrid-classes/bloodrager/archetypes/paizo-bloodrager-archetypes/blood-conduit/)
 #### Fighter:  
@@ -145,8 +149,12 @@
 - Requires [Expanded Content](https://github.com/ka-dyn/ExpandedContent), or you won't gain the bonus feats!
 - [Witchguard](https://www.d20pfsrd.com/classes/core-classes/ranger/archetypes/paizo-ranger-archetypes/witchguard/)
 - [Infiltrator](https://www.d20pfsrd.com/classes/core-classes/ranger/archetypes/paizo-ranger-archetypes/infiltrator/)
+#### Rogue:  
+- [Kidnapper](https://www.d20pfsrd.com/classes/core-classes/rogue/archetypes/paizo-rogue-archetypes/jungle-kidnapper-rogue-archetype/)
 #### Sorcerer:  
 - [Truth Seeker](https://www.d20pfsrd.com/classes/core-classes/sorcerer/archetypes/paizo-sorcerer-archetypes/seeker/)
+#### Warpriest:  
+- [Divine Champion](https://www.d20pfsrd.com/classes/hybrid-classes/warpriest/archetypes/paizo-warpriest-archetypes/divine-champion-warpriest-archetype/)
 #### Witch:  
 - [White-Haired Witch](https://www.d20pfsrd.com/classes/base-classes/witch/archetypes/paizo-witch-archetypes/white-haired-witch/)
 - This is absolutely my favorite.
@@ -200,6 +208,8 @@
 - [Improved Parry](https://www.d20pfsrd.com/feats/combat-feats/improved-parry-combat/)
 - [Shield Slam](https://www.d20pfsrd.com/feats/combat-feats/shield-slam-combat/)
 - [Shield Snag](https://www.d20pfsrd.com/feats/combat-feats/shield-snag-combat/)
+- [Snatch Arrows](https://www.d20pfsrd.com/feats/combat-feats/snatch-arrows-combat) (thrown back only)
+- [Deflect Arrows (Mythic)](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-feats/deflect-arrows-mythic/): You deflect projectiles and ray spells with uncanny skill. When using Deflect Arrows, you can deflect an additional number of ranged attacks per round equal to half your tier. You can also deflect a single ray from a ray spell or effect targeting you.
 ### Trip Feats
 - [Vindictive Fall](https://www.d20pfsrd.com/feats/general-feats/vindictive-fall/)
 - [Ranged Trip](https://www.d20pfsrd.com/feats/combat-feats/ranged-trip-combat-targeting)
@@ -238,7 +248,7 @@
 - [Cloying Shades](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-talents/cloying-shades-su)
 - [Quick Shot](https://www.d20pfsrd.com/classes/unchained-classes/rogue-unchained/rogue-talents-advanced/paizo-rogue-talents-advanced/quick-shot)
 - [Sneaky Maneuver](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-talents/sneaky-maneuver-ex/)
-- [Ninja Trick](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-talents/ninja-trick-ex/): Deflect Arrows, Unarmed Combat Training, Style Master, Blood Debt, Kami Warden
+- [Ninja Trick](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-talents/ninja-trick-ex/): Deflect Arrows, Snatch Arrows, Unarmed Combat Training, Style Master, Blood Debt, Kami Warden
 ### New Spells
 
 - [Litany of Righteousness](https://www.d20pfsrd.com/magic/all-spells/l/litany-of-righteousness/)
