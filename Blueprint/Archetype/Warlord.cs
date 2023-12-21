@@ -145,7 +145,6 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetIcon(icon)
               .AddPrerequisiteArchetypeLevel(ArchetypeGuid, CharacterClassRefs.FighterClass.ToString())
               .SetHideNotAvailibleInUI(true)
-              //.AddACBonusAgainstFactOwner(bonus: 1, descriptor: ModifierDescriptor.Dodge, noFact: true)
               .AddContextStatBonus(StatType.AC, value: ContextValues.Rank(), descriptor: ModifierDescriptor.Dodge)
               .AddContextRankConfig(ContextRankConfigs.FeatureRank(EvasiveDuelingGuid))
               .SetRanks(20)

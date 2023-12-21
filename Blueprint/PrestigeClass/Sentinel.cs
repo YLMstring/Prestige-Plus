@@ -144,6 +144,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetObligatory(true)
               .AddToAllFeatures(SymbolicWeaponFeat())
               .AddToAllFeatures(EvilWeaponFeat())
+              .SetHideInCharacterSheetAndLevelUp()
               .Configure();
         }
 
@@ -418,7 +419,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         }
 
         private const string DivineBoon2 = "Sentinel.DivineBoon2";
-        private static readonly string DivineBoon2Guid = "{575DC4FC-3703-428A-92AE-204812921BD1}";
+        public static readonly string DivineBoon2Guid = "{575DC4FC-3703-428A-92AE-204812921BD1}";
 
         internal const string SentinelDivineBoon2DisplayName = "SentinelDivineBoon2.Name";
         private const string SentinelDivineBoon2Description = "SentinelDivineBoon2.Description";
@@ -435,7 +436,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         }
 
         private const string DivineBoon3 = "Sentinel.DivineBoon3";
-        private static readonly string DivineBoon3Guid = "{C4E8E721-3EEB-4984-9E66-EDCDD70D403C}";
+        public static readonly string DivineBoon3Guid = "{C4E8E721-3EEB-4984-9E66-EDCDD70D403C}";
 
         internal const string SentinelDivineBoon3DisplayName = "SentinelDivineBoon3.Name";
         private const string SentinelDivineBoon3Description = "SentinelDivineBoon3.Description";
