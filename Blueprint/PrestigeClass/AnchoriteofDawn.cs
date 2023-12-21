@@ -738,7 +738,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(AnchoriteDomainPlusDisplayName)
               .SetDescription(AnchoriteDomainPlusDescription)
               .SetIsClassFeature(true)
-              .SetRanks(10)
+              .SetRanks(20)
               .SetHideInUI(true)
               .AddComponent<DomainProgressionContinue>()
               .Configure();

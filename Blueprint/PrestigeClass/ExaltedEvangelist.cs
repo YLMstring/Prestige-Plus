@@ -34,6 +34,7 @@ using Kingmaker.UnitLogic.Mechanics.Properties;
 using Kingmaker.Utility;
 using PrestigePlus.CustomComponent.Archetype;
 using PrestigePlus.Blueprint.Archetype;
+using PrestigePlus.Patch;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -375,8 +376,35 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddToLevelEntry(1, "{05DC9561-0542-41BD-9E9F-404F59AB68C5}")
               .AddToLevelEntry(2, ChooseGoodEvilFeat())
               .AddToLevelEntry(4, ReligiousSpeakerFeat())
-              .AddToLevelEntry(5)
+              .AddToLevelEntry(5, ExaltedDomainPlusFeat())
               .AddToLevelEntry(10)
+              .Configure();
+        }
+
+        private const string ExaltedDomainPlus = "Exalted.ExaltedDomainPlus";
+        private static readonly string ExaltedDomainPlusGuid = "{85761AE1-3085-4CD9-A367-26F2D443A544}";
+
+        internal const string ExaltedDomainPlusDisplayName = "ExaltedExaltedDomainPlus.Name";
+        private const string ExaltedDomainPlusDescription = "ExaltedExaltedDomainPlus.Description";
+
+        public static BlueprintProgression ExaltedDomainPlusFeat()
+        {
+            return ProgressionConfigurator.New(ExaltedDomainPlus, ExaltedDomainPlusGuid)
+              .SetDisplayName(ExaltedDomainPlusDisplayName)
+              .SetDescription(ExaltedDomainPlusDescription)
+              .SetIsClassFeature(true)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToClasses(ArchetypeGuid)
+              .AddToLevelEntry(1, FeatureSelectionRefs.SecondDomainsSelection.ToString(), AnchoriteofDawn.AnchoriteDomainPlusfeatGuid)
+              .AddToLevelEntry(2, AnchoriteofDawn.AnchoriteDomainPlusfeatGuid)
+                .AddToLevelEntry(3, AnchoriteofDawn.AnchoriteDomainPlusfeatGuid)
+                .AddToLevelEntry(4, AnchoriteofDawn.AnchoriteDomainPlusfeatGuid)
+                .AddToLevelEntry(5, AnchoriteofDawn.AnchoriteDomainPlusfeatGuid)
+                .AddToLevelEntry(6, AnchoriteofDawn.AnchoriteDomainPlusfeatGuid)
+                .AddToLevelEntry(7, AnchoriteofDawn.AnchoriteDomainPlusfeatGuid)
+                .AddToLevelEntry(8, AnchoriteofDawn.AnchoriteDomainPlusfeatGuid)
+                .AddToLevelEntry(9, AnchoriteofDawn.AnchoriteDomainPlusfeatGuid)
+                .AddToLevelEntry(10, AnchoriteofDawn.AnchoriteDomainPlusfeatGuid)
               .Configure();
         }
     }
