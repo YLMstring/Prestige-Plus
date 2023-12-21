@@ -66,7 +66,7 @@ namespace PrestigePlus.Blueprint.Archetype
             var icon = FeatureRefs.GrandCognatogenFeature.Reference.Get().Icon;
 
             var action = ActionsBuilder.New()
-                        .DealDamageToAbility(StatType.Wisdom, ContextDice.Value(Kingmaker.RuleSystem.DiceType.D4, 1, 0))
+                        .DealDamageToAbility(StatType.Wisdom, ContextDice.Value(Kingmaker.RuleSystem.DiceType.D4, 1, 0), setFactAsReason: true)
                         .RestoreResource(AbilityResourceRefs.MutagenResource.ToString(), 1)
                         .Build();
 

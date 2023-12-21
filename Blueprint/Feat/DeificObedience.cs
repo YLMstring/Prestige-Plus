@@ -43,6 +43,7 @@ using Kingmaker.UnitLogic.Mechanics.Properties;
 using Kingmaker.Blueprints.Items.Armors;
 using PrestigePlus.CustomAction.OtherFeatRelated;
 using PrestigePlus.Blueprint.Archetype;
+using Kingmaker.AreaLogic;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -90,6 +91,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(DesnaFeat())
               .AddToAllFeatures(ErastilFeat())
               .AddToAllFeatures(GorumFeat())
+              .AddToAllFeatures(MahathallahFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -1072,6 +1074,139 @@ namespace PrestigePlus.Blueprint.Feat
               .AddBuffExtraEffects(checkedBuff: BuffRefs.StandartFocusedRageBuff.ToString(), extraEffectBuff: Buff)
               .AddBuffExtraEffects(checkedBuff: BuffRefs.BloodragerStandartRageBuff.ToString(), extraEffectBuff: Buff)
               .AddBuffExtraEffects(checkedBuff: BuffRefs.DemonRageBuff.ToString(), extraEffectBuff: Buff)
+              .Configure();
+        }
+
+        private const string Mahathallah = "DeificObedience.Mahathallah";
+        public static readonly string MahathallahGuid = "{9E8B62F4-284D-4A96-BDFF-9FD133E4ED5E}";
+
+        internal const string MahathallahDisplayName = "DeificObedienceMahathallah.Name";
+        private const string MahathallahDescription = "DeificObedienceMahathallah.Description";
+        public static BlueprintFeature MahathallahFeat()
+        {
+            var icon = FeatureRefs.AsmodeusFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Mahathallah, MahathallahGuid)
+              .SetDisplayName(MahathallahDisplayName)
+              .SetDescription(MahathallahDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.AsmodeusFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.LawfulEvil, group: Prerequisite.GroupType.Any)
+              .AddToIsPrerequisiteFor(MahathallahExaltedFeat())
+              .AddIncreaseSpellSchoolDC(2, ModifierDescriptor.UntypedStackable, SpellSchool.Illusion)
+              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Profane, spellDescriptor: SpellDescriptor.MindAffecting, value: 2)
+              .Configure();
+        }
+
+        private const string MahathallahExalted = "DeificObedience.MahathallahExalted";
+        public static readonly string MahathallahExaltedGuid = "{DA3AAF2F-2E98-451D-A8E5-3005F5A80FE5}";
+
+        internal const string MahathallahExaltedDisplayName = "DeificObedienceMahathallahExalted.Name";
+        private const string MahathallahExaltedDescription = "DeificObedienceMahathallahExalted.Description";
+        public static BlueprintProgression MahathallahExaltedFeat()
+        {
+            var icon = FeatureRefs.AsmodeusFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(MahathallahExalted, MahathallahExaltedGuid)
+              .SetDisplayName(MahathallahExaltedDisplayName)
+              .SetDescription(MahathallahExaltedDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(MahathallahGuid)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(2, CreateMahathallahExalted1())
+              .AddToLevelEntry(6, MahathallahExalted2Feat())
+              .AddToLevelEntry(10, MahathallahExalted3Feat())
+              .Configure();
+        }
+
+        private const string MahathallahExalted1 = "SpellPower.MahathallahExalted1";
+        public static readonly string MahathallahExalted1Guid = "{93E1E1D5-21DB-4262-962C-920924C18FB0}";
+        internal const string MahathallahExalted1DisplayName = "SpellPowerMahathallahExalted1.Name";
+        private const string MahathallahExalted1Description = "SpellPowerMahathallahExalted1.Description";
+
+        private const string MahathallahExalted1Ablity2 = "SpellPower.UseMahathallahExalted12";
+        private static readonly string MahathallahExalted1Ablity2Guid = "{6E2C0DD3-C6D8-42C7-A59A-53E33BCE9DB9}";
+
+        private static BlueprintFeature CreateMahathallahExalted1()
+        {
+            var icon = AbilityRefs.Invisibility.Reference.Get().Icon;
+
+            var ability2 = AbilityConfigurator.New(MahathallahExalted1Ablity2, MahathallahExalted1Ablity2Guid)
+                .CopyFrom(
+                AbilityRefs.Invisibility,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx))
+                .AddPretendSpellLevel(spellLevel: 2)
+                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(MahathallahExalted1, MahathallahExalted1Guid)
+              .SetDisplayName(MahathallahExalted1DisplayName)
+              .SetDescription(MahathallahExalted1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability2 })
+              .Configure();
+        }
+
+        private const string MahathallahExalted2 = "DeificObedience.MahathallahExalted2";
+        public static readonly string MahathallahExalted2Guid = "{69C25B88-4909-4B0D-9285-B15C0F4B2827}";
+
+        internal const string MahathallahExalted2DisplayName = "DeificObedienceMahathallahExalted2.Name";
+        private const string MahathallahExalted2Description = "DeificObedienceMahathallahExalted2.Description";
+
+        private const string Mahathallah2Buff = "DeificObedience.Mahathallah2Buff";
+        private static readonly string Mahathallah2BuffGuid = "{3036A36B-4B62-469D-8F3B-50B33AFEAB75}";
+
+        private const string Mahathallah2Ability = "DeificObedience.Mahathallah2Ability";
+        private static readonly string Mahathallah2AbilityGuid = "{D0E831B7-FCD7-419C-9BD3-4A97AAA1C6CE}";
+        public static BlueprintFeature MahathallahExalted2Feat()
+        {
+            var icon = AbilityRefs.MindFog.Reference.Get().Icon;
+
+            var Buff1 = BuffConfigurator.New(Mahathallah2Buff, Mahathallah2BuffGuid)
+              .SetDisplayName(MahathallahExalted2DisplayName)
+              .SetDescription(MahathallahExalted2Description)
+              .SetIcon(icon)
+              .AddCombatStateTrigger(ActionsBuilder.New()
+                    .DealDamageToAbility(StatType.Strength, ContextDice.Value(DiceType.D4, 1, 0), setFactAsReason: true)
+                    .HealTarget(ContextDice.Value(DiceType.D6, 3, 0))
+                    .Build())
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+              .Configure();
+
+            var ability = ActivatableAbilityConfigurator.New(Mahathallah2Ability, Mahathallah2AbilityGuid)
+                .SetDisplayName(MahathallahExalted2DisplayName)
+                .SetDescription(MahathallahExalted2Description)
+                .SetIcon(icon)
+                .SetBuff(Buff1)
+                .SetIsOnByDefault(true)
+                .SetDeactivateImmediately(true)
+                .Configure();
+
+            return FeatureConfigurator.New(MahathallahExalted2, MahathallahExalted2Guid)
+              .SetDisplayName(MahathallahExalted2DisplayName)
+              .SetDescription(MahathallahExalted2Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string MahathallahExalted3 = "DeificObedience.MahathallahExalted3";
+        public static readonly string MahathallahExalted3Guid = "{6BE27E0D-8EC7-4DAA-939C-B1BA4D02EA50}";
+
+        internal const string MahathallahExalted3DisplayName = "DeificObedienceMahathallahExalted3.Name";
+        private const string MahathallahExalted3Description = "DeificObedienceMahathallahExalted3.Description";
+        public static BlueprintFeature MahathallahExalted3Feat()
+        {
+            var icon = AbilityRefs.BreathOfLifeTouch.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(MahathallahExalted3, MahathallahExalted3Guid)
+              .SetDisplayName(MahathallahExalted3DisplayName)
+              .SetDescription(MahathallahExalted3Description)
+              .SetIcon(icon)
+              .AddSavingThrowBonusAgainstDescriptor(spellDescriptor: SpellDescriptor.Poison, value: 4)
               .Configure();
         }
     }

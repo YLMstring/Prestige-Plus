@@ -128,7 +128,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
-              //.AddToAllFeatures(DeificObedience.ShelynExaltedEvangelistGuid)
+              .AddToAllFeatures(DeificObedience.MahathallahExaltedGuid)
               .Configure();
         }
 
