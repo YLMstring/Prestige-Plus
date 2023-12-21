@@ -33,6 +33,7 @@ using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Mechanics.Properties;
 using Kingmaker.Utility;
 using PrestigePlus.CustomComponent.Archetype;
+using PrestigePlus.Blueprint.Archetype;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -55,7 +56,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             BlueprintProgression progression =
             ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
             .SetClasses(ArchetypeGuid)
-            .AddToLevelEntry(1, BonusFeatFeat(), FeatureSelectionRefs.StudentOfWarAdditionalSKillSelection.ToString(), FeatureSelectionRefs.StudentOfWarAdditionalSKillSelection.ToString())
+            .AddToLevelEntry(1, BonusFeatFeat(), ChoosePathFeat(), FeatureSelectionRefs.StudentOfWarAdditionalSKillSelection.ToString(), FeatureSelectionRefs.StudentOfWarAdditionalSKillSelection.ToString())
             .AddToLevelEntry(2, ProtectiveGraceFeat())
             .AddToLevelEntry(3, Sentinel.DivineBoon1Guid)
             .AddToLevelEntry(4)
@@ -145,6 +146,44 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddContextStatBonus(StatType.AC, value: ContextValues.Rank(), descriptor: ModifierDescriptor.Dodge)
               .AddContextRankConfig(ContextRankConfigs.FeatureRank(ProtectiveGraceGuid))
               .SetRanks(2)
+              .Configure();
+        }
+
+        private const string ReligiousSpeaker = "ExaltedEvangelist.ReligiousSpeaker";
+        private static readonly string ReligiousSpeakerGuid = "{31829A69-CCA4-4615-A033-C62838785B73}";
+
+        internal const string ExaltedEvangelistReligiousSpeakerDisplayName = "ExaltedEvangelistReligiousSpeaker.Name";
+        private const string ExaltedEvangelistReligiousSpeakerDescription = "ExaltedEvangelistReligiousSpeaker.Description";
+        public static BlueprintFeature ReligiousSpeakerFeat()
+        {
+            var icon = FeatureRefs.Dodge.Reference.Get().Icon;
+            return FeatureConfigurator.New(ReligiousSpeaker, ReligiousSpeakerGuid)
+              .SetDisplayName(ExaltedEvangelistReligiousSpeakerDisplayName)
+              .SetDescription(ExaltedEvangelistReligiousSpeakerDescription)
+              .SetIcon(icon)
+              .AddContextStatBonus(StatType.CheckDiplomacy, value: 2, descriptor: ModifierDescriptor.Competence)
+              .AddContextStatBonus(StatType.CheckBluff, value: 2, descriptor: ModifierDescriptor.Competence)
+              .Configure();
+        }
+
+        private const string ChoosePath = "ExaltedEvangelist.ChoosePath";
+        private static readonly string ChoosePathGuid = "{FAF8B16D-4C5F-4159-8DF6-6B322E09BD5D}";
+
+        internal const string ChoosePathDisplayName = "ExaltedEvangelistChoosePath.Name";
+        private const string ChoosePathDescription = "ExaltedEvangelistChoosePath.Description";
+
+        public static BlueprintFeatureSelection ChoosePathFeat()
+        {
+            var icon = AbilityRefs.BreathOfLifeCast.Reference.Get().Icon;
+            return FeatureSelectionConfigurator.New(ChoosePath, ChoosePathGuid)
+              .SetDisplayName(ChoosePathDisplayName)
+              .SetDescription(ChoosePathDescription)
+              .SetIcon(icon)
+              .SetObligatory(true)
+              .AddToAllFeatures(SanctifiedRogueFeat())
+              .AddToAllFeatures(SanctifiedKineticistFeat())
+              .AddToAllFeatures(TrueExaltedFeat())
+              .SetHideInCharacterSheetAndLevelUp()
               .Configure();
         }
 
@@ -260,6 +299,84 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                     .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
                     .AddIncreaseResourceAmountBySharedValue(false, abilityresourse, ContextValues.Property(UnitProperty.Level))
                     .Configure();
+        }
+
+        private const string SanctifiedRogue = "ExaltedEvangelist.SanctifiedRogue";
+        private static readonly string SanctifiedRogueGuid = "{66B4B2A1-8C37-4301-9F16-59810027FF46}";
+
+        internal const string SanctifiedRogueDisplayName = "ExaltedEvangelistSanctifiedRogue.Name";
+        private const string SanctifiedRogueDescription = "ExaltedEvangelistSanctifiedRogue.Description";
+        public static BlueprintProgression SanctifiedRogueFeat()
+        {
+            var icon = FeatureSelectionRefs.CombatTrick.Reference.Get().Icon;
+            return ProgressionConfigurator.New(SanctifiedRogue, SanctifiedRogueGuid)
+              .SetDisplayName(SanctifiedRogueDisplayName)
+              .SetDescription(SanctifiedRogueDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .SetClasses(ArchetypeGuid)
+              .AddPrerequisiteFeature(FeatureRefs.SneakAttack.ToString())
+              .AddClassLevelsForPrerequisites(actualClass: ArchetypeGuid, fakeClass: CharacterClassRefs.SlayerClass.ToString(), modifier: 1, summand: 0)
+              .AddToLevelEntry(2, FeatureRefs.SneakAttack.ToString())
+              .AddToLevelEntry(3, FeatureSelectionRefs.RogueTalentSelection.ToString())
+              .AddToLevelEntry(4, FeatureRefs.SneakAttack.ToString(), Kidnapper.CleanCaptureGuid)
+              .AddToLevelEntry(5, FeatureSelectionRefs.RogueTalentSelection.ToString())
+              .AddToLevelEntry(6, FeatureRefs.SneakAttack.ToString())
+              .AddToLevelEntry(7, FeatureSelectionRefs.RogueTalentSelection.ToString(), FeatureRefs.AdvanceTalents.ToString())
+              .AddToLevelEntry(8, FeatureRefs.SneakAttack.ToString())
+              .AddToLevelEntry(9, FeatureSelectionRefs.RogueTalentSelection.ToString())
+              .AddToLevelEntry(10, FeatureRefs.SneakAttack.ToString(), HalflingOpportunist.OpportunityGuid)
+              .Configure();
+        }
+
+        private const string SanctifiedKineticist = "ExaltedEvangelist.SanctifiedKineticist";
+        private static readonly string SanctifiedKineticistGuid = "{E80441D4-90BA-4880-85DC-1A66246F14D8}";
+
+        internal const string SanctifiedKineticistDisplayName = "ExaltedEvangelistSanctifiedKineticist.Name";
+        private const string SanctifiedKineticistDescription = "ExaltedEvangelistSanctifiedKineticist.Description";
+        public static BlueprintProgression SanctifiedKineticistFeat()
+        {
+            var icon = FeatureSelectionRefs.CombatTrick.Reference.Get().Icon;
+            return ProgressionConfigurator.New(SanctifiedKineticist, SanctifiedKineticistGuid)
+              .SetDisplayName(SanctifiedKineticistDisplayName)
+              .SetDescription(SanctifiedKineticistDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .SetClasses(ArchetypeGuid)
+              .AddPrerequisiteFeature(FeatureRefs.KineticBlastFeature.ToString())
+              .AddClassLevelsForPrerequisites(actualClass: ArchetypeGuid, fakeClass: CharacterClassRefs.KineticistClass.ToString(), modifier: 1, summand: 0)
+              .AddToLevelEntry(2, FeatureSelectionRefs.InfusionSelection.ToString(), EsotericKnight.FeatGuidPro2)
+              .AddToLevelEntry(3, FeatureSelectionRefs.WildTalentSelection.ToString(), EsotericKnight.BattleMindGuid, EsotericKnight.FeatGuidPro2)
+              .AddToLevelEntry(4, FeatureSelectionRefs.InfusionSelection.ToString(), FeatureRefs.InfusionSpecialization.ToString(), EsotericKnight.FeatGuidPro2)
+              .AddToLevelEntry(5, FeatureSelectionRefs.WildTalentSelection.ToString(), EsotericKnight.FeatGuidPro2)
+              .AddToLevelEntry(6, FeatureSelectionRefs.InfusionSelection.ToString(), EsotericKnight.BattleMindGuid, EsotericKnight.FeatGuidPro2)
+              .AddToLevelEntry(7, FeatureSelectionRefs.WildTalentSelection.ToString(), FeatureRefs.InfusionSpecialization.ToString(), EsotericKnight.FeatGuidPro2)
+              .AddToLevelEntry(8, FeatureSelectionRefs.InfusionSelection.ToString(), EsotericKnight.FeatGuidPro2)
+              .AddToLevelEntry(9, FeatureSelectionRefs.WildTalentSelection.ToString(), EsotericKnight.BattleMindGuid, EsotericKnight.FeatGuidPro2)
+              .AddToLevelEntry(10, FeatureSelectionRefs.ThirdElementalFocusSelection.ToString(), FeatureRefs.InfusionSpecialization.ToString(), EsotericKnight.FeatGuidPro2)
+              .Configure();
+        }
+
+        private const string TrueExalted = "ExaltedEvangelist.TrueExalted";
+        private static readonly string TrueExaltedGuid = "{0DC8DB64-DA89-4092-A5A4-15923F6798A6}";
+
+        internal const string TrueExaltedDisplayName = "ExaltedEvangelistTrueExalted.Name";
+        private const string TrueExaltedDescription = "ExaltedEvangelistTrueExalted.Description";
+        public static BlueprintProgression TrueExaltedFeat()
+        {
+            var icon = FeatureSelectionRefs.CombatTrick.Reference.Get().Icon;
+            return ProgressionConfigurator.New(TrueExalted, TrueExaltedGuid)
+              .SetDisplayName(TrueExaltedDisplayName)
+              .SetDescription(TrueExaltedDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .SetClasses(ArchetypeGuid)
+              .AddToLevelEntry(1, "{05DC9561-0542-41BD-9E9F-404F59AB68C5}")
+              .AddToLevelEntry(2, ChooseGoodEvilFeat())
+              .AddToLevelEntry(4, ReligiousSpeakerFeat())
+              .AddToLevelEntry(5)
+              .AddToLevelEntry(10)
+              .Configure();
         }
     }
 }

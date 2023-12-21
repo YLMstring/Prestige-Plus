@@ -258,7 +258,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         }
 
         private const string Opportunity = "HalflingOpportunist.Opportunity";
-        private static readonly string OpportunityGuid = "{1D7C9736-1309-45F1-B5E0-B45E7F3755E0}";
+        public static readonly string OpportunityGuid = "{1D7C9736-1309-45F1-B5E0-B45E7F3755E0}";
 
         internal const string OpportunityDisplayName = "HalflingOpportunistOpportunity.Name";
         private const string OpportunityDescription = "HalflingOpportunistOpportunity.Description";

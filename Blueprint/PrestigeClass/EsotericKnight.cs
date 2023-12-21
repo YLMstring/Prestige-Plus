@@ -293,7 +293,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         }
 
         private const string BattleMind = "EsotericKnight.BattleMind";
-        private static readonly string BattleMindGuid = "{590B27BE-7F6A-4F03-9440-16AA4FDB7913}";
+        public static readonly string BattleMindGuid = "{590B27BE-7F6A-4F03-9440-16AA4FDB7913}";
 
         internal const string EsotericKnightBattleMindDisplayName = "EsotericKnightBattleMind.Name";
         private const string EsotericKnightBattleMindDescription = "EsotericKnightBattleMind.Description";

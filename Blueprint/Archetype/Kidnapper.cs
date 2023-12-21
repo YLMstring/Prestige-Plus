@@ -36,7 +36,7 @@ namespace PrestigePlus.Blueprint.Archetype
         }
 
         private const string CleanCapture = "Kidnapper.CleanCapture";
-        private static readonly string CleanCaptureGuid = "{72473103-E23F-4C87-839A-37490701F9AC}";
+        public static readonly string CleanCaptureGuid = "{72473103-E23F-4C87-839A-37490701F9AC}";
 
         internal const string CleanCaptureDisplayName = "KidnapperCleanCapture.Name";
         private const string CleanCaptureDescription = "KidnapperCleanCapture.Description";
