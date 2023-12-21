@@ -180,10 +180,11 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(ChoosePathDescription)
               .SetIcon(icon)
               .SetObligatory(true)
+              .AddFacts(new() { FeatureRefs.LightArmorProficiency.ToString(), FeatureRefs.SimpleWeaponProficiency.ToString() })
+              .AddComponent<AddDeityWeaponPro>()
               .AddToAllFeatures(SanctifiedRogueFeat())
               .AddToAllFeatures(SanctifiedKineticistFeat())
               .AddToAllFeatures(TrueExaltedFeat())
-              .SetHideInCharacterSheetAndLevelUp()
               .Configure();
         }
 
