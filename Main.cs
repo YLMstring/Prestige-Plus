@@ -278,6 +278,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("sentinel"), defaultValue: true, Helpers.CreateString("toggle-desc59", "Sentinel"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("exalted"), defaultValue: true, Helpers.CreateString("toggle-desc69", "Exalted Evangelist"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("magehand"), defaultValue: true, Helpers.CreateString("toggle-desc39", "Magic Trick Feats"))
               .ShowVisualConnection())
           .AddToggle(
@@ -369,6 +372,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("juggle"))) { Juggler.Configure(); Juggler.CreateDeflectArrowsMythic(); BodyGuard.KatateDoriFeat(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("divinechamp"))) { DivineChampion.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("skymagic"))) { Aeromancer.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("exalted"))) { ExaltedEvangelist.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
@@ -393,7 +397,7 @@ namespace PrestigePlus
             Logger.Info("Already configured delayed blueprints.");
             return;
           }
-            Initialized = true; PatchDomain.Patch(); PatchArmorTraining.Patch(); PatchKinetic.Patch(); GraveSpellList.CreateSecretDeath();
+            Initialized = true; PatchDomain.Patch(); PatchArmorTraining.Patch(); PatchKinetic.Patch(); GraveSpellList.CreateSecretDeath(); GraveSpellList.CreateMiracleList();
             RootConfigurator.ConfigureDelayedBlueprints();
         }
         catch (Exception e)

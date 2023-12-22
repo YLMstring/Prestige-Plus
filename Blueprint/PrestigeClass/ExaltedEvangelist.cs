@@ -35,6 +35,10 @@ using Kingmaker.Utility;
 using PrestigePlus.CustomComponent.Archetype;
 using PrestigePlus.Blueprint.Archetype;
 using PrestigePlus.Patch;
+using BlueprintCore.Blueprints.Configurators.Classes.Spells;
+using Kingmaker.Blueprints.Classes.Spells;
+using Kingmaker.UnitLogic.Abilities;
+using System.Drawing;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -377,12 +381,12 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddToLevelEntry(2, ChooseGoodEvilFeat())
               .AddToLevelEntry(4, ReligiousSpeakerFeat())
               .AddToLevelEntry(5, ExaltedDomainPlusFeat())
-              .AddToLevelEntry(10)
+              .AddToLevelEntry(10, CreateSpellbook())
               .Configure();
         }
 
         private const string ExaltedDomainPlus = "Exalted.ExaltedDomainPlus";
-        private static readonly string ExaltedDomainPlusGuid = "{85761AE1-3085-4CD9-A367-26F2D443A544}";
+        private static readonly string ExaltedDomainPlusGuid = "{18E8AE34-E61D-4149-989B-4E55560F03CA}";
 
         internal const string ExaltedDomainPlusDisplayName = "ExaltedExaltedDomainPlus.Name";
         private const string ExaltedDomainPlusDescription = "ExaltedExaltedDomainPlus.Description";
@@ -405,6 +409,54 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddToLevelEntry(8, AnchoriteofDawn.AnchoriteDomainPlusfeatGuid)
                 .AddToLevelEntry(9, AnchoriteofDawn.AnchoriteDomainPlusfeatGuid)
                 .AddToLevelEntry(10, AnchoriteofDawn.AnchoriteDomainPlusfeatGuid)
+              .Configure();
+        }
+
+        private const string SpellBook = "ExaltedEvangelist.SpellBook";
+        private static readonly string SpellBookGuid = "{2BEC7992-A06A-4691-A65E-71F6BE6E8D49}";
+
+        private const string SpellBookFeat = "ExaltedEvangelist.SpellBookFeat";
+        private static readonly string SpellBookFeatGuid = "{337EF978-CEE6-4B71-9D64-7A32470C81B9}";
+
+        internal const string SpellBookDisplayName = "ExaltedEvangelistSpellBook.Name";
+        private const string SpellBookDescription = "ExaltedEvangelistSpellBook.Description";
+        private static BlueprintFeature CreateSpellbook()
+        {
+            var icon = FeatureSelectionRefs.CombatTrick.Reference.Get().Icon;
+
+            var spellbook = SpellbookConfigurator.New(SpellBook, SpellBookGuid)
+              .SetName(ArchetypeDisplayName)
+              .SetSpellsPerDay(GetSpellSlots())
+              .SetAllSpellsKnown(true)
+              .SetSpellList(GraveSpellList.spelllist2guid)
+              .SetCharacterClass(ArchetypeGuid)
+              .SetCastingAttribute(StatType.Charisma)
+              .SetSpontaneous(true)
+              .SetIsArcane(false)
+              .Configure(delayed: true);
+
+            return FeatureConfigurator.New(SpellBookFeat, SpellBookFeatGuid)
+                    .SetDisplayName(SpellBookDisplayName)
+                    .SetDescription(SpellBookDescription)
+                    .SetIcon(icon)
+                    .AddSpellbook(ContextValues.Property(UnitProperty.Level), spellbook: spellbook)
+                    .Configure();
+        }
+
+        private const string SpellTable = "ExaltedEvangelist.SpellTable";
+        private static readonly string SpellTableGuid = "{8FD87C0A-831F-450C-8843-0F770B2F777D}";
+        private static BlueprintSpellsTable GetSpellSlots()
+        {
+            var ClericSpellSlots = SpellsTableRefs.ClericSpellLevels.Reference.Get();
+            var levelEntries =
+              ClericSpellSlots.Levels.Select(
+                l =>
+                {
+                    var count = new int[] { 0, 1, 1, 1, 1, 1, 1 };
+                    return new SpellsLevelEntry { Count = count };
+                });
+            return SpellsTableConfigurator.New(SpellTable, SpellTableGuid)
+              .SetLevels(levelEntries.ToArray())
               .Configure();
         }
     }
