@@ -6910,7 +6910,7 @@
   {
     "Key": "ExaltedEvangelist.Description",
     "enGB": "Through constant meditation, reflection, and religious study, the exalted evangelist has forged a unique connection to her god. Though the exalted of every faith share certain granted abilities, each one also receives special abilities based on the specific teachings of her religion. All exalted evangelists conduct themselves with devotion and passion, however, inspiring zealotry through word and deed wherever they go.",
-    "zhCN": "通过不断地冥想、沉思、进行宗教研究，福音颂者努力与她所信奉的神祇间建立起独特的联系。尽管各种宗教的福音颂者都会有一些共通的能力，但她们还会基于自身宗教的独特性而获得相应的特殊能力。所有福音颂者都靠着热诚和信仰心引领着自身，无论她们存在于何处，都会通过言行来激发他人心中的狂热之心。"
+    "zhCN": "通过不断冥想、反思和宗教研究，福音颂者与她所信奉的神祇间建立起一种独特的联系。尽管各种信仰的福音颂者都会有一些共通的能力，但她们还会根据自身宗教的独特教义而获得相应的特殊能力。所有福音颂者都靠着热诚和奉献引领着自己，无论她们存在于何处，都能通过一言一行来激发他人心中的狂热。"
   },
   {
     "Key": "ExaltedEvangelistChoosePath.Name",
@@ -7048,12 +7048,12 @@
     "Key": "ExaltedEvangelistTrueExalted.Name",
     "ProcessTemplates": false,
     "enGB": "True Exalted",
-    "zhCN": "信仰化身"
+    "zhCN": "信念化身"
   },
   {
     "Key": "ExaltedEvangelistTrueExalted.Description",
     "enGB": "The exalted evangelist exemplifies the teachings of her faith. More than a religious leader, she is the embodiment of faith that all members of the religion strive to emulate. She may be part of the official religious hierarchy or an independent worshiper, but wherever she goes she inspires others to join or commit more fully to her faith.",
-    "zhCN": "福音颂者忠实展现了其信仰的教义。与其说是宗教领袖，她更像是宗教信徒们努力效仿的信仰具现。她可能会是宗教组织架构的一部分，也有可能是独往独来的朝拜者，不过无论她走向何方，福音颂者总是能够激励他人加入，或是对其信仰做出更多奉献。"
+    "zhCN": "福音颂者忠实展现了其信仰的教义。不仅是宗教领袖，她更是宗教信徒们努力效仿的信仰具现。她可能是宗教组织的一份子，也有可能是独立于组织的信徒，不过无论她走向何方，福音颂者总是能够激励他人加入，或是对其信仰做出更多奉献。"
   }
 
 ]
