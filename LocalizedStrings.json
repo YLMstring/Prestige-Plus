@@ -4422,7 +4422,7 @@
   {
     "Key": "EsotericKnightKineticEsoterica.Description",
     "enGB": "A character with levels in a class that grants the kinetic blast class feature can add effective levels (level 2, 4, 6, 8, 10) to that class. If she does, she increases her effective kineticist level for purposes of determining the highest level of wild talents she can select, the effective spell level of her kinetic blast and defense wild talents. She does not gain or increase other related class features, such as infusion specializations.",
-    "zhCN": "当一个角色在提供念袭职业能力的职业上拥有等级时，可提升有效职业等级（2，4，6，8，10级）。若她如此做，她在计算可获取原力的最高等级、念袭及原力的有效法术等级时，有效等级获得相应提升。若这些秘契骑士等级被视作获取念袭的职业等级，则她如常获得原力和注能。她不会获得除此之外任何相关的职业能力，如注能熟稔。"
+    "zhCN": "当一个角色在提供念袭职业能力的职业上拥有等级时，可提升有效职业等级（2，4，6，8，10级）。若她如此做，她在计算可获取原力的最高等级、念袭及原力的有效法术等级时，有效等级获得相应提升。她不会获得除此之外任何相关的职业能力，如注能熟稔。"
   },
   {
     "Key": "EsotericKnightProficiencies.Name",
@@ -6867,6 +6867,193 @@
     "Key": "AeromancerRebukingGale2.Description",
     "enGB": "At 11th level, by expending 3 points from her arcane reservoir as a standard action, an aeromancer can release a powerful blast of wind to push back her foes. This takes the form a 40-foot cone originating from the aeromancer’s space. The area is filled with hurricane-force winds. This makes ranged attacks involving affected units impossible for 1 round.",
     "zhCN": "11级时，御天使能从奥能源泉中消耗3点来释放一股强力的爆风来击退敌寇。以御天使所在空间为起点的40尺锥形，该区域内会吹起飓风。所有涉及被影响单位的远程攻击无法进行。该能力创造的强风持续1轮。"
+  },
+  {
+    "Key": "SpellPowerMahathallahExalted1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Mists of the Mind",
+    "zhCN": "心灵迷雾"
+  },
+  {
+    "Key": "SpellPowerMahathallahExalted1.Description",
+    "enGB": "invisibility 2/day",
+    "zhCN": "隐形术2次/天"
+  },
+  {
+    "Key": "DeificObedienceMahathallahExalted2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Breathe in the Cosmos",
+    "zhCN": "宙域呼吸"
+  },
+  {
+    "Key": "DeificObedienceMahathallahExalted2.Description",
+    "enGB": "At the end of each combat, upon ingesting a drug you can heal 3d6 damage due to its addictiveness. When taking the drug adyton, you take 1d4 Str damage, automatically succeed at the Will save and have your consciousness transported into the mindscape called the Adyton, where you can linger for as long as you like and return whenever you so please.",
+    "zhCN": "在每次战斗结束时，你可以吸收药物，在其成瘾性中获取3d6点治疗。在服用阿德顿时，你受到1d4点力量伤害，意志豁免自动成功，从而令你的意识传送至名为阿德顿的心灵世界，你可以在其中随意逗留，并在你愿意时返回现实。"
+  },
+  {
+    "Key": "DeificObedienceMahathallahExalted3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Breathe Out Death",
+    "zhCN": "呼出死亡"
+  },
+  {
+    "Key": "DeificObedienceMahathallahExalted3.Description",
+    "enGB": "You know the secrets of controlling the flow of blood and toxins in your body. You gain a +4 saving throw against poison and can no longer become addicted to drugs. Additionally, your life span is supernaturally lengthened, with each aging step (middle age, old, venerable) being postponed by a number of years equal to double your Wisdom score.",
+    "zhCN": "你知道如何控制体内血液和毒素流动。你对抗毒素的豁免检定得到+4加值，且不再对药物上瘾。此外，你的寿命被超自然地延长了，每一个衰老阶段（中年、老年、暮年）都推迟等同于你感知调整值两倍的年份。"
+  },
+  {
+    "Key": "ExaltedEvangelist.Name",
+    "ProcessTemplates": false,
+    "enGB": "Exalted Evangelist",
+    "zhCN": "福音颂者"
+  },
+  {
+    "Key": "ExaltedEvangelist.Description",
+    "enGB": "Through constant meditation, reflection, and religious study, the exalted evangelist has forged a unique connection to her god. Though the exalted of every faith share certain granted abilities, each one also receives special abilities based on the specific teachings of her religion. All exalted evangelists conduct themselves with devotion and passion, however, inspiring zealotry through word and deed wherever they go.",
+    "zhCN": "通过不断地冥想、沉思、进行宗教研究，福音颂者努力与她所信奉的神祇间建立起独特的联系。尽管各种宗教的福音颂者都会有一些共通的能力，但她们还会基于自身宗教的独特性而获得相应的特殊能力。所有福音颂者都靠着热诚和信仰心引领着自身，无论她们存在于何处，都会通过言行来激发他人心中的狂热之心。"
+  },
+  {
+    "Key": "ExaltedEvangelistChoosePath.Name",
+    "ProcessTemplates": false,
+    "enGB": "Weapon and Armor Proficiency",
+    "zhCN": "福音颂者擅长"
+  },
+  {
+    "Key": "ExaltedEvangelistChoosePath.Description",
+    "enGB": "An exalted evangelist is proficient with all simple weapons and light armor. An exalted evangelist also gains weapon proficiency with her chosen deity’s favored weapon.",
+    "zhCN": "福音颂者擅长所有简易武器和轻甲。福音颂者还擅长自身所信仰神祇的偏好武器。"
+  },
+  {
+    "Key": "ExaltedEvangelistBonusFeat.Name",
+    "ProcessTemplates": false,
+    "enGB": "Exalted Obedience",
+    "zhCN": "颂教仪典"
+  },
+  {
+    "Key": "ExaltedEvangelistBonusFeat.Description",
+    "enGB": "In order to maintain the abilities granted by this prestige class, an exalted evangelist must perform a daily obedience to the deity she worships.",
+    "zhCN": "为了维持这个进阶职业获得的能力，福音颂者必须执行她所信仰神祇的日常服从仪典。"
+  },
+  {
+    "Key": "ExaltedEvangelistProtectiveGrace.Name",
+    "ProcessTemplates": false,
+    "enGB": "Protective Grace",
+    "zhCN": "守护恩典"
+  },
+  {
+    "Key": "ExaltedEvangelistProtectiveGrace.Description",
+    "enGB": "The exalted evangelist’s chosen deity rewards her with heightened awareness and reaction skills, making her more difficult to strike in combat. At 2nd level, the exalted evangelist gains a +1 dodge bonus to AC. This bonus increases to +2 at 7th level. The exalted evangelist loses this bonus when she is denied her Dexterity bonus to AC.",
+    "zhCN": "福音颂者所侍奉的神祇会赋予她更强的洞察力和反应力作为奖赏，让她在战斗中变得更加难以被击倒。2级起，福音颂者的AC获得+1点闪避加值。这个加值会在7级提升至+2点。福音颂者会在AC失去敏捷加值时失去上述加值。"
+  },
+  {
+    "Key": "ExaltedEvangelistSpiritualForm.Name",
+    "ProcessTemplates": false,
+    "enGB": "Spiritual Form",
+    "zhCN": "神灵形态"
+  },
+  {
+    "Key": "ExaltedEvangelistSpiritualForm.Description",
+    "enGB": "Upon reaching 8th level, the exalted evangelist gains the ability to assume a spiritual form. Assuming this form is a standard action. She gains a +4 bonus to her highest ability score, a primary tail attack that deals 1d6 damage, and can remain in this form for a number of minutes per day equal to her character level. This duration does not need to be consecutive, but it must be used in 1-minute increments. Returning to her normal form is a free action.",
+    "zhCN": "达到8级时，福音颂者获得呈现出神灵形态的能力。呈现出这种形态是标准动作，她的最高能力值获得+4加值，获得一个1d6尾刺作为主要天生武器，而且福音颂者每日能够在这种形态下保持的分钟数等同于她的角色等级。这些持续时间不需要连续，但是必须以1分钟为单位进行。恢复正常形态是自由动作。"
+  },
+  {
+    "Key": "ExaltedEvangelistSpellBook.Name",
+    "ProcessTemplates": false,
+    "enGB": "Perform Miracle",
+    "zhCN": "展现神迹"
+  },
+  {
+    "Key": "ExaltedEvangelistSpellBook.Description",
+    "enGB": "The exalted evangelist at the pinnacle of her abilities can create effects that are nothing short of miraculous. At 10th level, once per day the exalted evangelist duplicate any cleric spell of 6th level or lower, or any other spell of 5th level or lower, as if it were a 7th-level spell. When an exalted evangelist uses this ability to duplicate a spell with a material component that costs more than 100 gp, she must provide that component.",
+    "zhCN": "福音颂者的力量达到了巅峰，她能够创造出与神迹无异的效果。10级起，每日1次，福音颂者能够复制任何6级或更低等级的牧师法术，或复制任何5级或更低等级的其他法术。复制的法术会按照7级法术进行计算。若福音颂者使用该能力复制法术时，法术需要的材料成分的价值超过了100金币的话，她也必须支付该成分。"
+  },
+  {
+    "Key": "ExaltedExaltedDomainPlus.Name",
+    "ProcessTemplates": false,
+    "enGB": "Expanded Portfolio",
+    "zhCN": "扩展神学"
+  },
+  {
+    "Key": "ExaltedExaltedDomainPlus.Description",
+    "enGB": "At 5th level, the exalted evangelist further increases her already impressive knowledge of her chosen deity’s faith and is rewarded with increased powers in one of the spheres over which her deity holds sway. The exalted chooses a new cleric secondary domain of her chosen deity to which she gains access, then adds her exalted class levels to all her domains. (If she is a separatist, treat her domain the way it essentially is).",
+    "zhCN": "5级起，福音颂者进一步增强了对自身宗教的理解和认识，而这使得她在她的神祇占据主导的一个方面获得了更强的力量。福音颂者可以选择一个她的神祇可以授予的新牧师次要领域，然后将福音颂者职业等级加到她的所有领域等级上。（如果他是一名异见先驱，按照她领域的本质进行处理）"
+  },
+  {
+    "Key": "ExaltedEvangelistReligiousSpeaker.Name",
+    "ProcessTemplates": false,
+    "enGB": "Religious Speaker",
+    "zhCN": "颂教者"
+  },
+  {
+    "Key": "ExaltedEvangelistReligiousSpeaker.Description",
+    "enGB": "Through her intense studies, meditation, and discussions with other worshipers, the exalted evangelist has mastered the art of speaking about her faith. At 4th level, she gains a +2 competence bonus on Bluff and Diplomacy checks.",
+    "zhCN": "福音颂者通过充满热忱的研究、冥思以及和其他信徒的讨论，她掌握许多宣扬自身信仰的演讲技巧。4级起，福音颂者在唬骗和交涉检定中获得+2表现加值。"
+  },
+  {
+    "Key": "ExaltedEvangelistChooseGoodEvil.Name",
+    "ProcessTemplates": false,
+    "enGB": "Vitality",
+    "zhCN": "活力"
+  },
+  {
+    "Key": "ExaltedEvangelistChooseGoodEvil.Description",
+    "enGB": "Divine energy suffuses the body of the exalted evangelist, making her more resilient. At 2nd level, the exalted evangelist gains a +2 sacred or profane bonus on Fortitude saves.",
+    "zhCN": "福音颂者的体内充盈着神力，令她变得更加强韧。2级起，福音颂者在强韧豁免中获得+2神圣或污邪加值。"
+  },
+  {
+    "Key": "ExaltedEvangelistVitalityGood.Name",
+    "ProcessTemplates": false,
+    "enGB": "Vitality",
+    "zhCN": "活力"
+  },
+  {
+    "Key": "ExaltedEvangelistVitalityGood.Description",
+    "enGB": "Divine energy suffuses the body of the exalted evangelist, making her more resilient. At 2nd level, the exalted evangelist gains a +2 sacred bonus on Fortitude saves.",
+    "zhCN": "福音颂者的体内充盈着神力，令她变得更加强韧。2级起，福音颂者在强韧豁免中获得+2神圣加值。"
+  },
+  {
+    "Key": "ExaltedEvangelistVitalityEvil.Name",
+    "ProcessTemplates": false,
+    "enGB": "Vitality",
+    "zhCN": "活力"
+  },
+  {
+    "Key": "ExaltedEvangelistVitalityEvil.Description",
+    "enGB": "Divine energy suffuses the body of the exalted evangelist, making her more resilient. At 2nd level, the exalted evangelist gains a +2 profane bonus on Fortitude saves.",
+    "zhCN": "福音颂者的体内充盈着神力，令她变得更加强韧。2级起，福音颂者在强韧豁免中获得+2污邪加值。"
+  },
+  {
+    "Key": "ExaltedEvangelistSanctifiedRogue.Name",
+    "ProcessTemplates": false,
+    "enGB": "Sanctified Rogue",
+    "zhCN": "神殿游荡者"
+  },
+  {
+    "Key": "ExaltedEvangelistSanctifiedRogue.Description",
+    "enGB": "The sanctified rogue serves a higher purpose, acting as a representative of a church or cult, or following the tenets of a specific faith or deity. While most sanctified rogues share the beliefs or ideals of the religions they represent, not all of them are necessarily pious. A handful of disreputable holy thieves serve purely as mercenaries. At the other end of spectrum, however, more sanctified rogues adhere to the tenets of their faith with fanatical devotion. Regardless, all seem blessed with the ability to call upon divine favor to aid them in times of need.",
+    "zhCN": "神殿游荡者服侍着崇高的势力，为圣殿或邪教服务，尊崇着一个原则或是神祇的信仰，信仰或理想在大部分的神殿游荡者心中都占有一席之地，当然，他们并不是全部都这么虔诚。极少数的神殿游荡者只是纯粹的佣兵，其他人则为狂热的为宗教信仰和理想奉献，无论如何，这些人身后似乎都有神圣的力量支持。"
+  },
+  {
+    "Key": "ExaltedEvangelistSanctifiedKineticist.Name",
+    "ProcessTemplates": false,
+    "enGB": "Kinetic Mysticism",
+    "zhCN": "操念秘仪"
+  },
+  {
+    "Key": "ExaltedEvangelistSanctifiedKineticist.Description",
+    "enGB": "A character with levels in a class that grants the kinetic blast class feature can add effective levels (level 2-10) to that class. If she does, she increases her effective kineticist level for purposes of determining the highest level of wild talents she can select, the effective spell level of her kinetic blast and defense wild talents.",
+    "zhCN": "当一个角色在提供念袭职业能力的职业上拥有等级时，可提升有效职业等级（2-10级）。若她如此做，她在计算可获取原力的最高等级、念袭及原力的有效法术等级时，有效等级获得相应提升。"
+  },
+  {
+    "Key": "ExaltedEvangelistTrueExalted.Name",
+    "ProcessTemplates": false,
+    "enGB": "True Exalted",
+    "zhCN": "信仰化身"
+  },
+  {
+    "Key": "ExaltedEvangelistTrueExalted.Description",
+    "enGB": "The exalted evangelist exemplifies the teachings of her faith. More than a religious leader, she is the embodiment of faith that all members of the religion strive to emulate. She may be part of the official religious hierarchy or an independent worshiper, but wherever she goes she inspires others to join or commit more fully to her faith.",
+    "zhCN": "福音颂者忠实展现了其信仰的教义。与其说是宗教领袖，她更像是宗教信徒们努力效仿的信仰具现。她可能会是宗教组织架构的一部分，也有可能是独往独来的朝拜者，不过无论她走向何方，福音颂者总是能够激励他人加入，或是对其信仰做出更多奉献。"
   }
 
 ]
