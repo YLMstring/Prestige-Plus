@@ -436,7 +436,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetCharacterClass(ArchetypeGuid)
               .SetCastingAttribute(StatType.Charisma)
               .SetHasSpecialSpellList(true)
-              .SetSpontaneous(true)
+              .SetSpontaneous(false)
               .SetIsArcane(false)
               .Configure(delayed: true);
 
@@ -457,7 +457,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               ClericSpellSlots.Levels.Select(
                 l =>
                 {
-                    var count = new int[] { 0, 1, 1, 1, 1, 1, 1 };
+                    var count = new int[] { 0, 30, 30, 30, 30, 30, 30 };
                     return new SpellsLevelEntry { Count = count };
                 });
             return SpellsTableConfigurator.New(SpellTable, SpellTableGuid)
