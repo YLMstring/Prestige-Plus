@@ -6997,8 +6997,8 @@
   },
   {
     "Key": "ExaltedEvangelistChooseGoodEvil.Description",
-    "enGB": "Divine energy suffuses the body of the exalted evangelist, making her more resilient. At 2nd level, the exalted evangelist gains a +2 sacred or profane bonus on Fortitude saves.",
-    "zhCN": "福音颂者的体内充盈着神力，令她变得更加强韧。2级起，福音颂者在强韧豁免中获得+2神圣或污邪加值。"
+    "enGB": "Divine energy suffuses the body of the exalted evangelist, making her more resilient. The exalted evangelist gains a +2 sacred or profane bonus on Fortitude saves.",
+    "zhCN": "福音颂者的体内充盈着神力，令她变得更加强韧。福音颂者在强韧豁免中获得+2神圣或污邪加值。"
   },
   {
     "Key": "ExaltedEvangelistVitalityGood.Name",
@@ -7008,8 +7008,8 @@
   },
   {
     "Key": "ExaltedEvangelistVitalityGood.Description",
-    "enGB": "Divine energy suffuses the body of the exalted evangelist, making her more resilient. At 2nd level, the exalted evangelist gains a +2 sacred bonus on Fortitude saves.",
-    "zhCN": "福音颂者的体内充盈着神力，令她变得更加强韧。2级起，福音颂者在强韧豁免中获得+2神圣加值。"
+    "enGB": "Divine energy suffuses the body of the exalted evangelist, making her more resilient. The exalted evangelist gains a +2 sacred bonus on Fortitude saves.",
+    "zhCN": "福音颂者的体内充盈着神力，令她变得更加强韧。福音颂者在强韧豁免中获得+2神圣加值。"
   },
   {
     "Key": "ExaltedEvangelistVitalityEvil.Name",
@@ -7019,8 +7019,8 @@
   },
   {
     "Key": "ExaltedEvangelistVitalityEvil.Description",
-    "enGB": "Divine energy suffuses the body of the exalted evangelist, making her more resilient. At 2nd level, the exalted evangelist gains a +2 profane bonus on Fortitude saves.",
-    "zhCN": "福音颂者的体内充盈着神力，令她变得更加强韧。2级起，福音颂者在强韧豁免中获得+2污邪加值。"
+    "enGB": "Divine energy suffuses the body of the exalted evangelist, making her more resilient. The exalted evangelist gains a +2 profane bonus on Fortitude saves.",
+    "zhCN": "福音颂者的体内充盈着神力，令她变得更加强韧。福音颂者在强韧豁免中获得+2污邪加值。"
   },
   {
     "Key": "ExaltedEvangelistSanctifiedRogue.Name",

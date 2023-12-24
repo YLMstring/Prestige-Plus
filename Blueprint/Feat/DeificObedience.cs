@@ -1113,9 +1113,9 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddPrerequisiteFeature(MahathallahGuid)
               .SetGiveFeaturesForPreviousLevels(true)
-              .AddToLevelEntry(2, CreateMahathallahExalted1())
-              .AddToLevelEntry(6, MahathallahExalted2Feat())
-              .AddToLevelEntry(10, MahathallahExalted3Feat())
+              .AddToLevelEntry(12, CreateMahathallahExalted1())
+              .AddToLevelEntry(16, MahathallahExalted2Feat())
+              .AddToLevelEntry(20, MahathallahExalted3Feat())
               .Configure();
         }
 

@@ -488,7 +488,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string AnchoriteDivineLightDescription = "AnchoriteDivineLight.Description";
         public static BlueprintFeature SADivineLight()
         {
-            var icon = AbilityRefs.Bless.Reference.Get().Icon;
+            var icon = AbilityRefs.PillarOfLife.Reference.Get().Icon;
             return FeatureConfigurator.New(DivineLight, DivineLightGuid)
               .SetDisplayName(AnchoriteDivineLightDisplayName)
               .SetDescription(AnchoriteDivineLightDescription)
@@ -732,7 +732,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintProgression AnchoriteDomainPlusFeat()
         {
-            //var icon = FeatureSelectionRefs.FavoriteEnemySelection.Reference.Get().Icon;
+            var icon = AbilityRefs.Bless.Reference.Get().Icon;
 
             var feat1 = FeatureConfigurator.New(AnchoriteDomainPlusfeat, AnchoriteDomainPlusfeatGuid)
               .SetDisplayName(AnchoriteDomainPlusDisplayName)
@@ -746,7 +746,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             return ProgressionConfigurator.New(AnchoriteDomainPlus, AnchoriteDomainPlusGuid)
               .SetDisplayName(AnchoriteDomainPlusDisplayName)
               .SetDescription(AnchoriteDomainPlusDescription)
-              //.SetIcon(icon)
+              .SetIcon(icon)
               .SetIsClassFeature(true)
               .SetGiveFeaturesForPreviousLevels(true)
               .AddToClasses(ArchetypeGuid)

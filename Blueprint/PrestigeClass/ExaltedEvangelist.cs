@@ -72,8 +72,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             .AddToLevelEntry(9, Sentinel.DivineBoon3Guid)
             .AddToLevelEntry(10)
             .SetUIGroups(UIGroupBuilder.New()
-                    //.AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { FiendishStudiesGuid, FiendishStudies5Guid, FiendishStudies10Guid })
-                    //.AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { VitalityGood3Guid, VitalityGood6Guid, VitalityGood9Guid, VitalityGoodGuid })
+                    //.AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { FeatureSelectionRefs.SecondatyElementalFocusSelection.ToString(), FeatureRefs.Supercharge.ToString(), FeatureRefs.CompositeBlastSpecialisation.ToString() })
+                    //.AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { FeatureSelectionRefs.ThirdElementalFocusSelection.ToString(), FeatureSelectionRefs.InfusionSelection.ToString() })
                     .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { Sentinel.DivineBoon1Guid, Sentinel.DivineBoon2Guid, Sentinel.DivineBoon3Guid }))
             .SetRanks(1)
             .SetIsClassFeature(true)
@@ -161,7 +161,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string ExaltedEvangelistReligiousSpeakerDescription = "ExaltedEvangelistReligiousSpeaker.Description";
         public static BlueprintFeature ReligiousSpeakerFeat()
         {
-            var icon = FeatureRefs.Dodge.Reference.Get().Icon;
+            var icon = FeatureRefs.Persuasive.Reference.Get().Icon;
             return FeatureConfigurator.New(ReligiousSpeaker, ReligiousSpeakerGuid)
               .SetDisplayName(ExaltedEvangelistReligiousSpeakerDisplayName)
               .SetDescription(ExaltedEvangelistReligiousSpeakerDescription)
@@ -179,7 +179,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintFeatureSelection ChoosePathFeat()
         {
-            var icon = AbilityRefs.BreathOfLifeCast.Reference.Get().Icon;
+            var icon = AbilityRefs.RemoveDisease.Reference.Get().Icon;
             return FeatureSelectionConfigurator.New(ChoosePath, ChoosePathGuid)
               .SetDisplayName(ChoosePathDisplayName)
               .SetDescription(ChoosePathDescription)
@@ -271,7 +271,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintFeature SpiritualFormFeat()
         {
-            var icon = AbilityRefs.IceBody.Reference.Get().Icon;
+            var icon = AbilityRefs.SacredNimbus.Reference.Get().Icon;
 
             var Buff1 = BuffConfigurator.New(AuraBuff, AuraBuffGuid)
               .SetDisplayName(SpiritualFormDisplayName)
@@ -314,7 +314,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string SanctifiedRogueDescription = "ExaltedEvangelistSanctifiedRogue.Description";
         public static BlueprintProgression SanctifiedRogueFeat()
         {
-            var icon = FeatureSelectionRefs.CombatTrick.Reference.Get().Icon;
+            var icon = FeatureSelectionRefs.SlayerTalentSelection2.Reference.Get().Icon;
             return ProgressionConfigurator.New(SanctifiedRogue, SanctifiedRogueGuid)
               .SetDisplayName(SanctifiedRogueDisplayName)
               .SetDescription(SanctifiedRogueDescription)
@@ -325,7 +325,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddClassLevelsForPrerequisites(actualClass: ArchetypeGuid, fakeClass: CharacterClassRefs.SlayerClass.ToString(), modifier: 1, summand: -1)
               .AddToLevelEntry(2, FeatureRefs.SneakAttack.ToString())
               .AddToLevelEntry(3, FeatureSelectionRefs.RogueTalentSelection.ToString())
-              .AddToLevelEntry(4, FeatureRefs.SneakAttack.ToString(), Kidnapper.CleanCaptureGuid)
+              .AddToLevelEntry(4, FeatureRefs.SneakAttack.ToString(), ChooseGoodEvilGuid)
               .AddToLevelEntry(5, FeatureSelectionRefs.RogueTalentSelection.ToString())
               .AddToLevelEntry(6, FeatureRefs.SneakAttack.ToString())
               .AddToLevelEntry(7, FeatureSelectionRefs.RogueTalentSelection.ToString(), FeatureRefs.AdvanceTalents.ToString())
@@ -342,7 +342,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string SanctifiedKineticistDescription = "ExaltedEvangelistSanctifiedKineticist.Description";
         public static BlueprintProgression SanctifiedKineticistFeat()
         {
-            var icon = FeatureSelectionRefs.CombatTrick.Reference.Get().Icon;
+            var icon = AbilityRefs.KnowledgeDomainGreaterAbility.Reference.Get().Icon;
             return ProgressionConfigurator.New(SanctifiedKineticist, SanctifiedKineticistGuid)
               .SetDisplayName(SanctifiedKineticistDisplayName)
               .SetDescription(SanctifiedKineticistDescription)
@@ -352,14 +352,17 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddPrerequisiteFeature(FeatureRefs.KineticBlastFeature.ToString())
               .AddClassLevelsForPrerequisites(actualClass: ArchetypeGuid, fakeClass: CharacterClassRefs.KineticistClass.ToString(), modifier: 1, summand: -1)
               .AddToLevelEntry(2, FeatureSelectionRefs.InfusionSelection.ToString(), EsotericKnight.FeatGuidPro2)
-              .AddToLevelEntry(3, FeatureSelectionRefs.WildTalentSelection.ToString(), EsotericKnight.BattleMindGuid, EsotericKnight.FeatGuidPro2)
+              .AddToLevelEntry(3, FeatureSelectionRefs.WildTalentSelection.ToString(), FeatureSelectionRefs.SecondatyElementalFocusSelection.ToString(), EsotericKnight.FeatGuidPro2)
               .AddToLevelEntry(4, FeatureSelectionRefs.InfusionSelection.ToString(), FeatureRefs.InfusionSpecialization.ToString(), EsotericKnight.FeatGuidPro2)
               .AddToLevelEntry(5, FeatureSelectionRefs.WildTalentSelection.ToString(), EsotericKnight.FeatGuidPro2)
-              .AddToLevelEntry(6, FeatureSelectionRefs.InfusionSelection.ToString(), EsotericKnight.BattleMindGuid, EsotericKnight.FeatGuidPro2)
+              .AddToLevelEntry(6, FeatureSelectionRefs.InfusionSelection.ToString(), FeatureRefs.Supercharge.ToString(), EsotericKnight.FeatGuidPro2)
               .AddToLevelEntry(7, FeatureSelectionRefs.WildTalentSelection.ToString(), FeatureRefs.InfusionSpecialization.ToString(), EsotericKnight.FeatGuidPro2)
               .AddToLevelEntry(8, FeatureSelectionRefs.InfusionSelection.ToString(), EsotericKnight.FeatGuidPro2)
-              .AddToLevelEntry(9, FeatureSelectionRefs.WildTalentSelection.ToString(), EsotericKnight.BattleMindGuid, EsotericKnight.FeatGuidPro2)
+              .AddToLevelEntry(9, FeatureSelectionRefs.WildTalentSelection.ToString(), FeatureRefs.CompositeBlastSpecialisation.ToString(), EsotericKnight.FeatGuidPro2)
               .AddToLevelEntry(10, FeatureSelectionRefs.ThirdElementalFocusSelection.ToString(), FeatureRefs.InfusionSpecialization.ToString(), EsotericKnight.FeatGuidPro2)
+              .SetUIGroups(UIGroupBuilder.New()
+                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { FeatureSelectionRefs.SecondatyElementalFocusSelection.ToString(), FeatureRefs.Supercharge.ToString(), FeatureRefs.CompositeBlastSpecialisation.ToString() })
+                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { FeatureSelectionRefs.ThirdElementalFocusSelection.ToString(), FeatureSelectionRefs.InfusionSelection.ToString() }))
               .Configure();
         }
 
@@ -370,7 +373,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string TrueExaltedDescription = "ExaltedEvangelistTrueExalted.Description";
         public static BlueprintProgression TrueExaltedFeat()
         {
-            var icon = FeatureSelectionRefs.CombatTrick.Reference.Get().Icon;
+            var icon = AbilityRefs.RemoveDisease.Reference.Get().Icon;
             return ProgressionConfigurator.New(TrueExalted, TrueExaltedGuid)
               .SetDisplayName(TrueExaltedDisplayName)
               .SetDescription(TrueExaltedDescription)
@@ -393,9 +396,11 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintProgression ExaltedDomainPlusFeat()
         {
+            var icon = AbilityRefs.Bless.Reference.Get().Icon;
             return ProgressionConfigurator.New(ExaltedDomainPlus, ExaltedDomainPlusGuid)
               .SetDisplayName(ExaltedDomainPlusDisplayName)
               .SetDescription(ExaltedDomainPlusDescription)
+              .SetIcon(icon)
               .SetIsClassFeature(true)
               .SetGiveFeaturesForPreviousLevels(true)
               .AddToClasses(ArchetypeGuid)
@@ -422,7 +427,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string SpellBookDescription = "ExaltedEvangelistSpellBook.Description";
         private static BlueprintFeature CreateSpellbook()
         {
-            var icon = FeatureSelectionRefs.CombatTrick.Reference.Get().Icon;
+            var icon = AbilityRefs.Foresight.Reference.Get().Icon;
 
             var spellbook = SpellbookConfigurator.New(SpellBook, SpellBookGuid)
               .SetName(ArchetypeDisplayName)
