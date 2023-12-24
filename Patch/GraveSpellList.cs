@@ -33,8 +33,63 @@ namespace PrestigePlus.Patch
         {
             var icon = AbilityRefs.AnimateDead.Reference.Get().Icon;
 
+            var firstLevelSpells = new SpellLevelList(1)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+
+            var secondLevelSpells = new SpellLevelList(2)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+
+            var thirdLevelSpells = new SpellLevelList(3)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+
+            var fourthLevelSpells = new SpellLevelList(4)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+
+            var fifthLevelSpells = new SpellLevelList(5)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+
+            var sixthLevelSpells = new SpellLevelList(6)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+            var sevenththLevelSpells = new SpellLevelList(7)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+
+            var eighthLevelSpells = new SpellLevelList(8)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+
+            var ninthLevelSpells = new SpellLevelList(9)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+
+
             var spellList = SpellListConfigurator.New(spelllist, spelllistguid)
-              //.CopyFrom(WizardNecromancySpells)
+              .AddToSpellsByLevel(
+                new(0),
+                firstLevelSpells,
+                secondLevelSpells,
+                thirdLevelSpells,
+                fourthLevelSpells,
+                fifthLevelSpells,
+                sixthLevelSpells,
+                sevenththLevelSpells,
+                eighthLevelSpells,
+                ninthLevelSpells)
               .SetFilterByMaxLevel(9)
               .Configure();
 
@@ -68,8 +123,45 @@ namespace PrestigePlus.Patch
 
         public static void CreateMiracleList()
         {
+            var firstLevelSpells = new SpellLevelList(1)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+
+            var secondLevelSpells = new SpellLevelList(2)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+
+            var thirdLevelSpells = new SpellLevelList(3)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+
+            var fourthLevelSpells = new SpellLevelList(4)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+
+            var fifthLevelSpells = new SpellLevelList(5)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+
+            var sixthLevelSpells = new SpellLevelList(6)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+
             var spellList = SpellListConfigurator.New(spelllist2, spelllist2guid)
-              //.CopyFrom(ClericSpells)
+              .AddToSpellsByLevel(
+                new(0),
+                firstLevelSpells,
+                secondLevelSpells,
+                thirdLevelSpells,
+                fourthLevelSpells,
+                fifthLevelSpells,
+                sixthLevelSpells)
               .SetFilterByMaxLevel(6)
               .Configure();
 
