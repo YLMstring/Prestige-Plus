@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using Kingmaker.EntitySystem.Stats;
 using PrestigePlus.Blueprint.PrestigeClass;
 using System.Security.Claims;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
 
 namespace PrestigePlus.Patch
 {
@@ -118,7 +119,7 @@ namespace PrestigePlus.Patch
               .Configure();
         }
 
-        private const string spelllist2 = "CreateMiracle.spelllist";
+        private const string spelllist2 = "CreateMiracle.spelllist2";
         public static readonly string spelllist2guid = "{DEEF40E3-22A2-4BD0-AB9A-3194A344EEC4}";
 
         public static void CreateMiracleList()
@@ -165,28 +166,33 @@ namespace PrestigePlus.Patch
               .SetFilterByMaxLevel(6)
               .Configure();
 
+            var spells = new List<BlueprintAbility>() { };
+
             foreach (var level in spellList.SpellsByLevel)
             {
                 if (level.SpellLevel > 6) continue;
                 foreach (var spell in ClericSpells.SpellsByLevel[level.SpellLevel].Spells)
                 {
                     level.m_Spells.Add(spell.ToReference<BlueprintAbilityReference>());
+                    spells.Add(spell);
                 }
             }
 
             var list = new List<BlueprintSpellList>() { SpellListRefs.AlchemistSpellList.Reference.Get(), SpellListRefs.BardSpellList.Reference.Get(), SpellListRefs.BloodragerSpellList.Reference.Get(), SpellListRefs.DruidSpellList.Reference.Get(), SpellListRefs.HunterSpelllist.Reference.Get(), SpellListRefs.InquisitorSpellList.Reference.Get(), SpellListRefs.MagusSpellList.Reference.Get(), SpellListRefs.PaladinSpellList.Reference.Get(), SpellListRefs.RangerSpellList.Reference.Get(), SpellListRefs.ShamanSpelllist.Reference.Get(), SpellListRefs.WarpriestSpelllist.Reference.Get(), SpellListRefs.WitchSpellList.Reference.Get(), SpellListRefs.WizardSpellList.Reference.Get() };
-            foreach (var clazz in list)
+            
+            foreach (var level in spellList.SpellsByLevel)
             {
-                foreach (var level in spellList.SpellsByLevel)
+                if (level.SpellLevel > 5) continue;
+                foreach (var clazz in list)
                 {
-                    if (level.SpellLevel > 5) continue;
                     foreach (var spell in clazz.SpellsByLevel[level.SpellLevel].Spells)
                     {
+                        if (spells.Contains(spell)) continue;
                         level.m_Spells.Add(spell.ToReference<BlueprintAbilityReference>());
+                        spells.Add(spell);
                     }
                 }
             }
-            
         }
     }
 }
