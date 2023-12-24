@@ -435,6 +435,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetSpellList(GraveSpellList.spelllist2guid)
               .SetCharacterClass(ArchetypeGuid)
               .SetCastingAttribute(StatType.Charisma)
+              .SetHasSpecialSpellList(true)
               .SetSpontaneous(true)
               .SetIsArcane(false)
               .Configure(delayed: true);
