@@ -37,6 +37,7 @@
 ### [Exalted](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/exalted/) [Evangelist](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/evangelist/)
 - Based off the Exalted class and the Evangelist class.
 - No Aligned Class, but you can pseudo-align with the rogue class, the kineticist class or the exalted class!
+- Perform Miracle: Essentially you prepare up to 30 spells each level to choose from, because the UI will explode if you have too many spells.
 ### [Sentinel](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/sentinel/)
 - [Guided Hand](https://www.d20pfsrd.com/feats/general-feats/guided-hand/)
 - [Guided Hand (Mythic)](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-feats/guided-hand-mythic/)
