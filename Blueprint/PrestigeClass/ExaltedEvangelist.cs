@@ -39,6 +39,8 @@ using BlueprintCore.Blueprints.Configurators.Classes.Spells;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.UnitLogic.Abilities;
 using System.Drawing;
+using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -417,7 +419,10 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         }
 
         private const string SpellBook = "ExaltedEvangelist.SpellBook";
-        private static readonly string SpellBookGuid = "{2BEC7992-A06A-4691-A65E-71F6BE6E8D49}";
+        public static readonly string SpellBookGuid = "{2BEC7992-A06A-4691-A65E-71F6BE6E8D49}";
+
+        private const string SpellBookBuff = "ExaltedEvangelist.SpellBookBuff";
+        public static readonly string SpellBookBuffGuid = "{1E7CFC7C-6F5B-4F14-8D7B-9F9FF5C1D22E}";
 
         private const string SpellBookFeat = "ExaltedEvangelist.SpellBookFeat";
         private static readonly string SpellBookFeatGuid = "{337EF978-CEE6-4B71-9D64-7A32470C81B9}";
@@ -427,6 +432,16 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private static BlueprintFeature CreateSpellbook()
         {
             var icon = AbilityRefs.Foresight.Reference.Get().Icon;
+
+            var Buff1 = BuffConfigurator.New(SpellBookBuff, SpellBookBuffGuid)
+              .SetDisplayName(SpellBookDisplayName)
+              .SetDescription(SpellBookDescription)
+              .SetIcon(icon)
+              .AddForbidSpellbook(spellbook: SpellBookGuid)
+              .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+              .AddToFlags(BlueprintBuff.Flags.RemoveOnRest)
+              .Configure();
 
             var spellbook = SpellbookConfigurator.New(SpellBook, SpellBookGuid)
               .SetName(ArchetypeDisplayName)
@@ -445,6 +460,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                     .SetDescription(SpellBookDescription)
                     .SetIcon(icon)
                     .AddSpellbook(ContextValues.Property(UnitProperty.Level), spellbook: spellbook)
+                    .AddComponent<MiracleSpellLevel>(c => { c.book = SpellBookGuid; })
+                    .AddAbilityUseTrigger(action: ActionsBuilder.New().ApplyBuffPermanent(Buff1, toCaster: true).Build(), afterCast: true, fromSpellbook: true, spellbooks: new() { spellbook })
                     .Configure();
         }
 
