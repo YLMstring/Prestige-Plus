@@ -28,4 +28,18 @@ namespace PrestigePlus.HarmonyFix
 
         private static BlueprintSpellbookReference Book = BlueprintTool.GetRef<BlueprintSpellbookReference>(ExaltedEvangelist.SpellBookGuid);
     }
+
+    [HarmonyPatch(typeof(Spellbook), nameof(Spellbook.SpendInternal))]
+    internal class MiracleSpellNumber2
+    {
+        static void Postfix(ref bool __result, ref Spellbook __instance)
+        {
+            if (__instance.Blueprint == Book.Get())
+            {
+                __result = true;
+            }
+        }
+
+        private static BlueprintSpellbookReference Book = BlueprintTool.GetRef<BlueprintSpellbookReference>(ExaltedEvangelist.SpellBookGuid);
+    }
 }

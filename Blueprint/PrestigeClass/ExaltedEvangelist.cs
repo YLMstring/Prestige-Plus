@@ -453,6 +453,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetHasSpecialSpellList(true)
               .SetSpontaneous(false)
               .SetIsArcane(false)
+              .SetCantripsType(CantripsType.Orisions)
               .Configure(delayed: true);
 
             return FeatureConfigurator.New(SpellBookFeat, SpellBookFeatGuid)
@@ -461,7 +462,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                     .SetIcon(icon)
                     .AddSpellbook(ContextValues.Property(UnitProperty.Level), spellbook: spellbook)
                     .AddComponent<MiracleSpellLevel>(c => { c.book = SpellBookGuid; })
-                    .AddAbilityUseTrigger(action: ActionsBuilder.New().ApplyBuffPermanent(Buff1, toCaster: true).Build(), afterCast: true, fromSpellbook: true, spellbooks: new() { spellbook })
+                    //.AddAbilityUseTrigger(action: ActionsBuilder.New().ApplyBuffPermanent(Buff1, toCaster: true).Build(), afterCast: true, fromSpellbook: true, spellbooks: new() { spellbook })
                     .Configure();
         }
 

@@ -1,9 +1,12 @@
 ﻿using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
+using Kingmaker.Designers;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules.Abilities;
 using Kingmaker.UnitLogic;
+using Kingmaker.UnitLogic.Abilities.Components;
+using Kingmaker.UnitLogic.Buffs;
 using PrestigePlus.Blueprint.PrestigeClass;
 using PrestigePlus.CustomComponent.Archetype;
 using System;
@@ -14,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace PrestigePlus.CustomComponent.PrestigeClass
 {
-    internal class MiracleSpellLevel : UnitFactComponentDelegate<TruthSeekerLore.ComponentData>, IInitiatorRulebookHandler<RuleCalculateAbilityParams>, IRulebookHandler<RuleCalculateAbilityParams>, ISubscriber, IInitiatorRulebookSubscriber
+    internal class MiracleSpellLevel : UnitFactComponentDelegate<TruthSeekerLore.ComponentData>, IInitiatorRulebookHandler<RuleCalculateAbilityParams>, IRulebookHandler<RuleCalculateAbilityParams>, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleApplySpell>, IRulebookHandler<RuleApplySpell>
     {
         void IRulebookHandler<RuleCalculateAbilityParams>.OnEventAboutToTrigger(RuleCalculateAbilityParams evt)
         {
@@ -31,6 +34,24 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
 
         }
 
+        void IRulebookHandler<RuleApplySpell>.OnEventAboutToTrigger(RuleApplySpell evt)
+        {
+            
+        }
+
+        void IRulebookHandler<RuleApplySpell>.OnEventDidTrigger(RuleApplySpell evt)
+        {
+            BlueprintSpellbookReference Book = BlueprintTool.GetRef<BlueprintSpellbookReference>(ExaltedEvangelist.SpellBookGuid);
+            var spellbook = Owner.GetSpellbook(Book);
+            var ability = evt.Spell.StickyTouch ?? evt.Spell;
+            ability = ability.ConvertedFrom ?? evt.Spell;
+            if (spellbook != null && ability.Spellbook == spellbook && evt.Spell.Blueprint.GetComponent<AbilityEffectStickyTouch>() == null)
+            {
+                GameHelper.ApplyBuff(Owner, Buff);
+            }
+        }
+
         public string book;
+        private static BlueprintBuffReference Buff = BlueprintTool.GetRef<BlueprintBuffReference>(ExaltedEvangelist.SpellBookBuffGuid);
     }
 }
