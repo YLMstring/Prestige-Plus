@@ -1,4 +1,4 @@
-# Prestige Plus v2.1.3 for WoTR 
+# Prestige Plus v2.2.0 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -32,7 +32,11 @@
 - [Dsena](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Desna): requires worshipping Desna or Chaotic Good
 - [Erastil](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Erastil): requires worshipping Erastil or Lawful Good
 - [Gorum (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Gorum): requires heavy armor proficiency, worshipping Gorum or Chaotic Neutral
+- [Mahathallah (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Mahathallah): requires worshipping Asmodeus or Lawful Evil
 - More coming soon!
+### [Exalted](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/exalted/) [Evangelist](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/evangelist/)
+- Based off the Exalted class and the Evangelist class.
+- No Aligned Class, but you can pseudo-align with the rogue class, the kineticist class or the exalted class!
 ### [Sentinel](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/sentinel/)
 - [Guided Hand](https://www.d20pfsrd.com/feats/general-feats/guided-hand/)
 - [Guided Hand (Mythic)](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-feats/guided-hand-mythic/)
