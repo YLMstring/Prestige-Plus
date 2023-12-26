@@ -23,12 +23,9 @@ namespace PrestigePlus.HarmonyFix
     {
         static void Postfix(ref int __result, ref UnitDescriptor unit, ref PrerequisiteStatValue __instance)
         {
-            Logger.Info("start");
             if (unit.HasFact(Dirty) && (__instance.Stat == StatType.Dexterity || __instance.Stat == StatType.Intelligence))
             {
-                Logger.Info("start1");
                 if (__instance.OwnerBlueprint is not BlueprintFeature blue) { return; }
-                Logger.Info("start2");
                 if (blue.GetComponent<ManeuverBonus>() == null)
                 {
                     var prere = blue.GetComponents<PrerequisiteFeature>();
@@ -44,7 +41,6 @@ namespace PrestigePlus.HarmonyFix
                     }
                     if (!isCMB) { return; }
                 }
-                Logger.Info("start3");
                 __result = Math.Max(13, __result);
             }
         }

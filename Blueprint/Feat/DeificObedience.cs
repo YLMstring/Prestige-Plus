@@ -1359,5 +1359,151 @@ namespace PrestigePlus.Blueprint.Feat
               .AddFacts(new() { ability })
               .Configure();
         }
+
+        private const string Otolmens = "DeificObedience.Otolmens";
+        public static readonly string OtolmensGuid = "{143FD642-FDCD-46C9-90C1-BA12115FEFE2}";
+
+        internal const string OtolmensDisplayName = "DeificObedienceOtolmens.Name";
+        private const string OtolmensDescription = "DeificObedienceOtolmens.Description";
+        public static BlueprintProgression OtolmensFeat()
+        {
+            var icon = FeatureRefs.FortuneRevelationFeature.Reference.Get().Icon;
+            //"OtolmensFeature": "e7f5ed5c-afd1-413f-9e26-e7a669572e21",
+            return ProgressionConfigurator.New(Otolmens, OtolmensGuid)
+              .SetDisplayName(OtolmensDisplayName)
+              .SetDescription(OtolmensDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature("e7f5ed5c-afd1-413f-9e26-e7a669572e21", group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.LawfulNeutral, group: Prerequisite.GroupType.Any)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(1, Otolmens0Feat())
+              .AddToLevelEntry(2, CreateOtolmens1())
+              .AddToLevelEntry(6, Otolmens2Feat())
+              .AddToLevelEntry(10, Otolmens3Feat())
+              .Configure();
+        }
+
+        private const string Otolmens0 = "DeificObedience.Otolmens0";
+        public static readonly string Otolmens0Guid = "{513F2BFE-18CF-4A61-BC7E-F9E789736E23}";
+
+        public static BlueprintFeature Otolmens0Feat()
+        {
+            var icon = FeatureRefs.FortuneRevelationFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Otolmens0, Otolmens0Guid)
+              .SetDisplayName(OtolmensDisplayName)
+              .SetDescription(OtolmensDescription)
+              .SetIcon(icon)
+              .AddCriticalConfirmationBonus(4)
+              .Configure();
+        }
+
+        private const string Otolmens1 = "SpellPower.Otolmens1";
+        public static readonly string Otolmens1Guid = "{E1F9FE0A-9AB2-402C-94F9-08963BD19D6C}";
+        internal const string Otolmens1DisplayName = "SpellPowerOtolmens1.Name";
+        private const string Otolmens1Description = "SpellPowerOtolmens1.Description";
+
+        private const string Otolmens1Ablity3 = "SpellPower.UseOtolmens13";
+        private static readonly string Otolmens1Ablity3Guid = "{D47BD8DD-249A-4C11-B427-6D5454CB1314}";
+
+        private static BlueprintFeature CreateOtolmens1()
+        {
+            var icon = AbilityRefs.Blink.Reference.Get().Icon;
+
+            var ability3 = AbilityConfigurator.New(Otolmens1Ablity3, Otolmens1Ablity3Guid)
+                .CopyFrom(
+                AbilityRefs.Blink,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(ContextRankConfig),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 3)
+                .AddAbilityResourceLogic(6, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Otolmens1, Otolmens1Guid)
+              .SetDisplayName(Otolmens1DisplayName)
+              .SetDescription(Otolmens1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability3 })
+              .Configure();
+        }
+
+        private const string Otolmens2 = "DeificObedience.Otolmens2";
+        public static readonly string Otolmens2Guid = "{48F018B2-7953-4BAE-8754-A354E849DE6E}";
+
+        internal const string Otolmens2DisplayName = "DeificObedienceOtolmens2.Name";
+        private const string Otolmens2Description = "DeificObedienceOtolmens2.Description";
+        public static BlueprintFeature Otolmens2Feat()
+        {
+            var icon = AbilityRefs.VengefulComets.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Otolmens2, Otolmens2Guid)
+              .SetDisplayName(Otolmens2DisplayName)
+              .SetDescription(Otolmens2Description)
+              .SetIcon(icon)
+              .AddInitiatorAttackWithWeaponTrigger(category: WeaponCategory.Bomb, onlyHit: true, checkWeaponCategory: true,
+                    action: ActionsBuilder.New().CastSpell(AbilityRefs.Poison.ToString(), overrideSpellLevel: 3).Build())
+              .Configure();
+        }
+
+        private const string Otolmens3 = "DeificObedience.Otolmens3";
+        public static readonly string Otolmens3Guid = "{87D51D12-352E-403B-A11A-EA5CAC6E010B}";
+
+        internal const string Otolmens3DisplayName = "DeificObedienceOtolmens3.Name";
+        private const string Otolmens3Description = "DeificObedienceOtolmens3.Description";
+
+        private const string Otolmens3Buff = "DeificObedience.Otolmens3Buff";
+        private static readonly string Otolmens3BuffGuid = "{5149D11A-8D7F-43BA-B483-C8182CA6C7B0}";
+
+        private const string Otolmens3Res = "DeificObedience.Otolmens3Res";
+        private static readonly string Otolmens3ResGuid = "{422F7482-BCA2-4216-9F5D-D6B05E732D66}";
+
+        private const string Otolmens3Ability = "DeificObedience.Otolmens3Ability";
+        private static readonly string Otolmens3AbilityGuid = "{F0D91E50-7848-484D-8286-9E2E15506377}";
+        public static BlueprintFeature Otolmens3Feat()
+        {
+            var icon = AbilityRefs.InvisibilityGreater.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(Otolmens3Res, Otolmens3ResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var ability = AbilityConfigurator.New(Otolmens3Ability, Otolmens3AbilityGuid)
+                .CopyFrom(
+                AbilityRefs.InvisibilityGreater,
+                typeof(SpellComponent))
+                .SetDisplayName(Otolmens3DisplayName)
+                .SetDescription(Otolmens3Description)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .ApplyBuff(Otolmens3BuffGuid, ContextDuration.Variable(ContextValues.Property(UnitProperty.Level), DurationRate.Minutes))
+                        .Build())
+                .SetRange(AbilityRange.Personal)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .Configure();
+
+            BuffConfigurator.New(Otolmens3Buff, Otolmens3BuffGuid)
+                .CopyFrom(
+                BuffRefs.InvisibilityGreaterBuff,
+                typeof(BuffInvisibility))
+             .SetDisplayName(Otolmens3DisplayName)
+             .SetDescription(Otolmens3Description)
+             .SetIcon(icon)
+             .AddStatBonus(ModifierDescriptor.Profane, false, StatType.SkillPerception, 4)
+             .AddWeaponCategoryAttackBonus(2, WeaponCategory.Shortsword, ModifierDescriptor.Profane)
+             .AddWeaponGroupAttackBonus(2, 1, ModifierDescriptor.Profane, false, WeaponFighterGroup.Bows)
+             .AddWeaponGroupAttackBonus(2, 1, ModifierDescriptor.Profane, false, WeaponFighterGroup.Crossbows)
+             .AddWeaponGroupAttackBonus(2, 1, ModifierDescriptor.Profane, false, WeaponFighterGroup.Thrown)
+             .Configure();
+
+            return FeatureConfigurator.New(Otolmens3, Otolmens3Guid)
+              .SetDisplayName(Otolmens3DisplayName)
+              .SetDescription(Otolmens3Description)
+              .SetIcon(icon)
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .AddFacts(new() { ability })
+              .Configure();
+        }
     }
 }
