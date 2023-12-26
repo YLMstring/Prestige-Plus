@@ -1,4 +1,4 @@
-# Prestige Plus v2.2.0 for WoTR 
+# Prestige Plus v2.2.1 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -10,6 +10,7 @@
 - You can Disarm, Sunder, or Trip in lieu of a melee attack, and Bull Rush in lieu of a charge attack, like on tabletop!
 - [Seize the Opportunity](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/seize-the-opportunity-combat/): From Path of War
 - Kinda OP so you can make it a mythic feat instead of combat feat if you like (default off)
+- [Dirty Fighting](https://www.d20pfsrd.com/feats/combat-feats/dirty-fighting-combat/)
 - [Surprise Maneuver](https://www.d20pfsrd.com/feats/general-feats/surprise-maneuver/)
 - [Strength Surge](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/strength-surge-ex/)
 - [Ki Throw](https://www.d20pfsrd.com/feats/combat-feats/ki-throw-combat/) and its mythic feat!
