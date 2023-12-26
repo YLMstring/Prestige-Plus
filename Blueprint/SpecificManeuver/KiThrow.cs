@@ -5,7 +5,9 @@ using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
+using PrestigePlus.Blueprint.Feat;
 using PrestigePlus.CustomAction.GrappleThrow;
 using PrestigePlus.CustomComponent.OtherManeuver;
 using PrestigePlus.Grapple;
@@ -73,7 +75,8 @@ namespace PrestigePlus.Blueprint.ManeuverFeat
                     .SetDisplayName(DragDisplayName)
                     .SetDescription(DragDescription)
                     .SetIcon(icon)
-                    .AddPrerequisiteFeature(FeatureRefs.ImprovedUnarmedStrike.ToString())
+                    .AddPrerequisiteFeature(FeatureRefs.ImprovedUnarmedStrike.ToString(), group: Prerequisite.GroupType.Any)
+                    .AddPrerequisiteFeature(DirtyFighting.DirtyFightingGuid, group: Prerequisite.GroupType.Any)
                     .AddManeuverTrigger(SetThrow, Kingmaker.RuleSystem.Rules.CombatManeuver.Trip, true)
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .AddToFeatureSelection(FeatureSelectionRefs.MonkBonusFeatSelectionLevel10.ToString())
@@ -84,7 +87,7 @@ namespace PrestigePlus.Blueprint.ManeuverFeat
                     .SetDisplayName(DragDisplayName2)
                     .SetDescription(DragDescription2)
                     .SetIcon(icon)
-                    .AddPrerequisiteFeature(DragGuid, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                    .AddPrerequisiteFeature(DragGuid, group: Prerequisite.GroupType.Any)
                     .AddPrerequisiteFeature(FeatureRefs.KiPowerFeature.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                     .AddManeuverTrigger(SetThrow, Kingmaker.RuleSystem.Rules.CombatManeuver.DirtyTrickBlind, true)
                     .AddManeuverTrigger(SetThrow, Kingmaker.RuleSystem.Rules.CombatManeuver.DirtyTrickEntangle, true)

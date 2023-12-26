@@ -7054,6 +7054,160 @@
     "Key": "ExaltedEvangelistTrueExalted.Description",
     "enGB": "The exalted evangelist exemplifies the teachings of her faith. More than a religious leader, she is the embodiment of faith that all members of the religion strive to emulate. She may be part of the official religious hierarchy or an independent worshiper, but wherever she goes she inspires others to join or commit more fully to her faith.",
     "zhCN": "传道尊者忠实展现了其信仰的教义。不仅是宗教领袖，她更是宗教信徒们努力效仿的信仰具现。她可能是宗教组织的一份子，也有可能是独立于组织的信徒，不过无论她走向何方，传道尊者总是能够激励他人加入，或是对其信仰做出更多奉献。"
+  },
+  {
+    "Key": "FeatDirtyFighting.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dirty Fighting",
+    "zhCN": "下三滥打法"
+  },
+  {
+    "Key": "FeatDirtyFighting.Description",
+    "enGB": "You can take advantage of a distracted foe. You can increase the bonus on your attack roll for flanking to +4 for combat maneuver checks. This feat counts as having Dex 13, Int 13, Combat Expertise, and Improved Unarmed Strike for the purposes of meeting the prerequisites of the various improved combat maneuver feats, as well as feats that require those improved combat maneuver feats as prerequisites.",
+    "zhCN": "你能在敌人无暇多顾时狠狠打他。每当你对一个被你夹击的敌人使用战技攻击时，你的夹击提供的攻击检定加值提升至+4加值。本专长可以在你选择任何精通战技类专长时视为拥有13敏捷，13智力，寓守于攻和精通徒手击打作为先决条件，同样也可以对需要这些精通战技专长作为先决条件的专长生效。"
+  },
+  {
+    "Key": "DeificObedienceNorgorber.Name",
+    "ProcessTemplates": false,
+    "enGB": "Norgorber Obedience",
+    "zhCN": "诺格巴仪典"
+  },
+  {
+    "Key": "DeificObedienceNorgorber.Description",
+    "enGB": "While moving through a crowd of people (at least six individuals), whisper a prayer to Norgorber so quietly that no one hears you. If you suspect a member of the crowd heard you, you must follow that individual and prick her with a poisoned needle or other sharp implement. If you can’t locate a suitable crowd, dig a hole at least 6 inches deep in the ground, whisper your prayers into the hole, and bury the sound. At the end of your obedience, dip a needle in poison and leave it on a road, jutting from a windowsill, or anywhere else a passerby might inadvertently prick herself.",
+    "zhCN": "你走路穿过一群人（至少6人）的时候，用仅有自己能听到的音量向诺格巴祈祷。若你怀疑人群中有人听到你说的话，那么你必须尾随该人并且使用淬毒的针或其他锐器刺伤她。若你找不到合适的人群，则要在地上挖出至少6英寸深的洞，向着这个坑低语你的祷词，并将之埋葬其中。在仪典结束时，给一根针淬毒并且将它丢在道路上、窗台外侧、或者其他任何可能让路人无意间刺中自己的地方。"
+  },
+  {
+    "Key": "SpellPowerNorgorber1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Virulence",
+    "zhCN": "毒性"
+  },
+  {
+    "Key": "SpellPowerNorgorber1.Description",
+    "enGB": "poison 1/day",
+    "zhCN": "毒击术 1次/日"
+  },
+  {
+    "Key": "DeificObedienceNorgorber2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Noxious Bomb",
+    "zhCN": "剧毒爆弹"
+  },
+  {
+    "Key": "DeificObedienceNorgorber2.Description",
+    "enGB": "You can combine a vial of poison with a thrown alchemist bomb. The bomb deals normal direct hit and splash damage, plus the target of the direct hit must save successfully or suffer the effects of the poison. Creatures hit by the bomb’s splash damage are unaffected by the poison.",
+    "zhCN": "你能够将一剂毒素和投掷用的炼金炸弹相结合。这个炸弹会如常造成直接和溅射伤害，炸弹直接命中的目标还必须进行豁免检定，失败就要承受毒素的效果。被炸弹的溅射伤害击中的生物不会受到毒素的影响。"
+  },
+  {
+    "Key": "DeificObedienceNorgorber3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Secret Self",
+    "zhCN": "隐藏人格"
+  },
+  {
+    "Key": "DeificObedienceNorgorber3.Description",
+    "enGB": "Once per day, you can use greater invisibility on yourself as a spell-like ability. When you use this spell-like ability, you gain certain gifts from Norgorber in addition to the spell effects. You gain a +4 profane bonus on Perception checks while invisible. You gain a +2 profane bonus on attack rolls made with thrown weapons, ranged weapons, and short swords while invisible as well. These bonuses apply only when you’re using this spell-like ability, not when you’re affected by any other spell or effect that grants greater invisibility. In addition, the invisibility effect lasts for 1 minute/level instead of the normal 1 round/level.",
+    "zhCN": "每日1次，你能够以类法术能力对自身使用高等隐形术。当你使用这个类法术能力时，除了法术原本的效果之外，诺格巴还会赐予你特殊的赠礼。你在隐形时察觉检定会获得+4亵渎加值。并且在隐形时使用投掷武器、远程武器和短剑进行的攻击检定都会获得+2亵渎加值。这些加值仅会在你使用这个类法术能力时生效，其他来源的法术或效果产生的高等隐形术无法使你获得这些效果。此外，该隐形效果的持续时间变为1分钟/等级而非正常的1轮/等级。"
+  },
+  {
+    "Key": "DeificObedienceLamashtu.Name",
+    "ProcessTemplates": false,
+    "enGB": "Lamashtu Obedience",
+    "zhCN": "拉玛什图仪典"
+  },
+  {
+    "Key": "DeificObedienceLamashtu.Description",
+    "enGB": "Sacrifice an unwilling living creature in the name of the Mother of Monsters. Draw the process out to inspire the maximum terror and suffering in your victim. The death blow you deal should be savage and destructive—do not grant your sacrifice a clean death. Once the creature is dead, remove one of its bones and sharpen it to a point. Use the bone to cut yourself deeply enough to leave a scar. Leave the sacrificed creature’s mutilated form in the open where scavengers may devour it or travelers may see it and know of Lamashtu’s power. Gain a +1 natural armor bonus to your AC.",
+    "zhCN": "以怪物之母的名义献祭一个非自愿的活物。在此过程中要最大程度地激发出祭品的恐惧之心并让其承受无上的苦痛。你施加的致命一击应当是狂野而极具毁灭性的——不要让你的祭品干净利落地死去。该名生物死亡后，便从它体内抽出一根骨头削尖。用这根骨头深深切开自己，使创口足以留下伤疤。最后将祭品那残缺不全的尸体暴露在有食腐生物能吃掉它，或者有旅者能看到它，因此知晓拉玛什图伟大力量的地方。你的AC获得+1天生防御加值。"
+  },
+  {
+    "Key": "DeificObedienceLamashtuExalted.Name",
+    "ProcessTemplates": false,
+    "enGB": "Lamashtu (Exalted)",
+    "zhCN": "拉玛什图（传道尊者）"
+  },
+  {
+    "Key": "DeificObedienceLamashtuExalted.Description",
+    "enGB": "Become an exalted evangelist to gain access to her boons, which will be granted at certain character or class levels.",
+    "zhCN": "成为传道尊者来获取她的神恩资格，你会在合适的角色或职业等级得到神恩。"
+  },
+  {
+    "Key": "SpellPowerLamashtu1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Howling Terror",
+    "zhCN": "可怖怒嚎"
+  },
+  {
+    "Key": "SpellPowerLamashtu1.Description",
+    "enGB": "cause fear 3/day, mortal terror 2/day, or fear 1/day",
+    "zhCN": "惊恐术 3次/日，惧死术 2次/日，或恐惧术 1次/日"
+  },
+  {
+    "Key": "DeificObedienceLamashtu2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Maddening Thoughts",
+    "zhCN": "狂乱思维"
+  },
+  {
+    "Key": "DeificObedienceLamashtu2.Description",
+    "enGB": "Your mind constantly swirls with dark whispers and disturbing thoughts. You gain a +4 profane bonus on saving throws against mind-affecting (compulsion) spells and effects and against divination spells and effects. Anyone who targets you with such a spell or effect must succeed at a Will saving throw (with a DC equal to 10 + your Wisdom modifier + 1/2 your Hit Dice) or take 1d4 points of Wisdom damage.",
+    "zhCN": "你的头脑中不断萦绕着黑暗的低语和让人不安的想法所组成的漩涡。你在对抗影响心智（胁迫）的法术和效果、以及预言系法术和效果时，豁免检定获得+4亵渎加值。任何以你为目标使用上述法术或效果的人，都必须进行一次意志豁免检定（DC为10 + 你的感知调整值 + 1/2你的生命骰），失败则会受到1d4点感知伤害。"
+  },
+  {
+    "Key": "DeificObedienceLamashtu3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Monstrous Transformation",
+    "zhCN": "怪物变形"
+  },
+  {
+    "Key": "DeificObedienceLamashtu3.Description",
+    "enGB": "Once per day, you can use baleful polymorph, except you change the target into a horribly mutated form of the chosen animal. The target takes a –4 penalty on its saving throw to resist your spell. In addition to the other effects of the spell, the subject is in constant pain from its twisted and disfigured form. This constant agony imposes a –2 penalty on all of the target’s skill checks, saving throws, attack rolls, and damage rolls.",
+    "zhCN": "你每日能够使用1次恶意变形术，不过你会将目标转变为你所选择动物的可怕变异体。目标在对抗你的法术的豁免检定中受到-4减值。除原本的效果之外，受术者还会从这种扭曲的畸变形态中受到永恒的痛苦，这种永恒的苦痛会让目标的所有技能检定、豁免检定、攻击检定和伤害检定受到-2减值。"
+  },
+  {
+    "Key": "DeificObedienceOtolmens.Name",
+    "ProcessTemplates": false,
+    "enGB": "Otolmens Obedience",
+    "zhCN": "奥托门斯仪典"
+  },
+  {
+    "Key": "DeificObedienceOtolmens.Description",
+    "enGB": "Spend 1 hour systematically diagraming one of your everyday tasks or upcoming projects in painstaking detail and technical language. Gain a +4 bonus on attack rolls to confirm critical hits.",
+    "zhCN": "花费1小时以详尽的细节和术语，系统地绘制您的一项日常任务或即将进行的项目的蓝图。你在确认重击时的攻击检定获得+4加值。"
+  },
+  {
+    "Key": "SpellPowerOtolmens1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Discerning Mind",
+    "zhCN": "善断心智"
+  },
+  {
+    "Key": "SpellPowerOtolmens1.Description",
+    "enGB": "blink 1/day",
+    "zhCN": "移位术 1次/日"
+  },
+  {
+    "Key": "DeificObedienceOtolmens2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Combat Calculus",
+    "zhCN": "战机计算"
+  },
+  {
+    "Key": "DeificObedienceOtolmens2.Description",
+    "enGB": "Three times per day as a move action, you can trace a series of mathematical calculations in the air. The next attack you make before the beginning of your next turn gains the benefits of true strike, ignores an amount of damage reduction equal to your Hit Dice, and deals additional damage as though it the weapon had the axiomatic weapon special ability.",
+    "zhCN": "每天三次，以一个移动动作，你可以凭空进行一系列的数学计算。你在下回合开始之前进行的下一次攻击将获得克敌机先法术的增益，忽略等于你的生命骰的伤害减免，并造成公理武器特殊能力一般的额外伤害。"
+  },
+  {
+    "Key": "DeificObedienceOtolmens3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Revise Reality",
+    "zhCN": "修正现实"
+  },
+  {
+    "Key": "DeificObedienceOtolmens3.Description",
+    "enGB": "Once per day, you can duplicate any wizard spell of 6th level or lower, or any other spell of 5th level or lower, as if it were a 9th-level spell.",
+    "zhCN": "每日1次，你能够复制任何6级或更低等级的法师法术，或复制任何5级或更低等级的其他法术。复制的法术会按照9级法术进行计算。"
   }
 
 ]

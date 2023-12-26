@@ -95,7 +95,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(ErastilFeat())
               .AddToAllFeatures(GorumFeat())
               .AddToAllFeatures(MahathallahFeat())
-              .AddToAllFeatures(NorgorberFeat())
+              //.AddToAllFeatures(NorgorberFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
