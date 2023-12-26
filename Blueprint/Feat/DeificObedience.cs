@@ -44,6 +44,9 @@ using Kingmaker.Blueprints.Items.Armors;
 using PrestigePlus.CustomAction.OtherFeatRelated;
 using PrestigePlus.Blueprint.Archetype;
 using Kingmaker.AreaLogic;
+using Kingmaker.UnitLogic.Mechanics;
+using Kingmaker.Designers.Mechanics.Buffs;
+using Kingmaker.Blueprints.Items.Weapons;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -92,6 +95,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(ErastilFeat())
               .AddToAllFeatures(GorumFeat())
               .AddToAllFeatures(MahathallahFeat())
+              .AddToAllFeatures(NorgorberFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -1207,6 +1211,152 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDescription(MahathallahExalted3Description)
               .SetIcon(icon)
               .AddSavingThrowBonusAgainstDescriptor(spellDescriptor: SpellDescriptor.Poison, value: 4)
+              .Configure();
+        }
+
+        private const string Norgorber = "DeificObedience.Norgorber";
+        public static readonly string NorgorberGuid = "{7F8A6152-8E04-4D8F-B2A5-E7F1FDA51425}";
+
+        internal const string NorgorberDisplayName = "DeificObedienceNorgorber.Name";
+        private const string NorgorberDescription = "DeificObedienceNorgorber.Description";
+        public static BlueprintProgression NorgorberFeat()
+        {
+            var icon = FeatureRefs.NorgorberFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(Norgorber, NorgorberGuid)
+              .SetDisplayName(NorgorberDisplayName)
+              .SetDescription(NorgorberDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.NorgorberFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.NeutralEvil, group: Prerequisite.GroupType.Any)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(1, Norgorber0Feat())
+              .AddToLevelEntry(2, CreateNorgorber1())
+              .AddToLevelEntry(6, Norgorber2Feat())
+              .AddToLevelEntry(10, Norgorber3Feat())
+              .Configure();
+        }
+
+        private const string Norgorber0 = "DeificObedience.Norgorber0";
+        public static readonly string Norgorber0Guid = "{F29EDA1E-0A57-4CF0-ADFC-23D8CEEFA12F}";
+
+        public static BlueprintFeature Norgorber0Feat()
+        {
+            var icon = FeatureRefs.NorgorberFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Norgorber0, Norgorber0Guid)
+              .SetDisplayName(NorgorberDisplayName)
+              .SetDescription(NorgorberDescription)
+              .SetIcon(icon)
+              .Configure();
+        }
+
+        private const string Norgorber1 = "SpellPower.Norgorber1";
+        public static readonly string Norgorber1Guid = "{30082553-FF29-4C8E-8E04-FC7BA85DB284}";
+        internal const string Norgorber1DisplayName = "SpellPowerNorgorber1.Name";
+        private const string Norgorber1Description = "SpellPowerNorgorber1.Description";
+
+        private const string Norgorber1Ablity3 = "SpellPower.UseNorgorber13";
+        private static readonly string Norgorber1Ablity3Guid = "{7F6257D7-3124-46EB-B3FB-A389E174BF4F}";
+
+        private static BlueprintFeature CreateNorgorber1()
+        {
+            var icon = AbilityRefs.PoisonCast.Reference.Get().Icon;
+
+            var ability3 = AbilityConfigurator.New(Norgorber1Ablity3, Norgorber1Ablity3Guid)
+                .CopyFrom(
+                AbilityRefs.MagicalVestment,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilityEffectStickyTouch),
+                typeof(AbilityTargetHasFact),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 3)
+                .AddAbilityResourceLogic(6, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Norgorber1, Norgorber1Guid)
+              .SetDisplayName(Norgorber1DisplayName)
+              .SetDescription(Norgorber1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability3 })
+              .Configure();
+        }
+
+        private const string Norgorber2 = "DeificObedience.Norgorber2";
+        public static readonly string Norgorber2Guid = "{48F018B2-7953-4BAE-8754-A354E849DE6E}";
+
+        internal const string Norgorber2DisplayName = "DeificObedienceNorgorber2.Name";
+        private const string Norgorber2Description = "DeificObedienceNorgorber2.Description";
+        public static BlueprintFeature Norgorber2Feat()
+        {
+            var icon = AbilityRefs.VengefulComets.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Norgorber2, Norgorber2Guid)
+              .SetDisplayName(Norgorber2DisplayName)
+              .SetDescription(Norgorber2Description)
+              .SetIcon(icon)
+              .AddInitiatorAttackWithWeaponTrigger(category: WeaponCategory.Bomb, onlyHit: true, checkWeaponCategory: true,
+                    action: ActionsBuilder.New().CastSpell(AbilityRefs.Poison.ToString(), overrideSpellLevel: 3).Build())
+              .Configure();
+        }
+
+        private const string Norgorber3 = "DeificObedience.Norgorber3";
+        public static readonly string Norgorber3Guid = "{87D51D12-352E-403B-A11A-EA5CAC6E010B}";
+
+        internal const string Norgorber3DisplayName = "DeificObedienceNorgorber3.Name";
+        private const string Norgorber3Description = "DeificObedienceNorgorber3.Description";
+
+        private const string Norgorber3Buff = "DeificObedience.Norgorber3Buff";
+        private static readonly string Norgorber3BuffGuid = "{5149D11A-8D7F-43BA-B483-C8182CA6C7B0}";
+
+        private const string Norgorber3Res = "DeificObedience.Norgorber3Res";
+        private static readonly string Norgorber3ResGuid = "{422F7482-BCA2-4216-9F5D-D6B05E732D66}";
+
+        private const string Norgorber3Ability = "DeificObedience.Norgorber3Ability";
+        private static readonly string Norgorber3AbilityGuid = "{F0D91E50-7848-484D-8286-9E2E15506377}";
+        public static BlueprintFeature Norgorber3Feat()
+        {
+            var icon = AbilityRefs.InvisibilityGreater.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(Norgorber3Res, Norgorber3ResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var ability = AbilityConfigurator.New(Norgorber3Ability, Norgorber3AbilityGuid)
+                .CopyFrom(
+                AbilityRefs.InvisibilityGreater,
+                typeof(SpellComponent))
+                .SetDisplayName(Norgorber3DisplayName)
+                .SetDescription(Norgorber3Description)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .ApplyBuff(Norgorber3BuffGuid, ContextDuration.Variable(ContextValues.Property(UnitProperty.Level), DurationRate.Minutes))
+                        .Build())
+                .SetRange(AbilityRange.Personal)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .Configure();
+
+            BuffConfigurator.New(Norgorber3Buff, Norgorber3BuffGuid)
+                .CopyFrom(
+                BuffRefs.InvisibilityGreaterBuff,
+                typeof(BuffInvisibility))
+             .SetDisplayName(Norgorber3DisplayName)
+             .SetDescription(Norgorber3Description)
+             .SetIcon(icon)
+             .AddStatBonus(ModifierDescriptor.Profane, false, StatType.SkillPerception, 4)
+             .AddWeaponCategoryAttackBonus(2, WeaponCategory.Shortsword, ModifierDescriptor.Profane)
+             .AddWeaponGroupAttackBonus(2, 1, ModifierDescriptor.Profane, false, WeaponFighterGroup.Bows)
+             .AddWeaponGroupAttackBonus(2, 1, ModifierDescriptor.Profane, false, WeaponFighterGroup.Crossbows)
+             .AddWeaponGroupAttackBonus(2, 1, ModifierDescriptor.Profane, false, WeaponFighterGroup.Thrown)
+             .Configure();
+
+            return FeatureConfigurator.New(Norgorber3, Norgorber3Guid)
+              .SetDisplayName(Norgorber3DisplayName)
+              .SetDescription(Norgorber3Description)
+              .SetIcon(icon)
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .AddFacts(new() { ability })
               .Configure();
         }
     }
