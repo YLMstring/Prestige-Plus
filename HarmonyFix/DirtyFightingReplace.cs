@@ -22,29 +22,33 @@ namespace PrestigePlus.HarmonyFix
     internal class DirtyFightingReplace
     {
         static void Postfix(ref int __result, ref UnitDescriptor unit, ref PrerequisiteStatValue __instance)
-        { 
+        {
+            Logger.Info("start");
             if (unit.HasFact(Dirty) && (__instance.Stat == StatType.Dexterity || __instance.Stat == StatType.Intelligence))
             {
+                Logger.Info("start1");
                 if (__instance.OwnerBlueprint is not BlueprintFeature blue) { return; }
-                if (blue.GetComponent<CMBBonus>() == null)
+                Logger.Info("start2");
+                if (blue.GetComponent<ManeuverBonus>() == null)
                 {
                     var prere = blue.GetComponents<PrerequisiteFeature>();
                     if (prere == null) { return; }
                     bool isCMB = false;
                     foreach (var pre in prere)
                     {
-                        if (pre.Feature?.GetComponent<CMBBonus>() != null)
+                        if (pre.Feature?.GetComponent<ManeuverBonus>() != null)
                         {
                             isCMB = true;
                             break;
                         }
                     }
                     if (!isCMB) { return; }
-                    __result = Math.Max(13, __result);
                 }
+                Logger.Info("start3");
+                __result = Math.Max(13, __result);
             }
         }
-
+        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         private static BlueprintFeatureReference Dirty = BlueprintTool.GetRef<BlueprintFeatureReference>(DirtyFighting.DirtyFightingGuid);
     }
 
@@ -68,14 +72,14 @@ namespace PrestigePlus.HarmonyFix
                 return;
             }
             if (__instance.OwnerBlueprint is not BlueprintFeature blue) { return; }
-            if (blue.GetComponent<CMBBonus>() == null)
+            if (blue.GetComponent<ManeuverBonus>() == null)
             {
                 var prere = blue.GetComponents<PrerequisiteFeature>();
                 if (prere == null) { return; }
                 bool isCMB = false;
                 foreach (var pre in prere)
                 {
-                    if (pre.Feature?.GetComponent<CMBBonus>() != null)
+                    if (pre.Feature?.GetComponent<ManeuverBonus>() != null)
                     {
                         isCMB = true;
                         break;

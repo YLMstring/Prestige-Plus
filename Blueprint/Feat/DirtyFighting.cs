@@ -20,7 +20,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string DirtyFightingDescription = "FeatDirtyFighting.Description";
         public static void DirtyFightingConfigure()
         {
-            var icon = FeatureRefs.DirtyTrickMythicFeat.Reference.Get().Icon;
+            var icon = AbilityRefs.SoothingMud.Reference.Get().Icon;
             
             FeatureConfigurator.New(DirtyFightingFeat, DirtyFightingGuid, FeatureGroup.Feat)
               .SetDisplayName(DirtyFightingDisplayName)

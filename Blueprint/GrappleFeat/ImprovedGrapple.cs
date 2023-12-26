@@ -220,7 +220,7 @@ namespace PrestigePlus.Blueprint.GrappleFeat
                     .AddPrerequisiteFeature(FeatureRefs.ImprovedUnarmedStrike.ToString())
                     .AddFacts(new() { ability, abilityRelease, abilityReady, abilityPin, abilityTieUp })
                     .AddComponent<ConditionTwoFreeHand>()
-                    .AddCMBBonusForManeuver(maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple }, value: ContextValues.Constant(2))
+                    .AddManeuverBonus(2, mythic: false, type: Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple)
                     .AddCMDBonusAgainstManeuvers(maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple }, value: ContextValues.Constant(2))
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .AddToFeatureSelection(FeatureSelectionRefs.MonkBonusFeatSelectionLevel1.ToString())
