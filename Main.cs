@@ -397,7 +397,7 @@ namespace PrestigePlus
             Logger.Info("Already configured delayed blueprints.");
             return;
           }
-            Initialized = true; PatchDomain.Patch(); PatchArmorTraining.Patch(); PatchKinetic.Patch(); GraveSpellList.CreateSecretDeath(); GraveSpellList.CreateMiracleList();
+            Initialized = true; PatchDomain.Patch(); PatchArmorTraining.Patch(); PatchKinetic.Patch(); GraveSpellList.CreateSecretDeath(); GraveSpellList.CreateMiracleList(); GraveSpellList.CreateMiracleList3();
             RootConfigurator.ConfigureDelayedBlueprints();
         }
         catch (Exception e)

@@ -47,6 +47,12 @@ using Kingmaker.AreaLogic;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.Blueprints.Items.Weapons;
+using Kingmaker.UnitLogic.Buffs.Components;
+using Kingmaker.Designers.Mechanics.Facts;
+using BlueprintCore.Blueprints.Configurators.Classes.Spells;
+using PrestigePlus.Patch;
+using PrestigePlus.Blueprint.PrestigeClass;
+using PrestigePlus.CustomComponent.PrestigeClass;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -1431,78 +1437,108 @@ namespace PrestigePlus.Blueprint.Feat
         }
 
         private const string Otolmens2 = "DeificObedience.Otolmens2";
-        public static readonly string Otolmens2Guid = "{48F018B2-7953-4BAE-8754-A354E849DE6E}";
+        public static readonly string Otolmens2Guid = "{F350ED5E-16A4-40A6-AC4B-75022A3B576E}";
 
         internal const string Otolmens2DisplayName = "DeificObedienceOtolmens2.Name";
         private const string Otolmens2Description = "DeificObedienceOtolmens2.Description";
+
+        private const string Otolmens2Buff = "DeificObedience.Otolmens2Buff";
+        private static readonly string Otolmens2BuffGuid = "{6BE98800-95A4-4CDF-BA06-9F09185B4FBD}";
+
+        private const string Otolmens2Res = "DeificObedience.Otolmens2Res";
+        private static readonly string Otolmens2ResGuid = "{EBBC4C26-85C8-47EB-9865-2D66FEF47378}";
+
+        private const string Otolmens2Ability = "DeificObedience.Otolmens2Ability";
+        private static readonly string Otolmens2AbilityGuid = "{D95219AB-86A6-472B-87BE-E10CA80334D8}";
         public static BlueprintFeature Otolmens2Feat()
         {
-            var icon = AbilityRefs.VengefulComets.Reference.Get().Icon;
+            var icon = AbilityRefs.TrueStrike.Reference.Get().Icon;
 
-            return FeatureConfigurator.New(Otolmens2, Otolmens2Guid)
-              .SetDisplayName(Otolmens2DisplayName)
-              .SetDescription(Otolmens2Description)
-              .SetIcon(icon)
-              .AddInitiatorAttackWithWeaponTrigger(category: WeaponCategory.Bomb, onlyHit: true, checkWeaponCategory: true,
-                    action: ActionsBuilder.New().CastSpell(AbilityRefs.Poison.ToString(), overrideSpellLevel: 3).Build())
-              .Configure();
-        }
-
-        private const string Otolmens3 = "DeificObedience.Otolmens3";
-        public static readonly string Otolmens3Guid = "{87D51D12-352E-403B-A11A-EA5CAC6E010B}";
-
-        internal const string Otolmens3DisplayName = "DeificObedienceOtolmens3.Name";
-        private const string Otolmens3Description = "DeificObedienceOtolmens3.Description";
-
-        private const string Otolmens3Buff = "DeificObedience.Otolmens3Buff";
-        private static readonly string Otolmens3BuffGuid = "{5149D11A-8D7F-43BA-B483-C8182CA6C7B0}";
-
-        private const string Otolmens3Res = "DeificObedience.Otolmens3Res";
-        private static readonly string Otolmens3ResGuid = "{422F7482-BCA2-4216-9F5D-D6B05E732D66}";
-
-        private const string Otolmens3Ability = "DeificObedience.Otolmens3Ability";
-        private static readonly string Otolmens3AbilityGuid = "{F0D91E50-7848-484D-8286-9E2E15506377}";
-        public static BlueprintFeature Otolmens3Feat()
-        {
-            var icon = AbilityRefs.InvisibilityGreater.Reference.Get().Icon;
-
-            var abilityresourse = AbilityResourceConfigurator.New(Otolmens3Res, Otolmens3ResGuid)
-                .SetMaxAmount(ResourceAmountBuilder.New(1))
+            var abilityresourse = AbilityResourceConfigurator.New(Otolmens2Res, Otolmens2ResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(3))
                 .Configure();
 
-            var ability = AbilityConfigurator.New(Otolmens3Ability, Otolmens3AbilityGuid)
+            var ability = AbilityConfigurator.New(Otolmens2Ability, Otolmens2AbilityGuid)
                 .CopyFrom(
-                AbilityRefs.InvisibilityGreater,
-                typeof(SpellComponent))
-                .SetDisplayName(Otolmens3DisplayName)
-                .SetDescription(Otolmens3Description)
+                AbilityRefs.TrueStrike,
+                typeof(AbilitySpawnFx))
+                .SetDisplayName(Otolmens2DisplayName)
+                .SetDescription(Otolmens2Description)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-                        .ApplyBuff(Otolmens3BuffGuid, ContextDuration.Variable(ContextValues.Property(UnitProperty.Level), DurationRate.Minutes))
+                        .ApplyBuff(Otolmens2BuffGuid, ContextDuration.Fixed(1))
                         .Build())
                 .SetRange(AbilityRange.Personal)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .Configure();
 
-            BuffConfigurator.New(Otolmens3Buff, Otolmens3BuffGuid)
+            BuffConfigurator.New(Otolmens2Buff, Otolmens2BuffGuid)
                 .CopyFrom(
-                BuffRefs.InvisibilityGreaterBuff,
-                typeof(BuffInvisibility))
-             .SetDisplayName(Otolmens3DisplayName)
-             .SetDescription(Otolmens3Description)
+                BuffRefs.TrueStrikeBuff,
+                typeof(AddGenericStatBonus),
+                typeof(RemoveBuffOnAttack),
+                typeof(IgnoreConcealment))
+             .SetDisplayName(Otolmens2DisplayName)
+             .SetDescription(Otolmens2Description)
              .SetIcon(icon)
-             .AddStatBonus(ModifierDescriptor.Profane, false, StatType.SkillPerception, 4)
-             .AddWeaponCategoryAttackBonus(2, WeaponCategory.Shortsword, ModifierDescriptor.Profane)
-             .AddWeaponGroupAttackBonus(2, 1, ModifierDescriptor.Profane, false, WeaponFighterGroup.Bows)
-             .AddWeaponGroupAttackBonus(2, 1, ModifierDescriptor.Profane, false, WeaponFighterGroup.Crossbows)
-             .AddWeaponGroupAttackBonus(2, 1, ModifierDescriptor.Profane, false, WeaponFighterGroup.Thrown)
+             .AddPartialDRIgnore(false, reductionPenaltyModifier: ContextValues.Property(UnitProperty.Level), useContextValue: true)
+             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Axiomatic.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.PrimaryHand)
+             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Axiomatic.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.SecondaryHand)
+             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Axiomatic.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.AdditionalLimb)
              .Configure();
+
+            return FeatureConfigurator.New(Otolmens2, Otolmens2Guid)
+              .SetDisplayName(Otolmens2DisplayName)
+              .SetDescription(Otolmens2Description)
+              .SetIcon(icon)
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string Otolmens3 = "DeificObedience.Otolmens3";
+        public static readonly string Otolmens3Guid = "{E71A0DA7-C131-447C-85D3-AE658DFECB88}";
+
+        private const string SpellBook = "Otolmens.SpellBook";
+        public static readonly string SpellBookGuid = "{BAB7DFA4-021C-474A-A6D8-C755E88B9D59}";
+
+        private const string SpellBookBuff = "Otolmens.SpellBookBuff";
+        public static readonly string SpellBookBuffGuid = "{D15BC272-E4CC-4917-8086-79F69FC437A3}";
+
+        internal const string Otolmens3DisplayName = "DeificObedienceOtolmens3.Name";
+        private const string Otolmens3Description = "DeificObedienceOtolmens3.Description";
+        public static BlueprintFeature Otolmens3Feat()
+        {
+            var icon = AbilityRefs.VengefulComets.Reference.Get().Icon;
+
+            var Buff1 = BuffConfigurator.New(SpellBookBuff, SpellBookBuffGuid)
+              .SetDisplayName(Otolmens3DisplayName)
+              .SetDescription(Otolmens3Description)
+              .SetIcon(icon)
+              .AddForbidSpellbook(spellbook: SpellBookGuid)
+              .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+              .AddToFlags(BlueprintBuff.Flags.RemoveOnRest)
+              .Configure();
+
+            var spellbook = SpellbookConfigurator.New(SpellBook, SpellBookGuid)
+              .SetName(OtolmensDisplayName)
+              .SetSpellsPerDay(ExaltedEvangelist.SpellTableGuid)
+              .SetAllSpellsKnown(true)
+              .SetSpellList(GraveSpellList.spelllist3guid)
+              .SetCharacterClass(CharacterClassRefs.MonkClass.ToString())
+              .SetCastingAttribute(StatType.Charisma)
+              .SetHasSpecialSpellList(true)
+              .SetSpontaneous(false)
+              .SetIsArcane(false)
+              .SetCantripsType(CantripsType.Orisions)
+              .Configure(delayed: true);
 
             return FeatureConfigurator.New(Otolmens3, Otolmens3Guid)
               .SetDisplayName(Otolmens3DisplayName)
               .SetDescription(Otolmens3Description)
               .SetIcon(icon)
-              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
-              .AddFacts(new() { ability })
+              .AddSpellbook(ContextValues.Property(UnitProperty.Level), spellbook: spellbook)
+              .AddComponent<MiracleSpellLevel>(c => { c.book = SpellBookGuid; c.level = 9; c.buff = SpellBookBuffGuid; })
               .Configure();
         }
     }

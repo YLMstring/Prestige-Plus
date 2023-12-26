@@ -29,6 +29,7 @@ namespace PrestigePlus.Patch
 
         private static readonly BlueprintSpellList WizardNecromancySpells = SpellListRefs.WizardNecromancySpellList.Reference.Get();
         private static readonly BlueprintSpellList ClericSpells = SpellListRefs.ClericSpellList.Reference.Get();
+        private static readonly BlueprintSpellList WizardSpells = SpellListRefs.WizardSpellList.Reference.Get();
 
         public static void CreateSecretDeath()
         {
@@ -166,15 +167,12 @@ namespace PrestigePlus.Patch
               .SetFilterByMaxLevel(6)
               .Configure();
 
-            var spells = new List<BlueprintAbility>() { };
-
             foreach (var level in spellList.SpellsByLevel)
             {
                 if (level.SpellLevel > 6) continue;
                 foreach (var spell in ClericSpells.SpellsByLevel[level.SpellLevel].Spells)
                 {
                     level.m_Spells.Add(spell.ToReference<BlueprintAbilityReference>());
-                    spells.Add(spell);
                 }
             }
 
@@ -187,9 +185,78 @@ namespace PrestigePlus.Patch
                 {
                     foreach (var spell in clazz.SpellsByLevel[level.SpellLevel].Spells)
                     {
-                        if (spells.Contains(spell)) continue;
                         level.m_Spells.Add(spell.ToReference<BlueprintAbilityReference>());
-                        spells.Add(spell);
+                    }
+                }
+            }
+        }
+
+        private const string spelllist3 = "CreateMiracle.spelllist3";
+        public static readonly string spelllist3guid = "{E02DA31C-756A-4150-B64C-A3B9A0F86957}";
+
+        public static void CreateMiracleList3()
+        {
+            var firstLevelSpells = new SpellLevelList(1)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+
+            var secondLevelSpells = new SpellLevelList(2)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+
+            var thirdLevelSpells = new SpellLevelList(3)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+
+            var fourthLevelSpells = new SpellLevelList(4)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+
+            var fifthLevelSpells = new SpellLevelList(5)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+
+            var sixthLevelSpells = new SpellLevelList(6)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+
+            var spellList = SpellListConfigurator.New(spelllist3, spelllist3guid)
+              .AddToSpellsByLevel(
+                new(0),
+                firstLevelSpells,
+                secondLevelSpells,
+                thirdLevelSpells,
+                fourthLevelSpells,
+                fifthLevelSpells,
+                sixthLevelSpells)
+              .SetFilterByMaxLevel(6)
+              .Configure();
+
+            foreach (var level in spellList.SpellsByLevel)
+            {
+                if (level.SpellLevel > 6) continue;
+                foreach (var spell in WizardSpells.SpellsByLevel[level.SpellLevel].Spells)
+                {
+                    level.m_Spells.Add(spell.ToReference<BlueprintAbilityReference>());
+                }
+            }
+
+            var list = new List<BlueprintSpellList>() { SpellListRefs.AlchemistSpellList.Reference.Get(), SpellListRefs.BardSpellList.Reference.Get(), SpellListRefs.BloodragerSpellList.Reference.Get(), SpellListRefs.DruidSpellList.Reference.Get(), SpellListRefs.HunterSpelllist.Reference.Get(), SpellListRefs.InquisitorSpellList.Reference.Get(), SpellListRefs.MagusSpellList.Reference.Get(), SpellListRefs.PaladinSpellList.Reference.Get(), SpellListRefs.RangerSpellList.Reference.Get(), SpellListRefs.ShamanSpelllist.Reference.Get(), SpellListRefs.WarpriestSpelllist.Reference.Get(), SpellListRefs.WitchSpellList.Reference.Get(), SpellListRefs.ClericSpellList.Reference.Get() };
+
+            foreach (var level in spellList.SpellsByLevel)
+            {
+                if (level.SpellLevel > 5) continue;
+                foreach (var clazz in list)
+                {
+                    foreach (var spell in clazz.SpellsByLevel[level.SpellLevel].Spells)
+                    {
+                        level.m_Spells.Add(spell.ToReference<BlueprintAbilityReference>());
                     }
                 }
             }

@@ -461,13 +461,12 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                     .SetDescription(SpellBookDescription)
                     .SetIcon(icon)
                     .AddSpellbook(ContextValues.Property(UnitProperty.Level), spellbook: spellbook)
-                    .AddComponent<MiracleSpellLevel>(c => { c.book = SpellBookGuid; })
-                    //.AddAbilityUseTrigger(action: ActionsBuilder.New().ApplyBuffPermanent(Buff1, toCaster: true).Build(), afterCast: true, fromSpellbook: true, spellbooks: new() { spellbook })
+                    .AddComponent<MiracleSpellLevel>(c => { c.book = SpellBookGuid; c.level = 7; c.buff = SpellBookBuffGuid; })
                     .Configure();
         }
 
         private const string SpellTable = "ExaltedEvangelist.SpellTable";
-        private static readonly string SpellTableGuid = "{8FD87C0A-831F-450C-8843-0F770B2F777D}";
+        public static readonly string SpellTableGuid = "{8FD87C0A-831F-450C-8843-0F770B2F777D}";
         private static BlueprintSpellsTable GetSpellSlots()
         {
             var ClericSpellSlots = SpellsTableRefs.ClericSpellLevels.Reference.Get();

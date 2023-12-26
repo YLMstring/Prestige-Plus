@@ -21,11 +21,11 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
     {
         void IRulebookHandler<RuleCalculateAbilityParams>.OnEventAboutToTrigger(RuleCalculateAbilityParams evt)
         {
-            BlueprintSpellbookReference Book = BlueprintTool.GetRef<BlueprintSpellbookReference>(ExaltedEvangelist.SpellBookGuid);
+            BlueprintSpellbookReference Book = BlueprintTool.GetRef<BlueprintSpellbookReference>(book);
             var spellbook = Owner.GetSpellbook(Book);
             if (spellbook != null && evt.Spellbook == spellbook)
             {
-                evt.ReplaceSpellLevel = 7;
+                evt.ReplaceSpellLevel = level;
             }
         }
 
@@ -41,17 +41,18 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
 
         void IRulebookHandler<RuleApplySpell>.OnEventDidTrigger(RuleApplySpell evt)
         {
-            BlueprintSpellbookReference Book = BlueprintTool.GetRef<BlueprintSpellbookReference>(ExaltedEvangelist.SpellBookGuid);
+            BlueprintSpellbookReference Book = BlueprintTool.GetRef<BlueprintSpellbookReference>(book);
             var spellbook = Owner.GetSpellbook(Book);
             var ability = evt.Spell.StickyTouch ?? evt.Spell;
             ability = ability.ConvertedFrom ?? evt.Spell;
             if (spellbook != null && ability.Spellbook == spellbook && evt.Spell.Blueprint.GetComponent<AbilityEffectStickyTouch>() == null)
             {
-                GameHelper.ApplyBuff(Owner, Buff);
+                GameHelper.ApplyBuff(Owner, BlueprintTool.GetRef<BlueprintBuffReference>(buff));
             }
         }
 
         public string book;
-        private static BlueprintBuffReference Buff = BlueprintTool.GetRef<BlueprintBuffReference>(ExaltedEvangelist.SpellBookBuffGuid);
+        public string buff;
+        public int level;
     }
 }
