@@ -34,7 +34,6 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteFeature(FeatureRefs.SelectiveChannel.ToString(), group: Prerequisite.GroupType.Any)
               .AddComponent<GuidedHandWis>()
               .Configure();
-
         }
 
         private const string GuidedHandMythic = "Feat.GuidedHandMythic";

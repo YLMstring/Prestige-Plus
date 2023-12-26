@@ -3,6 +3,7 @@ using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.EntitySystem.Entities;
+using PrestigePlus.Blueprint.Feat;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,14 @@ namespace PrestigePlus.Patch
             var feats = FeatureSelectionRefs.BasicFeatSelection.Reference.Get();
             var mabilities = FeatureSelectionRefs.MythicAbilitySelection.Reference.Get();
             var mfeats = FeatureSelectionRefs.MythicFeatSelection.Reference.Get();
+            var obedience = BlueprintTool.GetRef<BlueprintFeatureSelectionReference>(DeificObedience.DeificObedienceGuid)?.Get()?.m_AllFeatures;
+            if (obedience != null)
+            {
+                foreach (var feat in obedience)
+                {
+                    list.Add(feat);
+                }
+            }
             foreach (var feat in feats.m_Features)
             {
                 list.Add(feat);

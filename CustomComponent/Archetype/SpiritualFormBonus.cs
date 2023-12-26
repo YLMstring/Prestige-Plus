@@ -15,35 +15,30 @@ using Kingmaker.UnitLogic.Mechanics;
 
 namespace PrestigePlus.CustomComponent.Archetype
 {
-    internal class SpiritualFormBonus : UnitFactComponentDelegate<SpiritualFormBonus.ComponentData>
+    internal class SpiritualFormBonus : UnitFactComponentDelegate
     {
         public override void OnTurnOn()
         {
-            ModifiableValue stat;
-            stat = base.Owner.Stats.GetStat(Data.Stat);
-            if (Owner.Stats.Dexterity.ModifiedValue > stat.ModifiedValue)
+            ModifiableValue stat = base.Owner.Stats.Strength;
+            if (Owner.Stats.Dexterity > stat)
             {
-                Data.Stat = StatType.Dexterity;
+                stat = base.Owner.Stats.Dexterity;
             }
-            stat = base.Owner.Stats.GetStat(Data.Stat);
-            if (Owner.Stats.Constitution.ModifiedValue > stat.ModifiedValue)
+            if (Owner.Stats.Constitution > stat)
             {
-                Data.Stat = StatType.Constitution;
+                stat = base.Owner.Stats.Constitution;
             }
-            stat = base.Owner.Stats.GetStat(Data.Stat);
-            if (Owner.Stats.Intelligence.ModifiedValue > stat.ModifiedValue)
+            if (Owner.Stats.Intelligence > stat)
             {
-                Data.Stat = StatType.Intelligence;
+                stat = base.Owner.Stats.Intelligence;
             }
-            stat = base.Owner.Stats.GetStat(Data.Stat);
-            if (Owner.Stats.Wisdom.ModifiedValue > stat.ModifiedValue)
+            if (Owner.Stats.Wisdom > stat)
             {
-                Data.Stat = StatType.Wisdom;
+                stat = base.Owner.Stats.Wisdom;
             }
-            stat = base.Owner.Stats.GetStat(Data.Stat);
-            if (Owner.Stats.Charisma.ModifiedValue > stat.ModifiedValue)
+            if (Owner.Stats.Charisma > stat)
             {
-                Data.Stat = StatType.Charisma;
+                stat = base.Owner.Stats.Charisma;
             }
             stat.AddModifier(4, base.Runtime);
         }
@@ -51,16 +46,12 @@ namespace PrestigePlus.CustomComponent.Archetype
         // Token: 0x0600C0FC RID: 49404 RVA: 0x003267DA File Offset: 0x003249DA
         public override void OnTurnOff()
         {
-            ModifiableValue stat = base.Owner.Stats.GetStat(Data.Stat);
-            if (stat == null)
-            {
-                return;
-            }
-            stat.RemoveModifiersFrom(base.Runtime);
-        }
-        public class ComponentData
-        {
-            public StatType Stat = StatType.Strength;
+            Owner.Stats.Strength.RemoveModifiersFrom(base.Runtime);
+            Owner.Stats.Dexterity.RemoveModifiersFrom(base.Runtime);
+            Owner.Stats.Constitution.RemoveModifiersFrom(base.Runtime);
+            Owner.Stats.Intelligence.RemoveModifiersFrom(base.Runtime);
+            Owner.Stats.Wisdom.RemoveModifiersFrom(base.Runtime);
+            Owner.Stats.Charisma.RemoveModifiersFrom(base.Runtime);
         }
     }
 }
