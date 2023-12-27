@@ -54,6 +54,7 @@ using PrestigePlus.Patch;
 using PrestigePlus.Blueprint.PrestigeClass;
 using PrestigePlus.CustomComponent.PrestigeClass;
 using PrestigePlus.CustomComponent.Archetype;
+using Kingmaker.UnitLogic.FactLogic;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -102,7 +103,9 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(ErastilFeat())
               .AddToAllFeatures(GorumFeat())
               .AddToAllFeatures(MahathallahFeat())
-              //.AddToAllFeatures(NorgorberFeat())
+              .AddToAllFeatures(NorgorberFeat())
+              .AddToAllFeatures(OtolmensFeat())
+              .AddToAllFeatures(LamashtuFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -1674,30 +1677,44 @@ namespace PrestigePlus.Blueprint.Feat
         }
 
         private static readonly string Lamashtu3Name = "DeificObedienceLamashtu3";
-        public static readonly string Lamashtu3Guid = "{44AE0CA2-464E-4200-9C67-24D0CFCBAE1F}";
+        public static readonly string Lamashtu3Guid = "{F3250E50-B38F-4B8B-94EA-E9DA324918E8}";
 
         private static readonly string Lamashtu3DisplayName = "DeificObedienceLamashtu3.Name";
         private static readonly string Lamashtu3Description = "DeificObedienceLamashtu3.Description";
 
         private const string Lamashtu3Buff = "DeificObedienceStyle.Lamashtu3buff";
-        private static readonly string Lamashtu3BuffGuid = "{3A701136-709B-4F06-9202-F30AF7369F28}";
+        private static readonly string Lamashtu3BuffGuid = "{AC45714B-373D-43D8-876F-A5AEA678FCE0}";
 
         private const string Lamashtu3Ability = "DeificObedienceStyle.Lamashtu3Ability";
-        private static readonly string Lamashtu3AbilityGuid = "{BDC2A287-8FA8-4722-9206-A8E131D64EC8}";
+        private static readonly string Lamashtu3AbilityGuid = "{812310B5-0504-4A44-A472-25E3C6D783B2}";
 
         private const string Lamashtu3AbilityRes = "DeificObedienceStyle.Lamashtu3AbilityRes";
-        private static readonly string Lamashtu3AbilityResGuid = "{489136AD-7D46-44BD-979C-8633B294F324}";
+        private static readonly string Lamashtu3AbilityResGuid = "{93E4D058-1485-49B0-9EF1-0300C79EA1D5}";
 
         public static BlueprintFeature LamashtuExalted3Feat()
         {
-            var icon = AbilityRefs.IceBody.Reference.Get().Icon;
+            var icon = AbilityRefs.BalefulPolymorph.Reference.Get().Icon;
 
-            var Buff1 = BuffConfigurator.New(Lamashtu3Buff, Lamashtu3BuffGuid)
+            var buff = BuffConfigurator.New(Lamashtu3Buff, Lamashtu3BuffGuid)
+              .CopyFrom(
+                BuffRefs.BalefulPolymorphBuff,
+                typeof(AddCondition),
+                typeof(AddContextStatBonus),
+                typeof(Polymorph),
+                typeof(SpellDescriptorComponent),
+                typeof(ReplaceSourceBone),
+                typeof(ReplaceAsksList),
+                typeof(ReplaceCastSource),
+                typeof(ChangeImpatience),
+                typeof(SuppressBuffs),
+                typeof(AddBuffActions),
+                typeof(BuffMovementSpeed))
               .SetDisplayName(Lamashtu3DisplayName)
               .SetDescription(Lamashtu3Description)
-              .SetIcon(icon)
-              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
-              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+              .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.AdditionalAttackBonus, value: -2)
+              .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.AdditionalDamage, value: -2)
+              .AddBuffAllSavesBonus(ModifierDescriptor.Penalty, value: -2)
+              .AddBuffAllSkillsBonus(ModifierDescriptor.Penalty, value: -2, multiplier: 1)
               .Configure();
 
             var abilityresourse = AbilityResourceConfigurator.New(Lamashtu3AbilityRes, Lamashtu3AbilityResGuid)
@@ -1707,14 +1724,21 @@ namespace PrestigePlus.Blueprint.Feat
 
             var ability = AbilityConfigurator.New(Lamashtu3Ability, Lamashtu3AbilityGuid)
                 .CopyFrom(
-                AbilityRefs.InvisibilityGreater,
-                typeof(SpellComponent))
+                AbilityRefs.BalefulPolymorph,
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(AbilityTargetHasFact),
+                typeof(AbilitySpawnFx))
                 .SetDisplayName(Norgorber3DisplayName)
                 .SetDescription(Norgorber3Description)
-                .AddAbilityEffectRunAction(ActionsBuilder.New()
-                        .ApplyBuff(Norgorber3BuffGuid, ContextDuration.Variable(ContextValues.Property(UnitProperty.Level), DurationRate.Minutes))
+                .AddAbilityEffectRunAction(
+                actions: ActionsBuilder.New()
+                  .ConditionalSaved(failed: ActionsBuilder.New()
+                        .RemoveBuffsByDescriptor(SpellDescriptor.Polymorph, true)
+                        .ApplyBuffPermanent(buff, isFromSpell: true)
                         .Build())
-                .SetRange(AbilityRange.Personal)
+                  .Build(), savingThrowType: SavingThrowType.Fortitude)
+                .AddPretendSpellLevel(spellLevel: 9)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .Configure();
 

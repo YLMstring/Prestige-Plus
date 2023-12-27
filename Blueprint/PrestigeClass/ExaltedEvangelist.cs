@@ -135,6 +135,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
               .AddToAllFeatures(DeificObedience.MahathallahExaltedGuid)
+              .AddToAllFeatures(DeificObedience.LamashtuExaltedGuid)
               .Configure();
         }
 
