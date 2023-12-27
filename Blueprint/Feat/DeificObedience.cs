@@ -1541,5 +1541,180 @@ namespace PrestigePlus.Blueprint.Feat
               .AddComponent<MiracleSpellLevel>(c => { c.book = SpellBookGuid; c.level = 9; c.buff = SpellBookBuffGuid; })
               .Configure();
         }
+
+        private const string Lamashtu = "DeificObedience.Lamashtu";
+        public static readonly string LamashtuGuid = "{EA5E5868-7281-49D4-8B1A-8FC5EAE5D039}";
+
+        internal const string LamashtuDisplayName = "DeificObedienceLamashtu.Name";
+        private const string LamashtuDescription = "DeificObedienceLamashtu.Description";
+        public static BlueprintFeature LamashtuFeat()
+        {
+            var icon = FeatureRefs.LamashtuFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Lamashtu, LamashtuGuid)
+              .SetDisplayName(LamashtuDisplayName)
+              .SetDescription(LamashtuDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.LamashtuFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticEvil, group: Prerequisite.GroupType.Any)
+              .AddToIsPrerequisiteFor(LamashtuExaltedFeat())
+              .AddStatBonus(ModifierDescriptor.NaturalArmor, false, StatType.AC, 1)
+              .Configure();
+        }
+
+        private const string LamashtuExalted = "DeificObedience.LamashtuExalted";
+        public static readonly string LamashtuExaltedGuid = "{62E72E97-3407-4964-8873-46ED0757B0DA}";
+
+        internal const string LamashtuExaltedDisplayName = "DeificObedienceLamashtuExalted.Name";
+        private const string LamashtuExaltedDescription = "DeificObedienceLamashtuExalted.Description";
+        public static BlueprintProgression LamashtuExaltedFeat()
+        {
+            var icon = FeatureRefs.LamashtuFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(LamashtuExalted, LamashtuExaltedGuid)
+              .SetDisplayName(LamashtuExaltedDisplayName)
+              .SetDescription(LamashtuExaltedDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(LamashtuGuid)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(2, CreateLamashtu1())
+              .AddToLevelEntry(6, LamashtuExalted2Feat())
+              .AddToLevelEntry(10, LamashtuExalted3Feat())
+              .Configure();
+        }
+
+        private const string Lamashtu1 = "SpellPower.Lamashtu1";
+        public static readonly string Lamashtu1Guid = "{B546FA84-45BC-472D-8BA7-CFB9EB677FF9}";
+        internal const string Lamashtu1DisplayName = "SpellPowerLamashtu1.Name";
+        private const string Lamashtu1Description = "SpellPowerLamashtu1.Description";
+
+        private const string Lamashtu1Ablity = "SpellPower.UseLamashtu1";
+        private static readonly string Lamashtu1AblityGuid = "{F99A4ED4-9258-48F8-B46F-4F55FA6808EA}";
+
+        private const string Lamashtu1Ablity2 = "SpellPower.UseLamashtu12";
+        private static readonly string Lamashtu1Ablity2Guid = "{C667960A-44CA-433B-A07F-0BF545783E65}";
+
+        private const string Lamashtu1Ablity3 = "SpellPower.UseLamashtu13";
+        private static readonly string Lamashtu1Ablity3Guid = "{2DA69A18-0568-4A95-90D6-79751223DB3F}";
+
+        private static BlueprintFeature CreateLamashtu1()
+        {
+            var icon = FeatureRefs.ArmorMastery.Reference.Get().Icon;
+
+            var ability = AbilityConfigurator.New(Lamashtu1Ablity, Lamashtu1AblityGuid)
+                .CopyFrom(
+                AbilityRefs.EnlargePerson,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilityTargetHasFact),
+                typeof(AbilitySpawnFx))
+                .AddPretendSpellLevel(spellLevel: 1)
+                .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(Lamashtu1Ablity2, Lamashtu1Ablity2Guid)
+                .CopyFrom(
+                AbilityRefs.BullsStrength,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx))
+                .AddPretendSpellLevel(spellLevel: 2)
+                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var ability3 = AbilityConfigurator.New(Lamashtu1Ablity3, Lamashtu1Ablity3Guid)
+                .CopyFrom(
+                AbilityRefs.BeastShapeI,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(AbilitySpawnFx),
+                typeof(AbilityExecuteActionOnCast),
+                typeof(AbilityTargetHasFact),
+                typeof(ContextRankConfig))
+                .AddPretendSpellLevel(spellLevel: 3)
+                .AddAbilityResourceLogic(6, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Lamashtu1, Lamashtu1Guid)
+              .SetDisplayName(Lamashtu1DisplayName)
+              .SetDescription(Lamashtu1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability, ability2, ability3 })
+              .Configure();
+        }
+
+        private const string Lamashtu2 = "DeificObedience.Lamashtu2";
+        public static readonly string Lamashtu2Guid = "{0ACF8B8E-EA73-4D5A-96A6-4BC0303A8239}";
+
+        internal const string Lamashtu2DisplayName = "DeificObedienceLamashtu2.Name";
+        private const string Lamashtu2Description = "DeificObedienceLamashtu2.Description";
+        public static BlueprintFeature LamashtuExalted2Feat()
+        {
+            var icon = AbilityRefs.CrushingDespair.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Lamashtu2, Lamashtu2Guid)
+              .SetDisplayName(Lamashtu2DisplayName)
+              .SetDescription(Lamashtu2Description)
+              .SetIcon(icon)
+              .Configure();
+        }
+
+        private static readonly string Lamashtu3Name = "DeificObedienceLamashtu3";
+        public static readonly string Lamashtu3Guid = "{44AE0CA2-464E-4200-9C67-24D0CFCBAE1F}";
+
+        private static readonly string Lamashtu3DisplayName = "DeificObedienceLamashtu3.Name";
+        private static readonly string Lamashtu3Description = "DeificObedienceLamashtu3.Description";
+
+        private const string Lamashtu3Buff = "DeificObedienceStyle.Lamashtu3buff";
+        private static readonly string Lamashtu3BuffGuid = "{3A701136-709B-4F06-9202-F30AF7369F28}";
+
+        private const string Lamashtu3Ability = "DeificObedienceStyle.Lamashtu3Ability";
+        private static readonly string Lamashtu3AbilityGuid = "{BDC2A287-8FA8-4722-9206-A8E131D64EC8}";
+
+        private const string Lamashtu3AbilityRes = "DeificObedienceStyle.Lamashtu3AbilityRes";
+        private static readonly string Lamashtu3AbilityResGuid = "{489136AD-7D46-44BD-979C-8633B294F324}";
+
+        public static BlueprintFeature LamashtuExalted3Feat()
+        {
+            var icon = AbilityRefs.IceBody.Reference.Get().Icon;
+
+            var Buff1 = BuffConfigurator.New(Lamashtu3Buff, Lamashtu3BuffGuid)
+              .SetDisplayName(Lamashtu3DisplayName)
+              .SetDescription(Lamashtu3Description)
+              .SetIcon(icon)
+              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+              .Configure();
+
+            var abilityresourse = AbilityResourceConfigurator.New(Lamashtu3AbilityRes, Lamashtu3AbilityResGuid)
+                .SetMaxAmount(
+                    ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var ability = AbilityConfigurator.New(Lamashtu3Ability, Lamashtu3AbilityGuid)
+                .CopyFrom(
+                AbilityRefs.InvisibilityGreater,
+                typeof(SpellComponent))
+                .SetDisplayName(Norgorber3DisplayName)
+                .SetDescription(Norgorber3Description)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .ApplyBuff(Norgorber3BuffGuid, ContextDuration.Variable(ContextValues.Property(UnitProperty.Level), DurationRate.Minutes))
+                        .Build())
+                .SetRange(AbilityRange.Personal)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .Configure();
+
+            return FeatureConfigurator.New(Lamashtu3Name, Lamashtu3Guid)
+                    .SetDisplayName(Lamashtu3DisplayName)
+                    .SetDescription(Lamashtu3Description)
+                    .SetIcon(icon)
+                    .AddFacts(new() { ability })
+                    .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+                    .Configure();
+        }
     }
 }

@@ -7151,8 +7151,8 @@
   },
   {
     "Key": "DeificObedienceLamashtu2.Description",
-    "enGB": "Your mind constantly swirls with dark whispers and disturbing thoughts. You gain a +4 profane bonus on saving throws against mind-affecting (compulsion) spells and effects and against divination spells and effects. Anyone who targets you with such a spell or effect must succeed at a Will saving throw (with a DC equal to 10 + your Wisdom modifier + 1/2 your Hit Dice) or take 1d4 points of Wisdom damage.",
-    "zhCN": "你的头脑中不断萦绕着黑暗的低语和让人不安的想法所组成的漩涡。你在对抗影响心智（胁迫）的法术和效果、以及预言系法术和效果时，豁免检定获得+4亵渎加值。任何以你为目标使用上述法术或效果的人，都必须进行一次意志豁免检定（DC为10 + 你的感知调整值 + 1/2你的生命骰），失败则会受到1d4点感知伤害。"
+    "enGB": "Your mind constantly swirls with dark whispers and disturbing thoughts. You gain a +4 profane bonus on saving throws against mind-affecting (compulsion) spells and effects. Anyone who targets you with such a spell or effect must succeed at a Will saving throw (with a DC equal to 10 + your Wisdom modifier + 1/2 your Hit Dice) or take 1d4 points of Wisdom damage.",
+    "zhCN": "你的头脑中不断萦绕着黑暗的低语和让人不安的想法所组成的漩涡。你在对抗影响心智（胁迫）的法术和效果时，豁免检定获得+4亵渎加值。任何以你为目标使用上述法术或效果的人，都必须进行一次意志豁免检定（DC为10 + 你的感知调整值 + 1/2你的生命骰），失败则会受到1d4点感知伤害。"
   },
   {
     "Key": "DeificObedienceLamashtu3.Name",
@@ -7163,7 +7163,7 @@
   {
     "Key": "DeificObedienceLamashtu3.Description",
     "enGB": "Once per day, you can use baleful polymorph, except you change the target into a horribly mutated form of the chosen animal. The target takes a –4 penalty on its saving throw to resist your spell. In addition to the other effects of the spell, the subject is in constant pain from its twisted and disfigured form. This constant agony imposes a –2 penalty on all of the target’s skill checks, saving throws, attack rolls, and damage rolls.",
-    "zhCN": "你每日能够使用1次恶意变形术，不过你会将目标转变为你所选择动物的可怕变异体。目标在对抗你的法术的豁免检定中受到-4减值。除原本的效果之外，受术者还会从这种扭曲的畸变形态中受到永恒的痛苦，这种永恒的苦痛会让目标的所有技能检定、豁免检定、攻击检定和伤害检定受到-2减值。"
+    "zhCN": "你每日能够使用1次恶意变形术，不过你会将目标转变为你所选择动物的可怕变异体。目标在对抗你的法术的豁免检定中受到-4减值。除原本的效果之外，受术者还会在这种扭曲的畸变形态中感到持续的痛苦，这种持续的苦痛会让目标的所有技能检定、豁免检定、攻击检定和伤害检定受到-2减值。"
   },
   {
     "Key": "DeificObedienceOtolmens.Name",
