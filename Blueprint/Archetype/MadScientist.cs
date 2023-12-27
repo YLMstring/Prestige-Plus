@@ -108,11 +108,15 @@ namespace PrestigePlus.Blueprint.Archetype
         {
             var icon = AbilityRefs.JoyfulRapture.Reference.Get().Icon;
 
+            var action = ActionsBuilder.New()
+                                    .DealDamageToAbility(StatType.Wisdom, ContextDice.Value(Kingmaker.RuleSystem.DiceType.D3, 1, 0), setFactAsReason: true)
+                                    .Build();
+
             return FeatureConfigurator.New(MadGenius, MadGeniusGuid)
               .SetDisplayName(MadGeniusDisplayName)
               .SetDescription(MadGeniusDescription)
               .SetIcon(icon)
-              .AddComponent<MadScientistPrep>()
+              .AddComponent<MadScientistPrep>(c => { c.Action = action; })
               .Configure();
         }
     }

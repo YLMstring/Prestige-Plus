@@ -2,6 +2,7 @@
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
+using Kingmaker.ElementsSystem;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.PubSubSystem;
 using Kingmaker.UnitLogic;
@@ -16,6 +17,7 @@ namespace PrestigePlus.CustomComponent.Archetype
 {
     internal class MadScientistPrep : UnitFactComponentDelegate, ISpellBookRest
     {
+        public ActionList Action;
         void ISpellBookRest.OnSpellBookRestHandler(UnitEntityData unit)
         {
             if (unit != Owner || unit.Spellbooks?.Count() == 0) return;
@@ -36,8 +38,7 @@ namespace PrestigePlus.CustomComponent.Archetype
                                     IsTemporary = true
                                 };
                                 slot.Available = true;
-                                var action = ActionsBuilder.New().DealDamageToAbility(Kingmaker.EntitySystem.Stats.StatType.Wisdom, ContextDice.Value(Kingmaker.RuleSystem.DiceType.D3, 1, 0)).Build();
-                                Fact.RunActionInContext(action);
+                                Fact.RunActionInContext(Action);
                             }
                         }
                     }

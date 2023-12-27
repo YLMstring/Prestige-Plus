@@ -53,6 +53,7 @@ using BlueprintCore.Blueprints.Configurators.Classes.Spells;
 using PrestigePlus.Patch;
 using PrestigePlus.Blueprint.PrestigeClass;
 using PrestigePlus.CustomComponent.PrestigeClass;
+using PrestigePlus.CustomComponent.Archetype;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -1599,13 +1600,15 @@ namespace PrestigePlus.Blueprint.Feat
 
         private static BlueprintFeature CreateLamashtu1()
         {
-            var icon = FeatureRefs.ArmorMastery.Reference.Get().Icon;
+            var icon = AbilityRefs.MortalTerror.Reference.Get().Icon;
 
             var ability = AbilityConfigurator.New(Lamashtu1Ablity, Lamashtu1AblityGuid)
                 .CopyFrom(
-                AbilityRefs.EnlargePerson,
+                AbilityRefs.CauseFear,
                 typeof(AbilityEffectRunAction),
                 typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(AbilityTargetHasNoFactUnless),
                 typeof(AbilityTargetHasFact),
                 typeof(AbilitySpawnFx))
                 .AddPretendSpellLevel(spellLevel: 1)
@@ -1615,10 +1618,14 @@ namespace PrestigePlus.Blueprint.Feat
 
             var ability2 = AbilityConfigurator.New(Lamashtu1Ablity2, Lamashtu1Ablity2Guid)
                 .CopyFrom(
-                AbilityRefs.BullsStrength,
+                AbilityRefs.MortalTerror,
                 typeof(AbilityEffectRunAction),
                 typeof(SpellComponent),
-                typeof(AbilitySpawnFx))
+                typeof(SpellDescriptorComponent),
+                typeof(AbilityTargetHasNoFactUnless),
+                typeof(AbilityTargetHasFact),
+                typeof(AbilitySpawnFx),
+                typeof(ContextRankConfig))
                 .AddPretendSpellLevel(spellLevel: 2)
                 .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
                 .SetType(AbilityType.SpellLike)
@@ -1626,13 +1633,11 @@ namespace PrestigePlus.Blueprint.Feat
 
             var ability3 = AbilityConfigurator.New(Lamashtu1Ablity3, Lamashtu1Ablity3Guid)
                 .CopyFrom(
-                AbilityRefs.BeastShapeI,
+                AbilityRefs.Fear,
                 typeof(AbilityEffectRunAction),
                 typeof(SpellComponent),
                 typeof(SpellDescriptorComponent),
-                typeof(AbilitySpawnFx),
-                typeof(AbilityExecuteActionOnCast),
-                typeof(AbilityTargetHasFact),
+                typeof(AbilityDeliverProjectile),
                 typeof(ContextRankConfig))
                 .AddPretendSpellLevel(spellLevel: 3)
                 .AddAbilityResourceLogic(6, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
@@ -1656,10 +1661,15 @@ namespace PrestigePlus.Blueprint.Feat
         {
             var icon = AbilityRefs.CrushingDespair.Reference.Get().Icon;
 
+            var action = ActionsBuilder.New()
+                                    .DealDamageToAbility(StatType.Wisdom, ContextDice.Value(Kingmaker.RuleSystem.DiceType.D4, 1, 0), setFactAsReason: true)
+                                    .Build();
+
             return FeatureConfigurator.New(Lamashtu2, Lamashtu2Guid)
               .SetDisplayName(Lamashtu2DisplayName)
               .SetDescription(Lamashtu2Description)
               .SetIcon(icon)
+              .AddComponent<LamashtuMadness>(c => { c.Action = action; })
               .Configure();
         }
 
