@@ -1278,7 +1278,7 @@ namespace PrestigePlus.Blueprint.Feat
 
             var ability3 = AbilityConfigurator.New(Norgorber1Ablity3, Norgorber1Ablity3Guid)
                 .CopyFrom(
-                AbilityRefs.MagicalVestment,
+                AbilityRefs.PoisonCast,
                 typeof(AbilityEffectRunAction),
                 typeof(SpellComponent),
                 typeof(AbilityEffectStickyTouch),
@@ -1310,8 +1310,8 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(Norgorber2DisplayName)
               .SetDescription(Norgorber2Description)
               .SetIcon(icon)
-              .AddInitiatorAttackWithWeaponTrigger(category: WeaponCategory.Bomb, onlyHit: true, checkWeaponCategory: true,
-                    action: AbilityRefs.Poison.Reference.Get().GetComponent<AbilityEffectRunAction>()?.Actions)
+              //.AddComponent<NorgorberBomb>()
+              
               .Configure();
         }
 
@@ -1350,6 +1350,11 @@ namespace PrestigePlus.Blueprint.Feat
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .Configure();
 
+            var cats = new WeaponCategory [] { WeaponCategory.Shortsword, WeaponCategory.Shortbow, WeaponCategory.Longbow, WeaponCategory.LightRepeatingCrossbow,
+                                                WeaponCategory.LightCrossbow, WeaponCategory.HeavyRepeatingCrossbow, WeaponCategory.HeavyCrossbow,
+                                                WeaponCategory.HandCrossbow, WeaponCategory.Dart, WeaponCategory.Bomb, WeaponCategory.Javelin, WeaponCategory.Sling,
+                                                WeaponCategory.Shuriken, WeaponCategory.SlingStaff, WeaponCategory.ThrowingAxe };
+
             BuffConfigurator.New(Norgorber3Buff, Norgorber3BuffGuid)
                 .CopyFrom(
                 BuffRefs.InvisibilityGreaterBuff,
@@ -1358,10 +1363,7 @@ namespace PrestigePlus.Blueprint.Feat
              .SetDescription(Norgorber3Description)
              .SetIcon(icon)
              .AddStatBonus(ModifierDescriptor.Profane, false, StatType.SkillPerception, 4)
-             .AddWeaponCategoryAttackBonus(2, WeaponCategory.Shortsword, ModifierDescriptor.Profane)
-             .AddWeaponGroupAttackBonus(2, 1, ModifierDescriptor.Profane, false, WeaponFighterGroup.Bows)
-             .AddWeaponGroupAttackBonus(2, 1, ModifierDescriptor.Profane, false, WeaponFighterGroup.Crossbows)
-             .AddWeaponGroupAttackBonus(2, 1, ModifierDescriptor.Profane, false, WeaponFighterGroup.Thrown)
+             .AddWeaponMultipleCategoriesAttackBonus(2, cats, ModifierDescriptor.Profane)
              .Configure();
 
             return FeatureConfigurator.New(Norgorber3, Norgorber3Guid)
@@ -1586,7 +1588,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddPrerequisiteFeature(FeatureRefs.LamashtuFeature.ToString(), group: Prerequisite.GroupType.Any)
               .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticEvil, group: Prerequisite.GroupType.Any)
-              .AddPrerequisitePlayerHasFeature(FeatureRefs.DemonFirstAscension.ToString())
+              .AddPrerequisitePlayerHasFeature(FeatureRefs.DemonFirstAscension.ToString(), group: Prerequisite.GroupType.Any)
               .AddToIsPrerequisiteFor(LamashtuExaltedGuid)
               .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Profane, spellDescriptor: SpellDescriptor.Confusion, value: 4)
               .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Profane, spellDescriptor: SpellDescriptor.Polymorph, value: 4)
@@ -1735,12 +1737,11 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(ReplaceCastSource),
                 typeof(ChangeImpatience),
                 typeof(SuppressBuffs),
+                typeof(AddBuffActions),
                 typeof(BuffMovementSpeed))
               .SetDisplayName(Lamashtu3DisplayName)
               .SetDescription(Lamashtu3Description)
-              .AddBuffActions(activated: ActionsBuilder.New().RemoveBuff(BuffRefs.MountedBuff.ToString()).Build(),
-                    newRound: ActionsBuilder.New()
-                        .RemoveBuff(BuffRefs.MountedBuff.ToString())
+              .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New()
                         .DealDamage(DamageTypes.Direct(), ContextDice.Value(DiceType.D6, 1, 0))
                         .Build())
               .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.AdditionalAttackBonus, value: -2)
@@ -1761,8 +1762,8 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(SpellDescriptorComponent),
                 typeof(AbilityTargetHasFact),
                 typeof(AbilitySpawnFx))
-                .SetDisplayName(Norgorber3DisplayName)
-                .SetDescription(Norgorber3Description)
+                .SetDisplayName(Lamashtu3DisplayName)
+                .SetDescription(Lamashtu3Description)
                 .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
                   .ConditionalSaved(failed: ActionsBuilder.New()
