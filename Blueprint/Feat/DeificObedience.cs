@@ -1310,8 +1310,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(Norgorber2DisplayName)
               .SetDescription(Norgorber2Description)
               .SetIcon(icon)
-              //.AddComponent<NorgorberBomb>()
-              
+              .AddComponent<NorgorberBomb>()
               .Configure();
         }
 

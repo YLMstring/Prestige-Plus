@@ -1,7 +1,10 @@
-﻿using BlueprintCore.Blueprints.References;
+﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
+using BlueprintCore.Blueprints.References;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Items.Weapons;
 using Kingmaker.Designers;
+using Kingmaker.ElementsSystem;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic;
@@ -22,23 +25,15 @@ namespace PrestigePlus.CustomComponent.Feat
         {
             
         }
-
+        public ActionList action = ActionsBuilder.New()
+                                        .CastSpell(AbilityRefs.Poison.ToString(), overrideSpellLevel: 7)
+                                        .Build();
         void IRulebookHandler<RuleAttackRoll>.OnEventDidTrigger(RuleAttackRoll evt)
         {
             if (evt.IsHit && evt.Weapon?.Blueprint.Type == WeaponTypeRefs.BombType.Reference.Get())
             {
-                var action = AbilityRefs.Poison.Reference.Get().GetComponent<AbilityEffectRunAction>()?.Actions.Actions.First() as ContextActionConditionalSaved;
-                if (action?.Failed == null) return;
-                int dc = Owner.Stats.Wisdom.Bonus + 13;
-                bool pass = GameHelper.TriggerSkillCheck(new RuleSkillCheck(evt.Target, Kingmaker.EntitySystem.Stats.StatType.SaveWill, dc)
-                {
-                    IgnoreDifficultyBonusToDC = evt.Target.IsPlayersEnemy
-                }, evt.Target.Context, true).Success;
-                if (!pass)
-                {
-                    IFactContextOwner factContextOwner = base.Fact as IFactContextOwner;
-                    factContextOwner?.RunActionInContext(action.Failed, evt.Target);
-                }
+                IFactContextOwner factContextOwner = base.Fact as IFactContextOwner;
+                factContextOwner?.RunActionInContext(action, evt.Target);
             }
         }
     }
