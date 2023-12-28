@@ -1,4 +1,4 @@
-# Prestige Plus v2.2.1 for WoTR 
+# Prestige Plus v2.2.2 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -34,6 +34,9 @@
 - [Erastil](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Erastil): requires worshipping Erastil or Lawful Good
 - [Gorum (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Gorum): requires heavy armor proficiency, worshipping Gorum or Chaotic Neutral
 - [Mahathallah (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Mahathallah): requires worshipping Asmodeus or Lawful Evil
+- [Norgorber](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Norgorber): requires worshipping Norgorber or Neutral Evil
+- [Lamashtu (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Lamashtu): requires worshipping Lamashtu or Chaotic Evil
+- [Otolmens](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Otolmens): requires worshipping Otolmens (Expanded Content) or Lawful Neutral
 - More coming soon!
 ### [Exalted](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/exalted/) [Evangelist](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/evangelist/)
 - Based off the Exalted class and the Evangelist class.
