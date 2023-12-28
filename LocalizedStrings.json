@@ -7122,6 +7122,17 @@
     "zhCN": "以怪物之母的名义献祭一个非自愿的活物。在此过程中要最大程度地激发出祭品的恐惧之心并让其承受无上的苦痛。你施加的致命一击应当是狂野而极具毁灭性的——不要让你的祭品干净利落地死去。该名生物死亡后，便从它体内抽出一根骨头削尖。用这根骨头深深切开自己，使创口足以留下伤疤。最后将祭品那残缺不全的尸体暴露在有食腐生物能吃掉它，或者有旅者能看到它，因此知晓拉玛什图伟大力量的地方。你的AC获得+1天生防御加值。"
   },
   {
+    "Key": "DeificObedienceLamashtuDemon.Name",
+    "ProcessTemplates": false,
+    "enGB": "Lamashtu Demonic Obedience",
+    "zhCN": "拉玛什图恶魔仪典"
+  },
+  {
+    "Key": "DeificObedienceLamashtuDemon.Description",
+    "enGB": "Engage in a tryst with the sincere intention of being impregnated or impregnating your partner, or sacrifice a creature that has been alive for no more than a week. Gain a +4 profane bonus on saves against confusion, and polymorph effects.",
+    "zhCN": "带着让自己或伴侣怀孕的真诚意图进行一场幽会，或献祭一个存活时间不超过一周的生物。在对抗困惑和变形效果的豁免中获得+4亵渎加值。"
+  },
+  {
     "Key": "DeificObedienceLamashtuExalted.Name",
     "ProcessTemplates": false,
     "enGB": "Lamashtu (Exalted)",
@@ -7162,8 +7173,8 @@
   },
   {
     "Key": "DeificObedienceLamashtu3.Description",
-    "enGB": "Once per day, you can use baleful polymorph, except you change the target into a horribly mutated form of the chosen animal. The target takes a –4 penalty on its saving throw to resist your spell. In addition to the other effects of the spell, the subject is in constant pain from its twisted and disfigured form. This constant agony imposes a –2 penalty on all of the target’s skill checks, saving throws, attack rolls, and damage rolls.",
-    "zhCN": "你每日能够使用1次恶意变形术，不过你会将目标转变为你所选择动物的可怕变异体。目标在对抗你的法术的豁免检定中受到-4减值。除原本的效果之外，受术者还会在这种扭曲的畸变形态中感到持续的痛苦，这种持续的苦痛会让目标的所有技能检定、豁免检定、攻击检定和伤害检定受到-2减值。"
+    "enGB": "Once per day, you can use baleful polymorph, except you change the target into a horribly mutated form of the chosen animal. The target takes a –4 penalty on its saving throw to resist your spell. In addition to the other effects of the spell, the subject is in constant pain from its twisted and disfigured form, and takes 1d6 points of damage each round. This constant agony imposes a –2 penalty on all of the target’s skill checks, saving throws, attack rolls, and damage rolls.",
+    "zhCN": "你每日能够使用1次恶意变形术，不过你会将目标转变为你所选择动物的可怕变异体。目标在对抗你的法术的豁免检定中受到-4减值。除原本的效果之外，受术者还会在这种扭曲的畸变形态中感到持续的痛苦，每轮受到1d6点伤害。这种持续的苦痛还会让目标的所有技能检定、豁免检定、攻击检定和伤害检定受到-2减值。"
   },
   {
     "Key": "DeificObedienceOtolmens.Name",

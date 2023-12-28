@@ -55,6 +55,8 @@ using PrestigePlus.Blueprint.PrestigeClass;
 using PrestigePlus.CustomComponent.PrestigeClass;
 using PrestigePlus.CustomComponent.Archetype;
 using Kingmaker.UnitLogic.FactLogic;
+using Kingmaker.RuleSystem.Rules.Damage;
+using BlueprintCore.Actions.Builder.BasicEx;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -106,6 +108,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(NorgorberFeat())
               .AddToAllFeatures(OtolmensFeat())
               .AddToAllFeatures(LamashtuFeat())
+              .AddToAllFeatures(LamashtuDemonFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -1301,14 +1304,14 @@ namespace PrestigePlus.Blueprint.Feat
         private const string Norgorber2Description = "DeificObedienceNorgorber2.Description";
         public static BlueprintFeature Norgorber2Feat()
         {
-            var icon = AbilityRefs.VengefulComets.Reference.Get().Icon;
+            var icon = FeatureRefs.AcidBombsFeature.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Norgorber2, Norgorber2Guid)
               .SetDisplayName(Norgorber2DisplayName)
               .SetDescription(Norgorber2Description)
               .SetIcon(icon)
               .AddInitiatorAttackWithWeaponTrigger(category: WeaponCategory.Bomb, onlyHit: true, checkWeaponCategory: true,
-                    action: ActionsBuilder.New().CastSpell(AbilityRefs.Poison.ToString(), overrideSpellLevel: 3).Build())
+                    action: AbilityRefs.Poison.Reference.Get().GetComponent<AbilityEffectRunAction>()?.Actions)
               .Configure();
         }
 
@@ -1377,7 +1380,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string OtolmensDescription = "DeificObedienceOtolmens.Description";
         public static BlueprintProgression OtolmensFeat()
         {
-            var icon = FeatureRefs.FortuneRevelationFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.SkillFocusKnowledgeWorld.Reference.Get().Icon;
             //"OtolmensFeature": "e7f5ed5c-afd1-413f-9e26-e7a669572e21",
             return ProgressionConfigurator.New(Otolmens, OtolmensGuid)
               .SetDisplayName(OtolmensDisplayName)
@@ -1398,7 +1401,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static BlueprintFeature Otolmens0Feat()
         {
-            var icon = FeatureRefs.FortuneRevelationFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.SkillFocusKnowledgeWorld.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Otolmens0, Otolmens0Guid)
               .SetDisplayName(OtolmensDisplayName)
@@ -1418,7 +1421,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         private static BlueprintFeature CreateOtolmens1()
         {
-            var icon = AbilityRefs.Blink.Reference.Get().Icon;
+            var icon = FeatureRefs.CavalierTacticianFeature.Reference.Get().Icon;
 
             var ability3 = AbilityConfigurator.New(Otolmens1Ablity3, Otolmens1Ablity3Guid)
                 .CopyFrom(
@@ -1427,6 +1430,7 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(SpellComponent),
                 typeof(ContextRankConfig),
                 typeof(SpellDescriptorComponent))
+                .SetIcon(icon)
                 .AddPretendSpellLevel(spellLevel: 3)
                 .AddAbilityResourceLogic(6, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
                 .SetType(AbilityType.SpellLike)
@@ -1472,6 +1476,7 @@ namespace PrestigePlus.Blueprint.Feat
                         .ApplyBuff(Otolmens2BuffGuid, ContextDuration.Fixed(1))
                         .Build())
                 .SetRange(AbilityRange.Personal)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .Configure();
 
@@ -1479,11 +1484,11 @@ namespace PrestigePlus.Blueprint.Feat
                 .CopyFrom(
                 BuffRefs.TrueStrikeBuff,
                 typeof(AddGenericStatBonus),
-                typeof(RemoveBuffOnAttack),
                 typeof(IgnoreConcealment))
              .SetDisplayName(Otolmens2DisplayName)
              .SetDescription(Otolmens2Description)
              .SetIcon(icon)
+             .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().RemoveBuff(Otolmens2BuffGuid, toCaster: false).Build(), actionsOnInitiator: true)
              .AddPartialDRIgnore(false, reductionPenaltyModifier: ContextValues.Property(UnitProperty.Level), useContextValue: true)
              .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Axiomatic.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.PrimaryHand)
              .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Axiomatic.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.SecondaryHand)
@@ -1512,7 +1517,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string Otolmens3Description = "DeificObedienceOtolmens3.Description";
         public static BlueprintFeature Otolmens3Feat()
         {
-            var icon = AbilityRefs.VengefulComets.Reference.Get().Icon;
+            var icon = AbilityRefs.OverwhelmingPresence.Reference.Get().Icon;
 
             var Buff1 = BuffConfigurator.New(SpellBookBuff, SpellBookBuffGuid)
               .SetDisplayName(Otolmens3DisplayName)
@@ -1566,6 +1571,28 @@ namespace PrestigePlus.Blueprint.Feat
               .Configure();
         }
 
+        private const string LamashtuDemon = "DeificObedience.LamashtuDemon";
+        public static readonly string LamashtuDemonGuid = "{4C69BA62-9B69-44E2-B650-DEEB090CB958}";
+
+        internal const string LamashtuDemonDisplayName = "DeificObedienceLamashtuDemon.Name";
+        private const string LamashtuDemonDescription = "DeificObedienceLamashtuDemon.Description";
+        public static BlueprintFeature LamashtuDemonFeat()
+        {
+            var icon = AbilityRefs.Feeblemind.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(LamashtuDemon, LamashtuDemonGuid)
+              .SetDisplayName(LamashtuDemonDisplayName)
+              .SetDescription(LamashtuDemonDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.LamashtuFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticEvil, group: Prerequisite.GroupType.Any)
+              .AddPrerequisitePlayerHasFeature(FeatureRefs.DemonFirstAscension.ToString())
+              .AddToIsPrerequisiteFor(LamashtuExaltedGuid)
+              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Profane, spellDescriptor: SpellDescriptor.Confusion, value: 4)
+              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Profane, spellDescriptor: SpellDescriptor.Polymorph, value: 4)
+              .Configure();
+        }
+
         private const string LamashtuExalted = "DeificObedience.LamashtuExalted";
         public static readonly string LamashtuExaltedGuid = "{62E72E97-3407-4964-8873-46ED0757B0DA}";
 
@@ -1579,11 +1606,12 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(LamashtuExaltedDisplayName)
               .SetDescription(LamashtuExaltedDescription)
               .SetIcon(icon)
-              .AddPrerequisiteFeature(LamashtuGuid)
+              .AddPrerequisiteFeature(LamashtuGuid, group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteFeature(LamashtuDemonGuid, group: Prerequisite.GroupType.Any)
               .SetGiveFeaturesForPreviousLevels(true)
-              .AddToLevelEntry(2, CreateLamashtu1())
-              .AddToLevelEntry(6, LamashtuExalted2Feat())
-              .AddToLevelEntry(10, LamashtuExalted3Feat())
+              .AddToLevelEntry(12, CreateLamashtu1())
+              .AddToLevelEntry(16, LamashtuExalted2Feat())
+              .AddToLevelEntry(20, LamashtuExalted3Feat())
               .Configure();
         }
 
@@ -1662,7 +1690,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string Lamashtu2Description = "DeificObedienceLamashtu2.Description";
         public static BlueprintFeature LamashtuExalted2Feat()
         {
-            var icon = AbilityRefs.CrushingDespair.Reference.Get().Icon;
+            var icon = FeatureRefs.ShamanHexFearfulGazeFeature.Reference.Get().Icon;
 
             var action = ActionsBuilder.New()
                                     .DealDamageToAbility(StatType.Wisdom, ContextDice.Value(Kingmaker.RuleSystem.DiceType.D4, 1, 0), setFactAsReason: true)
@@ -1707,10 +1735,14 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(ReplaceCastSource),
                 typeof(ChangeImpatience),
                 typeof(SuppressBuffs),
-                typeof(AddBuffActions),
                 typeof(BuffMovementSpeed))
               .SetDisplayName(Lamashtu3DisplayName)
               .SetDescription(Lamashtu3Description)
+              .AddBuffActions(activated: ActionsBuilder.New().RemoveBuff(BuffRefs.MountedBuff.ToString()).Build(),
+                    newRound: ActionsBuilder.New()
+                        .RemoveBuff(BuffRefs.MountedBuff.ToString())
+                        .DealDamage(DamageTypes.Direct(), ContextDice.Value(DiceType.D6, 1, 0))
+                        .Build())
               .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.AdditionalAttackBonus, value: -2)
               .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.AdditionalDamage, value: -2)
               .AddBuffAllSavesBonus(ModifierDescriptor.Penalty, value: -2)
