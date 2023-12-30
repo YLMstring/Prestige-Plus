@@ -8,6 +8,7 @@ using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Class.LevelUp;
+using PrestigePlus.Blueprint.Archetype;
 using PrestigePlus.Blueprint.Feat;
 using PrestigePlus.Blueprint.PrestigeClass;
 using System;
@@ -59,6 +60,11 @@ namespace PrestigePlus.HarmonyFix
                 __result = !(selectionState != null) || !selectionState.IsSelectedInChildren(__instance.Feature);
                 return;
             }
+            if (unit.Progression.Features.HasFact(Defender) && __instance.Feature == FeatureRefs.CombatReflexes.Reference.Get())
+            {
+                __result = !(selectionState != null) || !selectionState.IsSelectedInChildren(__instance.Feature);
+                return;
+            }
             if (__instance.Feature != FeatureRefs.CombatExpertiseFeature.Reference.Get() && __instance.Feature != FeatureRefs.ImprovedUnarmedStrike.Reference.Get())
             {
                 return;
@@ -87,5 +93,6 @@ namespace PrestigePlus.HarmonyFix
         }
 
         private static BlueprintFeatureReference Dirty = BlueprintTool.GetRef<BlueprintFeatureReference>(DirtyFighting.DirtyFightingGuid);
+        private static BlueprintFeatureReference Defender = BlueprintTool.GetRef<BlueprintFeatureReference>(HighGuardian.DefenderReflexesGuid);
     }
 }
