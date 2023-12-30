@@ -18,9 +18,6 @@ namespace PrestigePlus.Blueprint.Feat
 {
     internal class RippleWater
     {
-        private static readonly string FeatName = "RippleWater";
-        public static readonly string FeatGuid = "{A2A76E5C-DBFC-40DA-AF18-06DBEE934588}";
-
         private static readonly string FeatNamePro = "RippleWaterPro";
         public static readonly string FeatGuidPro = "{F2675BE8-0E12-4D43-B485-708DA87A972F}";
 
@@ -80,9 +77,6 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToLevelEntry(19, featreal)
               .AddToLevelEntry(20, featreal)
               .Configure();
-
-            FeatureSelectionConfigurator.New(FeatName, FeatGuid)
-                    .Configure();
 
             FeatureSelectionConfigurator.For(FeatureSelectionRefs.BasicFeatSelection)
                 .AddToAllFeatures(pro)
