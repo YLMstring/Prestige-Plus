@@ -45,7 +45,7 @@ namespace PrestigePlus.Blueprint.MythicGrapple
         public static readonly string Stylebuff2Guid = "{A8710AE9-2052-4494-89E3-08E30A8CC95D}";
 
         private const string StyleActivatableAbility3 = "AerialAssault.StyleActivatableAbility3";
-        private static readonly string StyleActivatableAbility3Guid = "{3B783C46-7BE2-4587-920A-0BBCA4FAEBF9}";
+        public static readonly string StyleActivatableAbility3Guid = "{3B783C46-7BE2-4587-920A-0BBCA4FAEBF9}";
 
         private const string Stylebuff3 = "AerialAssault.Stylebuff3";
         public static readonly string Stylebuff3Guid = "{302B7432-7F03-4D5E-89C6-BB01227ABFD4}";
