@@ -474,7 +474,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .CopyFrom(
                 AbilityRefs.DazzlingDisplayAction,
                 typeof(AbilitySpawnFx))
-                //.SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.EnchantWeapon)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                     .SavingThrow(type: SavingThrowType.Will, useDCFromContextSavingThrow: true,
                     onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(Buff, ContextDuration.Fixed(1)).Build()).Build())

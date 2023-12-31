@@ -29,6 +29,11 @@ using Kingmaker.Utility;
 using BlueprintCore.Conditions.Builder.ContextEx;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Enums;
+using BlueprintCore.Actions.Builder.ContextEx;
+using Kingmaker.UnitLogic.Abilities.Components.Base;
+using PrestigePlus.CustomComponent.PrestigeClass;
+using PrestigePlus.Modify;
+using Kingmaker.UnitLogic.Abilities.Components;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -55,6 +60,7 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToAddFeatures(5, BadgeFeat())
             .AddToAddFeatures(7, Apprehend2Guid)
             .AddToAddFeatures(12, Apprehend2Guid)
+            .AddToAddFeatures(14, GreaterBadgeFeat())
             .AddToAddFeatures(17, Apprehend2Guid)
               .AddToClassSkills(StatType.SkillAthletics)
               .AddToClassSkills(StatType.SkillMobility)
@@ -148,6 +154,68 @@ namespace PrestigePlus.Blueprint.Archetype
                     .SetIcon(icon)
                     .AddAuraFeatureComponent(Buff1)
                     .Configure();
+        }
+
+        private const string GreaterBadge = "Constable.GreaterBadge";
+        private static readonly string GreaterBadgeGuid = "{91380B1C-701F-4BD4-83E1-EB4B59440E21}";
+
+        internal const string GreaterBadgeDisplayName = "ConstableGreaterBadge.Name";
+        private const string GreaterBadgeDescription = "ConstableGreaterBadge.Description";
+
+        private const string GreaterBadgeAbility = "Constable.GreaterBadgeAbility";
+        private static readonly string GreaterBadgeAbilityGuid = "{A028ABF1-8707-4BBF-AFA6-8CC7D163EF39}";
+
+        private const string GreaterBadgeCooldownBuff = "Constable.GreaterBadgeCooldownBuff";
+        private static readonly string GreaterBadgeCooldownBuffGuid = "{8257C172-2F03-4721-B7A3-9696B9069E2A}";
+
+        private const string GreaterBadgeBuff = "Constable.GreaterBadgeBuff";
+        private static readonly string GreaterBadgeBuffGuid = "{04613219-EC7A-40A4-90D5-0A4103BA6A91}";
+
+        public static BlueprintFeature GreaterBadgeFeat()
+        {
+            var icon = AbilityRefs.Glitterdust.Reference.Get().Icon;
+
+            var CooldownBuff = BuffConfigurator.New(GreaterBadgeCooldownBuff, GreaterBadgeCooldownBuffGuid)
+                .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+                .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+                .AddToFlags(BlueprintBuff.Flags.RemoveOnRest)
+                .Configure();
+
+            var Buff = BuffConfigurator.New(GreaterBadgeBuff, GreaterBadgeBuffGuid)
+              .SetDisplayName(GreaterBadgeDisplayName)
+              .SetDescription(GreaterBadgeDescription)
+              .SetIcon(icon)
+              .AddSpellDescriptorComponent(descriptor: SpellDescriptor.TemporaryHP)
+              .AddTemporaryHitPointsFromAbilityValue(removeWhenHitPointsEnd: true, value: ContextValues.Rank())
+              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.CavalierClass.ToString() }, type: AbilityRankType.SpeedBonus).WithBonusValueProgression(0, true))
+              .Configure();
+
+            var ability = AbilityConfigurator.New(GreaterBadgeAbility, GreaterBadgeAbilityGuid)
+                .CopyFrom(
+                AbilityRefs.FalseLife,
+                typeof(AbilitySpawnFx))
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                    .Conditional(ConditionsBuilder.New().HasFact(CooldownBuff, true).TargetIsYourself(true).Build(),
+                    ifTrue: ActionsBuilder.New()
+                        .ApplyBuff(Buff, ContextDuration.Fixed(1, Kingmaker.UnitLogic.Mechanics.DurationRate.TenMinutes))
+                        .ApplyBuff(CooldownBuff, ContextDuration.Fixed(1, Kingmaker.UnitLogic.Mechanics.DurationRate.Days))
+                        .Build())
+                    .Build())
+                .SetDisplayName(GreaterBadgeDisplayName)
+                .SetDescription(GreaterBadgeDescription)
+                .SetIcon(icon)
+                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Ally, radius: 30.Feet(), spreadSpeed: 40.Feet())
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Extraordinary)
+                .Configure();
+
+            return FeatureConfigurator.New(GreaterBadge, GreaterBadgeGuid)
+              .SetDisplayName(GreaterBadgeDisplayName)
+              .SetDescription(GreaterBadgeDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddFacts(new() { ability })
+              .Configure();
         }
     }
 }
