@@ -268,9 +268,6 @@ namespace PrestigePlus.Blueprint.Feat
         private const string AuraBuff = "DeificObedienceStyle.Naderi3buff";
         private static readonly string AuraBuffGuid = "{3A701136-709B-4F06-9202-F30AF7369F28}";
 
-        private const string AuraBuff2 = "DeificObedienceStyle.Naderi3buff2";
-        private static readonly string AuraBuff2Guid = "{35E97B8C-B385-4AC4-9556-D54DEF11DF56}";
-
         private const string Naderi3Aura = "DeificObedienceStyle.Naderi3Aura";
         private static readonly string Naderi3AuraGuid = "{0D79B107-54C2-4439-BF31-CA3B1C4A0A74}";
 
@@ -283,12 +280,6 @@ namespace PrestigePlus.Blueprint.Feat
         public static BlueprintFeature NaderiSentinel3Feat()
         {
             var icon = AbilityRefs.IceBody.Reference.Get().Icon;
-
-            var Buff2 = BuffConfigurator.New(AuraBuff2, AuraBuff2Guid)
-              .SetDisplayName(Naderi3DisplayName)
-              .SetDescription(Naderi3Description)
-              .SetIcon(icon)
-              .Configure();
 
             var area = AbilityAreaEffectConfigurator.New(Naderi3Aura, Naderi3AuraGuid)
                 .SetAffectEnemies(true)

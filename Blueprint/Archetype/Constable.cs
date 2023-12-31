@@ -21,6 +21,14 @@ using System.Threading.Tasks;
 using Kingmaker.EntitySystem.Stats;
 using PrestigePlus.Blueprint.MythicGrapple;
 using Kingmaker.RuleSystem.Rules;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.UnitLogic.ActivatableAbilities;
+using Kingmaker.UnitLogic.Buffs.Blueprints;
+using Kingmaker.UnitLogic.Mechanics.Properties;
+using Kingmaker.Utility;
+using BlueprintCore.Conditions.Builder.ContextEx;
+using Kingmaker.Blueprints.Classes.Spells;
+using Kingmaker.Enums;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -44,6 +52,7 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToAddFeatures(1, CreateApprehend())
             .AddToAddFeatures(2, CreateApprehend2())
             .AddToAddFeatures(4, FeatureRefs.HunterWoodlandStride.ToString())
+            .AddToAddFeatures(5, BadgeFeat())
             .AddToAddFeatures(7, Apprehend2Guid)
             .AddToAddFeatures(12, Apprehend2Guid)
             .AddToAddFeatures(17, Apprehend2Guid)
@@ -85,6 +94,60 @@ namespace PrestigePlus.Blueprint.Archetype
               .Configure();
         }
 
-        
+        private static readonly string BadgeName = "ConstableBadge";
+        public static readonly string BadgeGuid = "{ACC289B3-67EE-4918-9571-CB045D1F01D5}";
+
+        private static readonly string BadgeDisplayName = "ConstableBadge.Name";
+        private static readonly string BadgeDescription = "ConstableBadge.Description";
+
+        private const string AuraBuff = "Constable.Badgebuff";
+        private static readonly string AuraBuffGuid = "{776DA948-3A6C-41ED-8B84-ACF9E32F7E70}";
+
+        private const string AuraBuff2 = "Constable.Badgebuff2";
+        private static readonly string AuraBuff2Guid = "{41D0DB7F-AA2E-45FA-8C3C-833DF46F6814}";
+
+        private const string BadgeAura = "Constable.BadgeAura";
+        private static readonly string BadgeAuraGuid = "{E251A253-36FD-4C36-B308-90EBAFA7261A}";
+
+        public static BlueprintFeature BadgeFeat()
+        {
+            var icon = AbilityRefs.IceBody.Reference.Get().Icon;
+
+            var Buff2 = BuffConfigurator.New(AuraBuff2, AuraBuff2Guid)
+              .SetDisplayName(BadgeDisplayName)
+              .SetDescription(BadgeDescription)
+              .SetIcon(icon)
+              .AddSavingThrowBonusAgainstDescriptor(bonus: ContextValues.Rank(AbilityRankType.SpeedBonus), spellDescriptor: SpellDescriptor.Compulsion)
+              .AddSavingThrowBonusAgainstDescriptor(bonus: ContextValues.Rank(AbilityRankType.SpeedBonus), spellDescriptor: SpellDescriptor.Charm)
+              .AddSavingThrowBonusAgainstDescriptor(bonus: ContextValues.Rank(AbilityRankType.SpeedBonus), spellDescriptor: SpellDescriptor.Fear)
+              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.CavalierClass.ToString() }, type: AbilityRankType.SpeedBonus).WithStartPlusDivStepProgression(5))
+              .AddAttackBonusAgainstFactOwner(bonus: ContextValues.Rank(AbilityRankType.DamageBonus), checkedFact: BuffRefs.CavalierChallengeBuffTarget.ToString(), descriptor: ModifierDescriptor.Morale)
+              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.CavalierClass.ToString() }, type: AbilityRankType.DamageBonus).WithStartPlusDivStepProgression(5, 5))
+              .Configure();
+
+            var area = AbilityAreaEffectConfigurator.New(BadgeAura, BadgeAuraGuid)
+                .SetTargetType(BlueprintAbilityAreaEffect.TargetType.Ally)
+                .SetAffectDead(false)
+                .SetShape(AreaEffectShape.Cylinder)
+                .SetSize(33.Feet())
+                .AddAbilityAreaEffectBuff(Buff2, false, ConditionsBuilder.New().TargetIsYourself(true).Build())
+                .Configure();
+
+            var Buff1 = BuffConfigurator.New(AuraBuff, AuraBuffGuid)
+              .SetDisplayName(BadgeDisplayName)
+              .SetDescription(BadgeDescription)
+              .SetIcon(icon)
+              .AddAreaEffect(area)
+              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+              .Configure();
+
+            return FeatureConfigurator.New(BadgeName, BadgeGuid)
+                    .SetDisplayName(BadgeDisplayName)
+                    .SetDescription(BadgeDescription)
+                    .SetIcon(icon)
+                    .AddAuraFeatureComponent(Buff1)
+                    .Configure();
+        }
     }
 }
