@@ -44,16 +44,18 @@ namespace PrestigePlus.Blueprint.Archetype
     internal class Constable
     {
         private const string ArchetypeName = "Constable";
-        private static readonly string ArchetypeGuid = "{A580225F-2DE4-41E1-BF4C-19442C82981D}";
+        public static readonly string ArchetypeGuid = "{A580225F-2DE4-41E1-BF4C-19442C82981D}";
         internal const string ArchetypeDisplayName = "Constable.Name";
         private const string ArchetypeDescription = "Constable.Description";
         public static void Configure()
         {
+            //"ExpertTrainer": "ae97a4eb-750d-499c-8379-88f62a24e0de",
             ArchetypeConfigurator.New(ArchetypeName, ArchetypeGuid, CharacterClassRefs.CavalierClass)
               .SetLocalizedName(ArchetypeDisplayName)
               .SetLocalizedDescription(ArchetypeDescription)
             .SetRemoveFeaturesEntry(1, FeatureSelectionRefs.CavalierMountSelection.ToString())
             .SetRemoveFeaturesEntry(3, FeatureRefs.CavalierCharge.ToString())
+            .SetRemoveFeaturesEntry(4)
             .SetRemoveFeaturesEntry(5, FeatureRefs.CavalierBanner.ToString())
             .SetRemoveFeaturesEntry(11, FeatureRefs.CavalierMightyCharge.ToString())
             .SetRemoveFeaturesEntry(14, FeatureRefs.CavalierBannerGreater.ToString())
@@ -313,7 +315,9 @@ namespace PrestigePlus.Blueprint.Archetype
             var icon = AbilityRefs.CavalierTacticianAbility.Reference.Get().Icon;
 
             var CooldownBuff = BuffConfigurator.New(SquadCommanderCooldownBuff, SquadCommanderCooldownBuffGuid)
-                .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+                .SetDisplayName(SquadCommanderDisplayName)
+                .SetDescription(SquadCommanderDescription)
+                .SetIcon(icon)
                 .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
                 .Configure();
 

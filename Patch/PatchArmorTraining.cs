@@ -3,6 +3,7 @@ using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
 using Kingmaker.Utility;
+using PrestigePlus.Blueprint.Archetype;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,14 @@ namespace PrestigePlus.Patch
                 }
             }
             catch (Exception e) { Logger.Error("Failed to edit armor training.", e); }
+            try
+            {
+                var ExpertTrainer = BlueprintTool.GetRef<BlueprintFeatureReference>("ae97a4eb-750d-499c-8379-88f62a24e0de")?.Get();
+                if (ExpertTrainer == null) { Logger.Info("not found ttt et"); return; }
+                BlueprintTool.GetRef<BlueprintArchetypeReference>(Constable.ArchetypeGuid).Get().RemoveFeatures[2].m_Features = new() { ExpertTrainer.ToReference<BlueprintFeatureBaseReference>() };
+            }
+            catch (Exception e) { Logger.Error("Failed to edit ExpertTrainer.", e); }
+            
         }
     }
 }
