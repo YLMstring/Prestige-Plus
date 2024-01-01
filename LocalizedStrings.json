@@ -7219,6 +7219,149 @@
     "Key": "DeificObedienceOtolmens3.Description",
     "enGB": "Once per day, you can duplicate any wizard spell of 6th level or lower, or any other spell of 5th level or lower, as if it were a 9th-level spell.",
     "zhCN": "每日1次，你能够复制任何6级或更低等级的法师法术，或复制任何5级或更低等级的其他法术。复制的法术会按照9级法术进行计算。"
+  },
+  {
+    "Key": "DivineParagon.Name",
+    "ProcessTemplates": false,
+    "enGB": "Divine Paragon",
+    "zhCN": "神圣典范"
+  },
+  {
+    "Key": "DivineParagon.Description",
+    "enGB": "Divine paragons strive to emulate their god’s ideals as closely as possible. They might see themselves as an incarnation of their deity in the flesh, or they could simply seek to embody the physical and spiritual ideals set forth by their deity. Many divine paragons go as far as to alter their appearance, as best as possible, to look similar to their chosen deity, but such a level of devotion is not required by the archetype.",
+    "zhCN": "神圣典范尽力向她们所信仰神祇的理念看齐。有些会将自己视为神祇在凡间的化身，也有些仅仅追求从全身心展现神祇的理念。很多神圣典范甚至会改变她们的外貌，尽可能与她们的神祇相像，但是这种程度的奉献对本变体来说并不是必要的。"
+  },
+  {
+    "Key": "DivineParagonDevotedDomain.Name",
+    "ProcessTemplates": false,
+    "enGB": "Devoted Domain",
+    "zhCN": "奉献领域"
+  },
+  {
+    "Key": "DivineParagonDevotedDomain.Description",
+    "enGB": "When the divine paragon selects her domains, she gains all of her first domain’s granted powers and domain spells normally. For her second domain, she gains only its domain spells—she does not gain any of the granted powers of that domain.",
+    "zhCN": "当神圣典范选择领域时，她能正常获得第一领域所有的领域能力和领域法术。她只会获得第二领域的领域法术——她不会获得其他任何领域能力。"
+  },
+  {
+    "Key": "HighGuardian.Name",
+    "ProcessTemplates": false,
+    "enGB": "High Guardian",
+    "zhCN": "御林铁卫"
+  },
+  {
+    "Key": "HighGuardian.Description",
+    "enGB": "As the shield that protects his lord from the myriad dangers around every corner, the high guardian pledges his life to keep his charge safe. High guardians epitomize personal devotion.",
+    "zhCN": "御林铁卫如坚盾般为自己的主上抵御各种危险，为了确保其安然无恙不惜拼上性命——因为御林铁卫便是自我奉献的缩影。"
+  },
+  {
+    "Key": "HighGuardianDefenderReflexes.Name",
+    "ProcessTemplates": false,
+    "enGB": "Defender’s Reflexes",
+    "zhCN": "防守反射"
+  },
+  {
+    "Key": "HighGuardianDefenderReflexes.Description",
+    "enGB": "At 2nd level, a high guardian gains Combat Reflexes as a bonus feat, and he can use his Strength modifier instead of his Dexterity modifier to determine the number of additional attacks of opportunity he can make per round.",
+    "zhCN": "2级时，御林铁卫获得战斗反射作为额外专长。他还能以力量修正而非敏捷修正决定每轮额外借机攻击的次数。"
+  },
+  {
+    "Key": "HighGuardianUnassailableAllegiance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Unassailable Allegiance",
+    "zhCN": "忠贞不屈"
+  },
+  {
+    "Key": "HighGuardianUnassailableAllegiance.Description",
+    "enGB": "At 2nd level, a high guardian gains a +1 bonus on Will saves against compulsion spells and effects. This bonus increases by 1 for every 4 fighter levels beyond 2nd.",
+    "zhCN": "2级起，御林铁卫在对抗胁迫法术和效果的意志检定上得到+1加值。这个加值在2级后的每4个战士等级增加1点。"
+  },
+  {
+    "Key": "Constable.Name",
+    "ProcessTemplates": false,
+    "enGB": "Constable",
+    "zhCN": "警长"
+  },
+  {
+    "Key": "Constable.Description",
+    "enGB": "Constables keep order in the narrow streets and dark alleys of settlements.",
+    "zhCN": "在狭窄街道和黑暗小巷里，警长维持着秩序。"
+  },
+  {
+    "Key": "ConstableApprehend.Name",
+    "ProcessTemplates": false,
+    "enGB": "Apprehend",
+    "zhCN": "逮捕"
+  },
+  {
+    "Key": "ConstableApprehend.Description",
+    "enGB": "A constable gains Improved Unarmed Strike as a bonus feat and can attempt a grapple combat maneuver check in place of the attack at the end of a charge. At 2nd level, the constable receives a +1 bonus on Perception checks and combat maneuver checks to disarm, grapple, or trip opponents. At 7th level and every 5 levels thereafter, this bonus improves by 1.",
+    "zhCN": "警长获得精通徒手击打作为额外专长，并且他可以在冲锋时发动一次擒抱战技攻击以取代普通的近战攻击。在2级时，巡官可以在察觉技能检定，擒抱，缴械和摔绊的战技攻击上获得+1加值。在7级和之后每提升5级时，这个加值额外+1。"
+  },
+  {
+    "Key": "ConstableSquadCommander.Name",
+    "ProcessTemplates": false,
+    "enGB": "Squad Commander",
+    "zhCN": "战队指挥官"
+  },
+  {
+    "Key": "ConstableSquadCommander.Description",
+    "enGB": "At 3rd level, a constable can spend 1 minute laying out a plan to activate the tactician ability without having it count against his number of uses per day, and the benefits last for 1 minute per cavalier level he has.",
+    "zhCN": "3级起，警长可以花费1分钟时间制定计划，激活战术家能力而不花费该能力的每日使用次数。该效果可以持续每骑将等级1分钟。"
+  },
+  {
+    "Key": "ConstableBadge.Name",
+    "ProcessTemplates": false,
+    "enGB": "Badge",
+    "zhCN": "警徽"
+  },
+  {
+    "Key": "ConstableBadge.Description",
+    "enGB": "At 5th level, a constable’s badge becomes a powerful symbol of rules and authority. As long as he wears his badge, allies within 30 feet who can see him gain a +2 morale bonus on saving throws against charm, compulsion, and fear effects and a +1 morale bonus on attack rolls against targets the constable has challenged. At 10th level and every 5 levels thereafter, the bonuses increase by 1.",
+    "zhCN": "5级时，警长的徽章成为规则和权威的强大象征。只要他佩戴他的徽章，30英尺内能看到他的盟友在对抗魅惑、胁迫和恐惧效果的豁免检定上获得+2士气加值，且对警长所挑战的目标进行攻击检定时获得+1士气加值。在10级以及此后每5级，该加值增加1。"
+  },
+  {
+    "Key": "ConstableInstantOrder.Name",
+    "ProcessTemplates": false,
+    "enGB": "Instant Order",
+    "zhCN": "令行禁止"
+  },
+  {
+    "Key": "ConstableInstantOrder.Description",
+    "enGB": "At 11th level, a constable can bark an order to an ally within 30 feet as a standard action. That ally can instantly make an attack of opportunity against an opponent the constable has challenged. This attack dazes the ally for 1 round afterward.",
+    "zhCN": "11级时，警长可以用标准动作向30英尺内的盟友发出命令。该盟友可以立即对警长所挑战的对手进行一次借机攻击。此攻击使该盟友随后眩晕1轮。"
+  },
+  {
+    "Key": "ConstableInstantOrderMove.Name",
+    "ProcessTemplates": false,
+    "enGB": "Instant Order",
+    "zhCN": "令行禁止"
+  },
+  {
+    "Key": "ConstableInstantOrderMove.Description",
+    "enGB": "At 20th level, the constable can use Instant Order as a move action, but no more than once per round.",
+    "zhCN": "20级时，警长的可以用移动动作发起令行禁止，但每轮不得超过一次。"
+  },
+  {
+    "Key": "ConstableGreaterBadge.Name",
+    "ProcessTemplates": false,
+    "enGB": "Greater Badge",
+    "zhCN": "高等警徽"
+  },
+  {
+    "Key": "ConstableGreaterBadge.Description",
+    "enGB": "At 14th level, a constable can hold his badge aloft as a standard action to inspire his allies to be steadfast. All allies within 30 feet gain a number of temporary hit points equal to twice the constable’s cavalier level for 10 minutes. A given ally can benefit from this ability only once per day.",
+    "zhCN": "14级时，警长可以用标准动作高举徽章，以激励盟友坚定不移。30英尺内的所有盟友都会获得相当于骑将等级两倍的临时生命值，持续10分钟。每个盟友每天只能受益于该能力一次。"
+  },
+  {
+    "Key": "DiverseObedience.Name",
+    "ProcessTemplates": false,
+    "enGB": "Diverse Obedience",
+    "zhCN": "多样尊崇"
+  },
+  {
+    "Key": "DiverseObedience.Description",
+    "enGB": "Your intense faith in your deity allows you to gain boons not granted to most followers. You are treated as though you had 2 more Hit Dice than you actually do for the purposes of determining what divine boons you gain as a result of performing your deity’s obedience. Diverse Obedience doesn’t allow access to divine boons granted through prestige classes early, as those boons are tied to prestige class levels gained, not overall Hit Dice. Additionally, whenever you would gain a boon, you can choose among the options available for exalted or sentinel boons.",
+    "zhCN": "你对神祇的强烈信仰令你得到了大多数信徒都未曾得到的神恩。当你确定你因崇神仪典获得的神恩时，将你的HD视为比实际高2。多样尊崇不允许你通过进阶职业提前获得神恩，因为这些职业通过职业等级而非HD获取神恩。每当你获得神恩时，你可以从传道尊者或信仰哨卫神恩中进行选择。"
   }
 
 ]

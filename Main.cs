@@ -194,6 +194,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("conduit"), defaultValue: true, Helpers.CreateString("toggle-desc63", "Blood Conduit"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("constable"), defaultValue: true, Helpers.CreateString("toggle-desc70", "Constable"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("fightereg"), defaultValue: true, Helpers.CreateString("toggle-desc23", "Eldritch Guardian"))
               .ShowVisualConnection())
           .AddToggle(
@@ -373,6 +376,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("divinechamp"))) { DivineChampion.Configure(); DivineParagon.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("skymagic"))) { Aeromancer.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("exalted"))) { ExaltedEvangelist.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("constable"))) { Constable.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)

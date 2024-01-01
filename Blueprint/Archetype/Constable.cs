@@ -37,6 +37,7 @@ using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.Buffs;
 using PrestigePlus.CustomAction.OtherFeatRelated;
 using System.Drawing;
+using Kingmaker.UnitLogic.Mechanics;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -59,6 +60,7 @@ namespace PrestigePlus.Blueprint.Archetype
             .SetRemoveFeaturesEntry(20, FeatureRefs.CavalierSupremeCharge.ToString())
             .AddToAddFeatures(1, CreateApprehend())
             .AddToAddFeatures(2, CreateApprehend2())
+            .AddToAddFeatures(2, SquadCommanderFeat())
             .AddToAddFeatures(4, FeatureRefs.HunterWoodlandStride.ToString())
             .AddToAddFeatures(5, BadgeFeat())
             .AddToAddFeatures(7, Apprehend2Guid)
@@ -73,6 +75,10 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddToClassSkills(StatType.SkillPersuasion)
               .SetReplaceClassSkills(true)
               .Configure();
+
+            ProgressionConfigurator.For(ProgressionRefs.CavalierProgression)
+                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { ApprehendGuid, Apprehend2Guid })
+                .Configure();
         }
 
         private const string Apprehend = "Constable.Apprehend";
@@ -285,6 +291,66 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddComponent<ChangeActionSpell>(a => { a.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>(InstantOrderAbilityGuid); a.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move; })
+              .Configure();
+        }
+
+        private const string SquadCommander = "Constable.SquadCommander";
+        private static readonly string SquadCommanderGuid = "{DDC0820D-12E6-472F-955D-C29DBC34DAFB}";
+
+        internal const string SquadCommanderDisplayName = "ConstableSquadCommander.Name";
+        private const string SquadCommanderDescription = "ConstableSquadCommander.Description";
+
+        private const string SquadCommanderAbility = "Constable.SquadCommanderAbility";
+        private static readonly string SquadCommanderAbilityGuid = "{FE03D274-E3D6-4875-9FA2-8814F350C592}";
+
+        private const string SquadCommanderCooldownBuff = "Constable.SquadCommanderCooldownBuff";
+        private static readonly string SquadCommanderCooldownBuffGuid = "{63A2262F-A656-4278-BEF0-4D1247438E86}";
+
+        public static BlueprintFeature SquadCommanderFeat()
+        {
+            var icon = AbilityRefs.Glitterdust.Reference.Get().Icon;
+
+            var CooldownBuff = BuffConfigurator.New(SquadCommanderCooldownBuff, SquadCommanderCooldownBuffGuid)
+                .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+                .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+                .Configure();
+
+            var facts = AbilityRefs.CavalierTacticianAbility.Reference.Get().GetComponent<AbilityApplyFact>()?.m_Facts;
+
+            var ability = AbilityConfigurator.New(SquadCommanderAbility, SquadCommanderAbilityGuid)
+                .CopyFrom(
+                AbilityRefs.CavalierTacticianAbility,
+                typeof(AbilityTargetsAround),
+                typeof(AbilityEffectRunAction))
+                .SetDisplayName(SquadCommanderDisplayName)
+                .SetDescription(SquadCommanderDescription)
+                .SetIcon(icon)
+                .AddComponent<AbilityApplyFact>(c => { 
+                    c.m_Restriction = AbilityApplyFact.FactRestriction.CasterHasFact;
+                    c.m_Facts = facts;
+                    c.m_HasDuration = true;
+                    c.m_Duration = ContextDuration.Variable(ContextValues.Rank(), DurationRate.Minutes, false);
+                })
+                .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.CavalierClass.ToString() }))
+                .Configure();
+
+            var endact = ActionsBuilder.New()
+                        .ApplyBuff(CooldownBuff, ContextDuration.Fixed(10))
+                        .Build();
+
+            var startact = ActionsBuilder.New()
+                        .Conditional(ConditionsBuilder.New().HasFact(CooldownBuff, true).Build(), ifTrue:
+                            ActionsBuilder.New()
+                                .CastSpell(ability)
+                                .Build())
+                        .Build();
+
+            return FeatureConfigurator.New(SquadCommander, SquadCommanderGuid)
+              .SetDisplayName(SquadCommanderDisplayName)
+              .SetDescription(SquadCommanderDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddCombatStateTrigger(endact, startact)
               .Configure();
         }
     }
