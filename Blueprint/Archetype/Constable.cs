@@ -34,6 +34,9 @@ using Kingmaker.UnitLogic.Abilities.Components.Base;
 using PrestigePlus.CustomComponent.PrestigeClass;
 using PrestigePlus.Modify;
 using Kingmaker.UnitLogic.Abilities.Components;
+using Kingmaker.UnitLogic.Buffs;
+using PrestigePlus.CustomAction.OtherFeatRelated;
+using System.Drawing;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -59,9 +62,11 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToAddFeatures(4, FeatureRefs.HunterWoodlandStride.ToString())
             .AddToAddFeatures(5, BadgeFeat())
             .AddToAddFeatures(7, Apprehend2Guid)
+            .AddToAddFeatures(11, InstantOrderFeat())
             .AddToAddFeatures(12, Apprehend2Guid)
             .AddToAddFeatures(14, GreaterBadgeFeat())
             .AddToAddFeatures(17, Apprehend2Guid)
+            .AddToAddFeatures(20, CreateInstantOrderMove())
               .AddToClassSkills(StatType.SkillAthletics)
               .AddToClassSkills(StatType.SkillMobility)
               .AddToClassSkills(StatType.SkillPerception)
@@ -77,9 +82,11 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature CreateApprehend()
         {
+            var icon = AbilityRefs.Glitterdust.Reference.Get().Icon;
             return FeatureConfigurator.New(Apprehend, ApprehendGuid)
               .SetDisplayName(ApprehendDisplayName)
               .SetDescription(ApprehendDescription)
+              .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddFacts(new() { FeatureRefs.ImprovedUnarmedStrike.ToString(), AerialAssault.StyleActivatableAbility3Guid })
               .Configure();
@@ -89,9 +96,11 @@ namespace PrestigePlus.Blueprint.Archetype
         private static readonly string Apprehend2Guid = "{80C96103-C78B-4FB4-9EC0-8A31C9346A36}";
         public static BlueprintFeature CreateApprehend2()
         {
+            var icon = AbilityRefs.Glitterdust.Reference.Get().Icon;
             return FeatureConfigurator.New(Apprehend2, Apprehend2Guid)
               .SetDisplayName(ApprehendDisplayName)
               .SetDescription(ApprehendDescription)
+              .SetIcon(icon)
               .SetIsClassFeature(true)
               .SetRanks(5)
               .AddContextStatBonus(StatType.SkillPerception, ContextValues.Rank())
@@ -215,6 +224,67 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string InstantOrder = "Constable.InstantOrder";
+        private static readonly string InstantOrderGuid = "{C3CEC9C3-B2D6-483C-A996-38E5172A2774}";
+
+        internal const string InstantOrderDisplayName = "ConstableInstantOrder.Name";
+        private const string InstantOrderDescription = "ConstableInstantOrder.Description";
+
+        private const string InstantOrderAbility = "Constable.InstantOrderAbility";
+        private static readonly string InstantOrderAbilityGuid = "{3E0CAC1D-E913-48E7-8E87-7F750644D4DA}";
+
+        private const string InstantOrderCooldownBuff = "Constable.InstantOrderCooldownBuff";
+        private static readonly string InstantOrderCooldownBuffGuid = "{D1BA3070-0726-475C-B9E3-4ECB663B0379}";
+
+        public static BlueprintFeature InstantOrderFeat()
+        {
+            var icon = AbilityRefs.Glitterdust.Reference.Get().Icon;
+
+            var CooldownBuff = BuffConfigurator.New(InstantOrderCooldownBuff, InstantOrderCooldownBuffGuid)
+                .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+                .Configure();
+
+            var ability = AbilityConfigurator.New(InstantOrderAbility, InstantOrderAbilityGuid)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .Add<InstantOrderAttack>()
+                        .ApplyBuff(CooldownBuff, ContextDuration.Fixed(1), toCaster: true)
+                        .Build())
+                .SetDisplayName(InstantOrderDisplayName)
+                .SetDescription(InstantOrderDescription)
+                .SetIcon(icon)
+                .AllowTargeting(false, false, true, false)
+                .AddAbilityCasterHasNoFacts(new() { CooldownBuff })
+                .SetRange(AbilityRange.Close)
+                .SetType(AbilityType.Extraordinary)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Point)
+                .Configure();
+
+            return FeatureConfigurator.New(InstantOrder, InstantOrderGuid)
+              .SetDisplayName(InstantOrderDisplayName)
+              .SetDescription(InstantOrderDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string InstantOrderMove = "Constable.InstantOrderMove";
+        private static readonly string InstantOrderMoveGuid = "{208D53F3-AAAF-4813-88BF-CE1F5636C60A}";
+        internal const string InstantOrderMoveDisplayName = "ConstableInstantOrderMove.Name";
+        private const string InstantOrderMoveDescription = "ConstableInstantOrderMove.Description";
+
+        public static BlueprintFeature CreateInstantOrderMove()
+        {
+            var icon = AbilityRefs.Glitterdust.Reference.Get().Icon;
+            return FeatureConfigurator.New(InstantOrderMove, InstantOrderMoveGuid)
+              .SetDisplayName(InstantOrderMoveDisplayName)
+              .SetDescription(InstantOrderMoveDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddComponent<ChangeActionSpell>(a => { a.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>(InstantOrderAbilityGuid); a.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move; })
               .Configure();
         }
     }

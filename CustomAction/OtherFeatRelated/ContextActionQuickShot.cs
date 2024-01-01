@@ -22,7 +22,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
     {
         public override string GetCaption()
         {
-            return "AceTrip";
+            return "QuickShot";
         }
 
         public override void RunAction()
