@@ -142,9 +142,9 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(BadgeDisplayName)
               .SetDescription(BadgeDescription)
               .SetIcon(icon)
-              .AddSavingThrowBonusAgainstDescriptor(bonus: ContextValues.Rank(AbilityRankType.SpeedBonus), spellDescriptor: SpellDescriptor.Compulsion)
-              .AddSavingThrowBonusAgainstDescriptor(bonus: ContextValues.Rank(AbilityRankType.SpeedBonus), spellDescriptor: SpellDescriptor.Charm)
-              .AddSavingThrowBonusAgainstDescriptor(bonus: ContextValues.Rank(AbilityRankType.SpeedBonus), spellDescriptor: SpellDescriptor.Fear)
+              .AddSavingThrowBonusAgainstDescriptor(bonus: ContextValues.Rank(AbilityRankType.SpeedBonus), spellDescriptor: SpellDescriptor.Compulsion, modifierDescriptor: ModifierDescriptor.Morale)
+              .AddSavingThrowBonusAgainstDescriptor(bonus: ContextValues.Rank(AbilityRankType.SpeedBonus), spellDescriptor: SpellDescriptor.Charm, modifierDescriptor: ModifierDescriptor.Morale)
+              .AddSavingThrowBonusAgainstDescriptor(bonus: ContextValues.Rank(AbilityRankType.SpeedBonus), spellDescriptor: SpellDescriptor.Fear, modifierDescriptor: ModifierDescriptor.Morale)
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.CavalierClass.ToString() }, type: AbilityRankType.SpeedBonus).WithStartPlusDivStepProgression(5))
               .AddAttackBonusAgainstFactOwner(bonus: ContextValues.Rank(AbilityRankType.DamageBonus), checkedFact: BuffRefs.CavalierChallengeBuffTarget.ToString(), descriptor: ModifierDescriptor.Morale)
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.CavalierClass.ToString() }, type: AbilityRankType.DamageBonus).WithStartPlusDivStepProgression(5, 5))
@@ -206,7 +206,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetIcon(icon)
               .AddSpellDescriptorComponent(descriptor: SpellDescriptor.TemporaryHP)
               .AddTemporaryHitPointsFromAbilityValue(removeWhenHitPointsEnd: true, value: ContextValues.Rank())
-              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.CavalierClass.ToString() }, type: AbilityRankType.SpeedBonus).WithBonusValueProgression(0, true))
+              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.CavalierClass.ToString() }).WithBonusValueProgression(0, true))
               .Configure();
 
             var ability = AbilityConfigurator.New(GreaterBadgeAbility, GreaterBadgeAbilityGuid)
@@ -216,8 +216,8 @@ namespace PrestigePlus.Blueprint.Archetype
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                     .Conditional(ConditionsBuilder.New().HasFact(CooldownBuff, true).TargetIsYourself(true).Build(),
                     ifTrue: ActionsBuilder.New()
-                        .ApplyBuff(Buff, ContextDuration.Fixed(1, Kingmaker.UnitLogic.Mechanics.DurationRate.TenMinutes))
-                        .ApplyBuff(CooldownBuff, ContextDuration.Fixed(1, Kingmaker.UnitLogic.Mechanics.DurationRate.Days))
+                        .ApplyBuff(Buff, ContextDuration.Fixed(1, DurationRate.TenMinutes))
+                        .ApplyBuff(CooldownBuff, ContextDuration.Fixed(1, DurationRate.Days))
                         .Build())
                     .Build())
                 .SetDisplayName(GreaterBadgeDisplayName)
@@ -312,13 +312,17 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature SquadCommanderFeat()
         {
-            var icon = AbilityRefs.CavalierTacticianAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.CommandGreater.Reference.Get().Icon;
 
             var CooldownBuff = BuffConfigurator.New(SquadCommanderCooldownBuff, SquadCommanderCooldownBuffGuid)
                 .SetDisplayName(SquadCommanderDisplayName)
                 .SetDescription(SquadCommanderDescription)
                 .SetIcon(icon)
                 .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+                .SetStacking(StackingType.Prolong)
+                .AddBuffActions(deactivated: ActionsBuilder.New()
+                    .RestoreResource(AbilityResourceRefs.CavalierTacticianResource.ToString(),1)
+                    .Build())
                 .Configure();
 
             var facts = AbilityRefs.CavalierTacticianAbility.Reference.Get().GetComponent<AbilityApplyFact>()?.m_Facts;
@@ -338,17 +342,12 @@ namespace PrestigePlus.Blueprint.Archetype
                     c.m_Duration = ContextDuration.Variable(ContextValues.Rank(), DurationRate.Minutes, false);
                 })
                 .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.CavalierClass.ToString() }))
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .AddAbilityResourceLogic(1, isSpendResource: true, requiredResource: AbilityResourceRefs.CavalierTacticianResource.ToString())
                 .Configure();
 
             var endact = ActionsBuilder.New()
                         .ApplyBuff(CooldownBuff, ContextDuration.Fixed(10))
-                        .Build();
-
-            var startact = ActionsBuilder.New()
-                        .Conditional(ConditionsBuilder.New().HasFact(CooldownBuff, true).Build(), ifTrue:
-                            ActionsBuilder.New()
-                                .CastSpell(ability)
-                                .Build())
                         .Build();
 
             return FeatureConfigurator.New(SquadCommander, SquadCommanderGuid)
@@ -356,7 +355,8 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDescription(SquadCommanderDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddCombatStateTrigger(endact, startact)
+              .AddCombatStateTrigger(endact)
+              .AddFacts(new() { ability })
               .Configure();
         }
     }
