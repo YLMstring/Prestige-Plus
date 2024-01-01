@@ -39,7 +39,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         private static BlueprintFeature CreateDevotedDomain()
         {
-            var icon = FeatureSelectionRefs.ExtraDiscoverySelection.Reference.Get().Icon;
+            var icon = AbilityRefs.RemoveParalysis.Reference.Get().Icon;
 
             return FeatureConfigurator.New(DevotedDomain, DevotedDomainGuid)
               .SetDisplayName(DevotedDomainDisplayName)

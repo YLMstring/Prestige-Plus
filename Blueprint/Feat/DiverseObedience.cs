@@ -24,7 +24,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static void Configure()
         {
-            var icon = AbilityRefs.HolyBlareAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.SearingLight.Reference.Get().Icon;
 
             var pro = ProgressionConfigurator.New(FeatNamePro, FeatGuidPro)
               .SetDisplayName(DisplayName)

@@ -60,7 +60,7 @@ namespace PrestigePlus.Blueprint.Archetype
             .SetRemoveFeaturesEntry(20, FeatureRefs.CavalierSupremeCharge.ToString())
             .AddToAddFeatures(1, CreateApprehend())
             .AddToAddFeatures(2, CreateApprehend2())
-            .AddToAddFeatures(2, SquadCommanderFeat())
+            .AddToAddFeatures(3, SquadCommanderFeat())
             .AddToAddFeatures(4, FeatureRefs.HunterWoodlandStride.ToString())
             .AddToAddFeatures(5, BadgeFeat())
             .AddToAddFeatures(7, Apprehend2Guid)
@@ -77,7 +77,9 @@ namespace PrestigePlus.Blueprint.Archetype
               .Configure();
 
             ProgressionConfigurator.For(ProgressionRefs.CavalierProgression)
-                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { ApprehendGuid, Apprehend2Guid })
+                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { ApprehendGuid, Apprehend2Guid, FeatureRefs.HunterWoodlandStride.ToString() })
+                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { BadgeGuid, GreaterBadgeGuid, InstantOrderGuid, InstantOrderMoveGuid })
+                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { SquadCommanderGuid, FeatureRefs.CavalierTacticianFeature.ToString() })
                 .Configure();
         }
 
@@ -88,7 +90,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature CreateApprehend()
         {
-            var icon = AbilityRefs.Glitterdust.Reference.Get().Icon;
+            var icon = AbilityRefs.ArmyShifterGrabAbility.Reference.Get().Icon;
             return FeatureConfigurator.New(Apprehend, ApprehendGuid)
               .SetDisplayName(ApprehendDisplayName)
               .SetDescription(ApprehendDescription)
@@ -102,7 +104,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private static readonly string Apprehend2Guid = "{80C96103-C78B-4FB4-9EC0-8A31C9346A36}";
         public static BlueprintFeature CreateApprehend2()
         {
-            var icon = AbilityRefs.Glitterdust.Reference.Get().Icon;
+            var icon = AbilityRefs.ChainsOfLight.Reference.Get().Icon;
             return FeatureConfigurator.New(Apprehend2, Apprehend2Guid)
               .SetDisplayName(ApprehendDisplayName)
               .SetDescription(ApprehendDescription)
@@ -132,7 +134,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature BadgeFeat()
         {
-            var icon = AbilityRefs.IceBody.Reference.Get().Icon;
+            var icon = FeatureRefs.InquisitorJudgements.Reference.Get().Icon;
 
             var Buff2 = BuffConfigurator.New(AuraBuff2, AuraBuff2Guid)
               .SetDisplayName(BadgeDisplayName)
@@ -188,7 +190,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature GreaterBadgeFeat()
         {
-            var icon = AbilityRefs.Glitterdust.Reference.Get().Icon;
+            var icon = AbilityRefs.Arbitrament.Reference.Get().Icon;
 
             var CooldownBuff = BuffConfigurator.New(GreaterBadgeCooldownBuff, GreaterBadgeCooldownBuffGuid)
                 .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
@@ -247,7 +249,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature InstantOrderFeat()
         {
-            var icon = AbilityRefs.Glitterdust.Reference.Get().Icon;
+            var icon = AbilityRefs.Command.Reference.Get().Icon;
 
             var CooldownBuff = BuffConfigurator.New(InstantOrderCooldownBuff, InstantOrderCooldownBuffGuid)
                 .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
@@ -284,7 +286,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature CreateInstantOrderMove()
         {
-            var icon = AbilityRefs.Glitterdust.Reference.Get().Icon;
+            var icon = AbilityRefs.CommandGreater.Reference.Get().Icon;
             return FeatureConfigurator.New(InstantOrderMove, InstantOrderMoveGuid)
               .SetDisplayName(InstantOrderMoveDisplayName)
               .SetDescription(InstantOrderMoveDescription)
@@ -308,7 +310,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature SquadCommanderFeat()
         {
-            var icon = AbilityRefs.Glitterdust.Reference.Get().Icon;
+            var icon = AbilityRefs.CavalierTacticianAbility.Reference.Get().Icon;
 
             var CooldownBuff = BuffConfigurator.New(SquadCommanderCooldownBuff, SquadCommanderCooldownBuffGuid)
                 .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
