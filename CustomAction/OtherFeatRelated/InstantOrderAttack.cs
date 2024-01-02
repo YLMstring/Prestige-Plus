@@ -47,7 +47,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                 if (target.CombatState.EngagedUnits.Contains(unit) && buff?.Context?.MaybeCaster == caster)
                 {
                     Game.Instance.CombatEngagementController.ForceAttackOfOpportunity(target, unit, false);
-                    GameHelper.ApplyBuff(target, BuffRefs.Daze.Reference, new Rounds?(1.Rounds()));
+                    //GameHelper.ApplyBuff(target, BuffRefs.Daze.Reference, new Rounds?(1.Rounds()));
                     return;
                 }
             }

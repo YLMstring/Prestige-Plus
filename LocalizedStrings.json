@@ -7254,6 +7254,17 @@
     "zhCN": "御林铁卫如坚盾般为自己的主上抵御各种危险，为了确保其安然无恙不惜拼上性命——因为御林铁卫便是自我奉献的缩影。"
   },
   {
+    "Key": "HighGuardianRightHand.Name",
+    "ProcessTemplates": false,
+    "enGB": "Right Hand",
+    "zhCN": "可靠助手"
+  },
+  {
+    "Key": "HighGuardianRightHand.Description",
+    "enGB": "At 1st level, a high guardian can step 5 feet into the space of his obligation as a swift action. If he does, his obligation immediately takes a 5-foot step into the high guardian’s former space without spending an action to do so.",
+    "zhCN": "1级时，御林铁卫能用迅捷动作与五尺范围内他正在保护的友军交换位置，不消耗友军的行动机会。"
+  },
+  {
     "Key": "HighGuardianDefenderReflexes.Name",
     "ProcessTemplates": false,
     "enGB": "Defender’s Reflexes",

@@ -18,30 +18,25 @@ using Kingmaker.EntitySystem;
 using Kingmaker.Utility;
 using Kingmaker.Enums;
 using PrestigePlus.CustomComponent.PrestigeClass;
+using BlueprintCore.Utils;
 
 namespace PrestigePlus.CustomComponent.Archetype
 {
     internal class DevotedDomainSpell : UnitFactComponentDelegate<DevotedDomainSpell.ComponentData>, ILevelUpCompleteUIHandler, IGlobalSubscriber, ISubscriber
     {
+        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         public void HandleLevelUpComplete(UnitEntityData unit, bool isChargen)
         {
-            if (Data.prolist.Count != 0) return;
+            if (Data.list.Count != 0) return;
             var list = FeatureSelectionRefs.SecondDomainsSelection.Reference.Get().m_AllFeatures;
             foreach (var prog in list)
             {
                 var pro = prog?.Get()?.ToReference<BlueprintProgressionReference>();
                 if (pro != null && Owner.HasFact(pro))
                 {
+                    Logger.Info(pro.NameSafe());
                     GetSpell(pro);
                 }
-            }
-            foreach (var prog in Data.prolist)
-            {
-                Owner.Descriptor.Progression.Features.RemoveFact(prog);
-            }
-            foreach (var feat in Data.list)
-            {
-                Owner.Descriptor.AddFact(feat);
             }
         }
         public override void OnDeactivate()
@@ -60,7 +55,10 @@ namespace PrestigePlus.CustomComponent.Archetype
                 if (comp.Feature?.GetComponent<AddSpecialSpellList>() != null)
                 {
                     Data.list.Add(comp.Feature);
-                    Data.prolist.Add(pro);
+                    Owner.Descriptor.Progression.Features.RemoveFact(pro);
+                    Owner.Descriptor.Progression.Features.RemoveFact(pro.LevelEntries[0].Features.First());
+                    Owner.Descriptor.AddFact(comp.Feature);
+                    return;
                 }
             }
         }
@@ -68,7 +66,6 @@ namespace PrestigePlus.CustomComponent.Archetype
         public class ComponentData
         {
             public List<BlueprintFeature> list = new() { };
-            public List<BlueprintProgression> prolist = new() { };
         }
     }
 }

@@ -266,7 +266,7 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetDescription(InstantOrderDescription)
                 .SetIcon(icon)
                 .AllowTargeting(false, false, true, false)
-                .AddAbilityCasterHasNoFacts(new() { CooldownBuff })
+                //.AddAbilityCasterHasNoFacts(new() { CooldownBuff })
                 .SetRange(AbilityRange.Close)
                 .SetType(AbilityType.Extraordinary)
                 .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Point)
@@ -294,7 +294,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDescription(InstantOrderMoveDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddComponent<ChangeActionSpell>(a => { a.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>(InstantOrderAbilityGuid); a.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move; })
+              .AddComponent<ChangeActionSpell>(a => { a.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>(InstantOrderAbilityGuid); a.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free; })
               .Configure();
         }
 

@@ -10,6 +10,10 @@ using System.Text;
 using System.Threading.Tasks;
 using PrestigePlus.Blueprint.Feat;
 using Kingmaker.EntitySystem.Stats;
+using BlueprintCore.Actions.Builder;
+using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
+using PrestigePlus.CustomAction.OtherFeatRelated;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -31,9 +35,9 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToRemoveFeatures(10, FeatureRefs.Bravery.ToString())
             .AddToRemoveFeatures(14, FeatureRefs.Bravery.ToString())
             .AddToRemoveFeatures(18, FeatureRefs.Bravery.ToString())
-            .AddToAddFeatures(1, FeatureRefs.DivineGuardianTrothFeature.ToString(), FeatureRefs.MythicIgnoreAlignmentRestrictions.ToString())
+            .AddToAddFeatures(1, RightHandConfigure())
             .AddToAddFeatures(2, CreateDefenderReflexes(), CreateUnassailableAllegiance())
-            .AddToAddFeatures(4, BodyGuard.FeatGuid, BodyGuard.Feat2Guid)
+            .AddToAddFeatures(4, FeatureRefs.DivineGuardianTrothFeature.ToString())
             .AddToAddFeatures(6, UnassailableAllegianceGuid)
             .AddToAddFeatures(10, UnassailableAllegianceGuid)
             .AddToAddFeatures(14, UnassailableAllegianceGuid)
@@ -43,6 +47,46 @@ namespace PrestigePlus.Blueprint.Archetype
             FeatureConfigurator.For(FeatureRefs.CombatReflexes)
                 .AddPrerequisiteNoFeature(DefenderReflexesGuid)
                 .Configure();
+        }
+
+        private static readonly string RightHandName = "HighGuardianRightHand";
+        public static readonly string RightHandGuid = "{8CF81BF8-AC54-4459-9F97-342C52C03F87}";
+
+        private static readonly string RightHandDisplayName = "HighGuardianRightHand.Name";
+        private static readonly string RightHandDescription = "HighGuardianRightHand.Description";
+
+        private const string RightHandAbility = "HighGuardianRightHand.RightHandAbility";
+        private static readonly string RightHandAbilityGuid = "{F93465E3-7171-449F-BA87-45B2FC37F24A}";
+        public static BlueprintFeature RightHandConfigure()
+        {
+            var icon = FeatureRefs.BackToBack.Reference.Get().Icon;
+
+            var grab = ActionsBuilder.New()
+                .Add<ContextActionCastling>(c => { c.consume5 = false; })
+                .Build();
+
+            var ability = AbilityConfigurator.New(RightHandAbility, RightHandAbilityGuid)
+                .SetDisplayName(RightHandDisplayName)
+                .SetDescription(RightHandDescription)
+                .SetIcon(icon)
+                .AddAbilityEffectRunAction(grab)
+                .SetType(AbilityType.Physical)
+                .SetCanTargetEnemies(false)
+                .SetCanTargetSelf(false)
+                .SetCanTargetFriends(true)
+                .SetRange(AbilityRange.Custom)
+                .SetCustomRange(5)
+                .AddAbilityTargetHasFact(new() { BuffRefs.DivineGuardianTrothBuff.ToString() })
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+                .Configure();
+
+            return FeatureConfigurator.New(RightHandName, RightHandGuid)
+                    .SetDisplayName(RightHandDisplayName)
+                    .SetDescription(RightHandDescription)
+                    .SetIcon(icon)
+                    .AddFacts(new() { FeatureRefs.MythicIgnoreAlignmentRestrictions.ToString(), AbilityRefs.DivineGuardianTrothAbility.ToString(), ability })
+                    .Configure();
         }
 
         private const string DefenderReflexes = "HighGuardian.DefenderReflexes";
