@@ -266,7 +266,6 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetIcon(icon)
                 .AddNewRoundTrigger(newRoundActions:ActionsBuilder.New()
                         .ApplyBuff(BuffRefs.Daze.ToString(), ContextDuration.Fixed(1))
-                        .RemoveSelf()
                         .Build())
                 .Configure();
 
