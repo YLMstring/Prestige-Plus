@@ -59,7 +59,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private static readonly string RightHandAbilityGuid = "{F93465E3-7171-449F-BA87-45B2FC37F24A}";
         public static BlueprintFeature RightHandConfigure()
         {
-            var icon = FeatureRefs.BackToBack.Reference.Get().Icon;
+            var icon = FeatureRefs.CoordinatedDefense.Reference.Get().Icon;
 
             var grab = ActionsBuilder.New()
                 .Add<ContextActionCastling>(c => { c.consume5 = false; })
@@ -86,6 +86,7 @@ namespace PrestigePlus.Blueprint.Archetype
                     .SetDescription(RightHandDescription)
                     .SetIcon(icon)
                     .AddFacts(new() { FeatureRefs.MythicIgnoreAlignmentRestrictions.ToString(), AbilityRefs.DivineGuardianTrothAbility.ToString(), ability })
+                    .AddAbilityResources(resource: AbilityResourceRefs.DivineGuardianTrothResource.ToString(), restoreAmount: true)
                     .Configure();
         }
 

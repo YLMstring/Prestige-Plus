@@ -16,6 +16,10 @@ using BlueprintCore.Blueprints.References;
 using Kingmaker.UnitLogic.Buffs;
 using Kingmaker.Designers;
 using Kingmaker.Utility;
+using BlueprintCore.Utils;
+using Kingmaker.Blueprints;
+using PrestigePlus.Blueprint.CombatStyle;
+using PrestigePlus.Blueprint.Archetype;
 
 namespace PrestigePlus.CustomAction.OtherFeatRelated
 {
@@ -47,10 +51,12 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                 if (target.CombatState.EngagedUnits.Contains(unit) && buff?.Context?.MaybeCaster == caster)
                 {
                     Game.Instance.CombatEngagementController.ForceAttackOfOpportunity(target, unit, false);
-                    //GameHelper.ApplyBuff(target, BuffRefs.Daze.Reference, new Rounds?(1.Rounds()));
+                    GameHelper.ApplyBuff(target, Daze, new Rounds?(1.Rounds()));
                     return;
                 }
             }
         }
+
+        private static BlueprintBuffReference Daze = BlueprintTool.GetRef<BlueprintBuffReference>(Constable.InstantOrderBuffGuid);
     }
 }

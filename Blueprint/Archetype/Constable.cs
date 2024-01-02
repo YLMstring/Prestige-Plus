@@ -249,12 +249,25 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string InstantOrderCooldownBuff = "Constable.InstantOrderCooldownBuff";
         private static readonly string InstantOrderCooldownBuffGuid = "{D1BA3070-0726-475C-B9E3-4ECB663B0379}";
 
+        private const string InstantOrderBuff = "Constable.InstantOrderBuff";
+        public static readonly string InstantOrderBuffGuid = "{7BB9FE30-C17E-46D5-A514-C44FE6402C66}";
+
         public static BlueprintFeature InstantOrderFeat()
         {
             var icon = AbilityRefs.Command.Reference.Get().Icon;
 
             var CooldownBuff = BuffConfigurator.New(InstantOrderCooldownBuff, InstantOrderCooldownBuffGuid)
                 .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+                .Configure();
+
+            var Buff = BuffConfigurator.New(InstantOrderBuff, InstantOrderBuffGuid)
+                .SetDisplayName(InstantOrderDisplayName)
+                .SetDescription(InstantOrderDescription)
+                .SetIcon(icon)
+                .AddNewRoundTrigger(newRoundActions:ActionsBuilder.New()
+                        .ApplyBuff(BuffRefs.Daze.ToString(), ContextDuration.Fixed(1))
+                        .RemoveSelf()
+                        .Build())
                 .Configure();
 
             var ability = AbilityConfigurator.New(InstantOrderAbility, InstantOrderAbilityGuid)
@@ -266,7 +279,7 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetDescription(InstantOrderDescription)
                 .SetIcon(icon)
                 .AllowTargeting(false, false, true, false)
-                //.AddAbilityCasterHasNoFacts(new() { CooldownBuff })
+                .AddAbilityCasterHasNoFacts(new() { CooldownBuff })
                 .SetRange(AbilityRange.Close)
                 .SetType(AbilityType.Extraordinary)
                 .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Point)
@@ -294,7 +307,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDescription(InstantOrderMoveDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddComponent<ChangeActionSpell>(a => { a.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>(InstantOrderAbilityGuid); a.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free; })
+              .AddComponent<ChangeActionSpell>(a => { a.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>(InstantOrderAbilityGuid); a.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move; })
               .Configure();
         }
 
