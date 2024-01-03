@@ -625,6 +625,7 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(ContextRankConfigs))
                 .SetDisplayName(Ragathiel3DisplayName)
                 .SetDescription(Ragathiel3Description)
+                .SetType(AbilityType.SpellLike)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .Configure();
 
@@ -1333,6 +1334,7 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(SpellComponent))
                 .SetDisplayName(Norgorber3DisplayName)
                 .SetDescription(Norgorber3Description)
+                .SetType(AbilityType.SpellLike)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                         .ApplyBuff(Norgorber3BuffGuid, ContextDuration.Variable(ContextValues.Property(UnitProperty.Level), DurationRate.Minutes))
                         .Build())
@@ -1754,6 +1756,7 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(AbilitySpawnFx))
                 .SetDisplayName(Lamashtu3DisplayName)
                 .SetDescription(Lamashtu3Description)
+                .SetType(AbilityType.SpellLike)
                 .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
                   .ConditionalSaved(failed: ActionsBuilder.New()
