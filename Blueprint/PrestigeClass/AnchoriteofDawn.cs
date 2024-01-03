@@ -246,7 +246,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(AnchoriteofDawnSolarInvocationDescription)
               .SetIcon(icon)
               .AddAreaEffect(area)
-              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var Buff5 = BuffConfigurator.New(SolarBuff5, SolarBuffGuid5)
@@ -254,6 +255,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(AnchoriteofDawnSolarInvocationDescription)
               .SetIcon(icon)
               .SetStacking(StackingType.Summ)
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var Buff1 = BuffConfigurator.New(SolarBuff, SolarBuffGuid)
@@ -553,6 +555,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 BuffRefs.MageLightBuff,
                 typeof(UniqueBuff))
               .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             return FeatureConfigurator.New(SunBlade, SunBladeGuid)

@@ -171,7 +171,8 @@ namespace PrestigePlus.Feats
               .SetDescription(AnnihilationDescription)
               .SetIcon(icon)
               .AddAreaEffect(area)
-              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             FeatureConfigurator.New(AnnihilationName, AnnihilationGuid, FeatureGroup.Feat)

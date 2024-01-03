@@ -191,7 +191,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(InheritorCrusaderGreaterAuraDescription)
               .SetIcon(icon)
               .AddAreaEffect(area)
-              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             return FeatureConfigurator.New(GreaterAura, GreaterAuraGuid)
