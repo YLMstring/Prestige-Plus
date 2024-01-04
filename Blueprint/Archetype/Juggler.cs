@@ -154,7 +154,8 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDescription(DeflectArrowsMythicDescription)
               .SetIcon(icon)
               .AddComponent<TryDeflectRay>()
-              .AddPrerequisiteFeature(FeatureRefs.DeflectArrows.ToString())
+              .AddPrerequisiteFeature(FeatureRefs.DeflectArrows.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+              .AddPrerequisiteFeature(FeatureRefs.MissileShield.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
               .AddToFeatureSelection("0d3a3619-9d99-47af-8e47-cb6cc4d26821") //ttt
               .Configure();
         }
