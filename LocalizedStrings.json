@@ -7373,6 +7373,182 @@
     "Key": "DiverseObedience.Description",
     "enGB": "Your intense faith in your deity allows you to gain boons not granted to most followers. You are treated as though you had 2 more Hit Dice than you actually do for the purposes of determining what divine boons you gain as a result of performing your deity’s obedience. Diverse Obedience doesn’t allow access to divine boons granted through prestige classes early, as those boons are tied to prestige class levels gained, not overall Hit Dice. Additionally, whenever you would gain a boon, you can choose among the options available for exalted or sentinel boons.",
     "zhCN": "你对神祇的强烈信仰令你得到了大多数信徒都未曾得到的神恩。当你确定你因崇神仪典获得的神恩时，将你的HD视为比实际高2。多样尊崇不允许你通过进阶职业提前获得神恩，因为这些职业通过职业等级而非HD获取神恩。每当你获得神恩时，你可以从传道尊者或信仰哨卫神恩中进行选择。"
+  },
+  {
+    "Key": "DeificObedienceArazni.Name",
+    "ProcessTemplates": false,
+    "enGB": "Arazni Obedience",
+    "zhCN": "亚拉兹妮仪典"
+  },
+  {
+    "Key": "DeificObedienceArazni.Description",
+    "enGB": "Spend an hour reliving or imagining terrible things that happened to you. This process is mentally strenuous, dealing 1d6 points of damage. You cannot allow anyone else to know of your struggles: speaking of them, showing distress while considering them, or even asking for assistance in healing the damage negates the benefits of this obedience. When you fail a saving throw against a creature’s spell or spell-like ability, you gain a +4 profane bonus on saving throws against any of that creature’s abilities for 1 minute.",
+    "zhCN": "花一个小时重温或想象发生在你身上的可怕事情。这个过程在精神上相当费力，会对你造成 1d6 点伤害。你不能让任何人知道你的挣扎：谈论它们，在考虑时表现出痛苦，甚至在治疗该伤害时寻求帮助都会令你失去这个仪典带来的好处。当你在对抗某个生物的法术或类法术能力的豁免检定失败时，你在对抗该生物任何能力的豁免检定上获得+4亵渎加值，持续1分钟。"
+  },
+  {
+    "Key": "DeificObedienceArazniSentinel.Name",
+    "ProcessTemplates": false,
+    "enGB": "Arazni (Sentinel)",
+    "zhCN": "亚拉兹妮（信仰哨卫）"
+  },
+  {
+    "Key": "DeificObedienceArazniSentinel.Description",
+    "enGB": "Become a Sentinel to gain access to her boons, which will be granted at certain character or class levels.",
+    "zhCN": "成为信仰哨卫来获取她的神恩资格，你会在合适的角色或职业等级得到神恩。"
+  },
+  {
+    "Key": "SpellPowerArazni1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Red Queen’s Rapier",
+    "zhCN": "红王后之剑"
+  },
+  {
+    "Key": "SpellPowerArazni1.Description",
+    "enGB": "divine favor 3/day, effortless armor 2/day, or rage 1/day",
+    "zhCN": "神恩术3/天，重甲轻装2/天，或狂暴术1/天"
+  },
+  {
+    "Key": "DeificObedienceArazni2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Subliminal Intransigence",
+    "zhCN": "潜意识之抗"
+  },
+  {
+    "Key": "DeificObedienceArazni2.Description",
+    "enGB": "Through ceaseless conditioning, you have constructed insurmountable mental defenses that deny others the ability to sway your thoughts, whether for good or for ill. You gain immunity to charm and compulsion effects and a +4 bonus on saving throws against fear effects.",
+    "zhCN": "通过不断的调节，你建立了难以逾越的精神防御，使他人无法影响你的想法，无论是好是坏。你免疫魅惑和胁迫效果，并且在对抗恐惧效果的豁免检定上获得+4加值。"
+  },
+  {
+    "Key": "DeificObedienceArazni3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Fallen Crusader’s Retaliation",
+    "zhCN": "陨落圣教军之回击"
+  },
+  {
+    "Key": "DeificObedienceArazni3.Description",
+    "enGB": "The Red Queen’s life is a painful example of the danger of falling prey to the arcane arts, and you have learned from this lesson. Ever wary of those who wield magic in battle, you hone your reflexes to strike when least expected. You gain Disruptive as a bonus feat.",
+    "zhCN": "红王后充满痛苦的人生可以看作一个案例，说明惹上奥术有多么危险，你从中吸取了教训。你对战斗中施法者保持时刻警惕，磨练你的反应能力，在最意想不到的时候发动攻击。你获得扰法者作为额外专长。"
+  },
+  {
+    "Key": "DeificObedienceCharon.Name",
+    "ProcessTemplates": false,
+    "enGB": "Charon Obedience",
+    "zhCN": "卡戎仪典"
+  },
+  {
+    "Key": "DeificObedienceCharon.Description",
+    "enGB": "Meditate upon your infirmities and the slow, inevitable progression of physical and mental decay inherent to the ravages of time. Mimic this progression by immersing yourself or a victim in icy water until nearly unconscious, or by consuming alcohol or drugs that dull memory and mental faculties. Gain a +4 profane bonus on saving throws against necromancy and negative energy effects.",
+    "zhCN": "细细反思凡躯的脆弱，以及时光对肉体与心灵所造成的缓慢却不可阻挡的衰退。将自己或一名受害者浸入冰水直至几乎失去知觉，或通过饮酒，服用药物模糊记忆力和精神来模拟这种感觉。你在对抗死灵系法术和负能量效果的豁免检定上获得+4亵渎加值。"
+  },
+  {
+    "Key": "DeificObedienceCharonSentinel.Name",
+    "ProcessTemplates": false,
+    "enGB": "Charon (Sentinel)",
+    "zhCN": "卡戎（信仰哨卫）"
+  },
+  {
+    "Key": "DeificObedienceCharonSentinel.Description",
+    "enGB": "Become a Sentinel to gain access to his boons, which will be granted at certain character or class levels.",
+    "zhCN": "成为信仰哨卫来获取他的神恩资格，你会在合适的角色或职业等级得到神恩。"
+  },
+  {
+    "Key": "SpellPowerCharon1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Death’s Crusader",
+    "zhCN": "死亡斗士"
+  },
+  {
+    "Key": "SpellPowerCharon1.Description",
+    "enGB": "summon monster I 3/day",
+    "zhCN": "召唤怪物1级，3次/天"
+  },
+  {
+    "Key": "DeificObedienceCharon2.Name",
+    "ProcessTemplates": false,
+    "enGB": "On a Pale Horse (Swift)",
+    "zhCN": "灰马之上（迅捷）"
+  },
+  {
+    "Key": "DeificObedienceCharon2.Description",
+    "enGB": "You gain the ability to invoke the power of the Pale Horse. As a swift action, you cause a flickering image of the Pale Horse to appear in a 10-foot square adjacent to you. Any creature whose space the image of the Pale Horse passes through must succeed at a Fortitude save or take a –6 penalty to Strength, Dexterity, and Constitution, as if it had suddenly aged to become venerable. A creature can resist the effects of the Pale Horse with a successful Fortitude save (DC = 10 + half your Hit Dice + your Charisma modifier). This is an aging curse effect. The Pale Horse then moves around you in a 30-foot radius as you mentally direct its movement (doing so is a move action that requires concentration).",
+    "zhCN": "你获得呼唤灰马力量的能力。你可以迅捷动作召唤灰马的幻影出现在你身边的一个10尺方格内。被灰马幻象穿过的生物若未通过强韧豁免，则力量，敏捷和体质受到-6减值，就好似突然步入暮年。通过强韧豁免（DC=10+1/2HD+魅力调整值）能抵抗该效果。这是一个衰老诅咒效果。你可以用意志操纵灰马在你周围30尺范围内移动，这需要一个专注的移动动作。"
+  },
+  {
+    "Key": "DeificObedienceCharon22.Name",
+    "ProcessTemplates": false,
+    "enGB": "On a Pale Horse (Move)",
+    "zhCN": "灰马之上（移动）"
+  },
+  {
+    "Key": "DeificObedienceCharon22.Description",
+    "enGB": " The Pale Horse then moves around you in a 30-foot radius as you mentally direct its movement (doing so is a move action that requires concentration). A creature can be affected by the Pale Horse only once per round, regardless of how many times the Pale Horse moves through its space. Creatures (like dragons) that normally gain benefits from aging do not gain any benefits, and they instead take the ability score penalties described above.",
+    "zhCN": "你可以用意志操纵灰马在你周围30尺范围内移动，这需要一个专注的移动动作。一个生物每轮只能受到一次灰马的影响，无论被幻影穿过多少次。一般能从衰老中获得好处的生物（比如龙）也无法获得属性减值外的任何增益。"
+  },
+  {
+    "Key": "DeificObedienceCharon3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Death’s Call",
+    "zhCN": "死亡呼唤"
+  },
+  {
+    "Key": "DeificObedienceCharon3.Description",
+    "enGB": "Once per day, you can call upon Charon’s power to wither your enemies into dust. This ability functions as wail of the banshee, except it lacks a sonic descriptor.",
+    "zhCN": "每天一次，你可以祈唤卡戎的力量，令你的敌人化为尘土。该能力如同女妖之嚎法术一般，但没有声波描述符。"
+  },
+  {
+    "Key": "DeificObedienceSzuriel.Name",
+    "ProcessTemplates": false,
+    "enGB": "Szuriel Obedience",
+    "zhCN": "祖瑞尔仪典"
+  },
+  {
+    "Key": "DeificObedienceSzuriel.Description",
+    "enGB": "Select a target or multiple targets of your wrath, studying them for a time before either slaying them in open combat with multiple witnesses or crucifying your enemies in effigy in a public venue. Gain a +4 profane bonus on saving throws against fire-based effects.",
+    "zhCN": "选择一个或多个你宣泄怒火的目标，研究一段时间后，在有多个目击者的公开战斗中击杀他们或将他们钉在公共场所的十字架上。对抗火焰效果的豁免获得+4亵渎加值。"
+  },
+  {
+    "Key": "DeificObedienceSzurielSentinel.Name",
+    "ProcessTemplates": false,
+    "enGB": "Szuriel (Sentinel)",
+    "zhCN": "祖瑞尔（信仰哨卫）"
+  },
+  {
+    "Key": "DeificObedienceSzurielSentinel.Description",
+    "enGB": "Become a Sentinel to gain access to her boons, which will be granted at certain character or class levels.",
+    "zhCN": "成为信仰哨卫来获取她的神恩资格，你会在合适的角色或职业等级得到神恩。"
+  },
+  {
+    "Key": "DeificObedienceSzuriel2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Weapon Lore",
+    "zhCN": "武器学识"
+  },
+  {
+    "Key": "DeificObedienceSzuriel2.Description",
+    "enGB": "You are proficient with all weapons, but you are particularly gifted with swords. You gain a +2 profane bonus on attack and damage rolls; this bonus becomes +4 when you wield a greatsword.",
+    "zhCN": "你擅长所有武器，但特别精通剑术。攻击和伤害检定获得+2亵渎加值；使用巨剑时该加值变为+4。"
+  },
+  {
+    "Key": "DeificObedienceSzuriel3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Avatar of the Seraph",
+    "zhCN": "炽天使化身"
+  },
+  {
+    "Key": "DeificObedienceSzuriel3.Description",
+    "enGB": "You gain a +2 profane bonus to Strength and Constitution.",
+    "zhCN": "你的力量和体质获得+2亵渎加值。"
+  },
+  {
+    "Key": "SwordLordQuickDraw.Name",
+    "ProcessTemplates": false,
+    "enGB": "Quick Draw",
+    "zhCN": "拔刀术"
+  },
+  {
+    "Key": "SwordLordQuickDraw.Description",
+    "enGB": "If the swordlord already has Quick Draw or Alertness, he gains Aldori Dueling Mastery as a bonus feat.",
+    "zhCN": "如果剑爵已经拥有拔刀术或者警觉专长，他获得阿尔多瑞决斗精通作为额外专长。"
   }
 
 ]
