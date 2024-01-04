@@ -57,6 +57,7 @@ using PrestigePlus.CustomComponent.Archetype;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.RuleSystem.Rules.Damage;
 using BlueprintCore.Actions.Builder.BasicEx;
+using static Kingmaker.EntitySystem.EntityDataBase;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -117,6 +118,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(LamashtuDemonFeat())
               .AddToAllFeatures(ArazniFeat())
               .AddToAllFeatures(CharonFeat())
+              .AddToAllFeatures(SzurielFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -1586,9 +1588,8 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(LamashtuDemonDisplayName)
               .SetDescription(LamashtuDemonDescription)
               .SetIcon(icon)
-              .AddPrerequisiteFeature(FeatureRefs.LamashtuFeature.ToString(), group: Prerequisite.GroupType.Any)
-              .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticEvil, group: Prerequisite.GroupType.Any)
               .AddPrerequisitePlayerHasFeature(FeatureRefs.DemonFirstAscension.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticEvil, group: Prerequisite.GroupType.Any)
               .AddToIsPrerequisiteFor(LamashtuExaltedGuid)
               .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Profane, spellDescriptor: SpellDescriptor.Confusion, value: 4)
               .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Profane, spellDescriptor: SpellDescriptor.Polymorph, value: 4)
@@ -2137,9 +2138,6 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(AbilityDeliverDelay),
                 typeof(AbilityDifficultyLimitDC),
                 typeof(ContextRankConfig))
-                .SetDisplayName(Charon3DisplayName)
-                .SetDescription(Charon3Description)
-                .SetIcon(icon)
                 .SetType(AbilityType.SpellLike)
                 .AddPretendSpellLevel(spellLevel: 9)
                 .AddSpellDescriptorComponent(SpellDescriptor.Death)
@@ -2206,11 +2204,24 @@ namespace PrestigePlus.Blueprint.Feat
         {
             var icon = FeatureRefs.StunningFistSickenedFeature.Reference.Get().Icon;
 
-            return FeatureConfigurator.New(Szuriel2, Szuriel2Guid)
+            var feat = FeatureConfigurator.New(Szuriel2, Szuriel2Guid)
               .SetDisplayName(Szuriel2DisplayName)
               .SetDescription(Szuriel2Description)
-              .SetIcon(icon)
+              .SetIcon(icon);
 
+            var weapons = FeatureSelectionRefs.ExoticWeaponProficiencySelection.Reference.Get().m_AllFeatures;
+            foreach (var weapon in weapons)
+            {
+                feat.AddFacts(new() { weapon.Get() });
+            }
+            
+              return feat.AddFacts(new() { FeatureRefs.SimpleWeaponProficiency.ToString(), FeatureRefs.MartialWeaponProficiency.ToString() })
+              .AddStatBonus(ModifierDescriptor.Profane, stat: StatType.AdditionalAttackBonus, value: 2)
+              .AddStatBonus(ModifierDescriptor.Profane, stat: StatType.AdditionalDamage, value: 2)
+              .AddWeaponCategoryAttackBonus(4, WeaponCategory.Greatsword, ModifierDescriptor.Profane)
+              .AddDamageBonusConditional(4, true, ConditionsBuilder.New()
+                    .IsWeaponEquipped(category: WeaponCategory.Greatsword, checkWeaponCategory: true)
+                    .Build(), ModifierDescriptor.Profane, true)
               .Configure();
         }
 
@@ -2227,7 +2238,8 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(Szuriel3DisplayName)
               .SetDescription(Szuriel3Description)
               .SetIcon(icon)
-
+              .AddContextStatBonus(StatType.Strength, 2, ModifierDescriptor.Profane)
+              .AddContextStatBonus(StatType.Constitution, 2, ModifierDescriptor.Profane)
               .Configure();
         }
     }
