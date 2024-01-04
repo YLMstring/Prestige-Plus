@@ -159,7 +159,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         }
 
         private const string Shaitan = "Asavir.Shaitan";
-        private static readonly string ShaitanGuid = "{76669252-6914-476F-9026-93371FD9AF7E}";
+        public static readonly string ShaitanGuid = "{76669252-6914-476F-9026-93371FD9AF7E}";
 
         internal const string ShaitanDisplayName = "AsavirShaitan.Name";
         private const string ShaitanDescription = "AsavirShaitan.Description";

@@ -88,7 +88,7 @@ namespace PrestigePlus.Blueprint.ManeuverFeat
                     .SetDescription(DragDescription2)
                     .SetIcon(icon)
                     .AddPrerequisiteFeature(DragGuid, group: Prerequisite.GroupType.Any)
-                    .AddPrerequisiteFeature(FeatureRefs.KiPowerFeature.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                    .AddPrerequisiteFeature(FeatureRefs.KiPowerFeature.ToString(), group: Prerequisite.GroupType.Any)
                     .AddManeuverTrigger(SetThrow, Kingmaker.RuleSystem.Rules.CombatManeuver.DirtyTrickBlind, true)
                     .AddManeuverTrigger(SetThrow, Kingmaker.RuleSystem.Rules.CombatManeuver.DirtyTrickEntangle, true)
                     .AddManeuverTrigger(SetThrow, Kingmaker.RuleSystem.Rules.CombatManeuver.DirtyTrickSickened, true)

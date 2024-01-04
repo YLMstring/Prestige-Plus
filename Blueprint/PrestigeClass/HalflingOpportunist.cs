@@ -159,11 +159,11 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .Add<ExploitiveManeuver>()
                 .Build();
 
-            var mythicfeat = FeatureConfigurator.New(Exploitive2, ExploitiveGuid2, FeatureGroup.MythicFeat)
+            FeatureConfigurator.New(Exploitive2, ExploitiveGuid2, FeatureGroup.MythicFeat)
               .SetDisplayName(ExploitiveDisplayName2)
               .SetDescription(ExploitiveDescription2)
               .SetIcon(icon)
-              .AddPrerequisiteClassLevel(ArchetypeGuid, 5)
+              .AddPrerequisiteFeature(OpportunityGuid)
               .AddFacts(new() { SeizetheOpportunity.ManeuverGuid })
               //.AddPrerequisiteFeature(SeizetheOpportunity.FeatGuid)
               .AddToFeatureSelection("0d3a3619-9d99-47af-8e47-cb6cc4d26821") //ttt

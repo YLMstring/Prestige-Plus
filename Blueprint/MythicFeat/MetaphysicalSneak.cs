@@ -26,7 +26,7 @@ namespace PrestigePlus.BasePrestigeEnhance
                     .SetDisplayName(DisplayName)
                     .SetDescription(Description)
                     .SetIcon(icon)
-                    .AddPrerequisiteClassLevel(CharacterClassRefs.StudentOfWarClass.ToString(), 1)
+                    .AddPrerequisiteFeature(FeatureRefs.StudentOfWarKnowYourEnemyFeature.ToString())
                     .AddPrerequisiteFeature(FeatureRefs.SneakAttack.ToString())
                     .AddComponent<MetaphysicalSneakFix>()
                     .Configure();

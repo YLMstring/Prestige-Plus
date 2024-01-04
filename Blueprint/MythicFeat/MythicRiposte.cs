@@ -48,7 +48,7 @@ namespace PrestigePlus.BasePrestigeEnhance
                     .SetDisplayName(DisplayName)
                     .SetDescription(Description)
                     .SetIcon(icon)
-                    .AddPrerequisiteClassLevel(CharacterClassRefs.DuelistClass.ToString(), 2)
+                    .AddPrerequisiteFeature(FeatureRefs.DuelistParryFeature.ToString())
                     .AddToFeatureSelection("0d3a3619-9d99-47af-8e47-cb6cc4d26821") //ttt
                     .Configure();
         }

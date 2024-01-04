@@ -40,7 +40,7 @@ namespace PrestigePlus.BasePrestigeEnhance
                     .SetIcon(icon)
                     .AddFeatureOnClassLevel(beforeThisLevel: false, clazz: CharacterClassRefs.AssassinClass.ToString(), level: 10, feature: feat)
                     .AddFacts(new() { FeatureRefs.AssassinDeathAttackStandard.ToString()})
-                    .AddPrerequisiteClassLevel(CharacterClassRefs.AssassinClass.ToString(), 1)
+                    .AddPrerequisiteFeature(FeatureRefs.AssassinDeathAttack.ToString())
                     .Configure();
         }
 

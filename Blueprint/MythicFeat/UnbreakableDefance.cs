@@ -52,8 +52,8 @@ namespace PrestigePlus.BasePrestigeEnhance
                     .SetDisplayName(DisplayName)
                     .SetDescription(Description)
                     .SetIcon(icon)
-                    .AddPrerequisiteClassLevel(CharacterClassRefs.StalwartDefenderClass.ToString(), 1, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
-                    .AddPrerequisiteArchetypeLevel(ArchetypeRefs.StonelordArchetype.ToString(), level: 4, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any, characterClass: CharacterClassRefs.PaladinClass.ToString())
+                    .AddPrerequisiteFeature(FeatureRefs.DefensiveStanceFeature.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                    .AddPrerequisiteFeature(FeatureRefs.StonelordDefensiveStanceFeature.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                     .Configure();
         }
     }

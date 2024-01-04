@@ -37,7 +37,7 @@ namespace PrestigePlus.Blueprint.MythicFeat
                     .SetDisplayName(DisplayName)
                     .SetDescription(Description)
                     .SetIcon(icon)
-                    .AddPrerequisiteClassLevel(MammothRider.ArchetypeGuid, 8)
+                    .AddPrerequisiteFeature(MammothRider.CombinedMightGuid)
                     .AddComponent<GiganticLimit>()
                     .Configure();
         }

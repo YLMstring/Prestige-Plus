@@ -26,7 +26,7 @@ namespace PrestigePlus.Blueprint.MythicFeat
                     .SetDisplayName(DisplayName)
                     .SetDescription(Description)
                     .SetIcon(icon)
-                    .AddPrerequisiteClassLevel(Asavir.ArchetypeGuid, 2)
+                    .AddPrerequisiteFeature(Asavir.ShaitanGuid)
                     .Configure();
         }
     }

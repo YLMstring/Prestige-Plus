@@ -35,8 +35,7 @@ namespace PrestigePlus.BasePrestigeEnhance
                     .SetIcon(icon)
                     .AddAdditionalLimb(ItemWeaponRefs.Wing1d4.ToString())
                     .AddAdditionalLimb(ItemWeaponRefs.Wing1d4.ToString())
-                    .AddPrerequisiteClassLevel(CharacterClassRefs.DragonDiscipleClass.ToString(), 5, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
-                    .AddPrerequisiteArchetypeLevel(ArchetypeRefs.DragonheirScionArchetype.ToString(), level: 10, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any, characterClass: CharacterClassRefs.FighterClass.ToString())
+                    .AddPrerequisiteFeature(FeatureRefs.DragonDiscipleBlindSense.ToString())
                     .AddToFeatureSelection("0d3a3619-9d99-47af-8e47-cb6cc4d26821") //ttt
                     .Configure();
         }
@@ -61,8 +60,7 @@ namespace PrestigePlus.BasePrestigeEnhance
                     .AddComponent<ChangeActionSpell>(a => { a.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>(AbilityRefs.GoldenDragonBreathAbility.ToString()); a.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move; })
                     .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New().Randomize((action, 1), (action2, 2)).Build())
                     .AddCombatStateTrigger(combatEndActions: ActionsBuilder.New().RestoreResource(AbilityResourceRefs.BloodlineDraconicBreathWeaponResource.ToString(), ContextValues.Constant(100)).Build())
-                    .AddPrerequisiteClassLevel(CharacterClassRefs.DragonDiscipleClass.ToString(), 9, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
-                    .AddPrerequisiteArchetypeLevel(ArchetypeRefs.DragonheirScionArchetype.ToString(), level: 15, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any, characterClass: CharacterClassRefs.FighterClass.ToString())
+                    .AddPrerequisiteFeature(FeatureRefs.DragonDiscipleIntelligence.ToString())
                     .Configure();
         }
     }

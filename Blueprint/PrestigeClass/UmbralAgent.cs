@@ -506,7 +506,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                     .SetDisplayName(Gaze4DisplayName)
                     .SetDescription(Gaze4Description)
                     .SetIcon(icon)
-                    .AddPrerequisiteClassLevel(ArchetypeGuid, 5)
+                    .AddPrerequisiteFeature(GazeGuid)
                     .Configure();
 
         }

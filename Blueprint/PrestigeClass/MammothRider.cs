@@ -396,7 +396,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         }
 
         private const string CombinedMight = "MammothRider.CombinedMight";
-        private static readonly string CombinedMightGuid = "{A620DA1D-8224-458B-A748-11CFE7729782}";
+        public static readonly string CombinedMightGuid = "{A620DA1D-8224-458B-A748-11CFE7729782}";
 
         private const string CombinedMightBuff = "MammothRider.CombinedMightBuff";
         private static readonly string CombinedMightBuffGuid = "{49F7F0A5-B8E5-4C21-AFB7-E2E509D6C34E}";
