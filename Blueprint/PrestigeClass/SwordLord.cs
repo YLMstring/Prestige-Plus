@@ -33,6 +33,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .AddFeatureIfHasFact("b7b65e54-2278-4145-8590-31fa48b785e9", FeatureRefs.DuelingMastery.ToString(), false)
               .AddFeatureIfHasFact(FeatureRefs.Alertness.ToString(), FeatureRefs.DuelingMastery.ToString(), false)
+              .SetReapplyOnLevelUp()
               .Configure();
 
             ProgressionConfigurator.For(ProgressionRefs.SwordlordProgression)

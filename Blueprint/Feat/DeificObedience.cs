@@ -1843,7 +1843,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         private static BlueprintFeature CreateArazni1()
         {
-            var icon = AbilityRefs.DivineFavor.Reference.Get().Icon;
+            var icon = FeatureRefs.FinesseTrainingRapier.Reference.Get().Icon;
 
             var ability = AbilityConfigurator.New(Arazni1Ablity, Arazni1AblityGuid)
                 .CopyFrom(
@@ -1933,7 +1933,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string CharonDescription = "DeificObedienceCharon.Description";
         public static BlueprintFeature CharonFeat()
         {
-            var icon = FeatureRefs.UrgathoaFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.DeathClutch.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Charon, CharonGuid)
               .SetDisplayName(CharonDisplayName)
@@ -1955,7 +1955,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string CharonSentinelDescription = "DeificObedienceCharonSentinel.Description";
         public static BlueprintProgression CharonSentinelFeat()
         {
-            var icon = FeatureRefs.UrgathoaFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.DeathClutch.Reference.Get().Icon;
 
             return ProgressionConfigurator.New(CharonSentinel, CharonSentinelGuid)
               .SetDisplayName(CharonSentinelDisplayName)
@@ -2024,7 +2024,8 @@ namespace PrestigePlus.Blueprint.Feat
         private const string Charon2Description2 = "DeificObedienceCharon22.Description";
         public static BlueprintFeature CharonSentinel2Feat()
         {
-            var icon = AbilityRefs.AbilityDismount.Reference.Get().Icon;
+            var icon = FeatureRefs.GhostRiderGhostSpiritualBondFeature.Reference.Get().Icon;
+            var icon2 = FeatureRefs.GhostRiderSpiritedMountFeature.Reference.Get().Icon;
 
             var Buff = BuffConfigurator.New(Charon2Buff, Charon2BuffGuid)
              .SetDisplayName(Charon2DisplayName)
@@ -2077,7 +2078,7 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(AbilitySpawnFx))
                 .SetDisplayName(Charon2DisplayName2)
                 .SetDescription(Charon2Description2)
-                .SetIcon(icon)
+                .SetIcon(icon2)
                 .SetType(AbilityType.SpellLike)
                 .SetRange(AbilityRange.Personal)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move)
@@ -2160,7 +2161,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string SzurielDescription = "DeificObedienceSzuriel.Description";
         public static BlueprintFeature SzurielFeat()
         {
-            var icon = FeatureRefs.UrgathoaFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.ExecutionerAssassinateFeature.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Szuriel, SzurielGuid)
               .SetDisplayName(SzurielDisplayName)
@@ -2180,7 +2181,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string SzurielSentinelDescription = "DeificObedienceSzurielSentinel.Description";
         public static BlueprintProgression SzurielSentinelFeat()
         {
-            var icon = FeatureRefs.UrgathoaFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.ExecutionerAssassinateFeature.Reference.Get().Icon;
 
             return ProgressionConfigurator.New(SzurielSentinel, SzurielSentinelGuid)
               .SetDisplayName(SzurielSentinelDisplayName)
@@ -2202,7 +2203,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static BlueprintFeature Szuriel2Feat()
         {
-            var icon = FeatureRefs.StunningFistSickenedFeature.Reference.Get().Icon;
+            var icon = FeatureSelectionRefs.ExoticWeaponProficiencySelection.Reference.Get().Icon;
 
             var feat = FeatureConfigurator.New(Szuriel2, Szuriel2Guid)
               .SetDisplayName(Szuriel2DisplayName)
@@ -2232,7 +2233,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string Szuriel3Description = "DeificObedienceSzuriel3.Description";
         public static BlueprintFeature Szuriel3Feat()
         {
-            var icon = AbilityRefs.ChannelRage.Reference.Get().Icon;
+            var icon = FeatureRefs.HellsSealFeature.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Szuriel3, Szuriel3Guid)
               .SetDisplayName(Szuriel3DisplayName)
