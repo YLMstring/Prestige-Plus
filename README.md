@@ -288,6 +288,7 @@
 - Infernal Healing: You can fully heal outside of combat by spending gold, as if you buy a wand of infernal healing and use it! (gold : hp = 3:2)
 - Weak Crits against Enemies: Symmetrical with owlcat weak crits settings, making it fair (default off)
 - Fix Difficulty CMD Tripple-Dipped: This will significantly reduce enemy CMD at higher difficulties. CMD is calculated by adding STR bonus, DEX bonus and AC bonus, which means difficulty stat advancement is applied 3 times in vanilla, leading to total madness.
+- Fix Power Attack: now working as descripted: This bonus to damage is halved (–50%) if you are making an attack with an off-hand weapon. Note that Piranha Strike has the same bug but it isn't fixed because this might give Piranha Strike an edge over Power Attack, which is pretty coool.
 
 ## Mod Combo
 
