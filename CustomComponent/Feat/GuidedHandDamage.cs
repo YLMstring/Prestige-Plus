@@ -45,7 +45,7 @@ namespace PrestigePlus.CustomComponent.Feat
 
         public override void OnDeactivate()
         {
-            Data.cat = new() { };
+            Data.cat.Clear();
         }
 
         public class ComponentData

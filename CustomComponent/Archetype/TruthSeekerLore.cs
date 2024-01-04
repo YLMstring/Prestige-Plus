@@ -59,7 +59,7 @@ namespace PrestigePlus.CustomComponent.Archetype
 
         public override void OnDeactivate()
         {
-            Data.SpellList = new() { };
+            Data.SpellList.Clear();
         }
 
         public class ComponentData

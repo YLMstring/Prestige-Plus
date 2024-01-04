@@ -90,6 +90,12 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetDescription(DeificObedienceDescription)
                 .SetIcon(icon)
                 .AllowTargeting(self: true)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                    .Conditional(conditions: ConditionsBuilder.New().HasFact(Arazni0Guid).Build(),
+                    ifTrue: ActionsBuilder.New()
+                        .DealDamage(value: ContextDice.Value(DiceType.D6, bonus: 0, diceCount: ContextValues.Constant(1)), damageType: DamageTypes.Direct())
+                        .Build())
+                    .Build())
                 .Configure();
 
             var feat = FeatureSelectionConfigurator.New(DeificObedienceFeat, DeificObedienceGuid)
@@ -109,6 +115,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(OtolmensFeat())
               .AddToAllFeatures(LamashtuFeat())
               .AddToAllFeatures(LamashtuDemonFeat())
+              .AddToAllFeatures(ArazniFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -1774,6 +1781,335 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetIcon(icon)
                     .AddFacts(new() { ability })
                     .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+                    .Configure();
+        }
+
+        private const string Arazni = "DeificObedience.Arazni";
+        public static readonly string ArazniGuid = "{0FD1BF05-093E-47F2-9243-7979B25742A1}";
+
+        internal const string ArazniDisplayName = "DeificObedienceArazni.Name";
+        private const string ArazniDescription = "DeificObedienceArazni.Description";
+        public static BlueprintProgression ArazniFeat()
+        {
+            var icon = FeatureRefs.UrgathoaFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(Arazni, ArazniGuid)
+              .SetDisplayName(ArazniDisplayName)
+              .SetDescription(ArazniDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.UrgathoaFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.NeutralEvil, group: Prerequisite.GroupType.Any)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(1, Arazni0Feat())
+              .AddToLevelEntry(12, CreateArazni1())
+              .AddToLevelEntry(16, Arazni2Feat())
+              .AddToLevelEntry(20, Arazni3Feat())
+              .Configure();
+        }
+
+        private const string Arazni0 = "DeificObedience.Arazni0";
+        public static readonly string Arazni0Guid = "{9D53BBC5-1E4C-42D9-AEC0-89479F0FD840}";
+
+        public static BlueprintFeature Arazni0Feat()
+        {
+            var icon = FeatureRefs.UrgathoaFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Arazni0, Arazni0Guid)
+              .SetDisplayName(ArazniDisplayName)
+              .SetDescription(ArazniDescription)
+              .SetIcon(icon)
+              .AddComponent<ArazniObedience>()
+              .Configure();
+        }
+
+        private const string Arazni1 = "SpellPower.Arazni1";
+        public static readonly string Arazni1Guid = "{4F105860-5A78-4C62-8264-72759F66B299}";
+        internal const string Arazni1DisplayName = "SpellPowerArazni1.Name";
+        private const string Arazni1Description = "SpellPowerArazni1.Description";
+
+        private const string Arazni1Ablity = "SpellPower.UseArazni1";
+        private static readonly string Arazni1AblityGuid = "{87F342E2-A823-428D-BDB4-A0DAF5BB1EB6}";
+
+        private const string Arazni1Ablity2 = "SpellPower.UseArazni12";
+        private static readonly string Arazni1Ablity2Guid = "{646EBA59-E44A-4F5A-A7C3-15096328E7C2}";
+
+        private const string Arazni1Ablity3 = "SpellPower.UseArazni13";
+        private static readonly string Arazni1Ablity3Guid = "{0A418C02-CFA7-48C3-A478-3572FF6D9605}";
+
+        private static BlueprintFeature CreateArazni1()
+        {
+            var icon = AbilityRefs.DivineFavor.Reference.Get().Icon;
+
+            var ability = AbilityConfigurator.New(Arazni1Ablity, Arazni1AblityGuid)
+                .CopyFrom(
+                AbilityRefs.DivineFavor,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx))
+                .AddPretendSpellLevel(spellLevel: 1)
+                .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(Arazni1Ablity2, Arazni1Ablity2Guid)
+                .CopyFrom(
+                AbilityRefs.EffortlessArmor,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx),
+                typeof(ContextRankConfig))
+                .AddPretendSpellLevel(spellLevel: 2)
+                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var ability3 = AbilityConfigurator.New(Arazni1Ablity3, Arazni1Ablity3Guid)
+                .CopyFrom(
+                AbilityRefs.Rage,
+                typeof(AbilityEffectRunAction),
+                typeof(AbilityTargetsAround),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 3)
+                .AddAbilityResourceLogic(6, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Arazni1, Arazni1Guid)
+              .SetDisplayName(Arazni1DisplayName)
+              .SetDescription(Arazni1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability, ability2, ability3 })
+              .Configure();
+        }
+
+        private const string Arazni2 = "DeificObedience.Arazni2";
+        public static readonly string Arazni2Guid = "{9B9AFBD5-A3F8-4C01-A6BD-96420DE65DDB}";
+
+        internal const string Arazni2DisplayName = "DeificObedienceArazni2.Name";
+        private const string Arazni2Description = "DeificObedienceArazni2.Description";
+        public static BlueprintFeature Arazni2Feat()
+        {
+            var icon = AbilityRefs.MindBlank.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Arazni2, Arazni2Guid)
+              .SetDisplayName(Arazni2DisplayName)
+              .SetDescription(Arazni2Description)
+              .SetIcon(icon)
+              .AddBuffDescriptorImmunity(false, SpellDescriptor.Charm)
+              .AddBuffDescriptorImmunity(false, SpellDescriptor.Compulsion)
+              .AddSpellImmunityToSpellDescriptor(descriptor: SpellDescriptor.Charm)
+              .AddSpellImmunityToSpellDescriptor(descriptor: SpellDescriptor.Compulsion)
+              .AddSavingThrowBonusAgainstDescriptor(value: 4, spellDescriptor: SpellDescriptor.Fear)
+              .Configure();
+        }
+
+        private const string Arazni3 = "DeificObedience.Arazni3";
+        public static readonly string Arazni3Guid = "{C760D063-45D2-410D-AF42-56A14C181154}";
+
+        internal const string Arazni3DisplayName = "DeificObedienceArazni3.Name";
+        private const string Arazni3Description = "DeificObedienceArazni3.Description";
+        public static BlueprintFeature Arazni3Feat()
+        {
+            var icon = FeatureRefs.Disruptive.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Arazni3, Arazni3Guid)
+              .SetDisplayName(Arazni3DisplayName)
+              .SetDescription(Arazni3Description)
+              .SetIcon(icon)
+              .AddFacts(new() { FeatureRefs.Disruptive.ToString() })
+              .Configure();
+        }
+
+        private const string Charon = "DeificObedience.Charon";
+        public static readonly string CharonGuid = "{B6E7CE78-79CA-406D-B678-340CA69CC65B}";
+
+        internal const string CharonDisplayName = "DeificObedienceCharon.Name";
+        private const string CharonDescription = "DeificObedienceCharon.Description";
+        public static BlueprintFeature CharonFeat()
+        {
+            var icon = FeatureRefs.UrgathoaFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Charon, CharonGuid)
+              .SetDisplayName(CharonDisplayName)
+              .SetDescription(CharonDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.UrgathoaFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.NeutralEvil, group: Prerequisite.GroupType.Any)
+              .AddToIsPrerequisiteFor(CharonSentinelFeat())
+              .AddSavingThrowBonusAgainstDescriptor(value: 4, spellDescriptor: SpellDescriptor.NegativeLevel, modifierDescriptor: ModifierDescriptor.Profane)
+              .AddSavingThrowBonusAgainstDescriptor(value: 4, spellDescriptor: SpellDescriptor.ChannelNegativeHarm, modifierDescriptor: ModifierDescriptor.Profane)
+              .AddSavingThrowBonusAgainstSchool(value: 4, school: SpellSchool.Necromancy, modifierDescriptor: ModifierDescriptor.Profane)
+              .Configure();
+        }
+
+        private const string CharonSentinel = "DeificObedience.CharonSentinel";
+        public static readonly string CharonSentinelGuid = "{73D86F82-44D7-471E-A711-1F72F3B98644}";
+
+        internal const string CharonSentinelDisplayName = "DeificObedienceCharonSentinel.Name";
+        private const string CharonSentinelDescription = "DeificObedienceCharonSentinel.Description";
+        public static BlueprintProgression CharonSentinelFeat()
+        {
+            var icon = AbilityRefs.ShamanHexBeckoningChillAbility.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(CharonSentinel, CharonSentinelGuid)
+              .SetDisplayName(CharonSentinelDisplayName)
+              .SetDescription(CharonSentinelDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(CharonGuid)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(12, CreateCharonSentinel1())
+              .AddToLevelEntry(16, CharonSentinel2Feat())
+              .AddToLevelEntry(20, CharonSentinel3Feat())
+              .Configure();
+        }
+
+        private const string CharonSentinel1 = "SpellPower.CharonSentinel1";
+        public static readonly string CharonSentinel1Guid = "{62A55541-7FBC-45D2-85AB-1E757D5F4DDD}";
+        internal const string CharonSentinel1DisplayName = "SpellPowerCharon1.Name";
+        private const string CharonSentinel1Description = "SpellPowerCharon1.Description";
+
+        private const string CharonSentinel1Ablity2 = "SpellPower.UseCharonSentinel12";
+        private static readonly string CharonSentinel1Ablity2Guid = "{0C3A2B3E-BD1E-42EA-ADBD-00A14DEB7A89}";
+
+        private static BlueprintFeature CreateCharonSentinel1()
+        {
+            var icon = AbilityRefs.IcyPrison.Reference.Get().Icon;
+
+            var ability2 = AbilityConfigurator.New(CharonSentinel1Ablity2, CharonSentinel1Ablity2Guid)
+                .CopyFrom(
+                AbilityRefs.Castigate,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx),
+                typeof(AbilityTargetHasNoFactUnless),
+                typeof(AbilityTargetHasFact),
+                typeof(SpellDescriptorComponent),
+                typeof(ContextRankConfig))
+                .SetIcon(icon)
+                .SetType(AbilityType.SpellLike)
+                .AddPretendSpellLevel(spellLevel: 2)
+                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .Configure();
+
+            return FeatureConfigurator.New(CharonSentinel1, CharonSentinel1Guid)
+              .SetDisplayName(CharonSentinel1DisplayName)
+              .SetDescription(CharonSentinel1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability2 })
+              .Configure();
+        }
+
+        private const string Charon2 = "DeificObedience.Charon2";
+        public static readonly string Charon2Guid = "{CC567A04-40C7-4257-B23D-A4054CB0B0BD}";
+
+        internal const string Charon2DisplayName = "DeificObedienceCharon2.Name";
+        private const string Charon2Description = "DeificObedienceCharon2.Description";
+
+        private const string Charon2Buff = "DeificObedience.Charon2Buff";
+        private static readonly string Charon2BuffGuid = "{202FD60C-3628-43BE-94ED-791D1150849B}";
+
+        private const string Charon2Ability = "DeificObedience.Charon2Ability";
+        private static readonly string Charon2AbilityGuid = "{86C1A7A1-E263-42D0-8B4C-989D506153F2}";
+        public static BlueprintFeature CharonSentinel2Feat()
+        {
+            var icon = AbilityRefs.CrushingDespair.Reference.Get().Icon;
+
+            var buff = BuffConfigurator.New(Charon2Buff, Charon2BuffGuid)
+             .SetDisplayName(Charon2DisplayName)
+             .SetDescription(Charon2Description)
+             .SetIcon(icon)
+             .AddCondition(Kingmaker.UnitLogic.UnitCondition.Staggered)
+             .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.AdditionalAttackBonus, value: -1)
+             .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.AdditionalDamage, value: -1)
+             .AddBuffAllSavesBonus(ModifierDescriptor.Penalty, value: -1)
+             .AddBuffAllSkillsBonus(ModifierDescriptor.Penalty, value: -1, multiplier: 1)
+             .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting)
+             .AddSpellDescriptorComponent(SpellDescriptor.Emotion)
+             .AddSpellDescriptorComponent(SpellDescriptor.NegativeEmotion)
+             .Configure();
+
+            var ability = AbilityConfigurator.New(Charon2Ability, Charon2AbilityGuid)
+                .SetDisplayName(Charon2DisplayName)
+                .SetDescription(Charon2Description)
+                .SetIcon(icon)
+                .SetType(AbilityType.Supernatural)
+                .SetRange(AbilityRange.Projectile)
+                .AllowTargeting(true, true, true, true)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Directional)
+                .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.NecromancyCone30Feet00.ToString() }, type: AbilityProjectileType.Cone, length: 30.Feet(), lineWidth: 5.Feet(), needAttackRoll: false)
+                .AddAbilityEffectRunAction(
+                actions: ActionsBuilder.New()
+                  .ConditionalSaved(failed: ActionsBuilder.New()
+                        .ApplyBuff(buff, ContextDuration.Variable(ContextValues.Property(UnitProperty.Level, toCaster: true)))
+                        .Build())
+                  .Build(), savingThrowType: SavingThrowType.Will)
+                .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting)
+                .AddSpellDescriptorComponent(SpellDescriptor.Emotion)
+                .AddSpellDescriptorComponent(SpellDescriptor.NegativeEmotion)
+                .Configure();
+
+            return FeatureConfigurator.New(Charon2, Charon2Guid)
+              .SetDisplayName(Charon2DisplayName)
+              .SetDescription(Charon2Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private static readonly string Charon3Name = "DeificObedienceCharon3";
+        public static readonly string Charon3Guid = "{44AE0CA2-464E-4200-9C67-24D0CFCBAE1F}";
+
+        private static readonly string Charon3DisplayName = "DeificObedienceCharon3.Name";
+        private static readonly string Charon3Description = "DeificObedienceCharon3.Description";
+
+        private const string Charon3Aura = "DeificObedienceStyle.Charon3Aura";
+        private static readonly string Charon3AuraGuid = "{0D79B107-54C2-4439-BF31-CA3B1C4A0A74}";
+
+        private const string Charon3Ability = "DeificObedienceStyle.Charon3Ability";
+        private static readonly string Charon3AbilityGuid = "{BDC2A287-8FA8-4722-9206-A8E131D64EC8}";
+
+        private const string Charon3AbilityRes = "DeificObedienceStyle.Charon3AbilityRes";
+        private static readonly string Charon3AbilityResGuid = "{489136AD-7D46-44BD-979C-8633B294F324}";
+
+        public static BlueprintFeature CharonSentinel3Feat()
+        {
+            var icon = AbilityRefs.IceBody.Reference.Get().Icon;
+
+            var area = AbilityAreaEffectConfigurator.New(Charon3Aura, Charon3AuraGuid)
+                .SetAffectEnemies(true)
+                .SetTargetType(BlueprintAbilityAreaEffect.TargetType.Any)
+                .SetAffectDead(false)
+                .SetShape(AreaEffectShape.Cylinder)
+                .SetSize(13.Feet())
+                .AddAbilityAreaEffectBuff(BuffRefs.SpellResistanceBuff.ToString())
+                .AddContextCalculateAbilityParams(replaceCasterLevel: true, casterLevel: ContextValues.Property(UnitProperty.Level))
+                .Configure();
+
+            var abilityresourse = AbilityResourceConfigurator.New(Charon3AbilityRes, Charon3AbilityResGuid)
+                .SetMaxAmount(
+                    ResourceAmountBuilder.New(0))
+                .Configure();
+
+            var ability = ActivatableAbilityConfigurator.New(Charon3Ability, Charon3AbilityGuid)
+                .SetDisplayName(Charon3DisplayName)
+                .SetDescription(Charon3Description)
+                .SetIcon(icon)
+                .SetDeactivateIfCombatEnded(true)
+                .SetDeactivateImmediately(true)
+                .SetActivationType(AbilityActivationType.WithUnitCommand)
+                .SetActivateWithUnitCommand(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard)
+                .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound)
+                .Configure();
+
+            return FeatureConfigurator.New(Charon3Name, Charon3Guid)
+                    .SetDisplayName(Charon3DisplayName)
+                    .SetDescription(Charon3Description)
+                    .SetIcon(icon)
+                    .AddFacts(new() { ability })
+                    .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+                    .AddIncreaseResourceAmountBySharedValue(false, abilityresourse, ContextValues.Property(UnitProperty.Level))
                     .Configure();
         }
     }
