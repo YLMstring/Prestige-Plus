@@ -2023,7 +2023,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string Charon2Description2 = "DeificObedienceCharon22.Description";
         public static BlueprintFeature CharonSentinel2Feat()
         {
-            var icon = AbilityRefs.CrushingDespair.Reference.Get().Icon;
+            var icon = AbilityRefs.AbilityDismount.Reference.Get().Icon;
 
             var Buff = BuffConfigurator.New(Charon2Buff, Charon2BuffGuid)
              .SetDisplayName(Charon2DisplayName)
@@ -2153,6 +2153,82 @@ namespace PrestigePlus.Blueprint.Feat
                     .AddFacts(new() { ability })
                     .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
                     .Configure();
+        }
+
+        private const string Szuriel = "DeificObedience.Szuriel";
+        public static readonly string SzurielGuid = "{1A12DE3E-E521-4DFA-9BD6-A340E0127EEE}";
+
+        internal const string SzurielDisplayName = "DeificObedienceSzuriel.Name";
+        private const string SzurielDescription = "DeificObedienceSzuriel.Description";
+        public static BlueprintFeature SzurielFeat()
+        {
+            var icon = FeatureRefs.UrgathoaFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Szuriel, SzurielGuid)
+              .SetDisplayName(SzurielDisplayName)
+              .SetDescription(SzurielDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.UrgathoaFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.NeutralEvil, group: Prerequisite.GroupType.Any)
+              .AddToIsPrerequisiteFor(SzurielSentinelFeat())
+              .AddSavingThrowBonusAgainstDescriptor(value: 4, spellDescriptor: SpellDescriptor.Fire, modifierDescriptor: ModifierDescriptor.Profane)
+              .Configure();
+        }
+
+        private const string SzurielSentinel = "DeificObedience.SzurielSentinel";
+        public static readonly string SzurielSentinelGuid = "{8EBC9513-483A-41CF-AA18-B9E683CD641F}";
+
+        internal const string SzurielSentinelDisplayName = "DeificObedienceSzurielSentinel.Name";
+        private const string SzurielSentinelDescription = "DeificObedienceSzurielSentinel.Description";
+        public static BlueprintProgression SzurielSentinelFeat()
+        {
+            var icon = FeatureRefs.UrgathoaFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(SzurielSentinel, SzurielSentinelGuid)
+              .SetDisplayName(SzurielSentinelDisplayName)
+              .SetDescription(SzurielSentinelDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(SzurielGuid)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(12, CharonSentinel1Guid)
+              .AddToLevelEntry(16, Szuriel2Feat())
+              .AddToLevelEntry(20, Szuriel3Feat())
+              .Configure();
+        }
+
+        private const string Szuriel2 = "DeificObedience.Szuriel2";
+        public static readonly string Szuriel2Guid = "{97FF9DE3-B575-4DA7-9643-3495E4CD891F}";
+
+        internal const string Szuriel2DisplayName = "DeificObedienceSzuriel2.Name";
+        private const string Szuriel2Description = "DeificObedienceSzuriel2.Description";
+
+        public static BlueprintFeature Szuriel2Feat()
+        {
+            var icon = FeatureRefs.StunningFistSickenedFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Szuriel2, Szuriel2Guid)
+              .SetDisplayName(Szuriel2DisplayName)
+              .SetDescription(Szuriel2Description)
+              .SetIcon(icon)
+
+              .Configure();
+        }
+
+        private const string Szuriel3 = "DeificObedience.Szuriel3";
+        public static readonly string Szuriel3Guid = "{5E7FC4DF-2DDF-4718-887D-B7D5B75C2ADC}";
+
+        internal const string Szuriel3DisplayName = "DeificObedienceSzuriel3.Name";
+        private const string Szuriel3Description = "DeificObedienceSzuriel3.Description";
+        public static BlueprintFeature Szuriel3Feat()
+        {
+            var icon = AbilityRefs.ChannelRage.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Szuriel3, Szuriel3Guid)
+              .SetDisplayName(Szuriel3DisplayName)
+              .SetDescription(Szuriel3Description)
+              .SetIcon(icon)
+
+              .Configure();
         }
     }
 }
