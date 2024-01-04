@@ -1944,13 +1944,13 @@ namespace PrestigePlus.Blueprint.Feat
         }
 
         private const string CharonSentinel = "DeificObedience.CharonSentinel";
-        public static readonly string CharonSentinelGuid = "{73D86F82-44D7-471E-A711-1F72F3B98644}";
+        public static readonly string CharonSentinelGuid = "{85920F3C-C027-4B4C-AC2A-B88CEBF0A753}";
 
         internal const string CharonSentinelDisplayName = "DeificObedienceCharonSentinel.Name";
         private const string CharonSentinelDescription = "DeificObedienceCharonSentinel.Description";
         public static BlueprintProgression CharonSentinelFeat()
         {
-            var icon = AbilityRefs.ShamanHexBeckoningChillAbility.Reference.Get().Icon;
+            var icon = FeatureRefs.UrgathoaFeature.Reference.Get().Icon;
 
             return ProgressionConfigurator.New(CharonSentinel, CharonSentinelGuid)
               .SetDisplayName(CharonSentinelDisplayName)
@@ -1965,31 +1965,28 @@ namespace PrestigePlus.Blueprint.Feat
         }
 
         private const string CharonSentinel1 = "SpellPower.CharonSentinel1";
-        public static readonly string CharonSentinel1Guid = "{62A55541-7FBC-45D2-85AB-1E757D5F4DDD}";
+        public static readonly string CharonSentinel1Guid = "{BE7F9649-5D74-4B40-9509-DD21F47D4AD6}";
         internal const string CharonSentinel1DisplayName = "SpellPowerCharon1.Name";
         private const string CharonSentinel1Description = "SpellPowerCharon1.Description";
 
         private const string CharonSentinel1Ablity2 = "SpellPower.UseCharonSentinel12";
-        private static readonly string CharonSentinel1Ablity2Guid = "{0C3A2B3E-BD1E-42EA-ADBD-00A14DEB7A89}";
+        private static readonly string CharonSentinel1Ablity2Guid = "{64546C71-8FFD-4CC8-B82D-F2287C8EEEF0}";
 
         private static BlueprintFeature CreateCharonSentinel1()
         {
-            var icon = AbilityRefs.IcyPrison.Reference.Get().Icon;
+            var icon = AbilityRefs.SummonMonsterISingle.Reference.Get().Icon;
 
             var ability2 = AbilityConfigurator.New(CharonSentinel1Ablity2, CharonSentinel1Ablity2Guid)
                 .CopyFrom(
-                AbilityRefs.Castigate,
+                AbilityRefs.SummonMonsterISingle,
                 typeof(AbilityEffectRunAction),
                 typeof(SpellComponent),
-                typeof(AbilitySpawnFx),
-                typeof(AbilityTargetHasNoFactUnless),
-                typeof(AbilityTargetHasFact),
                 typeof(SpellDescriptorComponent),
                 typeof(ContextRankConfig))
                 .SetIcon(icon)
                 .SetType(AbilityType.SpellLike)
-                .AddPretendSpellLevel(spellLevel: 2)
-                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .AddPretendSpellLevel(spellLevel: 1)
+                .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
                 .Configure();
 
             return FeatureConfigurator.New(CharonSentinel1, CharonSentinel1Guid)
@@ -2001,60 +1998,107 @@ namespace PrestigePlus.Blueprint.Feat
         }
 
         private const string Charon2 = "DeificObedience.Charon2";
-        public static readonly string Charon2Guid = "{CC567A04-40C7-4257-B23D-A4054CB0B0BD}";
+        public static readonly string Charon2Guid = "{03966D1F-4940-4CA6-B7BA-0A54F33CDBDD}";
 
         internal const string Charon2DisplayName = "DeificObedienceCharon2.Name";
         private const string Charon2Description = "DeificObedienceCharon2.Description";
 
         private const string Charon2Buff = "DeificObedience.Charon2Buff";
-        private static readonly string Charon2BuffGuid = "{202FD60C-3628-43BE-94ED-791D1150849B}";
+        private static readonly string Charon2BuffGuid = "{265B99BE-2DEA-4690-9CAF-12CADAA7301D}";
+
+        private const string Charon2CoolBuff = "DeificObedience.Charon2CoolBuff";
+        private static readonly string Charon2CoolBuffGuid = "{8DCD7F94-7A02-4329-9CB8-2830D82C9723}";
 
         private const string Charon2Ability = "DeificObedience.Charon2Ability";
-        private static readonly string Charon2AbilityGuid = "{86C1A7A1-E263-42D0-8B4C-989D506153F2}";
+        private static readonly string Charon2AbilityGuid = "{97FB71B8-0F1A-4DDA-B206-E9EB9A4DA0EC}";
+
+        private const string Charon2Ability2 = "DeificObedience.Charon2Ability2";
+        private static readonly string Charon2Ability2Guid = "{E822B9FD-9AA4-489B-BC55-E4D49C6B939F}";
+
+        internal const string Charon2DisplayName2 = "DeificObedienceCharon22.Name";
+        private const string Charon2Description2 = "DeificObedienceCharon22.Description";
         public static BlueprintFeature CharonSentinel2Feat()
         {
             var icon = AbilityRefs.CrushingDespair.Reference.Get().Icon;
 
-            var buff = BuffConfigurator.New(Charon2Buff, Charon2BuffGuid)
+            var Buff = BuffConfigurator.New(Charon2Buff, Charon2BuffGuid)
              .SetDisplayName(Charon2DisplayName)
              .SetDescription(Charon2Description)
              .SetIcon(icon)
-             .AddCondition(Kingmaker.UnitLogic.UnitCondition.Staggered)
-             .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.AdditionalAttackBonus, value: -1)
-             .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.AdditionalDamage, value: -1)
-             .AddBuffAllSavesBonus(ModifierDescriptor.Penalty, value: -1)
-             .AddBuffAllSkillsBonus(ModifierDescriptor.Penalty, value: -1, multiplier: 1)
-             .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting)
-             .AddSpellDescriptorComponent(SpellDescriptor.Emotion)
-             .AddSpellDescriptorComponent(SpellDescriptor.NegativeEmotion)
+             .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.Strength, value: -6)
+             .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.Dexterity, value: -6)
+             .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.Constitution, value: -6)
+             .AddSpellDescriptorComponent(SpellDescriptor.Curse)
+             .Configure();
+
+            var CoolDownBuff = BuffConfigurator.New(Charon2CoolBuff, Charon2CoolBuffGuid)
+             .SetDisplayName(Charon2DisplayName)
+             .SetDescription(Charon2Description)
+             .SetIcon(icon)
+             .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
              .Configure();
 
             var ability = AbilityConfigurator.New(Charon2Ability, Charon2AbilityGuid)
+                .CopyFrom(
+                AbilityRefs.Weird,
+                typeof(AbilitySpawnFx))
                 .SetDisplayName(Charon2DisplayName)
                 .SetDescription(Charon2Description)
                 .SetIcon(icon)
                 .SetType(AbilityType.Supernatural)
-                .SetRange(AbilityRange.Projectile)
-                .AllowTargeting(true, true, true, true)
-                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard)
-                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Directional)
-                .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.NecromancyCone30Feet00.ToString() }, type: AbilityProjectileType.Cone, length: 30.Feet(), lineWidth: 5.Feet(), needAttackRoll: false)
+                .SetRange(AbilityRange.Custom)
+                .SetCustomRange(10.Feet())
+                .AllowTargeting(false, true, false, false)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Kineticist)
+                .AddAbilityTargetHasFact(new() { CoolDownBuff }, inverted: true)
                 .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
                   .ConditionalSaved(failed: ActionsBuilder.New()
-                        .ApplyBuff(buff, ContextDuration.Variable(ContextValues.Property(UnitProperty.Level, toCaster: true)))
+                        .ApplyBuffPermanent(Buff, isFromSpell: true)
+                        .Build(),
+                        succeed: ActionsBuilder.New()
+                        .ApplyBuff(CoolDownBuff, ContextDuration.Fixed(1))
                         .Build())
-                  .Build(), savingThrowType: SavingThrowType.Will)
-                .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting)
-                .AddSpellDescriptorComponent(SpellDescriptor.Emotion)
-                .AddSpellDescriptorComponent(SpellDescriptor.NegativeEmotion)
+                  .Build(), savingThrowType: SavingThrowType.Fortitude)
+                .AddSpellDescriptorComponent(SpellDescriptor.Curse)
+                .AddContextSetAbilityParams(spellLevel: ContextValues.Rank())
+                .AddContextRankConfig(ContextRankConfigs.CharacterLevel().WithDiv2Progression())
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(Charon2Ability2, Charon2Ability2Guid)
+                .CopyFrom(
+                AbilityRefs.Weird,
+                typeof(AbilitySpawnFx))
+                .SetDisplayName(Charon2DisplayName2)
+                .SetDescription(Charon2Description2)
+                .SetIcon(icon)
+                .SetType(AbilityType.SpellLike)
+                .SetRange(AbilityRange.Personal)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Kineticist)
+                .AllowTargeting(false, true, false, false)
+                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Enemy, radius: 30.Feet(), spreadSpeed: 40.Feet())
+                .AddAbilityTargetHasFact(new() { CoolDownBuff }, inverted: true)
+                .AddAbilityEffectRunAction(
+                actions: ActionsBuilder.New()
+                  .ConditionalSaved(failed: ActionsBuilder.New()
+                        .ApplyBuffPermanent(Buff, isFromSpell: true)
+                        .Build(),
+                        succeed: ActionsBuilder.New()
+                        .ApplyBuff(CoolDownBuff, ContextDuration.Fixed(1))
+                        .Build())
+                  .Build(), savingThrowType: SavingThrowType.Fortitude)
+                .AddSpellDescriptorComponent(SpellDescriptor.Curse)
+                .AddContextSetAbilityParams(spellLevel: ContextValues.Rank())
+                .AddContextRankConfig(ContextRankConfigs.CharacterLevel().WithDiv2Progression())
                 .Configure();
 
             return FeatureConfigurator.New(Charon2, Charon2Guid)
               .SetDisplayName(Charon2DisplayName)
               .SetDescription(Charon2Description)
               .SetIcon(icon)
-              .AddFacts(new() { ability })
+              .AddFacts(new() { ability, ability2 })
               .Configure();
         }
 
