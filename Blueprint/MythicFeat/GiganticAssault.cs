@@ -39,13 +39,13 @@ namespace PrestigePlus.Blueprint.MythicFeat
                     .SetIcon(icon)
                     .AddPrerequisiteFeature(MammothRider.CombinedMightGuid)
                     .AddComponent<GiganticLimit>()
+                    .AddBuffExtraEffects(checkedBuff: BuffRefs.MountedBuff.ToString(), extraEffectBuff: BuffRefs.ChargeBuff.ToString())
                     .Configure();
         }
 
         public static void Configure2()
         {
             BuffConfigurator.For(BuffRefs.ChargeBuff)
-                    //.AddComponent<GiganticLimit>()
                     .AddCMBBonus(value: 2)
                     .Configure();
         }

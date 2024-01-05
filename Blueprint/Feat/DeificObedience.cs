@@ -2213,7 +2213,7 @@ namespace PrestigePlus.Blueprint.Feat
             
               return feat.AddFacts(new() { FeatureRefs.SimpleWeaponProficiency.ToString(), FeatureRefs.MartialWeaponProficiency.ToString() })
               .AddStatBonus(ModifierDescriptor.Profane, stat: StatType.AdditionalAttackBonus, value: 2)
-              .AddStatBonus(ModifierDescriptor.Profane, stat: StatType.AdditionalAttackBonus, value: 2)
+              .AddStatBonus(ModifierDescriptor.Profane, stat: StatType.AdditionalAttackBonus, value: 20)
               .AddStatBonus(ModifierDescriptor.Profane, stat: StatType.AdditionalDamage, value: 2)
               .AddWeaponCategoryAttackBonus(4, WeaponCategory.Greatsword, ModifierDescriptor.Profane)
               .AddDamageBonusConditional(4, true, ConditionsBuilder.New()

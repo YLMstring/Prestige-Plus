@@ -44,22 +44,7 @@ namespace PrestigePlus.GrappleMechanic
             if (turn?.Rider == unit && !unit.View.IsMoving() && unit.HasFact(Jab) && unit.HasFact(Dancer) && turn.HasFiveFootStep(unit) == false && turn.m_RiderMovementStats.MetersMovedByFiveFootStep > 0)
             {
                 GameHelper.RemoveBuff(unit, Dancer);
-                //turn.m_RiderMovementStats.TimeMovedByFiveFootStep = 0;
                 turn.m_RiderMovementStats.MetersMovedByFiveFootStep = 0.1f;
-                //turn.m_RiderMovementStats.TimeMoved = 0;
-            }
-            if (unit.HasFact(Base)) 
-            {
-                UnitEntityData mount = unit.GetSaddledUnit();
-                if (mount == null)
-                {
-                    GameHelper.RemoveBuff(unit, BlueprintRoot.Instance.SystemMechanics.ChargeBuff);
-                }
-                else if (!unit.HasFact(BlueprintRoot.Instance.SystemMechanics.ChargeBuff))
-                {
-                    unit.Descriptor.AddBuff(BlueprintRoot.Instance.SystemMechanics.ChargeBuff, unit.Context, new TimeSpan?(1.Rounds().Seconds));
-                    mount.Descriptor.AddBuff(BlueprintRoot.Instance.SystemMechanics.ChargeBuff, mount.Context, new TimeSpan?(1.Rounds().Seconds));
-                }
             }
             var rhino = unit.GetFact(Buff)?.MaybeContext?.MaybeCaster;
             if (rhino != null && TryAboveAttack.CheckTargetRestriction(rhino, null, out _, unit) && rhino.DistanceTo(unit) <= rhino.CombatSpeedMps * 3f)
