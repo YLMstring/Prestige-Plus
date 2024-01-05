@@ -1,4 +1,4 @@
-# Prestige Plus v2.2.3 for WoTR 
+# Prestige Plus v2.2.4 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -37,6 +37,9 @@
 - [Norgorber](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Norgorber): requires worshipping Norgorber or Neutral Evil
 - [Lamashtu (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Lamashtu): requires worshipping Lamashtu or Chaotic Evil
 - [Otolmens](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Otolmens): requires worshipping Otolmens (Expanded Content) or Lawful Neutral
+- [Arazni](https://aonprd.com/DeityDisplay.aspx?ItemName=Arazni): requires worshipping Urgathoa or Neutral Evil
+- [Charon](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Charon): requires worshipping Urgathoa or Neutral Evil
+- [Szuriel](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Szuriel): requires worshipping Urgathoa or Neutral Evil
 - More coming soon!
 ### [Exalted](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/exalted/) [Evangelist](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/evangelist/)
 - [Diverse Obedience](https://www.d20pfsrd.com/feats/general-feats/diverse-obedience/)
@@ -289,6 +292,7 @@
 - Weak Crits against Enemies: Symmetrical with owlcat weak crits settings, making it fair (default off)
 - Fix Difficulty CMD Tripple-Dipped: This will significantly reduce enemy CMD at higher difficulties. CMD is calculated by adding STR bonus, DEX bonus and AC bonus, which means difficulty stat advancement is applied 3 times in vanilla, leading to total madness.
 - Fix Power Attack: now working as descripted: This bonus to damage is halved (–50%) if you are making an attack with an off-hand weapon. Note that Piranha Strike has the same bug but it isn't fixed because this might give Piranha Strike an edge over Power Attack, which is pretty coool.
+- [Quick Draw](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/swordlord/): If the swordlord already has Quick Draw or Alertness, he gains Aldori Dueling Mastery as a bonus feat.
 
 ## Mod Combo
 
