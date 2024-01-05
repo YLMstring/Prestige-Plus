@@ -24,7 +24,7 @@ namespace PrestigePlus.Blueprint.MythicFeat
     internal class GiganticAssault
     {
         private static readonly string FeatName = "GiganticAssault";
-        private static readonly string FeatGuid = "{D47DC15C-3A96-4358-A652-DB9E632009A7}";
+        public static readonly string FeatGuid = "{D47DC15C-3A96-4358-A652-DB9E632009A7}";
 
         private static readonly string DisplayName = "GiganticAssault.Name";
         private static readonly string Description = "GiganticAssault.Description";

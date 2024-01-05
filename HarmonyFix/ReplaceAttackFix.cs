@@ -16,6 +16,7 @@ using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Parts;
 using PrestigePlus.Blueprint;
 using PrestigePlus.Blueprint.GrappleFeat;
+using PrestigePlus.Blueprint.MythicFeat;
 using PrestigePlus.Blueprint.MythicGrapple;
 using PrestigePlus.Blueprint.SpecificManeuver;
 using PrestigePlus.CustomAction.OtherManeuver;
@@ -43,6 +44,10 @@ namespace PrestigePlus.HarmonyFix
             {
                 var caster = __instance.Executor;
                 var target = __instance.Target;
+                if (caster.HasFact(Assault) && caster.HasFact(BuffRefs.ChargeBuff.Reference))
+                {
+                    __instance.IsCharge = true;
+                }
                 if (!attack.Weapon.Blueprint.IsMelee) { return true; }
                 if (caster.Body?.EmptyHandWeapon == null) { return true; }
                 var AttackBonusRule = new RuleCalculateAttackBonus(caster, target, caster.Body.EmptyHandWeapon, 0) { };
@@ -207,5 +212,7 @@ namespace PrestigePlus.HarmonyFix
 
         private static readonly BlueprintFeatureReference Steal = BlueprintTool.GetRef<BlueprintFeatureReference>(RangedDisarm.AceDisarmGuid);
         private static readonly BlueprintFeatureReference Arm = BlueprintTool.GetRef<BlueprintFeatureReference>(RangedDisarm.ArmBindGuid);
+
+        private static readonly BlueprintFeatureReference Assault = BlueprintTool.GetRef<BlueprintFeatureReference>(GiganticAssault.FeatGuid);
     }
 }

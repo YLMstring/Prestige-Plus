@@ -39,7 +39,7 @@ namespace PrestigePlus.Modify
 
         void IUnitNewCombatRoundHandler.HandleNewCombatRound(UnitEntityData unit)
         {
-            if (unit != base.Owner) { return; }
+            if (unit != base.Owner || !Owner.HasFact(BuffRefs.ChargeBuff.Reference)) { return; }
             foreach (Buff buff in base.Owner.Buffs)
             {
                 var comp = buff.Blueprint.GetComponent<AddAbilityUseTrigger>();
