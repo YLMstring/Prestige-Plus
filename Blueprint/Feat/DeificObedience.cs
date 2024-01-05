@@ -2210,15 +2210,15 @@ namespace PrestigePlus.Blueprint.Feat
             {
                 feat.AddFacts(new() { weapon.Get() });
             }
-            
-              return feat.AddFacts(new() { FeatureRefs.SimpleWeaponProficiency.ToString(), FeatureRefs.MartialWeaponProficiency.ToString() })
-              .AddStatBonus(ModifierDescriptor.Profane, stat: StatType.AdditionalAttackBonus, value: 2)
-              .AddStatBonus(ModifierDescriptor.Profane, stat: StatType.AdditionalAttackBonus, value: 20)
-              .AddStatBonus(ModifierDescriptor.Profane, stat: StatType.AdditionalDamage, value: 2)
-              .AddWeaponCategoryAttackBonus(4, WeaponCategory.Greatsword, ModifierDescriptor.Profane)
-              .AddDamageBonusConditional(4, true, ConditionsBuilder.New()
+
+            var cond = ConditionsBuilder.New()
                     .IsWeaponEquipped(category: WeaponCategory.Greatsword, checkWeaponCategory: true)
-                    .Build(), ModifierDescriptor.Profane, true)
+                    .Build();  
+            return feat.AddFacts(new() { FeatureRefs.SimpleWeaponProficiency.ToString(), FeatureRefs.MartialWeaponProficiency.ToString() })
+              .AddAttackBonusConditional(2, descriptor: ModifierDescriptor.Profane)
+              .AddDamageBonusConditional(2, descriptor: ModifierDescriptor.Profane, onlyWeaponDamage: true)
+              .AddAttackBonusConditional(4, true, cond, ModifierDescriptor.Profane)
+              .AddDamageBonusConditional(4, true, cond, ModifierDescriptor.Profane, true)
               .Configure();
         }
 
