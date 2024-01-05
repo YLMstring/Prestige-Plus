@@ -9,6 +9,7 @@ using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.ActivatableAbilities;
+using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Utility;
 using PrestigePlus.Blueprint.PrestigeClass;
 using PrestigePlus.Grapple;
@@ -39,7 +40,6 @@ namespace PrestigePlus.Blueprint.MythicFeat
                     .SetIcon(icon)
                     .AddPrerequisiteFeature(MammothRider.CombinedMightGuid)
                     .AddComponent<GiganticLimit>()
-                    .AddBuffExtraEffects(checkedBuff: BuffRefs.MountedBuff.ToString(), extraEffectBuff: BuffRefs.ChargeBuff.ToString())
                     .Configure();
         }
 

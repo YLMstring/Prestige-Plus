@@ -158,25 +158,13 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddContextStatBonus(StatType.AC, value: 2)
               .Configure();
 
-            var feat = FeatureConfigurator.New(ControllCharge, ControllChargeGuid)
+            return FeatureConfigurator.New(ControllCharge, ControllChargeGuid)
               .SetDisplayName(ControllChargeDisplayName)
               .SetDescription(ControllChargeDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
+              .AddBuffExtraEffects(checkedBuff: BuffRefs.ChargeBuff.ToString(), extraEffectBuff: Buff1)
               .Configure();
-
-            var action = ActionsBuilder.New()
-                .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(feat).Build(), ifTrue: ActionsBuilder.New()
-                    .ApplyBuff(buff: Buff1, durationValue: ContextDuration.Fixed(1))
-                    .Build())
-                .Build();
-
-            BuffConfigurator.For(BuffRefs.ChargeBuff)
-            .EditComponent<AddFactContextActions>(
-                a => a.Activated.Actions = CommonTool.Append(a.Activated.Actions, action.Actions))
-              .Configure();
-
-            return feat;
         }
 
         private const string StubbornMind = "Chevalier.StubbornMind";

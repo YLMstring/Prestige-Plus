@@ -1,6 +1,7 @@
 ﻿using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
+using Kingmaker.Designers;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules;
@@ -9,6 +10,7 @@ using Kingmaker.UnitLogic.Buffs;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Actions;
+using Kingmaker.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +25,7 @@ namespace PrestigePlus.Modify
         {
             
         }
-
+        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         void IRulebookHandler<RuleCalculateAttacksCount>.OnEventDidTrigger(RuleCalculateAttacksCount evt)
         {
             if (!Owner.HasFact(BuffRefs.ChargeBuff.Reference) || Owner.Descriptor.State.Features.Pounce) { return; }
@@ -39,14 +41,17 @@ namespace PrestigePlus.Modify
 
         void IUnitNewCombatRoundHandler.HandleNewCombatRound(UnitEntityData unit)
         {
-            if (unit != base.Owner || !Owner.HasFact(BuffRefs.ChargeBuff.Reference)) { return; }
+            if (unit != base.Owner) { return; }
+            if (!Owner.HasFact(BuffRefs.MountedBuff.Reference)) return;
+            GameHelper.ApplyBuff(Owner, BuffRefs.ChargeBuff.Reference, new Rounds?(1.Rounds()));
             foreach (Buff buff in base.Owner.Buffs)
             {
                 var comp = buff.Blueprint.GetComponent<AddAbilityUseTrigger>();
-                var actions = comp.Action?.Actions;
+                var actions = comp?.Action?.Actions;
                 if (comp?.m_Ability == AbilityRefs.ChargeAbility.Reference && actions?.Any() == true)
                 {
-                    Fact.RunActionInContext(comp.Action);
+                    Fact.RunActionInContext(comp.Action, Owner);
+                    Logger.Info(buff.Blueprint.NameSafe());
                 }
             }
         }
