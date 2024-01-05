@@ -58,6 +58,7 @@ using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.RuleSystem.Rules.Damage;
 using BlueprintCore.Actions.Builder.BasicEx;
 using static Kingmaker.EntitySystem.EntityDataBase;
+using Kingmaker.UnitLogic.Abilities;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -2026,6 +2027,7 @@ namespace PrestigePlus.Blueprint.Feat
         {
             var icon = FeatureRefs.GhostRiderGhostSpiritualBondFeature.Reference.Get().Icon;
             var icon2 = FeatureRefs.GhostRiderSpiritedMountFeature.Reference.Get().Icon;
+            var fx = AbilityRefs.Weird.Reference.Get().GetComponent<AbilitySpawnFx>();
 
             var Buff = BuffConfigurator.New(Charon2Buff, Charon2BuffGuid)
              .SetDisplayName(Charon2DisplayName)
@@ -2045,12 +2047,10 @@ namespace PrestigePlus.Blueprint.Feat
              .Configure();
 
             var ability = AbilityConfigurator.New(Charon2Ability, Charon2AbilityGuid)
-                .CopyFrom(
-                AbilityRefs.Weird,
-                typeof(AbilitySpawnFx))
                 .SetDisplayName(Charon2DisplayName)
                 .SetDescription(Charon2Description)
                 .SetIcon(icon)
+                .AddComponent(fx)
                 .SetType(AbilityType.Supernatural)
                 .SetRange(AbilityRange.Custom)
                 .SetCustomRange(10.Feet())
@@ -2068,24 +2068,20 @@ namespace PrestigePlus.Blueprint.Feat
                         .Build())
                   .Build(), savingThrowType: SavingThrowType.Fortitude)
                 .AddSpellDescriptorComponent(SpellDescriptor.Curse)
-                .AddContextSetAbilityParams(spellLevel: ContextValues.Rank())
-                .AddContextRankConfig(ContextRankConfigs.CharacterLevel().WithDiv2Progression())
+                .AddComponent<CustomDC>(c => { c.characterlv = true; c.halfed = true; c.Property = StatType.Charisma; })
                 .Configure();
 
             var ability2 = AbilityConfigurator.New(Charon2Ability2, Charon2Ability2Guid)
-                .CopyFrom(
-                AbilityRefs.Weird,
-                typeof(AbilitySpawnFx))
                 .SetDisplayName(Charon2DisplayName2)
                 .SetDescription(Charon2Description2)
                 .SetIcon(icon2)
+                .AddComponent(fx)
                 .SetType(AbilityType.SpellLike)
                 .SetRange(AbilityRange.Personal)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move)
                 .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Kineticist)
-                .AllowTargeting(false, true, false, false)
-                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Enemy, radius: 30.Feet(), spreadSpeed: 40.Feet())
-                .AddAbilityTargetHasFact(new() { CoolDownBuff }, inverted: true)
+                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Enemy, radius: 30.Feet(), spreadSpeed: 40.Feet(),
+                        condition: ConditionsBuilder.New().HasBuff(CoolDownBuff, true).Build())
                 .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
                   .ConditionalSaved(failed: ActionsBuilder.New()
@@ -2096,8 +2092,7 @@ namespace PrestigePlus.Blueprint.Feat
                         .Build())
                   .Build(), savingThrowType: SavingThrowType.Fortitude)
                 .AddSpellDescriptorComponent(SpellDescriptor.Curse)
-                .AddContextSetAbilityParams(spellLevel: ContextValues.Rank())
-                .AddContextRankConfig(ContextRankConfigs.CharacterLevel().WithDiv2Progression())
+                .AddComponent<CustomDC>(c => { c.characterlv = true; c.halfed = true; c.Property = StatType.Charisma; })
                 .Configure();
 
             return FeatureConfigurator.New(Charon2, Charon2Guid)
@@ -2142,7 +2137,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetType(AbilityType.SpellLike)
                 .AddPretendSpellLevel(spellLevel: 9)
                 .AddSpellDescriptorComponent(SpellDescriptor.Death)
-                .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: abilityresourse)
+                .AddAbilityResourceLogic(1, isSpendResource: true, requiredResource: abilityresourse)
                 .Configure();
 
             return FeatureConfigurator.New(Charon3Name, Charon3Guid)

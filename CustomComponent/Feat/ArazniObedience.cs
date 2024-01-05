@@ -20,7 +20,7 @@ namespace PrestigePlus.CustomComponent.Feat
         void IRulebookHandler<RuleSavingThrow>.OnEventAboutToTrigger(RuleSavingThrow evt)
         {
             if (Data.units.Count == 0) return;
-            if (base.Data.LastUseTime + 10.Rounds().Seconds > Game.Instance.TimeController.GameTime)
+            if (base.Data.LastUseTime + 10.Rounds().Seconds < Game.Instance.TimeController.GameTime)
             {
                 Data.units.Clear();
                 return;

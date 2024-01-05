@@ -56,25 +56,27 @@ namespace PrestigePlus.Modify
             {
                 ruleCalculateAbilityParams.ReplaceStatBonusModifier = new int?(this.m_CustomProperty.Get().GetInt(caster));
             }
-            var archetype = BlueprintTool.GetRef<BlueprintCharacterClassReference>(classguid);
-            int level = caster.Descriptor.Progression.GetClassLevel(archetype);
+            int level = caster.Descriptor.Progression.CharacterLevel;
+            if (!characterlv)
+            {
+                var archetype = BlueprintTool.GetRef<BlueprintCharacterClassReference>(classguid);
+                level = caster.Descriptor.Progression.GetClassLevel(archetype);
+            }
             if (isRogue)
             {
                 level += caster.Descriptor.Progression.GetClassLevel(BlueprintTool.GetRef<BlueprintCharacterClassReference>(CharacterClassRefs.SlayerClass.ToString()));
                 level += caster.Descriptor.Progression.GetClassLevel(BlueprintTool.GetRef<BlueprintCharacterClassReference>(ShadowDancer.ArchetypeGuid));
             }
-            ruleCalculateAbilityParams.ReplaceCasterLevel = new int?(level);
             ruleCalculateAbilityParams.ReplaceSpellLevel = new int?(level);
             if (halfed)
             {
-                ruleCalculateAbilityParams.ReplaceCasterLevel /= 2;
                 ruleCalculateAbilityParams.ReplaceSpellLevel /= 2;
             }
             if (context != null)
             {
-                return context.TriggerRule<RuleCalculateAbilityParams>(ruleCalculateAbilityParams).Result;
+                return context.TriggerRule(ruleCalculateAbilityParams).Result;
             }
-            return Rulebook.Trigger<RuleCalculateAbilityParams>(ruleCalculateAbilityParams).Result;
+            return Rulebook.Trigger(ruleCalculateAbilityParams).Result;
         }
 
         public string classguid;
@@ -84,5 +86,6 @@ namespace PrestigePlus.Modify
         public StatType Property2 = StatType.Unknown;
         public bool isRogue = false;
 
+        public bool characterlv = false;
     }
 }
