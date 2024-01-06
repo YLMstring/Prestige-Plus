@@ -138,19 +138,14 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private static readonly string ProficienciesGuid = "{BEF4CC4E-DC23-45A1-9166-6D0E6A9FD288}";
         internal const string ProficienciesDisplayName = "UmbralAgentProficiencies.Name";
         private const string ProficienciesDescription = "UmbralAgentProficiencies.Description";
-
-        private static readonly string ShadowJumpAblityGuid = "E1A86DF3-38E6-4E78-82B9-4EF7A6436BA8";
-        private static readonly string ShadowJumpAblityGuid2 = "{8ED8B86D-A5DB-46FE-B88A-05098198041A}";
-        private static readonly string ShadowJumpAblityResGuid = "E96F5710-5344-495F-A3C7-A4859C1ABF81";
-
         public static BlueprintFeature CreateProficiencies()
         {
             return FeatureConfigurator.New(Proficiencies, ProficienciesGuid)
               .SetDisplayName(ProficienciesDisplayName)
               .SetDescription(ProficienciesDescription)
               .SetIsClassFeature(true)
-              .AddFacts(new() { ShadowJumpAblityGuid, ShadowJumpAblityGuid2 })
-              .AddAbilityResources(resource: ShadowJumpAblityResGuid, restoreAmount: true)
+              .AddFacts(new() { ShadowDancer.ShadowJumpAblityGuid, ShadowDancer.ShadowJumpAblityGuid2 })
+              .AddAbilityResources(resource: ShadowDancer.ShadowJumpAblityResGuid, restoreAmount: true)
               .AddProficiencies(
                 weaponProficiencies:
                   new WeaponCategory[]

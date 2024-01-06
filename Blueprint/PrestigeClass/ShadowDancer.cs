@@ -137,8 +137,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         internal const string ProficienciesDisplayName = "ShadowDancerProficiencies.Name";
         private const string ProficienciesDescription = "ShadowDancerProficiencies.Description";
 
-        private const string ShadowJump = "ShadowDancer.ShadowJump";
-        private static readonly string ShadowJumpGuid = "5565506D-04DE-47EC-8545-C19ABCEA40B2";
         internal const string ShadowJumpDisplayName = "ShadowDancerShadowJump.Name";
         private const string ShadowJumpDescription = "ShadowDancerShadowJump.Description";
 
@@ -146,10 +144,10 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         public static readonly string ShadowJumpAblityGuid = "E1A86DF3-38E6-4E78-82B9-4EF7A6436BA8";
 
         private const string ShadowJumpAblity2 = "ShadowDancer.UseShadowJump2";
-        private static readonly string ShadowJumpAblityGuid2 = "{8ED8B86D-A5DB-46FE-B88A-05098198041A}";
+        public static readonly string ShadowJumpAblityGuid2 = "{8ED8B86D-A5DB-46FE-B88A-05098198041A}";
 
         private const string ShadowJumpAblityRes = "ShadowDancer.ShadowJumpRes";
-        private static readonly string ShadowJumpAblityResGuid = "E96F5710-5344-495F-A3C7-A4859C1ABF81";
+        public static readonly string ShadowJumpAblityResGuid = "E96F5710-5344-495F-A3C7-A4859C1ABF81";
 
         public static BlueprintFeature CreateProficiencies()
         {

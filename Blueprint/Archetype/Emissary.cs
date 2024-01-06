@@ -69,7 +69,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string ErraticChargeDescription = "EmissaryErraticCharge.Description";
         private static BlueprintFeature CreateErraticCharge()
         {
-            var icon = FeatureRefs.CavalierCharge.Reference.Get().Icon;
+            var icon = FeatureRefs.VulpinePounce.Reference.Get().Icon;
 
             var Buff1 = BuffConfigurator.New(ErraticChargeBuff, ErraticChargeGuidBuff)
               .SetDisplayName(ErraticChargeDisplayName)

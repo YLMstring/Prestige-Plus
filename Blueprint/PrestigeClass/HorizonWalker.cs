@@ -369,10 +369,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         internal const string DominanceAstralDisplayName = "HorizonWalkerDominanceAstral.Name";
         private const string DominanceAstralDescription = "HorizonWalkerDominanceAstral.Description";
-
-        private static readonly string ShadowJumpAblityGuid2 = "{8ED8B86D-A5DB-46FE-B88A-05098198041A}";
-
-        private static readonly string ShadowJumpAblityResGuid = "E96F5710-5344-495F-A3C7-A4859C1ABF81";
         public static BlueprintFeature DominanceAstralFeat()
         {
             var icon = FeatureRefs.KiAbudantStepFeature.Reference.Get().Icon;
@@ -383,9 +379,9 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddPrerequisiteFeature(MasteryAstralGuid)
-              .AddFacts(new() { ShadowJumpAblityGuid2 })
-              .AddAbilityResources(resource: ShadowJumpAblityResGuid, restoreAmount: true)
-              .AddIncreaseResourceAmountBySharedValue(false, ShadowJumpAblityResGuid, ContextValues.Rank())
+              .AddFacts(new() { ShadowDancer.ShadowJumpAblityGuid2 })
+              .AddAbilityResources(resource: ShadowDancer.ShadowJumpAblityResGuid, restoreAmount: true)
+              .AddIncreaseResourceAmountBySharedValue(false, ShadowDancer.ShadowJumpAblityResGuid, ContextValues.Rank())
               .AddContextRankConfig(ContextRankConfigs.StatBonus(StatType.Wisdom).WithBonusValueProgression(3, false))
               .AddRecalculateOnStatChange(stat: StatType.Wisdom)
               .AddDamageBonusAgainstFactOwner(damageBonus: 1, checkedFact: FeatureRefs.OutsiderType.ToString(), descriptor: ModifierDescriptor.Competence)
