@@ -383,7 +383,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddPrerequisiteFeature(MasteryAstralGuid)
-              .AddFacts(new() { ShadowJumpAblityGuid2, FeatureRefs.KiAbudantStepFeature.ToString() })
+              .AddFacts(new() { ShadowJumpAblityGuid2 })
               .AddAbilityResources(resource: ShadowJumpAblityResGuid, restoreAmount: true)
               .AddIncreaseResourceAmountBySharedValue(false, ShadowJumpAblityResGuid, ContextValues.Rank())
               .AddContextRankConfig(ContextRankConfigs.StatBonus(StatType.Wisdom).WithBonusValueProgression(3, false))

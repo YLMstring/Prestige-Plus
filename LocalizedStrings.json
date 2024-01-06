@@ -85,7 +85,7 @@
 
   {
     "Key": "ShadowDancerShadowJump.Description",
-    "enGB": "a shadowdancer gains the ability to travel between shadows as if by means of a dimension door spell or the abundant step class feature. You can gain this feat multiple times. Each time you gain 4 additional uses per day.",
+    "enGB": "a shadowdancer gains the ability to travel between shadows as if by means of a dimension door spell or the abundant step monk class feature. You can gain this feat multiple times. Each time you gain 4 additional uses per day.",
     "zhCN": "影舞者可以在阴影之间移动，如同次元门法术或武僧“无相挪移”能力。你可多次选择此专长，获得每天4次使用次数，效果叠加。"
   },
 
@@ -1284,8 +1284,8 @@
 
   {
     "Key": "HorizonWalkerDominanceAstral.Description",
-    "enGB": "The horizon walker gains a +1 competence bonus on attack and damage rolls against outsiders. He gains dimension door as a spell-like ability a number of times per day equal to 3 + the character’s Wisdom modifier (caster level equal to the character’s level). He also gains Abudant Step if he has a ki pool.",
-    "zhCN": "大地旅者对异界生物的攻击和伤害+1表现加值，并且可以将“任意门”作为类法术能力使用，每天使用次数为“3+感知修正”，施法者等级视为大地旅者人物等级。如果他有气池，还可以使用无相挪移能力。"
+    "enGB": "The horizon walker gains a +1 competence bonus on attack and damage rolls against outsiders. He gains dimension door as a spell-like ability a number of times per day equal to 3 + the character’s Wisdom modifier (caster level equal to the character’s level).",
+    "zhCN": "大地旅者对异界生物的攻击和伤害+1表现加值，并且可以将“任意门”作为类法术能力使用，每天使用次数为“3+感知修正”，施法者等级视为大地旅者人物等级。"
   },
 
   {

@@ -25,7 +25,7 @@ namespace PrestigePlus.Modify
         {
             
         }
-        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
+        //private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         void IRulebookHandler<RuleCalculateAttacksCount>.OnEventDidTrigger(RuleCalculateAttacksCount evt)
         {
             if (!Owner.HasFact(BuffRefs.ChargeBuff.Reference) || Owner.Descriptor.State.Features.Pounce) { return; }
