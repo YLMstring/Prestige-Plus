@@ -44,14 +44,17 @@ namespace PrestigePlus.Modify
             if (unit != base.Owner) { return; }
             if (!Owner.HasFact(BuffRefs.MountedBuff.Reference)) return;
             GameHelper.ApplyBuff(Owner, BuffRefs.ChargeBuff.Reference, new Rounds?(1.Rounds()));
+            var list = new List<Buff>() { };
             foreach (Buff buff in base.Owner.Buffs)
             {
+                list.Add(buff);
+            }
+            foreach (Buff buff in list)
+            {
                 var comp = buff.Blueprint.GetComponent<AddAbilityUseTrigger>();
-                var actions = comp?.Action?.Actions;
-                if (comp?.m_Ability == AbilityRefs.ChargeAbility.Reference && actions?.Any() == true)
+                if (comp != null && comp.Ability == AbilityRefs.ChargeAbility.Reference.Get())
                 {
                     Fact.RunActionInContext(comp.Action, Owner);
-                    Logger.Info(buff.Blueprint.NameSafe());
                 }
             }
         }

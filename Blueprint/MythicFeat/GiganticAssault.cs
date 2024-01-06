@@ -40,6 +40,7 @@ namespace PrestigePlus.Blueprint.MythicFeat
                     .SetIcon(icon)
                     .AddPrerequisiteFeature(MammothRider.CombinedMightGuid)
                     .AddComponent<GiganticLimit>()
+                    .AddBuffExtraEffects(checkedBuff: BuffRefs.MountedBuff.ToString(), extraEffectBuff: BuffRefs.ChargeBuff.ToString())
                     .Configure();
         }
 
