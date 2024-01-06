@@ -41,11 +41,11 @@ namespace PrestigePlus.Blueprint.Archetype
               .Configure();
         }
 
-        private const string BattlefieldAgility = "Chevalier.BattlefieldAgility";
+        private const string BattlefieldAgility = "Emissary.BattlefieldAgility";
         private static readonly string BattlefieldAgilityGuid = "{431945F2-017F-4AE7-970E-F49E3B8A01C1}";
 
-        internal const string BattlefieldAgilityDisplayName = "ChevalierBattlefieldAgility.Name";
-        private const string BattlefieldAgilityDescription = "ChevalierBattlefieldAgility.Description";
+        internal const string BattlefieldAgilityDisplayName = "EmissaryBattlefieldAgility.Name";
+        private const string BattlefieldAgilityDescription = "EmissaryBattlefieldAgility.Description";
         private static BlueprintFeature CreateBattlefieldAgility()
         {
             var icon = FeatureRefs.Mobility.Reference.Get().Icon;
@@ -59,14 +59,14 @@ namespace PrestigePlus.Blueprint.Archetype
               .Configure();
         }
 
-        private const string ErraticCharge = "Chevalier.ErraticCharge";
+        private const string ErraticCharge = "Emissary.ErraticCharge";
         private static readonly string ErraticChargeGuid = "{01C8B159-E69B-4468-AC45-4E0ECDE99E00}";
 
-        private const string ErraticChargeBuff = "Chevalier.ErraticChargeBuff";
+        private const string ErraticChargeBuff = "Emissary.ErraticChargeBuff";
         private static readonly string ErraticChargeGuidBuff = "{78727615-7D5A-4FD9-8C07-4632492D131B}";
 
-        internal const string ErraticChargeDisplayName = "ChevalierErraticCharge.Name";
-        private const string ErraticChargeDescription = "ChevalierErraticCharge.Description";
+        internal const string ErraticChargeDisplayName = "EmissaryErraticCharge.Name";
+        private const string ErraticChargeDescription = "EmissaryErraticCharge.Description";
         private static BlueprintFeature CreateErraticCharge()
         {
             var icon = FeatureRefs.CavalierCharge.Reference.Get().Icon;
