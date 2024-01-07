@@ -58,7 +58,7 @@ namespace PrestigePlus.Blueprint.GrappleFeat
         private static readonly string StylebuffGuid4 = "{C5F4DDFE-CA2E-4309-90BB-1BB5C0F32E78}";
 
         private const string StyleAbility = "ImprovedGrapple.StyleAbility";
-        private static readonly string StyleAbilityGuid = "{3011EAD3-71BD-4F62-B535-877285808A0E}";
+        public static readonly string StyleAbilityGuid = "{3011EAD3-71BD-4F62-B535-877285808A0E}";
 
         private const string PinAbility = "ImprovedGrapple.PinAbility";
         private static readonly string PinAbilityGuid = "{531632AA-0E0F-402C-8A07-18E8E0D35C80}";
