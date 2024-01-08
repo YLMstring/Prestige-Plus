@@ -1,6 +1,7 @@
 ﻿using BlueprintCore.Actions.Builder;
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
+using BlueprintCore.Blueprints.CustomConfigurators;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
@@ -14,10 +15,16 @@ using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
+using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.UnitLogic.Abilities.Components;
+using Kingmaker.UnitLogic.Abilities.Components.Base;
 using Kingmaker.UnitLogic.ActivatableAbilities;
+using Kingmaker.Utility;
 using PrestigePlus.Blueprint.Feat;
 using PrestigePlus.Blueprint.GrappleFeat;
+using PrestigePlus.CustomAction.OtherManeuver;
+using PrestigePlus.CustomComponent.OtherManeuver;
 using PrestigePlus.Maneuvers;
 using System;
 using System.Collections.Generic;
@@ -49,6 +56,7 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToAddFeatures(5, MeditativeFeat())
             .AddToAddFeatures(8, CreateFlurry8())
             .AddToAddFeatures(10, CreateSweeping())
+            .AddToAddFeatures(14, CreateWhirlwind())
             .AddToAddFeatures(15, CreateFlurry15())
               .Configure();
 
@@ -387,6 +395,77 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string WhirlwindFeat = "ManeuverMaster.Whirlwind";
+        private static readonly string WhirlwindGuid = "{356CD77A-ABDD-4FCD-91B6-9E866B954A79}";
+        internal const string WhirlwindDisplayName = "ManeuverMasterWhirlwind.Name";
+        private const string WhirlwindDescription = "ManeuverMasterWhirlwind.Description";
+
+        private const string WhirlwindAblity = "ManeuverMaster.UseWhirlwind";
+        private static readonly string WhirlwindAblityGuid = "{CF9D45C8-96EB-4FD2-B32C-EFBCC03F2F78}";
+
+        private const string WhirlwindRes = "ManeuverMaster.UseWhirlwindRes";
+        public static readonly string WhirlwindResGuid = "{9348F1F3-91C7-48FC-8F0C-47FC069CF279}";
+
+        private const string WhirlwindAblity2 = "ManeuverMaster.UseWhirlwind2";
+        private static readonly string WhirlwindAblityGuid2 = "{46F5D117-98ED-4E05-8666-509FDF26FBFB}";
+
+        public static BlueprintFeature CreateWhirlwind()
+        {
+            var icon = FeatureRefs.CoordinatedManeuvers.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(WhirlwindRes, WhirlwindResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var shoot = ActionsBuilder.New()
+                .Add<ContextActionSunderStorm>(c => { c.UseAnyType = true; })
+                .Build();
+
+            var ability = AbilityConfigurator.New(WhirlwindAblity, WhirlwindAblityGuid)
+                .AddAbilityEffectRunAction(shoot)
+                .SetType(AbilityType.Physical)
+                .SetDisplayName(WhirlwindDisplayName)
+                .SetDescription(WhirlwindDescription)
+                .SetIcon(icon)
+                .SetRange(AbilityRange.Personal)
+                .AddAbilityTargetsAround(includeDead: false, radius: 50.Feet(), targetType: TargetType.Enemy)
+                .AddAbilityCasterMainWeaponIsMelee()
+                .SetIsFullRoundAction(true)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
+                .Configure();
+
+            var cast = ActionsBuilder.New()
+                .CastSpell(ability)
+                .Build();
+
+            var ability2 = AbilityConfigurator.New(WhirlwindAblity2, WhirlwindAblityGuid2)
+                .CopyFrom(
+                AbilityRefs.DazzlingDisplayAction,
+                typeof(AbilitySpawnFx))
+                .AddAbilityEffectRunAction(ActionsBuilder.New().OnContextCaster(cast).Build())
+                .SetType(AbilityType.Physical)
+                .SetDisplayName(WhirlwindDisplayName)
+                .SetDescription(WhirlwindDescription)
+                .SetIcon(icon)
+                .SetRange(AbilityRange.Weapon)
+                .SetCanTargetEnemies(true)
+                .SetCanTargetFriends(false)
+                .SetCanTargetSelf(false)
+                .AddAbilityCasterMainWeaponIsMelee()
+                .SetIsFullRoundAction(true)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .Configure();
+
+            return FeatureConfigurator.New(WhirlwindFeat, WhirlwindGuid)
+              .SetDisplayName(WhirlwindDisplayName)
+              .SetDescription(WhirlwindDescription)
+              .SetIcon(icon)
+              .AddFacts(new() { ability2 })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .Configure();
         }
     }
