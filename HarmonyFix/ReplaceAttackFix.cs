@@ -107,8 +107,9 @@ namespace PrestigePlus.HarmonyFix
                         {
                             TriggerManeuver(caster, target, AttackBonusRule, maneuver);
                         }
-                        GameHelper.ApplyBuff(caster, FlurryCoolDown, new Rounds?(1.Rounds()));
                     }
+                    GameHelper.ApplyBuff(caster, FlurryCoolDown, new Rounds?(1.Rounds()));
+                    return false;
                 }
                 if (caster.HasFact(AerialBuff) && caster.HasFact(GrappleFeat) && __instance.IsCharge)
                 {

@@ -46,6 +46,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetLocalizedName(ArchetypeDisplayName)
               .SetLocalizedDescription(ArchetypeDescription)
             .AddToRemoveFeatures(1, FeatureRefs.MonkFlurryOfBlowstUnlock.ToString(), FeatureSelectionRefs.MonkBonusFeatSelectionLevel1.ToString())
+            .AddToRemoveFeatures(2, FeatureSelectionRefs.MonkBonusFeatSelectionLevel1.ToString())
             .AddToRemoveFeatures(4, FeatureRefs.StillMind.ToString())
             .AddToRemoveFeatures(5, FeatureRefs.PurityOfBody.ToString())
             .AddToRemoveFeatures(6, FeatureSelectionRefs.MonkBonusFeatSelectionLevel6.ToString())
@@ -54,6 +55,7 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToRemoveFeatures(14, FeatureSelectionRefs.MonkKiPowerSelection.ToString(), FeatureSelectionRefs.MonkBonusFeatSelectionLevel10.ToString())
             .AddToRemoveFeatures(18, FeatureSelectionRefs.MonkBonusFeatSelectionLevel10.ToString())
             .AddToAddFeatures(1, CreateFlurry(), CreateFlurry1())
+            .AddToAddFeatures(2, Flurry1Guid)
             .AddToAddFeatures(4, ReliableFeat())
             .AddToAddFeatures(5, MeditativeFeat())
             .AddToAddFeatures(6, CreateFlurry2())
@@ -230,8 +232,8 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(Flurry1DisplayName)
               .SetDescription(Flurry1Description)
               .SetIcon(icon)
-              .SetIgnorePrerequisites(false)
-              .SetObligatory(false)
+              .SetIgnorePrerequisites(true)
+              .SetObligatory(true)
               .AddToAllFeatures(FeatureRefs.ImprovedBullRush.ToString())
               .AddToAllFeatures(FeatureRefs.ImprovedDirtyTrick.ToString())
               .AddToAllFeatures(FeatureRefs.ImprovedDisarm.ToString())
@@ -255,8 +257,8 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(Flurry2DisplayName)
               .SetDescription(Flurry2Description)
               .SetIcon(icon)
-              .SetIgnorePrerequisites(false)
-              .SetObligatory(false)
+              .SetIgnorePrerequisites(true)
+              .SetObligatory(true)
               .AddToAllFeatures(FeatureRefs.GreaterBullRush.ToString())
               .AddToAllFeatures(FeatureRefs.GreaterDirtyTrick.ToString())
               .AddToAllFeatures(FeatureRefs.GreaterDisarm.ToString())
@@ -270,19 +272,16 @@ namespace PrestigePlus.Blueprint.Archetype
 
         private const string Flurry3 = "ManeuverMaster.Flurry3";
         private static readonly string Flurry3Guid = "{B427FE51-1092-46E8-B5D2-0460C6FDDC27}";
-
-        internal const string Flurry3DisplayName = "ManeuverMasterFlurry3.Name";
-        private const string Flurry3Description = "ManeuverMasterFlurry3.Description";
         private static BlueprintFeature CreateFlurry3()
         {
             var icon = FeatureRefs.DefensiveSpinFeature.Reference.Get().Icon;
 
             return FeatureSelectionConfigurator.New(Flurry3, Flurry3Guid)
-              .SetDisplayName(Flurry3DisplayName)
-              .SetDescription(Flurry3Description)
+              .SetDisplayName(Flurry2DisplayName)
+              .SetDescription(Flurry2Description)
               .SetIcon(icon)
-              .SetIgnorePrerequisites(false)
-              .SetObligatory(false)
+              .SetIgnorePrerequisites(true)
+              .SetObligatory(true)
               .AddToAllFeatures(FeatureRefs.GreaterBullRush.ToString())
               .AddToAllFeatures(FeatureRefs.GreaterDirtyTrick.ToString())
               .AddToAllFeatures(FeatureRefs.GreaterDisarm.ToString())
