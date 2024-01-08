@@ -7549,6 +7549,182 @@
     "Key": "SwordLordQuickDraw.Description",
     "enGB": "If the swordlord already has Quick Draw or Alertness, he gains Aldori Dueling Mastery as a bonus feat.",
     "zhCN": "如果剑爵已经拥有拔刀术或者警觉专长，他获得阿尔多瑞决斗精通作为额外专长。"
+  },
+  {
+    "Key": "ManeuverMaster.Name",
+    "ProcessTemplates": false,
+    "enGB": "Maneuver Master",
+    "zhCN": "战技宗师"
+  },
+  {
+    "Key": "ManeuverMaster.Description",
+    "enGB": "The maneuver master specializes in more complicated moves than simple damage-dealing strikes.",
+    "zhCN": "战技宗师着重于比简单造成伤害的打击更为复杂的作战技巧。"
+  },
+  {
+    "Key": "ManeuverMasterFlurry1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Improved Maneuver Feat",
+    "zhCN": "精通战技专长"
+  },
+  {
+    "Key": "ManeuverMasterFlurry1.Description",
+    "enGB": "In addition to normal monk bonus feats, a maneuver master may select any combat maneuver feat as a bonus feat.",
+    "zhCN": "除了正常的额外专长之外，战技宗师还可以选择战技专长作为额外专长。"
+  },
+  {
+    "Key": "ManeuverMasterFlurry2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Greater Maneuver Feat",
+    "zhCN": "高等战技专长"
+  },
+  {
+    "Key": "ManeuverMasterFlurry2.Description",
+    "enGB": "At 6th level and above, a maneuver master may select any Greater combat maneuver feat as a bonus feat.",
+    "zhCN": "6级起，战技宗师还可以选取高等战技专长作为额外专长。"
+  },
+  {
+    "Key": "ManeuverMasterFlurry.Name",
+    "ProcessTemplates": false,
+    "enGB": "Flurry of Maneuvers",
+    "zhCN": "疾风战技"
+  },
+  {
+    "Key": "ManeuverMasterFlurry.Description",
+    "enGB": "At 1st level, as part of a full-attack action, a maneuver master can make one additional combat maneuver, regardless of whether the maneuver normally replaces a melee attack or requires a standard action. The maneuver master uses his monk level in place of his base attack bonus to determine his CMB for the bonus maneuvers, though all combat maneuver checks suffer a –2 penalty when using a flurry. A maneuver master loses this ability when wearing armor, using a shield, or carrying a medium or heavy load.",
+    "zhCN": "1级起，在整轮攻击中，战技宗师可以施展一次额外的战技，无论该战技通常需要花费的近战攻击还是标准动作。在计算CMB时，他用武僧等级取代基本攻击加值，但所有的战技检定将承受-2减值。在穿戴护甲、使用盾牌、中载或重载时，战技宗师失去这项能力。"
+  },
+  {
+    "Key": "ManeuverMasterFlurry8.Name",
+    "ProcessTemplates": false,
+    "enGB": "Flurry of Maneuvers II",
+    "zhCN": "疾风战技II"
+  },
+  {
+    "Key": "ManeuverMasterFlurry8.Description",
+    "enGB": "At 8th level, a maneuver master may attempt a second additional combat maneuver, with a total –5 penalty on combat maneuver checks.",
+    "zhCN": "8级起，他可以发动第二次战技攻击，但所有的战技检定将一共承受-5减值。"
+  },
+  {
+    "Key": "ManeuverMasterFlurry15.Name",
+    "ProcessTemplates": false,
+    "enGB": "Flurry of Maneuvers III",
+    "zhCN": "疾风战技III"
+  },
+  {
+    "Key": "ManeuverMasterFlurry15.Description",
+    "enGB": "At 15th level, a maneuver master may attempt a third additional combat maneuver, with a total –9 penalty on combat maneuver checks.",
+    "zhCN": "15级起，他可以发动第三次战技攻击，但所有的战技检定将一共承受-9减值。"
+  },
+  {
+    "Key": "ManeuverMasterReliable.Name",
+    "ProcessTemplates": false,
+    "enGB": "Reliable Maneuver",
+    "zhCN": "稳健战技"
+  },
+  {
+    "Key": "ManeuverMasterReliable.Description",
+    "enGB": "At 4th level, as a swift action, a maneuver master may spend 1 point from his ki pool before attempting a combat maneuver. He can roll his combat maneuver check for that maneuver twice and use the better result.",
+    "zhCN": "4级起，战技宗师可以在使用战技前以一个迅捷动作花费1点气，他进行两次战技检定并取其高值。"
+  },
+  {
+    "Key": "ManeuverMasterMeditative.Name",
+    "ProcessTemplates": false,
+    "enGB": "Meditative Maneuver",
+    "zhCN": "冥想战技"
+  },
+  {
+    "Key": "ManeuverMasterMeditative.Description",
+    "enGB": "At 5th level, as a swift action, a maneuver master can add his Wisdom modifier on any combat maneuver check he makes before the beginning of his next turn.",
+    "zhCN": "5级起，战技宗师可以用一个迅捷动作将他的感知调整值加到他的战技检定上，直到他的下回合开始。"
+  },
+  {
+    "Key": "ManeuverMasterSweeping.Name",
+    "ProcessTemplates": false,
+    "enGB": "Sweeping Maneuver",
+    "zhCN": "扫荡战技"
+  },
+  {
+    "Key": "ManeuverMasterSweeping.Description",
+    "enGB": "At 10th level, whenever a maneuver master makes a combat maneuver as a standard action, he can make one more as long as neither maneuver requires the maneuver master to move.",
+    "zhCN": "10级起，每当战技宗师通过标准动作发起战技攻击时，他可以再发起另一个，但两个战技都不能是需要他进行移动的战技。"
+  },
+  {
+    "Key": "ManeuverMasterWhirlwind.Name",
+    "ProcessTemplates": false,
+    "enGB": "Whirlwind Maneuver",
+    "zhCN": "旋风战技"
+  },
+  {
+    "Key": "ManeuverMasterWhirlwind.Description",
+    "enGB": "At 14th level, once per day as a full-round action, a maneuver master can attempt a single combat maneuver against every opponent he threatens, as long as the combat maneuver does not require movement.",
+    "zhCN": "14级起，每天1次，以一个整轮动作，战技宗师可以对他威胁范围内的所有敌人发起一次不需要进行移动的战技攻击。"
+  },
+  {
+    "Key": "Emissary.Name",
+    "ProcessTemplates": false,
+    "enGB": "Emissary",
+    "zhCN": "先锋使者"
+  },
+  {
+    "Key": "Emissary.Description",
+    "enGB": "Cavaliers serve many roles on the battlefield, from bold leaders and shock troops to dashing knights and mounted juggernauts. Some cavaliers, however, focus more on speed and mobility than they do on the raw power of the mounted charge. On foot or in the saddle, the emissary is usually first to meet the enemy, with a pointed lance, a drawn sword, or terms for surrender.",
+    "zhCN": "骑将在战场上可以扮演多种角色，从大胆的领导者到突击队员，从英勇的骑士到马背上的巨兽。然而比起骑乘冲锋的纯粹力量，有些骑将更注重速度和灵巧。无论是步行还是骑马，先锋使者往往率先迎敌，手持一柄尖锐的矛，一把出鞘的剑，或是一封劝降书。"
+  },
+  {
+    "Key": "EmissaryBattlefieldAgility.Name",
+    "ProcessTemplates": false,
+    "enGB": "Battlefield Agility",
+    "zhCN": "战地敏捷"
+  },
+  {
+    "Key": "EmissaryBattlefieldAgility.Description",
+    "enGB": "At 5th level, an emissary learns to be more aware of the threats that surround him in combat, and shares this awareness with his loyal steed. Both the emissary and his mount gain Mobility as a bonus feat.",
+    "zhCN": "5级起，先锋使者学会了在战斗中更好地察觉周遭的威胁，并分享给他忠诚的坐骑。先锋使者和他的坐骑得到“灵活移动”作为额外专长。"
+  },
+  {
+    "Key": "EmissaryErraticCharge.Name",
+    "ProcessTemplates": false,
+    "enGB": "Erratic Charge",
+    "zhCN": "飘忽冲刺"
+  },
+  {
+    "Key": "EmissaryErraticCharge.Description",
+    "enGB": "At 20th level, an emissary learns to ride through the thick of combat, striking and then moving away with blinding speed. Whenever the emissary is mounted and takes the charge action, he can perform a full attack.",
+    "zhCN": "20级起，先锋使者学会了如何在战场中进退自如，以炫目的速度实现出击后的脱离。当他发起骑乘冲锋时，可以进行全回合攻击。"
+  },
+  {
+    "Key": "MenhirSavant.Name",
+    "ProcessTemplates": false,
+    "enGB": "Menhir Savant",
+    "zhCN": "立石贤者"
+  },
+  {
+    "Key": "MenhirSavant.Description",
+    "enGB": "Some druids study the paths of nature’s power through the nodes and ley lines that connect standing stones and megalithic circles, learning to tap into their energies.",
+    "zhCN": "一些德鲁伊通过研究连接着立石和石阵的灵眼和灵脉，以此深入自然之道，学习如何沟通引导其中的能量。"
+  },
+  {
+    "Key": "MenhirSavantPlaceMagic.Name",
+    "ProcessTemplates": false,
+    "enGB": "Place Magic",
+    "zhCN": "灵场魔法"
+  },
+  {
+    "Key": "MenhirSavantPlaceMagic.Description",
+    "enGB": "At 2nd level, a menhir savant learns to identify and tap into ley lines in different types of terrain. As a free action, she can tap into the magic of a nearby ley line and increase her caster level by +1 for 1 round. She can use this ability a number of times per day equal to 3 + her Wisdom bonus.",
+    "zhCN": "2级起，立石贤者学会了在各种地形中识别并沟通引导灵脉。以一个自由动作，她可以和沟通引导周边的灵脉，她在1轮内的有效施法者等级提升1级，每日可以使用此能力的次数等于3+感知调整值。"
+  },
+  {
+    "Key": "MenhirSavantWalkLines.Name",
+    "ProcessTemplates": false,
+    "enGB": "Walk the Lines",
+    "zhCN": "灵脉行者"
+  },
+  {
+    "Key": "MenhirSavantWalkLines.Description",
+    "enGB": "At 9th level, a menhir savant can use her connection to ley lines to cast dimension door a number of times per day equal to her Wisdom bonus.",
+    "zhCN": "9级时，立石贤者可以利用她和灵脉之间的联结施展次元门，每日可使用次数等同于她的感知修正。"
   }
 
 ]
