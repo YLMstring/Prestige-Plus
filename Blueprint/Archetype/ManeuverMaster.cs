@@ -45,23 +45,28 @@ namespace PrestigePlus.Blueprint.Archetype
             ArchetypeConfigurator.New(ArchetypeName, ArchetypeGuid, CharacterClassRefs.MonkClass)
               .SetLocalizedName(ArchetypeDisplayName)
               .SetLocalizedDescription(ArchetypeDescription)
-            .AddToRemoveFeatures(1, FeatureRefs.MonkFlurryOfBlowstUnlock.ToString())
+            .AddToRemoveFeatures(1, FeatureRefs.MonkFlurryOfBlowstUnlock.ToString(), FeatureSelectionRefs.MonkBonusFeatSelectionLevel1.ToString())
             .AddToRemoveFeatures(4, FeatureRefs.StillMind.ToString())
             .AddToRemoveFeatures(5, FeatureRefs.PurityOfBody.ToString())
-            .AddToRemoveFeatures(10, FeatureSelectionRefs.MonkKiPowerSelection.ToString())
+            .AddToRemoveFeatures(6, FeatureSelectionRefs.MonkBonusFeatSelectionLevel6.ToString())
+            .AddToRemoveFeatures(10, FeatureSelectionRefs.MonkKiPowerSelection.ToString(), FeatureSelectionRefs.MonkBonusFeatSelectionLevel10.ToString())
             .AddToRemoveFeatures(11, FeatureRefs.MonkFlurryOfBlowstLevel11Unlock.ToString())
-            .AddToRemoveFeatures(14, FeatureSelectionRefs.MonkKiPowerSelection.ToString())
-            .AddToAddFeatures(1, CreateFlurry())
+            .AddToRemoveFeatures(14, FeatureSelectionRefs.MonkKiPowerSelection.ToString(), FeatureSelectionRefs.MonkBonusFeatSelectionLevel10.ToString())
+            .AddToRemoveFeatures(18, FeatureSelectionRefs.MonkBonusFeatSelectionLevel10.ToString())
+            .AddToAddFeatures(1, CreateFlurry(), CreateFlurry1())
             .AddToAddFeatures(4, ReliableFeat())
             .AddToAddFeatures(5, MeditativeFeat())
+            .AddToAddFeatures(6, CreateFlurry2())
             .AddToAddFeatures(8, CreateFlurry8())
-            .AddToAddFeatures(10, CreateSweeping())
-            .AddToAddFeatures(14, CreateWhirlwind())
+            .AddToAddFeatures(10, CreateSweeping(), CreateFlurry3())
+            .AddToAddFeatures(14, CreateWhirlwind(), Flurry3Guid)
             .AddToAddFeatures(15, CreateFlurry15())
+            .AddToAddFeatures(18, Flurry3Guid)
               .Configure();
 
             ProgressionConfigurator.For(ProgressionRefs.MonkProgression)
                 .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { FlurryGuid, Flurry8Guid, Flurry15Guid })
+                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { Flurry1Guid, Flurry2Guid, Flurry3Guid })
                 .Configure();
         }
 
@@ -115,8 +120,6 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDescription(FlurryDescription)
               .SetIcon(icon)
               .AddFacts(new() { ability, SeizetheOpportunity.ManeuverGuid })
-              .AddToIsPrerequisiteFor(CreateFlurry1())
-              .AddToIsPrerequisiteFor(CreateFlurry2())
               .Configure();
         }
 
@@ -211,12 +214,10 @@ namespace PrestigePlus.Blueprint.Archetype
         {
             var icon = FeatureRefs.DefensiveSpinFeature.Reference.Get().Icon;
 
-            var feat = FeatureSelectionConfigurator.New(Flurry1, Flurry1Guid)
+            return FeatureSelectionConfigurator.New(Flurry1, Flurry1Guid)
               .SetDisplayName(Flurry1DisplayName)
               .SetDescription(Flurry1Description)
               .SetIcon(icon)
-              .AddPrerequisiteFeature(FlurryGuid)
-
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
               .AddToAllFeatures(FeatureRefs.ImprovedBullRush.ToString())
@@ -225,22 +226,8 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddToAllFeatures(FeatureRefs.ImprovedSunder.ToString())
               .AddToAllFeatures(FeatureRefs.ImprovedTrip.ToString())
               .AddToAllFeatures(ImprovedGrapple.StyleGuid)
-              .SetHideNotAvailibleInUI(true)
+              .AddToAllFeatures(FeatureSelectionRefs.MonkBonusFeatSelectionLevel1.ToString())
               .Configure();
-
-            FeatureSelectionConfigurator.For(FeatureSelectionRefs.MonkBonusFeatSelectionLevel1)
-                .AddToAllFeatures(feat)
-                .Configure();
-
-            FeatureSelectionConfigurator.For(FeatureSelectionRefs.MonkBonusFeatSelectionLevel6)
-                .AddToAllFeatures(feat)
-                .Configure();
-
-            FeatureSelectionConfigurator.For(FeatureSelectionRefs.MonkBonusFeatSelectionLevel10)
-                .AddToAllFeatures(feat)
-                .Configure();
-
-            return feat;
         }
 
         private const string Flurry2 = "ManeuverMaster.Flurry2";
@@ -252,11 +239,10 @@ namespace PrestigePlus.Blueprint.Archetype
         {
             var icon = FeatureRefs.DefensiveSpinFeature.Reference.Get().Icon;
 
-            var feat = FeatureSelectionConfigurator.New(Flurry2, Flurry2Guid)
+            return FeatureSelectionConfigurator.New(Flurry2, Flurry2Guid)
               .SetDisplayName(Flurry2DisplayName)
               .SetDescription(Flurry2Description)
               .SetIcon(icon)
-              .AddPrerequisiteFeature(FlurryGuid)
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
               .AddToAllFeatures(FeatureRefs.GreaterBullRush.ToString())
@@ -265,18 +251,35 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddToAllFeatures(FeatureRefs.GreaterSunder.ToString())
               .AddToAllFeatures(FeatureRefs.GreaterTrip.ToString())
               .AddToAllFeatures(GreaterGrapple.FeatGuid)
-              .SetHideNotAvailibleInUI(true)
+              .AddToAllFeatures(Flurry1Guid)
+              .AddToAllFeatures(FeatureSelectionRefs.MonkBonusFeatSelectionLevel6.ToString())
               .Configure();
+        }
 
-            FeatureSelectionConfigurator.For(FeatureSelectionRefs.MonkBonusFeatSelectionLevel6)
-                .AddToAllFeatures(feat)
-                .Configure();
+        private const string Flurry3 = "ManeuverMaster.Flurry3";
+        private static readonly string Flurry3Guid = "{B427FE51-1092-46E8-B5D2-0460C6FDDC27}";
 
-            FeatureSelectionConfigurator.For(FeatureSelectionRefs.MonkBonusFeatSelectionLevel10)
-                .AddToAllFeatures(feat)
-                .Configure();
+        internal const string Flurry3DisplayName = "ManeuverMasterFlurry3.Name";
+        private const string Flurry3Description = "ManeuverMasterFlurry3.Description";
+        private static BlueprintFeature CreateFlurry3()
+        {
+            var icon = FeatureRefs.DefensiveSpinFeature.Reference.Get().Icon;
 
-            return feat;
+            return FeatureSelectionConfigurator.New(Flurry3, Flurry3Guid)
+              .SetDisplayName(Flurry3DisplayName)
+              .SetDescription(Flurry3Description)
+              .SetIcon(icon)
+              .SetIgnorePrerequisites(false)
+              .SetObligatory(false)
+              .AddToAllFeatures(FeatureRefs.GreaterBullRush.ToString())
+              .AddToAllFeatures(FeatureRefs.GreaterDirtyTrick.ToString())
+              .AddToAllFeatures(FeatureRefs.GreaterDisarm.ToString())
+              .AddToAllFeatures(FeatureRefs.GreaterSunder.ToString())
+              .AddToAllFeatures(FeatureRefs.GreaterTrip.ToString())
+              .AddToAllFeatures(GreaterGrapple.FeatGuid)
+              .AddToAllFeatures(Flurry1Guid)
+              .AddToAllFeatures(FeatureSelectionRefs.MonkBonusFeatSelectionLevel10.ToString())
+              .Configure();
         }
 
         private const string Sweeping = "ManeuverMaster.Sweeping";
