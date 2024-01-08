@@ -48,7 +48,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string BattlefieldAgilityDescription = "EmissaryBattlefieldAgility.Description";
         private static BlueprintFeature CreateBattlefieldAgility()
         {
-            var icon = FeatureRefs.Mobility.Reference.Get().Icon;
+            var icon = FeatureRefs.MountedShield.Reference.Get().Icon;
 
             return FeatureConfigurator.New(BattlefieldAgility, BattlefieldAgilityGuid)
               .SetDisplayName(BattlefieldAgilityDisplayName)
@@ -69,7 +69,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string ErraticChargeDescription = "EmissaryErraticCharge.Description";
         private static BlueprintFeature CreateErraticCharge()
         {
-            var icon = FeatureRefs.VulpinePounce.Reference.Get().Icon;
+            var icon = FeatureRefs.SpiritedCharge.Reference.Get().Icon;
 
             var Buff1 = BuffConfigurator.New(ErraticChargeBuff, ErraticChargeGuidBuff)
               .SetDisplayName(ErraticChargeDisplayName)

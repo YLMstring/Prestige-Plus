@@ -5,7 +5,9 @@ using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
+using BlueprintCore.Utils;
 using BlueprintCore.Utils.Types;
+using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Items.Armors;
 using Kingmaker.EntitySystem.Stats;
@@ -37,6 +39,10 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToAddFeatures(2, PlaceMagicFeat())
             .AddToAddFeatures(9, CreateWalkLines())
               .Configure();
+
+            ProgressionConfigurator.For(ProgressionRefs.DruidProgression)
+                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { WalkLinesGuid, PlaceMagicGuid })
+                .Configure();
         }
 
         private const string WalkLines = "MenhirSavant.WalkLines";

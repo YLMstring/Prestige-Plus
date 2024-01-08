@@ -203,13 +203,13 @@ namespace PrestigePlus.Blueprint.Archetype
         }
 
         private const string Flurry1 = "ManeuverMaster.Flurry1";
-        private static readonly string Flurry1Guid = "{538EF175-6943-4785-9F6C-25F29FF3053E}";
+        private static readonly string Flurry1Guid = "{82B3CBD0-CF0F-4306-8E28-CFB0E61211B0}";
 
         internal const string Flurry1DisplayName = "ManeuverMasterFlurry1.Name";
         private const string Flurry1Description = "ManeuverMasterFlurry1.Description";
         private static BlueprintFeatureSelection CreateFlurry1()
         {
-            var icon = AbilityRefs.MasteryOfFlesh.Reference.Get().Icon;
+            var icon = FeatureRefs.DefensiveSpinFeature.Reference.Get().Icon;
 
             var feat = FeatureSelectionConfigurator.New(Flurry1, Flurry1Guid)
               .SetDisplayName(Flurry1DisplayName)
@@ -243,13 +243,13 @@ namespace PrestigePlus.Blueprint.Archetype
         }
 
         private const string Flurry2 = "ManeuverMaster.Flurry2";
-        private static readonly string Flurry2Guid = "{56B29EEC-07C5-4DC6-821C-0578D957C6EF}";
+        private static readonly string Flurry2Guid = "{6EF04B19-805B-4C8E-BFFB-E027D6737BFE}";
 
         internal const string Flurry2DisplayName = "ManeuverMasterFlurry2.Name";
         private const string Flurry2Description = "ManeuverMasterFlurry2.Description";
         private static BlueprintFeature CreateFlurry2()
         {
-            var icon = AbilityRefs.MasteryOfFlesh.Reference.Get().Icon;
+            var icon = FeatureRefs.DefensiveSpinFeature.Reference.Get().Icon;
 
             var feat = FeatureSelectionConfigurator.New(Flurry2, Flurry2Guid)
               .SetDisplayName(Flurry2DisplayName)
@@ -334,7 +334,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature ReliableFeat()
         {
-            var icon = AbilityRefs.Transformation.Reference.Get().Icon;
+            var icon = FeatureRefs.LegSweepFeature.Reference.Get().Icon;
 
             var Buff2 = BuffConfigurator.New(ReliableBuff2, ReliableBuff2Guid)
              .SetDisplayName(ReliableDisplayName)
@@ -379,7 +379,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature MeditativeFeat()
         {
-            var icon = AbilityRefs.Transformation.Reference.Get().Icon;
+            var icon = FeatureRefs.PurityOfBody.Reference.Get().Icon;
 
             var Buff2 = BuffConfigurator.New(MeditativeBuff2, MeditativeBuff2Guid)
              .SetDisplayName(MeditativeDisplayName)
@@ -425,7 +425,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature CreateWhirlwind()
         {
-            var icon = FeatureRefs.CoordinatedManeuvers.Reference.Get().Icon;
+            var icon = FeatureRefs.CleavingFinish.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(WhirlwindRes, WhirlwindResGuid)
                 .SetMaxAmount(ResourceAmountBuilder.New(1))
