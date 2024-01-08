@@ -216,6 +216,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDescription(Flurry1Description)
               .SetIcon(icon)
               .AddPrerequisiteFeature(FlurryGuid)
+
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
               .AddToAllFeatures(FeatureRefs.ImprovedBullRush.ToString())
@@ -288,7 +289,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string SweepingDescription = "ManeuverMasterSweeping.Description";
         private static BlueprintFeature CreateSweeping()
         {
-            var icon = FeatureRefs.CleaveFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.ShakeItOff.Reference.Get().Icon;
 
             var Buff = BuffConfigurator.New(SweepingBuff, SweepingBuffGuid)
              .SetDisplayName(SweepingDisplayName)
@@ -425,7 +426,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature CreateWhirlwind()
         {
-            var icon = FeatureRefs.CleavingFinish.Reference.Get().Icon;
+            var icon = FeatureRefs.ShakeItOff.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(WhirlwindRes, WhirlwindResGuid)
                 .SetMaxAmount(ResourceAmountBuilder.New(1))
