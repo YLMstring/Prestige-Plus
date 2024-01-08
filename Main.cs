@@ -197,6 +197,12 @@ namespace PrestigePlus
             Toggle.New(GetKey("constable"), defaultValue: true, Helpers.CreateString("toggle-desc70", "Constable"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("emissary"), defaultValue: true, Helpers.CreateString("toggle-desc71", "Emissary"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("menhir"), defaultValue: true, Helpers.CreateString("toggle-desc72", "Menhir Savant"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("fightereg"), defaultValue: true, Helpers.CreateString("toggle-desc23", "Eldritch Guardian"))
               .ShowVisualConnection())
           .AddToggle(
@@ -210,6 +216,9 @@ namespace PrestigePlus
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("spire"), defaultValue: true, Helpers.CreateString("toggle-desc33", "Spire Defender"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("mm"), defaultValue: true, Helpers.CreateString("toggle-desc73", "Maneuver Master"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("shining"), defaultValue: true, Helpers.CreateString("toggle-desc62", "Shining Knight"))
@@ -377,6 +386,9 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("skymagic"))) { Aeromancer.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("exalted"))) { ExaltedEvangelist.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("constable"))) { Constable.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("emissary"))) { Emissary.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("menhir"))) { MenhirSavant.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("mm"))) { ManeuverMaster.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
