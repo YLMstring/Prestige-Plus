@@ -68,6 +68,9 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string Flurry = "ManeuverMaster.Flurry";
         public static readonly string FlurryGuid = "{08B7F7DD-D332-4B51-8C1A-D52EBF065CFB}";
 
+        private const string FlurryFeat = "ManeuverMaster.FlurryFeat";
+        public static readonly string FlurryFeatGuid = "{C4D92D6C-368A-49B3-93F2-5A7D12850B93}";
+
         internal const string FlurryDisplayName = "ManeuverMasterFlurry.Name";
         private const string FlurryDescription = "ManeuverMasterFlurry.Description";
 
@@ -80,12 +83,20 @@ namespace PrestigePlus.Blueprint.Archetype
         {
             var icon = FeatureRefs.AgileManeuvers.Reference.Get().Icon;
 
+            var feat = FeatureConfigurator.New(FlurryFeat, FlurryFeatGuid)
+                .SetDisplayName(FlurryDisplayName)
+                .SetDescription(FlurryDescription)
+                .SetIcon(icon)
+                .AddBuffExtraAttack(false, number: 1)
+                .Configure();
+
             var Buff = BuffConfigurator.New(Flurrybuff, FlurrybuffGuid)
               .SetDisplayName(FlurryDisplayName)
               .SetDescription(FlurryDescription)
               .SetIcon(icon)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddMonkNoArmorFeatureUnlock(feat)
               .AddCMBBonus(descriptor: ModifierDescriptor.Penalty, value: -2)
               .Configure();
 
