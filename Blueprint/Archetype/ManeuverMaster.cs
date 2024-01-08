@@ -96,6 +96,8 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetDescription(FlurryDescription)
                 .SetIcon(icon)
                 .AddBuffExtraAttack(false, number: 1)
+                .AddCMBBonus(value: ContextValues.Rank())
+                .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.MonkClass.ToString() }).WithStartPlusDivStepProgression(4, 1, true))
                 .Configure();
 
             BuffConfigurator.New(FlurryCoolDownbuff, FlurryCoolDownbuffGuid)
