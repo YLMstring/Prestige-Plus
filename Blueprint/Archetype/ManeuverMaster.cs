@@ -7,6 +7,8 @@ using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
+using BlueprintCore.Conditions.Builder;
+using BlueprintCore.Conditions.Builder.BasicEx;
 using BlueprintCore.Utils;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints;
@@ -98,14 +100,13 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetDescription(FlurryDescription)
                 .SetIcon(icon)
                 .AddBuffExtraAttack(false, number: 1)
-                .AddCMBBonus(value: ContextValues.Rank())
-                .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.MonkClass.ToString() }).WithStartPlusDivStepProgression(4, 1, true))
                 .Configure();
 
             BuffConfigurator.New(FlurryCoolDownbuff, FlurryCoolDownbuffGuid)
               .SetDisplayName(FlurryDisplayName)
               .SetDescription(FlurryDescription)
               .SetIcon(icon)
+              .AddCMBBonus(descriptor: ModifierDescriptor.Penalty, value: -2)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .Configure();
 
@@ -116,7 +117,6 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddMonkNoArmorFeatureUnlock(feat)
-              .AddCMBBonus(descriptor: ModifierDescriptor.Penalty, value: -2)
               .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(FlurryActivatableAbility, FlurryActivatableAbilityGuid)
@@ -146,11 +146,23 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string Flurry8buff = "ManeuverFlurry.Flurry8buff";
         public static readonly string Flurry8buffGuid = "{1D73AD78-519E-47F4-AD13-F72A7BA9341C}";
 
+        private const string Flurry9buff = "ManeuverFlurry.Flurry9buff";
+        public static readonly string Flurry9buffGuid = "{21B758EC-4AC3-4E45-AAB8-DEA7D8F1AFBA}";
+
         private const string Flurry8ActivatableAbility = "ManeuverFlurry.Flurry8ActivatableAbility";
         private static readonly string Flurry8ActivatableAbilityGuid = "{090CCF50-4767-4051-A96E-65C19921B204}";
         private static BlueprintFeature CreateFlurry8()
         {
             var icon = FeatureRefs.AgileManeuvers.Reference.Get().Icon;
+
+            var Buff2 = BuffConfigurator.New(Flurry9buff, Flurry9buffGuid)
+              .SetDisplayName(Flurry8DisplayName)
+              .SetDescription(Flurry8Description)
+              .SetIcon(icon)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddCMBBonus(descriptor: ModifierDescriptor.Penalty, value: -3)
+              .Configure();
 
             var Buff = BuffConfigurator.New(Flurry8buff, Flurry8buffGuid)
               .SetDisplayName(Flurry8DisplayName)
@@ -158,7 +170,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetIcon(icon)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-              .AddCMBBonus(descriptor: ModifierDescriptor.Penalty, value: -3)
+              .AddBuffExtraEffects(FlurryCoolDownbuffGuid, extraEffectBuff: Buff2)
               .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(Flurry8ActivatableAbility, Flurry8ActivatableAbilityGuid)
@@ -187,11 +199,23 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string Flurry15buff = "ManeuverFlurry.Flurry15buff";
         public static readonly string Flurry15buffGuid = "{595B0559-342E-411A-8FA5-18ABD1593A27}";
 
+        private const string Flurry16buff = "ManeuverFlurry.Flurry16buff";
+        public static readonly string Flurry16buffGuid = "{43ED4525-DF36-44DF-8FD6-8456A4E1E976}";
+
         private const string Flurry15ActivatableAbility = "ManeuverFlurry.Flurry1ActivatableAbility";
         private static readonly string Flurry15ActivatableAbilityGuid = "{63730852-9F8B-43DC-B1DD-62479CA44362}";
         private static BlueprintFeature CreateFlurry15()
         {
             var icon = FeatureRefs.AgileManeuvers.Reference.Get().Icon;
+
+            var Buff2 = BuffConfigurator.New(Flurry16buff, Flurry16buffGuid)
+              .SetDisplayName(Flurry15DisplayName)
+              .SetDescription(Flurry15Description)
+              .SetIcon(icon)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddCMBBonus(descriptor: ModifierDescriptor.Penalty, value: -4)
+              .Configure();
 
             var Buff = BuffConfigurator.New(Flurry15buff, Flurry15buffGuid)
               .SetDisplayName(Flurry15DisplayName)
@@ -199,7 +223,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetIcon(icon)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-              .AddCMBBonus(descriptor: ModifierDescriptor.Penalty, value: -4)
+              .AddBuffExtraEffects(FlurryCoolDownbuffGuid, extraEffectBuff: Buff2)
               .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(Flurry15ActivatableAbility, Flurry15ActivatableAbilityGuid)
@@ -299,6 +323,9 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string SweepingBuff = "ManeuverMaster.SweepingBuff";
         private static readonly string SweepingBuffGuid = "{ADFDFAB8-1FD0-4501-92DC-17704994CF63}";
 
+        private const string SweepingBuff2 = "ManeuverMaster.SweepingBuff2";
+        private static readonly string SweepingBuff2Guid = "{CAF6FC7A-4C39-4957-8341-88DC51FE5C14}";
+
         internal const string SweepingDisplayName = "ManeuverMasterSweeping.Name";
         private const string SweepingDescription = "ManeuverMasterSweeping.Description";
         private static BlueprintFeature CreateSweeping()
@@ -317,21 +344,32 @@ namespace PrestigePlus.Blueprint.Archetype
              .AddFreeActionSpell(AbilityRefs.SunderAction.ToString())
              .AddFreeActionSpell(AbilityRefs.TripAction.ToString())
              .AddFreeActionSpell(ImprovedGrapple.StyleAbilityGuid)
+             .AddBuffActions(activated: ActionsBuilder.New().RemoveBuff(SweepingBuff2Guid).Build())
              .AddAbilityUseTrigger(new() { AbilityRefs.BullRushAction.ToString(), AbilityRefs.DirtyTrickBlindnessAction.ToString(),
                 AbilityRefs.DirtyTrickEntangleAction.ToString(), AbilityRefs.DirtyTrickSickenedAction.ToString(), AbilityRefs.DisarmAction.ToString(),
                 AbilityRefs.DisarmAction.ToString(), AbilityRefs.SunderAction.ToString(), AbilityRefs.TripAction.ToString(),
-                ImprovedGrapple.StyleAbilityGuid }, action: ActionsBuilder.New().RemoveSelf().Build(), forMultipleSpells: true)
+                ImprovedGrapple.StyleAbilityGuid }, 
+                action: ActionsBuilder.New().RemoveSelf().Build(), forMultipleSpells: true)
+             .Configure();
+
+            BuffConfigurator.New(SweepingBuff2, SweepingBuff2Guid)
+             .SetDisplayName(SweepingDisplayName)
+             .SetDescription(SweepingDescription)
+             .SetIcon(icon)
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+             .AddAbilityUseTrigger(new() { AbilityRefs.BullRushAction.ToString(), AbilityRefs.DirtyTrickBlindnessAction.ToString(),
+                AbilityRefs.DirtyTrickEntangleAction.ToString(), AbilityRefs.DirtyTrickSickenedAction.ToString(), AbilityRefs.DisarmAction.ToString(),
+                AbilityRefs.DisarmAction.ToString(), AbilityRefs.SunderAction.ToString(), AbilityRefs.TripAction.ToString(),
+                ImprovedGrapple.StyleAbilityGuid }, action: ActionsBuilder.New().ApplyBuff(Buff, ContextDuration.Fixed(1)).Build(),
+                forMultipleSpells: true)
              .Configure();
 
             return FeatureConfigurator.New(Sweeping, SweepingGuid)
               .SetDisplayName(SweepingDisplayName)
               .SetDescription(SweepingDescription)
               .SetIcon(icon)
-              .AddAbilityUseTrigger(new() { AbilityRefs.BullRushAction.ToString(), AbilityRefs.DirtyTrickBlindnessAction.ToString(),
-                AbilityRefs.DirtyTrickEntangleAction.ToString(), AbilityRefs.DirtyTrickSickenedAction.ToString(), AbilityRefs.DisarmAction.ToString(),
-                AbilityRefs.DisarmAction.ToString(), AbilityRefs.SunderAction.ToString(), AbilityRefs.TripAction.ToString(),
-                ImprovedGrapple.StyleAbilityGuid }, action: ActionsBuilder.New().ApplyBuff(Buff, ContextDuration.Fixed(1)).Build(),
-                afterCast: true, oncePerContext: true, forMultipleSpells: true)
+              .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New().ApplyBuff(SweepingBuff2Guid, ContextDuration.Fixed(1)).Build())
               .Configure();
         }
 
@@ -400,7 +438,7 @@ namespace PrestigePlus.Blueprint.Archetype
              .SetDisplayName(MeditativeDisplayName)
              .SetDescription(MeditativeDescription)
              .SetIcon(icon)
-             .AddCMBBonus(value: ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom))
+             .AddCMBBonus(value: ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom, true))
              .Configure();
 
             var ability = AbilityConfigurator.New(MeditativeAblity, MeditativeAblityGuid)

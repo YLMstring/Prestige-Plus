@@ -59,6 +59,7 @@ namespace PrestigePlus.HarmonyFix
                 ContextActionCombatTrickery.TriggerMRule(ref AttackBonusRule);
                 if (caster.HasFact(Flurry) && !caster.HasFact(FlurryCoolDown) && __instance.IsAttackFull)
                 {
+                    GameHelper.ApplyBuff(caster, FlurryCoolDown, new Rounds?(1.Rounds()));
                     var maneuver = CombatManeuver.None;
                     if (caster.HasFact(BullRush) && caster.HasFact(BullRushFeat))
                     {
@@ -108,7 +109,6 @@ namespace PrestigePlus.HarmonyFix
                             TriggerManeuver(caster, target, AttackBonusRule, maneuver);
                         }
                     }
-                    GameHelper.ApplyBuff(caster, FlurryCoolDown, new Rounds?(1.Rounds()));
                     return false;
                 }
                 if (caster.HasFact(AerialBuff) && caster.HasFact(GrappleFeat) && __instance.IsCharge)

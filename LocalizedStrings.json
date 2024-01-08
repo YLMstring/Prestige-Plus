@@ -7591,8 +7591,8 @@
   },
   {
     "Key": "ManeuverMasterFlurry.Description",
-    "enGB": "At 1st level, as part of a full-attack action, a maneuver master can make one additional combat maneuver, regardless of whether the maneuver normally replaces a melee attack or requires a standard action. The maneuver master uses his monk level in place of his base attack bonus to determine his CMB for the bonus maneuvers, though all combat maneuver checks suffer a –2 penalty when using a flurry. A maneuver master loses this ability when wearing armor, using a shield, or carrying a medium or heavy load.",
-    "zhCN": "1级起，在整轮攻击中，战技宗师可以施展一次额外的战技，无论该战技通常需要花费的近战攻击还是标准动作。在计算CMB时，他用武僧等级取代基本攻击加值，但所有的战技检定将承受-2减值。在穿戴护甲、使用盾牌、中载或重载时，战技宗师失去这项能力。"
+    "enGB": "At 1st level, as part of a full-attack action, a maneuver master can make one additional combat maneuver, regardless of whether the maneuver normally replaces a melee attack or requires a standard action, though all combat maneuver checks suffer a –2 penalty when using a flurry. A maneuver master loses this ability when wearing armor, using a shield, or carrying a medium or heavy load.",
+    "zhCN": "1级起，在整轮攻击中，战技宗师可以施展一次额外的战技，无论该战技通常需要花费的近战攻击还是标准动作，但所有的战技检定将承受-2减值。在穿戴护甲、使用盾牌、中载或重载时，战技宗师失去这项能力。"
   },
   {
     "Key": "ManeuverMasterFlurry8.Name",
