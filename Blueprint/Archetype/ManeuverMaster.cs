@@ -3,6 +3,7 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
+using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
@@ -10,11 +11,14 @@ using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
+using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using PrestigePlus.Blueprint.Feat;
 using PrestigePlus.Blueprint.GrappleFeat;
+using PrestigePlus.Maneuvers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +45,8 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToRemoveFeatures(11, FeatureRefs.MonkFlurryOfBlowstLevel11Unlock.ToString())
             .AddToRemoveFeatures(14, FeatureSelectionRefs.MonkKiPowerSelection.ToString())
             .AddToAddFeatures(1, CreateFlurry())
+            .AddToAddFeatures(4, ReliableFeat())
+            .AddToAddFeatures(5, MeditativeFeat())
             .AddToAddFeatures(8, CreateFlurry8())
             .AddToAddFeatures(10, CreateSweeping())
             .AddToAddFeatures(15, CreateFlurry15())
@@ -72,6 +78,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetIcon(icon)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddCMBBonus(descriptor: ModifierDescriptor.Penalty, value: -2)
               .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(FlurryActivatableAbility, FlurryActivatableAbilityGuid)
@@ -88,7 +95,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(FlurryDisplayName)
               .SetDescription(FlurryDescription)
               .SetIcon(icon)
-              .AddFacts(new() { ability })
+              .AddFacts(new() { ability, SeizetheOpportunity.ManeuverGuid })
               .AddToIsPrerequisiteFor(CreateFlurry1())
               .AddToIsPrerequisiteFor(CreateFlurry2())
               .Configure();
@@ -115,6 +122,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetIcon(icon)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddCMBBonus(descriptor: ModifierDescriptor.Penalty, value: -3)
               .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(Flurry8ActivatableAbility, Flurry8ActivatableAbilityGuid)
@@ -155,6 +163,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetIcon(icon)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddCMBBonus(descriptor: ModifierDescriptor.Penalty, value: -4)
               .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(Flurry15ActivatableAbility, Flurry15ActivatableAbilityGuid)
@@ -289,6 +298,95 @@ namespace PrestigePlus.Blueprint.Archetype
                 AbilityRefs.DisarmAction.ToString(), AbilityRefs.SunderAction.ToString(), AbilityRefs.TripAction.ToString(),
                 ImprovedGrapple.StyleAbilityGuid }, action: ActionsBuilder.New().ApplyBuff(Buff, ContextDuration.Fixed(1)).Build(),
                 afterCast: true, oncePerContext: true, forMultipleSpells: true)
+              .Configure();
+        }
+
+        private const string Reliable = "ManeuverMaster.Reliable";
+        public static readonly string ReliableGuid = "{A469E55D-3278-4385-BF69-C93D8C81F7B6}";
+
+        private const string ReliableAblity = "ManeuverMaster.UseReliable";
+        private static readonly string ReliableAblityGuid = "{A54B577A-EED0-496A-9A9D-548B43AB5D30}";
+
+        private const string ReliableBuff2 = "ManeuverMaster.ReliableBuff2";
+        private static readonly string ReliableBuff2Guid = "{EA858E67-8F2E-40D8-9226-2DEEAFB98E1A}";
+
+        internal const string ReliableDisplayName = "ManeuverMasterReliable.Name";
+        private const string ReliableDescription = "ManeuverMasterReliable.Description";
+
+        public static BlueprintFeature ReliableFeat()
+        {
+            var icon = AbilityRefs.Transformation.Reference.Get().Icon;
+
+            var Buff2 = BuffConfigurator.New(ReliableBuff2, ReliableBuff2Guid)
+             .SetDisplayName(ReliableDisplayName)
+             .SetDescription(ReliableDescription)
+             .SetIcon(icon)
+             .AddModifyD20(rule: RuleType.Maneuver, replace: false, rollsAmount: 1, takeBest: true, dispellOnRerollFinished: true)
+             .Configure();
+
+            var ability = AbilityConfigurator.New(ReliableAblity, ReliableAblityGuid)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .ApplyBuff(Buff2, ContextDuration.Fixed(1))
+                        .Build())
+                .SetDisplayName(ReliableDisplayName)
+                .SetDescription(ReliableDescription)
+                .SetIcon(icon)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: AbilityResourceRefs.KiPowerResource.ToString())
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Extraordinary)
+                .Configure();
+
+            return FeatureConfigurator.New(Reliable, ReliableGuid)
+              .SetDisplayName(ReliableDisplayName)
+              .SetDescription(ReliableDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string Meditative = "ManeuverMaster.Meditative";
+        public static readonly string MeditativeGuid = "{34FBA5AB-0FD6-42AF-A21A-D1D06137B66A}";
+
+        private const string MeditativeAblity = "ManeuverMaster.UseMeditative";
+        private static readonly string MeditativeAblityGuid = "{CAD2CD9B-3D95-49E4-9812-C88922F1952D}";
+
+        private const string MeditativeBuff2 = "ManeuverMaster.MeditativeBuff2";
+        private static readonly string MeditativeBuff2Guid = "{216F6093-EE95-4D89-BCC5-4ADD1195C428}";
+
+        internal const string MeditativeDisplayName = "ManeuverMasterMeditative.Name";
+        private const string MeditativeDescription = "ManeuverMasterMeditative.Description";
+
+        public static BlueprintFeature MeditativeFeat()
+        {
+            var icon = AbilityRefs.Transformation.Reference.Get().Icon;
+
+            var Buff2 = BuffConfigurator.New(MeditativeBuff2, MeditativeBuff2Guid)
+             .SetDisplayName(MeditativeDisplayName)
+             .SetDescription(MeditativeDescription)
+             .SetIcon(icon)
+             .AddCMBBonus(value: ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusWisdom))
+             .Configure();
+
+            var ability = AbilityConfigurator.New(MeditativeAblity, MeditativeAblityGuid)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .ApplyBuff(Buff2, ContextDuration.Fixed(1))
+                        .Build())
+                .SetDisplayName(MeditativeDisplayName)
+                .SetDescription(MeditativeDescription)
+                .SetIcon(icon)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Extraordinary)
+                .Configure();
+
+            return FeatureConfigurator.New(Meditative, MeditativeGuid)
+              .SetDisplayName(MeditativeDisplayName)
+              .SetDescription(MeditativeDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddFacts(new() { ability })
               .Configure();
         }
     }

@@ -73,17 +73,17 @@ namespace PrestigePlus.HarmonyFix
                 }
                 else if (caster.HasFact(DirtyBlind) && caster.HasFact(DirtyFeat))
                 {
-                    if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.DirtyTrickBlindnessBuff)) { return true; }
+                    if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.DirtyTrickBlindnessBuff) && !caster.HasFact(DMfeat)) { return true; }
                     maneuver = CombatManeuver.DirtyTrickBlind;
                 }
                 else if (caster.HasFact(DirtyEntangle) && caster.HasFact(DirtyFeat))
                 {
-                    if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.DirtyTrickEntangledBuff)) { return true; }
+                    if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.DirtyTrickEntangledBuff) && !caster.HasFact(DMfeat)) { return true; }
                     maneuver = CombatManeuver.DirtyTrickEntangle;
                 }
                 else if (caster.HasFact(DirtySicken) && caster.HasFact(DirtyFeat))
                 {
-                    if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.DirtyTrickSickenedBuff)) { return true; }
+                    if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.DirtyTrickSickenedBuff) && !caster.HasFact(DMfeat)) { return true; }
                     maneuver = CombatManeuver.DirtyTrickSickened;
                 }
                 else if (caster.HasFact(Disarm) && caster.HasFact(DisarmFeat))
@@ -216,5 +216,6 @@ namespace PrestigePlus.HarmonyFix
 
         private static readonly BlueprintFeatureReference Steal = BlueprintTool.GetRef<BlueprintFeatureReference>(RangedDisarm.AceDisarmGuid);
         private static readonly BlueprintFeatureReference Arm = BlueprintTool.GetRef<BlueprintFeatureReference>(RangedDisarm.ArmBindGuid);
+        private static readonly BlueprintFeatureReference DMfeat = BlueprintTool.GetRef<BlueprintFeatureReference>(DirtyFeats.StyleGuid);
     }
 }
