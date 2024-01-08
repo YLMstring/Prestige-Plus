@@ -32,6 +32,7 @@ using PrestigePlus.Grapple;
 using static Kingmaker.Visual.CharacterSystem.CharacterStudio;
 using static RootMotion.FinalIK.IKSolverVR;
 using BlueprintCore.Blueprints.References;
+using Kingmaker.Designers.Mechanics.Buffs;
 
 namespace PrestigePlus.CustomAction.OtherManeuver
 {
@@ -54,6 +55,7 @@ namespace PrestigePlus.CustomAction.OtherManeuver
                     return;
                 }
                 UnitEntityData maybeCaster = Context.MaybeCaster;
+                var caster = maybeCaster;
                 if (maybeCaster == null)
                 {
                     PFLog.Default.Error("Caster is missing", Array.Empty<object>());
@@ -87,7 +89,6 @@ namespace PrestigePlus.CustomAction.OtherManeuver
                 var maneuver = type;
                 if (UseAnyType)
                 {
-                    var caster = maybeCaster;
                     maneuver = CombatManeuver.None;
                     if (caster.HasFact(BullRush) && caster.HasFact(BullRushFeat))
                     {
@@ -125,7 +126,12 @@ namespace PrestigePlus.CustomAction.OtherManeuver
                 }
                 if (maneuver == CombatManeuver.None) { return; }
                 RuleCombatManeuver ruleCombatManeuver = new(maybeCaster, unit, maneuver, AttackBonusRule);
-                Rulebook.Trigger(ruleCombatManeuver);
+                ruleCombatManeuver = Rulebook.Trigger(ruleCombatManeuver);
+                if (ruleCombatManeuver.Success && maneuver == CombatManeuver.Grapple)
+                {
+                    caster.Ensure<UnitPartGrappleInitiatorPP>().Init(unit, CasterBuff, unit.Context);
+                    unit.Ensure<UnitPartGrappleTargetPP>().Init(caster, TargetBuff, caster.Context);
+                }
             }
             catch (Exception ex) { Logger.Error("Failed to storm.", ex); }
         }
@@ -179,5 +185,8 @@ namespace PrestigePlus.CustomAction.OtherManeuver
         public static readonly BlueprintFeatureReference GrappleFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(ImprovedGrapple.StyleGuid);
         public static readonly BlueprintFeatureReference SunderFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ImprovedSunder.ToString());
         public static readonly BlueprintFeatureReference TripFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ImprovedTrip.ToString());
+
+        private static readonly BlueprintBuffReference CasterBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{D6D08842-8E03-4A9D-81B8-1D9FB2245649}");
+        private static readonly BlueprintBuffReference TargetBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{F505D659-0610-41B1-B178-E767CCB9292E}");
     }
 }
