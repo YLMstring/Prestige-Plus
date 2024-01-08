@@ -1,4 +1,4 @@
-# Prestige Plus v2.2.5 for WoTR 
+# Prestige Plus v2.3.0 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -144,8 +144,12 @@
 #### Cavalier:  
 - [Constable](https://www.d20pfsrd.com/classes/base-classes/cavalier/archetypes/paizo-cavalier-archetypes/constable-cavalier-archetype)
 - Squad Commander: automatically start laying out a plan at the end of each combat!
+- [Emissary](https://www.d20pfsrd.com/classes/base-classes/cavalier/archetypes/paizo-cavalier-archetypes/emissary)
+- Requires TTT, or you won't gain the bonus feats!
 #### Cleric:  
 - [Divine Paragon](https://www.d20pfsrd.com/classes/core-classes/cleric/archetypes/paizo-cleric-archetypes/divine-paragon-cleric-archetype/)
+#### Druid:  
+- [Menhir Savant](https://www.d20pfsrd.com/classes/core-classes/druid/archetypes/paizo-druid-archetypes/menhir-savant)
 #### Fighter:  
 - [Eldritch Guardian](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Eldritch%20Guardian)
 - Share Training with your pets!
@@ -158,6 +162,9 @@
 - New Magus Arcana: [Familiar](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/familiar-ex)
 - New Magus Arcana: [Reach Spellstrike](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/reach-spellstrike-su/)
 - New Magus Arcana: [Close Range](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/close-range-ex/)
+#### Monk:  
+- [Maneuver Master](https://www.d20pfsrd.com/classes/core-classes/monk/archetypes/paizo-monk-archetypes/maneuver-master/)
+- This is absolutely my favorite.
 #### Oracle:  
 - [Truth Seeker](https://www.d20pfsrd.com/classes/base-classes/oracle/archetypes/paizo-oracle-archetypes/seeker/)
 #### Paladin:  
