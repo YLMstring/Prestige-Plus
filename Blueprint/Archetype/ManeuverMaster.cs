@@ -82,6 +82,9 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string Flurrybuff = "ManeuverFlurry.Flurrybuff";
         public static readonly string FlurrybuffGuid = "{89CCCD57-CC47-4443-A192-1FF7D18F2A3C}";
 
+        private const string FlurryCoolDownbuff = "ManeuverFlurry.FlurryCoolDownbuff";
+        public static readonly string FlurryCoolDownbuffGuid = "{1355973E-3E06-459C-8A41-E83A0A889371}";
+
         private const string FlurryActivatableAbility = "ManeuverFlurry.FlurryActivatableAbility";
         private static readonly string FlurryActivatableAbilityGuid = "{260D7372-AB40-42A7-8611-56BE31CEC209}";
         private static BlueprintFeature CreateFlurry()
@@ -94,6 +97,13 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetIcon(icon)
                 .AddBuffExtraAttack(false, number: 1)
                 .Configure();
+
+            BuffConfigurator.New(FlurryCoolDownbuff, FlurryCoolDownbuffGuid)
+              .SetDisplayName(FlurryDisplayName)
+              .SetDescription(FlurryDescription)
+              .SetIcon(icon)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .Configure();
 
             var Buff = BuffConfigurator.New(Flurrybuff, FlurrybuffGuid)
               .SetDisplayName(FlurryDisplayName)

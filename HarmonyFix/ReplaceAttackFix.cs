@@ -14,7 +14,9 @@ using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Commands;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Parts;
+using Kingmaker.Utility;
 using PrestigePlus.Blueprint;
+using PrestigePlus.Blueprint.Archetype;
 using PrestigePlus.Blueprint.GrappleFeat;
 using PrestigePlus.Blueprint.MythicFeat;
 using PrestigePlus.Blueprint.MythicGrapple;
@@ -31,6 +33,7 @@ using System.Threading.Tasks;
 using static Kingmaker.EntitySystem.EntityDataBase;
 using static Kingmaker.UI.CanvasScalerWorkaround;
 using static Kingmaker.Visual.CharacterSystem.CharacterStudio;
+using static Pathfinding.Util.RetainedGizmos;
 
 namespace PrestigePlus.HarmonyFix
 {
@@ -53,27 +56,72 @@ namespace PrestigePlus.HarmonyFix
                 var AttackBonusRule = new RuleCalculateAttackBonus(caster, target, caster.Body.EmptyHandWeapon, 0) { };
                 int penalty = -attack.AttackBonusPenalty + DualPenalty(caster, attack);
                 AttackBonusRule.AddModifier(penalty, descriptor: ModifierDescriptor.Penalty);
-                //ContextActionCombatTrickery.TriggerMRule(ref AttackBonusRule);
                 ContextActionCombatTrickery.TriggerMRule(ref AttackBonusRule);
+                if (caster.HasFact(Flurry) && !caster.HasFact(FlurryCoolDown) && __instance.IsAttackFull)
+                {
+                    var maneuver = CombatManeuver.None;
+                    if (caster.HasFact(BullRush) && caster.HasFact(BullRushFeat))
+                    {
+                        maneuver = CombatManeuver.BullRush;
+                    }
+                    else if (caster.HasFact(DirtyBlind) && caster.HasFact(DirtyFeat))
+                    {
+                        maneuver = CombatManeuver.DirtyTrickBlind;
+                    }
+                    else if (caster.HasFact(DirtyEntangle) && caster.HasFact(DirtyFeat))
+                    {
+                        maneuver = CombatManeuver.DirtyTrickEntangle;
+                    }
+                    else if (caster.HasFact(DirtySicken) && caster.HasFact(DirtyFeat))
+                    {
+                        maneuver = CombatManeuver.DirtyTrickSickened;
+                    }
+                    else if (caster.HasFact(Disarm) && caster.HasFact(DisarmFeat))
+                    {
+                        maneuver = CombatManeuver.Disarm;
+                    }
+                    else if (caster.HasFact(Sunder) && caster.HasFact(SunderFeat))
+                    {
+                        maneuver = CombatManeuver.SunderArmor;
+                    }
+                    else if (caster.HasFact(Trip) && caster.HasFact(TripFeat))
+                    {
+                        maneuver = CombatManeuver.Trip;
+                    }
+                    else if (caster.HasFact(Grapple) && caster.HasFact(GrappleFeat))
+                    { 
+                        maneuver = CombatManeuver.Grapple;
+                        if (caster.Get<UnitPartGrappleInitiatorPP>() || target.Get<UnitPartGrappleTargetPP>() || !ConditionTwoFreeHand.HasFreeHand(caster)) 
+                        {
+                            maneuver = CombatManeuver.None;
+                        }
+                    }
+                    if (maneuver != CombatManeuver.None)
+                    {
+                        TriggerManeuver(caster, target, AttackBonusRule, maneuver);
+                        if (caster.HasFact(Flurry8))
+                        {
+                            TriggerManeuver(caster, target, AttackBonusRule, maneuver);
+                        }
+                        if (caster.HasFact(Flurry15))
+                        {
+                            TriggerManeuver(caster, target, AttackBonusRule, maneuver);
+                        }
+                        GameHelper.ApplyBuff(caster, FlurryCoolDown, new Rounds?(1.Rounds()));
+                    }
+                }
                 if (caster.HasFact(AerialBuff) && caster.HasFact(GrappleFeat) && __instance.IsCharge)
                 {
                     GameHelper.RemoveBuff(caster, AerialBuff);
                     if (caster.Get<UnitPartGrappleInitiatorPP>() || target.Get<UnitPartGrappleTargetPP>() || !ConditionTwoFreeHand.HasFreeHand(caster)) { return true; }
-                    RuleCombatManeuver ruleCombatManeuver = new(caster, target, CombatManeuver.Grapple, AttackBonusRule);
-                    ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
-                    if (ruleCombatManeuver.Success)
-                    {
-                        caster.Ensure<UnitPartGrappleInitiatorPP>().Init(target, CasterBuff, target.Context);
-                        target.Ensure<UnitPartGrappleTargetPP>().Init(caster, TargetBuff, caster.Context);
-                    }
+                    TriggerManeuver(caster, target, AttackBonusRule, CombatManeuver.Grapple);
                     return false;
                 }
                 if (caster.HasFact(BullRush1) && __instance.IsCharge)
                 {
                     GameHelper.RemoveBuff(caster, BullRush1);
                     if (target.State.HasCondition(UnitCondition.ForceMove)) { return true; }
-                    RuleCombatManeuver ruleCombatManeuver = new(caster, target, CombatManeuver.BullRush, AttackBonusRule);
-                    ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
+                    TriggerManeuver(caster, target, AttackBonusRule, CombatManeuver.BullRush);
                     return false;
                 }
                 if (!__instance.IsAttackFull) { return true; }
@@ -81,16 +129,14 @@ namespace PrestigePlus.HarmonyFix
                 {
                     GameHelper.RemoveBuff(caster, BullRush2);
                     if (target.State.HasCondition(UnitCondition.ForceMove)) { return true; }
-                    RuleCombatManeuver ruleCombatManeuver = new(caster, target, CombatManeuver.BullRush, AttackBonusRule);
-                    ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
+                    TriggerManeuver(caster, target, AttackBonusRule, CombatManeuver.BullRush);
                     return false;
                 }
                 if (caster.HasFact(BullRush3) && caster.HasFact(BullRush4))
                 {
                     GameHelper.RemoveBuff(caster, BullRush3);
                     if (target.State.HasCondition(UnitCondition.ForceMove)) { return true; }
-                    RuleCombatManeuver ruleCombatManeuver = new(caster, target, CombatManeuver.BullRush, AttackBonusRule);
-                    ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
+                    TriggerManeuver(caster, target, AttackBonusRule, CombatManeuver.BullRush);
                     return false;
                 }
                 if (caster.HasFact(Disarm1) || caster.HasFact(Disarm2))
@@ -101,16 +147,14 @@ namespace PrestigePlus.HarmonyFix
                         var threat = target.GetThreatHandMelee();
                         if (threat == null || threat.MaybeWeapon == null || threat.MaybeWeapon.Blueprint.IsNatural || threat.MaybeWeapon.Blueprint.IsUnarmed) { return true; }
                     }
-                    RuleCombatManeuver ruleCombatManeuver = new(caster, target, CombatManeuver.Disarm, AttackBonusRule);
-                    ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
+                    TriggerManeuver(caster, target, AttackBonusRule, CombatManeuver.Disarm);
                     return false;
                 }
                 if (caster.HasFact(Sunder1) || caster.HasFact(Sunder2))
                 {
                     GameHelper.RemoveBuff(caster, Sunder1);
                     if (target.HasFact(BlueprintRoot.Instance.SystemMechanics.SunderArmorBuff) && !caster.HasFact(SunderReal)) { return true; }
-                    RuleCombatManeuver ruleCombatManeuver = new(caster, target, CombatManeuver.SunderArmor, AttackBonusRule);
-                    ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
+                    TriggerManeuver(caster, target, AttackBonusRule, CombatManeuver.SunderArmor);
                     return false;
                 }
                 if (caster.HasFact(Trip1) || caster.HasFact(Trip2))
@@ -118,29 +162,25 @@ namespace PrestigePlus.HarmonyFix
                     GameHelper.RemoveBuff(caster, Trip1);
                     if (target.Descriptor.State.Prone.Active) { return true; }
                     if (!target.CanBeKnockedOff() && !caster.HasFact(Ace)) { return true; }
-                    RuleCombatManeuver ruleCombatManeuver = new(caster, target, CombatManeuver.Trip, AttackBonusRule);
-                    ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
+                    TriggerManeuver(caster, target, AttackBonusRule, CombatManeuver.Trip);
                     return false;
                 }
                 if (caster.HasFact(DirtyTrick1))
                 {
                     GameHelper.RemoveBuff(caster, DirtyTrick1);
-                    RuleCombatManeuver ruleCombatManeuver = new(caster, target, CombatManeuver.DirtyTrickBlind, AttackBonusRule);
-                    ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
+                    TriggerManeuver(caster, target, AttackBonusRule, CombatManeuver.DirtyTrickBlind);
                     return false;
                 }
                 if (caster.HasFact(DirtyTrick2))
                 {
                     GameHelper.RemoveBuff(caster, DirtyTrick2);
-                    RuleCombatManeuver ruleCombatManeuver = new(caster, target, CombatManeuver.DirtyTrickEntangle, AttackBonusRule);
-                    ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
+                    TriggerManeuver(caster, target, AttackBonusRule, CombatManeuver.DirtyTrickEntangle);
                     return false;
                 }
                 if (caster.HasFact(DirtyTrick3))
                 {
                     GameHelper.RemoveBuff(caster, DirtyTrick3);
-                    RuleCombatManeuver ruleCombatManeuver = new(caster, target, CombatManeuver.DirtyTrickSickened, AttackBonusRule);
-                    ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
+                    TriggerManeuver(caster, target, AttackBonusRule, CombatManeuver.DirtyTrickSickened);
                     return false;
                 }
                 return true;
@@ -163,7 +203,6 @@ namespace PrestigePlus.HarmonyFix
         private static BlueprintBuffReference BullRush4 = BlueprintTool.GetRef<BlueprintBuffReference>(BullRushFeats.KnockbackbuffGuid);
 
         private static BlueprintBuffReference AerialBuff = BlueprintTool.GetRef<BlueprintBuffReference>(AerialAssault.Stylebuff2Guid);
-        private static BlueprintFeatureReference GrappleFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(ImprovedGrapple.StyleGuid);
 
         private static readonly BlueprintBuffReference CasterBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{C5F4DDFE-CA2E-4309-90BB-1BB5C0F32E78}");
         private static readonly BlueprintBuffReference TargetBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{F505D659-0610-41B1-B178-E767CCB9292E}");
@@ -204,6 +243,17 @@ namespace PrestigePlus.HarmonyFix
             return num3 + second;
         }
 
+        public static void TriggerManeuver(UnitEntityData caster, UnitEntityData target, RuleCalculateAttackBonus AttackBonusRule, CombatManeuver type)
+        {
+            RuleCombatManeuver ruleCombatManeuver = new(caster, target, type, AttackBonusRule);
+            ruleCombatManeuver = (target.Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
+            if (ruleCombatManeuver.Success && type == CombatManeuver.Grapple)
+            {
+                caster.Ensure<UnitPartGrappleInitiatorPP>().Init(target, CasterBuff, target.Context);
+                target.Ensure<UnitPartGrappleTargetPP>().Init(caster, TargetBuff, caster.Context);
+            }
+        }
+
         private static readonly BlueprintFeatureReference TWF = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.TwoWeaponFighting.ToString());
         private static readonly BlueprintFeatureReference Mythic = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.TwoWeaponFightingMythicFeat.ToString());
 
@@ -214,5 +264,35 @@ namespace PrestigePlus.HarmonyFix
         private static readonly BlueprintFeatureReference Arm = BlueprintTool.GetRef<BlueprintFeatureReference>(RangedDisarm.ArmBindGuid);
 
         private static readonly BlueprintFeatureReference Assault = BlueprintTool.GetRef<BlueprintFeatureReference>(GiganticAssault.FeatGuid);
+
+        private static readonly BlueprintFeatureReference Flurry = BlueprintTool.GetRef<BlueprintFeatureReference>(ManeuverMaster.FlurryFeatGuid);
+        private static readonly BlueprintBuffReference FlurryCoolDown = BlueprintTool.GetRef<BlueprintBuffReference>(ManeuverMaster.FlurryCoolDownbuffGuid);
+        private static readonly BlueprintBuffReference Flurry8 = BlueprintTool.GetRef<BlueprintBuffReference>(ManeuverMaster.Flurry8buffGuid);
+        private static readonly BlueprintBuffReference Flurry15 = BlueprintTool.GetRef<BlueprintBuffReference>(ManeuverMaster.Flurry15buffGuid);
+
+        private static readonly string SeizetheBullRushbuffGuid = "{FDD7D762-A448-48FB-B72C-709D14285FF6}";
+        private static readonly string SeizetheDirtyBlindbuffGuid = "{6142C847-22F1-410F-A132-9545D7404F4A}";
+        private static readonly string SeizetheDirtyEntanglebuffGuid = "{723AC061-8A31-485B-976D-2E233B5B4B9E}";
+        private static readonly string SeizetheDirtySickenbuffGuid = "{4B94C35F-0F34-494F-9CF3-BB2BAD84FCF9}";
+        private static readonly string SeizetheDisarmbuffGuid = "{0E686D2C-2CBB-43F4-A247-110A85B938C1}";
+        private static readonly string SeizetheSunderbuffGuid = "{E4FD5F1E-A417-47CE-AF53-CD0FC91225B0}";
+        private static readonly string SeizetheTripbuffGuid = "{8DFA0D89-D1D5-4A63-AF3E-37655D9935D5}";
+        private static readonly string SeizetheGrapplebuffGuid = "{55BD97E6-84AB-4E2A-9F0D-EF8A730DC7CF}";
+
+        private static readonly BlueprintBuffReference BullRush = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheBullRushbuffGuid);
+        private static readonly BlueprintBuffReference DirtyBlind = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheDirtyBlindbuffGuid);
+        private static readonly BlueprintBuffReference DirtyEntangle = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheDirtyEntanglebuffGuid);
+        private static readonly BlueprintBuffReference DirtySicken = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheDirtySickenbuffGuid);
+        private static readonly BlueprintBuffReference Disarm = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheDisarmbuffGuid);
+        private static readonly BlueprintBuffReference Grapple = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheGrapplebuffGuid);
+        private static readonly BlueprintBuffReference Sunder = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheSunderbuffGuid);
+        private static readonly BlueprintBuffReference Trip = BlueprintTool.GetRef<BlueprintBuffReference>(SeizetheTripbuffGuid);
+
+        public static readonly BlueprintFeatureReference BullRushFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ImprovedBullRush.ToString());
+        public static readonly BlueprintFeatureReference DirtyFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ImprovedDirtyTrick.ToString());
+        public static readonly BlueprintFeatureReference DisarmFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ImprovedDisarm.ToString());
+        public static readonly BlueprintFeatureReference GrappleFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(ImprovedGrapple.StyleGuid);
+        public static readonly BlueprintFeatureReference SunderFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ImprovedSunder.ToString());
+        public static readonly BlueprintFeatureReference TripFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ImprovedTrip.ToString());
     }
 }
