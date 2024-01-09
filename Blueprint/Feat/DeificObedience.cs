@@ -1062,7 +1062,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDescription(Gorum2Description)
               .SetIcon(icon)
               .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().Add<GorumUnarmed>().Build(), 
-                    onlyOnFullAttack: true, onlyOnFirstAttack: true, triggerBeforeAttack: true)
+                    onlyOnFullAttack: true, onlyOnFirstAttack: true, onlyHit: false)
               .Configure();
         }
 
@@ -1494,7 +1494,7 @@ namespace PrestigePlus.Blueprint.Feat
              .SetDisplayName(Otolmens2DisplayName)
              .SetDescription(Otolmens2Description)
              .SetIcon(icon)
-             .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().RemoveBuff(Otolmens2BuffGuid, toCaster: false).Build(), actionsOnInitiator: true)
+             .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().RemoveBuff(Otolmens2BuffGuid, toCaster: false).Build(), actionsOnInitiator: true, onlyHit: false)
              .AddPartialDRIgnore(false, reductionPenaltyModifier: ContextValues.Property(UnitProperty.Level), useContextValue: true)
              .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Axiomatic.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.PrimaryHand)
              .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Axiomatic.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.SecondaryHand)

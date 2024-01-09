@@ -560,7 +560,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
              .SetDescription(SeekerArrowDescription)
              .SetIcon(icon)
              .AddIgnoreConcealment()
-             .AddInitiatorAttackWithWeaponTrigger(action: ActionsBuilder.New().RemoveSelf().Build(), actionsOnInitiator: true, triggerBeforeAttack: false)
+             .AddInitiatorAttackWithWeaponTrigger(action: ActionsBuilder.New().RemoveSelf().Build(), actionsOnInitiator: true, onlyHit: false)
              .Configure();
 
             var abilityresourse = AbilityResourceConfigurator.New(SeekerArrowAblityRes, SeekerArrowAblityResGuid)
@@ -635,7 +635,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
              .AddIgnoreConcealment()
              .AddBuffEnchantAnyWeapon(enchant, Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.PrimaryHand)
              .AddBuffEnchantAnyWeapon(enchant, Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.SecondaryHand)
-             .AddInitiatorAttackWithWeaponTrigger(action: ActionsBuilder.New().RemoveSelf().Build(), actionsOnInitiator: true, triggerBeforeAttack: false)
+             .AddInitiatorAttackWithWeaponTrigger(action: ActionsBuilder.New().RemoveSelf().Build(), actionsOnInitiator: true, onlyHit: false)
              .Configure();
 
             var abilityresourse = AbilityResourceConfigurator.New(PhaseArrowAblityRes, PhaseArrowAblityResGuid)
@@ -757,7 +757,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
              .SetIcon(icon)
              .AddContextRankConfig(ContextRankConfigs.StatBonus(stat: StatType.Charisma).WithBonusValueProgression(20, false))
              .AddInitiatorAttackWithWeaponTrigger(action: shoot, actionsOnInitiator: false, triggerBeforeAttack: false, onlyHit: true)
-             .AddInitiatorAttackWithWeaponTrigger(action: ActionsBuilder.New().RemoveSelf().Build(), actionsOnInitiator: true, triggerBeforeAttack: false)
+             .AddInitiatorAttackWithWeaponTrigger(action: ActionsBuilder.New().RemoveSelf().Build(), actionsOnInitiator: true, onlyHit: false)
              .Configure();
 
             var ability = AbilityConfigurator.New(DeathArrowAblity, DeathArrowAblityGuid)

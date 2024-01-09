@@ -152,8 +152,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
              .SetDisplayName(EnergyArrowDisplayName)
              .SetDescription(EnergyArrowDescription)
              .SetIcon(icon)
-             .AddInitiatorAttackWithWeaponTrigger(action: ActionsBuilder.New().RemoveBuff(Buff1).Build(), actionsOnInitiator: false, triggerBeforeAttack: false)
-             .AddInitiatorAttackWithWeaponTrigger(action: ActionsBuilder.New().RemoveSelf().Build(), actionsOnInitiator: true, triggerBeforeAttack: false)
+             .AddInitiatorAttackWithWeaponTrigger(action: ActionsBuilder.New().RemoveBuff(Buff1).Build(), actionsOnInitiator: false, onlyHit: false)
+             .AddInitiatorAttackWithWeaponTrigger(action: ActionsBuilder.New().RemoveSelf().Build(), actionsOnInitiator: true, onlyHit: false)
              .Configure();
 
             var Buff3 = BuffConfigurator.New(EnergyArrowBuff3, EnergyArrowBuff3Guid)

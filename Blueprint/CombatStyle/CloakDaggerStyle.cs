@@ -126,7 +126,6 @@ namespace PrestigePlus.Blueprint.CombatStyle
               .SetIcon(icon)
               //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddComponent<CloakDaggerManeuver>()
-              //.AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().RemoveSelf().Build(), actionsOnInitiator: true, triggerBeforeAttack: false)
               .Configure();
 
             var action = ActionsBuilder.New()
