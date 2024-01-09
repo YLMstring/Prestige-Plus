@@ -1061,7 +1061,8 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(Gorum2DisplayName)
               .SetDescription(Gorum2Description)
               .SetIcon(icon)
-              .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().Add<GorumUnarmed>().Build(), onlyOnFullAttack: true, onlyOnFirstAttack: true)
+              .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().Add<GorumUnarmed>().Build(), 
+                    onlyOnFullAttack: true, onlyOnFirstAttack: true, triggerBeforeAttack: true)
               .Configure();
         }
 

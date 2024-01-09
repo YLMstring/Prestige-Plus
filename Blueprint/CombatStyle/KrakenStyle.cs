@@ -122,7 +122,7 @@ namespace PrestigePlus.Feats
                     .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New()
                         .ApplyBuff(StyleAbilitybuffGuid, ContextDuration.Fixed(1))
                         .Build(), true, category: Kingmaker.Enums.WeaponCategory.UnarmedStrike, checkWeaponCategory: true,
-                        onlyOnFullAttack: true)
+                        onlyOnFullAttack: true, triggerBeforeAttack: true)
                     .AddToFeatureSelection(FeatureSelectionRefs.MonkBonusFeatSelectionLevel10.ToString())
                     .Configure();
 
@@ -130,6 +130,8 @@ namespace PrestigePlus.Feats
               .SetDisplayName(WrathDisplayName)
               .SetDescription(WrathDescription)
               .SetIcon(icon)
+              .SetStacking(Kingmaker.UnitLogic.Buffs.Blueprints.StackingType.Rank)
+              .SetRanks(10)
               .AddFacts(new() { ability })
               .Configure();
         }

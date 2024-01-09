@@ -45,14 +45,24 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                     Logger.Info("no caster");
                     return;
                 }
+                var buff = maybeCaster.GetFact(CasterBuff);
+                if (buff == null || buff.GetRank() == 10) return;
                 var IsTargetFlatFooted = Rulebook.Trigger(new RuleCheckTargetFlatFooted(maybeCaster, unit)).IsFlatFooted;
                 if (IsTargetFlatFooted || unit.State.HasCondition(UnitCondition.Dazed) || unit.State.HasCondition(UnitCondition.LoseDexterityToAC) || unit.State.HasCondition(UnitCondition.Paralyzed) || unit.State.HasCondition(UnitCondition.Staggered) || unit.State.HasCondition(UnitCondition.Stunned) || unit.State.HasCondition(UnitCondition.Unconscious))
                 {
                     var attackAnimation = maybeCaster.View.AnimationManager.CreateHandle(UnitAnimationType.SpecialAttack);
                     maybeCaster.View.AnimationManager.Execute(attackAnimation);
+                    GameHelper.ApplyBuff(maybeCaster, CasterBuff, new Rounds?(1.Rounds()));
+                    GameHelper.ApplyBuff(maybeCaster, CasterBuff, new Rounds?(1.Rounds()));
+                    GameHelper.ApplyBuff(maybeCaster, CasterBuff, new Rounds?(1.Rounds()));
+                    GameHelper.ApplyBuff(maybeCaster, CasterBuff, new Rounds?(1.Rounds()));
+                    GameHelper.ApplyBuff(maybeCaster, CasterBuff, new Rounds?(1.Rounds()));
+                    GameHelper.ApplyBuff(maybeCaster, CasterBuff, new Rounds?(1.Rounds()));
+                    GameHelper.ApplyBuff(maybeCaster, CasterBuff, new Rounds?(1.Rounds()));
+                    GameHelper.ApplyBuff(maybeCaster, CasterBuff, new Rounds?(1.Rounds()));
+                    GameHelper.ApplyBuff(maybeCaster, CasterBuff, new Rounds?(1.Rounds()));
                     RunAttackRule(maybeCaster, unit);
                     RunAttackRule(maybeCaster, unit);
-                    GameHelper.RemoveBuff(maybeCaster, CasterBuff);
                 }
             }
             catch (Exception ex) { Logger.Error("Failed to medusa.", ex); }
