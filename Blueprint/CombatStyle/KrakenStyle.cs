@@ -23,6 +23,7 @@ using Kingmaker.Utility;
 using PrestigePlus.Blueprint.GrappleFeat;
 using PrestigePlus.CustomAction.OtherFeatRelated;
 using PrestigePlus.CustomComponent.Feat;
+using BlueprintCore.Utils.Types;
 
 namespace PrestigePlus.Feats
 {
@@ -101,11 +102,9 @@ namespace PrestigePlus.Feats
                 .SetDisplayName(WrathDisplayName)
                 .SetDescription(WrathDescription)
                 .SetIcon(icon)
-                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard)
-                .SetIsFullRoundAction(true)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
                 .SetCanTargetEnemies(true)
                 .SetCanTargetSelf(false)
-                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.BreathWeapon)
                 .SetRange(AbilityRange.Weapon)
                 .SetType(AbilityType.Physical)
                 .Configure();
@@ -120,7 +119,10 @@ namespace PrestigePlus.Feats
                     .AddPrerequisiteFeature(WrackGuid)
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .AddToGroups(FeatureGroup.StyleFeat)
-                    .AddFacts(new() { ability })
+                    .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New()
+                        .ApplyBuff(StyleAbilitybuffGuid, ContextDuration.Fixed(1))
+                        .Build(), true, category: Kingmaker.Enums.WeaponCategory.UnarmedStrike, checkWeaponCategory: true,
+                        onlyOnFullAttack: true)
                     .AddToFeatureSelection(FeatureSelectionRefs.MonkBonusFeatSelectionLevel10.ToString())
                     .Configure();
 
@@ -128,8 +130,7 @@ namespace PrestigePlus.Feats
               .SetDisplayName(WrathDisplayName)
               .SetDescription(WrathDescription)
               .SetIcon(icon)
-              .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-              .AddBuffExtraAttack(haste: false, number: 2)
+              .AddFacts(new() { ability })
               .Configure();
         }
 

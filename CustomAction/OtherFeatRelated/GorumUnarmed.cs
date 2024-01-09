@@ -70,7 +70,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                     AutoCriticalThreat = false,
                     AutoCriticalConfirmation = false,
                     ExtraAttack = true,
-                    IsFullAttack = false,
+                    IsFullAttack = true,
                     AttackNumber = 0,
                     AttacksCount = 1
                 };
