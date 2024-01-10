@@ -1941,7 +1941,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(CharonDisplayName)
               .SetDescription(CharonDescription)
               .SetIcon(icon)
-              .AddPrerequisiteFeature(FeatureRefs.UrgathoaFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteFeature(FeatureRefs.ZonKuthonFeature.ToString(), group: Prerequisite.GroupType.Any)
               .AddPrerequisiteAlignment(AlignmentMaskType.NeutralEvil, group: Prerequisite.GroupType.Any)
               .AddToIsPrerequisiteFor(CharonSentinelFeat())
               .AddSavingThrowBonusAgainstDescriptor(value: 4, spellDescriptor: SpellDescriptor.NegativeLevel, modifierDescriptor: ModifierDescriptor.Profane)
@@ -2163,7 +2163,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(SzurielDisplayName)
               .SetDescription(SzurielDescription)
               .SetIcon(icon)
-              .AddPrerequisiteFeature(FeatureRefs.UrgathoaFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteFeature(FeatureRefs.GyronnaFeature.ToString(), group: Prerequisite.GroupType.Any)
               .AddPrerequisiteAlignment(AlignmentMaskType.NeutralEvil, group: Prerequisite.GroupType.Any)
               .AddToIsPrerequisiteFor(SzurielSentinelFeat())
               .AddSavingThrowBonusAgainstDescriptor(value: 4, spellDescriptor: SpellDescriptor.Fire, modifierDescriptor: ModifierDescriptor.Profane)
@@ -2215,6 +2215,7 @@ namespace PrestigePlus.Blueprint.Feat
             var cond = ConditionsBuilder.New()
                     .IsWeaponEquipped(category: WeaponCategory.Greatsword, checkWeaponCategory: true)
                     .Build();  
+
             return feat.AddFacts(new() { FeatureRefs.SimpleWeaponProficiency.ToString(), FeatureRefs.MartialWeaponProficiency.ToString() })
               .AddAttackBonusConditional(2, descriptor: ModifierDescriptor.Profane)
               .AddDamageBonusConditional(2, descriptor: ModifierDescriptor.Profane, onlyWeaponDamage: true)
