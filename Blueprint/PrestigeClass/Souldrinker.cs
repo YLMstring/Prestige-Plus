@@ -147,7 +147,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(CacodaemonDisplayName)
               .SetDescription(CacodaemonDescription)
               .SetIcon(icon)
-
+              .AddAbilityResources(resource: SoulPoolAbilityResGuid, restoreAmount: true)
               .Configure();
         }
 
@@ -180,7 +180,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
              .SetDescription(EnergyDrainDescription)
              .SetIcon(icon)
              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-             .AddTemporaryHitPointsFromAbilityValue(removeWhenHitPointsEnd: true, value: 5)
+             .AddComponent<EnergyDrainLife>(c => { c.value = 5; })
              .Configure();
 
             BuffConfigurator.New(EnergyDrainBuff2, EnergyDrainBuff2Guid)
@@ -188,7 +188,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
              .SetDescription(EnergyDrainDescription)
              .SetIcon(icon)
              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-             .AddTemporaryHitPointsFromAbilityValue(removeWhenHitPointsEnd: true, value: 10)
+             .AddComponent<EnergyDrainLife>(c => { c.value = 10; })
              .Configure();
 
             BuffConfigurator.New(EnergyDrainBuff3, EnergyDrainBuff3Guid)
@@ -196,7 +196,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
              .SetDescription(EnergyDrainDescription)
              .SetIcon(icon)
              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-             .AddTemporaryHitPointsFromAbilityValue(removeWhenHitPointsEnd: true, value: 15)
+             .AddComponent<EnergyDrainLife>(c => { c.value = 15; })
              .Configure();
 
             BuffConfigurator.New(EnergyDrainBuff4, EnergyDrainBuff4Guid)
@@ -204,7 +204,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
              .SetDescription(EnergyDrainDescription)
              .SetIcon(icon)
              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-             .AddTemporaryHitPointsFromAbilityValue(removeWhenHitPointsEnd: true, value: 20)
+             .AddComponent<EnergyDrainLife>(c => { c.value = 20; })
              .Configure();
 
             var ability = AbilityConfigurator.New(EnergyDrainAblity, EnergyDrainAblityGuid)
