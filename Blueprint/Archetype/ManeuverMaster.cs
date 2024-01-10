@@ -25,6 +25,7 @@ using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.Utility;
 using PrestigePlus.Blueprint.Feat;
 using PrestigePlus.Blueprint.GrappleFeat;
+using PrestigePlus.CustomAction.OtherFeatRelated;
 using PrestigePlus.CustomAction.OtherManeuver;
 using PrestigePlus.CustomComponent.OtherManeuver;
 using PrestigePlus.Maneuvers;
@@ -530,6 +531,110 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetIcon(icon)
               .AddFacts(new() { ability2 })
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .Configure();
+        }
+
+        private const string Freedom = "ManeuverMaster.Freedom";
+        public static readonly string FreedomGuid = "{EE082D1F-6871-4D54-A4AE-2C6995AD513A}";
+
+        private const string FreedomAblity = "ManeuverMaster.UseFreedom";
+        private static readonly string FreedomAblityGuid = "{FBAD374A-CE84-4F85-A2D5-8BB0052CE85C}";
+
+        internal const string FreedomDisplayName = "ManeuverMasterFreedom.Name";
+        private const string FreedomDescription = "ManeuverMasterFreedom.Description";
+
+        public static BlueprintFeature FreedomFeat()
+        {
+            var icon = AbilityRefs.FreedomOfMovement.Reference.Get().Icon;
+
+            var ability = AbilityConfigurator.New(FreedomAblity, FreedomAblityGuid)
+                .CopyFrom(
+                AbilityRefs.FreedomOfMovement,
+                typeof(AbilitySpawnFx))
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .ApplyBuff(BuffRefs.FreedomOfMovementBuff.ToString(), ContextDuration.Fixed(1))
+                        .Build())
+                .SetDisplayName(FreedomDisplayName)
+                .SetDescription(FreedomDescription)
+                .SetIcon(icon)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: AbilityResourceRefs.KiPowerResource.ToString())
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Supernatural)
+                .Configure();
+
+            return FeatureConfigurator.New(Freedom, FreedomGuid)
+              .SetDisplayName(FreedomDisplayName)
+              .SetDescription(FreedomDescription)
+              .SetIcon(icon)
+              .AddFacts(new() { ability })
+              .AddToFeatureSelection(FeatureSelectionRefs.MonkKiPowerSelection.ToString())
+              .Configure();
+        }
+
+        private const string OneTouch = "ManeuverMaster.OneTouch";
+        public static readonly string OneTouchGuid = "{BFCF6BEB-722D-42D3-A9BA-8AAC1462E6B6}";
+
+        private const string OneTouchAblity = "ManeuverMaster.UseOneTouch";
+        private static readonly string OneTouchAblityGuid = "{CDBF0B36-59ED-43E6-9D1E-50C065F7C1DF}";
+
+        private const string OneTouchAblity2 = "ManeuverMaster.UseOneTouch2";
+        private static readonly string OneTouchAblity2Guid = "{1F1FC522-7BA3-4488-A958-26013DAB43E3}";
+
+        private const string OneTouchBuff2 = "ManeuverMaster.OneTouchBuff2";
+        public static readonly string OneTouchBuff2Guid = "{E99915C0-34B2-4C25-9563-2FD2101EAFDB}";
+
+        internal const string OneTouchDisplayName = "ManeuverMasterOneTouch.Name";
+        private const string OneTouchDescription = "ManeuverMasterOneTouch.Description";
+
+        internal const string OneTouchDisplayName2 = "ManeuverMasterOneTouch2.Name";
+        private const string OneTouchDescription2 = "ManeuverMasterOneTouch2.Description";
+
+        public static BlueprintFeature OneTouchFeat()
+        {
+            var icon = AbilityRefs.FingerOfDeath.Reference.Get().Icon;
+
+            var Buff2 = BuffConfigurator.New(OneTouchBuff2, OneTouchBuff2Guid)
+             .SetDisplayName(OneTouchDisplayName)
+             .SetDescription(OneTouchDescription)
+             .SetIcon(icon)
+             .AddAttackTypeChange(false, false, AttackType.Touch, AttackType.Melee)
+             .Configure();
+
+            var ability = AbilityConfigurator.New(OneTouchAblity, OneTouchAblityGuid)
+                .AllowTargeting(enemies: true)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .ApplyBuff(Buff2, ContextDuration.Fixed(1), toCaster: true)
+                        .Add<OneTouchAttack>()
+                        .Build())
+                .SetDisplayName(OneTouchDisplayName)
+                .SetDescription(OneTouchDescription)
+                .SetIcon(icon)
+                .AddAbilityResourceLogic(isSpendResource: false, requiredResource: AbilityResourceRefs.KiPowerResource.ToString())
+                .SetRange(AbilityRange.Weapon)
+                .SetType(AbilityType.Extraordinary)
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(OneTouchAblity2, OneTouchAblity2Guid)
+                .AllowTargeting(enemies: true)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .ApplyBuff(Buff2, ContextDuration.Fixed(1), toCaster: true)
+                        .Add<OneTouchAttack>(c => { c.ki = true; })
+                        .Build())
+                .SetDisplayName(OneTouchDisplayName2)
+                .SetDescription(OneTouchDescription2)
+                .SetIcon(icon)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: AbilityResourceRefs.KiPowerResource.ToString())
+                .SetRange(AbilityRange.Weapon)
+                .SetType(AbilityType.Extraordinary)
+                .Configure();
+
+            return FeatureConfigurator.New(OneTouch, OneTouchGuid)
+              .SetDisplayName(OneTouchDisplayName)
+              .SetDescription(OneTouchDescription)
+              .SetIcon(icon)
+              .AddFacts(new() { ability, ability2 })
+              .AddToFeatureSelection(FeatureSelectionRefs.MonkKiPowerSelection.ToString())
               .Configure();
         }
     }

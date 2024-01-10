@@ -388,7 +388,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("constable"))) { Constable.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("emissary"))) { Emissary.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("menhir"))) { MenhirSavant.Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("mm"))) { ManeuverMaster.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("mm"))) { ManeuverMaster.Configure(); ManeuverMaster.FreedomFeat(); ManeuverMaster.OneTouchFeat(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
