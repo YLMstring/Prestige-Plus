@@ -32,6 +32,9 @@ using BlueprintCore.Conditions.Builder.BasicEx;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using Kingmaker.UnitLogic.Mechanics;
 using PrestigePlus.CustomAction.ClassRelated;
+using Kingmaker.Blueprints.Classes.Spells;
+using BlueprintCore.Conditions.Builder.ContextEx;
+using PrestigePlus.Blueprint.GrappleFeat;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -60,10 +63,10 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
                 .AddToLevelEntry(1, CreateProficiencies(), Sentinel.BonusFeatGuid, spellupgradeGuid)
-                .AddToLevelEntry(2, CreateEnergyDrain())
+                .AddToLevelEntry(2, CreateEnergyDrain(), SoulPoolFeat())
                 .AddToLevelEntry(3, Sentinel.DivineBoon1Guid)
-                .AddToLevelEntry(4)
-                .AddToLevelEntry(5)
+                .AddToLevelEntry(4, LesserOblivionFeat())
+                .AddToLevelEntry(5, EnergyDrainGuid)
                 .AddToLevelEntry(6, Sentinel.DivineBoon2Guid)
                 .AddToLevelEntry(7)
                 .AddToLevelEntry(8, CacodaemonFeature())
@@ -132,11 +135,11 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .Configure();
         }
 
-        private const string Cacodaemon = "Cacodaemon";
+        private const string Cacodaemon = "SouldrinkerCacodaemon";
         private static readonly string CacodaemonGuid = "{DDFD1C42-FEA4-44A4-8DD1-7937291CFC98}";
 
-        internal const string CacodaemonDisplayName = "Cacodaemon.Name";
-        private const string CacodaemonDescription = "Cacodaemon.Description";
+        internal const string CacodaemonDisplayName = "SouldrinkerCacodaemon.Name";
+        private const string CacodaemonDescription = "SouldrinkerCacodaemon.Description";
         public static BlueprintFeature CacodaemonFeature()
         {
             var icon = AbilityRefs.SummonMonsterIVd3.Reference.Get().Icon;
@@ -213,7 +216,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetIcon(icon)
                 .AllowTargeting(false, true, false, false)
                 .AddAbilityTargetHasFact(new() { FeatureRefs.ConstructType.ToString(), FeatureRefs.UndeadType.ToString() }, inverted: true)
-                .SetSpellDescriptor(Kingmaker.Blueprints.Classes.Spells.SpellDescriptor.NegativeLevel)
+                .SetSpellDescriptor(SpellDescriptor.NegativeLevel)
                 .SetType(AbilityType.Special)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                     .DealDamageTemporaryNegativeLevels(ContextDuration.Fixed(1, DurationRate.Days), ContextDice.Value(DiceType.Zero, 0, ContextValues.Rank()), setFactAsReason: true)
@@ -226,9 +229,121 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(EnergyDrainDisplayName)
               .SetDescription(EnergyDrainDescription)
               .SetIcon(icon)
+              .SetRanks(2)
               .SetIsClassFeature(true)
               .AddFacts(new() { ability })
               .Configure();
+        }
+
+        private const string LesserOblivion = "Souldrinker.LesserOblivion";
+        private static readonly string LesserOblivionGuid = "{A61D6340-B909-4EF8-865E-3F0ECCF95DF6}";
+
+        internal const string SouldrinkerLesserOblivionDisplayName = "SouldrinkerLesserOblivion.Name";
+        private const string SouldrinkerLesserOblivionDescription = "SouldrinkerLesserOblivion.Description";
+
+        private const string LesserOblivionDeath = "Souldrinker.LesserOblivionDeath";
+        private static readonly string LesserOblivionDeathGuid = "{5D2295DF-9270-473C-9DB4-90D4AC44A8C5}";
+
+        private const string LesserOblivionWar = "Souldrinker.LesserOblivionWar";
+        private static readonly string LesserOblivionWarGuid = "{607229A5-E67A-4AB3-8854-848404013B00}";
+        public static BlueprintFeature LesserOblivionFeat()
+        {
+            var icon = FeatureRefs.BloodFeaster.Reference.Get().Icon;
+
+            var war = FeatureConfigurator.New(LesserOblivionWar, LesserOblivionWarGuid)
+              .SetDisplayName(SouldrinkerLesserOblivionDisplayName)
+              .SetDescription(SouldrinkerLesserOblivionDescription)
+              .SetIcon(icon)
+              .AddBuffDescriptorImmunity(descriptor: SpellDescriptor.Bleed)
+              .AddSpellImmunityToSpellDescriptor(descriptor: SpellDescriptor.Bleed)
+              .AddImmunityToAbilityScoreDamage(true, statTypes: new StatType[] { StatType.Strength })
+              .Configure();
+
+            var death = FeatureConfigurator.New(LesserOblivionDeath, LesserOblivionDeathGuid)
+              .SetDisplayName(SouldrinkerLesserOblivionDisplayName)
+              .SetDescription(SouldrinkerLesserOblivionDescription)
+              .SetIcon(icon)
+              .AddBuffDescriptorImmunity(descriptor: SpellDescriptor.Disease)
+              .AddSpellImmunityToSpellDescriptor(descriptor: SpellDescriptor.Disease)
+              .AddImmunityToAbilityScoreDamage(true, statTypes: new StatType[] { StatType.Constitution })
+              .Configure();
+
+            return FeatureConfigurator.New(LesserOblivion, LesserOblivionGuid)
+              .SetDisplayName(SouldrinkerLesserOblivionDisplayName)
+              .SetDescription(SouldrinkerLesserOblivionDescription)
+              .SetIcon(icon)
+              .AddFeatureIfHasFact(DeificObedience.CharonGuid, death)
+              .AddFeatureIfHasFact(DeificObedience.SzurielGuid, war)
+              .SetHideInCharacterSheetAndLevelUp()
+              .Configure();
+        }
+
+        private static readonly string SoulPoolFeatName = "SouldrinkerSoulPool";
+        public static readonly string SoulPoolFeatGuid = "{5973C97A-D210-4499-A57D-C033B18245E4}";
+
+        private static readonly string SoulPoolDisplayName = "SouldrinkerSoulPool.Name";
+        private static readonly string SoulPoolDescription = "SouldrinkerSoulPool.Description";
+
+        private static readonly string SoulPool2DisplayName = "SouldrinkerSoulPool2.Name";
+        private static readonly string SoulPool2Description = "SouldrinkerSoulPool2.Description";
+
+        private static readonly string SoulPool3DisplayName = "SouldrinkerSoulPool3.Name";
+        private static readonly string SoulPool3Description = "SouldrinkerSoulPool3.Description";
+
+        private const string SoulPoolAbility = "Souldrinker.SoulPoolAbility";
+        private static readonly string SoulPoolAbilityGuid = "{59ECF957-7C6A-44E5-B39D-717C37470266}";
+
+        private const string SoulPoolAbility2 = "Souldrinker.SoulPoolAbility2";
+        private static readonly string SoulPoolAbility2Guid = "{DD8F513C-D7E8-46B6-953A-85546ED54579}";
+
+        private const string SoulPoolAbilityRes = "CrimsonTemplarStyle.SoulPoolAbilityRes";
+        public static readonly string SoulPoolAbilityResGuid = "{DF8CAC1D-C121-41BD-AB7A-118DEE5FB340}";
+        public static BlueprintFeature SoulPoolFeat()
+        {
+            var icon = AbilityRefs.CoupDeGraceAbility.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(SoulPoolAbilityRes, SoulPoolAbilityResGuid)
+                .SetMaxAmount(
+                    ResourceAmountBuilder.New(0)
+                        .IncreaseByLevel(classes: new string[] { ArchetypeGuid }))
+                .SetUseMax()
+                .SetMax(10)
+                .Configure();
+
+            var abilityTrick = AbilityConfigurator.New(SoulPoolAbility, SoulPoolAbilityGuid)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .HealEnergyDrain(Kingmaker.RuleSystem.Rules.EnergyDrainHealType.None, Kingmaker.RuleSystem.Rules.EnergyDrainHealType.One)
+                        .Build())
+                .SetDisplayName(SoulPool2DisplayName)
+                .SetDescription(SoulPool2Description)
+                .SetIcon(icon)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Supernatural)
+                .Configure();
+
+            var abilityTrick2 = AbilityConfigurator.New(SoulPoolAbility2, SoulPoolAbility2Guid)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .HealEnergyDrain(Kingmaker.RuleSystem.Rules.EnergyDrainHealType.One, Kingmaker.RuleSystem.Rules.EnergyDrainHealType.None)
+                        .Build())
+                .SetDisplayName(SoulPool3DisplayName)
+                .SetDescription(SoulPool3Description)
+                .SetIcon(icon)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Supernatural)
+                .Configure();
+
+            return FeatureConfigurator.New(SoulPoolFeatName, SoulPoolFeatGuid)
+                    .SetDisplayName(SoulPoolDisplayName)
+                    .SetDescription(SoulPoolDescription)
+                    .SetIcon(icon)
+                    .AddFacts(new() { abilityTrick, abilityTrick2 })
+                    .AddComponent<SoulPointStuff>(c => { c.Resource = abilityresourse; })
+                    .AddAbilityResources(resource: abilityresourse, restoreAmount: false)
+                    .Configure();
         }
     }
 }
