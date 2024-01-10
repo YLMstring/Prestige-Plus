@@ -7725,6 +7725,160 @@
     "Key": "MenhirSavantWalkLines.Description",
     "enGB": "At 9th level, a menhir savant can use her connection to ley lines to cast dimension door a number of times per day equal to her Wisdom bonus.",
     "zhCN": "9级时，立石贤者可以利用她和灵脉之间的联结施展次元门，每日可使用次数等同于她的感知修正。"
+  },
+  {
+    "Key": "Souldrinker.Name",
+    "ProcessTemplates": false,
+    "enGB": "Souldrinker",
+    "zhCN": "魂饮者"
+  },
+  {
+    "Key": "Souldrinker.Description",
+    "enGB": "Pledging their souls to the Horsemen, souldrinkers learn the worst of daemonic magic while gaining the ability to bind and devour souls. With every soul they consume, these casters tithe a fraction to their patrons in Abaddon. They are the proxies of death, serving the architects of the apocalypse until eventually their own souls are drawn into their masters’ waiting maws.",
+    "zhCN": "以灵魂向驭者起誓，魂饮者在习得如何绑定和吞噬灵魂的同时也学会了最恶毒的邪魔法术。而每当她们吞噬一个灵魂，都会向其亚巴顿的主宰缴纳一部分。她们是死亡的代理人，侍奉天启灾变的缔造者，直到自己的灵魂也最终被主人所吞噬。"
+  },
+  {
+    "Key": "SouldrinkerProficiencies.Name",
+    "ProcessTemplates": false,
+    "enGB": "Weapon and Armor Proficiencies",
+    "zhCN": "魂饮者擅长"
+  },
+  {
+    "Key": "SouldrinkerProficiencies.Description",
+    "enGB": "A souldrinker gains proficiency with the favored weapon of her chosen deity.",
+    "zhCN": "魂饮者擅长其神祇的偏好武器。"
+  },
+  {
+    "Key": "SouldrinkerEnergyDrain.Name",
+    "ProcessTemplates": false,
+    "enGB": "Energy Drain",
+    "zhCN": "能量吸取"
+  },
+  {
+    "Key": "SouldrinkerEnergyDrain.Description",
+    "enGB": "At 2nd level, a souldrinker gains the energy drain ability. By making a touch attack as a standard action, she bestows one negative level on the target (two levels on a critical hit). The souldrinker gains 5 temporary hit points for each negative level she bestows on an opponent. These temporary hit points last for a maximum of 1 hour. At 5th level, this touch attack bestows two negative levels (four on a critical hit).",
+    "zhCN": "2级时，魂饮者获得能量吸取能力。通过标准动作进行一次接触攻击，她赋予目标一个负向等级（重击时两个等级）。魂饮者获得对应造成的每负向等级5点临时生命值。此临时生命值持续最多1小时。5级时，此接触攻击造成两个负向等级（重击时四个等级）。"
+  },
+  {
+    "Key": "SouldrinkerSoulPool.Name",
+    "ProcessTemplates": false,
+    "enGB": "Soul Pool",
+    "zhCN": "魂池"
+  },
+  {
+    "Key": "SouldrinkerSoulPool.Description",
+    "enGB": "At 2nd level, a souldrinker can store stolen life energy to use thereafter to accomplish unnatural feats. Her soul pool starts at 0, and at any one time, it can contain a maximum number of soul points equal to her souldrinker level. Every time a souldrinker inflicts a negative level on a creature other than herself, she gains 1 soul point.",
+    "zhCN": "2级时，魂饮者可以储存偷到的生命能量，并随后利用其实现非凡的效果。她的魂池起始点数为0，每当魂饮者对别人施加一个负向等级，她便获得1点灵魂点数。魂饮者对应灵魂吸取造成的每负向等级获得1点灵魂点数。魂池中能够拥有的灵魂点数上限等于其职业等级。"
+  },
+  {
+    "Key": "SouldrinkerCacodaemon.Name",
+    "ProcessTemplates": false,
+    "enGB": "Summon Cacodaemon",
+    "zhCN": "召唤邪灵怪"
+  },
+  {
+    "Key": "SouldrinkerCacodaemon.Description",
+    "enGB": "At 8th level, the souldrinker can summon cacodaemons, who create soul gems for her. (restore all soul points after 8 hours of complete rest)",
+    "zhCN": "8级时，魂饮者能够召唤邪灵怪帮她制造灵魂宝石。（长休后恢复所有灵魂点数）"
+  },
+  {
+    "Key": "SouldrinkerSoulPool4.Name",
+    "ProcessTemplates": false,
+    "enGB": "Recover Spell Slot",
+    "zhCN": "恢复法术位"
+  },
+  {
+    "Key": "SouldrinkerSoulPool4.Description",
+    "enGB": "As a full-round action, a souldrinker can expend a number of points from her soul pool equal to double the spell level of a cast spell or expended spell slot in order to regain that spell or slot as if it had not been used.",
+    "zhCN": "用一个整轮动作，魂饮者可以恢复一个已消耗的法术位，但需消耗双倍于该法术位等级的灵魂点数。"
+  },
+  {
+    "Key": "SouldrinkerSoulPool2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Protect Soul (temporary)",
+    "zhCN": "保护灵魂"
+  },
+  {
+    "Key": "SouldrinkerSoulPool2.Description",
+    "enGB": "A souldrinker can spend soul points to negate a negative level of hers, at a rate of 0 soul point per negative level negated.",
+    "zhCN": "魂饮者可以消耗灵魂点数来抵消自身同等数目的负向等级。"
+  },
+  {
+    "Key": "SouldrinkerSoulPool3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Protect Soul (permanent)",
+    "zhCN": "保护灵魂"
+  },
+  {
+    "Key": "SouldrinkerSoulPool3.Description",
+    "enGB": "A souldrinker can spend soul points to negate a negative level of hers, at a rate of 1 soul point per negative level negated.",
+    "zhCN": "魂饮者可以消耗灵魂点数来抵消自身同等数目的负向等级。"
+  },
+  {
+    "Key": "SouldrinkerLesserOblivion.Name",
+    "ProcessTemplates": false,
+    "enGB": "Lesser Oblivion",
+    "zhCN": "次级湮灭"
+  },
+  {
+    "Key": "SouldrinkerLesserOblivion.Description",
+    "enGB": "At 4th level, a souldrinker’s apocalyptic vow invests her with a specific ability, depending on which Horseman she made her vow to. Horseman of death: Immunity to disease effects and Constitution damage and drain. Horseman of war: Immunity to bleed effects and Strength damage and drain.",
+    "zhCN": "4级时，魂饮者的天启誓约赋予其一项特定能力，取决于她缔约的驭者是谁。死亡驭者：免疫疾病，体力伤害与流失。战争驭者：免疫流血，力量伤害与流失。"
+  },
+  {
+    "Key": "SouldrinkerOblivion.Name",
+    "ProcessTemplates": false,
+    "enGB": "Oblivion",
+    "zhCN": "湮灭"
+  },
+  {
+    "Key": "SouldrinkerOblivion.Description",
+    "enGB": "At 7th level, the souldrinker is granted more power by her apocalyptic vow, gaining a spell-like ability usable at will but that costs 1 soul point for each use. Horseman of death: vampiric touch. Horseman of war: rage.",
+    "zhCN": "7级时，魂饮者的天启誓约赐予了更多力量，可以任意使用一个类法术能力，不过需要1点灵魂点数。死亡驭者：吸血鬼之触。战争驭者：狂暴术。"
+  },
+  {
+    "Key": "SouldrinkerGreaterOblivion.Name",
+    "ProcessTemplates": false,
+    "enGB": "Greater Oblivion",
+    "zhCN": "高等湮灭"
+  },
+  {
+    "Key": "SouldrinkerGreaterOblivion.Description",
+    "enGB": "At 10th level, the souldrinker gains more power from her apocalyptic vow. The spell-like abilities listed here are usable at will but cost 3 soul points per use. Horseman of death: Gain fast healing 10 for 10 rounds. Horseman of war: blade barrier.",
+    "zhCN": "10级时，魂饮者从天启誓约中获得了更多力量，可以任意使用更强的类法术能力，不过需要3点灵魂点数。死亡驭者：获得快速回复10，持续10轮。战争驭者：剑刃障壁。"
+  },
+  {
+    "Key": "ManeuverMasterOneTouch.Name",
+    "ProcessTemplates": false,
+    "enGB": "One Touch",
+    "zhCN": "一指禅"
+  },
+  {
+    "Key": "ManeuverMasterOneTouch.Description",
+    "enGB": "As long as he has at least 1 point remaining in his ki pool, as a standard action, a monk with this power can make an unarmed strike against a foe as a touch attack. He adds 1/2 his monk level as a bonus on the damage roll. He can spend 1 ki point to double this bonus for that attack.",
+    "zhCN": "只要武僧气池内还至少有1点气，他就可用标准动作，对一个目标进行一次徒手攻击近战接触攻击。本次攻击获得等同于1/2武僧等级的伤害加值。他可以选择消耗1点气翻倍该伤害加值。"
+  },
+  {
+    "Key": "ManeuverMasterOneTouch2.Name",
+    "ProcessTemplates": false,
+    "enGB": "One Touch (ki)",
+    "zhCN": "一指禅（气）"
+  },
+  {
+    "Key": "ManeuverMasterOneTouch2.Description",
+    "enGB": "He adds 1/2 his monk level as a bonus on the damage roll. He can spend 1 ki point to double this bonus for that attack.",
+    "zhCN": "本次攻击获得等同于1/2武僧等级的伤害加值。他可以选择消耗2点气翻倍该伤害加值。"
+  },
+  {
+    "Key": "ManeuverMasterFreedom.Name",
+    "ProcessTemplates": false,
+    "enGB": "Freedom of Movement",
+    "zhCN": "凌波微步"
+  },
+  {
+    "Key": "ManeuverMasterFreedom.Description",
+    "enGB": "A monk with this ability can spend 1 ki point as a swift action to gain the effects of freedom of movement for 1 round.",
+    "zhCN": "习得此绝学的武僧获得如同行动自如法术的好处，持续1轮。使用该能力是一个迅捷动作，需消耗1点气。"
   }
 
 ]
