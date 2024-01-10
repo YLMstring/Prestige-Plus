@@ -35,6 +35,7 @@ using PrestigePlus.CustomAction.ClassRelated;
 using Kingmaker.Blueprints.Classes.Spells;
 using BlueprintCore.Conditions.Builder.ContextEx;
 using PrestigePlus.Blueprint.GrappleFeat;
+using TabletopTweaks.Core.NewComponents;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -357,6 +358,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             var abilityTrick3 = AbilityConfigurator.New(SoulPoolAbility3, SoulPoolAbility3Guid)
                 .AddAbilityRestoreSpellSlot(false, spellLevel: 1)
                 .AddAbilityRestoreSpontaneousSpell(false, spellLevel: 1)
+                .AddComponent<AbilityRestoreArcanistSpell>(c => { c.AnySpellLevel = false; c.SpellLevel = 1; })
                 .SetDisplayName(SoulPool4DisplayName)
                 .SetDescription(SoulPool4Description)
                 .SetIcon(icon)
@@ -369,6 +371,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             var abilityTrick4 = AbilityConfigurator.New(SoulPoolAbility4, SoulPoolAbility4Guid)
                 .AddAbilityRestoreSpellSlot(false, spellLevel: 2)
                 .AddAbilityRestoreSpontaneousSpell(false, spellLevel: 2)
+                .AddComponent<AbilityRestoreArcanistSpell>(c => { c.AnySpellLevel = false; c.SpellLevel = 2; })
                 .SetDisplayName(SoulPool4DisplayName)
                 .SetDescription(SoulPool4Description)
                 .SetIcon(icon)
@@ -381,6 +384,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             var abilityTrick5 = AbilityConfigurator.New(SoulPoolAbility5, SoulPoolAbility5Guid)
                 .AddAbilityRestoreSpellSlot(false, spellLevel: 3)
                 .AddAbilityRestoreSpontaneousSpell(false, spellLevel: 3)
+                .AddComponent<AbilityRestoreArcanistSpell>(c => { c.AnySpellLevel = false; c.SpellLevel = 3; })
                 .SetDisplayName(SoulPool4DisplayName)
                 .SetDescription(SoulPool4Description)
                 .SetIcon(icon)
@@ -393,6 +397,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             var abilityTrick6 = AbilityConfigurator.New(SoulPoolAbility6, SoulPoolAbility6Guid)
                 .AddAbilityRestoreSpellSlot(false, spellLevel: 4)
                 .AddAbilityRestoreSpontaneousSpell(false, spellLevel: 4)
+                .AddComponent<AbilityRestoreArcanistSpell>(c => { c.AnySpellLevel = false; c.SpellLevel = 4; })
                 .SetDisplayName(SoulPool4DisplayName)
                 .SetDescription(SoulPool4Description)
                 .SetIcon(icon)
@@ -405,6 +410,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             var abilityTrick7 = AbilityConfigurator.New(SoulPoolAbility7, SoulPoolAbility7Guid)
                 .AddAbilityRestoreSpellSlot(false, spellLevel: 5)
                 .AddAbilityRestoreSpontaneousSpell(false, spellLevel: 5)
+                .AddComponent<AbilityRestoreArcanistSpell>(c => { c.AnySpellLevel = false; c.SpellLevel = 5; })
                 .SetDisplayName(SoulPool4DisplayName)
                 .SetDescription(SoulPool4Description)
                 .SetIcon(icon)

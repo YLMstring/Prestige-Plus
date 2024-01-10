@@ -34,6 +34,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TabletopTweaks.Core.NewComponents;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -568,6 +569,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDescription(FreedomDescription)
               .SetIcon(icon)
               .AddFacts(new() { ability })
+              .AddPrerequisiteClassLevel(CharacterClassRefs.MonkClass.ToString(), 8)
               .AddToFeatureSelection(FeatureSelectionRefs.MonkKiPowerSelection.ToString())
               .Configure();
         }
@@ -603,6 +605,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
             var ability = AbilityConfigurator.New(OneTouchAblity, OneTouchAblityGuid)
                 .AllowTargeting(enemies: true)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                         .ApplyBuff(Buff2, ContextDuration.Fixed(1), toCaster: true)
                         .Add<OneTouchAttack>()
@@ -610,13 +613,14 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetDisplayName(OneTouchDisplayName)
                 .SetDescription(OneTouchDescription)
                 .SetIcon(icon)
-                .AddAbilityResourceLogic(isSpendResource: false, requiredResource: AbilityResourceRefs.KiPowerResource.ToString())
+                .AddComponent<AbilityRequirementHasResource>(c => { c.Amount = 1; c.Resource = AbilityResourceRefs.KiPowerResource.Reference.Get().ToReference<BlueprintAbilityResourceReference>(); })
                 .SetRange(AbilityRange.Weapon)
                 .SetType(AbilityType.Extraordinary)
                 .Configure();
 
             var ability2 = AbilityConfigurator.New(OneTouchAblity2, OneTouchAblity2Guid)
                 .AllowTargeting(enemies: true)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                         .ApplyBuff(Buff2, ContextDuration.Fixed(1), toCaster: true)
                         .Add<OneTouchAttack>(c => { c.ki = true; })
@@ -634,6 +638,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDescription(OneTouchDescription)
               .SetIcon(icon)
               .AddFacts(new() { ability, ability2 })
+              .AddPrerequisiteClassLevel(CharacterClassRefs.MonkClass.ToString(), 12)
               .AddToFeatureSelection(FeatureSelectionRefs.MonkKiPowerSelection.ToString())
               .Configure();
         }
