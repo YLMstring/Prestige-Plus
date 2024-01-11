@@ -75,9 +75,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddToLevelEntry(8, CacodaemonFeature())
                 .AddToLevelEntry(9, Sentinel.DivineBoon3Guid)
                 .AddToLevelEntry(10, GreaterOblivionFeat())
-                //.SetUIGroups(UIGroupBuilder.New()
-                    //.AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { CacodaemonGuid }))
-                ///.AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { SeekerArrowGuid, PhaseArrowGuid, HailArrowGuid, DeathArrowGuid }))
                 .SetDisplayName("")
                 .SetDescription(ArchetypeDescription)
                 .Configure();
@@ -175,7 +172,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         private static BlueprintFeature CreateEnergyDrain()
         {
-            var icon = AbilityRefs.BloodlineUndeadGraspOfTheDeadAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.PerniciousPoison.Reference.Get().Icon;
 
             BuffConfigurator.New(EnergyDrainBuff, EnergyDrainBuffGuid)
              .SetDisplayName(EnergyDrainDisplayName)
@@ -366,7 +363,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private static readonly string GreaterOblivionWarAbilityGuid = "{78E35558-420C-4B39-AD9C-EAAA0E91C9E2}";
         public static BlueprintFeature GreaterOblivionFeat()
         {
-            var icon = AbilityRefs.CultistSelfSacrifice.Reference.Get().Icon;
+            var icon = AbilityRefs.CircleOfDeath.Reference.Get().Icon;
 
             var abilitywar = AbilityConfigurator.New(GreaterOblivionWarAbility, GreaterOblivionWarAbilityGuid)
                 .CopyFrom(
@@ -458,7 +455,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         public static readonly string SoulPoolAbilityResGuid = "{DF8CAC1D-C121-41BD-AB7A-118DEE5FB340}";
         public static BlueprintFeature SoulPoolFeat()
         {
-            var icon = AbilityRefs.CoupDeGraceAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.HarmCast.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(SoulPoolAbilityRes, SoulPoolAbilityResGuid)
                 .SetMaxAmount(
