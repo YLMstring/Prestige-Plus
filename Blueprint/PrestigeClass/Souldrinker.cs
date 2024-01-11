@@ -63,7 +63,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, CreateProficiencies(), Sentinel.BonusFeatGuid, spellupgradeGuid)
+                .AddToLevelEntry(1, Sentinel.BonusFeatGuid, spellupgradeGuid, CreateProficiencies())
                 .AddToLevelEntry(2, CreateEnergyDrain(), SoulPoolFeat())
                 .AddToLevelEntry(3, Sentinel.DivineBoon1Guid)
                 .AddToLevelEntry(4, LesserOblivionFeat())
@@ -73,14 +73,13 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddToLevelEntry(8, CacodaemonFeature())
                 .AddToLevelEntry(9, Sentinel.DivineBoon3Guid)
                 .AddToLevelEntry(10)
-                .SetUIGroups(UIGroupBuilder.New()
-                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { CacodaemonGuid }))
+                //.SetUIGroups(UIGroupBuilder.New()
+                    //.AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { CacodaemonGuid }))
                 ///.AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { SeekerArrowGuid, PhaseArrowGuid, HailArrowGuid, DeathArrowGuid }))
-                .SetRanks(1)
-                .SetIsClassFeature(true)
                 .SetDisplayName("")
                 .SetDescription(ArchetypeDescription)
                 .Configure();
+
             var archetype =
               CharacterClassConfigurator.New(ArchetypeName, ArchetypeGuid)
                 .SetLocalizedName(ArchetypeDisplayName)

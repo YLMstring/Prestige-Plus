@@ -173,6 +173,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("dancer"), defaultValue: true, Helpers.CreateString("toggle-desc4", "Shadowdancer"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("drinker"), defaultValue: true, Helpers.CreateString("toggle-desc74", "Souldrinker"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("umbral"), defaultValue: true, Helpers.CreateString("toggle-desc17", "Umbral Agent"))
               .ShowVisualConnection())
           .AddToggle(
@@ -389,6 +392,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("emissary"))) { Emissary.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("menhir"))) { MenhirSavant.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("mm"))) { ManeuverMaster.Configure(); ManeuverMaster.FreedomFeat(); ManeuverMaster.OneTouchFeat(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("drinker"))) { Souldrinker.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
