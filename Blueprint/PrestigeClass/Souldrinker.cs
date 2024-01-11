@@ -383,8 +383,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                         .ApplyBuff(BuffRefs.FastHealing10.ToString(), ContextDuration.Fixed(10))
                         .Build())
-                .SetDisplayName(SoulPool2DisplayName)
-                .SetDescription(SoulPool2Description)
+                .SetDisplayName(SouldrinkerGreaterOblivionDisplayName)
+                .SetDescription(SouldrinkerGreaterOblivionDescription)
                 .SetIcon(icon)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
                 .SetRange(AbilityRange.Personal)
@@ -425,14 +425,14 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private static readonly string SoulPool4DisplayName = "SouldrinkerSoulPool4.Name";
         private static readonly string SoulPool4Description = "SouldrinkerSoulPool4.Description";
 
-        private const string SoulPoolAbility = "Souldrinker.SoulPoolAbility";
-        private static readonly string SoulPoolAbilityGuid = "{59ECF957-7C6A-44E5-B39D-717C37470266}";
-
         private const string SoulPoolAbility2 = "Souldrinker.SoulPoolAbility2";
         private static readonly string SoulPoolAbility2Guid = "{DD8F513C-D7E8-46B6-953A-85546ED54579}";
 
         private const string SoulPoolAbility3 = "Souldrinker.SoulPoolAbility3";
         private static readonly string SoulPoolAbility3Guid = "{AEE3D3B6-B89A-46C4-917B-CDE9A738E665}";
+
+        private const string SoulPoolAbility4 = "Souldrinker.SoulPoolAbility4";
+        private static readonly string SoulPoolAbility4Guid = "{B65986E4-4A3F-4F05-8078-FC9DD62AF8D1}";
 
         private const string SoulPoolAbilityRes = "CrimsonTemplarStyle.SoulPoolAbilityRes";
         public static readonly string SoulPoolAbilityResGuid = "{DF8CAC1D-C121-41BD-AB7A-118DEE5FB340}";
@@ -446,19 +446,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                         .IncreaseByLevel(classes: new string[] { ArchetypeGuid }))
                 .SetUseMax()
                 .SetMax(10)
-                .Configure();
-
-            var abilityTrick = AbilityConfigurator.New(SoulPoolAbility, SoulPoolAbilityGuid)
-                .AddAbilityEffectRunAction(ActionsBuilder.New()
-                        .HealEnergyDrain(Kingmaker.RuleSystem.Rules.EnergyDrainHealType.None, Kingmaker.RuleSystem.Rules.EnergyDrainHealType.One)
-                        .Build())
-                .SetDisplayName(SoulPool2DisplayName)
-                .SetDescription(SoulPool2Description)
-                .SetIcon(icon)
-                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
-                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
-                .SetRange(AbilityRange.Personal)
-                .SetType(AbilityType.Supernatural)
                 .Configure();
 
             var abilityTrick2 = AbilityConfigurator.New(SoulPoolAbility2, SoulPoolAbility2Guid)
@@ -476,7 +463,21 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
             var abilityTrick3 = AbilityConfigurator.New(SoulPoolAbility3, SoulPoolAbility3Guid)
                 .AddComponent<AbilityRestoreSoulSpell>(c => { c.RequiredResource = abilityresourse; })
+                .AddAbilityRestoreSpellSlot(true)
                 .SetActionBarAutoFillIgnored(true)
+                .SetDisplayName(SoulPool4DisplayName)
+                .SetDescription(SoulPool4Description)
+                .SetIcon(icon)
+                .SetIsFullRoundAction(true)
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Supernatural)
+                .Configure();
+
+            var abilityTrick4 = AbilityConfigurator.New(SoulPoolAbility4, SoulPoolAbility4Guid)
+                .AddComponent<AbilityRestoreSoulSpell2>(c => { c.RequiredResource = abilityresourse; })
+                .AddAbilityRestoreSpontaneousSpell(true)
+                .SetActionBarAutoFillIgnored(true)
+                .SetHidden(true)
                 .SetDisplayName(SoulPool4DisplayName)
                 .SetDescription(SoulPool4Description)
                 .SetIcon(icon)
@@ -489,7 +490,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                     .SetDisplayName(SoulPoolDisplayName)
                     .SetDescription(SoulPoolDescription)
                     .SetIcon(icon)
-                    .AddFacts(new() { abilityTrick, abilityTrick2, abilityTrick3 })
+                    .AddFacts(new() { abilityTrick2, abilityTrick3, abilityTrick4 })
                     .AddComponent<SoulPointStuff>(c => { c.Resource = abilityresourse; })
                     .AddAbilityResources(resource: abilityresourse, restoreAmount: false)
                     .Configure();

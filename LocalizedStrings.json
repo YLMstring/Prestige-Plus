@@ -7793,20 +7793,9 @@
     "zhCN": "用一个整轮动作，魂饮者可以恢复一个已消耗的法术位，但需消耗双倍于该法术位等级的灵魂点数。"
   },
   {
-    "Key": "SouldrinkerSoulPool2.Name",
-    "ProcessTemplates": false,
-    "enGB": "Protect Soul (temporary)",
-    "zhCN": "保护灵魂"
-  },
-  {
-    "Key": "SouldrinkerSoulPool2.Description",
-    "enGB": "A souldrinker can spend soul points to negate a negative level of hers, at a rate of 0 soul point per negative level negated.",
-    "zhCN": "魂饮者可以消耗灵魂点数来抵消自身同等数目的负向等级。"
-  },
-  {
     "Key": "SouldrinkerSoulPool3.Name",
     "ProcessTemplates": false,
-    "enGB": "Protect Soul (permanent)",
+    "enGB": "Protect Soul",
     "zhCN": "保护灵魂"
   },
   {
