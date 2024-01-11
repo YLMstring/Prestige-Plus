@@ -38,8 +38,8 @@
 - [Lamashtu (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Lamashtu): requires worshipping Lamashtu or Chaotic Evil
 - [Otolmens](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Otolmens): requires worshipping Otolmens (Expanded Content) or Lawful Neutral
 - [Arazni](https://aonprd.com/DeityDisplay.aspx?ItemName=Arazni): requires worshipping Urgathoa or Neutral Evil
-- [Charon](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Charon): requires worshipping Urgathoa or Neutral Evil
-- [Szuriel](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Szuriel): requires worshipping Urgathoa or Neutral Evil
+- [Charon](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Charon): requires worshipping Zon-Kuthon or Neutral Evil
+- [Szuriel](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Szuriel): requires worshipping Gyronna or Neutral Evil
 - More coming soon!
 ### [Exalted](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/exalted/) [Evangelist](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/evangelist/)
 - [Diverse Obedience](https://www.d20pfsrd.com/feats/general-feats/diverse-obedience/)
