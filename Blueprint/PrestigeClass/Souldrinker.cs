@@ -135,7 +135,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         }
 
         private const string Cacodaemon = "SouldrinkerCacodaemon";
-        private static readonly string CacodaemonGuid = "{DDFD1C42-FEA4-44A4-8DD1-7937291CFC98}";
+        public static readonly string CacodaemonGuid = "{DDFD1C42-FEA4-44A4-8DD1-7937291CFC98}";
 
         internal const string CacodaemonDisplayName = "SouldrinkerCacodaemon.Name";
         private const string CacodaemonDescription = "SouldrinkerCacodaemon.Description";
@@ -146,7 +146,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(CacodaemonDisplayName)
               .SetDescription(CacodaemonDescription)
               .SetIcon(icon)
-              .AddAbilityResources(resource: SoulPoolAbilityResGuid, restoreAmount: true)
               .Configure();
         }
 
