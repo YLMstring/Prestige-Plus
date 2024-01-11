@@ -263,8 +263,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(SouldrinkerLesserOblivionDisplayName)
               .SetDescription(SouldrinkerLesserOblivionDescription)
               .SetIcon(icon)
-              .AddBuffDescriptorImmunity(descriptor: SpellDescriptor.Disease)
-              .AddSpellImmunityToSpellDescriptor(descriptor: SpellDescriptor.Disease)
+              .AddBuffDescriptorImmunity(descriptor: SpellDescriptor.Petrified)
+              .AddSpellImmunityToSpellDescriptor(descriptor: SpellDescriptor.Petrified)
               .AddImmunityToAbilityScoreDamage(true, statTypes: new StatType[] { StatType.Constitution })
               .Configure();
 

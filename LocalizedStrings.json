@@ -7822,8 +7822,8 @@
   },
   {
     "Key": "SouldrinkerLesserOblivion.Description",
-    "enGB": "At 4th level, a souldrinker’s apocalyptic vow invests her with a specific ability, depending on which Horseman she made her vow to. Horseman of death: Immunity to disease effects and Constitution damage and drain. Horseman of war: Immunity to bleed effects and Strength damage and drain.",
-    "zhCN": "4级时，魂饮者的天启誓约赋予其一项特定能力，取决于她缔约的驭者是谁。死亡驭者：免疫疾病，体力伤害与流失。战争驭者：免疫流血，力量伤害与流失。"
+    "enGB": "At 4th level, a souldrinker’s apocalyptic vow invests her with a specific ability, depending on which Horseman she made her vow to. Horseman of death: Immunity to petrified effects and Constitution damage and drain. Horseman of war: Immunity to bleed effects and Strength damage and drain.",
+    "zhCN": "4级时，魂饮者的天启誓约赋予其一项特定能力，取决于她缔约的驭者是谁。死亡驭者：免疫石化，体力伤害与流失。战争驭者：免疫流血，力量伤害与流失。"
   },
   {
     "Key": "SouldrinkerOblivion.Name",
