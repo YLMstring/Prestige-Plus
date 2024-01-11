@@ -1,4 +1,4 @@
-# Prestige Plus v2.3.0 for WoTR 
+# Prestige Plus v2.4.0 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -38,8 +38,8 @@
 - [Lamashtu (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Lamashtu): requires worshipping Lamashtu or Chaotic Evil
 - [Otolmens](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Otolmens): requires worshipping Otolmens (Expanded Content) or Lawful Neutral
 - [Arazni](https://aonprd.com/DeityDisplay.aspx?ItemName=Arazni): requires worshipping Urgathoa or Neutral Evil
-- [Charon](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Charon): requires worshipping Urgathoa or Neutral Evil
-- [Szuriel](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Szuriel): requires worshipping Urgathoa or Neutral Evil
+- [Charon](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Charon): requires worshipping Zon-Kuthon or Neutral Evil
+- [Szuriel](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Szuriel): requires worshipping Gyronna or Neutral Evil
 - More coming soon!
 ### [Exalted](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/exalted/) [Evangelist](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/evangelist/)
 - [Diverse Obedience](https://www.d20pfsrd.com/feats/general-feats/diverse-obedience/)
@@ -53,18 +53,20 @@
 - It works for deities from other mods!
 ### [Agent of the Grave Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/a-b/agent-of-the-grave/)
 - The class has only 5 levels.
-- Agent of the Grave lose spell progression at level 1. I have no idea why my code can make you lose spell progression, but it just works.
+- Gain spell progression at level 2, 3, 4, 5.
 - Hide your alignment!
 #### Homebrew Options:  
 - At level 5 you can learn all necromancy spells (requires 13 int, full caster)
 - Or become a ghoul! (you're undead so incompatible with lichdom)
 - Or become a vampire! (requires blood drinker, incompatible with lichdom)
 ### [Anchorite of Dawn Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/a-b/anchorite/)
+- Gain spell progression at level 2-10.
 - Focused Sacred Weapon can't be turned off once chosen (it will become very complicated for me otherwise)
 - Credence gives access to [Dervish in TTT](https://github.com/Vek17/TabletopTweaks-Base).
 #### Homebrew Options:  
 - Blossoming Light: a mythic ability to use Solar Invocation for free!
 ### [Arcane Archer Class](https://www.d20pfsrd.com/classes/prestige-classes/core-rulebook/arcane-archer/)   
+- Gain spell progression at level 2-4, 6-8, 10.
 - A True Imbue Arrow is always with a quickened spell XD
 - And we have [Deadeye Devotee](https://aonprd.com/ArchetypeDisplay.aspx?FixedName=Arcane%20Archer%20Deadeye%20Devotee)!
 #### Homebrew Options:  
@@ -93,10 +95,12 @@
 - The Terrain Mastery abilities of Astral Plane and Abyss are actually useless in the module but they are prerequisites for their Terrain Dominance.
 - There isn't a GM available telling which creature is native to where, so ONLY ABYSS's favored enemy bonus works, for demons (which is written explicitly in the its description). And you guys probably won't focus on other creatures anyway lol
 ### [Hinterlander Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/hinterlander/)
+- Gain spell progression at level 2-10.
 - Master Archer gives access to [Deadeye’s Blessing in TTT](https://github.com/Vek17/TabletopTweaks-Base) and [Pinpoint Targeting in ExpandedContent](https://github.com/ka-dyn/ExpandedContent), but you'll need the respective mod active to select them. If you don't want these feats, my mod doesn't require anything, as the original feature will still be there.
 - Gain a new Favored Terrain at level 2, 6, and an upgrade at level 9, 10. No need to study for 24 hours!
 ### [Inheritor’s Crusader Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/i-m/inheritor-s-crusader/)
 - The class has only 3 levels.
+- Gain spell progression at level 1-3.
 #### Homebrew Options:  
 - Spells per day/Destroyer of Tyranny/Sword Against Injustice: Now warpriest-friendly!
 ### [Mammoth Rider](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/i-m/mammoth-rider/)
@@ -117,7 +121,11 @@
 - Summon Shadow: You can choose an animal companian instead and make it undead!
 - Shadow Jump: You can choose any feat from the dimentional feat chain instead! This requires [Microscopic Content Expansion mod](https://github.com/alterasc/MicroscopicContentExpansion/). If you don't want these feats, my mod doesn't require anything, as the original feature will still be there.
 - Extra Shadow Jump: This is a homebrew feat that gives you 4 extra uses of Shadow Jump ability and you can take it as soon as shadowdancer level 1!
+### [Souldrinker Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/souldrinker/)   
+- Gain spell progression at level 2-5, 7-10.
+- With good stuff from [this version](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/souldrinker-pzo9239/)
 ### [Umbral Agent Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/umbral-agent/)   
+- Gain spell progression at level 2-4, 6-8, 10.
 #### Homebrew Options:  
 - Endless Gaze: a mythic ability to use Unnerving Gaze for free!
 - Shadow Jump: You can choose any feat from the dimentional feat chain instead! This requires [Microscopic Content Expansion mod](https://github.com/alterasc/MicroscopicContentExpansion/). If you don't want these feats, my mod doesn't require anything, as the original feature will still be there.
@@ -154,7 +162,7 @@
 - [Eldritch Guardian](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Eldritch%20Guardian)
 - Share Training with your pets!
 - [High Guardian](https://www.d20pfsrd.com/classes/core-classes/fighter/archetypes/paizo-fighter-archetypes/high-guardian-fighter-archetype/)
-- [Lore Warden](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Lore%20Warden) (preserving pros of [this version](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Lore%20Warden%20(PFS%20Field%20Guide)))
+- [Lore Warden](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Lore%20Warden) (with good stuff from [this version](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Lore%20Warden%20(PFS%20Field%20Guide)))
 - [Warlord](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Warlord)
 #### Magus:  
 - [Spire Defender](https://www.d20pfsrd.com/classes/base-classes/magus/archetypes/paizo-magus-archetypes/spire-defender/)
@@ -165,6 +173,8 @@
 #### Monk:  
 - [Maneuver Master](https://www.d20pfsrd.com/classes/core-classes/monk/archetypes/paizo-monk-archetypes/maneuver-master/)
 - This is absolutely my favorite.
+- New Ki Power: [One Touch](https://www.aonprd.com/MonkUCKiPowers.aspx)
+- New Ki Power: [Freedom of Movement](https://www.aonprd.com/MonkUCKiPowers.aspx)
 #### Oracle:  
 - [Truth Seeker](https://www.d20pfsrd.com/classes/base-classes/oracle/archetypes/paizo-oracle-archetypes/seeker/)
 #### Paladin:  
