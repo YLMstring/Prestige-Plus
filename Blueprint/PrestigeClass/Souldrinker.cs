@@ -435,18 +435,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string SoulPoolAbility3 = "Souldrinker.SoulPoolAbility3";
         private static readonly string SoulPoolAbility3Guid = "{AEE3D3B6-B89A-46C4-917B-CDE9A738E665}";
 
-        private const string SoulPoolAbility4 = "Souldrinker.SoulPoolAbility4";
-        private static readonly string SoulPoolAbility4Guid = "{DCE3C93D-62B6-4442-A084-22E0CD7371CA}";
-
-        private const string SoulPoolAbility5 = "Souldrinker.SoulPoolAbility5";
-        private static readonly string SoulPoolAbility5Guid = "{A88667B9-15A8-4185-83E0-6DEEF49D0905}";
-
-        private const string SoulPoolAbility6 = "Souldrinker.SoulPoolAbility6";
-        private static readonly string SoulPoolAbility6Guid = "{ADB887B8-FC22-41EC-B9F8-EBC2A7EA4718}";
-
-        private const string SoulPoolAbility7 = "Souldrinker.SoulPoolAbility7";
-        private static readonly string SoulPoolAbility7Guid = "{A7825DD5-AAB1-4070-A61E-1F57E74D8AE1}";
-
         private const string SoulPoolAbilityRes = "CrimsonTemplarStyle.SoulPoolAbilityRes";
         public static readonly string SoulPoolAbilityResGuid = "{DF8CAC1D-C121-41BD-AB7A-118DEE5FB340}";
         public static BlueprintFeature SoulPoolFeat()
@@ -488,70 +476,11 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .Configure();
 
             var abilityTrick3 = AbilityConfigurator.New(SoulPoolAbility3, SoulPoolAbility3Guid)
-                .AddAbilityRestoreSpellSlot(false, spellLevel: 1)
-                .AddAbilityRestoreSpontaneousSpell(false, spellLevel: 1)
-                .AddComponent<AbilityRestoreArcanistSpell>(c => { c.AnySpellLevel = false; c.SpellLevel = 1; })
+                .AddComponent<AbilityRestoreSoulSpell>(c => { c.RequiredResource = abilityresourse; })
                 .SetActionBarAutoFillIgnored(true)
                 .SetDisplayName(SoulPool4DisplayName)
                 .SetDescription(SoulPool4Description)
                 .SetIcon(icon)
-                .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: abilityresourse)
-                .SetIsFullRoundAction(true)
-                .SetRange(AbilityRange.Personal)
-                .SetType(AbilityType.Supernatural)
-                .Configure();
-
-            var abilityTrick4 = AbilityConfigurator.New(SoulPoolAbility4, SoulPoolAbility4Guid)
-                .AddAbilityRestoreSpellSlot(false, spellLevel: 2)
-                .AddAbilityRestoreSpontaneousSpell(false, spellLevel: 2)
-                .AddComponent<AbilityRestoreArcanistSpell>(c => { c.AnySpellLevel = false; c.SpellLevel = 2; })
-                .SetActionBarAutoFillIgnored(true)
-                .SetDisplayName(SoulPool4DisplayName)
-                .SetDescription(SoulPool4Description)
-                .SetIcon(icon)
-                .AddAbilityResourceLogic(4, isSpendResource: true, requiredResource: abilityresourse)
-                .SetIsFullRoundAction(true)
-                .SetRange(AbilityRange.Personal)
-                .SetType(AbilityType.Supernatural)
-                .Configure();
-
-            var abilityTrick5 = AbilityConfigurator.New(SoulPoolAbility5, SoulPoolAbility5Guid)
-                .AddAbilityRestoreSpellSlot(false, spellLevel: 3)
-                .AddAbilityRestoreSpontaneousSpell(false, spellLevel: 3)
-                .AddComponent<AbilityRestoreArcanistSpell>(c => { c.AnySpellLevel = false; c.SpellLevel = 3; })
-                .SetActionBarAutoFillIgnored(true)
-                .SetDisplayName(SoulPool4DisplayName)
-                .SetDescription(SoulPool4Description)
-                .SetIcon(icon)
-                .AddAbilityResourceLogic(6, isSpendResource: true, requiredResource: abilityresourse)
-                .SetIsFullRoundAction(true)
-                .SetRange(AbilityRange.Personal)
-                .SetType(AbilityType.Supernatural)
-                .Configure();
-
-            var abilityTrick6 = AbilityConfigurator.New(SoulPoolAbility6, SoulPoolAbility6Guid)
-                .AddAbilityRestoreSpellSlot(false, spellLevel: 4)
-                .AddAbilityRestoreSpontaneousSpell(false, spellLevel: 4)
-                .AddComponent<AbilityRestoreArcanistSpell>(c => { c.AnySpellLevel = false; c.SpellLevel = 4; })
-                .SetActionBarAutoFillIgnored(true)
-                .SetDisplayName(SoulPool4DisplayName)
-                .SetDescription(SoulPool4Description)
-                .SetIcon(icon)
-                .AddAbilityResourceLogic(8, isSpendResource: true, requiredResource: abilityresourse)
-                .SetIsFullRoundAction(true)
-                .SetRange(AbilityRange.Personal)
-                .SetType(AbilityType.Supernatural)
-                .Configure();
-
-            var abilityTrick7 = AbilityConfigurator.New(SoulPoolAbility7, SoulPoolAbility7Guid)
-                .AddAbilityRestoreSpellSlot(false, spellLevel: 5)
-                .AddAbilityRestoreSpontaneousSpell(false, spellLevel: 5)
-                .AddComponent<AbilityRestoreArcanistSpell>(c => { c.AnySpellLevel = false; c.SpellLevel = 5; })
-                .SetActionBarAutoFillIgnored(true)
-                .SetDisplayName(SoulPool4DisplayName)
-                .SetDescription(SoulPool4Description)
-                .SetIcon(icon)
-                .AddAbilityResourceLogic(10, isSpendResource: true, requiredResource: abilityresourse)
                 .SetIsFullRoundAction(true)
                 .SetRange(AbilityRange.Personal)
                 .SetType(AbilityType.Supernatural)
@@ -561,7 +490,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                     .SetDisplayName(SoulPoolDisplayName)
                     .SetDescription(SoulPoolDescription)
                     .SetIcon(icon)
-                    .AddFacts(new() { abilityTrick, abilityTrick2, abilityTrick3, abilityTrick4, abilityTrick5, abilityTrick6, abilityTrick7 })
+                    .AddFacts(new() { abilityTrick, abilityTrick2, abilityTrick3 })
                     .AddComponent<SoulPointStuff>(c => { c.Resource = abilityresourse; })
                     .AddAbilityResources(resource: abilityresourse, restoreAmount: false)
                     .Configure();

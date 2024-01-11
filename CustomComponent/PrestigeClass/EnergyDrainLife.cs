@@ -28,7 +28,7 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
 
         void IRulebookHandler<RuleDealDamage>.OnEventDidTrigger(RuleDealDamage evt)
         {
-            if (base.Data.Modifier?.AppliedTo == null || Data.Modifier.ModValue < 1)
+            if (Data.Modifier?.AppliedTo == null || Data.Modifier?.ModValue < 1)
             {
                 base.Buff.Remove();
             }
