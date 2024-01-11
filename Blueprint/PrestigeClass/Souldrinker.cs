@@ -219,10 +219,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetSpellDescriptor(SpellDescriptor.NegativeLevel)
                 .SetType(AbilityType.Special)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-                    .DealDamageTemporaryNegativeLevels(ContextDuration.Fixed(1, DurationRate.Days), ContextDice.Value(DiceType.Zero, 0, ContextValues.Rank()), setFactAsReason: true)
                     .Add<EnergyDrainFalseLife>()
                     .Build())
-                .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }).WithCustomProgression((4, 1), (20, 2)))
                 .Configure();
 
             return FeatureConfigurator.New(EnergyDrain, EnergyDrainGuid)

@@ -2,6 +2,8 @@
 using Kingmaker.Blueprints;
 using Kingmaker.Designers;
 using Kingmaker.ElementsSystem;
+using Kingmaker.RuleSystem;
+using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.ContextData;
 using Kingmaker.Utility;
@@ -26,13 +28,16 @@ namespace PrestigePlus.CustomAction.ClassRelated
         public override void RunAction()
         {
             var caster = Context.MaybeCaster;
-            if (caster == null) { return; }
+            if (caster == null || Target.Unit == null) { return; }
             int rank = 1;
             if (caster.Progression.GetClassLevel(soul) >=5) { rank++; }
             bool isCrit = ContextData<ContextAttackData>.Current?.AttackRoll?.IsCriticalConfirmed ?? false;
             if (isCrit) { rank *= 2; }
+            RuleDrainEnergy rule = new(caster, Target.Unit, EnergyDrainType.Permanent, null, DiceFormula.Zero, rank);
+            rule = Rulebook.Trigger(rule);
+            rank = rule.Result;
             var round = new Rounds?(600.Rounds());
-            if (rank == 4)
+            if (rank >= 4)
             {
                 GameHelper.ApplyBuff(caster, Buff4, round);
             }
