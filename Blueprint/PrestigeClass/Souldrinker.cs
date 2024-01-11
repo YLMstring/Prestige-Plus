@@ -36,6 +36,8 @@ using Kingmaker.Blueprints.Classes.Spells;
 using BlueprintCore.Conditions.Builder.ContextEx;
 using PrestigePlus.Blueprint.GrappleFeat;
 using TabletopTweaks.Core.NewComponents;
+using Kingmaker.UnitLogic.Abilities;
+using Kingmaker.UnitLogic.Mechanics.Components;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -69,10 +71,10 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddToLevelEntry(4, LesserOblivionFeat())
                 .AddToLevelEntry(5, EnergyDrainGuid)
                 .AddToLevelEntry(6, Sentinel.DivineBoon2Guid)
-                .AddToLevelEntry(7)
+                .AddToLevelEntry(7, OblivionFeat())
                 .AddToLevelEntry(8, CacodaemonFeature())
                 .AddToLevelEntry(9, Sentinel.DivineBoon3Guid)
-                .AddToLevelEntry(10)
+                .AddToLevelEntry(10, GreaterOblivionFeat())
                 //.SetUIGroups(UIGroupBuilder.New()
                     //.AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { CacodaemonGuid }))
                 ///.AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { SeekerArrowGuid, PhaseArrowGuid, HailArrowGuid, DeathArrowGuid }))
@@ -246,7 +248,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private static readonly string LesserOblivionWarGuid = "{607229A5-E67A-4AB3-8854-848404013B00}";
         public static BlueprintFeature LesserOblivionFeat()
         {
-            var icon = FeatureRefs.BloodFeaster.Reference.Get().Icon;
+            var icon = FeatureRefs.BardLoreMaster.Reference.Get().Icon;
 
             var war = FeatureConfigurator.New(LesserOblivionWar, LesserOblivionWarGuid)
               .SetDisplayName(SouldrinkerLesserOblivionDisplayName)
@@ -269,6 +271,146 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             return FeatureConfigurator.New(LesserOblivion, LesserOblivionGuid)
               .SetDisplayName(SouldrinkerLesserOblivionDisplayName)
               .SetDescription(SouldrinkerLesserOblivionDescription)
+              .SetIcon(icon)
+              .AddFeatureIfHasFact(DeificObedience.CharonGuid, death)
+              .AddFeatureIfHasFact(DeificObedience.SzurielGuid, war)
+              .SetHideInCharacterSheetAndLevelUp()
+              .Configure();
+        }
+
+        private const string Oblivion = "Souldrinker.Oblivion";
+        private static readonly string OblivionGuid = "{7A9C7911-5407-4BE2-B0E8-70C967C10028}";
+
+        internal const string SouldrinkerOblivionDisplayName = "SouldrinkerOblivion.Name";
+        private const string SouldrinkerOblivionDescription = "SouldrinkerOblivion.Description";
+
+        private const string OblivionDeath = "Souldrinker.OblivionDeath";
+        private static readonly string OblivionDeathGuid = "{F0C20980-69A1-480A-A8CC-185B9F89C5DC}";
+
+        private const string OblivionWar = "Souldrinker.OblivionWar";
+        private static readonly string OblivionWarGuid = "{7939CDAC-6B30-44CE-96AF-1114A47D1637}";
+
+        private const string OblivionDeathAbility = "Souldrinker.OblivionDeathAbility";
+        private static readonly string OblivionDeathAbilityGuid = "{8B47FE08-A290-41D0-ABDE-80B4CD5CC971}";
+
+        private const string OblivionWarAbility = "Souldrinker.OblivionWarAbility";
+        private static readonly string OblivionWarAbilityGuid = "{B491C238-9AB0-4DCE-A00D-410B2DDC1729}";
+        public static BlueprintFeature OblivionFeat()
+        {
+            var icon = AbilityRefs.VampiricTouchCast.Reference.Get().Icon;
+
+            var abilitywar = AbilityConfigurator.New(OblivionWarAbility, OblivionWarAbilityGuid)
+                .CopyFrom(
+                AbilityRefs.Rage,
+                typeof(AbilityEffectRunAction),
+                typeof(AbilityTargetsAround),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 3)
+                .AddAbilityResourceLogic(1, isSpendResource: true, requiredResource: SoulPoolAbilityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var war = FeatureConfigurator.New(OblivionWar, OblivionWarGuid)
+              .SetDisplayName(SouldrinkerOblivionDisplayName)
+              .SetDescription(SouldrinkerOblivionDescription)
+              .SetIcon(icon)
+              .AddFacts(new() { abilitywar })
+              .Configure();
+
+            var abilitydeath = AbilityConfigurator.New(OblivionDeathAbility, OblivionDeathAbilityGuid)
+                .CopyFrom(
+                AbilityRefs.VampiricTouchCast,
+                typeof(AbilityEffectRunAction),
+                typeof(AbilityEffectStickyTouch),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 3)
+                .AddAbilityResourceLogic(1, isSpendResource: true, requiredResource: SoulPoolAbilityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var death = FeatureConfigurator.New(OblivionDeath, OblivionDeathGuid)
+              .SetDisplayName(SouldrinkerOblivionDisplayName)
+              .SetDescription(SouldrinkerOblivionDescription)
+              .SetIcon(icon)
+              .AddFacts(new() { abilitydeath })
+              .Configure();
+
+            return FeatureConfigurator.New(Oblivion, OblivionGuid)
+              .SetDisplayName(SouldrinkerOblivionDisplayName)
+              .SetDescription(SouldrinkerOblivionDescription)
+              .SetIcon(icon)
+              .AddFeatureIfHasFact(DeificObedience.CharonGuid, death)
+              .AddFeatureIfHasFact(DeificObedience.SzurielGuid, war)
+              .SetHideInCharacterSheetAndLevelUp()
+              .Configure();
+        }
+
+        private const string GreaterOblivion = "Souldrinker.GreaterOblivion";
+        private static readonly string GreaterOblivionGuid = "{495DABC8-34CE-430C-92B2-1ED97CF6FC92}";
+
+        internal const string SouldrinkerGreaterOblivionDisplayName = "SouldrinkerGreaterOblivion.Name";
+        private const string SouldrinkerGreaterOblivionDescription = "SouldrinkerGreaterOblivion.Description";
+
+        private const string GreaterOblivionDeath = "Souldrinker.GreaterOblivionDeath";
+        private static readonly string GreaterOblivionDeathGuid = "{D94C816E-0EA8-4098-BFD7-21F254685F01}";
+
+        private const string GreaterOblivionWar = "Souldrinker.GreaterOblivionWar";
+        private static readonly string GreaterOblivionWarGuid = "{D3E28EE1-ED74-489C-AB71-D6B12743A633}";
+
+        private const string GreaterOblivionDeathAbility = "Souldrinker.GreaterOblivionDeathAbility";
+        private static readonly string GreaterOblivionDeathAbilityGuid = "{3B26D251-179C-4E08-95FE-BC96CDFE5D50}";
+
+        private const string GreaterOblivionWarAbility = "Souldrinker.GreaterOblivionWarAbility";
+        private static readonly string GreaterOblivionWarAbilityGuid = "{78E35558-420C-4B39-AD9C-EAAA0E91C9E2}";
+        public static BlueprintFeature GreaterOblivionFeat()
+        {
+            var icon = AbilityRefs.CultistSelfSacrifice.Reference.Get().Icon;
+
+            var abilitywar = AbilityConfigurator.New(GreaterOblivionWarAbility, GreaterOblivionWarAbilityGuid)
+                .CopyFrom(
+                AbilityRefs.BladeBarrier,
+                typeof(AbilityEffectRunAction),
+                typeof(ContextRankConfig),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 6)
+                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: SoulPoolAbilityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var war = FeatureConfigurator.New(GreaterOblivionWar, GreaterOblivionWarGuid)
+              .SetDisplayName(SouldrinkerGreaterOblivionDisplayName)
+              .SetDescription(SouldrinkerGreaterOblivionDescription)
+              .SetIcon(icon)
+              .AddFacts(new() { abilitywar })
+              .Configure();
+
+            var abilitydeath = AbilityConfigurator.New(GreaterOblivionDeathAbility, GreaterOblivionDeathAbilityGuid)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .ApplyBuff(BuffRefs.FastHealing10.ToString(), ContextDuration.Fixed(10))
+                        .Build())
+                .SetDisplayName(SoulPool2DisplayName)
+                .SetDescription(SoulPool2Description)
+                .SetIcon(icon)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .SetRange(AbilityRange.Personal)
+                .AddPretendSpellLevel(spellLevel: 6)
+                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: SoulPoolAbilityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var death = FeatureConfigurator.New(GreaterOblivionDeath, GreaterOblivionDeathGuid)
+              .SetDisplayName(SouldrinkerGreaterOblivionDisplayName)
+              .SetDescription(SouldrinkerGreaterOblivionDescription)
+              .SetIcon(icon)
+              .AddFacts(new() { abilitydeath })
+              .Configure();
+
+            return FeatureConfigurator.New(GreaterOblivion, GreaterOblivionGuid)
+              .SetDisplayName(SouldrinkerGreaterOblivionDisplayName)
+              .SetDescription(SouldrinkerGreaterOblivionDescription)
               .SetIcon(icon)
               .AddFeatureIfHasFact(DeificObedience.CharonGuid, death)
               .AddFeatureIfHasFact(DeificObedience.SzurielGuid, war)

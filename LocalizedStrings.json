@@ -7844,8 +7844,8 @@
   },
   {
     "Key": "SouldrinkerGreaterOblivion.Description",
-    "enGB": "At 10th level, the souldrinker gains more power from her apocalyptic vow. The spell-like abilities listed here are usable at will but cost 3 soul points per use. Horseman of death: Gain fast healing 10 for 10 rounds. Horseman of war: blade barrier.",
-    "zhCN": "10级时，魂饮者从天启誓约中获得了更多力量，可以任意使用更强的类法术能力，不过需要3点灵魂点数。死亡驭者：获得快速回复10，持续10轮。战争驭者：剑刃障壁。"
+    "enGB": "At 10th level, the souldrinker gains more power from her apocalyptic vow. The spell-like abilities listed here are usable at will but cost 3 soul points per use. Horseman of death: Gain fast healing 10 for 10 rounds. This counts as a 6th-level spell. Horseman of war: blade barrier.",
+    "zhCN": "10级时，魂饮者从天启誓约中获得了更多力量，可以任意使用更强的类法术能力，不过需要3点灵魂点数。死亡驭者：获得快速回复10，持续10轮，视为6级法术。战争驭者：剑刃障壁。"
   },
   {
     "Key": "ManeuverMasterOneTouch.Name",
