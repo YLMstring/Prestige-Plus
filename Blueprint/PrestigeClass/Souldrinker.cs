@@ -178,7 +178,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
              .SetDisplayName(EnergyDrainDisplayName)
              .SetDescription(EnergyDrainDescription)
              .SetIcon(icon)
-             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
              .AddComponent<EnergyDrainLife>(c => { c.value = 5; })
              .Configure();
 
@@ -186,7 +185,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
              .SetDisplayName(EnergyDrainDisplayName)
              .SetDescription(EnergyDrainDescription)
              .SetIcon(icon)
-             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
              .AddComponent<EnergyDrainLife>(c => { c.value = 10; })
              .Configure();
 
@@ -194,7 +192,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
              .SetDisplayName(EnergyDrainDisplayName)
              .SetDescription(EnergyDrainDescription)
              .SetIcon(icon)
-             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
              .AddComponent<EnergyDrainLife>(c => { c.value = 15; })
              .Configure();
 
@@ -202,7 +199,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
              .SetDisplayName(EnergyDrainDisplayName)
              .SetDescription(EnergyDrainDescription)
              .SetIcon(icon)
-             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
              .AddComponent<EnergyDrainLife>(c => { c.value = 20; })
              .Configure();
 
@@ -495,6 +491,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddAbilityRestoreSpellSlot(false, spellLevel: 1)
                 .AddAbilityRestoreSpontaneousSpell(false, spellLevel: 1)
                 .AddComponent<AbilityRestoreArcanistSpell>(c => { c.AnySpellLevel = false; c.SpellLevel = 1; })
+                .SetActionBarAutoFillIgnored(true)
                 .SetDisplayName(SoulPool4DisplayName)
                 .SetDescription(SoulPool4Description)
                 .SetIcon(icon)
@@ -508,6 +505,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddAbilityRestoreSpellSlot(false, spellLevel: 2)
                 .AddAbilityRestoreSpontaneousSpell(false, spellLevel: 2)
                 .AddComponent<AbilityRestoreArcanistSpell>(c => { c.AnySpellLevel = false; c.SpellLevel = 2; })
+                .SetActionBarAutoFillIgnored(true)
                 .SetDisplayName(SoulPool4DisplayName)
                 .SetDescription(SoulPool4Description)
                 .SetIcon(icon)
@@ -521,6 +519,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddAbilityRestoreSpellSlot(false, spellLevel: 3)
                 .AddAbilityRestoreSpontaneousSpell(false, spellLevel: 3)
                 .AddComponent<AbilityRestoreArcanistSpell>(c => { c.AnySpellLevel = false; c.SpellLevel = 3; })
+                .SetActionBarAutoFillIgnored(true)
                 .SetDisplayName(SoulPool4DisplayName)
                 .SetDescription(SoulPool4Description)
                 .SetIcon(icon)
@@ -534,6 +533,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddAbilityRestoreSpellSlot(false, spellLevel: 4)
                 .AddAbilityRestoreSpontaneousSpell(false, spellLevel: 4)
                 .AddComponent<AbilityRestoreArcanistSpell>(c => { c.AnySpellLevel = false; c.SpellLevel = 4; })
+                .SetActionBarAutoFillIgnored(true)
                 .SetDisplayName(SoulPool4DisplayName)
                 .SetDescription(SoulPool4Description)
                 .SetIcon(icon)
@@ -547,6 +547,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddAbilityRestoreSpellSlot(false, spellLevel: 5)
                 .AddAbilityRestoreSpontaneousSpell(false, spellLevel: 5)
                 .AddComponent<AbilityRestoreArcanistSpell>(c => { c.AnySpellLevel = false; c.SpellLevel = 5; })
+                .SetActionBarAutoFillIgnored(true)
                 .SetDisplayName(SoulPool4DisplayName)
                 .SetDescription(SoulPool4Description)
                 .SetIcon(icon)

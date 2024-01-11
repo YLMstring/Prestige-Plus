@@ -1,5 +1,6 @@
 ﻿using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.JsonSystem;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
@@ -17,6 +18,7 @@ using System.Threading.Tasks;
 
 namespace PrestigePlus.CustomComponent.PrestigeClass
 {
+    [TypeId("{6A9DFE50-27EE-473A-A0AB-7533DDB6CDAB}")]
     internal class EnergyDrainLife : UnitBuffComponentDelegate<EnergyDrainLife.ComponentData>, ITargetRulebookHandler<RuleDealDamage>, IRulebookHandler<RuleDealDamage>, ISubscriber, ITargetRulebookSubscriber, IUnitBuffHandler, IGlobalSubscriber
     {
         void IRulebookHandler<RuleDealDamage>.OnEventAboutToTrigger(RuleDealDamage evt)
@@ -26,7 +28,7 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
 
         void IRulebookHandler<RuleDealDamage>.OnEventDidTrigger(RuleDealDamage evt)
         {
-            if (base.Data.Modifier.AppliedTo == null)
+            if (base.Data.Modifier?.AppliedTo == null || Data.Modifier.ModValue < 1)
             {
                 base.Buff.Remove();
             }
@@ -51,7 +53,7 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
         void IUnitBuffHandler.HandleBuffDidAdded(Buff buff)
         {
             if (buff.Owner != base.Owner || buff.Blueprint == Context.AssociatedBlueprint) return;
-            var point = 0;
+            int point;
             if (buff.Blueprint == Buff1.Get())
             {
                 point = 5;
