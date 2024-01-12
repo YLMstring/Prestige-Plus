@@ -211,21 +211,9 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         internal const string RuggedSteedDisplayName = "MammothRiderRuggedSteed.Name";
         private const string RuggedSteedDescription = "MammothRiderRuggedSteed.Description";
-
-        private const string GiganticSteed4 = "MammothRider.GiganticSteed4";
-        private static readonly string GiganticSteed4Guid = "{FA43A17B-68CD-4EAC-BB07-A288D1085A00}";
         public static BlueprintFeature RuggedSteedFeat()
         {
             var icon = AbilityRefs.Barkskin.Reference.Get().Icon;
-
-            var feat4 = FeatureConfigurator.New(GiganticSteed4, GiganticSteed4Guid)
-              .SetDisplayName(RuggedSteedDisplayName)
-              .SetDescription(RuggedSteedDescription)
-              .SetIcon(icon)
-              //.AddACBonusAgainstFactOwner(bonus: 1, descriptor: Kingmaker.Enums.ModifierDescriptor.NaturalArmor, noFact: true)
-              .AddContextStatBonus(StatType.AC, value: 1, descriptor: ModifierDescriptor.NaturalArmor)
-              .SetRanks(10)
-              .Configure();
 
             return FeatureConfigurator.New(RuggedSteed, RuggedSteedGuid)
               .SetDisplayName(RuggedSteedDisplayName)
