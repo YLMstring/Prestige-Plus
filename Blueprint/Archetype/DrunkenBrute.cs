@@ -41,7 +41,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetLocalizedName(ArchetypeDisplayName)
               .SetLocalizedDescription(ArchetypeDescription)
               .SetRemoveFeaturesEntry(1, FeatureRefs.FastMovement.ToString())
-              .AddToAddFeatures(1, LiquidCourageFeat())
+              .AddToAddFeatures(1, CreateRagingDrunk())
               .Configure();
         }
 
@@ -290,6 +290,8 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddBuffExtraEffects(BuffRefs.BloodragerStandartRageBuff.ToString(), extraEffectBuff: Buff2)
               .AddBuffExtraEffects(BuffRefs.StandartFocusedRageBuff.ToString(), extraEffectBuff: Buff2)
               .AddBuffExtraEffects(BuffRefs.StandartRageBuff.ToString(), extraEffectBuff: Buff2)
+              .AddToIsPrerequisiteFor(RoaringDrunkGuid)
+              .AddToIsPrerequisiteFor(LiquidCourageGuid)
               .Configure();
         }
     }

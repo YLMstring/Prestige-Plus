@@ -191,6 +191,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("skymagic"), defaultValue: true, Helpers.CreateString("toggle-desc65", "Aeromancer"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("drunk"), defaultValue: true, Helpers.CreateString("toggle-desc76", "Drunken Brute"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("juggle"), defaultValue: true, Helpers.CreateString("toggle-desc64", "Juggler"))
               .ShowVisualConnection())
           .AddToggle(
@@ -397,6 +400,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("mm"))) { ManeuverMaster.Configure(); ManeuverMaster.FreedomFeat(); ManeuverMaster.OneTouchFeat(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("drinker"))) { Souldrinker.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("cardplayer"))) { Cartomancer.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("drunk"))) { DrunkenBrute.Configure(); DrunkenBrute.AtavismFeat(); DrunkenBrute.GreaterAtavismFeat(); DrunkenBrute.CreateGlare(); DrunkenBrute.RoaringDrunkFeat(); DrunkenBrute.LiquidCourageFeat(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)

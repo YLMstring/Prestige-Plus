@@ -7868,6 +7868,160 @@
     "Key": "ManeuverMasterFreedom.Description",
     "enGB": "A monk with this ability can spend 1 ki point as a swift action to gain the effects of freedom of movement for 1 round.",
     "zhCN": "习得此绝学的武僧获得如同行动自如法术的好处，持续1轮。使用该能力是一个迅捷动作，需消耗1点气。"
+  },
+  {
+    "Key": "PlainsDruid.Name",
+    "ProcessTemplates": false,
+    "enGB": "Plains Druid",
+    "zhCN": "平原德鲁伊"
+  },
+  {
+    "Key": "PlainsDruid.Description",
+    "enGB": "Out upon the wide and rolling prairies and savannahs, plains druids stand guard over the grasslands. These druids range far and wide, watching over nomadic tribes and wandering herds and preserving the sometimes fragile ecosystem of the wide open spaces.",
+    "zhCN": "来自宽阔的草原和荒野，平原德鲁伊们行走在绿地之上，看顾着广大粗犷的原野、游牧聚落、流浪的兽群，并致力维持这脆弱而庞大的生态系统。"
+  },
+  {
+    "Key": "PlainsDruidCannyCharger.Name",
+    "ProcessTemplates": false,
+    "enGB": "Canny Charger",
+    "zhCN": "审慎突袭"
+  },
+  {
+    "Key": "PlainsDruidCannyCharger.Description",
+    "enGB": "At 9th level, a plains druid can charge through difficult terrain, allies and obstacles when not mounted, making turns if neccessary. She also gains a +4 dodge bonus to AC against enemy charge attacks.",
+    "zhCN": "9级时，平原德鲁伊在并未骑乘时，可以冲锋穿过友军，小障碍物或困难地形，在必要时转向。此外，在面对敌人冲锋攻击时平原德鲁伊得到+4的闪避加值。"
+  },
+  {
+    "Key": "FungalPilgrim.Name",
+    "ProcessTemplates": false,
+    "enGB": "Fungal Pilgrim",
+    "zhCN": "真菌朝圣者"
+  },
+  {
+    "Key": "FungalPilgrim.Description",
+    "enGB": "Druids often work to preserve the natural world, but some seek to further emulate it. Fungal pilgrims are druids seeking transformation into a more plantlike existence. These unique adherents of nature’s creed see fungi as the means to such ends, as many fungi—particularly those of the Deeplands— naturally work their way into the bodies of living creatures.",
+    "zhCN": "德鲁伊们通常致力于维护自然世界，但有些人尝试更进一步的模仿它。真菌朝圣者是寻求着转变为更为接近于植物般存在的德鲁伊。这些独特的自然信条拥护者将真菌视为达成这一目的的手段，因为许多真菌，尤其是黑暗之地的那些，可以自然地融入生物的身体。"
+  },
+  {
+    "Key": "FungalPilgrimFungalCompanion.Name",
+    "ProcessTemplates": false,
+    "enGB": "Fungal Companion",
+    "zhCN": "真菌伙伴"
+  },
+  {
+    "Key": "FungalPilgrimFungalCompanion.Description",
+    "enGB": "At 4th level, a fungal pilgrim initiates a transformation in her companion. The animal companion gains the fungal creature template, but does not gain the create spawn, poison spore cloud, and poisonous blood special attacks. (Plant creature type and immunities, speed -10, Str +4, Dex –2, Con +4, extra natural armor +2)",
+    "zhCN": "4级起，真菌朝圣者的动物伙伴开始了转变。动物伙伴获得真菌生物模板，但不会获得创造衍体、孢子毒云、剧毒血液等特殊能力。（植物类别及其免疫，速度-10，力量+4，敏捷-2，体质+4，天生护甲额外+2）"
+  },
+  {
+    "Key": "FungalPilgrimTransformation.Name",
+    "ProcessTemplates": false,
+    "enGB": "Mycological Transformation",
+    "zhCN": "菌类转变"
+  },
+  {
+    "Key": "FungalPilgrimTransformation.Description",
+    "enGB": "Fungal spores become fully integrated into the druid’s body, inside and out. At 15th level, she gains all immunities granted by the plant creature type.",
+    "zhCN": "真菌孢子从里到外完全地融入了德鲁伊的身体。15级起，她获得所有植物具备的免疫特性。"
+  },
+  {
+    "Key": "Cartomancer.Name",
+    "ProcessTemplates": false,
+    "enGB": "Cartomancer",
+    "zhCN": "卡牌占卜师"
+  },
+  {
+    "Key": "Cartomancer.Description",
+    "enGB": "More than mere playing cards, harrow decks allow individuals to communicate with powers beyond mortal ken. A witch who serves the spirits of the harrow in exchange for mystical power is known as a cartomancer. Rather than connecting with a familiar, a cartomancer communes with her patron through a consecrated harrow deck.",
+    "zhCN": "哈罗牌不只可以用来玩，还能让人们通过它沟通其背后超凡的力量。为哈罗牌之灵服务以交换其神秘力量的巫师被称为卡牌占卜师。代替链接魔宠，卡牌占卜师和其庇护主通过一副祝福过的哈罗牌来进行通灵。"
+  },
+  {
+    "Key": "CartomancerDeadlyDealer.Name",
+    "ProcessTemplates": false,
+    "enGB": "Deadly Dealer",
+    "zhCN": "致命发牌"
+  },
+  {
+    "Key": "CartomancerDeadlyDealer.Description",
+    "enGB": "At 3rd level, the cartomancer can deliver a touch spell with a thrown card. She must use the Arcane Strike feat when throwing a card in this way, except the attack is resolved as a ranged touch attack and the card deals no damage of its own.",
+    "zhCN": "3级起，卡牌占卜师可以通过掷出卡牌传递接触法术。以此法掷出卡牌必须使用奥术打击专长，但该攻击按照远程接触攻击结算，且卡牌本身不造成伤害。"
+  },
+  {
+    "Key": "DrunkenBruteGlare.Name",
+    "ProcessTemplates": false,
+    "enGB": "Intimidating Glare",
+    "zhCN": "可怖怒视"
+  },
+  {
+    "Key": "DrunkenBruteGlare.Description",
+    "enGB": "The barbarian can make an Intimidate check against one adjacent foe as a move action. If the barbarian successfully demoralizes her opponent, the foe is shaken for 1d4 rounds + 1 round for every 5 points by which the barbarian’s check exceeds the DC.",
+    "zhCN": "野蛮人能以移动动作对一名邻接敌人进行一次威吓技能检定。如果他成功挫败对方士气，则敌人将战栗1d4轮，野蛮人的检定结果每超过威吓DC5点额外增加1轮。"
+  },
+  {
+    "Key": "DrunkenBruteAtavism.Name",
+    "ProcessTemplates": false,
+    "enGB": "Atavism",
+    "zhCN": "返祖"
+  },
+  {
+    "Key": "DrunkenBruteAtavism.Description",
+    "enGB": "The barbarian gains ferocity, no longer falls unconscious when reduced to a negative hit point total, though he can take only a single standard or move action while at negative hit points.",
+    "zhCN": "野蛮人获得凶暴能力，不再会在生命值降至负值时陷入昏迷，不过他只能在生命值为负值时进行单个标准动作或移动动作。"
+  },
+  {
+    "Key": "DrunkenBruteGreaterAtavism.Name",
+    "ProcessTemplates": false,
+    "enGB": "Greater Atavism",
+    "zhCN": "高等返祖"
+  },
+  {
+    "Key": "DrunkenBruteGreaterAtavism.Description",
+    "enGB": "The barbarian gains trample.",
+    "zhCN": "野蛮人获得践踏能力。"
+  },
+  {
+    "Key": "DrunkenBrute.Name",
+    "ProcessTemplates": false,
+    "enGB": "Drunken Brute",
+    "zhCN": "醉蛮"
+  },
+  {
+    "Key": "DrunkenBrute.Description",
+    "enGB": "Barbarians are known for their ability to consume potent drink, but drunken brutes turn drinking into a combat tactic, using the potent liquor to fuel their rage and grant them additional powers.",
+    "zhCN": "野蛮人对烈酒的消费能力是众所周知的，但醉蛮把喝酒变成战术，使用烈酒来催动其愤怒，给予他们更多的力量。"
+  },
+  {
+    "Key": "DrunkenBruteRagingDrunk.Name",
+    "ProcessTemplates": false,
+    "enGB": "Raging Drunk",
+    "zhCN": "醉怒狂饮"
+  },
+  {
+    "Key": "DrunkenBruteRagingDrunk.Description",
+    "enGB": "While raging, the drunken brute can drink a potion as a swift action, or a tankard of ale or similar quantity of alcohol as a move action that does not provoke attacks of opportunity. A potion has its normal effect, while an alcoholic drink allows the barbarian to maintain her rage that round without expending a round of rage for the day, which makes her nauseated for 1 minute when her rage expires. Tireless rage does not negate this nauseated condition but the internal fortitude rage power does.",
+    "zhCN": "狂暴时，醉蛮可以用一个迅捷动作喝一瓶药水，也可以用一个移动动作喝一大杯酒，不引发借机攻击。药水正常生效，而喝酒可以使他这一轮的狂暴不算入今天的狂暴轮数，但这会让她在狂暴结束时反胃1分钟。不倦狂暴不能忽略该反胃效果，但是狂暴之力-内在强韧则可以。"
+  },
+  {
+    "Key": "DrunkenBruteRoaringDrunk.Name",
+    "ProcessTemplates": false,
+    "enGB": "Roaring Drunk",
+    "zhCN": "醉怒狂吼"
+  },
+  {
+    "Key": "DrunkenBruteRoaringDrunk.Description",
+    "enGB": "While raging, the barbarian gains a +1 morale bonus per four barbarian levels on Intimidate checks and to the save DC of any fear effects she creates.",
+    "zhCN": "狂暴时，野蛮人获得威吓检定以及她创造的任何恐惧效果DC的士气加值，每4野蛮人等级增加1点。"
+  },
+  {
+    "Key": "DrunkenBruteLiquidCourage.Name",
+    "ProcessTemplates": false,
+    "enGB": "Liquid Courage",
+    "zhCN": "勇气之水"
+  },
+  {
+    "Key": "DrunkenBruteLiquidCourage.Description",
+    "enGB": "While raging, the barbarian increases her morale bonus on saving throws against mind-affecting effects by +1 per four barbarian levels.",
+    "zhCN": "狂暴时，野蛮人获得针对影响心智效果的豁免士气加值，每4野蛮人等级增加1点。"
   }
 
 ]
