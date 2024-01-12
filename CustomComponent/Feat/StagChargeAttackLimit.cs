@@ -11,6 +11,7 @@ using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
 using Kingmaker.UnitLogic;
 using BlueprintCore.Blueprints.References;
+using PrestigePlus.Blueprint.Archetype;
 
 namespace PrestigePlus.CustomComponent.Feat
 {
@@ -23,7 +24,7 @@ namespace PrestigePlus.CustomComponent.Feat
 
         void IRulebookHandler<RuleCalculateAttacksCount>.OnEventDidTrigger(RuleCalculateAttacksCount evt)
         {
-            if (!Owner.HasFact(ChargeBuff)) { return; }
+            if (!Owner.HasFact(ChargeBuff) || Owner.HasFact(CannyCharger)) { return; }
             RuleCalculateAttacksCount.AttacksCount primaryHand = evt.Result.PrimaryHand;
             RuleCalculateAttacksCount.AttacksCount secondaryHand = evt.Result.SecondaryHand;
             primaryHand.PenalizedAttacks = 0;
@@ -34,5 +35,6 @@ namespace PrestigePlus.CustomComponent.Feat
             secondaryHand.AdditionalAttacks = 0;
         }
         private static BlueprintBuffReference ChargeBuff = BlueprintTool.GetRef<BlueprintBuffReference>(BuffRefs.ChargeBuff.ToString());
+        private static BlueprintFeatureReference CannyCharger = BlueprintTool.GetRef<BlueprintFeatureReference>(PlainsDruid.CannyChargerGuid);
     }
 }

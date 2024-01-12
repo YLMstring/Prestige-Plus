@@ -18,6 +18,9 @@ using System.Text;
 using System.Threading.Tasks;
 using BlueprintCore.Actions.Builder.ContextEx;
 using Kingmaker.EntitySystem.Stats;
+using Kingmaker.UnitLogic.Abilities;
+using PrestigePlus.Blueprint.MythicGrapple;
+using PrestigePlus.Feats;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -53,53 +56,21 @@ namespace PrestigePlus.Blueprint.Archetype
         }
 
         private const string CannyCharger = "PlainsDruid.CannyCharger";
-        public static readonly string CannyChargerGuid = "{09CBFD91-6583-464B-AE88-F93120A1D22F}";
-
-        private const string CannyChargerAblity = "PlainsDruid.UseCannyCharger";
-        private static readonly string CannyChargerAblityGuid = "{40779FD4-19D2-45C3-A018-D5BFD4C2AE86}";
-
-        private const string CannyChargerBuff2 = "PlainsDruid.CannyChargerBuff2";
-        private static readonly string CannyChargerBuff2Guid = "{85734B85-EF44-4325-B28C-B782FF853C4A}";
+        public static readonly string CannyChargerGuid = "{F553A4FD-51AC-428B-86FF-7A8CB0A034BE}";
 
         internal const string CannyChargerDisplayName = "PlainsDruidCannyCharger.Name";
         private const string CannyChargerDescription = "PlainsDruidCannyCharger.Description";
-
-        private const string CannyChargerAblityRes = "PlainsDruid.CannyChargerRes";
-        public static readonly string CannyChargerAblityResGuid = "{CB37DC09-3E57-4591-986A-8C7D7A4BD466}";
         public static BlueprintFeature CannyChargerFeat()
         {
-            var icon = FeatureRefs.Geomancy.Reference.Get().Icon;
-
-            var abilityresourse = AbilityResourceConfigurator.New(CannyChargerAblityRes, CannyChargerAblityResGuid)
-                .SetMaxAmount(ResourceAmountBuilder.New(3).IncreaseByStat(StatType.Wisdom))
-                .Configure();
-
-            var Buff2 = BuffConfigurator.New(CannyChargerBuff2, CannyChargerBuff2Guid)
-             .SetDisplayName(CannyChargerDisplayName)
-             .SetDescription(CannyChargerDescription)
-             .SetIcon(icon)
-             .AddIncreaseCasterLevel(value: 1)
-             .Configure();
-
-            var ability = AbilityConfigurator.New(CannyChargerAblity, CannyChargerAblityGuid)
-                .AddAbilityEffectRunAction(ActionsBuilder.New()
-                        .ApplyBuff(Buff2, ContextDuration.Fixed(1))
-                        .Build())
-                .SetDisplayName(CannyChargerDisplayName)
-                .SetDescription(CannyChargerDescription)
-                .SetIcon(icon)
-                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
-                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
-                .SetRange(AbilityRange.Personal)
-                .SetType(AbilityType.Supernatural)
-                .Configure();
+            var icon = FeatureRefs.VulpinePounce.Reference.Get().Icon;
 
             return FeatureConfigurator.New(CannyCharger, CannyChargerGuid)
               .SetDisplayName(CannyChargerDisplayName)
               .SetDescription(CannyChargerDescription)
               .SetIcon(icon)
-              .AddFacts(new() { ability })
-              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .AddACBonusAgainstBuffOwner(bonus: 4, checkedBuff: BuffRefs.ChargeBuff.ToString(), descriptor: Kingmaker.Enums.ModifierDescriptor.Dodge)
+              .AddAuraFeatureComponent(StagStyle.StylebuffGuid)
+              .AddFacts(new() { AerialAssault.ReleaseAbilityGuid })
               .Configure();
         }
     }

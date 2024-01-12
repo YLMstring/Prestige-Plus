@@ -37,7 +37,7 @@ namespace PrestigePlus.Feats
         private static readonly string StyleDescription = "StagStyle.Description";
 
         private const string Stylebuff = "StagStyle.Stylebuff";
-        private static readonly string StylebuffGuid = "{21F094D4-1D59-400B-9CEB-558E6218FB0C}";
+        public static readonly string StylebuffGuid = "{21F094D4-1D59-400B-9CEB-558E6218FB0C}";
 
         private const string StyleActivatableAbility = "StagStyle.StyleActivatableAbility";
         private static readonly string StyleActivatableAbilityGuid = "{68FAB881-4AFD-4389-B9E9-B2E735303E04}";
@@ -50,6 +50,7 @@ namespace PrestigePlus.Feats
               .SetDescription(StyleDescription)
               .SetIcon(icon)
               .AddComponent<StagChargeAttackLimit>()
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
