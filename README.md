@@ -86,7 +86,7 @@
 - Dvine Psychic: continue divine spellcasting progression every 2 levels!
 - Kinetic Esoterica: more versatile kineticist progression!
 ### [Furious Guardian Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/furious-guardian/)
-- Chosen Ally is for babarian standard rage only =-=
+- Chosen Ally is for barbarian standard rage only =-=
 ### [Halfling Opportunist Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/halfling-opportunist/)
 #### Homebrew Options:  
 - Alternative access to the class for non-halflings!
