@@ -242,6 +242,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("divinechamp"), defaultValue: true, Helpers.CreateString("toggle-desc66", "Divine Champion"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("cardplayer"), defaultValue: true, Helpers.CreateString("toggle-desc75", "Cartomancer"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("whitehair"), defaultValue: true, Helpers.CreateString("toggle-desc32", "White-Haired Witch"))
               .ShowVisualConnection())
           .AddToggle(
@@ -335,11 +338,11 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("dancer"))) { ShadowDancer.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("seraph"))) { BlackSeraphStyle.StyleConfigure(); BlackSeraphStyle.MalevolenceConfigure(); BlackSeraphStyle.AnnihilationConfigure(); RippleWater.Configure(); SeizetheOpportunity.FeatConfigure(); BodyGuard.GreaterNameConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("grabbing"))) { GrabbingStyle.StyleConfigure(); GrabbingStyle.DragConfigure(); GrabbingStyle.MasterConfigure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("stag"))) { StagStyle.StyleConfigure(); StagStyle.HornsConfigure(); StagStyle.SubmissionConfigure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("stag"))) { StagStyle.StyleConfigure(); StagStyle.HornsConfigure(); StagStyle.SubmissionConfigure(); PlainsDruid.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("turtle"))) { SnappingTurtleStyle.StyleConfigure(); SnappingTurtleStyle.ClutchConfigure(); SnappingTurtleStyle.ShellConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("kraken"))) { KrakenStyle.StyleConfigure(); KrakenStyle.WrackConfigure(); KrakenStyle.WrathConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("umbral"))) { UmbralAgent.Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("biggg"))) { MammothRider.Configure(); GiganticAssault.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("biggg"))) { MammothRider.Configure(); GiganticAssault.Configure(); FungalPilgrim.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("asavir"))) { Asavir.Configure(); BondGenie.Configure(); TrampleMythic.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("maneuver"))) { ReplaceAttack.BullRushQuickConfigure(); ReplaceAttack.BullRushAngryConfigure(); ReplaceAttack.BullRushConfigure(); ReplaceAttack.DisarmConfigure(); ReplaceAttack.SunderConfigure(); ReplaceAttack.TripConfigure(); ReplaceAttack.DirtyBlindQuickConfigure(); ReplaceAttack.DirtyEntangleQuickConfigure(); ReplaceAttack.DirtySickenQuickConfigure();
                         StrengthSurge.StrengthSurgeFeat(); KiThrow.DragConfigure(); ImprovedKiThrow.DragConfigure(); EnhancedThrow.DragConfigure(); BindingThrow.DragConfigure(); 
@@ -393,6 +396,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("menhir"))) { MenhirSavant.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("mm"))) { ManeuverMaster.Configure(); ManeuverMaster.FreedomFeat(); ManeuverMaster.OneTouchFeat(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("drinker"))) { Souldrinker.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("cardplayer"))) { Cartomancer.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
