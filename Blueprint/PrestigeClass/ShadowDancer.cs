@@ -151,6 +151,10 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintFeature CreateProficiencies()
         {
+            FeatureConfigurator.For(FeatureRefs.Evasion)
+                .SetHideNotAvailibleInUI(false)
+                .Configure();
+            
             var abilityresourse = AbilityResourceConfigurator.New(ShadowJumpAblityRes, ShadowJumpAblityResGuid)
                 .SetMaxAmount(ResourceAmountBuilder.New(0))
                 .SetUseMax()

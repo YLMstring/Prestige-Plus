@@ -38,7 +38,7 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToRemoveFeatures(5, FeatureRefs.BardLoreMaster.ToString())
             .AddToRemoveFeatures(12, FeatureRefs.SoothingPerformanceFeature.ToString())
             .AddToAddFeatures(1, FeatureRefs.DeflectArrows.ToString(), CreateProficiencies())
-            .AddToAddFeatures(2, CreateCombatJuggling())
+            .AddToAddFeatures(2, CreateCombatJuggling(), FeatureRefs.Evasion.ToString())
             .AddToAddFeatures(5, CreateSnatchArrows())
             .AddToAddFeatures(11, CreateFastReactions())
             .AddToAddFeatures(12, FeatureRefs.ImprovedEvasion_0.ToString())
@@ -116,7 +116,6 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDescription(CombatJugglingDescription)
               .SetIcon(icon)
               .AddComponent<CombatJuggling>()
-              .AddFacts(new() { FeatureRefs.Evasion.ToString() })
               .Configure();
         }
 

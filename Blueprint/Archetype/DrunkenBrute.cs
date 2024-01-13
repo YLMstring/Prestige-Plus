@@ -289,7 +289,7 @@ namespace PrestigePlus.Blueprint.Archetype
                     .Build())
              .Configure();
 
-            return FeatureConfigurator.New(RagingDrunk, RagingDrunkGuid, FeatureGroup.RagePower)
+            return FeatureConfigurator.New(RagingDrunk, RagingDrunkGuid)
               .SetDisplayName(RagingDrunkDisplayName)
               .SetDescription(RagingDrunkDescription)
               .SetIcon(icon)

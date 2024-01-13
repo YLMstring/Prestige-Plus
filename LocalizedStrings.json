@@ -6777,8 +6777,8 @@
   },
   {
     "Key": "JugglerCombatJuggling.Description",
-    "enGB": "At 2nd level, a juggler gains evasion, as the rogue class feature of the same name. He can also hold and wield (in other words, “juggle”) up to three items or weapons in his hands. The juggler must be able to hold and wield an object in one hand in order to juggle it. This ability doesn’t grant the juggler additional attacks, though it does allow him to Deflect Arrows.",
-    "zhCN": "2级时，杂耍者获得反射闪避，如同盗贼同名能力。他还可以同时在手中持用或叫抛接至多三个物体或武器。他必须能够持用一个物品，才能不断杂耍。该能力不会给予杂耍者额外的攻击次数，但允许他拨挡飞箭。"
+    "enGB": "At 2nd level, a juggler can hold and wield (in other words, “juggle”) up to three items or weapons in his hands. The juggler must be able to hold and wield an object in one hand in order to juggle it. This ability doesn’t grant the juggler additional attacks, though it does allow him to Deflect Arrows.",
+    "zhCN": "2级时，杂耍者可以同时在手中持用或叫抛接至多三个物体或武器。他必须能够持用一个物品，才能不断杂耍。该能力不会给予杂耍者额外的攻击次数，但允许他拨挡飞箭。"
   },
   {
     "Key": "JugglerDeflectArrowsMythic.Name",

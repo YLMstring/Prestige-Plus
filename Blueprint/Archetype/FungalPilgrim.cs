@@ -56,7 +56,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature CreateTransformation()
         {
-            var icon = AbilityRefs.FungalInfestationAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.ThornBody.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Transformation, TransformationGuid)
               .SetDisplayName(TransformationDisplayName)
@@ -77,7 +77,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature FungalCompanionConfigure()
         {
-            var icon = AbilityRefs.FungalBurstAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.FungalInfestationAbility.Reference.Get().Icon;
 
             var feat = FeatureConfigurator.New(FungalCompanionFeat, FungalCompanionFeatGuid)
               .SetDisplayName(FungalCompanionDisplayName)
