@@ -46,7 +46,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .Configure();
 
             ProgressionConfigurator.For(ProgressionRefs.BardProgression)
-                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { FeatureRefs.DeflectArrows.ToString(), SnatchArrowsGuid, FastReactionsGuid, CombatJugglingGuid, FeatureRefs.ImprovedEvasion_0.ToString() })
+                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { FeatureRefs.DeflectArrows.ToString(), SnatchArrowsGuid, FastReactionsGuid, CombatJugglingGuid })
                 .Configure();
         }
 
