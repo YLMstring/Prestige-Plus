@@ -56,7 +56,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature LiquidCourageFeat()
         {
-            var icon = AbilityRefs.Nurah_InspirecourageAbility.Reference.Get().Icon;
+            var icon = FeatureRefs.EnhancePotion.Reference.Get().Icon;
 
             var Buff = BuffConfigurator.New(LiquidCourageBuff2, LiquidCourageBuff2Guid)
              .SetDisplayName(LiquidCourageDisplayName)
@@ -87,7 +87,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature RoaringDrunkFeat()
         {
-            var icon = AbilityRefs.Nurah_InspirecourageAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.Shout.Reference.Get().Icon;
 
             var Buff = BuffConfigurator.New(RoaringDrunkBuff2, RoaringDrunkBuff2Guid)
              .SetDisplayName(RoaringDrunkDisplayName)
@@ -119,7 +119,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature AtavismFeat()
         {
-            var icon = AbilityRefs.Nurah_InspirecourageAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.AspectOfTheBear.Reference.Get().Icon;
 
             var Buff = BuffConfigurator.New(AtavismBuff2, AtavismBuff2Guid)
              .SetDisplayName(AtavismDisplayName)
@@ -151,7 +151,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature GreaterAtavismFeat()
         {
-            var icon = AbilityRefs.Nurah_InspirecourageAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.BearsEnduranceMass.Reference.Get().Icon;
 
             var Buff = BuffConfigurator.New(GreaterAtavismBuff2, GreaterAtavismBuff2Guid)
              .SetDisplayName(GreaterAtavismDisplayName)
@@ -185,7 +185,7 @@ namespace PrestigePlus.Blueprint.Archetype
         public static readonly string GlareBuff2Guid = "{B28F0D2F-3785-41A2-A970-01CB2CD9D2AC}";
         public static BlueprintFeature CreateGlare()
         {
-            var icon = FeatureRefs.SpellStrikeFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.Eyebite.Reference.Get().Icon;
 
             var ability = AbilityConfigurator.New(GlareAblity, GlareAblityGuid)
               .SetDisplayName(GlareDisplayName)
@@ -236,7 +236,7 @@ namespace PrestigePlus.Blueprint.Archetype
         public static readonly string RagingDrunkBuff3Guid = "{65D8B448-8660-4722-99B0-55BF323E3B45}";
         public static BlueprintFeature CreateRagingDrunk()
         {
-            var icon = FeatureRefs.SpellStrikeFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.ExplosiveBombsFeature.Reference.Get().Icon;
 
             var Buff3 = BuffConfigurator.New(RagingDrunkBuff3, RagingDrunkBuff3Guid)
              .SetDisplayName(RagingDrunkDisplayName)
@@ -278,10 +278,14 @@ namespace PrestigePlus.Blueprint.Archetype
              .AddFacts(new() { ability })
              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
              .AddBuffActions(deactivated: ActionsBuilder.New()
+                    .RemoveBuff(Buff1)
                     .Conditional(ConditionsBuilder.New()
                         .HasFact(RagingDrunkBuff2Guid)
                         .HasFact(FeatureRefs.InternalFortitudeFeature.ToString(),true)
-                        .Build(), ActionsBuilder.New().ApplyBuff(BuffRefs.Nauseated.ToString(), ContextDuration.Fixed(10)).Build())
+                        .Build(), ActionsBuilder.New()
+                            .ApplyBuff(BuffRefs.Nauseated.ToString(), ContextDuration.Fixed(10))
+                            .RemoveBuff(Buff3)
+                            .Build())
                     .Build())
              .Configure();
 

@@ -47,7 +47,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature CreateDeadlyDealer()
         {
-            var icon = AbilityRefs.PoisonedDart.Reference.Get().Icon;
+            var icon = AbilityRefs.ArrowOfLaw.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(DeadlyDealerBuff, DeadlyDealerBuffGuid)
               .SetDisplayName(DeadlyDealerDisplayName)

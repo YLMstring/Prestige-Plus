@@ -36,7 +36,6 @@ namespace PrestigePlus.Blueprint.Archetype
             .SetRemoveFeaturesEntry(4, FeatureRefs.WildShapeIWolfFeature.ToString())
             .SetRemoveFeaturesEntry(6, FeatureRefs.WildShapeIILeopardFeature.ToString(), FeatureRefs.WildShapeExtraUse.ToString(), FeatureRefs.WildShapeElementalSmallFeature.ToString())
             .SetRemoveFeaturesEntry(8, FeatureRefs.WildShapeIVBearFeature.ToString(), FeatureRefs.WildShapeExtraUse.ToString(), FeatureRefs.WildShapeElementalFeatureAddMedium.ToString())
-            .SetRemoveFeaturesEntry(9, FeatureRefs.VenomImmunity.ToString())
             .SetRemoveFeaturesEntry(10, FeatureRefs.WildShapeIIISmilodonFeature.ToString(), FeatureRefs.WildShapeExtraUse.ToString(), FeatureRefs.WildShapeElementalFeatureAddLarge.ToString(), FeatureRefs.WildShapeIVShamblingMoundFeature.ToString())
             .SetRemoveFeaturesEntry(12, FeatureRefs.WildShapeElementaHugeFeature.ToString(), FeatureRefs.WildShapeExtraUse.ToString())
             .SetRemoveFeaturesEntry(14, FeatureRefs.WildShapeExtraUse.ToString())
@@ -57,7 +56,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature CreateTransformation()
         {
-            var icon = AbilityRefs.PlantDomainBaseAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.FungalInfestationAbility.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Transformation, TransformationGuid)
               .SetDisplayName(TransformationDisplayName)
@@ -78,7 +77,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature FungalCompanionConfigure()
         {
-            var icon = FeatureRefs.PlantDomainGreaterFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.FungalBurstAbility.Reference.Get().Icon;
 
             var feat = FeatureConfigurator.New(FungalCompanionFeat, FungalCompanionFeatGuid)
               .SetDisplayName(FungalCompanionDisplayName)
