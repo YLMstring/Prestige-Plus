@@ -26,6 +26,7 @@ using Kingmaker.UI.MVVM._VM.Other;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Conditions.Builder.ContextEx;
+using Kingmaker.Blueprints.Classes.Prerequisites;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -135,7 +136,10 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDescription(AtavismDescription)
               .SetIcon(icon)
               .AddPrerequisiteFeature(FeatureRefs.AnimalFuryFeature.ToString())
-              .AddPrerequisiteClassLevel(CharacterClassRefs.BarbarianClass.ToString(), 6)
+              .AddPrerequisiteClassLevel(CharacterClassRefs.BarbarianClass.ToString(), 6, group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteArchetypeLevel(ArchetypeRefs.PrimalistArchetype.ToString(), CharacterClassRefs.BloodragerClass.ToString(), level: 6, group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteClassLevel(CharacterClassRefs.SkaldClass.ToString(), 6, group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteClassLevel(CharacterClassRefs.ShifterClass.ToString(), 6, group: Prerequisite.GroupType.Any)
               .AddBuffExtraEffects(BuffRefs.BloodragerStandartRageBuff.ToString(), extraEffectBuff: Buff)
               .AddBuffExtraEffects(BuffRefs.StandartFocusedRageBuff.ToString(), extraEffectBuff: Buff)
               .AddBuffExtraEffects(BuffRefs.StandartRageBuff.ToString(), extraEffectBuff: Buff)
@@ -167,7 +171,10 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDescription(GreaterAtavismDescription)
               .SetIcon(icon)
               .AddPrerequisiteFeature(AtavismGuid)
-              .AddPrerequisiteClassLevel(CharacterClassRefs.BarbarianClass.ToString(), 10)
+              .AddPrerequisiteClassLevel(CharacterClassRefs.BarbarianClass.ToString(), 10, group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteArchetypeLevel(ArchetypeRefs.PrimalistArchetype.ToString(), CharacterClassRefs.BloodragerClass.ToString(), level: 10, group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteClassLevel(CharacterClassRefs.SkaldClass.ToString(), 10, group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteClassLevel(CharacterClassRefs.ShifterClass.ToString(), 10, group: Prerequisite.GroupType.Any)
               .AddBuffExtraEffects(BuffRefs.BloodragerStandartRageBuff.ToString(), extraEffectBuff: Buff)
               .AddBuffExtraEffects(BuffRefs.StandartFocusedRageBuff.ToString(), extraEffectBuff: Buff)
               .AddBuffExtraEffects(BuffRefs.StandartRageBuff.ToString(), extraEffectBuff: Buff)
