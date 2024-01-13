@@ -39,7 +39,7 @@ namespace PrestigePlus.HarmonyFix
         {
             try
             {
-                Logger.Info(context.AssociatedBlueprint.NameSafe() + "start");
+                Logger.Info(context?.AssociatedBlueprint?.NameSafe() + "start");
                 if (__instance.CharacterClass == CharacterClassRefs.KineticistClass.Reference.Get() && caster.HasFact(feat))
                 {
                     Logger.Info(caster.CharacterName + "start");
