@@ -198,6 +198,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetRange(AbilityRange.Custom)
               .SetCustomRange(5)
               .SetType(AbilityType.Extraordinary)
+              .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move)
               .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
               .AddAbilityEffectRunAction(ActionsBuilder.New().CastSpell(AbilityRefs.PersuasionUseAbility.ToString()).Build())
               .Configure();
@@ -227,6 +228,9 @@ namespace PrestigePlus.Blueprint.Archetype
 
         private const string RagingDrunkAbility = "DrunkenBrute.UseRagingDrunk";
         public static readonly string RagingDrunkAbilityGuid = "{9D0D1986-CAC8-4FCC-AFFD-4EFB35710461}";
+
+        private const string RagingDrunkBuff1 = "DrunkenBrute.RagingDrunkBuff1";
+        public static readonly string RagingDrunkBuff1Guid = "{FCAA7865-7E26-423F-84C9-1A2B414E6E31}";
 
         private const string RagingDrunkBuff2 = "DrunkenBrute.RagingDrunkBuff2";
         public static readonly string RagingDrunkBuff2Guid = "{E6BA4067-CD1B-4163-B938-4B779EC572A3}";
@@ -265,15 +269,25 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetIcon(icon)
                 .SetBuff(Buff2)
                 .SetDeactivateIfOwnerDisabled(true)
-                .SetDeactivateIfCombatEnded(true)
-                .SetDeactivateImmediately()
+                .SetDeactivateImmediately(true)
                 .Configure();
+
+            var Buff1 = BuffConfigurator.New(RagingDrunkBuff1, RagingDrunkBuff1Guid)
+             .SetDisplayName(RagingDrunkDisplayName)
+             .SetDescription(RagingDrunkDescription)
+             .SetIcon(icon)
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+             .AddFacts(new() { FeatureRefs.EmergencyPotionMythicFeat.ToString() })
+             .Configure();
 
             return FeatureConfigurator.New(RagingDrunk, RagingDrunkGuid)
               .SetDisplayName(RagingDrunkDisplayName)
               .SetDescription(RagingDrunkDescription)
               .SetIcon(icon)
               .AddFacts(new() { ability })
+              .AddBuffExtraEffects(BuffRefs.BloodragerStandartRageBuff.ToString(), extraEffectBuff: Buff1)
+              .AddBuffExtraEffects(BuffRefs.StandartFocusedRageBuff.ToString(), extraEffectBuff: Buff1)
+              .AddBuffExtraEffects(BuffRefs.StandartRageBuff.ToString(), extraEffectBuff: Buff1)
               .AddToIsPrerequisiteFor(RoaringDrunkGuid)
               .AddToIsPrerequisiteFor(LiquidCourageGuid)
               .Configure();

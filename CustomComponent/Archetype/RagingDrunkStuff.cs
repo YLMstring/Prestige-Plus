@@ -21,7 +21,7 @@ namespace PrestigePlus.CustomComponent.Archetype
         {
             if (Owner.HasFact(BuffRefs.StandartRageBuff.Reference) || Owner.HasFact(BuffRefs.BloodragerStandartRageBuff.Reference) || Owner.HasFact(BuffRefs.StandartFocusedRageBuff.Reference))
             {
-                if (Owner.HasMoveAction())
+                if (!Owner.UsedOneMoveAction())
                 {
                     Owner.SpendAction(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move, false, 0);
                     Owner.Resources.Restore(AbilityResourceRefs.RageResourse.Reference, 1);
@@ -36,7 +36,7 @@ namespace PrestigePlus.CustomComponent.Archetype
         {
             if (Owner.HasFact(BuffRefs.StandartRageBuff.Reference) || Owner.HasFact(BuffRefs.BloodragerStandartRageBuff.Reference) || Owner.HasFact(BuffRefs.StandartFocusedRageBuff.Reference))
             {
-                if (Owner.HasMoveAction())
+                if (!Owner.UsedOneMoveAction())
                 {
                     Owner.SpendAction(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move, false, 0);
                     Owner.Resources.Restore(AbilityResourceRefs.RageResourse.Reference, 1);
