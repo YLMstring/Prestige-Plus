@@ -228,9 +228,6 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string RagingDrunkAbility = "DrunkenBrute.UseRagingDrunk";
         public static readonly string RagingDrunkAbilityGuid = "{9D0D1986-CAC8-4FCC-AFFD-4EFB35710461}";
 
-        private const string RagingDrunkBuff1 = "DrunkenBrute.RagingDrunkBuff1";
-        public static readonly string RagingDrunkBuff1Guid = "{FCAA7865-7E26-423F-84C9-1A2B414E6E31}";
-
         private const string RagingDrunkBuff2 = "DrunkenBrute.RagingDrunkBuff2";
         public static readonly string RagingDrunkBuff2Guid = "{E6BA4067-CD1B-4163-B938-4B779EC572A3}";
 
@@ -244,60 +241,39 @@ namespace PrestigePlus.Blueprint.Archetype
              .SetDisplayName(RagingDrunkDisplayName)
              .SetDescription(RagingDrunkDescription)
              .SetIcon(icon)
-             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+             .AddFactsChangeTrigger(new() { BuffRefs.BloodragerStandartRageBuff.ToString(), BuffRefs.StandartRageBuff.ToString(), BuffRefs.StandartFocusedRageBuff.ToString() },
+                    ActionsBuilder.New().RemoveSelf().Build(), 
+                    ActionsBuilder.New().Conditional(ConditionsBuilder.New()
+                        .HasFact(FeatureRefs.InternalFortitudeFeature.ToString(), true)
+                        .Build(), ActionsBuilder.New()
+                            .ApplyBuff(BuffRefs.Nauseated.ToString(), ContextDuration.Fixed(10))
+                            .Build())
+                    .Build())
              .Configure();
 
-            var Buff1 = BuffConfigurator.New(RagingDrunkBuff1, RagingDrunkBuff1Guid)
+            var Buff2 = BuffConfigurator.New(RagingDrunkBuff2, RagingDrunkBuff2Guid)
              .SetDisplayName(RagingDrunkDisplayName)
              .SetDescription(RagingDrunkDescription)
              .SetIcon(icon)
-             .AddCondition(Kingmaker.UnitLogic.UnitCondition.Staggered)
-             .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New()
-                    .RestoreResource(AbilityResourceRefs.RageResourse.ToString(), 1)
-                    .RestoreResource(AbilityResourceRefs.BloodragerRageResource.ToString(), 1)
-                    .RestoreResource(AbilityResourceRefs.FocusedRageResourse.ToString(), 1)
-                    .ApplyBuffPermanent(Buff3)
-                    .Build())
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+             .AddComponent<RagingDrunkStuff>()
              .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(RagingDrunkAbility, RagingDrunkAbilityGuid)
                 .SetDisplayName(RagingDrunkDisplayName)
                 .SetDescription(RagingDrunkDescription)
                 .SetIcon(icon)
-                .AddActivatableAbilityUnitCommand(type: Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move)
-                .SetBuff(Buff1)
-                .SetActivationType(AbilityActivationType.WithUnitCommand)
-                .SetActivateWithUnitCommand(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move)
+                .SetBuff(Buff2)
                 .SetDeactivateIfOwnerDisabled(true)
                 .SetDeactivateIfCombatEnded(true)
                 .SetDeactivateImmediately()
                 .Configure();
 
-            var Buff2 = BuffConfigurator.New(RagingDrunkBuff2, RagingDrunkBuff2Guid)
-             .SetDisplayName(RagingDrunkDisplayName)
-             .SetDescription(RagingDrunkDescription)
-             .SetIcon(icon)
-             .AddFacts(new() { ability })
-             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-             .AddBuffActions(deactivated: ActionsBuilder.New()
-                    .RemoveBuff(Buff1)
-                    .Conditional(ConditionsBuilder.New()
-                        .HasFact(RagingDrunkBuff2Guid)
-                        .HasFact(FeatureRefs.InternalFortitudeFeature.ToString(),true)
-                        .Build(), ActionsBuilder.New()
-                            .ApplyBuff(BuffRefs.Nauseated.ToString(), ContextDuration.Fixed(10))
-                            .RemoveBuff(Buff3)
-                            .Build())
-                    .Build())
-             .Configure();
-
             return FeatureConfigurator.New(RagingDrunk, RagingDrunkGuid)
               .SetDisplayName(RagingDrunkDisplayName)
               .SetDescription(RagingDrunkDescription)
               .SetIcon(icon)
-              .AddBuffExtraEffects(BuffRefs.BloodragerStandartRageBuff.ToString(), extraEffectBuff: Buff2)
-              .AddBuffExtraEffects(BuffRefs.StandartFocusedRageBuff.ToString(), extraEffectBuff: Buff2)
-              .AddBuffExtraEffects(BuffRefs.StandartRageBuff.ToString(), extraEffectBuff: Buff2)
+              .AddFacts(new() { ability })
               .AddToIsPrerequisiteFor(RoaringDrunkGuid)
               .AddToIsPrerequisiteFor(LiquidCourageGuid)
               .Configure();
