@@ -15,6 +15,7 @@ using Kingmaker.UnitLogic.Abilities.Components.CasterCheckers;
 using Kingmaker.UnitLogic.Abilities.Components.TargetCheckers;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs;
+using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Utility;
 using PrestigePlus.Blueprint.GrappleFeat;
 using PrestigePlus.CustomComponent.Charge;
@@ -65,7 +66,7 @@ namespace PrestigePlus.Blueprint.MythicGrapple
             AbilityConfigurator.New(ReleaseAbility, ReleaseAbilityGuid)
                 .CopyFrom(
                 AbilityRefs.ChargeAbility,
-                typeof(AbilityRequirementHasCondition),
+                typeof(HideDCFromTooltip),
                 typeof(AbilityCasterHasNoFacts),
                 typeof(AbilityIsFullRoundInTurnBased),
                 typeof(AbilityRequirementCanMove))
@@ -73,6 +74,7 @@ namespace PrestigePlus.Blueprint.MythicGrapple
                 .SetDisplayName(DisplayName2)
                 .SetDescription(Description2)
                 .SetIcon(icon)
+                .AddComponent<ChargeConditions>()
                 .AddAbilityCasterHasNoFacts(new() { BuffRefs.MountedBuff.Reference.Get() })
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard)
                 .SetCanTargetEnemies(true)

@@ -14,6 +14,9 @@ using Kingmaker.RuleSystem;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.FactLogic;
 using static TabletopTweaks.Core.NewUnitParts.CustomStatTypes;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.Designers.Mechanics.Facts;
+using Kingmaker.UnitLogic.Abilities;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -53,13 +56,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(DeadlyDealerDisplayName)
               .SetDescription(DeadlyDealerDescription)
               .SetIcon(icon)
-              .AddComponent<AddStatBonus>(c =>
-              {
-                  c.Stat = CustomStatType.MeleeTouchReach.Stat();
-                  c.Value = 15;
-                  c.Descriptor = ModifierDescriptor.Feat;
-              })
-              .AddAttackTypeChange(false, false, AttackType.RangedTouch, AttackType.Touch)
+              .AddComponent<DeadlyDealer>(c => { c.Range = AbilityRange.Touch; c.m_AllowedAbilities = AutoMetamagic.AllowedType.SpellOnly; c.Metamagic = Metamagic.Reach; })
               .SetFlags(BlueprintBuff.Flags.HiddenInUi)
               .Configure();
 

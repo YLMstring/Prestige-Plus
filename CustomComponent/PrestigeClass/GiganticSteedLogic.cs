@@ -57,25 +57,25 @@ namespace PrestigePlus.Modify
                     {
                         entity.Stats.Strength.AddModifier(10, base.Runtime, ModifierDescriptor.UntypedStackable);
                         entity.Stats.Constitution.AddModifier(6, base.Runtime, ModifierDescriptor.UntypedStackable);
-                        entity.Stats.AC.AddModifier(4, base.Runtime, ModifierDescriptor.UntypedStackable);
+                        entity.Stats.AC.AddModifier(4, base.Runtime, ModifierDescriptor.ArmorFocus);
                     }
                     else if (level >= 7) 
                     {
                         entity.Stats.Strength.AddModifier(8, base.Runtime, ModifierDescriptor.UntypedStackable);
                         entity.Stats.Constitution.AddModifier(4, base.Runtime, ModifierDescriptor.UntypedStackable);
-                        entity.Stats.AC.AddModifier(3, base.Runtime, ModifierDescriptor.UntypedStackable);
+                        entity.Stats.AC.AddModifier(3, base.Runtime, ModifierDescriptor.ArmorFocus);
                     }
                     else if (level >= 5)
                     {
                         entity.Stats.Strength.AddModifier(6, base.Runtime, ModifierDescriptor.UntypedStackable);
                         entity.Stats.Constitution.AddModifier(4, base.Runtime, ModifierDescriptor.UntypedStackable);
-                        entity.Stats.AC.AddModifier(2, base.Runtime, ModifierDescriptor.UntypedStackable);
+                        entity.Stats.AC.AddModifier(2, base.Runtime, ModifierDescriptor.ArmorFocus);
                     }
                     else if (level >= 3)
                     {
                         entity.Stats.Strength.AddModifier(4, base.Runtime, ModifierDescriptor.UntypedStackable);
                         entity.Stats.Constitution.AddModifier(2, base.Runtime, ModifierDescriptor.UntypedStackable);
-                        entity.Stats.AC.AddModifier(1, base.Runtime, ModifierDescriptor.UntypedStackable);
+                        entity.Stats.AC.AddModifier(1, base.Runtime, ModifierDescriptor.ArmorFocus);
                     }
                     else
                     {

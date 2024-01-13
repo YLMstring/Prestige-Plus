@@ -44,7 +44,7 @@ namespace PrestigePlus.Blueprint.Archetype
             .SetRemoveFeaturesEntry(12, FeatureRefs.WildShapeElementaHugeFeature.ToString())
             .AddToAddFeatures(2, FeatureRefs.FavoriteTerrainPlains.ToString())
             .AddToAddFeatures(3, FeatureRefs.FastMovement.ToString())
-            .AddToAddFeatures(9, CannyChargerFeat())
+            .AddToAddFeatures(1, CannyChargerFeat())
             .SetAddFeatureEntry(13, FeatureRefs.Evasion.ToString())
             .AddToAddFeatures(6, FeatureRefs.WildShapeIWolfFeature.ToString())
             .AddToAddFeatures(8, FeatureRefs.WildShapeIILeopardFeature.ToString(), FeatureRefs.WildShapeElementalSmallFeature.ToString())

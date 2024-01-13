@@ -18,6 +18,8 @@ using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.Enums;
 using Kingmaker.Utility;
 using Kingmaker.EntitySystem.Stats;
+using Kingmaker.Blueprints;
+using Kingmaker.UnitLogic.FactLogic;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -57,12 +59,13 @@ namespace PrestigePlus.Blueprint.Archetype
         public static BlueprintFeature CreateTransformation()
         {
             var icon = AbilityRefs.ThornBody.Reference.Get().Icon;
+            var facts = FeatureRefs.PlantType.Reference.Get().GetComponent<AddFacts>();
 
             return FeatureConfigurator.New(Transformation, TransformationGuid)
               .SetDisplayName(TransformationDisplayName)
               .SetDescription(TransformationDescription)
               .SetIcon(icon)
-              .AddFacts(new() { FeatureRefs.PlantType.ToString() })
+              .AddComponent(facts)
               .Configure();
         }
 
@@ -86,7 +89,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddFacts(new() { FeatureRefs.PlantType.ToString() })
               .AddStatBonus(ModifierDescriptor.Penalty, false, StatType.Speed, -10)
               .AddStatBonus(ModifierDescriptor.UntypedStackable, false, StatType.Strength, 4)
-              .AddStatBonus(ModifierDescriptor.Penalty, false, StatType.Dexterity, 2)
+              .AddStatBonus(ModifierDescriptor.Penalty, false, StatType.Dexterity, -2)
               .AddStatBonus(ModifierDescriptor.UntypedStackable, false, StatType.Constitution, 4)
               .AddStatBonus(ModifierDescriptor.ArmorFocus, false, StatType.AC, 2)
               .Configure();
