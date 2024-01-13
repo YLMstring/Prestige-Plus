@@ -63,6 +63,7 @@ namespace PrestigePlus.Blueprint.Archetype
              .SetDisplayName(LiquidCourageDisplayName)
              .SetDescription(LiquidCourageDescription)
              .SetIcon(icon)
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
              .AddSavingThrowBonusAgainstDescriptor(ContextValues.Rank(), modifierDescriptor: ModifierDescriptor.Morale, spellDescriptor: SpellDescriptor.MindAffecting)
              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.BarbarianClass.ToString() }).WithDivStepProgression(4))
              .Configure();
@@ -97,6 +98,7 @@ namespace PrestigePlus.Blueprint.Archetype
              .SetIcon(icon)
              .AddIncreaseSpellContextDescriptorDC(SpellDescriptor.Fear, modifierDescriptor: ModifierDescriptor.Morale, onlyOnce: false, spellsOnly: false, value: ContextValues.Rank())
              .AddContextStatBonus(StatType.CheckIntimidate, ContextValues.Rank(), ModifierDescriptor.Morale)
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.BarbarianClass.ToString() }).WithDivStepProgression(4))
              .Configure();
 
@@ -129,6 +131,7 @@ namespace PrestigePlus.Blueprint.Archetype
              .SetDescription(AtavismDescription)
              .SetIcon(icon)
              .AddFacts(new() { UnitFactRefs.Ferocity.ToString() })
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
              .Configure();
 
             return FeatureConfigurator.New(Atavism, AtavismGuid, FeatureGroup.RagePower)
@@ -164,6 +167,7 @@ namespace PrestigePlus.Blueprint.Archetype
              .SetDescription(GreaterAtavismDescription)
              .SetIcon(icon)
              .AddFacts(new() { AbilityRefs.OverrunAbility.ToString() })
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
              .Configure();
 
             return FeatureConfigurator.New(GreaterAtavism, GreaterAtavismGuid, FeatureGroup.RagePower)
@@ -215,6 +219,7 @@ namespace PrestigePlus.Blueprint.Archetype
              .SetDescription(GlareDescription)
              .SetIcon(icon)
              .AddFacts(new() { ability })
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
              .Configure();
 
             return FeatureConfigurator.New(Glare, GlareGuid, FeatureGroup.RagePower)
