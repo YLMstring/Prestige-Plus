@@ -15,7 +15,7 @@ namespace PrestigePlus.CustomComponent.Charge
     {
         string IAbilityRestriction.GetAbilityRestrictionUIText()
         {
-            return "Fatigued, Entangled or DifficultTerrain";
+            return "Fatigued, Entangled or Difficult Terrain";
         }
 
         bool IAbilityRestriction.IsAbilityRestrictionPassed(AbilityData ability)
