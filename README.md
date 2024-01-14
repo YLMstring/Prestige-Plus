@@ -1,4 +1,4 @@
-# Prestige Plus v2.4.0 for WoTR 
+# Prestige Plus v2.4.1 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -147,6 +147,15 @@
 - [Aeromancer](https://www.d20pfsrd.com/classes/hybrid-classes/arcanist/archetypes/paizo-arcanist-archetypes/aeromancer-arcanist-archetype/)
 #### Bard:  
 - [Juggler](https://www.d20pfsrd.com/classes/core-classes/bard/archetypes/paizo-bard-archetypes/juggler-bard-archetype/)
+#### Barbarian:  
+- [Drunken Brute](https://www.d20pfsrd.com/classes/core-classes/barbarian/archetypes/paizo-barbarian-archetypes/drunken-brute/)
+- Drinking a potion is already a move action in wotr, so Raging Drunk should make it a swift action.
+- New Rage Power: [Roaring Drunk](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/roaring-drunk-ex)
+- New Rage Power: [Liquid Courage](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/liquid-courage-ex)
+- The drinks are on us, the hangover is on you.
+- New Rage Power: [Intimidating Glare](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/intimidating-glare-ex)
+- New Rage Power: [Atavism](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/atavism-totem-su/)
+- New Rage Power: [Greater Atavism](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/atavism-totem-greater-su/)
 #### Bloodrager:  
 - [Blood Conduit](https://www.d20pfsrd.com/classes/hybrid-classes/bloodrager/archetypes/paizo-bloodrager-archetypes/blood-conduit/)
 #### Cavalier:  
@@ -158,6 +167,8 @@
 - [Divine Paragon](https://www.d20pfsrd.com/classes/core-classes/cleric/archetypes/paizo-cleric-archetypes/divine-paragon-cleric-archetype/)
 #### Druid:  
 - [Menhir Savant](https://www.d20pfsrd.com/classes/core-classes/druid/archetypes/paizo-druid-archetypes/menhir-savant)
+- [Plains Druid](https://www.d20pfsrd.com/classes/core-classes/druid/archetypes/paizo-druid-archetypes/plains-druid)
+- [Fungal Pilgrim](https://www.d20pfsrd.com/classes/core-classes/druid/archetypes/paizo-druid-archetypes/fungal-pilgrim-druid-archetype/)
 #### Fighter:  
 - [Eldritch Guardian](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Eldritch%20Guardian)
 - Share Training with your pets!
@@ -194,6 +205,7 @@
 #### Witch:  
 - [White-Haired Witch](https://www.d20pfsrd.com/classes/base-classes/witch/archetypes/paizo-witch-archetypes/white-haired-witch/)
 - This is absolutely my favorite.
+- [Cartomancer](https://www.d20pfsrd.com/classes/base-classes/witch/archetypes/paizo-witch-archetypes/cartomancer-witch-archetype/)
 
 ### New Style Feats
 
