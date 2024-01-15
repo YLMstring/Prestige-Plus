@@ -6106,8 +6106,8 @@
   },
   {
     "Key": "SentinelChooseGoodEvil.Description",
-    "enGB": "At 1st level, the sentinel chooses a holy (or unholy) symbol. An evil sentinel can't choose to gain sacred bonus, and a good sentinel can't choose to gain profane bonus.",
-    "zhCN": "1级时，信仰哨卫选择一枚圣徽或者邪徽。邪恶阵营的信仰哨卫不能选择获得神圣加值，善良阵营的信仰哨卫不能选择获得亵渎加值。"
+    "enGB": "At 1st level, the sentinel chooses a holy (or unholy) symbol. The sentinel of an evil deity can't choose to gain sacred bonus, and the sentinel of a good deity can't choose to gain profane bonus.",
+    "zhCN": "1级时，信仰哨卫选择一枚圣徽或者邪徽。邪神的信仰哨卫不能选择获得神圣加值，善神的信仰哨卫不能选择获得亵渎加值。"
   },
   {
     "Key": "SentinelSymbolicWeapon.Name",
@@ -6997,8 +6997,8 @@
   },
   {
     "Key": "ExaltedEvangelistChooseGoodEvil.Description",
-    "enGB": "Divine energy suffuses the body of the exalted evangelist, making her more resilient. The exalted evangelist gains a +2 sacred or profane bonus on Fortitude saves.",
-    "zhCN": "传道尊者的体内充盈着神力，令她变得更加强韧。传道尊者在强韧豁免中获得+2神圣或污邪加值。"
+    "enGB": "Divine energy suffuses the body of the exalted evangelist, making her more resilient. The exalted evangelist gains a +2 sacred or profane bonus on Fortitude saves. The evangelist of an evil deity can't choose to gain sacred bonus, and the evangelist of a good deity can't choose to gain profane bonus.",
+    "zhCN": "传道尊者的体内充盈着神力，令她变得更加强韧。传道尊者在强韧豁免中获得+2神圣或污邪加值。邪神的传道尊者不能选择获得神圣加值，善神的传道尊者不能选择获得亵渎加值。"
   },
   {
     "Key": "ExaltedEvangelistVitalityGood.Name",
