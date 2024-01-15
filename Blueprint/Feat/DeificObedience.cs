@@ -61,6 +61,7 @@ using static Kingmaker.EntitySystem.EntityDataBase;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UI.MVVM._VM.Other;
 using Kingmaker.UnitLogic;
+using TabletopTweaks.Core.NewComponents;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -2387,6 +2388,123 @@ namespace PrestigePlus.Blueprint.Feat
               .AddSpellPenetrationBonus(value: 1)
               .AddFacts(new() { ability })
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .Configure();
+        }
+
+        private const string Milani = "DeificObedience.Milani";
+        public static readonly string MilaniGuid = "{FB69E653-B6DF-44DD-B823-12BA534B4264}";
+
+        internal const string MilaniDisplayName = "DeificObedienceMilani.Name";
+        private const string MilaniDescription = "DeificObedienceMilani.Description";
+        public static BlueprintFeature MilaniFeat()
+        {
+            var icon = FeatureRefs.ElectricRoseFeature.Reference.Get().Icon;
+            //"MilaniFeature": "C5C537C7-77DB-48B7-BBE8-61414DB4D366",
+            return FeatureConfigurator.New(Milani, MilaniGuid)
+              .SetDisplayName(MilaniDisplayName)
+              .SetDescription(MilaniDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature("C5C537C7-77DB-48B7-BBE8-61414DB4D366", group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.LawfulGood, group: Prerequisite.GroupType.Any)
+              .AddToIsPrerequisiteFor(MilaniSentinelFeat())
+              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Charm, value: 2)
+              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Compulsion, value: 2)
+              .AddComponent<ContextDispelBonusOnType>(c => {
+                  c.Bonus = 2;
+                  c.Type = Kingmaker.RuleSystem.Rules.RuleDispelMagic.CheckType.CasterLevel;
+              })
+              .Configure();
+        }
+
+        private const string MilaniSentinel = "DeificObedience.MilaniSentinel";
+        public static readonly string MilaniSentinelGuid = "{9E9CE292-B127-4B26-A81B-B2C5C4F62B60}";
+
+        internal const string MilaniSentinelDisplayName = "DeificObedienceMilaniSentinel.Name";
+        private const string MilaniSentinelDescription = "DeificObedienceMilaniSentinel.Description";
+        public static BlueprintProgression MilaniSentinelFeat()
+        {
+            var icon = FeatureRefs.ElectricRoseFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(MilaniSentinel, MilaniSentinelGuid)
+              .SetDisplayName(MilaniSentinelDisplayName)
+              .SetDescription(MilaniSentinelDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(MilaniGuid)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(12, CreateMilani1())
+              .AddToLevelEntry(16, Milani2Feat())
+              .AddToLevelEntry(20, Milani3Feat())
+              .Configure();
+        }
+
+        private const string Milani1 = "SpellPower.Milani1";
+        public static readonly string Milani1Guid = "{A3E1040E-7D95-487D-BD9E-1C9F513AB6A9}";
+        internal const string Milani1DisplayName = "SpellPowerMilani1.Name";
+        private const string Milani1Description = "SpellPowerMilani1.Description";
+
+        private const string MilaniSentinel1Ablity = "SpellPower.UseMilaniSentinel1";
+        private static readonly string MilaniSentinel1AblityGuid = "{10700DE2-BAAF-4C2B-91FE-177AB6A51C33}";
+
+        private static BlueprintFeature CreateMilani1()
+        {
+            var icon = AbilityRefs.ProtectionFromEvil.Reference.Get().Icon;
+
+            var ability = AbilityConfigurator.New(MilaniSentinel1Ablity, MilaniSentinel1AblityGuid)
+                .CopyFrom(
+                AbilityRefs.ProtectionFromEvil,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(AbilitySpawnFx))
+                .SetIcon(icon)
+                .SetType(AbilityType.SpellLike)
+                .AddPretendSpellLevel(spellLevel: 1)
+                .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .Configure();
+
+            return FeatureConfigurator.New(Milani1, Milani1Guid)
+              .SetDisplayName(Milani1DisplayName)
+              .SetDescription(Milani1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability, Erastil1Ablity2Guid, Ragathiel1Ablity3Guid })
+              .Configure();
+        }
+
+        private const string Milani2 = "DeificObedience.Milani2";
+        public static readonly string Milani2Guid = "{73A5F185-9CA5-4DF7-8586-1DAC09DDD86E}";
+
+        internal const string Milani2DisplayName = "DeificObedienceMilani2.Name";
+        private const string Milani2Description = "DeificObedienceMilani2.Description";
+
+        public static BlueprintFeature Milani2Feat()
+        {
+            var icon = AbilityRefs.Restoration.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Milani2, Milani2Guid)
+              .SetDisplayName(Milani2DisplayName)
+              .SetDescription(Milani2Description)
+              .SetIcon(icon)
+              .AddBuffDescriptorImmunity(false, SpellDescriptor.Charm)
+              .AddBuffDescriptorImmunity(false, SpellDescriptor.Fear)
+              .AddSpellImmunityToSpellDescriptor(descriptor: SpellDescriptor.Charm)
+              .AddSpellImmunityToSpellDescriptor(descriptor: SpellDescriptor.Fear)
+              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Compulsion, value: 4)
+              .Configure();
+        }
+
+        private const string Milani3 = "DeificObedience.Milani3";
+        public static readonly string Milani3Guid = "{F2A2FB7F-63B8-4B24-B8C6-622E80D7FD24}";
+
+        internal const string Milani3DisplayName = "DeificObedienceMilani3.Name";
+        private const string Milani3Description = "DeificObedienceMilani3.Description";
+        public static BlueprintFeature Milani3Feat()
+        {
+            var icon = FeatureRefs.FlamewardenPhoenixRising.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Milani3, Milani3Guid)
+              .SetDisplayName(Milani3DisplayName)
+              .SetDescription(Milani3Description)
+              .SetIcon(icon)
               .Configure();
         }
     }

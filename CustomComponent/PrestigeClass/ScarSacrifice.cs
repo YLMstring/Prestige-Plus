@@ -17,6 +17,8 @@ using Kingmaker.Utility;
 using BlueprintCore.Utils;
 using Kingmaker.Designers;
 using Kingmaker.Blueprints.JsonSystem;
+using PrestigePlus.Blueprint.Archetype;
+using PrestigePlus.Blueprint.Feat;
 
 namespace PrestigePlus.CustomComponent.PrestigeClass
 {
@@ -87,6 +89,10 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
                 {
                     evt.RedirectionTarget = maybeCaster;
                     evt.RedirectedPercent = 50;
+                    if (maybeCaster.Descriptor.HasFact(Martyrdom))
+                    {
+                        evt.RedirectedPercent = 100;
+                    }
                     if (!maybeCaster.Descriptor.HasFact(CooldownBuff) && CooldownBuff != null)
                     {
                         GameHelper.ApplyBuff(maybeCaster, CooldownBuff, new Rounds?(1.Rounds()));
@@ -115,5 +121,7 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
         [SerializeField]
         [FormerlySerializedAs("KeepBuff")]
         public BlueprintBuffReference m_KeepBuff;
+
+        private static BlueprintFeatureReference Martyrdom = BlueprintTool.GetRef<BlueprintFeatureReference>(DeificObedience.Milani3Guid);
     }
 }
