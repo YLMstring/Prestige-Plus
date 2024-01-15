@@ -156,7 +156,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
-              .AddToAllFeatures(FeatureRefs.SmiteEvilFeature.ToString())
+              //.AddToAllFeatures(FeatureRefs.SmiteEvilFeature.ToString())
               .AddToAllFeatures(FeatureRefs.SmiteEvilAdditionalUse.ToString())
               .AddDamageBonusAgainstFactOwner(bonus: ContextValues.Rank(), checkedFact: BuffRefs.SmiteEvilBuff.ToString())
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }).WithLinearProgression(1, 0))

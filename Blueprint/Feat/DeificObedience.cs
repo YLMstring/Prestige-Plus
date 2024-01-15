@@ -59,6 +59,8 @@ using Kingmaker.RuleSystem.Rules.Damage;
 using BlueprintCore.Actions.Builder.BasicEx;
 using static Kingmaker.EntitySystem.EntityDataBase;
 using Kingmaker.UnitLogic.Abilities;
+using Kingmaker.UI.MVVM._VM.Other;
+using Kingmaker.UnitLogic;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -120,6 +122,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(ArazniFeat())
               .AddToAllFeatures(CharonFeat())
               .AddToAllFeatures(SzurielFeat())
+              .AddToAllFeatures(IomedaeFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -2239,6 +2242,151 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddContextStatBonus(StatType.Strength, 2, ModifierDescriptor.Profane)
               .AddContextStatBonus(StatType.Constitution, 2, ModifierDescriptor.Profane)
+              .Configure();
+        }
+
+        private const string Iomedae = "DeificObedience.Iomedae";
+        public static readonly string IomedaeGuid = "{346F315B-BDDB-441C-8D07-E80B837293EB}";
+
+        internal const string IomedaeDisplayName = "DeificObedienceIomedae.Name";
+        private const string IomedaeDescription = "DeificObedienceIomedae.Description";
+        public static BlueprintFeature IomedaeFeat()
+        {
+            var icon = FeatureRefs.IomedaeFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Iomedae, IomedaeGuid)
+              .SetDisplayName(IomedaeDisplayName)
+              .SetDescription(IomedaeDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.IomedaeFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.LawfulGood, group: Prerequisite.GroupType.Any)
+              .AddToIsPrerequisiteFor(IomedaeSentinelFeat())
+              .AddStatBonus(ModifierDescriptor.Profane, false, StatType.CheckDiplomacy, 4)
+              .Configure();
+        }
+
+        private const string IomedaeSentinel = "DeificObedience.IomedaeSentinel";
+        public static readonly string IomedaeSentinelGuid = "{21B9F247-5A20-4DDE-A1AB-6858A8EA8A93}";
+
+        internal const string IomedaeSentinelDisplayName = "DeificObedienceIomedaeSentinel.Name";
+        private const string IomedaeSentinelDescription = "DeificObedienceIomedaeSentinel.Description";
+        public static BlueprintProgression IomedaeSentinelFeat()
+        {
+            var icon = FeatureRefs.IomedaeFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(IomedaeSentinel, IomedaeSentinelGuid)
+              .SetDisplayName(IomedaeSentinelDisplayName)
+              .SetDescription(IomedaeSentinelDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(IomedaeGuid)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(12, CreateIomedae1())
+              .AddToLevelEntry(16, Iomedae2Feat())
+              .AddToLevelEntry(20, Iomedae3Feat())
+              .Configure();
+        }
+
+        private const string Iomedae1 = "SpellPower.Iomedae1";
+        public static readonly string Iomedae1Guid = "{DC4C281F-067A-40BA-89DE-CF68CDFC6768}";
+        internal const string Iomedae1DisplayName = "SpellPowerIomedae1.Name";
+        private const string Iomedae1Description = "SpellPowerIomedae1.Description";
+        private static BlueprintFeature CreateIomedae1()
+        {
+            var icon = FeatureRefs.CavalierCharge.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Iomedae1, Iomedae1Guid)
+              .SetDisplayName(Iomedae1DisplayName)
+              .SetDescription(Iomedae1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { Ragathiel1AblityGuid, Gorum1Ablity2Guid, Ragathiel1Ablity3Guid })
+              .Configure();
+        }
+
+        private const string Iomedae2 = "DeificObedience.Iomedae2";
+        public static readonly string Iomedae2Guid = "{9A8217DC-2D73-42A3-A16B-DFDBBD930A6B}";
+
+        private const string Iomedae2Buff = "DeificObedience.Iomedae2Buff";
+        public static readonly string Iomedae2BuffGuid = "{6946F51E-C203-4DC4-A2E7-85EA0CD11A2E}";
+
+        internal const string Iomedae2DisplayName = "DeificObedienceIomedae2.Name";
+        private const string Iomedae2Description = "DeificObedienceIomedae2.Description";
+
+        public static BlueprintFeature Iomedae2Feat()
+        {
+            var icon = FeatureRefs.SmiteEvilFeature.Reference.Get().Icon;
+
+            BuffConfigurator.New(Iomedae2Buff, Iomedae2BuffGuid)
+             .SetDisplayName(Iomedae2DisplayName)
+             .SetDescription(Iomedae2Description)
+             .SetIcon(icon)
+             .Configure();
+
+            return FeatureConfigurator.New(Iomedae2, Iomedae2Guid)
+              .SetDisplayName(Iomedae2DisplayName)
+              .SetDescription(Iomedae2Description)
+              .SetIcon(icon)
+              .AddFacts(new() { FeatureRefs.SmiteEvilAdditionalUse.ToString() })
+              .AddDamageBonusAgainstFactOwner(bonus: ContextValues.Rank(), checkedFact: BuffRefs.SmiteEvilBuff.ToString())
+              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { Sentinel.ArchetypeGuid }))
+              .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New()
+                    .Add<ValorousSmite>()
+                    .Build(), onlyHit: true)
+              .Configure();
+        }
+
+        private const string Iomedae3 = "DeificObedience.Iomedae3";
+        public static readonly string Iomedae3Guid = "{525DCF84-83DC-4F80-9C3C-D62231987BF1}";
+
+        private const string Iomedae3Buff = "DeificObedience.Iomedae3Buff";
+        public static readonly string Iomedae3BuffGuid = "{5AB133C7-1B36-4217-BAB8-473DE04848DA}";
+
+        internal const string Iomedae3DisplayName = "DeificObedienceIomedae3.Name";
+        private const string Iomedae3Description = "DeificObedienceIomedae3.Description";
+
+        private const string Iomedae3Ablity = "DeificObedience.UseIomedae3";
+        private static readonly string Iomedae3AblityGuid = "{926A3480-1E6F-42D4-B349-CF308E847311}";
+
+        private const string Iomedae3AblityRes = "DeificObedience.Iomedae3Res";
+        private static readonly string Iomedae3AblityResGuid = "{83EF86BB-7AA5-4A79-8FE9-3F3E7E7D941C}";
+        public static BlueprintFeature Iomedae3Feat()
+        {
+            var icon = AbilityRefs.Banishment.Reference.Get().Icon;
+
+            var shoot = ActionsBuilder.New()
+                    .CastSpell(AbilityRefs.Dismissal.ToString(), overrideSpellLevel: 9)
+                    .Build();
+
+            var Buff = BuffConfigurator.New(Iomedae3Buff, Iomedae3BuffGuid)
+             .SetDisplayName(Iomedae3DisplayName)
+             .SetDescription(Iomedae3Description)
+             .SetIcon(icon)
+             .AddInitiatorAttackWithWeaponTrigger(action: shoot, actionsOnInitiator: false, triggerBeforeAttack: false, onlyHit: true)
+             .AddInitiatorAttackWithWeaponTrigger(action: ActionsBuilder.New().RemoveSelf().Build(), actionsOnInitiator: true, onlyHit: false)
+             .Configure();
+
+            var abilityresourse = AbilityResourceConfigurator.New(Iomedae3AblityRes, Iomedae3AblityResGuid)
+                .SetMaxAmount(
+                    ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var ability = AbilityConfigurator.New(Iomedae3Ablity, Iomedae3AblityGuid)
+                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuffPermanent(Buff).Build())
+                .SetDisplayName(Iomedae3DisplayName)
+                .SetDescription(Iomedae3Description)
+                .SetIcon(icon)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Special)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: Iomedae3AblityResGuid)
+                .Configure();
+
+            return FeatureConfigurator.New(Iomedae3, Iomedae3Guid)
+              .SetDisplayName(Iomedae3DisplayName)
+              .SetDescription(Iomedae3Description)
+              .SetIcon(icon)
+              .AddSpellPenetrationBonus(value: 1)
+              .AddFacts(new() { ability })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .Configure();
         }
     }
