@@ -127,6 +127,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(SzurielFeat())
               .AddToAllFeatures(IomedaeFeat())
               .AddToAllFeatures(MilaniFeat())
+              .AddToAllFeatures(NiviFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -2654,10 +2655,13 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string Nivi3BuffGuid = "{B70682D5-1E29-4C38-AE48-8E01C8D8688E}";
 
         private const string Nivi3Buff2 = "DeificObedienceStyle.Nivi3buff2";
-        private static readonly string Nivi3Buff2Guid = "{A998E83C-28E8-4A71-B872-F987BBEDD9BF}";
+        public static readonly string Nivi3Buff2Guid = "{A998E83C-28E8-4A71-B872-F987BBEDD9BF}";
 
         private const string Nivi3Buff3 = "DeificObedienceStyle.Nivi3buff3";
         private static readonly string Nivi3Buff3Guid = "{A1E3B3C5-3E21-4BEC-B762-8F922401B725}";
+
+        private const string Nivi3Buff4 = "DeificObedienceStyle.Nivi3buff4";
+        public static readonly string Nivi3Buff4Guid = "{B3CD548C-3D0B-4E75-96DB-4AB436242C27}";
 
         private const string Nivi3Ability = "DeificObedienceStyle.Nivi3Ability";
         private static readonly string Nivi3AbilityGuid = "{B246CD82-8C1B-4C4C-B376-033AC08978CE}";
@@ -2685,13 +2689,13 @@ namespace PrestigePlus.Blueprint.Feat
             var buff = BuffConfigurator.New(Nivi3Buff, Nivi3BuffGuid)
               .SetDisplayName(Nivi3DisplayName)
               .SetDescription(Nivi3Description)
-
+              .AddComponent<NiviGemAttack>()
               .Configure();
 
             var buff3 = BuffConfigurator.New(Nivi3Buff3, Nivi3Buff3Guid)
               .SetDisplayName(Nivi3DisplayName)
               .SetDescription(Nivi3Description)
-
+              .AddComponent<NiviGemAttack>(c => { c.wager = true; })
               .Configure();
 
             var ability = AbilityConfigurator.New(Nivi3Ability, Nivi3AbilityGuid)
@@ -2706,14 +2710,13 @@ namespace PrestigePlus.Blueprint.Feat
                 .Configure();
 
             var ability2 = AbilityConfigurator.New(Nivi3Ability2, Nivi3Ability2Guid)
-                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuffPermanent(buff).Build())
+                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuffPermanent(buff3).Build())
                 .SetDisplayName(Nivi3DisplayName2)
                 .SetDescription(Nivi3Description2)
                 .SetIcon(icon)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
                 .SetRange(AbilityRange.Personal)
                 .SetType(AbilityType.Supernatural)
-                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: Nivi3Buff2Guid)
                 .Configure();
 
             BuffConfigurator.New(Nivi3Buff2, Nivi3Buff2Guid)
@@ -2723,8 +2726,15 @@ namespace PrestigePlus.Blueprint.Feat
               .SetRanks(20)
               .AddToFlags(BlueprintBuff.Flags.RemoveOnRest)
               .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+              .Configure();
+
+            BuffConfigurator.New(Nivi3Buff4, Nivi3Buff4Guid)
+              .SetDisplayName(Nivi3DisplayName2)
+              .SetDescription(Nivi3Description2)
+              .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(BlueprintBuff.Flags.RemoveOnRest)
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
               .AddFacts(new() { ability2 })
-              .AddAbilityResources(useThisAsResource: true)
               .Configure();
 
             return FeatureConfigurator.New(Nivi3Name, Nivi3Guid)
@@ -2733,7 +2743,7 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetIcon(icon)
                     .AddFacts(new() { ability })
                     .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
-                    .AddComponent<AddAbilityResourceDepletedTrigger>(c => { c.m_Resource = abilityresourse.ToReference<BlueprintAbilityResourceReference>(); c.Action = ActionsBuilder.New().ApplyBuffPermanent(Nivi3Buff2Guid).Build(); c.Cost = 1; })
+                    .AddComponent<AddAbilityResourceDepletedTrigger>(c => { c.m_Resource = abilityresourse.ToReference<BlueprintAbilityResourceReference>(); c.Action = ActionsBuilder.New().ApplyBuffPermanent(Nivi3Buff4Guid).Build(); c.Cost = 1; })
                     .Configure();
         }
     }
