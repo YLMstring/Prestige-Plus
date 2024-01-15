@@ -2525,7 +2525,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(NiviDisplayName)
               .SetDescription(NiviDescription)
               .SetIcon(icon)
-              .AddPrerequisiteFeature(FeatureRefs.SarenraeFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteFeature(FeatureRefs.ToragFeature.ToString(), group: Prerequisite.GroupType.Any)
               .AddPrerequisiteAlignment(AlignmentMaskType.TrueNeutral, group: Prerequisite.GroupType.Any)
               .AddToIsPrerequisiteFor(NiviExaltedFeat())
               .AddStatBonus(ModifierDescriptor.Profane, false, StatType.CheckBluff, 4)

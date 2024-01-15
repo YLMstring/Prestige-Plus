@@ -8022,6 +8022,182 @@
     "Key": "DrunkenBruteLiquidCourage.Description",
     "enGB": "While raging, the barbarian increases her morale bonus on saving throws against mind-affecting effects by +1 per four barbarian levels.",
     "zhCN": "狂暴时，野蛮人获得针对影响心智效果的豁免士气加值，每4野蛮人等级增加1点。"
+  },
+  {
+    "Key": "DeificObedienceIomedae.Name",
+    "ProcessTemplates": false,
+    "enGB": "Iomedae Obedience",
+    "zhCN": "艾奥梅黛仪典"
+  },
+  {
+    "Key": "DeificObedienceIomedae.Description",
+    "enGB": "Hold your primary weapon in front of you and hang a holy symbol of Iomedae from it. Kneel while focusing on the holy symbol, pray for guidance and protection from the Inheritor, and swear to follow her teachings. Gain a +4 sacred bonus on Diplomacy checks.",
+    "zhCN": "将你的主手武器举在身前，并将艾奥梅黛的圣徽悬挂在武器之上。以此姿势跪下并专注于圣徽，祈求后继者的指引与保护，并立誓遵从她的教诲。你的交涉检定获得+4神圣加值。"
+  },
+  {
+    "Key": "DeificObedienceIomedaeSentinel.Name",
+    "ProcessTemplates": false,
+    "enGB": "Iomedae (Sentinel)",
+    "zhCN": "艾奥梅黛（信仰哨卫）"
+  },
+  {
+    "Key": "DeificObedienceIomedaeSentinel.Description",
+    "enGB": "Become a Sentinel to gain access to her boons, which will be granted at certain character or class levels.",
+    "zhCN": "成为信仰哨卫来获取她的神恩资格，你会在合适的角色或职业等级得到神恩。"
+  },
+  {
+    "Key": "SpellPowerIomedae1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Knight of Valor",
+    "zhCN": "英勇骑士"
+  },
+  {
+    "Key": "SpellPowerIomedae1.Description",
+    "enGB": "bless weapon 3/day, bull’s strength 2/day, or magic vestment 1/day",
+    "zhCN": "祝福武器 3次/日，牛之蛮力 2次/日，或魔化防具 1次/日"
+  },
+  {
+    "Key": "DeificObedienceIomedae2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Valorous Smite",
+    "zhCN": "勇气斩"
+  },
+  {
+    "Key": "DeificObedienceIomedae2.Description",
+    "enGB": "If you have the smite evil class feature, you gain an extra use of that ability per day. You add the levels of sentinel to your paladin levels when calculating the extra damage dealt by your smite. If you successfully deal damage with your smite, your target must succeed at a Will saving throw (with a DC equal to 10 + your Charisma modifier + 1/2 your Hit Dice) or be stunned for 1 round plus 1 round for every 4 Hit Dice you possess (maximum 6 rounds). Once a target saves against this stunning effect, it is immune to the stunning effect for 24 hours.",
+    "zhCN": "若你具有制裁邪恶职业能力，那么该能力的每日使用次数额外增加1次。在判断该能力造成的额外伤害时，将你的信仰哨卫等级加到圣武士等级之上。若你成功使用制裁邪恶造成伤害，那么你的目标必须进行意志豁免（DC为10 + 你的魅力调整值 + 1/2你的生命骰），失败则会震慑，持续时间为1轮，你每有4个生命骰额外增加1轮（最高6轮）。如果目标成功豁免，会在24小时内免疫这个震慑效果。"
+  },
+  {
+    "Key": "DeificObedienceIomedae3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Banishing Strike",
+    "zhCN": "放逐斩"
+  },
+  {
+    "Key": "DeificObedienceIomedae3.Description",
+    "enGB": "Once per day, you can channel the effects of banishment through your weapon, though you don’t need to cast (or even know) the spell. You must declare your use of this ability before you roll your attack. On a hit, the target is affected by a banishment effect. If you openly wear a holy symbol of Iomedae, you gain a +1 bonus on your caster level check to overcome the target’s spell resistance (if any) and the saving throw DC increases by 2.",
+    "zhCN": "每日1次，你能够将放逐术的效果引导至你的武器上，不过这并不需要施放（甚至学会）该法术。你必须在做出攻击检定之前声明使用该能力。若命中，目标会受到放逐术的效果影响。若你公开佩戴着艾奥梅黛的圣徽，那么你会在克服目标的法术抗力（若有）的施法者等级检定中获得+1加值，并且该效果的豁免DC增加2点。"
+  },
+  {
+    "Key": "DeificObedienceMilani.Name",
+    "ProcessTemplates": false,
+    "enGB": "Milani Obedience",
+    "zhCN": "美洛妮仪典"
+  },
+  {
+    "Key": "DeificObedienceMilani.Description",
+    "enGB": "Spend time meditating among roses you have planted yourself, so you can inhale their sacred scent while offering prayers to Milani. If no such roses are available, you can instead brew tea from herbs and rose petals and share the tea with close friends or neighbors. Preferred topics for conversation during this teatime include hopes for the future and preparations for times of need, but the act of sharing is itself enough. During times of war or conflict, though, you must instead spend time sparring, preferably with friends or neighbors whom you plan to fight alongside during the conflicts to come. If you are imprisoned and unable to spar, you can instead sing any song of hope or resistance in unison with one or more fellow prisoners. You gain a +2 sacred bonus on all saving throws against charm and compulsion effects, and a +2 bonus on all dispel checks based on your caster level.",
+    "zhCN": "在自己种植的玫瑰花丛中冥想，在向美洛妮祈祷的同时呼吸着它们神圣的香气。如果没有这样的玫瑰花，你可以用香草和玫瑰花瓣泡茶，并与亲密的朋友或邻居一起喝。茶会上首选的话题包括对未来的希望，未雨绸缪等等，但不聊这些也没关系。但在战争或冲突时期，你必须击剑，最好是与你计划在即将到来的冲突中并肩作战的朋友或邻居击剑。如果你被监禁并且无法击剑，你可以与一名或多名狱友齐声唱任何关于希望或抵抗的歌曲。你在对抗魅惑和胁迫效果的豁免检定上获得+2神圣加值，并且基于施法者等级的所有解除魔法检定获得+2加值。"
+  },
+  {
+    "Key": "DeificObedienceMilaniSentinel.Name",
+    "ProcessTemplates": false,
+    "enGB": "Milani (Sentinel)",
+    "zhCN": "美洛妮（信仰哨卫）"
+  },
+  {
+    "Key": "DeificObedienceMilaniSentinel.Description",
+    "enGB": "Become a Sentinel to gain access to her boons, which will be granted at certain character or class levels.",
+    "zhCN": "成为信仰哨卫来获取她的神恩资格，你会在合适的角色或职业等级得到神恩。"
+  },
+  {
+    "Key": "SpellPowerMilani1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Neighborhood Guardian",
+    "zhCN": "家园守护者"
+  },
+  {
+    "Key": "SpellPowerMilani1.Description",
+    "enGB": "protection from evil 3/day, shield other 2/day, or magic vestment 1/day",
+    "zhCN": "防护邪恶 3次/日，护卫他人 2次/日，或魔化防具 1次/日"
+  },
+  {
+    "Key": "DeificObedienceMilani2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Stoic Guardian",
+    "zhCN": "隐修守护者"
+  },
+  {
+    "Key": "DeificObedienceMilani2.Description",
+    "enGB": "Inspired by Milani’s valor and steadfastness, you refuse to let magic corrupt your thoughts and deny fear any hold on your actions. You are immune to fear and charm effects, and gain a +4 sacred bonus on all saving throws against compulsion effects.",
+    "zhCN": "激励于美洛妮的英勇和坚定，你拒绝让魔法侵蚀你的思想，并不让恐惧影响你的任何行动。你免疫恐惧和魅惑效果，并且在对抗胁迫效果的所有豁免检定上获得+4神圣加值。"
+  },
+  {
+    "Key": "DeificObedienceMilani3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Martyrdom",
+    "zhCN": "殉难"
+  },
+  {
+    "Key": "DeificObedienceMilani3.Description",
+    "enGB": "Your deeds and faith have earned you the Everbloom’s blessing to give your life for a worthy cause and still fight on. The subject of your shield other effects takes no damage. The amount of damage not taken by them is taken by you.",
+    "zhCN": "你的事迹和信仰为你赢得了永绽之花的祝福，让你能够为了有价值的事业献出生命并继续战斗。你的护卫他人效果的目标不会受到任何伤害。其未受到的伤害将由你承担。"
+  },
+  {
+    "Key": "DeificObedienceNivi.Name",
+    "ProcessTemplates": false,
+    "enGB": "Nivi Obedience",
+    "zhCN": "妮维仪典"
+  },
+  {
+    "Key": "DeificObedienceNivi.Description",
+    "enGB": "Engage in a game of chance in which money, gems, or items worth at least 10 gp are at stake. This must be a wager that both parties enter into willingly. Offer a prayer out loud to Nivi Rhombodazzle before the wager begins (for example, if the wager involves dice, offer up the prayer before the dice are rolled). If you are alone and there is no one else to wager against, make a bet against yourself on Nivi’s behalf, setting aside the stakes as an offering in the event that Nivi’s side of the wager wins. Spend time privately reveling in the exciting thrill of making a risky wager and preparing yourself for the inevitable moment when the dice turn against you. Gain a +4 profane bonus on Bluff and Sleight of Hand checks.",
+    "zhCN": "参与一场运气游戏，赌上金钱、宝石或其它价值至少 10 金币的物品。必须双方自愿参与。在赌局开始前向妮维大声祈祷（例如，如果赌注涉及骰子，在掷骰子之前献上祈祷）。如果您独自一人并且没有其他人可以下注，请代表妮维和自己对赌，如果代表妮维的一方获胜，将赌注献祭给妮维。私下陶醉于冒险下注的兴奋快感，并为不可避免的骰运不佳做好准备。在唬骗和巧手检定上获得+4亵渎加值。"
+  },
+  {
+    "Key": "DeificObedienceNiviExalted.Name",
+    "ProcessTemplates": false,
+    "enGB": "Nivi (Exalted)",
+    "zhCN": "妮维（传道尊者）"
+  },
+  {
+    "Key": "DeificObedienceNiviExalted.Description",
+    "enGB": "Become an exalted evangelist to gain access to her boons, which will be granted at certain character or class levels. Nivi was once an ordinary mortal gnome with a penchant for gambling and games of chance. She was not addicted to winning so much as playing the game. Unfortunately, this attitude led her to owe a lot of money to a lot of people, which eventually forced her to flee from some of her more powerful creditors. She eventually found her way into the Darklands and became the first gnome to stave off the effects of the Bleaching by fully embracing her new life below the surface of Golarion. She traded a special gem to Torag in exchange for becoming a demigoddess. She appears as an umbral gnome with eyes that glimmer like gems.",
+    "zhCN": "成为传道尊者来获取她的神恩资格，你会在合适的角色或职业等级得到神恩。Nivi was once an ordinary mortal gnome with a penchant for gambling and games of chance. She was not addicted to winning so much as playing the game. Unfortunately, this attitude led her to owe a lot of money to a lot of people, which eventually forced her to flee from some of her more powerful creditors. She eventually found her way into the Darklands and became the first gnome to stave off the effects of the Bleaching by fully embracing her new life below the surface of Golarion. She traded a special gem to Torag in exchange for becoming a demigoddess. She appears as an umbral gnome with eyes that glimmer like gems."
+  },
+  {
+    "Key": "SpellPowerNivi1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Faithful’s Fortune",
+    "zhCN": "忠实好运"
+  },
+  {
+    "Key": "SpellPowerNivi1.Description",
+    "enGB": "bless 3/day, shield other 2/day, or heroism 1/day",
+    "zhCN": "祝福术 3次/日，护卫他人 2次/日，或英雄气概 1次/日"
+  },
+  {
+    "Key": "DeificObedienceNivi2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Gemstone Guardian",
+    "zhCN": "宝石卫士"
+  },
+  {
+    "Key": "DeificObedienceNivi2.Description",
+    "enGB": "Once per day as a standard action, you can summon a Huge earth elemental. It appears where you designate and attacks your opponents to the best of its ability.",
+    "zhCN": "每天一次，以一个标准动作，你可以召唤一个巨型土元素，它会出现在你指定的地方，并尽力攻击你的对手。"
+  },
+  {
+    "Key": "DeificObedienceNivi3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Seven-Pipped Gem",
+    "zhCN": "七棱宝石"
+  },
+  {
+    "Key": "DeificObedienceNivi3.Description",
+    "enGB": "As a swift action, you can gain a luck bonus on your next attack roll equal to half your total Hit Dice. You can use this ability a number of times per day equal to your Charisma bonus (minimum 1). Once you have used all of your daily uses of this ability, you can attempt to use this ability one additional time, but there is a 50% chance that instead of gaining a luck bonus on the roll, you instead take a penalty equal to the bonus you would have received. Each time the attack hits and would have hit without this ability, you gain an additional daily use in the latter manner.",
+    "zhCN": "以一个迅捷动作，你可以在下一次攻击检​​定中获得相当于生命骰一半的幸运加值。你每天可以使用该能力的次数等于你的魅力加值（最少 1 次）。你用完所有的次数后，可以再使用此能力一次，但你有50%的概率不会获得运气加值，而是受到相等的减值。每当这种攻击命中，并且不用这个能力本来就能命中时，你能以后一种方式额外再使用一次本能力。"
+  },
+  {
+    "Key": "DeificObedienceNivi32.Name",
+    "ProcessTemplates": false,
+    "enGB": "Seven-Pipped Gem (wager)",
+    "zhCN": "七棱宝石（赌局）"
+  },
+  {
+    "Key": "DeificObedienceNivi32.Description",
+    "enGB": "There is a 50% chance that instead of gaining a luck bonus on the roll, you instead take a penalty equal to the bonus you would have received.",
+    "zhCN": "你有50%的概率不会获得运气加值，而是受到相等的减值。"
   }
 
 ]
