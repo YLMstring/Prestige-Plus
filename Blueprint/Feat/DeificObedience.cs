@@ -63,6 +63,7 @@ using Kingmaker.UI.MVVM._VM.Other;
 using Kingmaker.UnitLogic;
 using TabletopTweaks.Core.NewComponents;
 using static Kingmaker.EntitySystem.Properties.BaseGetter.PropertyContextAccessor;
+using BlueprintCore.Utils;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -2644,76 +2645,87 @@ namespace PrestigePlus.Blueprint.Feat
         }
 
         private static readonly string Nivi3Name = "DeificObedienceNivi3";
-        public static readonly string Nivi3Guid = "{F3250E50-B38F-4B8B-94EA-E9DA324918E8}";
+        public static readonly string Nivi3Guid = "{860AC1F0-FE4E-4E68-83C8-FC6E436B7F97}";
 
         private static readonly string Nivi3DisplayName = "DeificObedienceNivi3.Name";
         private static readonly string Nivi3Description = "DeificObedienceNivi3.Description";
 
         private const string Nivi3Buff = "DeificObedienceStyle.Nivi3buff";
-        private static readonly string Nivi3BuffGuid = "{AC45714B-373D-43D8-876F-A5AEA678FCE0}";
+        private static readonly string Nivi3BuffGuid = "{B70682D5-1E29-4C38-AE48-8E01C8D8688E}";
+
+        private const string Nivi3Buff2 = "DeificObedienceStyle.Nivi3buff2";
+        private static readonly string Nivi3Buff2Guid = "{A998E83C-28E8-4A71-B872-F987BBEDD9BF}";
+
+        private const string Nivi3Buff3 = "DeificObedienceStyle.Nivi3buff3";
+        private static readonly string Nivi3Buff3Guid = "{A1E3B3C5-3E21-4BEC-B762-8F922401B725}";
 
         private const string Nivi3Ability = "DeificObedienceStyle.Nivi3Ability";
-        private static readonly string Nivi3AbilityGuid = "{812310B5-0504-4A44-A472-25E3C6D783B2}";
+        private static readonly string Nivi3AbilityGuid = "{B246CD82-8C1B-4C4C-B376-033AC08978CE}";
+
+        private const string Nivi3Ability2 = "DeificObedienceStyle.Nivi3Ability2";
+        private static readonly string Nivi3Ability2Guid = "{4053C5B7-9AF0-46C3-8DE5-B03B66B6D86D}";
+
+        private static readonly string Nivi3DisplayName2 = "DeificObedienceNivi32.Name";
+        private static readonly string Nivi3Description2 = "DeificObedienceNivi32.Description";
 
         private const string Nivi3AbilityRes = "DeificObedienceStyle.Nivi3AbilityRes";
-        private static readonly string Nivi3AbilityResGuid = "{93E4D058-1485-49B0-9EF1-0300C79EA1D5}";
+        private static readonly string Nivi3AbilityResGuid = "{595B4578-6357-42EA-9A1E-BF3A82E71D5E}";
 
         public static BlueprintFeature NiviExalted3Feat()
         {
-            var icon = AbilityRefs.BalefulPolymorph.Reference.Get().Icon;
+            var icon = FeatureRefs.OreadHeritageGemsoul.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(Nivi3AbilityRes, Nivi3AbilityResGuid)
                 .SetMaxAmount(
-                    ResourceAmountBuilder.New(1))
+                    ResourceAmountBuilder.New(0)
+                    .IncreaseByStat(StatType.Charisma))
+                .SetMin(1)
                 .Configure();
 
             var buff = BuffConfigurator.New(Nivi3Buff, Nivi3BuffGuid)
-              .CopyFrom(
-                BuffRefs.BalefulPolymorphBuff,
-                typeof(AddCondition),
-                typeof(AddContextStatBonus),
-                typeof(Polymorph),
-                typeof(SpellDescriptorComponent),
-                typeof(ReplaceSourceBone),
-                typeof(ReplaceAsksList),
-                typeof(ReplaceCastSource),
-                typeof(ChangeImpatience),
-                typeof(SuppressBuffs),
-                typeof(AddBuffActions),
-                typeof(BuffMovementSpeed))
               .SetDisplayName(Nivi3DisplayName)
               .SetDescription(Nivi3Description)
-              .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New()
-                        .DealDamage(DamageTypes.Direct(), ContextDice.Value(DiceType.D6, 1, 0))
-                        .Build())
-              .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.AdditionalAttackBonus, value: -2)
-              .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.AdditionalDamage, value: -2)
-              .AddBuffAllSavesBonus(ModifierDescriptor.Penalty, value: -2)
-              .AddBuffAllSkillsBonus(ModifierDescriptor.Penalty, value: -2, multiplier: 1)
+
               .Configure();
 
-            
+            var buff3 = BuffConfigurator.New(Nivi3Buff3, Nivi3Buff3Guid)
+              .SetDisplayName(Nivi3DisplayName)
+              .SetDescription(Nivi3Description)
+
+              .Configure();
 
             var ability = AbilityConfigurator.New(Nivi3Ability, Nivi3AbilityGuid)
-                .CopyFrom(
-                AbilityRefs.BalefulPolymorph,
-                typeof(SpellComponent),
-                typeof(SpellDescriptorComponent),
-                typeof(AbilityTargetHasFact),
-                typeof(AbilitySpawnFx))
+                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuffPermanent(buff).Build())
                 .SetDisplayName(Nivi3DisplayName)
                 .SetDescription(Nivi3Description)
-                .SetType(AbilityType.SpellLike)
-                .AddAbilityEffectRunAction(
-                actions: ActionsBuilder.New()
-                  .ConditionalSaved(failed: ActionsBuilder.New()
-                        .RemoveBuffsByDescriptor(SpellDescriptor.Polymorph, true)
-                        .ApplyBuffPermanent(buff, isFromSpell: true)
-                        .Build())
-                  .Build(), savingThrowType: SavingThrowType.Fortitude)
-                .AddPretendSpellLevel(spellLevel: 9)
+                .SetIcon(icon)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Supernatural)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .Configure();
+
+            var ability2 = AbilityConfigurator.New(Nivi3Ability2, Nivi3Ability2Guid)
+                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuffPermanent(buff).Build())
+                .SetDisplayName(Nivi3DisplayName2)
+                .SetDescription(Nivi3Description2)
+                .SetIcon(icon)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Supernatural)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: Nivi3Buff2Guid)
+                .Configure();
+
+            BuffConfigurator.New(Nivi3Buff2, Nivi3Buff2Guid)
+              .SetDisplayName(Nivi3DisplayName2)
+              .SetDescription(Nivi3Description2)
+              .SetStacking(StackingType.Rank)
+              .SetRanks(20)
+              .AddToFlags(BlueprintBuff.Flags.RemoveOnRest)
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+              .AddFacts(new() { ability2 })
+              .AddAbilityResources(useThisAsResource: true)
+              .Configure();
 
             return FeatureConfigurator.New(Nivi3Name, Nivi3Guid)
                     .SetDisplayName(Nivi3DisplayName)
@@ -2721,6 +2733,7 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetIcon(icon)
                     .AddFacts(new() { ability })
                     .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+                    .AddComponent<AddAbilityResourceDepletedTrigger>(c => { c.m_Resource = abilityresourse.ToReference<BlueprintAbilityResourceReference>(); c.Action = ActionsBuilder.New().ApplyBuffPermanent(Nivi3Buff2Guid).Build(); c.Cost = 1; })
                     .Configure();
         }
     }

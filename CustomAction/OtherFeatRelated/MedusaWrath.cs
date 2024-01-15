@@ -18,6 +18,7 @@ using Kingmaker.Utility;
 using Kingmaker.UnitLogic.Commands;
 using Kingmaker.Items.Slots;
 using Kingmaker.Visual.Animation.Kingmaker;
+using Kingmaker.UnitLogic.Buffs;
 
 namespace PrestigePlus.CustomAction.OtherFeatRelated
 {
@@ -45,22 +46,13 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                     Logger.Info("no caster");
                     return;
                 }
-                var buff = maybeCaster.GetFact(CasterBuff);
-                if (buff == null || buff.GetRank() == 10) return;
+                if (maybeCaster.GetFact(CasterBuff) is not Buff buff || buff.GetRank() == 10) return;
                 var IsTargetFlatFooted = Rulebook.Trigger(new RuleCheckTargetFlatFooted(maybeCaster, unit)).IsFlatFooted;
                 if (IsTargetFlatFooted || unit.State.HasCondition(UnitCondition.Dazed) || unit.State.HasCondition(UnitCondition.LoseDexterityToAC) || unit.State.HasCondition(UnitCondition.Paralyzed) || unit.State.HasCondition(UnitCondition.Staggered) || unit.State.HasCondition(UnitCondition.Stunned) || unit.State.HasCondition(UnitCondition.Unconscious))
                 {
                     var attackAnimation = maybeCaster.View.AnimationManager.CreateHandle(UnitAnimationType.SpecialAttack);
                     maybeCaster.View.AnimationManager.Execute(attackAnimation);
-                    GameHelper.ApplyBuff(maybeCaster, CasterBuff, new Rounds?(1.Rounds()));
-                    GameHelper.ApplyBuff(maybeCaster, CasterBuff, new Rounds?(1.Rounds()));
-                    GameHelper.ApplyBuff(maybeCaster, CasterBuff, new Rounds?(1.Rounds()));
-                    GameHelper.ApplyBuff(maybeCaster, CasterBuff, new Rounds?(1.Rounds()));
-                    GameHelper.ApplyBuff(maybeCaster, CasterBuff, new Rounds?(1.Rounds()));
-                    GameHelper.ApplyBuff(maybeCaster, CasterBuff, new Rounds?(1.Rounds()));
-                    GameHelper.ApplyBuff(maybeCaster, CasterBuff, new Rounds?(1.Rounds()));
-                    GameHelper.ApplyBuff(maybeCaster, CasterBuff, new Rounds?(1.Rounds()));
-                    GameHelper.ApplyBuff(maybeCaster, CasterBuff, new Rounds?(1.Rounds()));
+                    buff.SetRank(10);
                     RunAttackRule(maybeCaster, unit);
                     RunAttackRule(maybeCaster, unit);
                 }
