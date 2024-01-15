@@ -144,7 +144,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(ProficienciesDisplayName)
               .SetDescription(ProficienciesDescription)
               .SetIsClassFeature(true)
-              .AddFacts(new() { ShadowDancer.ShadowJumpAblityGuid, ShadowDancer.ShadowJumpAblityGuid2 })
               .AddAbilityResources(resource: ShadowDancer.ShadowJumpAblityResGuid, restoreAmount: true)
               .AddProficiencies(
                 weaponProficiencies:

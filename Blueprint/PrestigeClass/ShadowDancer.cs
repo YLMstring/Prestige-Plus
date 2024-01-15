@@ -46,6 +46,7 @@ using Kingmaker.Designers.EventConditionActionSystem.Evaluators;
 using Kingmaker.Designers.EventConditionActionSystem.ContextData;
 using BlueprintCore.Conditions.Builder;
 using Kingmaker.UnitLogic.Abilities.Components.TargetCheckers;
+using static Kingmaker.EntitySystem.Properties.BaseGetter.PropertyContextAccessor;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -159,6 +160,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetMaxAmount(ResourceAmountBuilder.New(0))
                 .SetUseMax()
                 .Configure();
+
             var ability = AbilityConfigurator.New(ShadowJumpAblity, ShadowJumpAblityGuid)
                 .CopyFrom(
                 AbilityRefs.KiAbudantStep,
@@ -186,7 +188,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(ProficienciesDisplayName)
               .SetDescription(ProficienciesDescription)
               .SetIsClassFeature(true)
-              .AddFacts(new() { ability, ability2 })
               .AddAbilityResources(resource: ShadowJumpAblityResGuid, restoreAmount: true)
               .AddComponent(assProficiencies.GetComponent<AddFacts>())
               .AddProficiencies(
@@ -388,7 +389,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddPrerequisiteClassLevel(ArchetypeGuid, 1, group: Prerequisite.GroupType.Any)
               .AddPrerequisiteClassLevel(UmbralAgent.ArchetypeGuid, 1, group: Prerequisite.GroupType.Any)
               .AddIncreaseResourceAmount(ShadowJumpAblityResGuid, 4)
-              .AddFeatureTagsComponent(FeatureTag.ClassSpecific)
+              .AddFacts(new() { ShadowJumpAblityGuid, ShadowJumpAblityGuid2 })
               .Configure();
         }
 
