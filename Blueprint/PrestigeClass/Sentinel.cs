@@ -163,10 +163,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(SentinelSymbolicWeaponDisplayName)
               .SetDescription(SentinelSymbolicWeaponDescription)
               .SetIcon(icon)
-              .AddPrerequisiteAlignment(AlignmentMaskType.Good, group: Prerequisite.GroupType.Any)
-              .AddPrerequisiteAlignment(AlignmentMaskType.LawfulNeutral, group: Prerequisite.GroupType.Any)
-              .AddPrerequisiteAlignment(AlignmentMaskType.TrueNeutral, group: Prerequisite.GroupType.Any)
-              .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticNeutral, group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteNoFeature(FeatureRefs.EvilDomainAllowed.ToString())
               .AddComponent<SymbolicWeaponBonus>()
               .Configure();
         }
@@ -183,10 +180,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(SentinelEvilWeaponDisplayName)
               .SetDescription(SentinelEvilWeaponDescription)
               .SetIcon(icon)
-              .AddPrerequisiteAlignment(AlignmentMaskType.Evil, group: Prerequisite.GroupType.Any)
-              .AddPrerequisiteAlignment(AlignmentMaskType.LawfulNeutral, group: Prerequisite.GroupType.Any)
-              .AddPrerequisiteAlignment(AlignmentMaskType.TrueNeutral, group: Prerequisite.GroupType.Any)
-              .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticNeutral, group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteNoFeature(FeatureRefs.GoodDomainAllowed.ToString())
               .AddComponent<SymbolicWeaponBonus>(c => { c.Des = Kingmaker.Enums.ModifierDescriptor.Profane; })
               .Configure();
         }

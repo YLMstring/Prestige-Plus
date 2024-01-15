@@ -229,10 +229,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(ExaltedEvangelistVitalityGoodDisplayName)
               .SetDescription(ExaltedEvangelistVitalityGoodDescription)
               .SetIcon(icon)
-              .AddPrerequisiteAlignment(AlignmentMaskType.Good, group: Prerequisite.GroupType.Any)
-              .AddPrerequisiteAlignment(AlignmentMaskType.LawfulNeutral, group: Prerequisite.GroupType.Any)
-              .AddPrerequisiteAlignment(AlignmentMaskType.TrueNeutral, group: Prerequisite.GroupType.Any)
-              .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticNeutral, group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteNoFeature(FeatureRefs.EvilDomainAllowed.ToString())
               .AddStatBonus(ModifierDescriptor.Sacred, false, StatType.SaveFortitude, 2)
               .Configure();
         }
@@ -249,10 +246,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(ExaltedEvangelistVitalityEvilDisplayName)
               .SetDescription(ExaltedEvangelistVitalityEvilDescription)
               .SetIcon(icon)
-              .AddPrerequisiteAlignment(AlignmentMaskType.Evil, group: Prerequisite.GroupType.Any)
-              .AddPrerequisiteAlignment(AlignmentMaskType.LawfulNeutral, group: Prerequisite.GroupType.Any)
-              .AddPrerequisiteAlignment(AlignmentMaskType.TrueNeutral, group: Prerequisite.GroupType.Any)
-              .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticNeutral, group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteNoFeature(FeatureRefs.GoodDomainAllowed.ToString())
               .AddStatBonus(ModifierDescriptor.Profane, false, StatType.SaveFortitude, 2)
               .Configure();
         }
