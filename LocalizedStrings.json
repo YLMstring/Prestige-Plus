@@ -204,8 +204,8 @@
 
   {
     "Key": "InheritorCrusaderChampionHonor.Description",
-    "enGB": "An Inheritor’s crusader can smite evil once (or once more) per day. A crusader’s class levels stack with paladin class levels for the purpose of determining the damage of the paladin’s smite evil ability.",
-    "zhCN": "后继者远征骑士可每日使用一次（或额外使用一次）制裁邪恶能力。在决定制裁邪恶能力的伤害时，将远征骑士的等级与圣武士职业等级叠加计算。"
+    "enGB": "An Inheritor’s crusader may smite evil one additional time per day if he has the ability. A crusader’s class levels stack with paladin class levels for the purpose of determining the damage of the paladin’s smite evil ability.",
+    "zhCN": "后继者远征骑士若有制裁邪恶能力，每日可多使用一次。在决定制裁邪恶能力的伤害时，将远征骑士的等级与圣武士职业等级叠加计算。"
   },
 
   {

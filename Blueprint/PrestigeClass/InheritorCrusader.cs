@@ -147,18 +147,14 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         internal const string InheritorCrusaderChampionHonorDisplayName = "InheritorCrusaderChampionHonor.Name";
         private const string InheritorCrusaderChampionHonorDescription = "InheritorCrusaderChampionHonor.Description";
-        public static BlueprintFeatureSelection ICChampionHonor()
+        public static BlueprintFeature ICChampionHonor()
         {
             var icon = AbilityRefs.SmiteEvilAbility.Reference.Get().Icon;
-            return FeatureSelectionConfigurator.New(ChampionHonor, ChampionHonorGuid)
+            return FeatureConfigurator.New(ChampionHonor, ChampionHonorGuid)
               .SetDisplayName(InheritorCrusaderChampionHonorDisplayName)
               .SetDescription(InheritorCrusaderChampionHonorDescription)
               .SetIcon(icon)
-              .SetIgnorePrerequisites(false)
-              .SetObligatory(false)
-              //.AddToAllFeatures(FeatureRefs.SmiteEvilFeature.ToString())
-              .AddToAllFeatures(FeatureRefs.SmiteEvilAdditionalUse.ToString())
-              .AddToAllFeatures(FeatureRefs.SmiteChaosAdditionalUse.ToString())
+              .AddFacts(new() { FeatureRefs.SmiteEvilAdditionalUse.ToString() })
               .AddDamageBonusAgainstFactOwner(bonus: ContextValues.Rank(), checkedFact: BuffRefs.SmiteEvilBuff.ToString())
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }))
               .Configure();
