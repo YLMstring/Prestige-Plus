@@ -62,6 +62,7 @@ using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UI.MVVM._VM.Other;
 using Kingmaker.UnitLogic;
 using TabletopTweaks.Core.NewComponents;
+using static Kingmaker.EntitySystem.Properties.BaseGetter.PropertyContextAccessor;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -124,6 +125,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(CharonFeat())
               .AddToAllFeatures(SzurielFeat())
               .AddToAllFeatures(IomedaeFeat())
+              .AddToAllFeatures(MilaniFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -2405,7 +2407,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDescription(MilaniDescription)
               .SetIcon(icon)
               .AddPrerequisiteFeature("C5C537C7-77DB-48B7-BBE8-61414DB4D366", group: Prerequisite.GroupType.Any)
-              .AddPrerequisiteAlignment(AlignmentMaskType.LawfulGood, group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticGood, group: Prerequisite.GroupType.Any)
               .AddToIsPrerequisiteFor(MilaniSentinelFeat())
               .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Charm, value: 2)
               .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Compulsion, value: 2)
@@ -2506,6 +2508,220 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDescription(Milani3Description)
               .SetIcon(icon)
               .Configure();
+        }
+
+        private const string Nivi = "DeificObedience.Nivi";
+        public static readonly string NiviGuid = "{658E4AE1-14BF-4183-AB27-C5F7A44E4368}";
+
+        internal const string NiviDisplayName = "DeificObedienceNivi.Name";
+        private const string NiviDescription = "DeificObedienceNivi.Description";
+        public static BlueprintFeature NiviFeat()
+        {
+            var icon = FeatureRefs.LuckBlessingFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Nivi, NiviGuid)
+              .SetDisplayName(NiviDisplayName)
+              .SetDescription(NiviDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.SarenraeFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.TrueNeutral, group: Prerequisite.GroupType.Any)
+              .AddToIsPrerequisiteFor(NiviExaltedFeat())
+              .AddStatBonus(ModifierDescriptor.Profane, false, StatType.CheckBluff, 4)
+              .AddStatBonus(ModifierDescriptor.Profane, false, StatType.SkillThievery, 4)
+              .Configure();
+        }
+
+        private const string NiviExalted = "DeificObedience.NiviExalted";
+        public static readonly string NiviExaltedGuid = "{31968312-5083-4DEC-9D34-14F16E7B79DA}";
+
+        internal const string NiviExaltedDisplayName = "DeificObedienceNiviExalted.Name";
+        private const string NiviExaltedDescription = "DeificObedienceNiviExalted.Description";
+        public static BlueprintProgression NiviExaltedFeat()
+        {
+            var icon = FeatureRefs.LuckBlessingFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(NiviExalted, NiviExaltedGuid)
+              .SetDisplayName(NiviExaltedDisplayName)
+              .SetDescription(NiviExaltedDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(NiviGuid)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(12, CreateNivi1())
+              .AddToLevelEntry(16, NiviExalted2Feat())
+              .AddToLevelEntry(20, NiviExalted3Feat())
+              .Configure();
+        }
+
+        private const string Nivi1 = "SpellPower.Nivi1";
+        public static readonly string Nivi1Guid = "{8A6120C3-5685-498A-A770-8CB4AC841DF4}";
+        internal const string Nivi1DisplayName = "SpellPowerNivi1.Name";
+        private const string Nivi1Description = "SpellPowerNivi1.Description";
+
+        private const string Nivi1Ablity = "SpellPower.UseNivi1";
+        private static readonly string Nivi1AblityGuid = "{4A253F7A-C5EA-468D-97E5-2508532AD5D2}";
+
+        private const string Nivi1Ablity3 = "SpellPower.UseNivi13";
+        private static readonly string Nivi1Ablity3Guid = "{E1222D70-CE12-4B89-8CA6-B7DE1A38D764}";
+
+        private static BlueprintFeature CreateNivi1()
+        {
+            var icon = AbilityRefs.Bless.Reference.Get().Icon;
+
+            var ability = AbilityConfigurator.New(Nivi1Ablity, Nivi1AblityGuid)
+                .CopyFrom(
+                AbilityRefs.Bless,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(AbilityTargetsAround),
+                typeof(AbilitySpawnFx))
+                .AddPretendSpellLevel(spellLevel: 1)
+                .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var ability3 = AbilityConfigurator.New(Nivi1Ablity3, Nivi1Ablity3Guid)
+                .CopyFrom(
+                AbilityRefs.Heroism,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(AbilitySpawnFx))
+                .AddPretendSpellLevel(spellLevel: 3)
+                .AddAbilityResourceLogic(6, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Nivi1, Nivi1Guid)
+              .SetDisplayName(Nivi1DisplayName)
+              .SetDescription(Nivi1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability, Erastil1Ablity2Guid, ability3 })
+              .Configure();
+        }
+
+        private const string Nivi2 = "DeificObedience.Nivi2";
+        public static readonly string Nivi2Guid = "{D34AD54A-3AA9-45A5-ABCF-E7122566B1E1}";
+
+        private const string Nivi2Ablity = "DeificObedience.UseNivi2";
+        private static readonly string Nivi2AblityGuid = "{93939E8C-B2D8-4E95-BAB2-AD8CAF2845E3}";
+
+        private const string Nivi2AbilityRes = "DeificObedienceStyle.Nivi3AbilityRes";
+        private static readonly string Nivi2AbilityResGuid = "{682EBC7C-C776-4CF7-AC87-A69EC4F62A83}";
+
+        internal const string Nivi2DisplayName = "DeificObedienceNivi2.Name";
+        private const string Nivi2Description = "DeificObedienceNivi2.Description";
+        public static BlueprintFeature NiviExalted2Feat()
+        {
+            var icon = AbilityRefs.SummonElementalHugeEarth.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(Nivi2AbilityRes, Nivi2AbilityResGuid)
+                .SetMaxAmount(
+                    ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var ability = AbilityConfigurator.New(Nivi2Ablity, Nivi2AblityGuid)
+                .CopyFrom(
+                AbilityRefs.SummonElementalHugeEarth,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(ContextRankConfig))
+                .SetDisplayName(Nivi2DisplayName)
+                .SetDescription(Nivi2Description)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetIsFullRoundAction(false)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Nivi2, Nivi2Guid)
+              .SetDisplayName(Nivi2DisplayName)
+              .SetDescription(Nivi2Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .Configure();
+        }
+
+        private static readonly string Nivi3Name = "DeificObedienceNivi3";
+        public static readonly string Nivi3Guid = "{F3250E50-B38F-4B8B-94EA-E9DA324918E8}";
+
+        private static readonly string Nivi3DisplayName = "DeificObedienceNivi3.Name";
+        private static readonly string Nivi3Description = "DeificObedienceNivi3.Description";
+
+        private const string Nivi3Buff = "DeificObedienceStyle.Nivi3buff";
+        private static readonly string Nivi3BuffGuid = "{AC45714B-373D-43D8-876F-A5AEA678FCE0}";
+
+        private const string Nivi3Ability = "DeificObedienceStyle.Nivi3Ability";
+        private static readonly string Nivi3AbilityGuid = "{812310B5-0504-4A44-A472-25E3C6D783B2}";
+
+        private const string Nivi3AbilityRes = "DeificObedienceStyle.Nivi3AbilityRes";
+        private static readonly string Nivi3AbilityResGuid = "{93E4D058-1485-49B0-9EF1-0300C79EA1D5}";
+
+        public static BlueprintFeature NiviExalted3Feat()
+        {
+            var icon = AbilityRefs.BalefulPolymorph.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(Nivi3AbilityRes, Nivi3AbilityResGuid)
+                .SetMaxAmount(
+                    ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var buff = BuffConfigurator.New(Nivi3Buff, Nivi3BuffGuid)
+              .CopyFrom(
+                BuffRefs.BalefulPolymorphBuff,
+                typeof(AddCondition),
+                typeof(AddContextStatBonus),
+                typeof(Polymorph),
+                typeof(SpellDescriptorComponent),
+                typeof(ReplaceSourceBone),
+                typeof(ReplaceAsksList),
+                typeof(ReplaceCastSource),
+                typeof(ChangeImpatience),
+                typeof(SuppressBuffs),
+                typeof(AddBuffActions),
+                typeof(BuffMovementSpeed))
+              .SetDisplayName(Nivi3DisplayName)
+              .SetDescription(Nivi3Description)
+              .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New()
+                        .DealDamage(DamageTypes.Direct(), ContextDice.Value(DiceType.D6, 1, 0))
+                        .Build())
+              .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.AdditionalAttackBonus, value: -2)
+              .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.AdditionalDamage, value: -2)
+              .AddBuffAllSavesBonus(ModifierDescriptor.Penalty, value: -2)
+              .AddBuffAllSkillsBonus(ModifierDescriptor.Penalty, value: -2, multiplier: 1)
+              .Configure();
+
+            
+
+            var ability = AbilityConfigurator.New(Nivi3Ability, Nivi3AbilityGuid)
+                .CopyFrom(
+                AbilityRefs.BalefulPolymorph,
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(AbilityTargetHasFact),
+                typeof(AbilitySpawnFx))
+                .SetDisplayName(Nivi3DisplayName)
+                .SetDescription(Nivi3Description)
+                .SetType(AbilityType.SpellLike)
+                .AddAbilityEffectRunAction(
+                actions: ActionsBuilder.New()
+                  .ConditionalSaved(failed: ActionsBuilder.New()
+                        .RemoveBuffsByDescriptor(SpellDescriptor.Polymorph, true)
+                        .ApplyBuffPermanent(buff, isFromSpell: true)
+                        .Build())
+                  .Build(), savingThrowType: SavingThrowType.Fortitude)
+                .AddPretendSpellLevel(spellLevel: 9)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .Configure();
+
+            return FeatureConfigurator.New(Nivi3Name, Nivi3Guid)
+                    .SetDisplayName(Nivi3DisplayName)
+                    .SetDescription(Nivi3Description)
+                    .SetIcon(icon)
+                    .AddFacts(new() { ability })
+                    .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+                    .Configure();
         }
     }
 }
