@@ -2297,7 +2297,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string Iomedae1Description = "SpellPowerIomedae1.Description";
         private static BlueprintFeature CreateIomedae1()
         {
-            var icon = FeatureRefs.CavalierCharge.Reference.Get().Icon;
+            var icon = FeatureRefs.CavalierMightyCharge.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Iomedae1, Iomedae1Guid)
               .SetDisplayName(Iomedae1DisplayName)
@@ -2690,16 +2690,23 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(Nivi3DisplayName)
               .SetDescription(Nivi3Description)
               .AddComponent<NiviGemAttack>()
+              .AddToFlags(BlueprintBuff.Flags.RemoveOnRest)
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var buff3 = BuffConfigurator.New(Nivi3Buff3, Nivi3Buff3Guid)
               .SetDisplayName(Nivi3DisplayName)
               .SetDescription(Nivi3Description)
               .AddComponent<NiviGemAttack>(c => { c.wager = true; })
+              .AddToFlags(BlueprintBuff.Flags.RemoveOnRest)
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var ability = AbilityConfigurator.New(Nivi3Ability, Nivi3AbilityGuid)
-                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1)).Build())
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                    .ApplyBuffPermanent(buff)
+                    .RemoveBuff(buff3)
+                    .Build())
                 .SetDisplayName(Nivi3DisplayName)
                 .SetDescription(Nivi3Description)
                 .SetIcon(icon)
@@ -2710,7 +2717,10 @@ namespace PrestigePlus.Blueprint.Feat
                 .Configure();
 
             var ability2 = AbilityConfigurator.New(Nivi3Ability2, Nivi3Ability2Guid)
-                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff3, ContextDuration.Fixed(1)).Build())
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                    .ApplyBuffPermanent(buff3)
+                    .RemoveBuff(buff)
+                    .Build())
                 .SetDisplayName(Nivi3DisplayName2)
                 .SetDescription(Nivi3Description2)
                 .SetIcon(icon)
