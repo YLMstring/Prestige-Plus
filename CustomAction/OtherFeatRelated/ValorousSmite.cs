@@ -42,20 +42,23 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                 return;
             }
             if (target.HasFact(Cool) || target.State.HasCondition(UnitCondition.Stunned)) { return; }
-            int dc = caster.Stats.Charisma.Bonus + 10 + caster.Progression.CharacterLevel / 2;
-            bool pass = GameHelper.TriggerSkillCheck(new RuleSkillCheck(target, Kingmaker.EntitySystem.Stats.StatType.SaveWill, dc)
+            if (target.GetFact(BuffRefs.SmiteEvilBuff.Reference) is Buff smited && smited.Context?.MaybeCaster == caster)
             {
-                IgnoreDifficultyBonusToDC = true
-            }, target.Context, true).Success;
-            if (pass)
-            {
-                GameHelper.ApplyBuff(target, Cool, new Rounds?(14400.Rounds()));
-            }
-            else
-            {
-                int num = caster.Progression.CharacterLevel / 4 + 1;
-                GameHelper.ApplyBuff(target, BuffRefs.Stunned.Reference, new Rounds?(num.Rounds()));
-            }
+                int dc = caster.Stats.Charisma.Bonus + 10 + caster.Progression.CharacterLevel / 2;
+                bool pass = GameHelper.TriggerSkillCheck(new RuleSkillCheck(target, Kingmaker.EntitySystem.Stats.StatType.SaveWill, dc)
+                {
+                    IgnoreDifficultyBonusToDC = true
+                }, target.Context, true).Success;
+                if (pass)
+                {
+                    GameHelper.ApplyBuff(target, Cool, new Rounds?(14400.Rounds()));
+                }
+                else
+                {
+                    int num = caster.Progression.CharacterLevel / 4 + 1;
+                    GameHelper.ApplyBuff(target, BuffRefs.Stunned.Reference, new Rounds?(num.Rounds()));
+                }
+            }           
         }
 
         private static BlueprintBuffReference Cool = BlueprintTool.GetRef<BlueprintBuffReference>(DeificObedience.Iomedae2BuffGuid);

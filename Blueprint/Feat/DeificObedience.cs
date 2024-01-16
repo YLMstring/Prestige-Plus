@@ -2266,7 +2266,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteFeature(FeatureRefs.IomedaeFeature.ToString(), group: Prerequisite.GroupType.Any)
               .AddPrerequisiteAlignment(AlignmentMaskType.LawfulGood, group: Prerequisite.GroupType.Any)
               .AddToIsPrerequisiteFor(IomedaeSentinelFeat())
-              .AddStatBonus(ModifierDescriptor.Profane, false, StatType.CheckDiplomacy, 4)
+              .AddStatBonus(ModifierDescriptor.Sacred, false, StatType.CheckDiplomacy, 4)
               .Configure();
         }
 
@@ -2285,9 +2285,9 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddPrerequisiteFeature(IomedaeGuid)
               .SetGiveFeaturesForPreviousLevels(true)
-              .AddToLevelEntry(12, CreateIomedae1())
-              .AddToLevelEntry(16, Iomedae2Feat())
-              .AddToLevelEntry(20, Iomedae3Feat())
+              .AddToLevelEntry(2, CreateIomedae1())
+              .AddToLevelEntry(6, Iomedae2Feat())
+              .AddToLevelEntry(10, Iomedae3Feat())
               .Configure();
         }
 
@@ -2355,7 +2355,7 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string Iomedae3AblityResGuid = "{83EF86BB-7AA5-4A79-8FE9-3F3E7E7D941C}";
         public static BlueprintFeature Iomedae3Feat()
         {
-            var icon = AbilityRefs.Banishment.Reference.Get().Icon;
+            var icon = AbilityRefs.Dismissal.Reference.Get().Icon;
 
             var shoot = ActionsBuilder.New()
                     .CastSpell(AbilityRefs.Dismissal.ToString(), overrideSpellLevel: 9)
@@ -2402,7 +2402,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string MilaniDescription = "DeificObedienceMilani.Description";
         public static BlueprintFeature MilaniFeat()
         {
-            var icon = FeatureRefs.ElectricRoseFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.Vinetrap.Reference.Get().Icon;
             //"MilaniFeature": "C5C537C7-77DB-48B7-BBE8-61414DB4D366",
             return FeatureConfigurator.New(Milani, MilaniGuid)
               .SetDisplayName(MilaniDisplayName)
@@ -2427,7 +2427,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string MilaniSentinelDescription = "DeificObedienceMilaniSentinel.Description";
         public static BlueprintProgression MilaniSentinelFeat()
         {
-            var icon = FeatureRefs.ElectricRoseFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.Vinetrap.Reference.Get().Icon;
 
             return ProgressionConfigurator.New(MilaniSentinel, MilaniSentinelGuid)
               .SetDisplayName(MilaniSentinelDisplayName)
@@ -2503,7 +2503,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string Milani3Description = "DeificObedienceMilani3.Description";
         public static BlueprintFeature Milani3Feat()
         {
-            var icon = FeatureRefs.FlamewardenPhoenixRising.Reference.Get().Icon;
+            var icon = FeatureRefs.AuraOfCourageFeature.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Milani3, Milani3Guid)
               .SetDisplayName(Milani3DisplayName)
@@ -2519,7 +2519,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string NiviDescription = "DeificObedienceNivi.Description";
         public static BlueprintFeature NiviFeat()
         {
-            var icon = FeatureRefs.LuckBlessingFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.LuckDomainBaseFeature.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Nivi, NiviGuid)
               .SetDisplayName(NiviDisplayName)
@@ -2540,7 +2540,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string NiviExaltedDescription = "DeificObedienceNiviExalted.Description";
         public static BlueprintProgression NiviExaltedFeat()
         {
-            var icon = FeatureRefs.LuckBlessingFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.LuckDomainBaseFeature.Reference.Get().Icon;
 
             return ProgressionConfigurator.New(NiviExalted, NiviExaltedGuid)
               .SetDisplayName(NiviExaltedDisplayName)
@@ -2548,9 +2548,9 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddPrerequisiteFeature(NiviGuid)
               .SetGiveFeaturesForPreviousLevels(true)
-              .AddToLevelEntry(12, CreateNivi1())
-              .AddToLevelEntry(16, NiviExalted2Feat())
-              .AddToLevelEntry(20, NiviExalted3Feat())
+              .AddToLevelEntry(2, CreateNivi1())
+              .AddToLevelEntry(6, NiviExalted2Feat())
+              .AddToLevelEntry(10, NiviExalted3Feat())
               .Configure();
         }
 
@@ -2608,7 +2608,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string Nivi2Ablity = "DeificObedience.UseNivi2";
         private static readonly string Nivi2AblityGuid = "{93939E8C-B2D8-4E95-BAB2-AD8CAF2845E3}";
 
-        private const string Nivi2AbilityRes = "DeificObedienceStyle.Nivi3AbilityRes";
+        private const string Nivi2AbilityRes = "DeificObedienceStyle.Nivi2AbilityRes";
         private static readonly string Nivi2AbilityResGuid = "{682EBC7C-C776-4CF7-AC87-A69EC4F62A83}";
 
         internal const string Nivi2DisplayName = "DeificObedienceNivi2.Name";
@@ -2677,7 +2677,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static BlueprintFeature NiviExalted3Feat()
         {
-            var icon = FeatureRefs.OreadHeritageGemsoul.Reference.Get().Icon;
+            var icon = AbilityRefs.IceStorm.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(Nivi3AbilityRes, Nivi3AbilityResGuid)
                 .SetMaxAmount(
@@ -2699,7 +2699,7 @@ namespace PrestigePlus.Blueprint.Feat
               .Configure();
 
             var ability = AbilityConfigurator.New(Nivi3Ability, Nivi3AbilityGuid)
-                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuffPermanent(buff).Build())
+                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1)).Build())
                 .SetDisplayName(Nivi3DisplayName)
                 .SetDescription(Nivi3Description)
                 .SetIcon(icon)
@@ -2710,7 +2710,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .Configure();
 
             var ability2 = AbilityConfigurator.New(Nivi3Ability2, Nivi3Ability2Guid)
-                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuffPermanent(buff3).Build())
+                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff3, ContextDuration.Fixed(1)).Build())
                 .SetDisplayName(Nivi3DisplayName2)
                 .SetDescription(Nivi3Description2)
                 .SetIcon(icon)
@@ -2722,6 +2722,7 @@ namespace PrestigePlus.Blueprint.Feat
             BuffConfigurator.New(Nivi3Buff2, Nivi3Buff2Guid)
               .SetDisplayName(Nivi3DisplayName2)
               .SetDescription(Nivi3Description2)
+              .SetIcon(icon)
               .SetStacking(StackingType.Rank)
               .SetRanks(20)
               .AddToFlags(BlueprintBuff.Flags.RemoveOnRest)
@@ -2743,7 +2744,8 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetIcon(icon)
                     .AddFacts(new() { ability })
                     .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
-                    .AddComponent<AddAbilityResourceDepletedTrigger>(c => { c.m_Resource = abilityresourse.ToReference<BlueprintAbilityResourceReference>(); c.Action = ActionsBuilder.New().ApplyBuffPermanent(Nivi3Buff4Guid).Build(); c.Cost = 1; })
+                    .AddComponent<AddAbilityResourceDepletedTrigger>(c => { c.m_Resource = abilityresourse.ToReference<BlueprintAbilityResourceReference>(); 
+                        c.Action = ActionsBuilder.New().ApplyBuffPermanent(Nivi3Buff2Guid).ApplyBuffPermanent(Nivi3Buff4Guid).Build(); c.Cost = 1; })
                     .Configure();
         }
     }
