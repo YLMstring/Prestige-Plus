@@ -206,7 +206,13 @@ namespace PrestigePlus
             Toggle.New(GetKey("emissary"), defaultValue: true, Helpers.CreateString("toggle-desc71", "Emissary"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("mendev"), defaultValue: true, Helpers.CreateString("toggle-desc80", "Mendevian Priest"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("menhir"), defaultValue: true, Helpers.CreateString("toggle-desc72", "Menhir Savant"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("toxic"), defaultValue: true, Helpers.CreateString("toggle-desc78", "Toxicologist"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("fightereg"), defaultValue: true, Helpers.CreateString("toggle-desc23", "Eldritch Guardian"))
@@ -227,6 +233,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("mm"), defaultValue: true, Helpers.CreateString("toggle-desc73", "Maneuver Master"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("wadept"), defaultValue: true, Helpers.CreateString("toggle-desc77", "Weapon Adept"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("shining"), defaultValue: true, Helpers.CreateString("toggle-desc62", "Shining Knight"))
               .ShowVisualConnection())
           .AddToggle(
@@ -240,6 +249,9 @@ namespace PrestigePlus
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("kidnapper"), defaultValue: true, Helpers.CreateString("toggle-desc67", "Kidnapper"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("fated"), defaultValue: true, Helpers.CreateString("toggle-desc79", "Fated Champion"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("divinechamp"), defaultValue: true, Helpers.CreateString("toggle-desc66", "Divine Champion"))
@@ -401,6 +413,10 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("drinker"))) { Souldrinker.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("cardplayer"))) { Cartomancer.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("drunk"))) { DrunkenBrute.Configure(); DrunkenBrute.AtavismFeat(); DrunkenBrute.GreaterAtavismFeat(); DrunkenBrute.CreateGlare(); DrunkenBrute.RoaringDrunkFeat(); DrunkenBrute.LiquidCourageFeat(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("wadept"))) { WeaponAdept.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("toxic"))) { Toxicologist.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fated"))) { FatedChampion.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("mendev"))) { MendevianPriest.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
