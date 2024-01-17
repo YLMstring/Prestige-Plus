@@ -8198,6 +8198,160 @@
     "Key": "DeificObedienceNivi32.Description",
     "enGB": "There is a 50% chance that instead of gaining a luck bonus on the roll, you instead take a penalty equal to the bonus you would have received.",
     "zhCN": "你有50%的概率不会获得运气加值，而是受到相等的减值。"
+  },
+  {
+    "Key": "WeaponAdept.Name",
+    "ProcessTemplates": false,
+    "enGB": "Weapon Adept",
+    "zhCN": "执械僧"
+  },
+  {
+    "Key": "WeaponAdept.Description",
+    "enGB": "While all monks train in both unarmed combat and with weapons, the weapon adept seeks to become one with his weapons, transforming them into perfect extensions of his own body. Through such training, a weapon adept seeks to attain perfection by becoming a living weapon himself.",
+    "zhCN": "尽管所有武僧都兼修拳脚和兵刃，执械僧则尝试将武器化为肢体的完美延伸。通过这种训练，执械僧将自己化为行走的武器，并尝试以此趋向完善的理念。"
+  },
+  {
+    "Key": "WeaponAdeptFocus.Name",
+    "ProcessTemplates": false,
+    "enGB": "Way of the Weapon Master",
+    "zhCN": "执械武道"
+  },
+  {
+    "Key": "WeaponAdeptFocus.Description",
+    "enGB": "At 2nd level, a weapon adept gains Weapon Focus as a bonus feat with kama, nunchaku, sai, and siangham.",
+    "zhCN": "2级时，执械僧获得其中一种武僧武器的“武器专攻”作为额外专长。"
+  },
+  {
+    "Key": "WeaponAdeptFocus2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Way of the Weapon Master",
+    "zhCN": "执械武道"
+  },
+  {
+    "Key": "WeaponAdeptFocus2.Description",
+    "enGB": "At 6th level, the monk gains Weapon Specialization with the same weapons as a bonus feat, even if he does not meet the prerequisites.",
+    "zhCN": "6级时，执械僧获得相同武器的“武器专精”作为额外专长，无论他是否满足先决条件。"
+  },
+  {
+    "Key": "WeaponAdeptUncannyInitiative.Name",
+    "ProcessTemplates": false,
+    "enGB": "Uncanny Initiative",
+    "zhCN": "神行百变"
+  },
+  {
+    "Key": "WeaponAdeptUncannyInitiative.Description",
+    "enGB": "At 17th level, a weapon adept does not need to roll for initiative. He always treats his initiative roll as if it resulted in 20.",
+    "zhCN": "17级起，执械僧无需进行先攻检定，其骰值直接视为20点。"
+  },
+  {
+    "Key": "WeaponAdeptPurePower.Name",
+    "ProcessTemplates": false,
+    "enGB": "Pure Power",
+    "zhCN": "易经洗髓"
+  },
+  {
+    "Key": "WeaponAdeptPurePower.Description",
+    "enGB": "At 20th level, a weapon adept forsakes the ideals of the perfect self to become a bastion of the physical and mental virtues monks hold dear. The monk gains a +3 bonus to Strength, Dexterity, Constitution, Intelligence, Wisdom, and Charisma.",
+    "zhCN": "20级时，执械僧放弃让自己成为完善的理念，而是成为保卫武僧所珍视的各项身心美德的堡垒。武僧在力量、敏捷、体质、智力、感知和魅力上获得+3加值。"
+  },
+  {
+    "Key": "Toxicologist.Name",
+    "ProcessTemplates": false,
+    "enGB": "Toxicologist",
+    "zhCN": "毒理学家"
+  },
+  {
+    "Key": "Toxicologist.Description",
+    "enGB": "Druids protect the natural environs of the world, and sometimes that requires forcibly expelling those who would pollute, despoil, or otherwise harm such areas. Single battles may not be enough to win the war, so some druids specialize in the stealthy application of insidious poisons to their targets. Many druids work to root out their enemies by means of powerful toxins, believing word of their foes’ horrifying deaths will deter others from attempting similar desecrations of the natural world.",
+    "zhCN": "德鲁伊保护着这个世界的自然环境，有时便会需要强行驱逐那些污染、掠夺或以其他方式伤害自然的人。单靠战斗或许不足以赢得战争，因此一些德鲁伊专精于秘密毒害敌人。许多德鲁伊致力于通过强大的毒素来根除敌人，他们相信敌人恐怖的死法会阻止其他人对自然世界进行类似的亵渎。"
+  },
+  {
+    "Key": "ToxicologistExpandedRepertoire.Name",
+    "ProcessTemplates": false,
+    "enGB": "Natural Poison Lore",
+    "zhCN": "自然毒素学识"
+  },
+  {
+    "Key": "ToxicologistExpandedRepertoire.Description",
+    "enGB": "A toxicologist adds stinking cloud (3rd level) and cloudkill (5th level) to her druid spell list.",
+    "zhCN": "毒理学家将臭云术（3环）和死云术（5环）加入她的德鲁伊法术列表。"
+  },
+  {
+    "Key": "ToxicologistExpertPoisoner.Name",
+    "ProcessTemplates": false,
+    "enGB": "Expert Poisoner",
+    "zhCN": "用毒专家"
+  },
+  {
+    "Key": "ToxicologistExpertPoisoner.Description",
+    "enGB": "At 4th level, a toxicologist increases the DCs of any spells she casts with the poison descriptor by 1.",
+    "zhCN": "4级起，毒理学家施放的任何具有毒素描述符的法术DC增加1点。"
+  },
+  {
+    "Key": "FatedChampion.Name",
+    "ProcessTemplates": false,
+    "enGB": "Fated Champion",
+    "zhCN": "天命勇者"
+  },
+  {
+    "Key": "FatedChampion.Description",
+    "enGB": "Many cultures see fate as a limit that is both stifling and unwanted, regardless of the destiny that lurks in the days and years ahead. Among cultures where skalds are the keepers of lore and wisdom, there are those who learn to read the winds of fate and take up the mantle of the fated champion, knowing and embracing their destined paths with strength borne of conviction.",
+    "zhCN": "许多文化都将命运视为一种限制，无论未来的岁月里潜藏着怎样的命运，它都是令人窒息的、不受欢迎的。在某些文明里，歌者作为知识和智慧的守护者，其中便有学会解读命运之风的人。他们肩负起天命勇者的衣钵，以来自信念的力量知晓并拥抱自己命中注定的道路。"
+  },
+  {
+    "Key": "FatedChampionWatcher.Name",
+    "ProcessTemplates": false,
+    "enGB": "Watcher of the Weave",
+    "zhCN": "观弦者"
+  },
+  {
+    "Key": "FatedChampionWatcher.Description",
+    "enGB": "At 2nd level, a fated champion learns to see the tapestry of events moments before it is woven. He gains an insight bonus on initiative checks equal to 1/2 his skald level.",
+    "zhCN": "2级时，天命勇者学会观察命运之弦在编织成既定现实之前的样子。他在先攻检定上获得1/2歌者等级的洞察加值。"
+  },
+  {
+    "Key": "FatedChampionShieldForesight.Name",
+    "ProcessTemplates": false,
+    "enGB": "Shield of Foresight",
+    "zhCN": "预兆之盾"
+  },
+  {
+    "Key": "FatedChampionShieldForesight.Description",
+    "enGB": "At 10th level, a fated champion’s certainty of his own fate grants him the ability to stare down fear and remain unbowed. When using raging song, he is immune to fear effects, and allies affected by his raging song gain a +5 bonus on saves attempted against fear effects.",
+    "zhCN": "在10级时，天命勇者已经知晓了他注定的命运，这让他能够压制恐惧，不会轻易屈服。当他正在使用战怒之歌能力时，天命勇者免疫恐惧效果，所有受到战怒之歌影响的盟友则在对抗恐惧效果的豁免检定上获得+5加值。"
+  },
+  {
+    "Key": "FatedChampionNotThisDay.Name",
+    "ProcessTemplates": false,
+    "enGB": "Not This Day",
+    "zhCN": "改日再死"
+  },
+  {
+    "Key": "FatedChampionNotThisDay.Description",
+    "enGB": "At 20th level, the fated champion gains the ability to reweave the strands of fate. This functions as both another day and slippery mind rogue talents.",
+    "zhCN": "在20级时，天命勇者可以重编命运之线。该能力如同兼具改日再死和灵活心智盗贼天赋。"
+  },
+  {
+    "Key": "MendevianPriest.Name",
+    "ProcessTemplates": false,
+    "enGB": "Mendevian Priest",
+    "zhCN": "蒙蒂维祭司"
+  },
+  {
+    "Key": "MendevianPriest.Description",
+    "enGB": "People of high and low character flock to Mendev for glory, plunder, or the desire to slay demons from the Worldwound. Crusade-minded clerics of Iomedae, Gorum, and other churches come to Mendev, learn battlefield tactics and the weaknesses of demons, and strike out to make a name for themselves.",
+    "zhCN": "三教九流的人涌向蒙蒂维，追求荣誉、掠夺，或者只是想斩杀世界之伤的恶魔。艾奥梅黛、格鲁姆与其他教会中那些心怀远征的祭司来到蒙蒂维，学习战术策略以及恶魔的弱点，并主动出击，成就自己的赫赫声名。"
+  },
+  {
+    "Key": "MendevianPriestTeamwork.Name",
+    "ProcessTemplates": false,
+    "enGB": "Teamwork Feat",
+    "zhCN": "团队专长"
+  },
+  {
+    "Key": "MendevianPriestTeamwork.Description",
+    "enGB": "At 4th level and 8th level, the Mendevian priest gains a bonus feat. This must be a teamwork feat, Selective Channel, Spell Penetration, or Greater Spell Penetration. The cleric must meet the prerequisites of the selected bonus feat.",
+    "zhCN": "4级与8级时，蒙蒂维祭司获得一个额外专长。该专长必须是团队专长，选择导能，法术穿透，或高等法术穿透。牧师必须满足所选奖励专长的先决条件。"
   }
 
 ]
