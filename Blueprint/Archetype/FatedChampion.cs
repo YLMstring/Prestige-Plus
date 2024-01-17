@@ -19,6 +19,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Blueprints.Classes.Spells;
+using Kingmaker.UnitLogic.FactLogic;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -58,11 +59,12 @@ namespace PrestigePlus.Blueprint.Archetype
         {
             var icon = AbilityRefs.Foresight.Reference.Get().Icon;
 
-            var feat = FeatureConfigurator.New(ShieldForesightFeat, ShieldForesightFeatGuid)
+            var feat = FeatureConfigurator.New(ShieldForesightFeat, ShieldForesightFeatGuid, FeatureGroup.RagePower)
               .SetDisplayName(ShieldForesightDisplayName)
               .SetDescription(ShieldForesightDescription)
               .SetIcon(icon)
-              .SetIsClassFeature(true)
+              .AddPrerequisiteFeature(FeatureRefs.MonsterMythicWeaponSizeFeature.ToString())
+              .SetHideNotAvailibleInUI(true)
               .AddSavingThrowBonusAgainstDescriptor(spellDescriptor: SpellDescriptor.Fear, value: 5)
               .Configure();
 
@@ -75,9 +77,10 @@ namespace PrestigePlus.Blueprint.Archetype
              .AddSpellImmunityToSpellDescriptor(descriptor: SpellDescriptor.Fear)
              .Configure();
 
-            BuffConfigurator.For(BuffRefs.InspiredRageEffectBuff)
-                .AddFactsFromCaster(new() { feat }, false)
-                .Configure();
+            //BuffConfigurator.For(BuffRefs.InspiredRageEffectBuff)
+                //.EditComponent<AddFactsFromCaster>(c => { c.Fact = })
+                //.Configure();
+            //.(new() { feat }, false)
 
             return FeatureConfigurator.New(ShieldForesight, ShieldForesightGuid)
               .SetDisplayName(ShieldForesightDisplayName)
@@ -96,7 +99,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         private static BlueprintFeature CreateWatcher()
         {
-            var icon = AbilityRefs.SeeInvisibility.Reference.Get().Icon;
+            var icon = AbilityRefs.Web.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Watcher, WatcherGuid)
               .SetDisplayName(WatcherDisplayName)

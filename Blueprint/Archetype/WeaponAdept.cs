@@ -34,16 +34,14 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetLocalizedDescription(ArchetypeDescription)
             .SetRemoveFeaturesEntry(1, FeatureRefs.StunningFist.ToString())
             .SetRemoveFeaturesEntry(2, FeatureRefs.Evasion.ToString())
-            .SetRemoveFeaturesEntry(4, FeatureRefs.StunningFistFatigueFeature.ToString())
-            .SetRemoveFeaturesEntry(8, FeatureRefs.StunningFistSickenedFeature.ToString())
             .SetRemoveFeaturesEntry(9, FeatureRefs.ImprovedEvasion.ToString())
             .SetRemoveFeaturesEntry(20, FeatureRefs.KiPerfectSelfFeature.ToString())
             .AddToAddFeatures(1, FeatureRefs.PerfectStrikeFeature.ToString())
             .AddToAddFeatures(2, CreateFocus())
             .AddToAddFeatures(3, CreateFocus2())
-            .AddToAddFeatures(4, FeatureRefs.Evasion.ToString())
+            .AddToAddFeatures(9, FeatureRefs.Evasion.ToString())
             .AddToAddFeatures(4, UncannyInitiativeFeat())
-            .AddToAddFeatures(4, PurePowerFeat())
+            .AddToAddFeatures(5, PurePowerFeat())
               .Configure();
         }
         //1 2 6 9 17 20
@@ -135,7 +133,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature UncannyInitiativeFeat()
         {
-            var icon = FeatureRefs.UncannyDodge.Reference.Get().Icon;
+            var icon = AbilityRefs.WalkThroughSpace.Reference.Get().Icon;
 
             return FeatureConfigurator.New(UncannyInitiative, UncannyInitiativeGuid)
               .SetDisplayName(UncannyInitiativeDisplayName)
@@ -154,7 +152,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature PurePowerFeat()
         {
-            var icon = FeatureRefs.KiDiamondBodyFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.RestorationGreater.Reference.Get().Icon;
 
             return FeatureConfigurator.New(PurePower, PurePowerGuid)
               .SetDisplayName(PurePowerDisplayName)

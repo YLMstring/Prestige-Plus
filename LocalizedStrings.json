@@ -8330,28 +8330,6 @@
     "Key": "FatedChampionNotThisDay.Description",
     "enGB": "At 20th level, the fated champion gains the ability to reweave the strands of fate. This functions as both another day and slippery mind rogue talents.",
     "zhCN": "在20级时，天命勇者可以重编命运之线。该能力如同兼具改日再死和灵活心智盗贼天赋。"
-  },
-  {
-    "Key": "MendevianPriest.Name",
-    "ProcessTemplates": false,
-    "enGB": "Mendevian Priest",
-    "zhCN": "蒙蒂维祭司"
-  },
-  {
-    "Key": "MendevianPriest.Description",
-    "enGB": "People of high and low character flock to Mendev for glory, plunder, or the desire to slay demons from the Worldwound. Crusade-minded clerics of Iomedae, Gorum, and other churches come to Mendev, learn battlefield tactics and the weaknesses of demons, and strike out to make a name for themselves.",
-    "zhCN": "三教九流的人涌向蒙蒂维，追求荣誉、掠夺，或者只是想斩杀世界之伤的恶魔。艾奥梅黛、格鲁姆与其他教会中那些心怀远征的祭司来到蒙蒂维，学习战术策略以及恶魔的弱点，并主动出击，成就自己的赫赫声名。"
-  },
-  {
-    "Key": "MendevianPriestTeamwork.Name",
-    "ProcessTemplates": false,
-    "enGB": "Teamwork Feat",
-    "zhCN": "团队专长"
-  },
-  {
-    "Key": "MendevianPriestTeamwork.Description",
-    "enGB": "At 4th level and 8th level, the Mendevian priest gains a bonus feat. This must be a teamwork feat, Selective Channel, Spell Penetration, or Greater Spell Penetration. The cleric must meet the prerequisites of the selected bonus feat.",
-    "zhCN": "4级与8级时，蒙蒂维祭司获得一个额外专长。该专长必须是团队专长，选择导能，法术穿透，或高等法术穿透。牧师必须满足所选奖励专长的先决条件。"
   }
 
 ]

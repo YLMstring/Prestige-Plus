@@ -416,7 +416,6 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("wadept"))) { WeaponAdept.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("toxic"))) { Toxicologist.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fated"))) { FatedChampion.Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("mendev"))) { MendevianPriest.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
