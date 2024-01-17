@@ -18,6 +18,7 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Blueprints;
 using Kingmaker.EntitySystem.Stats;
+using BlueprintCore.Utils;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -27,11 +28,15 @@ namespace PrestigePlus.Blueprint.Archetype
         private static readonly string ArchetypeGuid = "{67216A5C-4153-44FB-9547-4DE79C57D0C4}";
         internal const string ArchetypeDisplayName = "WeaponAdept.Name";
         private const string ArchetypeDescription = "WeaponAdept.Description";
+
+        //"PerfectStrikeZenArcherUpgrade": "4ac24d1f-7398-488c-9482-493db1c0863a",
         public static void Configure()
         {
             ArchetypeConfigurator.New(ArchetypeName, ArchetypeGuid, CharacterClassRefs.MonkClass)
               .SetLocalizedName(ArchetypeDisplayName)
               .SetLocalizedDescription(ArchetypeDescription)
+            .SetRemoveFeaturesEntry(4, FeatureRefs.StunningFistFatigueFeature.ToString())
+            .SetRemoveFeaturesEntry(8, FeatureRefs.StunningFistSickenedFeature.ToString())
             .SetRemoveFeaturesEntry(1, FeatureRefs.StunningFist.ToString())
             .SetRemoveFeaturesEntry(2, FeatureRefs.Evasion.ToString())
             .SetRemoveFeaturesEntry(9, FeatureRefs.ImprovedEvasion.ToString())
@@ -40,9 +45,14 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToAddFeatures(2, CreateFocus())
             .AddToAddFeatures(3, CreateFocus2())
             .AddToAddFeatures(9, FeatureRefs.Evasion.ToString())
+            .AddToAddFeatures(4, "4ac24d1f-7398-488c-9482-493db1c0863a")
             .AddToAddFeatures(4, UncannyInitiativeFeat())
             .AddToAddFeatures(5, PurePowerFeat())
               .Configure();
+
+            ProgressionConfigurator.For(ProgressionRefs.MonkProgression)
+                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { FeatureRefs.PerfectStrikeFeature.ToString(), FocusGuid, Focus2Guid, "4ac24d1f-7398-488c-9482-493db1c0863a" })
+                .Configure();
         }
         //1 2 6 9 17 20
         private const string Focus = "WeaponAdept.Focus";
