@@ -80,7 +80,7 @@ namespace PrestigePlus.Blueprint.Gunslinger
                 .Configure();
 
             var guntype = WeaponTypeConfigurator.New(GuntypeName, GuntypeGuid)
-                .SetCategory(WeaponCategory.HeavyRepeatingCrossbow)
+                .SetCategory(WeaponCategory.HeavyCrossbow)
                 .SetTypeNameText(MaximDisplayName2)
                 .SetDefaultNameText(MaximDisplayName2)
                 .SetIcon(null)
@@ -176,12 +176,7 @@ namespace PrestigePlus.Blueprint.Gunslinger
               .SetDisplayName(GunsmithDisplayName)
               .SetDescription(GunsmithDescription)
               .SetIcon(icon)
-              .AddProficiencies(
-                weaponProficiencies:
-                  new WeaponCategory[]
-                  {
-              WeaponCategory.HeavyRepeatingCrossbow,
-                  })
+              .AddFacts(new() { FeatureRefs.SimpleWeaponProficiency.ToString(), FeatureRefs.MartialWeaponProficiency.ToString(), FeatureRefs.LightArmorProficiency.ToString() })
               .Configure();
         }
 
@@ -207,7 +202,7 @@ namespace PrestigePlus.Blueprint.Gunslinger
         private const string GritDescription2 = "GunslingerGrit.Description2";
         private static BlueprintFeature CreateGrit()
         {
-            var icon = AbilityRefs.ChargeAbility.Reference.Get().Icon;
+            var icon = FeatureRefs.Bravery.Reference.Get().Icon;
 
             var swashres = "AC63BFCF-EC31-43DC-A5CE-04617A3BC854";
             var res = AbilityResourceConfigurator.New(GritResource, GritResourceGuid)
@@ -247,8 +242,7 @@ namespace PrestigePlus.Blueprint.Gunslinger
                 .SetDisplayName(GritDisplayName)
                 .SetDescription(GritDescription)
                 .SetIcon(icon)
-                .SetIcon(FeatureRefs.Bravery.Reference.Get().Icon)
-                .AddFacts(new() { FeatureRefs.SimpleWeaponProficiency.ToString(), FeatureRefs.MartialWeaponProficiency.ToString(), FeatureRefs.LightArmorProficiency.ToString(), ability1, ability2 })
+                .AddFacts(new() { ability1, ability2 })
                 .AddAbilityResources(resource: res, restoreAmount: true)
                 .AddInitiatorAttackWithWeaponTrigger(action: ActionsBuilder.New().RestoreResource(res, 1), actionsOnInitiator: true, duelistWeapon: true, criticalHit: true)
                 .AddInitiatorAttackWithWeaponTrigger(action: ActionsBuilder.New().RestoreResource(res, 1), actionsOnInitiator: true, duelistWeapon: true, reduceHPToZero: true)
