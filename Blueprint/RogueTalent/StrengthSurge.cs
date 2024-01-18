@@ -59,7 +59,7 @@ namespace PrestigePlus.Blueprint.RogueTalent
               .SetDescription(StrengthSurgeDescription)
               .SetIcon(icon)
               .AddCMBBonus(value: ContextValues.Rank())
-              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.BarbarianClass.ToString(), CharacterClassRefs.BloodragerClass.ToString() }))
+              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.BarbarianClass.ToString(), CharacterClassRefs.BloodragerClass.ToString(), CharacterClassRefs.SkaldClass.ToString() }))
               .AddManeuverTrigger(ActionsBuilder.New().RemoveBuff(StrengthSurgeBuffGuid, toCaster: true).Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.None, false)
               .Configure();
 
@@ -78,10 +78,7 @@ namespace PrestigePlus.Blueprint.RogueTalent
                     .Conditional(ConditionsBuilder.New().CasterHasFact(BuffRefs.BloodragerStandartRageBuff.ToString()).Build(), ifTrue: ActionsBuilder.New()
                         .ApplyBuff(Buff, ContextDuration.Fixed(2))
                         .Build())
-                    .Conditional(ConditionsBuilder.New().CasterHasFact(BuffRefs.InspiredRageEffectBuff.ToString()).Build(), ifTrue: ActionsBuilder.New()
-                        .ApplyBuff(Buff, ContextDuration.Fixed(2))
-                        .Build())
-                    .Conditional(ConditionsBuilder.New().CasterHasFact(BuffRefs.InspiredRageEffectBuffMythic.ToString()).Build(), ifTrue: ActionsBuilder.New()
+                    .Conditional(ConditionsBuilder.New().CasterHasFact(BuffRefs.InspiredRageBuff.ToString()).Build(), ifTrue: ActionsBuilder.New()
                         .ApplyBuff(Buff, ContextDuration.Fixed(2))
                         .Build())
                     .Build())
@@ -113,12 +110,7 @@ namespace PrestigePlus.Blueprint.RogueTalent
                 a => a.Activated.Actions = CommonTool.Append(a.Activated.Actions, action.Actions))
               .Configure();
 
-            BuffConfigurator.For(BuffRefs.InspiredRageEffectBuff)
-            .EditComponent<AddFactContextActions>(
-                a => a.Activated.Actions = CommonTool.Append(a.Activated.Actions, action.Actions))
-              .Configure();
-
-            BuffConfigurator.For(BuffRefs.InspiredRageEffectBuffMythic)
+            BuffConfigurator.For(BuffRefs.InspiredRageBuff)
             .EditComponent<AddFactContextActions>(
                 a => a.Activated.Actions = CommonTool.Append(a.Activated.Actions, action.Actions))
               .Configure();

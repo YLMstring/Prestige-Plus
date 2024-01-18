@@ -26,8 +26,6 @@ namespace PrestigePlus.Patch
             Add(DrunkenBrute.AtavismGuid);
             Add(DrunkenBrute.GreaterAtavismGuid);
             Add(DrunkenBrute.GlareGuid);
-            Add(StrengthSurge.StrengthSurgeGuid);
-            Add(FatedChampion.ShieldForesightFeatGuid);
         }
 
         public static void Add(string guid)

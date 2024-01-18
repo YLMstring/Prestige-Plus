@@ -38,11 +38,11 @@ namespace PrestigePlus.Blueprint.Archetype
             .SetRemoveFeaturesEntry(10, FeatureRefs.DirgeOfDoom.ToString())
             .SetRemoveFeaturesEntry(20, FeatureRefs.MasterSkald.ToString())
             .AddToAddFeatures(2, CreateWatcher())
-            .AddToAddFeatures(3, CreateShieldForesight())
-            .AddToAddFeatures(4, CreateNotThisDay())
+            .AddToAddFeatures(10, CreateShieldForesight())
+            .AddToAddFeatures(20, CreateNotThisDay())
               .Configure();
         }
-        //2 10 20
+
         private const string ShieldForesight = "FatedChampion.ShieldForesight";
         public static readonly string ShieldForesightGuid = "{09C3C05C-D642-4A43-97A3-4B0F065D235C}";
 

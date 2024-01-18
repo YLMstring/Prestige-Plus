@@ -76,7 +76,7 @@ namespace PrestigePlus.Blueprint.Gunslinger
             var gunenchant = WeaponEnchantmentConfigurator.New(MaximEnchantName, MaximEnchantGuid)
                 .SetEnchantName(MaximEnchantDisplayName)
                 .SetDescription(MaximEnchantDescription)
-                .AddUnitFeatureEquipment(null)
+                .AddUnitFeatureEquipment(CreateSpecialBiuBiu())
                 .Configure();
 
             var guntype = WeaponTypeConfigurator.New(GuntypeName, GuntypeGuid)
@@ -355,6 +355,23 @@ namespace PrestigePlus.Blueprint.Gunslinger
               .SetDescription(DodgeDescription)
               .SetIcon(icon)
               .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string SpecialBiuBiu = "Gunslinger.SpecialBiuBiu";
+        private static readonly string SpecialBiuBiuGuid = "{5E6DDFF5-61F2-4D90-8579-CD2E0DEA5B63}";
+
+        internal const string SpecialBiuBiuDisplayName = "GunslingerSpecialBiuBiu.Name";
+        private const string SpecialBiuBiuDescription = "GunslingerSpecialBiuBiu.Description";
+        private static BlueprintFeature CreateSpecialBiuBiu()
+        {
+            var icon = FeatureRefs.CavalierCharge.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(SpecialBiuBiu, SpecialBiuBiuGuid)
+              .SetDisplayName(SpecialBiuBiuDisplayName)
+              .SetDescription(SpecialBiuBiuDescription)
+              .SetIcon(icon)
+              
               .Configure();
         }
     }
