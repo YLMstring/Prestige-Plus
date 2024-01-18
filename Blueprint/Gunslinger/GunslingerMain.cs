@@ -4,22 +4,31 @@ using BlueprintCore.Blueprints.Configurators.Classes;
 using BlueprintCore.Blueprints.Configurators.Items.Ecnchantments;
 using BlueprintCore.Blueprints.Configurators.Items.Weapons;
 using BlueprintCore.Blueprints.Configurators.Root;
+using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
 using BlueprintCore.Blueprints.CustomConfigurators;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
+using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Conditions.Builder;
+using BlueprintCore.Conditions.Builder.ContextEx;
+using BlueprintCore.Utils;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Items.Armors;
 using Kingmaker.Blueprints.Root;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.RuleSystem;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Alignments;
 using Kingmaker.Utility;
+using PrestigePlus.Modify;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -105,7 +114,7 @@ namespace PrestigePlus.Blueprint.Gunslinger
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, CreateGunsmith(), CreateGrit())
+                .AddToLevelEntry(1, CreateGunsmith(), CreateGrit(), DodgeFeat())
                 .AddToLevelEntry(2, CreateNimble())
                 .AddToLevelEntry(3, CreateInitiative())
                 .AddToLevelEntry(4, FeatureSelectionRefs.FighterFeatSelection.ToString())
@@ -184,18 +193,62 @@ namespace PrestigePlus.Blueprint.Gunslinger
 
         internal const string GritDisplayName = "GunslingerGrit.Name";
         private const string GritDescription = "GunslingerGrit.Description";
+
+        private const string ConvertAblity1 = "Gunslinger.UseConvert";
+        private static readonly string ConvertAblity1Guid = "{D8CE1AD5-0C85-4805-8669-799281586CFB}";
+
+        internal const string GritDisplayName1 = "GunslingerGrit.Name1";
+        private const string GritDescription1 = "GunslingerGrit.Description1";
+
+        private const string ConvertAblity2 = "Gunslinger.UseConvert2";
+        private static readonly string ConvertAblity2Guid = "{B1BAE0AB-950C-4EB7-B1AC-45DA0B6E6667}";
+
+        internal const string GritDisplayName2 = "GunslingerGrit.Name2";
+        private const string GritDescription2 = "GunslingerGrit.Description2";
         private static BlueprintFeature CreateGrit()
         {
+            var icon = AbilityRefs.ChargeAbility.Reference.Get().Icon;
+
+            var swashres = "AC63BFCF-EC31-43DC-A5CE-04617A3BC854";
             var res = AbilityResourceConfigurator.New(GritResource, GritResourceGuid)
                 .SetMaxAmount(ResourceAmountBuilder.New(0).IncreaseByStat(StatType.Wisdom))
                 .SetMin(1)
                 .Configure();
 
+            var ability1 = AbilityConfigurator.New(ConvertAblity1, ConvertAblity1Guid)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                    .RestoreResource(swashres)
+                    .Build())
+                .SetDisplayName(GritDisplayName1)
+                .SetDescription(GritDescription1)
+                .SetIcon(icon)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Special)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: res)
+                .SetActionBarAutoFillIgnored(true)
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(ConvertAblity2, ConvertAblity2)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                    .RestoreResource(res, 1)
+                    .Build())
+                .SetDisplayName(GritDisplayName2)
+                .SetDescription(GritDescription2)
+                .SetIcon(icon)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Special)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: swashres)
+                .SetActionBarAutoFillIgnored(true)
+                .Configure();
+
             return FeatureConfigurator.New(GritFeature, GritFeatureGuid)
                 .SetDisplayName(GritDisplayName)
                 .SetDescription(GritDescription)
+                .SetIcon(icon)
                 .SetIcon(FeatureRefs.Bravery.Reference.Get().Icon)
-                .AddFacts(new() { FeatureRefs.SimpleWeaponProficiency.ToString(), FeatureRefs.MartialWeaponProficiency.ToString(), FeatureRefs.LightArmorProficiency.ToString() })
+                .AddFacts(new() { FeatureRefs.SimpleWeaponProficiency.ToString(), FeatureRefs.MartialWeaponProficiency.ToString(), FeatureRefs.LightArmorProficiency.ToString(), ability1, ability2 })
                 .AddAbilityResources(resource: res, restoreAmount: true)
                 .AddInitiatorAttackWithWeaponTrigger(action: ActionsBuilder.New().RestoreResource(res, 1), actionsOnInitiator: true, duelistWeapon: true, criticalHit: true)
                 .AddInitiatorAttackWithWeaponTrigger(action: ActionsBuilder.New().RestoreResource(res, 1), actionsOnInitiator: true, duelistWeapon: true, reduceHPToZero: true)
@@ -262,6 +315,52 @@ namespace PrestigePlus.Blueprint.Gunslinger
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddWeaponTypeDamageStatReplacement(WeaponCategory.HeavyRepeatingCrossbow, false, StatType.Dexterity, false)
+              .Configure();
+        }
+
+        private const string Dodge = "Gunslinger.Dodge";
+        private static readonly string DodgeGuid = "{E857E9B8-8A53-4915-9EFA-A71CD57E792C}";
+
+        internal const string DodgeDisplayName = "GunslingerDodge.Name";
+        private const string DodgeDescription = "GunslingerDodge.Description";
+
+        private const string Dodge2Buff = "Gunslinger.Dodge2Buff";
+        private static readonly string Dodge2BuffGuid = "{CEEF3B49-6828-4F2C-A859-6D44AD55D28A}";
+
+        private const string DodgeAblity = "Gunslinger.UseDodge";
+        private static readonly string DodgeAblityGuid = "{5D300146-3884-4A6B-A75E-CEC32C7A64AB}";
+
+        public static BlueprintFeature DodgeFeat()
+        {
+            var icon = FeatureRefs.Dodge.Reference.Get().Icon;
+
+            var Buff2 = BuffConfigurator.New(Dodge2Buff, Dodge2BuffGuid)
+                .SetDisplayName(DodgeDisplayName)
+                .SetDescription(DodgeDescription)
+                .SetIcon(icon)
+                .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+                .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
+                .AddACBonusAgainstAttacks(false, true, 2, notArmorCategory: new ArmorProficiencyGroup[] { ArmorProficiencyGroup.Heavy })
+                .AddTargetAttackWithWeaponTrigger(ActionsBuilder.New()
+                        .ContextSpendResource(GritResourceGuid, 1)
+                        .Build(), onlyHit: false, onlyRanged: true, waitForAttackResolve: true)
+                .AddComponent<AddAbilityResourceDepletedTrigger>(c => { c.m_Resource = BlueprintTool.GetRef<BlueprintAbilityResourceReference>(GritResourceGuid); c.Action = ActionsBuilder.New().RemoveSelf().Build(); c.Cost = 1; })
+                .Configure();
+
+            var ability = ActivatableAbilityConfigurator.New(DodgeAblity, DodgeAblityGuid)
+                .SetDisplayName(DodgeDisplayName)
+                .SetDescription(DodgeDescription)
+                .SetIcon(icon)
+                .AddActivatableAbilityResourceLogic(requiredResource: GritResourceGuid, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.Never)
+                .SetBuff(Buff2)
+                .SetDeactivateImmediately()
+                .Configure();
+
+            return FeatureConfigurator.New(Dodge, DodgeGuid)
+              .SetDisplayName(DodgeDisplayName)
+              .SetDescription(DodgeDescription)
+              .SetIcon(icon)
+              .AddFacts(new() { ability })
               .Configure();
         }
     }
