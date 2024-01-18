@@ -35,8 +35,8 @@ namespace PrestigePlus.Blueprint.Archetype
             ArchetypeConfigurator.New(ArchetypeName, ArchetypeGuid, CharacterClassRefs.MonkClass)
               .SetLocalizedName(ArchetypeDisplayName)
               .SetLocalizedDescription(ArchetypeDescription)
-            .SetRemoveFeaturesEntry(4, FeatureRefs.StunningFistFatigueFeature.ToString())
-            .SetRemoveFeaturesEntry(8, FeatureRefs.StunningFistSickenedFeature.ToString())
+            //.SetRemoveFeaturesEntry(4, FeatureRefs.StunningFistFatigueFeature.ToString())
+            //.SetRemoveFeaturesEntry(8, FeatureRefs.StunningFistSickenedFeature.ToString())
             .SetRemoveFeaturesEntry(1, FeatureRefs.StunningFist.ToString())
             .SetRemoveFeaturesEntry(2, FeatureRefs.Evasion.ToString())
             .SetRemoveFeaturesEntry(9, FeatureRefs.ImprovedEvasion.ToString())
@@ -51,7 +51,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .Configure();
 
             ProgressionConfigurator.For(ProgressionRefs.MonkProgression)
-                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { FeatureRefs.PerfectStrikeFeature.ToString(), FocusGuid, Focus2Guid, "4ac24d1f-7398-488c-9482-493db1c0863a" })
+                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { FeatureRefs.PerfectStrikeFeature.ToString(), FocusGuid, Focus2Guid, "4ac24d1f-7398-488c-9482-493db1c0863a", UncannyInitiativeGuid, PurePowerGuid })
                 .Configure();
         }
 

@@ -95,31 +95,11 @@ namespace PrestigePlus.Blueprint.RogueTalent
                 .Add<PPrestoreRes>(c => { c.m_Resource = abilityresourse.ToReference<BlueprintAbilityResourceReference>(); c.Value = 1; })
                 .Build();
 
-            BuffConfigurator.For(BuffRefs.StandartRageBuff)
-            .EditComponent<AddFactContextActions>(
-                a => a.Activated.Actions = CommonTool.Append(a.Activated.Actions, action.Actions))
-              .Configure();
-
-            BuffConfigurator.For(BuffRefs.StandartFocusedRageBuff)
-            .EditComponent<AddFactContextActions>(
-                a => a.Activated.Actions = CommonTool.Append(a.Activated.Actions, action.Actions))
-              .Configure();
-
-            BuffConfigurator.For(BuffRefs.BloodragerStandartRageBuff)
-            .EditComponent<AddFactContextActions>(
-                a => a.Activated.Actions = CommonTool.Append(a.Activated.Actions, action.Actions))
-              .Configure();
-
-            BuffConfigurator.For(BuffRefs.InspiredRageBuff)
-            .EditComponent<AddFactContextActions>(
-                a => a.Activated.Actions = CommonTool.Append(a.Activated.Actions, action.Actions))
-              .Configure();
-
-            return FeatureConfigurator.New(StrengthSurgePower, StrengthSurgeGuid)
+            return FeatureConfigurator.New(StrengthSurgePower, StrengthSurgeGuid, FeatureGroup.RagePower)
               .SetDisplayName(StrengthSurgeDisplayName)
               .SetDescription(StrengthSurgeDescription)
               .SetIcon(icon)
-              .AddToGroups(FeatureGroup.RagePower)
+              .AddFactsChangeTrigger(new() { BuffRefs.StandartRageBuff.ToString(), BuffRefs.StandartFocusedRageBuff.ToString(), BuffRefs.BloodragerStandartRageBuff.ToString(), BuffRefs.InspiredRageBuff.ToString() }, onFactGainedActions: action)
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .AddFacts(new() { ability })
               .Configure();
