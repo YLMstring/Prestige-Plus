@@ -107,7 +107,7 @@ namespace PrestigePlus.Blueprint.Gunslinger
                 .SetIsJunk(false)
                 .SetDestructible(false)
                 .SetType(guntype)
-                .SetSize(Size.Medium)
+                .SetSize(Kingmaker.Enums.Size.Medium)
                 .AddEquipmentRestrictionClass(ArchetypeGuid)
                 .Configure();
             
