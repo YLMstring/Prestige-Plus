@@ -65,8 +65,8 @@ namespace PrestigePlus.Blueprint.Gunslinger
             };
 
             var gunenchant = WeaponEnchantmentConfigurator.New(MaximEnchantName, MaximEnchantGuid)
-                .SetEnchantName(MaximEnchantName)
-                .SetDescription(MaximDescription)
+                .SetEnchantName(MaximEnchantDisplayName)
+                .SetDescription(MaximEnchantDescription)
                 .AddUnitFeatureEquipment(null)
                 .Configure();
 
