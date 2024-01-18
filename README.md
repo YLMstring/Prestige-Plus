@@ -1,4 +1,4 @@
-# Prestige Plus v2.4.2 for WoTR 
+# Prestige Plus v2.4.3 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -172,6 +172,7 @@
 - [Menhir Savant](https://www.d20pfsrd.com/classes/core-classes/druid/archetypes/paizo-druid-archetypes/menhir-savant)
 - [Plains Druid](https://www.d20pfsrd.com/classes/core-classes/druid/archetypes/paizo-druid-archetypes/plains-druid)
 - [Fungal Pilgrim](https://www.d20pfsrd.com/classes/core-classes/druid/archetypes/paizo-druid-archetypes/fungal-pilgrim-druid-archetype/)
+- [Toxicologist](https://www.d20pfsrd.com/classes/core-classes/druid/archetypes/paizo-druid-archetypes/toxicologist-druid-archetype)
 #### Fighter:  
 - [Eldritch Guardian](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Eldritch%20Guardian)
 - Share Training with your pets!
@@ -189,6 +190,7 @@
 - This is absolutely my favorite.
 - New Ki Power: [One Touch](https://www.aonprd.com/MonkUCKiPowers.aspx)
 - New Ki Power: [Freedom of Movement](https://www.aonprd.com/MonkUCKiPowers.aspx)
+- [Weapon Adept](https://www.d20pfsrd.com/classes/core-classes/monk/archetypes/paizo-monk-archetypes/weapon-adept/)
 #### Oracle:  
 - [Truth Seeker](https://www.d20pfsrd.com/classes/base-classes/oracle/archetypes/paizo-oracle-archetypes/seeker/)
 #### Paladin:  
@@ -201,6 +203,8 @@
 - [Infiltrator](https://www.d20pfsrd.com/classes/core-classes/ranger/archetypes/paizo-ranger-archetypes/infiltrator/)
 #### Rogue:  
 - [Kidnapper](https://www.d20pfsrd.com/classes/core-classes/rogue/archetypes/paizo-rogue-archetypes/jungle-kidnapper-rogue-archetype/)
+#### Skald:  
+- [Fated Champion](https://www.d20pfsrd.com/classes/hybrid-classes/skald/archetypes/paizo-skald-archetypes/fated-champion/)
 #### Sorcerer:  
 - [Truth Seeker](https://www.d20pfsrd.com/classes/core-classes/sorcerer/archetypes/paizo-sorcerer-archetypes/seeker/)
 #### Warpriest:  
