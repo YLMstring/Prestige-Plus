@@ -491,7 +491,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                         .RestoreResource(AbilityResourceRefs.BloodragerRageResource.ToString(), 4)
                         .RestoreResource(AbilityResourceRefs.FocusedRageResourse.ToString(), 4)
                         .RestoreResource(AbilityResourceRefs.DemonRageResource.ToString(), 4)
-                        .RestoreResource(AbilityResourceRefs.RageshaperShifterResource.ToString(), 4)
                         .Build())
                 .SetDisplayName(PsychicRageDisplayName)
                 .SetDescription(PsychicRageDescription)

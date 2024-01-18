@@ -53,7 +53,7 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
         }
 
         private static readonly string Feat2Name = "FeatKnockback";
-        private static readonly string Feat2Guid = "{55DA148B-C5DA-42C2-9F29-30F2EEB75C9D}";
+        public static readonly string Feat2Guid = "{55DA148B-C5DA-42C2-9F29-30F2EEB75C9D}";
 
         private static readonly string DisplayName2 = "FeatKnockback.Name";
         private static readonly string Description2 = "FeatKnockback.Description";

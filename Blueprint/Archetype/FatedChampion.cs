@@ -47,7 +47,7 @@ namespace PrestigePlus.Blueprint.Archetype
         public static readonly string ShieldForesightGuid = "{09C3C05C-D642-4A43-97A3-4B0F065D235C}";
 
         private const string ShieldForesightFeat = "FatedChampion.UseShieldForeFeat";
-        private static readonly string ShieldForesightFeatGuid = "{3E41D736-B7E9-4978-8FFE-5EF37034DFCE}";
+        public static readonly string ShieldForesightFeatGuid = "{3E41D736-B7E9-4978-8FFE-5EF37034DFCE}";
 
         private const string ShieldForesightBuff = "FatedChampion.ShieldForesightBuff";
         private static readonly string ShieldForesightBuffGuid = "{22F69E4B-DFCF-4A35-B16E-AD588A3A6CB8}";
@@ -59,12 +59,10 @@ namespace PrestigePlus.Blueprint.Archetype
         {
             var icon = AbilityRefs.Foresight.Reference.Get().Icon;
 
-            var feat = FeatureConfigurator.New(ShieldForesightFeat, ShieldForesightFeatGuid, FeatureGroup.RagePower)
+            var feat = FeatureConfigurator.New(ShieldForesightFeat, ShieldForesightFeatGuid)
               .SetDisplayName(ShieldForesightDisplayName)
               .SetDescription(ShieldForesightDescription)
               .SetIcon(icon)
-              .AddPrerequisiteFeature(FeatureRefs.MonsterMythicWeaponSizeFeature.ToString())
-              .SetHideNotAvailibleInUI(true)
               .AddSavingThrowBonusAgainstDescriptor(spellDescriptor: SpellDescriptor.Fear, value: 5)
               .Configure();
 
@@ -75,12 +73,8 @@ namespace PrestigePlus.Blueprint.Archetype
              .AddFacts(new() { feat })
              .AddBuffDescriptorImmunity(false, SpellDescriptor.Fear)
              .AddSpellImmunityToSpellDescriptor(descriptor: SpellDescriptor.Fear)
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
              .Configure();
-
-            //BuffConfigurator.For(BuffRefs.InspiredRageEffectBuff)
-                //.EditComponent<AddFactsFromCaster>(c => { c.Fact = })
-                //.Configure();
-            //.(new() { feat }, false)
 
             return FeatureConfigurator.New(ShieldForesight, ShieldForesightGuid)
               .SetDisplayName(ShieldForesightDisplayName)

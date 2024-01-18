@@ -23,13 +23,15 @@ using BlueprintCore.Utils;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.EntitySystem.Stats;
 using PrestigePlus.CustomComponent.Feat;
+using PrestigePlus.CustomAction;
+using Kingmaker.Blueprints;
 
 namespace PrestigePlus.Blueprint.RogueTalent
 {
     internal class StrengthSurge
     {
         private const string StrengthSurgePower = "Barbarian.StrengthSurge";
-        private static readonly string StrengthSurgeGuid = "{A7B7D768-B3AB-4105-AFAB-5EAD68E1C616}";
+        public static readonly string StrengthSurgeGuid = "{A7B7D768-B3AB-4105-AFAB-5EAD68E1C616}";
 
         internal const string StrengthSurgeDisplayName = "BarbarianStrengthSurge.Name";
         private const string StrengthSurgeDescription = "BarbarianStrengthSurge.Description";
@@ -93,7 +95,7 @@ namespace PrestigePlus.Blueprint.RogueTalent
                 .Configure();
 
             var action = ActionsBuilder.New()
-                .RestoreResource(abilityresourse, ContextValues.Constant(1))
+                .Add<PPrestoreRes>(c => { c.m_Resource = abilityresourse.ToReference<BlueprintAbilityResourceReference>(); c.Value = 1; })
                 .Build();
 
             BuffConfigurator.For(BuffRefs.StandartRageBuff)
