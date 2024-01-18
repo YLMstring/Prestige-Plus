@@ -1,11 +1,14 @@
 ﻿using BlueprintCore.Actions.Builder;
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.Configurators.Classes;
+using BlueprintCore.Blueprints.Configurators.Items.Ecnchantments;
 using BlueprintCore.Blueprints.Configurators.Items.Weapons;
 using BlueprintCore.Blueprints.Configurators.Root;
+using BlueprintCore.Blueprints.CustomConfigurators;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
+using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
@@ -14,6 +17,7 @@ using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Alignments;
+using Kingmaker.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,8 +41,17 @@ namespace PrestigePlus.Blueprint.Gunslinger
         private const string MaximName = "GunslingerWeapon";
         private static readonly string MaximGuid = "{F497D51D-2B4F-4ADA-9300-EC2266DD7255}";
         internal const string MaximDisplayName = "GunslingerMaxim.Name";
+        internal const string MaximDisplayName2 = "GunslingerMaxim2.Name";
         private const string MaximDescription = "GunslingerMaxim.Description";
         private const string MaximDescription2 = "GunslingerMaxim2.Description";
+
+        private const string GuntypeName = "GunslingerWeaponType";
+        private static readonly string GuntypeGuid = "{8BB782AE-6EFD-45C9-944B-0E73D6EB49D8}";
+
+        private const string MaximEnchantName = "GunslingerWeaponEnchant";
+        private static readonly string MaximEnchantGuid = "{CA8D8C72-209B-45FD-B039-9A8239ADC751}";
+        internal const string MaximEnchantDisplayName = "GunslingerMaximEnchant.Name";
+        private const string MaximEnchantDescription = "GunslingerMaximEnchant.Description";
 
         public static void Configure()
         {
@@ -51,30 +64,52 @@ namespace PrestigePlus.Blueprint.Gunslinger
                 }
             };
 
+            var gunenchant = WeaponEnchantmentConfigurator.New(MaximEnchantName, MaximEnchantGuid)
+                .SetEnchantName(MaximEnchantName)
+                .SetDescription(MaximDescription)
+                .AddUnitFeatureEquipment(null)
+                .Configure();
+
+            var guntype = WeaponTypeConfigurator.New(GuntypeName, GuntypeGuid)
+                .SetCategory(WeaponCategory.HeavyRepeatingCrossbow)
+                .SetTypeNameText(MaximDisplayName2)
+                .SetDefaultNameText(MaximDisplayName2)
+                .SetIcon(null)
+                .SetVisualParameters(null)
+                .SetAttackType(AttackType.Ranged)
+                .SetAttackRange(60.Feet())
+                .SetIsTwoHanded(true)
+                .SetBaseDamage(new DiceFormula(2, DiceType.D8))
+                .SetDamageType(damagetype)
+                .SetCriticalRollEdge(20)
+                .SetCriticalModifier(Kingmaker.Enums.Damage.DamageCriticalModifierType.X4)
+                .SetWeight(140)
+                .AddToEnchantments(gunenchant)
+                .Configure();
+
             var maxim = ItemWeaponConfigurator.New(MaximName, MaximGuid)
                 .SetDisplayNameText(MaximDisplayName)
                 .SetDescriptionText(MaximDescription)
                 .SetFlavorText(MaximDescription2)
                 .SetIcon(null)
+                .SetVisualParameters(null)
                 .SetCost(1500)
-                .SetWeight(140)
                 .SetIsNotable(true)
                 .SetIsJunk(false)
                 .SetDestructible(false)
-                .SetType(WeaponTypeRefs.BombType.ToString())
+                .SetType(guntype)
                 .SetSize(Size.Medium)
-                .SetOverrideDamageDice(true)
-                .SetDamageDice(new DiceFormula(2, DiceType.D8))
-                .SetDamageType(damagetype)
                 .AddEquipmentRestrictionClass(ArchetypeGuid)
                 .Configure();
             
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1)
-                .AddToLevelEntry(2, CreateControllCharge())
-                .AddToLevelEntry(3, FeatureRefs.PoisonImmunity.ToString())
+                .AddToLevelEntry(1, CreateGunsmith(), CreateGrit())
+                .AddToLevelEntry(2, CreateNimble())
+                .AddToLevelEntry(3, CreateInitiative())
+                .AddToLevelEntry(4, FeatureSelectionRefs.FighterFeatSelection.ToString())
+                .AddToLevelEntry(5, CreateGunTraining())
                 .SetIsClassFeature(true)
                 .SetDisplayName("")
                 .SetDescription(ArchetypeDescription)
@@ -119,67 +154,114 @@ namespace PrestigePlus.Blueprint.Gunslinger
                 .Configure(delayed: true);
         }
 
-        private const string Reckless = "Gunslinger.Reckless";
-        private static readonly string RecklessGuid = "{8E229789-C76E-4FDB-AE0D-3532BEF28BF3}";
+        private const string Gunsmith = "Gunslinger.Gunsmith";
+        private static readonly string GunsmithGuid = "{29F72FD6-0A56-4F52-8997-00A0C5672D74}";
 
-        private const string RecklessBuff = "Gunslinger.RecklessBuff";
-        private static readonly string RecklessGuidBuff = "{3574A095-46EC-4F8E-AFD8-9253258C6A49}";
-
-        internal const string RecklessDisplayName = "GunslingerReckless.Name";
-        private const string RecklessDescription = "GunslingerReckless.Description";
-        private static BlueprintFeature CreateReckless()
-        {
-            var icon = AbilityRefs.ChargeAbility.Reference.Get().Icon;
-
-            var Buff1 = BuffConfigurator.New(RecklessBuff, RecklessGuidBuff)
-              .SetDisplayName(RecklessDisplayName)
-              .SetDescription(RecklessDescription)
-              .SetIcon(icon)
-              .AddAttackBonusConditional(ContextValues.Rank(), descriptor: ModifierDescriptor.Morale)
-              //.AddContextStatBonus(StatType.AdditionalAttackBonus, ContextValues.Rank(), ModifierDescriptor.Morale)
-              .AddDamageBonusConditional(ContextValues.Rank(), descriptor: ModifierDescriptor.Morale)
-              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }))
-              .Configure();
-
-            var action = ActionsBuilder.New()
-                .ApplyBuff(buff: Buff1, durationValue: ContextDuration.Fixed(1))
-                .Build();
-
-            return FeatureConfigurator.New(Reckless, RecklessGuid)
-              .SetDisplayName(RecklessDisplayName)
-              .SetDescription(RecklessDescription)
-              .SetIcon(icon)
-              .SetIsClassFeature(true)
-              .AddCombatStateTrigger(combatStartActions: action)
-              .Configure();
-        }
-
-        private const string ControllCharge = "Gunslinger.ControllCharge";
-        private static readonly string ControllChargeGuid = "{48AF1EDA-5A68-4C0F-B62F-7F4F9A7A721C}";
-
-        private const string ControllChargeBuff = "Gunslinger.ControllChargeBuff";
-        private static readonly string ControllChargeGuidBuff = "{1AE0EC6C-3E58-4309-8B49-17CDD0EFD65B}";
-
-        internal const string ControllChargeDisplayName = "GunslingerControllCharge.Name";
-        private const string ControllChargeDescription = "GunslingerControllCharge.Description";
-        private static BlueprintFeature CreateControllCharge()
+        internal const string GunsmithDisplayName = "GunslingerGunsmith.Name";
+        private const string GunsmithDescription = "GunslingerGunsmith.Description";
+        private static BlueprintFeature CreateGunsmith()
         {
             var icon = FeatureRefs.CavalierCharge.Reference.Get().Icon;
 
-            var Buff1 = BuffConfigurator.New(ControllChargeBuff, ControllChargeGuidBuff)
-              .SetDisplayName(ControllChargeDisplayName)
-              .SetDescription(ControllChargeDescription)
+            return FeatureConfigurator.New(Gunsmith, GunsmithGuid)
+              .SetDisplayName(GunsmithDisplayName)
+              .SetDescription(GunsmithDescription)
               .SetIcon(icon)
-              //.AddACBonusAgainstAttacks(armorClassBonus: 2)
-              .AddContextStatBonus(StatType.AC, value: 2)
+              .AddProficiencies(
+                weaponProficiencies:
+                  new WeaponCategory[]
+                  {
+              WeaponCategory.HeavyRepeatingCrossbow,
+                  })
               .Configure();
+        }
 
-            return FeatureConfigurator.New(ControllCharge, ControllChargeGuid)
-              .SetDisplayName(ControllChargeDisplayName)
-              .SetDescription(ControllChargeDescription)
+        private const string GritFeature = "Gunslinger.Grit";
+        private static readonly string GritFeatureGuid = "{689FA7B8-90ED-4B9A-89C9-83970FAC1F0D}";
+
+        private const string GritResource = "Gunslinger.GritResource";
+        private static readonly string GritResourceGuid = "{5E983BF8-BDE0-4FD5-B3CB-240B5A4B8BF5}";
+
+        internal const string GritDisplayName = "GunslingerGrit.Name";
+        private const string GritDescription = "GunslingerGrit.Description";
+        private static BlueprintFeature CreateGrit()
+        {
+            var res = AbilityResourceConfigurator.New(GritResource, GritResourceGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(0).IncreaseByStat(StatType.Wisdom))
+                .SetMin(1)
+                .Configure();
+
+            return FeatureConfigurator.New(GritFeature, GritFeatureGuid)
+                .SetDisplayName(GritDisplayName)
+                .SetDescription(GritDescription)
+                .SetIcon(FeatureRefs.Bravery.Reference.Get().Icon)
+                .AddFacts(new() { FeatureRefs.SimpleWeaponProficiency.ToString(), FeatureRefs.MartialWeaponProficiency.ToString(), FeatureRefs.LightArmorProficiency.ToString() })
+                .AddAbilityResources(resource: res, restoreAmount: true)
+                .AddInitiatorAttackWithWeaponTrigger(action: ActionsBuilder.New().RestoreResource(res, 1), actionsOnInitiator: true, duelistWeapon: true, criticalHit: true)
+                .AddInitiatorAttackWithWeaponTrigger(action: ActionsBuilder.New().RestoreResource(res, 1), actionsOnInitiator: true, duelistWeapon: true, reduceHPToZero: true)
+                .Configure();
+        }
+
+        private const string Nimble = "Gunslinger.Nimble";
+        private static readonly string NimbleGuid = "{9747226A-6953-4F3F-B01C-9BA6E2B47B88}";
+
+        private const string NimbleBuff = "Gunslinger.NimbleBuff";
+        private static readonly string NimbleGuidBuff = "{63609D02-8290-4A2B-9CD7-E59DB03A8FBE}";
+
+        internal const string NimbleDisplayName = "GunslingerNimble.Name";
+        private const string NimbleDescription = "GunslingerNimble.Description";
+        private static BlueprintFeature CreateNimble()
+        {
+            var icon = AbilityRefs.ChargeAbility.Reference.Get().Icon;
+
+            var Buff1 = BuffConfigurator.New(NimbleBuff, NimbleGuidBuff)
+              .SetDisplayName(NimbleDisplayName)
+              .SetDescription(NimbleDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddBuffExtraEffects(checkedBuff: BuffRefs.ChargeBuff.ToString(), extraEffectBuff: Buff1)
+              .AddStatBonus(ModifierDescriptor.Dodge, false, StatType.AC, 1)
+              .Configure();
+
+            return FeatureConfigurator.New(Nimble, NimbleGuid)
+              .SetDisplayName(NimbleDisplayName)
+              .SetDescription(NimbleDescription)
+              .SetIcon(icon)
+              .AddBuffOnLightOrNoArmor(Buff1)
+              .Configure();
+        }
+
+        private const string Initiative = "Gunslinger.Initiative";
+        private static readonly string InitiativeGuid = "{03723CFE-2CA7-427D-BEEA-BCC351E9AE81}";
+
+        internal const string InitiativeDisplayName = "GunslingerInitiative.Name";
+        private const string InitiativeDescription = "GunslingerInitiative.Description";
+        private static BlueprintFeature CreateInitiative()
+        {
+            var icon = FeatureRefs.CavalierCharge.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Initiative, InitiativeGuid)
+              .SetDisplayName(InitiativeDisplayName)
+              .SetDescription(InitiativeDescription)
+              .SetIcon(icon)
+              .AddStatBonus(stat: StatType.Initiative, value: 2)
+              .Configure();
+        }
+
+        private const string GunTraining = "Gunslinger.GunTraining";
+        private static readonly string GunTrainingGuid = "{48B6D9AF-C48D-4007-9A25-23E9523FB738}";
+
+        internal const string GunTrainingDisplayName = "GunslingerGunTraining.Name";
+        private const string GunTrainingDescription = "GunslingerGunTraining.Description";
+        private static BlueprintFeature CreateGunTraining()
+        {
+            var icon = FeatureRefs.CavalierCharge.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(GunTraining, GunTrainingGuid)
+              .SetDisplayName(GunTrainingDisplayName)
+              .SetDescription(GunTrainingDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddWeaponTypeDamageStatReplacement(WeaponCategory.HeavyRepeatingCrossbow, false, StatType.Dexterity, false)
               .Configure();
         }
     }
