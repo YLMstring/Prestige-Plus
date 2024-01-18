@@ -80,7 +80,7 @@ namespace PrestigePlus.Blueprint.Gunslinger
                 .Configure();
 
             var guntype = WeaponTypeConfigurator.New(GuntypeName, GuntypeGuid)
-                .SetCategory(WeaponCategory.HeavyCrossbow)
+                .SetCategory(WeaponCategory.Javelin)
                 .SetTypeNameText(MaximDisplayName2)
                 .SetDefaultNameText(MaximDisplayName2)
                 .SetIcon(null)
