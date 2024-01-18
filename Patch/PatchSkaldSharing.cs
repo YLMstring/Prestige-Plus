@@ -36,6 +36,10 @@ namespace PrestigePlus.Patch
                 BuffConfigurator.For(BuffRefs.InspiredRageEffectBuff)
                     .EditComponent<AddFactsFromCaster>(c => { c.m_Facts = c.m_Facts.AppendToArray(feat); })
                     .Configure();
+
+                BuffConfigurator.For(BuffRefs.InspiredRageEffectBuffMythic)
+                    .EditComponent<AddFactsFromCaster>(c => { c.m_Facts = c.m_Facts.AppendToArray(feat); })
+                    .Configure();
             }
         }
     }
