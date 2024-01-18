@@ -38,7 +38,7 @@ namespace PrestigePlus.Blueprint.Gunslinger
     internal class GunslingerMain
     {
         private const string ArchetypeName = "Gunslinger";
-        private static readonly string ArchetypeGuid = "{9F8F23C3-1E2E-42E9-9D6E-EC0EF9C67B6B}";
+        public static readonly string ArchetypeGuid = "{9F8F23C3-1E2E-42E9-9D6E-EC0EF9C67B6B}";
         internal const string ArchetypeDisplayName = "Gunslinger.Name";
         private const string ArchetypeDescription = "Gunslinger.Description";
 
@@ -278,7 +278,7 @@ namespace PrestigePlus.Blueprint.Gunslinger
         }
 
         private const string Initiative = "Gunslinger.Initiative";
-        private static readonly string InitiativeGuid = "{03723CFE-2CA7-427D-BEEA-BCC351E9AE81}";
+        public static readonly string InitiativeGuid = "{03723CFE-2CA7-427D-BEEA-BCC351E9AE81}";
 
         internal const string InitiativeDisplayName = "GunslingerInitiative.Name";
         private const string InitiativeDescription = "GunslingerInitiative.Description";
@@ -313,7 +313,7 @@ namespace PrestigePlus.Blueprint.Gunslinger
         }
 
         private const string Dodge = "Gunslinger.Dodge";
-        private static readonly string DodgeGuid = "{E857E9B8-8A53-4915-9EFA-A71CD57E792C}";
+        public static readonly string DodgeGuid = "{E857E9B8-8A53-4915-9EFA-A71CD57E792C}";
 
         internal const string DodgeDisplayName = "GunslingerDodge.Name";
         private const string DodgeDescription = "GunslingerDodge.Description";
