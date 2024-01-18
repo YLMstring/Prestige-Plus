@@ -76,6 +76,12 @@ namespace PrestigePlus.Blueprint.RogueTalent
                     .Conditional(ConditionsBuilder.New().CasterHasFact(BuffRefs.BloodragerStandartRageBuff.ToString()).Build(), ifTrue: ActionsBuilder.New()
                         .ApplyBuff(Buff, ContextDuration.Fixed(2))
                         .Build())
+                    .Conditional(ConditionsBuilder.New().CasterHasFact(BuffRefs.InspiredRageEffectBuff.ToString()).Build(), ifTrue: ActionsBuilder.New()
+                        .ApplyBuff(Buff, ContextDuration.Fixed(2))
+                        .Build())
+                    .Conditional(ConditionsBuilder.New().CasterHasFact(BuffRefs.InspiredRageEffectBuffMythic.ToString()).Build(), ifTrue: ActionsBuilder.New()
+                        .ApplyBuff(Buff, ContextDuration.Fixed(2))
+                        .Build())
                     .Build())
                 .SetDisplayName(StrengthSurgeDisplayName)
                 .SetDescription(StrengthSurgeDescription)
@@ -101,6 +107,16 @@ namespace PrestigePlus.Blueprint.RogueTalent
               .Configure();
 
             BuffConfigurator.For(BuffRefs.BloodragerStandartRageBuff)
+            .EditComponent<AddFactContextActions>(
+                a => a.Activated.Actions = CommonTool.Append(a.Activated.Actions, action.Actions))
+              .Configure();
+
+            BuffConfigurator.For(BuffRefs.InspiredRageEffectBuff)
+            .EditComponent<AddFactContextActions>(
+                a => a.Activated.Actions = CommonTool.Append(a.Activated.Actions, action.Actions))
+              .Configure();
+
+            BuffConfigurator.For(BuffRefs.InspiredRageEffectBuffMythic)
             .EditComponent<AddFactContextActions>(
                 a => a.Activated.Actions = CommonTool.Append(a.Activated.Actions, action.Actions))
               .Configure();
@@ -147,6 +163,8 @@ namespace PrestigePlus.Blueprint.RogueTalent
                         .CasterHasFact(BuffRefs.StandartRageBuff.ToString())
                         .CasterHasFact(BuffRefs.StandartFocusedRageBuff.ToString())
                         .CasterHasFact(BuffRefs.BloodragerStandartRageBuff.ToString())
+                        .CasterHasFact(BuffRefs.InspiredRageEffectBuff.ToString())
+                        .CasterHasFact(BuffRefs.InspiredRageEffectBuffMythic.ToString())
                         .Build(), 
                     ifFalse: ActionsBuilder.New()
                         .RemoveSelf()

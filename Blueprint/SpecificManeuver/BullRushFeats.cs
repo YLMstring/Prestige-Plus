@@ -93,6 +93,8 @@ namespace PrestigePlus.Blueprint.SpecificManeuver
                     .AddBuffExtraEffects(BuffRefs.BloodragerStandartRageBuff.ToString(), extraEffectBuff: ReplaceAttack.BullRushAngry2buffGuid)
                     .AddBuffExtraEffects(BuffRefs.StandartFocusedRageBuff.ToString(), extraEffectBuff: ReplaceAttack.BullRushAngry2buffGuid)
                     .AddBuffExtraEffects(BuffRefs.StandartRageBuff.ToString(), extraEffectBuff: ReplaceAttack.BullRushAngry2buffGuid)
+                    .AddBuffExtraEffects(BuffRefs.InspiredRageEffectBuff.ToString(), extraEffectBuff: ReplaceAttack.BullRushAngry2buffGuid)
+                    .AddBuffExtraEffects(BuffRefs.InspiredRageEffectBuffMythic.ToString(), extraEffectBuff: ReplaceAttack.BullRushAngry2buffGuid)
                     .AddFacts(new() { ability })
                     .Configure();
         }

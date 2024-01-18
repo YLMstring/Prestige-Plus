@@ -76,6 +76,8 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddBuffExtraEffects(BuffRefs.BloodragerStandartRageBuff.ToString(), extraEffectBuff: Buff)
               .AddBuffExtraEffects(BuffRefs.StandartFocusedRageBuff.ToString(), extraEffectBuff: Buff)
               .AddBuffExtraEffects(BuffRefs.StandartRageBuff.ToString(), extraEffectBuff: Buff)
+              .AddBuffExtraEffects(BuffRefs.InspiredRageEffectBuff.ToString(), extraEffectBuff: Buff)
+              .AddBuffExtraEffects(BuffRefs.InspiredRageEffectBuffMythic.ToString(), extraEffectBuff: Buff)
               .Configure();
         }
 
@@ -110,6 +112,8 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddBuffExtraEffects(BuffRefs.BloodragerStandartRageBuff.ToString(), extraEffectBuff: Buff)
               .AddBuffExtraEffects(BuffRefs.StandartFocusedRageBuff.ToString(), extraEffectBuff: Buff)
               .AddBuffExtraEffects(BuffRefs.StandartRageBuff.ToString(), extraEffectBuff: Buff)
+              .AddBuffExtraEffects(BuffRefs.InspiredRageEffectBuff.ToString(), extraEffectBuff: Buff)
+              .AddBuffExtraEffects(BuffRefs.InspiredRageEffectBuffMythic.ToString(), extraEffectBuff: Buff)
               .Configure();
         }
 
@@ -146,6 +150,8 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddBuffExtraEffects(BuffRefs.BloodragerStandartRageBuff.ToString(), extraEffectBuff: Buff)
               .AddBuffExtraEffects(BuffRefs.StandartFocusedRageBuff.ToString(), extraEffectBuff: Buff)
               .AddBuffExtraEffects(BuffRefs.StandartRageBuff.ToString(), extraEffectBuff: Buff)
+              .AddBuffExtraEffects(BuffRefs.InspiredRageEffectBuff.ToString(), extraEffectBuff: Buff)
+              .AddBuffExtraEffects(BuffRefs.InspiredRageEffectBuffMythic.ToString(), extraEffectBuff: Buff)
               .Configure();
         }
 
@@ -182,6 +188,8 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddBuffExtraEffects(BuffRefs.BloodragerStandartRageBuff.ToString(), extraEffectBuff: Buff)
               .AddBuffExtraEffects(BuffRefs.StandartFocusedRageBuff.ToString(), extraEffectBuff: Buff)
               .AddBuffExtraEffects(BuffRefs.StandartRageBuff.ToString(), extraEffectBuff: Buff)
+              .AddBuffExtraEffects(BuffRefs.InspiredRageEffectBuff.ToString(), extraEffectBuff: Buff)
+              .AddBuffExtraEffects(BuffRefs.InspiredRageEffectBuffMythic.ToString(), extraEffectBuff: Buff)
               .Configure();
         }
 
@@ -229,6 +237,8 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddBuffExtraEffects(BuffRefs.BloodragerStandartRageBuff.ToString(), extraEffectBuff: Buff)
               .AddBuffExtraEffects(BuffRefs.StandartFocusedRageBuff.ToString(), extraEffectBuff: Buff)
               .AddBuffExtraEffects(BuffRefs.StandartRageBuff.ToString(), extraEffectBuff: Buff)
+              .AddBuffExtraEffects(BuffRefs.InspiredRageEffectBuff.ToString(), extraEffectBuff: Buff)
+              .AddBuffExtraEffects(BuffRefs.InspiredRageEffectBuffMythic.ToString(), extraEffectBuff: Buff)
               .Configure();
         }
 
@@ -300,6 +310,8 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddBuffExtraEffects(BuffRefs.BloodragerStandartRageBuff.ToString(), extraEffectBuff: Buff1)
               .AddBuffExtraEffects(BuffRefs.StandartFocusedRageBuff.ToString(), extraEffectBuff: Buff1)
               .AddBuffExtraEffects(BuffRefs.StandartRageBuff.ToString(), extraEffectBuff: Buff1)
+              .AddBuffExtraEffects(BuffRefs.InspiredRageEffectBuff.ToString(), extraEffectBuff: Buff1)
+              .AddBuffExtraEffects(BuffRefs.InspiredRageEffectBuffMythic.ToString(), extraEffectBuff: Buff1)
               .AddToIsPrerequisiteFor(RoaringDrunkGuid)
               .AddToIsPrerequisiteFor(LiquidCourageGuid)
               .Configure();

@@ -1103,6 +1103,8 @@ namespace PrestigePlus.Blueprint.Feat
               .AddBuffExtraEffects(checkedBuff: BuffRefs.StandartFocusedRageBuff.ToString(), extraEffectBuff: Buff)
               .AddBuffExtraEffects(checkedBuff: BuffRefs.BloodragerStandartRageBuff.ToString(), extraEffectBuff: Buff)
               .AddBuffExtraEffects(checkedBuff: BuffRefs.DemonRageBuff.ToString(), extraEffectBuff: Buff)
+              .AddBuffExtraEffects(BuffRefs.InspiredRageEffectBuff.ToString(), extraEffectBuff: Buff)
+              .AddBuffExtraEffects(BuffRefs.InspiredRageEffectBuffMythic.ToString(), extraEffectBuff: Buff)
               .Configure();
         }
 

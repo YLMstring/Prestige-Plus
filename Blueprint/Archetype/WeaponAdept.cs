@@ -43,18 +43,18 @@ namespace PrestigePlus.Blueprint.Archetype
             .SetRemoveFeaturesEntry(20, FeatureRefs.KiPerfectSelfFeature.ToString())
             .AddToAddFeatures(1, FeatureRefs.PerfectStrikeFeature.ToString())
             .AddToAddFeatures(2, CreateFocus())
-            .AddToAddFeatures(3, CreateFocus2())
+            .AddToAddFeatures(6, CreateFocus2())
             .AddToAddFeatures(9, FeatureRefs.Evasion.ToString())
-            .AddToAddFeatures(4, "4ac24d1f-7398-488c-9482-493db1c0863a")
-            .AddToAddFeatures(4, UncannyInitiativeFeat())
-            .AddToAddFeatures(5, PurePowerFeat())
+            .AddToAddFeatures(10, "4ac24d1f-7398-488c-9482-493db1c0863a")
+            .AddToAddFeatures(17, UncannyInitiativeFeat())
+            .AddToAddFeatures(20, PurePowerFeat())
               .Configure();
 
             ProgressionConfigurator.For(ProgressionRefs.MonkProgression)
                 .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { FeatureRefs.PerfectStrikeFeature.ToString(), FocusGuid, Focus2Guid, "4ac24d1f-7398-488c-9482-493db1c0863a" })
                 .Configure();
         }
-        //1 2 6 9 17 20
+
         private const string Focus = "WeaponAdept.Focus";
         private static readonly string FocusGuid = "{B200D27E-96C7-4A17-87C5-2D2AFB26BF9F}";
 
