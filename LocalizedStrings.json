@@ -423,13 +423,13 @@
     // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
     // links to encycolpedia pages.
     "ProcessTemplates": false,
-    "enGB": "Ghoul Transformation",
+    "enGB": "Ghoulish Transformation",
     "zhCN": "转化食尸鬼"
   },
 
   {
     "Key": "AgentoftheGraveGhoul.Description",
-    "enGB": "Inspired by what was done in the lost chapel, the Agent of the Grave transforms into a ghast while retaining his inteligence as well as class levels. He gains Ghast Special Abilities, bite (1d6) and 2 claws (1d6).",
+    "enGB": "Inspired by what was done in the lost chapel, the Agent of the Grave transforms into a ghast while retaining his inteligence as well as class levels. He gains Ghoul Special Abilities, bite (1d6) and 2 claws (1d6).",
     "zhCN": "从失落神殿一战中汲取灵感后，墓穴使者转变为保留智慧和职业等级的食尸鬼，他获得食尸鬼的特殊能力，1d6噬咬攻击和2次1d6爪抓。"
   },
 
@@ -438,14 +438,14 @@
     // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
     // links to encycolpedia pages.
     "ProcessTemplates": false,
-    "enGB": "Vampire Transformation",
+    "enGB": "Vampiric Transformation",
     "zhCN": "转化吸血鬼"
   },
 
   {
     "Key": "AgentoftheGraveVampire.Description",
-    "enGB": "The Agent of the Grave is no longer a half-vampire but a real one. He gains Vampire Spawn Special Abilities, Resistence, and 2 slams (1d6).",
-    "zhCN": "墓穴使者不再是半吸血鬼，而是真正的吸血鬼。他获得吸血鬼衍体的特殊能力，抗性和1d6挥击。"
+    "enGB": "The Agent of the Grave is no longer a half-vampire but a real one. He gains Vampire Spawn Special Abilities, resistance, and 2 slams (1d6).",
+    "zhCN": "墓穴使者不再是半吸血鬼，而是真正的吸血鬼。他获得吸血鬼衍体的特殊能力，抗性和2次1d6挥击。"
   },
 
   {
