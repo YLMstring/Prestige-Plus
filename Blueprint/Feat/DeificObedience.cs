@@ -2882,13 +2882,24 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string Kabriri3DisplayName = "DeificObedienceKabriri3.Name";
         private static readonly string Kabriri3Description = "DeificObedienceKabriri3.Description";
 
-        private const string Kabriri3Feat = "DeificObedienceStyle.Kabriri3Feat";
-        private static readonly string Kabriri3FeatGuid = "{FAFAF466-3B63-4BD1-B988-4D92ECAC7ECD}";
+        private const string Kabriri3Feat1 = "DeificObedienceStyle.Kabriri3Feat1";
+        private static readonly string Kabriri3Feat1Guid = "{FAFAF466-3B63-4BD1-B988-4D92ECAC7ECD}";
+
+        private const string Kabriri3Feat2 = "DeificObedienceStyle.Kabriri3Feat2";
+        private static readonly string Kabriri3Feat2Guid = "{A540E078-53A6-40B6-9A05-D019D8709F45}";
         public static BlueprintFeature KabririExalted3Feat()
         {
             var icon = AbilityRefs.CreateUndeadGreaterBase.Reference.Get().Icon;
 
-            var feat = FeatureConfigurator.New(Kabriri3Feat, Kabriri3FeatGuid)
+            var feat1 = FeatureConfigurator.New(Kabriri3Feat2, Kabriri3Feat2Guid)
+                    .SetDisplayName(Kabriri3DisplayName)
+                    .SetDescription(Kabriri3Description)
+                    .SetIcon(icon)
+                    .AddStatBonus(ModifierDescriptor.NaturalArmor, false, StatType.AC, 2)
+                    .AddFacts(new() { AgentoftheGrave.GhoulGuid })
+                    .Configure();
+
+            var feat2 = FeatureConfigurator.New(Kabriri3Feat2, Kabriri3Feat2Guid)
                     .SetDisplayName(Kabriri3DisplayName)
                     .SetDescription(Kabriri3Description)
                     .SetIcon(icon)
@@ -2899,7 +2910,7 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetDisplayName(Kabriri3DisplayName)
                     .SetDescription(Kabriri3Description)
                     .SetIcon(icon)
-                    .AddComponent<KabririGhoul>(c => { c.feat1 = BlueprintTool.GetRef<BlueprintFeatureReference>(AgentoftheGrave.GhoulGuid); c.feat2 = feat; })
+                    .AddComponent<KabririGhoul>(c => { c.feat1 = feat1; c.feat2 = feat2; })
                     .SetHideInCharacterSheetAndLevelUp(true)
                     .Configure();
         }
