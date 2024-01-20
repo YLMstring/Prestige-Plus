@@ -64,6 +64,7 @@ using Kingmaker.UnitLogic;
 using TabletopTweaks.Core.NewComponents;
 using static Kingmaker.EntitySystem.Properties.BaseGetter.PropertyContextAccessor;
 using BlueprintCore.Utils;
+using TabletopTweaks.Core.NewComponents.OwlcatReplacements;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -129,6 +130,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(MilaniFeat())
               .AddToAllFeatures(NiviFeat())
               .AddToAllFeatures(KabririFeat())
+              .AddToAllFeatures(FalaynaFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -1259,9 +1261,9 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteAlignment(AlignmentMaskType.NeutralEvil, group: Prerequisite.GroupType.Any)
               .SetGiveFeaturesForPreviousLevels(true)
               .AddToLevelEntry(1, Norgorber0Feat())
-              .AddToLevelEntry(2, CreateNorgorber1())
-              .AddToLevelEntry(6, Norgorber2Feat())
-              .AddToLevelEntry(10, Norgorber3Feat())
+              .AddToLevelEntry(12, CreateNorgorber1())
+              .AddToLevelEntry(16, Norgorber2Feat())
+              .AddToLevelEntry(20, Norgorber3Feat())
               .Configure();
         }
 
@@ -1407,9 +1409,9 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteAlignment(AlignmentMaskType.LawfulNeutral, group: Prerequisite.GroupType.Any)
               .SetGiveFeaturesForPreviousLevels(true)
               .AddToLevelEntry(1, Otolmens0Feat())
-              .AddToLevelEntry(2, CreateOtolmens1())
-              .AddToLevelEntry(6, Otolmens2Feat())
-              .AddToLevelEntry(10, Otolmens3Feat())
+              .AddToLevelEntry(12, CreateOtolmens1())
+              .AddToLevelEntry(16, Otolmens2Feat())
+              .AddToLevelEntry(20, Otolmens3Feat())
               .Configure();
         }
 
@@ -2891,7 +2893,7 @@ namespace PrestigePlus.Blueprint.Feat
         {
             var icon = AbilityRefs.CreateUndeadGreaterBase.Reference.Get().Icon;
 
-            var feat1 = FeatureConfigurator.New(Kabriri3Feat2, Kabriri3Feat2Guid)
+            var feat1 = FeatureConfigurator.New(Kabriri3Feat1, Kabriri3Feat1Guid)
                     .SetDisplayName(Kabriri3DisplayName)
                     .SetDescription(Kabriri3Description)
                     .SetIcon(icon)
@@ -2913,6 +2915,160 @@ namespace PrestigePlus.Blueprint.Feat
                     .AddComponent<KabririGhoul>(c => { c.feat1 = feat1; c.feat2 = feat2; })
                     .SetHideInCharacterSheetAndLevelUp(true)
                     .Configure();
+        }
+
+        private const string Falayna = "DeificObedience.Falayna";
+        public static readonly string FalaynaGuid = "{FCFB17F5-9442-49C0-8D9F-D7D0C4778499}";
+
+        internal const string FalaynaDisplayName = "DeificObedienceFalayna.Name";
+        private const string FalaynaDescription = "DeificObedienceFalayna.Description";
+        public static BlueprintProgression FalaynaFeat()
+        {
+            //"FalaynaFeature": "7316c5a8-9dc9-4c62-98de-fb156da3b723",
+            var icon = AbilityRefs.InstantEnemy.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(Falayna, FalaynaGuid)
+              .SetDisplayName(FalaynaDisplayName)
+              .SetDescription(FalaynaDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature("7316c5a8-9dc9-4c62-98de-fb156da3b723", group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.LawfulGood, group: Prerequisite.GroupType.Any)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(1, Falayna0Feat())
+              .AddToLevelEntry(2, CreateFalayna1())
+              .AddToLevelEntry(6, Falayna3Feat())
+              .AddToLevelEntry(10, Falayna2Feat())
+              .Configure();
+        }
+
+        private const string Falayna0 = "DeificObedience.Falayna0";
+        public static readonly string Falayna0Guid = "{ADD1CDB9-DA5D-48F2-93AF-361915A51D3A}";
+
+        public static BlueprintFeature Falayna0Feat()
+        {
+            var icon = AbilityRefs.AngelicAspect.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Falayna0, Falayna0Guid)
+              .SetDisplayName(FalaynaDisplayName)
+              .SetDescription(FalaynaDescription)
+              .SetIcon(icon)
+              .AddStatBonus(ModifierDescriptor.Sacred, false, StatType.AdditionalCMD, 4)
+              .AddManeuverBonus(4, mythic: false, type: Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple, descriptor: ModifierDescriptor.Sacred)
+              .Configure();
+        }
+
+        private const string Falayna1 = "SpellPower.Falayna1";
+        public static readonly string Falayna1Guid = "{A5612B95-DB12-48E0-863B-C0379B1136A6}";
+        internal const string Falayna1DisplayName = "SpellPowerFalayna1.Name";
+        private const string Falayna1Description = "SpellPowerFalayna1.Description";
+
+        private const string Falayna1Ablity2 = "SpellPower.UseFalayna12";
+        private static readonly string Falayna1Ablity2Guid = "{30634B82-8871-4649-946F-E0D44406C249}";
+
+        private const string Falayna1Ablity3 = "SpellPower.UseFalayna13";
+        private static readonly string Falayna1Ablity3Guid = "{60BA7F5F-54D9-47EF-8F36-D793998E9AE2}";
+
+        private static BlueprintFeature CreateFalayna1()
+        {
+            var icon = AbilityRefs.DivineFavor.Reference.Get().Icon;
+
+            var ability2 = AbilityConfigurator.New(Falayna1Ablity2, Falayna1Ablity2Guid)
+                .CopyFrom(
+                AbilityRefs.BoneFists,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilityTargetsAround))
+                .AddPretendSpellLevel(spellLevel: 2)
+                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var ability3 = AbilityConfigurator.New(Falayna1Ablity3, Falayna1Ablity3Guid)
+                .CopyFrom(
+                AbilityRefs.MagicWeaponGreater,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilityVariants))
+                .AddPretendSpellLevel(spellLevel: 3)
+                .AddAbilityResourceLogic(6, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Falayna1, Falayna1Guid)
+              .SetDisplayName(Falayna1DisplayName)
+              .SetDescription(Falayna1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { Arazni1AblityGuid, ability2, ability3 })
+              .Configure();
+        }
+
+        private const string Falayna2 = "DeificObedience.Falayna2";
+        public static readonly string Falayna2Guid = "{00625802-C02D-47AE-A63E-DCB1A366EF2A}";
+
+        internal const string Falayna2DisplayName = "DeificObedienceFalayna2.Name";
+        private const string Falayna2Description = "DeificObedienceFalayna2.Description";
+        public static BlueprintFeature Falayna2Feat()
+        {
+            var icon = FeatureSelectionRefs.CombatTrick.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Falayna2, Falayna2Guid)
+              .SetDisplayName(Falayna2DisplayName)
+              .SetDescription(Falayna2Description)
+              .SetIcon(icon)
+              .Configure();
+        }
+
+        private const string Falayna3 = "DeificObedience.Falayna3";
+        public static readonly string Falayna3Guid = "{03D4102A-3940-42EF-8690-AECF28AE3C4B}";
+
+        internal const string Falayna3DisplayName = "DeificObedienceFalayna3.Name";
+        private const string Falayna3Description = "DeificObedienceFalayna3.Description";
+
+        private const string Falayna3Buff = "DeificObedience.Falayna3Buff";
+        private static readonly string Falayna3BuffGuid = "{70F3A330-5C0F-4A81-B270-720751343962}";
+
+        private const string Falayna3Res = "DeificObedience.Falayna3Res";
+        private static readonly string Falayna3ResGuid = "{A140E2B2-3DF2-4CB9-88A7-AA51D971C98F}";
+
+        private const string Falayna3Ability = "DeificObedience.Falayna3Ability";
+        private static readonly string Falayna3AbilityGuid = "{9168F28A-6165-432B-8FCF-CD9AA177D2C1}";
+        public static BlueprintFeature Falayna3Feat()
+        {
+            var icon = FeatureSelectionRefs.BasicFeatSelection.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(Falayna3Res, Falayna3ResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(0))
+                .Configure();
+
+            var ability = ActivatableAbilityConfigurator.New(Falayna3Ability, Falayna3AbilityGuid)
+                .SetDisplayName(Falayna3DisplayName)
+                .SetDescription(Falayna3Description)
+                .SetIcon(icon)
+                .SetBuff(Falayna3BuffGuid)
+                .SetDeactivateIfCombatEnded(true)
+                .SetDeactivateImmediately(true)
+                .SetActivationType(AbilityActivationType.WithUnitCommand)
+                .SetActivateWithUnitCommand(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+                .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound, freeBlueprint: Falayna2Guid)
+                .Configure();
+
+            BuffConfigurator.New(Falayna3Buff, Falayna3BuffGuid)
+             .SetDisplayName(Falayna3DisplayName)
+             .SetDescription(Falayna3Description)
+             .SetIcon(icon)
+             .AddComponent<WeaponSizeChangeTTT>()
+             .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+             .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+             .Configure();
+
+            return FeatureConfigurator.New(Falayna3, Falayna3Guid)
+              .SetDisplayName(Falayna3DisplayName)
+              .SetDescription(Falayna3Description)
+              .SetIcon(icon)
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .AddIncreaseResourceAmountBySharedValue(false, abilityresourse, ContextValues.Property(UnitProperty.Level))
+              .AddFacts(new() { ability })
+              .Configure();
         }
     }
 }
