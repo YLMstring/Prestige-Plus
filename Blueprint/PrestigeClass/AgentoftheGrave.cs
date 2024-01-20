@@ -309,7 +309,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         }
 
         private const string Ghoul = "AgentoftheGrave.Ghoul";
-        private static readonly string GhoulGuid = "{DC99A999-022B-40E1-A258-F1CA3848F028}";
+        public static readonly string GhoulGuid = "{DC99A999-022B-40E1-A258-F1CA3848F028}";
         internal const string GhoulDisplayName = "AgentoftheGraveGhoul.Name";
         private const string GhoulDescription = "AgentoftheGraveGhoul.Description";
 
@@ -322,10 +322,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(GhoulDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddPrerequisiteNoFeature(FeatureRefs.MythicLichSkeletonCompanionArcher.ToString())
-              .AddPrerequisiteNoFeature(FeatureRefs.MythicLichSkeletonCompanionDualWielder.ToString())
-              .AddPrerequisiteNoFeature(FeatureRefs.MythicLichSkeletonCompanionTank.ToString())
-              .AddPrerequisiteNoFeature(FeatureRefs.MythicLichSkeletonCompanionTwoHanded.ToString())
+              .AddPrerequisiteNoFeature(FeatureRefs.UndeadType.ToString())
+              .AddPrerequisiteNoFeature(FeatureSelectionRefs.MythicLichSkeletonSelection.ToString())
               .AddFacts(new() { FeatureRefs.UndeadType.ToString(), FeatureRefs.GhoulParalysisFeature.ToString(), FeatureRefs.GhoulDiseaseFeature.ToString(), FeatureRefs.DLC4_Ghast_StenchFeature.ToString(), FeatureRefs.ChannelResistance2.ToString() })
               .AddAdditionalLimb(ItemWeaponRefs.Bite1d6.ToString())
               .AddEmptyHandWeaponOverride(isMonkUnarmedStrike: false, isPermanent: true, weapon: ItemWeaponRefs.Claw1d6.ToString())
@@ -346,10 +344,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(VampireDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddPrerequisiteNoFeature(FeatureRefs.MythicLichSkeletonCompanionArcher.ToString())
-              .AddPrerequisiteNoFeature(FeatureRefs.MythicLichSkeletonCompanionDualWielder.ToString())
-              .AddPrerequisiteNoFeature(FeatureRefs.MythicLichSkeletonCompanionTank.ToString())
-              .AddPrerequisiteNoFeature(FeatureRefs.MythicLichSkeletonCompanionTwoHanded.ToString())
+              .AddPrerequisiteNoFeature(FeatureRefs.UndeadType.ToString())
+              .AddPrerequisiteNoFeature(FeatureSelectionRefs.MythicLichSkeletonSelection.ToString())
               .AddPrerequisiteFeature(FeatureRefs.BloodDrinker.ToString())
               .AddFacts(new() { FeatureRefs.UndeadType.ToString(), FeatureRefs.VampireSpawnFeatures.ToString() })
               .AddEmptyHandWeaponOverride(isMonkUnarmedStrike: false, isPermanent: true, weapon: ItemWeaponRefs.Slam1d6.ToString())

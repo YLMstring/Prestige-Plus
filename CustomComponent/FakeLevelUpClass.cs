@@ -1,5 +1,6 @@
 ﻿using BlueprintCore.Utils;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.JsonSystem;
 using Kingmaker.Enums;
 using Kingmaker.PubSubSystem;
 using Kingmaker.UnitLogic;
@@ -13,8 +14,9 @@ using System.Text;
 using System.Threading.Tasks;
 using static Kingmaker.UI.CanvasScalerWorkaround;
 
-namespace PrestigePlus.Patch
+namespace PrestigePlus.CustomComponent
 {
+    [TypeId("{EECCF91C-0225-4F5A-96B7-1B33E9CB4CD0}")]
     internal class FakeLevelUpClass : UnitFactComponentDelegate<FakeLevelUpClass.ComponentData>, IUnitSubscriber, ISubscriber
     {
         //private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");

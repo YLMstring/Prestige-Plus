@@ -128,6 +128,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(IomedaeFeat())
               .AddToAllFeatures(MilaniFeat())
               .AddToAllFeatures(NiviFeat())
+              .AddToAllFeatures(KabririFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -2288,9 +2289,9 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddPrerequisiteFeature(IomedaeGuid)
               .SetGiveFeaturesForPreviousLevels(true)
-              .AddToLevelEntry(2, CreateIomedae1())
-              .AddToLevelEntry(6, Iomedae2Feat())
-              .AddToLevelEntry(10, Iomedae3Feat())
+              .AddToLevelEntry(12, CreateIomedae1())
+              .AddToLevelEntry(16, Iomedae2Feat())
+              .AddToLevelEntry(20, Iomedae3Feat())
               .Configure();
         }
 
@@ -2551,9 +2552,9 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddPrerequisiteFeature(NiviGuid)
               .SetGiveFeaturesForPreviousLevels(true)
-              .AddToLevelEntry(2, CreateNivi1())
-              .AddToLevelEntry(6, NiviExalted2Feat())
-              .AddToLevelEntry(10, NiviExalted3Feat())
+              .AddToLevelEntry(12, CreateNivi1())
+              .AddToLevelEntry(16, NiviExalted2Feat())
+              .AddToLevelEntry(20, NiviExalted3Feat())
               .Configure();
         }
 
@@ -2759,6 +2760,147 @@ namespace PrestigePlus.Blueprint.Feat
                     .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
                     .AddComponent<AddAbilityResourceDepletedTrigger>(c => { c.m_Resource = abilityresourse.ToReference<BlueprintAbilityResourceReference>(); 
                         c.Action = ActionsBuilder.New().ApplyBuffPermanent(Nivi3Buff2Guid).ApplyBuffPermanent(Nivi3Buff4Guid).Build(); c.Cost = 1; })
+                    .Configure();
+        }
+
+        private const string Kabriri = "DeificObedience.Kabriri";
+        public static readonly string KabririGuid = "{30246D78-FE04-4149-B1BD-E52D443CB862}";
+
+        internal const string KabririDisplayName = "DeificObedienceKabriri.Name";
+        private const string KabririDescription = "DeificObedienceKabriri.Description";
+        public static BlueprintFeature KabririFeat()
+        {
+            var icon = AbilityRefs.BloodDrinkerAbility.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Kabriri, KabririGuid)
+              .SetDisplayName(KabririDisplayName)
+              .SetDescription(KabririDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.KabririFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticEvil, group: Prerequisite.GroupType.Any)
+              .AddToIsPrerequisiteFor(KabririExaltedFeat())
+              .AddSavingThrowBonusAgainstDescriptor(value: 4, modifierDescriptor: ModifierDescriptor.Profane, spellDescriptor: SpellDescriptor.Paralysis)
+              .AddSavingThrowBonusAgainstDescriptor(value: 4, modifierDescriptor: ModifierDescriptor.Profane, spellDescriptor: SpellDescriptor.Disease)
+              .Configure();
+        }
+
+        private const string KabririExalted = "DeificObedience.KabririExalted";
+        public static readonly string KabririExaltedGuid = "{5F226354-0EFE-4DDD-945A-CB73A4C6CFDA}";
+
+        internal const string KabririExaltedDisplayName = "DeificObedienceKabririExalted.Name";
+        private const string KabririExaltedDescription = "DeificObedienceKabririExalted.Description";
+        public static BlueprintProgression KabririExaltedFeat()
+        {
+            var icon = AbilityRefs.BloodDrinkerAbility.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(KabririExalted, KabririExaltedGuid)
+              .SetDisplayName(KabririExaltedDisplayName)
+              .SetDescription(KabririExaltedDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(KabririGuid)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(2, CreateKabriri1())
+              .AddToLevelEntry(6, KabririExalted2Feat())
+              .AddToLevelEntry(10, KabririExalted3Feat())
+              .Configure();
+        }
+
+        private const string Kabriri1 = "SpellPower.Kabriri1";
+        public static readonly string Kabriri1Guid = "{DF69183F-03C6-4550-861D-FB6E7B648A7C}";
+        internal const string Kabriri1DisplayName = "SpellPowerKabriri1.Name";
+        private const string Kabriri1Description = "SpellPowerKabriri1.Description";
+
+        private const string Kabriri1Ablity = "SpellPower.UseKabriri1";
+        private static readonly string Kabriri1AblityGuid = "{F2F63D04-905C-4012-9707-AE7D6990DF04}";
+        private static BlueprintFeature CreateKabriri1()
+        {
+            var icon = AbilityRefs.GhoulTouchCast.Reference.Get().Icon;
+
+            var ability = AbilityConfigurator.New(Kabriri1Ablity, Kabriri1AblityGuid)
+                .CopyFrom(
+                AbilityRefs.GhoulTouchCast,
+                typeof(AbilityEffectStickyTouch),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 2)
+                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Kabriri1, Kabriri1Guid)
+              .SetDisplayName(Kabriri1DisplayName)
+              .SetDescription(Kabriri1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string Kabriri2 = "DeificObedience.Kabriri2";
+        public static readonly string Kabriri2Guid = "{A7603C36-9B20-49F4-9B4B-9C1257DC8244}";
+
+        private const string Kabriri2Ablity = "DeificObedience.UseKabriri2";
+        private static readonly string Kabriri2AblityGuid = "{DCE59EFD-3C80-4D6F-B204-BB2E309F273F}";
+
+        private const string Kabriri2AbilityRes = "DeificObedienceStyle.Kabriri2AbilityRes";
+        private static readonly string Kabriri2AbilityResGuid = "{B5608F03-57B3-4089-A4DF-921177278377}";
+
+        internal const string Kabriri2DisplayName = "DeificObedienceKabriri2.Name";
+        private const string Kabriri2Description = "DeificObedienceKabriri2.Description";
+        public static BlueprintFeature KabririExalted2Feat()
+        {
+            var icon = AbilityRefs.CreateUndeadBase.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(Kabriri2AbilityRes, Kabriri2AbilityResGuid)
+                .SetMaxAmount(
+                    ResourceAmountBuilder.New(2))
+                .Configure();
+
+            var ability = AbilityConfigurator.New(Kabriri2Ablity, Kabriri2AblityGuid)
+                .CopyFrom(
+                AbilityRefs.CreateUndeadBase,
+                typeof(AbilityVariants),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent))
+                .SetDisplayName(Kabriri2DisplayName)
+                .SetDescription(Kabriri2Description)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Kabriri2, Kabriri2Guid)
+              .SetDisplayName(Kabriri2DisplayName)
+              .SetDescription(Kabriri2Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .Configure();
+        }
+
+        private static readonly string Kabriri3Name = "DeificObedienceKabriri3";
+        public static readonly string Kabriri3Guid = "{0EE559A8-7D64-4011-B534-1930A0943BDA}";
+
+        private static readonly string Kabriri3DisplayName = "DeificObedienceKabriri3.Name";
+        private static readonly string Kabriri3Description = "DeificObedienceKabriri3.Description";
+
+        private const string Kabriri3Feat = "DeificObedienceStyle.Kabriri3Feat";
+        private static readonly string Kabriri3FeatGuid = "{FAFAF466-3B63-4BD1-B988-4D92ECAC7ECD}";
+        public static BlueprintFeature KabririExalted3Feat()
+        {
+            var icon = AbilityRefs.CreateUndeadGreaterBase.Reference.Get().Icon;
+
+            var feat = FeatureConfigurator.New(Kabriri3Feat, Kabriri3FeatGuid)
+                    .SetDisplayName(Kabriri3DisplayName)
+                    .SetDescription(Kabriri3Description)
+                    .SetIcon(icon)
+                    .AddStatBonus(ModifierDescriptor.Profane, false, StatType.Charisma, 4)
+                    .Configure();
+
+            return FeatureConfigurator.New(Kabriri3Name, Kabriri3Guid)
+                    .SetDisplayName(Kabriri3DisplayName)
+                    .SetDescription(Kabriri3Description)
+                    .SetIcon(icon)
+                    .AddComponent<KabririGhoul>(c => { c.feat1 = BlueprintTool.GetRef<BlueprintFeatureReference>(AgentoftheGrave.GhoulGuid); c.feat2 = feat; })
+                    .SetHideInCharacterSheetAndLevelUp(true)
                     .Configure();
         }
     }
