@@ -131,6 +131,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(NiviFeat())
               .AddToAllFeatures(KabririFeat())
               .AddToAllFeatures(FalaynaFeat())
+              .AddToAllFeatures(SocothbenothFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -3068,6 +3069,231 @@ namespace PrestigePlus.Blueprint.Feat
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .AddIncreaseResourceAmountBySharedValue(false, abilityresourse, ContextValues.Property(UnitProperty.Level))
               .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string Socothbenoth = "DeificObedience.Socothbenoth";
+        public static readonly string SocothbenothGuid = "{7316A90E-0166-4F6C-8995-FF6BD8870118}";
+
+        internal const string SocothbenothDisplayName = "DeificObedienceSocothbenoth.Name";
+        private const string SocothbenothDescription = "DeificObedienceSocothbenoth.Description";
+        public static BlueprintFeature SocothbenothFeat()
+        {
+            var icon = FeatureRefs.SocothbenothFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Socothbenoth, SocothbenothGuid)
+              .SetDisplayName(SocothbenothDisplayName)
+              .SetDescription(SocothbenothDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.SocothbenothFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticEvil, group: Prerequisite.GroupType.Any)
+              .AddToIsPrerequisiteFor(SocothbenothSentinelFeat())
+              .AddSavingThrowBonusAgainstSchool(school: SpellSchool.Enchantment, value: 4)
+              .Configure();
+        }
+
+        private const string SocothbenothSentinel = "DeificObedience.SocothbenothSentinel";
+        public static readonly string SocothbenothSentinelGuid = "{1ED25636-61B3-4C1C-848E-4FF4011E9770}";
+
+        internal const string SocothbenothSentinelDisplayName = "DeificObedienceSocothbenothSentinel.Name";
+        private const string SocothbenothSentinelDescription = "DeificObedienceSocothbenothSentinel.Description";
+        public static BlueprintProgression SocothbenothSentinelFeat()
+        {
+            var icon = FeatureRefs.SocothbenothFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(SocothbenothSentinel, SocothbenothSentinelGuid)
+              .SetDisplayName(SocothbenothSentinelDisplayName)
+              .SetDescription(SocothbenothSentinelDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(SocothbenothGuid)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(2, CreateSocothbenoth1())
+              .AddToLevelEntry(6, Socothbenoth3Feat())
+              .AddToLevelEntry(10, Socothbenoth2Feat())
+              .Configure();
+        }
+
+        private const string Socothbenoth1 = "SpellPower.Socothbenoth1";
+        public static readonly string Socothbenoth1Guid = "{A734AE31-5510-446E-AB5A-1D6919DC5DCC}";
+        internal const string Socothbenoth1DisplayName = "SpellPowerSocothbenoth1.Name";
+        private const string Socothbenoth1Description = "SpellPowerSocothbenoth1.Description";
+
+        private const string Socothbenoth1Ablity = "SpellPower.UseSocothbenoth1";
+        private static readonly string Socothbenoth1AblityGuid = "{4C39729E-5BFC-4DC4-ACF7-14981179A8DF}";
+
+        private const string Socothbenoth1Ablity2 = "SpellPower.UseSocothbenoth12";
+        private static readonly string Socothbenoth1Ablity2Guid = "{B306DEDD-D2EC-4E60-938B-B3025583F334}";
+
+        private static BlueprintFeature CreateSocothbenoth1()
+        {
+            var icon = AbilityRefs.Heroism.Reference.Get().Icon;
+
+            var ability = AbilityConfigurator.New(Socothbenoth1Ablity, Socothbenoth1AblityGuid)
+                .CopyFrom(
+                AbilityRefs.Command,
+                typeof(AbilityVariants),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 1)
+                .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(Socothbenoth1Ablity2, Socothbenoth1Ablity2Guid)
+                .CopyFrom(
+                AbilityRefs.MirrorImage,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(AbilitySpawnFx))
+                .AddPretendSpellLevel(spellLevel: 2)
+                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Socothbenoth1, Socothbenoth1Guid)
+              .SetDisplayName(Socothbenoth1DisplayName)
+              .SetDescription(Socothbenoth1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability, ability2, Nivi1Ablity3Guid })
+              .Configure();
+        }
+
+        private const string Socothbenoth2 = "DeificObedience.Socothbenoth2";
+        public static readonly string Socothbenoth2Guid = "{5C30D50A-96FA-4667-801C-731EDB40EDBD}";
+
+        private const string Socothbenoth2Buff = "DeificObedience.Socothbenoth2Buff";
+        public static readonly string Socothbenoth2BuffGuid = "{F4402A5A-6076-4BD5-9CE8-242632B012D8}";
+
+        internal const string Socothbenoth2DisplayName = "DeificObedienceSocothbenoth2.Name";
+        private const string Socothbenoth2Description = "DeificObedienceSocothbenoth2.Description";
+
+        public static BlueprintFeature Socothbenoth2Feat()
+        {
+            var icon = AbilityRefs.EvilSuccubusDominate.Reference.Get().Icon;
+
+            var buff = BuffConfigurator.New(Socothbenoth2Buff, Socothbenoth2BuffGuid)
+             .SetDisplayName(Socothbenoth2DisplayName)
+             .SetDescription(Socothbenoth2Description)
+             .SetIcon(icon)
+             .AddTargetAttackWithWeaponTrigger(ActionsBuilder.New().RemoveSelf().Build(), onlyHit: false, waitForAttackResolve: true)
+             .Configure();
+
+            return FeatureConfigurator.New(Socothbenoth2, Socothbenoth2Guid)
+              .SetDisplayName(Socothbenoth2DisplayName)
+              .SetDescription(Socothbenoth2Description)
+              .SetIcon(icon)
+              .AddStatBonus(ModifierDescriptor.Profane, false, StatType.Charisma, 2)
+              .AddTargetAttackRollTrigger(actionsOnAttacker: ActionsBuilder.New().ApplyBuffPermanent(buff).Build(), onlyHit: true)
+              .AddAttackBonusAgainstFactOwner(bonus: ContextValues.Property(UnitProperty.StatBonusCharisma), checkedFact: buff, descriptor: ModifierDescriptor.Profane)
+              .AddComponent<SensuousFacade>()
+              .Configure();
+        }
+
+        private const string Socothbenoth3 = "DeificObedience.Socothbenoth3";
+        public static readonly string Socothbenoth3Guid = "{7740D4BF-7B39-4F7C-948F-97C24A8337A5}";
+
+        private const string Socothbenoth3Buff = "DeificObedience.Socothbenoth3Buff";
+        public static readonly string Socothbenoth3BuffGuid = "{2B8636B8-BF91-4923-BB21-5AF9B32AA98D}";
+
+        internal const string Socothbenoth3DisplayName = "DeificObedienceSocothbenoth3.Name";
+        private const string Socothbenoth3Description = "DeificObedienceSocothbenoth3.Description";
+
+        private const string Socothbenoth3Ablity = "DeificObedience.UseSocothbenoth3";
+        private static readonly string Socothbenoth3AblityGuid = "{D0067D84-9B1F-4861-8F40-BB22A89E3AF4}";
+
+        private const string Socothbenoth3AblityRes = "DeificObedience.Socothbenoth3Res";
+        private static readonly string Socothbenoth3AblityResGuid = "{26284573-8E6C-4DAA-A140-4ABCFB17C816}";
+
+        private const string Socothbenoth3Buff1 = "DeificObedience.Socothbenoth3Buff1";
+        public static readonly string Socothbenoth3Buff1Guid = "{9F1B3620-4CEB-495E-983C-BEE109B1FF50}";
+
+        private const string Socothbenoth3Buff2 = "DeificObedience.Socothbenoth3Buff2";
+        public static readonly string Socothbenoth3Buff2Guid = "{95A62AC6-5E4D-47B6-A723-E318F1835F00}";
+
+        private const string Socothbenoth3Buff3 = "DeificObedience.Socothbenoth3Buff3";
+        public static readonly string Socothbenoth3Buff3Guid = "{E17198C9-69CE-4F9C-9187-C66D00D74978}";
+        public static BlueprintFeature Socothbenoth3Feat()
+        {
+            var icon = AbilityRefs.EvilSuccubusDominate.Reference.Get().Icon;
+
+            var Buff1 = BuffConfigurator.New(Socothbenoth3Buff1, Socothbenoth3Buff1Guid)
+             .SetDisplayName(Socothbenoth3DisplayName)
+             .SetDescription(Socothbenoth3Description)
+             .SetIcon(icon)
+             .AddTemporaryHitPointsFromAbilityValue(removeWhenHitPointsEnd: true, value: ContextValues.Rank())
+             .AddContextRankConfig(ContextRankConfigs.StatBonus(StatType.Charisma).WithBonusValueProgression(0, true))
+             .AddComponent<ViolentViceFullHP>()
+             .Configure();
+
+            var Buff2 = BuffConfigurator.New(Socothbenoth3Buff2, Socothbenoth3Buff2Guid)
+             .SetDisplayName(Socothbenoth3DisplayName)
+             .SetDescription(Socothbenoth3Description)
+             .SetIcon(icon)
+             .AddTemporaryHitPointsFromAbilityValue(removeWhenHitPointsEnd: true, value: ContextValues.Rank())
+             .AddContextRankConfig(ContextRankConfigs.StatBonus(StatType.Charisma).WithBonusValueProgression(0, true))
+             .AddComponent<ViolentViceFullHP>()
+             .Configure();
+
+            var Buff3 = BuffConfigurator.New(Socothbenoth3Buff3, Socothbenoth3Buff3Guid)
+             .SetDisplayName(Socothbenoth3DisplayName)
+             .SetDescription(Socothbenoth3Description)
+             .SetIcon(icon)
+             .AddTemporaryHitPointsFromAbilityValue(removeWhenHitPointsEnd: true, value: ContextValues.Rank())
+             .AddContextRankConfig(ContextRankConfigs.StatBonus(StatType.Charisma).WithBonusValueProgression(0, true))
+             .AddComponent<ViolentViceFullHP>()
+             .Configure();
+
+            var shoot1 = ActionsBuilder.New()
+                    .ApplyBuff(Buff1, ContextDuration.Fixed(10), toCaster: true)
+                    .Build();
+
+            var shoot3 = ActionsBuilder.New()
+                    .ApplyBuff(Buff2, ContextDuration.Fixed(10), toCaster: true)
+                    .Build();
+
+            var shoot4 = ActionsBuilder.New()
+                    .ApplyBuff(Buff3, ContextDuration.Fixed(10), toCaster: true)
+                    .Build();
+
+            var shoot2 = ActionsBuilder.New()
+                    .Conditional(ConditionsBuilder.New().CasterHasFact(Buff2).Build(), ifFalse: shoot3, ifTrue: shoot4)
+                    .Build();
+
+            var shoot = ActionsBuilder.New()
+                    .Conditional(ConditionsBuilder.New().CasterHasFact(Buff1).Build(), ifFalse: shoot1, ifTrue: shoot2)
+                    .Build();
+
+            var Buff = BuffConfigurator.New(Socothbenoth3Buff, Socothbenoth3BuffGuid)
+             .SetDisplayName(Socothbenoth3DisplayName)
+             .SetDescription(Socothbenoth3Description)
+             .SetIcon(icon)
+             .AddComponent<AddOutgoingDamageTriggerTTT>(c => { c.Actions = shoot; c.NotZeroDamage = true; })
+             .Configure();
+
+            var abilityresourse = AbilityResourceConfigurator.New(Socothbenoth3AblityRes, Socothbenoth3AblityResGuid)
+                .SetMaxAmount(
+                    ResourceAmountBuilder.New(3))
+                .Configure();
+
+            var ability = AbilityConfigurator.New(Socothbenoth3Ablity, Socothbenoth3AblityGuid)
+                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuffPermanent(Buff).Build())
+                .SetDisplayName(Socothbenoth3DisplayName)
+                .SetDescription(Socothbenoth3Description)
+                .SetIcon(icon)
+                .AddAbilityCasterHasNoFacts(new() { Buff })
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Extraordinary)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: Socothbenoth3AblityResGuid)
+                .Configure();
+
+            return FeatureConfigurator.New(Socothbenoth3, Socothbenoth3Guid)
+              .SetDisplayName(Socothbenoth3DisplayName)
+              .SetDescription(Socothbenoth3Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .Configure();
         }
     }
