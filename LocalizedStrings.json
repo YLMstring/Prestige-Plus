@@ -8330,6 +8330,160 @@
     "Key": "FatedChampionNotThisDay.Description",
     "enGB": "At 20th level, the fated champion gains the ability to reweave the strands of fate. This functions as both another day and slippery mind rogue talents.",
     "zhCN": "在20级时，天命勇者可以重编命运之线。该能力如同兼具改日再死和灵活心智盗贼天赋。"
+  },
+  {
+    "Key": "DeificObedienceKabriri.Name",
+    "ProcessTemplates": false,
+    "enGB": "Kabriri Obedience",
+    "zhCN": "卡怖厉厉仪典"
+  },
+  {
+    "Key": "DeificObedienceKabriri.Description",
+    "enGB": "You must partake of a cannibal feast; the body upon which you feed must either be at least a week old or be eaten while atop a grave. Gain a +4 profane bonus on all saving throws against paralysis and disease effects.",
+    "zhCN": "参加一场食人筵席，你需要在坟墓上进食，或者你吃掉的尸体已经放了一星期以上。在对抗麻痹和疾病效果的豁免检定中获得+4亵渎加值。"
+  },
+  {
+    "Key": "DeificObedienceKabririExalted.Name",
+    "ProcessTemplates": false,
+    "enGB": "Kabriri (Exalted)",
+    "zhCN": "卡怖厉厉（传道尊者）"
+  },
+  {
+    "Key": "DeificObedienceKabririExalted.Description",
+    "enGB": "Become an exalted evangelist to gain access to his boons, which will be granted at certain character or class levels.",
+    "zhCN": "成为传道尊者来获取他的神恩资格，你会在合适的角色或职业等级得到神恩。"
+  },
+  {
+    "Key": "SpellPowerKabriri1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Kiss of the Grave",
+    "zhCN": "坟墓之吻"
+  },
+  {
+    "Key": "SpellPowerKabriri1.Description",
+    "enGB": "ghoul touch 2/day",
+    "zhCN": "食尸鬼之触 2次/天"
+  },
+  {
+    "Key": "DeificObedienceKabriri2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Undead Minion",
+    "zhCN": "不死仆从"
+  },
+  {
+    "Key": "DeificObedienceKabriri2.Description",
+    "enGB": "Worship of Kabriri has revealed to you secret methods by which you can coax unlife from rotten flesh and old bones. You can cast create undead as a spell-like ability twice per day. The undead created obey you without question.",
+    "zhCN": "对卡怖厉厉的信仰令你获得了神秘的启示，你可以通过这种方法从腐烂的肉体和古老的骸骨中制造出亡灵。每天2次，你可以施放唤起死灵，这是一个类法术能力。创造出的不死生物完全忠实地服从你的命令。"
+  },
+  {
+    "Key": "DeificObedienceKabriri3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Ghoulish Apotheosis",
+    "zhCN": "尸鬼飞升"
+  },
+  {
+    "Key": "DeificObedienceKabriri3.Description",
+    "enGB": "For you, death is not an ending but a beginning. This functions as ghoulish transformation for the agent of the grave class and +2 natural armor bonus. If you achieve this boon when you’re on the lich path or already an undead creature, you instead gain a +4 profane bonus to your Charisma score.",
+    "zhCN": "对你来说，死亡并非结束，而是新的开始。该能力如同墓穴使徒的转化食尸鬼，并且获得+2天生护甲加值。如果你得到该神恩时已经是不死生物或者走上巫妖道途，则原效果改为令你的魅力获得+4亵渎加值。"
+  },
+  {
+    "Key": "DeificObedienceSocothbenoth.Name",
+    "ProcessTemplates": false,
+    "enGB": "Socothbenoth Obedience",
+    "zhCN": "索克斯贝诺仪典"
+  },
+  {
+    "Key": "DeificObedienceSocothbenoth.Description",
+    "enGB": "Achieve sexual release, either alone or with a partner, and then defile a page torn from the religious canon of a lawful good deity. Gain a +4 bonus on saves against enchantment effects.",
+    "zhCN": "达到高潮，自行解决或者依靠伴侣均可。接着玷污一张从守序善良神明的教典上撕下来的书页。对抗惑控效果的豁免获得+4加值。"
+  },
+  {
+    "Key": "DeificObedienceSocothbenothSentinel.Name",
+    "ProcessTemplates": false,
+    "enGB": "Socothbenoth (Sentinel)",
+    "zhCN": "索克斯贝诺（信仰哨卫）"
+  },
+  {
+    "Key": "DeificObedienceSocothbenothSentinel.Description",
+    "enGB": "Become a sentinel to gain access to his boons, which will be granted at certain character or class levels.",
+    "zhCN": "成为信仰哨卫来获取他的神恩资格，你会在合适的角色或职业等级得到神恩。"
+  },
+  {
+    "Key": "SpellPowerSocothbenoth1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Before The Fall",
+    "zhCN": "月盈未亏"
+  },
+  {
+    "Key": "SpellPowerSocothbenoth1.Description",
+    "enGB": "command 3/day, mirror image 2/day, or heroism 1/day",
+    "zhCN": "命令术 3次/天，镜影术 2次/天，或英雄气概 1次/天"
+  },
+  {
+    "Key": "DeificObedienceSocothbenoth3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Violent Vice",
+    "zhCN": "横行霸道"
+  },
+  {
+    "Key": "DeificObedienceSocothbenoth3.Description",
+    "enGB": "Causing harm to others fills you with a euphoric pleasure that allows you to endure the harshest blows. Up to three times per day as you deal hit point damage to a creature, the rush of pleasure grants you temporary hit points equal to twice your Charisma modifier. These temporary hit points stack with multiple uses of this ability, and last for 1 minute or until depleted. As long as you are fully healed and have at least one of these temporary hit points, you gain a +4 morale bonus on attack rolls and Will saving throws.",
+    "zhCN": "伤害他人能让你的心中充满一种愉悦的快感，这种快感使你能够忍受最严酷的打击。每天3次，当你对一个生物造成伤害时，激增的快感会赋予你相当于双倍魅力调整值的临时生命值。这些临时生命值会因多次使用该能力而叠加，持续1分钟或耗尽为止。只要你生命值全满，且至少有1点该能力赋予的临时生命值，你便在攻击检定和意志豁免上获得+4士气加值。"
+  },
+  {
+    "Key": "DeificObedienceSocothbenoth2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Sensuous Facade",
+    "zhCN": "风情万种"
+  },
+  {
+    "Key": "DeificObedienceSocothbenoth2.Description",
+    "enGB": "Your form has achieved the utmost perfection, granting you a measure of protection and filling you with a surge of prideful wrath whenever your beauty would be sullied by others’ assaults. Your physical appearance becomes darkly beautiful and sexually appealing, granting you a +2 profane bonus to your Charisma score. As long as you do not have an armor bonus to your Armor Class, you gain a profane bonus to your AC and on Fortitude saving throws equal to your Charisma modifier. Whenever a creature deals damage to you with an attack, you gain a profane bonus equal to your Charisma modifier on your next weapon attack roll against that creature.",
+    "zhCN": "你的外貌已经达到极致完美，这给予你一定程度的保护。每当你的美貌被他人的攻击所玷污时，你的内心就会充满一股骄傲的愤怒。你展现出一种极具性张力的阴暗之美，你的魅力获得+2亵渎加值。只要你的AC没有护甲加值，你的AC与强韧豁免就会得到等于你魅力调整值的亵渎加值。每当一个生物通过攻击对你造成伤害，你在下一次对该生物的武器攻击检定上获得等于你魅力调整值的亵渎加值。"
+  },
+  {
+    "Key": "DeificObedienceFalayna.Name",
+    "ProcessTemplates": false,
+    "enGB": "Falayna Obedience",
+    "zhCN": "法蕾娜仪典"
+  },
+  {
+    "Key": "DeificObedienceFalayna.Description",
+    "enGB": "Don a jeweled ring on each finger and strike a practice dummy barehanded until the impression of the rings is left in your skin. Gain a +4 sacred bonus on grapple checks and to CMD.",
+    "zhCN": "每根手指戴一枚宝石戒指，空手击打训练人偶，直到戒指的痕迹印在你的皮肤上。你的CMD和擒抱检定获得+4神圣加值。"
+  },
+  {
+    "Key": "SpellPowerFalayna1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Martial Excellence",
+    "zhCN": "杰出武艺"
+  },
+  {
+    "Key": "SpellPowerFalayna1.Description",
+    "enGB": "divine favor 3/day, bone fists 2/day, or greater magic weapon 1/day",
+    "zhCN": "神恩术 3次/天，骨拳术 2次/天，或高等魔化武器 1次/天"
+  },
+  {
+    "Key": "DeificObedienceFalayna3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Strong Arm",
+    "zhCN": "强臂"
+  },
+  {
+    "Key": "DeificObedienceFalayna3.Description",
+    "enGB": "As a swift action, you can increase the damage die of your weapon by one step for a number of rounds per day equal to your HD. These rounds need not be consecutive.",
+    "zhCN": "以一个迅捷动作提升武器伤害骰一级，持续时间为等同于你的HD的轮数，无需连续。"
+  },
+  {
+    "Key": "DeificObedienceFalayna2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Falayna's Rings",
+    "zhCN": "法蕾娜之戒"
+  },
+  {
+    "Key": "DeificObedienceFalayna2.Description",
+    "enGB": "You no longer have a limited amount of strong arm rounds per day.",
+    "zhCN": "你的强臂能力不再有每日轮数限制。"
   }
 
 ]
