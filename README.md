@@ -1,4 +1,4 @@
-# Prestige Plus v2.4.3 for WoTR 
+# Prestige Plus v2.4.4 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -39,10 +39,13 @@
 - [Otolmens](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Otolmens): requires worshipping Otolmens (Expanded Content) or Lawful Neutral
 - [Arazni (sentinel)](https://aonprd.com/DeityDisplay.aspx?ItemName=Arazni): requires worshipping Urgathoa or Neutral Evil
 - [Charon (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Charon): requires worshipping Zon-Kuthon or Neutral Evil
-- [Szuriel (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Szuriel): requires worshipping Gyronna or Neutral Evil
+- [Szuriel (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Szuriel): requires worshipping Godclaw or Neutral Evil
 - [Iomedae (sentinel)](https://aonprd.com/DeityDisplay.aspx?ItemName=Iomedae): requires worshipping Iomedae or Lawful Good
 - [Milani (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Milani): requires worshipping Milani (Expanded Content) or Chaotic Good
 - [Nivi (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Nivi%20Rhombodazzle): requires worshipping Torag or Neutral
+- [Socothbenoth (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Socothbenoth): requires worshipping Gyronna or Chaotic Evil
+- [Falayna](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Falayna): requires worshipping Falayna (Expanded Content) or Lawful Good
+- [Kabriri (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Kabriri): requires worshipping Kabriri (Expanded Content) or Chaotic Evil
 - More coming soon!
 ### [Exalted](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/exalted/) [Evangelist](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/evangelist/)
 - [Diverse Obedience](https://www.d20pfsrd.com/feats/general-feats/diverse-obedience/)
