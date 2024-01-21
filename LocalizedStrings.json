@@ -8372,8 +8372,8 @@
   },
   {
     "Key": "DeificObedienceKabriri2.Description",
-    "enGB": "Worship of Kabriri has revealed to you secret methods by which you can coax unlife from rotten flesh and old bones. You can cast create undead as a spell-like ability twice per day. The undead created obey you without question.",
-    "zhCN": "对卡怖厉厉的信仰令你获得了神秘的启示，你可以通过这种方法从腐烂的肉体和古老的骸骨中制造出亡灵。每天2次，你可以施放唤起死灵，这是一个类法术能力。创造出的不死生物完全忠实地服从你的命令。"
+    "enGB": "Worship of Kabriri has revealed to you secret methods by which you can coax unlife from rotten flesh and old bones. You can cast create undead as a spell-like ability once per combat. The undead created obey you without question.",
+    "zhCN": "对卡怖厉厉的信仰令你获得了神秘的启示，你可以通过这种方法从腐烂的肉体和古老的骸骨中制造出亡灵。每场战斗1次，你可以施放唤起死灵，这是一个类法术能力。创造出的不死生物完全忠实地服从你的命令。"
   },
   {
     "Key": "DeificObedienceKabriri3.Name",

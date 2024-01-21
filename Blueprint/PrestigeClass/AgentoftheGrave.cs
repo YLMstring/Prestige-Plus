@@ -324,7 +324,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIsClassFeature(true)
               .AddPrerequisiteNoFeature(FeatureRefs.UndeadType.ToString())
               .AddPrerequisiteNoFeature(FeatureSelectionRefs.MythicLichSkeletonSelection.ToString())
-              .AddFacts(new() { FeatureRefs.UndeadType.ToString(), FeatureRefs.GhoulParalysisFeature.ToString(), FeatureRefs.GhoulDiseaseFeature.ToString(), FeatureRefs.DLC4_Ghast_StenchFeature.ToString(), FeatureRefs.ChannelResistance2.ToString() })
+              .AddFacts(new() { FeatureRefs.UndeadType.ToString(), FeatureRefs.GhoulParalysisFeature.ToString(), FeatureRefs.GhoulDiseaseFeature.ToString(), FeatureRefs.DLC4_Ghast_StenchFeature.ToString() })
               .AddAdditionalLimb(ItemWeaponRefs.Bite1d6.ToString())
               .AddEmptyHandWeaponOverride(isMonkUnarmedStrike: false, isPermanent: true, weapon: ItemWeaponRefs.Claw1d6.ToString())
               .Configure();

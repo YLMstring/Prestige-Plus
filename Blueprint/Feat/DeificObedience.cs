@@ -2864,19 +2864,22 @@ namespace PrestigePlus.Blueprint.Feat
 
             var abilityresourse = AbilityResourceConfigurator.New(Kabriri2AbilityRes, Kabriri2AbilityResGuid)
                 .SetMaxAmount(
-                    ResourceAmountBuilder.New(2))
+                    ResourceAmountBuilder.New(1))
                 .Configure();
 
             var ability = AbilityConfigurator.New(Kabriri2Ablity, Kabriri2AblityGuid)
                 .CopyFrom(
-                AbilityRefs.CreateUndeadBase,
-                typeof(AbilityVariants),
+                AbilityRefs.CreateUndeadGraveknight,
+                typeof(ContextRankConfig),
                 typeof(SpellComponent),
-                typeof(SpellDescriptorComponent))
+                typeof(SpellDescriptorComponent),
+                typeof(AbilityEffectRunAction))
                 .SetDisplayName(Kabriri2DisplayName)
                 .SetDescription(Kabriri2Description)
+                .SetIcon(icon)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .SetType(AbilityType.SpellLike)
+                .AddAbilityCasterInCombat(false)
                 .Configure();
 
             return FeatureConfigurator.New(Kabriri2, Kabriri2Guid)
@@ -2885,6 +2888,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddFacts(new() { ability })
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .AddCombatStateTrigger(ActionsBuilder.New().RestoreResource(abilityresourse, 1).Build())
               .Configure();
         }
 
@@ -3195,7 +3199,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddStatBonus(ModifierDescriptor.Profane, false, StatType.Charisma, 2)
               .AddTargetAttackRollTrigger(actionsOnAttacker: ActionsBuilder.New().ApplyBuffPermanent(buff).Build(), onlyHit: true)
-              .AddAttackBonusAgainstFactOwner(bonus: ContextValues.Property(UnitProperty.StatBonusCharisma), checkedFact: buff, descriptor: ModifierDescriptor.Profane)
+              .AddAttackBonusAgainstFactOwner(bonus: ContextValues.Property(UnitProperty.StatBonusCharisma, true), checkedFact: buff, descriptor: ModifierDescriptor.Profane)
               .AddComponent<SensuousFacade>()
               .Configure();
         }
@@ -3234,6 +3238,7 @@ namespace PrestigePlus.Blueprint.Feat
              .AddTemporaryHitPointsFromAbilityValue(removeWhenHitPointsEnd: true, value: ContextValues.Rank())
              .AddContextRankConfig(ContextRankConfigs.StatBonus(StatType.Charisma).WithBonusValueProgression(0, true))
              .AddComponent<ViolentViceFullHP>()
+             .AddBuffActions(ActionsBuilder.New().RemoveBuff(Socothbenoth3BuffGuid).Build())
              .Configure();
 
             var Buff2 = BuffConfigurator.New(Socothbenoth3Buff2, Socothbenoth3Buff2Guid)
@@ -3243,6 +3248,7 @@ namespace PrestigePlus.Blueprint.Feat
              .AddTemporaryHitPointsFromAbilityValue(removeWhenHitPointsEnd: true, value: ContextValues.Rank())
              .AddContextRankConfig(ContextRankConfigs.StatBonus(StatType.Charisma).WithBonusValueProgression(0, true))
              .AddComponent<ViolentViceFullHP>()
+             .AddBuffActions(ActionsBuilder.New().RemoveBuff(Socothbenoth3BuffGuid).Build())
              .Configure();
 
             var Buff3 = BuffConfigurator.New(Socothbenoth3Buff3, Socothbenoth3Buff3Guid)
@@ -3252,6 +3258,7 @@ namespace PrestigePlus.Blueprint.Feat
              .AddTemporaryHitPointsFromAbilityValue(removeWhenHitPointsEnd: true, value: ContextValues.Rank())
              .AddContextRankConfig(ContextRankConfigs.StatBonus(StatType.Charisma).WithBonusValueProgression(0, true))
              .AddComponent<ViolentViceFullHP>()
+             .AddBuffActions(ActionsBuilder.New().RemoveBuff(Socothbenoth3BuffGuid).Build())
              .Configure();
 
             var shoot1 = ActionsBuilder.New()
