@@ -1829,7 +1829,6 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteAlignment(AlignmentMaskType.NeutralEvil, group: Prerequisite.GroupType.Any)
               .AddToIsPrerequisiteFor(ArazniSentinelFeat())
               .AddComponent<ArazniObedience>(c => { c.buff = buff; })
-              .AddSavingThrowBonusAgainstFact(null, buff, ModifierDescriptor.Profane, 4)
               .Configure();
         }
 

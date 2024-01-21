@@ -22,7 +22,13 @@ namespace PrestigePlus.CustomComponent.Feat
     {
         void IRulebookHandler<RuleSavingThrow>.OnEventAboutToTrigger(RuleSavingThrow evt)
         {
-
+            var caster = evt.Reason?.Caster;
+            if (caster?.HasFact(buff) == true)
+            {
+                evt.AddTemporaryModifier(evt.Initiator.Stats.SaveWill.AddModifier(4, base.Runtime, ModifierDescriptor.Profane));
+                evt.AddTemporaryModifier(evt.Initiator.Stats.SaveReflex.AddModifier(4, base.Runtime, ModifierDescriptor.Profane));
+                evt.AddTemporaryModifier(evt.Initiator.Stats.SaveFortitude.AddModifier(4, base.Runtime, ModifierDescriptor.Profane));
+            }
         }
 
         void IRulebookHandler<RuleSavingThrow>.OnEventDidTrigger(RuleSavingThrow evt)
