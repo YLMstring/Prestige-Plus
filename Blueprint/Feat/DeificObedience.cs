@@ -1806,11 +1806,20 @@ namespace PrestigePlus.Blueprint.Feat
         private const string Arazni = "DeificObedience.Arazni";
         public static readonly string ArazniGuid = "{9D53BBC5-1E4C-42D9-AEC0-89479F0FD840}";
 
+        private const string ArazniBuff = "DeificObedience.ArazniBuff";
+        private static readonly string ArazniBuffGuid = "{5A8C1970-5AD8-4756-8355-D8AE8B181EF3}";
+
         internal const string ArazniDisplayName = "DeificObedienceArazni.Name";
         private const string ArazniDescription = "DeificObedienceArazni.Description";
         public static BlueprintFeature ArazniFeat()
         {
             var icon = FeatureRefs.UrgathoaFeature.Reference.Get().Icon;
+
+            var buff = BuffConfigurator.New(ArazniBuff, ArazniBuffGuid)
+             .SetDisplayName(ArazniDisplayName)
+             .SetDescription(ArazniDescription)
+             .SetIcon(icon)
+             .Configure();
 
             return FeatureConfigurator.New(Arazni, ArazniGuid)
               .SetDisplayName(ArazniDisplayName)
@@ -1819,7 +1828,8 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteFeature(FeatureRefs.UrgathoaFeature.ToString(), group: Prerequisite.GroupType.Any)
               .AddPrerequisiteAlignment(AlignmentMaskType.NeutralEvil, group: Prerequisite.GroupType.Any)
               .AddToIsPrerequisiteFor(ArazniSentinelFeat())
-              .AddComponent<ArazniObedience>()
+              .AddComponent<ArazniObedience>(c => { c.buff = buff; })
+              .AddSavingThrowBonusAgainstFact(null, buff, ModifierDescriptor.Profane, 4)
               .Configure();
         }
 

@@ -1,10 +1,13 @@
 ﻿using Kingmaker;
+using Kingmaker.Designers;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.Enums;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.UnitLogic.Buffs;
+using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.Utility;
 using PrestigePlus.CustomComponent.PrestigeClass;
 using System;
@@ -15,23 +18,11 @@ using System.Threading.Tasks;
 
 namespace PrestigePlus.CustomComponent.Feat
 {
-    internal class ArazniObedience : UnitFactComponentDelegate<ArazniObedience.ComponentData>, IInitiatorRulebookHandler<RuleSavingThrow>, IRulebookHandler<RuleSavingThrow>, ISubscriber, IInitiatorRulebookSubscriber
+    internal class ArazniObedience : UnitFactComponentDelegate<ArazniObedience>, IInitiatorRulebookHandler<RuleSavingThrow>, IRulebookHandler<RuleSavingThrow>, ISubscriber, IInitiatorRulebookSubscriber
     {
         void IRulebookHandler<RuleSavingThrow>.OnEventAboutToTrigger(RuleSavingThrow evt)
         {
-            if (Data.units.Count == 0) return;
-            if (base.Data.LastUseTime + 10.Rounds().Seconds < Game.Instance.TimeController.GameTime)
-            {
-                Data.units.Clear();
-                return;
-            }
-            var caster = evt.Reason?.Caster;
-            if (caster != null && Data.units.Contains(caster))
-            {
-                evt.AddTemporaryModifier(evt.Initiator.Stats.SaveWill.AddModifier(4, base.Runtime, ModifierDescriptor.Profane));
-                evt.AddTemporaryModifier(evt.Initiator.Stats.SaveReflex.AddModifier(4, base.Runtime, ModifierDescriptor.Profane));
-                evt.AddTemporaryModifier(evt.Initiator.Stats.SaveFortitude.AddModifier(4, base.Runtime, ModifierDescriptor.Profane));
-            }
+
         }
 
         void IRulebookHandler<RuleSavingThrow>.OnEventDidTrigger(RuleSavingThrow evt)
@@ -40,15 +31,10 @@ namespace PrestigePlus.CustomComponent.Feat
             var caster = evt.Reason?.Caster;
             if (!evt.IsPassed && caster != null && (type == AbilityType.Spell || type == AbilityType.SpellLike))
             {
-                Data.units.Add(caster);
-                Data.LastUseTime = Game.Instance.TimeController.GameTime;
+                GameHelper.ApplyBuff(caster, buff, new Rounds?(10.Rounds()));
             }
         }
 
-        public class ComponentData
-        {
-            public List<UnitEntityData> units = new() { };
-            public TimeSpan LastUseTime = default;
-        }
+        public BlueprintBuff buff;
     }
 }
