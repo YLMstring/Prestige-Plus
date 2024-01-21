@@ -44,7 +44,7 @@
 - [Milani (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Milani): requires worshipping Milani (Expanded Content) or Chaotic Good
 - [Nivi (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Nivi%20Rhombodazzle): requires worshipping Torag or Neutral
 - [Socothbenoth (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Socothbenoth): requires worshipping Gyronna or Chaotic Evil
-- [Falayna)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Falayna): requires worshipping Falayna (Expanded Content) or Lawful Good
+- [Falayna](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Falayna): requires worshipping Falayna (Expanded Content) or Lawful Good
 - [Kabriri (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Kabriri): requires worshipping Kabriri (Expanded Content) or Chaotic Evil
 - More coming soon!
 ### [Exalted](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/exalted/) [Evangelist](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/evangelist/)
