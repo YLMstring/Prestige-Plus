@@ -2187,7 +2187,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(SzurielDisplayName)
               .SetDescription(SzurielDescription)
               .SetIcon(icon)
-              .AddPrerequisiteFeature(FeatureRefs.GyronnaFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteFeature(FeatureRefs.GodclawFeature.ToString(), group: Prerequisite.GroupType.Any)
               .AddPrerequisiteAlignment(AlignmentMaskType.NeutralEvil, group: Prerequisite.GroupType.Any)
               .AddToIsPrerequisiteFor(SzurielSentinelFeat())
               .AddSavingThrowBonusAgainstDescriptor(value: 4, spellDescriptor: SpellDescriptor.Fire, modifierDescriptor: ModifierDescriptor.Profane)
