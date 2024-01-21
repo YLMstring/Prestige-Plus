@@ -2901,7 +2901,7 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string Kabriri3Feat2Guid = "{A540E078-53A6-40B6-9A05-D019D8709F45}";
         public static BlueprintFeature KabririExalted3Feat()
         {
-            var icon = AbilityRefs.CreateUndeadGreaterBase.Reference.Get().Icon;
+            var icon = AbilityRefs.Fear.Reference.Get().Icon;
 
             var feat1 = FeatureConfigurator.New(Kabriri3Feat1, Kabriri3Feat1Guid)
                     .SetDisplayName(Kabriri3DisplayName)
@@ -2909,6 +2909,7 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetIcon(icon)
                     .AddStatBonus(ModifierDescriptor.NaturalArmor, false, StatType.AC, 2)
                     .AddFacts(new() { AgentoftheGrave.GhoulGuid })
+                    .SetHideInCharacterSheetAndLevelUp(true)
                     .Configure();
 
             var feat2 = FeatureConfigurator.New(Kabriri3Feat2, Kabriri3Feat2Guid)
@@ -2916,6 +2917,7 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetDescription(Kabriri3Description)
                     .SetIcon(icon)
                     .AddStatBonus(ModifierDescriptor.Profane, false, StatType.Charisma, 4)
+                    .SetHideInCharacterSheetAndLevelUp(true)
                     .Configure();
 
             return FeatureConfigurator.New(Kabriri3Name, Kabriri3Guid)
@@ -2923,7 +2925,6 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetDescription(Kabriri3Description)
                     .SetIcon(icon)
                     .AddComponent<KabririGhoul>(c => { c.feat1 = feat1; c.feat2 = feat2; })
-                    .SetHideInCharacterSheetAndLevelUp(true)
                     .Configure();
         }
 
@@ -2935,7 +2936,7 @@ namespace PrestigePlus.Blueprint.Feat
         public static BlueprintProgression FalaynaFeat()
         {
             //"FalaynaFeature": "7316c5a8-9dc9-4c62-98de-fb156da3b723",
-            var icon = AbilityRefs.InstantEnemy.Reference.Get().Icon;
+            var icon = AbilityRefs.AngelicAspect.Reference.Get().Icon;
 
             return ProgressionConfigurator.New(Falayna, FalaynaGuid)
               .SetDisplayName(FalaynaDisplayName)
@@ -2962,7 +2963,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(FalaynaDisplayName)
               .SetDescription(FalaynaDescription)
               .SetIcon(icon)
-              .AddStatBonus(ModifierDescriptor.Sacred, false, StatType.AdditionalCMD, 4)
+              .AddCMDBonus(descriptor: ModifierDescriptor.Sacred, value: 4)
               .AddManeuverBonus(4, mythic: false, type: Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple, descriptor: ModifierDescriptor.Sacred)
               .Configure();
         }
@@ -3088,13 +3089,13 @@ namespace PrestigePlus.Blueprint.Feat
         private const string SocothbenothDescription = "DeificObedienceSocothbenoth.Description";
         public static BlueprintFeature SocothbenothFeat()
         {
-            var icon = FeatureRefs.SocothbenothFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.HolyWhisper.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Socothbenoth, SocothbenothGuid)
               .SetDisplayName(SocothbenothDisplayName)
               .SetDescription(SocothbenothDescription)
               .SetIcon(icon)
-              .AddPrerequisiteFeature(FeatureRefs.SocothbenothFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteFeature(FeatureRefs.AreshkagalFeature.ToString(), group: Prerequisite.GroupType.Any)
               .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticEvil, group: Prerequisite.GroupType.Any)
               .AddToIsPrerequisiteFor(SocothbenothSentinelFeat())
               .AddSavingThrowBonusAgainstSchool(school: SpellSchool.Enchantment, value: 4)
@@ -3108,7 +3109,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string SocothbenothSentinelDescription = "DeificObedienceSocothbenothSentinel.Description";
         public static BlueprintProgression SocothbenothSentinelFeat()
         {
-            var icon = FeatureRefs.SocothbenothFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.HolyWhisper.Reference.Get().Icon;
 
             return ProgressionConfigurator.New(SocothbenothSentinel, SocothbenothSentinelGuid)
               .SetDisplayName(SocothbenothSentinelDisplayName)
@@ -3179,7 +3180,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static BlueprintFeature Socothbenoth2Feat()
         {
-            var icon = AbilityRefs.EvilSuccubusDominate.Reference.Get().Icon;
+            var icon = AbilityRefs.OathOfPeace.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(Socothbenoth2Buff, Socothbenoth2BuffGuid)
              .SetDisplayName(Socothbenoth2DisplayName)
@@ -3224,7 +3225,7 @@ namespace PrestigePlus.Blueprint.Feat
         public static readonly string Socothbenoth3Buff3Guid = "{E17198C9-69CE-4F9C-9187-C66D00D74978}";
         public static BlueprintFeature Socothbenoth3Feat()
         {
-            var icon = AbilityRefs.EvilSuccubusDominate.Reference.Get().Icon;
+            var icon = AbilityRefs.FalseLife.Reference.Get().Icon;
 
             var Buff1 = BuffConfigurator.New(Socothbenoth3Buff1, Socothbenoth3Buff1Guid)
              .SetDisplayName(Socothbenoth3DisplayName)
