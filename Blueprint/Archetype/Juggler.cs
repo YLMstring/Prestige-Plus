@@ -12,6 +12,7 @@ using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.FactLogic;
 using PrestigePlus.Blueprint.GrappleFeat;
+using PrestigePlus.CustomComponent;
 using PrestigePlus.CustomComponent.Archetype;
 using System;
 using System.Collections.Generic;
@@ -62,6 +63,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(ProficienciesDisplayName)
               .SetDescription(ProficienciesDescription)
               .SetIsClassFeature(true)
+              //.AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ShamanClass.Reference; })
               .AddComponent(assProficiencies.GetComponent<ArcaneArmorProficiency>())
               .AddFacts(new() { FeatureRefs.LightArmorProficiency.ToString(), FeatureRefs.SimpleWeaponProficiency.ToString() })
               .AddProficiencies(
@@ -115,6 +117,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(CombatJugglingDisplayName)
               .SetDescription(CombatJugglingDescription)
               .SetIcon(icon)
+              //.AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ShamanClass.Reference; })
               .AddComponent<CombatJuggling>()
               .Configure();
         }

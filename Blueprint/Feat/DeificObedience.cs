@@ -2811,9 +2811,9 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddPrerequisiteFeature(KabririGuid)
               .SetGiveFeaturesForPreviousLevels(true)
-              .AddToLevelEntry(2, CreateKabriri1())
-              .AddToLevelEntry(6, KabririExalted2Feat())
-              .AddToLevelEntry(10, KabririExalted3Feat())
+              .AddToLevelEntry(12, CreateKabriri1())
+              .AddToLevelEntry(16, KabririExalted2Feat())
+              .AddToLevelEntry(20, KabririExalted3Feat())
               .Configure();
         }
 
@@ -2905,7 +2905,7 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string Kabriri3Feat2Guid = "{A540E078-53A6-40B6-9A05-D019D8709F45}";
         public static BlueprintFeature KabririExalted3Feat()
         {
-            var icon = AbilityRefs.Fear.Reference.Get().Icon;
+            var icon = AbilityRefs.ArmySummonGhoul.Reference.Get().Icon;
 
             var feat1 = FeatureConfigurator.New(Kabriri3Feat1, Kabriri3Feat1Guid)
                     .SetDisplayName(Kabriri3DisplayName)
@@ -2950,9 +2950,9 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteAlignment(AlignmentMaskType.LawfulGood, group: Prerequisite.GroupType.Any)
               .SetGiveFeaturesForPreviousLevels(true)
               .AddToLevelEntry(1, Falayna0Feat())
-              .AddToLevelEntry(2, CreateFalayna1())
-              .AddToLevelEntry(6, Falayna3Feat())
-              .AddToLevelEntry(10, Falayna2Feat())
+              .AddToLevelEntry(12, CreateFalayna1())
+              .AddToLevelEntry(16, Falayna3Feat())
+              .AddToLevelEntry(20, Falayna2Feat())
               .Configure();
         }
 
@@ -3121,9 +3121,9 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddPrerequisiteFeature(SocothbenothGuid)
               .SetGiveFeaturesForPreviousLevels(true)
-              .AddToLevelEntry(2, CreateSocothbenoth1())
-              .AddToLevelEntry(6, Socothbenoth3Feat())
-              .AddToLevelEntry(10, Socothbenoth2Feat())
+              .AddToLevelEntry(12, CreateSocothbenoth1())
+              .AddToLevelEntry(16, Socothbenoth3Feat())
+              .AddToLevelEntry(20, Socothbenoth2Feat())
               .Configure();
         }
 
