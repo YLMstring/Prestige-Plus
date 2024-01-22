@@ -6663,12 +6663,12 @@
     "Key": "DeificObedienceMahathallahExalted.Name",
     "ProcessTemplates": false,
     "enGB": "Mahathallah (Exalted)",
-    "zhCN": "玛哈萨拉（传道尊者）"
+    "zhCN": "玛哈萨拉（传道者）"
   },
   {
     "Key": "DeificObedienceMahathallahExalted.Description",
-    "enGB": "Become an exalted evangelist to gain access to her boons, which will be granted at certain character or class levels. Mahathallah is a Queen of the Night, one of the female powers who followed Asmodeus into Hell eons ago during the Exodus. She was once a psychopomp usher: a handmaiden of the goddess Pharasma, who was granted the double-edged vision of her own death. She fled Pharasma's side in terrible fear, wishing to avoid her fate. Her unholy symbol is a single eye surrounded by mystic runes and a two-toned haze. Mahathallah begins each morning in her original angelic form, but deteriorates during the day, until she is nothing but a skeleton at evening time. To disguise this transformation, she covers herself with numerous illusions, wishing not to be reminded of the fate that supposedly awaits her.",
-    "zhCN": "成为传道尊者来获取她的神恩资格，你会在合适的角色或职业等级得到神恩。Mahathallah is a Queen of the Night, one of the female powers who followed Asmodeus into Hell eons ago during the Exodus. She was once a psychopomp usher: a handmaiden of the goddess Pharasma, who was granted the double-edged vision of her own death. She fled Pharasma's side in terrible fear, wishing to avoid her fate. Her unholy symbol is a single eye surrounded by mystic runes and a two-toned haze. Mahathallah begins each morning in her original angelic form, but deteriorates during the day, until she is nothing but a skeleton at evening time. To disguise this transformation, she covers herself with numerous illusions, wishing not to be reminded of the fate that supposedly awaits her."
+    "enGB": "Become an evangelist to gain access to her boons, which will be granted at certain character or class levels. Mahathallah is a Queen of the Night, one of the female powers who followed Asmodeus into Hell eons ago during the Exodus. She was once a psychopomp usher: a handmaiden of the goddess Pharasma, who was granted the double-edged vision of her own death. She fled Pharasma's side in terrible fear, wishing to avoid her fate. Her unholy symbol is a single eye surrounded by mystic runes and a two-toned haze. Mahathallah begins each morning in her original angelic form, but deteriorates during the day, until she is nothing but a skeleton at evening time. To disguise this transformation, she covers herself with numerous illusions, wishing not to be reminded of the fate that supposedly awaits her.",
+    "zhCN": "成为传道者来获取她的神恩资格，你会在合适的角色或职业等级得到神恩。Mahathallah is a Queen of the Night, one of the female powers who followed Asmodeus into Hell eons ago during the Exodus. She was once a psychopomp usher: a handmaiden of the goddess Pharasma, who was granted the double-edged vision of her own death. She fled Pharasma's side in terrible fear, wishing to avoid her fate. Her unholy symbol is a single eye surrounded by mystic runes and a two-toned haze. Mahathallah begins each morning in her original angelic form, but deteriorates during the day, until she is nothing but a skeleton at evening time. To disguise this transformation, she covers herself with numerous illusions, wishing not to be reminded of the fate that supposedly awaits her."
   },
   {
     "Key": "DivineChampion.Name",
@@ -6915,24 +6915,24 @@
   {
     "Key": "ExaltedEvangelist.Name",
     "ProcessTemplates": false,
-    "enGB": "Exalted Evangelist",
-    "zhCN": "传道尊者"
+    "enGB": "evangelist",
+    "zhCN": "传道者"
   },
   {
     "Key": "ExaltedEvangelist.Description",
-    "enGB": "Through constant meditation, reflection, and religious study, the exalted evangelist has forged a unique connection to her god. Though the exalted of every faith share certain granted abilities, each one also receives special abilities based on the specific teachings of her religion. All exalted evangelists conduct themselves with devotion and passion, however, inspiring zealotry through word and deed wherever they go.",
-    "zhCN": "通过不断冥想、反思和宗教研究，传道尊者与她所信奉的神祇间建立起一种独特的联系。尽管各种信仰的传道尊者都会有一些共通的能力，但她们还会根据自身宗教的独特教义而获得相应的特殊能力。所有传道尊者都靠着热诚和奉献引领着自己，无论她们存在于何处，都能通过一言一行来激发他人心中的狂热。"
+    "enGB": "Though all faiths have their dedicated priests and righteous warriors, gods inspire devotion from a wide range of individuals. Rogues who specialize in stealth and poisons might swear allegiance to Norgorber, while wandering bards sing songs in praise of Desna. Even the most powerful deity is not too proud to turn such followers aside, for the worship of passionate acolytes is precious regardless of their backgrounds, professions, races, or ages, and they might lead others to the faith by example. These unusual but skillful followers of the gods are called evangelists.",
+    "zhCN": "尽管所有宗教都有专司其职的牧师和为之尽忠的勇士，不过神祇还会从更加宽泛的范围中吸纳信仰。专门从事秘密行动并和毒药打交道的盗贼们会向诺格巴立下誓言，而四处流浪的吟游诗人则会高歌赞颂德丝娜。即便是最为强大的神祇，也不会傲慢到忽视这些追随者的程度，因为无论这些狂热信徒背景、职业、种族或年龄如何，他们的崇敬之心都是如此珍贵，这些人还有可能成为引领其他人加入信仰的榜样。这些与众不同却又有着虔诚信仰的神之追随者被称为传道者。"
   },
   {
     "Key": "ExaltedEvangelistChoosePath.Name",
     "ProcessTemplates": false,
     "enGB": "Weapon and Armor Proficiency",
-    "zhCN": "传道尊者擅长"
+    "zhCN": "传道者擅长"
   },
   {
     "Key": "ExaltedEvangelistChoosePath.Description",
-    "enGB": "An exalted evangelist is proficient with all simple weapons and light armor. An exalted evangelist also gains weapon proficiency with her chosen deity’s favored weapon.",
-    "zhCN": "传道尊者擅长所有简易武器和轻甲。传道尊者还擅长自身所信仰神祇的偏好武器。"
+    "enGB": "An evangelist is proficient with all simple weapons and light armor. An evangelist also gains weapon proficiency with her chosen deity’s favored weapon.",
+    "zhCN": "传道者擅长所有简易武器和轻甲。传道者还擅长自身所信仰神祇的偏好武器。"
   },
   {
     "Key": "ExaltedEvangelistBonusFeat.Name",
@@ -6942,8 +6942,8 @@
   },
   {
     "Key": "ExaltedEvangelistBonusFeat.Description",
-    "enGB": "In order to maintain the abilities granted by this prestige class, an exalted evangelist must perform a daily obedience to the deity she worships.",
-    "zhCN": "为了维持这个进阶职业获得的能力，传道尊者必须执行她所信仰神祇的日常服从仪典。"
+    "enGB": "In order to maintain the abilities granted by this prestige class, an evangelist must perform a daily obedience to the deity she worships.",
+    "zhCN": "为了维持这个进阶职业获得的能力，传道者必须执行她所信仰神祇的日常服从仪典。"
   },
   {
     "Key": "ExaltedEvangelistProtectiveGrace.Name",
@@ -6953,8 +6953,8 @@
   },
   {
     "Key": "ExaltedEvangelistProtectiveGrace.Description",
-    "enGB": "The exalted evangelist’s chosen deity rewards her with heightened awareness and reaction skills, making her more difficult to strike in combat. At 2nd level, the exalted evangelist gains a +1 dodge bonus to AC. This bonus increases to +2 at 7th level. The exalted evangelist loses this bonus when she is denied her Dexterity bonus to AC.",
-    "zhCN": "传道尊者所侍奉的神祇会赋予她更强的洞察力和反应力作为奖赏，让她在战斗中变得更加难以被击倒。2级起，传道尊者的AC获得+1点闪避加值。这个加值会在7级提升至+2点。传道尊者会在AC失去敏捷加值时失去上述加值。"
+    "enGB": "The evangelist’s chosen deity rewards her with heightened awareness and reaction skills, making her more difficult to strike in combat. At 2nd level, the evangelist gains a +1 dodge bonus to AC. This bonus increases to +2 at 7th level. The evangelist loses this bonus when she is denied her Dexterity bonus to AC.",
+    "zhCN": "传道者所侍奉的神祇会赋予她更强的洞察力和反应力作为奖赏，让她在战斗中变得更加难以被击倒。2级起，传道者的AC获得+1点闪避加值。这个加值会在7级提升至+2点。传道者会在AC失去敏捷加值时失去上述加值。"
   },
   {
     "Key": "ExaltedEvangelistSpiritualForm.Name",
@@ -6964,8 +6964,8 @@
   },
   {
     "Key": "ExaltedEvangelistSpiritualForm.Description",
-    "enGB": "Upon reaching 8th level, the exalted evangelist gains the ability to assume a spiritual form. Assuming this form is a standard action. She gains a +4 bonus to her highest ability score, a primary tail attack that deals 1d6 damage, and can remain in this form for a number of minutes per day equal to her character level. This duration does not need to be consecutive, but it must be used in 1-minute increments. Returning to her normal form is a free action.",
-    "zhCN": "达到8级时，传道尊者获得呈现出神灵形态的能力。呈现出这种形态是标准动作，她的最高能力值获得+4加值，获得一个1d6尾刺作为主要天生武器，而且传道尊者每日能够在这种形态下保持的分钟数等同于她的角色等级。这些持续时间不需要连续，但是必须以1分钟为单位进行。恢复正常形态是自由动作。"
+    "enGB": "Upon reaching 10th level, the evangelist gains the ability to assume a spiritual form. Assuming this form is a standard action. She gains a +4 bonus to her highest ability score, a primary tail attack that deals 1d6 damage, and can remain in this form for a number of minutes per day equal to her character level. This duration does not need to be consecutive, but it must be used in 1-minute increments. Returning to her normal form is a free action.",
+    "zhCN": "达到10级时，传道者获得呈现出神灵形态的能力。呈现出这种形态是标准动作，她的最高能力值获得+4加值，获得一个1d6尾刺作为主要天生武器，而且传道者每日能够在这种形态下保持的分钟数等同于她的角色等级。这些持续时间不需要连续，但是必须以1分钟为单位进行。恢复正常形态是自由动作。"
   },
   {
     "Key": "ExaltedEvangelistSpellBook.Name",
@@ -6975,8 +6975,8 @@
   },
   {
     "Key": "ExaltedEvangelistSpellBook.Description",
-    "enGB": "The exalted evangelist at the pinnacle of her abilities can create effects that are nothing short of miraculous. At 10th level, once per day the exalted evangelist duplicate any cleric spell of 6th level or lower, or any other spell of 5th level or lower, as if it were a 7th-level spell. When an exalted evangelist uses this ability to duplicate a spell with a material component that costs more than 100 gp, she must provide that component.",
-    "zhCN": "传道尊者的力量达到了巅峰，她能够创造出与神迹无异的效果。10级起，每日1次，传道尊者能够复制任何6级或更低等级的牧师法术，或复制任何5级或更低等级的其他法术。复制的法术会按照7级法术进行计算。若传道尊者使用该能力复制法术时，法术需要的材料成分的价值超过了100金币的话，她也必须支付该成分。"
+    "enGB": "The evangelist at the pinnacle of her abilities can create effects that are nothing short of miraculous. At 10th level, once per day the evangelist duplicate any cleric spell of 6th level or lower, or any other spell of 5th level or lower, as if it were a 7th-level spell. When an evangelist uses this ability to duplicate a spell with a material component that costs more than 100 gp, she must provide that component.",
+    "zhCN": "传道者的力量达到了巅峰，她能够创造出与神迹无异的效果。10级起，每日1次，传道者能够复制任何6级或更低等级的牧师法术，或复制任何5级或更低等级的其他法术。复制的法术会按照7级法术进行计算。若传道者使用该能力复制法术时，法术需要的材料成分的价值超过了100金币的话，她也必须支付该成分。"
   },
   {
     "Key": "ExaltedExaltedDomainPlus.Name",
@@ -6986,8 +6986,8 @@
   },
   {
     "Key": "ExaltedExaltedDomainPlus.Description",
-    "enGB": "At 5th level, the exalted evangelist further increases her already impressive knowledge of her chosen deity’s faith and is rewarded with increased powers in one of the spheres over which her deity holds sway. The exalted chooses a new cleric secondary domain of her chosen deity to which she gains access, then adds her exalted class levels to all her domains. (If she is a separatist, treat her domain the way it essentially is).",
-    "zhCN": "5级起，传道尊者进一步增强了对自身宗教的理解和认识，而这使得她在她的神祇占据主导的一个方面获得了更强的力量。传道尊者可以选择一个她的神祇可以授予的新牧师次要领域，然后将传道尊者职业等级加到她的所有领域等级上。（如果他是一名异见先驱，按照她领域的本质进行处理）"
+    "enGB": "At 5th level, the evangelist further increases her already impressive knowledge of her chosen deity’s faith and is rewarded with increased powers in one of the spheres over which her deity holds sway. The exalted chooses a new cleric secondary domain of her chosen deity to which she gains access, then adds her exalted class levels to all her domains. (If she is a separatist, treat her domain the way it essentially is).",
+    "zhCN": "5级起，传道者进一步增强了对自身宗教的理解和认识，而这使得她在她的神祇占据主导的一个方面获得了更强的力量。传道者可以选择一个她的神祇可以授予的新牧师次要领域，然后将传道者职业等级加到她的所有领域等级上。（如果他是一名异见先驱，按照她领域的本质进行处理）"
   },
   {
     "Key": "ExaltedEvangelistReligiousSpeaker.Name",
@@ -6997,8 +6997,8 @@
   },
   {
     "Key": "ExaltedEvangelistReligiousSpeaker.Description",
-    "enGB": "Through her intense studies, meditation, and discussions with other worshipers, the exalted evangelist has mastered the art of speaking about her faith. At 4th level, she gains a +2 competence bonus on Bluff and Diplomacy checks.",
-    "zhCN": "传道尊者通过充满热忱的研究、冥思以及和其他信徒的讨论，她掌握许多宣扬自身信仰的演讲技巧。4级起，传道尊者在唬骗和交涉检定中获得+2表现加值。"
+    "enGB": "Through her intense studies, meditation, and discussions with other worshipers, the evangelist has mastered the art of speaking about her faith. At 4th level, she gains a +2 competence bonus on Bluff and Diplomacy checks.",
+    "zhCN": "传道者通过充满热忱的研究、冥思以及和其他信徒的讨论，她掌握许多宣扬自身信仰的演讲技巧。4级起，传道者在唬骗和交涉检定中获得+2表现加值。"
   },
   {
     "Key": "ExaltedEvangelistChooseGoodEvil.Name",
@@ -7008,8 +7008,8 @@
   },
   {
     "Key": "ExaltedEvangelistChooseGoodEvil.Description",
-    "enGB": "Divine energy suffuses the body of the exalted evangelist, making her more resilient. The exalted evangelist gains a +2 sacred or profane bonus on Fortitude saves. The evangelist of an evil deity can't choose to gain sacred bonus, and the evangelist of a good deity can't choose to gain profane bonus.",
-    "zhCN": "传道尊者的体内充盈着神力，令她变得更加强韧。传道尊者在强韧豁免中获得+2神圣或污邪加值。邪神的传道尊者不能选择获得神圣加值，善神的传道尊者不能选择获得亵渎加值。"
+    "enGB": "Divine energy suffuses the body of the evangelist, making her more resilient. The evangelist gains a +2 sacred or profane bonus on Fortitude saves. The evangelist of an evil deity can't choose to gain sacred bonus, and the evangelist of a good deity can't choose to gain profane bonus.",
+    "zhCN": "传道者的体内充盈着神力，令她变得更加强韧。传道者在强韧豁免中获得+2神圣或污邪加值。邪神的传道者不能选择获得神圣加值，善神的传道者不能选择获得亵渎加值。"
   },
   {
     "Key": "ExaltedEvangelistVitalityGood.Name",
@@ -7019,8 +7019,8 @@
   },
   {
     "Key": "ExaltedEvangelistVitalityGood.Description",
-    "enGB": "Divine energy suffuses the body of the exalted evangelist, making her more resilient. The exalted evangelist gains a +2 sacred bonus on Fortitude saves.",
-    "zhCN": "传道尊者的体内充盈着神力，令她变得更加强韧。传道尊者在强韧豁免中获得+2神圣加值。"
+    "enGB": "Divine energy suffuses the body of the evangelist, making her more resilient. The evangelist gains a +2 sacred bonus on Fortitude saves.",
+    "zhCN": "传道者的体内充盈着神力，令她变得更加强韧。传道者在强韧豁免中获得+2神圣加值。"
   },
   {
     "Key": "ExaltedEvangelistVitalityEvil.Name",
@@ -7030,8 +7030,8 @@
   },
   {
     "Key": "ExaltedEvangelistVitalityEvil.Description",
-    "enGB": "Divine energy suffuses the body of the exalted evangelist, making her more resilient. The exalted evangelist gains a +2 profane bonus on Fortitude saves.",
-    "zhCN": "传道尊者的体内充盈着神力，令她变得更加强韧。传道尊者在强韧豁免中获得+2污邪加值。"
+    "enGB": "Divine energy suffuses the body of the evangelist, making her more resilient. The evangelist gains a +2 profane bonus on Fortitude saves.",
+    "zhCN": "传道者的体内充盈着神力，令她变得更加强韧。传道者在强韧豁免中获得+2污邪加值。"
   },
   {
     "Key": "ExaltedEvangelistSanctifiedRogue.Name",
@@ -7063,8 +7063,8 @@
   },
   {
     "Key": "ExaltedEvangelistTrueExalted.Description",
-    "enGB": "The exalted evangelist exemplifies the teachings of her faith. More than a religious leader, she is the embodiment of faith that all members of the religion strive to emulate. She may be part of the official religious hierarchy or an independent worshiper, but wherever she goes she inspires others to join or commit more fully to her faith.",
-    "zhCN": "传道尊者忠实展现了其信仰的教义。不仅是宗教领袖，她更是宗教信徒们努力效仿的信仰具现。她可能是宗教组织的一份子，也有可能是独立于组织的信徒，不过无论她走向何方，传道尊者总是能够激励他人加入，或是对其信仰做出更多奉献。"
+    "enGB": "The evangelist exemplifies the teachings of her faith. More than a religious leader, she is the embodiment of faith that all members of the religion strive to emulate. She may be part of the official religious hierarchy or an independent worshiper, but wherever she goes she inspires others to join or commit more fully to her faith.",
+    "zhCN": "传道者忠实展现了其信仰的教义。不仅是宗教领袖，她更是宗教信徒们努力效仿的信仰具现。她可能是宗教组织的一份子，也有可能是独立于组织的信徒，不过无论她走向何方，传道者总是能够激励他人加入，或是对其信仰做出更多奉献。"
   },
   {
     "Key": "FeatDirtyFighting.Name",
@@ -7147,12 +7147,12 @@
     "Key": "DeificObedienceLamashtuExalted.Name",
     "ProcessTemplates": false,
     "enGB": "Lamashtu (Exalted)",
-    "zhCN": "拉玛什图（传道尊者）"
+    "zhCN": "拉玛什图（传道者）"
   },
   {
     "Key": "DeificObedienceLamashtuExalted.Description",
-    "enGB": "Become an exalted evangelist to gain access to her boons, which will be granted at certain character or class levels.",
-    "zhCN": "成为传道尊者来获取她的神恩资格，你会在合适的角色或职业等级得到神恩。"
+    "enGB": "Become an evangelist to gain access to her boons, which will be granted at certain character or class levels.",
+    "zhCN": "成为传道者来获取她的神恩资格，你会在合适的角色或职业等级得到神恩。"
   },
   {
     "Key": "SpellPowerLamashtu1.Name",
@@ -7383,7 +7383,7 @@
   {
     "Key": "DiverseObedience.Description",
     "enGB": "Your intense faith in your deity allows you to gain boons not granted to most followers. You are treated as though you had 2 more Hit Dice than you actually do for the purposes of determining what divine boons you gain as a result of performing your deity’s obedience. Diverse Obedience doesn’t allow access to divine boons granted through prestige classes early, as those boons are tied to prestige class levels gained, not overall Hit Dice. Additionally, whenever you would gain a boon, you can choose among the options available for exalted or sentinel boons.",
-    "zhCN": "你对神祇的强烈信仰令你得到了大多数信徒都未曾得到的神恩。当你确定你因崇神仪典获得的神恩时，将你的HD视为比实际高2。多样尊崇不允许你通过进阶职业提前获得神恩，因为这些职业通过职业等级而非HD获取神恩。每当你获得神恩时，你可以从传道尊者或信仰哨卫神恩中进行选择。"
+    "zhCN": "你对神祇的强烈信仰令你得到了大多数信徒都未曾得到的神恩。当你确定你因崇神仪典获得的神恩时，将你的HD视为比实际高2。多样尊崇不允许你通过进阶职业提前获得神恩，因为这些职业通过职业等级而非HD获取神恩。每当你获得神恩时，你可以从传道者或信仰哨卫神恩中进行选择。"
   },
   {
     "Key": "DeificObedienceArazni.Name",
@@ -8159,12 +8159,12 @@
     "Key": "DeificObedienceNiviExalted.Name",
     "ProcessTemplates": false,
     "enGB": "Nivi (Exalted)",
-    "zhCN": "妮维（传道尊者）"
+    "zhCN": "妮维（传道者）"
   },
   {
     "Key": "DeificObedienceNiviExalted.Description",
-    "enGB": "Become an exalted evangelist to gain access to her boons, which will be granted at certain character or class levels. Nivi was once an ordinary mortal gnome with a penchant for gambling and games of chance. She was not addicted to winning so much as playing the game. Unfortunately, this attitude led her to owe a lot of money to a lot of people, which eventually forced her to flee from some of her more powerful creditors. She eventually found her way into the Darklands and became the first gnome to stave off the effects of the Bleaching by fully embracing her new life below the surface of Golarion. She traded a special gem to Torag in exchange for becoming a demigoddess. She appears as an umbral gnome with eyes that glimmer like gems.",
-    "zhCN": "成为传道尊者来获取她的神恩资格，你会在合适的角色或职业等级得到神恩。Nivi was once an ordinary mortal gnome with a penchant for gambling and games of chance. She was not addicted to winning so much as playing the game. Unfortunately, this attitude led her to owe a lot of money to a lot of people, which eventually forced her to flee from some of her more powerful creditors. She eventually found her way into the Darklands and became the first gnome to stave off the effects of the Bleaching by fully embracing her new life below the surface of Golarion. She traded a special gem to Torag in exchange for becoming a demigoddess. She appears as an umbral gnome with eyes that glimmer like gems."
+    "enGB": "Become an evangelist to gain access to her boons, which will be granted at certain character or class levels. Nivi was once an ordinary mortal gnome with a penchant for gambling and games of chance. She was not addicted to winning so much as playing the game. Unfortunately, this attitude led her to owe a lot of money to a lot of people, which eventually forced her to flee from some of her more powerful creditors. She eventually found her way into the Darklands and became the first gnome to stave off the effects of the Bleaching by fully embracing her new life below the surface of Golarion. She traded a special gem to Torag in exchange for becoming a demigoddess. She appears as an umbral gnome with eyes that glimmer like gems.",
+    "zhCN": "成为传道者来获取她的神恩资格，你会在合适的角色或职业等级得到神恩。Nivi was once an ordinary mortal gnome with a penchant for gambling and games of chance. She was not addicted to winning so much as playing the game. Unfortunately, this attitude led her to owe a lot of money to a lot of people, which eventually forced her to flee from some of her more powerful creditors. She eventually found her way into the Darklands and became the first gnome to stave off the effects of the Bleaching by fully embracing her new life below the surface of Golarion. She traded a special gem to Torag in exchange for becoming a demigoddess. She appears as an umbral gnome with eyes that glimmer like gems."
   },
   {
     "Key": "SpellPowerNivi1.Name",
@@ -8357,12 +8357,12 @@
     "Key": "DeificObedienceKabririExalted.Name",
     "ProcessTemplates": false,
     "enGB": "Kabriri (Exalted)",
-    "zhCN": "卡怖厉厉（传道尊者）"
+    "zhCN": "卡怖厉厉（传道者）"
   },
   {
     "Key": "DeificObedienceKabririExalted.Description",
-    "enGB": "Become an exalted evangelist to gain access to his boons, which will be granted at certain character or class levels.",
-    "zhCN": "成为传道尊者来获取他的神恩资格，你会在合适的角色或职业等级得到神恩。"
+    "enGB": "Become an evangelist to gain access to his boons, which will be granted at certain character or class levels.",
+    "zhCN": "成为传道者来获取他的神恩资格，你会在合适的角色或职业等级得到神恩。"
   },
   {
     "Key": "SpellPowerKabriri1.Name",
