@@ -63,7 +63,6 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(ProficienciesDisplayName)
               .SetDescription(ProficienciesDescription)
               .SetIsClassFeature(true)
-              .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SorcererClass.Reference; })
               .AddComponent(assProficiencies.GetComponent<ArcaneArmorProficiency>())
               .AddFacts(new() { FeatureRefs.LightArmorProficiency.ToString(), FeatureRefs.SimpleWeaponProficiency.ToString() })
               .AddProficiencies(
@@ -117,7 +116,6 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(CombatJugglingDisplayName)
               .SetDescription(CombatJugglingDescription)
               .SetIcon(icon)
-              .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SorcererClass.Reference; })
               .AddComponent<CombatJuggling>()
               .Configure();
         }
