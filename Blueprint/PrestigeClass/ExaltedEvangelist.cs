@@ -357,6 +357,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .SetClasses(ArchetypeGuid)
+              .AddPrerequisiteCasterTypeSpellLevel(false, false, 3)
               .AddToLevelEntry(1, BonusFeatFeat(), "{05DC9561-0542-41BD-9E9F-404F59AB68C5}")
               .AddToLevelEntry(2, ChooseGoodEvilFeat())
               .AddToLevelEntry(4, ReligiousSpeakerFeat())
