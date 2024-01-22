@@ -33,13 +33,13 @@ namespace PrestigePlus.Mechanic
             {
                 return Evangelist;
             }
-            if (Classes.Count < 2) return null;
-            return Classes.ElementAt(1);
+            return Classes.ElementAt(Classes.Count - 3);
         }
 
         void ILevelUpSelectClassHandler.HandleSelectClass(UnitDescriptor unit, LevelUpState state)
         {
             Add(state.SelectedClass);
+            LogWrapper.Get("PrestigePlus").Info("add to list " + state.SelectedClass.NameSafe() + Classes.Count().ToString());
         }
 
         void IUnitLevelUpHandler.HandleUnitBeforeLevelUp(UnitEntityData unit)
@@ -49,7 +49,7 @@ namespace PrestigePlus.Mechanic
 
         void IUnitLevelUpHandler.HandleUnitAfterLevelUp(UnitEntityData unit, LevelUpController controller)
         {
-            Classes.Clear();
+            
         }
 
         private List<BlueprintCharacterClass> Classes = new();

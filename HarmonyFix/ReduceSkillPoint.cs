@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using BlueprintCore.Utils;
+using HarmonyLib;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Designers.Mechanics.Facts;
@@ -20,6 +21,7 @@ namespace PrestigePlus.HarmonyFix
         static void Postfix(ref int __result, ref UnitDescriptor unit)
         {
             __result += unit.Ensure<UnitPartAlignedClass>().SkillPointPenalty;
+            LogWrapper.Get("PrestigePlus").Info("skill " + unit.Get<UnitPartAlignedClass>().SkillPointPenalty.ToString());
         }
     }
 }

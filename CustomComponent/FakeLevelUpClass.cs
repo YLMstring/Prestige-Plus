@@ -27,17 +27,19 @@ namespace PrestigePlus.CustomComponent
     [TypeId("{EECCF91C-0225-4F5A-96B7-1B33E9CB4CD0}")]
     internal class FakeLevelUpClass : UnitFactComponentDelegate<FakeLevelUpClass.ComponentData>, IUnitSubscriber, ISubscriber, IUnitLevelUpHandler
     {
-        //private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
+        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         public override void OnActivate()
         {
             LevelUpController controller = Game.Instance?.LevelUpController;
             if (controller == null) { return; }
             var realclazz = clazz ?? Owner.Ensure<UnitPartAlignedClass>().GetMax(controller.State);
+            Logger.Info("class is " + realclazz.NameSafe());
             if (realclazz == controller.State.SelectedClass) { return; }
             var data = Owner.Progression.GetClassData(realclazz);
             if (data == null || data.Level >= 20) { return; }
             data.Level += 1;
             Owner.Ensure<UnitPartAlignedClass>().SkillPointPenalty += data.CalcSkillPoints();
+            Logger.Info("add " + data.CalcSkillPoints().ToString());
             Data.added += 1;
             Data.addedclazz = realclazz;
             LevelUpHelper.UpdateProgression(controller.State, Owner, realclazz.Progression);
@@ -58,11 +60,14 @@ namespace PrestigePlus.CustomComponent
 
         public override void OnDeactivate()
         {
+            Logger.Info("OnDeactivate");
             var realclazz = Data.addedclazz;
             var data = Owner.Progression.GetClassData(realclazz);
             if (data == null) { return; }
+            Logger.Info("OnDeactivate 2");
             data.Level -= Data.added;
             Owner.Ensure<UnitPartAlignedClass>().SkillPointPenalty -= data.CalcSkillPoints();
+            Logger.Info("remove " + data.CalcSkillPoints().ToString());
             Data.added = 0;
         }
         public class ComponentData
@@ -151,27 +156,25 @@ namespace PrestigePlus.CustomComponent
 
         void IUnitLevelUpHandler.HandleUnitBeforeLevelUp(UnitEntityData unit)
         {
-            
-        }
-
-        void IUnitLevelUpHandler.HandleUnitAfterLevelUp(UnitEntityData unit, LevelUpController controller)
-        {
             if (unit == base.Owner)
             {
                 var realclazz = Data.addedclazz;
                 var data = Owner.Progression.GetClassData(realclazz);
-                if (data != null) 
+                if (data != null)
                 {
                     data.Level += Data.added;
                     var part = Owner.Ensure<UnitPartAlignedClass>();
                     part.SkillPointPenalty += data.CalcSkillPoints();
-                    if (controller.State.SelectedClass == BlueprintTool.GetRef<BlueprintCharacterClassReference>(ExaltedEvangelist.ArchetypeGuid).Get())
-                    {
-                        part.Evangelist = realclazz;
-                    }
+                    Logger.Info("finally add " + data.CalcSkillPoints().ToString());
+                    //if (controller.State.SelectedClass == BlueprintTool.GetRef<BlueprintCharacterClassReference>(ExaltedEvangelist.ArchetypeGuid).Get())
                 }
                 Owner.RemoveFact(Fact);
             }
+        }
+
+        void IUnitLevelUpHandler.HandleUnitAfterLevelUp(UnitEntityData unit, LevelUpController controller)
+        {
+            
         }
     }
 }
