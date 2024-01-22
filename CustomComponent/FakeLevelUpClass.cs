@@ -37,7 +37,7 @@ namespace PrestigePlus.CustomComponent
             var data = Owner.Progression.GetClassData(realclazz);
             if (data == null || data.Level >= 20) { return; }
             data.Level += 1;
-            Owner.Ensure<UnitPartAlignedClass>().SkillPointPenalty += realclazz.SkillPoints;
+            Owner.Ensure<UnitPartAlignedClass>().SkillPointPenalty += data.CalcSkillPoints();
             Data.added += 1;
             Data.addedclazz = realclazz;
             LevelUpHelper.UpdateProgression(controller.State, Owner, realclazz.Progression);
@@ -62,7 +62,7 @@ namespace PrestigePlus.CustomComponent
             var data = Owner.Progression.GetClassData(realclazz);
             if (data == null) { return; }
             data.Level -= Data.added;
-            Owner.Ensure<UnitPartAlignedClass>().SkillPointPenalty -= realclazz.SkillPoints;
+            Owner.Ensure<UnitPartAlignedClass>().SkillPointPenalty -= data.CalcSkillPoints();
             Data.added = 0;
         }
         public class ComponentData
@@ -164,7 +164,7 @@ namespace PrestigePlus.CustomComponent
                 {
                     data.Level += Data.added;
                     var part = Owner.Ensure<UnitPartAlignedClass>();
-                    part.SkillPointPenalty += realclazz.SkillPoints;
+                    part.SkillPointPenalty += data.CalcSkillPoints();
                     if (controller.State.SelectedClass == BlueprintTool.GetRef<BlueprintCharacterClassReference>(ExaltedEvangelist.ArchetypeGuid).Get())
                     {
                         part.Evangelist = realclazz;
