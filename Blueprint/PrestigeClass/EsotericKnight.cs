@@ -358,7 +358,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetType(AbilityType.Special)
                 .Configure();
 
-            var holder = ArchetypeGuid;
+            var holder = CharacterClassRefs.ClericClass.ToString();
 
             return FeatureConfigurator.New(ConfoundingProjection, ConfoundingProjectionGuid)
               .SetDisplayName(ConfoundingProjectionDisplayName)
@@ -421,7 +421,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetType(AbilityType.Special)
                 .Configure();
 
-            var holder = ArchetypeGuid;
+            var holder = CharacterClassRefs.ClericClass.ToString();
 
             return FeatureConfigurator.New(StepthroughReality, StepthroughRealityGuid)
               .SetDisplayName(StepthroughRealityDisplayName)
@@ -481,7 +481,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetType(AbilityType.Special)
                 .Configure();
 
-            var holder = ArchetypeGuid;
+            var holder = CharacterClassRefs.ClericClass.ToString();
 
             return FeatureConfigurator.New(PsychicRage, PsychicRageGuid)
               .SetDisplayName(PsychicRageDisplayName)
@@ -535,7 +535,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetType(AbilityType.Special)
                 .Configure();
 
-            var holder = ArchetypeGuid;
+            var holder = CharacterClassRefs.ClericClass.ToString();
 
             return FeatureConfigurator.New(PsychicDaring, PsychicDaringGuid)
               .SetDisplayName(PsychicDaringDisplayName)
@@ -598,7 +598,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetType(AbilityType.Supernatural)
                 .Configure();
 
-            var holder = ArchetypeGuid;
+            var holder = CharacterClassRefs.ClericClass.ToString();
 
             return FeatureConfigurator.New(PhantomArmory, PhantomArmoryGuid)
               .SetDisplayName(PhantomArmoryDisplayName)
@@ -675,7 +675,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetType(AbilityType.Special)
                 .Configure();
 
-            var holder = ArchetypeGuid;
+            var holder = CharacterClassRefs.ClericClass.ToString();
 
             return FeatureConfigurator.New(ShadowProjection, ShadowProjectionGuid)
               .SetDisplayName(ShadowProjectionDisplayName)

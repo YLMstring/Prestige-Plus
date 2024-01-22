@@ -25,10 +25,7 @@ namespace PrestigePlus.Mechanic
         public void Add(BlueprintCharacterClass clazz)
         {
             if (clazz == null) return;
-            if (Owner.Progression.GetClassLevel(clazz) > 1)
-            {
-                Classes.Add(clazz);
-            }
+            Classes.Add(clazz);
         }
         public BlueprintCharacterClass GetMax(LevelUpState state)
         {
@@ -36,21 +33,8 @@ namespace PrestigePlus.Mechanic
             {
                 return Evangelist;
             }
-            while (true)
-            {
-                if (Classes.Remove(state.SelectedClass) != true)
-                {
-                    break;
-                }
-            }
-            if (Classes.Count == 0) return null;
-            var highCountItems = Classes
-                .GroupBy(item => item)
-                .GroupBy(g => g.Count(), g => g.Key)
-                .OrderByDescending(counts => counts.Key)
-                .First();
-
-            return (BlueprintCharacterClass)highCountItems;
+            if (Classes.Count < 2) return null;
+            return Classes.ElementAt(1);
         }
 
         void ILevelUpSelectClassHandler.HandleSelectClass(UnitDescriptor unit, LevelUpState state)

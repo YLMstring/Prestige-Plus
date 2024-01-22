@@ -14,12 +14,12 @@ using static Kingmaker.Blueprints.Root.CheatRoot;
 
 namespace PrestigePlus.HarmonyFix
 {
-    [HarmonyPatch(typeof(LevelUpHelper), nameof(LevelUpHelper.GetTotalSkillPoints))]
+    [HarmonyPatch(typeof(LevelUpHelper), nameof(LevelUpHelper.GetSpentSkillPoints))]
     internal class ReduceSkillPoint
     {
         static void Postfix(ref int __result, ref UnitDescriptor unit)
         {
-            __result -= unit.Ensure<UnitPartAlignedClass>().SkillPointPenalty;
+            __result += unit.Ensure<UnitPartAlignedClass>().SkillPointPenalty;
         }
     }
 }
