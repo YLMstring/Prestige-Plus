@@ -26,7 +26,7 @@ namespace PrestigePlus.CustomComponent
         //private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         public override void OnActivate()
         {
-            LevelUpController controller = Kingmaker.Game.Instance?.LevelUpController;
+            LevelUpController controller = Game.Instance?.LevelUpController;
             if (controller == null) { return; }
             var data = Owner.Progression.GetClassData(clazz);
             if (data == null) { return; }
