@@ -19,6 +19,8 @@ using System.Threading.Tasks;
 using static Kingmaker.UI.CanvasScalerWorkaround;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.View;
+using PrestigePlus.Mechanic;
+using PrestigePlus.Blueprint.PrestigeClass;
 
 namespace PrestigePlus.CustomComponent
 {
@@ -30,12 +32,15 @@ namespace PrestigePlus.CustomComponent
         {
             LevelUpController controller = Game.Instance?.LevelUpController;
             if (controller == null) { return; }
-            var data = Owner.Progression.GetClassData(clazz);
+            var realclazz = clazz ?? Owner.Ensure<UnitPartAlignedClass>().GetMax(controller.State);
+            var data = Owner.Progression.GetClassData(realclazz);
             if (data == null) { return; }
             data.Level += 1;
+            Owner.Ensure<UnitPartAlignedClass>().SkillPointPenalty += realclazz.SkillPoints;
             Data.added += 1;
-            LevelUpHelper.UpdateProgression(controller.State, Owner, clazz.Progression);
-            ApplySpell(controller.State, Owner, data.Level);
+            Data.addedclazz = realclazz;
+            LevelUpHelper.UpdateProgression(controller.State, Owner, realclazz.Progression);
+            ApplySpell(controller.State, Owner, data.Level, realclazz);
             List<Feature> features = new();
             foreach (var progress in Owner.Progression.Features)
             {
@@ -52,43 +57,46 @@ namespace PrestigePlus.CustomComponent
 
         public override void OnDeactivate()
         {
-            var data = Owner.Progression.GetClassData(clazz);
+            var realclazz = Data.addedclazz;
+            var data = Owner.Progression.GetClassData(realclazz);
             if (data == null) { return; }
             data.Level -= Data.added;
+            Owner.Ensure<UnitPartAlignedClass>().SkillPointPenalty -= realclazz.SkillPoints;
             Data.added = 0;
         }
         public class ComponentData
         {
             public int added = 0;
+            public BlueprintCharacterClass addedclazz;
         }
 
         public BlueprintCharacterClass clazz;
 
-        public void ApplySpell(LevelUpState state, UnitDescriptor unit, int level)
+        public void ApplySpell(LevelUpState state, UnitDescriptor unit, int level, BlueprintCharacterClass realclazz)
         {
-            if (clazz == null)
+            if (realclazz == null)
             {
                 return;
             }
-            SkipLevelsForSpellProgression component = clazz.GetComponent<SkipLevelsForSpellProgression>();
+            SkipLevelsForSpellProgression component = realclazz.GetComponent<SkipLevelsForSpellProgression>();
             if (component != null && component.Levels.Contains(level))
             {
                 return;
             }
-            ClassData classData = unit.Progression.GetClassData(clazz);
+            ClassData classData = unit.Progression.GetClassData(realclazz);
             if (classData.Spellbook != null)
             {
                 Spellbook spellbook = unit.DemandSpellbook(classData.Spellbook);
-                if (clazz.Spellbook && clazz.Spellbook != classData.Spellbook)
+                if (realclazz.Spellbook && realclazz.Spellbook != classData.Spellbook)
                 {
-                    Spellbook spellbook2 = unit.Spellbooks.FirstOrDefault((Spellbook s) => s.Blueprint == clazz.Spellbook);
+                    Spellbook spellbook2 = unit.Spellbooks.FirstOrDefault((Spellbook s) => s.Blueprint == realclazz.Spellbook);
                     if (spellbook2 != null)
                     {
                         foreach (AbilityData abilityData in spellbook2.GetAllKnownSpells())
                         {
                             spellbook.AddKnown(abilityData.SpellLevel, abilityData.Blueprint, true);
                         }
-                        unit.DeleteSpellbook(clazz.Spellbook);
+                        unit.DeleteSpellbook(realclazz.Spellbook);
                     }
                 }
                 int num = classData.CharacterClass.IsMythic ? spellbook.CasterLevel : spellbook.BaseLevel;
@@ -149,10 +157,17 @@ namespace PrestigePlus.CustomComponent
         {
             if (unit == base.Owner)
             {
-                var data = Owner.Progression.GetClassData(clazz);
+                var realclazz = Data.addedclazz;
+                var data = Owner.Progression.GetClassData(realclazz);
                 if (data != null) 
                 {
                     data.Level += Data.added;
+                    var part = Owner.Ensure<UnitPartAlignedClass>();
+                    part.SkillPointPenalty += realclazz.SkillPoints;
+                    if (controller.State.SelectedClass == BlueprintTool.GetRef<BlueprintCharacterClassReference>(ExaltedEvangelist.ArchetypeGuid).Get())
+                    {
+                        part.Evangelist = realclazz;
+                    }
                 }
                 Owner.RemoveFact(Fact);
             }

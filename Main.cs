@@ -28,6 +28,7 @@ using PrestigePlus.Blueprint;
 using PrestigePlus.CustomComponent.Feat;
 using PrestigePlus.Blueprint.SpecificManeuver;
 using PrestigePlus.Blueprint.Spell;
+using PrestigePlus.Mechanic;
 
 namespace PrestigePlus
 {
@@ -339,7 +340,7 @@ namespace PrestigePlus
           Initialized = true;
 
                     Logger.Info("Configuring blueprints!"); 
-                    SpellbookReplace.Select(); SpellbookLevelUp.Select(); ImbueArrow.Configure(); ShadowDancer.CreateProficiencies(); ShadowDancer.ExtraShadowJump(); ShadowDancer.ExtraFeat(); SeizetheOpportunity.Configure(); AerialAssault.ConfigureAbility();
+                    SpellbookReplace.Select(); SpellbookLevelUp.Select(); ImbueArrow.Configure(); ShadowDancer.CreateProficiencies(); ShadowDancer.ExtraShadowJump(); ShadowDancer.ExtraFeat(); SeizetheOpportunity.Configure(); AerialAssault.ConfigureAbility(); AlignedClassFeature.StyleConfigure();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("grapple"))) { ImprovedGrapple.StyleConfigure(); ImprovedGrappleMythic.Configure(); GreaterGrapple.Configure(); ManeuverExpert.Configure(); RapidGrappler.Configure(); UnfairGrip.Configure(); PinningKnockout.Configure(); PinningRend.Configure(); SavageSlam.Configure(); UncannyGrapple.Configure(); HamatulaStrike.Configure(); DramaticSlam.Configure(); KnotExpert.Configure(); AerialAssault.Configure(); MeatShield.Configure(); ThroatSlicer.Configure(); CrabKing.Configure(); CrabKing.Configure2(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("grave"))) AgentoftheGrave.Configure();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("archer"))) { ArcaneArcher.Configure(); StormArrow.Configure(); }

@@ -77,7 +77,6 @@ namespace PrestigePlus.Blueprint
             FeatureConfigurator.For(FeatureRefs.SkillAbilities)
                     .AddFacts(new() { ability, ability2 })
                     .Configure();
-
         }
 
         public static void DisableConfigure()
@@ -94,7 +93,6 @@ namespace PrestigePlus.Blueprint
                 .AddHideFeatureInInspect()
                 .SetActionBarAutoFillIgnored(true)
                 .Configure();
-
         }
     }
 }
