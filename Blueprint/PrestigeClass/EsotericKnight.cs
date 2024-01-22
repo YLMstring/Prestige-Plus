@@ -36,6 +36,7 @@ using PrestigePlus.CustomAction.ClassRelated;
 using PrestigePlus.CustomComponent.PrestigeClass;
 using Kingmaker.AreaLogic.SummonPool;
 using PrestigePlus.HarmonyFix;
+using PrestigePlus.CustomComponent;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -191,15 +192,10 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                     .SetDisplayName(KineticEsotericaDisplayName)
                     .SetDescription(KineticEsotericaDescription)
                     .SetIcon(icon)
-                    .AddComponent<KineticProgressionContinue>()
+                    .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.KineticistClass.Reference; })
                     .SetRanks(20)
                     .SetHideInUI(true)
                     .Configure();
-
-            ProgressionConfigurator.For(ProgressionRefs.KineticBlastProgression)
-                .AddToFeaturesRankIncrease(featreal)
-                .SetGiveFeaturesForPreviousLevels(true)
-                .Configure();
 
             return ProgressionConfigurator.New(KineticEsoterica, KineticEsotericaGuid)
               .SetDisplayName(KineticEsotericaDisplayName)
@@ -208,13 +204,11 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIsClassFeature(true)
               .SetClasses(ArchetypeGuid)
               .AddPrerequisiteFeature(FeatureRefs.KineticBlastFeature.ToString())
-              .AddClassLevelsForPrerequisites(actualClass: ArchetypeGuid, fakeClass: CharacterClassRefs.KineticistClass.ToString(), modifier: 0.5, summand: 0)
-              .SetGiveFeaturesForPreviousLevels(true)
-              .AddToLevelEntry(2, KineticSelectionGuid, featreal)
-              .AddToLevelEntry(4, KineticSelectionGuid, featreal)
-              .AddToLevelEntry(6, KineticSelectionGuid, featreal)
-              .AddToLevelEntry(8, KineticSelectionGuid, featreal)
-              .AddToLevelEntry(10, KineticSelectionGuid, featreal)
+              .AddToLevelEntry(2, featreal)
+              .AddToLevelEntry(4, featreal)
+              .AddToLevelEntry(6, featreal)
+              .AddToLevelEntry(8, featreal)
+              .AddToLevelEntry(10, featreal)
               .Configure();
         }
 
