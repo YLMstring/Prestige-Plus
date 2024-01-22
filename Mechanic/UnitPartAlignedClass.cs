@@ -36,6 +36,13 @@ namespace PrestigePlus.Mechanic
             {
                 return Evangelist;
             }
+            while (true)
+            {
+                if (Classes.Remove(state.SelectedClass) != true)
+                {
+                    break;
+                }
+            }
             if (Classes.Count == 0) return null;
             var highCountItems = Classes
                 .GroupBy(item => item)

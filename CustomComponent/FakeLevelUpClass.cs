@@ -33,6 +33,7 @@ namespace PrestigePlus.CustomComponent
             LevelUpController controller = Game.Instance?.LevelUpController;
             if (controller == null) { return; }
             var realclazz = clazz ?? Owner.Ensure<UnitPartAlignedClass>().GetMax(controller.State);
+            if (realclazz == controller.State.SelectedClass) { return; }
             var data = Owner.Progression.GetClassData(realclazz);
             if (data == null || data.Level >= 20) { return; }
             data.Level += 1;
