@@ -4421,8 +4421,19 @@
   },
   {
     "Key": "EsotericKnightKineticEsoterica.Description",
-    "enGB": "A character with levels in a class that grants the kinetic blast class feature can add effective levels (level 2, 4, 6, 8, 10) to that class. If she does, she increases her effective kineticist level for purposes of determining the highest level of wild talents she can select, the effective spell level of her kinetic blast and defense wild talents. She does not gain or increase other related class features, such as infusion specializations.",
-    "zhCN": "当一个角色在提供念袭职业能力的职业上拥有等级时，可提升有效职业等级（2，4，6，8，10级）。若她如此做，她在计算可获取原力的最高等级、念袭及原力的有效法术等级时，有效等级获得相应提升。她不会获得除此之外任何相关的职业能力，如注能熟稔。"
+    "enGB": "A character with levels in the kineticist class can add effective levels (level 2, 4, 6, 8, 10) to that class.",
+    "zhCN": "当你拥有操念使等级时，可提升其有效职业等级（2，4，6，8，10级）。"
+  },
+  {
+    "Key": "EsotericKnightDivinePsychic.Name",
+    "ProcessTemplates": false,
+    "enGB": "Divine Psychic",
+    "zhCN": "神圣念力"
+  },
+  {
+    "Key": "EsotericKnightDivinePsychic.Description",
+    "enGB": "A character with levels in the cleric class can add effective levels (level 2, 4, 6, 8, 10) to that class.",
+    "zhCN": "当你拥有牧师等级时，可提升其有效职业等级（2，4，6，8，10级）。"
   },
   {
     "Key": "EsotericKnightProficiencies.Name",

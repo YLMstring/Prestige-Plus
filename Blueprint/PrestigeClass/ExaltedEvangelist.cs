@@ -193,7 +193,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddFacts(new() { FeatureRefs.LightArmorProficiency.ToString(), FeatureRefs.SimpleWeaponProficiency.ToString() })
               .AddComponent<AddDeityWeaponPro>()
               .AddToAllFeatures(SanctifiedRogueFeat())
-              .AddToAllFeatures(SanctifiedKineticistFeat())
               .AddToAllFeatures(TrueExaltedFeat())
               .Configure();
         }
@@ -331,36 +330,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddToLevelEntry(8, FeatureRefs.SneakAttack.ToString())
               .AddToLevelEntry(9, FeatureSelectionRefs.RogueTalentSelection.ToString())
               .AddToLevelEntry(10, FeatureRefs.SneakAttack.ToString(), HalflingOpportunist.OpportunityGuid)
-              .Configure();
-        }
-
-        private const string SanctifiedKineticist = "ExaltedEvangelist.SanctifiedKineticist";
-        private static readonly string SanctifiedKineticistGuid = "{E80441D4-90BA-4880-85DC-1A66246F14D8}";
-
-        internal const string SanctifiedKineticistDisplayName = "ExaltedEvangelistSanctifiedKineticist.Name";
-        private const string SanctifiedKineticistDescription = "ExaltedEvangelistSanctifiedKineticist.Description";
-        public static BlueprintProgression SanctifiedKineticistFeat()
-        {
-            var icon = AbilityRefs.KnowledgeDomainGreaterAbility.Reference.Get().Icon;
-            return ProgressionConfigurator.New(SanctifiedKineticist, SanctifiedKineticistGuid)
-              .SetDisplayName(SanctifiedKineticistDisplayName)
-              .SetDescription(SanctifiedKineticistDescription)
-              .SetIcon(icon)
-              .SetIsClassFeature(true)
-              .SetClasses(ArchetypeGuid)
-              .AddPrerequisiteFeature(FeatureRefs.KineticBlastFeature.ToString())
-              .AddClassLevelsForPrerequisites(actualClass: ArchetypeGuid, fakeClass: CharacterClassRefs.KineticistClass.ToString(), modifier: 1, summand: -1)
-              .AddToLevelEntry(2, FeatureSelectionRefs.InfusionSelection.ToString(), EsotericKnight.FeatGuidPro2, FeatureRefs.MetakinesisEmpowerFeature.ToString())
-              .AddToLevelEntry(3, FeatureSelectionRefs.WildTalentSelection.ToString(), EsotericKnight.BattleMindGuid, EsotericKnight.FeatGuidPro2)
-              .AddToLevelEntry(4, FeatureSelectionRefs.InfusionSelection.ToString(), FeatureRefs.InfusionSpecialization.ToString(), EsotericKnight.FeatGuidPro2)
-              .AddToLevelEntry(5, FeatureSelectionRefs.WildTalentSelection.ToString(), EsotericKnight.FeatGuidPro2, FeatureRefs.MetakinesisMaximizedFeature.ToString())
-              .AddToLevelEntry(6, FeatureSelectionRefs.InfusionSelection.ToString(), EsotericKnight.BattleMindGuid, EsotericKnight.FeatGuidPro2)
-              .AddToLevelEntry(7, FeatureSelectionRefs.WildTalentSelection.ToString(), FeatureRefs.InfusionSpecialization.ToString(), EsotericKnight.FeatGuidPro2)
-              .AddToLevelEntry(8, FeatureSelectionRefs.InfusionSelection.ToString(), EsotericKnight.FeatGuidPro2, FeatureRefs.MetakinesisQuickenFeature.ToString())
-              .AddToLevelEntry(9, FeatureSelectionRefs.WildTalentSelection.ToString(), EsotericKnight.BattleMindGuid, EsotericKnight.FeatGuidPro2)
-              .AddToLevelEntry(10, FeatureSelectionRefs.MetakinesisMaster.ToString(), FeatureRefs.InfusionSpecialization.ToString(), EsotericKnight.FeatGuidPro2)
-              .SetUIGroups(UIGroupBuilder.New()
-                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { FeatureSelectionRefs.MetakinesisMaster.ToString(), FeatureSelectionRefs.InfusionSelection.ToString() }))
               .Configure();
         }
 

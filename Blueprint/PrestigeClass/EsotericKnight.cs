@@ -53,22 +53,17 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         private const string ClassProgressName = "EsotericKnightPrestige";
         private static readonly string ClassProgressGuid = "{91A782A8-AE78-4297-A507-E68D39F3C209}";
-
-        private static readonly string spellupgradeGuid = "{05DC9561-0542-41BD-9E9F-404F59AB68C5}";
-
         public static void Configure()
         {
-            KineticSelectionFeat(); KnightSelectionFeat(); MentalSelectionFeat(); PsychicEsotericaFeat();
+            KnightSelectionFeat(); MentalSelectionFeat(); PsychicEsotericaFeat();
             BlueprintProgression progression =
             ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
             .SetClasses(ArchetypeGuid)
             .AddToLevelEntry(1, KnightSelectionGuid, KnightSelectionGuid, CreateProficiencies())
             .AddToLevelEntry(2, PsychicEsotericaGuid)
-            .AddToLevelEntry(3, BattleMindGuid)
             .AddToLevelEntry(4, PsychicEsotericaGuid)
             .AddToLevelEntry(6, PsychicEsotericaGuid)
             .AddToLevelEntry(8, PsychicEsotericaGuid)
-            .AddToLevelEntry(9, BattleMindGuid)
             .AddToLevelEntry(10, PsychicEsotericaGuid)
             .SetRanks(1)
             .SetIsClassFeature(true)
@@ -88,11 +83,10 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             .SetReflexSave(SavesPrestigeLow)
             .SetWillSave(SavesPrestigeHigh)
             .SetProgression(progression)
-            .AddSkipLevelsForSpellProgression(new int[] { 3, 5, 7, 9 })
             .SetClassSkills(new StatType[] { StatType.SkillAthletics, StatType.SkillLoreReligion, StatType.SkillKnowledgeArcana, StatType.SkillMobility })
             .AddPrerequisiteStatValue(StatType.BaseAttackBonus, 5)
-            .AddPrerequisiteCasterTypeSpellLevel(false, false, 1, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
-            .AddPrerequisiteFeature(FeatureRefs.KineticBlastFeature.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.KineticistClass.ToString(), 1, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.ClericClass.ToString(), 1, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
             .Configure();
 
             Action<ProgressionRoot> act = delegate (ProgressionRoot i)
@@ -154,28 +148,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .Configure();
         }
 
-        private const string KineticSelection = "EsotericKnight.KineticSelection";
-        private static readonly string KineticSelectionGuid = "{C9373D0C-D33E-4975-9E95-B16E51CAFBD1}";
-
-        internal const string KineticSelectionDisplayName = "KineticSelection.Name";
-        private const string KineticSelectionDescription = "KineticSelection.Description";
-
-        public static void KineticSelectionFeat()
-        {
-            var icon = AbilityRefs.KnowledgeDomainGreaterAbility.Reference.Get().Icon;
-
-            FeatureSelectionConfigurator.New(KineticSelection, KineticSelectionGuid)
-              .SetDisplayName(KineticSelectionDisplayName)
-              .SetDescription(KineticSelectionDescription)
-              .SetIcon(icon)
-              .SetIgnorePrerequisites(false)
-              .SetObligatory(false)
-              .AddToAllFeatures(FeatureSelectionRefs.InfusionSelection.ToString())
-              .AddToAllFeatures(FeatureSelectionRefs.WildTalentSelection.ToString())
-              .AddToAllFeatures(SABattleMind())
-              .Configure();
-        }
-
         private const string KineticEsoterica = "EsotericKnight.KineticEsoterica";
         private static readonly string KineticEsotericaGuid = "{EEA55FBD-5E91-4D9C-9EB6-C2E24CD41C87}";
 
@@ -203,7 +175,43 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .SetClasses(ArchetypeGuid)
-              .AddPrerequisiteFeature(FeatureRefs.KineticBlastFeature.ToString())
+              .AddPrerequisiteClassLevel(CharacterClassRefs.KineticistClass.ToString(), 1)
+              .AddToLevelEntry(2, featreal)
+              .AddToLevelEntry(4, featreal)
+              .AddToLevelEntry(6, featreal)
+              .AddToLevelEntry(8, featreal)
+              .AddToLevelEntry(10, featreal)
+              .Configure();
+        }
+
+        private const string DivinePsychic = "EsotericKnight.DivinePsychic";
+        private static readonly string DivinePsychicGuid = "{D715CE8C-0E09-4FCD-9BB2-305D06EEF459}";
+
+        internal const string DivinePsychicDisplayName = "EsotericKnightDivinePsychic.Name";
+        private const string DivinePsychicDescription = "EsotericKnightDivinePsychic.Description";
+
+        private static readonly string FeatNamePro3 = "DivinePsychicPro2";
+        public static readonly string FeatGuidPro3 = "{62390821-FCDC-4230-B4C5-01F6BDDD3A7E}";
+        public static BlueprintProgression DivinePsychicFeat()
+        {
+            var icon = AbilityRefs.PolarMidnight.Reference.Get().Icon;
+
+            var featreal = FeatureConfigurator.New(FeatNamePro3, FeatGuidPro3)
+                    .SetDisplayName(DivinePsychicDisplayName)
+                    .SetDescription(DivinePsychicDescription)
+                    .SetIcon(icon)
+                    .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ClericClass.Reference; })
+                    .SetRanks(20)
+                    .SetHideInUI(true)
+                    .Configure();
+
+            return ProgressionConfigurator.New(DivinePsychic, DivinePsychicGuid)
+              .SetDisplayName(DivinePsychicDisplayName)
+              .SetDescription(DivinePsychicDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .SetClasses(ArchetypeGuid)
+              .AddPrerequisiteClassLevel(CharacterClassRefs.ClericClass.ToString(), 1)
               .AddToLevelEntry(2, featreal)
               .AddToLevelEntry(4, featreal)
               .AddToLevelEntry(6, featreal)
@@ -230,7 +238,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetObligatory(false)
               .AddToAllFeatures(MartialEsotericaFeat())
               .AddToAllFeatures(KineticEsotericaFeat())
-              .AddToAllFeatures(spellupgradeGuid)
+              .AddToAllFeatures(DivinePsychicFeat())
               .Configure();
         }
 
@@ -283,26 +291,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddToAllFeatures(PhantomArmoryFeat())
               .AddToAllFeatures(ShadowProjectionFeat())
               .AddToAllFeatures(StepthroughRealityFeat())
-              .Configure();
-        }
-
-        private const string BattleMind = "EsotericKnight.BattleMind";
-        public static readonly string BattleMindGuid = "{590B27BE-7F6A-4F03-9440-16AA4FDB7913}";
-
-        internal const string EsotericKnightBattleMindDisplayName = "EsotericKnightBattleMind.Name";
-        private const string EsotericKnightBattleMindDescription = "EsotericKnightBattleMind.Description";
-        public static BlueprintFeature SABattleMind()
-        {
-            var icon = FeatureRefs.IntimidatingProwess.Reference.Get().Icon;
-            return FeatureConfigurator.New(BattleMind, BattleMindGuid)
-              .SetDisplayName(EsotericKnightBattleMindDisplayName)
-              .SetDescription(EsotericKnightBattleMindDescription)
-              .SetIcon(icon)
-              .SetRanks(10)
-              .AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.BurnPerRoundResource.ToString(), ContextValues.Rank())
-              .AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.BurnResource.ToString(), ContextValues.Rank())
-              .AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.DarkElementalistBurnResource.ToString(), ContextValues.Rank())
-              .AddContextRankConfig(ContextRankConfigs.FeatureRank(BattleMindGuid))
               .Configure();
         }
 

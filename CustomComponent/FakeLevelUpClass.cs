@@ -34,6 +34,13 @@ namespace PrestigePlus.CustomComponent
             Data.added += 1;
             LevelUpHelper.UpdateProgression(controller.State, Owner, clazz.Progression);
             ApplySpell(controller.State, Owner, data.Level);
+            foreach (var progress in Owner.Progression.Features)
+            {
+                if (progress.Blueprint is BlueprintProgression pro)
+                {
+                    LevelUpHelper.UpdateProgression(controller.State, Owner, pro);
+                }
+            }
         }
 
         public override void OnDeactivate()
