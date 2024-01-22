@@ -89,7 +89,7 @@
 - Requires worshipping Ragathiel (Expanded Content) or Lawful Good.
 ### [Esoteric Knight Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/esoteric-knight/)
 #### Homebrew Options:  
-- Dvine Psychic: continue divine spellcasting progression every 2 levels!
+- Divine Psychic: continue divine spellcasting progression every 2 levels!
 - Kinetic Esoterica: more versatile kineticist progression!
 ### [Furious Guardian Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/furious-guardian/)
 - Chosen Ally is for barbarian standard rage only =-=
