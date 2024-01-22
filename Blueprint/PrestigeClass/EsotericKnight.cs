@@ -165,7 +165,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                     .SetDescription(KineticEsotericaDescription)
                     .SetIcon(icon)
                     .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.KineticistClass.Reference; })
-                    .SetRanks(20)
                     .SetHideInUI(true)
                     .Configure();
 
@@ -201,7 +200,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                     .SetDescription(DivinePsychicDescription)
                     .SetIcon(icon)
                     .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ClericClass.Reference; })
-                    .SetRanks(20)
                     .SetHideInUI(true)
                     .Configure();
 

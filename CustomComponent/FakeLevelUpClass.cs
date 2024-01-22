@@ -17,11 +17,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static Kingmaker.UI.CanvasScalerWorkaround;
+using Kingmaker.EntitySystem.Entities;
+using Kingmaker.View;
 
 namespace PrestigePlus.CustomComponent
 {
     [TypeId("{EECCF91C-0225-4F5A-96B7-1B33E9CB4CD0}")]
-    internal class FakeLevelUpClass : UnitFactComponentDelegate<FakeLevelUpClass.ComponentData>, IUnitSubscriber, ISubscriber
+    internal class FakeLevelUpClass : UnitFactComponentDelegate<FakeLevelUpClass.ComponentData>, IUnitSubscriber, ISubscriber, IUnitLevelUpHandler
     {
         //private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         public override void OnActivate()
@@ -34,7 +36,12 @@ namespace PrestigePlus.CustomComponent
             Data.added += 1;
             LevelUpHelper.UpdateProgression(controller.State, Owner, clazz.Progression);
             ApplySpell(controller.State, Owner, data.Level);
+            List<Feature> features = new();
             foreach (var progress in Owner.Progression.Features)
+            {
+                features.Add(progress);
+            }
+            foreach (var progress in features)
             {
                 if (progress.Blueprint is BlueprintProgression pro)
                 {
@@ -130,6 +137,24 @@ namespace PrestigePlus.CustomComponent
                 {
                     ApplySpellbook.TryApplyCustomSpells(spellbook, customSpells, state, unit);
                 }
+            }
+        }
+
+        void IUnitLevelUpHandler.HandleUnitBeforeLevelUp(UnitEntityData unit)
+        {
+            
+        }
+
+        void IUnitLevelUpHandler.HandleUnitAfterLevelUp(UnitEntityData unit, LevelUpController controller)
+        {
+            if (unit == base.Owner)
+            {
+                var data = Owner.Progression.GetClassData(clazz);
+                if (data != null) 
+                {
+                    data.Level += Data.added;
+                }
+                Owner.RemoveFact(Fact);
             }
         }
     }
