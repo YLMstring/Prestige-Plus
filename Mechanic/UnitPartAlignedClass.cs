@@ -20,7 +20,7 @@ using PrestigePlus.Blueprint.PrestigeClass;
 
 namespace PrestigePlus.Mechanic
 {
-    internal class UnitPartAlignedClass : OldStyleUnitPart, ILevelUpSelectClassHandler
+    internal class UnitPartAlignedClass : OldStyleUnitPart, ILevelUpSelectClassHandler, IUnitLevelUpHandler
     {
         public void Add(BlueprintCharacterClass clazz)
         {
@@ -30,12 +30,6 @@ namespace PrestigePlus.Mechanic
                 Classes.Add(clazz);
             }
         }
-
-        public void Clear()
-        {
-            Classes.Clear();
-        }
-
         public BlueprintCharacterClass GetMax(LevelUpState state)
         {
             if (Evangelist != null && state.SelectedClass == BlueprintTool.GetRef<BlueprintCharacterClassReference>(ExaltedEvangelist.ArchetypeGuid).Get())
@@ -57,7 +51,17 @@ namespace PrestigePlus.Mechanic
             Add(state.SelectedClass);
         }
 
-        private readonly List<BlueprintCharacterClass> Classes = new();
+        void IUnitLevelUpHandler.HandleUnitBeforeLevelUp(UnitEntityData unit)
+        {
+            
+        }
+
+        void IUnitLevelUpHandler.HandleUnitAfterLevelUp(UnitEntityData unit, LevelUpController controller)
+        {
+            Classes.Clear();
+        }
+
+        private List<BlueprintCharacterClass> Classes = new();
         public BlueprintCharacterClass Evangelist;
         public int SkillPointPenalty = 0;
     }

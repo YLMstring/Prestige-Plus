@@ -7036,13 +7036,13 @@
   {
     "Key": "ExaltedEvangelistSanctifiedRogue.Name",
     "ProcessTemplates": false,
-    "enGB": "Sanctified Rogue",
-    "zhCN": "神殿游荡者"
+    "enGB": "Aligned Class",
+    "zhCN": "关联职业"
   },
   {
     "Key": "ExaltedEvangelistSanctifiedRogue.Description",
-    "enGB": "The sanctified rogue serves a higher purpose, acting as a representative of a church or cult, or following the tenets of a specific faith or deity. While most sanctified rogues share the beliefs or ideals of the religions they represent, not all of them are necessarily pious. A handful of disreputable holy thieves serve purely as mercenaries. At the other end of spectrum, however, more sanctified rogues adhere to the tenets of their faith with fanatical devotion. Regardless, all seem blessed with the ability to call upon divine favor to aid them in times of need.",
-    "zhCN": "神殿游荡者服侍着崇高的势力，为圣殿或邪教服务，尊崇着一个原则或是神祇的信仰，信仰或理想在大部分的神殿游荡者心中都占有一席之地，当然，他们并不是全部都这么虔诚。极少数的神殿游荡者只是纯粹的佣兵，其他人则为狂热的为宗教信仰和理想奉献，无论如何，这些人身后似乎都有神圣的力量支持。"
+    "enGB": "Evangelists come from many different backgrounds, and they show an unusual range of diversity. At 2nd level, the evangelist must choose a class she belonged to before adding the prestige class to be her aligned class. She gains all the class features for this class, essentially adding every evangelist level beyond 1st to her aligned class to determine what class features she gains. She still retains the Hit Dice, base attack bonus, saving throw bonuses, and skill ranks of the prestige class, but gains all other class features of her aligned class as well as those of the evangelist prestige class.",
+    "zhCN": "传道者的背景多种多样，她们所表现出的多样性极为丰富。2级起，传道者必须从获得进阶职业之前所具有的职业中选择一个，将这个职业作为她的关联职业。她会获得这个职业的所有职业能力，传道者将1级之后的每个传道者等级加到关联职业的等级上，来判断她能够获得的职业能力。她仍旧会获得进阶职业的生命骰、基本攻击加值、豁免加值以及技能等级，但是她还会获得关联职业的所有其他职业能力，就如同这些能力是传道者进阶职业的能力一般。"
   },
   {
     "Key": "ExaltedEvangelistSanctifiedKineticist.Name",
@@ -8495,16 +8495,6 @@
     "Key": "DeificObedienceFalayna2.Description",
     "enGB": "You no longer have a limited amount of strong arm rounds per day.",
     "zhCN": "你的强臂能力不再有每日轮数限制。"
-  },
-  {
-    "Key": "AlignedClass.Name",
-    "ProcessTemplates": false,
-    "enGB": "Choose Aligned Class",
-    "zhCN": "选择关联职业"
-  },
-  {
-    "Key": "AlignedClass.Description",
-    "enGB": "The most clicked class in your level up process",
-    "zhCN": "你的强臂能力不再有每日轮数限制。"
   }
+
 ]

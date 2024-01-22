@@ -163,7 +163,6 @@ namespace PrestigePlus.CustomComponent
                 {
                     data.Level += Data.added;
                     var part = Owner.Ensure<UnitPartAlignedClass>();
-                    part.Clear();
                     part.SkillPointPenalty += realclazz.SkillPoints;
                     if (controller.State.SelectedClass == BlueprintTool.GetRef<BlueprintCharacterClassReference>(ExaltedEvangelist.ArchetypeGuid).Get())
                     {
