@@ -6975,8 +6975,8 @@
   },
   {
     "Key": "ExaltedEvangelistSpellBook.Description",
-    "enGB": "The exalted at the pinnacle of her abilities can create effects that are nothing short of miraculous. At 10th level, once per day the exalted duplicate any cleric spell of 6th level or lower, or any other spell of 5th level or lower, as if it were a 7th-level spell. When an exalted uses this ability to duplicate a spell with a material component that costs more than 100 gp, she must provide that component.",
-    "zhCN": "大尊者的力量达到了巅峰，她能够创造出与神迹无异的效果。10级起，每日1次，大尊者能够复制任何6级或更低等级的牧师法术，或复制任何5级或更低等级的其他法术。复制的法术会按照7级法术进行计算。若大尊者使用该能力复制法术时，法术需要的材料成分的价值超过了100金币的话，她也必须支付该成分。"
+    "enGB": "The exalted at the pinnacle of her abilities can create effects that are nothing short of miraculous. At 8th level, once per day the exalted duplicate any cleric spell of 6th level or lower, or any other spell of 5th level or lower, as if it were a 7th-level spell. When an exalted uses this ability to duplicate a spell with a material component that costs more than 100 gp, she must provide that component.",
+    "zhCN": "大尊者的力量达到了巅峰，她能够创造出与神迹无异的效果。8级起，每日1次，大尊者能够复制任何6级或更低等级的牧师法术，或复制任何5级或更低等级的其他法术。复制的法术会按照7级法术进行计算。若大尊者使用该能力复制法术时，法术需要的材料成分的价值超过了100金币的话，她也必须支付该成分。"
   },
   {
     "Key": "ExaltedExaltedDomainPlus.Name",

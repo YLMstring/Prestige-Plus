@@ -361,7 +361,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddToLevelEntry(2, ChooseGoodEvilFeat())
               .AddToLevelEntry(4, ReligiousSpeakerFeat())
               .AddToLevelEntry(5, ExaltedDomainPlusFeat())
-              .AddToLevelEntry(10, CreateSpellbook())
+              .AddToLevelEntry(8, CreateSpellbook())
               .Configure();
         }
 
