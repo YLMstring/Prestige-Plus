@@ -8499,12 +8499,12 @@
   {
     "Key": "AlignedClass.Name",
     "ProcessTemplates": false,
-    "enGB": "Aligned Class",
-    "zhCN": "关联职业"
+    "enGB": "Choose Aligned Class",
+    "zhCN": "选择关联职业"
   },
   {
     "Key": "AlignedClass.Description",
-    "enGB": "You no longer have a limited amount of strong arm rounds per day.",
+    "enGB": "The most clicked class in your level up process",
     "zhCN": "你的强臂能力不再有每日轮数限制。"
   }
 ]

@@ -310,26 +310,36 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         internal const string SanctifiedRogueDisplayName = "ExaltedEvangelistSanctifiedRogue.Name";
         private const string SanctifiedRogueDescription = "ExaltedEvangelistSanctifiedRogue.Description";
+
+        private const string SanctifiedRoguePro = "ExaltedEvangelist.SanctifiedRoguePro";
+        private static readonly string SanctifiedRogueProGuid = "{0C759109-184A-4034-AAB3-602E1A648975}";
         public static BlueprintProgression SanctifiedRogueFeat()
         {
             var icon = FeatureSelectionRefs.SlayerTalentSelection2.Reference.Get().Icon;
+
+            var featreal = FeatureConfigurator.New(SanctifiedRoguePro, SanctifiedRogueProGuid)
+                    .SetDisplayName(SanctifiedRogueDisplayName)
+                    .SetDescription(SanctifiedRogueDescription)
+                    .SetIcon(icon)
+                    .AddComponent<FakeLevelUpClass>()
+                    .SetHideInUI(true)
+                    .Configure();
+
             return ProgressionConfigurator.New(SanctifiedRogue, SanctifiedRogueGuid)
               .SetDisplayName(SanctifiedRogueDisplayName)
               .SetDescription(SanctifiedRogueDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .SetClasses(ArchetypeGuid)
-              .AddPrerequisiteFeature(FeatureRefs.SneakAttack.ToString())
-              .AddClassLevelsForPrerequisites(actualClass: ArchetypeGuid, fakeClass: CharacterClassRefs.SlayerClass.ToString(), modifier: 1, summand: -1)
-              .AddToLevelEntry(2, FeatureRefs.SneakAttack.ToString())
-              .AddToLevelEntry(3, FeatureSelectionRefs.RogueTalentSelection.ToString())
-              .AddToLevelEntry(4, FeatureRefs.SneakAttack.ToString(), ChooseGoodEvilGuid)
-              .AddToLevelEntry(5, FeatureSelectionRefs.RogueTalentSelection.ToString())
-              .AddToLevelEntry(6, FeatureRefs.SneakAttack.ToString())
-              .AddToLevelEntry(7, FeatureSelectionRefs.RogueTalentSelection.ToString(), FeatureRefs.AdvanceTalents.ToString())
-              .AddToLevelEntry(8, FeatureRefs.SneakAttack.ToString())
-              .AddToLevelEntry(9, FeatureSelectionRefs.RogueTalentSelection.ToString())
-              .AddToLevelEntry(10, FeatureRefs.SneakAttack.ToString(), HalflingOpportunist.OpportunityGuid)
+              .AddToLevelEntry(2, featreal)
+              .AddToLevelEntry(3, featreal)
+              .AddToLevelEntry(4, featreal)
+              .AddToLevelEntry(5, featreal)
+              .AddToLevelEntry(6, featreal)
+              .AddToLevelEntry(7, featreal)
+              .AddToLevelEntry(8, featreal)
+              .AddToLevelEntry(9, featreal)
+              .AddToLevelEntry(10, featreal)
               .Configure();
         }
 
