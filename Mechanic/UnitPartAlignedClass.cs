@@ -17,43 +17,23 @@ using Kingmaker.UnitLogic.Class.LevelUp;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
 using PrestigePlus.Blueprint.PrestigeClass;
+using Kingmaker.UnitLogic.Parts;
 
 namespace PrestigePlus.Mechanic
 {
-    internal class UnitPartAlignedClass : OldStyleUnitPart, ILevelUpSelectClassHandler, IUnitLevelUpHandler
+    internal class UnitPartAlignedClass : OldStyleUnitPart
     {
-        public void Add(BlueprintCharacterClass clazz)
+        public void Init(int num)
         {
-            if (clazz == null) return;
-            Classes.Add(clazz);
-        }
-        public BlueprintCharacterClass GetMax(LevelUpState state)
-        {
-            if (Evangelist != null && state.SelectedClass == BlueprintTool.GetRef<BlueprintCharacterClassReference>(ExaltedEvangelist.ArchetypeGuid).Get())
+            if (isInited != true)
             {
-                return Evangelist;
+                SkillPointPenalty = num;
+                isInited = true;
             }
-            return Classes.ElementAt(Classes.Count - 3);
         }
 
-        void ILevelUpSelectClassHandler.HandleSelectClass(UnitDescriptor unit, LevelUpState state)
-        {
-            Add(state.SelectedClass);
-            LogWrapper.Get("PrestigePlus").Info("add to list " + state.SelectedClass.NameSafe() + Classes.Count().ToString());
-        }
-
-        void IUnitLevelUpHandler.HandleUnitBeforeLevelUp(UnitEntityData unit)
-        {
-            
-        }
-
-        void IUnitLevelUpHandler.HandleUnitAfterLevelUp(UnitEntityData unit, LevelUpController controller)
-        {
-            
-        }
-
-        private List<BlueprintCharacterClass> Classes = new();
         public BlueprintCharacterClass Evangelist;
-        public int SkillPointPenalty = 0;
+        public int SkillPointPenalty;
+        public bool isInited;
     }
 }

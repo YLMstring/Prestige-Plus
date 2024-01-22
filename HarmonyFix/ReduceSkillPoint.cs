@@ -20,8 +20,13 @@ namespace PrestigePlus.HarmonyFix
     {
         static void Postfix(ref int __result, ref UnitDescriptor unit)
         {
-            __result += unit.Ensure<UnitPartAlignedClass>().SkillPointPenalty;
-            LogWrapper.Get("PrestigePlus").Info("skill " + unit.Get<UnitPartAlignedClass>().SkillPointPenalty.ToString());
+            LogWrapper.Get("PrestigePlus").Info("start");
+            if (unit.Get<UnitPartAlignedClass>())
+            {
+                LogWrapper.Get("PrestigePlus").Info("start1");
+                __result += unit.Get<UnitPartAlignedClass>().SkillPointPenalty;
+                LogWrapper.Get("PrestigePlus").Info("skill " + unit.Get<UnitPartAlignedClass>().SkillPointPenalty.ToString());
+            }
         }
     }
 }

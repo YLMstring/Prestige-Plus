@@ -21,27 +21,27 @@ using Kingmaker.EntitySystem.Entities;
 using Kingmaker.View;
 using PrestigePlus.Mechanic;
 using PrestigePlus.Blueprint.PrestigeClass;
+using Kingmaker.UnitLogic.Class.Kineticist;
 
 namespace PrestigePlus.CustomComponent
 {
     [TypeId("{EECCF91C-0225-4F5A-96B7-1B33E9CB4CD0}")]
-    internal class FakeLevelUpClass : UnitFactComponentDelegate<FakeLevelUpClass.ComponentData>, IUnitSubscriber, ISubscriber, IUnitLevelUpHandler
+    internal class FakeLevelUpClass : UnitFactComponentDelegate, IUnitSubscriber, ISubscriber
     {
         private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
-        public override void OnActivate()
+        public override void OnTurnOn()
         {
             LevelUpController controller = Game.Instance?.LevelUpController;
             if (controller == null) { return; }
-            var realclazz = clazz ?? Owner.Ensure<UnitPartAlignedClass>().GetMax(controller.State);
+            Owner.Ensure<UnitPartAlignedClass>().Init(0);
+            var realclazz = clazz; //?? Owner.Ensure<UnitPartAlignedClass>().GetMax(controller.State);
             Logger.Info("class is " + realclazz.NameSafe());
             if (realclazz == controller.State.SelectedClass) { return; }
             var data = Owner.Progression.GetClassData(realclazz);
             if (data == null || data.Level >= 20) { return; }
             data.Level += 1;
-            Owner.Ensure<UnitPartAlignedClass>().SkillPointPenalty += data.CalcSkillPoints();
+            Owner.Get<UnitPartAlignedClass>().SkillPointPenalty = data.CalcSkillPoints() + Owner.Get<UnitPartAlignedClass>().SkillPointPenalty;
             Logger.Info("add " + data.CalcSkillPoints().ToString());
-            Data.added += 1;
-            Data.addedclazz = realclazz;
             LevelUpHelper.UpdateProgression(controller.State, Owner, realclazz.Progression);
             ApplySpell(controller.State, Owner, data.Level, realclazz);
             List<Feature> features = new();
@@ -56,24 +56,12 @@ namespace PrestigePlus.CustomComponent
                     LevelUpHelper.UpdateProgression(controller.State, Owner, pro);
                 }
             }
+            //Owner.RemoveFact(Fact);
         }
 
         public override void OnDeactivate()
         {
-            Logger.Info("OnDeactivate");
-            var realclazz = Data.addedclazz;
-            var data = Owner.Progression.GetClassData(realclazz);
-            if (data == null) { return; }
-            Logger.Info("OnDeactivate 2");
-            data.Level -= Data.added;
-            Owner.Ensure<UnitPartAlignedClass>().SkillPointPenalty -= data.CalcSkillPoints();
-            Logger.Info("remove " + data.CalcSkillPoints().ToString());
-            Data.added = 0;
-        }
-        public class ComponentData
-        {
-            public int added = 0;
-            public BlueprintCharacterClass addedclazz;
+            
         }
 
         public BlueprintCharacterClass clazz;
@@ -153,28 +141,9 @@ namespace PrestigePlus.CustomComponent
                 }
             }
         }
-
-        void IUnitLevelUpHandler.HandleUnitBeforeLevelUp(UnitEntityData unit)
+        UnitEntityData IUnitSubscriber.GetSubscribingUnit()
         {
-            if (unit == base.Owner)
-            {
-                var realclazz = Data.addedclazz;
-                var data = Owner.Progression.GetClassData(realclazz);
-                if (data != null)
-                {
-                    data.Level += Data.added;
-                    var part = Owner.Ensure<UnitPartAlignedClass>();
-                    part.SkillPointPenalty += data.CalcSkillPoints();
-                    Logger.Info("finally add " + data.CalcSkillPoints().ToString());
-                    //if (controller.State.SelectedClass == BlueprintTool.GetRef<BlueprintCharacterClassReference>(ExaltedEvangelist.ArchetypeGuid).Get())
-                }
-                Owner.RemoveFact(Fact);
-            }
-        }
-
-        void IUnitLevelUpHandler.HandleUnitAfterLevelUp(UnitEntityData unit, LevelUpController controller)
-        {
-            
+            throw new NotImplementedException();
         }
     }
 }
