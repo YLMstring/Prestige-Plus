@@ -63,7 +63,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             BlueprintProgression progression =
             ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
             .SetClasses(ArchetypeGuid)
-            .AddToLevelEntry(1, BonusFeatFeat(), ChoosePathFeat(), FeatureSelectionRefs.StudentOfWarAdditionalSKillSelection.ToString())
+            .AddToLevelEntry(1, ChoosePathFeat(), FeatureSelectionRefs.StudentOfWarAdditionalSKillSelection.ToString())
             .AddToLevelEntry(2, ProtectiveGraceFeat())
             .AddToLevelEntry(3, Sentinel.DivineBoon1Guid)
             .AddToLevelEntry(4)
@@ -357,7 +357,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .SetClasses(ArchetypeGuid)
-              .AddToLevelEntry(1, "{05DC9561-0542-41BD-9E9F-404F59AB68C5}")
+              .AddToLevelEntry(1, BonusFeatFeat(), "{05DC9561-0542-41BD-9E9F-404F59AB68C5}")
               .AddToLevelEntry(2, ChooseGoodEvilFeat())
               .AddToLevelEntry(4, ReligiousSpeakerFeat())
               .AddToLevelEntry(5, ExaltedDomainPlusFeat())
