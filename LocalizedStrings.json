@@ -4476,8 +4476,8 @@
   },
   {
     "Key": "EsotericKnightSelection.Description",
-    "enGB": "Choose 2 of the following progressions: Martial Esoterica, Kinetic Esoterica, Spell Casting Progression (level 2, 4, 6, 8, 10)",
-    "zhCN": "选择两项成长：武学秘传，操念秘传，施法能力成长（2，4，6，8，10级）"
+    "enGB": "Choose 2 of the following progressions: Martial Esoterica, Kinetic Esoterica, Divine Psychic",
+    "zhCN": "选择以下两项成长：武学秘传，操念秘传，神圣念力"
   },
   {
     "Key": "EsotericKnightPsychicRage.Name",
@@ -6915,7 +6915,7 @@
   {
     "Key": "ExaltedEvangelist.Name",
     "ProcessTemplates": false,
-    "enGB": "evangelist",
+    "enGB": "Evangelist",
     "zhCN": "传道者"
   },
   {
