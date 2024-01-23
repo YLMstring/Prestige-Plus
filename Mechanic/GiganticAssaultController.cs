@@ -32,6 +32,7 @@ using Kingmaker.UnitLogic.Parts;
 using UnityEngine;
 using TurnBased.Controllers;
 using PrestigePlus.Blueprint.CombatStyle;
+using PrestigePlus.CustomComponent;
 
 namespace PrestigePlus.GrappleMechanic
 {
@@ -40,6 +41,7 @@ namespace PrestigePlus.GrappleMechanic
         private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         public override void TickOnUnit(UnitEntityData unit)
         {
+            //CalcLevel(unit);
             var turn = Game.Instance.TurnBasedCombatController?.CurrentTurn;
             if (turn?.Rider == unit && !unit.View.IsMoving() && unit.HasFact(Jab) && unit.HasFact(Dancer) && turn.HasFiveFootStep(unit) == false && turn.m_RiderMovementStats.MetersMovedByFiveFootStep > 0)
             {
@@ -89,9 +91,29 @@ namespace PrestigePlus.GrappleMechanic
 
         private static BlueprintBuffReference Buff = BlueprintTool.GetRef<BlueprintBuffReference>(RhinoCharge.RhinoChargebuffGuid);
         private static BlueprintAbilityReference Charge = BlueprintTool.GetRef<BlueprintAbilityReference>(AerialAssault.ReleaseAbilityGuid);
-        private static BlueprintFeatureReference Base = BlueprintTool.GetRef<BlueprintFeatureReference>("{D47DC15C-3A96-4358-A652-DB9E632009A7}");
 
         private static BlueprintBuffReference Jab = BlueprintTool.GetRef<BlueprintBuffReference>(JabbingStyle.StylebuffGuid);
         private static BlueprintBuffReference Dancer = BlueprintTool.GetRef<BlueprintBuffReference>(JabbingStyle.Stylebuff3Guid);
+
+        private static void CalcLevel(UnitEntityData target)
+        {
+            int cl = 0;
+            foreach (ClassData classData in target.Progression.Classes)
+            {
+                if (!classData.CharacterClass.IsMythic)
+                {
+                    cl += classData.Level;
+                }
+            }
+            foreach (var feat in target.Progression.Features)
+            {
+                var comp = feat.GetComponent<FakeLevelUpClass>();
+                if (comp == null) continue;
+                var realclazz = BlueprintTool.GetRef<BlueprintCharacterClassReference>(comp.clazz)?.Get();
+                if (realclazz == null) continue;
+                cl -= 1;
+            }
+            target.Progression.CharacterLevel = cl;
+        }
     }
 }
