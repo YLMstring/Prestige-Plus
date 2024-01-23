@@ -8495,6 +8495,636 @@
     "Key": "DeificObedienceFalayna2.Description",
     "enGB": "You no longer have a limited amount of strong arm rounds per day.",
     "zhCN": "你的强臂能力不再有每日轮数限制。"
+  },
+  {
+    "Key": "EvangelistAlchemistClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "AlchemistClass"
+  },
+  {
+    "Key": "EvangelistAlchemistClass0Align.Description",
+    "enGB": "AlchemistClass"
+  },
+  {
+    "Key": "EvangelistArcaneTricksterClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "ArcaneTricksterClass"
+  },
+  {
+    "Key": "EvangelistArcaneTricksterClass0Align.Description",
+    "enGB": "ArcaneTricksterClass"
+  },
+  {
+    "Key": "EvangelistArcanistClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "ArcanistClass"
+  },
+  {
+    "Key": "EvangelistArcanistClass0Align.Description",
+    "enGB": "ArcanistClass"
+  },
+  {
+    "Key": "EvangelistAssassinClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "AssassinClass"
+  },
+  {
+    "Key": "EvangelistAssassinClass0Align.Description",
+    "enGB": "AssassinClass"
+  },
+  {
+    "Key": "EvangelistBarbarianClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "BarbarianClass"
+  },
+  {
+    "Key": "EvangelistBarbarianClass0Align.Description",
+    "enGB": "BarbarianClass"
+  },
+  {
+    "Key": "EvangelistBardClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "BardClass"
+  },
+  {
+    "Key": "EvangelistBardClass0Align.Description",
+    "enGB": "BardClass"
+  },
+  {
+    "Key": "EvangelistBloodragerClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "BloodragerClass"
+  },
+  {
+    "Key": "EvangelistBloodragerClass0Align.Description",
+    "enGB": "BloodragerClass"
+  },
+  {
+    "Key": "EvangelistCavalierClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "CavalierClass"
+  },
+  {
+    "Key": "EvangelistCavalierClass0Align.Description",
+    "enGB": "CavalierClass"
+  },
+  {
+    "Key": "EvangelistClericClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "ClericClass"
+  },
+  {
+    "Key": "EvangelistClericClass0Align.Description",
+    "enGB": "ClericClass"
+  },
+  {
+    "Key": "EvangelistDragonDiscipleClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "DragonDiscipleClass"
+  },
+  {
+    "Key": "EvangelistDragonDiscipleClass0Align.Description",
+    "enGB": "DragonDiscipleClass"
+  },
+  {
+    "Key": "EvangelistDruidClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "DruidClass"
+  },
+  {
+    "Key": "EvangelistDruidClass0Align.Description",
+    "enGB": "DruidClass"
+  },
+  {
+    "Key": "EvangelistDuelistClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "DuelistClass"
+  },
+  {
+    "Key": "EvangelistDuelistClass0Align.Description",
+    "enGB": "DuelistClass"
+  },
+  {
+    "Key": "EvangelistEldritchKnightClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "EldritchKnightClass"
+  },
+  {
+    "Key": "EvangelistEldritchKnightClass0Align.Description",
+    "enGB": "EldritchKnightClass"
+  },
+  {
+    "Key": "EvangelistEldritchScionClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "EldritchScionClass"
+  },
+  {
+    "Key": "EvangelistEldritchScionClass0Align.Description",
+    "enGB": "EldritchScionClass"
+  },
+  {
+    "Key": "EvangelistFighterClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "FighterClass"
+  },
+  {
+    "Key": "EvangelistFighterClass0Align.Description",
+    "enGB": "FighterClass"
+  },
+  {
+    "Key": "EvangelistHellknightClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "HellknightClass"
+  },
+  {
+    "Key": "EvangelistHellknightClass0Align.Description",
+    "enGB": "HellknightClass"
+  },
+  {
+    "Key": "EvangelistHellknightSigniferClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "HellknightSigniferClass"
+  },
+  {
+    "Key": "EvangelistHellknightSigniferClass0Align.Description",
+    "enGB": "HellknightSigniferClass"
+  },
+  {
+    "Key": "EvangelistHunterClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "HunterClass"
+  },
+  {
+    "Key": "EvangelistHunterClass0Align.Description",
+    "enGB": "HunterClass"
+  },
+  {
+    "Key": "EvangelistInquisitorClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "InquisitorClass"
+  },
+  {
+    "Key": "EvangelistInquisitorClass0Align.Description",
+    "enGB": "InquisitorClass"
+  },
+  {
+    "Key": "EvangelistKineticistClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "KineticistClass"
+  },
+  {
+    "Key": "EvangelistKineticistClass0Align.Description",
+    "enGB": "KineticistClass"
+  },
+  {
+    "Key": "EvangelistLoremasterClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "LoremasterClass"
+  },
+  {
+    "Key": "EvangelistLoremasterClass0Align.Description",
+    "enGB": "LoremasterClass"
+  },
+  {
+    "Key": "EvangelistMagusClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "MagusClass"
+  },
+  {
+    "Key": "EvangelistMagusClass0Align.Description",
+    "enGB": "MagusClass"
+  },
+  {
+    "Key": "EvangelistMonkClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "MonkClass"
+  },
+  {
+    "Key": "EvangelistMonkClass0Align.Description",
+    "enGB": "MonkClass"
+  },
+  {
+    "Key": "EvangelistMysticTheurgeClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "MysticTheurgeClass"
+  },
+  {
+    "Key": "EvangelistMysticTheurgeClass0Align.Description",
+    "enGB": "MysticTheurgeClass"
+  },
+  {
+    "Key": "EvangelistOracleClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "OracleClass"
+  },
+  {
+    "Key": "EvangelistOracleClass0Align.Description",
+    "enGB": "OracleClass"
+  },
+  {
+    "Key": "EvangelistPaladinClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "PaladinClass"
+  },
+  {
+    "Key": "EvangelistPaladinClass0Align.Description",
+    "enGB": "PaladinClass"
+  },
+  {
+    "Key": "EvangelistRangerClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "RangerClass"
+  },
+  {
+    "Key": "EvangelistRangerClass0Align.Description",
+    "enGB": "RangerClass"
+  },
+  {
+    "Key": "EvangelistRogueClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "RogueClass"
+  },
+  {
+    "Key": "EvangelistRogueClass0Align.Description",
+    "enGB": "RogueClass"
+  },
+  {
+    "Key": "EvangelistShamanClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "ShamanClass"
+  },
+  {
+    "Key": "EvangelistShamanClass0Align.Description",
+    "enGB": "ShamanClass"
+  },
+  {
+    "Key": "EvangelistShifterClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "ShifterClass"
+  },
+  {
+    "Key": "EvangelistShifterClass0Align.Description",
+    "enGB": "ShifterClass"
+  },
+  {
+    "Key": "EvangelistSkaldClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "SkaldClass"
+  },
+  {
+    "Key": "EvangelistSkaldClass0Align.Description",
+    "enGB": "SkaldClass"
+  },
+  {
+    "Key": "EvangelistSlayerClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "SlayerClass"
+  },
+  {
+    "Key": "EvangelistSlayerClass0Align.Description",
+    "enGB": "SlayerClass"
+  },
+  {
+    "Key": "EvangelistSorcererClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "SorcererClass"
+  },
+  {
+    "Key": "EvangelistSorcererClass0Align.Description",
+    "enGB": "SorcererClass"
+  },
+  {
+    "Key": "EvangelistStalwartDefenderClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "StalwartDefenderClass"
+  },
+  {
+    "Key": "EvangelistStalwartDefenderClass0Align.Description",
+    "enGB": "StalwartDefenderClass"
+  },
+  {
+    "Key": "EvangelistStudentOfWarClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "StudentOfWarClass"
+  },
+  {
+    "Key": "EvangelistStudentOfWarClass0Align.Description",
+    "enGB": "StudentOfWarClass"
+  },
+  {
+    "Key": "EvangelistSwordlordClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "SwordlordClass"
+  },
+  {
+    "Key": "EvangelistSwordlordClass0Align.Description",
+    "enGB": "SwordlordClass"
+  },
+  {
+    "Key": "EvangelistWarpriestClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "WarpriestClass"
+  },
+  {
+    "Key": "EvangelistWarpriestClass0Align.Description",
+    "enGB": "WarpriestClass"
+  },
+  {
+    "Key": "EvangelistWinterWitchClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "WinterWitchClass"
+  },
+  {
+    "Key": "EvangelistWinterWitchClass0Align.Description",
+    "enGB": "WinterWitchClass"
+  },
+  {
+    "Key": "EvangelistWitchClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "WitchClass"
+  },
+  {
+    "Key": "EvangelistWitchClass0Align.Description",
+    "enGB": "WitchClass"
+  },
+  {
+    "Key": "EvangelistWizardClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "WizardClass"
+  },
+  {
+    "Key": "EvangelistWizardClass0Align.Description",
+    "enGB": "WizardClass"
+  },
+  {
+    "Key": "EvangelistGunslingerClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "GunslingerClass"
+  },
+  {
+    "Key": "EvangelistGunslingerClass0Align.Description",
+    "enGB": "GunslingerClass"
+  },
+  {
+    "Key": "EvangelistAgentoftheGraveClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "AgentoftheGraveClass"
+  },
+  {
+    "Key": "EvangelistAgentoftheGraveClass0Align.Description",
+    "enGB": "AgentoftheGraveClass"
+  },
+  {
+    "Key": "EvangelistAnchoriteofDawnClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "AnchoriteofDawnClass"
+  },
+  {
+    "Key": "EvangelistAnchoriteofDawnClass0Align.Description",
+    "enGB": "AnchoriteofDawnClass"
+  },
+  {
+    "Key": "EvangelistArcaneAcherClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "ArcaneAcherClass"
+  },
+  {
+    "Key": "EvangelistArcaneAcherClass0Align.Description",
+    "enGB": "ArcaneAcherClass"
+  },
+  {
+    "Key": "EvangelistAsavirClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "AsavirClass"
+  },
+  {
+    "Key": "EvangelistAsavirClass0Align.Description",
+    "enGB": "AsavirClass"
+  },
+  {
+    "Key": "EvangelistChevalierClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "ChevalierClass"
+  },
+  {
+    "Key": "EvangelistChevalierClass0Align.Description",
+    "enGB": "ChevalierClass"
+  },
+  {
+    "Key": "EvangelistCrimsonTemplarClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "CrimsonTemplarClass"
+  },
+  {
+    "Key": "EvangelistCrimsonTemplarClass0Align.Description",
+    "enGB": "CrimsonTemplarClass"
+  },
+  {
+    "Key": "EvangelistDeadeyeDevoteeClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "DeadeyeDevoteeClass"
+  },
+  {
+    "Key": "EvangelistDeadeyeDevoteeClass0Align.Description",
+    "enGB": "DeadeyeDevoteeClass"
+  },
+  {
+    "Key": "EvangelistDragonFuryClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "DragonFuryClass"
+  },
+  {
+    "Key": "EvangelistDragonFuryClass0Align.Description",
+    "enGB": "DragonFuryClass"
+  },
+  {
+    "Key": "EvangelistEsotericKnightClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "EsotericKnightClass"
+  },
+  {
+    "Key": "EvangelistEsotericKnightClass0Align.Description",
+    "enGB": "EsotericKnightClass"
+  },
+  {
+    "Key": "EvangelistExaltedEvangelistClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "ExaltedEvangelistClass"
+  },
+  {
+    "Key": "EvangelistExaltedEvangelistClass0Align.Description",
+    "enGB": "ExaltedEvangelistClass"
+  },
+  {
+    "Key": "EvangelistFuriousGuardianClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "FuriousGuardianClass"
+  },
+  {
+    "Key": "EvangelistFuriousGuardianClass0Align.Description",
+    "enGB": "FuriousGuardianClass"
+  },
+  {
+    "Key": "EvangelistHalflingOpportunistClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "HalflingOpportunistClass"
+  },
+  {
+    "Key": "EvangelistHalflingOpportunistClass0Align.Description",
+    "enGB": "HalflingOpportunistClass"
+  },
+  {
+    "Key": "EvangelistHinterlanderClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "HinterlanderClass"
+  },
+  {
+    "Key": "EvangelistHinterlanderClass0Align.Description",
+    "enGB": "HinterlanderClass"
+  },
+  {
+    "Key": "EvangelistHorizonWalkerClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "HorizonWalkerClass"
+  },
+  {
+    "Key": "EvangelistHorizonWalkerClass0Align.Description",
+    "enGB": "HorizonWalkerClass"
+  },
+  {
+    "Key": "EvangelistInheritorCrusaderClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "InheritorCrusaderClass"
+  },
+  {
+    "Key": "EvangelistInheritorCrusaderClass0Align.Description",
+    "enGB": "InheritorCrusaderClass"
+  },
+  {
+    "Key": "EvangelistMammothRiderClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "MammothRiderClass"
+  },
+  {
+    "Key": "EvangelistMammothRiderClass0Align.Description",
+    "enGB": "MammothRiderClass"
+  },
+  {
+    "Key": "EvangelistSanguineAngelClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "SanguineAngelClass"
+  },
+  {
+    "Key": "EvangelistSanguineAngelClass0Align.Description",
+    "enGB": "SanguineAngelClass"
+  },
+  {
+    "Key": "EvangelistScarSeekerClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "ScarSeekerClass"
+  },
+  {
+    "Key": "EvangelistScarSeekerClass0Align.Description",
+    "enGB": "ScarSeekerClass"
+  },
+  {
+    "Key": "EvangelistSentinelClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "SentinelClass"
+  },
+  {
+    "Key": "EvangelistSentinelClass0Align.Description",
+    "enGB": "SentinelClass"
+  },
+  {
+    "Key": "EvangelistShadowDancerClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "ShadowDancerClass"
+  },
+  {
+    "Key": "EvangelistShadowDancerClass0Align.Description",
+    "enGB": "ShadowDancerClass"
+  },
+  {
+    "Key": "EvangelistSouldrinkerClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "SouldrinkerClass"
+  },
+  {
+    "Key": "EvangelistSouldrinkerClass0Align.Description",
+    "enGB": "SouldrinkerClass"
+  },
+  {
+    "Key": "EvangelistUmbralAgentClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "UmbralAgentClass"
+  },
+  {
+    "Key": "EvangelistUmbralAgentClass0Align.Description",
+    "enGB": "UmbralAgentClass"
+  },
+  {
+    "Key": "EvangelistMicroAntiPaladinClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "MicroAntiPaladinClass"
+  },
+  {
+    "Key": "EvangelistMicroAntiPaladinClass0Align.Description",
+    "enGB": "MicroAntiPaladinClass"
+  },
+  {
+    "Key": "EvangelistOathbreakerClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "OathbreakerClass"
+  },
+  {
+    "Key": "EvangelistOathbreakerClass0Align.Description",
+    "enGB": "OathbreakerClass"
+  },
+  {
+    "Key": "EvangelistDreadKnightClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "DreadKnightClass"
+  },
+  {
+    "Key": "EvangelistDreadKnightClass0Align.Description",
+    "enGB": "DreadKnightClass"
+  },
+  {
+    "Key": "EvangelistStargazerClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "StargazerClass"
+  },
+  {
+    "Key": "EvangelistStargazerClass0Align.Description",
+    "enGB": "StargazerClass"
+  },
+  {
+    "Key": "EvangelistSwashbucklerClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "SwashbucklerClass"
+  },
+  {
+    "Key": "EvangelistSwashbucklerClass0Align.Description",
+    "enGB": "SwashbucklerClass"
+  },
+  {
+    "Key": "EvangelistHolyVindicatorClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "HolyVindicatorClass"
+  },
+  {
+    "Key": "EvangelistHolyVindicatorClass0Align.Description",
+    "enGB": "HolyVindicatorClass"
+  },
+  {
+    "Key": "EvangelistSummonerClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "SummonerClass"
+  },
+  {
+    "Key": "EvangelistSummonerClass0Align.Description",
+    "enGB": "SummonerClass"
   }
 
 ]

@@ -29,7 +29,7 @@ namespace PrestigePlus.Patch
     internal class PatchKinetic
     {
         private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
-        private static BlueprintFeatureReference feat = BlueprintTool.GetRef<BlueprintFeatureReference>(EsotericKnight.FeatGuidPro2);
+        private static BlueprintFeatureReference feat;// = BlueprintTool.GetRef<BlueprintFeatureReference>(EsotericKnight.FeatGuidPro2);
         public static void PatchDomains(string fref)
         {
             var feature = BlueprintTool.GetRef<BlueprintFeatureBaseReference>(fref).Get();

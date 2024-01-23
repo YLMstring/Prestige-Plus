@@ -193,7 +193,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetObligatory(true)
               .AddFacts(new() { FeatureRefs.LightArmorProficiency.ToString(), FeatureRefs.SimpleWeaponProficiency.ToString() })
               .AddComponent<AddDeityWeaponPro>()
-              .AddToAllFeatures(SanctifiedRogueFeat())
+              .AddToAllFeatures(AlignSpamFeat())
               .AddToAllFeatures(TrueExaltedFeat())
               .Configure();
         }
@@ -463,21 +463,2989 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             string HolyVindicatorClass = "b5daf66532f5425aa22df5372c57d766";
             string SummonerClass = "c6a9c7f9-bdce-4c89-aedf-cde62620b2b7";
 
-            
+            var list = new List<BlueprintFeature>();
+
+            var EvangelistAlchemistClasspro = ProgressionConfigurator.New(EvangelistAlchemistClass0Align, EvangelistAlchemistClass0AlignGuid)
+.SetDisplayName(EvangelistAlchemistClass0AlignDisplayName)
+.SetDisplayName(EvangelistAlchemistClass0AlignDescription)
+.SetClasses(ArchetypeGuid)
+.AddPrerequisiteClassLevel(CharacterClassRefs.AlchemistClass.ToString(), 1)
+.SetHideNotAvailibleInUI(true);
+            EvangelistAlchemistClasspro = EvangelistAlchemistClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistAlchemistClass2Align, EvangelistAlchemistClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.AlchemistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistAlchemistClasspro = EvangelistAlchemistClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistAlchemistClass3Align, EvangelistAlchemistClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.AlchemistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistAlchemistClasspro = EvangelistAlchemistClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistAlchemistClass4Align, EvangelistAlchemistClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.AlchemistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistAlchemistClasspro = EvangelistAlchemistClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistAlchemistClass5Align, EvangelistAlchemistClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.AlchemistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistAlchemistClasspro = EvangelistAlchemistClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistAlchemistClass6Align, EvangelistAlchemistClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.AlchemistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistAlchemistClasspro = EvangelistAlchemistClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistAlchemistClass7Align, EvangelistAlchemistClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.AlchemistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistAlchemistClasspro = EvangelistAlchemistClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistAlchemistClass8Align, EvangelistAlchemistClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.AlchemistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistAlchemistClasspro = EvangelistAlchemistClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistAlchemistClass9Align, EvangelistAlchemistClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.AlchemistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistAlchemistClasspro = EvangelistAlchemistClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistAlchemistClass10Align, EvangelistAlchemistClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.AlchemistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistAlchemistClasspro.Configure());
+            var EvangelistArcaneTricksterClasspro = ProgressionConfigurator.New(EvangelistArcaneTricksterClass0Align, EvangelistArcaneTricksterClass0AlignGuid)
+            .SetDisplayName(EvangelistArcaneTricksterClass0AlignDisplayName)
+            .SetDisplayName(EvangelistArcaneTricksterClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.ArcaneTricksterClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistArcaneTricksterClasspro = EvangelistArcaneTricksterClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistArcaneTricksterClass2Align, EvangelistArcaneTricksterClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ArcaneTricksterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistArcaneTricksterClasspro = EvangelistArcaneTricksterClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistArcaneTricksterClass3Align, EvangelistArcaneTricksterClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ArcaneTricksterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistArcaneTricksterClasspro = EvangelistArcaneTricksterClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistArcaneTricksterClass4Align, EvangelistArcaneTricksterClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ArcaneTricksterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistArcaneTricksterClasspro = EvangelistArcaneTricksterClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistArcaneTricksterClass5Align, EvangelistArcaneTricksterClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ArcaneTricksterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistArcaneTricksterClasspro = EvangelistArcaneTricksterClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistArcaneTricksterClass6Align, EvangelistArcaneTricksterClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ArcaneTricksterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistArcaneTricksterClasspro = EvangelistArcaneTricksterClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistArcaneTricksterClass7Align, EvangelistArcaneTricksterClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ArcaneTricksterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistArcaneTricksterClasspro = EvangelistArcaneTricksterClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistArcaneTricksterClass8Align, EvangelistArcaneTricksterClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ArcaneTricksterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistArcaneTricksterClasspro = EvangelistArcaneTricksterClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistArcaneTricksterClass9Align, EvangelistArcaneTricksterClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ArcaneTricksterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistArcaneTricksterClasspro = EvangelistArcaneTricksterClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistArcaneTricksterClass10Align, EvangelistArcaneTricksterClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ArcaneTricksterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistArcaneTricksterClasspro.Configure());
+            var EvangelistArcanistClasspro = ProgressionConfigurator.New(EvangelistArcanistClass0Align, EvangelistArcanistClass0AlignGuid)
+            .SetDisplayName(EvangelistArcanistClass0AlignDisplayName)
+            .SetDisplayName(EvangelistArcanistClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.ArcanistClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistArcanistClasspro = EvangelistArcanistClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistArcanistClass2Align, EvangelistArcanistClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ArcanistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistArcanistClasspro = EvangelistArcanistClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistArcanistClass3Align, EvangelistArcanistClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ArcanistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistArcanistClasspro = EvangelistArcanistClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistArcanistClass4Align, EvangelistArcanistClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ArcanistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistArcanistClasspro = EvangelistArcanistClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistArcanistClass5Align, EvangelistArcanistClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ArcanistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistArcanistClasspro = EvangelistArcanistClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistArcanistClass6Align, EvangelistArcanistClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ArcanistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistArcanistClasspro = EvangelistArcanistClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistArcanistClass7Align, EvangelistArcanistClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ArcanistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistArcanistClasspro = EvangelistArcanistClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistArcanistClass8Align, EvangelistArcanistClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ArcanistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistArcanistClasspro = EvangelistArcanistClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistArcanistClass9Align, EvangelistArcanistClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ArcanistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistArcanistClasspro = EvangelistArcanistClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistArcanistClass10Align, EvangelistArcanistClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ArcanistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistArcanistClasspro.Configure());
+            var EvangelistAssassinClasspro = ProgressionConfigurator.New(EvangelistAssassinClass0Align, EvangelistAssassinClass0AlignGuid)
+            .SetDisplayName(EvangelistAssassinClass0AlignDisplayName)
+            .SetDisplayName(EvangelistAssassinClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.AssassinClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistAssassinClasspro = EvangelistAssassinClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistAssassinClass2Align, EvangelistAssassinClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.AssassinClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistAssassinClasspro = EvangelistAssassinClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistAssassinClass3Align, EvangelistAssassinClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.AssassinClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistAssassinClasspro = EvangelistAssassinClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistAssassinClass4Align, EvangelistAssassinClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.AssassinClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistAssassinClasspro = EvangelistAssassinClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistAssassinClass5Align, EvangelistAssassinClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.AssassinClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistAssassinClasspro = EvangelistAssassinClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistAssassinClass6Align, EvangelistAssassinClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.AssassinClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistAssassinClasspro = EvangelistAssassinClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistAssassinClass7Align, EvangelistAssassinClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.AssassinClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistAssassinClasspro = EvangelistAssassinClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistAssassinClass8Align, EvangelistAssassinClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.AssassinClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistAssassinClasspro = EvangelistAssassinClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistAssassinClass9Align, EvangelistAssassinClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.AssassinClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistAssassinClasspro = EvangelistAssassinClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistAssassinClass10Align, EvangelistAssassinClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.AssassinClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistAssassinClasspro.Configure());
+            var EvangelistBarbarianClasspro = ProgressionConfigurator.New(EvangelistBarbarianClass0Align, EvangelistBarbarianClass0AlignGuid)
+            .SetDisplayName(EvangelistBarbarianClass0AlignDisplayName)
+            .SetDisplayName(EvangelistBarbarianClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.BarbarianClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistBarbarianClasspro = EvangelistBarbarianClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistBarbarianClass2Align, EvangelistBarbarianClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BarbarianClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistBarbarianClasspro = EvangelistBarbarianClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistBarbarianClass3Align, EvangelistBarbarianClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BarbarianClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistBarbarianClasspro = EvangelistBarbarianClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistBarbarianClass4Align, EvangelistBarbarianClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BarbarianClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistBarbarianClasspro = EvangelistBarbarianClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistBarbarianClass5Align, EvangelistBarbarianClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BarbarianClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistBarbarianClasspro = EvangelistBarbarianClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistBarbarianClass6Align, EvangelistBarbarianClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BarbarianClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistBarbarianClasspro = EvangelistBarbarianClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistBarbarianClass7Align, EvangelistBarbarianClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BarbarianClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistBarbarianClasspro = EvangelistBarbarianClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistBarbarianClass8Align, EvangelistBarbarianClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BarbarianClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistBarbarianClasspro = EvangelistBarbarianClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistBarbarianClass9Align, EvangelistBarbarianClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BarbarianClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistBarbarianClasspro = EvangelistBarbarianClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistBarbarianClass10Align, EvangelistBarbarianClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BarbarianClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistBarbarianClasspro.Configure());
+            var EvangelistBardClasspro = ProgressionConfigurator.New(EvangelistBardClass0Align, EvangelistBardClass0AlignGuid)
+            .SetDisplayName(EvangelistBardClass0AlignDisplayName)
+            .SetDisplayName(EvangelistBardClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.BardClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistBardClasspro = EvangelistBardClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistBardClass2Align, EvangelistBardClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BardClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistBardClasspro = EvangelistBardClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistBardClass3Align, EvangelistBardClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BardClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistBardClasspro = EvangelistBardClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistBardClass4Align, EvangelistBardClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BardClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistBardClasspro = EvangelistBardClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistBardClass5Align, EvangelistBardClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BardClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistBardClasspro = EvangelistBardClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistBardClass6Align, EvangelistBardClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BardClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistBardClasspro = EvangelistBardClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistBardClass7Align, EvangelistBardClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BardClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistBardClasspro = EvangelistBardClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistBardClass8Align, EvangelistBardClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BardClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistBardClasspro = EvangelistBardClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistBardClass9Align, EvangelistBardClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BardClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistBardClasspro = EvangelistBardClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistBardClass10Align, EvangelistBardClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BardClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistBardClasspro.Configure());
+            var EvangelistBloodragerClasspro = ProgressionConfigurator.New(EvangelistBloodragerClass0Align, EvangelistBloodragerClass0AlignGuid)
+            .SetDisplayName(EvangelistBloodragerClass0AlignDisplayName)
+            .SetDisplayName(EvangelistBloodragerClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.BloodragerClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistBloodragerClasspro = EvangelistBloodragerClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistBloodragerClass2Align, EvangelistBloodragerClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BloodragerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistBloodragerClasspro = EvangelistBloodragerClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistBloodragerClass3Align, EvangelistBloodragerClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BloodragerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistBloodragerClasspro = EvangelistBloodragerClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistBloodragerClass4Align, EvangelistBloodragerClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BloodragerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistBloodragerClasspro = EvangelistBloodragerClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistBloodragerClass5Align, EvangelistBloodragerClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BloodragerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistBloodragerClasspro = EvangelistBloodragerClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistBloodragerClass6Align, EvangelistBloodragerClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BloodragerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistBloodragerClasspro = EvangelistBloodragerClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistBloodragerClass7Align, EvangelistBloodragerClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BloodragerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistBloodragerClasspro = EvangelistBloodragerClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistBloodragerClass8Align, EvangelistBloodragerClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BloodragerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistBloodragerClasspro = EvangelistBloodragerClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistBloodragerClass9Align, EvangelistBloodragerClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BloodragerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistBloodragerClasspro = EvangelistBloodragerClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistBloodragerClass10Align, EvangelistBloodragerClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.BloodragerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistBloodragerClasspro.Configure());
+            var EvangelistCavalierClasspro = ProgressionConfigurator.New(EvangelistCavalierClass0Align, EvangelistCavalierClass0AlignGuid)
+            .SetDisplayName(EvangelistCavalierClass0AlignDisplayName)
+            .SetDisplayName(EvangelistCavalierClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.CavalierClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistCavalierClasspro = EvangelistCavalierClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistCavalierClass2Align, EvangelistCavalierClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.CavalierClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistCavalierClasspro = EvangelistCavalierClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistCavalierClass3Align, EvangelistCavalierClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.CavalierClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistCavalierClasspro = EvangelistCavalierClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistCavalierClass4Align, EvangelistCavalierClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.CavalierClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistCavalierClasspro = EvangelistCavalierClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistCavalierClass5Align, EvangelistCavalierClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.CavalierClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistCavalierClasspro = EvangelistCavalierClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistCavalierClass6Align, EvangelistCavalierClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.CavalierClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistCavalierClasspro = EvangelistCavalierClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistCavalierClass7Align, EvangelistCavalierClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.CavalierClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistCavalierClasspro = EvangelistCavalierClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistCavalierClass8Align, EvangelistCavalierClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.CavalierClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistCavalierClasspro = EvangelistCavalierClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistCavalierClass9Align, EvangelistCavalierClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.CavalierClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistCavalierClasspro = EvangelistCavalierClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistCavalierClass10Align, EvangelistCavalierClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.CavalierClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistCavalierClasspro.Configure());
+            var EvangelistClericClasspro = ProgressionConfigurator.New(EvangelistClericClass0Align, EvangelistClericClass0AlignGuid)
+            .SetDisplayName(EvangelistClericClass0AlignDisplayName)
+            .SetDisplayName(EvangelistClericClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.ClericClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistClericClasspro = EvangelistClericClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistClericClass2Align, EvangelistClericClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ClericClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistClericClasspro = EvangelistClericClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistClericClass3Align, EvangelistClericClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ClericClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistClericClasspro = EvangelistClericClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistClericClass4Align, EvangelistClericClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ClericClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistClericClasspro = EvangelistClericClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistClericClass5Align, EvangelistClericClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ClericClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistClericClasspro = EvangelistClericClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistClericClass6Align, EvangelistClericClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ClericClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistClericClasspro = EvangelistClericClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistClericClass7Align, EvangelistClericClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ClericClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistClericClasspro = EvangelistClericClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistClericClass8Align, EvangelistClericClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ClericClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistClericClasspro = EvangelistClericClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistClericClass9Align, EvangelistClericClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ClericClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistClericClasspro = EvangelistClericClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistClericClass10Align, EvangelistClericClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ClericClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistClericClasspro.Configure());
+            var EvangelistDragonDiscipleClasspro = ProgressionConfigurator.New(EvangelistDragonDiscipleClass0Align, EvangelistDragonDiscipleClass0AlignGuid)
+            .SetDisplayName(EvangelistDragonDiscipleClass0AlignDisplayName)
+            .SetDisplayName(EvangelistDragonDiscipleClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.DragonDiscipleClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistDragonDiscipleClasspro = EvangelistDragonDiscipleClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistDragonDiscipleClass2Align, EvangelistDragonDiscipleClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DragonDiscipleClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistDragonDiscipleClasspro = EvangelistDragonDiscipleClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistDragonDiscipleClass3Align, EvangelistDragonDiscipleClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DragonDiscipleClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistDragonDiscipleClasspro = EvangelistDragonDiscipleClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistDragonDiscipleClass4Align, EvangelistDragonDiscipleClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DragonDiscipleClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistDragonDiscipleClasspro = EvangelistDragonDiscipleClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistDragonDiscipleClass5Align, EvangelistDragonDiscipleClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DragonDiscipleClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistDragonDiscipleClasspro = EvangelistDragonDiscipleClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistDragonDiscipleClass6Align, EvangelistDragonDiscipleClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DragonDiscipleClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistDragonDiscipleClasspro = EvangelistDragonDiscipleClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistDragonDiscipleClass7Align, EvangelistDragonDiscipleClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DragonDiscipleClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistDragonDiscipleClasspro = EvangelistDragonDiscipleClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistDragonDiscipleClass8Align, EvangelistDragonDiscipleClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DragonDiscipleClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistDragonDiscipleClasspro = EvangelistDragonDiscipleClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistDragonDiscipleClass9Align, EvangelistDragonDiscipleClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DragonDiscipleClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistDragonDiscipleClasspro = EvangelistDragonDiscipleClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistDragonDiscipleClass10Align, EvangelistDragonDiscipleClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DragonDiscipleClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistDragonDiscipleClasspro.Configure());
+            var EvangelistDruidClasspro = ProgressionConfigurator.New(EvangelistDruidClass0Align, EvangelistDruidClass0AlignGuid)
+            .SetDisplayName(EvangelistDruidClass0AlignDisplayName)
+            .SetDisplayName(EvangelistDruidClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.DruidClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistDruidClasspro = EvangelistDruidClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistDruidClass2Align, EvangelistDruidClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DruidClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistDruidClasspro = EvangelistDruidClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistDruidClass3Align, EvangelistDruidClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DruidClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistDruidClasspro = EvangelistDruidClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistDruidClass4Align, EvangelistDruidClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DruidClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistDruidClasspro = EvangelistDruidClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistDruidClass5Align, EvangelistDruidClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DruidClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistDruidClasspro = EvangelistDruidClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistDruidClass6Align, EvangelistDruidClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DruidClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistDruidClasspro = EvangelistDruidClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistDruidClass7Align, EvangelistDruidClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DruidClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistDruidClasspro = EvangelistDruidClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistDruidClass8Align, EvangelistDruidClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DruidClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistDruidClasspro = EvangelistDruidClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistDruidClass9Align, EvangelistDruidClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DruidClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistDruidClasspro = EvangelistDruidClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistDruidClass10Align, EvangelistDruidClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DruidClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistDruidClasspro.Configure());
+            var EvangelistDuelistClasspro = ProgressionConfigurator.New(EvangelistDuelistClass0Align, EvangelistDuelistClass0AlignGuid)
+            .SetDisplayName(EvangelistDuelistClass0AlignDisplayName)
+            .SetDisplayName(EvangelistDuelistClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.DuelistClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistDuelistClasspro = EvangelistDuelistClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistDuelistClass2Align, EvangelistDuelistClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DuelistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistDuelistClasspro = EvangelistDuelistClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistDuelistClass3Align, EvangelistDuelistClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DuelistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistDuelistClasspro = EvangelistDuelistClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistDuelistClass4Align, EvangelistDuelistClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DuelistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistDuelistClasspro = EvangelistDuelistClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistDuelistClass5Align, EvangelistDuelistClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DuelistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistDuelistClasspro = EvangelistDuelistClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistDuelistClass6Align, EvangelistDuelistClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DuelistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistDuelistClasspro = EvangelistDuelistClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistDuelistClass7Align, EvangelistDuelistClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DuelistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistDuelistClasspro = EvangelistDuelistClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistDuelistClass8Align, EvangelistDuelistClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DuelistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistDuelistClasspro = EvangelistDuelistClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistDuelistClass9Align, EvangelistDuelistClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DuelistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistDuelistClasspro = EvangelistDuelistClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistDuelistClass10Align, EvangelistDuelistClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.DuelistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistDuelistClasspro.Configure());
+            var EvangelistEldritchKnightClasspro = ProgressionConfigurator.New(EvangelistEldritchKnightClass0Align, EvangelistEldritchKnightClass0AlignGuid)
+            .SetDisplayName(EvangelistEldritchKnightClass0AlignDisplayName)
+            .SetDisplayName(EvangelistEldritchKnightClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.EldritchKnightClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistEldritchKnightClasspro = EvangelistEldritchKnightClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistEldritchKnightClass2Align, EvangelistEldritchKnightClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.EldritchKnightClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistEldritchKnightClasspro = EvangelistEldritchKnightClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistEldritchKnightClass3Align, EvangelistEldritchKnightClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.EldritchKnightClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistEldritchKnightClasspro = EvangelistEldritchKnightClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistEldritchKnightClass4Align, EvangelistEldritchKnightClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.EldritchKnightClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistEldritchKnightClasspro = EvangelistEldritchKnightClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistEldritchKnightClass5Align, EvangelistEldritchKnightClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.EldritchKnightClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistEldritchKnightClasspro = EvangelistEldritchKnightClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistEldritchKnightClass6Align, EvangelistEldritchKnightClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.EldritchKnightClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistEldritchKnightClasspro = EvangelistEldritchKnightClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistEldritchKnightClass7Align, EvangelistEldritchKnightClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.EldritchKnightClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistEldritchKnightClasspro = EvangelistEldritchKnightClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistEldritchKnightClass8Align, EvangelistEldritchKnightClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.EldritchKnightClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistEldritchKnightClasspro = EvangelistEldritchKnightClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistEldritchKnightClass9Align, EvangelistEldritchKnightClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.EldritchKnightClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistEldritchKnightClasspro = EvangelistEldritchKnightClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistEldritchKnightClass10Align, EvangelistEldritchKnightClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.EldritchKnightClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistEldritchKnightClasspro.Configure());
+            var EvangelistEldritchScionClasspro = ProgressionConfigurator.New(EvangelistEldritchScionClass0Align, EvangelistEldritchScionClass0AlignGuid)
+            .SetDisplayName(EvangelistEldritchScionClass0AlignDisplayName)
+            .SetDisplayName(EvangelistEldritchScionClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.EldritchScionClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistEldritchScionClasspro = EvangelistEldritchScionClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistEldritchScionClass2Align, EvangelistEldritchScionClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.EldritchScionClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistEldritchScionClasspro = EvangelistEldritchScionClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistEldritchScionClass3Align, EvangelistEldritchScionClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.EldritchScionClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistEldritchScionClasspro = EvangelistEldritchScionClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistEldritchScionClass4Align, EvangelistEldritchScionClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.EldritchScionClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistEldritchScionClasspro = EvangelistEldritchScionClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistEldritchScionClass5Align, EvangelistEldritchScionClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.EldritchScionClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistEldritchScionClasspro = EvangelistEldritchScionClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistEldritchScionClass6Align, EvangelistEldritchScionClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.EldritchScionClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistEldritchScionClasspro = EvangelistEldritchScionClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistEldritchScionClass7Align, EvangelistEldritchScionClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.EldritchScionClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistEldritchScionClasspro = EvangelistEldritchScionClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistEldritchScionClass8Align, EvangelistEldritchScionClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.EldritchScionClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistEldritchScionClasspro = EvangelistEldritchScionClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistEldritchScionClass9Align, EvangelistEldritchScionClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.EldritchScionClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistEldritchScionClasspro = EvangelistEldritchScionClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistEldritchScionClass10Align, EvangelistEldritchScionClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.EldritchScionClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistEldritchScionClasspro.Configure());
+            var EvangelistFighterClasspro = ProgressionConfigurator.New(EvangelistFighterClass0Align, EvangelistFighterClass0AlignGuid)
+            .SetDisplayName(EvangelistFighterClass0AlignDisplayName)
+            .SetDisplayName(EvangelistFighterClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.FighterClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistFighterClasspro = EvangelistFighterClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistFighterClass2Align, EvangelistFighterClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.FighterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistFighterClasspro = EvangelistFighterClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistFighterClass3Align, EvangelistFighterClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.FighterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistFighterClasspro = EvangelistFighterClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistFighterClass4Align, EvangelistFighterClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.FighterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistFighterClasspro = EvangelistFighterClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistFighterClass5Align, EvangelistFighterClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.FighterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistFighterClasspro = EvangelistFighterClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistFighterClass6Align, EvangelistFighterClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.FighterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistFighterClasspro = EvangelistFighterClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistFighterClass7Align, EvangelistFighterClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.FighterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistFighterClasspro = EvangelistFighterClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistFighterClass8Align, EvangelistFighterClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.FighterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistFighterClasspro = EvangelistFighterClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistFighterClass9Align, EvangelistFighterClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.FighterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistFighterClasspro = EvangelistFighterClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistFighterClass10Align, EvangelistFighterClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.FighterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistFighterClasspro.Configure());
+            var EvangelistHellknightClasspro = ProgressionConfigurator.New(EvangelistHellknightClass0Align, EvangelistHellknightClass0AlignGuid)
+            .SetDisplayName(EvangelistHellknightClass0AlignDisplayName)
+            .SetDisplayName(EvangelistHellknightClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.HellknightClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistHellknightClasspro = EvangelistHellknightClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistHellknightClass2Align, EvangelistHellknightClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HellknightClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistHellknightClasspro = EvangelistHellknightClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistHellknightClass3Align, EvangelistHellknightClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HellknightClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistHellknightClasspro = EvangelistHellknightClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistHellknightClass4Align, EvangelistHellknightClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HellknightClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistHellknightClasspro = EvangelistHellknightClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistHellknightClass5Align, EvangelistHellknightClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HellknightClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistHellknightClasspro = EvangelistHellknightClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistHellknightClass6Align, EvangelistHellknightClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HellknightClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistHellknightClasspro = EvangelistHellknightClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistHellknightClass7Align, EvangelistHellknightClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HellknightClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistHellknightClasspro = EvangelistHellknightClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistHellknightClass8Align, EvangelistHellknightClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HellknightClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistHellknightClasspro = EvangelistHellknightClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistHellknightClass9Align, EvangelistHellknightClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HellknightClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistHellknightClasspro = EvangelistHellknightClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistHellknightClass10Align, EvangelistHellknightClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HellknightClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistHellknightClasspro.Configure());
+            var EvangelistHellknightSigniferClasspro = ProgressionConfigurator.New(EvangelistHellknightSigniferClass0Align, EvangelistHellknightSigniferClass0AlignGuid)
+            .SetDisplayName(EvangelistHellknightSigniferClass0AlignDisplayName)
+            .SetDisplayName(EvangelistHellknightSigniferClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.HellknightSigniferClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistHellknightSigniferClasspro = EvangelistHellknightSigniferClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistHellknightSigniferClass2Align, EvangelistHellknightSigniferClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HellknightSigniferClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistHellknightSigniferClasspro = EvangelistHellknightSigniferClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistHellknightSigniferClass3Align, EvangelistHellknightSigniferClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HellknightSigniferClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistHellknightSigniferClasspro = EvangelistHellknightSigniferClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistHellknightSigniferClass4Align, EvangelistHellknightSigniferClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HellknightSigniferClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistHellknightSigniferClasspro = EvangelistHellknightSigniferClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistHellknightSigniferClass5Align, EvangelistHellknightSigniferClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HellknightSigniferClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistHellknightSigniferClasspro = EvangelistHellknightSigniferClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistHellknightSigniferClass6Align, EvangelistHellknightSigniferClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HellknightSigniferClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistHellknightSigniferClasspro = EvangelistHellknightSigniferClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistHellknightSigniferClass7Align, EvangelistHellknightSigniferClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HellknightSigniferClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistHellknightSigniferClasspro = EvangelistHellknightSigniferClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistHellknightSigniferClass8Align, EvangelistHellknightSigniferClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HellknightSigniferClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistHellknightSigniferClasspro = EvangelistHellknightSigniferClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistHellknightSigniferClass9Align, EvangelistHellknightSigniferClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HellknightSigniferClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistHellknightSigniferClasspro = EvangelistHellknightSigniferClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistHellknightSigniferClass10Align, EvangelistHellknightSigniferClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HellknightSigniferClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistHellknightSigniferClasspro.Configure());
+            var EvangelistHunterClasspro = ProgressionConfigurator.New(EvangelistHunterClass0Align, EvangelistHunterClass0AlignGuid)
+            .SetDisplayName(EvangelistHunterClass0AlignDisplayName)
+            .SetDisplayName(EvangelistHunterClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.HunterClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistHunterClasspro = EvangelistHunterClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistHunterClass2Align, EvangelistHunterClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HunterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistHunterClasspro = EvangelistHunterClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistHunterClass3Align, EvangelistHunterClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HunterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistHunterClasspro = EvangelistHunterClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistHunterClass4Align, EvangelistHunterClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HunterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistHunterClasspro = EvangelistHunterClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistHunterClass5Align, EvangelistHunterClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HunterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistHunterClasspro = EvangelistHunterClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistHunterClass6Align, EvangelistHunterClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HunterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistHunterClasspro = EvangelistHunterClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistHunterClass7Align, EvangelistHunterClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HunterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistHunterClasspro = EvangelistHunterClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistHunterClass8Align, EvangelistHunterClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HunterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistHunterClasspro = EvangelistHunterClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistHunterClass9Align, EvangelistHunterClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HunterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistHunterClasspro = EvangelistHunterClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistHunterClass10Align, EvangelistHunterClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.HunterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistHunterClasspro.Configure());
+            var EvangelistInquisitorClasspro = ProgressionConfigurator.New(EvangelistInquisitorClass0Align, EvangelistInquisitorClass0AlignGuid)
+            .SetDisplayName(EvangelistInquisitorClass0AlignDisplayName)
+            .SetDisplayName(EvangelistInquisitorClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.InquisitorClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistInquisitorClasspro = EvangelistInquisitorClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistInquisitorClass2Align, EvangelistInquisitorClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.InquisitorClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistInquisitorClasspro = EvangelistInquisitorClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistInquisitorClass3Align, EvangelistInquisitorClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.InquisitorClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistInquisitorClasspro = EvangelistInquisitorClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistInquisitorClass4Align, EvangelistInquisitorClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.InquisitorClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistInquisitorClasspro = EvangelistInquisitorClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistInquisitorClass5Align, EvangelistInquisitorClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.InquisitorClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistInquisitorClasspro = EvangelistInquisitorClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistInquisitorClass6Align, EvangelistInquisitorClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.InquisitorClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistInquisitorClasspro = EvangelistInquisitorClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistInquisitorClass7Align, EvangelistInquisitorClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.InquisitorClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistInquisitorClasspro = EvangelistInquisitorClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistInquisitorClass8Align, EvangelistInquisitorClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.InquisitorClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistInquisitorClasspro = EvangelistInquisitorClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistInquisitorClass9Align, EvangelistInquisitorClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.InquisitorClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistInquisitorClasspro = EvangelistInquisitorClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistInquisitorClass10Align, EvangelistInquisitorClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.InquisitorClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistInquisitorClasspro.Configure());
+            var EvangelistKineticistClasspro = ProgressionConfigurator.New(EvangelistKineticistClass0Align, EvangelistKineticistClass0AlignGuid)
+            .SetDisplayName(EvangelistKineticistClass0AlignDisplayName)
+            .SetDisplayName(EvangelistKineticistClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.KineticistClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistKineticistClasspro = EvangelistKineticistClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistKineticistClass2Align, EvangelistKineticistClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.KineticistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistKineticistClasspro = EvangelistKineticistClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistKineticistClass3Align, EvangelistKineticistClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.KineticistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistKineticistClasspro = EvangelistKineticistClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistKineticistClass4Align, EvangelistKineticistClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.KineticistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistKineticistClasspro = EvangelistKineticistClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistKineticistClass5Align, EvangelistKineticistClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.KineticistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistKineticistClasspro = EvangelistKineticistClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistKineticistClass6Align, EvangelistKineticistClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.KineticistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistKineticistClasspro = EvangelistKineticistClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistKineticistClass7Align, EvangelistKineticistClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.KineticistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistKineticistClasspro = EvangelistKineticistClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistKineticistClass8Align, EvangelistKineticistClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.KineticistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistKineticistClasspro = EvangelistKineticistClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistKineticistClass9Align, EvangelistKineticistClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.KineticistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistKineticistClasspro = EvangelistKineticistClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistKineticistClass10Align, EvangelistKineticistClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.KineticistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistKineticistClasspro.Configure());
+            var EvangelistLoremasterClasspro = ProgressionConfigurator.New(EvangelistLoremasterClass0Align, EvangelistLoremasterClass0AlignGuid)
+            .SetDisplayName(EvangelistLoremasterClass0AlignDisplayName)
+            .SetDisplayName(EvangelistLoremasterClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.LoremasterClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistLoremasterClasspro = EvangelistLoremasterClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistLoremasterClass2Align, EvangelistLoremasterClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.LoremasterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistLoremasterClasspro = EvangelistLoremasterClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistLoremasterClass3Align, EvangelistLoremasterClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.LoremasterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistLoremasterClasspro = EvangelistLoremasterClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistLoremasterClass4Align, EvangelistLoremasterClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.LoremasterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistLoremasterClasspro = EvangelistLoremasterClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistLoremasterClass5Align, EvangelistLoremasterClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.LoremasterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistLoremasterClasspro = EvangelistLoremasterClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistLoremasterClass6Align, EvangelistLoremasterClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.LoremasterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistLoremasterClasspro = EvangelistLoremasterClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistLoremasterClass7Align, EvangelistLoremasterClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.LoremasterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistLoremasterClasspro = EvangelistLoremasterClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistLoremasterClass8Align, EvangelistLoremasterClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.LoremasterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistLoremasterClasspro = EvangelistLoremasterClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistLoremasterClass9Align, EvangelistLoremasterClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.LoremasterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistLoremasterClasspro = EvangelistLoremasterClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistLoremasterClass10Align, EvangelistLoremasterClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.LoremasterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistLoremasterClasspro.Configure());
+            var EvangelistMagusClasspro = ProgressionConfigurator.New(EvangelistMagusClass0Align, EvangelistMagusClass0AlignGuid)
+            .SetDisplayName(EvangelistMagusClass0AlignDisplayName)
+            .SetDisplayName(EvangelistMagusClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.MagusClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistMagusClasspro = EvangelistMagusClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistMagusClass2Align, EvangelistMagusClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MagusClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistMagusClasspro = EvangelistMagusClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistMagusClass3Align, EvangelistMagusClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MagusClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistMagusClasspro = EvangelistMagusClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistMagusClass4Align, EvangelistMagusClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MagusClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistMagusClasspro = EvangelistMagusClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistMagusClass5Align, EvangelistMagusClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MagusClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistMagusClasspro = EvangelistMagusClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistMagusClass6Align, EvangelistMagusClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MagusClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistMagusClasspro = EvangelistMagusClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistMagusClass7Align, EvangelistMagusClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MagusClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistMagusClasspro = EvangelistMagusClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistMagusClass8Align, EvangelistMagusClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MagusClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistMagusClasspro = EvangelistMagusClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistMagusClass9Align, EvangelistMagusClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MagusClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistMagusClasspro = EvangelistMagusClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistMagusClass10Align, EvangelistMagusClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MagusClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistMagusClasspro.Configure());
+            var EvangelistMonkClasspro = ProgressionConfigurator.New(EvangelistMonkClass0Align, EvangelistMonkClass0AlignGuid)
+            .SetDisplayName(EvangelistMonkClass0AlignDisplayName)
+            .SetDisplayName(EvangelistMonkClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.MonkClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistMonkClasspro = EvangelistMonkClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistMonkClass2Align, EvangelistMonkClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MonkClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistMonkClasspro = EvangelistMonkClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistMonkClass3Align, EvangelistMonkClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MonkClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistMonkClasspro = EvangelistMonkClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistMonkClass4Align, EvangelistMonkClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MonkClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistMonkClasspro = EvangelistMonkClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistMonkClass5Align, EvangelistMonkClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MonkClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistMonkClasspro = EvangelistMonkClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistMonkClass6Align, EvangelistMonkClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MonkClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistMonkClasspro = EvangelistMonkClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistMonkClass7Align, EvangelistMonkClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MonkClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistMonkClasspro = EvangelistMonkClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistMonkClass8Align, EvangelistMonkClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MonkClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistMonkClasspro = EvangelistMonkClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistMonkClass9Align, EvangelistMonkClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MonkClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistMonkClasspro = EvangelistMonkClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistMonkClass10Align, EvangelistMonkClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MonkClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistMonkClasspro.Configure());
+            var EvangelistMysticTheurgeClasspro = ProgressionConfigurator.New(EvangelistMysticTheurgeClass0Align, EvangelistMysticTheurgeClass0AlignGuid)
+            .SetDisplayName(EvangelistMysticTheurgeClass0AlignDisplayName)
+            .SetDisplayName(EvangelistMysticTheurgeClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.MysticTheurgeClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistMysticTheurgeClasspro = EvangelistMysticTheurgeClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistMysticTheurgeClass2Align, EvangelistMysticTheurgeClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MysticTheurgeClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistMysticTheurgeClasspro = EvangelistMysticTheurgeClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistMysticTheurgeClass3Align, EvangelistMysticTheurgeClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MysticTheurgeClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistMysticTheurgeClasspro = EvangelistMysticTheurgeClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistMysticTheurgeClass4Align, EvangelistMysticTheurgeClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MysticTheurgeClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistMysticTheurgeClasspro = EvangelistMysticTheurgeClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistMysticTheurgeClass5Align, EvangelistMysticTheurgeClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MysticTheurgeClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistMysticTheurgeClasspro = EvangelistMysticTheurgeClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistMysticTheurgeClass6Align, EvangelistMysticTheurgeClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MysticTheurgeClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistMysticTheurgeClasspro = EvangelistMysticTheurgeClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistMysticTheurgeClass7Align, EvangelistMysticTheurgeClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MysticTheurgeClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistMysticTheurgeClasspro = EvangelistMysticTheurgeClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistMysticTheurgeClass8Align, EvangelistMysticTheurgeClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MysticTheurgeClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistMysticTheurgeClasspro = EvangelistMysticTheurgeClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistMysticTheurgeClass9Align, EvangelistMysticTheurgeClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MysticTheurgeClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistMysticTheurgeClasspro = EvangelistMysticTheurgeClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistMysticTheurgeClass10Align, EvangelistMysticTheurgeClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.MysticTheurgeClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistMysticTheurgeClasspro.Configure());
+            var EvangelistOracleClasspro = ProgressionConfigurator.New(EvangelistOracleClass0Align, EvangelistOracleClass0AlignGuid)
+            .SetDisplayName(EvangelistOracleClass0AlignDisplayName)
+            .SetDisplayName(EvangelistOracleClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.OracleClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistOracleClasspro = EvangelistOracleClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistOracleClass2Align, EvangelistOracleClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.OracleClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistOracleClasspro = EvangelistOracleClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistOracleClass3Align, EvangelistOracleClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.OracleClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistOracleClasspro = EvangelistOracleClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistOracleClass4Align, EvangelistOracleClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.OracleClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistOracleClasspro = EvangelistOracleClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistOracleClass5Align, EvangelistOracleClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.OracleClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistOracleClasspro = EvangelistOracleClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistOracleClass6Align, EvangelistOracleClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.OracleClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistOracleClasspro = EvangelistOracleClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistOracleClass7Align, EvangelistOracleClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.OracleClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistOracleClasspro = EvangelistOracleClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistOracleClass8Align, EvangelistOracleClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.OracleClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistOracleClasspro = EvangelistOracleClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistOracleClass9Align, EvangelistOracleClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.OracleClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistOracleClasspro = EvangelistOracleClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistOracleClass10Align, EvangelistOracleClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.OracleClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistOracleClasspro.Configure());
+            var EvangelistPaladinClasspro = ProgressionConfigurator.New(EvangelistPaladinClass0Align, EvangelistPaladinClass0AlignGuid)
+            .SetDisplayName(EvangelistPaladinClass0AlignDisplayName)
+            .SetDisplayName(EvangelistPaladinClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.PaladinClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistPaladinClasspro = EvangelistPaladinClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistPaladinClass2Align, EvangelistPaladinClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.PaladinClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistPaladinClasspro = EvangelistPaladinClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistPaladinClass3Align, EvangelistPaladinClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.PaladinClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistPaladinClasspro = EvangelistPaladinClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistPaladinClass4Align, EvangelistPaladinClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.PaladinClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistPaladinClasspro = EvangelistPaladinClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistPaladinClass5Align, EvangelistPaladinClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.PaladinClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistPaladinClasspro = EvangelistPaladinClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistPaladinClass6Align, EvangelistPaladinClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.PaladinClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistPaladinClasspro = EvangelistPaladinClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistPaladinClass7Align, EvangelistPaladinClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.PaladinClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistPaladinClasspro = EvangelistPaladinClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistPaladinClass8Align, EvangelistPaladinClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.PaladinClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistPaladinClasspro = EvangelistPaladinClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistPaladinClass9Align, EvangelistPaladinClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.PaladinClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistPaladinClasspro = EvangelistPaladinClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistPaladinClass10Align, EvangelistPaladinClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.PaladinClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistPaladinClasspro.Configure());
+            var EvangelistRangerClasspro = ProgressionConfigurator.New(EvangelistRangerClass0Align, EvangelistRangerClass0AlignGuid)
+            .SetDisplayName(EvangelistRangerClass0AlignDisplayName)
+            .SetDisplayName(EvangelistRangerClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.RangerClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistRangerClasspro = EvangelistRangerClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistRangerClass2Align, EvangelistRangerClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.RangerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistRangerClasspro = EvangelistRangerClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistRangerClass3Align, EvangelistRangerClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.RangerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistRangerClasspro = EvangelistRangerClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistRangerClass4Align, EvangelistRangerClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.RangerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistRangerClasspro = EvangelistRangerClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistRangerClass5Align, EvangelistRangerClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.RangerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistRangerClasspro = EvangelistRangerClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistRangerClass6Align, EvangelistRangerClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.RangerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistRangerClasspro = EvangelistRangerClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistRangerClass7Align, EvangelistRangerClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.RangerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistRangerClasspro = EvangelistRangerClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistRangerClass8Align, EvangelistRangerClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.RangerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistRangerClasspro = EvangelistRangerClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistRangerClass9Align, EvangelistRangerClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.RangerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistRangerClasspro = EvangelistRangerClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistRangerClass10Align, EvangelistRangerClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.RangerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistRangerClasspro.Configure());
+            var EvangelistRogueClasspro = ProgressionConfigurator.New(EvangelistRogueClass0Align, EvangelistRogueClass0AlignGuid)
+            .SetDisplayName(EvangelistRogueClass0AlignDisplayName)
+            .SetDisplayName(EvangelistRogueClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.RogueClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistRogueClasspro = EvangelistRogueClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistRogueClass2Align, EvangelistRogueClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.RogueClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistRogueClasspro = EvangelistRogueClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistRogueClass3Align, EvangelistRogueClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.RogueClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistRogueClasspro = EvangelistRogueClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistRogueClass4Align, EvangelistRogueClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.RogueClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistRogueClasspro = EvangelistRogueClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistRogueClass5Align, EvangelistRogueClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.RogueClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistRogueClasspro = EvangelistRogueClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistRogueClass6Align, EvangelistRogueClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.RogueClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistRogueClasspro = EvangelistRogueClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistRogueClass7Align, EvangelistRogueClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.RogueClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistRogueClasspro = EvangelistRogueClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistRogueClass8Align, EvangelistRogueClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.RogueClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistRogueClasspro = EvangelistRogueClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistRogueClass9Align, EvangelistRogueClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.RogueClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistRogueClasspro = EvangelistRogueClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistRogueClass10Align, EvangelistRogueClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.RogueClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistRogueClasspro.Configure());
+            var EvangelistShamanClasspro = ProgressionConfigurator.New(EvangelistShamanClass0Align, EvangelistShamanClass0AlignGuid)
+            .SetDisplayName(EvangelistShamanClass0AlignDisplayName)
+            .SetDisplayName(EvangelistShamanClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.ShamanClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistShamanClasspro = EvangelistShamanClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistShamanClass2Align, EvangelistShamanClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ShamanClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistShamanClasspro = EvangelistShamanClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistShamanClass3Align, EvangelistShamanClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ShamanClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistShamanClasspro = EvangelistShamanClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistShamanClass4Align, EvangelistShamanClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ShamanClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistShamanClasspro = EvangelistShamanClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistShamanClass5Align, EvangelistShamanClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ShamanClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistShamanClasspro = EvangelistShamanClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistShamanClass6Align, EvangelistShamanClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ShamanClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistShamanClasspro = EvangelistShamanClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistShamanClass7Align, EvangelistShamanClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ShamanClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistShamanClasspro = EvangelistShamanClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistShamanClass8Align, EvangelistShamanClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ShamanClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistShamanClasspro = EvangelistShamanClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistShamanClass9Align, EvangelistShamanClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ShamanClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistShamanClasspro = EvangelistShamanClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistShamanClass10Align, EvangelistShamanClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ShamanClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistShamanClasspro.Configure());
+            var EvangelistShifterClasspro = ProgressionConfigurator.New(EvangelistShifterClass0Align, EvangelistShifterClass0AlignGuid)
+            .SetDisplayName(EvangelistShifterClass0AlignDisplayName)
+            .SetDisplayName(EvangelistShifterClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.ShifterClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistShifterClasspro = EvangelistShifterClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistShifterClass2Align, EvangelistShifterClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ShifterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistShifterClasspro = EvangelistShifterClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistShifterClass3Align, EvangelistShifterClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ShifterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistShifterClasspro = EvangelistShifterClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistShifterClass4Align, EvangelistShifterClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ShifterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistShifterClasspro = EvangelistShifterClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistShifterClass5Align, EvangelistShifterClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ShifterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistShifterClasspro = EvangelistShifterClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistShifterClass6Align, EvangelistShifterClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ShifterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistShifterClasspro = EvangelistShifterClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistShifterClass7Align, EvangelistShifterClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ShifterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistShifterClasspro = EvangelistShifterClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistShifterClass8Align, EvangelistShifterClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ShifterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistShifterClasspro = EvangelistShifterClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistShifterClass9Align, EvangelistShifterClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ShifterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistShifterClasspro = EvangelistShifterClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistShifterClass10Align, EvangelistShifterClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.ShifterClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistShifterClasspro.Configure());
+            var EvangelistSkaldClasspro = ProgressionConfigurator.New(EvangelistSkaldClass0Align, EvangelistSkaldClass0AlignGuid)
+            .SetDisplayName(EvangelistSkaldClass0AlignDisplayName)
+            .SetDisplayName(EvangelistSkaldClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.SkaldClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistSkaldClasspro = EvangelistSkaldClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistSkaldClass2Align, EvangelistSkaldClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SkaldClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSkaldClasspro = EvangelistSkaldClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistSkaldClass3Align, EvangelistSkaldClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SkaldClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSkaldClasspro = EvangelistSkaldClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistSkaldClass4Align, EvangelistSkaldClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SkaldClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSkaldClasspro = EvangelistSkaldClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistSkaldClass5Align, EvangelistSkaldClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SkaldClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSkaldClasspro = EvangelistSkaldClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistSkaldClass6Align, EvangelistSkaldClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SkaldClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSkaldClasspro = EvangelistSkaldClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistSkaldClass7Align, EvangelistSkaldClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SkaldClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSkaldClasspro = EvangelistSkaldClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistSkaldClass8Align, EvangelistSkaldClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SkaldClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSkaldClasspro = EvangelistSkaldClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistSkaldClass9Align, EvangelistSkaldClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SkaldClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSkaldClasspro = EvangelistSkaldClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistSkaldClass10Align, EvangelistSkaldClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SkaldClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistSkaldClasspro.Configure());
+            var EvangelistSlayerClasspro = ProgressionConfigurator.New(EvangelistSlayerClass0Align, EvangelistSlayerClass0AlignGuid)
+            .SetDisplayName(EvangelistSlayerClass0AlignDisplayName)
+            .SetDisplayName(EvangelistSlayerClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.SlayerClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistSlayerClasspro = EvangelistSlayerClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistSlayerClass2Align, EvangelistSlayerClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SlayerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSlayerClasspro = EvangelistSlayerClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistSlayerClass3Align, EvangelistSlayerClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SlayerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSlayerClasspro = EvangelistSlayerClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistSlayerClass4Align, EvangelistSlayerClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SlayerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSlayerClasspro = EvangelistSlayerClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistSlayerClass5Align, EvangelistSlayerClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SlayerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSlayerClasspro = EvangelistSlayerClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistSlayerClass6Align, EvangelistSlayerClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SlayerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSlayerClasspro = EvangelistSlayerClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistSlayerClass7Align, EvangelistSlayerClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SlayerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSlayerClasspro = EvangelistSlayerClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistSlayerClass8Align, EvangelistSlayerClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SlayerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSlayerClasspro = EvangelistSlayerClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistSlayerClass9Align, EvangelistSlayerClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SlayerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSlayerClasspro = EvangelistSlayerClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistSlayerClass10Align, EvangelistSlayerClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SlayerClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistSlayerClasspro.Configure());
+            var EvangelistSorcererClasspro = ProgressionConfigurator.New(EvangelistSorcererClass0Align, EvangelistSorcererClass0AlignGuid)
+            .SetDisplayName(EvangelistSorcererClass0AlignDisplayName)
+            .SetDisplayName(EvangelistSorcererClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.SorcererClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistSorcererClasspro = EvangelistSorcererClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistSorcererClass2Align, EvangelistSorcererClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SorcererClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSorcererClasspro = EvangelistSorcererClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistSorcererClass3Align, EvangelistSorcererClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SorcererClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSorcererClasspro = EvangelistSorcererClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistSorcererClass4Align, EvangelistSorcererClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SorcererClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSorcererClasspro = EvangelistSorcererClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistSorcererClass5Align, EvangelistSorcererClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SorcererClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSorcererClasspro = EvangelistSorcererClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistSorcererClass6Align, EvangelistSorcererClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SorcererClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSorcererClasspro = EvangelistSorcererClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistSorcererClass7Align, EvangelistSorcererClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SorcererClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSorcererClasspro = EvangelistSorcererClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistSorcererClass8Align, EvangelistSorcererClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SorcererClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSorcererClasspro = EvangelistSorcererClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistSorcererClass9Align, EvangelistSorcererClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SorcererClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSorcererClasspro = EvangelistSorcererClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistSorcererClass10Align, EvangelistSorcererClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SorcererClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistSorcererClasspro.Configure());
+            var EvangelistStalwartDefenderClasspro = ProgressionConfigurator.New(EvangelistStalwartDefenderClass0Align, EvangelistStalwartDefenderClass0AlignGuid)
+            .SetDisplayName(EvangelistStalwartDefenderClass0AlignDisplayName)
+            .SetDisplayName(EvangelistStalwartDefenderClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.StalwartDefenderClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistStalwartDefenderClasspro = EvangelistStalwartDefenderClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistStalwartDefenderClass2Align, EvangelistStalwartDefenderClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.StalwartDefenderClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistStalwartDefenderClasspro = EvangelistStalwartDefenderClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistStalwartDefenderClass3Align, EvangelistStalwartDefenderClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.StalwartDefenderClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistStalwartDefenderClasspro = EvangelistStalwartDefenderClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistStalwartDefenderClass4Align, EvangelistStalwartDefenderClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.StalwartDefenderClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistStalwartDefenderClasspro = EvangelistStalwartDefenderClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistStalwartDefenderClass5Align, EvangelistStalwartDefenderClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.StalwartDefenderClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistStalwartDefenderClasspro = EvangelistStalwartDefenderClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistStalwartDefenderClass6Align, EvangelistStalwartDefenderClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.StalwartDefenderClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistStalwartDefenderClasspro = EvangelistStalwartDefenderClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistStalwartDefenderClass7Align, EvangelistStalwartDefenderClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.StalwartDefenderClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistStalwartDefenderClasspro = EvangelistStalwartDefenderClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistStalwartDefenderClass8Align, EvangelistStalwartDefenderClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.StalwartDefenderClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistStalwartDefenderClasspro = EvangelistStalwartDefenderClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistStalwartDefenderClass9Align, EvangelistStalwartDefenderClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.StalwartDefenderClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistStalwartDefenderClasspro = EvangelistStalwartDefenderClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistStalwartDefenderClass10Align, EvangelistStalwartDefenderClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.StalwartDefenderClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistStalwartDefenderClasspro.Configure());
+            var EvangelistStudentOfWarClasspro = ProgressionConfigurator.New(EvangelistStudentOfWarClass0Align, EvangelistStudentOfWarClass0AlignGuid)
+            .SetDisplayName(EvangelistStudentOfWarClass0AlignDisplayName)
+            .SetDisplayName(EvangelistStudentOfWarClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.StudentOfWarClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistStudentOfWarClasspro = EvangelistStudentOfWarClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistStudentOfWarClass2Align, EvangelistStudentOfWarClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.StudentOfWarClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistStudentOfWarClasspro = EvangelistStudentOfWarClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistStudentOfWarClass3Align, EvangelistStudentOfWarClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.StudentOfWarClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistStudentOfWarClasspro = EvangelistStudentOfWarClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistStudentOfWarClass4Align, EvangelistStudentOfWarClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.StudentOfWarClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistStudentOfWarClasspro = EvangelistStudentOfWarClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistStudentOfWarClass5Align, EvangelistStudentOfWarClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.StudentOfWarClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistStudentOfWarClasspro = EvangelistStudentOfWarClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistStudentOfWarClass6Align, EvangelistStudentOfWarClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.StudentOfWarClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistStudentOfWarClasspro = EvangelistStudentOfWarClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistStudentOfWarClass7Align, EvangelistStudentOfWarClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.StudentOfWarClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistStudentOfWarClasspro = EvangelistStudentOfWarClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistStudentOfWarClass8Align, EvangelistStudentOfWarClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.StudentOfWarClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistStudentOfWarClasspro = EvangelistStudentOfWarClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistStudentOfWarClass9Align, EvangelistStudentOfWarClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.StudentOfWarClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistStudentOfWarClasspro = EvangelistStudentOfWarClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistStudentOfWarClass10Align, EvangelistStudentOfWarClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.StudentOfWarClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistStudentOfWarClasspro.Configure());
+            var EvangelistSwordlordClasspro = ProgressionConfigurator.New(EvangelistSwordlordClass0Align, EvangelistSwordlordClass0AlignGuid)
+            .SetDisplayName(EvangelistSwordlordClass0AlignDisplayName)
+            .SetDisplayName(EvangelistSwordlordClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.SwordlordClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistSwordlordClasspro = EvangelistSwordlordClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistSwordlordClass2Align, EvangelistSwordlordClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SwordlordClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSwordlordClasspro = EvangelistSwordlordClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistSwordlordClass3Align, EvangelistSwordlordClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SwordlordClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSwordlordClasspro = EvangelistSwordlordClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistSwordlordClass4Align, EvangelistSwordlordClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SwordlordClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSwordlordClasspro = EvangelistSwordlordClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistSwordlordClass5Align, EvangelistSwordlordClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SwordlordClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSwordlordClasspro = EvangelistSwordlordClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistSwordlordClass6Align, EvangelistSwordlordClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SwordlordClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSwordlordClasspro = EvangelistSwordlordClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistSwordlordClass7Align, EvangelistSwordlordClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SwordlordClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSwordlordClasspro = EvangelistSwordlordClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistSwordlordClass8Align, EvangelistSwordlordClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SwordlordClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSwordlordClasspro = EvangelistSwordlordClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistSwordlordClass9Align, EvangelistSwordlordClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SwordlordClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistSwordlordClasspro = EvangelistSwordlordClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistSwordlordClass10Align, EvangelistSwordlordClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.SwordlordClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistSwordlordClasspro.Configure());
+            var EvangelistWarpriestClasspro = ProgressionConfigurator.New(EvangelistWarpriestClass0Align, EvangelistWarpriestClass0AlignGuid)
+            .SetDisplayName(EvangelistWarpriestClass0AlignDisplayName)
+            .SetDisplayName(EvangelistWarpriestClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.WarpriestClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistWarpriestClasspro = EvangelistWarpriestClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistWarpriestClass2Align, EvangelistWarpriestClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WarpriestClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWarpriestClasspro = EvangelistWarpriestClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistWarpriestClass3Align, EvangelistWarpriestClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WarpriestClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWarpriestClasspro = EvangelistWarpriestClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistWarpriestClass4Align, EvangelistWarpriestClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WarpriestClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWarpriestClasspro = EvangelistWarpriestClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistWarpriestClass5Align, EvangelistWarpriestClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WarpriestClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWarpriestClasspro = EvangelistWarpriestClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistWarpriestClass6Align, EvangelistWarpriestClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WarpriestClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWarpriestClasspro = EvangelistWarpriestClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistWarpriestClass7Align, EvangelistWarpriestClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WarpriestClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWarpriestClasspro = EvangelistWarpriestClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistWarpriestClass8Align, EvangelistWarpriestClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WarpriestClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWarpriestClasspro = EvangelistWarpriestClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistWarpriestClass9Align, EvangelistWarpriestClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WarpriestClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWarpriestClasspro = EvangelistWarpriestClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistWarpriestClass10Align, EvangelistWarpriestClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WarpriestClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistWarpriestClasspro.Configure());
+            var EvangelistWinterWitchClasspro = ProgressionConfigurator.New(EvangelistWinterWitchClass0Align, EvangelistWinterWitchClass0AlignGuid)
+            .SetDisplayName(EvangelistWinterWitchClass0AlignDisplayName)
+            .SetDisplayName(EvangelistWinterWitchClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.WinterWitchClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistWinterWitchClasspro = EvangelistWinterWitchClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistWinterWitchClass2Align, EvangelistWinterWitchClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WinterWitchClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWinterWitchClasspro = EvangelistWinterWitchClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistWinterWitchClass3Align, EvangelistWinterWitchClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WinterWitchClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWinterWitchClasspro = EvangelistWinterWitchClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistWinterWitchClass4Align, EvangelistWinterWitchClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WinterWitchClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWinterWitchClasspro = EvangelistWinterWitchClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistWinterWitchClass5Align, EvangelistWinterWitchClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WinterWitchClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWinterWitchClasspro = EvangelistWinterWitchClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistWinterWitchClass6Align, EvangelistWinterWitchClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WinterWitchClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWinterWitchClasspro = EvangelistWinterWitchClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistWinterWitchClass7Align, EvangelistWinterWitchClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WinterWitchClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWinterWitchClasspro = EvangelistWinterWitchClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistWinterWitchClass8Align, EvangelistWinterWitchClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WinterWitchClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWinterWitchClasspro = EvangelistWinterWitchClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistWinterWitchClass9Align, EvangelistWinterWitchClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WinterWitchClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWinterWitchClasspro = EvangelistWinterWitchClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistWinterWitchClass10Align, EvangelistWinterWitchClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WinterWitchClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistWinterWitchClasspro.Configure());
+            var EvangelistWitchClasspro = ProgressionConfigurator.New(EvangelistWitchClass0Align, EvangelistWitchClass0AlignGuid)
+            .SetDisplayName(EvangelistWitchClass0AlignDisplayName)
+            .SetDisplayName(EvangelistWitchClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.WitchClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistWitchClasspro = EvangelistWitchClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistWitchClass2Align, EvangelistWitchClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WitchClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWitchClasspro = EvangelistWitchClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistWitchClass3Align, EvangelistWitchClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WitchClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWitchClasspro = EvangelistWitchClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistWitchClass4Align, EvangelistWitchClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WitchClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWitchClasspro = EvangelistWitchClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistWitchClass5Align, EvangelistWitchClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WitchClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWitchClasspro = EvangelistWitchClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistWitchClass6Align, EvangelistWitchClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WitchClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWitchClasspro = EvangelistWitchClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistWitchClass7Align, EvangelistWitchClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WitchClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWitchClasspro = EvangelistWitchClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistWitchClass8Align, EvangelistWitchClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WitchClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWitchClasspro = EvangelistWitchClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistWitchClass9Align, EvangelistWitchClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WitchClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWitchClasspro = EvangelistWitchClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistWitchClass10Align, EvangelistWitchClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WitchClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistWitchClasspro.Configure());
+            var EvangelistWizardClasspro = ProgressionConfigurator.New(EvangelistWizardClass0Align, EvangelistWizardClass0AlignGuid)
+            .SetDisplayName(EvangelistWizardClass0AlignDisplayName)
+            .SetDisplayName(EvangelistWizardClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.WizardClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistWizardClasspro = EvangelistWizardClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistWizardClass2Align, EvangelistWizardClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WizardClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWizardClasspro = EvangelistWizardClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistWizardClass3Align, EvangelistWizardClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WizardClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWizardClasspro = EvangelistWizardClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistWizardClass4Align, EvangelistWizardClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WizardClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWizardClasspro = EvangelistWizardClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistWizardClass5Align, EvangelistWizardClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WizardClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWizardClasspro = EvangelistWizardClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistWizardClass6Align, EvangelistWizardClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WizardClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWizardClasspro = EvangelistWizardClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistWizardClass7Align, EvangelistWizardClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WizardClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWizardClasspro = EvangelistWizardClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistWizardClass8Align, EvangelistWizardClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WizardClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWizardClasspro = EvangelistWizardClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistWizardClass9Align, EvangelistWizardClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WizardClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EvangelistWizardClasspro = EvangelistWizardClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistWizardClass10Align, EvangelistWizardClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.WizardClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistWizardClasspro.Configure());
+            var EvangelistGunslingerClasspro = ProgressionConfigurator.New(EvangelistGunslingerClass0Align, EvangelistGunslingerClass0AlignGuid)
+            .SetDisplayName(EvangelistGunslingerClass0AlignDisplayName)
+            .SetDisplayName(EvangelistGunslingerClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(GunslingerClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistGunslingerClasspro = EvangelistGunslingerClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistGunslingerClass2Align, EvangelistGunslingerClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = GunslingerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistGunslingerClasspro = EvangelistGunslingerClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistGunslingerClass3Align, EvangelistGunslingerClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = GunslingerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistGunslingerClasspro = EvangelistGunslingerClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistGunslingerClass4Align, EvangelistGunslingerClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = GunslingerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistGunslingerClasspro = EvangelistGunslingerClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistGunslingerClass5Align, EvangelistGunslingerClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = GunslingerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistGunslingerClasspro = EvangelistGunslingerClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistGunslingerClass6Align, EvangelistGunslingerClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = GunslingerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistGunslingerClasspro = EvangelistGunslingerClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistGunslingerClass7Align, EvangelistGunslingerClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = GunslingerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistGunslingerClasspro = EvangelistGunslingerClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistGunslingerClass8Align, EvangelistGunslingerClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = GunslingerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistGunslingerClasspro = EvangelistGunslingerClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistGunslingerClass9Align, EvangelistGunslingerClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = GunslingerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistGunslingerClasspro = EvangelistGunslingerClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistGunslingerClass10Align, EvangelistGunslingerClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = GunslingerClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistGunslingerClasspro.Configure());
+            var EvangelistAgentoftheGraveClasspro = ProgressionConfigurator.New(EvangelistAgentoftheGraveClass0Align, EvangelistAgentoftheGraveClass0AlignGuid)
+            .SetDisplayName(EvangelistAgentoftheGraveClass0AlignDisplayName)
+            .SetDisplayName(EvangelistAgentoftheGraveClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(AgentoftheGraveClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistAgentoftheGraveClasspro = EvangelistAgentoftheGraveClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistAgentoftheGraveClass2Align, EvangelistAgentoftheGraveClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AgentoftheGraveClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistAgentoftheGraveClasspro = EvangelistAgentoftheGraveClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistAgentoftheGraveClass3Align, EvangelistAgentoftheGraveClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AgentoftheGraveClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistAgentoftheGraveClasspro = EvangelistAgentoftheGraveClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistAgentoftheGraveClass4Align, EvangelistAgentoftheGraveClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AgentoftheGraveClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistAgentoftheGraveClasspro = EvangelistAgentoftheGraveClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistAgentoftheGraveClass5Align, EvangelistAgentoftheGraveClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AgentoftheGraveClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistAgentoftheGraveClasspro = EvangelistAgentoftheGraveClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistAgentoftheGraveClass6Align, EvangelistAgentoftheGraveClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AgentoftheGraveClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistAgentoftheGraveClasspro = EvangelistAgentoftheGraveClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistAgentoftheGraveClass7Align, EvangelistAgentoftheGraveClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AgentoftheGraveClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistAgentoftheGraveClasspro = EvangelistAgentoftheGraveClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistAgentoftheGraveClass8Align, EvangelistAgentoftheGraveClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AgentoftheGraveClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistAgentoftheGraveClasspro = EvangelistAgentoftheGraveClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistAgentoftheGraveClass9Align, EvangelistAgentoftheGraveClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AgentoftheGraveClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistAgentoftheGraveClasspro = EvangelistAgentoftheGraveClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistAgentoftheGraveClass10Align, EvangelistAgentoftheGraveClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AgentoftheGraveClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistAgentoftheGraveClasspro.Configure());
+            var EvangelistAnchoriteofDawnClasspro = ProgressionConfigurator.New(EvangelistAnchoriteofDawnClass0Align, EvangelistAnchoriteofDawnClass0AlignGuid)
+            .SetDisplayName(EvangelistAnchoriteofDawnClass0AlignDisplayName)
+            .SetDisplayName(EvangelistAnchoriteofDawnClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(AnchoriteofDawnClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistAnchoriteofDawnClasspro = EvangelistAnchoriteofDawnClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistAnchoriteofDawnClass2Align, EvangelistAnchoriteofDawnClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AnchoriteofDawnClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistAnchoriteofDawnClasspro = EvangelistAnchoriteofDawnClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistAnchoriteofDawnClass3Align, EvangelistAnchoriteofDawnClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AnchoriteofDawnClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistAnchoriteofDawnClasspro = EvangelistAnchoriteofDawnClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistAnchoriteofDawnClass4Align, EvangelistAnchoriteofDawnClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AnchoriteofDawnClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistAnchoriteofDawnClasspro = EvangelistAnchoriteofDawnClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistAnchoriteofDawnClass5Align, EvangelistAnchoriteofDawnClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AnchoriteofDawnClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistAnchoriteofDawnClasspro = EvangelistAnchoriteofDawnClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistAnchoriteofDawnClass6Align, EvangelistAnchoriteofDawnClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AnchoriteofDawnClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistAnchoriteofDawnClasspro = EvangelistAnchoriteofDawnClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistAnchoriteofDawnClass7Align, EvangelistAnchoriteofDawnClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AnchoriteofDawnClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistAnchoriteofDawnClasspro = EvangelistAnchoriteofDawnClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistAnchoriteofDawnClass8Align, EvangelistAnchoriteofDawnClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AnchoriteofDawnClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistAnchoriteofDawnClasspro = EvangelistAnchoriteofDawnClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistAnchoriteofDawnClass9Align, EvangelistAnchoriteofDawnClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AnchoriteofDawnClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistAnchoriteofDawnClasspro = EvangelistAnchoriteofDawnClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistAnchoriteofDawnClass10Align, EvangelistAnchoriteofDawnClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AnchoriteofDawnClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistAnchoriteofDawnClasspro.Configure());
+            var EvangelistArcaneAcherClasspro = ProgressionConfigurator.New(EvangelistArcaneAcherClass0Align, EvangelistArcaneAcherClass0AlignGuid)
+            .SetDisplayName(EvangelistArcaneAcherClass0AlignDisplayName)
+            .SetDisplayName(EvangelistArcaneAcherClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(ArcaneAcherClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistArcaneAcherClasspro = EvangelistArcaneAcherClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistArcaneAcherClass2Align, EvangelistArcaneAcherClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ArcaneAcherClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistArcaneAcherClasspro = EvangelistArcaneAcherClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistArcaneAcherClass3Align, EvangelistArcaneAcherClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ArcaneAcherClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistArcaneAcherClasspro = EvangelistArcaneAcherClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistArcaneAcherClass4Align, EvangelistArcaneAcherClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ArcaneAcherClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistArcaneAcherClasspro = EvangelistArcaneAcherClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistArcaneAcherClass5Align, EvangelistArcaneAcherClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ArcaneAcherClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistArcaneAcherClasspro = EvangelistArcaneAcherClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistArcaneAcherClass6Align, EvangelistArcaneAcherClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ArcaneAcherClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistArcaneAcherClasspro = EvangelistArcaneAcherClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistArcaneAcherClass7Align, EvangelistArcaneAcherClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ArcaneAcherClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistArcaneAcherClasspro = EvangelistArcaneAcherClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistArcaneAcherClass8Align, EvangelistArcaneAcherClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ArcaneAcherClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistArcaneAcherClasspro = EvangelistArcaneAcherClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistArcaneAcherClass9Align, EvangelistArcaneAcherClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ArcaneAcherClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistArcaneAcherClasspro = EvangelistArcaneAcherClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistArcaneAcherClass10Align, EvangelistArcaneAcherClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ArcaneAcherClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistArcaneAcherClasspro.Configure());
+            var EvangelistAsavirClasspro = ProgressionConfigurator.New(EvangelistAsavirClass0Align, EvangelistAsavirClass0AlignGuid)
+            .SetDisplayName(EvangelistAsavirClass0AlignDisplayName)
+            .SetDisplayName(EvangelistAsavirClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(AsavirClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistAsavirClasspro = EvangelistAsavirClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistAsavirClass2Align, EvangelistAsavirClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AsavirClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistAsavirClasspro = EvangelistAsavirClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistAsavirClass3Align, EvangelistAsavirClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AsavirClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistAsavirClasspro = EvangelistAsavirClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistAsavirClass4Align, EvangelistAsavirClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AsavirClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistAsavirClasspro = EvangelistAsavirClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistAsavirClass5Align, EvangelistAsavirClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AsavirClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistAsavirClasspro = EvangelistAsavirClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistAsavirClass6Align, EvangelistAsavirClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AsavirClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistAsavirClasspro = EvangelistAsavirClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistAsavirClass7Align, EvangelistAsavirClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AsavirClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistAsavirClasspro = EvangelistAsavirClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistAsavirClass8Align, EvangelistAsavirClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AsavirClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistAsavirClasspro = EvangelistAsavirClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistAsavirClass9Align, EvangelistAsavirClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AsavirClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistAsavirClasspro = EvangelistAsavirClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistAsavirClass10Align, EvangelistAsavirClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = AsavirClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistAsavirClasspro.Configure());
+            var EvangelistChevalierClasspro = ProgressionConfigurator.New(EvangelistChevalierClass0Align, EvangelistChevalierClass0AlignGuid)
+            .SetDisplayName(EvangelistChevalierClass0AlignDisplayName)
+            .SetDisplayName(EvangelistChevalierClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(ChevalierClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistChevalierClasspro = EvangelistChevalierClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistChevalierClass2Align, EvangelistChevalierClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ChevalierClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistChevalierClasspro = EvangelistChevalierClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistChevalierClass3Align, EvangelistChevalierClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ChevalierClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistChevalierClasspro = EvangelistChevalierClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistChevalierClass4Align, EvangelistChevalierClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ChevalierClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistChevalierClasspro = EvangelistChevalierClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistChevalierClass5Align, EvangelistChevalierClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ChevalierClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistChevalierClasspro = EvangelistChevalierClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistChevalierClass6Align, EvangelistChevalierClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ChevalierClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistChevalierClasspro = EvangelistChevalierClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistChevalierClass7Align, EvangelistChevalierClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ChevalierClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistChevalierClasspro = EvangelistChevalierClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistChevalierClass8Align, EvangelistChevalierClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ChevalierClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistChevalierClasspro = EvangelistChevalierClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistChevalierClass9Align, EvangelistChevalierClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ChevalierClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistChevalierClasspro = EvangelistChevalierClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistChevalierClass10Align, EvangelistChevalierClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ChevalierClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistChevalierClasspro.Configure());
+            var EvangelistCrimsonTemplarClasspro = ProgressionConfigurator.New(EvangelistCrimsonTemplarClass0Align, EvangelistCrimsonTemplarClass0AlignGuid)
+            .SetDisplayName(EvangelistCrimsonTemplarClass0AlignDisplayName)
+            .SetDisplayName(EvangelistCrimsonTemplarClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CrimsonTemplarClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistCrimsonTemplarClasspro = EvangelistCrimsonTemplarClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistCrimsonTemplarClass2Align, EvangelistCrimsonTemplarClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CrimsonTemplarClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistCrimsonTemplarClasspro = EvangelistCrimsonTemplarClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistCrimsonTemplarClass3Align, EvangelistCrimsonTemplarClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CrimsonTemplarClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistCrimsonTemplarClasspro = EvangelistCrimsonTemplarClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistCrimsonTemplarClass4Align, EvangelistCrimsonTemplarClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CrimsonTemplarClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistCrimsonTemplarClasspro = EvangelistCrimsonTemplarClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistCrimsonTemplarClass5Align, EvangelistCrimsonTemplarClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CrimsonTemplarClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistCrimsonTemplarClasspro = EvangelistCrimsonTemplarClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistCrimsonTemplarClass6Align, EvangelistCrimsonTemplarClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CrimsonTemplarClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistCrimsonTemplarClasspro = EvangelistCrimsonTemplarClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistCrimsonTemplarClass7Align, EvangelistCrimsonTemplarClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CrimsonTemplarClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistCrimsonTemplarClasspro = EvangelistCrimsonTemplarClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistCrimsonTemplarClass8Align, EvangelistCrimsonTemplarClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CrimsonTemplarClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistCrimsonTemplarClasspro = EvangelistCrimsonTemplarClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistCrimsonTemplarClass9Align, EvangelistCrimsonTemplarClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CrimsonTemplarClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistCrimsonTemplarClasspro = EvangelistCrimsonTemplarClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistCrimsonTemplarClass10Align, EvangelistCrimsonTemplarClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CrimsonTemplarClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistCrimsonTemplarClasspro.Configure());
+            var EvangelistDeadeyeDevoteeClasspro = ProgressionConfigurator.New(EvangelistDeadeyeDevoteeClass0Align, EvangelistDeadeyeDevoteeClass0AlignGuid)
+            .SetDisplayName(EvangelistDeadeyeDevoteeClass0AlignDisplayName)
+            .SetDisplayName(EvangelistDeadeyeDevoteeClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(DeadeyeDevoteeClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistDeadeyeDevoteeClasspro = EvangelistDeadeyeDevoteeClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistDeadeyeDevoteeClass2Align, EvangelistDeadeyeDevoteeClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DeadeyeDevoteeClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistDeadeyeDevoteeClasspro = EvangelistDeadeyeDevoteeClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistDeadeyeDevoteeClass3Align, EvangelistDeadeyeDevoteeClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DeadeyeDevoteeClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistDeadeyeDevoteeClasspro = EvangelistDeadeyeDevoteeClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistDeadeyeDevoteeClass4Align, EvangelistDeadeyeDevoteeClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DeadeyeDevoteeClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistDeadeyeDevoteeClasspro = EvangelistDeadeyeDevoteeClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistDeadeyeDevoteeClass5Align, EvangelistDeadeyeDevoteeClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DeadeyeDevoteeClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistDeadeyeDevoteeClasspro = EvangelistDeadeyeDevoteeClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistDeadeyeDevoteeClass6Align, EvangelistDeadeyeDevoteeClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DeadeyeDevoteeClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistDeadeyeDevoteeClasspro = EvangelistDeadeyeDevoteeClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistDeadeyeDevoteeClass7Align, EvangelistDeadeyeDevoteeClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DeadeyeDevoteeClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistDeadeyeDevoteeClasspro = EvangelistDeadeyeDevoteeClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistDeadeyeDevoteeClass8Align, EvangelistDeadeyeDevoteeClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DeadeyeDevoteeClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistDeadeyeDevoteeClasspro = EvangelistDeadeyeDevoteeClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistDeadeyeDevoteeClass9Align, EvangelistDeadeyeDevoteeClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DeadeyeDevoteeClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistDeadeyeDevoteeClasspro = EvangelistDeadeyeDevoteeClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistDeadeyeDevoteeClass10Align, EvangelistDeadeyeDevoteeClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DeadeyeDevoteeClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistDeadeyeDevoteeClasspro.Configure());
+            var EvangelistDragonFuryClasspro = ProgressionConfigurator.New(EvangelistDragonFuryClass0Align, EvangelistDragonFuryClass0AlignGuid)
+            .SetDisplayName(EvangelistDragonFuryClass0AlignDisplayName)
+            .SetDisplayName(EvangelistDragonFuryClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(DragonFuryClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistDragonFuryClasspro = EvangelistDragonFuryClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistDragonFuryClass2Align, EvangelistDragonFuryClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DragonFuryClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistDragonFuryClasspro = EvangelistDragonFuryClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistDragonFuryClass3Align, EvangelistDragonFuryClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DragonFuryClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistDragonFuryClasspro = EvangelistDragonFuryClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistDragonFuryClass4Align, EvangelistDragonFuryClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DragonFuryClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistDragonFuryClasspro = EvangelistDragonFuryClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistDragonFuryClass5Align, EvangelistDragonFuryClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DragonFuryClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistDragonFuryClasspro = EvangelistDragonFuryClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistDragonFuryClass6Align, EvangelistDragonFuryClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DragonFuryClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistDragonFuryClasspro = EvangelistDragonFuryClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistDragonFuryClass7Align, EvangelistDragonFuryClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DragonFuryClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistDragonFuryClasspro = EvangelistDragonFuryClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistDragonFuryClass8Align, EvangelistDragonFuryClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DragonFuryClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistDragonFuryClasspro = EvangelistDragonFuryClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistDragonFuryClass9Align, EvangelistDragonFuryClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DragonFuryClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistDragonFuryClasspro = EvangelistDragonFuryClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistDragonFuryClass10Align, EvangelistDragonFuryClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DragonFuryClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistDragonFuryClasspro.Configure());
+            var EvangelistEsotericKnightClasspro = ProgressionConfigurator.New(EvangelistEsotericKnightClass0Align, EvangelistEsotericKnightClass0AlignGuid)
+            .SetDisplayName(EvangelistEsotericKnightClass0AlignDisplayName)
+            .SetDisplayName(EvangelistEsotericKnightClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(EsotericKnightClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistEsotericKnightClasspro = EvangelistEsotericKnightClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistEsotericKnightClass2Align, EvangelistEsotericKnightClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = EsotericKnightClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistEsotericKnightClasspro = EvangelistEsotericKnightClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistEsotericKnightClass3Align, EvangelistEsotericKnightClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = EsotericKnightClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistEsotericKnightClasspro = EvangelistEsotericKnightClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistEsotericKnightClass4Align, EvangelistEsotericKnightClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = EsotericKnightClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistEsotericKnightClasspro = EvangelistEsotericKnightClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistEsotericKnightClass5Align, EvangelistEsotericKnightClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = EsotericKnightClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistEsotericKnightClasspro = EvangelistEsotericKnightClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistEsotericKnightClass6Align, EvangelistEsotericKnightClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = EsotericKnightClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistEsotericKnightClasspro = EvangelistEsotericKnightClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistEsotericKnightClass7Align, EvangelistEsotericKnightClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = EsotericKnightClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistEsotericKnightClasspro = EvangelistEsotericKnightClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistEsotericKnightClass8Align, EvangelistEsotericKnightClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = EsotericKnightClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistEsotericKnightClasspro = EvangelistEsotericKnightClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistEsotericKnightClass9Align, EvangelistEsotericKnightClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = EsotericKnightClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistEsotericKnightClasspro = EvangelistEsotericKnightClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistEsotericKnightClass10Align, EvangelistEsotericKnightClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = EsotericKnightClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistEsotericKnightClasspro.Configure());
+            var EvangelistFuriousGuardianClasspro = ProgressionConfigurator.New(EvangelistFuriousGuardianClass0Align, EvangelistFuriousGuardianClass0AlignGuid)
+            .SetDisplayName(EvangelistFuriousGuardianClass0AlignDisplayName)
+            .SetDisplayName(EvangelistFuriousGuardianClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(FuriousGuardianClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistFuriousGuardianClasspro = EvangelistFuriousGuardianClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistFuriousGuardianClass2Align, EvangelistFuriousGuardianClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = FuriousGuardianClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistFuriousGuardianClasspro = EvangelistFuriousGuardianClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistFuriousGuardianClass3Align, EvangelistFuriousGuardianClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = FuriousGuardianClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistFuriousGuardianClasspro = EvangelistFuriousGuardianClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistFuriousGuardianClass4Align, EvangelistFuriousGuardianClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = FuriousGuardianClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistFuriousGuardianClasspro = EvangelistFuriousGuardianClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistFuriousGuardianClass5Align, EvangelistFuriousGuardianClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = FuriousGuardianClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistFuriousGuardianClasspro = EvangelistFuriousGuardianClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistFuriousGuardianClass6Align, EvangelistFuriousGuardianClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = FuriousGuardianClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistFuriousGuardianClasspro = EvangelistFuriousGuardianClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistFuriousGuardianClass7Align, EvangelistFuriousGuardianClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = FuriousGuardianClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistFuriousGuardianClasspro = EvangelistFuriousGuardianClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistFuriousGuardianClass8Align, EvangelistFuriousGuardianClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = FuriousGuardianClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistFuriousGuardianClasspro = EvangelistFuriousGuardianClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistFuriousGuardianClass9Align, EvangelistFuriousGuardianClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = FuriousGuardianClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistFuriousGuardianClasspro = EvangelistFuriousGuardianClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistFuriousGuardianClass10Align, EvangelistFuriousGuardianClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = FuriousGuardianClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistFuriousGuardianClasspro.Configure());
+            var EvangelistHalflingOpportunistClasspro = ProgressionConfigurator.New(EvangelistHalflingOpportunistClass0Align, EvangelistHalflingOpportunistClass0AlignGuid)
+            .SetDisplayName(EvangelistHalflingOpportunistClass0AlignDisplayName)
+            .SetDisplayName(EvangelistHalflingOpportunistClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(HalflingOpportunistClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistHalflingOpportunistClasspro = EvangelistHalflingOpportunistClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistHalflingOpportunistClass2Align, EvangelistHalflingOpportunistClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HalflingOpportunistClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHalflingOpportunistClasspro = EvangelistHalflingOpportunistClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistHalflingOpportunistClass3Align, EvangelistHalflingOpportunistClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HalflingOpportunistClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHalflingOpportunistClasspro = EvangelistHalflingOpportunistClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistHalflingOpportunistClass4Align, EvangelistHalflingOpportunistClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HalflingOpportunistClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHalflingOpportunistClasspro = EvangelistHalflingOpportunistClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistHalflingOpportunistClass5Align, EvangelistHalflingOpportunistClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HalflingOpportunistClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHalflingOpportunistClasspro = EvangelistHalflingOpportunistClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistHalflingOpportunistClass6Align, EvangelistHalflingOpportunistClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HalflingOpportunistClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHalflingOpportunistClasspro = EvangelistHalflingOpportunistClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistHalflingOpportunistClass7Align, EvangelistHalflingOpportunistClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HalflingOpportunistClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHalflingOpportunistClasspro = EvangelistHalflingOpportunistClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistHalflingOpportunistClass8Align, EvangelistHalflingOpportunistClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HalflingOpportunistClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHalflingOpportunistClasspro = EvangelistHalflingOpportunistClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistHalflingOpportunistClass9Align, EvangelistHalflingOpportunistClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HalflingOpportunistClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHalflingOpportunistClasspro = EvangelistHalflingOpportunistClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistHalflingOpportunistClass10Align, EvangelistHalflingOpportunistClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HalflingOpportunistClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistHalflingOpportunistClasspro.Configure());
+            var EvangelistHinterlanderClasspro = ProgressionConfigurator.New(EvangelistHinterlanderClass0Align, EvangelistHinterlanderClass0AlignGuid)
+            .SetDisplayName(EvangelistHinterlanderClass0AlignDisplayName)
+            .SetDisplayName(EvangelistHinterlanderClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(HinterlanderClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistHinterlanderClasspro = EvangelistHinterlanderClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistHinterlanderClass2Align, EvangelistHinterlanderClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HinterlanderClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHinterlanderClasspro = EvangelistHinterlanderClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistHinterlanderClass3Align, EvangelistHinterlanderClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HinterlanderClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHinterlanderClasspro = EvangelistHinterlanderClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistHinterlanderClass4Align, EvangelistHinterlanderClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HinterlanderClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHinterlanderClasspro = EvangelistHinterlanderClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistHinterlanderClass5Align, EvangelistHinterlanderClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HinterlanderClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHinterlanderClasspro = EvangelistHinterlanderClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistHinterlanderClass6Align, EvangelistHinterlanderClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HinterlanderClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHinterlanderClasspro = EvangelistHinterlanderClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistHinterlanderClass7Align, EvangelistHinterlanderClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HinterlanderClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHinterlanderClasspro = EvangelistHinterlanderClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistHinterlanderClass8Align, EvangelistHinterlanderClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HinterlanderClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHinterlanderClasspro = EvangelistHinterlanderClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistHinterlanderClass9Align, EvangelistHinterlanderClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HinterlanderClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHinterlanderClasspro = EvangelistHinterlanderClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistHinterlanderClass10Align, EvangelistHinterlanderClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HinterlanderClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistHinterlanderClasspro.Configure());
+            var EvangelistHorizonWalkerClasspro = ProgressionConfigurator.New(EvangelistHorizonWalkerClass0Align, EvangelistHorizonWalkerClass0AlignGuid)
+            .SetDisplayName(EvangelistHorizonWalkerClass0AlignDisplayName)
+            .SetDisplayName(EvangelistHorizonWalkerClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(HorizonWalkerClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistHorizonWalkerClasspro = EvangelistHorizonWalkerClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistHorizonWalkerClass2Align, EvangelistHorizonWalkerClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HorizonWalkerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHorizonWalkerClasspro = EvangelistHorizonWalkerClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistHorizonWalkerClass3Align, EvangelistHorizonWalkerClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HorizonWalkerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHorizonWalkerClasspro = EvangelistHorizonWalkerClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistHorizonWalkerClass4Align, EvangelistHorizonWalkerClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HorizonWalkerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHorizonWalkerClasspro = EvangelistHorizonWalkerClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistHorizonWalkerClass5Align, EvangelistHorizonWalkerClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HorizonWalkerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHorizonWalkerClasspro = EvangelistHorizonWalkerClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistHorizonWalkerClass6Align, EvangelistHorizonWalkerClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HorizonWalkerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHorizonWalkerClasspro = EvangelistHorizonWalkerClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistHorizonWalkerClass7Align, EvangelistHorizonWalkerClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HorizonWalkerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHorizonWalkerClasspro = EvangelistHorizonWalkerClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistHorizonWalkerClass8Align, EvangelistHorizonWalkerClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HorizonWalkerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHorizonWalkerClasspro = EvangelistHorizonWalkerClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistHorizonWalkerClass9Align, EvangelistHorizonWalkerClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HorizonWalkerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHorizonWalkerClasspro = EvangelistHorizonWalkerClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistHorizonWalkerClass10Align, EvangelistHorizonWalkerClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HorizonWalkerClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistHorizonWalkerClasspro.Configure());
+            var EvangelistInheritorCrusaderClasspro = ProgressionConfigurator.New(EvangelistInheritorCrusaderClass0Align, EvangelistInheritorCrusaderClass0AlignGuid)
+            .SetDisplayName(EvangelistInheritorCrusaderClass0AlignDisplayName)
+            .SetDisplayName(EvangelistInheritorCrusaderClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(InheritorCrusaderClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistInheritorCrusaderClasspro = EvangelistInheritorCrusaderClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistInheritorCrusaderClass2Align, EvangelistInheritorCrusaderClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = InheritorCrusaderClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistInheritorCrusaderClasspro = EvangelistInheritorCrusaderClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistInheritorCrusaderClass3Align, EvangelistInheritorCrusaderClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = InheritorCrusaderClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistInheritorCrusaderClasspro = EvangelistInheritorCrusaderClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistInheritorCrusaderClass4Align, EvangelistInheritorCrusaderClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = InheritorCrusaderClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistInheritorCrusaderClasspro = EvangelistInheritorCrusaderClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistInheritorCrusaderClass5Align, EvangelistInheritorCrusaderClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = InheritorCrusaderClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistInheritorCrusaderClasspro = EvangelistInheritorCrusaderClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistInheritorCrusaderClass6Align, EvangelistInheritorCrusaderClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = InheritorCrusaderClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistInheritorCrusaderClasspro = EvangelistInheritorCrusaderClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistInheritorCrusaderClass7Align, EvangelistInheritorCrusaderClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = InheritorCrusaderClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistInheritorCrusaderClasspro = EvangelistInheritorCrusaderClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistInheritorCrusaderClass8Align, EvangelistInheritorCrusaderClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = InheritorCrusaderClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistInheritorCrusaderClasspro = EvangelistInheritorCrusaderClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistInheritorCrusaderClass9Align, EvangelistInheritorCrusaderClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = InheritorCrusaderClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistInheritorCrusaderClasspro = EvangelistInheritorCrusaderClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistInheritorCrusaderClass10Align, EvangelistInheritorCrusaderClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = InheritorCrusaderClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistInheritorCrusaderClasspro.Configure());
+            var EvangelistMammothRiderClasspro = ProgressionConfigurator.New(EvangelistMammothRiderClass0Align, EvangelistMammothRiderClass0AlignGuid)
+            .SetDisplayName(EvangelistMammothRiderClass0AlignDisplayName)
+            .SetDisplayName(EvangelistMammothRiderClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(MammothRiderClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistMammothRiderClasspro = EvangelistMammothRiderClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistMammothRiderClass2Align, EvangelistMammothRiderClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MammothRiderClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistMammothRiderClasspro = EvangelistMammothRiderClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistMammothRiderClass3Align, EvangelistMammothRiderClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MammothRiderClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistMammothRiderClasspro = EvangelistMammothRiderClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistMammothRiderClass4Align, EvangelistMammothRiderClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MammothRiderClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistMammothRiderClasspro = EvangelistMammothRiderClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistMammothRiderClass5Align, EvangelistMammothRiderClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MammothRiderClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistMammothRiderClasspro = EvangelistMammothRiderClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistMammothRiderClass6Align, EvangelistMammothRiderClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MammothRiderClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistMammothRiderClasspro = EvangelistMammothRiderClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistMammothRiderClass7Align, EvangelistMammothRiderClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MammothRiderClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistMammothRiderClasspro = EvangelistMammothRiderClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistMammothRiderClass8Align, EvangelistMammothRiderClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MammothRiderClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistMammothRiderClasspro = EvangelistMammothRiderClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistMammothRiderClass9Align, EvangelistMammothRiderClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MammothRiderClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistMammothRiderClasspro = EvangelistMammothRiderClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistMammothRiderClass10Align, EvangelistMammothRiderClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MammothRiderClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistMammothRiderClasspro.Configure());
+            var EvangelistSanguineAngelClasspro = ProgressionConfigurator.New(EvangelistSanguineAngelClass0Align, EvangelistSanguineAngelClass0AlignGuid)
+            .SetDisplayName(EvangelistSanguineAngelClass0AlignDisplayName)
+            .SetDisplayName(EvangelistSanguineAngelClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(SanguineAngelClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistSanguineAngelClasspro = EvangelistSanguineAngelClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistSanguineAngelClass2Align, EvangelistSanguineAngelClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SanguineAngelClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSanguineAngelClasspro = EvangelistSanguineAngelClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistSanguineAngelClass3Align, EvangelistSanguineAngelClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SanguineAngelClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSanguineAngelClasspro = EvangelistSanguineAngelClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistSanguineAngelClass4Align, EvangelistSanguineAngelClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SanguineAngelClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSanguineAngelClasspro = EvangelistSanguineAngelClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistSanguineAngelClass5Align, EvangelistSanguineAngelClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SanguineAngelClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSanguineAngelClasspro = EvangelistSanguineAngelClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistSanguineAngelClass6Align, EvangelistSanguineAngelClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SanguineAngelClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSanguineAngelClasspro = EvangelistSanguineAngelClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistSanguineAngelClass7Align, EvangelistSanguineAngelClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SanguineAngelClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSanguineAngelClasspro = EvangelistSanguineAngelClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistSanguineAngelClass8Align, EvangelistSanguineAngelClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SanguineAngelClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSanguineAngelClasspro = EvangelistSanguineAngelClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistSanguineAngelClass9Align, EvangelistSanguineAngelClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SanguineAngelClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSanguineAngelClasspro = EvangelistSanguineAngelClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistSanguineAngelClass10Align, EvangelistSanguineAngelClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SanguineAngelClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistSanguineAngelClasspro.Configure());
+            var EvangelistScarSeekerClasspro = ProgressionConfigurator.New(EvangelistScarSeekerClass0Align, EvangelistScarSeekerClass0AlignGuid)
+            .SetDisplayName(EvangelistScarSeekerClass0AlignDisplayName)
+            .SetDisplayName(EvangelistScarSeekerClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(ScarSeekerClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistScarSeekerClasspro = EvangelistScarSeekerClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistScarSeekerClass2Align, EvangelistScarSeekerClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ScarSeekerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistScarSeekerClasspro = EvangelistScarSeekerClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistScarSeekerClass3Align, EvangelistScarSeekerClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ScarSeekerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistScarSeekerClasspro = EvangelistScarSeekerClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistScarSeekerClass4Align, EvangelistScarSeekerClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ScarSeekerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistScarSeekerClasspro = EvangelistScarSeekerClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistScarSeekerClass5Align, EvangelistScarSeekerClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ScarSeekerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistScarSeekerClasspro = EvangelistScarSeekerClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistScarSeekerClass6Align, EvangelistScarSeekerClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ScarSeekerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistScarSeekerClasspro = EvangelistScarSeekerClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistScarSeekerClass7Align, EvangelistScarSeekerClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ScarSeekerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistScarSeekerClasspro = EvangelistScarSeekerClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistScarSeekerClass8Align, EvangelistScarSeekerClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ScarSeekerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistScarSeekerClasspro = EvangelistScarSeekerClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistScarSeekerClass9Align, EvangelistScarSeekerClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ScarSeekerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistScarSeekerClasspro = EvangelistScarSeekerClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistScarSeekerClass10Align, EvangelistScarSeekerClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ScarSeekerClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistScarSeekerClasspro.Configure());
+            var EvangelistSentinelClasspro = ProgressionConfigurator.New(EvangelistSentinelClass0Align, EvangelistSentinelClass0AlignGuid)
+            .SetDisplayName(EvangelistSentinelClass0AlignDisplayName)
+            .SetDisplayName(EvangelistSentinelClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(SentinelClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistSentinelClasspro = EvangelistSentinelClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistSentinelClass2Align, EvangelistSentinelClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SentinelClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSentinelClasspro = EvangelistSentinelClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistSentinelClass3Align, EvangelistSentinelClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SentinelClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSentinelClasspro = EvangelistSentinelClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistSentinelClass4Align, EvangelistSentinelClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SentinelClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSentinelClasspro = EvangelistSentinelClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistSentinelClass5Align, EvangelistSentinelClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SentinelClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSentinelClasspro = EvangelistSentinelClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistSentinelClass6Align, EvangelistSentinelClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SentinelClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSentinelClasspro = EvangelistSentinelClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistSentinelClass7Align, EvangelistSentinelClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SentinelClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSentinelClasspro = EvangelistSentinelClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistSentinelClass8Align, EvangelistSentinelClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SentinelClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSentinelClasspro = EvangelistSentinelClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistSentinelClass9Align, EvangelistSentinelClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SentinelClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSentinelClasspro = EvangelistSentinelClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistSentinelClass10Align, EvangelistSentinelClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SentinelClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistSentinelClasspro.Configure());
+            var EvangelistShadowDancerClasspro = ProgressionConfigurator.New(EvangelistShadowDancerClass0Align, EvangelistShadowDancerClass0AlignGuid)
+            .SetDisplayName(EvangelistShadowDancerClass0AlignDisplayName)
+            .SetDisplayName(EvangelistShadowDancerClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(ShadowDancerClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistShadowDancerClasspro = EvangelistShadowDancerClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistShadowDancerClass2Align, EvangelistShadowDancerClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ShadowDancerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistShadowDancerClasspro = EvangelistShadowDancerClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistShadowDancerClass3Align, EvangelistShadowDancerClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ShadowDancerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistShadowDancerClasspro = EvangelistShadowDancerClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistShadowDancerClass4Align, EvangelistShadowDancerClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ShadowDancerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistShadowDancerClasspro = EvangelistShadowDancerClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistShadowDancerClass5Align, EvangelistShadowDancerClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ShadowDancerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistShadowDancerClasspro = EvangelistShadowDancerClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistShadowDancerClass6Align, EvangelistShadowDancerClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ShadowDancerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistShadowDancerClasspro = EvangelistShadowDancerClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistShadowDancerClass7Align, EvangelistShadowDancerClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ShadowDancerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistShadowDancerClasspro = EvangelistShadowDancerClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistShadowDancerClass8Align, EvangelistShadowDancerClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ShadowDancerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistShadowDancerClasspro = EvangelistShadowDancerClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistShadowDancerClass9Align, EvangelistShadowDancerClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ShadowDancerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistShadowDancerClasspro = EvangelistShadowDancerClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistShadowDancerClass10Align, EvangelistShadowDancerClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ShadowDancerClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistShadowDancerClasspro.Configure());
+            var EvangelistSouldrinkerClasspro = ProgressionConfigurator.New(EvangelistSouldrinkerClass0Align, EvangelistSouldrinkerClass0AlignGuid)
+            .SetDisplayName(EvangelistSouldrinkerClass0AlignDisplayName)
+            .SetDisplayName(EvangelistSouldrinkerClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(SouldrinkerClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistSouldrinkerClasspro = EvangelistSouldrinkerClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistSouldrinkerClass2Align, EvangelistSouldrinkerClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SouldrinkerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSouldrinkerClasspro = EvangelistSouldrinkerClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistSouldrinkerClass3Align, EvangelistSouldrinkerClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SouldrinkerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSouldrinkerClasspro = EvangelistSouldrinkerClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistSouldrinkerClass4Align, EvangelistSouldrinkerClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SouldrinkerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSouldrinkerClasspro = EvangelistSouldrinkerClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistSouldrinkerClass5Align, EvangelistSouldrinkerClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SouldrinkerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSouldrinkerClasspro = EvangelistSouldrinkerClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistSouldrinkerClass6Align, EvangelistSouldrinkerClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SouldrinkerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSouldrinkerClasspro = EvangelistSouldrinkerClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistSouldrinkerClass7Align, EvangelistSouldrinkerClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SouldrinkerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSouldrinkerClasspro = EvangelistSouldrinkerClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistSouldrinkerClass8Align, EvangelistSouldrinkerClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SouldrinkerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSouldrinkerClasspro = EvangelistSouldrinkerClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistSouldrinkerClass9Align, EvangelistSouldrinkerClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SouldrinkerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSouldrinkerClasspro = EvangelistSouldrinkerClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistSouldrinkerClass10Align, EvangelistSouldrinkerClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SouldrinkerClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistSouldrinkerClasspro.Configure());
+            var EvangelistUmbralAgentClasspro = ProgressionConfigurator.New(EvangelistUmbralAgentClass0Align, EvangelistUmbralAgentClass0AlignGuid)
+            .SetDisplayName(EvangelistUmbralAgentClass0AlignDisplayName)
+            .SetDisplayName(EvangelistUmbralAgentClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(UmbralAgentClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistUmbralAgentClasspro = EvangelistUmbralAgentClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistUmbralAgentClass2Align, EvangelistUmbralAgentClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = UmbralAgentClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistUmbralAgentClasspro = EvangelistUmbralAgentClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistUmbralAgentClass3Align, EvangelistUmbralAgentClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = UmbralAgentClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistUmbralAgentClasspro = EvangelistUmbralAgentClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistUmbralAgentClass4Align, EvangelistUmbralAgentClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = UmbralAgentClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistUmbralAgentClasspro = EvangelistUmbralAgentClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistUmbralAgentClass5Align, EvangelistUmbralAgentClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = UmbralAgentClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistUmbralAgentClasspro = EvangelistUmbralAgentClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistUmbralAgentClass6Align, EvangelistUmbralAgentClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = UmbralAgentClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistUmbralAgentClasspro = EvangelistUmbralAgentClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistUmbralAgentClass7Align, EvangelistUmbralAgentClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = UmbralAgentClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistUmbralAgentClasspro = EvangelistUmbralAgentClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistUmbralAgentClass8Align, EvangelistUmbralAgentClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = UmbralAgentClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistUmbralAgentClasspro = EvangelistUmbralAgentClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistUmbralAgentClass9Align, EvangelistUmbralAgentClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = UmbralAgentClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistUmbralAgentClasspro = EvangelistUmbralAgentClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistUmbralAgentClass10Align, EvangelistUmbralAgentClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = UmbralAgentClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistUmbralAgentClasspro.Configure());
+            var EvangelistMicroAntiPaladinClasspro = ProgressionConfigurator.New(EvangelistMicroAntiPaladinClass0Align, EvangelistMicroAntiPaladinClass0AlignGuid)
+            .SetDisplayName(EvangelistMicroAntiPaladinClass0AlignDisplayName)
+            .SetDisplayName(EvangelistMicroAntiPaladinClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(MicroAntiPaladinClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistMicroAntiPaladinClasspro = EvangelistMicroAntiPaladinClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistMicroAntiPaladinClass2Align, EvangelistMicroAntiPaladinClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MicroAntiPaladinClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistMicroAntiPaladinClasspro = EvangelistMicroAntiPaladinClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistMicroAntiPaladinClass3Align, EvangelistMicroAntiPaladinClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MicroAntiPaladinClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistMicroAntiPaladinClasspro = EvangelistMicroAntiPaladinClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistMicroAntiPaladinClass4Align, EvangelistMicroAntiPaladinClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MicroAntiPaladinClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistMicroAntiPaladinClasspro = EvangelistMicroAntiPaladinClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistMicroAntiPaladinClass5Align, EvangelistMicroAntiPaladinClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MicroAntiPaladinClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistMicroAntiPaladinClasspro = EvangelistMicroAntiPaladinClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistMicroAntiPaladinClass6Align, EvangelistMicroAntiPaladinClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MicroAntiPaladinClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistMicroAntiPaladinClasspro = EvangelistMicroAntiPaladinClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistMicroAntiPaladinClass7Align, EvangelistMicroAntiPaladinClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MicroAntiPaladinClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistMicroAntiPaladinClasspro = EvangelistMicroAntiPaladinClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistMicroAntiPaladinClass8Align, EvangelistMicroAntiPaladinClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MicroAntiPaladinClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistMicroAntiPaladinClasspro = EvangelistMicroAntiPaladinClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistMicroAntiPaladinClass9Align, EvangelistMicroAntiPaladinClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MicroAntiPaladinClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistMicroAntiPaladinClasspro = EvangelistMicroAntiPaladinClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistMicroAntiPaladinClass10Align, EvangelistMicroAntiPaladinClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MicroAntiPaladinClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistMicroAntiPaladinClasspro.Configure());
+            var EvangelistOathbreakerClasspro = ProgressionConfigurator.New(EvangelistOathbreakerClass0Align, EvangelistOathbreakerClass0AlignGuid)
+            .SetDisplayName(EvangelistOathbreakerClass0AlignDisplayName)
+            .SetDisplayName(EvangelistOathbreakerClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(OathbreakerClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistOathbreakerClasspro = EvangelistOathbreakerClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistOathbreakerClass2Align, EvangelistOathbreakerClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = OathbreakerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistOathbreakerClasspro = EvangelistOathbreakerClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistOathbreakerClass3Align, EvangelistOathbreakerClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = OathbreakerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistOathbreakerClasspro = EvangelistOathbreakerClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistOathbreakerClass4Align, EvangelistOathbreakerClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = OathbreakerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistOathbreakerClasspro = EvangelistOathbreakerClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistOathbreakerClass5Align, EvangelistOathbreakerClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = OathbreakerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistOathbreakerClasspro = EvangelistOathbreakerClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistOathbreakerClass6Align, EvangelistOathbreakerClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = OathbreakerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistOathbreakerClasspro = EvangelistOathbreakerClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistOathbreakerClass7Align, EvangelistOathbreakerClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = OathbreakerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistOathbreakerClasspro = EvangelistOathbreakerClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistOathbreakerClass8Align, EvangelistOathbreakerClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = OathbreakerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistOathbreakerClasspro = EvangelistOathbreakerClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistOathbreakerClass9Align, EvangelistOathbreakerClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = OathbreakerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistOathbreakerClasspro = EvangelistOathbreakerClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistOathbreakerClass10Align, EvangelistOathbreakerClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = OathbreakerClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistOathbreakerClasspro.Configure());
+            var EvangelistDreadKnightClasspro = ProgressionConfigurator.New(EvangelistDreadKnightClass0Align, EvangelistDreadKnightClass0AlignGuid)
+            .SetDisplayName(EvangelistDreadKnightClass0AlignDisplayName)
+            .SetDisplayName(EvangelistDreadKnightClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(DreadKnightClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistDreadKnightClasspro = EvangelistDreadKnightClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistDreadKnightClass2Align, EvangelistDreadKnightClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DreadKnightClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistDreadKnightClasspro = EvangelistDreadKnightClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistDreadKnightClass3Align, EvangelistDreadKnightClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DreadKnightClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistDreadKnightClasspro = EvangelistDreadKnightClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistDreadKnightClass4Align, EvangelistDreadKnightClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DreadKnightClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistDreadKnightClasspro = EvangelistDreadKnightClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistDreadKnightClass5Align, EvangelistDreadKnightClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DreadKnightClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistDreadKnightClasspro = EvangelistDreadKnightClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistDreadKnightClass6Align, EvangelistDreadKnightClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DreadKnightClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistDreadKnightClasspro = EvangelistDreadKnightClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistDreadKnightClass7Align, EvangelistDreadKnightClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DreadKnightClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistDreadKnightClasspro = EvangelistDreadKnightClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistDreadKnightClass8Align, EvangelistDreadKnightClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DreadKnightClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistDreadKnightClasspro = EvangelistDreadKnightClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistDreadKnightClass9Align, EvangelistDreadKnightClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DreadKnightClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistDreadKnightClasspro = EvangelistDreadKnightClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistDreadKnightClass10Align, EvangelistDreadKnightClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = DreadKnightClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistDreadKnightClasspro.Configure());
+            var EvangelistStargazerClasspro = ProgressionConfigurator.New(EvangelistStargazerClass0Align, EvangelistStargazerClass0AlignGuid)
+            .SetDisplayName(EvangelistStargazerClass0AlignDisplayName)
+            .SetDisplayName(EvangelistStargazerClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(StargazerClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistStargazerClasspro = EvangelistStargazerClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistStargazerClass2Align, EvangelistStargazerClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = StargazerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistStargazerClasspro = EvangelistStargazerClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistStargazerClass3Align, EvangelistStargazerClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = StargazerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistStargazerClasspro = EvangelistStargazerClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistStargazerClass4Align, EvangelistStargazerClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = StargazerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistStargazerClasspro = EvangelistStargazerClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistStargazerClass5Align, EvangelistStargazerClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = StargazerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistStargazerClasspro = EvangelistStargazerClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistStargazerClass6Align, EvangelistStargazerClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = StargazerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistStargazerClasspro = EvangelistStargazerClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistStargazerClass7Align, EvangelistStargazerClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = StargazerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistStargazerClasspro = EvangelistStargazerClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistStargazerClass8Align, EvangelistStargazerClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = StargazerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistStargazerClasspro = EvangelistStargazerClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistStargazerClass9Align, EvangelistStargazerClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = StargazerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistStargazerClasspro = EvangelistStargazerClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistStargazerClass10Align, EvangelistStargazerClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = StargazerClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistStargazerClasspro.Configure());
+            var EvangelistSwashbucklerClasspro = ProgressionConfigurator.New(EvangelistSwashbucklerClass0Align, EvangelistSwashbucklerClass0AlignGuid)
+            .SetDisplayName(EvangelistSwashbucklerClass0AlignDisplayName)
+            .SetDisplayName(EvangelistSwashbucklerClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(SwashbucklerClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistSwashbucklerClasspro = EvangelistSwashbucklerClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistSwashbucklerClass2Align, EvangelistSwashbucklerClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SwashbucklerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSwashbucklerClasspro = EvangelistSwashbucklerClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistSwashbucklerClass3Align, EvangelistSwashbucklerClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SwashbucklerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSwashbucklerClasspro = EvangelistSwashbucklerClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistSwashbucklerClass4Align, EvangelistSwashbucklerClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SwashbucklerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSwashbucklerClasspro = EvangelistSwashbucklerClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistSwashbucklerClass5Align, EvangelistSwashbucklerClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SwashbucklerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSwashbucklerClasspro = EvangelistSwashbucklerClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistSwashbucklerClass6Align, EvangelistSwashbucklerClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SwashbucklerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSwashbucklerClasspro = EvangelistSwashbucklerClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistSwashbucklerClass7Align, EvangelistSwashbucklerClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SwashbucklerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSwashbucklerClasspro = EvangelistSwashbucklerClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistSwashbucklerClass8Align, EvangelistSwashbucklerClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SwashbucklerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSwashbucklerClasspro = EvangelistSwashbucklerClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistSwashbucklerClass9Align, EvangelistSwashbucklerClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SwashbucklerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSwashbucklerClasspro = EvangelistSwashbucklerClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistSwashbucklerClass10Align, EvangelistSwashbucklerClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SwashbucklerClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistSwashbucklerClasspro.Configure());
+            var EvangelistHolyVindicatorClasspro = ProgressionConfigurator.New(EvangelistHolyVindicatorClass0Align, EvangelistHolyVindicatorClass0AlignGuid)
+            .SetDisplayName(EvangelistHolyVindicatorClass0AlignDisplayName)
+            .SetDisplayName(EvangelistHolyVindicatorClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(HolyVindicatorClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistHolyVindicatorClasspro = EvangelistHolyVindicatorClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistHolyVindicatorClass2Align, EvangelistHolyVindicatorClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HolyVindicatorClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHolyVindicatorClasspro = EvangelistHolyVindicatorClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistHolyVindicatorClass3Align, EvangelistHolyVindicatorClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HolyVindicatorClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHolyVindicatorClasspro = EvangelistHolyVindicatorClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistHolyVindicatorClass4Align, EvangelistHolyVindicatorClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HolyVindicatorClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHolyVindicatorClasspro = EvangelistHolyVindicatorClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistHolyVindicatorClass5Align, EvangelistHolyVindicatorClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HolyVindicatorClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHolyVindicatorClasspro = EvangelistHolyVindicatorClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistHolyVindicatorClass6Align, EvangelistHolyVindicatorClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HolyVindicatorClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHolyVindicatorClasspro = EvangelistHolyVindicatorClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistHolyVindicatorClass7Align, EvangelistHolyVindicatorClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HolyVindicatorClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHolyVindicatorClasspro = EvangelistHolyVindicatorClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistHolyVindicatorClass8Align, EvangelistHolyVindicatorClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HolyVindicatorClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHolyVindicatorClasspro = EvangelistHolyVindicatorClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistHolyVindicatorClass9Align, EvangelistHolyVindicatorClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HolyVindicatorClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHolyVindicatorClasspro = EvangelistHolyVindicatorClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistHolyVindicatorClass10Align, EvangelistHolyVindicatorClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HolyVindicatorClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistHolyVindicatorClasspro.Configure());
+            var EvangelistSummonerClasspro = ProgressionConfigurator.New(EvangelistSummonerClass0Align, EvangelistSummonerClass0AlignGuid)
+            .SetDisplayName(EvangelistSummonerClass0AlignDisplayName)
+            .SetDisplayName(EvangelistSummonerClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(SummonerClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistSummonerClasspro = EvangelistSummonerClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistSummonerClass2Align, EvangelistSummonerClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SummonerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSummonerClasspro = EvangelistSummonerClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistSummonerClass3Align, EvangelistSummonerClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SummonerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSummonerClasspro = EvangelistSummonerClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistSummonerClass4Align, EvangelistSummonerClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SummonerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSummonerClasspro = EvangelistSummonerClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistSummonerClass5Align, EvangelistSummonerClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SummonerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSummonerClasspro = EvangelistSummonerClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistSummonerClass6Align, EvangelistSummonerClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SummonerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSummonerClasspro = EvangelistSummonerClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistSummonerClass7Align, EvangelistSummonerClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SummonerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSummonerClasspro = EvangelistSummonerClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistSummonerClass8Align, EvangelistSummonerClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SummonerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSummonerClasspro = EvangelistSummonerClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistSummonerClass9Align, EvangelistSummonerClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SummonerClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistSummonerClasspro = EvangelistSummonerClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistSummonerClass10Align, EvangelistSummonerClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = SummonerClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistSummonerClasspro.Configure());
 
             var select = FeatureSelectionConfigurator.New(AlignSpam, AlignSpamGuid)
               .SetDisplayName(SanctifiedRogueDisplayName)
               .SetDescription(SanctifiedRogueDescription)
               .SetIcon(icon)
               .SetIgnorePrerequisites(false)
-              .SetObligatory(false)
-              .AddToAllFeatures(DeificObedience.MahathallahExaltedGuid)
-              .AddToAllFeatures(DeificObedience.LamashtuExaltedGuid)
-              .AddToAllFeatures(DeificObedience.NiviExaltedGuid)
-              .AddToAllFeatures(DeificObedience.KabririExaltedGuid)
-              .Configure();
+              .SetObligatory(false);
 
-            return select;
+            foreach (var feature in list)
+            {
+                select = select.AddToAllFeatures(feature);
+            }
+
+            return select.Configure();
         }
         private const string EvangelistAlchemistClass0Align = "EvangelistAlchemistClass0Align";
         private static readonly string EvangelistAlchemistClass0AlignGuid = "replaceguidhere";
