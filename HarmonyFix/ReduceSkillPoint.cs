@@ -36,34 +36,28 @@ namespace PrestigePlus.HarmonyFix
     }
 
     [HarmonyPatch(typeof(UnitProgressionData), nameof(UnitProgressionData.SetupLevelsIfNecessary))]
+    [HarmonyPriority(Priority.First)]
     internal class ReduceSkillPoint2
     {
         static void Prefix(ref UnitProgressionData __instance)
         {
-            if (__instance.m_CharacterLevel == null || __instance.m_MythicLevel == null)
+            int cl = 0;
+            foreach (Kingmaker.UnitLogic.ClassData classData in __instance.Classes)
             {
-                __instance.m_CharacterLevel = new int?(0);
-                __instance.m_MythicLevel = new int?(0);
-                foreach (Kingmaker.UnitLogic.ClassData classData in __instance.Classes)
-                {
-                    if (classData.CharacterClass.IsMythic)
-                    {
-                        __instance.m_MythicLevel += classData.Level;
-                    }
-                    else
-                    {
-                        __instance.m_CharacterLevel += classData.Level;
-                    }
-                }
-                foreach (var feat in __instance.Features)
-                {
-                    var comp = feat.GetComponent<FakeLevelUpClass>();
-                    if (comp == null) continue;
-                    var realclazz = BlueprintTool.GetRef<BlueprintCharacterClassReference>(comp.clazz)?.Get();
-                    if (realclazz == null) continue;
-                    __instance.m_CharacterLevel -= 1;
+                if (!classData.CharacterClass.IsMythic) 
+                { 
+                    cl += classData.Level;
                 }
             }
+            foreach (var feat in __instance.Features)
+            {
+                var comp = feat.GetComponent<FakeLevelUpClass>();
+                if (comp == null) continue;
+                var realclazz = BlueprintTool.GetRef<BlueprintCharacterClassReference>(comp.clazz)?.Get();
+                if (realclazz == null) continue;
+                cl -= 1;
+            }
+            //__instance.m_CharacterLevel = cl;
         }
     }
 }
