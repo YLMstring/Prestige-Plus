@@ -15,6 +15,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using static Kingmaker.Blueprints.Root.CheatRoot;
+using static Kingmaker.Utility.UnitDescription.UnitDescription;
 
 namespace PrestigePlus.HarmonyFix
 {
@@ -30,6 +31,38 @@ namespace PrestigePlus.HarmonyFix
                 var realclazz = BlueprintTool.GetRef<BlueprintCharacterClassReference>(comp.clazz)?.Get();
                 if (realclazz == null) continue;
                 __result += realclazz.SkillPoints;
+            }
+        }
+    }
+
+    [HarmonyPatch(typeof(UnitProgressionData), nameof(UnitProgressionData.SetupLevelsIfNecessary))]
+    internal class ReduceSkillPoint2
+    {
+        static void Prefix(ref UnitProgressionData __instance)
+        {
+            if (__instance.m_CharacterLevel == null || __instance.m_MythicLevel == null)
+            {
+                __instance.m_CharacterLevel = new int?(0);
+                __instance.m_MythicLevel = new int?(0);
+                foreach (Kingmaker.UnitLogic.ClassData classData in __instance.Classes)
+                {
+                    if (classData.CharacterClass.IsMythic)
+                    {
+                        __instance.m_MythicLevel += classData.Level;
+                    }
+                    else
+                    {
+                        __instance.m_CharacterLevel += classData.Level;
+                    }
+                }
+                foreach (var feat in __instance.Features)
+                {
+                    var comp = feat.GetComponent<FakeLevelUpClass>();
+                    if (comp == null) continue;
+                    var realclazz = BlueprintTool.GetRef<BlueprintCharacterClassReference>(comp.clazz)?.Get();
+                    if (realclazz == null) continue;
+                    __instance.m_CharacterLevel -= 1;
+                }
             }
         }
     }
