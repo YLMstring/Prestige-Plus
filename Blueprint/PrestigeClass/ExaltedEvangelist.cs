@@ -467,7 +467,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
             var EvangelistAlchemistClasspro = ProgressionConfigurator.New(EvangelistAlchemistClass0Align, EvangelistAlchemistClass0AlignGuid)
             .SetDisplayName(EvangelistAlchemistClass0AlignDisplayName)
-            .SetDisplayName(EvangelistAlchemistClass0AlignDescription)
+            .SetDescription(EvangelistAlchemistClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.AlchemistClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -510,7 +510,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistAlchemistClasspro.Configure());
             var EvangelistArcaneTricksterClasspro = ProgressionConfigurator.New(EvangelistArcaneTricksterClass0Align, EvangelistArcaneTricksterClass0AlignGuid)
             .SetDisplayName(EvangelistArcaneTricksterClass0AlignDisplayName)
-            .SetDisplayName(EvangelistArcaneTricksterClass0AlignDescription)
+            .SetDescription(EvangelistArcaneTricksterClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.ArcaneTricksterClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -553,7 +553,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistArcaneTricksterClasspro.Configure());
             var EvangelistArcanistClasspro = ProgressionConfigurator.New(EvangelistArcanistClass0Align, EvangelistArcanistClass0AlignGuid)
             .SetDisplayName(EvangelistArcanistClass0AlignDisplayName)
-            .SetDisplayName(EvangelistArcanistClass0AlignDescription)
+            .SetDescription(EvangelistArcanistClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.ArcanistClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -596,7 +596,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistArcanistClasspro.Configure());
             var EvangelistAssassinClasspro = ProgressionConfigurator.New(EvangelistAssassinClass0Align, EvangelistAssassinClass0AlignGuid)
             .SetDisplayName(EvangelistAssassinClass0AlignDisplayName)
-            .SetDisplayName(EvangelistAssassinClass0AlignDescription)
+            .SetDescription(EvangelistAssassinClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.AssassinClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -639,7 +639,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistAssassinClasspro.Configure());
             var EvangelistBarbarianClasspro = ProgressionConfigurator.New(EvangelistBarbarianClass0Align, EvangelistBarbarianClass0AlignGuid)
             .SetDisplayName(EvangelistBarbarianClass0AlignDisplayName)
-            .SetDisplayName(EvangelistBarbarianClass0AlignDescription)
+            .SetDescription(EvangelistBarbarianClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.BarbarianClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -682,7 +682,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistBarbarianClasspro.Configure());
             var EvangelistBardClasspro = ProgressionConfigurator.New(EvangelistBardClass0Align, EvangelistBardClass0AlignGuid)
             .SetDisplayName(EvangelistBardClass0AlignDisplayName)
-            .SetDisplayName(EvangelistBardClass0AlignDescription)
+            .SetDescription(EvangelistBardClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.BardClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -725,7 +725,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistBardClasspro.Configure());
             var EvangelistBloodragerClasspro = ProgressionConfigurator.New(EvangelistBloodragerClass0Align, EvangelistBloodragerClass0AlignGuid)
             .SetDisplayName(EvangelistBloodragerClass0AlignDisplayName)
-            .SetDisplayName(EvangelistBloodragerClass0AlignDescription)
+            .SetDescription(EvangelistBloodragerClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.BloodragerClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -768,7 +768,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistBloodragerClasspro.Configure());
             var EvangelistCavalierClasspro = ProgressionConfigurator.New(EvangelistCavalierClass0Align, EvangelistCavalierClass0AlignGuid)
             .SetDisplayName(EvangelistCavalierClass0AlignDisplayName)
-            .SetDisplayName(EvangelistCavalierClass0AlignDescription)
+            .SetDescription(EvangelistCavalierClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.CavalierClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -811,7 +811,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistCavalierClasspro.Configure());
             var EvangelistClericClasspro = ProgressionConfigurator.New(EvangelistClericClass0Align, EvangelistClericClass0AlignGuid)
             .SetDisplayName(EvangelistClericClass0AlignDisplayName)
-            .SetDisplayName(EvangelistClericClass0AlignDescription)
+            .SetDescription(EvangelistClericClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.ClericClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -854,7 +854,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistClericClasspro.Configure());
             var EvangelistDragonDiscipleClasspro = ProgressionConfigurator.New(EvangelistDragonDiscipleClass0Align, EvangelistDragonDiscipleClass0AlignGuid)
             .SetDisplayName(EvangelistDragonDiscipleClass0AlignDisplayName)
-            .SetDisplayName(EvangelistDragonDiscipleClass0AlignDescription)
+            .SetDescription(EvangelistDragonDiscipleClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.DragonDiscipleClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -897,7 +897,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistDragonDiscipleClasspro.Configure());
             var EvangelistDruidClasspro = ProgressionConfigurator.New(EvangelistDruidClass0Align, EvangelistDruidClass0AlignGuid)
             .SetDisplayName(EvangelistDruidClass0AlignDisplayName)
-            .SetDisplayName(EvangelistDruidClass0AlignDescription)
+            .SetDescription(EvangelistDruidClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.DruidClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -940,7 +940,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistDruidClasspro.Configure());
             var EvangelistDuelistClasspro = ProgressionConfigurator.New(EvangelistDuelistClass0Align, EvangelistDuelistClass0AlignGuid)
             .SetDisplayName(EvangelistDuelistClass0AlignDisplayName)
-            .SetDisplayName(EvangelistDuelistClass0AlignDescription)
+            .SetDescription(EvangelistDuelistClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.DuelistClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -983,7 +983,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistDuelistClasspro.Configure());
             var EvangelistEldritchKnightClasspro = ProgressionConfigurator.New(EvangelistEldritchKnightClass0Align, EvangelistEldritchKnightClass0AlignGuid)
             .SetDisplayName(EvangelistEldritchKnightClass0AlignDisplayName)
-            .SetDisplayName(EvangelistEldritchKnightClass0AlignDescription)
+            .SetDescription(EvangelistEldritchKnightClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.EldritchKnightClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -1026,7 +1026,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistEldritchKnightClasspro.Configure());
             var EvangelistEldritchScionClasspro = ProgressionConfigurator.New(EvangelistEldritchScionClass0Align, EvangelistEldritchScionClass0AlignGuid)
             .SetDisplayName(EvangelistEldritchScionClass0AlignDisplayName)
-            .SetDisplayName(EvangelistEldritchScionClass0AlignDescription)
+            .SetDescription(EvangelistEldritchScionClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.EldritchScionClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -1069,7 +1069,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistEldritchScionClasspro.Configure());
             var EvangelistFighterClasspro = ProgressionConfigurator.New(EvangelistFighterClass0Align, EvangelistFighterClass0AlignGuid)
             .SetDisplayName(EvangelistFighterClass0AlignDisplayName)
-            .SetDisplayName(EvangelistFighterClass0AlignDescription)
+            .SetDescription(EvangelistFighterClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.FighterClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -1112,7 +1112,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistFighterClasspro.Configure());
             var EvangelistHellknightClasspro = ProgressionConfigurator.New(EvangelistHellknightClass0Align, EvangelistHellknightClass0AlignGuid)
             .SetDisplayName(EvangelistHellknightClass0AlignDisplayName)
-            .SetDisplayName(EvangelistHellknightClass0AlignDescription)
+            .SetDescription(EvangelistHellknightClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.HellknightClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -1155,7 +1155,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistHellknightClasspro.Configure());
             var EvangelistHellknightSigniferClasspro = ProgressionConfigurator.New(EvangelistHellknightSigniferClass0Align, EvangelistHellknightSigniferClass0AlignGuid)
             .SetDisplayName(EvangelistHellknightSigniferClass0AlignDisplayName)
-            .SetDisplayName(EvangelistHellknightSigniferClass0AlignDescription)
+            .SetDescription(EvangelistHellknightSigniferClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.HellknightSigniferClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -1198,7 +1198,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistHellknightSigniferClasspro.Configure());
             var EvangelistHunterClasspro = ProgressionConfigurator.New(EvangelistHunterClass0Align, EvangelistHunterClass0AlignGuid)
             .SetDisplayName(EvangelistHunterClass0AlignDisplayName)
-            .SetDisplayName(EvangelistHunterClass0AlignDescription)
+            .SetDescription(EvangelistHunterClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.HunterClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -1241,7 +1241,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistHunterClasspro.Configure());
             var EvangelistInquisitorClasspro = ProgressionConfigurator.New(EvangelistInquisitorClass0Align, EvangelistInquisitorClass0AlignGuid)
             .SetDisplayName(EvangelistInquisitorClass0AlignDisplayName)
-            .SetDisplayName(EvangelistInquisitorClass0AlignDescription)
+            .SetDescription(EvangelistInquisitorClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.InquisitorClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -1284,7 +1284,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistInquisitorClasspro.Configure());
             var EvangelistKineticistClasspro = ProgressionConfigurator.New(EvangelistKineticistClass0Align, EvangelistKineticistClass0AlignGuid)
             .SetDisplayName(EvangelistKineticistClass0AlignDisplayName)
-            .SetDisplayName(EvangelistKineticistClass0AlignDescription)
+            .SetDescription(EvangelistKineticistClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.KineticistClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -1327,7 +1327,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistKineticistClasspro.Configure());
             var EvangelistLoremasterClasspro = ProgressionConfigurator.New(EvangelistLoremasterClass0Align, EvangelistLoremasterClass0AlignGuid)
             .SetDisplayName(EvangelistLoremasterClass0AlignDisplayName)
-            .SetDisplayName(EvangelistLoremasterClass0AlignDescription)
+            .SetDescription(EvangelistLoremasterClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.LoremasterClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -1370,7 +1370,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistLoremasterClasspro.Configure());
             var EvangelistMagusClasspro = ProgressionConfigurator.New(EvangelistMagusClass0Align, EvangelistMagusClass0AlignGuid)
             .SetDisplayName(EvangelistMagusClass0AlignDisplayName)
-            .SetDisplayName(EvangelistMagusClass0AlignDescription)
+            .SetDescription(EvangelistMagusClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.MagusClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -1413,7 +1413,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistMagusClasspro.Configure());
             var EvangelistMonkClasspro = ProgressionConfigurator.New(EvangelistMonkClass0Align, EvangelistMonkClass0AlignGuid)
             .SetDisplayName(EvangelistMonkClass0AlignDisplayName)
-            .SetDisplayName(EvangelistMonkClass0AlignDescription)
+            .SetDescription(EvangelistMonkClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.MonkClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -1456,7 +1456,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistMonkClasspro.Configure());
             var EvangelistMysticTheurgeClasspro = ProgressionConfigurator.New(EvangelistMysticTheurgeClass0Align, EvangelistMysticTheurgeClass0AlignGuid)
             .SetDisplayName(EvangelistMysticTheurgeClass0AlignDisplayName)
-            .SetDisplayName(EvangelistMysticTheurgeClass0AlignDescription)
+            .SetDescription(EvangelistMysticTheurgeClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.MysticTheurgeClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -1499,7 +1499,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistMysticTheurgeClasspro.Configure());
             var EvangelistOracleClasspro = ProgressionConfigurator.New(EvangelistOracleClass0Align, EvangelistOracleClass0AlignGuid)
             .SetDisplayName(EvangelistOracleClass0AlignDisplayName)
-            .SetDisplayName(EvangelistOracleClass0AlignDescription)
+            .SetDescription(EvangelistOracleClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.OracleClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -1542,7 +1542,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistOracleClasspro.Configure());
             var EvangelistPaladinClasspro = ProgressionConfigurator.New(EvangelistPaladinClass0Align, EvangelistPaladinClass0AlignGuid)
             .SetDisplayName(EvangelistPaladinClass0AlignDisplayName)
-            .SetDisplayName(EvangelistPaladinClass0AlignDescription)
+            .SetDescription(EvangelistPaladinClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.PaladinClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -1585,7 +1585,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistPaladinClasspro.Configure());
             var EvangelistRangerClasspro = ProgressionConfigurator.New(EvangelistRangerClass0Align, EvangelistRangerClass0AlignGuid)
             .SetDisplayName(EvangelistRangerClass0AlignDisplayName)
-            .SetDisplayName(EvangelistRangerClass0AlignDescription)
+            .SetDescription(EvangelistRangerClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.RangerClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -1628,7 +1628,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistRangerClasspro.Configure());
             var EvangelistRogueClasspro = ProgressionConfigurator.New(EvangelistRogueClass0Align, EvangelistRogueClass0AlignGuid)
             .SetDisplayName(EvangelistRogueClass0AlignDisplayName)
-            .SetDisplayName(EvangelistRogueClass0AlignDescription)
+            .SetDescription(EvangelistRogueClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.RogueClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -1671,7 +1671,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistRogueClasspro.Configure());
             var EvangelistShamanClasspro = ProgressionConfigurator.New(EvangelistShamanClass0Align, EvangelistShamanClass0AlignGuid)
             .SetDisplayName(EvangelistShamanClass0AlignDisplayName)
-            .SetDisplayName(EvangelistShamanClass0AlignDescription)
+            .SetDescription(EvangelistShamanClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.ShamanClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -1714,7 +1714,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistShamanClasspro.Configure());
             var EvangelistShifterClasspro = ProgressionConfigurator.New(EvangelistShifterClass0Align, EvangelistShifterClass0AlignGuid)
             .SetDisplayName(EvangelistShifterClass0AlignDisplayName)
-            .SetDisplayName(EvangelistShifterClass0AlignDescription)
+            .SetDescription(EvangelistShifterClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.ShifterClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -1757,7 +1757,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistShifterClasspro.Configure());
             var EvangelistSkaldClasspro = ProgressionConfigurator.New(EvangelistSkaldClass0Align, EvangelistSkaldClass0AlignGuid)
             .SetDisplayName(EvangelistSkaldClass0AlignDisplayName)
-            .SetDisplayName(EvangelistSkaldClass0AlignDescription)
+            .SetDescription(EvangelistSkaldClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.SkaldClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -1800,7 +1800,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistSkaldClasspro.Configure());
             var EvangelistSlayerClasspro = ProgressionConfigurator.New(EvangelistSlayerClass0Align, EvangelistSlayerClass0AlignGuid)
             .SetDisplayName(EvangelistSlayerClass0AlignDisplayName)
-            .SetDisplayName(EvangelistSlayerClass0AlignDescription)
+            .SetDescription(EvangelistSlayerClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.SlayerClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -1843,7 +1843,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistSlayerClasspro.Configure());
             var EvangelistSorcererClasspro = ProgressionConfigurator.New(EvangelistSorcererClass0Align, EvangelistSorcererClass0AlignGuid)
             .SetDisplayName(EvangelistSorcererClass0AlignDisplayName)
-            .SetDisplayName(EvangelistSorcererClass0AlignDescription)
+            .SetDescription(EvangelistSorcererClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.SorcererClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -1886,7 +1886,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistSorcererClasspro.Configure());
             var EvangelistStalwartDefenderClasspro = ProgressionConfigurator.New(EvangelistStalwartDefenderClass0Align, EvangelistStalwartDefenderClass0AlignGuid)
             .SetDisplayName(EvangelistStalwartDefenderClass0AlignDisplayName)
-            .SetDisplayName(EvangelistStalwartDefenderClass0AlignDescription)
+            .SetDescription(EvangelistStalwartDefenderClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.StalwartDefenderClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -1929,7 +1929,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistStalwartDefenderClasspro.Configure());
             var EvangelistStudentOfWarClasspro = ProgressionConfigurator.New(EvangelistStudentOfWarClass0Align, EvangelistStudentOfWarClass0AlignGuid)
             .SetDisplayName(EvangelistStudentOfWarClass0AlignDisplayName)
-            .SetDisplayName(EvangelistStudentOfWarClass0AlignDescription)
+            .SetDescription(EvangelistStudentOfWarClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.StudentOfWarClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -1972,7 +1972,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistStudentOfWarClasspro.Configure());
             var EvangelistSwordlordClasspro = ProgressionConfigurator.New(EvangelistSwordlordClass0Align, EvangelistSwordlordClass0AlignGuid)
             .SetDisplayName(EvangelistSwordlordClass0AlignDisplayName)
-            .SetDisplayName(EvangelistSwordlordClass0AlignDescription)
+            .SetDescription(EvangelistSwordlordClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.SwordlordClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -2015,7 +2015,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistSwordlordClasspro.Configure());
             var EvangelistWarpriestClasspro = ProgressionConfigurator.New(EvangelistWarpriestClass0Align, EvangelistWarpriestClass0AlignGuid)
             .SetDisplayName(EvangelistWarpriestClass0AlignDisplayName)
-            .SetDisplayName(EvangelistWarpriestClass0AlignDescription)
+            .SetDescription(EvangelistWarpriestClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.WarpriestClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -2058,7 +2058,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistWarpriestClasspro.Configure());
             var EvangelistWinterWitchClasspro = ProgressionConfigurator.New(EvangelistWinterWitchClass0Align, EvangelistWinterWitchClass0AlignGuid)
             .SetDisplayName(EvangelistWinterWitchClass0AlignDisplayName)
-            .SetDisplayName(EvangelistWinterWitchClass0AlignDescription)
+            .SetDescription(EvangelistWinterWitchClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.WinterWitchClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -2101,7 +2101,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistWinterWitchClasspro.Configure());
             var EvangelistWitchClasspro = ProgressionConfigurator.New(EvangelistWitchClass0Align, EvangelistWitchClass0AlignGuid)
             .SetDisplayName(EvangelistWitchClass0AlignDisplayName)
-            .SetDisplayName(EvangelistWitchClass0AlignDescription)
+            .SetDescription(EvangelistWitchClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.WitchClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -2144,7 +2144,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistWitchClasspro.Configure());
             var EvangelistWizardClasspro = ProgressionConfigurator.New(EvangelistWizardClass0Align, EvangelistWizardClass0AlignGuid)
             .SetDisplayName(EvangelistWizardClass0AlignDisplayName)
-            .SetDisplayName(EvangelistWizardClass0AlignDescription)
+            .SetDescription(EvangelistWizardClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.WizardClass.ToString(), 1)
             .SetHideNotAvailibleInUI(true);
@@ -2187,7 +2187,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistWizardClasspro.Configure());
             var EvangelistGunslingerClasspro = ProgressionConfigurator.New(EvangelistGunslingerClass0Align, EvangelistGunslingerClass0AlignGuid)
             .SetDisplayName(EvangelistGunslingerClass0AlignDisplayName)
-            .SetDisplayName(EvangelistGunslingerClass0AlignDescription)
+            .SetDescription(EvangelistGunslingerClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(GunslingerClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -2230,7 +2230,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistGunslingerClasspro.Configure());
             var EvangelistAgentoftheGraveClasspro = ProgressionConfigurator.New(EvangelistAgentoftheGraveClass0Align, EvangelistAgentoftheGraveClass0AlignGuid)
             .SetDisplayName(EvangelistAgentoftheGraveClass0AlignDisplayName)
-            .SetDisplayName(EvangelistAgentoftheGraveClass0AlignDescription)
+            .SetDescription(EvangelistAgentoftheGraveClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(AgentoftheGraveClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -2273,7 +2273,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistAgentoftheGraveClasspro.Configure());
             var EvangelistAnchoriteofDawnClasspro = ProgressionConfigurator.New(EvangelistAnchoriteofDawnClass0Align, EvangelistAnchoriteofDawnClass0AlignGuid)
             .SetDisplayName(EvangelistAnchoriteofDawnClass0AlignDisplayName)
-            .SetDisplayName(EvangelistAnchoriteofDawnClass0AlignDescription)
+            .SetDescription(EvangelistAnchoriteofDawnClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(AnchoriteofDawnClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -2316,7 +2316,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistAnchoriteofDawnClasspro.Configure());
             var EvangelistArcaneAcherClasspro = ProgressionConfigurator.New(EvangelistArcaneAcherClass0Align, EvangelistArcaneAcherClass0AlignGuid)
             .SetDisplayName(EvangelistArcaneAcherClass0AlignDisplayName)
-            .SetDisplayName(EvangelistArcaneAcherClass0AlignDescription)
+            .SetDescription(EvangelistArcaneAcherClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(ArcaneAcherClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -2359,7 +2359,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistArcaneAcherClasspro.Configure());
             var EvangelistAsavirClasspro = ProgressionConfigurator.New(EvangelistAsavirClass0Align, EvangelistAsavirClass0AlignGuid)
             .SetDisplayName(EvangelistAsavirClass0AlignDisplayName)
-            .SetDisplayName(EvangelistAsavirClass0AlignDescription)
+            .SetDescription(EvangelistAsavirClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(AsavirClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -2402,7 +2402,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistAsavirClasspro.Configure());
             var EvangelistChevalierClasspro = ProgressionConfigurator.New(EvangelistChevalierClass0Align, EvangelistChevalierClass0AlignGuid)
             .SetDisplayName(EvangelistChevalierClass0AlignDisplayName)
-            .SetDisplayName(EvangelistChevalierClass0AlignDescription)
+            .SetDescription(EvangelistChevalierClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(ChevalierClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -2445,7 +2445,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistChevalierClasspro.Configure());
             var EvangelistCrimsonTemplarClasspro = ProgressionConfigurator.New(EvangelistCrimsonTemplarClass0Align, EvangelistCrimsonTemplarClass0AlignGuid)
             .SetDisplayName(EvangelistCrimsonTemplarClass0AlignDisplayName)
-            .SetDisplayName(EvangelistCrimsonTemplarClass0AlignDescription)
+            .SetDescription(EvangelistCrimsonTemplarClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CrimsonTemplarClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -2488,7 +2488,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistCrimsonTemplarClasspro.Configure());
             var EvangelistDeadeyeDevoteeClasspro = ProgressionConfigurator.New(EvangelistDeadeyeDevoteeClass0Align, EvangelistDeadeyeDevoteeClass0AlignGuid)
             .SetDisplayName(EvangelistDeadeyeDevoteeClass0AlignDisplayName)
-            .SetDisplayName(EvangelistDeadeyeDevoteeClass0AlignDescription)
+            .SetDescription(EvangelistDeadeyeDevoteeClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(DeadeyeDevoteeClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -2531,7 +2531,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistDeadeyeDevoteeClasspro.Configure());
             var EvangelistDragonFuryClasspro = ProgressionConfigurator.New(EvangelistDragonFuryClass0Align, EvangelistDragonFuryClass0AlignGuid)
             .SetDisplayName(EvangelistDragonFuryClass0AlignDisplayName)
-            .SetDisplayName(EvangelistDragonFuryClass0AlignDescription)
+            .SetDescription(EvangelistDragonFuryClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(DragonFuryClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -2574,7 +2574,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistDragonFuryClasspro.Configure());
             var EvangelistEsotericKnightClasspro = ProgressionConfigurator.New(EvangelistEsotericKnightClass0Align, EvangelistEsotericKnightClass0AlignGuid)
             .SetDisplayName(EvangelistEsotericKnightClass0AlignDisplayName)
-            .SetDisplayName(EvangelistEsotericKnightClass0AlignDescription)
+            .SetDescription(EvangelistEsotericKnightClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(EsotericKnightClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -2617,7 +2617,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistEsotericKnightClasspro.Configure());
             var EvangelistFuriousGuardianClasspro = ProgressionConfigurator.New(EvangelistFuriousGuardianClass0Align, EvangelistFuriousGuardianClass0AlignGuid)
             .SetDisplayName(EvangelistFuriousGuardianClass0AlignDisplayName)
-            .SetDisplayName(EvangelistFuriousGuardianClass0AlignDescription)
+            .SetDescription(EvangelistFuriousGuardianClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(FuriousGuardianClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -2660,7 +2660,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistFuriousGuardianClasspro.Configure());
             var EvangelistHalflingOpportunistClasspro = ProgressionConfigurator.New(EvangelistHalflingOpportunistClass0Align, EvangelistHalflingOpportunistClass0AlignGuid)
             .SetDisplayName(EvangelistHalflingOpportunistClass0AlignDisplayName)
-            .SetDisplayName(EvangelistHalflingOpportunistClass0AlignDescription)
+            .SetDescription(EvangelistHalflingOpportunistClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(HalflingOpportunistClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -2703,7 +2703,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistHalflingOpportunistClasspro.Configure());
             var EvangelistHinterlanderClasspro = ProgressionConfigurator.New(EvangelistHinterlanderClass0Align, EvangelistHinterlanderClass0AlignGuid)
             .SetDisplayName(EvangelistHinterlanderClass0AlignDisplayName)
-            .SetDisplayName(EvangelistHinterlanderClass0AlignDescription)
+            .SetDescription(EvangelistHinterlanderClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(HinterlanderClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -2746,7 +2746,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistHinterlanderClasspro.Configure());
             var EvangelistHorizonWalkerClasspro = ProgressionConfigurator.New(EvangelistHorizonWalkerClass0Align, EvangelistHorizonWalkerClass0AlignGuid)
             .SetDisplayName(EvangelistHorizonWalkerClass0AlignDisplayName)
-            .SetDisplayName(EvangelistHorizonWalkerClass0AlignDescription)
+            .SetDescription(EvangelistHorizonWalkerClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(HorizonWalkerClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -2789,7 +2789,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistHorizonWalkerClasspro.Configure());
             var EvangelistInheritorCrusaderClasspro = ProgressionConfigurator.New(EvangelistInheritorCrusaderClass0Align, EvangelistInheritorCrusaderClass0AlignGuid)
             .SetDisplayName(EvangelistInheritorCrusaderClass0AlignDisplayName)
-            .SetDisplayName(EvangelistInheritorCrusaderClass0AlignDescription)
+            .SetDescription(EvangelistInheritorCrusaderClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(InheritorCrusaderClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -2832,7 +2832,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistInheritorCrusaderClasspro.Configure());
             var EvangelistMammothRiderClasspro = ProgressionConfigurator.New(EvangelistMammothRiderClass0Align, EvangelistMammothRiderClass0AlignGuid)
             .SetDisplayName(EvangelistMammothRiderClass0AlignDisplayName)
-            .SetDisplayName(EvangelistMammothRiderClass0AlignDescription)
+            .SetDescription(EvangelistMammothRiderClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(MammothRiderClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -2875,7 +2875,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistMammothRiderClasspro.Configure());
             var EvangelistSanguineAngelClasspro = ProgressionConfigurator.New(EvangelistSanguineAngelClass0Align, EvangelistSanguineAngelClass0AlignGuid)
             .SetDisplayName(EvangelistSanguineAngelClass0AlignDisplayName)
-            .SetDisplayName(EvangelistSanguineAngelClass0AlignDescription)
+            .SetDescription(EvangelistSanguineAngelClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(SanguineAngelClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -2918,7 +2918,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistSanguineAngelClasspro.Configure());
             var EvangelistScarSeekerClasspro = ProgressionConfigurator.New(EvangelistScarSeekerClass0Align, EvangelistScarSeekerClass0AlignGuid)
             .SetDisplayName(EvangelistScarSeekerClass0AlignDisplayName)
-            .SetDisplayName(EvangelistScarSeekerClass0AlignDescription)
+            .SetDescription(EvangelistScarSeekerClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(ScarSeekerClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -2961,7 +2961,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistScarSeekerClasspro.Configure());
             var EvangelistSentinelClasspro = ProgressionConfigurator.New(EvangelistSentinelClass0Align, EvangelistSentinelClass0AlignGuid)
             .SetDisplayName(EvangelistSentinelClass0AlignDisplayName)
-            .SetDisplayName(EvangelistSentinelClass0AlignDescription)
+            .SetDescription(EvangelistSentinelClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(SentinelClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -3004,7 +3004,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistSentinelClasspro.Configure());
             var EvangelistShadowDancerClasspro = ProgressionConfigurator.New(EvangelistShadowDancerClass0Align, EvangelistShadowDancerClass0AlignGuid)
             .SetDisplayName(EvangelistShadowDancerClass0AlignDisplayName)
-            .SetDisplayName(EvangelistShadowDancerClass0AlignDescription)
+            .SetDescription(EvangelistShadowDancerClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(ShadowDancerClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -3047,7 +3047,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistShadowDancerClasspro.Configure());
             var EvangelistSouldrinkerClasspro = ProgressionConfigurator.New(EvangelistSouldrinkerClass0Align, EvangelistSouldrinkerClass0AlignGuid)
             .SetDisplayName(EvangelistSouldrinkerClass0AlignDisplayName)
-            .SetDisplayName(EvangelistSouldrinkerClass0AlignDescription)
+            .SetDescription(EvangelistSouldrinkerClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(SouldrinkerClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -3090,7 +3090,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistSouldrinkerClasspro.Configure());
             var EvangelistUmbralAgentClasspro = ProgressionConfigurator.New(EvangelistUmbralAgentClass0Align, EvangelistUmbralAgentClass0AlignGuid)
             .SetDisplayName(EvangelistUmbralAgentClass0AlignDisplayName)
-            .SetDisplayName(EvangelistUmbralAgentClass0AlignDescription)
+            .SetDescription(EvangelistUmbralAgentClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(UmbralAgentClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -3133,7 +3133,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistUmbralAgentClasspro.Configure());
             var EvangelistMicroAntiPaladinClasspro = ProgressionConfigurator.New(EvangelistMicroAntiPaladinClass0Align, EvangelistMicroAntiPaladinClass0AlignGuid)
             .SetDisplayName(EvangelistMicroAntiPaladinClass0AlignDisplayName)
-            .SetDisplayName(EvangelistMicroAntiPaladinClass0AlignDescription)
+            .SetDescription(EvangelistMicroAntiPaladinClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(MicroAntiPaladinClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -3176,7 +3176,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistMicroAntiPaladinClasspro.Configure());
             var EvangelistOathbreakerClasspro = ProgressionConfigurator.New(EvangelistOathbreakerClass0Align, EvangelistOathbreakerClass0AlignGuid)
             .SetDisplayName(EvangelistOathbreakerClass0AlignDisplayName)
-            .SetDisplayName(EvangelistOathbreakerClass0AlignDescription)
+            .SetDescription(EvangelistOathbreakerClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(OathbreakerClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -3219,7 +3219,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistOathbreakerClasspro.Configure());
             var EvangelistDreadKnightClasspro = ProgressionConfigurator.New(EvangelistDreadKnightClass0Align, EvangelistDreadKnightClass0AlignGuid)
             .SetDisplayName(EvangelistDreadKnightClass0AlignDisplayName)
-            .SetDisplayName(EvangelistDreadKnightClass0AlignDescription)
+            .SetDescription(EvangelistDreadKnightClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(DreadKnightClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -3262,7 +3262,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistDreadKnightClasspro.Configure());
             var EvangelistStargazerClasspro = ProgressionConfigurator.New(EvangelistStargazerClass0Align, EvangelistStargazerClass0AlignGuid)
             .SetDisplayName(EvangelistStargazerClass0AlignDisplayName)
-            .SetDisplayName(EvangelistStargazerClass0AlignDescription)
+            .SetDescription(EvangelistStargazerClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(StargazerClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -3305,7 +3305,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistStargazerClasspro.Configure());
             var EvangelistSwashbucklerClasspro = ProgressionConfigurator.New(EvangelistSwashbucklerClass0Align, EvangelistSwashbucklerClass0AlignGuid)
             .SetDisplayName(EvangelistSwashbucklerClass0AlignDisplayName)
-            .SetDisplayName(EvangelistSwashbucklerClass0AlignDescription)
+            .SetDescription(EvangelistSwashbucklerClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(SwashbucklerClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -3348,7 +3348,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistSwashbucklerClasspro.Configure());
             var EvangelistHolyVindicatorClasspro = ProgressionConfigurator.New(EvangelistHolyVindicatorClass0Align, EvangelistHolyVindicatorClass0AlignGuid)
             .SetDisplayName(EvangelistHolyVindicatorClass0AlignDisplayName)
-            .SetDisplayName(EvangelistHolyVindicatorClass0AlignDescription)
+            .SetDescription(EvangelistHolyVindicatorClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(HolyVindicatorClass, 1)
             .SetHideNotAvailibleInUI(true);
@@ -3391,7 +3391,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             list.Add(EvangelistHolyVindicatorClasspro.Configure());
             var EvangelistSummonerClasspro = ProgressionConfigurator.New(EvangelistSummonerClass0Align, EvangelistSummonerClass0AlignGuid)
             .SetDisplayName(EvangelistSummonerClass0AlignDisplayName)
-            .SetDisplayName(EvangelistSummonerClass0AlignDescription)
+            .SetDescription(EvangelistSummonerClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(SummonerClass, 1)
             .SetHideNotAvailibleInUI(true);

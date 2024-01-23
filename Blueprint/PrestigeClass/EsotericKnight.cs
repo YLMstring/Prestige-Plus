@@ -174,8 +174,9 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
             var EsotericKnightKineticistClasspro = ProgressionConfigurator.New(KineticEsoterica, KineticEsotericaGuid)
             .SetDisplayName(EsotericKnightKineticistClass0AlignDisplayName)
-            .SetDisplayName(EsotericKnightKineticistClass0AlignDescription)
+            .SetDescription(EsotericKnightKineticistClass0AlignDescription)
             .SetClasses(ArchetypeGuid)
+            .SetIcon(icon)
             .AddPrerequisiteClassLevel(CharacterClassRefs.KineticistClass.ToString(), 1);
             EsotericKnightKineticistClasspro = EsotericKnightKineticistClasspro.AddToLevelEntry(2,
             FeatureConfigurator.New(EsotericKnightKineticistClass2Align, EsotericKnightKineticistClass2AlignGuid)
@@ -227,7 +228,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
             var EsotericKnightClericClasspro = ProgressionConfigurator.New(DivinePsychic, DivinePsychicGuid)
             .SetDisplayName(EsotericKnightClericClass0AlignDisplayName)
-            .SetDisplayName(EsotericKnightClericClass0AlignDescription)
+            .SetDescription(EsotericKnightClericClass0AlignDescription)
+            .SetIcon(icon)
             .SetClasses(ArchetypeGuid)
             .AddPrerequisiteClassLevel(CharacterClassRefs.ClericClass.ToString(), 1);
             EsotericKnightClericClasspro = EsotericKnightClericClasspro.AddToLevelEntry(2,
