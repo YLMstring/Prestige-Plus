@@ -51,7 +51,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
     internal class ScarSeeker
     {
         private const string ArchetypeName = "ScarSeeker";
-        private static readonly string ArchetypeGuid = "{A9827D49-8599-4525-B763-0E4554DCC1A0}";
+        public static readonly string ArchetypeGuid = "{A9827D49-8599-4525-B763-0E4554DCC1A0}";
         internal const string ArchetypeDisplayName = "ScarSeeker.Name";
         private const string ArchetypeDescription = "ScarSeeker.Description";
 

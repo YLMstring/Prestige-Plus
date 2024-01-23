@@ -51,7 +51,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
     internal class InheritorCrusader
     {
         private const string ArchetypeName = "InheritorCrusader";
-        private static readonly string ArchetypeGuid = "{772F4078-A60A-4D0F-B06C-61E56C4688D7}";
+        public static readonly string ArchetypeGuid = "{772F4078-A60A-4D0F-B06C-61E56C4688D7}";
         internal const string ArchetypeDisplayName = "InheritorCrusader.Name";
         private const string ArchetypeDescription = "InheritorCrusader.Description";
 

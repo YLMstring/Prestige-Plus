@@ -19,7 +19,6 @@ using System.Threading.Tasks;
 using static Kingmaker.UI.CanvasScalerWorkaround;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.View;
-using PrestigePlus.Mechanic;
 using PrestigePlus.Blueprint.PrestigeClass;
 using Kingmaker.UnitLogic.Class.Kineticist;
 
@@ -28,20 +27,15 @@ namespace PrestigePlus.CustomComponent
     [TypeId("{EECCF91C-0225-4F5A-96B7-1B33E9CB4CD0}")]
     internal class FakeLevelUpClass : UnitFactComponentDelegate, IUnitSubscriber, ISubscriber
     {
-        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
-        public override void OnTurnOn()
+        //private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
+        public override void OnActivate()
         {
             LevelUpController controller = Game.Instance?.LevelUpController;
             if (controller == null) { return; }
-            Owner.Ensure<UnitPartAlignedClass>().Init(0);
-            var realclazz = clazz; //?? Owner.Ensure<UnitPartAlignedClass>().GetMax(controller.State);
-            Logger.Info("class is " + realclazz.NameSafe());
-            if (realclazz == controller.State.SelectedClass) { return; }
+            var realclazz = BlueprintTool.GetRef<BlueprintCharacterClassReference>(clazz)?.Get();
             var data = Owner.Progression.GetClassData(realclazz);
             if (data == null || data.Level >= 20) { return; }
             data.Level += 1;
-            Owner.Get<UnitPartAlignedClass>().SkillPointPenalty = data.CalcSkillPoints() + Owner.Get<UnitPartAlignedClass>().SkillPointPenalty;
-            Logger.Info("add " + data.CalcSkillPoints().ToString());
             LevelUpHelper.UpdateProgression(controller.State, Owner, realclazz.Progression);
             ApplySpell(controller.State, Owner, data.Level, realclazz);
             List<Feature> features = new();
@@ -56,15 +50,9 @@ namespace PrestigePlus.CustomComponent
                     LevelUpHelper.UpdateProgression(controller.State, Owner, pro);
                 }
             }
-            //Owner.RemoveFact(Fact);
         }
 
-        public override void OnDeactivate()
-        {
-            
-        }
-
-        public BlueprintCharacterClass clazz;
+        public string clazz;
 
         public void ApplySpell(LevelUpState state, UnitDescriptor unit, int level, BlueprintCharacterClass realclazz)
         {
@@ -140,10 +128,6 @@ namespace PrestigePlus.CustomComponent
                     ApplySpellbook.TryApplyCustomSpells(spellbook, customSpells, state, unit);
                 }
             }
-        }
-        UnitEntityData IUnitSubscriber.GetSubscribingUnit()
-        {
-            throw new NotImplementedException();
         }
     }
 }

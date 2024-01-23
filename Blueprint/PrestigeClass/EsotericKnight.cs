@@ -151,36 +151,55 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string KineticEsoterica = "EsotericKnight.KineticEsoterica";
         private static readonly string KineticEsotericaGuid = "{EEA55FBD-5E91-4D9C-9EB6-C2E24CD41C87}";
 
-        internal const string KineticEsotericaDisplayName = "EsotericKnightKineticEsoterica.Name";
-        private const string KineticEsotericaDescription = "EsotericKnightKineticEsoterica.Description";
+        internal const string EsotericKnightKineticistClass0AlignDisplayName = "EsotericKnightKineticEsoterica.Name";
+        private const string EsotericKnightKineticistClass0AlignDescription = "EsotericKnightKineticEsoterica.Description";
 
-        private static readonly string FeatNamePro2 = "KineticEsotericaPro2";
-        public static readonly string FeatGuidPro2 = "{AD71F26B-E83E-424F-9129-D7F38DFCB6CC}";
+        private static readonly string EsotericKnightKineticistClass2Align = "KineticEsotericaPro2";
+        public static readonly string EsotericKnightKineticistClass2AlignGuid = "{AD71F26B-E83E-424F-9129-D7F38DFCB6CC}";
+
+        private static readonly string EsotericKnightKineticistClass4Align = "KineticEsotericaPro4";
+        public static readonly string EsotericKnightKineticistClass4AlignGuid = "{AD71F26B-E83E-424F-9129-D7F38DFCB6CC}";
+
+        private static readonly string EsotericKnightKineticistClass6Align = "KineticEsotericaPro6";
+        public static readonly string EsotericKnightKineticistClass6AlignGuid = "{AD71F26B-E83E-424F-9129-D7F38DFCB6CC}";
+
+        private static readonly string EsotericKnightKineticistClass8Align = "KineticEsotericaPro8";
+        public static readonly string EsotericKnightKineticistClass8AlignGuid = "{AD71F26B-E83E-424F-9129-D7F38DFCB6CC}";
+
+        private static readonly string EsotericKnightKineticistClass10Align = "KineticEsotericaPro10";
+        public static readonly string EsotericKnightKineticistClass10AlignGuid = "{AD71F26B-E83E-424F-9129-D7F38DFCB6CC}";
         public static BlueprintProgression KineticEsotericaFeat()
         {
             var icon = AbilityRefs.KnowledgeDomainGreaterAbility.Reference.Get().Icon;
 
-            var featreal = FeatureConfigurator.New(FeatNamePro2, FeatGuidPro2)
-                    .SetDisplayName(KineticEsotericaDisplayName)
-                    .SetDescription(KineticEsotericaDescription)
-                    .SetIcon(icon)
-                    .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.KineticistClass.Reference; })
-                    .SetHideInUI(true)
-                    .Configure();
+            var EsotericKnightKineticistClasspro = ProgressionConfigurator.New(KineticEsoterica, KineticEsotericaGuid)
+            .SetDisplayName(EsotericKnightKineticistClass0AlignDisplayName)
+            .SetDisplayName(EsotericKnightKineticistClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.KineticistClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
+            EsotericKnightKineticistClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EsotericKnightKineticistClass2Align, EsotericKnightKineticistClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.KineticistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EsotericKnightKineticistClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EsotericKnightKineticistClass4Align, EsotericKnightKineticistClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.KineticistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EsotericKnightKineticistClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EsotericKnightKineticistClass6Align, EsotericKnightKineticistClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.KineticistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EsotericKnightKineticistClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EsotericKnightKineticistClass8Align, EsotericKnightKineticistClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.KineticistClass.ToString(); })
+            .SetHideInUI(true).Configure());
+            EsotericKnightKineticistClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EsotericKnightKineticistClass10Align, EsotericKnightKineticistClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.KineticistClass.ToString(); })
+            .SetHideInUI(true).Configure());
 
-            return ProgressionConfigurator.New(KineticEsoterica, KineticEsotericaGuid)
-              .SetDisplayName(KineticEsotericaDisplayName)
-              .SetDescription(KineticEsotericaDescription)
-              .SetIcon(icon)
-              .SetIsClassFeature(true)
-              .SetClasses(ArchetypeGuid)
-              .AddPrerequisiteClassLevel(CharacterClassRefs.KineticistClass.ToString(), 1)
-              .AddToLevelEntry(2, featreal)
-              .AddToLevelEntry(4, featreal)
-              .AddToLevelEntry(6, featreal)
-              .AddToLevelEntry(8, featreal)
-              .AddToLevelEntry(10, featreal)
-              .Configure();
+            return EsotericKnightKineticistClasspro.Configure();
         }
 
         private const string DivinePsychic = "EsotericKnight.DivinePsychic";

@@ -34,7 +34,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
     internal class Hinterlander
     {
         private const string ArchetypeName = "Hinterlander";
-        private static readonly string ArchetypeGuid = "{E6A41412-A7C7-4C9F-AB77-EA73835691A0}";
+        public static readonly string ArchetypeGuid = "{E6A41412-A7C7-4C9F-AB77-EA73835691A0}";
         internal const string ArchetypeDisplayName = "Hinterlander.Name";
         private const string ArchetypeDescription = "Hinterlander.Description";
 

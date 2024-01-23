@@ -35,7 +35,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
     internal class HalflingOpportunist
     {
         private const string ArchetypeName = "HalflingOpportunist";
-        private static readonly string ArchetypeGuid = "{AEA57FFB-36F0-43AB-9BA6-BFB3B0D9AFF9}";
+        public static readonly string ArchetypeGuid = "{AEA57FFB-36F0-43AB-9BA6-BFB3B0D9AFF9}";
         internal const string ArchetypeDisplayName = "HalflingOpportunist.Name";
         private const string ArchetypeDescription = "HalflingOpportunist.Description";
 

@@ -5,7 +5,6 @@ using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Class.LevelUp.Actions;
-using PrestigePlus.Mechanic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,12 +20,6 @@ namespace PrestigePlus.HarmonyFix
         static void Postfix(ref int __result, ref UnitDescriptor unit)
         {
             LogWrapper.Get("PrestigePlus").Info("start");
-            if (unit.Get<UnitPartAlignedClass>())
-            {
-                LogWrapper.Get("PrestigePlus").Info("start1");
-                __result += unit.Get<UnitPartAlignedClass>().SkillPointPenalty;
-                LogWrapper.Get("PrestigePlus").Info("skill " + unit.Get<UnitPartAlignedClass>().SkillPointPenalty.ToString());
-            }
         }
     }
 }

@@ -28,7 +28,6 @@ using PrestigePlus.Blueprint;
 using PrestigePlus.CustomComponent.Feat;
 using PrestigePlus.Blueprint.SpecificManeuver;
 using PrestigePlus.Blueprint.Spell;
-using PrestigePlus.Mechanic;
 
 namespace PrestigePlus
 {

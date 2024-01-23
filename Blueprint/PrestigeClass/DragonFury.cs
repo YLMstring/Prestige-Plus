@@ -33,7 +33,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
     internal class DragonFury
     {
         private const string ArchetypeName = "DragonFury";
-        private static readonly string ArchetypeGuid = "{B216ABB1-3EF6-4E03-9D58-69CE7CF94B4F}";
+        public static readonly string ArchetypeGuid = "{B216ABB1-3EF6-4E03-9D58-69CE7CF94B4F}";
         internal const string ArchetypeDisplayName = "DragonFury.Name";
         private const string ArchetypeDescription = "DragonFury.Description";
 

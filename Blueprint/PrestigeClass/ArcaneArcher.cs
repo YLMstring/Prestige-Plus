@@ -40,7 +40,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
     internal class ArcaneArcher
     {
         private const string ArchetypeName = "ArcaneArcher";
-        private static readonly string ArchetypeGuid = "{80CFDDF1-B798-4974-A7E3-D9C26BA29BC2}";
+        public static readonly string ArchetypeGuid = "{80CFDDF1-B798-4974-A7E3-D9C26BA29BC2}";
         internal const string ArchetypeDisplayName = "ArcaneArcher.Name";
         private const string ArchetypeDescription = "ArcaneArcher.Description";
 

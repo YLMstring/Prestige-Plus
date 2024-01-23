@@ -36,7 +36,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
     internal class HorizonWalker
     {
         private const string ArchetypeName = "HorizonWalker";
-        private static readonly string ArchetypeGuid = "{381A5F93-83E8-40C8-866B-ADD25318A009}";
+        public static readonly string ArchetypeGuid = "{381A5F93-83E8-40C8-866B-ADD25318A009}";
         internal const string ArchetypeDisplayName = "HorizonWalker.Name";
         private const string ArchetypeDescription = "HorizonWalker.Description";
 

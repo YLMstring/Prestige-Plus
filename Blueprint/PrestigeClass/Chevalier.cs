@@ -41,7 +41,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
     internal class Chevalier
     {
         private const string ArchetypeName = "Chevalier";
-        private static readonly string ArchetypeGuid = "{CEE13F69-676D-4A3E-B352-7F989B2EE9DA}";
+        public static readonly string ArchetypeGuid = "{CEE13F69-676D-4A3E-B352-7F989B2EE9DA}";
         internal const string ArchetypeDisplayName = "Chevalier.Name";
         private const string ArchetypeDescription = "Chevalier.Description";
 

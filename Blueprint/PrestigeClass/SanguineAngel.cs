@@ -33,7 +33,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
     internal class SanguineAngel
     {
         private const string ArchetypeName = "SanguineAngel";
-        private static readonly string ArchetypeGuid = "{EBA75E50-F41C-48E5-852D-9575FB2C7DEF}";
+        public static readonly string ArchetypeGuid = "{EBA75E50-F41C-48E5-852D-9575FB2C7DEF}";
         internal const string ArchetypeDisplayName = "SanguineAngel.Name";
         private const string ArchetypeDescription = "SanguineAngel.Description";
 
