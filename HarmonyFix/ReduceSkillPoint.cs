@@ -5,9 +5,11 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.UnitLogic;
+using Kingmaker.UnitLogic.Class.LevelUp;
 using Kingmaker.UnitLogic.Class.LevelUp.Actions;
 using Kingmaker.UnitLogic.FactLogic;
 using PrestigePlus.CustomComponent;
+using PrestigePlus.GrappleMechanic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,19 +21,12 @@ using static Kingmaker.Utility.UnitDescription.UnitDescription;
 
 namespace PrestigePlus.HarmonyFix
 {
-    [HarmonyPatch(typeof(LevelUpHelper), nameof(LevelUpHelper.GetSpentSkillPoints))]
+    [HarmonyPatch(typeof(LevelUpController), nameof(LevelUpController.NeedToSetName))]
     internal class ReduceSkillPoint
     {
-        static void Postfix(ref int __result, ref UnitDescriptor unit)
+        static void Postfix(ref UnitDescriptor unit)
         {
-            foreach (var feat in unit.Progression.Features)
-            {
-                var comp = feat.GetComponent<FakeLevelUpClass>();
-                if (comp == null) continue;
-                var realclazz = BlueprintTool.GetRef<BlueprintCharacterClassReference>(comp.clazz)?.Get();
-                if (realclazz == null) continue;
-                __result += realclazz.SkillPoints;
-            }
+            GiganticAssaultController.CalcLevel(unit);
         }
     }
 }

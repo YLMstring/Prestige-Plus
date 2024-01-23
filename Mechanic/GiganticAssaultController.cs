@@ -95,22 +95,24 @@ namespace PrestigePlus.GrappleMechanic
         private static BlueprintBuffReference Jab = BlueprintTool.GetRef<BlueprintBuffReference>(JabbingStyle.StylebuffGuid);
         private static BlueprintBuffReference Dancer = BlueprintTool.GetRef<BlueprintBuffReference>(JabbingStyle.Stylebuff3Guid);
 
-        private static void CalcLevel(UnitEntityData target)
+        public static void CalcLevel(UnitEntityData target)
         {
             int cl = 0;
             foreach (ClassData classData in target.Progression.Classes)
             {
                 if (!classData.CharacterClass.IsMythic)
                 {
-                    cl += classData.Level;
+                    // don't change this
+                    if (classData.Level > 0)
+                    {
+                        cl += classData.Level;
+                    }
                 }
             }
             foreach (var feat in target.Progression.Features)
             {
                 var comp = feat.GetComponent<FakeLevelUpClass>();
                 if (comp == null) continue;
-                var realclazz = BlueprintTool.GetRef<BlueprintCharacterClassReference>(comp.clazz)?.Get();
-                if (realclazz == null) continue;
                 cl -= 1;
             }
             target.Progression.CharacterLevel = cl;
