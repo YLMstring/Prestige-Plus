@@ -466,11 +466,11 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             var list = new List<BlueprintFeature>();
 
             var EvangelistAlchemistClasspro = ProgressionConfigurator.New(EvangelistAlchemistClass0Align, EvangelistAlchemistClass0AlignGuid)
-.SetDisplayName(EvangelistAlchemistClass0AlignDisplayName)
-.SetDisplayName(EvangelistAlchemistClass0AlignDescription)
-.SetClasses(ArchetypeGuid)
-.AddPrerequisiteClassLevel(CharacterClassRefs.AlchemistClass.ToString(), 1)
-.SetHideNotAvailibleInUI(true);
+            .SetDisplayName(EvangelistAlchemistClass0AlignDisplayName)
+            .SetDisplayName(EvangelistAlchemistClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(CharacterClassRefs.AlchemistClass.ToString(), 1)
+            .SetHideNotAvailibleInUI(true);
             EvangelistAlchemistClasspro = EvangelistAlchemistClasspro.AddToLevelEntry(2,
             FeatureConfigurator.New(EvangelistAlchemistClass2Align, EvangelistAlchemistClass2AlignGuid)
             .AddComponent<FakeLevelUpClass>(c => { c.clazz = CharacterClassRefs.AlchemistClass.ToString(); })
