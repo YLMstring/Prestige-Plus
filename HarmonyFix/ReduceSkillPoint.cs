@@ -29,4 +29,20 @@ namespace PrestigePlus.HarmonyFix
             GiganticAssaultController.CalcLevel(unit);
         }
     }
+
+    [HarmonyPatch(typeof(LevelUpHelper), nameof(LevelUpHelper.GetSpentSkillPoints))]
+    internal class ReduceSkillPoint2
+    {
+        static void Postfix(ref int __result, ref UnitDescriptor unit)
+        {
+            foreach (var feat in unit.Progression.Features)
+            {
+                var comp = feat.GetComponent<FakeLevelUpClass>();
+                if (comp == null) continue;
+                var realclazz = BlueprintTool.GetRef<BlueprintCharacterClassReference>(comp.clazz)?.Get();
+                if (realclazz == null) continue;
+                __result += realclazz.SkillPoints;
+            }
+        }
+    }
 }
