@@ -227,5 +227,25 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddPrerequisiteFeature(FeatureRefs.SpellStrikeFeature.ToString())
               .Configure();
         }
+
+        private const string Disruptive = "SpireDefender.Disruptive";
+        public static readonly string DisruptiveGuid = "{0526CD64-32F6-4E1F-9EC7-9449D8ECFF98}";
+
+        internal const string DisruptiveDisplayName = "SpireDefenderDisruptive.Name";
+        private const string DisruptiveDescription = "SpireDefenderDisruptive.Description";
+
+        public static BlueprintFeature CreateDisruptive()
+        {
+            var icon = FeatureRefs.Disruptive.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Disruptive, DisruptiveGuid, FeatureGroup.MagusArcana)
+              .SetDisplayName(DisruptiveDisplayName)
+              .SetDescription(DisruptiveDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteNoFeature(FeatureRefs.Disruptive.ToString())
+              .AddPrerequisiteClassLevel(CharacterClassRefs.MagusClass.ToString(), 6)
+              .AddFacts(new() { FeatureRefs.Disruptive.ToString() })
+              .Configure();
+        }
     }
 }
