@@ -374,7 +374,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("rogue"))) { QuickShot.Configure(); CloyingShades.CloyingShadesFeat(); DefensiveRoll.Configure(); SneakyManeuver.SneakyManeuverFeat(); SurpriseManeuver.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("kineticknight"))) { EsotericKnight.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("whitehair"))) { WhiteHairedWitch.Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("spire"))) { SpireDefender.Configure(); SpireDefender.CreateReachSpellstrike(); SpireDefender.CreateCloseRange(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("spire"))) { SpireDefender.Configure(); SpireDefender.CreateReachSpellstrike(); SpireDefender.CreateCloseRange(); SpireDefender.CreateDisruptive(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("autoheal"))) { AutoHeal.StyleConfigure(); } else { AutoHeal.DisableConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("furious"))) { FuriousGuardian.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("magehand"))) { MageHandTrick.ConfigureMageHandMain(); MageHandTrick.ConfigureShieldMain(); }
@@ -403,7 +403,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("conduit"))) { BloodConduit.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("kidnapper"))) { Kidnapper.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("juggle"))) { Juggler.Configure(); Juggler.CreateDeflectArrowsMythic(); BodyGuard.KatateDoriFeat(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("divinechamp"))) { DivineChampion.Configure(); DivineParagon.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("divinechamp"))) { DivineChampion.Configure(); DivineParagon.Configure(); Inquisition.SpellkillerFeat(); Inquisition.ReformationFeat(); Inquisition.TacticsFeat(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("skymagic"))) { Aeromancer.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("exalted"))) { ExaltedEvangelist.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("constable"))) { Constable.Configure(); }

@@ -28,6 +28,7 @@ using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Mechanics.Properties;
 using Kingmaker.Designers.Mechanics.Facts;
+using Kingmaker.Blueprints.Classes.Prerequisites;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -232,6 +233,32 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddReplaceStatBaseAttribute(StatType.Wisdom, true, Kingmaker.UnitLogic.Buffs.BonusMod.AsIs, StatType.CheckDiplomacy)
               .AddReplaceStatBaseAttribute(StatType.Wisdom, true, Kingmaker.UnitLogic.Buffs.BonusMod.AsIs, StatType.CheckIntimidate)
+              .Configure();
+        }
+
+        private const string Tactics = "Inquisition.Tactics";
+        private static readonly string TacticsGuid = "{02FD81B6-5F1D-454E-860F-A5A02A2CC13D}";
+
+        internal const string TacticsDisplayName = "InquisitionTactics.Name";
+        private const string TacticsDescription = "InquisitionTactics.Description";
+        public static BlueprintProgression TacticsFeat()
+        {
+            var icon = FeatureRefs.TacticalLeaderFeatShareSwift.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(Tactics, TacticsGuid)
+              .SetDisplayName(TacticsDisplayName)
+              .SetDescription(TacticsDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .SetClasses(ProgressionRefs.AirDomainProgression.Reference.Get().m_Classes)
+              .SetArchetypes(ProgressionRefs.AirDomainProgression.Reference.Get().m_Archetypes)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToGroups(FeatureGroup.Domain)
+              .AddPrerequisiteFeature(FeatureRefs.ToragFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteFeature(FeatureRefs.IroriFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteFeature(FeatureRefs.GorumFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddToLevelEntry(1, InspiredRhetoricFeat())
+              .AddToLevelEntry(4, BlessedCorrectionFeat())
               .Configure();
         }
     }
