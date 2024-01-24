@@ -1,4 +1,4 @@
-# Prestige Plus v2.4.4 for WoTR 
+# Prestige Plus v2.5.0 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -47,10 +47,9 @@
 - [Falayna](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Falayna): requires worshipping Falayna (Expanded Content) or Lawful Good
 - [Kabriri (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Kabriri): requires worshipping Kabriri (Expanded Content) or Chaotic Evil
 - More coming soon!
-### [Exalted](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/exalted/) [Evangelist](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/evangelist/)
+### [Evangelist](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/evangelist/)
 - [Diverse Obedience](https://www.d20pfsrd.com/feats/general-feats/diverse-obedience/)
-- Based off the Exalted class and the Evangelist class.
-- No Aligned Class, but you can pseudo-align with the rogue class, the kineticist class or the exalted class!
+- Continue the aligned class progression or start your [Exalted](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/exalted/) career!
 - Perform Miracle: Essentially you prepare up to 30 spells each level to choose from, because the UI will explode if you have too many spells.
 ### [Sentinel](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/sentinel/)
 - [Guided Hand](https://www.d20pfsrd.com/feats/general-feats/guided-hand/)
@@ -88,9 +87,9 @@
 ### [Crimson Templar Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/c-d/crimson-templar/)
 - Requires worshipping Ragathiel (Expanded Content) or Lawful Good.
 ### [Esoteric Knight Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/esoteric-knight/)
+- Kinetic Esoterica: continue kineticist progression every 2 levels!
 #### Homebrew Options:  
-- Divine Psychic: continue divine spellcasting progression every 2 levels!
-- Kinetic Esoterica: more versatile kineticist progression!
+- Divine Psychic: continue cleric progression every 2 levels!
 ### [Furious Guardian Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/furious-guardian/)
 - Chosen Ally is for barbarian standard rage only =-=
 ### [Halfling Opportunist Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/halfling-opportunist/)
