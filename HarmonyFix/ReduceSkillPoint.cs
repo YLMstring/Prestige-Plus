@@ -18,6 +18,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static Kingmaker.Blueprints.Root.CheatRoot;
 using static Kingmaker.Utility.UnitDescription.UnitDescription;
+using ClassData = Kingmaker.UnitLogic.ClassData;
 
 namespace PrestigePlus.HarmonyFix
 {
@@ -26,7 +27,25 @@ namespace PrestigePlus.HarmonyFix
     {
         static void Postfix(ref UnitDescriptor unit)
         {
-            GiganticAssaultController.CalcLevel(unit);
+            int cl = 0;
+            foreach (ClassData classData in unit.Progression.Classes)
+            {
+                if (!classData.CharacterClass.IsMythic)
+                {
+                    // don't change this
+                    if (classData.Level > 0)
+                    {
+                        cl += classData.Level;
+                    }
+                }
+            }
+            foreach (var feat in unit.Progression.Features)
+            {
+                var comp = feat.GetComponent<FakeLevelUpClass>();
+                if (comp == null) continue;
+                cl -= 1;
+            }
+            unit.Progression.CharacterLevel = cl;
         }
     }
 

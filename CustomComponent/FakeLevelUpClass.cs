@@ -22,6 +22,7 @@ using Kingmaker.View;
 using PrestigePlus.Blueprint.PrestigeClass;
 using Kingmaker.UnitLogic.Class.Kineticist;
 using BlueprintCore.Blueprints.References;
+using PrestigePlus.Blueprint.CombatStyle;
 
 namespace PrestigePlus.CustomComponent
 {
@@ -36,9 +37,9 @@ namespace PrestigePlus.CustomComponent
             var realclazz = BlueprintTool.GetRef<BlueprintCharacterClassReference>(clazz)?.Get();
             var data = Owner.Progression.GetClassData(realclazz);
             if (data == null || data.Level >= 20) { return; }
-            ClassData classData = Owner.Progression.SureClassData(CharacterClassRefs.HellknightClass.Reference);
+            ClassData classData = Owner.Progression.SureClassData(FakeClass);
             classData.Level--;
-            Owner.Progression.m_ClassesOrder.Add(CharacterClassRefs.HellknightClass.Reference);
+            Owner.Progression.m_ClassesOrder.Add(FakeClass);
             data.Level += 1;
             LevelUpHelper.UpdateProgression(controller.State, Owner, realclazz.Progression);
             ApplySpell(controller.State, Owner, data.Level, realclazz);
@@ -133,5 +134,7 @@ namespace PrestigePlus.CustomComponent
                 }
             }
         }
+
+        private static BlueprintCharacterClassReference FakeClass = BlueprintTool.GetRef<BlueprintCharacterClassReference>(FakeAlignedClass.ArchetypeGuid);
     }
 }
