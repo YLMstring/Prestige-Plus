@@ -44,7 +44,7 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
                 if (!Owner.HasFact(feat)) { continue; }
                 var pro = feat as BlueprintProgression;
                 pro ??= feat.IsPrerequisiteFor?.First()?.Get() as BlueprintProgression;
-                if (pro == null) { continue; }
+                if (pro == null || !Owner.HasFact(pro)) { continue; }
                 var boon = pro.GetLevelEntry(level)?.Features?.First();
                 if (boon == null) { continue; }
                 base.Data.AppliedFact = Owner.AddFact(boon, null, null);
