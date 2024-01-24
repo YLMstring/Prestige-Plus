@@ -33,6 +33,8 @@ using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.Utility;
+using PrestigePlus.CustomAction.OtherFeatRelated;
+using Kingmaker.UnitLogic.Abilities.Components.Base;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -261,7 +263,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteFeature(FeatureRefs.ToragFeature.ToString(), group: Prerequisite.GroupType.Any)
               .AddPrerequisiteFeature(FeatureRefs.IroriFeature.ToString(), group: Prerequisite.GroupType.Any)
               .AddPrerequisiteFeature(FeatureRefs.GorumFeature.ToString(), group: Prerequisite.GroupType.Any)
-              .AddToLevelEntry(1, InspiredRhetoricFeat())
+              .AddToLevelEntry(1, DirectionFeat())
               .AddToLevelEntry(8, GrantInitiativeFeat())
               .Configure();
         }
@@ -316,6 +318,64 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetIcon(icon)
                     .AddAuraFeatureComponent(Buff1)
                     .Configure();
+        }
+
+        private const string Direction = "Inquisition.Direction";
+        private static readonly string DirectionGuid = "{4AF21068-0395-4009-8AA3-34494BAA9C78}";
+
+        internal const string DirectionDisplayName = "InquisitionDirection.Name";
+        private const string DirectionDescription = "InquisitionDirection.Description";
+
+        private const string DirectionAbility = "Inquisition.DirectionAbility";
+        private static readonly string DirectionAbilityGuid = "{F11F68EA-53CA-4A69-8070-E314E42AAB93}";
+
+        private const string DirectionAbilityRes = "Inquisition.DirectionAbilityRes";
+        private static readonly string DirectionAbilityResGuid = "{614F6273-9730-4070-BFB6-5E53C0172F08}";
+
+        private const string DirectionCooldownBuff = "Inquisition.DirectionCooldownBuff";
+        private static readonly string DirectionCooldownBuffGuid = "{2E9F847F-CCA9-4A5F-A765-9F15EC897DA9}";
+        public static BlueprintFeature DirectionFeat()
+        {
+            var icon = FeatureRefs.BattleMeditation.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(DirectionAbilityRes, DirectionAbilityResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(3).IncreaseByStat(StatType.Wisdom))
+                .Configure();
+
+            var CooldownBuff = BuffConfigurator.New(DirectionCooldownBuff, DirectionCooldownBuffGuid)
+                .SetDisplayName(DirectionDisplayName)
+                .SetDescription(DirectionDescription)
+                .SetIcon(icon)
+                //.AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+                .AddCondition(Kingmaker.UnitLogic.UnitCondition.DisableAttacksOfOpportunity)
+                .Configure();
+
+            var ability = AbilityConfigurator.New(DirectionAbility, DirectionAbilityGuid)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .Conditional(ConditionsBuilder.New().HasBuff(BuffRefs.SlowBuff.ToString()).Build(),
+                        ifTrue: ActionsBuilder.New().RemoveBuff(BuffRefs.SlowBuff.ToString()).Build(),
+                        ifFalse: ActionsBuilder.New().ApplyBuff(BuffRefs.HasteBuff.ToString(), ContextDuration.Fixed(1)).Build())
+                        .ApplyBuff(CooldownBuff, ContextDuration.Fixed(1), toCaster: true)
+                        .Build())
+                .SetDisplayName(DirectionDisplayName)
+                .SetDescription(DirectionDescription)
+                .SetIcon(icon)
+                .AddComponent(AbilityRefs.Haste.Reference.Get().GetComponent<AbilitySpawnFx>())
+                .AllowTargeting(false, false, true, false)
+                .SetRange(AbilityRange.Close)
+                .SetType(AbilityType.Supernatural)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Point)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .Configure();
+
+            return FeatureConfigurator.New(Direction, DirectionGuid)
+              .SetDisplayName(DirectionDisplayName)
+              .SetDescription(DirectionDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddFacts(new() { ability })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .Configure();
         }
     }
 }
