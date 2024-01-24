@@ -148,6 +148,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.CavalierClass.ToString() }, type: AbilityRankType.SpeedBonus).WithStartPlusDivStepProgression(5))
               .AddAttackBonusAgainstFactOwner(bonus: ContextValues.Rank(AbilityRankType.DamageBonus), checkedFact: BuffRefs.CavalierChallengeBuffTarget.ToString(), descriptor: ModifierDescriptor.Morale)
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.CavalierClass.ToString() }, type: AbilityRankType.DamageBonus).WithStartPlusDivStepProgression(5, 5))
+              .AddRecalculateOnStatChange(stat: StatType.HitPoints)
               .Configure();
 
             var area = AbilityAreaEffectConfigurator.New(BadgeAura, BadgeAuraGuid)

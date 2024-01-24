@@ -29,6 +29,10 @@ using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Mechanics.Properties;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.Blueprints.Classes.Prerequisites;
+using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
+using Kingmaker.Blueprints.Classes.Spells;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.Utility;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -258,8 +262,60 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteFeature(FeatureRefs.IroriFeature.ToString(), group: Prerequisite.GroupType.Any)
               .AddPrerequisiteFeature(FeatureRefs.GorumFeature.ToString(), group: Prerequisite.GroupType.Any)
               .AddToLevelEntry(1, InspiredRhetoricFeat())
-              .AddToLevelEntry(4, BlessedCorrectionFeat())
+              .AddToLevelEntry(8, GrantInitiativeFeat())
               .Configure();
+        }
+
+        private static readonly string GrantInitiativeName = "InquisitionGrantInitiative";
+        public static readonly string GrantInitiativeGuid = "{66020E49-93C3-491D-9CAB-D1DD71244682}";
+
+        private static readonly string GrantInitiativeDisplayName = "InquisitionGrantInitiative.Name";
+        private static readonly string GrantInitiativeDescription = "InquisitionGrantInitiative.Description";
+
+        private const string AuraBuff = "Inquisition.GrantInitiativebuff";
+        private static readonly string AuraBuffGuid = "{42F325F7-6A58-45B1-B239-118D2BD0EBBF}";
+
+        private const string AuraBuff2 = "Inquisition.GrantInitiativebuff2";
+        private static readonly string AuraBuff2Guid = "{25B529C5-8566-4FD5-A8AB-1BD6A7831BD8}";
+
+        private const string GrantInitiativeAura = "Inquisition.GrantInitiativeAura";
+        private static readonly string GrantInitiativeAuraGuid = "{7CC9637F-8DD8-4BD1-8AFB-DFDEDEFD5FA1}";
+
+        public static BlueprintFeature GrantInitiativeFeat()
+        {
+            var icon = FeatureRefs.CunningInitiative.Reference.Get().Icon;
+
+            var Buff2 = BuffConfigurator.New(AuraBuff2, AuraBuff2Guid)
+              .SetDisplayName(GrantInitiativeDisplayName)
+              .SetDescription(GrantInitiativeDescription)
+              .SetIcon(icon)
+              .AddContextStatBonus(StatType.Initiative, ContextValues.Property(UnitProperty.StatBonusWisdom, true))
+              .AddRecalculateOnStatChange(stat: StatType.Wisdom)
+              .Configure();
+
+            var area = AbilityAreaEffectConfigurator.New(GrantInitiativeAura, GrantInitiativeAuraGuid)
+                .SetTargetType(BlueprintAbilityAreaEffect.TargetType.Ally)
+                .SetAffectDead(false)
+                .SetShape(AreaEffectShape.Cylinder)
+                .SetSize(33.Feet())
+                .AddAbilityAreaEffectBuff(Buff2, false, ConditionsBuilder.New().TargetIsYourself(true).Build())
+                .Configure();
+
+            var Buff1 = BuffConfigurator.New(AuraBuff, AuraBuffGuid)
+              .SetDisplayName(GrantInitiativeDisplayName)
+              .SetDescription(GrantInitiativeDescription)
+              .SetIcon(icon)
+              .AddAreaEffect(area)
+              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+              .Configure();
+
+            return FeatureConfigurator.New(GrantInitiativeName, GrantInitiativeGuid)
+                    .SetDisplayName(GrantInitiativeDisplayName)
+                    .SetDescription(GrantInitiativeDescription)
+                    .SetIcon(icon)
+                    .AddAuraFeatureComponent(Buff1)
+                    .Configure();
         }
     }
 }
