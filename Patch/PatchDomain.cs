@@ -28,6 +28,7 @@ namespace PrestigePlus.Patch
 
             var progress = BlueprintTool.GetRef<BlueprintProgressionReference>(fref).Get();
             var feat = BlueprintTool.GetRef<BlueprintFeatureReference>(AnchoriteofDawn.AnchoriteDomainPlusfeatGuid);
+            var feat2 = BlueprintTool.GetRef<BlueprintFeatureReference>(SwordLord.HellDomainfeatGuid);
 
             foreach (LevelEntry entry in progress.LevelEntries)
             {
@@ -44,6 +45,10 @@ namespace PrestigePlus.Patch
                                 {
                                     crc.m_FeatureList = crc.m_FeatureList.AddToArray(feat);
                                 }
+                                if (!crc.m_FeatureList.Contains(feat2))
+                                {
+                                    crc.m_FeatureList = crc.m_FeatureList.AddToArray(feat2);
+                                }
                             }
                         }
                     }
@@ -59,6 +64,10 @@ namespace PrestigePlus.Patch
                                 if (!crc.m_FeatureList.Contains(feat))
                                 {
                                     crc.m_FeatureList = crc.m_FeatureList.AddToArray(feat);
+                                }
+                                if (!crc.m_FeatureList.Contains(feat2))
+                                {
+                                    crc.m_FeatureList = crc.m_FeatureList.AddToArray(feat2);
                                 }
                             }
 
@@ -78,6 +87,10 @@ namespace PrestigePlus.Patch
                                                 if (!config.m_FeatureList.Contains(feat))
                                                 {
                                                     config.m_FeatureList = config.m_FeatureList.AddToArray(feat);
+                                                }
+                                                if (!config.m_FeatureList.Contains(feat2))
+                                                {
+                                                    config.m_FeatureList = config.m_FeatureList.AddToArray(feat2);
                                                 }
                                             }
                                         }
