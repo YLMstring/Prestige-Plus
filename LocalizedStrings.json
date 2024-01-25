@@ -9125,6 +9125,138 @@
   {
     "Key": "EvangelistSummonerClass0Align.Description",
     "enGB": "SummonerClass"
+  },
+  {
+    "Key": "SpireDefenderDisruptive.Name",
+    "ProcessTemplates": false,
+    "enGB": "Disruptive",
+    "zhCN": "扰法者"
+  },
+  {
+    "Key": "SpireDefenderDisruptive.Description",
+    "enGB": "The magus gains Disruptive as a bonus feat.",
+    "zhCN": "魔战士获得扰法者作为额外专长。"
+  },
+  {
+    "Key": "InquisitionSpellkiller.Name",
+    "ProcessTemplates": false,
+    "enGB": "Spellkiller Inquisition",
+    "zhCN": "灭法审判域"
+  },
+  {
+    "Key": "InquisitionSpellkiller.Description",
+    "enGB": "Many religious individuals and orders find themselves in conflict with the users of arcane magic, and have created inquisitions and training regimens expressly to fight arcane spellcasters.",
+    "zhCN": "许多信人和教派会与奥术施法者发生冲突，于是专门成立了审判团和训练体系来对抗之。"
+  },
+  {
+    "Key": "InquisitionChooseGoodEvil.Name",
+    "ProcessTemplates": false,
+    "enGB": "Witch Hunter",
+    "zhCN": "猎巫人"
+  },
+  {
+    "Key": "InquisitionChooseGoodEvil.Description",
+    "enGB": "You gain the Disruptive feat as a bonus feat. When you defeat an enemy, you gain a +2 sacred or profane bonus to AC for 1 minute per level. The inquisitor of an evil deity can't choose to gain sacred bonus, and the inquisitor of a good deity can't choose to gain profane bonus.",
+    "zhCN": "你获得扰法者作为额外专长。你击败一个敌人时，便在防御等级上获得+2神圣或亵渎加值，持续1分钟每审判者等级。"
+  },
+  {
+    "Key": "InquisitionHunterGood.Name",
+    "ProcessTemplates": false,
+    "enGB": "Witch Hunter",
+    "zhCN": "猎巫人"
+  },
+  {
+    "Key": "InquisitionHunterGood.Description",
+    "enGB": "When you defeat an enemy, you gain a +2 sacred bonus to AC for 1 minute per level.",
+    "zhCN": "你击败一个敌人时，便在防御等级上获得+2神圣加值，持续1分钟每审判者等级。"
+  },
+  {
+    "Key": "InquisitionHunterEvil.Name",
+    "ProcessTemplates": false,
+    "enGB": "Witch Hunter",
+    "zhCN": "猎巫人"
+  },
+  {
+    "Key": "InquisitionHunterEvil.Description",
+    "enGB": "When you defeat an enemy, you gain a +2 profane bonus to AC for 1 minute per level.",
+    "zhCN": "你击败一个敌人时，便在防御等级上获得+2亵渎加值，持续1分钟每审判者等级。"
+  },
+  {
+    "Key": "InquisitionReformation.Name",
+    "ProcessTemplates": false,
+    "enGB": "Reformation Inquisition",
+    "zhCN": "革新审判域"
+  },
+  {
+    "Key": "InquisitionReformation.Description",
+    "enGB": "You can speak with divine persuasiveness. Moved by divine disapproval of your church’s mistakes, you seek to correct them however you can.",
+    "zhCN": "你的话语带有神圣的感染力。神祇不满于你的教会所犯下的错误，由于这样的启示，你致力于尽你所能纠正这些错误。"
+  },
+  {
+    "Key": "InquisitionInspiredRhetoric.Name",
+    "ProcessTemplates": false,
+    "enGB": "Inspired Rhetoric",
+    "zhCN": "神授巧言"
+  },
+  {
+    "Key": "InquisitionInspiredRhetoric.Description",
+    "enGB": "You use your Wisdom modifier in place of your Charisma modifier when making Diplomacy and Intimidate checks.",
+    "zhCN": "你可以使用感知调整值而非魅力调整值加到交涉和威吓检定的结果上。"
+  },
+  {
+    "Key": "InquisitionBlessedCorrection.Name",
+    "ProcessTemplates": false,
+    "enGB": "Blessed Correction",
+    "zhCN": "祝福圆场"
+  },
+  {
+    "Key": "InquisitionBlessedCorrection.Description",
+    "enGB": "At 4th level, when you make a Diplomacy or Intimidate check, you may roll twice and take the more favorable result. You can use this ability a number of rounds per day equal to your Wisdom bonus.",
+    "zhCN": "4级起，当你进行一次交涉或威吓技能检定时，你可以双骰取高。你每天可以使用本能力的轮数等同于你的感知调整值。"
+  },
+  {
+    "Key": "InquisitionTactics.Name",
+    "ProcessTemplates": false,
+    "enGB": "Tactics Inquisition",
+    "zhCN": "策略审判域"
+  },
+  {
+    "Key": "InquisitionTactics.Description",
+    "enGB": "It is the cold and tactical mind that often wins the day. A proper, carefully considered sacrifice can inspire one’s allies to serve your cause.",
+    "zhCN": "胸有成略之人往往会赢得胜利。一次深思熟虑、恰到好处的牺牲可以激励你的盟友，让他们投入到共同的事业中来。"
+  },
+  {
+    "Key": "InquisitionDirection.Name",
+    "ProcessTemplates": false,
+    "enGB": "Inquisitor's Direction",
+    "zhCN": "审判者之指引"
+  },
+  {
+    "Key": "InquisitionDirection.Description",
+    "enGB": "As a full-round action, you can choose to enter a tranquil, reflective state and forgo all attacks of opportunity for that round; one ally of your choice within 30 feet gains the benefit of haste for 1 round. You can use this ability a number of times per day equal to your 3 + Wisdom bonus.",
+    "zhCN": "以一个整轮动作，你可以进入一种宁静内省的状态，放弃本轮所有的借机攻击，并使一个距离你不超过30尺的盟友获得加速术的好处1轮。你每天可以使用本能力的次数等同于3+你的感知调整值。"
+  },
+  {
+    "Key": "InquisitionGrantInitiative.Name",
+    "ProcessTemplates": false,
+    "enGB": "Grant the Initiative",
+    "zhCN": "巧赐先攻"
+  },
+  {
+    "Key": "InquisitionGrantInitiative.Description",
+    "enGB": "At 8th level, you and all allies within 30 feet may add your Wisdom bonus to their initiative checks.",
+    "zhCN": "8级起，所有距离你不超过30尺的盟友都可以将你的感知调整值加到他们的先攻检定结果上。"
+  },
+  {
+    "Key": "SwordLordCatechesis.Name",
+    "ProcessTemplates": false,
+    "enGB": "Catechesis",
+    "zhCN": "教理讲授"
+  },
+  {
+    "Key": "SwordLordCatechesis.Description",
+    "enGB": "If a Hell Knight signifer has the Warrior Priest feat, his Hell Knight signifer level stacks with other divine spellcasting classes for determining the effects of those classes’ domain powers and inquisitions. This doesn’t grant any new powers or abilities. In addition, a signifer with the Warrior Priest feat gains Selective Channel as a bonus feat.",
+    "zhCN": "若地狱骑士持节士拥有以战筑信专长，他的地狱骑士持节士等级与其他神术施法者等级叠加，以计算那些职业的领域和审判域的效果，但不会因此获得新能力。拥有以战筑信专长的持节士还会获得选择导能作为额外专长。"
   }
 
 ]
