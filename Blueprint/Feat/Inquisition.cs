@@ -48,7 +48,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string SpellkillerDescription = "InquisitionSpellkiller.Description";
         public static BlueprintProgression SpellkillerFeat()
         {
-            var icon = FeatureRefs.Disruptive.Reference.Get().Icon;
+            var icon = AbilityRefs.VampiricShadowShield.Reference.Get().Icon;
 
             var pro = ProgressionConfigurator.New(Spellkiller, SpellkillerGuid)
               .SetDisplayName(SpellkillerDisplayName)
@@ -165,7 +165,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string ReformationDescription = "InquisitionReformation.Description";
         public static BlueprintProgression ReformationFeat()
         {
-            var icon = FeatureRefs.FortuneRevelationFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.CavalierBannerGreater.Reference.Get().Icon;
 
             var pro = ProgressionConfigurator.New(Reformation, ReformationGuid)
               .SetDisplayName(ReformationDisplayName)
@@ -304,7 +304,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static BlueprintFeature GrantInitiativeFeat()
         {
-            var icon = FeatureRefs.CunningInitiative.Reference.Get().Icon;
+            var icon = AbilityRefs.FeatherStepMass.Reference.Get().Icon;
 
             var Buff2 = BuffConfigurator.New(AuraBuff2, AuraBuff2Guid)
               .SetDisplayName(GrantInitiativeDisplayName)
@@ -355,7 +355,7 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string DirectionCooldownBuffGuid = "{2E9F847F-CCA9-4A5F-A765-9F15EC897DA9}";
         public static BlueprintFeature DirectionFeat()
         {
-            var icon = FeatureRefs.BattleMeditation.Reference.Get().Icon;
+            var icon = FeatureRefs.FreebootersBondFeature.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(DirectionAbilityRes, DirectionAbilityResGuid)
                 .SetMaxAmount(ResourceAmountBuilder.New(3).IncreaseByStat(StatType.Wisdom))
