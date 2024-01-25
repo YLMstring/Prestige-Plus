@@ -36,6 +36,7 @@ using Kingmaker.Utility;
 using PrestigePlus.CustomAction.OtherFeatRelated;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
 using PrestigePlus.Blueprint.PrestigeClass;
+using PrestigePlus.CustomComponent.Feat;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -317,13 +318,14 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetAffectDead(false)
                 .SetShape(AreaEffectShape.Cylinder)
                 .SetSize(33.Feet())
-                .AddAbilityAreaEffectBuff(Buff2, true, ConditionsBuilder.New().TargetIsYourself(true).Build())
+                .AddAbilityAreaEffectBuff(Buff2, false, ConditionsBuilder.New().TargetIsYourself(true).Build())
                 .Configure();
 
             var Buff1 = BuffConfigurator.New(AuraBuff, AuraBuffGuid)
               .SetDisplayName(GrantInitiativeDisplayName)
               .SetDescription(GrantInitiativeDescription)
               .SetIcon(icon)
+              .AddComponent<RecalculateEachRound>()
               .AddAreaEffect(area)
               .SetFlags(BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
