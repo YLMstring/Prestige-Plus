@@ -35,6 +35,7 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.Utility;
 using PrestigePlus.CustomAction.OtherFeatRelated;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
+using PrestigePlus.Blueprint.PrestigeClass;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -49,7 +50,7 @@ namespace PrestigePlus.Blueprint.Feat
         {
             var icon = FeatureRefs.Disruptive.Reference.Get().Icon;
 
-            return ProgressionConfigurator.New(Spellkiller, SpellkillerGuid)
+            var pro = ProgressionConfigurator.New(Spellkiller, SpellkillerGuid)
               .SetDisplayName(SpellkillerDisplayName)
               .SetDescription(SpellkillerDescription)
               .SetIcon(icon)
@@ -60,6 +61,12 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToGroups(FeatureGroup.Domain)
               .AddToLevelEntry(1, ChooseGoodEvilFeat())
               .Configure();
+
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.DomainsSelection)
+                .AddToAllFeatures(pro)
+                .Configure();
+
+            return pro;
         }
 
         private const string ChooseGoodEvil = "Inquisition.ChooseGoodEvil";
@@ -160,7 +167,7 @@ namespace PrestigePlus.Blueprint.Feat
         {
             var icon = FeatureRefs.FortuneRevelationFeature.Reference.Get().Icon;
 
-            return ProgressionConfigurator.New(Reformation, ReformationGuid)
+            var pro = ProgressionConfigurator.New(Reformation, ReformationGuid)
               .SetDisplayName(ReformationDisplayName)
               .SetDescription(ReformationDescription)
               .SetIcon(icon)
@@ -172,6 +179,12 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToLevelEntry(1, InspiredRhetoricFeat())
               .AddToLevelEntry(4, BlessedCorrectionFeat())
               .Configure();
+
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.DomainsSelection)
+                .AddToAllFeatures(pro)
+                .Configure();
+
+            return pro;
         }
 
         private const string BlessedCorrection = "Inquisition.BlessedCorrection";
@@ -251,7 +264,7 @@ namespace PrestigePlus.Blueprint.Feat
         {
             var icon = FeatureRefs.TacticalLeaderFeatShareSwift.Reference.Get().Icon;
 
-            return ProgressionConfigurator.New(Tactics, TacticsGuid)
+            var pro = ProgressionConfigurator.New(Tactics, TacticsGuid)
               .SetDisplayName(TacticsDisplayName)
               .SetDescription(TacticsDescription)
               .SetIcon(icon)
@@ -266,6 +279,12 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToLevelEntry(1, DirectionFeat())
               .AddToLevelEntry(8, GrantInitiativeFeat())
               .Configure();
+
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.DomainsSelection)
+                .AddToAllFeatures(pro)
+                .Configure();
+
+            return pro;
         }
 
         private static readonly string GrantInitiativeName = "InquisitionGrantInitiative";
