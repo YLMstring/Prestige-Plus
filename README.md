@@ -1,4 +1,4 @@
-# Prestige Plus v2.5.0 for WoTR 
+# Prestige Plus v2.5.1 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -187,6 +187,7 @@
 - New Magus Arcana: [Familiar](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/familiar-ex)
 - New Magus Arcana: [Reach Spellstrike](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/reach-spellstrike-su/)
 - New Magus Arcana: [Close Range](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/close-range-ex/)
+- New Magus Arcana: [Disruptive](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/disruptive-ex)
 #### Monk:  
 - [Maneuver Master](https://www.d20pfsrd.com/classes/core-classes/monk/archetypes/paizo-monk-archetypes/maneuver-master/)
 - This is absolutely my favorite.
@@ -306,6 +307,11 @@
 - [Quick Shot](https://www.d20pfsrd.com/classes/unchained-classes/rogue-unchained/rogue-talents-advanced/paizo-rogue-talents-advanced/quick-shot)
 - [Sneaky Maneuver](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-talents/sneaky-maneuver-ex/)
 - [Ninja Trick](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-talents/ninja-trick-ex/): Deflect Arrows, Snatch Arrows, Unarmed Combat Training, Style Master, Blood Debt, Kami Warden
+### New Inquisitions
+
+- [Spellkiller Inquisition](https://www.d20pfsrd.com/classes/base-classes/inquisitor/inquisitions/inquistions-paizo/spellkiller-inquisition/)
+- [Reformation Inquisition](https://www.d20pfsrd.com/classes/base-classes/inquisitor/inquisitions/inquistions-paizo/reformation-inquisition/)
+- [Tactics Inquisition](https://www.d20pfsrd.com/classes/base-classes/inquisitor/inquisitions/inquistions-paizo/tactics-inquisition/)
 ### New Spells
 
 - [Litany of Righteousness](https://www.d20pfsrd.com/magic/all-spells/l/litany-of-righteousness/)
@@ -325,13 +331,13 @@
 - Mystic Catalyst: You can use Lesser Spell Synthesis ability at will.
 ### Other Features
 
+- [Quick Draw](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/swordlord/): If a Swordlord already has Quick Draw or Alertness, he gains Aldori Dueling Mastery as a bonus feat.
+- [Catechesis](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/hellknight-signifer/): If a Hell Knight signifer has the Warrior Priest feat, his Hell Knight signifer level stacks with other divine spellcasting classes for determining the effects of those classes’ domain powers. This doesn’t grant any new powers or abilities. In addition, a signifer with the Warrior Priest feat gains Selective Channel as a bonus feat.
 - Estimated THC: Show hit chance and spell (not) saved chance in turn based mode. This is not precise because it doesn't take into consideration certain effects such as concealment, spell penetration or conditional save bonus, but still better than nothing, eh? (default off)
 - Infernal Healing: You can fully heal outside of combat by spending gold, as if you buy a wand of infernal healing and use it! (gold : hp = 3:2)
 - Weak Crits against Enemies: Symmetrical with owlcat weak crits settings, making it fair (default off)
 - Fix Difficulty CMD Tripple-Dipped: This will significantly reduce enemy CMD at higher difficulties. CMD is calculated by adding STR bonus, DEX bonus and AC bonus, which means difficulty stat advancement is applied 3 times in vanilla, leading to total madness.
 - Fix Power Attack: now working as descripted: This bonus to damage is halved (–50%) if you are making an attack with an off-hand weapon. Note that Piranha Strike has the same bug but it isn't fixed because this might give Piranha Strike an edge over Power Attack, which is pretty coool.
-- [Quick Draw](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/swordlord/): If the swordlord already has Quick Draw or Alertness, he gains Aldori Dueling Mastery as a bonus feat.
-
 ## Mod Combo
 
 ### [Expanded Content](https://github.com/ka-dyn/ExpandedContent)
