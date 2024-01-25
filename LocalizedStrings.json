@@ -9255,8 +9255,8 @@
   },
   {
     "Key": "SwordLordCatechesis.Description",
-    "enGB": "If a Hell Knight signifer has the Warrior Priest feat, his Hell Knight signifer level stacks with other divine spellcasting classes for determining the effects of those classes’ domain powers. This doesn’t grant any new powers or abilities. In addition, a signifer with the Warrior Priest feat gains Selective Channel as a bonus feat.",
-    "zhCN": "若地狱骑士持节士拥有以战筑信专长，他的地狱骑士持节士等级与其他神术施法者等级叠加，以计算那些职业的领域效果，但不会因此获得新能力。拥有以战筑信专长的持节士还会获得选择导能作为额外专长。"
+    "enGB": "If a Hell Knight signifer has the Warrior Priest feat, his Hell Knight signifer level stacks with other divine spellcasting classes for determining the effects of those classes’ domain powers and inquisitions. This doesn’t grant any new powers or abilities. In addition, a signifer with the Warrior Priest feat gains Selective Channel as a bonus feat.",
+    "zhCN": "若地狱骑士持节士拥有以战筑信专长，他的地狱骑士持节士等级与其他神术施法者等级叠加，以计算那些职业的领域和审判域的效果，但不会因此获得新能力。拥有以战筑信专长的持节士还会获得选择导能作为额外专长。"
   }
 
 ]
