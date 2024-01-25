@@ -28,6 +28,13 @@ namespace PrestigePlus.HarmonyFix
         static void Postfix(ref UnitDescriptor unit)
         {
             int cl = 0;
+            foreach (var feat in unit.Progression.Features)
+            {
+                var comp = feat.GetComponent<FakeLevelUpClass>();
+                if (comp == null) continue;
+                cl -= 1;
+            }
+            if (cl == 0) { return; }
             foreach (ClassData classData in unit.Progression.Classes)
             {
                 if (!classData.CharacterClass.IsMythic)
@@ -38,12 +45,6 @@ namespace PrestigePlus.HarmonyFix
                         cl += classData.Level;
                     }
                 }
-            }
-            foreach (var feat in unit.Progression.Features)
-            {
-                var comp = feat.GetComponent<FakeLevelUpClass>();
-                if (comp == null) continue;
-                cl -= 1;
             }
             unit.Progression.CharacterLevel = cl;
         }
