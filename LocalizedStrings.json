@@ -9200,8 +9200,8 @@
   },
   {
     "Key": "InquisitionInspiredRhetoric.Description",
-    "enGB": "You use your Wisdom modifier in place of your Charisma modifier when making Diplomacy and Intimidate checks.",
-    "zhCN": "你可以使用感知调整值而非魅力调整值加到交涉和威吓检定的结果上。"
+    "enGB": "You use your Wisdom modifier in place of your Charisma modifier when making any Persuasive checks.",
+    "zhCN": "你可以使用感知调整值而非魅力调整值加到任意说服检定的结果上。"
   },
   {
     "Key": "InquisitionBlessedCorrection.Name",

@@ -250,8 +250,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(InquisitionInspiredRhetoricDisplayName)
               .SetDescription(InquisitionInspiredRhetoricDescription)
               .SetIcon(icon)
-              .AddReplaceStatBaseAttribute(StatType.Wisdom, true, Kingmaker.UnitLogic.Buffs.BonusMod.AsIs, StatType.CheckDiplomacy)
-              .AddReplaceStatBaseAttribute(StatType.Wisdom, true, Kingmaker.UnitLogic.Buffs.BonusMod.AsIs, StatType.CheckIntimidate)
+              .AddReplaceStatBaseAttribute(StatType.Wisdom, true, Kingmaker.UnitLogic.Buffs.BonusMod.AsIs, StatType.SkillPersuasion)
               .Configure();
         }
 
@@ -311,7 +310,6 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDescription(GrantInitiativeDescription)
               .SetIcon(icon)
               .AddContextStatBonus(StatType.Initiative, ContextValues.Property(UnitProperty.StatBonusWisdom, true))
-              .AddRecalculateOnStatChange(stat: StatType.Wisdom)
               .Configure();
 
             var area = AbilityAreaEffectConfigurator.New(GrantInitiativeAura, GrantInitiativeAuraGuid)
@@ -319,7 +317,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetAffectDead(false)
                 .SetShape(AreaEffectShape.Cylinder)
                 .SetSize(33.Feet())
-                .AddAbilityAreaEffectBuff(Buff2, false, ConditionsBuilder.New().TargetIsYourself(true).Build())
+                .AddAbilityAreaEffectBuff(Buff2, true, ConditionsBuilder.New().TargetIsYourself(true).Build())
                 .Configure();
 
             var Buff1 = BuffConfigurator.New(AuraBuff, AuraBuffGuid)
@@ -336,6 +334,7 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetDescription(GrantInitiativeDescription)
                     .SetIcon(icon)
                     .AddAuraFeatureComponent(Buff1)
+                    .AddFacts(new() { FeatureRefs.CunningInitiative.ToString() })
                     .Configure();
         }
 
@@ -383,6 +382,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .AllowTargeting(false, false, true, false)
                 .SetRange(AbilityRange.Close)
                 .SetType(AbilityType.Supernatural)
+                .SetIsFullRoundAction(true)
                 .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Point)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .Configure();
