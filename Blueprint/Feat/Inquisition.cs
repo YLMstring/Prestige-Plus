@@ -364,7 +364,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetDisplayName(DirectionDisplayName)
                 .SetDescription(DirectionDescription)
                 .SetIcon(icon)
-                //.AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+                .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
                 .AddCondition(Kingmaker.UnitLogic.UnitCondition.DisableAttacksOfOpportunity)
                 .Configure();
 
