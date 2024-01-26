@@ -3319,7 +3319,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string ChaldiraDescription = "DeificObedienceChaldira.Description";
         public static BlueprintFeature ChaldiraFeat()
         {
-            var icon = AbilityRefs.BlessingOfCourageAndLife.Reference.Get().Icon;
+            var icon = AbilityRefs.BlessingOfLuckAndResolve.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Chaldira, ChaldiraGuid)
               .SetDisplayName(ChaldiraDisplayName)
@@ -3340,7 +3340,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string ChaldiraSentinelDescription = "DeificObedienceChaldiraSentinel.Description";
         public static BlueprintProgression ChaldiraSentinelFeat()
         {
-            var icon = AbilityRefs.BlessingOfCourageAndLife.Reference.Get().Icon;
+            var icon = AbilityRefs.BlessingOfLuckAndResolve.Reference.Get().Icon;
 
             return ProgressionConfigurator.New(ChaldiraSentinel, ChaldiraSentinelGuid)
               .SetDisplayName(ChaldiraSentinelDisplayName)
@@ -3360,7 +3360,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string ChaldiraSentinel1Description = "SpellPowerChaldira1.Description";
         private static BlueprintFeature CreateChaldiraSentinel1()
         {
-            var icon = AbilityRefs.Blink.Reference.Get().Icon;
+            var icon = AbilityRefs.Blur.Reference.Get().Icon;
 
             return FeatureConfigurator.New(ChaldiraSentinel1, ChaldiraSentinel1Guid)
               .SetDisplayName(ChaldiraSentinel1DisplayName)
@@ -3377,7 +3377,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string Chaldira2Description = "DeificObedienceChaldira2.Description";
         public static BlueprintFeature ChaldiraSentinel2Feat()
         {
-            var icon = AbilityRefs.CrushingDespair.Reference.Get().Icon;
+            var icon = FeatureRefs.LuckDomainBaseFeature.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Chaldira2, Chaldira2Guid)
               .SetDisplayName(Chaldira2DisplayName)
@@ -3431,7 +3431,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static BlueprintFeature Pulura0Feat()
         {
-            var icon = AbilityRefs.InstantEnemy.Reference.Get().Icon;
+            var icon = FeatureRefs.PuluraFeature.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Pulura0, Pulura0Guid)
               .SetDisplayName(PuluraDisplayName)
@@ -3486,7 +3486,7 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string Pulura2AblityResGuid = "{790C15E1-35BF-412F-B38E-0AE4D804CEBF}";
         public static BlueprintFeature Pulura2Feat()
         {
-            var icon = AbilityRefs.StarbowAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.MageLight.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(Pulura2AblityRes, Pulura2AblityResGuid)
                 .SetMaxAmount(
