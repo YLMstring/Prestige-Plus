@@ -2236,15 +2236,9 @@ namespace PrestigePlus.Blueprint.Feat
                 feat.AddFacts(new() { weapon.Get() });
             }
 
-            var cond = ConditionsBuilder.New()
-                    .IsWeaponEquipped(category: WeaponCategory.Greatsword, checkWeaponCategory: true)
-                    .Build();  
-
             return feat.AddFacts(new() { FeatureRefs.SimpleWeaponProficiency.ToString(), FeatureRefs.MartialWeaponProficiency.ToString() })
-              .AddAttackBonusConditional(2, descriptor: ModifierDescriptor.Profane)
-              .AddDamageBonusConditional(2, descriptor: ModifierDescriptor.Profane, onlyWeaponDamage: true)
-              .AddAttackBonusConditional(4, true, cond, ModifierDescriptor.Profane)
-              .AddDamageBonusConditional(4, true, cond, ModifierDescriptor.Profane, true)
+              .AddComponent<WeaponFocusPP>(c => { c.WeaponType = WeaponTypeRefs.Greatsword.Reference; c.AttackBonus = 4; c.AttackBonus2 = 2; c.Des = ModifierDescriptor.Profane; })
+              .AddComponent<WeaponTypeDamageBonusPP>(c => { c.WeaponType = WeaponTypeRefs.Greatsword.Reference; c.DamageBonus = 4; c.DamageBonus2 = 2; c.Des = ModifierDescriptor.Profane; })
               .Configure();
         }
 

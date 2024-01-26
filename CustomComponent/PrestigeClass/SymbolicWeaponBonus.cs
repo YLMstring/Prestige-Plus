@@ -20,7 +20,7 @@ using System.Threading.Tasks;
 namespace PrestigePlus.CustomComponent.PrestigeClass
 {
     [TypeId("{5722B4CC-BD83-45D6-A21E-5AEF7A537931}")]
-    internal class SymbolicWeaponBonus : UnitFactComponentDelegate<SymbolicWeaponBonus.ComponentData>, IInitiatorRulebookHandler<RuleAttackWithWeapon>, IRulebookHandler<RuleAttackWithWeapon>, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleCalculateAttackBonus>, IRulebookHandler<RuleCalculateAttackBonus>
+    internal class SymbolicWeaponBonus : UnitFactComponentDelegate<SymbolicWeaponBonus.ComponentData>, IInitiatorRulebookHandler<RuleAttackWithWeapon>, IRulebookHandler<RuleAttackWithWeapon>, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleCalculateAttackBonusWithoutTarget>, IRulebookHandler<RuleCalculateAttackBonusWithoutTarget>
     {
         void IRulebookHandler<RuleAttackWithWeapon>.OnEventAboutToTrigger(RuleAttackWithWeapon evt)
         {
@@ -34,7 +34,7 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
             }
         }
 
-        void IRulebookHandler<RuleCalculateAttackBonus>.OnEventAboutToTrigger(RuleCalculateAttackBonus evt)
+        void IRulebookHandler<RuleCalculateAttackBonusWithoutTarget>.OnEventAboutToTrigger(RuleCalculateAttackBonusWithoutTarget evt)
         {
             if (Data.cat.Count() == 0)
             {
@@ -51,7 +51,7 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
 
         }
 
-        void IRulebookHandler<RuleCalculateAttackBonus>.OnEventDidTrigger(RuleCalculateAttackBonus evt)
+        void IRulebookHandler<RuleCalculateAttackBonusWithoutTarget>.OnEventDidTrigger(RuleCalculateAttackBonusWithoutTarget evt)
         {
 
         }
