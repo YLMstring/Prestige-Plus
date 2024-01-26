@@ -3563,5 +3563,184 @@ namespace PrestigePlus.Blueprint.Feat
               .AddFacts(new() { ability })
               .Configure();
         }
+
+        private const string Rovagug = "DeificObedience.Rovagug";
+        public static readonly string RovagugGuid = "{FDF3CEDB-30FD-40CE-80E3-58DA27AC00FB}";
+
+        internal const string RovagugDisplayName = "DeificObedienceRovagug.Name";
+        private const string RovagugDescription = "DeificObedienceRovagug.Description";
+        public static BlueprintProgression RovagugFeat()
+        {
+            var icon = FeatureRefs.RovagugFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(Rovagug, RovagugGuid)
+              .SetDisplayName(RovagugDisplayName)
+              .SetDescription(RovagugDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.RovagugFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticEvil, group: Prerequisite.GroupType.Any)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(1, Rovagug0Feat())
+              .AddToLevelEntry(12, CreateRovagug1())
+              .AddToLevelEntry(16, Rovagug3Feat())
+              .AddToLevelEntry(20, CreateRovagug2())
+              .Configure();
+        }
+
+        private const string Rovagug0 = "DeificObedience.Rovagug0";
+        public static readonly string Rovagug0Guid = "{72C224C2-FED5-4276-87B9-6EB57A758F50}";
+
+        public static BlueprintFeature Rovagug0Feat()
+        {
+            var icon = FeatureRefs.RovagugFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Rovagug0, Rovagug0Guid)
+              .SetDisplayName(RovagugDisplayName)
+              .SetDescription(RovagugDescription)
+              .SetIcon(icon)
+              .AddManeuverBonus(4, mythic: false, type: Kingmaker.RuleSystem.Rules.CombatManeuver.SunderArmor)
+              .Configure();
+        }
+
+        private const string Rovagug1 = "SpellPower.Rovagug1";
+        public static readonly string Rovagug1Guid = "{12F76998-B39A-464D-88A8-234591B84B10}";
+        internal const string Rovagug1DisplayName = "SpellPowerRovagug1.Name";
+        private const string Rovagug1Description = "SpellPowerRovagug1.Description";
+
+        private const string Rovagug1Ablity2 = "SpellPower.UseRovagug12";
+        private static readonly string Rovagug1Ablity2Guid = "{4CB2C908-78A9-44AA-9B7C-99D496513D65}";
+        private static BlueprintFeature CreateRovagug1()
+        {
+            var icon = AbilityRefs.AlignWeaponEvil.Reference.Get().Icon;
+
+            var ability2 = AbilityConfigurator.New(Rovagug1Ablity2, Rovagug1Ablity2Guid)
+                .CopyFrom(
+                AbilityRefs.AlignWeaponEvil,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx),
+                typeof(ContextRankConfig))
+                .AddPretendSpellLevel(spellLevel: 2)
+                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Rovagug1, Rovagug1Guid)
+              .SetDisplayName(Rovagug1DisplayName)
+              .SetDescription(Rovagug1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability2 })
+              .Configure();
+        }
+
+        private const string Rovagug2 = "SpellPower.Rovagug2";
+        public static readonly string Rovagug2Guid = "{CF377FCE-4956-4B88-BBDE-26CEE2F13E77}";
+        internal const string Rovagug2DisplayName = "SpellPowerRovagug2.Name";
+        private const string Rovagug2Description = "SpellPowerRovagug2.Description";
+
+        private const string Rovagug2Ablity2 = "SpellPower.UseRovagug22";
+        private static readonly string Rovagug2Ablity2Guid = "{3D06C881-75D9-4946-B8BB-A1327BC74558}";
+
+        private const string Rovagug2Ablity3 = "SpellPower.UseRovagug23";
+        private static readonly string Rovagug2Ablity3Guid = "{4F2028FB-9652-4907-A795-1AC52A5FFC62}";
+
+        private const string Rovagug2AblityRes = "DeificObedience.Rovagug2Res";
+        private static readonly string Rovagug2AblityResGuid = "{E1FCA501-4C64-4A9B-A495-BDE125632C8D}";
+        private static BlueprintFeature CreateRovagug2()
+        {
+            var icon = AbilityRefs.Implosion.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(Rovagug2AblityRes, Rovagug2AblityResGuid)
+                .SetMaxAmount(
+                    ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(Rovagug2Ablity2, Rovagug2Ablity2Guid)
+                .CopyFrom(
+                AbilityRefs.Implosion,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilityTargetIsAlly),
+                typeof(ContextRankConfig),
+                typeof(AbilityTargetHasFact),
+                typeof(AbilitySpawnFx),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 9)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetType(AbilityType.Spell)
+                .Configure();
+
+            var ability3 = AbilityConfigurator.New(Rovagug2Ablity3, Rovagug2Ablity3Guid)
+                .CopyFrom(
+                AbilityRefs.SummonMonsterIXBase,
+                typeof(SpellDescriptorComponent),
+                typeof(SpellComponent),
+                typeof(AbilityVariants))
+                .AddPretendSpellLevel(spellLevel: 9)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetType(AbilityType.Spell)
+                .Configure();
+
+            return FeatureConfigurator.New(Rovagug2, Rovagug2Guid)
+              .SetDisplayName(Rovagug2DisplayName)
+              .SetDescription(Rovagug2Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability2, ability3 })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .Configure();
+        }
+
+        private const string Rovagug3 = "DeificObedience.Rovagug3";
+        public static readonly string Rovagug3Guid = "{03D4102A-3940-42EF-8690-AECF28AE3C4B}";
+
+        internal const string Rovagug3DisplayName = "DeificObedienceRovagug3.Name";
+        private const string Rovagug3Description = "DeificObedienceRovagug3.Description";
+
+        private const string Rovagug3Buff = "DeificObedience.Rovagug3Buff";
+        private static readonly string Rovagug3BuffGuid = "{70F3A330-5C0F-4A81-B270-720751343962}";
+
+        private const string Rovagug3Res = "DeificObedience.Rovagug3Res";
+        private static readonly string Rovagug3ResGuid = "{A140E2B2-3DF2-4CB9-88A7-AA51D971C98F}";
+
+        private const string Rovagug3Ability = "DeificObedience.Rovagug3Ability";
+        private static readonly string Rovagug3AbilityGuid = "{9168F28A-6165-432B-8FCF-CD9AA177D2C1}";
+        public static BlueprintFeature Rovagug3Feat()
+        {
+            var icon = FeatureSelectionRefs.BasicFeatSelection.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(Rovagug3Res, Rovagug3ResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(0))
+                .Configure();
+
+            var ability = ActivatableAbilityConfigurator.New(Rovagug3Ability, Rovagug3AbilityGuid)
+                .SetDisplayName(Rovagug3DisplayName)
+                .SetDescription(Rovagug3Description)
+                .SetIcon(icon)
+                .SetBuff(Rovagug3BuffGuid)
+                .SetDeactivateIfCombatEnded(true)
+                .SetDeactivateImmediately(true)
+                .SetActivationType(AbilityActivationType.WithUnitCommand)
+                .SetActivateWithUnitCommand(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+                .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound, freeBlueprint: Rovagug2Guid)
+                .Configure();
+
+            BuffConfigurator.New(Rovagug3Buff, Rovagug3BuffGuid)
+             .SetDisplayName(Rovagug3DisplayName)
+             .SetDescription(Rovagug3Description)
+             .SetIcon(icon)
+             .AddComponent<WeaponSizeChangeTTT>()
+             .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+             .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+             .Configure();
+
+            return FeatureConfigurator.New(Rovagug3, Rovagug3Guid)
+              .SetDisplayName(Rovagug3DisplayName)
+              .SetDescription(Rovagug3Description)
+              .SetIcon(icon)
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .AddIncreaseResourceAmountBySharedValue(false, abilityresourse, ContextValues.Property(UnitProperty.Level))
+              .AddFacts(new() { ability })
+              .Configure();
+        }
     }
 }
