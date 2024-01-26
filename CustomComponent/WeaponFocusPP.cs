@@ -28,7 +28,7 @@ namespace PrestigePlus.CustomComponent
             {
                 evt.AddModifier(this.AttackBonus, base.Fact, this.Des);
             }
-            else
+            else if (evt.Weapon.Blueprint.Category != WeaponCategory.Touch && evt.Weapon.Blueprint.Category != WeaponCategory.Ray)
             {
                 evt.AddModifier(this.AttackBonus2, base.Fact, this.Des);
             }

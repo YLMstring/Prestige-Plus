@@ -7536,8 +7536,8 @@
   },
   {
     "Key": "DeificObedienceSzuriel2.Description",
-    "enGB": "You are proficient with all weapons, but you are particularly gifted with swords. You gain a +2 profane bonus on attack and weapon damage rolls; this bonus becomes +4 when you wield a greatsword.",
-    "zhCN": "你擅长所有武器，但特别精通剑术。攻击和武器伤害检定获得+2亵渎加值；使用巨剑时该加值变为+4。"
+    "enGB": "You are proficient with all weapons, but you are particularly gifted with swords. You gain a +2 profane bonus on weapon attack and damage rolls; this bonus becomes +4 when you wield a greatsword.",
+    "zhCN": "你擅长所有武器，但特别精通剑术。武器攻击和伤害检定获得+2亵渎加值；使用巨剑时该加值变为+4。"
   },
   {
     "Key": "DeificObedienceSzuriel3.Name",
