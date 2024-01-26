@@ -65,6 +65,7 @@ using TabletopTweaks.Core.NewComponents;
 using static Kingmaker.EntitySystem.Properties.BaseGetter.PropertyContextAccessor;
 using BlueprintCore.Utils;
 using TabletopTweaks.Core.NewComponents.OwlcatReplacements;
+using TabletopTweaks.Core.NewActions;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -133,6 +134,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(FalaynaFeat())
               .AddToAllFeatures(SocothbenothFeat())
               .AddToAllFeatures(ChaldiraFeat())
+              .AddToAllFeatures(PuluraFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -3325,6 +3327,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddPrerequisiteFeature(FeatureRefs.SarenraeFeature.ToString(), group: Prerequisite.GroupType.Any)
               .AddPrerequisiteAlignment(AlignmentMaskType.NeutralGood, group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteStatValue(StatType.SkillThievery, 1)
               .AddToIsPrerequisiteFor(ChaldiraSentinelFeat())
               .AddComponent<WeaponFocusPP>(c => { c.WeaponType = WeaponTypeRefs.Shortsword.Reference; c.AttackBonus = 2; c.AttackBonus2 = 1; c.Des = ModifierDescriptor.Sacred; })
               .Configure();
@@ -3398,6 +3401,167 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetIcon(icon)
                     .AddCondition(UnitCondition.ImmuneToAttackOfOpportunity)
                     .Configure();
+        }
+
+        private const string Pulura = "DeificObedience.Pulura";
+        public static readonly string PuluraGuid = "{2FA6C772-F75A-4F1D-BF22-EDB72B7E0BA2}";
+
+        internal const string PuluraDisplayName = "DeificObediencePulura.Name";
+        private const string PuluraDescription = "DeificObediencePulura.Description";
+        public static BlueprintProgression PuluraFeat()
+        {
+            var icon = FeatureRefs.PuluraFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(Pulura, PuluraGuid)
+              .SetDisplayName(PuluraDisplayName)
+              .SetDescription(PuluraDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.PuluraFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticGood, group: Prerequisite.GroupType.Any)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(1, Pulura0Feat())
+              .AddToLevelEntry(12, CreatePulura1())
+              .AddToLevelEntry(16, Pulura2Feat())
+              .AddToLevelEntry(20, Pulura3Feat())
+              .Configure();
+        }
+
+        private const string Pulura0 = "DeificObedience.Pulura0";
+        public static readonly string Pulura0Guid = "{A6E16245-2589-4B3F-86EF-8FC67369F459}";
+
+        public static BlueprintFeature Pulura0Feat()
+        {
+            var icon = AbilityRefs.InstantEnemy.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Pulura0, Pulura0Guid)
+              .SetDisplayName(PuluraDisplayName)
+              .SetDescription(PuluraDescription)
+              .SetIcon(icon)
+              .AddAuraFeatureComponent(AnchoriteofDawn.SunBladeBuffGuid)
+              .Configure();
+        }
+
+        private const string Pulura1 = "SpellPower.Pulura1";
+        public static readonly string Pulura1Guid = "{B27162AB-9482-47FB-99CC-3307A3BBCF58}";
+        internal const string Pulura1DisplayName = "SpellPowerPulura1.Name";
+        private const string Pulura1Description = "SpellPowerPulura1.Description";
+
+        private const string Pulura1Ablity = "SpellPower.UsePulura1";
+        private static readonly string Pulura1AblityGuid = "{7D7FCECE-A491-4C0C-9A55-4200AC0A62F6}";
+        private static BlueprintFeature CreatePulura1()
+        {
+            var icon = AbilityRefs.ColorSpray.Reference.Get().Icon;
+
+            var ability = AbilityConfigurator.New(Pulura1Ablity, Pulura1AblityGuid)
+                .CopyFrom(
+                AbilityRefs.ColorSpray,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(ContextCalculateSharedValue),
+                typeof(AbilityDeliverProjectile),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 1)
+                .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Pulura1, Pulura1Guid)
+              .SetDisplayName(Pulura1DisplayName)
+              .SetDescription(Pulura1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string Pulura2 = "DeificObedience.Pulura2";
+        public static readonly string Pulura2Guid = "{ECEBFF1E-0D18-4E6C-B4C9-3F4B3583CE6F}";
+
+        internal const string Pulura2DisplayName = "DeificObediencePulura2.Name";
+        private const string Pulura2Description = "DeificObediencePulura2.Description";
+
+        private const string Pulura2Ablity = "DeificObedience.UsePulura2";
+        private static readonly string Pulura2AblityGuid = "{9E2F2AED-C730-4149-8FAA-102EDBB61C4A}";
+
+        private const string Pulura2AblityRes = "DeificObedience.Pulura2Res";
+        private static readonly string Pulura2AblityResGuid = "{790C15E1-35BF-412F-B38E-0AE4D804CEBF}";
+        public static BlueprintFeature Pulura2Feat()
+        {
+            var icon = AbilityRefs.StarbowAbility.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(Pulura2AblityRes, Pulura2AblityResGuid)
+                .SetMaxAmount(
+                    ResourceAmountBuilder.New(3))
+                .Configure();
+
+            var bril = WeaponEnchantmentRefs.BrilliantEnergy.Reference.Get().ToReference<BlueprintItemEnchantmentReference>();
+            var bril2 = WeaponEnchantmentRefs.Enhancement2.Reference.Get().ToReference<BlueprintItemEnchantmentReference>();
+
+            var ability = AbilityConfigurator.New(Pulura2Ablity, Pulura2AblityGuid)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                    .Add<ContextActionApplyWeaponEnchant>(c =>
+                    {
+                        c.DurationValue = ContextDuration.Fixed(10);
+                        c.Enchantments = new BlueprintItemEnchantmentReference[] { bril };
+                    })
+                    .Build())
+                .SetDisplayName(Pulura2DisplayName)
+                .SetDescription(Pulura2Description)
+                .SetIcon(icon)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .AddAbilityCasterMainWeaponCheck(WeaponCategory.SlingStaff)
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Supernatural)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: Pulura2AblityResGuid)
+                .Configure();
+
+            return FeatureConfigurator.New(Pulura2, Pulura2Guid)
+              .SetDisplayName(Pulura2DisplayName)
+              .SetDescription(Pulura2Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .Configure();
+        }
+
+        private const string Pulura3 = "DeificObedience.Pulura3";
+        public static readonly string Pulura3Guid = "{4B86DFD0-FF8D-4C5B-8947-14F328FE7673}";
+
+        internal const string Pulura3DisplayName = "DeificObediencePulura3.Name";
+        private const string Pulura3Description = "DeificObediencePulura3.Description";
+
+        private const string Pulura3Res = "DeificObedience.Pulura3Res";
+        private static readonly string Pulura3ResGuid = "{11640976-4C3C-4ED1-8CCD-E105B1874D23}";
+
+        private const string Pulura3Ability = "DeificObedience.Pulura3Ability";
+        private static readonly string Pulura3AbilityGuid = "{0B738A03-9336-46D1-B5E4-21681FA51498}";
+        public static BlueprintFeature Pulura3Feat()
+        {
+            var icon = AbilityRefs.WalkThroughSpace.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(Pulura3Res, Pulura3ResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var ability = AbilityConfigurator.New(Pulura3Ability, Pulura3AbilityGuid)
+                .CopyFrom(
+                AbilityRefs.WalkThroughSpace,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(AbilitySpawnFx),
+                typeof(ContextRankConfigs))
+                .SetType(AbilityType.SpellLike)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .Configure();
+
+            return FeatureConfigurator.New(Pulura3, Pulura3Guid)
+              .SetDisplayName(Pulura3DisplayName)
+              .SetDescription(Pulura3Description)
+              .SetIcon(icon)
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .AddFacts(new() { ability })
+              .Configure();
         }
     }
 }

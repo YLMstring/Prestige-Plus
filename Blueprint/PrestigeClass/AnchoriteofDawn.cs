@@ -542,7 +542,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private static readonly string SunBladeGuid = "{A406BEDD-E65B-47C3-90A0-883B6352430E}";
 
         private const string SunBladeBuff = "Anchorite.SunBladeBuff";
-        private static readonly string SunBladeBuffGuid = "{BDA0B3EA-10A8-4A6A-BBD4-6EA6B043BCAD}";
+        public static readonly string SunBladeBuffGuid = "{BDA0B3EA-10A8-4A6A-BBD4-6EA6B043BCAD}";
 
         internal const string AnchoriteSunBladeDisplayName = "AnchoriteSunBlade.Name";
         private const string AnchoriteSunBladeDescription = "AnchoriteSunBlade.Description";
