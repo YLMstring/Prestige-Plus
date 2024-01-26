@@ -20,9 +20,9 @@ using System.Threading.Tasks;
 namespace PrestigePlus.CustomComponent.PrestigeClass
 {
     [TypeId("{5722B4CC-BD83-45D6-A21E-5AEF7A537931}")]
-    internal class SymbolicWeaponBonus : UnitFactComponentDelegate<SymbolicWeaponBonus.ComponentData>, IInitiatorRulebookHandler<RuleAttackWithWeapon>, IRulebookHandler<RuleAttackWithWeapon>, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleCalculateAttackBonusWithoutTarget>, IRulebookHandler<RuleCalculateAttackBonusWithoutTarget>
+    internal class SymbolicWeaponBonus : UnitFactComponentDelegate<SymbolicWeaponBonus.ComponentData>, IInitiatorRulebookHandler<RuleCalculateWeaponStats>, IRulebookHandler<RuleCalculateWeaponStats>, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleCalculateAttackBonusWithoutTarget>, IRulebookHandler<RuleCalculateAttackBonusWithoutTarget>
     {
-        void IRulebookHandler<RuleAttackWithWeapon>.OnEventAboutToTrigger(RuleAttackWithWeapon evt)
+        void IRulebookHandler<RuleCalculateWeaponStats>.OnEventAboutToTrigger(RuleCalculateWeaponStats evt)
         {
             if (Data.cat.Count() == 0)
             {
@@ -30,7 +30,8 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
             }
             if (Data.cat.Contains(evt.Weapon.Blueprint.Category))
             {
-                evt.AddTemporaryModifier(evt.Initiator.Stats.AdditionalDamage.AddModifier(GetBonus(), base.Runtime, Des));
+                //evt.AddTemporaryModifier(evt.Initiator.Stats.AdditionalDamage.AddModifier(GetBonus(), base.Runtime, Des));
+                evt.AddDamageModifier(GetBonus(), base.Fact, Des);
             }
         }
 
@@ -46,7 +47,7 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
             }
         }
 
-        void IRulebookHandler<RuleAttackWithWeapon>.OnEventDidTrigger(RuleAttackWithWeapon evt)
+        void IRulebookHandler<RuleCalculateWeaponStats>.OnEventDidTrigger(RuleCalculateWeaponStats evt)
         {
 
         }
