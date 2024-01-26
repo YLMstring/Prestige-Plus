@@ -7085,8 +7085,8 @@
   },
   {
     "Key": "DeificObedienceNorgorber.Description",
-    "enGB": "While moving through a crowd of people (at least six individuals), whisper a prayer to Norgorber so quietly that no one hears you. If you suspect a member of the crowd heard you, you must follow that individual and prick her with a poisoned needle or other sharp implement. If you can’t locate a suitable crowd, dig a hole at least 6 inches deep in the ground, whisper your prayers into the hole, and bury the sound. At the end of your obedience, dip a needle in poison and leave it on a road, jutting from a windowsill, or anywhere else a passerby might inadvertently prick herself.",
-    "zhCN": "你走路穿过一群人（至少6人）的时候，用仅有自己能听到的音量向诺格巴祈祷。若你怀疑人群中有人听到你说的话，那么你必须尾随该人并且使用淬毒的针或其他锐器刺伤她。若你找不到合适的人群，则要在地上挖出至少6英寸深的洞，向着这个坑低语你的祷词，并将之埋葬其中。在仪典结束时，给一根针淬毒并且将它丢在道路上、窗台外侧、或者其他任何可能让路人无意间刺中自己的地方。"
+    "enGB": "While moving through a crowd of people (at least six individuals), whisper a prayer to Norgorber so quietly that no one hears you. If you suspect a member of the crowd heard you, you must follow that individual and prick her with a poisoned needle or other sharp implement. If you can’t locate a suitable crowd, dig a hole at least 6 inches deep in the ground, whisper your prayers into the hole, and bury the sound. At the end of your obedience, dip a needle in poison and leave it on a road, jutting from a windowsill, or anywhere else a passerby might inadvertently prick herself. Gain a +3 profane bonus on Bluff checks.",
+    "zhCN": "你走路穿过一群人（至少6人）的时候，用仅有自己能听到的音量向诺格巴祈祷。若你怀疑人群中有人听到你说的话，那么你必须尾随该人并且使用淬毒的针或其他锐器刺伤她。若你找不到合适的人群，则要在地上挖出至少6英寸深的洞，向着这个坑低语你的祷词，并将之埋葬其中。在仪典结束时，给一根针淬毒并且将它丢在道路上、窗台外侧、或者其他任何可能让路人无意间刺中自己的地方。在唬骗检定上获得+3亵渎加值。"
   },
   {
     "Key": "SpellPowerNorgorber1.Name",

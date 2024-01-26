@@ -1279,6 +1279,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(NorgorberDisplayName)
               .SetDescription(NorgorberDescription)
               .SetIcon(icon)
+              .AddStatBonus(ModifierDescriptor.Profane, false, StatType.CheckBluff, 3)
               .Configure();
         }
 
@@ -3306,6 +3307,97 @@ namespace PrestigePlus.Blueprint.Feat
               .AddFacts(new() { ability })
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .Configure();
+        }
+
+        private const string Chaldira = "DeificObedience.Chaldira";
+        public static readonly string ChaldiraGuid = "{57E5B8A2-80DF-4453-B817-718FF616C75D}";
+
+        internal const string ChaldiraDisplayName = "DeificObedienceChaldira.Name";
+        private const string ChaldiraDescription = "DeificObedienceChaldira.Description";
+        public static BlueprintFeature ChaldiraFeat()
+        {
+            var icon = AbilityRefs.BlessingOfCourageAndLife.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Chaldira, ChaldiraGuid)
+              .SetDisplayName(ChaldiraDisplayName)
+              .SetDescription(ChaldiraDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.SarenraeFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.NeutralGood, group: Prerequisite.GroupType.Any)
+              .AddToIsPrerequisiteFor(ChaldiraSentinelFeat())
+              .AddComponent<WeaponFocusPP>(c => { c.WeaponType = WeaponTypeRefs.Shortsword.Reference; c.AttackBonus = 2; c.AttackBonus2 = 1; c.Des = ModifierDescriptor.Sacred; })
+              .Configure();
+        }
+
+        private const string ChaldiraSentinel = "DeificObedience.ChaldiraSentinel";
+        public static readonly string ChaldiraSentinelGuid = "{FFFE5F1F-5583-42DE-B09F-10DE1796FA60}";
+
+        internal const string ChaldiraSentinelDisplayName = "DeificObedienceChaldiraSentinel.Name";
+        private const string ChaldiraSentinelDescription = "DeificObedienceChaldiraSentinel.Description";
+        public static BlueprintProgression ChaldiraSentinelFeat()
+        {
+            var icon = AbilityRefs.BlessingOfCourageAndLife.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(ChaldiraSentinel, ChaldiraSentinelGuid)
+              .SetDisplayName(ChaldiraSentinelDisplayName)
+              .SetDescription(ChaldiraSentinelDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(ChaldiraGuid)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(12, CreateChaldiraSentinel1())
+              .AddToLevelEntry(16, ChaldiraSentinel2Feat())
+              .AddToLevelEntry(20, ChaldiraSentinel3Feat())
+              .Configure();
+        }
+
+        private const string ChaldiraSentinel1 = "SpellPower.ChaldiraSentinel1";
+        public static readonly string ChaldiraSentinel1Guid = "{7FC32DA1-E683-4F93-B2EF-1D7FF32DBEE4}";
+        internal const string ChaldiraSentinel1DisplayName = "SpellPowerChaldira1.Name";
+        private const string ChaldiraSentinel1Description = "SpellPowerChaldira1.Description";
+        private static BlueprintFeature CreateChaldiraSentinel1()
+        {
+            var icon = AbilityRefs.Blink.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(ChaldiraSentinel1, ChaldiraSentinel1Guid)
+              .SetDisplayName(ChaldiraSentinel1DisplayName)
+              .SetDescription(ChaldiraSentinel1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { Otolmens1Ablity3Guid })
+              .Configure();
+        }
+
+        private const string Chaldira2 = "DeificObedience.Chaldira2";
+        public static readonly string Chaldira2Guid = "{B71AAEC4-AD44-4E90-9D08-0403D8083E4F}";
+
+        internal const string Chaldira2DisplayName = "DeificObedienceChaldira2.Name";
+        private const string Chaldira2Description = "DeificObedienceChaldira2.Description";
+        public static BlueprintFeature ChaldiraSentinel2Feat()
+        {
+            var icon = AbilityRefs.CrushingDespair.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Chaldira2, Chaldira2Guid)
+              .SetDisplayName(Chaldira2DisplayName)
+              .SetDescription(Chaldira2Description)
+              .SetIcon(icon)
+
+              .Configure();
+        }
+
+        private static readonly string Chaldira3Name = "DeificObedienceChaldira3";
+        public static readonly string Chaldira3Guid = "{7961181C-47A1-4351-B82E-E16B1D32C4AD}";
+
+        private static readonly string Chaldira3DisplayName = "DeificObedienceChaldira3.Name";
+        private static readonly string Chaldira3Description = "DeificObedienceChaldira3.Description";
+        public static BlueprintFeature ChaldiraSentinel3Feat()
+        {
+            var icon = AbilityRefs.HeroicInvocation.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Chaldira3Name, Chaldira3Guid)
+                    .SetDisplayName(Chaldira3DisplayName)
+                    .SetDescription(Chaldira3Description)
+                    .SetIcon(icon)
+                    .AddCondition(UnitCondition.ImmuneToAttackOfOpportunity)
+                    .Configure();
         }
     }
 }
