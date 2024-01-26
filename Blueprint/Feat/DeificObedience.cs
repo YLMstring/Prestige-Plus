@@ -132,6 +132,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(KabririFeat())
               .AddToAllFeatures(FalaynaFeat())
               .AddToAllFeatures(SocothbenothFeat())
+              .AddToAllFeatures(ChaldiraFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -3379,7 +3380,6 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(Chaldira2DisplayName)
               .SetDescription(Chaldira2Description)
               .SetIcon(icon)
-
               .Configure();
         }
 

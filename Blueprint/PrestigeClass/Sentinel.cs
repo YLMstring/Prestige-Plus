@@ -129,6 +129,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddToAllFeatures(DeificObedience.IomedaeSentinelGuid)
               .AddToAllFeatures(DeificObedience.MilaniSentinelGuid)
               .AddToAllFeatures(DeificObedience.SocothbenothSentinelGuid)
+              .AddToAllFeatures(DeificObedience.ChaldiraSentinelGuid)
               .AddClassLevelsForPrerequisites(actualClass: ArchetypeGuid, fakeClass: CharacterClassRefs.FighterClass.ToString(), modifier: 1, summand: 0)
               .Configure();
         }
