@@ -36,6 +36,7 @@ namespace PrestigePlus.BasePrestigeEnhance
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
+              //.AddAttackBonusConditional(bonus: ContextValues.Rank(), descriptor: ModifierDescriptor.UntypedStackable)
               .AddContextStatBonus(StatType.AdditionalAttackBonus, ContextValues.Rank())
               .AddCMBBonus(value: ContextValues.Rank(), descriptor: ModifierDescriptor.UntypedStackable)
               .AddContextRankConfig(ContextRankConfigs.MythicLevel())
