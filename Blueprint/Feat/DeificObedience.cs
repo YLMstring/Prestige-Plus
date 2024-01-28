@@ -3487,7 +3487,8 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string Pulura2AblityResGuid = "{790C15E1-35BF-412F-B38E-0AE4D804CEBF}";
         public static BlueprintFeature Pulura2Feat()
         {
-            var icon = AbilityRefs.MageLight.Reference.Get().Icon;
+            var icon = AbilityRefs.PrismaticSpray.Reference.Get().Icon;
+            var fx = AbilityRefs.BreathOfLifeTouch.Reference.Get().GetComponent<AbilitySpawnFx>();
 
             var abilityresourse = AbilityResourceConfigurator.New(Pulura2AblityRes, Pulura2AblityResGuid)
                 .SetMaxAmount(
@@ -3498,11 +3499,12 @@ namespace PrestigePlus.Blueprint.Feat
             var bril2 = WeaponEnchantmentRefs.Enhancement2.Reference.Get().ToReference<BlueprintItemEnchantmentReference>();
 
             var ability = AbilityConfigurator.New(Pulura2Ablity, Pulura2AblityGuid)
+                .AddComponent(fx)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                     .Add<ContextActionApplyWeaponEnchant>(c =>
                     {
                         c.DurationValue = ContextDuration.Fixed(10);
-                        c.Enchantments = new BlueprintItemEnchantmentReference[] { bril };
+                        c.Enchantments = new BlueprintItemEnchantmentReference[] { bril, bril2 };
                     })
                     .Build())
                 .SetDisplayName(Pulura2DisplayName)

@@ -9343,8 +9343,8 @@
   },
   {
     "Key": "DeificObediencePulura2.Description",
-    "enGB": "Three times per day, you can transmute sling bullets into bullets of starlight. These bullets function as +2 brilliant energy bullets. Bullets of starlight last for 1 minute.",
-    "zhCN": "每天三次，你能将投石索弹药转化为星光弹，视为+2光能投石索弹药，持续1分钟。"
+    "enGB": "Three times per day, you can transmute your sling bullets into bullets of starlight. These bullets function as +2 brilliant energy bullets. Bullets of starlight last for 1 minute.",
+    "zhCN": "每天三次，你能将你的投石索弹药转化为星光弹，视为+2光能投石索弹药，持续1分钟。"
   },
   {
     "Key": "DeificObediencePulura3.Name",
