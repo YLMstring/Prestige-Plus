@@ -96,8 +96,10 @@ namespace PrestigePlus.Blueprint.CombatStyle
               .SetDisplayName(ParryDisplayName)
               .SetDescription(ParryDescription)
               .SetIcon(icon)
-              .AddAttackBonusConditional(-2, descriptor: ModifierDescriptor.Penalty)
-              .AddDamageBonusConditional(-2, descriptor: ModifierDescriptor.Penalty, onlyWeaponDamage: true)
+              .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.AdditionalAttackBonus, value: -2)
+              .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.AdditionalDamage, value: -2)
+              //.AddAttackBonusConditional(-2, descriptor: ModifierDescriptor.Penalty)
+              //.AddDamageBonusConditional(-2, descriptor: ModifierDescriptor.Penalty, onlyWeaponDamage: true)
               .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().RemoveBuff(StylebuffGuid3, toCaster: false).Build(), actionsOnInitiator: true, onlyHit: false)
               .Configure();
 

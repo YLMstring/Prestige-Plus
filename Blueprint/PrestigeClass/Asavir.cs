@@ -410,7 +410,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(ControllChargeDisplayName)
               .SetDescription(ControllChargeDescription)
               .SetIcon(icon)
-              //.AddAttackBonusConditional(bonus: ContextValues.Constant(2), descriptor: ModifierDescriptor.UntypedStackable)
               .AddContextStatBonus(StatType.AdditionalAttackBonus, 2)
               //.AddACBonusAgainstAttacks(armorClassBonus: 2)
               .AddContextStatBonus(StatType.AC, value: 2)
