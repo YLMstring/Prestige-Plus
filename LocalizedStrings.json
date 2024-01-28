@@ -9257,6 +9257,149 @@
     "Key": "SwordLordCatechesis.Description",
     "enGB": "If a Hell Knight signifer has the Warrior Priest feat, his Hell Knight signifer level stacks with other divine spellcasting classes for determining the effects of those classes’ domain powers. This doesn’t grant any new powers or abilities. In addition, a signifer with the Warrior Priest feat gains Selective Channel as a bonus feat.",
     "zhCN": "若地狱骑士持节士拥有以战筑信专长，他的地狱骑士持节士等级与其他神术施法者等级叠加，以计算那些职业的领域效果，但不会因此获得新能力。拥有以战筑信专长的持节士还会获得选择导能作为额外专长。"
+  },
+  {
+    "Key": "DeificObedienceChaldira.Name",
+    "ProcessTemplates": false,
+    "enGB": "Chaldira Obedience",
+    "zhCN": "查尔迪菈仪典"
+  },
+  {
+    "Key": "DeificObedienceChaldira.Description",
+    "enGB": "Steal a coin or button from someone that isn’t likely to miss it or need it. While unobserved, balance the coin or button on the edge of a weapon, flip it into the air, and call out how it will land. If you are right, find someone else to give the coin or button to—perhaps even its original owner—and explain how the token will bring good fortune. Gain a +2 sacred bonus on attack rolls with short swords. If you can’t find someone to take the coin or button after an hour, or if you were wrong in calling how it will land, hide it somewhere where it will be found and where the finder might deem himself lucky for discovering it. You gain only a +1 sacred bonus on attack rolls with other weapons.",
+    "zhCN": "从不太可能会想念或需要它的人那里偷一枚硬币或纽扣。偷偷将其放在武器边缘，然后抛向空中，并猜它如何落地。如果猜对，把硬币或纽扣送给别人——甚至可以是它的原主人——并解释它如何带来好运。在短剑攻击检定中获得+2神圣加值。如果一个小时内你找不到能够送出的人，或者猜错，那就把它藏在一个能被找到的，并且捡到它的人可能会感到很幸运的地方。你在使用其他武器进行攻击时只获得+1神圣加值。"
+  },
+  {
+    "Key": "DeificObedienceChaldiraSentinel.Name",
+    "ProcessTemplates": false,
+    "enGB": "Chaldira (Sentinel)",
+    "zhCN": "查尔迪菈（信仰哨卫）"
+  },
+  {
+    "Key": "DeificObedienceChaldiraSentinel.Description",
+    "enGB": "Become a Sentinel to gain access to her boons, which will be granted at certain character or class levels.",
+    "zhCN": "成为信仰哨卫来获取她的神恩资格，你会在合适的角色或职业等级得到神恩。"
+  },
+  {
+    "Key": "SpellPowerChaldira1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Lucky Miss",
+    "zhCN": "幸运一闪"
+  },
+  {
+    "Key": "SpellPowerChaldira1.Description",
+    "enGB": "blink 1/day",
+    "zhCN": "移位术 1次/天"
+  },
+  {
+    "Key": "DeificObedienceChaldira2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Fortune’s Child",
+    "zhCN": "好运之子"
+  },
+  {
+    "Key": "DeificObedienceChaldira2.Description",
+    "enGB": "Your luck is legendary, and you derive a stronger benefit from effects that aid your luck than other people do. Increase luck bonuses you receive from any effect by 1.",
+    "zhCN": "你有着传奇般的好运，从提升运气的效果中获得比其他人更大的好处。你的任何运气加值增加1点。"
+  },
+  {
+    "Key": "DeificObedienceChaldira3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Impetuous Ardor",
+    "zhCN": "霹雳火"
+  },
+  {
+    "Key": "DeificObedienceChaldira3.Description",
+    "enGB": "Chaldira protects those who leap into combat without hesitation, and you cloak yourself in her favor when you dart across the battlefield toward your foes. You do not provoke attacks of opportunity for movement that takes you closer to an enemy.",
+    "zhCN": "查尔迪菈保护那些毫不犹豫地冲入战场的人，当你在战场上冲向敌人时，她的恩典保护着你。你移动接近敌人时不会引发借机攻击。"
+  },
+  {
+    "Key": "DeificObediencePulura.Name",
+    "ProcessTemplates": false,
+    "enGB": "Pulura Obedience",
+    "zhCN": "璞露拉仪典"
+  },
+  {
+    "Key": "DeificObediencePulura.Description",
+    "enGB": "Sit on the ground with your head tilted back to study the stars. Maintain the position for an hour and identify 12 constellations. If you cannot see the stars, draw the patterns of 12 constellations on a semi-permanent surface, such as a wall or hard floor. You shed light in a 10-foot radius.",
+    "zhCN": "坐在地上仰头观星，维持1小时并辨认出12个星座。如果看不到夜空，在半永久平面上（墙壁，硬地板）画上12个星座图。你散发出10尺范围的光芒。"
+  },
+  {
+    "Key": "SpellPowerPulura1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Aurora",
+    "zhCN": "极光"
+  },
+  {
+    "Key": "SpellPowerPulura1.Description",
+    "enGB": "color spray 3/day",
+    "zhCN": "七彩喷射 3次/天"
+  },
+  {
+    "Key": "DeificObediencePulura2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Starshot",
+    "zhCN": "星光弹"
+  },
+  {
+    "Key": "DeificObediencePulura2.Description",
+    "enGB": "Three times per day, you can transmute sling bullets into bullets of starlight. These bullets function as +2 brilliant energy bullets. Bullets of starlight last for 1 minute.",
+    "zhCN": "每天三次，你能将投石索弹药转化为星光弹，视为+2光能投石索弹药，持续1分钟。"
+  },
+  {
+    "Key": "DeificObediencePulura3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Otherworldly Traveler",
+    "zhCN": "异界旅者"
+  },
+  {
+    "Key": "DeificObediencePulura3.Description",
+    "enGB": "You can cast quickened walk through space once per day.",
+    "zhCN": "你能每天瞬发一次破空步。"
+  },
+  {
+    "Key": "DeificObedienceRovagug.Name",
+    "ProcessTemplates": false,
+    "enGB": "Rovagug Obedience",
+    "zhCN": "洛瓦古格仪典"
+  },
+  {
+    "Key": "DeificObedienceRovagug.Description",
+    "enGB": "Smash an assortment of items worth at least 10 gp, preferably something fragile, aesthetically beautiful, or with significance to a good-aligned deity (particularly Sarenrae). The more devout servants of Rovagug seek out and hoard particularly expensive, artistic, or rare items, such as fine bottles of wine or delicate curios, to smash during their obedience. Roll in the shards of the destroyed items, howling and shouting praises and curses invoking the Rough Beast, until the shards draw blood and your lungs ache. Gain a +4 bonus on sunder checks.",
+    "zhCN": "摧毁至少价值10金币的物品，最好是脆弱，美丽或者对善神（尤其是莎伦莱）重要的物品。而更为虔诚的洛瓦古格仆从，则会寻找并囤积价格昂贵、具有艺术价值或罕见的物品，比如上好的葡萄酒或稀有的珍奇物品，并在仪典中摧毁它们。在被摧毁的物品碎片上翻滚，狂嚎出赞颂和诅咒，祈唤毁天巨兽之力，直至身体被碎片割出鲜血，肺部因狂叫而发痛为止。你的击破检定获得+4加值。"
+  },
+  {
+    "Key": "SpellPowerRovagug1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Agent of the Beast",
+    "zhCN": "巨兽代行者"
+  },
+  {
+    "Key": "SpellPowerRovagug1.Description",
+    "enGB": "align weapon (evil only) 2/day",
+    "zhCN": "阵营武器（仅限邪恶） 2次/日"
+  },
+  {
+    "Key": "DeificObedienceRovagug3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Destructive Spell",
+    "zhCN": "法术湮灭"
+  },
+  {
+    "Key": "DeificObedienceRovagug3.Description",
+    "enGB": "By calling on the rage of the Rough Beast, you gain the ability to deal terrific damage with your spells. You can use this ability when casting a spell that deals hit point damage and has a casting time of 1 standard action or less. You can choose to cast the spell as a full-round action to gain a +4 bonus to its save DC. In addition, the spell deals +1 point of damage per dice rolled.",
+    "zhCN": "通过呼唤毁天巨兽之怒，你的法术能够造成可怕的伤害。你可以在施放一个造成生命值伤害，并且施法时间为标准动作或更快的法术时使用该能力。你以整轮动作施法，使其豁免DC获得+4加值。此外，该法术的每一个伤害骰都造成1点额外伤害。"
+  },
+  {
+    "Key": "SpellPowerRovagug2.Name",
+    "ProcessTemplates": false,
+    "enGB": "The Destroyer's Gifts",
+    "zhCN": "毁灭者之赐"
+  },
+  {
+    "Key": "SpellPowerRovagug2.Description",
+    "enGB": "You feel the touch of an alien presence at the corner of your mind, as if something hungry and hateful had taken root and now holds a measure of dominion over your thoughts. You can cast implosion or summon monster IX once per day as a spell-like ability, but it may count as a spell.",
+    "zhCN": "你感觉到自身精神的一角正在被某种异样的存在碰触着，就像饥饿与憎恨已经植根于你的心底，已经能在一定程度上控制你的思维。你每天可以施展一次内爆术或怪物召唤术IX，这是一个类法术能力，但可以视为法术。"
   }
 
 ]
