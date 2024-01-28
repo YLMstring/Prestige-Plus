@@ -121,8 +121,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               //.AddAttackBonusConditional(ContextValues.Rank(), descriptor: ModifierDescriptor.Morale)
               .AddContextStatBonus(StatType.AdditionalAttackBonus, ContextValues.Rank(), ModifierDescriptor.Morale)
-              .AddContextStatBonus(StatType.AdditionalDamage, ContextValues.Rank(), ModifierDescriptor.Morale)
-              //.AddDamageBonusConditional(ContextValues.Rank(), descriptor: ModifierDescriptor.Morale)
+              .AddDamageBonusConditional(ContextValues.Rank(), descriptor: ModifierDescriptor.Morale)
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }))
               .Configure();
 

@@ -248,8 +248,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               //.AddAttackBonusConditional(bonus: 1, descriptor: ModifierDescriptor.Profane)
               .AddContextStatBonus(StatType.AdditionalAttackBonus, 1, ModifierDescriptor.Profane)
-              .AddContextStatBonus(StatType.AdditionalDamage, 1, ModifierDescriptor.Profane)
-              //.AddDamageBonusConditional(bonus: ContextValues.Constant(1), descriptor: ModifierDescriptor.Profane)
+              .AddDamageBonusConditional(bonus: ContextValues.Constant(1), descriptor: ModifierDescriptor.Profane)
               //.AddSavingThrowBonusAgainstAbilityType(bonus: ContextValues.Constant(1), modifierDescriptor: ModifierDescriptor.Profane)
               .AddBuffAllSavesBonus(ModifierDescriptor.Profane, 1)
               .Configure();
