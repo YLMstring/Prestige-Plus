@@ -98,6 +98,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetDisplayName(DeificObedienceDisplayName)
                 .SetDescription(DeificObedienceDescription)
                 .SetIcon(icon)
+                .SetType(AbilityType.Special)
                 .AllowTargeting(self: true)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                     .Conditional(conditions: ConditionsBuilder.New().HasFact(ArazniGuid).Build(),
@@ -3360,7 +3361,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string ChaldiraSentinel1Description = "SpellPowerChaldira1.Description";
         private static BlueprintFeature CreateChaldiraSentinel1()
         {
-            var icon = AbilityRefs.Blur.Reference.Get().Icon;
+            var icon = FeatureRefs.CavalierTacticianFeature.Reference.Get().Icon;
 
             return FeatureConfigurator.New(ChaldiraSentinel1, ChaldiraSentinel1Guid)
               .SetDisplayName(ChaldiraSentinel1DisplayName)
