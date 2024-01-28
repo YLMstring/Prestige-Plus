@@ -3584,9 +3584,9 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticEvil, group: Prerequisite.GroupType.Any)
               .SetGiveFeaturesForPreviousLevels(true)
               .AddToLevelEntry(1, Rovagug0Feat())
-              .AddToLevelEntry(12, CreateRovagug1())
-              .AddToLevelEntry(16, Rovagug3Feat())
-              .AddToLevelEntry(20, CreateRovagug2())
+              .AddToLevelEntry(2, CreateRovagug1())
+              .AddToLevelEntry(6, Rovagug3Feat())
+              .AddToLevelEntry(10, CreateRovagug2())
               .Configure();
         }
 
@@ -3709,7 +3709,7 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string Rovagug3AbilityGuid = "{9168F28A-6165-432B-8FCF-CD9AA177D2C1}";
         public static BlueprintFeature Rovagug3Feat()
         {
-            var icon = FeatureSelectionRefs.BasicFeatSelection.Reference.Get().Icon;
+            var icon = FeatureRefs.BolsteredSpellFeat.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(Rovagug3Res, Rovagug3ResGuid)
                 .SetMaxAmount(ResourceAmountBuilder.New(0))
