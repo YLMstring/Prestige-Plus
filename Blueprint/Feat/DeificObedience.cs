@@ -3669,7 +3669,8 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(ContextRankConfig),
                 typeof(AbilityTargetHasFact),
                 typeof(AbilitySpawnFx),
-                typeof(SpellDescriptorComponent))
+                typeof(SpellDescriptorComponent),
+                typeof(SpellListComponent))
                 .AddPretendSpellLevel(spellLevel: 9)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .SetType(AbilityType.Spell)

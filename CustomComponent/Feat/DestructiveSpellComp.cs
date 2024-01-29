@@ -44,6 +44,11 @@ namespace PrestigePlus.CustomComponent.Feat
 
         public static bool HasDamage(BlueprintAbility spell)
         {
+            if (spell.Description == AbilityRefs.Implosion.Reference.Get().Description)
+            {
+                return true;
+            }
+            
             var stuff = spell.AbilityAndVariants()
                     .SelectMany(s => s.AbilityAndStickyTouch());
 
@@ -56,11 +61,6 @@ namespace PrestigePlus.CustomComponent.Feat
                                 .OfType<ContextActionDealDamage>()
                                 .Any(a => a.m_Type == ContextActionDealDamage.Type.Damage))
                             .Any())
-                    || stuff.Any(s => s.FlattenAllActions()
-                            .OfType<ContextActionApplyBuff>()
-                            .Any(a => a.Buff.GetComponent<AddBuffActions>()?.Activated?.Actions
-                                .OfType<ContextActionDealDamage>()
-                                .Any(a => a.m_Type == ContextActionDealDamage.Type.Damage) ?? false))
                     || stuff.Any(s => s.FlattenAllActions()
                             .OfType<ContextActionCastSpell>()
                             .Where(a => HasDamage(a.m_Spell) == true)
