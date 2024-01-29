@@ -365,7 +365,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         }
 
         private const string DominanceAstral = "HorizonWalker.DominanceAstral";
-        private static readonly string DominanceAstralGuid = "{C0439BF8-CED9-485C-95EE-8EC1BEC14F9A}";
+        public static readonly string DominanceAstralGuid = "{C0439BF8-CED9-485C-95EE-8EC1BEC14F9A}";
 
         internal const string DominanceAstralDisplayName = "HorizonWalkerDominanceAstral.Name";
         private const string DominanceAstralDescription = "HorizonWalkerDominanceAstral.Description";

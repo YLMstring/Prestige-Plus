@@ -440,7 +440,7 @@ namespace PrestigePlus
             Logger.Info("Already configured delayed blueprints.");
             return;
           }
-            Initialized = true; PatchDomain.Patch(); PatchArmorTraining.Patch(); PatchSkaldSharing.Patch();
+            Initialized = true; PatchDomain.Patch(); PatchArmorTraining.Patch(); PatchSkaldSharing.Patch(); ImprovedWalk.Patch();
             GraveSpellList.CreateSecretDeath(); GraveSpellList.CreateMiracleList(); GraveSpellList.CreateMiracleList3();
             RootConfigurator.ConfigureDelayedBlueprints();
         }

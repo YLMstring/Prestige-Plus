@@ -376,7 +376,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         }
 
         private const string ShadowJumpEx = "ShadowDancer.ShadowJumpEx";
-        private static readonly string ShadowJumpGuidEx = "3F7AEF5C-F45F-4904-A04F-5F49C6D3816B";
+        public static readonly string ShadowJumpGuidEx = "3F7AEF5C-F45F-4904-A04F-5F49C6D3816B";
 
         public static void ExtraShadowJump()
         {
