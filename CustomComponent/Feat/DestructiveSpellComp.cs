@@ -1,5 +1,6 @@
 ﻿using BlueprintCore.Blueprints.References;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.ElementsSystem;
 using Kingmaker.PubSubSystem;
@@ -31,7 +32,7 @@ namespace PrestigePlus.CustomComponent.Feat
         void IRulebookHandler<RuleCalculateAbilityParams>.OnEventAboutToTrigger(RuleCalculateAbilityParams evt)
         {
             var spell = evt.AbilityData.Blueprint;
-            if (spell.Type == AbilityType.Spell && !spell.IsFullRoundAction && HasDamage(spell))
+            if (spell.Type == AbilityType.Spell && !spell.IsFullRoundAction && HasDamage(spell) && spell.GetComponent<SpellListComponent>() != null)
             {
                 evt.AddBonusDC(4);
             }
@@ -57,10 +58,9 @@ namespace PrestigePlus.CustomComponent.Feat
                             .Any())
                     || stuff.Any(s => s.FlattenAllActions()
                             .OfType<ContextActionApplyBuff>()
-                            .Where(a => a.Buff.FlattenAllActions()
+                            .Any(a => a.Buff.GetComponent<AddBuffActions>()?.Activated?.Actions
                                 .OfType<ContextActionDealDamage>()
-                                .Any(a => a.m_Type == ContextActionDealDamage.Type.Damage))
-                            .Any())
+                                .Any(a => a.m_Type == ContextActionDealDamage.Type.Damage) ?? false))
                     || stuff.Any(s => s.FlattenAllActions()
                             .OfType<ContextActionCastSpell>()
                             .Where(a => HasDamage(a.m_Spell) == true)
