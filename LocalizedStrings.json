@@ -9400,6 +9400,16 @@
     "Key": "SpellPowerRovagug2.Description",
     "enGB": "You feel the touch of an alien presence at the corner of your mind, as if something hungry and hateful had taken root and now holds a measure of dominion over your thoughts. You can cast implosion or summon monster IX once per day as a spell-like ability, but it may count as a spell.",
     "zhCN": "你感觉到自身精神的一角正在被某种异样的存在碰触着，就像饥饿与憎恨已经植根于你的心底，已经能在一定程度上控制你的思维。你每天可以施展一次内爆术或怪物召唤术IX，这是一个类法术能力，但可以视为法术。"
+  },
+  {
+    "Key": "FeatWalkThroughSpace.Name",
+    "ProcessTemplates": false,
+    "enGB": "Improved Walk Through Space",
+    "zhCN": "精通破空步"
+  },
+  {
+    "Key": "FeatWalkThroughSpace.Description",
+    "enGB": "You can cast dimensional door at will when under the effect of walk through space spell.",
+    "zhCN": "你在破空步持续期间可以任意施放次元门。"
   }
-
 ]
