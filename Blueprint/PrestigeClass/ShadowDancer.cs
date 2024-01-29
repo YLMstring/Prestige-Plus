@@ -161,7 +161,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetUseMax()
                 .Configure();
 
-            var ability = AbilityConfigurator.New(ShadowJumpAblity, ShadowJumpAblityGuid)
+            AbilityConfigurator.New(ShadowJumpAblity, ShadowJumpAblityGuid)
                 .CopyFrom(
                 AbilityRefs.KiAbudantStep,
                 typeof(AbilityEffectRunAction),
@@ -171,7 +171,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDescription(ShadowJumpDescription)
                 .Configure(delayed: true);
 
-            var ability2 = AbilityConfigurator.New(ShadowJumpAblity2, ShadowJumpAblityGuid2)
+            AbilityConfigurator.New(ShadowJumpAblity2, ShadowJumpAblityGuid2)
                 .CopyFrom(
                 AbilityRefs.DimensionDoorBase,
                 typeof(SpellComponent),
