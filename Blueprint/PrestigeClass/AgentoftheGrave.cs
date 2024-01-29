@@ -50,6 +50,7 @@ using PrestigePlus.Feats;
 using TabletopTweaks.Core.NewComponents.Prerequisites;
 using PrestigePlus.CustomComponent.PrestigeClass;
 using PrestigePlus.Patch;
+using PrestigePlus.CustomComponent;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -246,8 +247,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(DesecrateDisplayName)
               .SetDescription(DesecrateDescription)
               .SetIcon(icon)
-              //.AddAttackBonusConditional(bonus: 1, descriptor: ModifierDescriptor.Profane)
-              .AddContextStatBonus(StatType.AdditionalAttackBonus, 1, ModifierDescriptor.Profane)
+              .AddComponent<WeaponFocusPP>(c => { c.NoCondition = true; c.AttackBonus = 1; c.Des = ModifierDescriptor.Profane; })
               .AddContextStatBonus(StatType.AdditionalDamage, 1, ModifierDescriptor.Profane)
               //.AddDamageBonusConditional(bonus: ContextValues.Constant(1), descriptor: ModifierDescriptor.Profane)
               //.AddSavingThrowBonusAgainstAbilityType(bonus: ContextValues.Constant(1), modifierDescriptor: ModifierDescriptor.Profane)

@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine.Serialization;
 using UnityEngine;
+using Kingmaker.UnitLogic.Mechanics;
 
 namespace PrestigePlus.CustomComponent
 {
@@ -23,19 +24,21 @@ namespace PrestigePlus.CustomComponent
         // Token: 0x0600E944 RID: 59716 RVA: 0x003BCB30 File Offset: 0x003BAD30
         public void OnEventAboutToTrigger(RuleCalculateAttackBonusWithoutTarget evt)
         {
+            int num = AttackBonus.Calculate(Fact.MaybeContext);
+            int num2 = AttackBonus2.Calculate(Fact.MaybeContext);
             if (NoCondition)
             {
-                evt.AddModifier(this.AttackBonus, base.Fact, this.Des);
+                evt.AddModifier(num, base.Fact, this.Des);
                 return;
             }
             if (evt.Weapon == null) return;
             if (evt.Weapon.Blueprint.Type == this.WeaponType)
             {
-                evt.AddModifier(this.AttackBonus, base.Fact, this.Des);
+                evt.AddModifier(num, base.Fact, this.Des);
             }
             else if (evt.Weapon.Blueprint.Category != WeaponCategory.Touch && evt.Weapon.Blueprint.Category != WeaponCategory.Ray)
             {
-                evt.AddModifier(this.AttackBonus2, base.Fact, this.Des);
+                evt.AddModifier(num2, base.Fact, this.Des);
             }
         }
 
@@ -45,8 +48,8 @@ namespace PrestigePlus.CustomComponent
         }
 
         // Token: 0x04009980 RID: 39296
-        public int AttackBonus;
-        public int AttackBonus2 = 0;
+        public ContextValue AttackBonus;
+        public ContextValue AttackBonus2 = 0;
         // Token: 0x04009981 RID: 39297
         public ModifierDescriptor Des = ModifierDescriptor.UntypedStackable;
         public bool NoCondition = false;

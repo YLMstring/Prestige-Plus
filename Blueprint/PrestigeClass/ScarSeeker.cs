@@ -34,6 +34,7 @@ using Kingmaker.UnitLogic.Alignments;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Mechanics.Properties;
 using Kingmaker.Utility;
+using PrestigePlus.CustomComponent;
 using PrestigePlus.CustomComponent.PrestigeClass;
 using PrestigePlus.Modify;
 using System;
@@ -752,8 +753,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddBuffAllSavesBonus(value: 1)
                 .AddBuffAllSkillsBonus(descriptor: ModifierDescriptor.Morale, value: 1, multiplier: ContextValues.Constant(1))
                 .AddBuffAllSkillsBonus(value: 1, multiplier: ContextValues.Constant(1))
-                .AddContextStatBonus(StatType.AdditionalAttackBonus, 1, ModifierDescriptor.Morale)
-                //.AddAttackBonusConditional(1, descriptor: ModifierDescriptor.Morale)
+                .AddComponent<WeaponFocusPP>(c => { c.NoCondition = true; c.AttackBonus = 1; c.Des = ModifierDescriptor.Morale; })
                 .AddContextStatBonus(StatType.AdditionalAttackBonus, 1)
                 .Configure();
 
@@ -854,8 +854,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
              .AddBuffAllSavesBonus(descriptor: ModifierDescriptor.Morale, value: 1)
              .AddBuffAllSkillsBonus(descriptor: ModifierDescriptor.Morale, value: 1)
              .AddBuffAbilityRollsBonus(affectAllStats: true, descriptor: ModifierDescriptor.Morale, value: 1)
-             //.AddAttackBonusConditional(bonus: 1, descriptor: ModifierDescriptor.Morale)
-             .AddContextStatBonus(StatType.AdditionalAttackBonus, 1, ModifierDescriptor.Morale)
+             .AddComponent<WeaponFocusPP>(c => { c.NoCondition = true; c.AttackBonus = 1; c.Des = ModifierDescriptor.Morale; })
              .Configure();
 
             var Buff2 = BuffConfigurator.New(Purify2Buff, Purify2BuffGuid)
@@ -865,8 +864,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
              .AddBuffAllSavesBonus(descriptor: ModifierDescriptor.Morale, value: 2)
              .AddBuffAllSkillsBonus(descriptor: ModifierDescriptor.Morale, value: 2)
              .AddBuffAbilityRollsBonus(affectAllStats: true, descriptor: ModifierDescriptor.Morale, value: 2)
-             //.AddAttackBonusConditional(bonus: 2, descriptor: ModifierDescriptor.Morale)
-             .AddContextStatBonus(StatType.AdditionalAttackBonus, 2, ModifierDescriptor.Morale)
+             .AddComponent<WeaponFocusPP>(c => { c.NoCondition = true; c.AttackBonus = 2; c.Des = ModifierDescriptor.Morale; })
              .Configure();
 
             var Buff3 = BuffConfigurator.New(Purify3Buff, Purify3BuffGuid)
@@ -876,8 +874,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
              .AddBuffAllSavesBonus(descriptor: ModifierDescriptor.Morale, value: 3)
              .AddBuffAllSkillsBonus(descriptor: ModifierDescriptor.Morale, value: 3)
              .AddBuffAbilityRollsBonus(affectAllStats: true, descriptor: ModifierDescriptor.Morale, value: 3)
-             //.AddAttackBonusConditional(bonus: 3, descriptor: ModifierDescriptor.Morale)
-             .AddContextStatBonus(StatType.AdditionalAttackBonus, 3, ModifierDescriptor.Morale)
+             .AddComponent<WeaponFocusPP>(c => { c.NoCondition = true; c.AttackBonus = 3; c.Des = ModifierDescriptor.Morale; })
              .Configure();
 
             var Buff4 = BuffConfigurator.New(Purify4Buff, Purify4BuffGuid)

@@ -35,6 +35,7 @@ using System.IO.Ports;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Designers.Mechanics.Facts;
+using PrestigePlus.CustomComponent;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -119,8 +120,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(RecklessDisplayName)
               .SetDescription(RecklessDescription)
               .SetIcon(icon)
-              //.AddAttackBonusConditional(ContextValues.Rank(), descriptor: ModifierDescriptor.Morale)
-              .AddContextStatBonus(StatType.AdditionalAttackBonus, ContextValues.Rank(), ModifierDescriptor.Morale)
+              .AddComponent<WeaponFocusPP>(c => { c.NoCondition = true; c.AttackBonus = ContextValues.Rank(); c.Des = ModifierDescriptor.Morale; })
               .AddContextStatBonus(StatType.AdditionalDamage, ContextValues.Rank(), ModifierDescriptor.Morale)
               //.AddDamageBonusConditional(ContextValues.Rank(), descriptor: ModifierDescriptor.Morale)
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }))

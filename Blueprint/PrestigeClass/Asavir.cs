@@ -411,7 +411,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(ControllChargeDescription)
               .SetIcon(icon)
               .AddContextStatBonus(StatType.AdditionalAttackBonus, 2)
-              //.AddACBonusAgainstAttacks(armorClassBonus: 2)
               .AddContextStatBonus(StatType.AC, value: 2)
               .Configure();
 
