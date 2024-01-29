@@ -9,10 +9,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Kingmaker.EntitySystem.Entities;
 
 namespace PrestigePlus.CustomComponent.Feat
 {
-    internal class IncreaseModifierBonus : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleSkillCheck>, IUnitGainFactHandler, IUnitLostFactHandler
+    internal class IncreaseModifierBonus : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleSkillCheck>, IUnitGainFactHandler, IUnitLostFactHandler, IUnitNewCombatRoundHandler
     {
         public int Bonus;
         public ModifierDescriptor Descriptor;
@@ -36,7 +37,10 @@ namespace PrestigePlus.CustomComponent.Feat
         {
             Update();
         }
-
+        void IUnitNewCombatRoundHandler.HandleNewCombatRound(UnitEntityData unit)
+        {
+            Update();
+        }
         public void Update()
         {
             foreach (var stat in this.Owner.Stats.AllStats)
