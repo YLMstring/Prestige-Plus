@@ -44,7 +44,7 @@ namespace PrestigePlus.CustomComponent.Feat
 
         public static bool HasDamage(BlueprintAbility spell)
         {
-            if (spell.Description == AbilityRefs.Implosion.Reference.Get().Description)
+            if (spell.m_DisplayName == AbilityRefs.Implosion.Reference.Get().m_DisplayName)
             {
                 return true;
             }

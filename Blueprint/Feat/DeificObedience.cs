@@ -3586,9 +3586,9 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticEvil, group: Prerequisite.GroupType.Any)
               .SetGiveFeaturesForPreviousLevels(true)
               .AddToLevelEntry(1, Rovagug0Feat())
-              .AddToLevelEntry(2, CreateRovagug1())
-              .AddToLevelEntry(6, Rovagug3Feat())
-              .AddToLevelEntry(10, CreateRovagug2())
+              .AddToLevelEntry(12, CreateRovagug1())
+              .AddToLevelEntry(16, Rovagug3Feat())
+              .AddToLevelEntry(20, CreateRovagug2())
               .Configure();
         }
 
