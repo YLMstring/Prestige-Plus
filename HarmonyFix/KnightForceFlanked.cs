@@ -27,7 +27,6 @@ namespace PrestigePlus.HarmonyFix
                 if (__instance.Unit.HasFact(Flanked))
                 {
                     __result = true;
-                    return;
                 }
             }
             catch (Exception ex) { Logger.Error("Failed to ForceFlanked.", ex); }

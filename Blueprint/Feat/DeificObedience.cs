@@ -3695,45 +3695,33 @@ namespace PrestigePlus.Blueprint.Feat
         }
 
         private const string Rovagug3 = "DeificObedience.Rovagug3";
-        public static readonly string Rovagug3Guid = "{03D4102A-3940-42EF-8690-AECF28AE3C4B}";
+        public static readonly string Rovagug3Guid = "{C31C9C13-AC34-469B-B94E-371A785D39DD}";
 
         internal const string Rovagug3DisplayName = "DeificObedienceRovagug3.Name";
         private const string Rovagug3Description = "DeificObedienceRovagug3.Description";
 
         private const string Rovagug3Buff = "DeificObedience.Rovagug3Buff";
-        private static readonly string Rovagug3BuffGuid = "{70F3A330-5C0F-4A81-B270-720751343962}";
-
-        private const string Rovagug3Res = "DeificObedience.Rovagug3Res";
-        private static readonly string Rovagug3ResGuid = "{A140E2B2-3DF2-4CB9-88A7-AA51D971C98F}";
+        public static readonly string Rovagug3BuffGuid = "{1EB38C97-393A-4175-8E63-2CD76AFE7614}";
 
         private const string Rovagug3Ability = "DeificObedience.Rovagug3Ability";
-        private static readonly string Rovagug3AbilityGuid = "{9168F28A-6165-432B-8FCF-CD9AA177D2C1}";
+        private static readonly string Rovagug3AbilityGuid = "{9AB2989F-3597-4093-AF6E-B9A57C8EA2EF}";
         public static BlueprintFeature Rovagug3Feat()
         {
             var icon = FeatureRefs.BolsteredSpellFeat.Reference.Get().Icon;
-
-            var abilityresourse = AbilityResourceConfigurator.New(Rovagug3Res, Rovagug3ResGuid)
-                .SetMaxAmount(ResourceAmountBuilder.New(0))
-                .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(Rovagug3Ability, Rovagug3AbilityGuid)
                 .SetDisplayName(Rovagug3DisplayName)
                 .SetDescription(Rovagug3Description)
                 .SetIcon(icon)
                 .SetBuff(Rovagug3BuffGuid)
-                .SetDeactivateIfCombatEnded(true)
                 .SetDeactivateImmediately(true)
-                .SetActivationType(AbilityActivationType.WithUnitCommand)
-                .SetActivateWithUnitCommand(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
-                .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound, freeBlueprint: Rovagug2Guid)
                 .Configure();
 
             BuffConfigurator.New(Rovagug3Buff, Rovagug3BuffGuid)
              .SetDisplayName(Rovagug3DisplayName)
              .SetDescription(Rovagug3Description)
              .SetIcon(icon)
-             .AddComponent<WeaponSizeChangeTTT>()
-             .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+             .AddComponent<DestructiveSpellComp>()
              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
              .Configure();
 
@@ -3741,8 +3729,6 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(Rovagug3DisplayName)
               .SetDescription(Rovagug3Description)
               .SetIcon(icon)
-              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
-              .AddIncreaseResourceAmountBySharedValue(false, abilityresourse, ContextValues.Property(UnitProperty.Level))
               .AddFacts(new() { ability })
               .Configure();
         }
