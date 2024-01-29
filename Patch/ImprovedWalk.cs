@@ -34,7 +34,7 @@ namespace PrestigePlus.Patch
             Configure();
 
             var feat = BlueprintTool.GetRef<BlueprintFeatureReference>("5110905a-4911-4916-a39c-9cda7a67eca0")?.Get();
-            if (feat != null)
+            if (feat != null && ModMenu.ModMenu.GetSettingValue<bool>(Main.GetKey("teleport")))
             {
                 feat.AddComponent<AddFacts>(c => { c.m_Facts = new BlueprintUnitFactReference[] { BlueprintTool.GetRef<BlueprintUnitFactReference>(FeatGuid) }; });
                 feat.AddComponent<PrerequisiteFeature>(c => { c.m_Feature = BlueprintTool.GetRef<BlueprintFeatureReference>(ShadowDancer.ShadowJumpGuidEx); c.Group = Prerequisite.GroupType.Any; });

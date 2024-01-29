@@ -206,9 +206,6 @@ namespace PrestigePlus
             Toggle.New(GetKey("emissary"), defaultValue: true, Helpers.CreateString("toggle-desc71", "Emissary"))
               .ShowVisualConnection())
           .AddToggle(
-            Toggle.New(GetKey("mendev"), defaultValue: true, Helpers.CreateString("toggle-desc80", "Mendevian Priest"))
-              .ShowVisualConnection())
-          .AddToggle(
             Toggle.New(GetKey("menhir"), defaultValue: true, Helpers.CreateString("toggle-desc72", "Menhir Savant"))
               .ShowVisualConnection())
           .AddToggle(
@@ -318,6 +315,9 @@ namespace PrestigePlus
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("spell"), defaultValue: true, Helpers.CreateString("toggle-desc54", "New Spells"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("teleport"), defaultValue: true, Helpers.CreateString("toggle-desc80", "Better Teleport Stuff"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("nerfsop"), defaultValue: false, Helpers.CreateString("toggle-desc38", "(Nerf) Seize the Opportunity as a Mythic Feat"))

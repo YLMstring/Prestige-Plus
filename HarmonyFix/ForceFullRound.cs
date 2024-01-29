@@ -25,7 +25,7 @@ namespace PrestigePlus.HarmonyFix
             try
             {
                 if (__result) { return; }
-                if (__instance.Caster.HasFact(ForceFull) && __instance.Blueprint.Type == AbilityType.Spell && DestructiveSpellComp.HasDamage(__instance))
+                if (__instance.Caster.HasFact(ForceFull) && __instance.Blueprint.Type == AbilityType.Spell && DestructiveSpellComp.HasDamage(__instance.Blueprint))
                 {
                     __result = true;
                 }

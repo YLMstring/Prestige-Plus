@@ -136,6 +136,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(SocothbenothFeat())
               .AddToAllFeatures(ChaldiraFeat())
               .AddToAllFeatures(PuluraFeat())
+              .AddToAllFeatures(RovagugFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -3707,7 +3708,7 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string Rovagug3AbilityGuid = "{9AB2989F-3597-4093-AF6E-B9A57C8EA2EF}";
         public static BlueprintFeature Rovagug3Feat()
         {
-            var icon = FeatureRefs.BolsteredSpellFeat.Reference.Get().Icon;
+            var icon = FeatureRefs.PersistentSpellFeat.Reference.Get().Icon;
 
             var ability = ActivatableAbilityConfigurator.New(Rovagug3Ability, Rovagug3AbilityGuid)
                 .SetDisplayName(Rovagug3DisplayName)

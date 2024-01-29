@@ -31,7 +31,7 @@ namespace PrestigePlus.CustomComponent.Feat
         void IRulebookHandler<RuleCalculateAbilityParams>.OnEventAboutToTrigger(RuleCalculateAbilityParams evt)
         {
             var spell = evt.AbilityData.Blueprint;
-            if (spell.Type == AbilityType.Spell && !spell.IsFullRoundAction && HasDamage(evt.AbilityData))
+            if (spell.Type == AbilityType.Spell && !spell.IsFullRoundAction && HasDamage(spell))
             {
                 evt.AddBonusDC(4);
             }
@@ -41,29 +41,29 @@ namespace PrestigePlus.CustomComponent.Feat
         {
         }
 
-        public static bool HasDamage(AbilityData data)
+        public static bool HasDamage(BlueprintAbility spell)
         {
-            var spell = data.Blueprint;
-            return spell.AbilityAndVariants()
-                    .SelectMany(s => s.AbilityAndStickyTouch())
-                    .Any(s => s.FlattenAllActions()
+            var stuff = spell.AbilityAndVariants()
+                    .SelectMany(s => s.AbilityAndStickyTouch());
+
+            return stuff.Any(s => s.FlattenAllActions()
                         .OfType<ContextActionDealDamage>()?
                         .Any(a => a.m_Type == ContextActionDealDamage.Type.Damage) ?? false)
-                    || spell.AbilityAndVariants()
-                        .SelectMany(s => s.AbilityAndStickyTouch())
-                        .Any(s => s.FlattenAllActions()
+                    || stuff.Any(s => s.FlattenAllActions()
                             .OfType<ContextActionSpawnAreaEffect>()
                             .Where(a => a.AreaEffect.FlattenAllActions()
                                 .OfType<ContextActionDealDamage>()
                                 .Any(a => a.m_Type == ContextActionDealDamage.Type.Damage))
                             .Any())
-                    || spell.AbilityAndVariants()
-                        .SelectMany(s => s.AbilityAndStickyTouch())
-                        .Any(s => s.FlattenAllActions()
+                    || stuff.Any(s => s.FlattenAllActions()
                             .OfType<ContextActionApplyBuff>()
                             .Where(a => a.Buff.FlattenAllActions()
                                 .OfType<ContextActionDealDamage>()
                                 .Any(a => a.m_Type == ContextActionDealDamage.Type.Damage))
+                            .Any())
+                    || stuff.Any(s => s.FlattenAllActions()
+                            .OfType<ContextActionCastSpell>()
+                            .Where(a => HasDamage(a.m_Spell) == true)
                             .Any());
         }
         void IRulebookHandler<RuleCalculateDamage>.OnEventAboutToTrigger(RuleCalculateDamage evt)
@@ -71,7 +71,7 @@ namespace PrestigePlus.CustomComponent.Feat
             var ability = evt.Reason?.Ability;
             if (ability == null) return;
             var spell = ability.Blueprint;
-            if (spell.Type == AbilityType.Spell && !spell.IsFullRoundAction && HasDamage(ability))
+            if (spell.Type == AbilityType.Spell && !spell.IsFullRoundAction && HasDamage(spell))
             {
                 foreach (BaseDamage baseDamage in evt.DamageBundle)
                 {
