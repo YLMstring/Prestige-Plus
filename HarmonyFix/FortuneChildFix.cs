@@ -67,7 +67,8 @@ namespace PrestigePlus.HarmonyFix
             var fact = __instance.Initiator.GetFact(Ace);
             if (fact != null && modifier.ModDescriptor == ModifierDescriptor.Luck && modifier.Source != fact)
             {
-                __instance.AddModifier(modifier.ModValue + 1, fact, ModifierDescriptor.Luck);
+                modifier.ModValue = 1 + modifier.ModValue;
+                modifier.Source = fact;
             }
         }
         private static BlueprintFeatureReference Ace = BlueprintTool.GetRef<BlueprintFeatureReference>(DeificObedience.Chaldira2Guid);
@@ -78,17 +79,18 @@ namespace PrestigePlus.HarmonyFix
     {
         static void Postfix(ref RulebookEvent __instance, ref RulebookEvent rule)
         {
-            if (rule.m_ModifiableBonus == null || rule.m_ModifiableBonus.ModifiersCount == 0)
+            if (__instance.m_Triggered || rule.m_TemporaryModifiers == null || rule.m_TemporaryModifiers.Count == 0)
             {
                 return;
             }
             var fact = __instance.Initiator.GetFact(Ace);
             if (fact == null) { return; }
-            foreach (var bonus in rule.m_ModifiableBonus.m_Modifiers)
+            foreach (var bonus in rule.m_TemporaryModifiers)
             {
-                if (bonus.Descriptor == ModifierDescriptor.Luck && bonus.Fact != fact)
+                if (bonus.ModDescriptor == ModifierDescriptor.Luck && bonus.Source != fact)
                 {
-                    __instance.AddModifier(bonus.Value + 1, fact, ModifierDescriptor.Luck);
+                    bonus.ModValue = 1 + bonus.ModValue;
+                    bonus.Source = fact;
                 }
             }
         }

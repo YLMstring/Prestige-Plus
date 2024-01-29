@@ -23,6 +23,11 @@ namespace PrestigePlus.CustomComponent
         // Token: 0x0600E944 RID: 59716 RVA: 0x003BCB30 File Offset: 0x003BAD30
         public void OnEventAboutToTrigger(RuleCalculateAttackBonusWithoutTarget evt)
         {
+            if (NoCondition)
+            {
+                evt.AddModifier(this.AttackBonus, base.Fact, this.Des);
+                return;
+            }
             if (evt.Weapon == null) return;
             if (evt.Weapon.Blueprint.Type == this.WeaponType)
             {
@@ -44,5 +49,6 @@ namespace PrestigePlus.CustomComponent
         public int AttackBonus2 = 0;
         // Token: 0x04009981 RID: 39297
         public ModifierDescriptor Des = ModifierDescriptor.UntypedStackable;
+        public bool NoCondition = false;
     }
 }
