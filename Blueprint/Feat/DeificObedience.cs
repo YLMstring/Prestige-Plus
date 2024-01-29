@@ -3384,6 +3384,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(Chaldira2DisplayName)
               .SetDescription(Chaldira2Description)
               .SetIcon(icon)
+              .AddComponent<IncreaseModifierBonus>(c => { c.Bonus = 1; c.Descriptor = ModifierDescriptor.Luck; })
               .Configure();
         }
 
