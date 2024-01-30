@@ -1966,12 +1966,13 @@ namespace PrestigePlus.Blueprint.Feat
         public static BlueprintFeature CharonFeat()
         {
             var icon = AbilityRefs.DeathClutch.Reference.Get().Icon;
+            //"CharonFeature": "158538c5-d54a-46f6-8663-4703118e9b34",
 
             return FeatureConfigurator.New(Charon, CharonGuid)
               .SetDisplayName(CharonDisplayName)
               .SetDescription(CharonDescription)
               .SetIcon(icon)
-              .AddPrerequisiteFeature(FeatureRefs.ZonKuthonFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteFeature("158538c5-d54a-46f6-8663-4703118e9b34", group: Prerequisite.GroupType.Any)
               .AddPrerequisiteAlignment(AlignmentMaskType.NeutralEvil, group: Prerequisite.GroupType.Any)
               .AddToIsPrerequisiteFor(CharonSentinelFeat())
               .AddSavingThrowBonusAgainstDescriptor(value: 4, spellDescriptor: SpellDescriptor.NegativeLevel, modifierDescriptor: ModifierDescriptor.Profane)
@@ -2188,12 +2189,13 @@ namespace PrestigePlus.Blueprint.Feat
         public static BlueprintFeature SzurielFeat()
         {
             var icon = FeatureRefs.ExecutionerAssassinateFeature.Reference.Get().Icon;
+            //"SzurielFeature": "8a80dae7-21a7-4433-8b44-170f4e486301",
 
             return FeatureConfigurator.New(Szuriel, SzurielGuid)
               .SetDisplayName(SzurielDisplayName)
               .SetDescription(SzurielDescription)
               .SetIcon(icon)
-              .AddPrerequisiteFeature(FeatureRefs.GodclawFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteFeature("8a80dae7-21a7-4433-8b44-170f4e486301", group: Prerequisite.GroupType.Any)
               .AddPrerequisiteAlignment(AlignmentMaskType.NeutralEvil, group: Prerequisite.GroupType.Any)
               .AddToIsPrerequisiteFor(SzurielSentinelFeat())
               .AddSavingThrowBonusAgainstDescriptor(value: 4, spellDescriptor: SpellDescriptor.Fire, modifierDescriptor: ModifierDescriptor.Profane)
