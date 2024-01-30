@@ -46,7 +46,7 @@
 - [Socothbenoth (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Socothbenoth): requires worshipping Gyronna or Chaotic Evil
 - [Falayna](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Falayna): requires worshipping Falayna (Expanded Content) or Lawful Good
 - [Kabriri (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Kabriri): requires worshipping Kabriri (Expanded Content) or Chaotic Evil
-- [Chaldira (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Chaldira): requires worshipping Sarenrae or Neutral Good
+- [Chaldira (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Chaldira): requires thievery 1, worshipping Sarenrae or Neutral Good
 - [Pulura](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Pulura): requires worshipping Pulura or Chaotic Good
 - [Rovagug](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Rovagug): requires worshipping Rovagug or Chaotic Evil
 - More coming soon!
