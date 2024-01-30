@@ -226,16 +226,10 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         internal const string SanguineAngelAngelDeathDisplayName = "SanguineAngelAngelDeath.Name";
         private const string SanguineAngelAngelDeathDescription = "SanguineAngelAngelDeath.Description";
-
-        private const string AngelDeathbuff = "SanguineAngel.AngelDeathbuff";
-        private static readonly string AngelDeathbuffGuid = "{390DE845-256A-4504-BCA1-89A9D0C2C430}";
-
         public static BlueprintFeature SAAngelDeath()
         {
             var icon = FeatureRefs.HellsSealFeature.Reference.Get().Icon;
-
-            AbilityConfigurator.New(AngelDeathbuff, AngelDeathbuffGuid)
-                .Configure();
+            var comp = BuffRefs.SeeInvisibilitytBuff.Reference.Get().GetComponent<AddCondition>();
 
             return FeatureConfigurator.New(AngelDeath, AngelDeathGuid)
               .SetDisplayName(SanguineAngelAngelDeathDisplayName)
@@ -243,8 +237,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .AddFacts(new() { FeatureRefs.OutsiderType.ToString(), FeatureRefs.SubtypeEvil.ToString(), FeatureRefs.SubtypeLawful.ToString(), BuffRefs.WingsAngelBlack.ToString() })
               .AddBuffMovementSpeed(value: 20)
-              .AddCondition(Kingmaker.UnitLogic.UnitCondition.SeeInvisibility)
-              .AddAuraFeatureComponent(BuffRefs.SeeInvisibilitytBuff.ToString())
+              .AddComponent(comp)
               .AddDamageResistanceEnergy(healOnDamage: false, value: ContextValues.Constant(30), type: Kingmaker.Enums.Damage.DamageEnergyType.Fire)
               .AddPrerequisiteFeature(FeatureRefs.PreciseShot.ToString())
               .Configure();
