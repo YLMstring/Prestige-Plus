@@ -333,6 +333,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                         .SavingThrow(type: SavingThrowType.Fortitude, customDC: ContextValues.CustomProperty(proper, true),
                             onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New()
                                 .ApplyBuff(BuffRefs.Unconsious.ToString(), ContextDuration.Variable(ContextValues.Rank()))
+                                .ApplyBuff(buff, ContextDuration.Fixed(1, Kingmaker.UnitLogic.Mechanics.DurationRate.Days))
                                 .Build(), succeed: ActionsBuilder.New()
                                 .ApplyBuff(buff, ContextDuration.Fixed(1, Kingmaker.UnitLogic.Mechanics.DurationRate.Days))
                                 .Build())
