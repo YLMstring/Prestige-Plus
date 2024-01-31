@@ -607,6 +607,10 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddComponent<DawnRagingSongComp>()
                 .Configure();
 
+            BuffConfigurator.For(BuffRefs.InspiredRageEffectBuffMythic)
+                .AddComponent<DawnRagingSongComp>()
+                .Configure();
+
             return ProgressionConfigurator.New(FocusedRagingSong, FocusedRagingSongGuid)
               .SetDisplayName(FocusedRagingSongDisplayName)
               .SetDescription(FocusedRagingSongDescription)

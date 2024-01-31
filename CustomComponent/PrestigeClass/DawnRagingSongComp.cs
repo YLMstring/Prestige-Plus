@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Kingmaker.UnitLogic;
 using PrestigePlus.Blueprint.PrestigeClass;
+using BlueprintCore.Blueprints.References;
 
 namespace PrestigePlus.Modify
 {
@@ -58,7 +59,14 @@ namespace PrestigePlus.Modify
             else if (level >= 12) num += 4;
             else if (level >= 8) num += 3;
             else if (level >= 4) num += 2;
-            //Logger.Info(num.ToString());
+            if (caster.HasFact(FeatureRefs.MythicInspire.Reference))
+            {
+                level = caster.Progression.MythicLevel;
+                if (level >= 10) num += 4;
+                else if (level >= 7) num += 3;
+                else if (level >= 4) num += 2;
+                else num += 1;
+            }
             return num;
         }
 
