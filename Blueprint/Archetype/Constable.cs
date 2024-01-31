@@ -55,7 +55,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetLocalizedDescription(ArchetypeDescription)
             .SetRemoveFeaturesEntry(1, FeatureSelectionRefs.CavalierMountSelection.ToString())
             .SetRemoveFeaturesEntry(3, FeatureRefs.CavalierCharge.ToString())
-            .SetRemoveFeaturesEntry(4)
+            .SetRemoveFeaturesEntry(4) //don't delete this
             .SetRemoveFeaturesEntry(5, FeatureRefs.CavalierBanner.ToString())
             .SetRemoveFeaturesEntry(11, FeatureRefs.CavalierMightyCharge.ToString())
             .SetRemoveFeaturesEntry(14, FeatureRefs.CavalierBannerGreater.ToString())

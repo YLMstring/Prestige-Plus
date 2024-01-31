@@ -28,7 +28,7 @@ namespace PrestigePlus.Blueprint.RogueTalent
     internal class CloyingShades
     {
         private const string CloyingShadesPower = "Rogue.CloyingShades";
-        private static readonly string CloyingShadesGuid = "{41C482BD-9727-40E7-A967-626253AA67D6}";
+        public static readonly string CloyingShadesGuid = "{41C482BD-9727-40E7-A967-626253AA67D6}";
 
         internal const string CloyingShadesDisplayName = "RogueCloyingShades.Name";
         private const string CloyingShadesDescription = "RogueCloyingShades.Description";
