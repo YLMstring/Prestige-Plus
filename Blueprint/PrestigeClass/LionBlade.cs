@@ -143,6 +143,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddToClasses(ArchetypeGuid)
               .AddIncreaseResourceAmountBySharedValue(decrease: false, resource: AbilityResourceRefs.BardicPerformanceResource.ToString(), value: ContextValues.Rank())
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new[] { ArchetypeGuid }).WithBonusValueProgression(0, true))
+              .AddToLevelEntry(1, FeatureRefs.BardicPerformanceResourceFact.ToString())
               .AddToLevelEntry(7, FeatureRefs.BardMovePerformance.ToString())
               .AddToLevelEntry(13, FeatureRefs.BardSwiftPerformance.ToString())
               .Configure();
