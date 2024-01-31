@@ -57,7 +57,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetClasses(ArchetypeGuid)
                 .AddToLevelEntry(1, CreateProficiencies(), spellupgradeGuid, FeatureSelectionRefs.FavoriteEnemySelection.ToString(), ImprovedFavorFeature(), ExtraFeat())
                 .AddToLevelEntry(2, FeatureRefs.FastMovement.ToString(), FeatureSelectionRefs.FavoriteTerrainSelection.ToString())
-                .AddToLevelEntry(3, FeatureRefs.BloodlineFeyWoodlandStride.ToString(), ExtraFeat2())
+                .AddToLevelEntry(3, FeatureRefs.HunterWoodlandStride.ToString(), ExtraFeat2())
                 .AddToLevelEntry(4)
                 .AddToLevelEntry(5, ExtraFeat3())
                 .AddToLevelEntry(6, FeatureSelectionRefs.FavoriteTerrainSelection.ToString())

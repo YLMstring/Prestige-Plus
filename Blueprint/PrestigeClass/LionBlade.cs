@@ -48,7 +48,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddToLevelEntry(4, FeatureRefs.FastMovement.ToString())
                 .AddToLevelEntry(5, InspirePoiseGuid)
                 .AddToLevelEntry(6, FeatureRefs.SneakAttack.ToString())
-                .AddToLevelEntry(7, CloudMindFeature())
+                .AddToLevelEntry(7, CloudMindFeature(), FeatureRefs.HunterWoodlandStride.ToString())
                 .AddToLevelEntry(8)
                 .AddToLevelEntry(9, InspirePoiseGuid)
                 .AddToLevelEntry(10, SilentSoulFeature(), FeatureRefs.SneakAttack.ToString())
