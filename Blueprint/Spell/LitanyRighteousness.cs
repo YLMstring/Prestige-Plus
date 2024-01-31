@@ -23,6 +23,8 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using Kingmaker.EntitySystem.Stats;
 using PrestigePlus.CustomComponent.Spell;
 using PrestigePlus.CustomComponent;
+using Kingmaker.Blueprints;
+using Kingmaker.UnitLogic.Abilities.Components.Base;
 
 namespace PrestigePlus.Blueprint.Spell
 {
@@ -47,11 +49,14 @@ namespace PrestigePlus.Blueprint.Spell
               .AddComponent<LitanyRighteousnessDamage>()
               .Configure();
 
+            var fx = AbilityRefs.SmiteEvilAbility.Reference.Get().GetComponent<AbilitySpawnFx>();
+
             AbilityConfigurator.NewSpell(
                 LitanyRighteousnessAbility, LitanyRighteousnessAbilityGuid, SpellSchool.Evocation, canSpecialize: false)
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
+              .AddComponent(fx)
               .AllowTargeting(enemies: true)
               .SetEffectOnEnemy(AbilityEffectOnUnit.Harmful)
               .AddAbilityTargetAlignment(Kingmaker.UnitLogic.Alignments.AlignmentMaskType.Evil)

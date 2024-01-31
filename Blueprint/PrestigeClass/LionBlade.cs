@@ -24,6 +24,9 @@ using PrestigePlus.Blueprint.RogueTalent;
 using BlueprintCore.Blueprints.Configurators.Root;
 using Kingmaker.Blueprints.Classes.Spells;
 using BlueprintCore.Actions.Builder.ContextEx;
+using BlueprintCore.Blueprints.CustomConfigurators;
+using Kingmaker.UnitLogic.Mechanics.Components;
+using Kingmaker.Designers.Mechanics.Facts;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -42,14 +45,14 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, InspirePoiseFeature(), FeatureRefs.Mobility.ToString())
+                .AddToLevelEntry(1, BardicPerformanceFeat(), InspirePoiseFeature(), FeatureRefs.Mobility.ToString())
                 .AddToLevelEntry(2, FeatureRefs.SneakAttack.ToString())
                 .AddToLevelEntry(3, FeatureRefs.AssassinHideInPlainSight.ToString())
                 .AddToLevelEntry(4, FeatureRefs.FastMovement.ToString())
                 .AddToLevelEntry(5, InspirePoiseGuid)
                 .AddToLevelEntry(6, FeatureRefs.SneakAttack.ToString())
                 .AddToLevelEntry(7, CloudMindFeature(), FeatureRefs.HunterWoodlandStride.ToString())
-                .AddToLevelEntry(8)
+                .AddToLevelEntry(8, NarrowMissConfigure())
                 .AddToLevelEntry(9, InspirePoiseGuid)
                 .AddToLevelEntry(10, SilentSoulFeature(), FeatureRefs.SneakAttack.ToString())
                 .SetUIGroups(UIGroupBuilder.New()
@@ -82,6 +85,23 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddPrerequisiteFeature(FeatureRefs.Improved_Initiative.ToString())
                 .Configure();
 
+            var list = new List<ContextRankConfig>() { };
+
+            list.AddRange(BuffRefs.InspireCourageEffectBuff.Reference.Get().GetComponents<ContextRankConfig>());
+            list.AddRange(BuffRefs.InspireCourageMythicEffectBuff.Reference.Get().GetComponents<ContextRankConfig>());
+            list.AddRange(BuffRefs.InspireCompetenceEffectBuff.Reference.Get().GetComponents<ContextRankConfig>());
+            list.AddRange(BuffRefs.InspireCompetenceMythicEffectBuff.Reference.Get().GetComponents<ContextRankConfig>());
+            list.AddRange(BuffRefs.InspireTranquilityEffectBuff.Reference.Get().GetComponents<ContextRankConfig>());
+            list.AddRange(BuffRefs.InspireTranquilityEffectBuffMythic.Reference.Get().GetComponents<ContextRankConfig>());
+
+            foreach (var item in list)
+            {
+                if (item.m_Class?.Length > 0)
+                {
+                    CommonTool.Append(item.m_Class, archetype.ToReference<BlueprintCharacterClassReference>());
+                }
+            }
+
             Action<ProgressionRoot> act = delegate (ProgressionRoot i)
             {
                 BlueprintCharacterClassReference[] result = new BlueprintCharacterClassReference[i.m_CharacterClasses.Length + 1];
@@ -99,35 +119,35 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .Configure(delayed: true);
         }
 
-        private const string FuryTraining = "FuryTraining";
-        private static readonly string FuryTrainingGuid = "{F5E6DA2E-6C88-46D8-8493-379097D80EA2}";
+        private const string BardicPerformance = "LionBlade.BardicPerformance";
+        public static readonly string BardicPerformanceGuid = "{5BA6961C-2228-4DDB-A46C-7A095C2D5677}";
 
-        internal const string FuryTrainingDisplayName = "FuryTraining.Name";
-        private const string FuryTrainingDescription = "FuryTraining.Description";
-        public static BlueprintFeature FuryTrainingFeature()
+        internal const string BardicPerformanceDisplayName = "LionBladeBardicPerformance.Name";
+        private const string BardicPerformanceDescription = "LionBladeBardicPerformance.Description";
+
+        public static BlueprintProgression BardicPerformanceFeat()
         {
-            var icon = FeatureRefs.NatureSense.Reference.Get().Icon;
-            return FeatureConfigurator.New(FuryTraining, FuryTrainingGuid)
-              .SetDisplayName(FuryTrainingDisplayName)
-              .SetDescription(FuryTrainingDescription)
+            var icon = FeatureRefs.InspireCourageFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(BardicPerformance, BardicPerformanceGuid)
+              .SetDisplayName(BardicPerformanceDisplayName)
+              .SetDescription(BardicPerformanceDescription)
               .SetIcon(icon)
-              .AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.KiPowerResource.ToString(), ContextValues.Rank(AbilityRankType.DamageDice))
-              .AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.RageResourse.ToString(), ContextValues.Rank(AbilityRankType.ProjectilesCount))
-              .AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.BloodragerRageResource.ToString(), ContextValues.Rank(AbilityRankType.ProjectilesCount))
-              .AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.FocusedRageResourse.ToString(), ContextValues.Rank(AbilityRankType.ProjectilesCount))
-              //.AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.DemonRageResource.ToString(), ContextValues.Rank(AbilityRankType.ProjectilesCount))
-              .AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.RageshaperShifterResource.ToString(), ContextValues.Rank(AbilityRankType.ProjectilesCount))
-              .AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.BardicPerformanceResource.ToString(), ContextValues.Rank(AbilityRankType.ProjectilesCount))
-              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new[] { ArchetypeGuid }, type: AbilityRankType.DamageDice).WithOnePlusDiv2Progression())
-              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new[] { ArchetypeGuid }, type: AbilityRankType.ProjectilesCount).WithBonusValueProgression(0, true))
+              .SetIsClassFeature(true)
+              .AddToClasses(CharacterClassRefs.BardClass.ToString())
+              .AddToClasses(ArchetypeGuid)
+              .AddIncreaseResourceAmountBySharedValue(decrease: false, resource: AbilityResourceRefs.BardicPerformanceResource.ToString(), value: ContextValues.Rank())
+              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new[] { ArchetypeGuid }).WithBonusValueProgression(0, true))
+              .AddToLevelEntry(7, FeatureRefs.BardMovePerformance.ToString())
+              .AddToLevelEntry(13, FeatureRefs.BardSwiftPerformance.ToString())
               .Configure();
         }
 
-        private const string InspirePoise = "InspirePoise";
+        private const string InspirePoise = "LionBladeInspirePoise";
         private static readonly string InspirePoiseGuid = "{37B8ABCD-4064-4C40-A26D-F4809B8BDB40}";
 
-        internal const string InspirePoiseDisplayName = "InspirePoise.Name";
-        private const string InspirePoiseDescription = "InspirePoise.Description";
+        internal const string InspirePoiseDisplayName = "LionBladeInspirePoise.Name";
+        private const string InspirePoiseDescription = "LionBladeInspirePoise.Description";
         public static BlueprintFeature InspirePoiseFeature()
         {
             var icon = FeatureRefs.ShifterClawsFeatureAddLevel1.Reference.Get().Icon;
@@ -141,11 +161,11 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .Configure();
         }
 
-        private const string CloudMind = "CloudMind";
+        private const string CloudMind = "LionBladeCloudMind";
         public static readonly string CloudMindGuid = "{A7C73185-C581-4EDC-8A95-EEE3D4369830}";
 
-        internal const string CloudMindDisplayName = "CloudMind.Name";
-        private const string CloudMindDescription = "CloudMind.Description";
+        internal const string CloudMindDisplayName = "LionBladeCloudMind.Name";
+        private const string CloudMindDescription = "LionBladeCloudMind.Description";
         public static BlueprintFeature CloudMindFeature()
         {
             var icon = FeatureRefs.ShiftersEdgeFeature.Reference.Get().Icon;
@@ -158,11 +178,11 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .Configure();
         }
 
-        private const string SilentSoul = "SilentSoul";
+        private const string SilentSoul = "LionBladeSilentSoul";
         private static readonly string SilentSoulGuid = "{8F05CF79-26E2-4741-96B4-AFE8FD2A57BA}";
 
-        internal const string SilentSoulDisplayName = "SilentSoul.Name";
-        private const string SilentSoulDescription = "SilentSoul.Description";
+        internal const string SilentSoulDisplayName = "LionBladeSilentSoul.Name";
+        private const string SilentSoulDescription = "LionBladeSilentSoul.Description";
         public static BlueprintFeature SilentSoulFeature()
         {
             var icon = FeatureRefs.ShifterACBonusUnlock.Reference.Get().Icon;
@@ -175,156 +195,99 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .Configure();
         }
 
-        private const string ViciousFang = "ViciousFang";
-        public static readonly string ViciousFangGuid = "{7737F897-1EDD-4631-9101-26AE64974743}";
+        private static readonly string NarrowMissName = "LionBladeNarrowMiss";
+        public static readonly string NarrowMissGuid = "{6316C32A-BD50-4A18-BC96-CDEDF9BEDA10}";
 
-        internal const string ViciousFangDisplayName = "ViciousFang.Name";
-        private const string ViciousFangDescription = "ViciousFang.Description";
-        public static BlueprintFeature ViciousFangFeature()
-        {
-            var icon = FeatureRefs.ShiftersEdgeFeature.Reference.Get().Icon;
-            return FeatureConfigurator.New(ViciousFang, ViciousFangGuid)
-              .SetDisplayName(ViciousFangDisplayName)
-              .SetDescription(ViciousFangDescription)
-              .SetIcon(icon)
-              .Configure();
-        }
+        private static readonly string NarrowMissDisplayName = "LionBladeNarrowMiss.Name";
+        private static readonly string NarrowMissDescription = "LionBladeNarrowMiss.Description";
 
-        private static readonly string DragonWarDanceName = "DragonWarDance";
-        public static readonly string DragonWarDanceGuid = "{F90313BC-68AA-4105-9BD0-14D5359D33C8}";
+        private const string NarrowMissAbility = "NarrowMiss.NarrowMissAbility";
+        private static readonly string NarrowMissAbilityGuid = "{5A16E581-674C-4EB5-855D-FB91480023B3}";
 
-        private static readonly string DragonWarDanceDisplayName = "DragonWarDance.Name";
-        private static readonly string DragonWarDanceDescription = "DragonWarDance.Description";
+        private const string NarrowMissBuff = "NarrowMiss.NarrowMissBuff";
+        private static readonly string NarrowMissBuffGuid = "{82225953-51DA-4850-A1C4-2F8714EEB3CD}";
 
-        private const string WarDanceAbility = "DragonWarDance.WarDanceAbility";
-        private static readonly string WarDanceAbilityGuid = "{1CE13E5A-3790-48B4-BD50-B36A4E096D69}";
-
-        private const string WarDanceBuff = "DragonWarDance.WarDanceBuff";
-        private static readonly string WarDanceBuffGuid = "{78B468A3-E7AF-49ED-B01D-B66EFD3B1906}";
-        public static BlueprintFeature DragonWarDanceConfigure()
+        private const string NarrowMissAblityRes = "LionBlade.NarrowMissRes";
+        public static readonly string NarrowMissAblityResGuid = "{92FD5B7B-9BA8-4D4A-B9BF-23182F894090}";
+        public static BlueprintFeature NarrowMissConfigure()
         {
             var icon = FeatureRefs.ShifterDragonFormFeature.Reference.Get().Icon;
 
-            var buff = BuffConfigurator.New(WarDanceBuff, WarDanceBuffGuid)
-                .SetDisplayName(DragonWarDanceDisplayName)
-                .SetDescription(DragonWarDanceDescription)
+            var abilityresourse = AbilityResourceConfigurator.New(NarrowMissAblityRes, NarrowMissAblityResGuid)
+                .SetMaxAmount(
+                    ResourceAmountBuilder.New(0)
+                        .IncreaseByLevelStartPlusDivStep(classes: new string[] { ArchetypeGuid }, otherClassLevelsMultiplier: 0, levelsPerStep: 2, bonusPerStep: 1))
+                .SetUseMax()
+                .SetMax(5)
+                .Configure();
+
+            var buff = BuffConfigurator.New(NarrowMissBuff, NarrowMissBuffGuid)
+                .SetDisplayName(NarrowMissDisplayName)
+                .SetDescription(NarrowMissDescription)
                 .SetIcon(icon)
                 .AddConcealment(concealment: Concealment.Partial, descriptor: ConcealmentDescriptor.Blur)
                 .Configure();
 
-            var ability = AbilityConfigurator.New(WarDanceAbility, WarDanceAbilityGuid)
-                .SetDisplayName(DragonWarDanceDisplayName)
-                .SetDescription(DragonWarDanceDescription)
+            var ability = AbilityConfigurator.New(NarrowMissAbility, NarrowMissAbilityGuid)
+                .SetDisplayName(NarrowMissDisplayName)
+                .SetDescription(NarrowMissDescription)
                 .SetIcon(icon)
                 .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1)).Build())
-                .SetType(AbilityType.Physical)
+                .SetType(AbilityType.Supernatural)
                 .SetRange(AbilityRange.Personal)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Self)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .Configure();
 
-            return FeatureConfigurator.New(DragonWarDanceName, DragonWarDanceGuid)
-                    .SetDisplayName(DragonWarDanceDisplayName)
-                    .SetDescription(DragonWarDanceDescription)
+            return FeatureConfigurator.New(NarrowMissName, NarrowMissGuid)
+                    .SetDisplayName(NarrowMissDisplayName)
+                    .SetDescription(NarrowMissDescription)
                     .SetIcon(icon)
                     .AddFacts(new() { ability })
+                    .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
                     .Configure();
         }
 
-        private static readonly string BendwithWindName = "BendwithWind";
-        public static readonly string BendwithWindGuid = "{05E46EA6-F494-4133-902C-3031E3235A93}";
+        private static readonly string MisfortuneName = "LionBladeMisfortune";
+        public static readonly string MisfortuneGuid = "{BF8469EB-FBE5-4ABA-9393-2E7B168D9CA0}";
 
-        private static readonly string BendwithWindDisplayName = "BendwithWind.Name";
-        private static readonly string BendwithWindDescription = "BendwithWind.Description";
+        private static readonly string MisfortuneDisplayName = "LionBladeMisfortune.Name";
+        private static readonly string MisfortuneDescription = "LionBladeMisfortune.Description";
 
-        private const string BendWindAbility = "BendwithWind.BendWindAbility";
-        private static readonly string BendWindAbilityGuid = "{D3A13A05-D86E-4801-BDDE-4E473B5B7DAF}";
+        private const string MisfortuneAbility = "Misfortune.MisfortuneAbility";
+        private static readonly string MisfortuneAbilityGuid = "{C14D3F23-7746-45BC-A65F-8683362FEF1F}";
 
-        private const string BendWindBuff = "BendwithWind.BendWindBuff";
-        private static readonly string BendWindBuffGuid = "{77915AA7-1B48-4E2E-A4B0-9806B80AB807}";
-        public static BlueprintFeature BendwithWindConfigure()
+        private const string MisfortuneBuff = "Misfortune.MisfortuneBuff";
+        private static readonly string MisfortuneBuffGuid = "{9A6EF146-F8D3-4852-BA56-33CAB76CBD52}";
+        public static BlueprintFeature MisfortuneConfigure()
         {
-            var icon = AbilityRefs.FeatherStep.Reference.Get().Icon;
+            var icon = FeatureRefs.ShifterDragonFormFeature.Reference.Get().Icon;
 
-            var buff = BuffConfigurator.New(BendWindBuff, BendWindBuffGuid)
-                .SetDisplayName(BendwithWindDisplayName)
-                .SetDescription(BendwithWindDescription)
+            var buff = BuffConfigurator.New(MisfortuneBuff, MisfortuneBuffGuid)
+                .SetDisplayName(MisfortuneDisplayName)
+                .SetDescription(MisfortuneDescription)
                 .SetIcon(icon)
-                .AddComponent<DFbindwind>()
+                .AddModifyD20(rule: RuleType.SavingThrow, rollsAmount: 1, rerollOnlyIfSuccess: true, addSavingThrowBonus: true, value: -2, bonusDescriptor: ModifierDescriptor.Penalty)
                 .Configure();
 
-            var ability = AbilityConfigurator.New(BendWindAbility, BendWindAbilityGuid)
-                .SetDisplayName(BendwithWindDisplayName)
-                .SetDescription(BendwithWindDescription)
+            var ability = AbilityConfigurator.New(MisfortuneAbility, MisfortuneAbilityGuid)
+                .SetDisplayName(MisfortuneDisplayName)
+                .SetDescription(MisfortuneDescription)
                 .SetIcon(icon)
-                .AddAbilityEffectRunAction(ActionsBuilder.New().RemoveBuff(OuterStanceBuffGuid).RemoveBuff(WarDanceBuffGuid).ApplyBuffPermanent(buff).Build())
-                .SetType(AbilityType.Physical)
-                .SetRange(AbilityRange.Personal)
+                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1)).Build())
+                .SetType(AbilityType.Supernatural)
+                .SetRange(AbilityRange.Close)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Self)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
                 .Configure();
 
-            return FeatureConfigurator.New(BendwithWindName, BendwithWindGuid)
-                    .SetDisplayName(BendwithWindDisplayName)
-                    .SetDescription(BendwithWindDescription)
+            return FeatureConfigurator.New(MisfortuneName, MisfortuneGuid)
+                    .SetDisplayName(MisfortuneDisplayName)
+                    .SetDescription(MisfortuneDescription)
                     .SetIcon(icon)
                     .AddFacts(new() { ability })
-                    .Configure();
-        }
-
-        private static readonly string OuterSphereStanceName = "OuterSphereStance";
-        public static readonly string OuterSphereStanceGuid = "{E7D3DD28-1714-4083-A7C4-43A7427C9D55}";
-
-        private static readonly string OuterSphereStanceDisplayName = "OuterSphereStance.Name";
-        private static readonly string OuterSphereStanceDescription = "OuterSphereStance.Description";
-
-        private const string OuterStanceAbility = "OuterSphereStance.OuterStanceAbility";
-        private static readonly string OuterStanceAbilityGuid = "{01B9D8F0-563E-4431-AF98-6F84EA9C7B92}";
-
-        private const string OuterStanceBuff = "OuterSphereStance.OuterStanceBuff";
-        private static readonly string OuterStanceBuffGuid = "{F1182AFE-66DC-4FA5-83AD-018D958DFC92}";
-
-        private static readonly string InnerSphereStanceDisplayName = "InnerSphereStance.Name";
-        private static readonly string InnerSphereStanceDescription = "InnerSphereStance.Description";
-
-        private const string InnerStanceAbility = "InnerSphereStance.InnerStanceAbility";
-        private static readonly string InnerStanceAbilityGuid = "{38C39F01-EB3E-4FF9-A318-5D76E5D2BB29}";
-        public static BlueprintFeature OuterSphereStanceConfigure()
-        {
-            var icon = FeatureSelectionRefs.SlayerTalentSelection2.Reference.Get().Icon;
-            var icon2 = AbilityRefs.WildShapeTurnBackAbility.Reference.Get().Icon;
-
-            var buff = BuffConfigurator.New(OuterStanceBuff, OuterStanceBuffGuid)
-                .SetDisplayName(OuterSphereStanceDisplayName)
-                .SetDescription(OuterSphereStanceDescription)
-                .SetIcon(icon)
-                .AddStatBonus(ModifierDescriptor.Penalty, false, StatType.AC, -2)
-                .AddComponent<ScarVicious>(c => { c.num = 1; c.checkBuff = false; })
-                .Configure();
-
-            var ability = AbilityConfigurator.New(OuterStanceAbility, OuterStanceAbilityGuid)
-                .SetDisplayName(OuterSphereStanceDisplayName)
-                .SetDescription(OuterSphereStanceDescription)
-                .SetIcon(icon)
-                .AddAbilityEffectRunAction(ActionsBuilder.New().RemoveBuff(BendWindBuffGuid).RemoveBuff(WarDanceBuffGuid).ApplyBuffPermanent(buff).Build())
-                .SetType(AbilityType.Physical)
-                .SetRange(AbilityRange.Personal)
-                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
-                .Configure();
-
-            var ability2 = AbilityConfigurator.New(InnerStanceAbility, InnerStanceAbilityGuid)
-                .SetDisplayName(InnerSphereStanceDisplayName)
-                .SetDescription(InnerSphereStanceDescription)
-                .SetIcon(icon2)
-                .AddAbilityEffectRunAction(ActionsBuilder.New().RemoveBuff(OuterStanceBuffGuid).RemoveBuff(BendWindBuffGuid).RemoveBuff(WarDanceBuffGuid).Build())
-                .SetType(AbilityType.Physical)
-                .SetRange(AbilityRange.Personal)
-                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
-                .Configure();
-
-            return FeatureConfigurator.New(OuterSphereStanceName, OuterSphereStanceGuid)
-                    .SetDisplayName(OuterSphereStanceDisplayName)
-                    .SetDescription(OuterSphereStanceDescription)
-                    .SetIcon(icon)
-                    .AddFacts(new() { ability, ability2 })
                     .Configure();
         }
     }
