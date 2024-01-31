@@ -161,6 +161,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("crusader"), defaultValue: true, Helpers.CreateString("toggle-desc3", "Inheritor¡¯s Crusader"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("lionblade"), defaultValue: true, Helpers.CreateString("toggle-desc81", "Lion Blade"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("biggg"), defaultValue: true, Helpers.CreateString("toggle-desc18", "Mammoth Rider"))
               .ShowVisualConnection())
           .AddToggle(
@@ -416,6 +419,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("wadept"))) { WeaponAdept.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("toxic"))) { Toxicologist.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fated"))) { FatedChampion.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("lionblade"))) { LionBlade.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)

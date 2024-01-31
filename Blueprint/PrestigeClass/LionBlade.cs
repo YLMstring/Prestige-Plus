@@ -27,6 +27,11 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Designers.Mechanics.Facts;
+using Kingmaker.UnitLogic.Abilities.Components.Base;
+using Kingmaker.UnitLogic;
+using BlueprintCore.Blueprints.Configurators.UnitLogic.Properties;
+using BlueprintCore.Conditions.Builder;
+using BlueprintCore.Conditions.Builder.ContextEx;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -48,8 +53,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddToLevelEntry(1, BardicPerformanceFeat(), InspirePoiseFeature(), FeatureRefs.Mobility.ToString())
                 .AddToLevelEntry(2, FeatureRefs.SneakAttack.ToString())
                 .AddToLevelEntry(3, FeatureRefs.AssassinHideInPlainSight.ToString())
-                .AddToLevelEntry(4, FeatureRefs.FastMovement.ToString())
-                .AddToLevelEntry(5, InspirePoiseGuid)
+                .AddToLevelEntry(4, FeatureRefs.FastMovement.ToString(), PerfectSurpriseFeature())
+                .AddToLevelEntry(5, MisfortuneConfigure(), InspirePoiseGuid)
                 .AddToLevelEntry(6, FeatureRefs.SneakAttack.ToString())
                 .AddToLevelEntry(7, CloudMindFeature(), FeatureRefs.HunterWoodlandStride.ToString())
                 .AddToLevelEntry(8, NarrowMissConfigure())
@@ -263,23 +268,29 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         public static BlueprintFeature MisfortuneConfigure()
         {
             var icon = FeatureRefs.ShifterDragonFormFeature.Reference.Get().Icon;
+            var fx = AbilityRefs.PredictionOfFailure.Reference.Get().GetComponent<AbilitySpawnFx>();
 
             var buff = BuffConfigurator.New(MisfortuneBuff, MisfortuneBuffGuid)
                 .SetDisplayName(MisfortuneDisplayName)
                 .SetDescription(MisfortuneDescription)
                 .SetIcon(icon)
-                .AddModifyD20(rule: RuleType.SavingThrow, rollsAmount: 1, rerollOnlyIfSuccess: true, addSavingThrowBonus: true, value: -2, bonusDescriptor: ModifierDescriptor.Penalty)
+                .AddModifyD20(ActionsBuilder.New().RemoveSelf().Build(), rule: RuleType.SavingThrow, rollsAmount: 1, rerollOnlyIfSuccess: true, addSavingThrowBonus: true, value: -2, bonusDescriptor: ModifierDescriptor.Penalty)
+                .AddSpellDescriptorComponent(SpellDescriptor.GazeAttack)
+                .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting)
                 .Configure();
 
             var ability = AbilityConfigurator.New(MisfortuneAbility, MisfortuneAbilityGuid)
                 .SetDisplayName(MisfortuneDisplayName)
                 .SetDescription(MisfortuneDescription)
                 .SetIcon(icon)
+                .AddComponent(fx)
+                .AllowTargeting(false, true, false, false)
                 .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1)).Build())
                 .SetType(AbilityType.Supernatural)
                 .SetRange(AbilityRange.Close)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
-                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Self)
+                .AddSpellDescriptorComponent(SpellDescriptor.GazeAttack)
+                .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
                 .Configure();
 
@@ -290,5 +301,56 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                     .AddFacts(new() { ability })
                     .Configure();
         }
+
+        private const string PerfectSurprise = "LionBladePerfectSurprise";
+        private static readonly string PerfectSurpriseGuid = "{3E57F3EE-8C79-4896-AAD1-358018763EBD}";
+
+        private const string PerfectSurprisePro = "LionBladePerfectSurprisePro";
+        private static readonly string PerfectSurpriseProGuid = "{669E26D8-0AFC-491B-8C98-4EC9F9119D26}";
+
+        internal const string PerfectSurpriseDisplayName = "LionBladePerfectSurprise.Name";
+        private const string PerfectSurpriseDescription = "LionBladePerfectSurprise.Description";
+
+        private const string PerfectSurpriseBuff = "PerfectSurprise.PerfectSurpriseBuff";
+        private static readonly string PerfectSurpriseBuffGuid = "{C49585B9-F617-4936-818D-F36CABFA457D}";
+        public static BlueprintFeature PerfectSurpriseFeature()
+        {
+            var icon = FeatureRefs.ShifterACBonusUnlock.Reference.Get().Icon;
+
+            var buff = BuffConfigurator.New(PerfectSurpriseBuff, PerfectSurpriseBuffGuid)
+                .SetDisplayName(PerfectSurpriseDisplayName)
+                .SetDescription(PerfectSurpriseDescription)
+                .SetIcon(icon)
+                //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+                .Configure();
+
+            var proper = UnitPropertyConfigurator.New(PerfectSurprisePro, PerfectSurpriseProGuid)
+                        .AddClassLevelGetter(clazz: ArchetypeGuid)
+                        .AddSimplePropertyGetter(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusIntelligence)
+                        .Configure();
+
+            var action = ActionsBuilder.New()
+                        .SavingThrow(type: SavingThrowType.Fortitude, customDC: ContextValues.CustomProperty(proper, true),
+                            onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New()
+                                .ApplyBuff(BuffRefs.Unconsious.ToString(), ContextDuration.Variable(ContextValues.Rank()))
+                                .Build(), succeed: ActionsBuilder.New()
+                                .ApplyBuff(buff, ContextDuration.Fixed(1, Kingmaker.UnitLogic.Mechanics.DurationRate.Days))
+                                .Build())
+                            .Build())
+                        .Build();
+
+            var action2 = ActionsBuilder.New()
+                            .Conditional(ConditionsBuilder.New().HasFact(buff).Build(), ifFalse: action)
+                            .Build();
+
+            return FeatureConfigurator.New(PerfectSurprise, PerfectSurpriseGuid)
+              .SetDisplayName(PerfectSurpriseDisplayName)
+              .SetDescription(PerfectSurpriseDescription)
+              .SetIcon(icon)
+              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }))
+              .AddInitiatorAttackWithWeaponTrigger(action2, onCharge: true, onlyHit: true, onlySneakAttack: true)
+              .Configure();
+        }
+        
     }
 }
