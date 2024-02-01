@@ -1,65 +1,65 @@
 ﻿using BlueprintCore.Actions.Builder;
 using BlueprintCore.Blueprints.Configurators.Classes;
+using BlueprintCore.Blueprints.Configurators.UnitLogic.Properties;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
+using BlueprintCore.Blueprints.CustomConfigurators;
 using BlueprintCore.Blueprints.References;
+using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Utils.Types;
 using BlueprintCore.Utils;
+using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Root;
 using Kingmaker.Blueprints;
+using Kingmaker.Designers.Mechanics.Facts;
+using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using PrestigePlus.CustomComponent.PrestigeClass;
-using PrestigePlus.Modify;
+using Kingmaker.UnitLogic.Abilities.Components.Base;
+using Kingmaker.UnitLogic.Mechanics.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Kingmaker.EntitySystem.Stats;
-using PrestigePlus.Blueprint.RogueTalent;
-using BlueprintCore.Blueprints.Configurators.Root;
-using Kingmaker.Blueprints.Classes.Spells;
 using BlueprintCore.Actions.Builder.ContextEx;
-using BlueprintCore.Blueprints.CustomConfigurators;
-using Kingmaker.UnitLogic.Mechanics.Components;
-using Kingmaker.Designers.Mechanics.Facts;
-using Kingmaker.UnitLogic.Abilities.Components.Base;
-using Kingmaker.UnitLogic;
-using BlueprintCore.Blueprints.Configurators.UnitLogic.Properties;
-using BlueprintCore.Conditions.Builder;
-using BlueprintCore.Conditions.Builder.ContextEx;
+using BlueprintCore.Blueprints.Configurators.Root;
+using TabletopTweaks.Core.NewComponents.Prerequisites;
+using PrestigePlus.Modify;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
-    internal class LionBlade
+    internal class EnchantingCourtesan
     {
-        private const string ArchetypeName = "LionBlade";
-        public static readonly string ArchetypeGuid = "{F89F7611-EC5E-4829-9BC1-1F98D5B558F2}";
-        internal const string ArchetypeDisplayName = "LionBlade.Name";
-        private const string ArchetypeDescription = "LionBlade.Description";
+        private const string ArchetypeName = "EnchantingCourtesan";
+        public static readonly string ArchetypeGuid = "{5EFD5A02-D3F0-4A1E-9E3A-D9C1368DB3FA}";
+        internal const string ArchetypeDisplayName = "EnchantingCourtesan.Name";
+        private const string ArchetypeDescription = "EnchantingCourtesan.Description";
 
-        private const string ClassProgressName = "LionBladePrestige";
-        private static readonly string ClassProgressGuid = "{C68888D6-4451-4860-BA90-06F576013670}";
+        private const string ClassProgressName = "EnchantingCourtesanPrestige";
+        private static readonly string ClassProgressGuid = "{9B060568-C3B7-4970-BDC3-69B934F8A2EA}";
 
         public static void Configure()
         {
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, BardicPerformanceFeat(), InspirePoiseFeature(), FeatureRefs.Mobility.ToString())
-                .AddToLevelEntry(2, FeatureRefs.SneakAttack.ToString())
-                .AddToLevelEntry(3, FeatureRefs.AssassinHideInPlainSight.ToString())
-                .AddToLevelEntry(4, FeatureRefs.FastMovement.ToString(), PerfectSurpriseFeature())
-                .AddToLevelEntry(5, MisfortuneConfigure(), InspirePoiseGuid)
-                .AddToLevelEntry(6, FeatureRefs.SneakAttack.ToString())
-                .AddToLevelEntry(7, CloudMindFeature(), FeatureRefs.HunterWoodlandStride.ToString())
-                .AddToLevelEntry(8, NarrowMissConfigure())
-                .AddToLevelEntry(9, InspirePoiseGuid)
-                .AddToLevelEntry(10, SilentSoulFeature(), FeatureRefs.SneakAttack.ToString())
+                .AddToLevelEntry(1, MasterSpyFeat(), SpellbookReplace.spellupgradeGuid)
+                .AddToLevelEntry(2, SeductiveIntuitionFeature())
+                .AddToLevelEntry(3, HiddenSpellFeature())
+                .AddToLevelEntry(4, SeductiveIntuitionGuid)
+                .AddToLevelEntry(5)
+                .AddToLevelEntry(6, SeductiveIntuitionGuid, HiddenSpellGuid)
+                .AddToLevelEntry(7)
+                .AddToLevelEntry(8, SeductiveIntuitionGuid)
+                .AddToLevelEntry(9, HiddenSpellGuid)
+                .AddToLevelEntry(10, SeductiveIntuitionGuid)
+                .SetUIGroups(UIGroupBuilder.New()
+                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] {  }))
+                ///.AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { SeekerArrowGuid, PhaseArrowGuid, HailArrowGuid, DeathArrowGuid }))
                 .SetRanks(1)
                 .SetIsClassFeature(true)
                 .SetDisplayName("")
@@ -70,39 +70,22 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetLocalizedName(ArchetypeDisplayName)
                 .SetLocalizedDescription(ArchetypeDescription)
                 .SetSkillPoints(6)
-                .SetHitDie(DiceType.D8)
+                .SetHitDie(DiceType.D6)
                 .SetPrestigeClass(true)
-                .SetBaseAttackBonus(StatProgressionRefs.BABMedium.ToString())
-                .SetFortitudeSave(StatProgressionRefs.SavesPrestigeLow.ToString())
-                .SetReflexSave(StatProgressionRefs.SavesPrestigeHigh.ToString())
+                .SetBaseAttackBonus(StatProgressionRefs.BABLow.ToString())
+                .SetFortitudeSave(StatProgressionRefs.SavesPrestigeHigh.ToString())
+                .SetReflexSave(StatProgressionRefs.SavesPrestigeLow.ToString())
                 .SetWillSave(StatProgressionRefs.SavesPrestigeHigh.ToString())
                 .SetProgression(progression)
-                .SetClassSkills(new StatType[] { StatType.SkillAthletics, StatType.SkillMobility, StatType.SkillThievery, StatType.SkillStealth, StatType.SkillKnowledgeWorld, StatType.SkillPerception, StatType.SkillPersuasion })
-                .AddPrerequisiteStatValue(StatType.SneakAttack, 2)
-                .AddPrerequisiteFeaturesFromList(new() { FeatureRefs.InspireCompetenceFeature.ToString(), FeatureRefs.SenseiInspireCompetenceFeature.ToString(), CloyingShades.CloyingShadesGuid }, 1)
-                .AddPrerequisiteStatValue(StatType.SkillStealth, 5)
-                .AddPrerequisiteStatValue(StatType.SkillPersuasion, 3)
-                .AddPrerequisiteStatValue(StatType.SkillUseMagicDevice, 3)
-                .AddPrerequisiteFeaturesFromList(new() { FeatureRefs.Deceitful.ToString(), FeatureRefs.SkillFocusDiplomacy.ToString() }, 1)
-                .AddPrerequisiteFeature(FeatureRefs.Improved_Initiative.ToString())
+                .SetClassSkills(new StatType[] { StatType.SkillMobility, StatType.SkillThievery, StatType.SkillStealth, StatType.SkillKnowledgeWorld, StatType.SkillKnowledgeArcana, StatType.SkillLoreReligion, StatType.SkillPerception, StatType.SkillPersuasion })
+                .AddPrerequisiteParametrizedSpellSchoolFeature(ParametrizedFeatureRefs.SpellFocus.ToString(), SpellSchool.Divination, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .AddPrerequisiteParametrizedSpellSchoolFeature(ParametrizedFeatureRefs.SpellFocus.ToString(), SpellSchool.Enchantment, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .AddPrerequisiteStatValue(StatType.SkillPerception, 5)
+                .AddPrerequisiteStatValue(StatType.SkillPersuasion, 5)
+                .AddPrerequisiteStatValue(StatType.SkillKnowledgeArcana, 2)
+                .AddPrerequisiteStatValue(StatType.SkillUseMagicDevice, 2)
+                .AddComponent<PrerequisiteCasterLevel>(c => { c.RequiredCasterLevel = 2; })
                 .Configure();
-
-            var list = new List<ContextRankConfig>() { };
-
-            list.AddRange(BuffRefs.InspireCourageEffectBuff.Reference.Get().GetComponents<ContextRankConfig>());
-            list.AddRange(BuffRefs.InspireCourageMythicEffectBuff.Reference.Get().GetComponents<ContextRankConfig>());
-            list.AddRange(BuffRefs.InspireCompetenceEffectBuff.Reference.Get().GetComponents<ContextRankConfig>());
-            list.AddRange(BuffRefs.InspireCompetenceMythicEffectBuff.Reference.Get().GetComponents<ContextRankConfig>());
-            list.AddRange(BuffRefs.InspireTranquilityEffectBuff.Reference.Get().GetComponents<ContextRankConfig>());
-            list.AddRange(BuffRefs.InspireTranquilityEffectBuffMythic.Reference.Get().GetComponents<ContextRankConfig>());
-
-            foreach (var item in list)
-            {
-                if (item.m_Class?.Length > 0)
-                {
-                    CommonTool.Append(item.m_Class, archetype.ToReference<BlueprintCharacterClassReference>());
-                }
-            }
 
             Action<ProgressionRoot> act = delegate (ProgressionRoot i)
             {
@@ -111,8 +94,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 {
                     result[a] = i.m_CharacterClasses[a];
                 }
-                var LionBladeref = archetype.ToReference<BlueprintCharacterClassReference>();
-                result[i.m_CharacterClasses.Length] = LionBladeref;
+                var EnchantingCourtesanref = archetype.ToReference<BlueprintCharacterClassReference>();
+                result[i.m_CharacterClasses.Length] = EnchantingCourtesanref;
                 i.m_CharacterClasses = result;
             };
 
@@ -121,88 +104,109 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .Configure(delayed: true);
         }
 
-        private const string BardicPerformance = "LionBlade.BardicPerformance";
-        public static readonly string BardicPerformanceGuid = "{5BA6961C-2228-4DDB-A46C-7A095C2D5677}";
+        private const string MasterSpy = "EnchantingCourtesan.MasterSpy";
+        public static readonly string MasterSpyGuid = "{C07AE528-7C26-40D9-9573-D0C351760E4C}";
 
-        internal const string BardicPerformanceDisplayName = "LionBladeBardicPerformance.Name";
-        private const string BardicPerformanceDescription = "LionBladeBardicPerformance.Description";
+        internal const string MasterSpyDisplayName = "EnchantingCourtesanMasterSpy.Name";
+        private const string MasterSpyDescription = "EnchantingCourtesanMasterSpy.Description";
 
-        public static BlueprintProgression BardicPerformanceFeat()
+        public static BlueprintProgression MasterSpyFeat()
         {
             var icon = FeatureRefs.InspireCompetenceFeature.Reference.Get().Icon;
 
-            return ProgressionConfigurator.New(BardicPerformance, BardicPerformanceGuid)
-              .SetDisplayName(BardicPerformanceDisplayName)
-              .SetDescription(BardicPerformanceDescription)
+            return ProgressionConfigurator.New(MasterSpy, MasterSpyGuid)
+              .SetDisplayName(MasterSpyDisplayName)
+              .SetDescription(MasterSpyDescription)
               .SetIcon(icon)
+              .AddPrerequisiteFeaturesFromList(new() { FeatureRefs.Deceitful.ToString(), FeatureRefs.IronWill.ToString() }, 1)
               .SetIsClassFeature(true)
-              .AddToClasses(CharacterClassRefs.BardClass.ToString())
               .AddToClasses(ArchetypeGuid)
-              .AddIncreaseResourceAmountBySharedValue(decrease: false, resource: AbilityResourceRefs.BardicPerformanceResource.ToString(), value: ContextValues.Rank())
-              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new[] { ArchetypeGuid }).WithBonusValueProgression(0, true))
-              .AddToLevelEntry(1, FeatureRefs.BardicPerformanceResourceFact.ToString())
-              .AddToLevelEntry(7, FeatureRefs.BardMovePerformance.ToString())
-              .AddToLevelEntry(13, FeatureRefs.BardSwiftPerformance.ToString())
+              .AddToLevelEntry(1, FeatureRefs.SneakAttack.ToString())
+              .AddToLevelEntry(2, MaskAlignmentFeature())
+              .AddToLevelEntry(4, FeatureRefs.SneakAttack.ToString())
+              .AddToLevelEntry(7, FeatureRefs.SneakAttack.ToString())
+              .AddToLevelEntry(9, HiddenMindFeature())
+              .AddToLevelEntry(10, FeatureRefs.SneakAttack.ToString())
               .Configure();
         }
 
-        private const string InspirePoise = "LionBladeInspirePoise";
-        private static readonly string InspirePoiseGuid = "{37B8ABCD-4064-4C40-A26D-F4809B8BDB40}";
+        private const string SeductiveIntuition = "EnchantingCourtesanSeductiveIntuition";
+        private static readonly string SeductiveIntuitionGuid = "{408692DA-8EFD-4A49-BA7E-51578894B5E5}";
 
-        internal const string InspirePoiseDisplayName = "LionBladeInspirePoise.Name";
-        private const string InspirePoiseDescription = "LionBladeInspirePoise.Description";
-        public static BlueprintFeature InspirePoiseFeature()
+        internal const string SeductiveIntuitionDisplayName = "EnchantingCourtesanSeductiveIntuition.Name";
+        private const string SeductiveIntuitionDescription = "EnchantingCourtesanSeductiveIntuition.Description";
+        public static BlueprintFeature SeductiveIntuitionFeature()
         {
             var icon = AbilityRefs.EuphoricTranquilityCast.Reference.Get().Icon;
-            return FeatureConfigurator.New(InspirePoise, InspirePoiseGuid)
-              .SetDisplayName(InspirePoiseDisplayName)
-              .SetDescription(InspirePoiseDescription)
+            return FeatureConfigurator.New(SeductiveIntuition, SeductiveIntuitionGuid)
+              .SetDisplayName(SeductiveIntuitionDisplayName)
+              .SetDescription(SeductiveIntuitionDescription)
               .SetIcon(icon)
+              .AddContextStatBonus(StatType.CheckBluff, ContextValues.Rank(), ModifierDescriptor.Competence)
+              .AddContextStatBonus(StatType.CheckDiplomacy, ContextValues.Rank(), ModifierDescriptor.Competence)
+              .AddContextStatBonus(StatType.SkillPerception, ContextValues.Rank(), ModifierDescriptor.Competence)
+              .AddContextStatBonus(StatType.SkillThievery, ContextValues.Rank(), ModifierDescriptor.Competence)
               .AddBuffAllSkillsBonusAbilityValue(ModifierDescriptor.Competence, ContextValues.Rank())
-              .AddContextRankConfig(ContextRankConfigs.FeatureRank(InspirePoiseGuid).WithBonusValueProgression(0, true))
+              .AddContextRankConfig(ContextRankConfigs.FeatureRank(SeductiveIntuitionGuid))
               .SetRanks(10)
               .Configure();
         }
 
-        private const string CloudMind = "LionBladeCloudMind";
-        public static readonly string CloudMindGuid = "{A7C73185-C581-4EDC-8A95-EEE3D4369830}";
+        private const string HiddenSpell = "EnchantingCourtesanHiddenSpell";
+        private static readonly string HiddenSpellGuid = "{89EFD710-16C2-43E3-B075-BCEAA6BB6C23}";
 
-        internal const string CloudMindDisplayName = "LionBladeCloudMind.Name";
-        private const string CloudMindDescription = "LionBladeCloudMind.Description";
-        public static BlueprintFeature CloudMindFeature()
+        internal const string HiddenSpellDisplayName = "EnchantingCourtesanHiddenSpell.Name";
+        private const string HiddenSpellDescription = "EnchantingCourtesanHiddenSpell.Description";
+        public static BlueprintFeature HiddenSpellFeature()
         {
-            var icon = AbilityRefs.MindFog.Reference.Get().Icon;
-            return FeatureConfigurator.New(CloudMind, CloudMindGuid)
-              .SetDisplayName(CloudMindDisplayName)
-              .SetDescription(CloudMindDescription)
+            var icon = AbilityRefs.EuphoricTranquilityCast.Reference.Get().Icon;
+            return FeatureConfigurator.New(HiddenSpell, HiddenSpellGuid)
+              .SetDisplayName(HiddenSpellDisplayName)
+              .SetDescription(HiddenSpellDescription)
               .SetIcon(icon)
-              .AddStatBonus(ModifierDescriptor.Insight, false, StatType.SkillStealth, 5)
+
+              .SetRanks(10)
+              .Configure();
+        }
+
+        private const string HiddenMind = "EnchantingCourtesanHiddenMind";
+        public static readonly string HiddenMindGuid = "{01661653-5877-4A6B-B4DF-EE8D9C26AD47}";
+
+        internal const string HiddenMindDisplayName = "EnchantingCourtesanHiddenMind.Name";
+        private const string HiddenMindDescription = "EnchantingCourtesanHiddenMind.Description";
+        public static BlueprintFeature HiddenMindFeature()
+        {
+            var icon = AbilityRefs.MindBlankCommunal.Reference.Get().Icon;
+            return FeatureConfigurator.New(HiddenMind, HiddenMindGuid)
+              .SetDisplayName(HiddenMindDisplayName)
+              .SetDescription(HiddenMindDescription)
+              .SetIcon(icon)
+              .AddSavingThrowBonusAgainstDescriptor(8, modifierDescriptor: ModifierDescriptor.Resistance, spellDescriptor: SpellDescriptor.MindAffecting)
               .AddFacts(new() { FeatureRefs.DivinationImmunityFeature.ToString() })
               .Configure();
         }
 
-        private const string SilentSoul = "LionBladeSilentSoul";
-        private static readonly string SilentSoulGuid = "{8F05CF79-26E2-4741-96B4-AFE8FD2A57BA}";
+        private const string MaskAlignment = "EnchantingCourtesanMaskAlignment";
+        private static readonly string MaskAlignmentGuid = "{EE2BF850-589D-49A1-98FB-2B11D0920860}";
 
-        internal const string SilentSoulDisplayName = "LionBladeSilentSoul.Name";
-        private const string SilentSoulDescription = "LionBladeSilentSoul.Description";
-        public static BlueprintFeature SilentSoulFeature()
+        internal const string MaskAlignmentDisplayName = "EnchantingCourtesanMaskAlignment.Name";
+        private const string MaskAlignmentDescription = "EnchantingCourtesanMaskAlignment.Description";
+        public static BlueprintFeature MaskAlignmentFeature()
         {
             var icon = AbilityRefs.MindBlank.Reference.Get().Icon;
-            return FeatureConfigurator.New(SilentSoul, SilentSoulGuid)
-              .SetDisplayName(SilentSoulDisplayName)
-              .SetDescription(SilentSoulDescription)
+            return FeatureConfigurator.New(MaskAlignment, MaskAlignmentGuid)
+              .SetDisplayName(MaskAlignmentDisplayName)
+              .SetDescription(MaskAlignmentDescription)
               .SetIcon(icon)
-              .AddStatBonus(ModifierDescriptor.Circumstance, false, StatType.SkillStealth, 10)
-              .AddSpellResistanceAgainstSpellDescriptor(spellDescriptor: SpellDescriptor.MindAffecting, value: 20)
+              .AddUndetectableAlignment()
               .Configure();
         }
 
-        private static readonly string NarrowMissName = "LionBladeNarrowMiss";
+        private static readonly string NarrowMissName = "EnchantingCourtesanNarrowMiss";
         public static readonly string NarrowMissGuid = "{6316C32A-BD50-4A18-BC96-CDEDF9BEDA10}";
 
-        private static readonly string NarrowMissDisplayName = "LionBladeNarrowMiss.Name";
-        private static readonly string NarrowMissDescription = "LionBladeNarrowMiss.Description";
+        private static readonly string NarrowMissDisplayName = "EnchantingCourtesanNarrowMiss.Name";
+        private static readonly string NarrowMissDescription = "EnchantingCourtesanNarrowMiss.Description";
 
         private const string NarrowMissAbility = "NarrowMiss.NarrowMissAbility";
         private static readonly string NarrowMissAbilityGuid = "{5A16E581-674C-4EB5-855D-FB91480023B3}";
@@ -210,7 +214,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string NarrowMissBuff = "NarrowMiss.NarrowMissBuff";
         private static readonly string NarrowMissBuffGuid = "{82225953-51DA-4850-A1C4-2F8714EEB3CD}";
 
-        private const string NarrowMissAblityRes = "LionBlade.NarrowMissRes";
+        private const string NarrowMissAblityRes = "EnchantingCourtesan.NarrowMissRes";
         public static readonly string NarrowMissAblityResGuid = "{92FD5B7B-9BA8-4D4A-B9BF-23182F894090}";
         public static BlueprintFeature NarrowMissConfigure()
         {
@@ -252,11 +256,11 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                     .Configure();
         }
 
-        private static readonly string MisfortuneName = "LionBladeMisfortune";
+        private static readonly string MisfortuneName = "EnchantingCourtesanMisfortune";
         public static readonly string MisfortuneGuid = "{BF8469EB-FBE5-4ABA-9393-2E7B168D9CA0}";
 
-        private static readonly string MisfortuneDisplayName = "LionBladeMisfortune.Name";
-        private static readonly string MisfortuneDescription = "LionBladeMisfortune.Description";
+        private static readonly string MisfortuneDisplayName = "EnchantingCourtesanMisfortune.Name";
+        private static readonly string MisfortuneDescription = "EnchantingCourtesanMisfortune.Description";
 
         private const string MisfortuneAbility = "Misfortune.MisfortuneAbility";
         private static readonly string MisfortuneAbilityGuid = "{C14D3F23-7746-45BC-A65F-8683362FEF1F}";
@@ -300,14 +304,14 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                     .Configure();
         }
 
-        private const string PerfectSurprise = "LionBladePerfectSurprise";
+        private const string PerfectSurprise = "EnchantingCourtesanPerfectSurprise";
         private static readonly string PerfectSurpriseGuid = "{3E57F3EE-8C79-4896-AAD1-358018763EBD}";
 
-        private const string PerfectSurprisePro = "LionBladePerfectSurprisePro";
+        private const string PerfectSurprisePro = "EnchantingCourtesanPerfectSurprisePro";
         private static readonly string PerfectSurpriseProGuid = "{669E26D8-0AFC-491B-8C98-4EC9F9119D26}";
 
-        internal const string PerfectSurpriseDisplayName = "LionBladePerfectSurprise.Name";
-        private const string PerfectSurpriseDescription = "LionBladePerfectSurprise.Description";
+        internal const string PerfectSurpriseDisplayName = "EnchantingCourtesanPerfectSurprise.Name";
+        private const string PerfectSurpriseDescription = "EnchantingCourtesanPerfectSurprise.Description";
 
         private const string PerfectSurpriseBuff = "PerfectSurprise.PerfectSurpriseBuff";
         private static readonly string PerfectSurpriseBuffGuid = "{C49585B9-F617-4936-818D-F36CABFA457D}";
@@ -352,6 +356,5 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddInitiatorAttackWithWeaponTrigger(action2, onCharge: true, onlyHit: true, onlySneakAttack: true)
               .Configure();
         }
-        
     }
 }

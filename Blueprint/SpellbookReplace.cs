@@ -25,7 +25,7 @@ namespace PrestigePlus.Modify
         public static readonly string AccursedWitchDescription = "AccursedWitch.Description";
 
         private const string spellupgrade = "Spellupgrade2";
-        private static readonly string spellupgradeGuid = "{05DC9561-0542-41BD-9E9F-404F59AB68C5}";
+        public static readonly string spellupgradeGuid = "{05DC9561-0542-41BD-9E9F-404F59AB68C5}";
 
         internal const string SpellupgradeDisplayName = "Spellupgrade.Name";
         private const string SpellupgradeDescription = "Spellupgrade.Description";
