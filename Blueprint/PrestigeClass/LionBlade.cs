@@ -325,15 +325,16 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
                 .Configure();
 
-            var proper = UnitPropertyConfigurator.New(PerfectSurprisePro, PerfectSurpriseProGuid)
+            UnitPropertyConfigurator.New(PerfectSurprisePro, PerfectSurpriseProGuid)
                         .AddClassLevelGetter(clazz: ArchetypeGuid)
                         .AddSimplePropertyGetter(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusIntelligence)
+                        .SetBaseValue(10)
                         .Configure();
 
             var action = ActionsBuilder.New()
-                        .SavingThrow(type: SavingThrowType.Fortitude, customDC: ContextValues.CustomProperty(proper, true),
+                        .SavingThrow(type: SavingThrowType.Fortitude, customDC: ContextValues.Rank(AbilityRankType.DamageDice),
                             onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New()
-                                .ApplyBuff(BuffRefs.Unconsious.ToString(), ContextDuration.Variable(ContextValues.Rank()))
+                                .ApplyBuff(BuffRefs.Unconsious.ToString(), ContextDuration.Variable(ContextValues.Rank(AbilityRankType.DamageBonus)))
                                 .ApplyBuff(buff, ContextDuration.Fixed(1, Kingmaker.UnitLogic.Mechanics.DurationRate.Days))
                                 .Build(), succeed: ActionsBuilder.New()
                                 .ApplyBuff(buff, ContextDuration.Fixed(1, Kingmaker.UnitLogic.Mechanics.DurationRate.Days))
@@ -349,7 +350,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(PerfectSurpriseDisplayName)
               .SetDescription(PerfectSurpriseDescription)
               .SetIcon(icon)
-              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }))
+              .AddContextRankConfig(ContextRankConfigs.CustomProperty(PerfectSurpriseProGuid, AbilityRankType.DamageDice))
+              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }, false, AbilityRankType.DamageBonus))
               .AddInitiatorAttackWithWeaponTrigger(action2, onCharge: true, onlyHit: true, onlySneakAttack: true)
               .Configure();
         }
