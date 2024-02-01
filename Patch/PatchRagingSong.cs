@@ -23,13 +23,14 @@ using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.Cheats;
 using Pathfinding.Voxels;
 using Kingmaker.Blueprints.Root;
+using Kingmaker.UnitLogic.Buffs.Blueprints;
 
 namespace PrestigePlus.Patch
 {
-    internal class PatchKinetic
+    internal class PatchRagingSong
     {
         private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
-        private static BlueprintFeatureReference feat;// = BlueprintTool.GetRef<BlueprintFeatureReference>(EsotericKnight.FeatGuidPro2);
+        private static BlueprintFeatureReference feat = BlueprintTool.GetRef<BlueprintFeatureReference>(AnchoriteofDawn.AnchoriteSongPlusfeatGuid);
         public static void PatchDomains(string fref)
         {
             var feature = BlueprintTool.GetRef<BlueprintFeatureBaseReference>(fref).Get();
@@ -211,16 +212,27 @@ namespace PrestigePlus.Patch
         }
         public static void Patch()
         {
-            var list = FeatureSelectionRefs.InfusionSelection.Reference.Get().m_AllFeatures;
-            foreach (var domain in list)
+            PatchBuffSimple(BuffRefs.InspiredRageEffectBuff.Reference.Get());
+            PatchBuffSimple(BuffRefs.InspiredRageEffectBuffMythic.Reference.Get());
+        }
+
+        public static void PatchBuffSimple(BlueprintBuff buff)
+        {
+            try
             {
-                PatchDomains(domain.Guid.ToString());
+                IEnumerable<ContextRankConfig> crcs = buff.GetComponents<ContextRankConfig>();
+                if (crcs != null && crcs.Any())
+                {
+                    foreach (ContextRankConfig crc in crcs)
+                    {
+                        if (PatchConfig(crc))
+                        {
+                            Logger.Info(buff.NameSafe());
+                        }
+                    }
+                }
             }
-            var list2 = FeatureSelectionRefs.WildTalentSelection.Reference.Get().m_AllFeatures;
-            foreach (var domain in list2)
-            {
-                PatchDomains(domain.Guid.ToString());
-            }
+            catch (Exception e) { Logger.Error("Failed to edit buff.", e); }
         }
     }
 }

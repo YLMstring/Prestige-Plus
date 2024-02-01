@@ -599,17 +599,41 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         internal const string FocusedRagingSongDisplayName = "AnchoriteFocusedRagingSong.Name";
         private const string FocusedRagingSongDescription = "AnchoriteFocusedRagingSong.Description";
 
+        private const string AnchoriteSongPlusfeat = "Anchorite.AnchoriteSongPlusfeat";
+        public static readonly string AnchoriteSongPlusfeatGuid = "{09AA488A-8E30-4868-AF86-22E678B6BAC4}";
+
+        private const string AnchoriteSongPlusfeat1 = "Anchorite.AnchoriteSongPlusfeat1";
+        public static readonly string AnchoriteSongPlusfeat1Guid = "{C19350F5-AC99-4E94-8439-7E5116CC565E}";
         public static BlueprintProgression FocusedRagingSongFeat()
         {
             var icon = FeatureRefs.RagingSong.Reference.Get().Icon;
 
-            BuffConfigurator.For(BuffRefs.InspiredRageEffectBuff)
-                .AddComponent<DawnRagingSongComp>()
-                .Configure();
+            var feat1 = FeatureConfigurator.New(AnchoriteSongPlusfeat, AnchoriteSongPlusfeatGuid)
+              .SetDisplayName(FocusedRagingSongDisplayName)
+              .SetDescription(FocusedRagingSongDescription)
+              .SetIsClassFeature(true)
+              .SetRanks(20)
+              .SetHideInUI(true)
+              .Configure();
 
-            BuffConfigurator.For(BuffRefs.InspiredRageEffectBuffMythic)
-                .AddComponent<DawnRagingSongComp>()
-                .Configure();
+            var feat = ProgressionConfigurator.New(AnchoriteSongPlusfeat1, AnchoriteSongPlusfeat1Guid)
+              .SetDisplayName(FocusedRagingSongDisplayName)
+              .SetDescription(FocusedRagingSongDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToClasses(ArchetypeGuid)
+              .AddToLevelEntry(1, feat1)
+              .AddToLevelEntry(2, feat1)
+                .AddToLevelEntry(3, feat1)
+                .AddToLevelEntry(4, feat1)
+                .AddToLevelEntry(5, feat1)
+                .AddToLevelEntry(6, feat1)
+                .AddToLevelEntry(7, feat1)
+                .AddToLevelEntry(8, feat1)
+                .AddToLevelEntry(9, feat1)
+                .AddToLevelEntry(10, feat1)
+              .Configure();
 
             return ProgressionConfigurator.New(FocusedRagingSong, FocusedRagingSongGuid)
               .SetDisplayName(FocusedRagingSongDisplayName)
@@ -622,6 +646,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddToClasses(ArchetypeGuid)
               .AddIncreaseResourceAmountBySharedValue(decrease: false, resource: AbilityResourceRefs.RagingSongResource.ToString(), value: ContextValues.Rank())
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new[] { ArchetypeGuid }).WithBonusValueProgression(0, true))
+              .AddToLevelEntry(1, feat)
               .AddToLevelEntry(6, FeatureRefs.SongOfStrength.ToString())
               .AddToLevelEntry(7, FeatureRefs.SKaldMovePerformance.ToString())
               .AddToLevelEntry(10, FeatureRefs.DirgeOfDoom.ToString())
