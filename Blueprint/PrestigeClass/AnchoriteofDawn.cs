@@ -64,12 +64,11 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static void Configure()
         {
-            string spellupgradeGuid = "{05DC9561-0542-41BD-9E9F-404F59AB68C5}";
             CredenceFeat();
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, SASolarInvocation(), spellupgradeGuid)
+                .AddToLevelEntry(1, SASolarInvocation(), SpellbookReplace.spellupgradeGuid)
                 .AddToLevelEntry(2, CredenceGuid)
                 .AddToLevelEntry(3, SABaskRadiance())
                 .AddToLevelEntry(4, CredenceGuid)
@@ -107,21 +106,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddComponent<PrerequisiteCasterLevel>(c => { c.RequiredCasterLevel = 2; })
                 .Configure();
 
-            Action<ProgressionRoot> act = delegate (ProgressionRoot i)
-            {
-                BlueprintCharacterClassReference[] result = new BlueprintCharacterClassReference[i.m_CharacterClasses.Length + 1];
-                for (int a = 0; a < i.m_CharacterClasses.Length; a++)
-                {
-                    result[a] = i.m_CharacterClasses[a];
-                }
-                var AnchoriteofDawnref = archetype.ToReference<BlueprintCharacterClassReference>();
-                result[i.m_CharacterClasses.Length] = AnchoriteofDawnref;
-                i.m_CharacterClasses = result;
-            };
-
-            RootConfigurator.For(RootRefs.BlueprintRoot)
-                .ModifyProgression(act)
-                .Configure();
+            FakeAlignedClass.AddtoMenu(archetype);
         }
 
         private const string Credence = "AnchoriteofDawn.Credence";

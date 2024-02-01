@@ -62,16 +62,13 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         private const string ClassProgressName = "ScarSeekerPrestige";
         private static readonly string ClassProgressGuid = "{9A7C75F8-529F-48AA-8702-CD2AB693EA68}";
-
-        private static readonly string spellupgradeGuid = "{05DC9561-0542-41BD-9E9F-404F59AB68C5}";
-
         public static void Configure()
         {
             EnduringScarFeat();
             BlueprintProgression progression =
             ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
             .SetClasses(ArchetypeGuid)
-            .AddToLevelEntry(1, EnduringScarGuid, PurifyFeat(), spellupgradeGuid, FeatureRefs.MythicIgnoreAlignmentRestrictions.ToString())
+            .AddToLevelEntry(1, EnduringScarGuid, PurifyFeat(), SpellbookReplace.spellupgradeGuid, FeatureRefs.MythicIgnoreAlignmentRestrictions.ToString())
             .AddToLevelEntry(2, FeatureRefs.LayOnHandsFeature.ToString())
             .AddToLevelEntry(3, EnduringScarGuid)
             .AddToLevelEntry(4, SSChampionHonor())
@@ -112,21 +109,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             .AddPrerequisiteAlignment(AlignmentMaskType.TrueNeutral, checkInProgression: true, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
             .Configure();
 
-            Action<ProgressionRoot> act = delegate (ProgressionRoot i)
-                {
-                    BlueprintCharacterClassReference[] result = new BlueprintCharacterClassReference[i.m_CharacterClasses.Length + 1];
-                    for (int a = 0; a < i.m_CharacterClasses.Length; a++)
-                    {
-                        result[a] = i.m_CharacterClasses[a];
-                    }
-                    var ScarSeekerref = archetype.ToReference<BlueprintCharacterClassReference>();
-                    result[i.m_CharacterClasses.Length] = ScarSeekerref;
-                    i.m_CharacterClasses = result;
-                };
-
-            RootConfigurator.For(RootRefs.BlueprintRoot)
-                .ModifyProgression(act)
-                .Configure(delayed: true);
+            FakeAlignedClass.AddtoMenu(archetype);
 
             ///put healing in here
 

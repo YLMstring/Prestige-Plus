@@ -57,12 +57,10 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private static readonly string DeathArrowGuid = "{8656CF6B-810D-4493-8898-51991ABC73DE}";
         public static void Configure()
         {
-            string spellupgradeGuid = "{05DC9561-0542-41BD-9E9F-404F59AB68C5}";
-
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, ProficienciesGuid, spellupgradeGuid, EnhanceArrows1Guid)
+                .AddToLevelEntry(1, ProficienciesGuid, SpellbookReplace.spellupgradeGuid, EnhanceArrows1Guid)
                 .AddToLevelEntry(2, ImbueArrow.FeatGuid, FeatureRefs.ReachSpellFeat.ToString())
                 .AddToLevelEntry(3, EnhanceArrows2Guid)
                 .AddToLevelEntry(4, CreateEnergyArrow())
@@ -103,21 +101,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddPrerequisiteCasterTypeSpellLevel(false, false, 1)
                 .Configure();
 
-            Action<ProgressionRoot> act = delegate (ProgressionRoot i)
-            {
-                BlueprintCharacterClassReference[] result = new BlueprintCharacterClassReference[i.m_CharacterClasses.Length + 1];
-                for (int a = 0; a < i.m_CharacterClasses.Length; a++)
-                {
-                    result[a] = i.m_CharacterClasses[a];
-                }
-                var DeadeyeDevoteeref = archetype.ToReference<BlueprintCharacterClassReference>();
-                result[i.m_CharacterClasses.Length] = DeadeyeDevoteeref;
-                i.m_CharacterClasses = result;
-            };
-
-            RootConfigurator.For(RootRefs.BlueprintRoot)
-                .ModifyProgression(act)
-                .Configure(delayed: true);
+            FakeAlignedClass.AddtoMenu(archetype);
         }
 
         private const string EnergyArrow = "DeadeyeDevotee.EnergyArrow";

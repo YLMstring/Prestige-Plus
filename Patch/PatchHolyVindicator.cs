@@ -5,6 +5,7 @@ using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
 using Kingmaker.Utility;
 using PrestigePlus.Blueprint.PrestigeClass;
+using PrestigePlus.Modify;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,11 +19,9 @@ namespace PrestigePlus.Patch
         private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         public static void Patch()
         {
-            string spellupgradeGuid = "{05DC9561-0542-41BD-9E9F-404F59AB68C5}";
-
             var progress = BlueprintTool.GetRef<BlueprintProgressionReference>("7162d325539a4c66a163fe49c42f279a")?.Get();
             if (progress == null) { Logger.Info("not found hv");  return; }
-            var Spell = BlueprintTool.GetRef<BlueprintFeatureBaseReference>(spellupgradeGuid);
+            var Spell = BlueprintTool.GetRef<BlueprintFeatureBaseReference>(SpellbookReplace.spellupgradeGuid);
             var old = BlueprintTool.GetRef<BlueprintFeatureBaseReference>("7d94808783e742e8bb8dc4d82e30ca0e");
             var feat1 = BlueprintTool.GetRef<BlueprintFeatureBaseReference>(HolyVindicator.DivineWrathGuid);
             var feat2 = BlueprintTool.GetRef<BlueprintFeatureBaseReference>(HolyVindicator.DivineJudgmentGuid);

@@ -15,6 +15,8 @@ using System.Text;
 using System.Threading.Tasks;
 using TabletopTweaks.Core.NewComponents.Prerequisites;
 using Kingmaker.EntitySystem.Stats;
+using System.Security.AccessControl;
+using BlueprintCore.Blueprints.Configurators.Root;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -50,6 +52,25 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             .SetProgression(progression)
             .SetClassSkills(new StatType[] {  })
             .Configure();
+        }
+
+        public static void AddtoMenu(BlueprintCharacterClass clazz)
+        {
+            void act(ProgressionRoot i)
+            {
+                BlueprintCharacterClassReference[] result = new BlueprintCharacterClassReference[i.m_CharacterClasses.Length + 1];
+                for (int a = 0; a < i.m_CharacterClasses.Length; a++)
+                {
+                    result[a] = i.m_CharacterClasses[a];
+                }
+                var clazzref = clazz.ToReference<BlueprintCharacterClassReference>();
+                result[i.m_CharacterClasses.Length] = clazzref;
+                i.m_CharacterClasses = result;
+            }
+
+            RootConfigurator.For(RootRefs.BlueprintRoot)
+                .ModifyProgression(act)
+                .Configure(delayed: true);
         }
     }
 }

@@ -51,6 +51,7 @@ using TabletopTweaks.Core.NewComponents.Prerequisites;
 using PrestigePlus.CustomComponent.PrestigeClass;
 using PrestigePlus.Patch;
 using PrestigePlus.CustomComponent;
+using PrestigePlus.Modify;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -71,11 +72,10 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private static readonly string ClassProgressGuid = "{C7BA87F4-64B1-4F3F-AF2F-974A3D1AF180}";
         public static void Configure()
         {
-            string spellupgradeGuid = "{05DC9561-0542-41BD-9E9F-404F59AB68C5}";
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, spellupgradeGuid, CreateLichTouch(), CreateUnholyFortitude())
+                .AddToLevelEntry(1, SpellbookReplace.spellupgradeGuid, CreateLichTouch(), CreateUnholyFortitude())
                 .AddToLevelEntry(2, FeatureRefs.BloodlineUndeadArcana.ToString())
                 .AddToLevelEntry(3, CreateDesecrate())
                 .AddToLevelEntry(4, FeatureRefs.NegativeEnergyAffinityDhampir.ToString(), CreateDeathShroud())
@@ -107,21 +107,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticNeutral, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                 .Configure();
 
-            Action<ProgressionRoot> act = delegate (ProgressionRoot i)
-            {
-                BlueprintCharacterClassReference[] result = new BlueprintCharacterClassReference[i.m_CharacterClasses.Length + 1];
-                for (int a = 0; a < i.m_CharacterClasses.Length; a++)
-                {
-                    result[a] = i.m_CharacterClasses[a];
-                }
-                var AgentoftheGraveref = archetype.ToReference<BlueprintCharacterClassReference>();
-                result[i.m_CharacterClasses.Length] = AgentoftheGraveref;
-                i.m_CharacterClasses = result;
-            };
-
-            RootConfigurator.For(RootRefs.BlueprintRoot)
-                .ModifyProgression(act)
-                .Configure(delayed: true);
+            FakeAlignedClass.AddtoMenu(archetype);
         }
 
         private const string LichTouch = "AgentoftheGrave.LichTouch";

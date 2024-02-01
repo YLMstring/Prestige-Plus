@@ -87,21 +87,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddPrerequisiteClassLevel(ArchetypeGuid, 3, not: true)
                 .Configure();
 
-            Action<ProgressionRoot> act = delegate (ProgressionRoot i)
-            {
-                BlueprintCharacterClassReference[] result = new BlueprintCharacterClassReference[i.m_CharacterClasses.Length + 1];
-                for (int a = 0; a < i.m_CharacterClasses.Length; a++)
-                {
-                    result[a] = i.m_CharacterClasses[a];
-                }
-                var Chevalierref = archetype.ToReference<BlueprintCharacterClassReference>();
-                result[i.m_CharacterClasses.Length] = Chevalierref;
-                i.m_CharacterClasses = result;
-            };
-
-            RootConfigurator.For(RootRefs.BlueprintRoot)
-                .ModifyProgression(act)
-                .Configure(delayed: true);
+            FakeAlignedClass.AddtoMenu(archetype);
         }
 
         private const string Reckless = "Chevalier.Reckless";

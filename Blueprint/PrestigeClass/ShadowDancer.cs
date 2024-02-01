@@ -117,21 +117,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddPrerequisiteFeature(FeatureRefs.Mobility.ToString())
                 .Configure();
 
-            Action<ProgressionRoot> act = delegate (ProgressionRoot i)
-            {
-                BlueprintCharacterClassReference[] result = new BlueprintCharacterClassReference[i.m_CharacterClasses.Length + 1];
-                for (int a = 0; a < i.m_CharacterClasses.Length; a++)
-                {
-                    result[a] = i.m_CharacterClasses[a];
-                }
-                var shadowdancerref = archetype.ToReference<BlueprintCharacterClassReference>();
-                result[i.m_CharacterClasses.Length] = shadowdancerref;
-                i.m_CharacterClasses = result;
-            };
-
-            RootConfigurator.For(RootRefs.BlueprintRoot)
-                .ModifyProgression(act)
-                .Configure(delayed: true);
+            FakeAlignedClass.AddtoMenu(archetype);
         }
         private const string Proficiencies = "ShadowDancer.Proficiencies";
         private static readonly string ProficienciesGuid = "D9B20A03-B2DD-4EB6-B00D-926E0D246E55";

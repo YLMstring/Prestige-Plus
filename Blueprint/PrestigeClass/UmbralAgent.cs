@@ -70,11 +70,10 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         public static void Configure()
         {
             TenebrousFeat(); SAShadowChains(); GazeConfigure();
-            string spellupgradeGuid = "{05DC9561-0542-41BD-9E9F-404F59AB68C5}";
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, spellupgradeGuid, CreateProficiencies(), SABlessingDarkness(), TenebrousGuid, SAUmbralCourtier())
+                .AddToLevelEntry(1, SpellbookReplace.spellupgradeGuid, CreateProficiencies(), SABlessingDarkness(), TenebrousGuid, SAUmbralCourtier())
                 .AddToLevelEntry(2, FeatureRefs.BlindFight.ToString())
                 .AddToLevelEntry(3, ShadowChainsGuid)
                 .AddToLevelEntry(4, ShadowJumpGuidFeat)
@@ -85,7 +84,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddToLevelEntry(9, Gaze3Guid)
                 .AddToLevelEntry(10, ShadowChains3Guid, ShadowJumpGuidFeat)
                 .SetUIGroups(UIGroupBuilder.New()
-                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { spellupgradeGuid, ShadowChainsGuid, ShadowChains2Guid, ShadowChains3Guid })
+                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { SpellbookReplace.spellupgradeGuid, ShadowChainsGuid, ShadowChains2Guid, ShadowChains3Guid })
                     .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { TenebrousGuid, GazeGuid, Gaze2Guid, Gaze3Guid })
                     .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { ShadowJumpGuidFeat, ProficienciesGuid }))
                 .SetRanks(1)
@@ -115,21 +114,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddComponent<PrerequisiteCasterLevel>(c => { c.RequiredCasterLevel = 2; })
                 .Configure();
 
-            Action<ProgressionRoot> act = delegate (ProgressionRoot i)
-            {
-                BlueprintCharacterClassReference[] result = new BlueprintCharacterClassReference[i.m_CharacterClasses.Length + 1];
-                for (int a = 0; a < i.m_CharacterClasses.Length; a++)
-                {
-                    result[a] = i.m_CharacterClasses[a];
-                }
-                var UmbralAgentref = archetype.ToReference<BlueprintCharacterClassReference>();
-                result[i.m_CharacterClasses.Length] = UmbralAgentref;
-                i.m_CharacterClasses = result;
-            };
-
-            RootConfigurator.For(RootRefs.BlueprintRoot)
-                .ModifyProgression(act)
-                .Configure(delayed: true);
+            FakeAlignedClass.AddtoMenu(archetype);
         }
 
         private const string Proficiencies = "UmbralAgent.Proficiencies";

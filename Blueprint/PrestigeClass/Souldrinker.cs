@@ -38,6 +38,7 @@ using PrestigePlus.Blueprint.GrappleFeat;
 using TabletopTweaks.Core.NewComponents;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Mechanics.Components;
+using PrestigePlus.Modify;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -60,12 +61,10 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static void Configure()
         {
-            string spellupgradeGuid = "{05DC9561-0542-41BD-9E9F-404F59AB68C5}";
-
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, Sentinel.BonusFeatGuid, spellupgradeGuid, CreateProficiencies())
+                .AddToLevelEntry(1, Sentinel.BonusFeatGuid, SpellbookReplace.spellupgradeGuid, CreateProficiencies())
                 .AddToLevelEntry(2, CreateEnergyDrain(), SoulPoolFeat())
                 .AddToLevelEntry(3, Sentinel.DivineBoon1Guid)
                 .AddToLevelEntry(4, LesserOblivionFeat())
@@ -102,21 +101,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddComponent<PrerequisiteCasterLevel>(c => { c.RequiredCasterLevel = 2; })
                 .Configure();
 
-            Action<ProgressionRoot> act = delegate (ProgressionRoot i)
-            {
-                BlueprintCharacterClassReference[] result = new BlueprintCharacterClassReference[i.m_CharacterClasses.Length + 1];
-                for (int a = 0; a < i.m_CharacterClasses.Length; a++)
-                {
-                    result[a] = i.m_CharacterClasses[a];
-                }
-                var Souldrinkerref = archetype.ToReference<BlueprintCharacterClassReference>();
-                result[i.m_CharacterClasses.Length] = Souldrinkerref;
-                i.m_CharacterClasses = result;
-            };
-
-            RootConfigurator.For(RootRefs.BlueprintRoot)
-                .ModifyProgression(act)
-                .Configure(delayed: true);
+            FakeAlignedClass.AddtoMenu(archetype);
         }
 
         private const string Proficiencies = "Souldrinker.Proficiencies";
