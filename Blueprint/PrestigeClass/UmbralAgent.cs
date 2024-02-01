@@ -111,9 +111,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddPrerequisiteStatValue(StatType.SkillLoreReligion, 7)
                 .AddPrerequisiteStatValue(StatType.SkillPersuasion, 5)
                 .AddPrerequisiteAlignment(AlignmentMaskType.Evil)
-                .AddPrerequisiteFeature(FeatureRefs.Deceitful.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
-                .AddPrerequisiteFeature(FeatureRefs.SkillFocusThievery.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
-                .AddPrerequisiteFeature(FeatureRefs.SkillFocusDiplomacy.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .AddPrerequisiteFeaturesFromList(new() { FeatureRefs.Deceitful.ToString(), FeatureRefs.SkillFocusThievery.ToString() }, 1)
                 .AddComponent<PrerequisiteCasterLevel>(c => { c.RequiredCasterLevel = 2; })
                 .Configure();
 

@@ -86,7 +86,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddPrerequisiteStatValue(StatType.SkillStealth, 5)
                 .AddPrerequisiteStatValue(StatType.SkillPersuasion, 3)
                 .AddPrerequisiteStatValue(StatType.SkillUseMagicDevice, 3)
-                .AddPrerequisiteFeaturesFromList(new() { FeatureRefs.Deceitful.ToString(), FeatureRefs.SkillFocusThievery.ToString(), FeatureRefs.SkillFocusDiplomacy.ToString() }, 1)
+                .AddPrerequisiteFeaturesFromList(new() { FeatureRefs.Deceitful.ToString(), FeatureRefs.SkillFocusDiplomacy.ToString() }, 1)
                 .AddPrerequisiteFeature(FeatureRefs.Improved_Initiative.ToString())
                 .Configure();
 
@@ -132,7 +132,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintProgression BardicPerformanceFeat()
         {
-            var icon = FeatureRefs.InspireCourageFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.InspireCompetenceFeature.Reference.Get().Icon;
 
             return ProgressionConfigurator.New(BardicPerformance, BardicPerformanceGuid)
               .SetDisplayName(BardicPerformanceDisplayName)
@@ -156,7 +156,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string InspirePoiseDescription = "LionBladeInspirePoise.Description";
         public static BlueprintFeature InspirePoiseFeature()
         {
-            var icon = FeatureRefs.ShifterClawsFeatureAddLevel1.Reference.Get().Icon;
+            var icon = AbilityRefs.EuphoricTranquilityCast.Reference.Get().Icon;
             return FeatureConfigurator.New(InspirePoise, InspirePoiseGuid)
               .SetDisplayName(InspirePoiseDisplayName)
               .SetDescription(InspirePoiseDescription)
@@ -174,7 +174,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string CloudMindDescription = "LionBladeCloudMind.Description";
         public static BlueprintFeature CloudMindFeature()
         {
-            var icon = FeatureRefs.ShiftersEdgeFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.MindFog.Reference.Get().Icon;
             return FeatureConfigurator.New(CloudMind, CloudMindGuid)
               .SetDisplayName(CloudMindDisplayName)
               .SetDescription(CloudMindDescription)
@@ -191,7 +191,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string SilentSoulDescription = "LionBladeSilentSoul.Description";
         public static BlueprintFeature SilentSoulFeature()
         {
-            var icon = FeatureRefs.ShifterACBonusUnlock.Reference.Get().Icon;
+            var icon = AbilityRefs.MindBlank.Reference.Get().Icon;
             return FeatureConfigurator.New(SilentSoul, SilentSoulGuid)
               .SetDisplayName(SilentSoulDisplayName)
               .SetDescription(SilentSoulDescription)
@@ -217,7 +217,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         public static readonly string NarrowMissAblityResGuid = "{92FD5B7B-9BA8-4D4A-B9BF-23182F894090}";
         public static BlueprintFeature NarrowMissConfigure()
         {
-            var icon = FeatureRefs.ShifterDragonFormFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.Displacement.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(NarrowMissAblityRes, NarrowMissAblityResGuid)
                 .SetMaxAmount(
@@ -268,7 +268,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private static readonly string MisfortuneBuffGuid = "{9A6EF146-F8D3-4852-BA56-33CAB76CBD52}";
         public static BlueprintFeature MisfortuneConfigure()
         {
-            var icon = FeatureRefs.ShifterDragonFormFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.DirgeOfDoomFeature.Reference.Get().Icon;
             var fx = AbilityRefs.PredictionOfFailure.Reference.Get().GetComponent<AbilitySpawnFx>();
 
             var buff = BuffConfigurator.New(MisfortuneBuff, MisfortuneBuffGuid)
@@ -316,7 +316,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private static readonly string PerfectSurpriseBuffGuid = "{C49585B9-F617-4936-818D-F36CABFA457D}";
         public static BlueprintFeature PerfectSurpriseFeature()
         {
-            var icon = FeatureRefs.ShifterACBonusUnlock.Reference.Get().Icon;
+            var icon = FeatureRefs.InspireGreatnessFeature.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(PerfectSurpriseBuff, PerfectSurpriseBuffGuid)
                 .SetDisplayName(PerfectSurpriseDisplayName)

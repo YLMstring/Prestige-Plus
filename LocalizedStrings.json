@@ -9411,6 +9411,94 @@
     "Key": "FeatWalkThroughSpace.Description",
     "enGB": "You can cast dimensional door at will when under the effect of walk through space spell.",
     "zhCN": "你在破空步持续期间可以任意施放次元门。"
+  },
+  {
+    "Key": "LionBlade.Name",
+    "ProcessTemplates": false,
+    "enGB": "Lion Blade",
+    "zhCN": "狮子剑"
+  },
+  {
+    "Key": "LionBlade.Description",
+    "enGB": "Lion blades come from the most secretive schools of the fighting arts. They scoff at assassins, laughing at their poisons and blow guns — and they’re equally derisive of knights, stomping about the battlefield in burdensome armor and wielding huge, slow weapons. Lion blades prefer crowded urban areas and are masters of motion, controlling both their own movement and those around them, and then step into a crowd and disappear from sight. They are quick, agile, knowledgeable, and masters of disguise.",
+    "zhCN": "狮子剑来自最为神秘的武术流派。他们嘲笑刺客，嘲笑他们的毒药和吹箭——他们同样嘲笑骑士，他们穿着笨重的盔甲，挥舞着巨大而缓慢的武器在战场上走来走去。狮子剑喜欢拥挤的市区，她们掌控自己和周围人的运动，随即融入人群，消失不见。她们迅速、敏捷、知识渊博，而且善于伪装。"
+  },
+  {
+    "Key": "LionBladeBardicPerformance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Bardic Performance",
+    "zhCN": "吟游表演"
+  },
+  {
+    "Key": "LionBladeBardicPerformance.Description",
+    "enGB": "The Lion Blade adds her class level to any other levels in classes that grant the bardic performance ability to determine the costs and effects of her bardic group inspiring abilities but not for the purpose of gaining access to new performances.",
+    "zhCN": "狮子剑可以把职业等级加到提供吟游表演的其他职业等级上来决定他的任何诗人群体激励能力的费用和效果，但不会获得新的表演。"
+  },
+  {
+    "Key": "LionBladeMisfortune.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dirge of Misfortune",
+    "zhCN": "厄运挽歌"
+  },
+  {
+    "Key": "LionBladeMisfortune.Description",
+    "enGB": "A Lion Blade of 5th level or higher can use her performance to break the concentration of her enemies, causing them to fail even at simple tasks. As a swift action, she can force a creature within 30 feet to reroll its next saving throw in this round before the effects are applied. The opponent must use the result of the reroll, which has a –2 penalty. This is a mind-affecting, visual ability that requires 1 round of performance.",
+    "zhCN": "5级或以上的狮子剑可以使用表演打破敌人的专注，让他们在最简单的任务上也会失败。以一个迅捷动作，她可以让30尺内一个生物在本轮下一个豁免生效之前重骰。对手必须使用重骰的结果，且此次检定受到-2减值。厄运挽歌是一个影响心智的视觉能力，且需消耗一轮吟游表演。"
+  },
+  {
+    "Key": "LionBladeInspirePoise.Name",
+    "ProcessTemplates": false,
+    "enGB": "Inspire Poise",
+    "zhCN": "提振风度"
+  },
+  {
+    "Key": "LionBladeInspirePoise.Description",
+    "enGB": "A lion blade learns a quiet, throaty chanting that puts her in a light trance, increasing her focus on the task at hand. The lion blade gains a +2 competence bonus on skill checks with a particular skill as long as she is able to continue her chant. The bonus increases to +4 at 5th level and +6 at 9th level.",
+    "zhCN": "狮子剑学会了一种安静、低沉的吟唱，这让她轻微地出神，从而能够更加专注于手头的任务。只要狮子剑保持吟唱，便能在一项特定技能上获得+2表现加值。这一加值会在5级提升到+4，在9级提升到+6，"
+  },
+  {
+    "Key": "LionBladePerfectSurprise.Name",
+    "ProcessTemplates": false,
+    "enGB": "Perfect Surprise",
+    "zhCN": "完美突袭"
+  },
+  {
+    "Key": "LionBladePerfectSurprise.Description",
+    "enGB": "At 4th level, a Lion Blade can deliver a devastating blow to anyone she catches unaware. Whenever she hits a foe with a sneak attack at the end of a charge, she can make the blow a perfect surprise as a free action. The target must succeed at a Fortitude saving throw (DC = 10 + the Lion Blade’s class level + her Intelligence modifier) or fall unconscious for 1 round per Lion Blade level. Once targeted by this ability, a victim is immune to perfect surprise for 24 hours.",
+    "zhCN": "4级起，狮子剑能抓准敌人的疏忽，施加毁灭般的打击。她若在冲锋后进行成功偷袭敌人，便可以用自由动作让这次攻击成为完美突袭。目标必须通过DC为10+狮子剑职业等级+智力调整值的强韧豁免，否则会失去意识，持续每狮子剑等级1轮。成为此能力目标后，受害者将在24小时内对完美突袭免疫。"
+  },
+  {
+    "Key": "LionBladeCloudMind.Name",
+    "ProcessTemplates": false,
+    "enGB": "Cloud the Mind",
+    "zhCN": "蒙蔽思维"
+  },
+  {
+    "Key": "LionBladeCloudMind.Description",
+    "enGB": "At 7th level, a lion blade becomes incredibly difficult to find. All Stealth checks made by the lion blade gain a +5 insight bonus and the lion blade is constantly protected from all devices and spells that gather information about the target through divination magic (such as true seeing).",
+    "zhCN": "7级时，狮子剑变得极其难以被找到。狮子剑的所有潜行检定获得+5洞察加值，并且狮子剑不受任何通过预言魔法获取目标信息的法术或装置影响（例如真知术）。"
+  },
+  {
+    "Key": "LionBladeNarrowMiss.Name",
+    "ProcessTemplates": false,
+    "enGB": "Narrow Miss",
+    "zhCN": "惊险躲避"
+  },
+  {
+    "Key": "LionBladeNarrowMiss.Description",
+    "enGB": "At 8th level, a lion blade can dodge swiftly and erratically as a swift action, gaining 20% concealment until her next turn. She may use this ability once per day per two class levels.",
+    "zhCN": "8级起，狮子剑能以迅捷动作进行迅速且出人意料的闪避，直到下回合开始，她获得20%掩蔽。她每天可以使用该能力的次数等同于狮子剑等级的一半。"
+  },
+  {
+    "Key": "LionBladeSilentSoul.Name",
+    "ProcessTemplates": false,
+    "enGB": "Silent Soul",
+    "zhCN": "寂静之魂"
+  },
+  {
+    "Key": "LionBladeSilentSoul.Description",
+    "enGB": "At 10th level, a lion blade has mastered the ability to still her thoughts, her movement, and her sounds to such a point that she becomes harder to dominate, harder to see, and harder to hear. All Stealth checks made by the lion blade gain a +10 circumstance bonus and the lion blade gains SR 20 against mind-affecting effects.",
+    "zhCN": "10级起，狮子剑熟练掌握了一种压制自身思想，行动和声响的方法，令她更难被支配，看到或听到。狮子剑在潜行检定上获得+10环境加值。她还会获得对抗影响心智效果的法术抗力20。"
   }
 
 ]

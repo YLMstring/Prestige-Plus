@@ -80,6 +80,14 @@ namespace PrestigePlus.Modify
             int num = 0;
             if (level >= 16) num += 2;
             else if (level >= 8) num += 1;
+            if (caster.HasFact(FeatureRefs.MythicInspire.Reference))
+            {
+                level = caster.Progression.MythicLevel;
+                if (level >= 10) num += 4;
+                else if (level >= 7) num += 3;
+                else if (level >= 4) num += 2;
+                else num += 1;
+            }
             return num;
         }
 
