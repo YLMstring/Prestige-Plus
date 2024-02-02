@@ -333,6 +333,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(PerfectSurpriseDisplayName)
               .SetDescription(PerfectSurpriseDescription)
               .SetIcon(icon)
+              .AddRecalculateOnStatChange(stat: StatType.Intelligence)
               .AddContextRankConfig(ContextRankConfigs.CustomProperty(PerfectSurpriseProGuid, AbilityRankType.DamageDice))
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }, false, AbilityRankType.DamageBonus))
               .AddInitiatorAttackWithWeaponTrigger(action2, onCharge: true, onlyHit: true, onlySneakAttack: true)
