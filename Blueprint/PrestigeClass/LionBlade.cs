@@ -214,7 +214,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDisplayName(NarrowMissDisplayName)
                 .SetDescription(NarrowMissDescription)
                 .SetIcon(icon)
-                .AddConcealment(concealment: Concealment.Partial, descriptor: ConcealmentDescriptor.Blur)
+                .AddConcealment(concealment: Concealment.Partial, descriptor: ConcealmentDescriptor.WindsOfVengenance)
                 .Configure();
 
             var ability = AbilityConfigurator.New(NarrowMissAbility, NarrowMissAbilityGuid)
@@ -258,7 +258,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDisplayName(MisfortuneDisplayName)
                 .SetDescription(MisfortuneDescription)
                 .SetIcon(icon)
-                .AddModifyD20(ActionsBuilder.New().RemoveSelf().Build(), rule: RuleType.SavingThrow, rollsAmount: 1, rerollOnlyIfSuccess: true, addSavingThrowBonus: true, value: -2, bonusDescriptor: ModifierDescriptor.Penalty)
+                .AddModifyD20(ActionsBuilder.New().RemoveSelf().Build(), rule: RuleType.SavingThrow, rollsAmount: 1, addSavingThrowBonus: true, value: -2, bonusDescriptor: ModifierDescriptor.Penalty)
                 .AddSpellDescriptorComponent(SpellDescriptor.GazeAttack | SpellDescriptor.MindAffecting)
                 .Configure();
 
@@ -303,7 +303,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDisplayName(PerfectSurpriseDisplayName)
                 .SetDescription(PerfectSurpriseDescription)
                 .SetIcon(icon)
-                //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+                .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
                 .Configure();
 
             UnitPropertyConfigurator.New(PerfectSurprisePro, PerfectSurpriseProGuid)
