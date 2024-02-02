@@ -53,7 +53,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddToLevelEntry(1, BardicPerformanceFeat(), InspirePoiseFeature(), FeatureRefs.Mobility.ToString())
                 .AddToLevelEntry(2, FeatureRefs.SneakAttack.ToString())
                 .AddToLevelEntry(3, FeatureRefs.AssassinHideInPlainSight.ToString())
-                .AddToLevelEntry(4, FeatureRefs.FastMovement.ToString(), PerfectSurpriseFeature())
+                .AddToLevelEntry(4, PerfectSurpriseFeature(), FeatureRefs.FastMovement.ToString())
                 .AddToLevelEntry(5, MisfortuneConfigure(), InspirePoiseGuid)
                 .AddToLevelEntry(6, FeatureRefs.SneakAttack.ToString())
                 .AddToLevelEntry(7, CloudMindFeature(), FeatureRefs.HunterWoodlandStride.ToString())
@@ -259,8 +259,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDescription(MisfortuneDescription)
                 .SetIcon(icon)
                 .AddModifyD20(ActionsBuilder.New().RemoveSelf().Build(), rule: RuleType.SavingThrow, rollsAmount: 1, rerollOnlyIfSuccess: true, addSavingThrowBonus: true, value: -2, bonusDescriptor: ModifierDescriptor.Penalty)
-                .AddSpellDescriptorComponent(SpellDescriptor.GazeAttack)
-                .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting)
+                .AddSpellDescriptorComponent(SpellDescriptor.GazeAttack | SpellDescriptor.MindAffecting)
                 .Configure();
 
             var ability = AbilityConfigurator.New(MisfortuneAbility, MisfortuneAbilityGuid)
@@ -273,8 +272,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetType(AbilityType.Supernatural)
                 .SetRange(AbilityRange.Close)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
-                .AddSpellDescriptorComponent(SpellDescriptor.GazeAttack)
-                .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting)
+                .AddSpellDescriptorComponent(SpellDescriptor.GazeAttack | SpellDescriptor.MindAffecting)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
                 .Configure();
 

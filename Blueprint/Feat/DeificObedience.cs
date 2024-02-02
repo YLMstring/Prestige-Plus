@@ -253,9 +253,7 @@ namespace PrestigePlus.Blueprint.Feat
              .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.AdditionalDamage, value: -1)
              .AddBuffAllSavesBonus(ModifierDescriptor.Penalty, value: -1)
              .AddBuffAllSkillsBonus(ModifierDescriptor.Penalty, value: -1, multiplier: 1)
-             .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting)
-             .AddSpellDescriptorComponent(SpellDescriptor.Emotion)
-             .AddSpellDescriptorComponent(SpellDescriptor.NegativeEmotion)
+             .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting | SpellDescriptor.Emotion | SpellDescriptor.NegativeEmotion)
              .Configure();
 
             var ability = AbilityConfigurator.New(Naderi2Ability, Naderi2AbilityGuid)
@@ -274,9 +272,7 @@ namespace PrestigePlus.Blueprint.Feat
                         .ApplyBuff(buff, ContextDuration.Variable(ContextValues.Property(UnitProperty.Level, toCaster: true)))
                         .Build())
                   .Build(), savingThrowType: SavingThrowType.Will)
-                .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting)
-                .AddSpellDescriptorComponent(SpellDescriptor.Emotion)
-                .AddSpellDescriptorComponent(SpellDescriptor.NegativeEmotion)
+                .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting | SpellDescriptor.Emotion | SpellDescriptor.NegativeEmotion)
                 .Configure();
 
             return FeatureConfigurator.New(Naderi2, Naderi2Guid)

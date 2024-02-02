@@ -419,9 +419,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetAffectDead(false)
                 .SetShape(AreaEffectShape.Cylinder)
                 .SetSize(33.Feet())
-                .AddSpellDescriptorComponent(descriptor: SpellDescriptor.GazeAttack)
-                .AddSpellDescriptorComponent(descriptor: SpellDescriptor.MindAffecting)
-                .AddSpellDescriptorComponent(descriptor: SpellDescriptor.Fear)
+                .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting | SpellDescriptor.GazeAttack | SpellDescriptor.Fear)
                 .Configure();
 
             var Buff1 = BuffConfigurator.New(AuraBuff, AuraBuffGuid)
