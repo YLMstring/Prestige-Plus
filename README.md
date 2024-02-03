@@ -1,4 +1,4 @@
-# Prestige Plus v2.5.2 for WoTR 
+# Prestige Plus v2.6.0 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -111,6 +111,10 @@
 - Gain spell progression at level 1-3.
 #### Homebrew Options:  
 - Spells per day/Destroyer of Tyranny/Sword Against Injustice: Now warpriest-friendly!
+### [Lion Blade Class](https://www.aonprd.com/PrestigeClassesDisplay.aspx?ItemName=Lion%20Blade)
+- With good stuff from [this version](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/i-m/lion-blade/)
+#### Homebrew Options:  
+- [Cloying Shades](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-talents/cloying-shades-su) functions as [Bardic Pretender](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-talents/bardic-pretender-ex/) for the class entry!
 ### [Mammoth Rider](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/i-m/mammoth-rider/)
 - Gigantic Steed gives stackable bonus instead of size bonus. It just doesn't make any sense that this can't stack with magical enlarge effect!
 - Steed’s Reach is togglable, because longer reach might have negative impact in the game.
