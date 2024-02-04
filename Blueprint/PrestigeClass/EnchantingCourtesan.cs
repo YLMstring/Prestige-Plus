@@ -53,7 +53,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, MasterSpyFeat(), SpellbookReplace.spellupgradeGuid)
+                .AddToLevelEntry(1, EnchantingTouchFeature(), MasterSpyFeat(), SpellbookReplace.spellupgradeGuid)
                 .AddToLevelEntry(2, SeductiveIntuitionFeature())
                 .AddToLevelEntry(3, HiddenSpellFeature())
                 .AddToLevelEntry(4, SeductiveIntuitionGuid)
@@ -110,7 +110,9 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(MasterSpyDisplayName)
               .SetDescription(MasterSpyDescription)
               .SetIcon(icon)
-              .AddPrerequisiteFeaturesFromList(new() { FeatureRefs.Deceitful.ToString(), FeatureRefs.IronWill.ToString() }, 1)
+              //.AddPrerequisiteFeaturesFromList(new() { FeatureRefs.Deceitful.ToString(), FeatureRefs.IronWill.ToString() }, 2)
+              .AddPrerequisiteFeature(FeatureRefs.Deceitful.ToString())
+              .AddPrerequisiteFeature(FeatureRefs.IronWill.ToString())
               .SetIsClassFeature(true)
               .AddToClasses(ArchetypeGuid)
               .AddToLevelEntry(1, FeatureRefs.SneakAttack.ToString())
@@ -176,6 +178,21 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .AddSavingThrowBonusAgainstDescriptor(8, modifierDescriptor: ModifierDescriptor.Resistance, spellDescriptor: SpellDescriptor.MindAffecting)
               .AddFacts(new() { FeatureRefs.DivinationImmunityFeature.ToString() })
+              .Configure();
+        }
+
+        private const string EnchantingTouch = "EnchantingCourtesanEnchantingTouch";
+        public static readonly string EnchantingTouchGuid = "{EBB40FD1-AB07-4894-B691-4E85CB90DC96}";
+
+        internal const string EnchantingTouchDisplayName = "EnchantingCourtesanEnchantingTouch.Name";
+        private const string EnchantingTouchDescription = "EnchantingCourtesanEnchantingTouch.Description";
+        public static BlueprintFeature EnchantingTouchFeature()
+        {
+            var icon = AbilityRefs.MindBlankCommunal.Reference.Get().Icon;
+            return FeatureConfigurator.New(EnchantingTouch, EnchantingTouchGuid)
+              .SetDisplayName(EnchantingTouchDisplayName)
+              .SetDescription(EnchantingTouchDescription)
+              .SetIcon(icon)
               .Configure();
         }
 
