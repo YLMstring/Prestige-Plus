@@ -9499,6 +9499,127 @@
     "Key": "LionBladeSilentSoul.Description",
     "enGB": "At 10th level, a lion blade has mastered the ability to still her thoughts, her movement, and her sounds to such a point that she becomes harder to dominate, harder to see, and harder to hear. All Stealth checks made by the lion blade gain a +10 circumstance bonus and the lion blade gains SR 20 against mind-affecting effects.",
     "zhCN": "10级起，狮子剑熟练掌握了一种压制自身思想，行动和声响的方法，令她更难被支配，看到或听到。狮子剑在潜行检定上获得+10环境加值。她还会获得对抗影响心智效果的法术抗力20。"
+  },
+  {
+    "Key": "EnchantingCourtesan.Name",
+    "ProcessTemplates": false,
+    "enGB": "Enchanting Courtesan",
+    "zhCN": "妩媚交际花"
+  },
+  {
+    "Key": "EnchantingCourtesan.Description",
+    "enGB": "Enchanting courtesans are elite information brokers who perfect their bodies and develop their minds to use illusions, enchantments, and other magical extensions of their considerable charms.",
+    "zhCN": "妩媚交际花是精英级的情报中介，通过完善身体，培育心灵，她们便能自如使用各种幻术，惑控术，以及自身诱惑力的其它魔法延伸。"
+  },
+  {
+    "Key": "EnchantingCourtesanEnchantingTouch.Name",
+    "ProcessTemplates": false,
+    "enGB": "Enchanting Touch",
+    "zhCN": "妩媚之触"
+  },
+  {
+    "Key": "EnchantingCourtesanEnchantingTouch.Description",
+    "enGB": "An enchanting courtesan can deliver a touch spell with a kiss or erotic gesture. Casting the spell does not provoke attacks of opportunity.",
+    "zhCN": "妩媚交际花可以通过一个吻或色情动作传递一个接触法术。如此施法不会引发借机攻击。"
+  },
+  {
+    "Key": "EnchantingCourtesanSeductiveIntuition.Name",
+    "ProcessTemplates": false,
+    "enGB": "Seductive Intuition",
+    "zhCN": "诱人直觉"
+  },
+  {
+    "Key": "EnchantingCourtesanSeductiveIntuition.Description",
+    "enGB": "At 2nd level, an enchanting courtesan gains a competence bonus equal to half his class level on Bluff, Diplomacy, Perception, and Thievery checks.",
+    "zhCN": "2级起，妩媚交际花会在唬骗、交涉、察觉、巧手检定上获得等同于其职业等级一半的表现加值。"
+  },
+  {
+    "Key": "EnchantingCourtesanHiddenSpell.Name",
+    "ProcessTemplates": false,
+    "enGB": "Hidden Spell",
+    "zhCN": "法术隐秘"
+  },
+  {
+    "Key": "EnchantingCourtesanHiddenSpell.Description",
+    "enGB": "At 3rd level, an enchanting courtesan can undermine a foe’s mental defenses with surprise. The enchanting courtesan gains a +1 bonus to the save DC of his spells against foes who are unaware of his presence or consider him an ally. In these circumstances, the enchanting courtesan also gains a +1 circumstance bonus on caster level checks to overcome targets’ spell resistance. At 6th level, the bonuses increase to +2. A 6th-level enchanting courtesan can also undermine the mental defenses of a target that is flanked or that is denied its Dexterity bonus to AC, but in these cases, the bonuses are each reduced by 1. At 9th level, the bonuses increase to +3, or +2 if the foe is merely flanked or denied its Dexterity bonus to AC.",
+    "zhCN": "3级起，妩媚交际花可以令敌人猝不及防，摧毁其精神防线，如果敌人没有意识到她的存在，或是认为她是盟友，则妩媚交际花对其施放的法术豁免DC获得+1加值，并且对抗法术抗力的施法者等级检定获得+1环境加值。6级起，这些加值提升到+2，6级的妩媚交际花还可以摧毁被夹击或是失去AC上敏捷加值敌人的心防，但这种情况下加值会下降1点。9级起，加值会提升到+3，在敌人仅是被夹击或失去AC上敏捷加值时提升到+2。"
+  },
+  {
+    "Key": "EnchantingCourtesanOverwhelming.Name",
+    "ProcessTemplates": false,
+    "enGB": "Overwhelming Touch",
+    "zhCN": "沛然之触"
+  },
+  {
+    "Key": "EnchantingCourtesanOverwhelming.Description",
+    "enGB": "At 8th level, an enchanting courtesan’s touch is deceptively and overwhelmingly entrancing. The enchanting courtesan’s target must roll twice and take the worse result on saving throws against spells delivered via enchanting touch.",
+    "zhCN": "8级起，妩媚交际花的触摸足以惑人心智，令其神魂颠倒。妩媚交际花的目标必须在妩媚之触所传递法术的豁免上双骰取低。"
+  },
+  {
+    "Key": "EnchantingCourtesanEcstasy.Name",
+    "ProcessTemplates": false,
+    "enGB": "Touch of Ecstasy",
+    "zhCN": "销魂之触"
+  },
+  {
+    "Key": "EnchantingCourtesanEcstasy.Description",
+    "enGB": "At 10th level, an enchanting courtesan has perfectly mastered the sensual arts. As a standard action, the enchanting courtesan can touch a living target to saturate its being with pure bliss. The target is filled with ecstatic pleasure for 1d4 rounds. The pleasure suppresses all pain effects during this time. The target must attempt a Fortitude save (DC = 20 + the enchanting courtesan’s Wisdom modifier). If it succeeds at this saving throw, the target is staggered for the duration. If it fails, it is stunned instead. This is a mind-affecting emotion effect. Any effect or immunity that prevents precision damage negates this ability.",
+    "zhCN": "10级起，妩媚交际花完美掌握了性爱艺术，以一个标准动作，妩媚交际花可以接触一个活物，令其充满纯粹的极乐。目标会在1d4轮内充盈着销魂的快感，在持续时间内压制所有痛苦效应。目标必须通过一次强韧豁免（DC=20+妩媚交际花的感知调整）。如果豁免成功，目标在持续时间内恍惚。如果失败，则被震慑。这是一个影响心智的情绪效果，目标若能阻止精准伤害，也能阻止此效果。"
+  },
+  {
+    "Key": "EnchantingCourtesanEcstasy1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Touch of Ecstasy - stunned",
+    "zhCN": "销魂之触-震慑"
+  },
+  {
+    "Key": "EnchantingCourtesanEcstasy1.Description",
+    "enGB": "The stunning pleasure suppresses all pain effects during this time. ",
+    "zhCN": "震慑之快感在持续时间内压制所有痛苦效应。"
+  },
+  {
+    "Key": "EnchantingCourtesanEcstasy2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Touch of Ecstasy - staggered",
+    "zhCN": "销魂之触-恍惚"
+  },
+  {
+    "Key": "EnchantingCourtesanEcstasy2.Description",
+    "enGB": "The staggering pleasure suppresses all pain effects during this time. ",
+    "zhCN": "恍惚之快感在持续时间内压制所有痛苦效应。"
+  },
+  {
+    "Key": "EnchantingCourtesanMasterSpy.Name",
+    "ProcessTemplates": false,
+    "enGB": "Master Spy",
+    "zhCN": "间谍大师"
+  },
+  {
+    "Key": "EnchantingCourtesanMasterSpy.Description",
+    "enGB": "A master spy is an expert at both magical and non-magical means of evading detection, and quick-witted when it comes to improvisation. Master spies may serve countries or private interests, or sell their services to the highest bidder without a thought to long-term loyalty.",
+    "zhCN": "间谍大师擅长使用各种魔法和非魔法手段来躲避侦测，也是意外发生时随机应变的专家。有些间谍大师为某些国家或个人服务，也有些可能随时改换门庭，为出价最高的人工作。"
+  },
+  {
+    "Key": "EnchantingCourtesanMaskAlignment.Name",
+    "ProcessTemplates": false,
+    "enGB": "Mask Alignment",
+    "zhCN": "伪装阵营"
+  },
+  {
+    "Key": "EnchantingCourtesanMaskAlignment.Description",
+    "enGB": "A master spy of 2nd level or higher can alter her alignment aura to deceive spells that discern alignment.",
+    "zhCN": "2级以上的间谍大师能够变更她的阵营灵光来欺骗那些识别阵营的法术。"
+  },
+  {
+    "Key": "EnchantingCourtesanHiddenMind.Name",
+    "ProcessTemplates": false,
+    "enGB": "Hidden Mind",
+    "zhCN": "隐秘心灵"
+  },
+  {
+    "Key": "EnchantingCourtesanHiddenMind.Description",
+    "enGB": "At 9th level, a master spy gains the benefit of a constant mind blank spell.",
+    "zhCN": "9级起，间谍大师获得永久性的心灵屏障法术效果保护。"
   }
 
 ]
