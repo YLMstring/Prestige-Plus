@@ -24,15 +24,9 @@ using static Kingmaker.Visual.Animation.IKController;
 
 namespace PrestigePlus.Modify
 {
-    internal class ImbueAdvanced : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleCastSpell>
+    internal class ImbueAdvanced : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleCastSpell>, IRulebookHandler<RuleCastSpell>, ISubscriber, IInitiatorRulebookSubscriber
     {
         private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
-
-        UnitEntityData IInitiatorRulebookSubscriber.GetSubscribingUnit()
-        {
-            throw new NotImplementedException();
-        }
-
         void IRulebookHandler<RuleCastSpell>.OnEventAboutToTrigger(RuleCastSpell evt)
         {
             try
@@ -105,7 +99,7 @@ namespace PrestigePlus.Modify
 
         private RuleAttackWithWeapon RunAttackRule(UnitEntityData maybeCaster, UnitEntityData unit, WeaponSlot threatHandRanged)
         {
-            RuleAttackWithWeapon ruleAttackWithWeapon = new RuleAttackWithWeapon(maybeCaster, unit, threatHandRanged.Weapon, 0)
+            RuleAttackWithWeapon ruleAttackWithWeapon = new(maybeCaster, unit, threatHandRanged.Weapon, 0)
             {
                 Reason = base.Context,
                 AutoHit = false,
@@ -116,7 +110,7 @@ namespace PrestigePlus.Modify
                 AttackNumber = 0,
                 AttacksCount = 1
             };
-            return base.Context.TriggerRule<RuleAttackWithWeapon>(ruleAttackWithWeapon);
+            return base.Context.TriggerRule(ruleAttackWithWeapon);
         }
 
         void IRulebookHandler<RuleCastSpell>.OnEventDidTrigger(RuleCastSpell evt)
