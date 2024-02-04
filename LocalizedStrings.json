@@ -9233,8 +9233,8 @@
   },
   {
     "Key": "InquisitionDirection.Description",
-    "enGB": "As a full-round action, you can choose to enter a tranquil, reflective state and forgo all attacks of opportunity for that round; one ally of your choice within 30 feet gains the benefit of haste for 1 round. You can use this ability a number of times per day equal to your 3 + Wisdom bonus.",
-    "zhCN": "以一个整轮动作，你可以进入一种宁静内省的状态，放弃本轮所有的借机攻击，并使一个距离你不超过30尺的盟友获得加速术的好处1轮。你每天可以使用本能力的次数等同于3+你的感知调整值。"
+    "enGB": "You can choose to enter a tranquil, reflective state and forgo your full-round action along with all attacks of opportunity for that round; one ally of your choice within 30 feet gains the benefit of haste for 1 round. You can use this ability a number of times per day equal to your 3 + Wisdom bonus.",
+    "zhCN": "你可以进入一种宁静内省的状态，放弃整轮动作以及本轮所有的借机攻击，并使一个距离你不超过30尺的盟友获得加速术的好处1轮。你每天可以使用本能力的次数等同于3+你的感知调整值。"
   },
   {
     "Key": "InquisitionGrantInitiative.Name",
