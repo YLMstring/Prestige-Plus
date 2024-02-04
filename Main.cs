@@ -158,7 +158,7 @@ namespace PrestigePlus
             Toggle.New(GetKey("walker"), defaultValue: true, Helpers.CreateString("toggle-desc10", "Horizon Walker"))
               .ShowVisualConnection())
           .AddToggle(
-            Toggle.New(GetKey("crusader"), defaultValue: true, Helpers.CreateString("toggle-desc3", "Inheritor¡¯s Crusader"))
+            Toggle.New(GetKey("crusader"), defaultValue: true, Helpers.CreateString("toggle-desc3", "Inheritor's Crusader"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("lionblade"), defaultValue: true, Helpers.CreateString("toggle-desc81", "Lion Blade"))

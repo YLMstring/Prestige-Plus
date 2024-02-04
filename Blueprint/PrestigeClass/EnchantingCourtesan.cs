@@ -30,6 +30,11 @@ using BlueprintCore.Blueprints.Configurators.Root;
 using TabletopTweaks.Core.NewComponents.Prerequisites;
 using PrestigePlus.Modify;
 using BlueprintCore.Conditions.Builder.BasicEx;
+using Kingmaker.UnitLogic;
+using Kingmaker.UnitLogic.Buffs;
+using TabletopTweaks.Core.NewComponents.OwlcatReplacements;
+using Kingmaker.UnitLogic.Abilities.Components.TargetCheckers;
+using PrestigePlus.CustomComponent.PrestigeClass;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -111,6 +116,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddToLevelEntry(1, FeatureRefs.SneakAttack.ToString())
               .AddToLevelEntry(2, MaskAlignmentFeature())
               .AddToLevelEntry(4, FeatureRefs.SneakAttack.ToString())
+              .AddToLevelEntry(5, FeatureRefs.SlipperyMind.ToString())
               .AddToLevelEntry(7, FeatureRefs.SneakAttack.ToString())
               .AddToLevelEntry(9, HiddenMindFeature())
               .AddToLevelEntry(10, FeatureRefs.SneakAttack.ToString())
@@ -243,49 +249,75 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                     .Configure();
         }
 
-        private static readonly string MisfortuneName = "EnchantingCourtesanMisfortune";
-        public static readonly string MisfortuneGuid = "{BF8469EB-FBE5-4ABA-9393-2E7B168D9CA0}";
+        private static readonly string EcstasyName = "EnchantingCourtesanEcstasy";
+        public static readonly string EcstasyGuid = "{49AC4C66-95CD-45AA-B923-0CE563C2CFB5}";
 
-        private static readonly string MisfortuneDisplayName = "EnchantingCourtesanMisfortune.Name";
-        private static readonly string MisfortuneDescription = "EnchantingCourtesanMisfortune.Description";
+        private static readonly string EcstasyDisplayName = "EnchantingCourtesanEcstasy.Name";
+        private static readonly string EcstasyDescription = "EnchantingCourtesanEcstasy.Description";
 
-        private const string MisfortuneAbility = "Misfortune.MisfortuneAbility";
-        private static readonly string MisfortuneAbilityGuid = "{C14D3F23-7746-45BC-A65F-8683362FEF1F}";
+        private static readonly string Ecstasy1DisplayName = "EnchantingCourtesanEcstasy1.Name";
+        private static readonly string Ecstasy1Description = "EnchantingCourtesanEcstasy1.Description";
 
-        private const string MisfortuneBuff = "Misfortune.MisfortuneBuff";
-        private static readonly string MisfortuneBuffGuid = "{9A6EF146-F8D3-4852-BA56-33CAB76CBD52}";
-        public static BlueprintFeature MisfortuneConfigure()
+        private static readonly string Ecstasy2DisplayName = "EnchantingCourtesanEcstasy2.Name";
+        private static readonly string Ecstasy2Description = "EnchantingCourtesanEcstasy2.Description";
+
+        private const string EcstasyAbility = "EnchantingCourtesan.EcstasyAbility";
+        private static readonly string EcstasyAbilityGuid = "{19DA9656-42E1-4572-98F5-722060B5ECB9}";
+
+        private const string EcstasyBuff = "EnchantingCourtesan.EcstasyBuff";
+        private static readonly string EcstasyBuffGuid = "{ED5C140F-9C2C-4119-8427-AFC5C7FD3675}";
+
+        private const string EcstasyBuff2 = "EnchantingCourtesan.EcstasyBuff2";
+        private static readonly string EcstasyBuff2Guid = "{1C21BC0A-7FE4-4630-81AB-F6F766E4A666}";
+        public static BlueprintFeature EcstasyConfigure()
         {
-            var icon = FeatureRefs.DirgeOfDoomFeature.Reference.Get().Icon;
-            var fx = AbilityRefs.PredictionOfFailure.Reference.Get().GetComponent<AbilitySpawnFx>();
+            var icon = AbilityRefs.JoyOfLife.Reference.Get().Icon;
+            var fx = AbilityRefs.JoyfulRapture.Reference.Get().GetComponent<AbilitySpawnFx>();
 
-            var buff = BuffConfigurator.New(MisfortuneBuff, MisfortuneBuffGuid)
-                .SetDisplayName(MisfortuneDisplayName)
-                .SetDescription(MisfortuneDescription)
+            var buff1 = BuffConfigurator.New(EcstasyBuff, EcstasyBuffGuid)
+                .SetDisplayName(Ecstasy1DisplayName)
+                .SetDescription(Ecstasy1Description)
                 .SetIcon(icon)
-                .AddModifyD20(ActionsBuilder.New().RemoveSelf().Build(), rule: RuleType.SavingThrow, rollsAmount: 1, rerollOnlyIfSuccess: true, addSavingThrowBonus: true, value: -2, bonusDescriptor: ModifierDescriptor.Penalty)
-                .AddSpellDescriptorComponent(SpellDescriptor.GazeAttack)
-                .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting)
+                .AddComponent<SuppressBuffsTTT>(c => { c.Descriptor = SpellDescriptor.NegativeEmotion; c.Continuous = true; })
+                .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting | SpellDescriptor.Emotion)
+                .AddFacts(new() { BuffRefs.Stunned.ToString() })
                 .Configure();
 
-            var ability = AbilityConfigurator.New(MisfortuneAbility, MisfortuneAbilityGuid)
-                .SetDisplayName(MisfortuneDisplayName)
-                .SetDescription(MisfortuneDescription)
+            var buff2 = BuffConfigurator.New(EcstasyBuff2, EcstasyBuff2Guid)
+                .SetDisplayName(Ecstasy2DisplayName)
+                .SetDescription(Ecstasy2Description)
+                .SetIcon(icon)
+                .AddComponent<SuppressBuffsTTT>(c => { c.Descriptor = SpellDescriptor.NegativeEmotion; c.Continuous = true; })
+                .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting | SpellDescriptor.Emotion)
+                .AddFacts(new() { BuffRefs.Staggered.ToString() })
+                .Configure();
+
+            var shoot = ActionsBuilder.New()
+                    .SavingThrow(type: SavingThrowType.Fortitude, customDC: ContextValues.Rank(), useDCFromContextSavingThrow: true,
+            onResult: ActionsBuilder.New()
+                        .ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(buff1, ContextDuration.FixedDice(DiceType.D4)).Build(),
+                                    succeed: ActionsBuilder.New().ApplyBuff(buff2, ContextDuration.FixedDice(DiceType.D4)).Build())
+                        .Build())
+                    .Build();
+
+            var ability = AbilityConfigurator.New(EcstasyAbility, EcstasyAbilityGuid)
+                .SetDisplayName(EcstasyDisplayName)
+                .SetDescription(EcstasyDescription)
                 .SetIcon(icon)
                 .AddComponent(fx)
-                .AllowTargeting(false, true, false, false)
-                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1)).Build())
-                .SetType(AbilityType.Supernatural)
-                .SetRange(AbilityRange.Close)
-                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
-                .AddSpellDescriptorComponent(SpellDescriptor.GazeAttack)
-                .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting)
-                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
+                .AddComponent<AbilityTargetMayPrecise>()
+                .AllowTargeting(false, true, true, true)
+                .AddAbilityDeliverTouch(false, null, ComponentMerge.Fail, ItemWeaponRefs.TouchItem.ToString())
+                .AddAbilityEffectRunAction(shoot)
+                .AddContextRankConfig(ContextRankConfigs.StatBonus(stat: StatType.Wisdom).WithBonusValueProgression(20, false))
+                .SetType(AbilityType.Extraordinary)
+                .SetRange(AbilityRange.Touch)
+                .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting | SpellDescriptor.Emotion)
                 .Configure();
 
-            return FeatureConfigurator.New(MisfortuneName, MisfortuneGuid)
-                    .SetDisplayName(MisfortuneDisplayName)
-                    .SetDescription(MisfortuneDescription)
+            return FeatureConfigurator.New(EcstasyName, EcstasyGuid)
+                    .SetDisplayName(EcstasyDisplayName)
+                    .SetDescription(EcstasyDescription)
                     .SetIcon(icon)
                     .AddFacts(new() { ability })
                     .Configure();
