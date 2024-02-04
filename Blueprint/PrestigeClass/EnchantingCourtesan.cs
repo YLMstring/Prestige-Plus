@@ -60,7 +60,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddToLevelEntry(5)
                 .AddToLevelEntry(6, SeductiveIntuitionGuid, HiddenSpellGuid)
                 .AddToLevelEntry(7)
-                .AddToLevelEntry(8, SeductiveIntuitionGuid)
+                .AddToLevelEntry(8, SeductiveIntuitionGuid, OverwhelmingConfigure())
                 .AddToLevelEntry(9, HiddenSpellGuid)
                 .AddToLevelEntry(10, SeductiveIntuitionGuid, EcstasyConfigure())
                 .SetUIGroups(UIGroupBuilder.New()
@@ -212,57 +212,29 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .Configure();
         }
 
-        private static readonly string NarrowMissName = "EnchantingCourtesanNarrowMiss";
-        public static readonly string NarrowMissGuid = "{6316C32A-BD50-4A18-BC96-CDEDF9BEDA10}";
+        private static readonly string OverwhelmingName = "EnchantingCourtesanOverwhelming";
+        public static readonly string OverwhelmingGuid = "{870DC3E9-3D71-450E-9013-4D9F795CFEFA}";
 
-        private static readonly string NarrowMissDisplayName = "EnchantingCourtesanNarrowMiss.Name";
-        private static readonly string NarrowMissDescription = "EnchantingCourtesanNarrowMiss.Description";
+        private static readonly string OverwhelmingDisplayName = "EnchantingCourtesanOverwhelming.Name";
+        private static readonly string OverwhelmingDescription = "EnchantingCourtesanOverwhelming.Description";
 
-        private const string NarrowMissAbility = "NarrowMiss.NarrowMissAbility";
-        private static readonly string NarrowMissAbilityGuid = "{5A16E581-674C-4EB5-855D-FB91480023B3}";
-
-        private const string NarrowMissBuff = "NarrowMiss.NarrowMissBuff";
-        private static readonly string NarrowMissBuffGuid = "{82225953-51DA-4850-A1C4-2F8714EEB3CD}";
-
-        private const string NarrowMissAblityRes = "EnchantingCourtesan.NarrowMissRes";
-        public static readonly string NarrowMissAblityResGuid = "{92FD5B7B-9BA8-4D4A-B9BF-23182F894090}";
-        public static BlueprintFeature NarrowMissConfigure()
+        private const string OverwhelmingBuff = "Overwhelming.OverwhelmingBuff";
+        public static readonly string OverwhelmingBuffGuid = "{F7C9B2BF-864C-4916-9109-56762E012D2D}";
+        public static BlueprintFeature OverwhelmingConfigure()
         {
             var icon = AbilityRefs.Displacement.Reference.Get().Icon;
 
-            var abilityresourse = AbilityResourceConfigurator.New(NarrowMissAblityRes, NarrowMissAblityResGuid)
-                .SetMaxAmount(
-                    ResourceAmountBuilder.New(0)
-                        .IncreaseByLevelStartPlusDivStep(classes: new string[] { ArchetypeGuid }, otherClassLevelsMultiplier: 0, levelsPerStep: 2, bonusPerStep: 1))
-                .SetUseMax()
-                .SetMax(5)
-                .Configure();
-
-            var buff = BuffConfigurator.New(NarrowMissBuff, NarrowMissBuffGuid)
-                .SetDisplayName(NarrowMissDisplayName)
-                .SetDescription(NarrowMissDescription)
+            BuffConfigurator.New(OverwhelmingBuff, OverwhelmingBuffGuid)
+                .SetDisplayName(OverwhelmingDisplayName)
+                .SetDescription(OverwhelmingDescription)
                 .SetIcon(icon)
-                .AddConcealment(concealment: Concealment.Partial, descriptor: ConcealmentDescriptor.Blur)
+                .AddModifyD20(ActionsBuilder.New().RemoveSelf().Build(), rule: RuleType.SavingThrow, rollsAmount: 1)
                 .Configure();
 
-            var ability = AbilityConfigurator.New(NarrowMissAbility, NarrowMissAbilityGuid)
-                .SetDisplayName(NarrowMissDisplayName)
-                .SetDescription(NarrowMissDescription)
-                .SetIcon(icon)
-                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1)).Build())
-                .SetType(AbilityType.Supernatural)
-                .SetRange(AbilityRange.Personal)
-                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
-                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Self)
-                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
-                .Configure();
-
-            return FeatureConfigurator.New(NarrowMissName, NarrowMissGuid)
-                    .SetDisplayName(NarrowMissDisplayName)
-                    .SetDescription(NarrowMissDescription)
+            return FeatureConfigurator.New(OverwhelmingName, OverwhelmingGuid)
+                    .SetDisplayName(OverwhelmingDisplayName)
+                    .SetDescription(OverwhelmingDescription)
                     .SetIcon(icon)
-                    .AddFacts(new() { ability })
-                    .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
                     .Configure();
         }
 
@@ -338,59 +310,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                     .SetIcon(icon)
                     .AddFacts(new() { ability })
                     .Configure();
-        }
-
-        private const string PerfectSurprise = "EnchantingCourtesanPerfectSurprise";
-        private static readonly string PerfectSurpriseGuid = "{3E57F3EE-8C79-4896-AAD1-358018763EBD}";
-
-        private const string PerfectSurprisePro = "EnchantingCourtesanPerfectSurprisePro";
-        private static readonly string PerfectSurpriseProGuid = "{669E26D8-0AFC-491B-8C98-4EC9F9119D26}";
-
-        internal const string PerfectSurpriseDisplayName = "EnchantingCourtesanPerfectSurprise.Name";
-        private const string PerfectSurpriseDescription = "EnchantingCourtesanPerfectSurprise.Description";
-
-        private const string PerfectSurpriseBuff = "PerfectSurprise.PerfectSurpriseBuff";
-        private static readonly string PerfectSurpriseBuffGuid = "{C49585B9-F617-4936-818D-F36CABFA457D}";
-        public static BlueprintFeature PerfectSurpriseFeature()
-        {
-            var icon = FeatureRefs.InspireGreatnessFeature.Reference.Get().Icon;
-
-            var buff = BuffConfigurator.New(PerfectSurpriseBuff, PerfectSurpriseBuffGuid)
-                .SetDisplayName(PerfectSurpriseDisplayName)
-                .SetDescription(PerfectSurpriseDescription)
-                .SetIcon(icon)
-                //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-                .Configure();
-
-            UnitPropertyConfigurator.New(PerfectSurprisePro, PerfectSurpriseProGuid)
-                        .AddClassLevelGetter(clazz: ArchetypeGuid)
-                        .AddSimplePropertyGetter(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusIntelligence)
-                        .SetBaseValue(10)
-                        .Configure();
-
-            var action = ActionsBuilder.New()
-                        .SavingThrow(type: SavingThrowType.Fortitude, customDC: ContextValues.Rank(AbilityRankType.DamageDice),
-                            onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New()
-                                .ApplyBuff(BuffRefs.Unconsious.ToString(), ContextDuration.Variable(ContextValues.Rank(AbilityRankType.DamageBonus)))
-                                .ApplyBuff(buff, ContextDuration.Fixed(1, Kingmaker.UnitLogic.Mechanics.DurationRate.Days))
-                                .Build(), succeed: ActionsBuilder.New()
-                                .ApplyBuff(buff, ContextDuration.Fixed(1, Kingmaker.UnitLogic.Mechanics.DurationRate.Days))
-                                .Build())
-                            .Build())
-                        .Build();
-
-            var action2 = ActionsBuilder.New()
-                            .Conditional(ConditionsBuilder.New().HasFact(buff).Build(), ifFalse: action)
-                            .Build();
-
-            return FeatureConfigurator.New(PerfectSurprise, PerfectSurpriseGuid)
-              .SetDisplayName(PerfectSurpriseDisplayName)
-              .SetDescription(PerfectSurpriseDescription)
-              .SetIcon(icon)
-              .AddContextRankConfig(ContextRankConfigs.CustomProperty(PerfectSurpriseProGuid, AbilityRankType.DamageDice))
-              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }, false, AbilityRankType.DamageBonus))
-              .AddInitiatorAttackWithWeaponTrigger(action2, onCharge: true, onlyHit: true, onlySneakAttack: true)
-              .Configure();
         }
     }
 }
