@@ -143,6 +143,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("templar"), defaultValue: true, Helpers.CreateString("toggle-desc56", "Crimson Templar"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("bitch"), defaultValue: true, Helpers.CreateString("toggle-desc82", "Enchanting Courtesan"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("kineticknight"), defaultValue: true, Helpers.CreateString("toggle-desc31", "Esoteric Knight"))
               .ShowVisualConnection())
           .AddToggle(
@@ -420,6 +423,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("toxic"))) { Toxicologist.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fated"))) { FatedChampion.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("lionblade"))) { LionBlade.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("bitch"))) { EnchantingCourtesan.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
