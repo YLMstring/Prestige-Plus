@@ -62,7 +62,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddToLevelEntry(7)
                 .AddToLevelEntry(8, SeductiveIntuitionGuid)
                 .AddToLevelEntry(9, HiddenSpellGuid)
-                .AddToLevelEntry(10, SeductiveIntuitionGuid)
+                .AddToLevelEntry(10, SeductiveIntuitionGuid, EcstasyConfigure())
                 .SetUIGroups(UIGroupBuilder.New()
                     .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] {  }))
                 ///.AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { SeekerArrowGuid, PhaseArrowGuid, HailArrowGuid, DeathArrowGuid }))
@@ -157,7 +157,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(HiddenSpellDisplayName)
               .SetDescription(HiddenSpellDescription)
               .SetIcon(icon)
-
+              .AddComponent<HiddenSpellComp>()
               .SetRanks(10)
               .Configure();
         }
