@@ -55,6 +55,7 @@ namespace PrestigePlus.Blueprint.RogueTalent
               .SetDescription(Description)
               .SetIcon(icon)
               .AddComponent<ImbueAdvanced>()
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var ability = AbilityConfigurator.New(ImbueArrowBuff3, ImbueArrowGuidBuff3)
