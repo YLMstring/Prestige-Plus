@@ -42,6 +42,7 @@ using System.Drawing;
 using PrestigePlus.CustomComponent.PrestigeClass;
 using PrestigePlus.Patch;
 using TabletopTweaks.Core.NewComponents.Prerequisites;
+using PrestigePlus.CustomComponent.BasePrestigeEnhance;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -103,7 +104,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddPrerequisiteStatValue(StatType.SkillLoreNature, 5)
                 .AddPrerequisiteStatValue(StatType.SkillLoreReligion, 5)
                 .AddPrerequisiteAlignment(AlignmentMaskType.Good)
-                .AddComponent<PrerequisiteCasterLevel>(c => { c.RequiredCasterLevel = 2; })
+                .AddComponent<PrerequisiteSpellLevel>(c => { c.RequiredSpellLevel = 2; })
                 .Configure();
 
             FakeAlignedClass.AddtoMenu(archetype);

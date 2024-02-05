@@ -29,6 +29,7 @@ using PrestigePlus.Blueprint.RogueTalent;
 using TabletopTweaks.Core.NewComponents.Prerequisites;
 using Kingmaker.UnitLogic.Alignments;
 using PrestigePlus.Modify;
+using PrestigePlus.CustomComponent.BasePrestigeEnhance;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -90,7 +91,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddPrerequisiteStatValue(StatType.SkillPerception, 5)
                 .AddPrerequisiteFeature(FeatureRefs.Endurance.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.All)
                 .AddPrerequisiteParametrizedWeaponFeature(ParametrizedFeatureRefs.WeaponFocus.ToString(), WeaponCategory.Longbow, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.All)
-                .AddComponent<PrerequisiteCasterLevel>(c => { c.RequiredCasterLevel = 1; })
+                .AddComponent<PrerequisiteSpellLevel>(c => { c.RequiredSpellLevel = 1; })
                 .AddPrerequisiteAlignment(AlignmentMaskType.Good, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                 .AddPrerequisiteAlignment(AlignmentMaskType.LawfulNeutral, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                 .AddPrerequisiteAlignment(AlignmentMaskType.TrueNeutral, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)

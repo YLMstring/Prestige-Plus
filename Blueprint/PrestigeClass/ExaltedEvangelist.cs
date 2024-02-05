@@ -42,6 +42,7 @@ using System.Drawing;
 using BlueprintCore.Actions.Builder;
 using BlueprintCore.Actions.Builder.ContextEx;
 using PrestigePlus.Blueprint.Gunslinger;
+using PrestigePlus.CustomComponent.BasePrestigeEnhance;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -99,7 +100,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             .SetClassSkills(new StatType[] { StatType.SkillKnowledgeArcana, StatType.SkillLoreReligion, StatType.SkillLoreNature, StatType.SkillPersuasion, StatType.SkillPerception })
             .AddPrerequisiteStatValue(StatType.BaseAttackBonus, 5, group: Prerequisite.GroupType.Any)
             .AddPrerequisiteStatValue(StatType.SkillKnowledgeWorld, 5, group: Prerequisite.GroupType.Any)
-            .AddComponent<PrerequisiteCasterLevel>(c => { c.RequiredCasterLevel = 3; c.Group = Prerequisite.GroupType.Any; })
+            .AddComponent<PrerequisiteSpellLevel>(c => { c.RequiredSpellLevel = 3; c.Group = Prerequisite.GroupType.Any; })
             .AddPrerequisiteFeature(DeificObedience.DeificObedienceGuid)
             .Configure();
 

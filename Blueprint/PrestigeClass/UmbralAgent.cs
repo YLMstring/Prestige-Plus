@@ -46,6 +46,7 @@ using PrestigePlus.CustomAction.GrappleThrow;
 using PrestigePlus.CustomComponent.PrestigeClass;
 using TabletopTweaks.Core.NewComponents.Prerequisites;
 using Kingmaker.Designers.Mechanics.Facts;
+using PrestigePlus.CustomComponent.BasePrestigeEnhance;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -111,7 +112,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddPrerequisiteStatValue(StatType.SkillPersuasion, 5)
                 .AddPrerequisiteAlignment(AlignmentMaskType.Evil)
                 .AddPrerequisiteFeaturesFromList(new() { FeatureRefs.Deceitful.ToString(), FeatureRefs.SkillFocusThievery.ToString() }, 1)
-                .AddComponent<PrerequisiteCasterLevel>(c => { c.RequiredCasterLevel = 2; })
+                .AddComponent<PrerequisiteSpellLevel>(c => { c.RequiredSpellLevel = 2; })
                 .Configure();
 
             FakeAlignedClass.AddtoMenu(archetype);

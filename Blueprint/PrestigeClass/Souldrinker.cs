@@ -39,6 +39,7 @@ using TabletopTweaks.Core.NewComponents;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using PrestigePlus.Modify;
+using PrestigePlus.CustomComponent.BasePrestigeEnhance;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -98,7 +99,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddPrerequisiteStatValue(StatType.SkillKnowledgeArcana, 7)
                 .AddPrerequisiteStatValue(StatType.SkillKnowledgeWorld, 7)
                 .AddPrerequisiteStatValue(StatType.SkillLoreReligion, 7)
-                .AddComponent<PrerequisiteCasterLevel>(c => { c.RequiredCasterLevel = 2; })
+                .AddComponent<PrerequisiteSpellLevel>(c => { c.RequiredSpellLevel = 2; })
                 .Configure();
 
             FakeAlignedClass.AddtoMenu(archetype);
