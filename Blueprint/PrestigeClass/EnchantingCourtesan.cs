@@ -161,7 +161,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddContextStatBonus(StatType.CheckDiplomacy, ContextValues.Rank(), ModifierDescriptor.Competence)
               .AddContextStatBonus(StatType.SkillPerception, ContextValues.Rank(), ModifierDescriptor.Competence)
               .AddContextStatBonus(StatType.SkillThievery, ContextValues.Rank(), ModifierDescriptor.Competence)
-              .AddBuffAllSkillsBonusAbilityValue(ModifierDescriptor.Competence, ContextValues.Rank())
               .AddContextRankConfig(ContextRankConfigs.FeatureRank(SeductiveIntuitionGuid))
               .SetRanks(10)
               .Configure();

@@ -21,14 +21,8 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
     {
         void IRulebookHandler<RuleSavingThrow>.OnEventAboutToTrigger(RuleSavingThrow evt)
         {
-            if (evt.Reason?.Caster == Owner && evt.Reason.Ability?.Blueprint.Type == AbilityType.Spell)
+            if (evt.Reason?.Caster == Owner && evt.Reason.Ability?.Blueprint.Type == AbilityType.Spell && evt.Reason.Ability.Range == AbilityRange.Touch)
             {
-                var touch = evt.Reason.Ability.Blueprint.GetComponent<AbilityDeliverTouch>();
-                var touch2 = evt.Reason.Ability.Blueprint.GetComponent<AbilityEffectStickyTouch>();
-                if (touch == null && touch2 == null)
-                {
-                    return;
-                }
                 GameHelper.ApplyBuff(evt.Initiator, TargetBuff, new Rounds?(1.Rounds()));
             }
         }

@@ -25,14 +25,8 @@ namespace PrestigePlus.HarmonyFix
             try
             {
                 if (__result) { return; }
-                if (__instance.Initiator.HasFact(Touch) && __instance.Spell?.Blueprint.Type == AbilityType.Spell)
+                if (__instance.Initiator.HasFact(Touch) && __instance.Spell?.Blueprint.Type == AbilityType.Spell && __instance.Spell.Range == AbilityRange.Touch)
                 {
-                    var touch = __instance.Spell.Blueprint.GetComponent<AbilityDeliverTouch>();
-                    var touch2 = __instance.Spell.Blueprint.GetComponent<AbilityEffectStickyTouch>();
-                    if (touch == null && touch2 == null)
-                    {
-                        return;
-                    }
                     __result = true;
                 }
             }
