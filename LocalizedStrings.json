@@ -9541,8 +9541,8 @@
   },
   {
     "Key": "EnchantingCourtesanHiddenSpell.Description",
-    "enGB": "At 3rd level, an enchanting courtesan can undermine a foe’s mental defenses with surprise. The enchanting courtesan gains a +1 bonus to the save DC of her spells against foes who are unaware of her presence or consider her an ally. In these circumstances, the enchanting courtesan also gains a +1 circumstance bonus on caster level checks to overcome targets’ spell resistance. At 6th level, the bonuses increase to +2. A 6th-level enchanting courtesan can also undermine the mental defenses of a target that is flanked or that is denied its Dexterity bonus to AC, but in these cases, the bonuses are each reduced by 1. At 9th level, the bonuses increase to +3, or +2 if the foe is merely flanked or denied its Dexterity bonus to AC.",
-    "zhCN": "3级起，妩媚交际花可以令敌人猝不及防，摧毁其精神防线，如果敌人没有意识到她的存在，或是认为她是盟友，则妩媚交际花对其施放的法术豁免DC获得+1加值，并且对抗法术抗力的施法者等级检定获得+1环境加值。6级起，这些加值提升到+2，6级的妩媚交际花还可以摧毁被夹击或是失去AC上敏捷加值敌人的心防，但这种情况下加值会下降1点。9级起，加值会提升到+3，在敌人仅是被夹击或失去AC上敏捷加值时提升到+2。"
+    "enGB": "At 3rd level, an enchanting courtesan can undermine a foe’s mental defenses with surprise. The enchanting courtesan gains a +1 bonus to the save DC of her spells against foes who are unaware of her presence or her casting, or consider her an ally. In these circumstances, the enchanting courtesan also gains a +1 circumstance bonus on caster level checks to overcome targets’ spell resistance. At 6th level, the bonuses increase to +2. A 6th-level enchanting courtesan can also undermine the mental defenses of a target that is flanked or that is denied its Dexterity bonus to AC, but in these cases, the bonuses are each reduced by 1. At 9th level, the bonuses increase to +3, or +2 if the foe is merely flanked or denied its Dexterity bonus to AC.",
+    "zhCN": "3级起，妩媚交际花可以令敌人猝不及防，摧毁其精神防线，如果敌人没有意识到她的存在或她的施法，或是认为她是盟友，则妩媚交际花对其施放的法术豁免DC获得+1加值，并且对抗法术抗力的施法者等级检定获得+1环境加值。6级起，这些加值提升到+2，6级的妩媚交际花还可以摧毁被夹击或是失去AC上敏捷加值敌人的心防，但这种情况下加值会下降1点。9级起，加值会提升到+3，在敌人仅是被夹击或失去AC上敏捷加值时提升到+2。"
   },
   {
     "Key": "EnchantingCourtesanOverwhelming.Name",
