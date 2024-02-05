@@ -214,6 +214,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(EnchantingTouchDisplayName)
               .SetDescription(EnchantingTouchDescription)
               .SetIcon(icon)
+              .AddComponent<EnchantingTouchComp>()
               .Configure();
         }
 
@@ -254,6 +255,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                     .SetDisplayName(OverwhelmingDisplayName)
                     .SetDescription(OverwhelmingDescription)
                     .SetIcon(icon)
+                    .AddComponent<OverwhelmingTouchComp>()
                     .Configure();
         }
 
