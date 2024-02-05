@@ -20,10 +20,11 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
 {
     internal class HiddenSpellComp : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleSpellResistanceCheck>, IRulebookHandler<RuleSpellResistanceCheck>, ISubscriber, IInitiatorRulebookSubscriber, IGlobalRulebookHandler<RuleSavingThrow>, IRulebookHandler<RuleSavingThrow>, IGlobalRulebookSubscriber
     {
-        private int HiddenLevel(UnitEntityData target)
+        private int HiddenLevel(UnitEntityData target, BlueprintAbility ability)
         {
             if (target.IsDirectlyControllable) { return 0; }
             int level = Fact.GetRank();
+            if (ability?.Range == AbilityRange.Touch) { return level; }
             if (target.IsPlayerFaction) { return level; }
             if (target.Memory.Enemies.Count == 0) { return level; }
             bool unknown = true;
@@ -48,7 +49,7 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
         {
             if (evt.Ability.Type == AbilityType.Spell)
             {
-                evt.AddSpellPenetration(HiddenLevel(evt.Target), ModifierDescriptor.Circumstance);
+                evt.AddSpellPenetration(HiddenLevel(evt.Target, evt.Ability), ModifierDescriptor.Circumstance);
             }
         }
 
@@ -56,7 +57,7 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
         {
             if (evt.Reason?.Caster == Owner && evt.Reason.Ability?.Blueprint.Type == AbilityType.Spell)
             {
-                int penalty = -HiddenLevel(evt.Initiator);
+                int penalty = -HiddenLevel(evt.Initiator, evt.Reason.Ability.Blueprint);
                 if (penalty < 0)
                 {
                     evt.AddTemporaryModifier(evt.Initiator.Stats.SaveWill.AddModifier(penalty, base.Runtime, ModifierDescriptor.Penalty));

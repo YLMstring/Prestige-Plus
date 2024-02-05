@@ -38,6 +38,7 @@ using PrestigePlus.CustomComponent.PrestigeClass;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.FactLogic;
+using PrestigePlus.CustomComponent.BasePrestigeEnhance;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -93,7 +94,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddPrerequisiteStatValue(StatType.SkillPersuasion, 5)
                 .AddPrerequisiteStatValue(StatType.SkillKnowledgeArcana, 2)
                 .AddPrerequisiteStatValue(StatType.SkillUseMagicDevice, 2)
-                .AddComponent<PrerequisiteCasterLevel>(c => { c.RequiredCasterLevel = 2; })
+                .AddComponent<PrerequisiteSpellLevel>(c => { c.RequiredSpellLevel = 2; })
                 .Configure();
 
             FakeAlignedClass.AddtoMenu(archetype);
