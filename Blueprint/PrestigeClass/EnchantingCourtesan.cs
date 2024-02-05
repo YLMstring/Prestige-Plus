@@ -37,6 +37,7 @@ using Kingmaker.UnitLogic.Abilities.Components.TargetCheckers;
 using PrestigePlus.CustomComponent.PrestigeClass;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
 using Kingmaker.Blueprints.Classes.Selection;
+using Kingmaker.UnitLogic.FactLogic;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -278,13 +279,12 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         public static BlueprintFeature EcstasyConfigure()
         {
             var icon = AbilityRefs.WavesOfEctasy.Reference.Get().Icon;
-            var fx = AbilityRefs.JoyfulRapture.Reference.Get().GetComponent<AbilitySpawnFx>();
 
             var buff1 = BuffConfigurator.New(EcstasyBuff, EcstasyBuffGuid)
                 .SetDisplayName(Ecstasy1DisplayName)
                 .SetDescription(Ecstasy1Description)
                 .SetIcon(icon)
-                .AddComponent<SuppressBuffsTTT>(c => { c.Descriptor = SpellDescriptor.NegativeEmotion; c.Continuous = true; })
+                .AddComponent<SuppressBuffs>(c => { c.Descriptor = SpellDescriptor.NegativeEmotion; })
                 .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting | SpellDescriptor.Emotion)
                 .AddFacts(new() { BuffRefs.Stunned.ToString() })
                 .Configure();
@@ -293,7 +293,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDisplayName(Ecstasy2DisplayName)
                 .SetDescription(Ecstasy2Description)
                 .SetIcon(icon)
-                .AddComponent<SuppressBuffsTTT>(c => { c.Descriptor = SpellDescriptor.NegativeEmotion; c.Continuous = true; })
+                .AddComponent<SuppressBuffs>(c => { c.Descriptor = SpellDescriptor.NegativeEmotion; })
                 .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting | SpellDescriptor.Emotion)
                 .AddFacts(new() { BuffRefs.Staggered.ToString() })
                 .Configure();
@@ -310,12 +310,12 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDisplayName(EcstasyDisplayName)
                 .SetDescription(EcstasyDescription)
                 .SetIcon(icon)
-                .AddComponent(fx)
                 .AddComponent<AbilityTargetMayPrecise>()
                 .AllowTargeting(false, true, true, true)
                 .AddAbilityDeliverTouch(false, null, ComponentMerge.Fail, ItemWeaponRefs.TouchItem.ToString())
                 .AddAbilityEffectRunAction(shoot)
                 .AddContextRankConfig(ContextRankConfigs.StatBonus(stat: StatType.Wisdom).WithBonusValueProgression(20, false))
+                .AddHideDCFromTooltip()
                 .SetType(AbilityType.Extraordinary)
                 .SetRange(AbilityRange.Touch)
                 .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting | SpellDescriptor.Emotion)
