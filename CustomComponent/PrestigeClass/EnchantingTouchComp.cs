@@ -29,6 +29,6 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
             }
         }
 
-        private static BlueprintBuffReference Touch = BlueprintTool.GetRef<BlueprintBuffReference>(EnchantingCourtesan.EnchantingTouchGuid);
+        private static BlueprintFeatureReference Touch = BlueprintTool.GetRef<BlueprintFeatureReference>(EnchantingCourtesan.EnchantingTouchGuid);
     }
 }
