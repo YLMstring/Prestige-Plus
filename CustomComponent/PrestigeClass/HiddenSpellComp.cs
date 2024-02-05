@@ -48,7 +48,7 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
         {
             if (evt.Ability.Type == AbilityType.Spell)
             {
-                evt.AddSpellPenetration(HiddenLevel(evt.Target), Kingmaker.Enums.ModifierDescriptor.Circumstance);
+                evt.AddSpellPenetration(HiddenLevel(evt.Target), ModifierDescriptor.Circumstance);
             }
         }
 

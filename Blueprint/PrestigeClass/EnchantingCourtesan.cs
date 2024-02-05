@@ -104,7 +104,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintProgression MasterSpyFeat()
         {
-            var icon = FeatureRefs.InspireCompetenceFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.MasterSpyFeature.Reference.Get().Icon;
 
             return ProgressionConfigurator.New(MasterSpy, MasterSpyGuid)
               .SetDisplayName(MasterSpyDisplayName)
@@ -132,7 +132,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string SeductiveIntuitionDescription = "EnchantingCourtesanSeductiveIntuition.Description";
         public static BlueprintFeature SeductiveIntuitionFeature()
         {
-            var icon = AbilityRefs.EuphoricTranquilityCast.Reference.Get().Icon;
+            var icon = AbilityRefs.SuccubusEnergyDrain.Reference.Get().Icon;
             return FeatureConfigurator.New(SeductiveIntuition, SeductiveIntuitionGuid)
               .SetDisplayName(SeductiveIntuitionDisplayName)
               .SetDescription(SeductiveIntuitionDescription)
@@ -154,7 +154,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string HiddenSpellDescription = "EnchantingCourtesanHiddenSpell.Description";
         public static BlueprintFeature HiddenSpellFeature()
         {
-            var icon = AbilityRefs.EuphoricTranquilityCast.Reference.Get().Icon;
+            var icon = FeatureRefs.FavoriteMetamagicSelective.Reference.Get().Icon;
             return FeatureConfigurator.New(HiddenSpell, HiddenSpellGuid)
               .SetDisplayName(HiddenSpellDisplayName)
               .SetDescription(HiddenSpellDescription)
@@ -171,7 +171,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string HiddenMindDescription = "EnchantingCourtesanHiddenMind.Description";
         public static BlueprintFeature HiddenMindFeature()
         {
-            var icon = AbilityRefs.MindBlankCommunal.Reference.Get().Icon;
+            var icon = AbilityRefs.MindBlank.Reference.Get().Icon;
             return FeatureConfigurator.New(HiddenMind, HiddenMindGuid)
               .SetDisplayName(HiddenMindDisplayName)
               .SetDescription(HiddenMindDescription)
@@ -188,7 +188,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string EnchantingTouchDescription = "EnchantingCourtesanEnchantingTouch.Description";
         public static BlueprintFeature EnchantingTouchFeature()
         {
-            var icon = AbilityRefs.MindBlankCommunal.Reference.Get().Icon;
+            var icon = AbilityRefs.TouchOfSlimeCast.Reference.Get().Icon;
             return FeatureConfigurator.New(EnchantingTouch, EnchantingTouchGuid)
               .SetDisplayName(EnchantingTouchDisplayName)
               .SetDescription(EnchantingTouchDescription)
@@ -203,11 +203,9 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string MaskAlignmentDescription = "EnchantingCourtesanMaskAlignment.Description";
         public static BlueprintFeature MaskAlignmentFeature()
         {
-            var icon = AbilityRefs.MindBlank.Reference.Get().Icon;
             return FeatureConfigurator.New(MaskAlignment, MaskAlignmentGuid)
               .SetDisplayName(MaskAlignmentDisplayName)
               .SetDescription(MaskAlignmentDescription)
-              .SetIcon(icon)
               .AddUndetectableAlignment()
               .Configure();
         }
@@ -222,7 +220,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         public static readonly string OverwhelmingBuffGuid = "{F7C9B2BF-864C-4916-9109-56762E012D2D}";
         public static BlueprintFeature OverwhelmingConfigure()
         {
-            var icon = AbilityRefs.Displacement.Reference.Get().Icon;
+            var icon = AbilityRefs.CharmDomainBaseAbility.Reference.Get().Icon;
 
             BuffConfigurator.New(OverwhelmingBuff, OverwhelmingBuffGuid)
                 .SetDisplayName(OverwhelmingDisplayName)
