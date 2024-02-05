@@ -9563,8 +9563,8 @@
   },
   {
     "Key": "EnchantingCourtesanEcstasy.Description",
-    "enGB": "At 10th level, an enchanting courtesan has perfectly mastered the sensual arts. As a standard action, the enchanting courtesan can touch a living target to saturate its being with pure bliss. The target is filled with ecstatic pleasure for 1d4 rounds. The pleasure suppresses all pain effects during this time. The target must attempt a Fortitude save (DC = 20 + the enchanting courtesan’s Wisdom modifier). If it succeeds at this saving throw, the target is staggered for the duration. If it fails, it is stunned instead. This is a mind-affecting emotion effect. Any effect or immunity that prevents precision damage negates this ability.",
-    "zhCN": "10级起，妩媚交际花完美掌握了性爱艺术，以一个标准动作，妩媚交际花可以接触一个活物，令其充满纯粹的极乐。目标会在1d4轮内充盈着销魂的快感，在持续时间内压制所有痛苦效应。目标必须通过一次强韧豁免（DC=20+妩媚交际花的感知调整）。如果豁免成功，目标在持续时间内恍惚。如果失败，则被震慑。这是一个影响心智的情绪效果，目标若能阻止精准伤害，也能阻止此效果。"
+    "enGB": "At 10th level, an enchanting courtesan has perfectly mastered the sensual arts. As a standard action, the enchanting courtesan can touch a living target to saturate its being with pure bliss. The target is filled with ecstatic pleasure for 1d4 rounds. The pleasure suppresses all negative emotion effects during this time. The target must attempt a Fortitude save (DC = 20 + the enchanting courtesan’s Wisdom modifier). If it succeeds at this saving throw, the target is staggered for the duration. If it fails, it is stunned instead. This is a mind-affecting emotion effect. Any effect or immunity that prevents precision damage negates this ability.",
+    "zhCN": "10级起，妩媚交际花完美掌握了性爱艺术，以一个标准动作，妩媚交际花可以接触一个活物，令其充满纯粹的极乐。目标会在1d4轮内充盈着销魂的快感，在持续时间内压制所有负面情绪效果。目标必须通过一次强韧豁免（DC=20+妩媚交际花的感知调整）。如果豁免成功，目标在持续时间内恍惚。如果失败，则被震慑。这是一个影响心智的情绪效果，目标若能阻止精准伤害，也能阻止此效果。"
   },
   {
     "Key": "EnchantingCourtesanEcstasy1.Name",
@@ -9574,8 +9574,8 @@
   },
   {
     "Key": "EnchantingCourtesanEcstasy1.Description",
-    "enGB": "The stunning pleasure suppresses all pain effects during this time. ",
-    "zhCN": "震慑之快感在持续时间内压制所有痛苦效应。"
+    "enGB": "The stunning pleasure suppresses all negative emotion effects during this time. ",
+    "zhCN": "震慑之快感在持续时间内压制所有负面情绪效果。"
   },
   {
     "Key": "EnchantingCourtesanEcstasy2.Name",
@@ -9585,8 +9585,8 @@
   },
   {
     "Key": "EnchantingCourtesanEcstasy2.Description",
-    "enGB": "The staggering pleasure suppresses all pain effects during this time. ",
-    "zhCN": "恍惚之快感在持续时间内压制所有痛苦效应。"
+    "enGB": "The staggering pleasure suppresses all negative emotion effects during this time. ",
+    "zhCN": "恍惚之快感在持续时间内压制所有负面情绪效果。"
   },
   {
     "Key": "EnchantingCourtesanMasterSpy.Name",
