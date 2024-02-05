@@ -35,6 +35,8 @@ using Kingmaker.UnitLogic.Buffs;
 using TabletopTweaks.Core.NewComponents.OwlcatReplacements;
 using Kingmaker.UnitLogic.Abilities.Components.TargetCheckers;
 using PrestigePlus.CustomComponent.PrestigeClass;
+using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
+using Kingmaker.Blueprints.Classes.Selection;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -53,7 +55,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, EnchantingTouchFeature(), MasterSpyFeat(), SpellbookReplace.spellupgradeGuid)
+                .AddToLevelEntry(1, EnchantingTouchFeature(), ChooseGoodEvilFeat(), SpellbookReplace.spellupgradeGuid)
                 .AddToLevelEntry(2, SeductiveIntuitionFeature())
                 .AddToLevelEntry(3, HiddenSpellFeature())
                 .AddToLevelEntry(4, SeductiveIntuitionGuid)
@@ -125,6 +127,24 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .Configure();
         }
 
+        private const string ChooseGoodEvil = "EnchantingCourtesan.ChooseGoodEvil";
+        private static readonly string ChooseGoodEvilGuid = "{24BD6A83-4AE4-46C6-8C53-C0CFC4D29C91}";
+        public static BlueprintFeatureSelection ChooseGoodEvilFeat()
+        {
+            var icon = FeatureRefs.MasterSpyFeature.Reference.Get().Icon;
+
+            return FeatureSelectionConfigurator.New(ChooseGoodEvil, ChooseGoodEvilGuid)
+              .SetDisplayName(MasterSpyDisplayName)
+              .SetDescription(MasterSpyDescription)
+              .SetIcon(icon)
+              .SetIgnorePrerequisites(false)
+              .SetObligatory(false)
+              .AddToAllFeatures(MasterSpyFeat())
+              .AddToAllFeatures(MaskAlignmentGuid)
+              .SetHideInCharacterSheetAndLevelUp()
+              .Configure();
+        }
+
         private const string SeductiveIntuition = "EnchantingCourtesanSeductiveIntuition";
         private static readonly string SeductiveIntuitionGuid = "{408692DA-8EFD-4A49-BA7E-51578894B5E5}";
 
@@ -132,7 +152,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string SeductiveIntuitionDescription = "EnchantingCourtesanSeductiveIntuition.Description";
         public static BlueprintFeature SeductiveIntuitionFeature()
         {
-            var icon = AbilityRefs.SuccubusEnergyDrain.Reference.Get().Icon;
+            var icon = FeatureRefs.CharmDomainGreaterFeature.Reference.Get().Icon;
             return FeatureConfigurator.New(SeductiveIntuition, SeductiveIntuitionGuid)
               .SetDisplayName(SeductiveIntuitionDisplayName)
               .SetDescription(SeductiveIntuitionDescription)
@@ -154,7 +174,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string HiddenSpellDescription = "EnchantingCourtesanHiddenSpell.Description";
         public static BlueprintFeature HiddenSpellFeature()
         {
-            var icon = FeatureRefs.FavoriteMetamagicSelective.Reference.Get().Icon;
+            var icon = FeatureRefs.SelectiveSpellFeat.Reference.Get().Icon;
             return FeatureConfigurator.New(HiddenSpell, HiddenSpellGuid)
               .SetDisplayName(HiddenSpellDisplayName)
               .SetDescription(HiddenSpellDescription)
@@ -188,7 +208,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string EnchantingTouchDescription = "EnchantingCourtesanEnchantingTouch.Description";
         public static BlueprintFeature EnchantingTouchFeature()
         {
-            var icon = AbilityRefs.TouchOfSlimeCast.Reference.Get().Icon;
+            var icon = AbilityRefs.HolyWhisper.Reference.Get().Icon;
             return FeatureConfigurator.New(EnchantingTouch, EnchantingTouchGuid)
               .SetDisplayName(EnchantingTouchDisplayName)
               .SetDescription(EnchantingTouchDescription)
@@ -220,7 +240,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         public static readonly string OverwhelmingBuffGuid = "{F7C9B2BF-864C-4916-9109-56762E012D2D}";
         public static BlueprintFeature OverwhelmingConfigure()
         {
-            var icon = AbilityRefs.CharmDomainBaseAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.HealCast.Reference.Get().Icon;
 
             BuffConfigurator.New(OverwhelmingBuff, OverwhelmingBuffGuid)
                 .SetDisplayName(OverwhelmingDisplayName)
@@ -258,7 +278,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private static readonly string EcstasyBuff2Guid = "{1C21BC0A-7FE4-4630-81AB-F6F766E4A666}";
         public static BlueprintFeature EcstasyConfigure()
         {
-            var icon = AbilityRefs.JoyOfLife.Reference.Get().Icon;
+            var icon = AbilityRefs.WavesOfEctasy.Reference.Get().Icon;
             var fx = AbilityRefs.JoyfulRapture.Reference.Get().GetComponent<AbilitySpawnFx>();
 
             var buff1 = BuffConfigurator.New(EcstasyBuff, EcstasyBuffGuid)
