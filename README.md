@@ -91,7 +91,7 @@
 - Requires worshipping Ragathiel (Expanded Content) or Lawful Good.
 ### [Enchanting Courtesan Class](https://www.aonprd.com/PrestigeClassesDisplay.aspx?ItemName=Enchanting%20Courtesan)
 #### Homebrew Options:  
-- A mythic ability to deliver any touch spell via enchanting touch.
+- A mythic ability to deliver any touch spell via enchanting touch!
 - Become a [master spy](https://www.aonprd.com/PrestigeClassesDisplay.aspx?ItemName=Master%20Spy)!
 ### [Esoteric Knight Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/esoteric-knight/)
 - Kinetic Esoterica: continue kineticist progression every 2 levels!
