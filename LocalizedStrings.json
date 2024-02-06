@@ -9519,8 +9519,8 @@
   },
   {
     "Key": "EnchantingCourtesanEnchantingTouch.Description",
-    "enGB": "An enchanting courtesan can deliver a touch spell with a kiss or erotic gesture. Observers do not notice that a spell has been cast, and casting the spell does not provoke attacks of opportunity.",
-    "zhCN": "妩媚交际花可以通过一个吻或色情动作传递一个接触法术。观察者不会察觉有人施法，如此施法也不会引发借机攻击。"
+    "enGB": "An enchanting courtesan can deliver a divination or enchantment spell with a touch, usually a kiss or erotic gesture. She can only target a creature within touch range, but casting the spell does not provoke attacks of opportunity. Observers do not notice that a spell has been cast.",
+    "zhCN": "妩媚交际花可以通过接触传递一个预言或惑控法术，通常是一个吻或色情动作。她只能指定一个接触范围内的生物为目标，但如此施法不会引发借机攻击。观察者不会察觉有人施法。"
   },
   {
     "Key": "EnchantingCourtesanSeductiveIntuition.Name",
