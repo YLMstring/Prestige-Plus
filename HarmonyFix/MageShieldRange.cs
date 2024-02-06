@@ -39,7 +39,7 @@ namespace PrestigePlus.HarmonyFix
             }
             if (__instance.Caster?.HasFact(Touch) == true)
             {
-                if (__instance.Blueprint.School == SpellSchool.Enchantment || __instance.Blueprint.School == SpellSchool.Divination)
+                if (__instance.Blueprint.School.HasFlag(SpellSchool.Enchantment) || __instance.Blueprint.School.HasFlag(SpellSchool.Divination))
                 {
                     __result = AbilityRange.Touch;
                 }
@@ -67,7 +67,7 @@ namespace PrestigePlus.HarmonyFix
             }
             if (__instance.Caster?.HasFact(Touch) == true)
             {
-                if (__instance.Blueprint.School == SpellSchool.Enchantment || __instance.Blueprint.School == SpellSchool.Divination)
+                if (__instance.Blueprint.School.HasFlag(SpellSchool.Enchantment) || __instance.Blueprint.School.HasFlag(SpellSchool.Divination))
                 {
                     __result = AbilityTargetAnchor.Unit;
                 }
@@ -85,7 +85,7 @@ namespace PrestigePlus.HarmonyFix
         {
             if (__instance.Caster?.HasFact(Touch) == true)
             {
-                if (__instance.Blueprint.School == SpellSchool.Enchantment || __instance.Blueprint.School == SpellSchool.Divination)
+                if (__instance.Blueprint.School.HasFlag(SpellSchool.Enchantment) || __instance.Blueprint.School.HasFlag(SpellSchool.Divination))
                 {
                     __result = null;
                 }
