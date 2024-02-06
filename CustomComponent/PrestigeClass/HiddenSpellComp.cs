@@ -15,6 +15,7 @@ using Kingmaker.EntitySystem.Entities;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.RuleSystem;
 using Kingmaker.Enums;
+using Kingmaker.Blueprints.Classes.Spells;
 
 namespace PrestigePlus.CustomComponent.PrestigeClass
 {
@@ -24,7 +25,13 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
         {
             if (target.IsDirectlyControllable) { return 0; }
             int level = Fact.GetRank();
-            if (ability?.Range == AbilityRange.Touch) { return level; }
+            if (ability?.Range == AbilityRange.Touch)
+            {
+                if (ability.School.HasFlag(SpellSchool.Enchantment) || ability.School.HasFlag(SpellSchool.Divination))
+                {
+                    return level;
+                }
+            }
             if (target.IsPlayerFaction) { return level; }
             if (target.Memory.Enemies.Count == 0) { return level; }
             bool unknown = true;
