@@ -1,12 +1,10 @@
 ﻿using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers;
 using Kingmaker.Enums;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic;
-using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.Utility;
@@ -25,10 +23,7 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
         {
             if (evt.Reason?.Caster == Owner && evt.Reason.Ability?.Blueprint.Type == AbilityType.Spell && evt.Reason.Ability.Range == AbilityRange.Touch)
             {
-                if (evt.Reason.Ability.Blueprint.School.HasFlag(SpellSchool.Enchantment) || evt.Reason.Ability.Blueprint.School.HasFlag(SpellSchool.Divination))
-                {
-                    GameHelper.ApplyBuff(evt.Initiator, TargetBuff, new Rounds?(1.Rounds()));
-                }
+                GameHelper.ApplyBuff(evt.Initiator, TargetBuff, new Rounds?(1.Rounds()));
             }
         }
 
