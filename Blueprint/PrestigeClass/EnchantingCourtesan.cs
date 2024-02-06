@@ -75,6 +75,9 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDisplayName("")
                 .SetDescription(ArchetypeDescription)
                 .Configure();
+
+            DeludingTouchFeature();
+
             var archetype =
               CharacterClassConfigurator.New(ArchetypeName, ArchetypeGuid)
                 .SetLocalizedName(ArchetypeDisplayName)
@@ -215,6 +218,22 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(EnchantingTouchDescription)
               .SetIcon(icon)
               .AddComponent<EnchantingTouchComp>()
+              .Configure();
+        }
+
+        private const string DeludingTouch = "EnchantingCourtesanDeludingTouch";
+        public static readonly string DeludingTouchGuid = "{604769DB-A407-4F43-87E9-066B66FAB9F7}";
+
+        internal const string DeludingTouchDisplayName = "EnchantingCourtesanDeludingTouch.Name";
+        private const string DeludingTouchDescription = "EnchantingCourtesanDeludingTouch.Description";
+        public static BlueprintFeature DeludingTouchFeature()
+        {
+            var icon = AbilityRefs.HolyWhisper.Reference.Get().Icon;
+            return FeatureConfigurator.New(DeludingTouch, DeludingTouchGuid, FeatureGroup.MythicAbility)
+              .SetDisplayName(DeludingTouchDisplayName)
+              .SetDescription(DeludingTouchDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(EnchantingTouchGuid)
               .Configure();
         }
 

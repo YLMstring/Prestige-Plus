@@ -15,6 +15,11 @@ using Kingmaker.EntitySystem.Entities;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.RuleSystem;
 using Kingmaker.Enums;
+using Kingmaker.Blueprints.Classes.Spells;
+using Kingmaker.DialogSystem.Blueprints;
+using BlueprintCore.Utils;
+using Kingmaker.Blueprints;
+using PrestigePlus.Blueprint.PrestigeClass;
 
 namespace PrestigePlus.CustomComponent.PrestigeClass
 {
@@ -24,7 +29,13 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
         {
             if (target.IsDirectlyControllable) { return 0; }
             int level = Fact.GetRank();
-            if (ability?.Range == AbilityRange.Touch) { return level; }
+            if (ability?.Range == AbilityRange.Touch) 
+            {
+                if (Owner.HasFact(Mythic) || ability.School == SpellSchool.Divination || ability.School == SpellSchool.Enchantment)
+                {
+                    return level;
+                }
+            }
             if (target.IsPlayerFaction) { return level; }
             if (target.Memory.Enemies.Count == 0) { return level; }
             bool unknown = true;
@@ -76,5 +87,7 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
         {
             
         }
+
+        private static BlueprintFeatureReference Mythic = BlueprintTool.GetRef<BlueprintFeatureReference>(EnchantingCourtesan.DeludingTouchGuid);
     }
 }
