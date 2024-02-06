@@ -65,17 +65,9 @@ namespace PrestigePlus.HarmonyFix
                     }
                 }
             }
-            if (__instance.Caster?.HasFact(Touch) == true)
-            {
-                if (__instance.Blueprint.School.HasFlag(SpellSchool.Enchantment) || __instance.Blueprint.School.HasFlag(SpellSchool.Divination))
-                {
-                    __result = AbilityTargetAnchor.Unit;
-                }
-            }
         }
         //private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         private static BlueprintFeatureReference Ace = BlueprintTool.GetRef<BlueprintFeatureReference>(MageHandTrick.ShieldMainFeatGuid);
-        private static BlueprintBuffReference Touch = BlueprintTool.GetRef<BlueprintBuffReference>(EnchantingCourtesan.EnchantingTouchBuffGuid);
     }
 
     [HarmonyPatch(typeof(AbilityData), nameof(AbilityData.AbilityTargetsAround), MethodType.Getter)]
