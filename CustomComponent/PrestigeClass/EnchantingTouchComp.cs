@@ -23,12 +23,10 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
 
         void IUnitTryCastingDefensivelyHandler.HandleUnitTryCastingDefensively(AbilityData ability, ref bool skipCasting)
         {
-            if (Owner.HasFact(Touch) && ability.Blueprint.Type == AbilityType.Spell && ability.Range == AbilityRange.Touch)
+            if (ability.Blueprint.Type == AbilityType.Spell && ability.Range == AbilityRange.Touch)
             {
                 skipCasting = true;
             }
         }
-
-        private static BlueprintFeatureReference Touch = BlueprintTool.GetRef<BlueprintFeatureReference>(EnchantingCourtesan.EnchantingTouchGuid);
     }
 }
