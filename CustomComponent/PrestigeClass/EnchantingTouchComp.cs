@@ -1,6 +1,5 @@
 ﻿using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.PubSubSystem;
 using Kingmaker.UnitLogic;
@@ -24,13 +23,12 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
 
         void IUnitTryCastingDefensivelyHandler.HandleUnitTryCastingDefensively(AbilityData ability, ref bool skipCasting)
         {
-            if (ability.Blueprint.Type == AbilityType.Spell && ability.Range == AbilityRange.Touch)
+            if (Owner.HasFact(Touch) && ability.Blueprint.Type == AbilityType.Spell && ability.Range == AbilityRange.Touch)
             {
-                if (ability.Blueprint.School.HasFlag(SpellSchool.Enchantment) || ability.Blueprint.School.HasFlag(SpellSchool.Divination))
-                {
-                    skipCasting = true;
-                }
+                skipCasting = true;
             }
         }
+
+        private static BlueprintFeatureReference Touch = BlueprintTool.GetRef<BlueprintFeatureReference>(EnchantingCourtesan.EnchantingTouchGuid);
     }
 }

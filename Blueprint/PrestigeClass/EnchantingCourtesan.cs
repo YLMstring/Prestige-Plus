@@ -39,8 +39,6 @@ using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.UnitLogic.FactLogic;
 using PrestigePlus.CustomComponent.BasePrestigeEnhance;
-using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
-using Kingmaker.UnitLogic.Buffs.Blueprints;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -209,37 +207,14 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         internal const string EnchantingTouchDisplayName = "EnchantingCourtesanEnchantingTouch.Name";
         private const string EnchantingTouchDescription = "EnchantingCourtesanEnchantingTouch.Description";
-
-        private const string EnchantingTouchBuff = "EnchantingCourtesan.EnchantingTouchBuff";
-        public static readonly string EnchantingTouchBuffGuid = "{6C42F83A-1AE2-4890-B48F-911A12B36CD5}";
-
-        private const string EnchantingTouchAbility = "EnchantingCourtesan.EnchantingTouchAbility";
-        private static readonly string EnchantingTouchAbilityGuid = "{A7A2C85A-28EF-4303-AEA3-49F885123356}";
         public static BlueprintFeature EnchantingTouchFeature()
         {
             var icon = AbilityRefs.HolyWhisper.Reference.Get().Icon;
-
-            var Buff1 = BuffConfigurator.New(EnchantingTouchBuff, EnchantingTouchBuffGuid)
-              .SetDisplayName(EnchantingTouchDisplayName)
-              .SetDescription(EnchantingTouchDescription)
-              .SetIcon(icon)
-              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
-              .Configure();
-
-            var ability = ActivatableAbilityConfigurator.New(EnchantingTouchAbility, EnchantingTouchAbilityGuid)
-                .SetDisplayName(EnchantingTouchDisplayName)
-                .SetDescription(EnchantingTouchDescription)
-                .SetIcon(icon)
-                .SetBuff(Buff1)
-                .SetDeactivateImmediately(true)
-                .Configure();
-
             return FeatureConfigurator.New(EnchantingTouch, EnchantingTouchGuid)
               .SetDisplayName(EnchantingTouchDisplayName)
               .SetDescription(EnchantingTouchDescription)
               .SetIcon(icon)
               .AddComponent<EnchantingTouchComp>()
-              .AddFacts(new() { ability })
               .Configure();
         }
 
