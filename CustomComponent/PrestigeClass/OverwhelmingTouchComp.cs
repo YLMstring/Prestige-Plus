@@ -25,7 +25,7 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
         {
             if (evt.Reason?.Caster == Owner && evt.Reason.Ability?.Blueprint.Type == AbilityType.Spell && evt.Reason.Ability.Range == AbilityRange.Touch)
             {
-                if (evt.Reason.Ability.Blueprint.School.HasFlag(SpellSchool.Enchantment) || evt.Reason.Ability.Blueprint.School.HasFlag(SpellSchool.Divination))
+                if (evt.Reason.Ability.Blueprint.School == SpellSchool.Enchantment || evt.Reason.Ability.Blueprint.School == SpellSchool.Divination)
                 {
                     GameHelper.ApplyBuff(evt.Initiator, TargetBuff, new Rounds?(1.Rounds()));
                 }

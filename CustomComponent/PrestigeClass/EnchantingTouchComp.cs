@@ -26,7 +26,7 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
         {
             if (ability.Blueprint.Type == AbilityType.Spell && ability.Range == AbilityRange.Touch)
             {
-                if (ability.Blueprint.School.HasFlag(SpellSchool.Enchantment) || ability.Blueprint.School.HasFlag(SpellSchool.Divination))
+                if (ability.Blueprint.School == SpellSchool.Divination || ability.Blueprint.School == SpellSchool.Enchantment)
                 {
                     skipCasting = true;
                 }
