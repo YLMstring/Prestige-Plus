@@ -1,4 +1,4 @@
-# Prestige Plus v2.6.0 for WoTR 
+# Prestige Plus v2.7.0 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -89,6 +89,10 @@
 - The class has only 3 levels.
 ### [Crimson Templar Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/c-d/crimson-templar/)
 - Requires worshipping Ragathiel (Expanded Content) or Lawful Good.
+### [Enchanting Courtesan Class](https://www.aonprd.com/PrestigeClassesDisplay.aspx?ItemName=Enchanting%20Courtesan)
+#### Homebrew Options:  
+- A mythic ability to deliver any touch spell via enchanting touch.
+- Become a [master spy](https://www.aonprd.com/PrestigeClassesDisplay.aspx?ItemName=Master%20Spy)!
 ### [Esoteric Knight Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/esoteric-knight/)
 - Kinetic Esoterica: continue kineticist progression every 2 levels!
 #### Homebrew Options:  
