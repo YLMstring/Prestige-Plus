@@ -16,6 +16,9 @@ using Kingmaker.UnitLogic.Abilities;
 using PrestigePlus.Blueprint.Feat;
 using BlueprintCore.Blueprints.References;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
+using PrestigePlus.Blueprint.PrestigeClass;
+using Kingmaker.Blueprints.Classes.Spells;
+using Kingmaker.UnitLogic.Abilities.Components;
 
 namespace PrestigePlus.HarmonyFix
 {
@@ -24,17 +27,41 @@ namespace PrestigePlus.HarmonyFix
     {
         static void Postfix(ref AbilityData __instance, ref AbilityRange __result)
         {
-            //Logger.Info("bababa");
             if (__instance.Blueprint == AbilityRefs.MageShield.Reference.Get())
             {
-                //Logger.Info("bababa1");
                 if (__instance.Caster.HasFact(Ace))
                 {
-                    //Logger.Info("bababa2");
                     if (__result == AbilityRange.Personal)
                     {
-                        //Logger.Info("bababa3");
                         __result = AbilityRange.Touch;
+                    }
+                }
+            }
+            if (__instance.Caster?.HasFact(Touch) == true)
+            {
+                if (__instance.Blueprint.School.HasFlag(SpellSchool.Enchantment) || __instance.Blueprint.School.HasFlag(SpellSchool.Divination))
+                {
+                    __result = AbilityRange.Touch;
+                }
+            }
+        }
+        //private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
+        private static BlueprintFeatureReference Ace = BlueprintTool.GetRef<BlueprintFeatureReference>(MageHandTrick.ShieldMainFeatGuid);
+        private static BlueprintBuffReference Touch = BlueprintTool.GetRef<BlueprintBuffReference>(EnchantingCourtesan.EnchantingTouchBuffGuid);
+    }
+
+    [HarmonyPatch(typeof(AbilityData), nameof(AbilityData.TargetAnchor), MethodType.Getter)]
+    internal class MageShieldRange2
+    {
+        static void Postfix(ref AbilityData __instance, ref AbilityTargetAnchor __result)
+        {
+            if (__instance.Blueprint == AbilityRefs.MageShield.Reference.Get())
+            {
+                if (__instance.Caster.HasFact(Ace))
+                {
+                    if (__result == AbilityTargetAnchor.Owner)
+                    {
+                        __result = AbilityTargetAnchor.Unit;
                     }
                 }
             }
@@ -43,27 +70,20 @@ namespace PrestigePlus.HarmonyFix
         private static BlueprintFeatureReference Ace = BlueprintTool.GetRef<BlueprintFeatureReference>(MageHandTrick.ShieldMainFeatGuid);
     }
 
-    [HarmonyPatch(typeof(AbilityData), nameof(AbilityData.TargetAnchor), MethodType.Getter)]
-    internal class MageShieldRange2
+    [HarmonyPatch(typeof(AbilityData), nameof(AbilityData.AbilityTargetsAround), MethodType.Getter)]
+    internal class MageShieldRange3
     {
-        static void Postfix(ref AbilityData __instance, ref AbilityTargetAnchor __result)
+        static void Postfix(ref AbilityData __instance, ref AbilityTargetsAround __result)
         {
-            //Logger.Info("bababa");
-            if (__instance.Blueprint == AbilityRefs.MageShield.Reference.Get())
+            if (__instance.Caster?.HasFact(Touch) == true)
             {
-                //Logger.Info("bababa1");
-                if (__instance.Caster.HasFact(Ace))
+                if (__instance.Blueprint.School.HasFlag(SpellSchool.Enchantment) || __instance.Blueprint.School.HasFlag(SpellSchool.Divination))
                 {
-                    //Logger.Info("bababa2");
-                    if (__result == AbilityTargetAnchor.Owner)
-                    {
-                        //Logger.Info("bababa3");
-                        __result = AbilityTargetAnchor.Unit;
-                    }
+                    __result = null;
                 }
             }
         }
         //private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
-        private static BlueprintFeatureReference Ace = BlueprintTool.GetRef<BlueprintFeatureReference>(MageHandTrick.ShieldMainFeatGuid);
+        private static BlueprintBuffReference Touch = BlueprintTool.GetRef<BlueprintBuffReference>(EnchantingCourtesan.EnchantingTouchBuffGuid);
     }
 }
