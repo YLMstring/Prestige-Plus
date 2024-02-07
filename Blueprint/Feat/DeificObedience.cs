@@ -137,6 +137,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(ChaldiraFeat())
               .AddToAllFeatures(PuluraFeat())
               .AddToAllFeatures(RovagugFeat())
+              .AddToAllFeatures(LanternKingFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -3730,6 +3731,189 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDescription(Rovagug3Description)
               .SetIcon(icon)
               .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string LanternKing = "DeificObedience.LanternKing";
+        public static readonly string LanternKingGuid = "{004E907D-855F-4409-9279-310E8B96A3FD}";
+
+        internal const string LanternKingDisplayName = "DeificObedienceLanternKing.Name";
+        private const string LanternKingDescription = "DeificObedienceLanternKing.Description";
+        public static BlueprintProgression LanternKingFeat()
+        {
+            //"TheLanternKingFeature": "ecb81f58-8458-4471-a62b-bb07728b8658",
+            var icon = AbilityRefs.BloodlineFeyLaughingTouchAbility.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(LanternKing, LanternKingGuid)
+              .SetDisplayName(LanternKingDisplayName)
+              .SetDescription(LanternKingDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature("ecb81f58-8458-4471-a62b-bb07728b8658", group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticNeutral, group: Prerequisite.GroupType.Any)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(1, LanternKing0Feat())
+              .AddToLevelEntry(12, CreateLanternKing1())
+              .AddToLevelEntry(16, CreateLanternKing2())
+              .AddToLevelEntry(20, CreateLanternKing3())
+              .Configure();
+        }
+
+        private const string LanternKing0 = "DeificObedience.LanternKing0";
+        public static readonly string LanternKing0Guid = "{3FDB49E9-D4D2-4B4D-9C66-B5BB8401F7E4}";
+
+        public static BlueprintFeature LanternKing0Feat()
+        {
+            var icon = AbilityRefs.BloodlineFeyLaughingTouchAbility.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(LanternKing0, LanternKing0Guid)
+              .SetDisplayName(LanternKingDisplayName)
+              .SetDescription(LanternKingDescription)
+              .SetIcon(icon)
+              .AddSavingThrowBonusAgainstSchool(null, ComponentMerge.Fail, ModifierDescriptor.Sacred, SpellSchool.Illusion, 4)
+              .Configure();
+        }
+
+        private const string LanternKing1 = "SpellPower.LanternKing1";
+        public static readonly string LanternKing1Guid = "{470A493E-3982-4407-AB86-DFB34358E924}";
+        internal const string LanternKing1DisplayName = "SpellPowerLanternKing1.Name";
+        private const string LanternKing1Description = "SpellPowerLanternKing1.Description";
+
+        private const string LanternKing1Ablity2 = "SpellPower.UseLanternKing12";
+        private static readonly string LanternKing1Ablity2Guid = "{AF3C9D21-467D-44AA-B8DB-98D5DD83200A}";
+        private static BlueprintFeature CreateLanternKing1()
+        {
+            var icon = AbilityRefs.HideousLaughter.Reference.Get().Icon;
+
+            var ability2 = AbilityConfigurator.New(LanternKing1Ablity2, LanternKing1Ablity2Guid)
+                .CopyFrom(
+                AbilityRefs.BoneFists,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(AbilityTargetHasNoFactUnless),
+                typeof(AbilityTargetHasFact),
+                typeof(AbilityTargetStatCondition))
+                .AddPretendSpellLevel(spellLevel: 2)
+                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(LanternKing1, LanternKing1Guid)
+              .SetDisplayName(LanternKing1DisplayName)
+              .SetDescription(LanternKing1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability2 })
+              .Configure();
+        }
+
+        private const string LanternKing2 = "SpellPower.LanternKing2";
+        public static readonly string LanternKing2Guid = "{7594E224-2BA0-42D4-B89D-F3CCC94B7C81}";
+        internal const string LanternKing2DisplayName = "SpellPowerLanternKing2.Name";
+        private const string LanternKing2Description = "SpellPowerLanternKing2.Description";
+
+        private const string LanternKing2Ablity2 = "SpellPower.UseLanternKing22";
+        private static readonly string LanternKing2Ablity2Guid = "{F3C21858-FFD5-4D69-B7CF-28A5B7C9FE64}";
+
+        private const string LanternKing2Ablity3 = "SpellPower.UseLanternKing23";
+        public static readonly string LanternKing2Ablity3Guid = "{2B4731A1-3B91-4F2D-BADA-49D9CEA03156}";
+
+        private const string LanternKing2Ablity4 = "SpellPower.UseLanternKing24";
+        private static readonly string LanternKing2Ablity4Guid = "{0E548DAF-6FBA-4866-97A7-61C1C876B8D3}";
+
+        private const string LanternKing2AblityRes = "DeificObedience.LanternKing2Res";
+        private static readonly string LanternKing2AblityResGuid = "{3DE79247-B990-4E48-9134-1986DF67583E}";
+        private static BlueprintFeature CreateLanternKing2()
+        {
+            var icon = AbilityRefs.PolymorphGreaterBase.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(LanternKing2AblityRes, LanternKing2AblityResGuid)
+                .SetMaxAmount(
+                    ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(LanternKing2Ablity2, LanternKing2Ablity2Guid)
+                .CopyFrom(
+                AbilityRefs.BalefulPolymorph,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(AbilityTargetHasFact),
+                typeof(AbilitySpawnFx))
+                .AddPretendSpellLevel(spellLevel: 8)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var ability3 = AbilityConfigurator.New(LanternKing2Ablity3, LanternKing2Ablity3Guid)
+                .CopyFrom(
+                AbilityRefs.PolymorphGreaterBase,
+                typeof(SpellComponent),
+                typeof(AbilityVariants),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 8)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var ability4 = AbilityConfigurator.New(LanternKing2Ablity4, LanternKing2Ablity4Guid)
+                .CopyFrom(
+                AbilityRefs.StoneToFlesh,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(AbilityTargetStoneToFlesh),
+                typeof(AbilitySpawnFx))
+                .AddPretendSpellLevel(spellLevel: 8)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(LanternKing2, LanternKing2Guid)
+              .SetDisplayName(LanternKing2DisplayName)
+              .SetDescription(LanternKing2Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability2, ability3, ability4 })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .AddComponent<TransformOthersDuration>()
+              .Configure();
+        }
+
+        private const string LanternKing3 = "SpellPower.LanternKing3";
+        public static readonly string LanternKing3Guid = "{390CF0E6-6B6F-41B2-B5D4-29A15A63D539}";
+        internal const string LanternKing3DisplayName = "SpellPowerLanternKing3.Name";
+        private const string LanternKing3Description = "SpellPowerLanternKing3.Description";
+
+        private const string LanternKing3Ablity2 = "SpellPower.UseLanternKing32";
+        private static readonly string LanternKing3Ablity2Guid = "{EA3289ED-1A1E-4AD9-B1A0-73707801F8BA}";
+
+        private const string LanternKing3AblityRes = "DeificObedience.LanternKing3Res";
+        private static readonly string LanternKing3AblityResGuid = "{8D063B9F-828A-4984-B2AB-EE19857FB70B}";
+        private static BlueprintFeature CreateLanternKing3()
+        {
+            var icon = AbilityRefs.Shapechange.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(LanternKing3AblityRes, LanternKing3AblityResGuid)
+                .SetMaxAmount(
+                    ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(LanternKing3Ablity2, LanternKing3Ablity2Guid)
+                .CopyFrom(
+                AbilityRefs.Shapechange,
+                typeof(SpellComponent),
+                typeof(AbilityVariants),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 9)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(LanternKing3, LanternKing3Guid)
+              .SetDisplayName(LanternKing3DisplayName)
+              .SetDescription(LanternKing3Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability2 })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .Configure();
         }
     }
