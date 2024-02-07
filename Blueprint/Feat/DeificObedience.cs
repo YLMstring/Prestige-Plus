@@ -138,6 +138,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(PuluraFeat())
               .AddToAllFeatures(RovagugFeat())
               .AddToAllFeatures(LanternKingFeat())
+              .AddToAllFeatures(GozrehFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -3915,6 +3916,115 @@ namespace PrestigePlus.Blueprint.Feat
               .AddFacts(new() { ability2 })
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .Configure();
+        }
+
+        private const string Gozreh = "DeificObedience.Gozreh";
+        public static readonly string GozrehGuid = "{641C52F9-5394-4412-909D-E89309D2FC76}";
+
+        internal const string GozrehDisplayName = "DeificObedienceGozreh.Name";
+        private const string GozrehDescription = "DeificObedienceGozreh.Description";
+        public static BlueprintFeature GozrehFeat()
+        {
+            var icon = FeatureRefs.GozrehFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Gozreh, GozrehGuid)
+              .SetDisplayName(GozrehDisplayName)
+              .SetDescription(GozrehDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.GozrehFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.TrueNeutral, group: Prerequisite.GroupType.Any)
+              .AddToIsPrerequisiteFor(GozrehExaltedFeat())
+              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Electricity, value: 4)
+              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Cold, value: 4)
+              .Configure();
+        }
+
+        private const string GozrehExalted = "DeificObedience.GozrehExalted";
+        public static readonly string GozrehExaltedGuid = "{61B4B364-6F6F-4E81-9939-75B0D9EC719C}";
+
+        internal const string GozrehExaltedDisplayName = "DeificObedienceGozrehExalted.Name";
+        private const string GozrehExaltedDescription = "DeificObedienceGozrehExalted.Description";
+        public static BlueprintProgression GozrehExaltedFeat()
+        {
+            var icon = FeatureRefs.GozrehFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(GozrehExalted, GozrehExaltedGuid)
+              .SetDisplayName(GozrehExaltedDisplayName)
+              .SetDescription(GozrehExaltedDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(GozrehGuid)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(12, CreateGozreh1())
+              .AddToLevelEntry(16, GozrehExalted2Feat())
+              .AddToLevelEntry(20, GozrehExalted3Feat())
+              .Configure();
+        }
+
+        private const string Gozreh1 = "SpellPower.Gozreh1";
+        public static readonly string Gozreh1Guid = "{4ACFAE95-8045-4521-BE34-9827F67754FB}";
+        internal const string Gozreh1DisplayName = "SpellPowerGozreh1.Name";
+        private const string Gozreh1Description = "SpellPowerGozreh1.Description";
+        private static BlueprintFeature CreateGozreh1()
+        {
+            var icon = AbilityRefs.Entangle.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Gozreh1, Gozreh1Guid)
+              .SetDisplayName(Gozreh1DisplayName)
+              .SetDescription(Gozreh1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ShelynSentinel1AblityGuid })
+              .Configure();
+        }
+
+        private const string Gozreh2 = "DeificObedience.Gozreh2";
+        public static readonly string Gozreh2Guid = "{6C5B990A-6C1E-4769-80C8-8A7C26DD40A5}";
+
+        internal const string Gozreh2DisplayName = "DeificObedienceGozreh2.Name";
+        private const string Gozreh2Description = "DeificObedienceGozreh2.Description";
+        public static BlueprintFeature GozrehExalted2Feat()
+        {
+            var icon = AbilityRefs.ThunderingRageAbility.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Gozreh2, Gozreh2Guid)
+              .SetDisplayName(Gozreh2DisplayName)
+              .SetDescription(Gozreh2Description)
+              .SetIcon(icon)
+              .AddDamageResistanceEnergy(healOnDamage: false, value: ContextValues.Rank(), type: Kingmaker.Enums.Damage.DamageEnergyType.Electricity)
+              .AddContextRankConfig(ContextRankConfigs.CharacterLevel().WithBonusValueProgression(5))
+              .Configure();
+        }
+
+        private static readonly string Gozreh3Name = "DeificObedienceGozreh3";
+        public static readonly string Gozreh3Guid = "{F17EFFF4-BE99-460F-B51F-75CFED906BF7}";
+
+        private static readonly string Gozreh3DisplayName = "DeificObedienceGozreh3.Name";
+        private static readonly string Gozreh3Description = "DeificObedienceGozreh3.Description";
+
+        private const string Gozreh3Feat = "DeificObedienceStyle.Gozreh3feat";
+        private static readonly string Gozreh3featGuid = "{99F8D1C6-BB48-49D6-957B-4601DB523445}";
+        public static BlueprintFeature GozrehExalted3Feat()
+        {
+            var icon = AbilityRefs.BalefulPolymorph.Reference.Get().Icon;
+
+            var feat = FeatureConfigurator.New(Gozreh3Feat, Gozreh3featGuid)
+                    .SetDisplayName(Gozreh3DisplayName)
+                    .SetDescription(Gozreh3Description)
+                    .SetIcon(icon)
+                    .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Electricity, value: 4)
+                    .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Cold, value: 4)
+                    .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Fire, value: 4)
+                    .AddStatBonus(stat: StatType.Intelligence, value: 1)
+                    .AddStatBonus(stat: StatType.Wisdom, value: 1)
+                    .AddComponent<WeaponFocusPP>(c => { c.NoCondition = true; c.AttackBonus = 2; c.Des = ModifierDescriptor.Sacred; })
+                    .AddContextStatBonus(StatType.AdditionalDamage, 2, ModifierDescriptor.Sacred)
+                    .Configure();
+
+            return FeatureConfigurator.New(Gozreh3Name, Gozreh3Guid)
+                    .SetDisplayName(Gozreh3DisplayName)
+                    .SetDescription(Gozreh3Description)
+                    .SetIcon(icon)
+                    .AddFeatureToPet(feat, PetType.AnimalCompanion)
+                    .Configure();
         }
     }
 }
