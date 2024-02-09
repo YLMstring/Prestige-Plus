@@ -4120,18 +4120,8 @@ namespace PrestigePlus.Blueprint.Feat
 
             AbilityConfigurator.For(AbilityRefs.CharmDomainBaseAbility)
               .EditComponent<AbilityEffectRunAction>(
-                a => a.Actions.Actions = shoot.Actions)
+                a => a.Actions.Actions = CommonTool.Append(a.Actions.Actions, shoot.Actions))
               .Configure(delayed: true);
-
-            var list = AbilityRefs.CharmDomainBaseAbility.Reference.Get().GetComponent<AbilityEffectRunAction>()?.Actions.Actions;
-            foreach ( var action in list )
-            {
-                if (action is Conditional cond)
-                {
-                    if (cond.IfTrue?.Actions == null) { continue; }
-                    CommonTool.Append(cond.IfTrue.Actions, shoot.Actions);
-                }
-            }
 
             return FeatureConfigurator.New(Calistria2, Calistria2Guid)
               .SetDisplayName(Calistria2DisplayName)
