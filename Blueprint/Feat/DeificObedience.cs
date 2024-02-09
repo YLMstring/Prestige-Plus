@@ -3790,7 +3790,7 @@ namespace PrestigePlus.Blueprint.Feat
 
             var ability2 = AbilityConfigurator.New(LanternKing1Ablity2, LanternKing1Ablity2Guid)
                 .CopyFrom(
-                AbilityRefs.BoneFists,
+                AbilityRefs.HideousLaughter,
                 typeof(AbilityEffectRunAction),
                 typeof(SpellComponent),
                 typeof(SpellDescriptorComponent),
@@ -3889,17 +3889,9 @@ namespace PrestigePlus.Blueprint.Feat
 
         private const string LanternKing3Ablity2 = "SpellPower.UseLanternKing32";
         private static readonly string LanternKing3Ablity2Guid = "{EA3289ED-1A1E-4AD9-B1A0-73707801F8BA}";
-
-        private const string LanternKing3AblityRes = "DeificObedience.LanternKing3Res";
-        private static readonly string LanternKing3AblityResGuid = "{8D063B9F-828A-4984-B2AB-EE19857FB70B}";
         private static BlueprintFeature CreateLanternKing3()
         {
             var icon = AbilityRefs.Shapechange.Reference.Get().Icon;
-
-            var abilityresourse = AbilityResourceConfigurator.New(LanternKing3AblityRes, LanternKing3AblityResGuid)
-                .SetMaxAmount(
-                    ResourceAmountBuilder.New(1))
-                .Configure();
 
             var ability2 = AbilityConfigurator.New(LanternKing3Ablity2, LanternKing3Ablity2Guid)
                 .CopyFrom(
@@ -3908,7 +3900,6 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(AbilityVariants),
                 typeof(SpellDescriptorComponent))
                 .AddPretendSpellLevel(spellLevel: 9)
-                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .SetType(AbilityType.SpellLike)
                 .Configure();
 
@@ -3917,7 +3908,8 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDescription(LanternKing3Description)
               .SetIcon(icon)
               .AddFacts(new() { ability2 })
-              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .AddFreeActionSpell(AbilityRefs.TurnBackAbilityStandart.ToString())
+              .AddComponent<ChangeActionSpell>(c => { c.Ability = ability2; c.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift; })
               .Configure();
         }
 

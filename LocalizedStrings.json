@@ -9673,8 +9673,8 @@
   },
   {
     "Key": "SpellPowerLanternKing3.Description",
-    "enGB": "You can cast shapechange once per day.",
-    "zhCN": "每天一次，你可以施放形体转换。"
+    "enGB": "You can cast shapechange as a swift action at will. Resuming your normal form is a free action.",
+    "zhCN": "你可以用迅捷动作任意施放形体转换，并且用自由动作恢复原本形态。"
   },
   {
     "Key": "DeificObedienceGozreh.Name",
