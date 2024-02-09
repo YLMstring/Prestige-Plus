@@ -127,6 +127,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddToAllFeatures(DeificObedience.NiviExaltedGuid)
               .AddToAllFeatures(DeificObedience.KabririExaltedGuid)
               .AddToAllFeatures(DeificObedience.GozrehExaltedGuid)
+              .AddToAllFeatures(DeificObedience.CalistriaExaltedGuid)
               .Configure();
         }
 

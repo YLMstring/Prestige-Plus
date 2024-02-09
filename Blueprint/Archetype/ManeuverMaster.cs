@@ -575,10 +575,10 @@ namespace PrestigePlus.Blueprint.Archetype
         }
 
         private const string Freedom2 = "ManeuverMaster.Freedom2";
-        public static readonly string Freedom2Guid = "{EE082D1F-6871-4D54-A4AE-2C6995AD513A}";
+        public static readonly string Freedom2Guid = "{622D6C15-624F-49E7-8DFF-54CB8E9B3DC0}";
 
         private const string Freedom2Ablity = "ManeuverMaster.UseFreedom2";
-        private static readonly string Freedom2AblityGuid = "{FBAD374A-CE84-4F85-A2D5-8BB0052CE85C}";
+        private static readonly string Freedom2AblityGuid = "{624E8BBB-AF9D-4F62-BF67-768525269D8F}";
 
         internal const string Freedom2DisplayName = "ManeuverMasterFreedom2.Name";
         private const string Freedom2Description = "ManeuverMasterFreedom2.Description";

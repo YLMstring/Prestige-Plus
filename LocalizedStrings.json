@@ -9631,6 +9631,171 @@
     "Key": "EnchantingCourtesanHiddenMind.Description",
     "enGB": "At 9th level, a master spy gains the benefit of a constant mind blank spell.",
     "zhCN": "9级起，间谍大师获得永久性的心灵屏障法术效果保护。"
+  },
+  {
+    "Key": "DeificObedienceLanternKing.Name",
+    "ProcessTemplates": false,
+    "enGB": "The Lantern King Obedience",
+    "zhCN": "灯王仪典"
+  },
+  {
+    "Key": "DeificObedienceLanternKing.Description",
+    "enGB": "Light a small lantern and tell it a joke or the story of a prank you played on someone—this must be a different joke or story each time. You gain a +4 sacred bonus on saving throws versus illusions.",
+    "zhCN": "点亮一盏小灯笼，给它讲一个笑话，或是你恶搞某人的故事——每次都必须是不同的笑话或故事。你在对抗幻术的豁免检定上获得+4神圣加值。"
+  },
+  {
+    "Key": "SpellPowerLanternKing1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Prankster's Touch",
+    "zhCN": "恶作剧之触"
+  },
+  {
+    "Key": "SpellPowerLanternKing1.Description",
+    "enGB": "hideous laughter 2/day",
+    "zhCN": "狂笑术 2次/日"
+  },
+  {
+    "Key": "SpellPowerLanternKing2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Transform Others",
+    "zhCN": "变化万物"
+  },
+  {
+    "Key": "SpellPowerLanternKing2.Description",
+    "enGB": "Once per day, you can duplicate the effects of baleful polymorph, greater polymorph or stone to flesh as a 8th-level spell-like ability. In addition, the polymorph effects last for at least 12 hours.",
+    "zhCN": "每天一次，你可以复制恶意变形术，高等变形术或解除石化的效果，这视为一个8级的类法术能力。此外，该变形效应至少持续12小时。"
+  },
+  {
+    "Key": "SpellPowerLanternKing3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Anyone and Anything",
+    "zhCN": "是我，都是我"
+  },
+  {
+    "Key": "SpellPowerLanternKing3.Description",
+    "enGB": "You can cast shapechange once per day.",
+    "zhCN": "每天一次，你可以施放形体转换。"
+  },
+  {
+    "Key": "DeificObedienceGozreh.Name",
+    "ProcessTemplates": false,
+    "enGB": "Gozreh Obedience",
+    "zhCN": "哥兹莱仪典"
+  },
+  {
+    "Key": "DeificObedienceGozreh.Description",
+    "enGB": "Hang a set of chimes where they will be stirred by either wind or water. If no suitable location exists to hang the chimes, you must hold the chimes and shake them gently to sound them throughout your obedience. Chant prayers from Hymns to the Wind and the Waves as you attune yourself to the sound of the chimes, then drink a mouthful of pure water and pour a handful over your head. Gain a +4 sacred bonus on saving throws against electricity and cold spells and effects.",
+    "zhCN": "将一套铃铛悬挂在能够被风或水摇荡的地方。若没有合适的地点来悬挂铃铛，你就必须在整个服从仪典中举着它们并轻轻地摇动。颂唱《风澜谣》中的祈祷文，逐渐将自己与铃声同调，之后喝下一口洁净的水，再将一把水洒在头顶。你在对抗闪电和寒冷法术与效果时，豁免检定获得+4神圣加值。"
+  },
+  {
+    "Key": "DeificObedienceGozrehExalted.Name",
+    "ProcessTemplates": false,
+    "enGB": "Gozreh (Exalted)",
+    "zhCN": "哥兹莱（大尊者）"
+  },
+  {
+    "Key": "DeificObedienceGozrehExalted.Description",
+    "enGB": "Become an exalted to gain access to his boons, which will be granted at certain character or class levels.",
+    "zhCN": "成为大尊者来获取他的神恩资格，你会在合适的角色或职业等级得到神恩。"
+  },
+  {
+    "Key": "SpellPowerGozreh1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Green Worker",
+    "zhCN": "环境保护者"
+  },
+  {
+    "Key": "SpellPowerGozreh1.Description",
+    "enGB": "entangle 3/day",
+    "zhCN": "纠缠术 3次/日"
+  },
+  {
+    "Key": "DeificObedienceGozreh2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Lightning Child",
+    "zhCN": "风暴之子"
+  },
+  {
+    "Key": "DeificObedienceGozreh2.Description",
+    "enGB": "You become resistant to lightning and similar effects. Gain electricity resistance equal to 5 + your Hit Dice.",
+    "zhCN": "你能够抵抗雷电以及类似的效果。你获得闪电抗力，数值等同于5+你的生命骰。"
+  },
+  {
+    "Key": "DeificObedienceGozreh3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Nature's Companion",
+    "zhCN": "自然伙伴"
+  },
+  {
+    "Key": "DeificObedienceGozreh3.Description",
+    "enGB": "Your animal companion develops greater combat prowess, mental acumen, and protection against natural elements. First, your animal companion gains a +1 bonus to its Intelligence and Wisdom scores. Second, your animal companion gains a +2 sacred bonus on attack and damage rolls. Third, your animal companion gains a +4 sacred bonus on all saving throws against cold, electricity, and fire spells and effects.",
+    "zhCN": "你的动物伙伴成长了，它获得了更强的战斗技巧、更加敏锐的思维、以及抵御自然元素的能力。首先，你的动物伙伴的智力和感知属性获得+1加值。其次，你的动物伙伴的攻击与伤害检定获得+2神圣加值。最后，你的动物伙伴在对抗寒冷、闪电以及火焰法术和效果时，豁免检定获得+4神圣加值。"
+  },
+  {
+    "Key": "DeificObedienceCalistria.Name",
+    "ProcessTemplates": false,
+    "enGB": "Calistria Obedience",
+    "zhCN": "卡莉丝翠仪典"
+  },
+  {
+    "Key": "DeificObedienceCalistria.Description",
+    "enGB": "Engage in sexual activity with another individual in exchange for money, information, or another valuable resource. This must be a willing act on both your parts; you should not endanger yourself or otherwise enter a situation that makes you uncomfortable. Pray aloud to Calistria before and after the act, and encourage your partner to do the same. If no suitable partner is available, wrap yourself in yellow silk and hold your holy symbol against your chest. Meditate on the teachings of Calistria and fantasize about taking vengeance against one who wronged you. Gain a +4 profane bonus on Diplomacy and Bluff skill checks when interacting with an intelligent creature that could be sexually attracted to you.",
+    "zhCN": "为了交换金钱、情报或者其他贵重资源而和某人进行性行为。双方都必须是自愿；你不应为此而涉险或者陷入某种令你不适的状况。在行房前后向卡莉丝翠大声祈祷，并鼓励你的伴侣也这么做。若没有合适的伴侣，则需要用黄色的丝绸包裹全身，用手握住圣徽按在胸前。默想卡莉丝翠的教诲，并幻想如何报复那些亏待你的人。当和你对其有性吸引力的智慧生命互动时，你在沟通和唬骗检定中获得+4亵渎加值。"
+  },
+  {
+    "Key": "DeificObedienceCalistriaExalted.Name",
+    "ProcessTemplates": false,
+    "enGB": "Calistria (Exalted)",
+    "zhCN": "卡莉丝翠（大尊者）"
+  },
+  {
+    "Key": "DeificObedienceCalistriaExalted.Description",
+    "enGB": "Become an exalted to gain access to her boons, which will be granted at certain character or class levels.",
+    "zhCN": "成为大尊者来获取他的神恩资格，你会在合适的角色或职业等级得到神恩。"
+  },
+  {
+    "Key": "SpellPowerCalistria1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Calistria's Tongue",
+    "zhCN": "卡莉丝翠之舌"
+  },
+  {
+    "Key": "SpellPowerCalistria1.Description",
+    "enGB": "eagle’s splendor 2/day",
+    "zhCN": "鹰之威仪 2次/日"
+  },
+  {
+    "Key": "DeificObedienceCalistria2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Stunning Touch",
+    "zhCN": "离魂之触"
+  },
+  {
+    "Key": "DeificObedienceCalistria2.Description",
+    "enGB": "When using the dazing touch power granted by the Charm domain, you can cause the creature touched to become stunned for 1 round instead of dazed. If you don’t have normal access to the Charm domain, you instead gain the ability to use the dazing touch power a number of times per day equal to 3 + your Wisdom modifier, as listed in the ability; however, you only daze your opponents instead of stunning them. Creatures with more Hit Dice than yours are unaffected.",
+    "zhCN": "在使用魅惑领域的接触能力时，你能够让目标震慑1轮，以取代原本的晕眩。若你并不具有正常的魅惑领域，那么你会获得魅惑领域的接触能力，每日使用次数为3 + 你的感知调整值，如同该能力所描述的一样，但你只能让敌人晕眩，而不是震慑。生命骰高于你的敌人不受影响。"
+  },
+  {
+    "Key": "DeificObedienceCalistria3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Protective Grace",
+    "zhCN": "优雅护身"
+  },
+  {
+    "Key": "DeificObedienceCalistria3.Description",
+    "enGB": "You may add your Charisma bonus to your AC while wearing light or no armor. This bonus applies against touch attacks. Any condition that would cause you to lose your Dexterity bonus to AC also causes you to lose your Charisma bonus to AC.",
+    "zhCN": "当你穿着轻甲或者不穿甲时，可以将你的魅力调整值加到你的AC上。该加值可以用于对抗接触攻击。任何会使你的AC失去敏捷加值的状态，也会使你失去AC上的魅力加值。"
+  },
+  {
+    "Key": "ManeuverMasterFreedom2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Wanderer’s Fortune",
+    "zhCN": "浪子好运"
+  },
+  {
+    "Key": "ManeuverMasterFreedom2.Description",
+    "enGB": "The promise of Elysium’s freedom liberates you from all forms of restraint, allowing you to move as you will and to avoid numerous kinds of restraints that would otherwise vex a traveler or explorer. As a swift action, you gain the benefits of freedom of movement for 1 round. You can use this feat’s benefit once per day, plus an additional time per day for every 5 ranks you have in Knowledge (arcana).",
+    "zhCN": "极乐境的自由誓言将你从旅行者与探险者所困扰的各种限制中解放出来，让你可以随心所欲地行动。以一个迅捷动作,你可以获得行动自如法术的好处，持续1轮。你能每天使用1次本专长，在知识（神秘）上每有5级额外增加一次。"
   }
 
 ]

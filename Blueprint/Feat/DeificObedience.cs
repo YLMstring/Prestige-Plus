@@ -141,6 +141,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(RovagugFeat())
               .AddToAllFeatures(LanternKingFeat())
               .AddToAllFeatures(GozrehFeat())
+              .AddToAllFeatures(CalistriaFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -3745,7 +3746,7 @@ namespace PrestigePlus.Blueprint.Feat
         public static BlueprintProgression LanternKingFeat()
         {
             //"TheLanternKingFeature": "ecb81f58-8458-4471-a62b-bb07728b8658",
-            var icon = AbilityRefs.BloodlineFeyLaughingTouchAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.DLC5_ShadowPlaneBeltLanternAbility.Reference.Get().Icon;
 
             return ProgressionConfigurator.New(LanternKing, LanternKingGuid)
               .SetDisplayName(LanternKingDisplayName)
@@ -3766,7 +3767,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static BlueprintFeature LanternKing0Feat()
         {
-            var icon = AbilityRefs.BloodlineFeyLaughingTouchAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.DLC5_ShadowPlaneBeltLanternAbility.Reference.Get().Icon;
 
             return FeatureConfigurator.New(LanternKing0, LanternKing0Guid)
               .SetDisplayName(LanternKingDisplayName)
