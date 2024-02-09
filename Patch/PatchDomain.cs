@@ -4,10 +4,12 @@ using BlueprintCore.Utils;
 using HarmonyLib;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.Components;
+using PrestigePlus.Blueprint.Feat;
 using PrestigePlus.Blueprint.PrestigeClass;
 using System;
 using System.Collections.Generic;
@@ -135,6 +137,11 @@ namespace PrestigePlus.Patch
             foreach (var domain in list4)
             {
                 PatchDomains(domain.Guid.ToString());
+            }
+            var charm = BlueprintTool.GetRef<BlueprintAbilityReference>(DeificObedience.Calistria2AblityGuid);
+            if (charm != null)
+            {
+                FeatureRefs.DomainMastery.Reference.Get().GetComponent<AutoMetamagic>()?.Abilities?.Add(charm);
             }
         }
     }

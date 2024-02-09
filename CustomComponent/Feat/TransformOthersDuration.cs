@@ -22,13 +22,13 @@ namespace PrestigePlus.CustomComponent.Feat
         public void HandleBuffDidAdded(Buff buff)
         {
             MechanicsContext maybeContext = buff.MaybeContext;
-            if (maybeContext?.MaybeCaster == Owner && buff.TimeLeft <= 12.Hours())
+            if (maybeContext?.MaybeCaster == Owner && buff.TimeLeft <= 3.Hours())
             {
                 AbilityExecutionContext sourceAbilityContext = buff.Context?.SourceAbilityContext;
                 AbilityData abilityData = sourceAbilityContext?.Ability;
                 if (abilityData?.ConvertedFrom?.Blueprint == Trans.Get())
                 {
-                    buff.SetEndTime(12.Hours() + buff.AttachTime);
+                    buff.SetEndTime(3.Hours() + buff.AttachTime);
                 }
             }
         }

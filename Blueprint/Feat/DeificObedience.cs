@@ -4102,7 +4102,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string Calistria2Description = "DeificObedienceCalistria2.Description";
 
         private const string Calistria2Ablity = "SpellPower.UseCalistria2";
-        private static readonly string Calistria2AblityGuid = "{FA02B3F6-A217-4C5D-A241-A6D4531A6E77}";
+        public static readonly string Calistria2AblityGuid = "{FA02B3F6-A217-4C5D-A241-A6D4531A6E77}";
         public static BlueprintFeature CalistriaExalted2Feat()
         {
             var icon = AbilityRefs.CharmDomainBaseAbility.Reference.Get().Icon;

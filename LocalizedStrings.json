@@ -9662,8 +9662,8 @@
   },
   {
     "Key": "SpellPowerLanternKing2.Description",
-    "enGB": "Once per day, you can duplicate the effects of baleful polymorph, greater polymorph or stone to flesh as a 8th-level spell-like ability. In addition, the polymorph effects last for at least 12 hours.",
-    "zhCN": "每天一次，你可以复制恶意变形术，高等变形术或解除石化的效果，这视为一个8级的类法术能力。此外，该变形效应至少持续12小时。"
+    "enGB": "Once per day, you can duplicate the effects of baleful polymorph, greater polymorph or stone to flesh as a 8th-level spell-like ability. In addition, the polymorph effects last for at least 3 hours.",
+    "zhCN": "每天一次，你可以复制恶意变形术，高等变形术或解除石化的效果，这视为一个8级的类法术能力。此外，该变形效应至少持续3小时。"
   },
   {
     "Key": "SpellPowerLanternKing3.Name",
