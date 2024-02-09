@@ -9,11 +9,13 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
+using PrestigePlus.CustomComponent;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TabletopTweaks.Core.NewComponents;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -100,14 +102,17 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(BattleBravadoDisplayName)
               .SetDescription(BattleBravadoDescription)
               .SetIcon(icon)
-              .AddFacts(new() { "64acb179cc6a4f19bb3513d094b28d02", "ffc307c9e39544968432a21ad842bf26" })
+              .AddFacts(new() { BuffRefs.ScaledFistACBonusBuff.ToString(), ActivatableAbilityRefs.ScaledFistSupressActivatableAbility.ToString() })
               .Configure();
 
             return FeatureConfigurator.New(BattleBravado, BattleBravadoGuid)
               .SetDisplayName(BattleBravadoDisplayName)
               .SetDescription(BattleBravadoDescription)
               .SetIcon(icon)
-              .AddMonkNoArmorFeatureUnlock(feat)
+              .AddComponent<ArmorUnlockPP>(c => { 
+                  c.NewFact = feat.ToReference<BlueprintUnitFactReference>();
+                  c.NoArmor = true;
+              })
               .Configure();
         }
 

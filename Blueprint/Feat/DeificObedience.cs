@@ -66,6 +66,8 @@ using static Kingmaker.EntitySystem.Properties.BaseGetter.PropertyContextAccesso
 using BlueprintCore.Utils;
 using TabletopTweaks.Core.NewComponents.OwlcatReplacements;
 using TabletopTweaks.Core.NewActions;
+using static Kingmaker.Armies.TacticalCombat.Grid.TacticalCombatGrid;
+using Kingmaker.Designers.EventConditionActionSystem.Actions;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -3753,9 +3755,9 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticNeutral, group: Prerequisite.GroupType.Any)
               .SetGiveFeaturesForPreviousLevels(true)
               .AddToLevelEntry(1, LanternKing0Feat())
-              .AddToLevelEntry(12, CreateLanternKing1())
-              .AddToLevelEntry(16, CreateLanternKing2())
-              .AddToLevelEntry(20, CreateLanternKing3())
+              .AddToLevelEntry(2, CreateLanternKing1())
+              .AddToLevelEntry(6, CreateLanternKing2())
+              .AddToLevelEntry(10, CreateLanternKing3())
               .Configure();
         }
 
@@ -3954,9 +3956,9 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddPrerequisiteFeature(GozrehGuid)
               .SetGiveFeaturesForPreviousLevels(true)
-              .AddToLevelEntry(12, CreateGozreh1())
-              .AddToLevelEntry(16, GozrehExalted2Feat())
-              .AddToLevelEntry(20, GozrehExalted3Feat())
+              .AddToLevelEntry(2, CreateGozreh1())
+              .AddToLevelEntry(6, GozrehExalted2Feat())
+              .AddToLevelEntry(10, GozrehExalted3Feat())
               .Configure();
         }
 
@@ -4004,7 +4006,7 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string Gozreh3featGuid = "{99F8D1C6-BB48-49D6-957B-4601DB523445}";
         public static BlueprintFeature GozrehExalted3Feat()
         {
-            var icon = AbilityRefs.BalefulPolymorph.Reference.Get().Icon;
+            var icon = AbilityRefs.DominateAnimal.Reference.Get().Icon;
 
             var feat = FeatureConfigurator.New(Gozreh3Feat, Gozreh3featGuid)
                     .SetDisplayName(Gozreh3DisplayName)
@@ -4024,6 +4026,150 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetDescription(Gozreh3Description)
                     .SetIcon(icon)
                     .AddFeatureToPet(feat, PetType.AnimalCompanion)
+                    .Configure();
+        }
+
+        private const string Calistria = "DeificObedience.Calistria";
+        public static readonly string CalistriaGuid = "{E74E2D65-6487-4514-8E47-56009AEA1318}";
+
+        internal const string CalistriaDisplayName = "DeificObedienceCalistria.Name";
+        private const string CalistriaDescription = "DeificObedienceCalistria.Description";
+        public static BlueprintFeature CalistriaFeat()
+        {
+            var icon = FeatureRefs.CalistriaFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Calistria, CalistriaGuid)
+              .SetDisplayName(CalistriaDisplayName)
+              .SetDescription(CalistriaDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.CalistriaFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticNeutral, group: Prerequisite.GroupType.Any)
+              .AddToIsPrerequisiteFor(CalistriaExaltedFeat())
+              .AddStatBonus(ModifierDescriptor.Profane, false, StatType.CheckBluff, 4)
+              .AddStatBonus(ModifierDescriptor.Profane, false, StatType.CheckDiplomacy, 4)
+              .Configure();
+        }
+
+        private const string CalistriaExalted = "DeificObedience.CalistriaExalted";
+        public static readonly string CalistriaExaltedGuid = "{E6E8A995-4470-4296-BF49-3AB8F03A371C}";
+
+        internal const string CalistriaExaltedDisplayName = "DeificObedienceCalistriaExalted.Name";
+        private const string CalistriaExaltedDescription = "DeificObedienceCalistriaExalted.Description";
+        public static BlueprintProgression CalistriaExaltedFeat()
+        {
+            var icon = FeatureRefs.CalistriaFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(CalistriaExalted, CalistriaExaltedGuid)
+              .SetDisplayName(CalistriaExaltedDisplayName)
+              .SetDescription(CalistriaExaltedDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(CalistriaGuid)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(2, CreateCalistria1())
+              .AddToLevelEntry(6, CalistriaExalted2Feat())
+              .AddToLevelEntry(10, CalistriaExalted3Feat())
+              .Configure();
+        }
+
+        private const string Calistria1 = "SpellPower.Calistria1";
+        public static readonly string Calistria1Guid = "{F99AD290-364B-4F23-A71E-D75141E3C80E}";
+        internal const string Calistria1DisplayName = "SpellPowerCalistria1.Name";
+        private const string Calistria1Description = "SpellPowerCalistria1.Description";
+
+        private const string Calistria1Ablity = "SpellPower.UseCalistria1";
+        private static readonly string Calistria1AblityGuid = "{6F31F2C9-1E51-46D4-B0BC-F923F5984A68}";
+        private static BlueprintFeature CreateCalistria1()
+        {
+            var icon = AbilityRefs.EaglesSplendor.Reference.Get().Icon;
+
+            var ability = AbilityConfigurator.New(Calistria1Ablity, Calistria1AblityGuid)
+                .CopyFrom(
+                AbilityRefs.EaglesSplendor,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 2)
+                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Calistria1, Calistria1Guid)
+              .SetDisplayName(Calistria1DisplayName)
+              .SetDescription(Calistria1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string Calistria2 = "DeificObedience.Calistria2";
+        public static readonly string Calistria2Guid = "{BD701CB9-0F65-420C-B573-FFD77B2A26B6}";
+
+        internal const string Calistria2DisplayName = "DeificObedienceCalistria2.Name";
+        private const string Calistria2Description = "DeificObedienceCalistria2.Description";
+        public static BlueprintFeature CalistriaExalted2Feat()
+        {
+            var icon = AbilityRefs.CharmDomainBaseAbility.Reference.Get().Icon;
+
+            var shoot = ActionsBuilder.New()
+                    .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(Calistria2Guid).CasterHasFact(FeatureRefs.CharmDomainBaseFeature.ToString()).Build(),
+                    ifTrue: ActionsBuilder.New()
+                        .ApplyBuff(BuffRefs.Stunned.ToString(), ContextDuration.Fixed(1))
+                        .Build())
+                    .Build();
+
+            AbilityConfigurator.For(AbilityRefs.CharmDomainBaseAbility)
+              .EditComponent<AbilityEffectRunAction>(
+                a => a.Actions.Actions = shoot.Actions)
+              .Configure(delayed: true);
+
+            var list = AbilityRefs.CharmDomainBaseAbility.Reference.Get().GetComponent<AbilityEffectRunAction>()?.Actions.Actions;
+            foreach ( var action in list )
+            {
+                if (action is Conditional cond)
+                {
+                    if (cond.IfTrue?.Actions == null) { continue; }
+                    CommonTool.Append(cond.IfTrue.Actions, shoot.Actions);
+                }
+            }
+
+            return FeatureConfigurator.New(Calistria2, Calistria2Guid)
+              .SetDisplayName(Calistria2DisplayName)
+              .SetDescription(Calistria2Description)
+              .SetIcon(icon)
+              .AddFacts(new() { AbilityRefs.CharmDomainBaseAbility.ToString() })
+              .AddAbilityResources(resource: AbilityResourceRefs.CharmDomainBaseResource.ToString(), restoreOnLevelUp: true)
+              .Configure();
+        }
+
+        private static readonly string Calistria3Name = "DeificObedienceCalistria3";
+        public static readonly string Calistria3Guid = "{EAE243D0-433F-4A2B-93FD-A16EF701A055}";
+
+        private static readonly string Calistria3DisplayName = "DeificObedienceCalistria3.Name";
+        private static readonly string Calistria3Description = "DeificObedienceCalistria3.Description";
+
+        private const string Calistria3Feat = "DeificObedienceStyle.Calistria3feat";
+        private static readonly string Calistria3featGuid = "{EAC449B5-40ED-4922-968B-FB07A2845318}";
+        public static BlueprintFeature CalistriaExalted3Feat()
+        {
+            var icon = AbilityRefs.Grace.Reference.Get().Icon;
+
+            var feat = FeatureConfigurator.New(Calistria3Feat, Calistria3featGuid)
+                    .SetDisplayName(Calistria3DisplayName)
+                    .SetDescription(Calistria3Description)
+                    .SetIcon(icon)
+                    .AddFacts(new() { BuffRefs.ScaledFistACBonusBuff.ToString(), ActivatableAbilityRefs.ScaledFistSupressActivatableAbility.ToString() })
+                    .Configure();
+
+            return FeatureConfigurator.New(Calistria3Name, Calistria3Guid)
+                    .SetDisplayName(Calistria3DisplayName)
+                    .SetDescription(Calistria3Description)
+                    .SetIcon(icon)
+                    .AddComponent<ArmorUnlockPP>(c => {
+                        c.NewFact = feat.ToReference<BlueprintUnitFactReference>();
+                        c.NoArmor = true;
+                        c.RequiredArmor = new ArmorProficiencyGroup[] { ArmorProficiencyGroup.Light };
+                    })
                     .Configure();
         }
     }
