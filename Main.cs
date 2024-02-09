@@ -415,7 +415,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("constable"))) { Constable.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("emissary"))) { Emissary.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("menhir"))) { MenhirSavant.Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("mm"))) { ManeuverMaster.Configure(); ManeuverMaster.FreedomFeat(); ManeuverMaster.OneTouchFeat(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("mm"))) { ManeuverMaster.Configure(); ManeuverMaster.FreedomFeat(); ManeuverMaster.OneTouchFeat(); ManeuverMaster.FreedomFeat2(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("drinker"))) { Souldrinker.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("cardplayer"))) { Cartomancer.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("drunk"))) { DrunkenBrute.Configure(); DrunkenBrute.AtavismFeat(); DrunkenBrute.GreaterAtavismFeat(); DrunkenBrute.CreateGlare(); DrunkenBrute.RoaringDrunkFeat(); DrunkenBrute.LiquidCourageFeat(); }

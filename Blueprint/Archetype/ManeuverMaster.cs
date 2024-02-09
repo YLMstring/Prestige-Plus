@@ -574,6 +574,53 @@ namespace PrestigePlus.Blueprint.Archetype
               .Configure();
         }
 
+        private const string Freedom2 = "ManeuverMaster.Freedom2";
+        public static readonly string Freedom2Guid = "{EE082D1F-6871-4D54-A4AE-2C6995AD513A}";
+
+        private const string Freedom2Ablity = "ManeuverMaster.UseFreedom2";
+        private static readonly string Freedom2AblityGuid = "{FBAD374A-CE84-4F85-A2D5-8BB0052CE85C}";
+
+        internal const string Freedom2DisplayName = "ManeuverMasterFreedom2.Name";
+        private const string Freedom2Description = "ManeuverMasterFreedom2.Description";
+
+        private const string Freedom2Res = "ManeuverMaster.UseFreedom2Res";
+        public static readonly string Freedom2ResGuid = "{17C7A5E2-2AD5-4D71-A4E9-94C34717039A}";
+        public static BlueprintFeature FreedomFeat2()
+        {
+            var icon = AbilityRefs.FreedomOfMovement.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(Freedom2Res, Freedom2ResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var ability = AbilityConfigurator.New(Freedom2Ablity, Freedom2AblityGuid)
+                .CopyFrom(
+                AbilityRefs.FreedomOfMovement,
+                typeof(AbilitySpawnFx))
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .ApplyBuff(BuffRefs.FreedomOfMovementBuff.ToString(), ContextDuration.Fixed(1))
+                        .Build())
+                .SetDisplayName(Freedom2DisplayName)
+                .SetDescription(Freedom2Description)
+                .SetIcon(icon)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Supernatural)
+                .Configure();
+
+            return FeatureConfigurator.New(Freedom2, Freedom2Guid, FeatureGroup.Feat)
+              .SetDisplayName(Freedom2DisplayName)
+              .SetDescription(Freedom2Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability })
+              .AddPrerequisiteStatValue(StatType.SkillKnowledgeArcana, 3)
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .AddIncreaseResourceAmountBySharedValue(false, abilityresourse, ContextValues.Rank())
+              .AddContextRankConfig(ContextRankConfigs.BaseStat(StatType.SkillKnowledgeArcana).WithDivStepProgression(5))
+              .Configure();
+        }
+
         private const string OneTouch = "ManeuverMaster.OneTouch";
         public static readonly string OneTouchGuid = "{BFCF6BEB-722D-42D3-A9BA-8AAC1462E6B6}";
 
