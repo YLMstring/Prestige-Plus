@@ -4107,27 +4107,39 @@ namespace PrestigePlus.Blueprint.Feat
 
         internal const string Calistria2DisplayName = "DeificObedienceCalistria2.Name";
         private const string Calistria2Description = "DeificObedienceCalistria2.Description";
+
+        private const string Calistria2Ablity = "SpellPower.UseCalistria2";
+        private static readonly string Calistria2AblityGuid = "{FA02B3F6-A217-4C5D-A241-A6D4531A6E77}";
         public static BlueprintFeature CalistriaExalted2Feat()
         {
             var icon = AbilityRefs.CharmDomainBaseAbility.Reference.Get().Icon;
 
             var shoot = ActionsBuilder.New()
-                    .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(Calistria2Guid).CasterHasFact(FeatureRefs.CharmDomainBaseFeature.ToString()).Build(),
+                    .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(FeatureRefs.CharmDomainBaseFeature.ToString()).Build(),
                     ifTrue: ActionsBuilder.New()
                         .ApplyBuff(BuffRefs.Stunned.ToString(), ContextDuration.Fixed(1))
+                        .Build(),
+                    ifFalse: ActionsBuilder.New()
+                        .ApplyBuff(BuffRefs.DazeBuff.ToString(), ContextDuration.Fixed(1))
                         .Build())
                     .Build();
 
-            AbilityConfigurator.For(AbilityRefs.CharmDomainBaseAbility)
-              .EditComponent<AbilityEffectRunAction>(
-                a => a.Actions.Actions = CommonTool.Append(a.Actions.Actions, shoot.Actions))
-              .Configure(delayed: true);
+            var ability = AbilityConfigurator.New(Calistria2Ablity, Calistria2AblityGuid)
+                .CopyFrom(
+                AbilityRefs.CharmDomainBaseAbility,
+                typeof(AbilityDeliverTouch),
+                typeof(AbilityResourceLogic))
+                .SetDisplayName(Calistria2DisplayName)
+                .SetDescription(Calistria2Description)
+                .AddAbilityEffectRunAction(shoot)
+                .AddComponent<AbilityTargetLessHD>()
+                .Configure();
 
             return FeatureConfigurator.New(Calistria2, Calistria2Guid)
               .SetDisplayName(Calistria2DisplayName)
               .SetDescription(Calistria2Description)
               .SetIcon(icon)
-              .AddFacts(new() { AbilityRefs.CharmDomainBaseAbility.ToString() })
+              .AddFacts(new() { ability })
               .AddAbilityResources(resource: AbilityResourceRefs.CharmDomainBaseResource.ToString(), restoreOnLevelUp: true)
               .Configure();
         }
