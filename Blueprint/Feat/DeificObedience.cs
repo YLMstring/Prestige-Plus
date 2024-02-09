@@ -3756,9 +3756,9 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticNeutral, group: Prerequisite.GroupType.Any)
               .SetGiveFeaturesForPreviousLevels(true)
               .AddToLevelEntry(1, LanternKing0Feat())
-              .AddToLevelEntry(2, CreateLanternKing1())
-              .AddToLevelEntry(6, CreateLanternKing2())
-              .AddToLevelEntry(10, CreateLanternKing3())
+              .AddToLevelEntry(12, CreateLanternKing1())
+              .AddToLevelEntry(16, CreateLanternKing2())
+              .AddToLevelEntry(20, CreateLanternKing3())
               .Configure();
         }
 
@@ -3949,9 +3949,9 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddPrerequisiteFeature(GozrehGuid)
               .SetGiveFeaturesForPreviousLevels(true)
-              .AddToLevelEntry(2, CreateGozreh1())
-              .AddToLevelEntry(6, GozrehExalted2Feat())
-              .AddToLevelEntry(10, GozrehExalted3Feat())
+              .AddToLevelEntry(12, CreateGozreh1())
+              .AddToLevelEntry(16, GozrehExalted2Feat())
+              .AddToLevelEntry(20, GozrehExalted3Feat())
               .Configure();
         }
 
@@ -3978,7 +3978,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string Gozreh2Description = "DeificObedienceGozreh2.Description";
         public static BlueprintFeature GozrehExalted2Feat()
         {
-            var icon = AbilityRefs.ThunderingRageAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.Repulsion.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Gozreh2, Gozreh2Guid)
               .SetDisplayName(Gozreh2DisplayName)
@@ -4058,9 +4058,9 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddPrerequisiteFeature(CalistriaGuid)
               .SetGiveFeaturesForPreviousLevels(true)
-              .AddToLevelEntry(2, CreateCalistria1())
-              .AddToLevelEntry(6, CalistriaExalted2Feat())
-              .AddToLevelEntry(10, CalistriaExalted3Feat())
+              .AddToLevelEntry(12, CreateCalistria1())
+              .AddToLevelEntry(16, CalistriaExalted2Feat())
+              .AddToLevelEntry(20, CalistriaExalted3Feat())
               .Configure();
         }
 
