@@ -9772,8 +9772,8 @@
   },
   {
     "Key": "DeificObedienceCalistria2.Description",
-    "enGB": "When using the dazing touch power granted by the Charm domain, you can cause the creature touched to become stunned for 1 round instead of dazed，and only creatures with more Hit Dice than yours are unaffected. If you don’t have normal access to the Charm domain, you instead gain the ability to use the dazing touch power a number of times per day equal to 3 + your Wisdom modifier, as listed in the ability; however, you only daze your opponents instead of stunning them.",
-    "zhCN": "在使用魅惑领域的接触能力时，你能够让目标震慑1轮，以取代原本的晕眩，且只有生命骰高于你的敌人不受影响。若你并不具有正常的魅惑领域，那么你会获得魅惑领域的接触能力，每日使用次数为3 + 你的感知调整值，如同该能力所描述的一样，但你只能让敌人晕眩，而不是震慑。"
+    "enGB": "When using the dazing touch power granted by the Charm domain, you can cause the creature touched to become stunned for 1 round instead of dazed. Only creatures with more Hit Dice than yours are unaffected. If you don’t have normal access to the Charm domain, you instead gain the ability to use the dazing touch power a number of times per day equal to 3 + your Wisdom modifier, as listed in the ability; however, you only daze your opponents instead of stunning them.",
+    "zhCN": "在使用魅惑领域的接触能力时，你能够让目标震慑1轮，以取代原本的晕眩。只有生命骰高于你的敌人不受影响。若你并不具有正常的魅惑领域，那么你会获得魅惑领域的接触能力，每日使用次数为3 + 你的感知调整值，如同该能力所描述的一样，但你只能让敌人晕眩，而不是震慑。"
   },
   {
     "Key": "DeificObedienceCalistria3.Name",
