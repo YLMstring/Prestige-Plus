@@ -1,6 +1,7 @@
 ﻿using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
+using PrestigePlus.CustomComponent.Feat;
 using PrestigePlus.Grapple;
 using System;
 using System.Collections.Generic;
@@ -46,7 +47,7 @@ namespace PrestigePlus.Blueprint.RogueTalent
                     .SetDisplayName(DisplayName2)
                     .SetDescription(Description2)
                     .SetIcon(icon)
-                    .AddCMBBonusForManeuver(maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple }, value: ContextValues.Constant(4))
+                    .AddComponent<TentacleGrab>()
                     .AddToGroups(Kingmaker.Blueprints.Classes.FeatureGroup.VivisectionistDiscovery)
                     .Configure();
         }
