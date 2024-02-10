@@ -151,6 +151,10 @@ namespace PrestigePlus.Grapple
             }
             if (!UnitPartGrappleTargetPP.IsTiedUp && !grappleInitiator.Context.TriggerRule(new RuleCombatManeuver(grappleInitiator, value, CombatManeuver.Grapple, null)).Success)
             {
+                if (isMaintain)
+                {
+                    UIUtility.SendWarning(grappleInitiator.CharacterName + " fails to maintain grapple.");
+                }
                 return isMaintain;
             }
             if (isMaintain)
