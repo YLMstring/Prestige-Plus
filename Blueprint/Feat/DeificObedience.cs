@@ -3756,9 +3756,9 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticNeutral, group: Prerequisite.GroupType.Any)
               .SetGiveFeaturesForPreviousLevels(true)
               .AddToLevelEntry(1, LanternKing0Feat())
-              .AddToLevelEntry(12, CreateLanternKing1())
-              .AddToLevelEntry(16, CreateLanternKing2())
-              .AddToLevelEntry(20, CreateLanternKing3())
+              .AddToLevelEntry(2, CreateLanternKing1())
+              .AddToLevelEntry(6, CreateLanternKing2())
+              .AddToLevelEntry(10, CreateLanternKing3())
               .Configure();
         }
 
