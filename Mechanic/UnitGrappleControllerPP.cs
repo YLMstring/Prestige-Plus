@@ -142,7 +142,7 @@ namespace PrestigePlus.Grapple
             if (UnitPartGrappleTargetPP == null) { return false; }
             if (grappleInitiator.HasFact(Release))
             {
-                UIUtility.SendWarning(grappleInitiator.ToString() + " releases grapple.");
+                UIUtility.SendWarning(grappleInitiator.CharacterName + " releases grapple.");
                 return true;
             }
             if (isMaintain)
@@ -155,7 +155,7 @@ namespace PrestigePlus.Grapple
             }
             if (isMaintain)
             {
-                UIUtility.SendWarning(grappleInitiator.ToString() + " maintains grapple.");
+                UIUtility.SendWarning(grappleInitiator.CharacterName + " maintains grapple.");
             }
             if (grappleInitiator.HasFact(Bear) || grappleInitiator.HasFact(Tiger) || grappleInitiator.HasFact(Lizard) || grappleInitiator.HasFact(Griffon))
             {
@@ -179,7 +179,7 @@ namespace PrestigePlus.Grapple
             }
             if (!UnitPartGrappleTargetPP.IsPinned && !grappleInitiator.HasFact(NoPin))
             {
-                UIUtility.SendWarning(grappleInitiator.ToString() + " pins the opponent.");
+                UIUtility.SendWarning(grappleInitiator.CharacterName + " pins the opponent.");
                 UnitPartGrappleTargetPP.TrySetPinned();
                 UnitPartGrappleInitiatorPP.TrySetPinning();
                 if (grappleInitiator.HasFact(StagBuff))
@@ -201,7 +201,7 @@ namespace PrestigePlus.Grapple
             }
             if (UnitPartGrappleTargetPP.IsPinned && !UnitPartGrappleTargetPP.IsTiedUp && !grappleInitiator.HasFact(NoTieUp))
             {
-                UIUtility.SendWarning(grappleInitiator.ToString() + " ties up the opponent.");
+                UIUtility.SendWarning(grappleInitiator.CharacterName + " ties up the opponent.");
                 UnitPartGrappleTargetPP.TrySetTiedUp();
                 UnitPartGrappleInitiatorPP.TryClearPinning();
                 return false;
