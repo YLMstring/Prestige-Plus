@@ -1,4 +1,4 @@
-# Prestige Plus v2.7.0 for WoTR 
+# Prestige Plus v2.7.1 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -19,7 +19,7 @@
 - [Enhanced Ki Throw](https://www.d20pfsrd.com/feats/combat-feats/enhanced-ki-throw-combat/)
 ### [Grapple Mechanic](https://www.d20pfsrd.com/gamemastering/Combat/#Grapple)
 - This is how I implement it:
-1. There are 3 kinds of grapples in the game. My Grapple Mechanic is very close to tabletop. Shifter grapples stay owlcat-brew but once the shifter takes Grapple (Improved Grapple) feat, their grapple mechanics would be turned into mine. Finally, monster grapples stay the way it is in vanilla.
+1. There are 3 kinds of grapples in the game. My Grapple Mechanic is very close to tabletop. Shifter and beast shape grapples stay owlcat-brew but once the character takes Grapple (Improved Grapple) feat, their grapple mechanics would be turned into mine. Finally, monster grapples stay the way it is in vanilla.
 2. If you are grappled, you can attempt to break the grapple by making a combat maneuver check (DC equal to your opponent’s CMD; this does not provoke an attack of opportunity) or Thievery check (with a DC equal to your opponent’s CMD). If you succeed, you break the grapple as a standard action. However, if you fail nothing happens, you don't use your standard action.
 3. Tied Up creatures still need to be grappled. The rope would be bursted if you release grapple, because you don't have time to tie someone up properly in combat. They are not helpless but can become the target of Coup De Grace. Additionally, grapple actions against them auto-succeed, they're auto pinned by the rope and their Thievery check DC to escape is higher.
 - Added Feats: Grapple (Improved Grapple), Greater Grapple, Rapid Grappler, Unfair Grip, Pinning Knockout, Pinning Rend, Savage Slam, Dramatic Slam, Hamatula Strike, Throat Slicer
@@ -49,6 +49,9 @@
 - [Chaldira (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Chaldira): requires thievery 1, worshipping Sarenrae or Neutral Good
 - [Pulura](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Pulura): requires worshipping Pulura or Chaotic Good
 - [Rovagug](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Rovagug): requires worshipping Rovagug or Chaotic Evil
+- [The Lantern King](https://aonprd.com/DeityDisplay.aspx?ItemName=The%20Lantern%20King): requires worshipping The Lantern King (Expanded Content) or Chaotic Neutral
+- [Gozreh (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Gozreh): requires worshipping Gozreh or Neutral
+- [Calistria (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Calistria): requires worshipping Calistria or Chaotic Neutral
 - More coming soon!
 ### [Evangelist](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/evangelist/)
 - [Diverse Obedience](https://www.d20pfsrd.com/feats/general-feats/diverse-obedience/)
@@ -274,6 +277,7 @@
 - [Magic Trick (mage hand)](https://www.d20pfsrd.com/feats/general-feats/magic-trick-2/) and its mythic feat!
 - [Magic Trick (shield)](https://www.d20pfsrd.com/feats/general-feats/magic-trick-2/)
 - [Eldritch Assault](https://www.d20pfsrd.com/feats/general-feats/eldritch-assault/)
+- [Wanderer’s Fortune](https://www.d20pfsrd.com/feats/conduit-feats/wanderers-fortune-conduit/)
 - [Improved Parry](https://www.d20pfsrd.com/feats/combat-feats/improved-parry-combat/)
 - [Shield Slam](https://www.d20pfsrd.com/feats/combat-feats/shield-slam-combat/)
 - [Shield Snag](https://www.d20pfsrd.com/feats/combat-feats/shield-snag-combat/)
