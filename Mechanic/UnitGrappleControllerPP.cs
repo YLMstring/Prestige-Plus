@@ -42,6 +42,7 @@ using PrestigePlus.Feats;
 using static Kingmaker.UI.CanvasScalerWorkaround;
 using Kingmaker.Visual.Animation.Kingmaker;
 using static Pathfinding.Util.RetainedGizmos;
+using Kingmaker.UI.Common;
 
 namespace PrestigePlus.Grapple
 {
@@ -141,6 +142,7 @@ namespace PrestigePlus.Grapple
             if (UnitPartGrappleTargetPP == null) { return false; }
             if (grappleInitiator.HasFact(Release))
             {
+                UIUtility.SendWarning(grappleInitiator.ToString() + " releases grapple.");
                 return true;
             }
             if (isMaintain)
@@ -150,6 +152,10 @@ namespace PrestigePlus.Grapple
             if (!UnitPartGrappleTargetPP.IsTiedUp && !grappleInitiator.Context.TriggerRule(new RuleCombatManeuver(grappleInitiator, value, CombatManeuver.Grapple, null)).Success)
             {
                 return isMaintain;
+            }
+            if (isMaintain)
+            {
+                UIUtility.SendWarning(grappleInitiator.ToString() + " maintains grapple.");
             }
             if (grappleInitiator.HasFact(Bear) || grappleInitiator.HasFact(Tiger) || grappleInitiator.HasFact(Lizard) || grappleInitiator.HasFact(Griffon))
             {
@@ -173,6 +179,7 @@ namespace PrestigePlus.Grapple
             }
             if (!UnitPartGrappleTargetPP.IsPinned && !grappleInitiator.HasFact(NoPin))
             {
+                UIUtility.SendWarning(grappleInitiator.ToString() + " pins the opponent.");
                 UnitPartGrappleTargetPP.TrySetPinned();
                 UnitPartGrappleInitiatorPP.TrySetPinning();
                 if (grappleInitiator.HasFact(StagBuff))
@@ -192,8 +199,9 @@ namespace PrestigePlus.Grapple
                 }
                 return false;
             }
-            if (!UnitPartGrappleTargetPP.IsTiedUp && !grappleInitiator.HasFact(NoTieUp))
+            if (UnitPartGrappleTargetPP.IsPinned && !UnitPartGrappleTargetPP.IsTiedUp && !grappleInitiator.HasFact(NoTieUp))
             {
+                UIUtility.SendWarning(grappleInitiator.ToString() + " ties up the opponent.");
                 UnitPartGrappleTargetPP.TrySetTiedUp();
                 UnitPartGrappleInitiatorPP.TryClearPinning();
                 return false;
