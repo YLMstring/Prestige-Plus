@@ -158,6 +158,14 @@ namespace PrestigePlus.Grapple
                     RunAttackRule(grappleInitiator, value);
                 }
             }
+            if (grappleInitiator.HasFact(Shamb))
+            {
+                if (!grappleInitiator.HasFact(FreeBuff) && grappleInitiator.HasFact(Base))
+                {
+                    RunAttackRule(grappleInitiator, value);
+                    RunAttackRule(grappleInitiator, value);
+                }
+            }
             if (grappleInitiator.HasFact(Kraken))
             {
                 GameHelper.ApplyBuff(value, BlueprintRoot.Instance.SystemMechanics.SunderArmorBuff, duration: new Rounds?(1.Rounds()));
@@ -322,6 +330,7 @@ namespace PrestigePlus.Grapple
         private static BlueprintFeatureReference Tiger = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ShifterGrabTiger.ToString());
         private static BlueprintFeatureReference Lizard = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ShifterGrabLizard.ToString());
         private static BlueprintFeatureReference Griffon = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ShifterGrabGriffon.ToString());
+        private static BlueprintFeatureReference Shamb = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ShamblingMoundGrabFeature.ToString());
 
         private static BlueprintAbilityReference Display = BlueprintTool.GetRef<BlueprintAbilityReference>(AbilityRefs.DazzlingDisplayAction.ToString());
 
