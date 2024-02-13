@@ -16,6 +16,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PrestigePlus.Blueprint.Feat;
+using PrestigePlus.CustomComponent.Archetype;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -42,190 +43,157 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToRemoveFeatures(17, FeatureSelectionRefs.MonkStyleStrike.ToString())
             .AddToRemoveFeatures(18, FeatureSelectionRefs.MonkBonusFeatSelectionLevel10.ToString())
             .AddToRemoveFeatures(20, FeatureRefs.KiPerfectSelfFeature.ToString())
-            .AddToAddFeatures(1, CreateFlurry(), CreateFlurry1())
-            .AddToAddFeatures(2, Flurry1Guid)
-            .AddToAddFeatures(4, ReliableFeat())
-            .AddToAddFeatures(5, MeditativeFeat())
-            .AddToAddFeatures(6, CreateFlurry2())
-            .AddToAddFeatures(8, CreateFlurry8())
-            .AddToAddFeatures(10, CreateSweeping(), CreateFlurry3())
-            .AddToAddFeatures(14, CreateWhirlwind(), Flurry3Guid)
-            .AddToAddFeatures(15, CreateFlurry15())
-            .AddToAddFeatures(18, Flurry3Guid)
+            .AddToAddFeatures(1, CreateManyFeat1(), CreateFuse())
+            .AddToAddFeatures(2, ManyFeat1Guid)
+            .AddToAddFeatures(5, CreateManyFeat2())
+            .AddToAddFeatures(6, ManyFeat2Guid)
+            .AddToAddFeatures(8, CreateFuse8())
+            .AddToAddFeatures(9, ManyFeat2Guid)
+            .AddToAddFeatures(10, ManyFeat2Guid)
+            .AddToAddFeatures(13, ManyFeat2Guid)
+            .AddToAddFeatures(14, ManyFeat2Guid)
+            .AddToAddFeatures(15, CreateFuse15())
+            .AddToAddFeatures(17, ManyFeat2Guid)
+            .AddToAddFeatures(18, ManyFeat2Guid)
+            .AddToAddFeatures(20, CreateFuse20())
               .Configure();
 
             ProgressionConfigurator.For(ProgressionRefs.MonkProgression)
-                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { FlurryGuid, Flurry8Guid, Flurry15Guid })
-                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { Flurry1Guid, Flurry2Guid, Flurry3Guid })
+                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { FuseGuid, Fuse8Guid, Fuse15Guid, Fuse20Guid })
+                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { ManyFeat1Guid, ManyFeat2Guid })
                 .Configure();
         }
 
-        private const string Flurry = "ManyMonk.Flurry";
-        public static readonly string FlurryGuid = "{08B7F7DD-D332-4B51-8C1A-D52EBF065CFB}";
+        private const string Fuse = "ManyMonk.Fuse";
+        public static readonly string FuseGuid = "{215C042D-A354-4AC9-AD19-5A9FBA9EBBE5}";
 
-        private const string FlurryFeat = "ManyMonk.FlurryFeat";
-        public static readonly string FlurryFeatGuid = "{C4D92D6C-368A-49B3-93F2-5A7D12850B93}";
-
-        internal const string FlurryDisplayName = "ManyMonkFlurry.Name";
-        private const string FlurryDescription = "ManyMonkFlurry.Description";
-
-        private const string Flurrybuff = "ManeuverFlurry.Flurrybuff";
-        public static readonly string FlurrybuffGuid = "{89CCCD57-CC47-4443-A192-1FF7D18F2A3C}";
-
-        private const string FlurryCoolDownbuff = "ManeuverFlurry.FlurryCoolDownbuff";
-        public static readonly string FlurryCoolDownbuffGuid = "{1355973E-3E06-459C-8A41-E83A0A889371}";
-
-        private const string FlurryActivatableAbility = "ManeuverFlurry.FlurryActivatableAbility";
-        private static readonly string FlurryActivatableAbilityGuid = "{260D7372-AB40-42A7-8611-56BE31CEC209}";
-        private static BlueprintFeature CreateFlurry()
+        internal const string FuseDisplayName = "ManyMonkFuse.Name";
+        private const string FuseDescription = "ManyMonkFuse.Description";
+        private static BlueprintFeature CreateFuse()
         {
             var icon = FeatureRefs.AgileManeuvers.Reference.Get().Icon;
 
-            var feat = FeatureConfigurator.New(FlurryFeat, FlurryFeatGuid)
-                .SetDisplayName(FlurryDisplayName)
-                .SetDescription(FlurryDescription)
-                .SetIcon(icon)
-                .AddBuffExtraAttack(false, number: 1)
-                .Configure();
-
-            BuffConfigurator.New(FlurryCoolDownbuff, FlurryCoolDownbuffGuid)
-              .SetDisplayName(FlurryDisplayName)
-              .SetDescription(FlurryDescription)
+            return FeatureConfigurator.New(Fuse, FuseGuid)
+              .SetDisplayName(FuseDisplayName)
+              .SetDescription(FuseDescription)
               .SetIcon(icon)
-              .AddCMBBonus(descriptor: ModifierDescriptor.Penalty, value: -2)
-              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-              .Configure();
-
-            var Buff = BuffConfigurator.New(Flurrybuff, FlurrybuffGuid)
-              .SetDisplayName(FlurryDisplayName)
-              .SetDescription(FlurryDescription)
-              .SetIcon(icon)
-              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
-              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-              .AddMonkNoArmorFeatureUnlock(feat)
-              .Configure();
-
-            var ability = ActivatableAbilityConfigurator.New(FlurryActivatableAbility, FlurryActivatableAbilityGuid)
-                .SetDisplayName(FlurryDisplayName)
-                .SetDescription(FlurryDescription)
-                .SetIcon(icon)
-                .SetBuff(Buff)
-                .SetDeactivateImmediately(true)
-                .SetActivationType(AbilityActivationType.Immediately)
-                .SetIsOnByDefault(true)
-                .Configure();
-
-            return FeatureConfigurator.New(Flurry, FlurryGuid)
-              .SetDisplayName(FlurryDisplayName)
-              .SetDescription(FlurryDescription)
-              .SetIcon(icon)
-              .AddFacts(new() { ability, SeizetheOpportunity.ManeuverGuid })
+              .AddIncreaseActivatableAbilityGroupSize(ActivatableAbilityGroup.CombatStyle)
               .Configure();
         }
 
-        private const string Flurry8 = "ManyMonk.Flurry8";
-        public static readonly string Flurry8Guid = "{E5CEDED4-321E-48E6-8641-B36BDAEBD741}";
+        private const string Fuse8 = "ManyMonk.Fuse8";
+        public static readonly string Fuse8Guid = "{875D706F-C309-490A-A20B-5238D65694A3}";
 
-        internal const string Flurry8DisplayName = "ManyMonkFlurry8.Name";
-        private const string Flurry8Description = "ManyMonkFlurry8.Description";
-
-        private const string Flurry8buff = "ManeuverFlurry.Flurry8buff";
-        public static readonly string Flurry8buffGuid = "{1D73AD78-519E-47F4-AD13-F72A7BA9341C}";
-
-        private const string Flurry9buff = "ManeuverFlurry.Flurry9buff";
-        public static readonly string Flurry9buffGuid = "{21B758EC-4AC3-4E45-AAB8-DEA7D8F1AFBA}";
-
-        private const string Flurry8ActivatableAbility = "ManeuverFlurry.Flurry8ActivatableAbility";
-        private static readonly string Flurry8ActivatableAbilityGuid = "{090CCF50-4767-4051-A96E-65C19921B204}";
-        private static BlueprintFeature CreateFlurry8()
+        internal const string Fuse8DisplayName = "ManyMonkFuse8.Name";
+        private const string Fuse8Description = "ManyMonkFuse8.Description";
+        private static BlueprintFeature CreateFuse8()
         {
             var icon = FeatureRefs.AgileManeuvers.Reference.Get().Icon;
 
-            var Buff2 = BuffConfigurator.New(Flurry9buff, Flurry9buffGuid)
-              .SetDisplayName(Flurry8DisplayName)
-              .SetDescription(Flurry8Description)
+            return FeatureConfigurator.New(Fuse8, Fuse8Guid)
+              .SetDisplayName(Fuse8DisplayName)
+              .SetDescription(Fuse8Description)
               .SetIcon(icon)
-              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
-              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-              .AddCMBBonus(descriptor: ModifierDescriptor.Penalty, value: -3)
-              .Configure();
-
-            var Buff = BuffConfigurator.New(Flurry8buff, Flurry8buffGuid)
-              .SetDisplayName(Flurry8DisplayName)
-              .SetDescription(Flurry8Description)
-              .SetIcon(icon)
-              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
-              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-              .AddBuffExtraEffects(FlurryCoolDownbuffGuid, extraEffectBuff: Buff2)
-              .Configure();
-
-            var ability = ActivatableAbilityConfigurator.New(Flurry8ActivatableAbility, Flurry8ActivatableAbilityGuid)
-                .SetDisplayName(Flurry8DisplayName)
-                .SetDescription(Flurry8Description)
-                .SetIcon(icon)
-                .SetBuff(Buff)
-                .SetDeactivateImmediately(true)
-                .SetActivationType(AbilityActivationType.Immediately)
-                .Configure();
-
-            return FeatureConfigurator.New(Flurry8, Flurry8Guid)
-              .SetDisplayName(Flurry8DisplayName)
-              .SetDescription(Flurry8Description)
-              .SetIcon(icon)
-              .AddFacts(new() { ability })
+              .AddIncreaseActivatableAbilityGroupSize(ActivatableAbilityGroup.CombatStyle)
+              .AddComponent<FuseStyleAttackBonus>()
               .Configure();
         }
 
-        private const string Flurry15 = "ManyMonk.Flurry15";
-        public static readonly string Flurry15Guid = "{4D5E9FB9-48A6-42C4-936D-725A9CC91843}";
+        private const string Fuse15 = "ManyMonk.Fuse15";
+        public static readonly string Fuse15Guid = "{469BE056-D1FB-41A3-B896-7A20E85EEEDD}";
 
-        internal const string Flurry15DisplayName = "ManyMonkFlurry15.Name";
-        private const string Flurry15Description = "ManyMonkFlurry15.Description";
-
-        private const string Flurry15buff = "ManeuverFlurry.Flurry15buff";
-        public static readonly string Flurry15buffGuid = "{595B0559-342E-411A-8FA5-18ABD1593A27}";
-
-        private const string Flurry16buff = "ManeuverFlurry.Flurry16buff";
-        public static readonly string Flurry16buffGuid = "{43ED4525-DF36-44DF-8FD6-8456A4E1E976}";
-
-        private const string Flurry15ActivatableAbility = "ManeuverFlurry.Flurry1ActivatableAbility";
-        private static readonly string Flurry15ActivatableAbilityGuid = "{63730852-9F8B-43DC-B1DD-62479CA44362}";
-        private static BlueprintFeature CreateFlurry15()
+        internal const string Fuse15DisplayName = "ManyMonkFuse15.Name";
+        private const string Fuse15Description = "ManyMonkFuse15.Description";
+        private static BlueprintFeature CreateFuse15()
         {
             var icon = FeatureRefs.AgileManeuvers.Reference.Get().Icon;
 
-            var Buff2 = BuffConfigurator.New(Flurry16buff, Flurry16buffGuid)
-              .SetDisplayName(Flurry15DisplayName)
-              .SetDescription(Flurry15Description)
+            return FeatureConfigurator.New(Fuse15, Fuse15Guid)
+              .SetDisplayName(Fuse15DisplayName)
+              .SetDescription(Fuse15Description)
               .SetIcon(icon)
-              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
-              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-              .AddCMBBonus(descriptor: ModifierDescriptor.Penalty, value: -4)
+              .AddIncreaseActivatableAbilityGroupSize(ActivatableAbilityGroup.CombatStyle)
+              .Configure();
+        }
+
+        private const string Fuse20 = "ManyMonk.Fuse20";
+        public static readonly string Fuse20Guid = "{8EF717B4-C44E-47F7-A720-1AF10C45F943}";
+
+        private const string Fuse201 = "ManyMonk.Fuse201";
+        public static readonly string Fuse201Guid = "{485EEB14-3E1B-439F-AE69-E53D2622512D}";
+
+        private const string Fuse202 = "ManyMonk.Fuse202";
+        public static readonly string Fuse202Guid = "{4023A57D-09B7-45A1-B828-BFAB7753469C}";
+
+        private const string Fuse203 = "ManyMonk.Fuse203";
+        public static readonly string Fuse203Guid = "{8F4FF68E-9324-41A1-8CF0-FB735BA5B5F5}";
+
+        private const string Fuse204 = "ManyMonk.Fuse204";
+        public static readonly string Fuse204Guid = "{E6F5DB42-C1D2-46E1-83F2-558B33F8DC90}";
+
+        private const string Fuse205 = "ManyMonk.Fuse205";
+        public static readonly string Fuse205Guid = "{8F029F73-6642-40D0-8A60-6FF8C48297E8}";
+
+        private const string Fuse206 = "ManyMonk.Fuse206";
+        public static readonly string Fuse206Guid = "{B8A36150-C0BF-4F0A-9B88-C37DE5475998}";
+
+        private const string Fuse207 = "ManyMonk.Fuse207";
+        public static readonly string Fuse207Guid = "{DC25DB68-42E9-40E0-9DC9-1F218D2AF533}";
+
+        internal const string Fuse20DisplayName = "ManyMonkFuse20.Name";
+        private const string Fuse20Description = "ManyMonkFuse20.Description";
+        private static BlueprintFeature CreateFuse20()
+        {
+            var icon = AbilityRefs.RestorationGreater.Reference.Get().Icon;
+
+            var feat1 = FeatureConfigurator.New(Fuse201, Fuse201Guid)
+              .SetHideInCharacterSheetAndLevelUp()
+              .SetHideInUI()
+              .AddIncreaseActivatableAbilityGroupSize(ActivatableAbilityGroup.CombatStyle)
               .Configure();
 
-            var Buff = BuffConfigurator.New(Flurry15buff, Flurry15buffGuid)
-              .SetDisplayName(Flurry15DisplayName)
-              .SetDescription(Flurry15Description)
-              .SetIcon(icon)
-              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
-              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-              .AddBuffExtraEffects(FlurryCoolDownbuffGuid, extraEffectBuff: Buff2)
+            var feat2 = FeatureConfigurator.New(Fuse202, Fuse202Guid)
+              .SetHideInCharacterSheetAndLevelUp()
+              .SetHideInUI()
+              .AddIncreaseActivatableAbilityGroupSize(ActivatableAbilityGroup.CombatStyle)
               .Configure();
 
-            var ability = ActivatableAbilityConfigurator.New(Flurry15ActivatableAbility, Flurry15ActivatableAbilityGuid)
-                .SetDisplayName(Flurry15DisplayName)
-                .SetDescription(Flurry15Description)
-                .SetIcon(icon)
-                .SetBuff(Buff)
-                .SetDeactivateImmediately(true)
-                .SetActivationType(AbilityActivationType.Immediately)
-                .Configure();
+            var feat3 = FeatureConfigurator.New(Fuse203, Fuse203Guid)
+              .SetHideInCharacterSheetAndLevelUp()
+              .SetHideInUI()
+              .AddIncreaseActivatableAbilityGroupSize(ActivatableAbilityGroup.CombatStyle)
+              .Configure();
 
-            return FeatureConfigurator.New(Flurry15, Flurry15Guid)
-              .SetDisplayName(Flurry15DisplayName)
-              .SetDescription(Flurry15Description)
+            var feat4 = FeatureConfigurator.New(Fuse204, Fuse204Guid)
+              .SetHideInCharacterSheetAndLevelUp()
+              .SetHideInUI()
+              .AddIncreaseActivatableAbilityGroupSize(ActivatableAbilityGroup.CombatStyle)
+              .Configure();
+
+            var feat5 = FeatureConfigurator.New(Fuse205, Fuse205Guid)
+              .SetHideInCharacterSheetAndLevelUp()
+              .SetHideInUI()
+              .AddIncreaseActivatableAbilityGroupSize(ActivatableAbilityGroup.CombatStyle)
+              .Configure();
+
+            var feat6 = FeatureConfigurator.New(Fuse206, Fuse206Guid)
+              .SetHideInCharacterSheetAndLevelUp()
+              .SetHideInUI()
+              .AddIncreaseActivatableAbilityGroupSize(ActivatableAbilityGroup.CombatStyle)
+              .Configure();
+
+            var feat7 = FeatureConfigurator.New(Fuse207, Fuse207Guid)
+              .SetHideInCharacterSheetAndLevelUp()
+              .SetHideInUI()
+              .AddIncreaseActivatableAbilityGroupSize(ActivatableAbilityGroup.CombatStyle)
+              .Configure();
+
+            return FeatureConfigurator.New(Fuse20, Fuse20Guid)
+              .SetDisplayName(Fuse20DisplayName)
+              .SetDescription(Fuse20Description)
               .SetIcon(icon)
-              .AddFacts(new() { ability })
+              .AddIncreaseActivatableAbilityGroupSize(ActivatableAbilityGroup.CombatStyle)
+              .AddFacts(new() { feat1, feat2, feat3, feat4, feat5, feat6, feat7 })
               .Configure();
         }
 
@@ -265,29 +233,6 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetIgnorePrerequisites(false)
               .SetObligatory(true)
               .AddToAllFeatures(ManyFeat1Guid)
-              .Configure();
-        }
-
-        private const string Flurry3 = "ManyMonk.Flurry3";
-        private static readonly string Flurry3Guid = "{B427FE51-1092-46E8-B5D2-0460C6FDDC27}";
-        private static BlueprintFeature CreateFlurry3()
-        {
-            var icon = FeatureRefs.DefensiveSpinFeature.Reference.Get().Icon;
-
-            return FeatureSelectionConfigurator.New(Flurry3, Flurry3Guid)
-              .SetDisplayName(Flurry2DisplayName)
-              .SetDescription(Flurry2Description)
-              .SetIcon(icon)
-              .SetIgnorePrerequisites(true)
-              .SetObligatory(true)
-              .AddToAllFeatures(FeatureRefs.GreaterBullRush.ToString())
-              .AddToAllFeatures(FeatureRefs.GreaterDirtyTrick.ToString())
-              .AddToAllFeatures(FeatureRefs.GreaterDisarm.ToString())
-              .AddToAllFeatures(FeatureRefs.GreaterSunder.ToString())
-              .AddToAllFeatures(FeatureRefs.GreaterTrip.ToString())
-              .AddToAllFeatures(GreaterGrapple.FeatGuid)
-              .AddToAllFeatures(Flurry1Guid)
-              .AddToAllFeatures(FeatureSelectionRefs.MonkBonusFeatSelectionLevel10.ToString())
               .Configure();
         }
     }
