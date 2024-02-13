@@ -10,6 +10,7 @@ using BlueprintCore.Utils;
 using Kingmaker.Blueprints.Classes.Selection;
 using PrestigePlus.Blueprint.Feat;
 using HarmonyLib;
+using PrestigePlus.Blueprint.Archetype;
 
 namespace PrestigePlus.Patch
 {
@@ -19,6 +20,7 @@ namespace PrestigePlus.Patch
         public static void Patch()
         {
             var target = BlueprintTool.GetRef<BlueprintFeatureSelectionReference>(BodyGuard.StyleMasterGuid)?.Get();
+            var target2 = BlueprintTool.GetRef<BlueprintFeatureSelectionReference>(ManyMonk.ManyFeat2Guid)?.Get();
             if (target == null) { return; }
             target.m_AllFeatures ??= new BlueprintFeatureReference[] { };
             var feats = FeatureSelectionRefs.FighterFeatSelection.Reference.Get();
@@ -27,6 +29,13 @@ namespace PrestigePlus.Patch
                 if (feat.NameSafe().Contains("Style"))
                 {
                     target.m_AllFeatures = CommonTool.Append(target.m_AllFeatures, feat);
+                    if (target2 != null && feat.Get().IsPrerequisiteFor?.Count() > 0)
+                    {
+                        foreach (var feat2 in feat.Get().IsPrerequisiteFor)
+                        {
+                            target2.m_AllFeatures = CommonTool.Append(target2.m_AllFeatures, feat2);
+                        }
+                    }
                 }
             }
         }

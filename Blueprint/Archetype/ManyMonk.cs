@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PrestigePlus.Blueprint.Feat;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -228,54 +229,42 @@ namespace PrestigePlus.Blueprint.Archetype
               .Configure();
         }
 
-        private const string Flurry1 = "ManyMonk.Flurry1";
-        private static readonly string Flurry1Guid = "{82B3CBD0-CF0F-4306-8E28-CFB0E61211B0}";
+        private const string ManyFeat1 = "ManyMonk.ManyFeat1";
+        private static readonly string ManyFeat1Guid = "{66C578E8-04E2-4E48-BC2A-ADC29F390EB3}";
 
-        internal const string Flurry1DisplayName = "ManyMonkFlurry1.Name";
-        private const string Flurry1Description = "ManyMonkFlurry1.Description";
-        private static BlueprintFeatureSelection CreateFlurry1()
+        internal const string ManyFeat1DisplayName = "ManyMonkManyFeat1.Name";
+        private const string ManyFeat1Description = "ManyMonkManyFeat1.Description";
+        private static BlueprintFeatureSelection CreateManyFeat1()
         {
             var icon = FeatureRefs.DefensiveSpinFeature.Reference.Get().Icon;
 
-            return FeatureSelectionConfigurator.New(Flurry1, Flurry1Guid)
-              .SetDisplayName(Flurry1DisplayName)
-              .SetDescription(Flurry1Description)
+            return FeatureSelectionConfigurator.New(ManyFeat1, ManyFeat1Guid)
+              .SetDisplayName(ManyFeat1DisplayName)
+              .SetDescription(ManyFeat1Description)
               .SetIcon(icon)
               .SetIgnorePrerequisites(true)
               .SetObligatory(true)
-              .AddToAllFeatures(FeatureRefs.ImprovedBullRush.ToString())
-              .AddToAllFeatures(FeatureRefs.ImprovedDirtyTrick.ToString())
-              .AddToAllFeatures(FeatureRefs.ImprovedDisarm.ToString())
-              .AddToAllFeatures(FeatureRefs.ImprovedSunder.ToString())
-              .AddToAllFeatures(FeatureRefs.ImprovedTrip.ToString())
-              .AddToAllFeatures(ImprovedGrapple.StyleGuid)
-              .AddToAllFeatures(FeatureSelectionRefs.MonkBonusFeatSelectionLevel1.ToString())
+              .AddToAllFeatures(BodyGuard.StyleMasterGuid)
+              .AddToAllFeatures(FeatureRefs.ElementalFistFeature.ToString())
               .Configure();
         }
 
-        private const string Flurry2 = "ManyMonk.Flurry2";
-        private static readonly string Flurry2Guid = "{6EF04B19-805B-4C8E-BFFB-E027D6737BFE}";
+        private const string ManyFeat2 = "ManyMonk.ManyFeat2";
+        public static readonly string ManyFeat2Guid = "{8E7962C4-C4DB-494F-A1BF-B796F0C799BA}";
 
-        internal const string Flurry2DisplayName = "ManyMonkFlurry2.Name";
-        private const string Flurry2Description = "ManyMonkFlurry2.Description";
-        private static BlueprintFeature CreateFlurry2()
+        internal const string ManyFeat2DisplayName = "ManyMonkManyFeat2.Name";
+        private const string ManyFeat2Description = "ManyMonkManyFeat2.Description";
+        private static BlueprintFeature CreateManyFeat2()
         {
             var icon = FeatureRefs.DefensiveSpinFeature.Reference.Get().Icon;
 
-            return FeatureSelectionConfigurator.New(Flurry2, Flurry2Guid)
-              .SetDisplayName(Flurry2DisplayName)
-              .SetDescription(Flurry2Description)
+            return FeatureSelectionConfigurator.New(ManyFeat2, ManyFeat2Guid)
+              .SetDisplayName(ManyFeat2DisplayName)
+              .SetDescription(ManyFeat2Description)
               .SetIcon(icon)
-              .SetIgnorePrerequisites(true)
+              .SetIgnorePrerequisites(false)
               .SetObligatory(true)
-              .AddToAllFeatures(FeatureRefs.GreaterBullRush.ToString())
-              .AddToAllFeatures(FeatureRefs.GreaterDirtyTrick.ToString())
-              .AddToAllFeatures(FeatureRefs.GreaterDisarm.ToString())
-              .AddToAllFeatures(FeatureRefs.GreaterSunder.ToString())
-              .AddToAllFeatures(FeatureRefs.GreaterTrip.ToString())
-              .AddToAllFeatures(GreaterGrapple.FeatGuid)
-              .AddToAllFeatures(Flurry1Guid)
-              .AddToAllFeatures(FeatureSelectionRefs.MonkBonusFeatSelectionLevel6.ToString())
+              .AddToAllFeatures(ManyFeat1Guid)
               .Configure();
         }
 
