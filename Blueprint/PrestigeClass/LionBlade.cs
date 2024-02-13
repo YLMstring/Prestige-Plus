@@ -78,7 +78,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetWillSave(StatProgressionRefs.SavesPrestigeHigh.ToString())
                 .SetProgression(progression)
                 .SetClassSkills(new StatType[] { StatType.SkillAthletics, StatType.SkillMobility, StatType.SkillThievery, StatType.SkillStealth, StatType.SkillKnowledgeWorld, StatType.SkillPerception, StatType.SkillPersuasion })
-                .AddPrerequisiteStatValue(StatType.SneakAttack, 2)
+                .AddPrerequisiteFullStatValue(stat: StatType.SneakAttack, value: 2)
                 .AddPrerequisiteFeaturesFromList(new() { FeatureRefs.InspireCompetenceFeature.ToString(), FeatureRefs.SenseiInspireCompetenceFeature.ToString(), CloyingShades.CloyingShadesGuid }, 1)
                 .AddPrerequisiteStatValue(StatType.SkillStealth, 5)
                 .AddPrerequisiteStatValue(StatType.SkillPersuasion, 3)
