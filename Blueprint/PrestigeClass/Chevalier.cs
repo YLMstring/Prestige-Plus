@@ -141,7 +141,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(ControllChargeDisplayName)
               .SetDescription(ControllChargeDescription)
               .SetIcon(icon)
-              //.AddACBonusAgainstAttacks(armorClassBonus: 2)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddContextStatBonus(StatType.AC, value: 2)
               .Configure();
 

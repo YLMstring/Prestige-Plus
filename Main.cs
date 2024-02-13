@@ -437,7 +437,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("lionblade"))) { LionBlade.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("bitch"))) { EnchantingCourtesan.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("mms"))) { ManyMonk.Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fighterdd"))) {  }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fighterdd"))) { DawnflowerDervish.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fighteraa"))) {  }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("mythicheritage"))) {  }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
