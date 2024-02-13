@@ -3885,7 +3885,7 @@
   {
     "Key": "AnchoriteofDawn.Name",
     "ProcessTemplates": false,
-    "enGB": "Anchorite of Dawn",
+    "enGB": "Dawnflower Anchorite",
     "zhCN": "晨花隐者"
   },
   {
@@ -3901,7 +3901,7 @@
   },
   {
     "Key": "AnchoriteofDawnCredence.Description",
-    "enGB": "Each anchorite of dawn develops a personal credence that guides his worship. He gains a credence at 2nd level and again every 2 class levels thereafter. Each credence can be chosen only once unless noted otherwise.",
+    "enGB": "Each dawnflower anchorite develops a personal credence that guides his worship. He gains a credence at 2nd level and again every 2 class levels thereafter. Each credence can be chosen only once unless noted otherwise.",
     "zhCN": "每名晨花隐者都会发展出一种独属于自身的信念，并以此来指引信仰之路。在2级以及之后的每2个等级，他都会获得一种新的信念。除非另有说明，每种信念仅能被选取一次。"
   },
   {
@@ -3912,7 +3912,7 @@
   },
   {
     "Key": "AnchoriteofDawnSolarInvocation.Description",
-    "enGB": "An anchorite of dawn can harness the sun’s life-giving warmth to protect the innocent and smite the wicked. At 1st level, If he cast a spell of the evocation school last turn or this turn, he can invoke the sun as a standard action, granting him a +1 competence bonus on attack rolls and damage rolls against evil creatures and adding 1 to the DC of his spells against evil creatures. The bonus on attack rolls and damage rolls increases to +2 at 5th level and +3 at 9th level. If an anchorite has an animal companion, the companion also gains the competence bonus on attack and damage rolls while this ability is active. An anchorite of dawn can invoke the sun for a number of rounds per day equal to twice his anchorite of dawn class level + his Charisma modifier. Maintaining this ability on subsequent rounds is a free action.",
+    "enGB": "A dawnflower anchorite can harness the sun’s life-giving warmth to protect the innocent and smite the wicked. At 1st level, If he cast a spell of the evocation school last turn or this turn, he can invoke the sun as a standard action, granting him a +1 competence bonus on attack rolls and damage rolls against evil creatures and adding 1 to the DC of his spells against evil creatures. The bonus on attack rolls and damage rolls increases to +2 at 5th level and +3 at 9th level. If an anchorite has an animal companion, the companion also gains the competence bonus on attack and damage rolls while this ability is active. A dawnflower anchorite can invoke the sun for a number of rounds per day equal to twice his dawnflower anchorite class level + his Charisma modifier. Maintaining this ability on subsequent rounds is a free action.",
     "zhCN": "晨花隐者能够利用太阳所赐予的热度保护无辜和惩奸除恶。在1级，如果上回合或本回合他施放过塑能法术，晨花隐者能够以标准动作恳求太阳，让他在对抗邪恶生物的攻击检定和伤害检定中获得+1表现加值，并且使得他所用来对抗邪恶生物的法术DC增加1点。为攻击检定和伤害检定提供的加值会在5级时提升至+2点，并在9级时提升至+3点。若晨花隐者具有动物伙伴，该动物伙伴也会在本能力生效时获得攻击和伤害的表现加值。晨花隐者每日能够利用太阳之力的轮数等同于他的晨花隐者职业等级 + 他的魅力调整值。在随后的轮数内维持该能力是自由动作。"
   },
   {
@@ -3934,7 +3934,7 @@
   },
   {
     "Key": "AnchoriteBaskRadiance.Description",
-    "enGB": "At 3rd level, when an anchorite of dawn uses his solar invocation ability, he can designate any number of allies within 30 feet to gain the bonuses granted by solar invocation for as long as he maintains the ability.",
+    "enGB": "At 3rd level, when a dawnflower anchorite uses his solar invocation ability, he can designate any number of allies within 30 feet to gain the bonuses granted by solar invocation for as long as he maintains the ability.",
     "zhCN": "3级起，当晨花隐者使用日光祈福能力时，他能够指定距其30尺内任意数量的盟友获得日光祈福带来的加值，只要晨花隐者仍在维持该能力，这些加值便会持续下去。"
   },
   {
@@ -3945,7 +3945,7 @@
   },
   {
     "Key": "AnchoriteSolarMove.Description",
-    "enGB": "At 5th level, an anchorite of dawn can invoke the sun as a move action.",
+    "enGB": "At 5th level, a dawnflower anchorite can invoke the sun as a move action.",
     "zhCN": "5级起，晨花隐者的日光祈福变成移动动作。"
   },
   {
@@ -3956,7 +3956,7 @@
   },
   {
     "Key": "AnchoriteSolarSwift.Description",
-    "enGB": "At 10th level, an anchorite of dawn can invoke the sun as a swift action.",
+    "enGB": "At 10th level, a dawnflower anchorite can invoke the sun as a swift action.",
     "zhCN": "10级起，晨花隐者的日光祈福变成迅捷动作。"
   },
   {
@@ -3967,7 +3967,7 @@
   },
   {
     "Key": "AnchoriteSunbeam.Description",
-    "enGB": "At 7th level, an anchorite of dawn gains the ability to cast sunbeam once per day as a spell-like ability. His caster level is equal to his Hit Dice, and the save DC is Charisma-based. At 10th level, the anchorite of dawn can use this ability twice per day.",
+    "enGB": "At 7th level, a dawnflower anchorite gains the ability to cast sunbeam once per day as a spell-like ability. His caster level is equal to his Hit Dice, and the save DC is Charisma-based. At 10th level, the dawnflower anchorite can use this ability twice per day.",
     "zhCN": "7级起，晨花隐者获得每日以类法术能力施放1次阳炎射线的能力。他的施法者等级等同于他的生命骰，该能力的豁免DC基于魅力。10级起，晨花隐者每日可以使用2次该能力。"
   },
   {
@@ -3978,7 +3978,7 @@
   },
   {
     "Key": "AnchoriteDawnInvocation.Description",
-    "enGB": "At 10th level, an anchorite of dawn is able to, once per day, use his solar invocation ability for 1 minute. The anchorite of dawn doesn't need an evocation spell this way. While using invocation of dawn, all bonuses gained from solar invocation increase by 1. Using this ability doesn’t cost rounds per day of solar invocation.",
+    "enGB": "At 10th level, a dawnflower anchorite is able to, once per day, use his solar invocation ability for 1 minute. The dawnflower anchorite doesn't need an evocation spell this way. While using invocation of dawn, all bonuses gained from solar invocation increase by 1. Using this ability doesn’t cost rounds per day of solar invocation.",
     "zhCN": "10级起，晨花隐者每日有1次机会，可以使用持续1分钟的日光祈福，无需塑能法术。在使用晨花祈福之时，日光祈福提供的所有加值均会增加1点。使用该能力并不会消耗日光祈福的每日使用轮数。"
   },
   {
@@ -3989,7 +3989,7 @@
   },
   {
     "Key": "AnchoriteDivineLight.Description",
-    "enGB": "The anchorite of dawn doesn't need an evocation spell to use his solar invocation ability. He can use solar invocation 2 additional rounds per day.",
+    "enGB": "The dawnflower anchorite doesn't need an evocation spell to use his solar invocation ability. He can use solar invocation 2 additional rounds per day.",
     "zhCN": "晨花隐者无需塑能法术即可使用日光祈福。他每日可以使用日光祈福的轮数额外增加2轮。"
   },
   {
@@ -4000,7 +4000,7 @@
   },
   {
     "Key": "AnchoriteExtraInvocations.Description",
-    "enGB": "The anchorite of dawn can use solar invocation for twice as many rounds per day as normal.",
+    "enGB": "The dawnflower anchorite can use solar invocation for twice as many rounds per day as normal.",
     "zhCN": "晨花隐者能够使用日光祈福的每日轮数变为其正常使用轮数的2倍。"
   },
   {
@@ -4011,7 +4011,7 @@
   },
   {
     "Key": "AnchoriteofDawnFocusedFeat.Description",
-    "enGB": "Choose one of the following class features: animal companion, bane, bardic performance (skald), favored enemy, or sacred weapon. This credence can be selected twice, but the anchorite of dawn must select a different class feature each time.",
+    "enGB": "Choose one of the following class features: animal companion, bane, bardic performance (skald), favored enemy, or sacred weapon. This credence can be selected twice, but the dawnflower anchorite must select a different class feature each time.",
     "zhCN": "从后述职业能力中选择一项：动物伙伴，破敌，吟游表演（歌者），宿敌，或神圣武器。这项信念能够选取2次，不过晨花隐者每次都必须选择不同的职业能力。"
   },
   {
@@ -4022,7 +4022,7 @@
   },
   {
     "Key": "AnchoriteFocusedAnimalCompanion.Description",
-    "enGB": "The character adds his anchorite of dawn class levels to his effective class level in one class of his choice for the purpose of determining the effects of the chosen class feature.",
+    "enGB": "The character adds his dawnflower anchorite class levels to his effective class level in one class of his choice for the purpose of determining the effects of the chosen class feature.",
     "zhCN": "角色将晨花隐者职业等级加到他所选择的一个职业的有效职业等级上，并以此来判断被选择的职业能力的效果。"
   },
   {
@@ -4033,7 +4033,7 @@
   },
   {
     "Key": "AnchoriteAnchoriteDomainPlus.Description",
-    "enGB": "The character adds his anchorite of dawn class levels to all his domains. (If he is a separatist, treat his domain the way it essentially is)",
+    "enGB": "The character adds his dawnflower anchorite class levels to all his domains. (If he is a separatist, treat his domain the way it essentially is)",
     "zhCN": "角色将晨花隐者职业等级加到他的所有领域等级上。（如果他是一名异见先驱，按照他领域的本质进行处理）"
   },
   {
@@ -4044,7 +4044,7 @@
   },
   {
     "Key": "AnchoriteFocusedBane.Description",
-    "enGB": "The character adds his anchorite of dawn class levels to his effective class level in one class of his choice for the purpose of determining the effects of the chosen class feature.",
+    "enGB": "The character adds his dawnflower anchorite class levels to his effective class level in one class of his choice for the purpose of determining the effects of the chosen class feature.",
     "zhCN": "角色将晨花隐者职业等级加到他所选择的一个职业的有效职业等级上，并以此来判断被选择的职业能力的效果。"
   },
   {
@@ -4055,7 +4055,7 @@
   },
   {
     "Key": "AnchoriteFocusedRagingSong.Description",
-    "enGB": "The character adds his anchorite of dawn class levels to his effective class level in one class of his choice for the purpose of determining the effects of the chosen class feature.",
+    "enGB": "The character adds his dawnflower anchorite class levels to his effective class level in one class of his choice for the purpose of determining the effects of the chosen class feature.",
     "zhCN": "角色将晨花隐者职业等级加到他所选择的一个职业的有效职业等级上，并以此来判断被选择的职业能力的效果。"
   },
   {
@@ -4066,7 +4066,7 @@
   },
   {
     "Key": "AnchoriteAnchoriteFavoredEnemy.Description",
-    "enGB": "At 4th and 9th level, the anchorite of dawn chooses a new favored enemy. This functions like the ranger class feature of the same name. Additionally, the bonus for one such enemy increases by 2.",
+    "enGB": "At 4th and 9th level, the dawnflower anchorite chooses a new favored enemy. This functions like the ranger class feature of the same name. Additionally, the bonus for one such enemy increases by 2.",
     "zhCN": "4级和9级时，晨花隐者选择一种新宿敌，并将一种宿敌的加值提高2，该能力的效果如同游侠的同名能力。"
   },
   {
@@ -4077,7 +4077,7 @@
   },
   {
     "Key": "AnchoriteFocusedSacredWeapon.Description",
-    "enGB": "The character adds his anchorite of dawn class levels to his effective class level in one class of his choice for the purpose of determining the effects of the chosen class feature.",
+    "enGB": "The character adds his dawnflower anchorite class levels to his effective class level in one class of his choice for the purpose of determining the effects of the chosen class feature.",
     "zhCN": "角色将晨花隐者职业等级加到他所选择的一个职业的有效职业等级上，并以此来判断被选择的职业能力的效果。"
   },
   {
@@ -4088,7 +4088,7 @@
   },
   {
     "Key": "AnchoriteSolarDefense.Description",
-    "enGB": "While using solar invocation, the anchorite of dawn adds his competence bonus on attack rolls to his Armor Class as a sacred bonus and to Reflex saving throws as a dodge bonus. The anchorite of dawn can select this credence twice—the second time he does so, the bonus to Armor Class and on Reflex saves also applies to any companions who gain bonuses from the anchorite of dawn’s solar invocation.",
+    "enGB": "While using solar invocation, the dawnflower anchorite adds his competence bonus on attack rolls to his Armor Class as a sacred bonus and to Reflex saving throws as a dodge bonus. The dawnflower anchorite can select this credence twice—the second time he does so, the bonus to Armor Class and on Reflex saves also applies to any companions who gain bonuses from the dawnflower anchorite’s solar invocation.",
     "zhCN": "当晨花隐者正在使用日光祈福时，他能够将攻击检定的表现加值作为神圣加值加到AC上，并且还能作为闪避加值加到反射豁免上。这项信念能够选取2次，当晨花隐者第2次选取该项信念时，若有任何同伴获得晨花隐者的日光祈福带来的加值，那么为AC和反射豁免提供的加值也能为其所用。"
   },
   {
@@ -4099,7 +4099,7 @@
   },
   {
     "Key": "AnchoriteSolarWeapons.Description",
-    "enGB": "While using solar invocation, the anchorite of dawn can select weapons wielded by a creature affected by his solar invocation. The weapons gain the flaming weapon special ability for as long as the anchorite of dawn’s solar invocation persists. An anchorite of dawn can select this credence twice—the second time he does so, the credence grants the flaming burst special ability instead of flaming. At 5th level, the anchorite of dawn can grant two creatures this ability; at 10th level, he can grant up to three creatures this ability.",
+    "enGB": "While using solar invocation, the dawnflower anchorite can select weapons wielded by a creature affected by his solar invocation. The weapons gain the flaming weapon special ability for as long as the dawnflower anchorite’s solar invocation persists. A dawnflower anchorite can select this credence twice—the second time he does so, the credence grants the flaming burst special ability instead of flaming. At 5th level, the dawnflower anchorite can grant two creatures this ability; at 10th level, he can grant up to three creatures this ability.",
     "zhCN": "当晨花隐者正在使用日光祈福时，他能够选择一名由受到他日光祈福影响的生物。只要晨花隐者的日光祈福仍在产生效果，其武器便能获得炽焰武器特殊能力。这项信念能够选取2次，当晨花隐者第2次选取该项信念时，该能力会提供焰爆武器特殊能力来替代原本的炽焰武器特殊能力。5级起，晨花隐者能为2个生物赋予该能力；10级起，晨花隐者至多能为3个生物赋予该能力。"
   },
   {
@@ -4110,7 +4110,7 @@
   },
   {
     "Key": "AnchoriteSunBlade.Description",
-    "enGB": "Any weapon wielded by the anchorite of dawn is treated having the undead bane special ability. Ranged weapons impart this ability to any ammunition fired from the weapon. All weapons wielded by the anchorite of dawn shed light as per a sunrod.",
+    "enGB": "Any weapon wielded by the dawnflower anchorite is treated having the undead bane special ability. Ranged weapons impart this ability to any ammunition fired from the weapon. All weapons wielded by the dawnflower anchorite shed light as per a sunrod.",
     "zhCN": "任何由晨花隐者所持用的武器视为具有破敌不死生物武器特殊能力。远程武器所发射出的弹药都会被该能力强化。所有由晨花隐者持用的武器都会如同照明杖一般散发出光芒。"
   },
 
