@@ -218,6 +218,12 @@ namespace PrestigePlus
             Toggle.New(GetKey("toxic"), defaultValue: true, Helpers.CreateString("toggle-desc78", "Toxicologist"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("fighteraa"), defaultValue: true, Helpers.CreateString("toggle-desc85", "Aerial Assaulter"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("fighterdd"), defaultValue: true, Helpers.CreateString("toggle-desc84", "Dawnflower Dervish"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("fightereg"), defaultValue: true, Helpers.CreateString("toggle-desc23", "Eldritch Guardian"))
               .ShowVisualConnection())
           .AddToggle(
@@ -234,6 +240,9 @@ namespace PrestigePlus
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("mm"), defaultValue: true, Helpers.CreateString("toggle-desc73", "Maneuver Master"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("mms"), defaultValue: true, Helpers.CreateString("toggle-desc83", "Master of Many Styles"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("wadept"), defaultValue: true, Helpers.CreateString("toggle-desc77", "Weapon Adept"))
@@ -315,6 +324,9 @@ namespace PrestigePlus
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("exalted"), defaultValue: true, Helpers.CreateString("toggle-desc69", "Exalted Evangelist"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("mythicheritage"), defaultValue: true, Helpers.CreateString("toggle-desc86", "Racial Heritage (Mythic)"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("magehand"), defaultValue: true, Helpers.CreateString("toggle-desc39", "Magic Trick Feats"))
@@ -424,6 +436,10 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fated"))) { FatedChampion.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("lionblade"))) { LionBlade.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("bitch"))) { EnchantingCourtesan.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("mms"))) { ManyMonk.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fighterdd"))) {  }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fighteraa"))) {  }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("mythicheritage"))) {  }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
