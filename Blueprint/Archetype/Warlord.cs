@@ -25,12 +25,9 @@ namespace PrestigePlus.Blueprint.Archetype
         private static readonly string ArchetypeGuid = "{E1C0D1F2-52D2-4251-901E-92C26463A921}";
         internal const string ArchetypeDisplayName = "Warlord.Name";
         private const string ArchetypeDescription = "Warlord.Description";
-
-        //private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
-        //[HarmonyBefore(new string[] { "TabletopTweaks-Base" })]
         public static void Configure()
         {
-            var arc = ArchetypeConfigurator.New(ArchetypeName, ArchetypeGuid, CharacterClassRefs.FighterClass)
+            ArchetypeConfigurator.New(ArchetypeName, ArchetypeGuid, CharacterClassRefs.FighterClass)
               .SetLocalizedName(ArchetypeDisplayName)
               .SetLocalizedDescription(ArchetypeDescription)
             .SetRemoveFeaturesEntry(1, FeatureRefs.FighterProficiencies.ToString())
@@ -38,9 +35,6 @@ namespace PrestigePlus.Blueprint.Archetype
             .SetRemoveFeaturesEntry(7, FeatureRefs.ArmorTraining.ToString())
             .SetRemoveFeaturesEntry(11, FeatureRefs.ArmorTraining.ToString())
             .SetRemoveFeaturesEntry(15, FeatureRefs.ArmorTraining.ToString())
-            //.SetRemoveFeaturesEntry(7, ModFeatureSelectionRefs.ArmorTrainingSelection.ToString())
-            //.SetRemoveFeaturesEntry(11, ModFeatureSelectionRefs.ArmorTrainingSelection.ToString())
-            //.SetRemoveFeaturesEntry(15, ModFeatureSelectionRefs.ArmorTrainingSelection.ToString())
             .SetRemoveFeaturesEntry(19, FeatureRefs.ArmorMastery.ToString())
             .AddToAddFeatures(1, CreateProficiencies())
             .AddToAddFeatures(3, CreateBattleBravado())
