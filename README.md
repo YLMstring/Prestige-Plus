@@ -367,7 +367,8 @@
 
 ## Thanks to  
 -   WittleWolfie for his [Blueprint-Core](https://wittlewolfie.github.io/WW-Blueprint-Core/index.html), which makes modding easy and enjoyable.
--   Bubbles (factsubio) for BubblePrints, saving me from going mad.   
+-   Bubbles (factsubio) for BubblePrints, saving me from going mad.
+-   Kosha99 for Russian localization!   
 -   All the Owlcat modders who came before me, wrote documents, and open sourced their code.
 -   Pathfinder Wrath of The Righteous Discord channel members.
 -   Join our [Discord](https://discord.com/invite/wotr)
