@@ -170,7 +170,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddPrerequisiteFeature(FeatureRefs.FavoriteTerrainForest.ToString())
-              .AddCMDBonusAgainstManeuvers(maneuvers: new CombatManeuver[] { CombatManeuver.Grapple }, value: ContextValues.Rank())
+              .AddCMDBonusAgainstManeuvers(maneuvers: new CombatManeuver[] { CombatManeuver.Grapple }, value: 4)
               .AddBuffSkillStealthBonus(ModifierDescriptor.Competence, 4)
               .Configure();
         }

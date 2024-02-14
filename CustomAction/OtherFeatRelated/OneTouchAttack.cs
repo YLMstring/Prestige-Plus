@@ -50,6 +50,10 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
         private void RunAttackRule(UnitEntityData maybeCaster, UnitEntityData unit)
         {
             var weapon = maybeCaster.Body.EmptyHandWeapon;
+            if (anyweapon)
+            {
+                weapon = maybeCaster.GetThreatHand()?.Weapon ?? weapon;
+            }
             if (weapon != null)
             {
                 var attackAnimation = maybeCaster.View.AnimationManager.CreateHandle(UnitAnimationType.SpecialAttack);
@@ -67,13 +71,17 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                 };
                 int num = maybeCaster.Progression.GetClassLevel(CharacterClassRefs.MonkClass.Reference);
                 if (!ki) { num /= 2; }
+                if (anyweapon) { num = 0; }
                 ruleAttackWithWeapon.AddTemporaryModifier(maybeCaster.Stats.AdditionalDamage.AddModifier(num));
                 maybeCaster.Context.TriggerRule(ruleAttackWithWeapon);
                 GameHelper.RemoveBuff(maybeCaster, Buff);
+                GameHelper.RemoveBuff(maybeCaster, Buff2);
             }
         }
 
+        public bool anyweapon = false;
         public bool ki = false;
         private static BlueprintBuffReference Buff = BlueprintTool.GetRef<BlueprintBuffReference>(ManeuverMaster.OneTouchBuff2Guid);
+        private static BlueprintBuffReference Buff2 = BlueprintTool.GetRef<BlueprintBuffReference>(WeaponMaster.UnstoppableStrikeBuff2Guid);
     }
 }
