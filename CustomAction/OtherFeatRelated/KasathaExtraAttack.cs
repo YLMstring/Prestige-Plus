@@ -40,13 +40,14 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                     PFLog.Default.Error("Caster is missing", Array.Empty<object>());
                     return;
                 }
-                if (maybeCaster.Body.CurrentHandEquipmentSetIndex == 1)
+                if (maybeCaster.Body.CurrentHandEquipmentSetIndex == 1 || maybeCaster.Body.IsPolymorphed)
                 {
                     return;
                 }
                 var sets = unit.Body.HandsEquipmentSets;
-                ItemEntityWeapon maybeWeapon = sets.ElementAt(1)?.PrimaryHand.MaybeWeapon;
-                ItemEntityWeapon maybeWeapon2 = sets.ElementAt(1)?.SecondaryHand.MaybeWeapon;
+                var weapon = maybeCaster.Body.EmptyHandWeapon;
+                ItemEntityWeapon maybeWeapon = sets.ElementAt(1)?.PrimaryHand.MaybeWeapon ?? weapon;
+                ItemEntityWeapon maybeWeapon2 = sets.ElementAt(1)?.SecondaryHand.MaybeWeapon ?? weapon;
                 RunAttackRule(maybeCaster, unit, maybeWeapon);
                 RunAttackRule(maybeCaster, unit, maybeWeapon2);
             }
