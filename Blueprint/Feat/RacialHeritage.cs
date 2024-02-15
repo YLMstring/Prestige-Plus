@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Kingmaker.Enums;
 using Kingmaker.Blueprints.Classes.Spells;
+using BlueprintCore.Actions.Builder;
+using PrestigePlus.CustomAction.OtherFeatRelated;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -60,7 +62,8 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(MultiArmedDisplayName)
               .SetDescription(MultiArmedDescription)
               .SetIcon(icon)
-
+              .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().Add<KasathaExtraAttack>().Build(),
+                    onlyOnFullAttack: true, onlyOnFirstAttack: true, onlyHit: false)
               .Configure();
         }
 

@@ -56,8 +56,6 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
         {
             if (weapon != null && !weapon.HoldInTwoHands)
             {
-                var attackAnimation = maybeCaster.View.AnimationManager.CreateHandle(UnitAnimationType.SpecialAttack);
-                maybeCaster.View.AnimationManager.Execute(attackAnimation);
                 int penalty = 8;
                 if (maybeCaster.HasFact(FeatureRefs.TwoWeaponFighting.Reference))
                 {
