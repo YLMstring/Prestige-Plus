@@ -325,6 +325,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private static BlueprintFeature CreateVampire()
         {
             var icon = AbilityRefs.VampiricTouch.Reference.Get().Icon;
+            //"VampirismCurseProgression": "15f2d9d3-f20f-42ea-bf4a-9849e802291b",
 
             return FeatureConfigurator.New(Vampire, VampireGuid)
               .SetDisplayName(VampireDisplayName)
@@ -333,7 +334,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIsClassFeature(true)
               .AddPrerequisiteNoFeature(FeatureRefs.UndeadType.ToString())
               .AddPrerequisiteNoFeature(FeatureSelectionRefs.MythicLichSkeletonSelection.ToString())
-              .AddPrerequisiteFeature(FeatureRefs.BloodDrinker.ToString())
+              .AddPrerequisiteFeature(FeatureRefs.BloodDrinker.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+              .AddPrerequisiteFeature("15f2d9d3-f20f-42ea-bf4a-9849e802291b", group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
               .AddFacts(new() { FeatureRefs.UndeadType.ToString(), FeatureRefs.VampireSpawnFeatures.ToString() })
               .AddEmptyHandWeaponOverride(isMonkUnarmedStrike: false, isPermanent: true, weapon: ItemWeaponRefs.Slam1d6.ToString())
               .AddOutgoingPhysicalDamageProperty(addMagic: true, naturalAttacks: true)
