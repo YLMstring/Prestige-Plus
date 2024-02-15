@@ -439,7 +439,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("mms"))) { ManyMonk.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fighterdd"))) { DawnflowerDervish.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fighteraa"))) { WeaponMaster.Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("mythicheritage"))) {  }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("mythicheritage"))) { RacialHeritage.RacialHeritageConfigure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)

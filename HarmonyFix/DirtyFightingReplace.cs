@@ -60,6 +60,26 @@ namespace PrestigePlus.HarmonyFix
                 __result = !(selectionState != null) || !selectionState.IsSelectedInChildren(__instance.Feature);
                 return;
             }
+            if (unit.Progression.Features.HasFact(Heritage1) && __instance.Feature == RaceRefs.AasimarRace.Reference.Get())
+            {
+                __result = !(selectionState != null) || !selectionState.IsSelectedInChildren(__instance.Feature);
+                return;
+            }
+            if (unit.Progression.Features.HasFact(Heritage2) && __instance.Feature == RaceRefs.DhampirRace.Reference.Get())
+            {
+                __result = !(selectionState != null) || !selectionState.IsSelectedInChildren(__instance.Feature);
+                return;
+            }
+            if (unit.Progression.Features.HasFact(Heritage3) && __instance.Feature == RaceRefs.ElfRace.Reference.Get())
+            {
+                __result = !(selectionState != null) || !selectionState.IsSelectedInChildren(__instance.Feature);
+                return;
+            }
+            if (unit.Progression.Features.HasFact(Heritage4) && __instance.Feature == RaceRefs.KitsuneRace.Reference.Get())
+            {
+                __result = !(selectionState != null) || !selectionState.IsSelectedInChildren(__instance.Feature);
+                return;
+            }
             if (unit.Progression.Features.HasFact(Defender) && __instance.Feature == FeatureRefs.CombatReflexes.Reference.Get())
             {
                 __result = !(selectionState != null) || !selectionState.IsSelectedInChildren(__instance.Feature);
@@ -94,5 +114,10 @@ namespace PrestigePlus.HarmonyFix
 
         private static BlueprintFeatureReference Dirty = BlueprintTool.GetRef<BlueprintFeatureReference>(DirtyFighting.DirtyFightingGuid);
         private static BlueprintFeatureReference Defender = BlueprintTool.GetRef<BlueprintFeatureReference>(HighGuardian.DefenderReflexesGuid);
+
+        private static BlueprintFeatureReference Heritage1 = BlueprintTool.GetRef<BlueprintFeatureReference>(RacialHeritage.CelestialCrusaderGuid);
+        private static BlueprintFeatureReference Heritage2 = BlueprintTool.GetRef<BlueprintFeatureReference>(RacialHeritage.BloodDrinkGuid);
+        private static BlueprintFeatureReference Heritage3 = BlueprintTool.GetRef<BlueprintFeatureReference>(RacialHeritage.DarkPowersGuid);
+        private static BlueprintFeatureReference Heritage4 = BlueprintTool.GetRef<BlueprintFeatureReference>(RacialHeritage.MagicKitsuneGuid);
     }
 }
