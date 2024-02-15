@@ -114,7 +114,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(GiganticSteedDescription)
               .SetIcon(icon)
               //.AddChangeUnitSize(type: Kingmaker.Designers.Mechanics.Buffs.ChangeUnitSize.ChangeType.Delta, size: Kingmaker.Enums.Size.Fine, sizeDelta: 1)
-              .AddComponent<ChangeUnitBaseSize>(c => { c.SizeDelta = 1; c.m_Type = TabletopTweaks.Core.NewUnitParts.UnitPartBaseSizeAdjustment.ChangeType.Delta; })
+              .AddComponent<ChangeUnitBaseSize>(c => { c.Size = Kingmaker.Enums.Size.Huge; c.m_Type = TabletopTweaks.Core.NewUnitParts.UnitPartBaseSizeAdjustment.ChangeType.Value; })
               .AddStatBonus(Kingmaker.Enums.ModifierDescriptor.Penalty, false, StatType.Dexterity, -2)
               .Configure();
 
