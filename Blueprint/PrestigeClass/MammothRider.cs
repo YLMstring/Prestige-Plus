@@ -24,6 +24,7 @@ using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.Utility;
+using PrestigePlus.CustomComponent.PrestigeClass;
 using PrestigePlus.Modify;
 using System;
 using System.Collections.Generic;
@@ -107,7 +108,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(GiganticSteedDisplayName)
               .SetDescription(GiganticSteedDescription)
               .SetIcon(icon)
-              //.AddChangeUnitSize(type: Kingmaker.Designers.Mechanics.Buffs.ChangeUnitSize.ChangeType.Delta, size: Kingmaker.Enums.Size.Fine, sizeDelta: 1)
+              //just update, don't actually change
+              .AddChangeUnitSize(type: Kingmaker.Designers.Mechanics.Buffs.ChangeUnitSize.ChangeType.Delta, sizeDelta: 0)
               //.AddComponent<ChangeUnitBaseSize>(c => { c.Size = Kingmaker.Enums.Size.Huge; c.m_Type = TabletopTweaks.Core.NewUnitParts.UnitPartBaseSizeAdjustment.ChangeType.Value; })
               .AddStatBonus(Kingmaker.Enums.ModifierDescriptor.Penalty, false, StatType.Dexterity, -2)
               .Configure();

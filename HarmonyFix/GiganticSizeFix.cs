@@ -14,13 +14,12 @@ using TabletopTweaks.Core.NewUnitParts;
 
 namespace PrestigePlus.HarmonyFix
 {
-    [HarmonyAfter(new string[] { "TabletopTweaks-Core", "TabletopTweaks-Base" })]
-    [HarmonyPatch(typeof(UnitState), nameof(UnitState.Size), MethodType.Getter)]
+    [HarmonyPatch(typeof(UnitDescriptor), nameof(UnitDescriptor.OriginalSize), MethodType.Getter)]
     internal class GiganticSizeFix
     {
-        static void Postfix(UnitState __instance, ref Size __result)
+        static void Postfix(UnitDescriptor __instance, ref Size __result)
         {
-            if (__instance.Owner.HasFact(Ace))
+            if (__instance.HasFact(Ace))
             {
                 __result += 1;
             }
