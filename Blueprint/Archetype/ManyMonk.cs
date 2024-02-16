@@ -204,7 +204,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string ManyFeat1Description = "ManyMonkManyFeat1.Description";
         private static BlueprintFeatureSelection CreateManyFeat1()
         {
-            var icon = FeatureRefs.DefensiveSpinFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.CraneStyleFeat.Reference.Get().Icon;
 
             return FeatureSelectionConfigurator.New(ManyFeat1, ManyFeat1Guid)
               .SetDisplayName(ManyFeat1DisplayName)
@@ -224,7 +224,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string ManyFeat2Description = "ManyMonkManyFeat2.Description";
         private static BlueprintFeature CreateManyFeat2()
         {
-            var icon = FeatureRefs.DefensiveSpinFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.CraneStyleFeat.Reference.Get().Icon;
 
             return FeatureSelectionConfigurator.New(ManyFeat2, ManyFeat2Guid)
               .SetDisplayName(ManyFeat2DisplayName)

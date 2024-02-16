@@ -56,7 +56,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string BurstDescription = "DawnflowerDervishBurst.Description";
         private static BlueprintFeature CreateBurst()
         {
-            var icon = FeatureRefs.CavalierCharge.Reference.Get().Icon;
+            var icon = FeatureRefs.FastMovement.Reference.Get().Icon;
 
             var Buff1 = BuffConfigurator.New(BurstBuff, BurstGuidBuff)
               .SetDisplayName(BurstDisplayName)
@@ -90,7 +90,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private static readonly string RapidAttackAbilityGuid = "{B5286362-8AF2-42C1-A0C0-678DEC7B1A5E}";
         public static BlueprintFeature RapidAttackFeat()
         {
-            var icon = FeatureRefs.AmuletOfQuickDrawFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.DisplayWeaponProwess.Reference.Get().Icon;
 
             var Buff1 = BuffConfigurator.New(RapidAttackBuff, RapidAttackBuffGuid)
               .SetDisplayName(RapidAttackDisplayName)
@@ -131,7 +131,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private static readonly string LightningAbilityGuid = "{17DFD8F3-BAE5-47E0-92BA-92AFCC515296}";
         public static BlueprintFeature LightningFeat()
         {
-            var icon = AbilityRefs.CallLightningStorm.Reference.Get().Icon;
+            var icon = FeatureRefs.DispellingAttack.Reference.Get().Icon;
 
             var Buff1 = BuffConfigurator.New(LightningBuff, LightningBuffGuid)
               .SetDisplayName(LightningDisplayName)

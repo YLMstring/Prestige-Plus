@@ -67,13 +67,13 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToAddFeatures(15, FeatureSelectionRefs.WeaponTrainingSelection.ToString())
             .AddToAddFeatures(5, FeatureRefs.PerfectStrikeFeature.ToString())
             .AddToAddFeatures(13, FeatureRefs.CriticalFocus.ToString())
-            .AddToAddFeatures(17, FeatureRefs.PerfectStrikeFeature.ToString())
+            .AddToAddFeatures(17, FeatureRefs.CriticalMastery.ToString())
             .AddToAddFeatures(9, MirrorMoveFeat())
             .AddToAddFeatures(19, UnstoppableStrikeFeat())
               .Configure();
 
             ProgressionConfigurator.For(ProgressionRefs.FighterProgression)
-                //.AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { LightningGuid, WeaponGuardGuid, MirrorMoveGuid })
+                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { FeatureRefs.PerfectStrikeFeature.ToString(), FeatureRefs.CriticalFocus.ToString(), FeatureRefs.CriticalMastery.ToString(), UnstoppableStrikeGuid, MirrorMoveGuid })
                 .Configure();
         }
 
@@ -158,7 +158,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string UnstoppableStrikeDescription = "WeaponMasterUnstoppableStrike.Description";
         public static BlueprintFeature UnstoppableStrikeFeat()
         {
-            var icon = AbilityRefs.ArmyTempestStrike.Reference.Get().Icon;
+            var icon = FeatureRefs.TwoHandedFighterBackswing.Reference.Get().Icon;
 
             var Buff2 = BuffConfigurator.New(UnstoppableStrikeBuff2, UnstoppableStrikeBuff2Guid)
              .SetDisplayName(UnstoppableStrikeDisplayName)

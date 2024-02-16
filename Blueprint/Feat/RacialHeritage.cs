@@ -24,7 +24,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string RacialHeritageDescription = "RacialHeritage.Description";
         public static void RacialHeritageConfigure()
         {
-            var icon = AbilityRefs.MixedBloodlineAbility.Reference.Get().Icon;
+            var icon = FeatureSelectionRefs.BloodlineAscendance.Reference.Get().Icon;
 
             var feat = FeatureSelectionConfigurator.New(RacialHeritageFeat, RacialHeritageGuid)
               .SetDisplayName(RacialHeritageDisplayName)
@@ -114,7 +114,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static BlueprintFeature BloodDrinkFeat()
         {
-            var icon = FeatureRefs.BloodDrinker.Reference.Get().Icon;
+            var icon = FeatureRefs.NegativeEnergyAffinityDhampir.Reference.Get().Icon;
 
             return FeatureConfigurator.New(BloodDrink, BloodDrinkGuid)
               .SetDisplayName(BloodDrinkDisplayName)
@@ -133,7 +133,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static BlueprintFeature DarkPowersFeat()
         {
-            var icon = AbilityRefs.DarkVeilAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.InflictCriticalWoundsMass.Reference.Get().Icon;
 
             return FeatureConfigurator.New(DarkPowers, DarkPowersGuid)
               .SetDisplayName(DarkPowersDisplayName)
