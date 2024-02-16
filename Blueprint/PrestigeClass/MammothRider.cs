@@ -99,12 +99,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         private const string GiganticSteed1 = "MammothRider.GiganticSteed1";
         public static readonly string GiganticSteed1Guid = "{D5D06F79-F7FF-4AB5-96FE-34CE19034EF4}";
-
-        private const string GiganticSteed2 = "MammothRider.GiganticSteed2";
-        private static readonly string GiganticSteed2Guid = "{19D65C1A-348D-45F6-A4AF-DAD42E6B4966}";
-
-        private const string GiganticSteed3 = "MammothRider.GiganticSteed3";
-        private static readonly string GiganticSteed3Guid = "{D110315F-EDD1-4E10-97EF-62EC7BE3C652}";
         public static BlueprintFeature GiganticSteedFeat()
         {
             var icon = AbilityRefs.AnimalGrowth.Reference.Get().Icon;
@@ -116,22 +110,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               //.AddChangeUnitSize(type: Kingmaker.Designers.Mechanics.Buffs.ChangeUnitSize.ChangeType.Delta, size: Kingmaker.Enums.Size.Fine, sizeDelta: 1)
               //.AddComponent<ChangeUnitBaseSize>(c => { c.Size = Kingmaker.Enums.Size.Huge; c.m_Type = TabletopTweaks.Core.NewUnitParts.UnitPartBaseSizeAdjustment.ChangeType.Value; })
               .AddStatBonus(Kingmaker.Enums.ModifierDescriptor.Penalty, false, StatType.Dexterity, -2)
-              .Configure();
-
-            var feat2 = FeatureConfigurator.New(GiganticSteed2, GiganticSteed2Guid)
-              .SetDisplayName(GiganticSteedDisplayName)
-              .SetDescription(GiganticSteedDescription)
-              .SetIcon(icon)
-              .AddStatBonus(Kingmaker.Enums.ModifierDescriptor.UntypedStackable, false, StatType.Strength, 2)
-              .SetRanks(10)
-              .Configure();
-
-            var feat3 = FeatureConfigurator.New(GiganticSteed3, GiganticSteed3Guid)
-              .SetDisplayName(GiganticSteedDisplayName)
-              .SetDescription(GiganticSteedDescription)
-              .SetIcon(icon)
-              .AddStatBonus(Kingmaker.Enums.ModifierDescriptor.UntypedStackable, false, StatType.Constitution, 2)
-              .SetRanks(10)
               .Configure();
 
             return FeatureConfigurator.New(GiganticSteed, GiganticSteedGuid)

@@ -14,6 +14,7 @@ using TabletopTweaks.Core.NewUnitParts;
 
 namespace PrestigePlus.HarmonyFix
 {
+    [HarmonyAfter(new string[] { "TabletopTweaks-Core", "TabletopTweaks-Base" })]
     [HarmonyPatch(typeof(UnitState), nameof(UnitState.Size), MethodType.Getter)]
     internal class GiganticSizeFix
     {
