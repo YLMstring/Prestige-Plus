@@ -98,7 +98,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string GiganticSteedDescription = "MammothRiderGiganticSteed.Description";
 
         private const string GiganticSteed1 = "MammothRider.GiganticSteed1";
-        private static readonly string GiganticSteed1Guid = "{D5D06F79-F7FF-4AB5-96FE-34CE19034EF4}";
+        public static readonly string GiganticSteed1Guid = "{D5D06F79-F7FF-4AB5-96FE-34CE19034EF4}";
 
         private const string GiganticSteed2 = "MammothRider.GiganticSteed2";
         private static readonly string GiganticSteed2Guid = "{19D65C1A-348D-45F6-A4AF-DAD42E6B4966}";
@@ -114,7 +114,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(GiganticSteedDescription)
               .SetIcon(icon)
               //.AddChangeUnitSize(type: Kingmaker.Designers.Mechanics.Buffs.ChangeUnitSize.ChangeType.Delta, size: Kingmaker.Enums.Size.Fine, sizeDelta: 1)
-              .AddComponent<ChangeUnitBaseSize>(c => { c.Size = Kingmaker.Enums.Size.Huge; c.m_Type = TabletopTweaks.Core.NewUnitParts.UnitPartBaseSizeAdjustment.ChangeType.Value; })
+              //.AddComponent<ChangeUnitBaseSize>(c => { c.Size = Kingmaker.Enums.Size.Huge; c.m_Type = TabletopTweaks.Core.NewUnitParts.UnitPartBaseSizeAdjustment.ChangeType.Value; })
               .AddStatBonus(Kingmaker.Enums.ModifierDescriptor.Penalty, false, StatType.Dexterity, -2)
               .Configure();
 
