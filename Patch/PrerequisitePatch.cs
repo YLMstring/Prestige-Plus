@@ -60,6 +60,10 @@ namespace PrestigePlus.Patch
                 }
                 catch (Exception e) { Logger.Error("Failed to edit " + feat.NameSafe(), e); }
             }
+            var awt = FeatureSelectionRefs.AdvancedWeaponTraining1.Reference.Get().m_AllFeatures;
+            FeatureSelectionRefs.AdvancedWeaponTraining2.Reference.Get().m_AllFeatures = awt;
+            FeatureSelectionRefs.AdvancedWeaponTraining3.Reference.Get().m_AllFeatures = awt;
+            FeatureSelectionRefs.AdvancedWeaponTraining4.Reference.Get().m_AllFeatures = awt;
         }
     }
 }
