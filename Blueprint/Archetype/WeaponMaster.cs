@@ -62,9 +62,9 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToAddFeatures(14, WeaponGuardGuid)
             .AddToAddFeatures(18, WeaponGuardGuid)
             .AddToAddFeatures(3, FeatureSelectionRefs.WeaponTrainingSelection.ToString())
-            .AddToAddFeatures(7, FeatureSelectionRefs.WeaponTrainingSelection.ToString())
-            .AddToAddFeatures(11, FeatureSelectionRefs.WeaponTrainingSelection.ToString())
-            .AddToAddFeatures(15, FeatureSelectionRefs.WeaponTrainingSelection.ToString())
+            .AddToAddFeatures(7, FeatureSelectionRefs.WeaponTrainingRankUpSelection.ToString())
+            .AddToAddFeatures(11, FeatureSelectionRefs.WeaponTrainingRankUpSelection.ToString())
+            .AddToAddFeatures(15, FeatureSelectionRefs.WeaponTrainingRankUpSelection.ToString())
             .AddToAddFeatures(5, FeatureRefs.PerfectStrikeFeature.ToString())
             .AddToAddFeatures(13, FeatureRefs.CriticalFocus.ToString())
             .AddToAddFeatures(17, FeatureRefs.CriticalMastery.ToString())
@@ -94,7 +94,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetIsClassFeature(true)
               .AddToIsPrerequisiteFor(CreateMasterTraining())
               .AddCMDBonusAgainstManeuvers(maneuvers: new CombatManeuver[] { CombatManeuver.Disarm, CombatManeuver.SunderArmor }, value: ContextValues.Rank())
-              //.AddContextRankConfig(ContextRankConfigs.FeatureRank(WeaponGuardGuid))
+              .AddContextRankConfig(ContextRankConfigs.FeatureRank(WeaponGuardGuid))
               .Configure();
         }
 
@@ -109,7 +109,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
             var feat = FeatureSelectionConfigurator.New(MasterTraining, MasterTrainingGuid)
               .CopyFrom(
-                FeatureSelectionRefs.AdvancedWeaponTraining4,
+                FeatureSelectionRefs.AdvancedWeaponTraining1,
                 typeof(FeatureTagsComponent))
               .SetDisplayName(MasterTrainingDisplayName)
               .SetDescription(MasterTrainingDescription)
@@ -166,7 +166,8 @@ namespace PrestigePlus.Blueprint.Archetype
              .SetIcon(icon)
              .AddAttackTypeChange(false, false, AttackType.Touch, AttackType.Melee)
              .AddAttackTypeChange(false, false, AttackType.RangedTouch, AttackType.Ranged)
-             .AddIgnoreTargetDR(true)
+             .AddPartialDRIgnore(false, reductionReduction: 1000, useContextValue: false)
+             //.AddIgnoreTargetDR(true)
              .Configure();
 
             var ability = AbilityConfigurator.New(UnstoppableStrikeAblity, UnstoppableStrikeAblityGuid)
