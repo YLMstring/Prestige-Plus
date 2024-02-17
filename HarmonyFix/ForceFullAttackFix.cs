@@ -14,17 +14,20 @@ using System.Threading.Tasks;
 using Kingmaker.UnitLogic.Commands;
 using PrestigePlus.Blueprint.Archetype;
 using Kingmaker.UnitLogic;
+using Kingmaker;
+using static Kingmaker.UI.CanvasScalerWorkaround;
 
 namespace PrestigePlus.HarmonyFix
 {
-    [HarmonyPatch(typeof(UnitAttack), nameof(UnitAttack.IsFullAttackRestricted))]
+    [HarmonyPatch(typeof(UnitAttack), nameof(UnitAttack.InitAttacks))]
     internal class ForceFullAttackFix
     {
-        static void Postfix(ref UnitAttack __instance, ref bool __result)
+        static void Prefix(ref UnitAttack __instance)
         {
-            if (__instance.Executor.HasFact(RapidBuff))
+            var turn = Game.Instance.TurnBasedCombatController?.CurrentTurn;
+            if (__instance.Executor.HasFact(RapidBuff) && turn?.Rider == __instance.Executor)
             {
-                __result = true;
+                __instance.ForceFullAttack = true;
             }
         }
 

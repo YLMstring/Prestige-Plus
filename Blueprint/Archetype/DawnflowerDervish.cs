@@ -96,7 +96,6 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(RapidAttackDisplayName)
               .SetDescription(RapidAttackDescription)
               .SetIcon(icon)
-              .AddMechanicsFeature(Kingmaker.UnitLogic.FactLogic.AddMechanicsFeature.MechanicsFeatureType.Pounce)
               .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.BaseAttackBonus, value: -5)
               .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
