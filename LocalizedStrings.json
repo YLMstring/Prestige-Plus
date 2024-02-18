@@ -9038,9 +9038,9 @@
   {
     "Key": "ManeuverMasterOneTouch.Name",
     "ProcessTemplates": false,
-    "enGB": "One Touch",
+    "enGB": "Ki Power: One Touch",
     "ruRU": "Сила ци: касание",
-    "zhCN": "一指禅"
+    "zhCN": "气力：一指禅"
   },
   {
     "Key": "ManeuverMasterOneTouch.Description",
@@ -9051,9 +9051,9 @@
   {
     "Key": "ManeuverMasterOneTouch2.Name",
     "ProcessTemplates": false,
-    "enGB": "One Touch (ki)",
+    "enGB": "Ki Power: One Touch (ki)",
     "ruRU": "Сила ци: касание (ци)",
-    "zhCN": "一指禅（气）"
+    "zhCN": "气力：一指禅（气）"
   },
   {
     "Key": "ManeuverMasterOneTouch2.Description",
@@ -9064,9 +9064,9 @@
   {
     "Key": "ManeuverMasterFreedom.Name",
     "ProcessTemplates": false,
-    "enGB": "Freedom of Movement",
+    "enGB": "Ki Power: Freedom of Movement",
     "ruRU": "Сила ци: свобода движений",
-    "zhCN": "凌波微步"
+    "zhCN": "气力：凌波微步"
   },
   {
     "Key": "ManeuverMasterFreedom.Description",
