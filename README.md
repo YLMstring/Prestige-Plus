@@ -70,7 +70,7 @@
 - At level 5 you can learn all necromancy spells (requires 13 int, full caster)
 - Or become a ghoul! (you're undead so incompatible with lichdom)
 - Or become a vampire! (requires blood drinker, incompatible with lichdom)
-### [Anchorite of Dawn Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/a-b/anchorite/)
+### [Dawnflower Anchorite Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/a-b/anchorite/)
 - Gain spell progression at level 2-10.
 - Focused Sacred Weapon can't be turned off once chosen (it will become very complicated for me otherwise)
 - Credence gives access to [Dervish in TTT](https://github.com/Vek17/TabletopTweaks-Base).
