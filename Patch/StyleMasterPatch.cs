@@ -28,12 +28,23 @@ namespace PrestigePlus.Patch
             {
                 if (feat.NameSafe().Contains("Style"))
                 {
+                    if (feat == FeatureRefs.CraneStyleRiposteFeat.Reference) continue;
+                    if (feat == FeatureRefs.CraneStyleWingFeat.Reference) continue;
                     target.m_AllFeatures = CommonTool.Append(target.m_AllFeatures, feat);
                     if (target2 != null && feat.Get().IsPrerequisiteFor?.Count() > 0)
                     {
                         foreach (var feat2 in feat.Get().IsPrerequisiteFor)
                         {
+                            if (target2.m_AllFeatures.Contains(feat2)) continue;
                             target2.m_AllFeatures = CommonTool.Append(target2.m_AllFeatures, feat2);
+                            if (feat2.Get().IsPrerequisiteFor?.Count() > 0)
+                            {
+                                foreach (var feat3 in feat.Get().IsPrerequisiteFor)
+                                {
+                                    if (target2.m_AllFeatures.Contains(feat3)) continue;
+                                    target2.m_AllFeatures = CommonTool.Append(target2.m_AllFeatures, feat3);
+                                }
+                            }
                         }
                     }
                 }

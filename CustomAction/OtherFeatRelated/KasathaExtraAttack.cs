@@ -46,8 +46,8 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                 }
                 var sets = unit.Body.HandsEquipmentSets;
                 var weapon = maybeCaster.Body.EmptyHandWeapon;
-                ItemEntityWeapon maybeWeapon = sets.ElementAt(1)?.PrimaryHand.MaybeWeapon ?? weapon;
-                ItemEntityWeapon maybeWeapon2 = sets.ElementAt(1)?.SecondaryHand.MaybeWeapon ?? weapon;
+                ItemEntityWeapon maybeWeapon = sets[1]?.PrimaryHand.Weapon ?? weapon;
+                ItemEntityWeapon maybeWeapon2 = sets[1]?.SecondaryHand.Weapon ?? weapon;
                 RunAttackRule(maybeCaster, unit, maybeWeapon);
                 RunAttackRule(maybeCaster, unit, maybeWeapon2);
             }

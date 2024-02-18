@@ -41,10 +41,32 @@ namespace PrestigePlus.Patch
             {
                 list.Add(feat);
             }
+            // don't change this, some weapon training somehow has all my own feats in it, it just works
+            foreach (var feat in FeatureSelectionRefs.AdvancedWeaponTraining1.Reference.Get().m_AllFeatures)
+            {
+                if (list.Contains(feat)) continue;
+                list.Add(feat);
+            }
+            foreach (var feat in FeatureSelectionRefs.AdvancedWeaponTraining2.Reference.Get().m_AllFeatures)
+            {
+                if (list.Contains(feat)) continue;
+                list.Add(feat);
+            }
+            foreach (var feat in FeatureSelectionRefs.AdvancedWeaponTraining3.Reference.Get().m_AllFeatures)
+            {
+                if (list.Contains(feat)) continue;
+                list.Add(feat);
+            }
+            foreach (var feat in FeatureSelectionRefs.AdvancedWeaponTraining4.Reference.Get().m_AllFeatures)
+            {
+                if (list.Contains(feat)) continue;
+                list.Add(feat);
+            }
             foreach (var feat in list)
             {
                 try
                 {
+                    //Logger.Info("edit " + feat.NameSafe());
                     foreach (var prerequisite in feat.Get().GetComponents<PrerequisiteFeature>())
                     {
                         var pre = prerequisite?.Feature;
