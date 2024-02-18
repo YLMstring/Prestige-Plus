@@ -1,4 +1,4 @@
-# Prestige Plus v2.7.2 for WoTR 
+# Prestige Plus v2.7.3 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -70,7 +70,7 @@
 - At level 5 you can learn all necromancy spells (requires 13 int, full caster)
 - Or become a ghoul! (you're undead so incompatible with lichdom)
 - Or become a vampire! (requires blood drinker, incompatible with lichdom)
-### [Anchorite of Dawn Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/a-b/anchorite/)
+### [Dawnflower Anchorite Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/a-b/anchorite/)
 - Gain spell progression at level 2-10.
 - Focused Sacred Weapon can't be turned off once chosen (it will become very complicated for me otherwise)
 - Credence gives access to [Dervish in TTT](https://github.com/Vek17/TabletopTweaks-Base).
@@ -190,11 +190,13 @@
 - [Fungal Pilgrim](https://www.d20pfsrd.com/classes/core-classes/druid/archetypes/paizo-druid-archetypes/fungal-pilgrim-druid-archetype/)
 - [Toxicologist](https://www.d20pfsrd.com/classes/core-classes/druid/archetypes/paizo-druid-archetypes/toxicologist-druid-archetype)
 #### Fighter:  
+- [Dawnflower Dervish](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Qadira%20%20Dawnflower%20Dervish)
 - [Eldritch Guardian](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Eldritch%20Guardian)
 - Share Training with your pets!
 - [High Guardian](https://www.d20pfsrd.com/classes/core-classes/fighter/archetypes/paizo-fighter-archetypes/high-guardian-fighter-archetype/)
 - [Lore Warden](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Lore%20Warden) (with good stuff from [this version](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Lore%20Warden%20(PFS%20Field%20Guide)))
 - [Warlord](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Warlord)
+- [Weapon Master](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Weapon%20Master): Fighters that have the weapon master archetype can select advanced weapon training beginning at 4th level. A weapon master can select this feat as a bonus feat and it doesn’t count for the purpose of the requirement that it can be taken at most once per 5 fighter levels.
 #### Magus:  
 - [Spire Defender](https://www.d20pfsrd.com/classes/base-classes/magus/archetypes/paizo-magus-archetypes/spire-defender/)
 - New Magus Arcana: [Maneuver Mastery](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/maneuver-mastery-ex)
@@ -205,6 +207,7 @@
 #### Monk:  
 - [Maneuver Master](https://www.d20pfsrd.com/classes/core-classes/monk/archetypes/paizo-monk-archetypes/maneuver-master/)
 - This is absolutely my favorite.
+- [Master of Many Styles](https://www.d20pfsrd.com/classes/core-classes/monk/archetypes/paizo-monk-archetypes/master-of-many-styles/)
 - New Ki Power: [One Touch](https://www.aonprd.com/MonkUCKiPowers.aspx)
 - New Ki Power: [Freedom of Movement](https://www.aonprd.com/MonkUCKiPowers.aspx)
 - [Weapon Adept](https://www.d20pfsrd.com/classes/core-classes/monk/archetypes/paizo-monk-archetypes/weapon-adept/)
@@ -283,6 +286,7 @@
 - [Shield Snag](https://www.d20pfsrd.com/feats/combat-feats/shield-snag-combat/)
 - [Snatch Arrows](https://www.d20pfsrd.com/feats/combat-feats/snatch-arrows-combat) (thrown back only)
 - [Deflect Arrows (Mythic)](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-feats/deflect-arrows-mythic/): You deflect projectiles and ray spells with uncanny skill. When using Deflect Arrows, you can deflect an additional number of ranged attacks per round equal to half your tier. You can also deflect a single ray from a ray spell or effect targeting you.
+- [Racial Heritage (Mythic)](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-feats/racial-heritage-mythic/): Celestial Crusader, Negative Energy Affinity, Champion of Dark Powers, Multi-Armed and Kitsune Magic!
 ### Trip Feats
 - [Vindictive Fall](https://www.d20pfsrd.com/feats/general-feats/vindictive-fall/)
 - [Ranged Trip](https://www.d20pfsrd.com/feats/combat-feats/ranged-trip-combat-targeting)
@@ -343,7 +347,7 @@
 - Endless Breath: You have 1/3 chance to recover one use of your breath weapon at the start of your turn. Additionally, your Gold Dragon Breath (Mythic) becomes a move action.
 - Riposte (Mythic): The duelist adds her mythic tier as a bonus on her attack roll when attempting a parry and riposte. This bonus does not stack with Ever Ready mythic feat.
 - Metaphysical Sneak Attack: If the student of war deals sneak attack damage to a target, he can study that target, allowing him to apply his Know Your Enemy effects. Additionally, his sneak attack no longer deals precision damage.
-- Mystic Catalyst: You can use Lesser Spell Synthesis ability at will.
+- Mystic Catalyst: You can use Lesser Spell Synthesis ability at will. 
 ### Other Features
 
 - [Quick Draw](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/swordlord/): If a Swordlord already has Quick Draw or Alertness, he gains Aldori Dueling Mastery as a bonus feat.
@@ -357,9 +361,10 @@
 
 ### [Expanded Content](https://github.com/ka-dyn/ExpandedContent)
 - Thanks bitter for adding [aid another](https://www.aonprd.com/Rules.aspx?Name=Aid%20Another&Category=Special%20Attacks) related stuff to my Asavir and Halfling Opportunist!
+- Vampirism oracle curse can qualify for my vampiric transformation!
 ### [Microscopic Content Expansion](https://github.com/alterasc/MicroscopicContentExpansion)
 - Love every feature of it!
-- My dimensional spell-like abilities qualify for the dimensional feat chain (default on)
+- My dimensional spell-like abilities can qualify for the dimensional feat chain (default on)
 - Walk Through Space with the dimensional feat chain! (default on)
 ### [Holy Vindicator](https://github.com/SpencerMycek/WoTR-HolyVindicator)
 - Spellbook Progression - Fixed
