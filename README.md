@@ -196,8 +196,7 @@
 - [High Guardian](https://www.d20pfsrd.com/classes/core-classes/fighter/archetypes/paizo-fighter-archetypes/high-guardian-fighter-archetype/)
 - [Lore Warden](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Lore%20Warden) (with good stuff from [this version](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Lore%20Warden%20(PFS%20Field%20Guide)))
 - [Warlord](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Warlord)
-- [Weapon Master](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Weapon%20Master)
-- Fighters that have the weapon master archetype can select advanced weapon training beginning at 4th level. A weapon master can select this feat as a bonus feat and it doesn’t count for the purpose of the requirement that it can be taken at most once per 5 fighter levels.
+- [Weapon Master](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Weapon%20Master): Fighters that have the weapon master archetype can select advanced weapon training beginning at 4th level. A weapon master can select this feat as a bonus feat and it doesn’t count for the purpose of the requirement that it can be taken at most once per 5 fighter levels.
 #### Magus:  
 - [Spire Defender](https://www.d20pfsrd.com/classes/base-classes/magus/archetypes/paizo-magus-archetypes/spire-defender/)
 - New Magus Arcana: [Maneuver Mastery](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/maneuver-mastery-ex)
