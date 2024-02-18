@@ -361,9 +361,10 @@
 
 ### [Expanded Content](https://github.com/ka-dyn/ExpandedContent)
 - Thanks bitter for adding [aid another](https://www.aonprd.com/Rules.aspx?Name=Aid%20Another&Category=Special%20Attacks) related stuff to my Asavir and Halfling Opportunist!
+- Vampirism oracle curse can qualify for my vampiric transformation!
 ### [Microscopic Content Expansion](https://github.com/alterasc/MicroscopicContentExpansion)
 - Love every feature of it!
-- My dimensional spell-like abilities qualify for the dimensional feat chain (default on)
+- My dimensional spell-like abilities can qualify for the dimensional feat chain (default on)
 - Walk Through Space with the dimensional feat chain! (default on)
 ### [Holy Vindicator](https://github.com/SpencerMycek/WoTR-HolyVindicator)
 - Spellbook Progression - Fixed
