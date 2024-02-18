@@ -28,8 +28,8 @@ namespace PrestigePlus.Patch
             {
                 if (feat.NameSafe().Contains("Style"))
                 {
-                    if (feat == FeatureRefs.CraneStyleRiposteFeat.Reference) continue;
-                    if (feat == FeatureRefs.CraneStyleWingFeat.Reference) continue;
+                    if (feat.Get() == FeatureRefs.CraneStyleRiposteFeat.Reference.Get()) continue;
+                    if (feat.Get() == FeatureRefs.CraneStyleWingFeat.Reference.Get()) continue;
                     target.m_AllFeatures = CommonTool.Append(target.m_AllFeatures, feat);
                     if (target2 != null && feat.Get().IsPrerequisiteFor?.Count() > 0)
                     {
@@ -39,7 +39,7 @@ namespace PrestigePlus.Patch
                             target2.m_AllFeatures = CommonTool.Append(target2.m_AllFeatures, feat2);
                             if (feat2.Get().IsPrerequisiteFor?.Count() > 0)
                             {
-                                foreach (var feat3 in feat.Get().IsPrerequisiteFor)
+                                foreach (var feat3 in feat2.Get().IsPrerequisiteFor)
                                 {
                                     if (target2.m_AllFeatures.Contains(feat3)) continue;
                                     target2.m_AllFeatures = CommonTool.Append(target2.m_AllFeatures, feat3);
