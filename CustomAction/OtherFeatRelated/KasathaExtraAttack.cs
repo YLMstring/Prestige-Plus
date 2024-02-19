@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Kingmaker.UnitLogic;
 using Kingmaker.Items;
+using Kingmaker.Items.Slots;
 
 namespace PrestigePlus.CustomAction.OtherFeatRelated
 {
@@ -40,16 +41,30 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                     PFLog.Default.Error("Caster is missing", Array.Empty<object>());
                     return;
                 }
-                if (maybeCaster.Body.CurrentHandEquipmentSetIndex == 1 || maybeCaster.Body.IsPolymorphed)
+                if (maybeCaster.Body.IsPolymorphed)
                 {
                     return;
                 }
-                var sets = unit.Body.HandsEquipmentSets;
-                var weapon = maybeCaster.Body.EmptyHandWeapon;
-                ItemEntityWeapon maybeWeapon = sets[1]?.PrimaryHand.MaybeItem as ItemEntityWeapon ?? weapon;
-                ItemEntityWeapon maybeWeapon2 = sets[1]?.SecondaryHand.MaybeItem as ItemEntityWeapon ?? weapon;
-                RunAttackRule(maybeCaster, unit, maybeWeapon);
-                RunAttackRule(maybeCaster, unit, maybeWeapon2);
+                var weapons = new List<ItemEntityWeapon> { };
+                foreach (var slot in maybeCaster.Body.EquipmentSlots)
+                {
+                    if (slot is HandSlot && slot != maybeCaster.Body.PrimaryHand && slot != maybeCaster.Body.SecondaryHand)
+                    {
+                        if (slot.HasItem && slot.Item is ItemEntityWeapon weapon)
+                        {
+                            weapons.Add(weapon);
+                            Logger.Info(weapon.Name);
+                        }
+                    }
+                }
+                if (!weapons.Any()) return;
+                var wep = maybeCaster.Body.AddAdditionalLimb(weapons[0].Blueprint, null);
+                RunAttackRule(maybeCaster, unit, maybeCaster.Body.AdditionalLimbs[wep].MaybeWeapon);
+                maybeCaster.Body.RemoveAdditionalLimb(wep);
+                if (weapons.Count() < 2) return;
+                wep = maybeCaster.Body.AddAdditionalLimb(weapons[1].Blueprint, null);
+                RunAttackRule(maybeCaster, unit, maybeCaster.Body.AdditionalLimbs[wep].MaybeWeapon);
+                maybeCaster.Body.RemoveAdditionalLimb(wep);
             }
             catch (Exception ex) { Logger.Error("Failed to storm.", ex); }
         }
