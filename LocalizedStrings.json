@@ -11365,8 +11365,8 @@
   },
   {
     "Key": "RacialHeritageMultiArmed.Description",
-    "enGB": "A kasatha has four arms. It can fight with four weapons, using two more off-hand weapons in your second weapon set.",
-    "zhCN": "卡萨萨有四只手，可以进行四武器战斗，额外的两个副手武器会使用你的第二个武器组之中的武器。"
+    "enGB": "A kasatha has four arms. It can fight with four weapons, using the first two off-hand weapons in its backup weapon sets. It can wield them like a double weapon.",
+    "zhCN": "卡萨萨有四只手，可以进行四武器战斗，使用其备用武器组中的前两个副手武器。它能够如同双头武器一般持用这些武器。"
   },
   {
     "Key": "RacialHeritageMagicKitsune.Name",
