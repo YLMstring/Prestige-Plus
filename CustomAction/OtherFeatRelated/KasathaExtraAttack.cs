@@ -60,6 +60,12 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                 if (!weapons.Any()) return;
                 var wep = maybeCaster.Body.AddAdditionalLimb(weapons[0].Blueprint, null);
                 RunAttackRule(maybeCaster, unit, maybeCaster.Body.AdditionalLimbs[wep].MaybeWeapon);
+                if (maybeCaster.Body.AdditionalLimbs[wep].MaybeWeapon?.Blueprint.Double == true)
+                {
+                    RunAttackRule(maybeCaster, unit, maybeCaster.Body.AdditionalLimbs[wep].MaybeWeapon);
+                    maybeCaster.Body.RemoveAdditionalLimb(wep);
+                    return;
+                }
                 maybeCaster.Body.RemoveAdditionalLimb(wep);
                 if (weapons.Count() < 2) return;
                 wep = maybeCaster.Body.AddAdditionalLimb(weapons[1].Blueprint, null);
