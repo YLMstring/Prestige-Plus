@@ -70,7 +70,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
         }
         private static void RunAttackRule(UnitEntityData maybeCaster, UnitEntityData unit, ItemEntityWeapon weapon)
         {
-            if (weapon != null && !weapon.HoldInTwoHands)
+            if (weapon != null && (!weapon.HoldInTwoHands || weapon.Blueprint.Double))
             {
                 int penalty = 8;
                 if (maybeCaster.HasFact(FeatureRefs.TwoWeaponFighting.Reference))
