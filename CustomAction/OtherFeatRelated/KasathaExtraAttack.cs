@@ -14,9 +14,6 @@ using System.Threading.Tasks;
 using Kingmaker.UnitLogic;
 using Kingmaker.Items;
 using Kingmaker.Items.Slots;
-using Kingmaker.DialogSystem.Blueprints;
-using Kingmaker.UnitLogic.Parts;
-using static Kingmaker.EntitySystem.Persistence.Versioning.PlayerUpgraderOnlyActions.EnsureUniqueItems;
 
 namespace PrestigePlus.CustomAction.OtherFeatRelated
 {
@@ -75,16 +72,16 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
         {
             if (weapon != null && !weapon.HoldInTwoHands)
             {
-                int rank = 0;
-                if (maybeCaster.HasFact(FeatureRefs.TwoWeaponFighting.Reference)) { rank = 2; }
-                int num2 = rank > 1 ? maybeCaster.HasFact(FeatureRefs.TwoWeaponFightingMythicFeat.Reference) ? 0 : -2 : -8;
-                UnitPartWeaponTraining unitPartWeaponTraining = maybeCaster.Get<UnitPartWeaponTraining>();
-                bool flag4 = maybeCaster.State.Features.EffortlessDualWielding && unitPartWeaponTraining != null && unitPartWeaponTraining.IsSuitableWeapon(weapon);
-                if (!weapon.Blueprint.IsLight && !weapon.Blueprint.Double && !weapon.IsShield && !flag4)
+                int penalty = 8;
+                if (maybeCaster.HasFact(FeatureRefs.TwoWeaponFighting.Reference))
                 {
-                    num2 -= 2;
+                    penalty = 2;
                 }
-                RuleAttackWithWeapon ruleAttackWithWeapon = new(maybeCaster, unit, weapon, -num2)
+                if (maybeCaster.HasFact(FeatureRefs.TwoWeaponFightingMythicFeat.Reference))
+                {
+                    penalty = 0;
+                }
+                RuleAttackWithWeapon ruleAttackWithWeapon = new(maybeCaster, unit, weapon, penalty)
                 {
                     Reason = maybeCaster.Context,
                     AutoHit = false,
