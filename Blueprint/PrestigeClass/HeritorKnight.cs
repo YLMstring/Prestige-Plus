@@ -35,6 +35,8 @@ using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.Utility;
 using Kingmaker.RuleSystem.Rules.Damage;
 using BlueprintCore.Actions.Builder.BasicEx;
+using BlueprintCore.Conditions.Builder.BasicEx;
+using PrestigePlus.CustomAction;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -53,11 +55,11 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, EnchantingTouchFeature(), SkillHeartFeat())
+                .AddToLevelEntry(1, SkillHeartFeat())
                 .AddToLevelEntry(2, HeritorHonorFeature(), CreateWitchesWoe())
                 .AddToLevelEntry(3, FeatureSelectionRefs.WeaponTrainingSelection.ToString(), FeatureSelectionRefs.WeaponTrainingRankUpSelection.ToString())
                 .AddToLevelEntry(4, CreateWraithwall())
-                .AddToLevelEntry(5)
+                .AddToLevelEntry(5, RedeemerUndeathConfigure())
                 .AddToLevelEntry(6, MightyStrikeConfigure())
                 .AddToLevelEntry(7)
                 .AddToLevelEntry(8, FeatureSelectionRefs.WeaponTrainingSelection.ToString(), FeatureSelectionRefs.WeaponTrainingRankUpSelection.ToString())
@@ -71,8 +73,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDisplayName("")
                 .SetDescription(ArchetypeDescription)
                 .Configure();
-
-            DeludingTouchFeature();
 
             var archetype =
               CharacterClassConfigurator.New(ArchetypeName, ArchetypeGuid)
@@ -217,7 +217,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private static readonly string WraithwallBuffGuid = "{1348676D-063B-4ADD-B819-A44A888C6A5C}";
         private static BlueprintFeature CreateWraithwall()
         {
-            var icon = AbilityRefs.UndeathToDeath.Reference.Get().Icon;
+            var icon = AbilityRefs.AngelWardFromHarmCommunal.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(WraithwallAblityRes, WraithwallAblityResGuid)
                 .SetMaxAmount(
@@ -312,57 +312,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .Configure();
         }
 
-        private const string HiddenMind = "HeritorKnightHiddenMind";
-        public static readonly string HiddenMindGuid = "{01661653-5877-4A6B-B4DF-EE8D9C26AD47}";
-
-        internal const string HiddenMindDisplayName = "HeritorKnightHiddenMind.Name";
-        private const string HiddenMindDescription = "HeritorKnightHiddenMind.Description";
-        public static BlueprintFeature HiddenMindFeature()
-        {
-            var icon = AbilityRefs.MindBlank.Reference.Get().Icon;
-            return FeatureConfigurator.New(HiddenMind, HiddenMindGuid)
-              .SetDisplayName(HiddenMindDisplayName)
-              .SetDescription(HiddenMindDescription)
-              .SetIcon(icon)
-              .AddSavingThrowBonusAgainstDescriptor(8, modifierDescriptor: ModifierDescriptor.Resistance, spellDescriptor: SpellDescriptor.MindAffecting)
-              .AddFacts(new() { FeatureRefs.DivinationImmunityFeature.ToString() })
-              .Configure();
-        }
-
-        private const string EnchantingTouch = "HeritorKnightEnchantingTouch";
-        public static readonly string EnchantingTouchGuid = "{EBB40FD1-AB07-4894-B691-4E85CB90DC96}";
-
-        internal const string EnchantingTouchDisplayName = "HeritorKnightEnchantingTouch.Name";
-        private const string EnchantingTouchDescription = "HeritorKnightEnchantingTouch.Description";
-        public static BlueprintFeature EnchantingTouchFeature()
-        {
-            var icon = AbilityRefs.HolyWhisper.Reference.Get().Icon;
-            return FeatureConfigurator.New(EnchantingTouch, EnchantingTouchGuid)
-              .SetDisplayName(EnchantingTouchDisplayName)
-              .SetDescription(EnchantingTouchDescription)
-              .SetIcon(icon)
-              .AddComponent<EnchantingTouchComp>()
-              .Configure();
-        }
-
-        private const string DeludingTouch = "HeritorKnightDeludingTouch";
-        public static readonly string DeludingTouchGuid = "{604769DB-A407-4F43-87E9-066B66FAB9F7}";
-
-        internal const string DeludingTouchDisplayName = "HeritorKnightDeludingTouch.Name";
-        private const string DeludingTouchDescription = "HeritorKnightDeludingTouch.Description";
-        public static BlueprintFeature DeludingTouchFeature()
-        {
-            var icon = AbilityRefs.HolyWhisper.Reference.Get().Icon;
-            return FeatureConfigurator.New(DeludingTouch, DeludingTouchGuid, FeatureGroup.MythicAbility)
-              .SetDisplayName(DeludingTouchDisplayName)
-              .SetDescription(DeludingTouchDescription)
-              .SetIcon(icon)
-              .AddPrerequisiteFeature(EnchantingTouchGuid)
-              .Configure();
-        }
-
-        
-
         private static readonly string MightyStrikeName = "HeritorKnightMightyStrike";
         public static readonly string MightyStrikeGuid = "{048CCF0B-97B8-4F6C-8EED-1461FD2D601F}";
 
@@ -382,85 +331,70 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddComponent<HeritorMightyStrike>()
                 .Configure();
 
-            var applyAdvancedBuff = ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1));
+            var applyAdvancedBuff = ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true);
 
             return FeatureConfigurator.New(MightyStrikeName, MightyStrikeGuid)
                     .SetDisplayName(MightyStrikeDisplayName)
                     .SetDescription(MightyStrikeDescription)
                     .SetIcon(icon)
                     .AddAbilityUseTrigger(ability: AbilityRefs.CleaveAction.ToString(), action: applyAdvancedBuff, actionsOnTarget: false)
+                    .AddAbilityUseTrigger(ability: RedeemerUndeathAbilityGuid, action: applyAdvancedBuff, actionsOnTarget: false)
                     .AddFacts(new() { FeatureRefs.VitalStrikeFeature.ToString(), FeatureRefs.VitalStrikeFeatureImproved.ToString() })
                     .Configure();
         }
 
-        private static readonly string EcstasyName = "HeritorKnightEcstasy";
-        public static readonly string EcstasyGuid = "{49AC4C66-95CD-45AA-B923-0CE563C2CFB5}";
+        private static readonly string RedeemerUndeathName = "HeritorKnightRedeemerUndeath";
+        public static readonly string RedeemerUndeathGuid = "{46F6D5FF-95A0-4699-9E4C-BB52EE629455}";
 
-        private static readonly string EcstasyDisplayName = "HeritorKnightEcstasy.Name";
-        private static readonly string EcstasyDescription = "HeritorKnightEcstasy.Description";
+        private static readonly string RedeemerUndeathDisplayName = "HeritorKnightRedeemerUndeath.Name";
+        private static readonly string RedeemerUndeathDescription = "HeritorKnightRedeemerUndeath.Description";
 
-        private static readonly string Ecstasy1DisplayName = "HeritorKnightEcstasy1.Name";
-        private static readonly string Ecstasy1Description = "HeritorKnightEcstasy1.Description";
+        private const string RedeemerUndeathAbility = "HeritorKnight.RedeemerUndeathAbility";
+        private static readonly string RedeemerUndeathAbilityGuid = "{59DA3FA3-4506-48FD-95CA-E4267EBB932E}";
 
-        private static readonly string Ecstasy2DisplayName = "HeritorKnightEcstasy2.Name";
-        private static readonly string Ecstasy2Description = "HeritorKnightEcstasy2.Description";
-
-        private const string EcstasyAbility = "HeritorKnight.EcstasyAbility";
-        private static readonly string EcstasyAbilityGuid = "{19DA9656-42E1-4572-98F5-722060B5ECB9}";
-
-        private const string EcstasyBuff = "HeritorKnight.EcstasyBuff";
-        private static readonly string EcstasyBuffGuid = "{ED5C140F-9C2C-4119-8427-AFC5C7FD3675}";
-
-        private const string EcstasyBuff2 = "HeritorKnight.EcstasyBuff2";
-        private static readonly string EcstasyBuff2Guid = "{1C21BC0A-7FE4-4630-81AB-F6F766E4A666}";
-        public static BlueprintFeature EcstasyConfigure()
+        private const string RedeemerUndeathBuff = "HeritorKnight.RedeemerUndeathBuff";
+        private static readonly string RedeemerUndeathBuffGuid = "{FD1F9EF2-AFE1-49FA-8886-29D705679A47}";
+        public static BlueprintFeature RedeemerUndeathConfigure()
         {
-            var icon = AbilityRefs.WavesOfEctasy.Reference.Get().Icon;
+            var icon = AbilityRefs.UndeathToDeath.Reference.Get().Icon;
 
-            var buff1 = BuffConfigurator.New(EcstasyBuff, EcstasyBuffGuid)
-                .SetDisplayName(Ecstasy1DisplayName)
-                .SetDescription(Ecstasy1Description)
+            var buff1 = BuffConfigurator.New(RedeemerUndeathBuff, RedeemerUndeathBuffGuid)
+                .SetDisplayName(RedeemerUndeathDisplayName)
+                .SetDescription(RedeemerUndeathDescription)
                 .SetIcon(icon)
-                .AddComponent<SuppressBuffs>(c => { c.Descriptor = SpellDescriptor.NegativeEmotion; })
-                .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting | SpellDescriptor.Emotion)
-                .AddFacts(new() { BuffRefs.Stunned.ToString() })
-                .Configure();
-
-            var buff2 = BuffConfigurator.New(EcstasyBuff2, EcstasyBuff2Guid)
-                .SetDisplayName(Ecstasy2DisplayName)
-                .SetDescription(Ecstasy2Description)
-                .SetIcon(icon)
-                .AddComponent<SuppressBuffs>(c => { c.Descriptor = SpellDescriptor.NegativeEmotion; })
-                .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting | SpellDescriptor.Emotion)
-                .AddFacts(new() { BuffRefs.Staggered.ToString() })
                 .Configure();
 
             var shoot = ActionsBuilder.New()
-                    .SavingThrow(type: SavingThrowType.Fortitude, customDC: ContextValues.Rank(), useDCFromContextSavingThrow: true,
+                    .SavingThrow(type: SavingThrowType.Will, useDCFromContextSavingThrow: true,
             onResult: ActionsBuilder.New()
-                        .ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(buff1, ContextDuration.FixedDice(DiceType.D4)).Build(),
-                                    succeed: ActionsBuilder.New().ApplyBuff(buff2, ContextDuration.FixedDice(DiceType.D4)).Build())
+                        .ConditionalSaved(failed: ActionsBuilder.New().Kill(true).Build(),
+                                    succeed: ActionsBuilder.New().ApplyBuff(buff1, ContextDuration.Fixed(1, DurationRate.Days)).Build())
                         .Build())
                     .Build();
 
-            var ability = AbilityConfigurator.New(EcstasyAbility, EcstasyAbilityGuid)
-                .SetDisplayName(EcstasyDisplayName)
-                .SetDescription(EcstasyDescription)
+            var action2 = ActionsBuilder.New()
+                            .Conditional(ConditionsBuilder.New().HasFact(buff1).Build(), ifFalse: shoot)
+                            .Build();
+
+            var action = ActionsBuilder.New()
+                            .Conditional(ConditionsBuilder.New().HasFact(FeatureRefs.UndeadType.ToString()).Build(), ifTrue: action2)
+                            .Build();
+
+            var ability = AbilityConfigurator.New(RedeemerUndeathAbility, RedeemerUndeathAbilityGuid)
+                .SetDisplayName(RedeemerUndeathDisplayName)
+                .SetDescription(RedeemerUndeathDescription)
                 .SetIcon(icon)
-                .AddComponent<AbilityTargetMayPrecise>()
-                .AllowTargeting(false, true, true, true)
-                .AddAbilityDeliverTouch(false, null, ComponentMerge.Fail, ItemWeaponRefs.TouchItem.ToString())
-                .AddAbilityEffectRunAction(shoot)
-                .AddContextRankConfig(ContextRankConfigs.StatBonus(stat: StatType.Wisdom).WithBonusValueProgression(20, false))
-                .AddHideDCFromTooltip()
-                .SetType(AbilityType.Extraordinary)
-                .SetRange(AbilityRange.Touch)
-                .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting | SpellDescriptor.Emotion)
+                .AllowTargeting(false, true, false, false)
+                .AddAbilityEffectRunAction(ActionsBuilder.New().Add<MeleeAttackExtended>(c => { c.OnHit = action; }).Build())
+                .AddComponent<CustomDC>(c => { c.classguid = ArchetypeGuid; c.Property = StatType.Charisma; })
+                .SetType(AbilityType.Supernatural)
+                .SetRange(AbilityRange.Weapon)
+                .AddAbilityCasterMainWeaponCheck(WeaponCategory.Longsword)
                 .Configure();
 
-            return FeatureConfigurator.New(EcstasyName, EcstasyGuid)
-                    .SetDisplayName(EcstasyDisplayName)
-                    .SetDescription(EcstasyDescription)
+            return FeatureConfigurator.New(RedeemerUndeathName, RedeemerUndeathGuid)
+                    .SetDisplayName(RedeemerUndeathDisplayName)
+                    .SetDescription(RedeemerUndeathDescription)
                     .SetIcon(icon)
                     .AddFacts(new() { ability })
                     .Configure();
