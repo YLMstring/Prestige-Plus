@@ -62,7 +62,7 @@
 
   {
     "Key": "ShadowDancerShadowCall.Description",
-    "enGB": "At 4th level, a shadowdancer can create creatures and effects out of raw shadow. This ability functions as shadow conjuration, using charactor level as the caster level. A shadowdancer can use this ability once per day at 4th level, plus one additional time per day for every two levels attained beyond 4th (2/day at 6th level, 3/day at 8th level, and 4/day at 10th level). Upon reaching 10th level, this ability functions as greater shadow conjuration. The DC for this ability is Charisma-based.",
+    "enGB": "At 4th level, a shadowdancer can create creatures and effects out of raw shadow. This ability functions as shadow conjuration, using his character level as the caster level. A shadowdancer can use this ability once per day at 4th level, plus one additional time per day for every two levels attained beyond 4th (2/day at 6th level, 3/day at 8th level, and 4/day at 10th level). Upon reaching 10th level, this ability functions as greater shadow conjuration. The DC for this ability is Charisma-based.",
     "ruRU": "Начиная с 4 уровня танцор теней учится создавать существ из теней. Эта способность работает как заклинание Теневое воплощение, используя при этом свой уровень персонажа в качестве уровня заклинателя. Он может применять  эту способность 1 раз в день на 4 уровне + 1 за каждые 2 уровня танцора в дальнейшем. При достижении 10 уровня, эта способность начинает работать как заклинание Теневое воплощение, высшее. Сложность спасброска против этой способности зависит от модификатора Харизмы.",
     "zhCN": "4级起，影舞者可以从阴影中制造出生物和效果。这一能力与“幽影咒法术”相同，使用角色等级作为施法者等级。4级时影舞者每天可以使用1次此能力，之后每两级都可以增加每天使用次数1次（6级时每天2次，8级时每天3次，10级时每天4次）。10级之后，此能力升级成为“高等幽影咒法术”。此能力的DC基于魅力。"
   },
@@ -79,7 +79,7 @@
 
   {
     "Key": "ShadowDancerShadowPower.Description",
-    "enGB": "At 8th level, a shadowdancer can use raw shadow to damage her foes. This ability functions as shadow evocation, using charactor level as the caster level. A shadowdancer can use this ability once per day at 8th level, and one additional time per day upon reaching 10th level. The DC for this ability is Charisma-based.",
+    "enGB": "At 8th level, a shadowdancer can use raw shadow to damage her foes. This ability functions as shadow evocation, using his character level as the caster level. A shadowdancer can use this ability once per day at 8th level, and one additional time per day upon reaching 10th level. The DC for this ability is Charisma-based.",
     "ruRU": "Начиная с 8 уровня танцор теней может использовать силы теней чтобы наносить урон своим врагам. Эта способность работает как заклинание Теневое разрушение, используя при этом свой уровень персонажа в качестве уровня заклинателя. Он может применять  эту способность 1 раз в день на 8 уровне и еще раз при достижении 10 уровня. Сложность спасброска против этой способности зависит от модификатора Харизмы.",
     "zhCN": "8级时，影舞者可以使用阴影对敌人造成伤害。此能力与“幽影塑能术”相同，使用角色等级作为施法者等级。8级时影舞者可天可以使用1次此能力，10级时每天可以多使用1次。此能力的DC基于魅力。"
   },
