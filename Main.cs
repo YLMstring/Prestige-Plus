@@ -155,6 +155,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("halfling"), defaultValue: true, Helpers.CreateString("toggle-desc21", "Halfling Opportunist"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("heritor"), defaultValue: true, Helpers.CreateString("toggle-desc87", "Heritor Knight"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("lander"), defaultValue: true, Helpers.CreateString("toggle-desc5", "Hinterlander"))
               .ShowVisualConnection())
           .AddToggle(
@@ -440,6 +443,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fighterdd"))) { DawnflowerDervish.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fighteraa"))) { WeaponMaster.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("mythicheritage"))) { RacialHeritage.RacialHeritageConfigure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("heritor"))) { HeritorKnight.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
