@@ -35,8 +35,10 @@ using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.Utility;
 using Kingmaker.RuleSystem.Rules.Damage;
 using BlueprintCore.Actions.Builder.BasicEx;
-using BlueprintCore.Conditions.Builder.BasicEx;
 using PrestigePlus.CustomAction;
+using Kingmaker.UI.MVVM._VM.Other;
+using BlueprintCore.Conditions.Builder.ContextEx;
+using BlueprintCore.Blueprints.Configurators;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -61,7 +63,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddToLevelEntry(4, CreateWraithwall())
                 .AddToLevelEntry(5, RedeemerUndeathConfigure())
                 .AddToLevelEntry(6, MightyStrikeConfigure())
-                .AddToLevelEntry(7)
+                .AddToLevelEntry(7, CreateImageDivinity())
                 .AddToLevelEntry(8, FeatureSelectionRefs.WeaponTrainingSelection.ToString(), FeatureSelectionRefs.WeaponTrainingRankUpSelection.ToString())
                 .AddToLevelEntry(9, CreateFreedBlood())
                 .AddToLevelEntry(10, SkyStrideFeature())
@@ -198,7 +200,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(SkyStrideDisplayName)
               .SetDescription(SkyStrideDescription)
               .SetIcon(icon)
-              .AddFacts(new() { FeatureRefs.WingsFeature.ToString() })
+              .AddFacts(new() { FeatureRefs.FeatureWingsAngel.ToString() })
               .Configure();
         }
 
@@ -398,6 +400,68 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                     .SetIcon(icon)
                     .AddFacts(new() { ability })
                     .Configure();
+        }
+
+        private const string ImageDivinity = "HeritorKnight.ImageDivinity";
+        public static readonly string ImageDivinityGuid = "{F02BEFC0-7A21-4F9E-BD73-7A72B0E12E7F}";
+        internal const string ImageDivinityDisplayName = "HeritorKnightImageDivinity.Name";
+        private const string ImageDivinityDescription = "HeritorKnightImageDivinity.Description";
+
+        private const string ImageDivinityAblity2 = "HeritorKnight.UseImageDivinity2";
+        private static readonly string ImageDivinityAblity2Guid = "{333041CE-09E6-48F2-8039-8731BB66CE47}";
+
+        private const string ImageDivinityAblityRes = "HeritorKnight.ImageDivinityRes";
+        private static readonly string ImageDivinityAblityResGuid = "{D8C6D998-1FBE-4EB5-AA60-D852E9767619}";
+
+        internal const string ImageDivinityDisplayName2 = "HeritorKnightImageDivinity2.Name";
+        private const string ImageDivinityDescription2 = "HeritorKnightImageDivinity2.Description";
+        private static BlueprintFeature CreateImageDivinity()
+        {
+            var icon = AbilityRefs.AngelicAspectGreater.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(ImageDivinityAblityRes, ImageDivinityAblityResGuid)
+                .SetMaxAmount(
+                    ResourceAmountBuilder.New(3))
+                .Configure();
+
+            var selfheal = ActionsBuilder.New()
+                .HealTarget(value: ContextDice.Value(DiceType.D6, ContextValues.Rank()))
+                .CastSpell(AbilityRefs.Restoration.ToString(), overrideSpellLevel: 4)
+                .Build();
+
+            var selfdamage = ActionsBuilder.New()
+                .DealDamage(value: ContextDice.Value(DiceType.D6, ContextValues.Rank()), damageType: DamageTypes.Energy(Kingmaker.Enums.Damage.DamageEnergyType.Divine))
+                .SavingThrow(type: SavingThrowType.Fortitude, useDCFromContextSavingThrow: true,
+                onResult: ActionsBuilder.New()
+                            .ConditionalSaved(failed: ActionsBuilder.New().ApplyBuff(BuffRefs.Staggered.ToString(), ContextDuration.Variable(ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusCharisma, true))).Build())
+                            .Build())
+                .Build();
+
+            var ability2 = AbilityConfigurator.New(ImageDivinityAblity2, ImageDivinityAblity2Guid)
+                .AllowTargeting(false, true, true, true)
+                .AddAbilityDeliverTouch(false, null, ComponentMerge.Fail, ItemWeaponRefs.TouchItem.ToString())
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                    .Conditional(ConditionsBuilder.New().Alignment(AlignmentComponent.Good).Build(), ifTrue: selfheal)
+                    .Conditional(ConditionsBuilder.New().Alignment(AlignmentComponent.Evil).Build(), ifTrue: selfdamage)
+                    .Build())
+                .SetDisplayName(ImageDivinityDisplayName2)
+                .SetDescription(ImageDivinityDescription2)
+                .SetIcon(icon)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+                .SetRange(AbilityRange.Touch)
+                .SetType(AbilityType.Supernatural)
+                .AddComponent<CustomDC>(c => { c.classguid = ArchetypeGuid; c.Property = StatType.Charisma; })
+                .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }))
+                .Configure();
+
+            return FeatureConfigurator.New(ImageDivinity, ImageDivinityGuid)
+              .SetDisplayName(ImageDivinityDisplayName)
+              .SetDescription(ImageDivinityDescription)
+              .SetIcon(icon)
+              .AddFacts(new() { ability2 })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .AddComponent<ChangePortrait>(c => { c.Portrait = UnitRefs.Iomedae.Reference.Get().PortraitSafe; })
+              .Configure();
         }
     }
 }
