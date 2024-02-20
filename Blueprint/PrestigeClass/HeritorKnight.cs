@@ -58,7 +58,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddToLevelEntry(3, FeatureSelectionRefs.WeaponTrainingSelection.ToString(), FeatureSelectionRefs.WeaponTrainingRankUpSelection.ToString())
                 .AddToLevelEntry(4, CreateWraithwall())
                 .AddToLevelEntry(5)
-                .AddToLevelEntry(6, HeritorHonorGuid, SkyStrideGuid)
+                .AddToLevelEntry(6, MightyStrikeConfigure())
                 .AddToLevelEntry(7)
                 .AddToLevelEntry(8, FeatureSelectionRefs.WeaponTrainingSelection.ToString(), FeatureSelectionRefs.WeaponTrainingRankUpSelection.ToString())
                 .AddToLevelEntry(9, CreateFreedBlood())
@@ -363,30 +363,33 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         
 
-        private static readonly string OverwhelmingName = "HeritorKnightOverwhelming";
-        public static readonly string OverwhelmingGuid = "{870DC3E9-3D71-450E-9013-4D9F795CFEFA}";
+        private static readonly string MightyStrikeName = "HeritorKnightMightyStrike";
+        public static readonly string MightyStrikeGuid = "{048CCF0B-97B8-4F6C-8EED-1461FD2D601F}";
 
-        private static readonly string OverwhelmingDisplayName = "HeritorKnightOverwhelming.Name";
-        private static readonly string OverwhelmingDescription = "HeritorKnightOverwhelming.Description";
+        private static readonly string MightyStrikeDisplayName = "HeritorKnightMightyStrike.Name";
+        private static readonly string MightyStrikeDescription = "HeritorKnightMightyStrike.Description";
 
-        private const string OverwhelmingBuff = "Overwhelming.OverwhelmingBuff";
-        public static readonly string OverwhelmingBuffGuid = "{F7C9B2BF-864C-4916-9109-56762E012D2D}";
-        public static BlueprintFeature OverwhelmingConfigure()
+        private const string MightyStrikeBuff = "MightyStrike.MightyStrikeBuff";
+        public static readonly string MightyStrikeBuffGuid = "{853E1768-A1B6-41BB-B2C0-C6F9BDEA9493}";
+        public static BlueprintFeature MightyStrikeConfigure()
         {
-            var icon = AbilityRefs.HealCast.Reference.Get().Icon;
+            var icon = AbilityRefs.RighteousMight.Reference.Get().Icon;
 
-            BuffConfigurator.New(OverwhelmingBuff, OverwhelmingBuffGuid)
-                .SetDisplayName(OverwhelmingDisplayName)
-                .SetDescription(OverwhelmingDescription)
+            var buff = BuffConfigurator.New(MightyStrikeBuff, MightyStrikeBuffGuid)
+                .SetDisplayName(MightyStrikeDisplayName)
+                .SetDescription(MightyStrikeDescription)
                 .SetIcon(icon)
-                .AddModifyD20(ActionsBuilder.New().RemoveSelf().Build(), rule: RuleType.SavingThrow, rollsAmount: 1)
+                .AddComponent<HeritorMightyStrike>()
                 .Configure();
 
-            return FeatureConfigurator.New(OverwhelmingName, OverwhelmingGuid)
-                    .SetDisplayName(OverwhelmingDisplayName)
-                    .SetDescription(OverwhelmingDescription)
+            var applyAdvancedBuff = ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1));
+
+            return FeatureConfigurator.New(MightyStrikeName, MightyStrikeGuid)
+                    .SetDisplayName(MightyStrikeDisplayName)
+                    .SetDescription(MightyStrikeDescription)
                     .SetIcon(icon)
-                    .AddComponent<OverwhelmingTouchComp>()
+                    .AddAbilityUseTrigger(ability: AbilityRefs.CleaveAction.ToString(), action: applyAdvancedBuff, actionsOnTarget: false)
+                    .AddFacts(new() { FeatureRefs.VitalStrikeFeature.ToString(), FeatureRefs.VitalStrikeFeatureImproved.ToString() })
                     .Configure();
         }
 
