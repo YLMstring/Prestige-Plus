@@ -265,7 +265,7 @@
 
   {
     "Key": "DestroyTyranny.Description",
-    "enGB": "At 2nd level, a crusader can shatter the oppressive influence of others. Dispell any ongoing charm or compulsion effect upon any creature targeted by a crusader’s channel positive energy ability, positive energy fervor or lay on hands, using his character level as the caster level.",
+    "enGB": "At 2nd level, a crusader can shatter the oppressive influence of others. Dispell any ongoing charm or compulsion effect upon any creature targeted by a crusader’s channel positive energy ability, positive energy fervor or lay on hands, using charactor level as the caster level.",
     "ruRU": "Начиная со 2 уровня крестоносец может разрушать гнетущее влияние других. При помощи проведения позитивной энергии, рвения или наложения рук, крестоносец может рассеивать любые эффекты очарование или принуждения используя свой уровень персонажа в качестве уровня заклинателя.",
     "zhCN": "2级时，远征骑士可以粉碎压迫他人的力量。使用角色等级作为施法者等级，尝试解除任何被远征骑士的引导正向能量，正向能量热诚或圣疗作为目标的生物身上正在生效的魅惑或胁迫效果。"
   },
@@ -317,7 +317,7 @@
   {
     "Key": "ChevalierReckless.Description",
     "enGB": "Sometimes hasty action proves more useful than even the best laid plans. A chevalier gains a morale bonus equal to his class level on attack and damage rolls on the round he enters a battle. ",
-    "ruRU": "Иногда, поспешные действия оказываются более эффективны чем даже самые продуманные планы. В течении первого раунда ккавалер получает бонус боевого духа своему уровню кавалера к броскам на попадание и урон.",
+    "ruRU": "Иногда, поспешные действия оказываются более эффективны чем даже самые продуманные планы. В течении первого раунда кавалер получает бонус боевого духа, равный своему уровню кавалера к броскам на попадание и урон.",
     "zhCN": "有时候草率行动比精心策划更有用。骑士在进入战斗的第一轮内，其攻击和伤害骰获得等同于职业等级的士气加值。"
   },
 
@@ -351,7 +351,7 @@
   {
     "Key": "ChevalierStubbornMind.Description",
     "enGB": "At 2nd level, a chevalier gains bonus on saving throws against mind-affecting conditions equal to her strength modifier.",
-    "ruRU": "На 2 уровне кавалер получает бонус к спасброскам против воздействующих на разум состояний равный его модификатору Силы.",
+    "ruRU": "На 2 уровне кавалер получает бонус к спасброскам против воздействующих на разум состояний, равный его модификатору Силы.",
     "zhCN": "2级时，骑士在抵抗影响心智效应的豁免中获得等同于力量调整值的加值。"
   },
 
@@ -436,7 +436,7 @@
   {
     "Key": "AgentoftheGraveUnholyFortitude.Description",
     "enGB": "At 1st level, the Agent of the Grave can tap into his conviction and bolster his health. He may choose to add either his Constitution bonus or his Charisma bonus to the number of hit points he gains for character levels.",
-    "ruRU": "На 1 уровне Агент могилы может воспользоваться своим убеждением и укрепить свое здоровье. Он может использовать свой модификатор Харизмы вместо модификатора Выносливости для определения количества очков здоровья.",
+    "ruRU": "На 1 уровне Агент могилы может воспользоваться своим убеждением и укрепить свое здоровье. Он может использовать свой модификатор Харизмы вместо модификатора Выносливости для определения количества очков здоровья, которые он получает при повышении уровня.",
     "zhCN": "1级时，墓穴使徒迈向极致的信念强化了他的身体。他在决定角色等级提供的生命值时可以选择使用体质加值或魅力加值。"
   },
 
@@ -878,7 +878,7 @@
   {
     "Key": "EnduringScar.Description",
     "enGB": "As a scar seeker gains levels, he accumulates scars of supernatural significance. He can activate his enduring scars abilities in any combination a number of times per day equal to half his class level plus his Charisma modifier. At 1st level and every 2 class levels thereafter, the scar seeker awakens a new enduring scar selected from the list below.",
-    "ruRU": "По мере того, как искатель шрамов получает уровни, он накапливает шрамы сверхъестественного значения. Он может активировать свои долговременные шрамы в любой комбинации количество раз в день, равное половине уровня его класса + модификатор Харизмы. На 1 уровне и каждые 2 уровня после этого искатель шрамов наносит новый шрам.",
+    "ruRU": "По мере того, как искатель шрамов получает уровни, он накапливает шрамы сверхъестественного значения. Он может активировать свои долговременные шрамы в любой последовательности, количество раз в день, равное половине уровня его класса + модификатор Харизмы. На 1 уровне и каждые 2 уровня после этого искатель шрамов наносит новый шрам.",
     "zhCN": "随着负痕求道者的等级得到提升，他会积累具有超自然含义的伤痕。他可以以任何组合方式启动自身的不灭圣痕能力，每日使用次数为他的职业等级的一半 + 他的魅力调整值。在1级以及之后的每2个等级，负痕求道者都会从后述列表中觉醒1个新的不灭圣痕。"
   },
 
@@ -1048,7 +1048,7 @@
   {
     "Key": "ScarSeekerChampionHonor.Description",
     "enGB": "A scar seeker can smite evil once (or once more) per day. A scar seeker’s class levels stack with paladin class levels for the purpose of determining the damage of the paladin’s smite evil ability, but the scar seeker’s effective paladin level equals his class level–3.",
-    "ruRU": "Искатель шрамов может сокрушать зло 1 раз (или больше 1 раза) в день. Уровни искателя шрамов складываются с уровнями паладина для определения урона он сокрушения зла, но его эффективный уровень паладина равен -3.",
+    "ruRU": "Искатель шрамов может сокрушать зло 1 раз (или больше 1 раза) в день. Уровни искателя шрамов складываются с уровнями паладина для определения урона от сокрушения зла, но его эффективный уровень паладина равен -3.",
     "zhCN": "负痕求道者可每日使用一次（或额外使用一次）制裁邪恶能力。在决定制裁邪恶能力的伤害时，将负痕求道者的等级与圣武士职业等级叠加后-3计算。"
   },
 
@@ -4354,13 +4354,13 @@
     "Key": "AnchoriteofDawn.Name",
     "ProcessTemplates": false,
     "enGB": "Dawnflower Anchorite",
-    "ruRU": "Отшельник рассвета",
+    "ruRU": "Отшельник Цветка Рассвета",
     "zhCN": "晨花隐者"
   },
   {
     "Key": "AnchoriteofDawn.Description",
     "enGB": "Dawnflower anchorite hope to receive enlightenment in their retreat to the wilds so that they can, some day, return to civilization and use their newfound grace to help heal the church’s wounds.",
-    "ruRU": "Отшельники рассвета отправляются в дикую природу в надежде на просветление, чтобы однажды, вернуться в цивилизацию и применять свои способности для излечения ран церкви.",
+    "ruRU": "Отшельники Цветка Рассвета отправляются в дикую природу в надежде на просветление, чтобы однажды, вернуться в цивилизацию и применять свои способности для излечения ран церкви.",
     "zhCN": "尽管大多数莎恩芮的信徒都致力于帮助他人或者追寻那些可以被救赎的恶徒，不过有对于极少一部分来说，他们更加看重对于太阳——莎伦莱赐予人间最伟大的馈赠——的敬畏。这些隐居荒野的晨花隐者希望能够从中受到启迪，这样他们便能在某一日返回文明社会，用全新的神赐恩典协助治愈教会所遭受的伤痛。"
   },
   {
@@ -4386,7 +4386,7 @@
   {
     "Key": "AnchoriteofDawnSolarInvocation.Description",
     "enGB": "A Dawnflower anchorite can harness the sun’s life-giving warmth to protect the innocent and smite the wicked. At 1st level, If he cast a spell of the evocation school last turn or this turn, he can invoke the sun as a standard action, granting him a +1 competence bonus on attack rolls and damage rolls against evil creatures and adding 1 to the DC of his spells against evil creatures. The bonus on attack rolls and damage rolls increases to +2 at 5th level and +3 at 9th level. If an anchorite has an animal companion, the companion also gains the competence bonus on attack and damage rolls while this ability is active. A Dawnflower anchorite can invoke the sun for a number of rounds per day equal to twice his Dawnflower anchorite class level + his Charisma modifier. Maintaining this ability on subsequent rounds is a free action.",
-    "ruRU": "Отшельник рассвета может использовать живительное тепло солнца, чтобы защитить невинных и покарать нечестивых. Начиная с 1 уровня, если отшельник сотворяет заклинание школы разрушения, то он может в этот или следующий ход, при помощи обычного действия, призвать солнце и получить бонус мастерства к броскам на попадание и урон против злых существ, а также 1 к сложности его заклинаний направленных на злых существ. Бонусы к броскам на попадание и урон увеличиваются до +2 на 5 и +3 на 9 уровнях. Если отшельник рассвета имеет верного зверя, то он тоже получает эти бонусы мастерства. Отшельник рассвета может призывать солнце количество раундов, равное удвоенному уровню отшельника + модификатор Харизмы. Поддержание призыва является свободным действием.",
+    "ruRU": "Отшельник Цветка Рассвета может использовать живительное тепло солнца, чтобы защитить невинных и покарать нечестивых. Начиная с 1 уровня, если отшельник сотворяет заклинание школы разрушения, то он может в этот или следующий ход, при помощи обычного действия, призвать солнце и получить бонус мастерства к броскам на попадание и урон против злых существ, а также 1 к сложности его заклинаний направленных на злых существ. Бонусы к броскам на попадание и урон увеличиваются до +2 на 5 и +3 на 9 уровнях. Если отшельник Цветка Рассвета имеет верного зверя, то он тоже получает эти бонусы мастерства. Отшельник Цветка Рассвета может призывать солнце количество раундов, равное удвоенному уровню отшельника + модификатор Харизмы. Поддержание призыва является свободным действием.",
     "zhCN": "晨花隐者能够利用太阳所赐予的热度保护无辜和惩奸除恶。在1级，如果上回合或本回合他施放过塑能法术，晨花隐者能够以标准动作恳求太阳，让他在对抗邪恶生物的攻击检定和伤害检定中获得+1表现加值，并且使得他所用来对抗邪恶生物的法术DC增加1点。为攻击检定和伤害检定提供的加值会在5级时提升至+2点，并在9级时提升至+3点。若晨花隐者具有动物伙伴，该动物伙伴也会在本能力生效时获得攻击和伤害的表现加值。晨花隐者每日能够利用太阳之力的轮数等同于他的晨花隐者职业等级 + 他的魅力调整值。在随后的轮数内维持该能力是自由动作。"
   },
   {
@@ -4425,7 +4425,7 @@
   {
     "Key": "AnchoriteSolarMove.Description",
     "enGB": "At 5th level, a Dawnflower anchorite can invoke the sun as a move action.",
-    "ruRU": "Начиная с 5 уровня отшельник рассвета может призывать солнце сопутствующим действием.",
+    "ruRU": "Начиная с 5 уровня отшельник Цветка Рассвета может призывать солнце сопутствующим действием.",
     "zhCN": "5级起，晨花隐者的日光祈福变成移动动作。"
   },
   {
@@ -4438,7 +4438,7 @@
   {
     "Key": "AnchoriteSolarSwift.Description",
     "enGB": "At 10th level, a Dawnflower anchorite can invoke the sun as a swift action.",
-    "ruRU": "На 10 уровне отшельник рассвета может призывать солнце быстрым действием.",
+    "ruRU": "На 10 уровне отшельник Цветка Рассвета может призывать солнце быстрым действием.",
     "zhCN": "10级起，晨花隐者的日光祈福变成迅捷动作。"
   },
   {
@@ -4451,20 +4451,20 @@
   {
     "Key": "AnchoriteSunbeam.Description",
     "enGB": "At 7th level, a Dawnflower anchorite gains the ability to cast sunbeam once per day as a spell-like ability. His caster level is equal to his Hit Dice, and the save DC is Charisma-based. At 10th level, the Dawnflower anchorite can use this ability twice per day.",
-    "ruRU": "На 7 уровне отшельник рассвета получает способность, раз в день, сотворять солнечный луч при помощи псевдозаклинания. Его уровень заклинателя этой способности равен количеству его костей здоровья, а сложность зависит от Харизмы. На 10 уровне, отшельник может сотворять луч еще 1 раз в день.",
+    "ruRU": "На 7 уровне отшельник Цветка Рассвета получает способность, раз в день, сотворять солнечный луч при помощи псевдозаклинания. Его уровень заклинателя этой способности равен количеству его костей здоровья, а сложность зависит от Харизмы. На 10 уровне, отшельник может сотворять луч еще 1 раз в день.",
     "zhCN": "7级起，晨花隐者获得每日以类法术能力施放1次阳炎射线的能力。他的施法者等级等同于他的生命骰，该能力的豁免DC基于魅力。10级起，晨花隐者每日可以使用2次该能力。"
   },
   {
     "Key": "AnchoriteDawnInvocation.Name",
     "ProcessTemplates": false,
     "enGB": "Invocation of Dawn",
-    "ruRU": "Призыв рассвета",
+    "ruRU": "Призыв Цветка Рассвета",
     "zhCN": "祈唤黎明"
   },
   {
     "Key": "AnchoriteDawnInvocation.Description",
     "enGB": "At 10th level, a Dawnflower anchorite is able to, once per day, use his solar invocation ability for 1 minute. The Dawnflower anchorite doesn't need an evocation spell this way. While using invocation of dawn, all bonuses gained from solar invocation increase by 1. Using this ability doesn’t cost rounds per day of solar invocation.",
-    "ruRU": "На 10 уровне отшельник рассвета может, раз в день, призвать солнце на 1 минуту. Эта способноСть не требует сотворения заклинания разрушения. При призыве таким образом все бонусы от солнечного призыва увеличиваются на 1. Применение этой способности не тратит раунды солнечного призыва.",
+    "ruRU": "На 10 уровне отшельник Цветка Рассвета может, раз в день, призвать солнце на 1 минуту. Эта способноСть не требует сотворения заклинания разрушения. При призыве таким образом все бонусы от солнечного призыва увеличиваются на 1. Применение этой способности не тратит раунды солнечного призыва.",
     "zhCN": "10级起，晨花隐者每日有1次机会，可以使用持续1分钟的日光祈福，无需塑能法术。在使用晨花祈福之时，日光祈福提供的所有加值均会增加1点。使用该能力并不会消耗日光祈福的每日使用轮数。"
   },
   {
@@ -4477,7 +4477,7 @@
   {
     "Key": "AnchoriteDivineLight.Description",
     "enGB": "The Dawnflower anchorite doesn't need an evocation spell to use his solar invocation ability. He can use solar invocation 2 additional rounds per day.",
-    "ruRU": "Отшельнику рассвета не нужно сотворять заклинание разрушения чтобы использовать солнечный призыв. Он может использовать солнечный призыв 2 дополнительных раунда в день.",
+    "ruRU": "Отшельнику Цветка Рассвета не нужно сотворять заклинание разрушения чтобы использовать солнечный призыв. Он может использовать солнечный призыв 2 дополнительных раунда в день.",
     "zhCN": "晨花隐者无需塑能法术即可使用日光祈福。他每日可以使用日光祈福的轮数额外增加2轮。"
   },
   {
@@ -4490,7 +4490,7 @@
   {
     "Key": "AnchoriteExtraInvocations.Description",
     "enGB": "The Dawnflower anchorite can use solar invocation for twice as many rounds per day as normal.",
-    "ruRU": "Отшельник рассвета может использовать в 2 раза больше раундов солнечного призыва чем обычно.",
+    "ruRU": "Отшельник Цветка Рассвета может использовать в 2 раза больше раундов солнечного призыва чем обычно.",
     "zhCN": "晨花隐者能够使用日光祈福的每日轮数变为其正常使用轮数的2倍。"
   },
   {
@@ -4516,20 +4516,20 @@
   {
     "Key": "AnchoriteFocusedAnimalCompanion.Description",
     "enGB": "The character adds his Dawnflower anchorite class levels to his effective class level in one class of his choice for the purpose of determining the effects of the chosen class feature.",
-    "ruRU": "Отшельник рассвета добавляет свой уровень к эффективному уровню того класса, давшего доступ к этой классовой способности.",
+    "ruRU": "Отшельник Цветка Рассвета добавляет свой уровень к эффективному уровню того класса, давшего доступ к этой классовой способности.",
     "zhCN": "角色将晨花隐者职业等级加到他所选择的一个职业的有效职业等级上，并以此来判断被选择的职业能力的效果。"
   },
   {
     "Key": "AnchoriteAnchoriteDomainPlus.Name",
     "ProcessTemplates": false,
     "enGB": "Anchorite Domain",
-    "ruRU": "Домейн рассвета",
+    "ruRU": "Домейн Цветка Рассвета",
     "zhCN": "隐者领域"
   },
   {
     "Key": "AnchoriteAnchoriteDomainPlus.Description",
     "enGB": "The character adds his Dawnflower anchorite class levels to all his domains. (If he is a separatist, treat his domain the way it essentially is)",
-    "ruRU": "Отшельник рассвета добавляет свой уровень ко всем домейнам.",
+    "ruRU": "Отшельник Цветка Рассвета добавляет свой уровень ко всем домейнам.",
     "zhCN": "角色将晨花隐者职业等级加到他的所有领域等级上。（如果他是一名异见先驱，按照他领域的本质进行处理）"
   },
   {
@@ -4542,7 +4542,7 @@
   {
     "Key": "AnchoriteFocusedBane.Description",
     "enGB": "The character adds his Dawnflower anchorite class levels to his effective class level in one class of his choice for the purpose of determining the effects of the chosen class feature.",
-    "ruRU": "Отшельник рассвета добавляет свой уровень к эффективному уровню того класса, давшего доступ к этой классовой способности.",
+    "ruRU": "Отшельник Цветка Рассвета добавляет свой уровень к эффективному уровню того класса, давшего доступ к этой классовой способности.",
     "zhCN": "角色将晨花隐者职业等级加到他所选择的一个职业的有效职业等级上，并以此来判断被选择的职业能力的效果。"
   },
   {
@@ -4555,7 +4555,7 @@
   {
     "Key": "AnchoriteFocusedRagingSong.Description",
     "enGB": "The character adds his Dawnflower anchorite class levels to his effective class level in one class of his choice for the purpose of determining the effects of the chosen class feature.",
-    "ruRU": "Отшельник рассвета добавляет свой уровень к эффективному уровню того класса, давшего доступ к этой классовой способности.",
+    "ruRU": "Отшельник Цветка Рассвета добавляет свой уровень к эффективному уровню того класса, давшего доступ к этой классовой способности.",
     "zhCN": "角色将晨花隐者职业等级加到他所选择的一个职业的有效职业等级上，并以此来判断被选择的职业能力的效果。"
   },
   {
@@ -4568,7 +4568,7 @@
   {
     "Key": "AnchoriteAnchoriteFavoredEnemy.Description",
     "enGB": "At 4th and 9th level, the Dawnflower anchorite chooses a new favored enemy. This functions like the ranger class feature of the same name. Additionally, the bonus for one such enemy increases by 2.",
-    "ruRU": "На 4 и 9 уровнях отшельник рассвета выбирает нового заклятого врага. Эта способность работает как одноименная способность рейнджера. Кроме того, бонус против одноги из выбранных заклятых врагов увеличивается на 2.",
+    "ruRU": "На 4 и 9 уровнях отшельник Цветка Рассвета выбирает нового заклятого врага. Эта способность работает как одноименная способность рейнджера. Кроме того, бонус против одноги из выбранных заклятых врагов увеличивается на 2.",
     "zhCN": "4级和9级时，晨花隐者选择一种新宿敌，并将一种宿敌的加值提高2，该能力的效果如同游侠的同名能力。"
   },
   {
@@ -4581,7 +4581,7 @@
   {
     "Key": "AnchoriteFocusedSacredWeapon.Description",
     "enGB": "The character adds his Dawnflower anchorite class levels to his effective class level in one class of his choice for the purpose of determining the effects of the chosen class feature.",
-    "ruRU": "Отшельник рассвета добавляет свой уровень к эффективному уровню того класса, давшего доступ к этой классовой способности.",
+    "ruRU": "Отшельник Цветка Рассвета добавляет свой уровень к эффективному уровню того класса, давшего доступ к этой классовой способности.",
     "zhCN": "角色将晨花隐者职业等级加到他所选择的一个职业的有效职业等级上，并以此来判断被选择的职业能力的效果。"
   },
   {
@@ -4594,7 +4594,7 @@
   {
     "Key": "AnchoriteSolarDefense.Description",
     "enGB": "While using solar invocation, the Dawnflower anchorite adds his competence bonus on attack rolls to his Armor Class as a sacred bonus and to Reflex saving throws as a dodge bonus. The Dawnflower anchorite can select this credence twice—the second time he does so, the bonus to Armor Class and on Reflex saves also applies to any companions who gain bonuses from the Dawnflower anchorite’s solar invocation.",
-    "ruRU": "При использовании солнечного призыва отшельник добавляет свой бонус мастерства к своей защите в качестве сакрального и к спасброскам реакции в качестве бонуса уклонения. Отшельник рассвета может выбрать это убеждение 2 раза - во 2 раз он предоставляет бонусы к защите и спасброскам реакции всем союзникам которые получают бонусы от его солнечного призыва.",
+    "ruRU": "При использовании солнечного призыва отшельник добавляет свой бонус мастерства к своей защите в качестве сакрального и к спасброскам реакции в качестве бонуса уклонения. Отшельник Цветка Рассвета может выбрать это убеждение 2 раза - во 2 раз он предоставляет бонусы к защите и спасброскам реакции всем союзникам которые получают бонусы от его солнечного призыва.",
     "zhCN": "当晨花隐者正在使用日光祈福时，他能够将攻击检定的表现加值作为神圣加值加到AC上，并且还能作为闪避加值加到反射豁免上。这项信念能够选取2次，当晨花隐者第2次选取该项信念时，若有任何同伴获得晨花隐者的日光祈福带来的加值，那么为AC和反射豁免提供的加值也能为其所用。"
   },
   {
@@ -4607,7 +4607,7 @@
   {
     "Key": "AnchoriteSolarWeapons.Description",
     "enGB": "While using solar invocation, the Dawnflower anchorite can select weapons wielded by a creature affected by his solar invocation. The weapons gain the flaming weapon special ability for as long as the Dawnflower anchorite’s solar invocation persists. A Dawnflower anchorite can select this credence twice—the second time he does so, the credence grants the flaming burst special ability instead of flaming. At 5th level, the Dawnflower anchorite can grant two creatures this ability; at 10th level, he can grant up to three creatures this ability.",
-    "ruRU": "При использовании солнечного призыва, отшельник рассвета может выбрать оружие которое держит существо находящееся под действием его способности. Это оружие получает огненное свойство пока на него действует солнечный призыв. Отшельник рассвета может выбрать это убеждение 2 раза - во 2 раз, когда он это делает, вместо этого, он может дать свойство огненного взрыва. На 5 уровне отшельник выбирает 2 существ при помощи этой способности, а на 10 может выбрать 3.",
+    "ruRU": "При использовании солнечного призыва, отшельник Цветка Рассвета может выбрать оружие которое держит существо находящееся под действием его способности. Это оружие получает огненное свойство пока на него действует солнечный призыв. Отшельник Цветка Рассвета может выбрать это убеждение 2 раза - во 2 раз, когда он это делает, вместо этого, он может дать свойство огненного взрыва. На 5 уровне отшельник выбирает 2 существ при помощи этой способности, а на 10 может выбрать 3.",
     "zhCN": "当晨花隐者正在使用日光祈福时，他能够选择一名由受到他日光祈福影响的生物。只要晨花隐者的日光祈福仍在产生效果，其武器便能获得炽焰武器特殊能力。这项信念能够选取2次，当晨花隐者第2次选取该项信念时，该能力会提供焰爆武器特殊能力来替代原本的炽焰武器特殊能力。5级起，晨花隐者能为2个生物赋予该能力；10级起，晨花隐者至多能为3个生物赋予该能力。"
   },
   {
@@ -4620,7 +4620,7 @@
   {
     "Key": "AnchoriteSunBlade.Description",
     "enGB": "Any weapon wielded by the Dawnflower anchorite is treated having the undead bane special ability. Ranged weapons impart this ability to any ammunition fired from the weapon. All weapons wielded by the Dawnflower anchorite shed light as per a sunrod.",
-    "ruRU": "Любое оружие которое отшельник рассвета держит в руках имеет свойство убийцы нежити. Дистанционное оружие применяет этот эффект ко всем снарядам которое он выпускает. Все которое держит отшельник испускает свят как скипетр света.",
+    "ruRU": "Любое оружие которое отшельник Цветка Рассвета держит в руках имеет свойство убийцы нежити. Дистанционное оружие применяет этот эффект ко всем снарядам которое он выпускает. Все которое держит отшельник испускает свят как скипетр света.",
     "zhCN": "任何由晨花隐者所持用的武器视为具有破敌不死生物武器特殊能力。远程武器所发射出的弹药都会被该能力强化。所有由晨花隐者持用的武器都会如同照明杖一般散发出光芒。"
   },
 
@@ -7713,13 +7713,13 @@
     "Key": "KidnapperCleanCapture2.Name",
     "ProcessTemplates": false,
     "enGB": "Clean Capture (Greater Grapple)",
-    "ruRU": "Вы получаете черту Захват+",
+    "ruRU": "Чистый захват (Захват+)",
     "zhCN": "轻松捕获（高等擒抱）"
   },
   {
     "Key": "KidnapperCleanCapture2.Description",
     "enGB": "You gain Greater Grapple as a bonus feat.",
-    "ruRU": "Чистый захват (Захват+)",
+    "ruRU": "Вы получаете черту Захват+.",
     "zhCN": "你获得高等擒抱作为额外专长。"
   },
   {
@@ -9682,7 +9682,7 @@
   {
     "Key": "DeificObedienceKabriri3.Description",
     "enGB": "For you, death is not an ending but a beginning. This functions as ghoulish transformation for the agent of the grave class and +2 natural armor bonus. If you achieve this boon when you’re on the lich path or already an undead creature, you instead gain a +4 profane bonus to your Charisma score.",
-    "ruRU": "Для вас смерть – это не конец, а начало. Этот дар работает как классовая способность агента могилы Трансформация в гуля, также вы получаете бонус +2 к естественной защите. Если вы получаете этот дар находясь на мифическом пути лича или уже являетесь нежитью, вы получаете нечестивый бонус к вашему модификатору Харизмы.",
+    "ruRU": "Для вас смерть – это не конец, а начало. Этот дар работает как классовая способность агента могилы Трансформация в гуля, также вы получаете бонус +2 к естественной защите. Если вы получаете этот дар находясь на мифическом пути лича или уже являетесь нежитью, вы получаете нечестивый бонус +4 к вашему модификатору Харизмы.",
     "zhCN": "对你来说，死亡并非结束，而是新的开始。该能力如同墓穴使徒的转化食尸鬼，并且获得+2天生护甲加值。如果你得到该神恩时已经是不死生物或者走上巫妖道途，则原效果改为令你的魅力获得+4亵渎加值。"
   },
   {
@@ -11222,250 +11222,295 @@
   {
     "Key": "ManeuverMasterFreedom2.Description",
     "enGB": "The promise of Elysium’s freedom liberates you from all forms of restraint, allowing you to move as you will and to avoid numerous kinds of restraints that would otherwise vex a traveler or explorer. As a swift action, you gain the benefits of freedom of movement for 1 round. You can use this feat’s benefit once per day, plus an additional time per day for every 5 ranks you have in Knowledge (arcana).",
-    "ruRU": "Обещание свободы Элизиума освобождает вас от всех форм ограничений, позволяя вам двигаться так, как вы пожелаете, и избегать многочисленных видов ограничений, которые в противном случае раздражали бы путешественника или исследователя. При помощи быстрого действия вы можете получить преимущества свободы движений на 1 раундю Вы можете применять эту черту 1 раз в день + дополнительный раз в день за каждые 5 очков в навыке знание (магия).",
+    "ruRU": "Обещание свободы Элизиума освобождает вас от всех форм ограничений, позволяя вам двигаться так, как вы пожелаете, и избегать многочисленных видов ограничений, которые в противном случае раздражали бы путешественника или исследователя. При помощи быстрого действия вы можете получить преимущества свободы движений на 1 раунд. Вы можете применять эту черту 1 раз в день + дополнительный раз в день за каждые 5 очков в навыке знание (магия).",
     "zhCN": "极乐境的自由誓言将你从旅行者与探险者所困扰的各种限制中解放出来，让你可以随心所欲地行动。以一个迅捷动作,你可以获得行动自如法术的好处，持续1轮。你能每天使用1次本专长，在知识（神秘）上每有5级额外增加一次。"
   },
   {
     "Key": "ManyMonk.Name",
     "ProcessTemplates": false,
     "enGB": "Master of Many Styles",
+    "ruRU": "Мастер стилей",
     "zhCN": "拆招僧"
   },
   {
     "Key": "ManyMonk.Description",
     "enGB": "The master of many styles is a collector. For every move, he seeks a counter. For every style, he has a riposte. Ultimately, he seeks perfection through the fusion of styles.",
+    "ruRU": "Мастер стилей – коллекционер. На каждый ход он ищет контратаку. На каждый стиль у него есть ответный удар. В конечном счете, он ищет совершенства через слияние стилей.",
     "zhCN": "拆招僧是武学的收藏家，他探寻着每一个招式的拆法，掌握着每一种套路的破法。最终，他要将所有武学套路融会贯通，到达登峰造极之境界。"
   },
   {
     "Key": "ManyMonkManyFeat1.Name",
     "ProcessTemplates": false,
     "enGB": "Bonus Feat",
+    "ruRU": "Дополнительная черта",
     "zhCN": "额外专长"
   },
   {
     "Key": "ManyMonkManyFeat1.Description",
     "enGB": "At 1st level, 2nd level, and every four levels thereafter, a master of many styles may select a bonus style feat or the Elemental Fist feat. He does not need to meet the prerequisites of that feat.",
+    "ruRU": "На 1 и 2 уровнях и за каждые 4 уровня в дальнейшем мастер стилей может выбрать в качестве дополнительной черты, стиль или кулак стихии. Он может не соответствовать требованиям этих черт.",
     "zhCN": "在1级、2级和之后的每4级拆招僧可以选择一个流派专长或元素拳作为额外专长，他不需要满足先决条件。"
   },
   {
     "Key": "ManyMonkManyFeat2.Name",
     "ProcessTemplates": false,
     "enGB": "Bonus Feat",
+    "ruRU": "Дополнительная черта",
     "zhCN": "额外专长"
   },
   {
     "Key": "ManyMonkManyFeat2.Description",
     "enGB": "Starting at 5th level, a master of many styles can choose to instead gain a bonus feat in styles feat paths as long as he meets the prerequisites.",
+    "ruRU": "Начиная с 5 уровня мастер стилей может брать черты улучшающие уже выбранный стиль, но только при условии, что он соответствует всем её требованиям.",
     "zhCN": "5级起，拆招僧可以改为获得一个流派专长链中的专长作为额外专长，但他需要满足先决条件。"
   },
   {
     "Key": "ManyMonkFuse.Name",
     "ProcessTemplates": false,
     "enGB": "Fuse Style",
+    "ruRU": "Объединенный стиль",
     "zhCN": "融会贯通"
   },
   {
     "Key": "ManyMonkFuse.Description",
     "enGB": "At 1st level, a master of many styles can fuse two of the styles he knows into a more perfect style. The master of many styles can have two style feat stances active at once.",
+    "ruRU": "Начиная с 1 уровня мастер стилей может объединить два известных ему стиля в один более совершенный. Мастер стилей может применять 2 стиля одновременно.",
     "zhCN": "1级起，拆招僧可以融合他已知两个流派的风格，他能够同时得到这两个流派的流派专长效果。"
   },
   {
     "Key": "ManyMonkFuse8.Name",
     "ProcessTemplates": false,
     "enGB": "Fuse Style",
+    "ruRU": "Объединенный стиль",
     "zhCN": "融会贯通"
   },
   {
     "Key": "ManyMonkFuse8.Description",
     "enGB": "At 8th level, the master of many styles can fuse three styles at once. He can have the stances of three style feats active at the same time. He gains a bonus on attack rolls equal to the number of styles whose stances he currently has active.",
+    "ruRU": "Начиная с 8 уровня мастер стилей может объединять до 3 стилей. Он может применять 3 стиля одновременно. Кроме того, он получает бонус к броскам на попадание равный количеству активных в данный момент стилей.",
     "zhCN": "8级起，拆招僧可以同时启动三个流派专长。在他激活流派专长时，拆招僧在攻击检定上获得加值，数值相当于他目前激活的流派数量。"
   },
   {
     "Key": "ManyMonkFuse15.Name",
     "ProcessTemplates": false,
     "enGB": "Fuse Style",
+    "ruRU": "Объединенный стиль",
     "zhCN": "融会贯通"
   },
   {
     "Key": "ManyMonkFuse15.Description",
     "enGB": "At 15th level, the master of many styles can fuse four styles at once. He can have the stances of four style feats active at the same time.",
+    "ruRU": "Начиная с 15 уровня мастер стилей может объединять до 4 стилей. Он может применять 4 стиля одновременно.",
     "zhCN": "15级起，拆招僧可以同时启动四个流派专长。"
   },
   {
     "Key": "ManyMonkFuse20.Name",
     "ProcessTemplates": false,
     "enGB": "Perfect Style",
+    "ruRU": "Идеальный стиль",
     "zhCN": "合而为一"
   },
   {
     "Key": "ManyMonkFuse20.Description",
     "enGB": "At 20th level, a master of many styles can have the stances of twelve style feats active at once.",
+    "ruRU": "На 20 уровне мастер стилей может одновременно применять до 12 стилей.",
     "zhCN": "20级时，拆招僧可以同时启动十二个流派专长。"
   },
   {
     "Key": "DawnflowerDervish.Name",
     "ProcessTemplates": false,
     "enGB": "Dawnflower Dervish",
+    "ruRU": "Дервиш Цветка Рассвета",
     "zhCN": "晨花狂舞者"
   },
   {
     "Key": "DawnflowerDervish.Description",
     "enGB": "No enemy is as feared as the dervishes of Sarenrae. While dervishes can be clerics, paladins, or rangers, zealous fighters join their ranks as well. These spinning warriors prefer light or no armor and wield scimitars with devastating consequences, moving swiftly over the treacherous desert sands to attack with lightning-fast strikes. They maneuver quickly among their enemies, relying on their speed and their skill to see them through the battle.",
+    "ruRU": "Ни один враг не страшен так сильно, как дервиши Саренрэй. Дервиши могут быть жрецами, паладинами или рейнджерами, но в их ряды вливаются и ревностные бойцы. Эти вращающиеся воины предпочитают легкую броню или ее отсутствие и владеют скимитарами, что приводит к разрушительным последствиям, быстро перемещаясь по коварным пескам пустыни и атакуя молниеносными ударами. Они быстро маневрируют среди своих врагов, полагаясь на свою скорость и свои навыки во время боя.",
     "zhCN": "没有敌人像莎恩芮的狂舞者一样可怕。狂舞者可以是牧师，圣武士，或者游侠，当然也可以是热情的战士。这些旋转的战士着轻甲或不着甲，手持弯刀，有着巨大的破坏力，在变化莫测的荒漠上轻快的移动，发起闪电般快速的攻击。他们在敌阵中灵活机动，依赖他们的速度和技巧穿过战场。"
   },
   {
     "Key": "DawnflowerDervishBurst.Name",
     "ProcessTemplates": false,
     "enGB": "Burst of Speed",
+    "ruRU": "Взрыв скорости",
     "zhCN": "疾速爆发"
   },
   {
     "Key": "DawnflowerDervishBurst.Description",
     "enGB": "At 3rd level, a Dawnflower dervish takes only a –1 penalty to her AC after charging. At 7th level, the Dawnflower dervish can charge with no penalty.",
+    "ruRU": "Начиная с 3 уровня Дервиш Цветка Рассвета штраф к защите от атаки с разбега уменьшается до -1. Начиная с 7 уровня он не получает штрафа вовсе.",
     "zhCN": "3级开始，晨花狂舞者在冲锋后只受到-1的AC罚值。7级开始，晨花狂舞者的冲锋完全没有罚值。"
   },
   {
     "Key": "DawnflowerDervishRapidAttack.Name",
     "ProcessTemplates": false,
     "enGB": "Rapid Attack",
+    "ruRU": "Быстрая атака",
     "zhCN": "快捷进击"
   },
   {
     "Key": "DawnflowerDervishRapidAttack.Description",
     "enGB": "At 11th level, a Dawnflower dervish may forgo the attack at her highest bonus to gain Pounce or to perform a full attack after a single move during her turn.",
+    "ruRU": "Начиная с 11 уровня дервиш Цветка Рассвета может отказаться от атаки с наибольшим модификатором атаки, чтобы получить способность Наскок или выполнить полную атаку после передвижения в течение своего хода.",
     "zhCN": "11级开始，晨花狂舞者可以放弃最高加值的一次攻击来获得猛扑，或是在回合中移动后再进行全力攻击。"
   },
   {
     "Key": "DawnflowerDervishLightning.Name",
     "ProcessTemplates": false,
     "enGB": "Lightning Strike",
+    "ruRU": "Молниеностный удар",
     "zhCN": "迅雷电闪"
   },
   {
     "Key": "DawnflowerDervishLightning.Description",
     "enGB": "At 15th level, as part of a full attack, a Dawnflower dervish can make one additional attack. This attack is at the dervish’s highest base attack bonus, but each attack in the round (including the extra one) takes a –2 penalty.",
+    "ruRU": "Начиная с 15 уровня в рамках атаки полного раунда дервиш Цветка Рассвета может совершить 1 дополнительную атаку. Эта атака наносится с наибольшим модификатором атаки, но каждая атака (включая дополнительную) получает штраф -2.",
     "zhCN": "15级开始，作为全力攻击的一部分，晨花狂舞者能做出一次额外攻击，使用狂舞者的最高BAB，但此轮所有攻击有-2罚值。"
   },
   {
     "Key": "RacialHeritage.Name",
     "ProcessTemplates": false,
     "enGB": "Racial Heritage (Mythic)",
+    "ruRU": "Расовое наследие (мифическое)",
     "zhCN": "血脉传承（神话）"
   },
   {
     "Key": "RacialHeritage.Description",
     "enGB": "Your racial heritage mingles with your mythic power to become more pronounced. Choose another humanoid race. You count as that race for the purpose of taking traits and feats, then gain a single racial trait of your choice.",
+    "ruRU": "Ваше расовое наследие смешивается с вашей мифической силой, становясь более выраженным. Выберите расу гуманоидов. Вы считаетесь представителем этой расы для соответствия требованиям расовых черт. Кроме того, вы получаете расовую черту по своему выбору.",
     "zhCN": "你的血脉传承与神话力量融合在一起，变得更加强大。选择另一个类人种族。在获得特性和专长时，你可以视为那个种族。然后，你获得所选种族的一个特性。"
   },
   {
     "Key": "RacialHeritageMultiArmed.Name",
     "ProcessTemplates": false,
     "enGB": "Kasatha: Multi-Armed",
+    "ruRU": "Касатха: Многорукость",
     "zhCN": "卡萨萨：多面手"
   },
   {
     "Key": "RacialHeritageMultiArmed.Description",
     "enGB": "A kasatha has four arms. It can fight with four weapons, using the first two off-hand weapons in its backup weapon sets. It can wield them like a double weapon.",
+    "ruRU": "Касатхи имеют 4 руки. Они могут сражаться при помощи 4 орудий, используя первые два оружия в слотах неведущей руки из своих резервных наборов оружия. Он может использовать их как двойное оружие.",
     "zhCN": "卡萨萨有四只手，可以进行四武器战斗，使用其备用武器组中的前两个副手武器。它能够如同双头武器一般持用这些武器。"
   },
   {
     "Key": "RacialHeritageMagicKitsune.Name",
     "ProcessTemplates": false,
     "enGB": "Kitsune: Kitsune Magic",
+    "ruRU": "Кицунэ: Магия кицунэ",
     "zhCN": "狐妖：狐妖法术"
   },
   {
     "Key": "RacialHeritageMagicKitsune.Description",
     "enGB": "Kitsune add +1 to the DC of any saving throws against enchantment spells that they cast.",
+    "ruRU": "Кицунэ получает +1 к сложности творимых ей заклинаний очарования.",
     "zhCN": "狐妖施放的惑控法术的豁免DC获得+1加值。"
   },
   {
     "Key": "RacialHeritageCelestialCrusader.Name",
     "ProcessTemplates": false,
     "enGB": "Aasimar: Celestial Crusader",
+    "ruRU": "Аазимар: Небесный крестоносец",
     "zhCN": "神裔：天界圣战士"
   },
   {
     "Key": "RacialHeritageCelestialCrusader.Description",
     "enGB": "Some aasimars follow their destiny to war against the powers of ultimate evil. These individuals gain a +1 insight bonus on attack rolls and to AC against evil outsiders.",
+    "ruRU": "Некоторые аазимары следуют своей судьбе и ведут войну против сил абсолютного зла. Они получают интуитивный бонус +1 к броскам на попадание и защите против злых потусторонних существ.",
     "zhCN": "一些神裔追随自己的命运，与终极的邪恶力量作战。这些人在攻击检定和对抗邪恶异界生物的AC上获得+1洞察加值。"
   },
   {
     "Key": "RacialHeritageBloodDrink.Name",
     "ProcessTemplates": false,
     "enGB": "Dhampir: Negative Energy Affinity",
+    "ruRU": "Дампир: Связь с негативной энергией",
     "zhCN": "吸血裔：负能量亲和"
   },
   {
     "Key": "RacialHeritageBloodDrink.Description",
     "enGB": "Though a living creature, a dhampir reacts to positive and negative energy as if it were undead—positive energy harms it, while negative energy heals it. Additionally, you gain blood drinker as a bonus feat.",
+    "ruRU": "Будучи живым существом, дампир, тем не менее, реагирует на позитивную и негативную энергию, словно нежить: позитивная энергия их ранит, в то время как негативная исцеляет. Кроме того, вы получаете черту Питающийся кровью (дампир).",
     "zhCN": "虽然吸血裔是活物，但它对正能量和负能量的反应就像不死生物一样——正能量会伤害它，而负能量会治愈它。此外，你获得饮血者作为额外专长。"
   },
   {
     "Key": "RacialHeritageDarkPowers.Name",
     "ProcessTemplates": false,
     "enGB": "Drow: Champion of Dark Powers",
+    "ruRU": "Дроу; Чемпион темных сил",
     "zhCN": "卓尔：邪能勇士"
   },
   {
     "Key": "RacialHeritageDarkPowers.Description",
     "enGB": "Some drow offer themselves to dark patrons, particularly demon lords. Anytime a drow with this racial trait casts a spell with the evil descriptor, the DC to resist the spell’s effects increases by 2.",
+    "ruRU": "Некоторые дроу посвящают себя темным покровителям, в частности лордам демонов. Каждый раз, когда дроу с этой расовой особенностью сотворяет заклинание с дескриптором зла, сложность спасброска против него увеличивается на 2.",
     "zhCN": "有些卓尔精灵将自己奉献给黑暗宗主，尤其是恶魔领主。每当这些卓尔精灵施展带有邪恶描述符的法术时，法术DC都会增加 2。"
   },
   {
     "Key": "WeaponMaster.Name",
     "ProcessTemplates": false,
     "enGB": "Weapon Master",
+    "ruRU": "Мастер оружия",
     "zhCN": "武器大师"
   },
   {
     "Key": "WeaponMaster.Description",
     "enGB": "Devoted to the perfection of a single weapon, the weapon master’s meditations upon his favored weapon border on the obsessive, but none can deny his consummate skill.",
+    "ruRU": "Преданные совершенствованию одного оружия, размышления мастера оружия о своем любимом оружии граничат с одержимостью, но никто не может отрицать его непревзойденное мастерство.",
     "zhCN": "致力于完美掌控一种武器，武器大师和他所选择的武器一起冥想，几近癫狂，但无人能否认他的技巧已臻至圆满。"
   },
   {
     "Key": "WeaponMasterWeaponGuard.Name",
     "ProcessTemplates": false,
     "enGB": "Weapon Guard",
+    "ruRU": "Защита оружия",
     "zhCN": "剑挡"
   },
   {
     "Key": "WeaponMasterWeaponGuard.Description",
     "enGB": "At 2nd level, a weapon master gains a +1 bonus to CMD against disarm and sunder attempts. The bonus increases by +1 for every four levels beyond 2nd.",
+    "ruRU": "На 2 уровне мастер оружия получает бонус +1 к защите от боевых маневров разоружения и разрушения брони. Этот бонус увеличивается на +1 за каждые 4 уровня после 2.",
     "zhCN": "2级起，武器大师对抗缴械和击破的CMD获得+1加值。此加值在2级后的每4级额外+1。"
   },
   {
     "Key": "WeaponMasterMasterTraining.Name",
     "ProcessTemplates": false,
     "enGB": "Master Training",
+    "ruRU": "Тренировка мастерства",
     "zhCN": "大师训练"
   },
   {
     "Key": "WeaponMasterMasterTraining.Description",
     "enGB": "Fighters that have the weapon master archetype can select advanced weapon training beginning at 4th level. A weapon master can select this feat as a bonus feat and it doesn’t count for the purpose of the requirement that it can be taken at most once per 5 fighter levels.",
+    "ruRU": "Начиная с 4 уровня, мастера оружия могут выбирать черту Продвинутое мастерство владения оружием. Мастер оружия может брать эту черту при помощи одной из своих дополнительных черт и она не учитывается с точки зрения требования о том, что такие черты можно брать не более одного раза за 5 уровней воина.",
     "zhCN": "拥有武器大师变体的战士从4级开始便可以选择进阶武器​​训练专长。武器大师可以选择此专长作为额外专长，并且不计入原本每5个战士等级1次的限制。"
   },
   {
     "Key": "WeaponMasterMirrorMove.Name",
     "ProcessTemplates": false,
     "enGB": "Mirror Move",
+    "ruRU": "Зеркальное движение",
     "zhCN": "镜影武技"
   },
   {
     "Key": "WeaponMasterMirrorMove.Description",
     "enGB": "At 9th level, a weapon master gains his weapon training bonus as an insight bonus to AC when attacked by the same weapon in his primary hand.",
+    "ruRU": "Начиная с 9 уровня мастер оружия добавляет бонус мастерства владения оружием к своей защите в качестве интуитивного, при условии, что его атакуют основным оружием принадлежащем к этой группе.",
     "zhCN": "9级起，在被他主手持用的武器攻击时，武器大师将其武器训练加值作为洞察加值加到AC上。"
   },
   {
     "Key": "WeaponMasterUnstoppableStrike.Name",
     "ProcessTemplates": false,
     "enGB": "Unstoppable Strike",
+    "ruRU": "Неостановимый удар",
     "zhCN": "破尽万法"
   },
   {
     "Key": "WeaponMasterUnstoppableStrike.Description",
     "enGB": "At 19th level, a weapon master can take a standard action to make one weapon attack as a touch attack that ignores damage reduction.",
+    "ruRU": "Начиная с 19 уровня мастер оружия, обычным действием, может совершить 1 атаку касанием при помощи своего оружия, которая игнорирует любое снижение урона.",
     "zhCN": "19级起，以一个标准动作，武器大师可以进行一次视作接触攻击的武器攻击，且无视伤害减免。"
   }
+
 
 ]
