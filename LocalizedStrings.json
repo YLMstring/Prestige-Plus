@@ -11391,7 +11391,7 @@
   {
     "Key": "RacialHeritageMultiArmed.Description",
     "enGB": "A kasatha has four arms. It can fight with four weapons, using the first two off-hand weapons in its backup weapon sets. It can wield them like a double weapon.",
-    "ruRU": "Касатхи имеют 4 руки. Они могут сражаться при помощи 4 орудий, используя первые два оружия в слотах неведущей руки из своих резервных наборов оружия. Он может использовать их как двойное оружие.",
+    "ruRU": "Касатхи имеют 4 руки. Они могут сражаться при помощи 4 орудий, используя первые два оружия из своих резервных наборов оружия. Он может использовать их как двойное оружие.",
     "zhCN": "卡萨萨有四只手，可以进行四武器战斗，使用其备用武器组中的前两个副手武器。它能够如同双头武器一般持用这些武器。"
   },
   {
@@ -11437,7 +11437,7 @@
     "Key": "RacialHeritageDarkPowers.Name",
     "ProcessTemplates": false,
     "enGB": "Drow: Champion of Dark Powers",
-    "ruRU": "Дроу; Чемпион темных сил",
+    "ruRU": "Дроу: Чемпион темных сил",
     "zhCN": "卓尔：邪能勇士"
   },
   {
