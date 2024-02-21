@@ -124,9 +124,12 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private static readonly string AsOneGuid = "{858E0DED-4212-490B-A482-F88C8C679D02}";
         public static BlueprintFeature AsOneFeature()
         {
+            var icon = FeatureRefs.FighterWeaponMastery.Reference.Get().Icon;
+
             return FeatureConfigurator.New(AsOne, AsOneGuid)
               .SetDisplayName(SkillHeartDisplayName)
               .SetDescription(SkillHeartDescription)
+              .SetIcon(icon)
               .AddClassLevelsForPrerequisites(actualClass: ArchetypeGuid, fakeClass: CharacterClassRefs.FighterClass.ToString(), modifier: 1, summand: 0)
               .Configure();
         }
@@ -138,7 +141,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string HeritorHonorDescription = "HeritorKnightHeritorHonor.Description";
         public static BlueprintFeature HeritorHonorFeature()
         {
-            var icon = FeatureRefs.DivineGrace.Reference.Get().Icon;
+            var icon = FeatureRefs.LayOnHandsFeature.Reference.Get().Icon;
             return FeatureConfigurator.New(HeritorHonor, HeritorHonorGuid)
               .SetDisplayName(HeritorHonorDisplayName)
               .SetDescription(HeritorHonorDescription)
@@ -195,7 +198,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string SkyStrideDescription = "HeritorKnightSkyStride.Description";
         public static BlueprintFeature SkyStrideFeature()
         {
-            var icon = FeatureRefs.OathOfTheSkyFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.WalkThroughSpace.Reference.Get().Icon;
             return FeatureConfigurator.New(SkyStride, SkyStrideGuid)
               .SetDisplayName(SkyStrideDisplayName)
               .SetDescription(SkyStrideDescription)
@@ -219,7 +222,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private static readonly string WraithwallBuffGuid = "{1348676D-063B-4ADD-B819-A44A888C6A5C}";
         private static BlueprintFeature CreateWraithwall()
         {
-            var icon = AbilityRefs.AngelWardFromHarmCommunal.Reference.Get().Icon;
+            var icon = AbilityRefs.Repulsion.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(WraithwallAblityRes, WraithwallAblityResGuid)
                 .SetMaxAmount(
@@ -271,7 +274,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private static readonly string FreedBloodBuffGuid = "{9D631947-9309-4AF7-AB01-89A0DDE70557}";
         private static BlueprintFeature CreateFreedBlood()
         {
-            var icon = AbilityRefs.BloodBoilerAbility.Reference.Get().Icon;
+            var icon = FeatureRefs.BleedingInfusionFeature.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(FreedBloodAblityRes, FreedBloodAblityResGuid)
                 .SetMaxAmount(
