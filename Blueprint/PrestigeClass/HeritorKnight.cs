@@ -399,7 +399,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetType(AbilityType.Supernatural)
                 .SetRange(AbilityRange.Weapon)
                 .AddAbilityCasterMainWeaponCheck(WeaponCategory.Longsword)
-                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.EnchantWeapon)
                 .AddHideDCFromTooltip()
                 .Configure();
 
@@ -462,7 +462,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddComponent<CustomDC>(c => { c.classguid = ArchetypeGuid; c.Property = StatType.Charisma; })
                 .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }))
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
-                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Touch)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Omni)
                 .AddHideDCFromTooltip()
                 .Configure();
 
@@ -473,6 +473,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddFacts(new() { ability2 })
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .AddComponent<ChangePortrait>(c => { c.Portrait = UnitRefs.Iomedae.Reference.Get().PortraitSafe; })
+              .AddReplaceUnitPrefab(prefab: UnitRefs.Iomedae.Reference.Get().Prefab.AssetId)
               .Configure();
         }
     }
