@@ -401,7 +401,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddAbilityCasterMainWeaponCheck(WeaponCategory.Longsword)
                 .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
                 .AddHideDCFromTooltip()
-                .AddComponent(AbilityRefs.UndeathToDeath.Reference.Get().GetComponent<AbilitySpawnFx>())
                 .Configure();
 
             return FeatureConfigurator.New(RedeemerUndeathName, RedeemerUndeathGuid)
@@ -463,6 +462,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddComponent<CustomDC>(c => { c.classguid = ArchetypeGuid; c.Property = StatType.Charisma; })
                 .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }))
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Touch)
+                .AddHideDCFromTooltip()
                 .Configure();
 
             return FeatureConfigurator.New(ImageDivinity, ImageDivinityGuid)
