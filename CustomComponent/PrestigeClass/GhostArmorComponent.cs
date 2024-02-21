@@ -78,9 +78,13 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
 
         void IRulebookHandler<RulePrepareDamage>.OnEventAboutToTrigger(RulePrepareDamage evt)
         {
-            evt.DamageBundle.WeaponDamage.Reality = Kingmaker.Enums.Damage.DamageRealityType.Ghost;
+            if (!onlyarmor)
+            {
+                evt.DamageBundle.WeaponDamage.Reality = Kingmaker.Enums.Damage.DamageRealityType.Ghost;
+            }
         }
 
+        public bool onlyarmor = true;
         void IRulebookHandler<RulePrepareDamage>.OnEventDidTrigger(RulePrepareDamage evt)
         {
             
