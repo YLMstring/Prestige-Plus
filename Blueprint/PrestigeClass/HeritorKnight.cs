@@ -346,8 +346,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                     .SetDisplayName(MightyStrikeDisplayName)
                     .SetDescription(MightyStrikeDescription)
                     .SetIcon(icon)
-                    .AddAbilityUseTrigger(ability: AbilityRefs.CleaveAction.ToString(), action: applyAdvancedBuff, actionsOnTarget: false)
-                    .AddAbilityUseTrigger(ability: RedeemerUndeathAbilityGuid, action: applyAdvancedBuff, actionsOnTarget: false)
+                    .AddAbilityUseTrigger(abilities: new() { AbilityRefs.CleaveAction.ToString(), RedeemerUndeathAbilityGuid }, action: applyAdvancedBuff, actionsOnTarget: false, forMultipleSpells: true)
                     .AddFacts(new() { FeatureRefs.VitalStrikeFeature.ToString(), FeatureRefs.VitalStrikeFeatureImproved.ToString() })
                     .Configure();
         }
@@ -399,6 +398,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetType(AbilityType.Supernatural)
                 .SetRange(AbilityRange.Weapon)
                 .AddAbilityCasterMainWeaponCheck(WeaponCategory.Longsword)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
                 .AddHideDCFromTooltip()
                 .Configure();
 

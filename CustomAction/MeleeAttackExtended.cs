@@ -2,6 +2,7 @@
 using Kingmaker.ElementsSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic.Mechanics.Actions;
+using Kingmaker.Visual.Animation.Kingmaker;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,12 @@ namespace PrestigePlus.CustomAction
         {
             try
             {
+                var maybeCaster = Context.MaybeCaster; 
+                if (maybeCaster != null)
+                {
+                    var attackAnimation = maybeCaster.View.AnimationManager.CreateHandle(UnitAnimationType.SpecialAttack);
+                    maybeCaster.View.AnimationManager.Execute(attackAnimation);
+                }
                 base.RunAction();
                 var attack = AbilityContext.RulebookContext?.LastEvent<RuleAttackWithWeapon>();
                 if (attack is null)
