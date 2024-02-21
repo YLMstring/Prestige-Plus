@@ -376,7 +376,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             var shoot = ActionsBuilder.New()
                     .SavingThrow(type: SavingThrowType.Will, useDCFromContextSavingThrow: true,
             onResult: ActionsBuilder.New()
-                        .ConditionalSaved(failed: ActionsBuilder.New().Kill(true).Build(),
+                        .ConditionalSaved(failed: ActionsBuilder.New().Kill(dismember: Kingmaker.UnitLogic.UnitState.DismemberType.InPower).Build(),
                                     succeed: ActionsBuilder.New().ApplyBuff(buff1, ContextDuration.Fixed(1, DurationRate.Days)).Build())
                         .Build())
                     .Build();
@@ -399,6 +399,9 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetType(AbilityType.Supernatural)
                 .SetRange(AbilityRange.Weapon)
                 .AddAbilityCasterMainWeaponCheck(WeaponCategory.Longsword)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
+                .AddHideDCFromTooltip()
+                .AddComponent(AbilityRefs.UndeathToDeath.Reference.Get().GetComponent<AbilitySpawnFx>())
                 .Configure();
 
             return FeatureConfigurator.New(RedeemerUndeathName, RedeemerUndeathGuid)
