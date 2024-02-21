@@ -250,6 +250,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Ally, radius: 30.Feet(), spreadSpeed: 40.Feet())
                 .SetRange(AbilityRange.Personal)
                 .SetType(AbilityType.Supernatural)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .Configure();
 
             return FeatureConfigurator.New(Wraithwall, WraithwallGuid)
@@ -308,6 +309,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
                 .SetRange(AbilityRange.Close)
                 .SetType(AbilityType.Supernatural)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .Configure();
 
             return FeatureConfigurator.New(FreedBlood, FreedBloodGuid)
@@ -457,6 +459,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetType(AbilityType.Supernatural)
                 .AddComponent<CustomDC>(c => { c.classguid = ArchetypeGuid; c.Property = StatType.Charisma; })
                 .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }))
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .Configure();
 
             return FeatureConfigurator.New(ImageDivinity, ImageDivinityGuid)
