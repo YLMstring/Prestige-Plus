@@ -77,7 +77,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetIcon(AbilityRefs.DirtyTrickBlindnessAction.Reference.Get().Icon)
                 .SetBuff(BuffSurprisingDirtyBlind)
                 .SetDeactivateImmediately()
-                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true)
+                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true).SetHiddenInUI()
                 .Configure();
 
             var BuffSurprisingDirtyEntangle = BuffConfigurator.New(SurprisingDirtyEntanglebuff, SurprisingDirtyEntanglebuffGuid)
@@ -98,7 +98,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetIcon(AbilityRefs.DirtyTrickEntangleAction.Reference.Get().Icon)
                 .SetBuff(BuffSurprisingDirtyEntangle)
                 .SetDeactivateImmediately()
-                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true)
+                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true).SetHiddenInUI()
                 .Configure();
 
             var BuffSurprisingDirtySicken = BuffConfigurator.New(SurprisingDirtySickenbuff, SurprisingDirtySickenbuffGuid)
@@ -119,7 +119,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetIcon(AbilityRefs.DirtyTrickSickenedAction.Reference.Get().Icon)
                 .SetBuff(BuffSurprisingDirtySicken)
                 .SetDeactivateImmediately()
-                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true)
+                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true).SetHiddenInUI()
                 .Configure();
 
             var BuffSurprisingDisarm = BuffConfigurator.New(SurprisingDisarmbuff, SurprisingDisarmbuffGuid)
@@ -136,7 +136,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetIcon(AbilityRefs.DisarmAction.Reference.Get().Icon)
                 .SetBuff(BuffSurprisingDisarm)
                 .SetDeactivateImmediately()
-                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true)
+                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true).SetHiddenInUI()
                 .Configure();
 
             var BuffSurprisingSunder = BuffConfigurator.New(SurprisingSunderbuff, SurprisingSunderbuffGuid)
@@ -153,7 +153,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetIcon(AbilityRefs.SunderAction.Reference.Get().Icon)
                 .SetBuff(BuffSurprisingSunder)
                 .SetDeactivateImmediately()
-                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true)
+                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true).SetHiddenInUI()
                 .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(SurprisingAbility, SurprisingAbilityGuid)
