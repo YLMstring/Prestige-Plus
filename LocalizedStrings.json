@@ -11541,8 +11541,8 @@
   },
   {
     "Key": "HeritorKnightHeritorHonor.Description",
-    "enGB": "At 2nd level, a heritor knight gains a bonus on Will saving throws that’s equal to her Charisma modifier. The bonus from this ability doesn’t stack with those from similar effects.",
-    "zhCN": "2级起，后继骑士的意志豁免获得等同于她的魅力调整值的加值。该能力提供的加值不会与其他类似的效果叠加。"
+    "enGB": "At 2nd level, a heritor knight gains a bonus on Will saving throws that’s equal to her Charisma modifier.",
+    "zhCN": "2级起，后继骑士的意志豁免获得等同于她的魅力调整值的加值。"
   },
   {
     "Key": "HeritorKnightWitchesWoe.Name",

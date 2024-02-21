@@ -130,6 +130,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(SkillHeartDisplayName)
               .SetDescription(SkillHeartDescription)
               .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureSelectionRefs.WeaponTrainingSelection.ToString())
               .AddClassLevelsForPrerequisites(actualClass: ArchetypeGuid, fakeClass: CharacterClassRefs.FighterClass.ToString(), modifier: 1, summand: 0)
               .Configure();
         }
@@ -147,6 +148,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(HeritorHonorDescription)
               .SetIcon(icon)
               .AddDerivativeStatBonus(StatType.Charisma, StatType.SaveWill)
+              .AddRecalculateOnStatChange(stat: StatType.Charisma, useKineticistMainStat: false)
               .Configure();
         }
 
