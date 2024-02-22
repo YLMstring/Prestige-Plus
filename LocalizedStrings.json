@@ -11515,143 +11515,143 @@
     "Key": "HeritorKnight.Name",
     "ProcessTemplates": false,
     "enGB": "Heritor Knight",
-	"ruRU": "Рыцарь Наследницы",
+    "ruRU": "Рыцарь Наследницы",
     "zhCN": "后继骑士"
   },
   {
     "Key": "HeritorKnight.Description",
     "enGB": "Some seek to follow in the footsteps of Iomedae the Inheritor through study of the miracles of her mortal life.",
-	"ruRU": "Некоторые стремятся пойти по стопам Иомедай, изучая деяния её смертной жизни.",
+    "ruRU": "Некоторые стремятся пойти по стопам Иомедай, изучая деяния её смертной жизни.",
     "zhCN": "有一些人，她们通过研究艾奥梅黛身为凡人时的事迹，追随着后继者的步伐。"
   },
   {
     "Key": "HeritorKnightSkillHeart.Name",
     "ProcessTemplates": false,
     "enGB": "Skill and Heart as One",
-	"ruRU": "Умения и сердце как единое целое",
+    "ruRU": "Умения и сердце как единое целое",
     "zhCN": "心技一体"
   },
   {
     "Key": "HeritorKnightSkillHeart.Description",
     "enGB": "If the heritor knight has the weapon training class feature, she gets full weapon training progression at 3rd and 8th level. In addition, heritor knight levels stack with fighter levels +1 for the purpose of feat prerequisites.",
-	"ruRU": "Если у рыцаря Наследницы есть классовая способность Мастерство владения оружием, то он получает улучшения этой способности на 3 и 8 уровнях. Кроме того, уровни рыцаря Наследницы складываются уровнями воина для определения соответствия требованиям черт.",
+    "ruRU": "Если у рыцаря Наследницы есть классовая способность Мастерство владения оружием, то он получает улучшения этой способности на 3 и 8 уровнях. Кроме того, уровни рыцаря Наследницы складываются уровнями воина для определения соответствия требованиям черт.",
     "zhCN": "如果后继骑士具有武器训练职业能力，那么3级和8级时她会获得完整的武器训练成长。此外，在判断专长的先决条件时，将她的后继骑士等级与战士等级叠加+1进行计算。"
   },
   {
     "Key": "HeritorKnightHeritorHonor.Name",
     "ProcessTemplates": false,
     "enGB": "Heritor’s Honor",
-	"ruRU": "Честь Наследницы",
+    "ruRU": "Честь Наследницы",
     "zhCN": "后继之荣耀"
   },
   {
     "Key": "HeritorKnightHeritorHonor.Description",
     "enGB": "At 2nd level, a heritor knight gains a bonus on Will saving throws that’s equal to her Charisma modifier.",
-	"ruRU": "На 2 уровне рыцарь Наследницы получает бонус к спасброскам воли, равный его модификатору Харизмы.",
+    "ruRU": "На 2 уровне рыцарь Наследницы получает бонус к спасброскам воли, равный его модификатору Харизмы.",
     "zhCN": "2级起，后继骑士的意志豁免获得等同于她的魅力调整值的加值。"
   },
   {
     "Key": "HeritorKnightWitchesWoe.Name",
     "ProcessTemplates": false,
     "enGB": "Witches’ Woe",
-	"ruRU": "Бедствие для ведьм",
+    "ruRU": "Бедствие для ведьм",
     "zhCN": "巫师之哀痛"
   },
   {
     "Key": "HeritorKnightWitchesWoe.Description",
     "enGB": "At 2nd level, a heritor knight gains a bonus equal to half her class level on saves against hexes and curse effects. In addition, once per day, she can cast remove curse as a spell-like ability, with a caster level equal to her character level.",
-	"ruRU": "На 2 уровне рыцарь Наследницы получает бонус, равный половине его уровня к спасброскам против заговоров и эффектов проклятий. Кроме того, раз в день он может сотворить псевдозаклинание Снятие проклятия используя свой уровень персонажа в качестве уровня заклинателя.",
+    "ruRU": "На 2 уровне рыцарь Наследницы получает бонус, равный половине его уровня к спасброскам против заговоров и эффектов проклятий. Кроме того, раз в день он может сотворить псевдозаклинание Снятие проклятия используя свой уровень персонажа в качестве уровня заклинателя.",
     "zhCN": "2级起，后继骑士在对抗巫术和诅咒效果时，其豁免检定获得相当于职业等级一半的加值。此外，每日1次，她能够以类法术能力施放移除诅咒，施法者等级等于她的角色等级。"
   },
   {
     "Key": "HeritorKnightWraithwall.Name",
     "ProcessTemplates": false,
     "enGB": "Wraithwall",
-	"ruRU": "Призрачная стена",
+    "ruRU": "Призрачная стена",
     "zhCN": "幽魂屏障"
   },
   {
     "Key": "HeritorKnightWraithwall.Description",
     "enGB": "At 4th level, once per day as a standard action, a heritor knight can inspire allies within 30 feet. Allies inspired this way treat all armor they wear as having the ghost touch special ability. In addition, inspired allies gain a +4 sacred bonus on saving throws against effects that would cause stat debuff or negative levels. This effect lasts for 1 minute.",
-	"ruRU": "Начиная с 4 уровня, при помощи обычного действия, рыцарь Наследницы может воодушевить своих союзников в радиусе 30 футов. Броня союзников, воодушевленных этой способностью, преобретает свойства призрачной. Кроме того, воодушевленные союзники получают сакральный бонус +4 к спасброскам против эффектов наносящих урон характеристикам или накладывающим негативные уровни. Этот действует в течение 1 минуты.",
+    "ruRU": "Начиная с 4 уровня, при помощи обычного действия, рыцарь Наследницы может воодушевить своих союзников в радиусе 30 футов. Броня союзников, воодушевленных этой способностью, преобретает свойства призрачной. Кроме того, воодушевленные союзники получают сакральный бонус +4 к спасброскам против эффектов наносящих урон характеристикам или накладывающим негативные уровни. Этот действует в течение 1 минуты.",
     "zhCN": "4级起，每日1次以标准动作，后继骑士能够鼓舞30尺内的盟友。以此方式受到激励的盟友均会被视为佩戴着具有幽冥特殊能力的护甲。此外，被激励的盟友还会在对抗那些导致属性减益或负向等级的效果时，豁免检定获得+4神圣加值。该效果持续1分钟。"
   },
   {
     "Key": "HeritorKnightRedeemerUndeath.Name",
     "ProcessTemplates": false,
     "enGB": "Redeemer of Undeath",
-	"ruRU": "Искупитель нежити",
+    "ruRU": "Искупитель нежити",
     "zhCN": "亡者救星"
   },
   {
     "Key": "HeritorKnightRedeemerUndeath.Description",
     "enGB": "At 5th level, as a standard action, a heritor knight can make a melee attack with a longsword against an undead creature. Resolve the attack normally, but if the attack hits and the undead was good-aligned in life, it must succeed at a Will save (DC = 10 + the heritor knight’s class level + her Charisma modifier) or be destroyed and redeemed of the evils of undeath, allowing the soul to reach a righteous afterlife. If the creature succeeds, it is immune to this ability for 24 hours.",
-	"ruRU": "Начиная с 5 уровня, при помощи обычного действия, рыцарь Наследницы может совершить атаку своим длинным мечом по нежити. Вы совершаете атаку как обычно, но если она попадает и её цель при жизни являлась доброй, то она должна совершить успешный спасбросок воли (DC = 10 + уровень рыцаря Наследницы + модификатор Харизмы) или быть уничтоженной и избавленной от зла нежити, позволяя душе достичь праведной загробной жизни. Если существо совершает успешный спасбросок, оно становится невосприимчиво к этой способности на 24 часа.",
+    "ruRU": "Начиная с 5 уровня, при помощи обычного действия, рыцарь Наследницы может совершить атаку своим длинным мечом по нежити. Вы совершаете атаку как обычно, но если она попадает и её цель при жизни являлась доброй, то она должна совершить успешный спасбросок воли (DC = 10 + уровень рыцаря Наследницы + модификатор Харизмы) или быть уничтоженной и избавленной от зла нежити, позволяя душе достичь праведной загробной жизни. Если существо совершает успешный спасбросок, оно становится невосприимчиво к этой способности на 24 часа.",
     "zhCN": "5级起，后继骑士能够以标准动作使用长剑对不死生物做出一次近战攻击。如常进行攻击检定，但如果攻击命中，它就必须进行意志豁免（DC = 10 + 后继骑士的等级 + 她的魅力调整值），失败则会被摧毁，身为亡者的罪孽将被宽恕，让灵魂前往正当的归宿。如果该生物豁免成功，则会在24小时内免疫该能力。"
   },
   {
     "Key": "HeritorKnightMightyStrike.Name",
     "ProcessTemplates": false,
     "enGB": "Mighty Strike",
-	"ruRU": "Могучий удар",
+    "ruRU": "Могучий удар",
     "zhCN": "刚力斩"
   },
   {
     "Key": "HeritorKnightMightyStrike.Description",
     "enGB": "At 6th level, a heritor knight gains Vital Strike and Improved Vital Strike as bonus feats. Whenever the heritor knight uses Redeemer of Undeath, Cleave or Great Cleave, she can apply the effects of Improved Vital Strike to that attack. If she has Greater Vital Strike, she can apply that feat’s effects instead.",
-	"ruRU": "На 6 уровне рыцарь Наследницы получает черты Жестокий удар и Жестокий удар+. Когда рыцарь использует способности Искупитель нежити, Рубящий удар или Рубящий удар+, то он может применить к ним черту Жестокий удар+. Если у него есть черта Жестокий удар++, то вместо этого он может применить эффекты этой черты.",
+    "ruRU": "На 6 уровне рыцарь Наследницы получает черты Жестокий удар и Жестокий удар+. Когда рыцарь использует способности Искупитель нежити, Рубящий удар или Рубящий удар+, то он может применить к ним черту Жестокий удар+. Если у него есть черта Жестокий удар++, то вместо этого он может применить эффекты этой черты.",
     "zhCN": "6级起，后继骑士获得要害打击和精通要害打击作为奖励专长。每当后继骑士使用亡者救星，顺劈斩或高等顺劈斩时，她都能够将精通要害打击的效果添加到该攻击上。若她具有高等要害打击专长，则能够应用该专长作为替代。"
   },
   {
     "Key": "HeritorKnightImageDivinity.Name",
     "ProcessTemplates": false,
     "enGB": "Image of Divinity",
-	"ruRU": "Образ Божественности",
+    "ruRU": "Образ Божественности",
     "zhCN": "圣容"
   },
   {
     "Key": "HeritorKnightImageDivinity.Description",
     "enGB": "At 7th level, a heritor knight’s appearance changes to superficially resemble the Inheritor herself, although she is still recognizable to those who know her, and her statistics do not change.",
-	"ruRU": "На 7 уровне внешний вид рыцаря Наследницы меняется и он становится похожим на саму Наследницу, хотя он все еще остается узнаваем его знакомыми, и его характеристики не изменяются.",
+    "ruRU": "На 7 уровне внешний вид рыцаря Наследницы меняется и он становится похожим на саму Наследницу, хотя он все еще остается узнаваем его знакомыми, и его характеристики не изменяются.",
     "zhCN": "7级起，后继骑士的外貌变得像是艾奥梅黛本尊，不过那些认识后继骑士本人的人依旧可以认出她来，这不会改变她的数据。"
   },
   {
     "Key": "HeritorKnightImageDivinity2.Name",
     "ProcessTemplates": false,
     "enGB": "Image of Divinity",
-	"ruRU": "Образ Божественности",
+    "ruRU": "Образ Божественности",
     "zhCN": "圣容"
   },
   {
     "Key": "HeritorKnightImageDivinity2.Description",
     "enGB": "Three times per day as a swift action, the heritor knight can touch a creature. If the touched creature is good-aligned, it regains 1d6 hit points per class level of the heritor knight; evil-aligned creatures instead take that amount of damage. If this ability heals the target, the target is also affected by restoration. If this ability damages the target, the target must succeed at a Fortitude save (DC = 10 + the heritor knight’s level + the heritor knight’s Charisma modifier) or become staggered for a number of rounds equal to the heritor knight’s Charisma bonus (minimum 1 round). Neutral-aligned creatures are unaffected.",
-	"ruRU": "Три раза в день, при помощи быстрого действия, рыцарь Наследницы может прикоснуться к существу. Если это существо является добрым, то оно излечивает 1d6 здоровья за уровень рыцаря Наследницы; если злым, то вместо этого оно получает столько же урона. Если эта способность применяется для исцеления, то цель также оказывается под воздействием восстановления. Если же способность применяется для нанесения урона, то цель должна совершить успешный спасбросок стойкости (DC = 10 + уровень рыцаря Наследница + модификатор Харизмы) или оказаться ошеломленной на количество раундов, равное модификатору Харизмы рыцаря (минимум 1 раунд). На нейтральных существ эта способность не оказывает никакого эффекта.",
+    "ruRU": "Три раза в день, при помощи быстрого действия, рыцарь Наследницы может прикоснуться к существу. Если это существо является добрым, то оно излечивает 1d6 здоровья за уровень рыцаря Наследницы; если злым, то вместо этого оно получает столько же урона. Если эта способность применяется для исцеления, то цель также оказывается под воздействием восстановления. Если же способность применяется для нанесения урона, то цель должна совершить успешный спасбросок стойкости (DC = 10 + уровень рыцаря Наследница + модификатор Харизмы) или оказаться ошеломленной на количество раундов, равное модификатору Харизмы рыцаря (минимум 1 раунд). На нейтральных существ эта способность не оказывает никакого эффекта.",
     "zhCN": "每日3次以迅捷动作，后继骑士能够碰触一名生物。若被碰触到的生物属于善良阵营，则会恢复生命值，恢复数值为每个后继骑士等级1d6点生命值；邪恶阵营的生物会受到相同数值的伤害。若该能力治疗了目标，那么他还会受到复原术的影响。若该能力伤害了目标，那么他必须进行强韧豁免（DC = 10 + 后继骑士的等级 + 后继骑士的魅力调整值），失败则会恍惚，持续轮数等同于后继骑士的魅力调整值（最低1轮）。中立阵营的生物不受影响。"
   },
   {
     "Key": "HeritorKnightFreedBlood.Name",
     "ProcessTemplates": false,
     "enGB": "Freed by Blood",
-	"ruRU": "Освобожденный кровью",
+    "ruRU": "Освобожденный кровью",
     "zhCN": "血战脱困"
   },
   {
     "Key": "HeritorKnightFreedBlood.Description",
     "enGB": "At 9th level, three times per day, the heritor knight can take 9 points of damage as a swift action. This ability dispells any ongoing death, paralysis, or compulsion effect upon an ally within 30 feet, using her character level as the caster level. The ally also gains a +9 sacred bonus on saving throws against these effects for a round.",
-	"ruRU": "Начиная с 9 уровня, 3 раза в день, рыцарь Наследницы может быстрым действием нанести себе 9 урона. Рыцарь рассеивает любые эффекты смерти, паралича или принуждения на союзнике в радиусе 30 футов, используя уровень своего персонажа в качестве уровня заклинателя. Этот союзник также получает сакральный бонус +9 к спасброскам против таких же эффектов на 1 раунд.",
+    "ruRU": "Начиная с 9 уровня, 3 раза в день, рыцарь Наследницы может быстрым действием нанести себе 9 урона. Рыцарь рассеивает любые эффекты смерти, паралича или принуждения на союзнике в радиусе 30 футов, используя уровень своего персонажа в качестве уровня заклинателя. Этот союзник также получает сакральный бонус +9 к спасброскам против таких же эффектов на 1 раунд.",
     "zhCN": "9级时，每天3次，后继骑士可以用一个迅捷动作承受9点伤害。该能力尝试解除30英尺内盟友身上任何持续的死亡、麻痹或胁迫效应，使用她的角色等级作为施法者等级。该盟友在对抗这些效果的豁免检定上也会获得 +9 神圣加值，持续一轮。"
   },
   {
     "Key": "HeritorKnightSkyStride.Name",
     "ProcessTemplates": false,
     "enGB": "Sky Stride",
-	"ruRU": "Небесный шаг",
+    "ruRU": "Небесный шаг",
     "zhCN": "天行步"
   },
   {
     "Key": "HeritorKnightSkyStride.Description",
     "enGB": "At 10th level, a heritor knight gains Wings as a bonus feat. When the heritor knight moves through the air, her steps appear to be supported by crimson cloth that appears beneath her feet.",
-	"ruRU": "На 10 уровне рыцарь Наследницы получает черту Крылья. Когда рыцарь Наследницы движется по воздуху, кажется, что он ступает по алой ткани, которая появляется у него под ногами.",
+    "ruRU": "На 10 уровне рыцарь Наследницы получает черту Крылья. Когда рыцарь Наследницы движется по воздуху, кажется, что он ступает по алой ткани, которая появляется у него под ногами.",
     "zhCN": "10级起，后继骑士获得双翼作为额外专长。当后继骑士在空中移动时，就像是被深红色的绸缎所托起一般。"
   }
 
