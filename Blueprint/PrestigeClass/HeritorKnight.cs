@@ -64,11 +64,11 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddToLevelEntry(5, RedeemerUndeathConfigure())
                 .AddToLevelEntry(6, MightyStrikeConfigure())
                 .AddToLevelEntry(7, CreateImageDivinity())
-                .AddToLevelEntry(8, FeatureSelectionRefs.WeaponTrainingSelection.ToString(), FeatureSelectionRefs.WeaponTrainingRankUpSelection.ToString())
+                .AddToLevelEntry(8, FeatureSelectionRefs.WeaponTrainingRankUpSelection.ToString())
                 .AddToLevelEntry(9, CreateFreedBlood())
                 .AddToLevelEntry(10, SkyStrideFeature())
                 .SetUIGroups(UIGroupBuilder.New()
-                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { WitchesWoeGuid, FeatureSelectionRefs.WeaponTrainingRankUpSelection.ToString() }))
+                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { WitchesWoeGuid, FeatureSelectionRefs.WeaponTrainingRankUpSelection.ToString(), FeatureSelectionRefs.WeaponTrainingSelection.ToString()}))
                 ///.AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { SeekerArrowGuid, PhaseArrowGuid, HailArrowGuid, DeathArrowGuid }))
                 .SetRanks(1)
                 .SetIsClassFeature(true)
@@ -134,6 +134,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddPrerequisiteFeature(FeatureSelectionRefs.WeaponTrainingSelection.ToString())
               .AddToClasses(ArchetypeGuid)
               .AddToLevelEntry(3, FeatureSelectionRefs.WeaponTrainingRankUpSelection.ToString())
+              .AddToLevelEntry(8, FeatureSelectionRefs.WeaponTrainingSelection.ToString())
               .Configure();
         }
 

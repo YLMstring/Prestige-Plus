@@ -11530,8 +11530,8 @@
   },
   {
     "Key": "HeritorKnightSkillHeart.Description",
-    "enGB": "If the heritor knight has the weapon training class feature, the bonus granted by her previous weapon group increases by +1 at 3rd level. In addition, heritor knight levels stack with fighter levels +1 for the purpose of feat prerequisites.",
-    "zhCN": "如果后继骑士具有武器训练职业能力，那么3级时她既有的武器组加值会提升1点。此外，在判断专长的先决条件时，将她的后继骑士等级与战士等级叠加+1进行计算。"
+    "enGB": "If the heritor knight has the weapon training class feature, she gets full weapon training progression at 3rd and 8th level. In addition, heritor knight levels stack with fighter levels +1 for the purpose of feat prerequisites.",
+    "zhCN": "如果后继骑士具有武器训练职业能力，那么3级和8级时她会获得完整的武器训练成长。此外，在判断专长的先决条件时，将她的后继骑士等级与战士等级叠加+1进行计算。"
   },
   {
     "Key": "HeritorKnightHeritorHonor.Name",
