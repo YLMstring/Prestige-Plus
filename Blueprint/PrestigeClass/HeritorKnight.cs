@@ -59,7 +59,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetClasses(ArchetypeGuid)
                 .AddToLevelEntry(1, SkillHeartFeat())
                 .AddToLevelEntry(2, HeritorHonorFeature(), CreateWitchesWoe())
-                .AddToLevelEntry(3, FeatureSelectionRefs.WeaponTrainingSelection.ToString(), FeatureSelectionRefs.WeaponTrainingRankUpSelection.ToString())
+                .AddToLevelEntry(3, FeatureSelectionRefs.WeaponTrainingSelection.ToString())
                 .AddToLevelEntry(4, CreateWraithwall())
                 .AddToLevelEntry(5, RedeemerUndeathConfigure())
                 .AddToLevelEntry(6, MightyStrikeConfigure())
@@ -126,12 +126,14 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         {
             var icon = FeatureRefs.FighterWeaponMastery.Reference.Get().Icon;
 
-            return FeatureConfigurator.New(AsOne, AsOneGuid)
+            return ProgressionConfigurator.New(AsOne, AsOneGuid)
               .SetDisplayName(SkillHeartDisplayName)
               .SetDescription(SkillHeartDescription)
               .SetIcon(icon)
               .AddPrerequisiteFeature(FeatureSelectionRefs.WeaponTrainingSelection.ToString())
-              .AddClassLevelsForPrerequisites(actualClass: ArchetypeGuid, fakeClass: CharacterClassRefs.FighterClass.ToString(), modifier: 1, summand: 0)
+              .AddClassLevelsForPrerequisites(actualClass: ArchetypeGuid, fakeClass: CharacterClassRefs.FighterClass.ToString(), modifier: 1, summand: 1)
+              .AddToClasses(ArchetypeGuid)
+              .AddToLevelEntry(3, FeatureSelectionRefs.WeaponTrainingRankUpSelection.ToString())
               .Configure();
         }
 
