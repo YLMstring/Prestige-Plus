@@ -594,7 +594,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
              .SetDisplayName(PhantomArmoryDisplayName)
              .SetDescription(PhantomArmoryDescription)
              .SetIcon(icon)
-             .AddComponent<GhostArmorComponent>()
+             .AddComponent<GhostArmorComponent>(c => { c.onlyarmor = false; })
              .Configure();
 
             var ability2 = AbilityConfigurator.New(PhantomArmoryAblity2, PhantomArmoryAblity2Guid)

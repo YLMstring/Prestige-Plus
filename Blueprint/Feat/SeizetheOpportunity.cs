@@ -106,7 +106,7 @@ namespace PrestigePlus.Maneuvers
                 .SetIcon(AbilityRefs.VitalStrikeAbility.Reference.Get().Icon)
                 .SetBuff(BuffSeizetheOpportunity)
                 .SetDeactivateImmediately()
-                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true)
+                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true).SetHiddenInUI()
                 .Configure();
 
             var BuffSeizetheBullRush = BuffConfigurator.New(SeizetheBullRushbuff, SeizetheBullRushbuffGuid)
@@ -123,7 +123,7 @@ namespace PrestigePlus.Maneuvers
                 .SetIcon(AbilityRefs.BullRushAction.Reference.Get().Icon)
                 .SetBuff(BuffSeizetheBullRush)
                 .SetDeactivateImmediately()
-                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true)
+                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true).SetHiddenInUI()
                 .Configure();
 
             var BuffSeizetheDirtyBlind = BuffConfigurator.New(SeizetheDirtyBlindbuff, SeizetheDirtyBlindbuffGuid)
@@ -144,7 +144,7 @@ namespace PrestigePlus.Maneuvers
                 .SetIcon(AbilityRefs.DirtyTrickBlindnessAction.Reference.Get().Icon)
                 .SetBuff(BuffSeizetheDirtyBlind)
                 .SetDeactivateImmediately()
-                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true)
+                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true).SetHiddenInUI()
                 .Configure();
 
             var BuffSeizetheDirtyEntangle = BuffConfigurator.New(SeizetheDirtyEntanglebuff, SeizetheDirtyEntanglebuffGuid)
@@ -165,7 +165,7 @@ namespace PrestigePlus.Maneuvers
                 .SetIcon(AbilityRefs.DirtyTrickEntangleAction.Reference.Get().Icon)
                 .SetBuff(BuffSeizetheDirtyEntangle)
                 .SetDeactivateImmediately()
-                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true)
+                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true).SetHiddenInUI()
                 .Configure();
 
             var BuffSeizetheDirtySicken = BuffConfigurator.New(SeizetheDirtySickenbuff, SeizetheDirtySickenbuffGuid)
@@ -186,7 +186,7 @@ namespace PrestigePlus.Maneuvers
                 .SetIcon(AbilityRefs.DirtyTrickSickenedAction.Reference.Get().Icon)
                 .SetBuff(BuffSeizetheDirtySicken)
                 .SetDeactivateImmediately()
-                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true)
+                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true).SetHiddenInUI()
                 .Configure();
 
             var BuffSeizetheDisarm = BuffConfigurator.New(SeizetheDisarmbuff, SeizetheDisarmbuffGuid)
@@ -203,7 +203,7 @@ namespace PrestigePlus.Maneuvers
                 .SetIcon(AbilityRefs.DisarmAction.Reference.Get().Icon)
                 .SetBuff(BuffSeizetheDisarm)
                 .SetDeactivateImmediately()
-                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true)
+                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true).SetHiddenInUI()
                 .Configure();
 
             var BuffSeizetheSunder = BuffConfigurator.New(SeizetheSunderbuff, SeizetheSunderbuffGuid)
@@ -220,7 +220,7 @@ namespace PrestigePlus.Maneuvers
                 .SetIcon(AbilityRefs.SunderAction.Reference.Get().Icon)
                 .SetBuff(BuffSeizetheSunder)
                 .SetDeactivateImmediately()
-                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true)
+                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true).SetHiddenInUI()
                 .Configure();
 
             var BuffSeizetheTrip = BuffConfigurator.New(SeizetheTripbuff, SeizetheTripbuffGuid)
@@ -237,7 +237,7 @@ namespace PrestigePlus.Maneuvers
                 .SetIcon(AbilityRefs.TripAction.Reference.Get().Icon)
                 .SetBuff(BuffSeizetheTrip)
                 .SetDeactivateImmediately()
-                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true)
+                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true).SetHiddenInUI()
                 .Configure();
 
             var BuffSeizetheGrapple = BuffConfigurator.New(SeizetheGrapplebuff, SeizetheGrapplebuffGuid)
@@ -254,7 +254,7 @@ namespace PrestigePlus.Maneuvers
                 .SetIcon(AbilityRefs.ArmyShifterGrabAbility.Reference.Get().Icon)
                 .SetBuff(BuffSeizetheGrapple)
                 .SetDeactivateImmediately()
-                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true)
+                .SetIsOnByDefault(false).SetActionBarAutoFillIgnored(true).SetHiddenInUI()
                 .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(SeizetheAbility, SeizetheAbilityGuid)

@@ -1,4 +1,4 @@
-# Prestige Plus v2.7.3 for WoTR 
+# Prestige Plus v2.8.0 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -106,6 +106,9 @@
 #### Homebrew Options:  
 - Alternative access to the class for non-halflings!
 - A mythic feat to use another combat maneuver with Exploitive Maneuver.
+### [Heritor Knight Class](https://www.aonprd.com/PrestigeClassesDisplay.aspx?ItemName=Heritor%20Knight)
+- Image of Divinity: At 7th level, a heritor knight’s appearance changes to superficially resemble the Inheritor herself, although she is still recognizable to those who know her, and her statistics do not change.
+- This is absolutely my favorite.
 ### [Horizon Walker Class](https://www.d20pfsrd.com/classes/prestige-classes/apg/horizon-walker/)
 - The Terrain Mastery abilities of Astral Plane and Abyss are actually useless in the module but they are prerequisites for their Terrain Dominance.
 - There isn't a GM available telling which creature is native to where, so ONLY ABYSS's favored enemy bonus works, for demons (which is written explicitly in the its description). And you guys probably won't focus on other creatures anyway lol

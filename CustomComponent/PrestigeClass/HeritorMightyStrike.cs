@@ -26,7 +26,7 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
         {
             try
             {
-                if (evt.IsFirstAttack && !evt.IsAttackOfOpportunity)
+                if (!evt.IsAttackOfOpportunity)
                 {
                     var caster = Owner;
                     VitalStrikePart vitalStrikePart = caster.Ensure<VitalStrikePart>();
@@ -60,9 +60,8 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
                 {
                     vitalStrikePart.SetDeferredRules(evt);
                     vitalStrikePart.RemoveSelfIfDone();
+                    Buff.Remove();
                 }
-                Buff.Remove();
-
             }
             catch (Exception e)
             {
