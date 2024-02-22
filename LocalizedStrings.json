@@ -5387,7 +5387,7 @@
     "ProcessTemplates": false,
     "enGB": "Grapple (Always)",
     "ruRU": "Захват (всегда)",
-    "zhCN": "擒抱（一次）"
+    "zhCN": "擒抱（总是）"
   },
   {
     "Key": "BasicImprovedCharge3.Description",
@@ -5400,7 +5400,7 @@
     "ProcessTemplates": false,
     "enGB": "Grapple (Next)",
     "ruRU": "Захват (один)",
-    "zhCN": "擒抱（总是）"
+    "zhCN": "擒抱（一次）"
   },
   {
     "Key": "BasicImprovedCharge4.Description",
