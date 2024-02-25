@@ -5,6 +5,7 @@ using BlueprintCore.Utils;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints;
 using Kingmaker.EntitySystem.Stats;
+using Kingmaker.Utility;
 using PrestigePlus.Blueprint.PrestigeClass;
 using PrestigePlus.Grapple;
 using PrestigePlus.Patch;
@@ -79,6 +80,9 @@ namespace PrestigePlus.Blueprint.Feat
               .Configure();
 
             FeatureSelectionConfigurator.For(FeatureSelectionRefs.BasicFeatSelection)
+                .AddToAllFeatures(pro)
+                .Configure();
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.DragonLevel2FeatSelection)
                 .AddToAllFeatures(pro)
                 .Configure();
             FeatureSelectionConfigurator.For(FeatureSelectionRefs.FighterFeatSelection)

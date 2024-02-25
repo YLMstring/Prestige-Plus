@@ -153,6 +153,9 @@ namespace PrestigePlus.Blueprint.Feat
             FeatureSelectionConfigurator.For(FeatureSelectionRefs.BasicFeatSelection)
                 .AddToAllFeatures(feat)
                 .Configure();
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.DragonLevel2FeatSelection)
+                .AddToAllFeatures(feat)
+                .Configure();
         }
 
         private const string Naderi = "DeificObedience.Naderi";

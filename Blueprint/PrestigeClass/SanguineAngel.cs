@@ -165,6 +165,9 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             FeatureSelectionConfigurator.For(FeatureSelectionRefs.BasicFeatSelection)
                 .AddToAllFeatures(feat)
                 .Configure();
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.DragonLevel2FeatSelection)
+                .AddToAllFeatures(feat)
+                .Configure();
 
             return feat;
         }

@@ -121,10 +121,13 @@ namespace PrestigePlus.Blueprint.Archetype
             FeatureSelectionConfigurator.For(FeatureSelectionRefs.BasicFeatSelection)
                 .AddToAllFeatures(feat)
                 .Configure();
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.DragonLevel2FeatSelection)
+                .AddToAllFeatures(feat)
+                .Configure(); 
             FeatureSelectionConfigurator.For(FeatureSelectionRefs.FighterFeatSelection)
                 .AddToAllFeatures(feat)
                 .Configure();
-
+            
             return feat;
         }
 

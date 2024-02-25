@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PrestigePlus.Blueprint.PrestigeClass;
+using Kingmaker.Utility;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -40,6 +41,9 @@ namespace PrestigePlus.Blueprint.Feat
               .Configure();
 
             FeatureSelectionConfigurator.For(FeatureSelectionRefs.BasicFeatSelection)
+                .AddToAllFeatures(pro)
+                .Configure();
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.DragonLevel2FeatSelection)
                 .AddToAllFeatures(pro)
                 .Configure();
         }
