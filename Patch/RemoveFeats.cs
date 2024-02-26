@@ -20,6 +20,7 @@ namespace PrestigePlus.Patch
             Remove("3ddce7711accaf144b33e9a6949bb61e");//hand
             Remove("0408028da24dd0348848f00c7134d211");//mythic hand
             Remove("2f2eb97cc7e04d72b1a71794cd741412");//dirty fighting
+            Remove("1a0da3ae8cbe41e44bc4fa55c06ba7c1");//strike true
         }
 
         private static void Remove(string guid)
