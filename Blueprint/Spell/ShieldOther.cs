@@ -81,7 +81,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetAnimation(CastAnimationStyle.Point)
               .SetRange(AbilityRange.Close)
               .SetType(AbilityType.Spell)
-              .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Extend)
+              .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Extend, Metamagic.Heighten)
               .AddToSpellLists(level: 2, SpellList.Cleric)
               .AddToSpellLists(level: 2, SpellList.Warpriest)
               .AddToSpellLists(level: 2, SpellList.Paladin)
