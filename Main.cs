@@ -443,7 +443,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fighterdd"))) { DawnflowerDervish.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fighteraa"))) { WeaponMaster.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("mythicheritage"))) { RacialHeritage.RacialHeritageConfigure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("heritor"))) { HeritorKnight.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("heritor"))) { HeritorKnight.Configure(); StrikeTrue.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
