@@ -11653,6 +11653,105 @@
     "enGB": "At 10th level, a heritor knight gains Wings as a bonus feat. When the heritor knight moves through the air, her steps appear to be supported by crimson cloth that appears beneath her feet.",
     "ruRU": "На 10 уровне рыцарь Наследницы получает черту Крылья. Когда рыцарь Наследницы движется по воздуху, кажется, что он ступает по алой ткани, которая появляется у него под ногами.",
     "zhCN": "10级起，后继骑士获得双翼作为额外专长。当后继骑士在空中移动时，就像是被深红色的绸缎所托起一般。"
+  },
+  {
+    "Key": "FeatStrikeTrue.Name",
+    "ProcessTemplates": false,
+    "enGB": "Strike True",
+    "zhCN": "机先克敌"
+  },
+  {
+    "Key": "FeatStrikeTrue.Description",
+    "enGB": "Rather than attempting a series of wild blows, you line up a perfect attack. You can focus yourself as a move action. When focused, you gain a +4 bonus on your next melee attack roll before the end of your turn.",
+    "zhCN": "你并不打出一连串狂猛的打击，而是设计好一次完美的进攻。你可以通过移动动作集中注意力，令你在回合结束前的下一次近战攻击检定中获得+4加值。"
+  },
+  {
+    "Key": "NewSpellInheritorSmite.Name",
+    "ProcessTemplates": false,
+    "enGB": "Inheritor's Smite",
+    "zhCN": "后继者神击术"
+  },
+  {
+    "Key": "NewSpellInheritorSmite.Description",
+    "enGB": "You channel the power of righteousness into your weapon arm, allowing you to strike with great force. Your next melee attack (if made before the end of your next turn) gains a +5 sacred bonus on the attack roll. If the attack hits, you may immediately attempt a bull rush combat maneuver (with a +5 sacred bonus on your combat maneuver check) against the target without provoking an attack of opportunity.",
+    "zhCN": "你引导艾奥梅黛的神力加持于自己持握武器的手臂，使你可以用极大的力道猛击目标。你在下一次发动近战攻击（若在下一回合结束前发动攻击）时，攻击检定可以获得+5神圣加值。如果该攻击命中，你可以立即尝试冲撞目标（对抗检定时同样获得+5神圣加值），并且不会引发借机攻击。"
+  },
+  {
+    "Key": "NewSpellRovagugFury.Name",
+    "ProcessTemplates": false,
+    "enGB": "Rovagug's Fury",
+    "zhCN": "洛瓦古格之怒"
+  },
+  {
+    "Key": "NewSpellRovagugFury.Description",
+    "enGB": "You create a minor earthquake that can trip creatures. Attempt combat maneuver checks against every creature in the area. This trip attack does not provoke an attack of opportunity (though you do provoke one for casting the spell).",
+    "zhCN": "你创造一阵可以摔绊生物的轻微地震。对区域内所有生物进行一次摔绊攻击检定。你不会因为这次摔绊攻击而引发借机攻击（但是施放此法术仍会引发借机攻击）。"
+  },
+  {
+    "Key": "NewSpellHydraulicTorrent.Name",
+    "ProcessTemplates": false,
+    "enGB": "Hydraulic Torrent",
+    "zhCN": "激流术"
+  },
+  {
+    "Key": "NewSpellHydraulicTorrent.Description",
+    "enGB": "You call forth a powerful stream of water that batters all creatures and obstacles in its path until it strikes something it cannot push past. Make combat maneuver checks to each creature within the area. Your CMB for this bull rush is equal to your caster level plus your Intelligence, Wisdom, or Charisma modifier, whichever is highest. This bull rush does not provoke an attack of opportunity.",
+    "zhCN": "你召唤一股强力的水流，冲击其路径上的所有生物和障碍物，直到撞上推不动的东西。水流路径上所有生物都受到一次冲撞战技攻击。你的冲撞战技检定加值等于你的施法者等级加上你的智力、感知和魅力调整值中最高的一项。这次冲撞不会引发借机攻击。"
+  },
+  {
+    "Key": "NewSpellThunderstomp.Name",
+    "ProcessTemplates": false,
+    "enGB": "Thunderstomp",
+    "zhCN": "雷霆重踏"
+  },
+  {
+    "Key": "NewSpellThunderstomp.Description",
+    "enGB": "You stomp your foot or strike your weapon against the ground or floor, creating a ripple of power that you can use to trip a creature. Attempt the combat maneuver check to trip the target, but instead of your base attack bonus you can use your caster level, and instead of your Strength modifier you can use your spellcasting ability score modifier. This does not provoke an attack of opportunity.",
+    "zhCN": "你用力跺脚或者使用武器击打地面，这会创造出能够用于摔绊一个生物的强大震波。尝试战技检定来摔绊目标，你的战技检定加值等于你的施法者等级加上你的施法属性调整值，且不会引发借机攻击。"
+  },
+  {
+    "Key": "NewSpellThunderstompGreater.Name",
+    "ProcessTemplates": false,
+    "enGB": "Thunderstomp, Greater",
+    "zhCN": "高等雷霆重踏"
+  },
+  {
+    "Key": "NewSpellThunderstompGreater.Description",
+    "enGB": "This spell functions as thunderstomp, except as noted, and it affects all creatures in the area, regardless of size. Attempt combat maneuver checks to each creature within the area.",
+    "zhCN": "该法术如同雷霆重踏一般，除了后述内容以外：法术对效果区域内所有生物有效，无关目标体型大小。对区域内所有生物进行一次战技检定。"
+  },
+  {
+    "Key": "NewSpellTelekineticManeuver.Name",
+    "ProcessTemplates": false,
+    "enGB": "Telekinetic Maneuver",
+    "zhCN": "念动战技"
+  },
+  {
+    "Key": "NewSpellTelekineticManeuver.Description",
+    "enGB": "You move objects or creatures by concentrating on them. once per round, you can use telekinesis to perform a bull rush, disarm, grapple (including pin), or trip. Resolve these attempts as normal, except that your CMB is equal to your caster level plus your spellcasting ability score modifier. This does not provoke an attack of opportunity. No save is allowed against these attempts, but spell resistance applies normally.",
+    "zhCN": "你通过专注于物体或生物来移动它们。每轮一次，你可以使用心灵遥控来进行冲撞、缴械、擒抱 (包括压制) 或者绊摔。如常处理这些战技尝试，但你的战技检定加值等于你的施法者等级加上你的施法者属性调整值，且不会引发借机攻击。对方不能进行豁免检定，但法术抗力仍会生效。"
+  },
+  {
+    "Key": "NewSpellLinebreaker.Name",
+    "ProcessTemplates": false,
+    "enGB": "Linebreaker",
+    "zhCN": "冲阵术"
+  },
+  {
+    "Key": "NewSpellLinebreaker.Description",
+    "enGB": "You gain a +2 bonus on combat maneuver checks made to bull rush or overrun.",
+    "zhCN": "你在冲撞以及闯越战技检定上获得+2加值。"
+  },
+  {
+    "Key": "NewSpellBladeLash.Name",
+    "ProcessTemplates": false,
+    "enGB": "Blade Lash",
+    "zhCN": "剑刃鞭笞"
+  },
+  {
+    "Key": "NewSpellBladeLash.Description",
+    "enGB": "Your weapon elongates and becomes whip-like. As part of casting this spell, you can use this weapon to attempt a trip combat maneuver against one creature within 20 feet, and you gain a +10 bonus on your roll, after which the weapon returns to its previous form.",
+    "zhCN": "你的武器被拉长，变得如同鞭子一般。作为施放该法术的一部分，你能够使用该武器尝试对20尺内的一个生物进行一次摔绊战技，而且你在检定中获得+10加值，在此之后，你的武器会还原至它原本的形态。"
   }
 
 ]
