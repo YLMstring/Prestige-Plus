@@ -18,6 +18,7 @@ using System.Threading.Tasks;
 using BlueprintCore.Actions.Builder.ContextEx;
 using static Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell;
 using Kingmaker.EntitySystem.Stats;
+using PrestigePlus.CustomComponent.Spell;
 
 namespace PrestigePlus.Blueprint.Spell
 {
@@ -36,18 +37,13 @@ namespace PrestigePlus.Blueprint.Spell
         private const string Description = "NewSpellInheritorSmite.Description";
         public static void Configure()
         {
-            var icon = AbilityRefs.SmiteEvilAbility.Reference.Get().Icon;
-
-            var action2 = ActionsBuilder.New()
-                .RemoveSelf()
-                .Build();
+            var icon = AbilityRefs.CrusadersEdge.Reference.Get().Icon;
 
             var buff2 = BuffConfigurator.New(InheritorSmiteBuff2, InheritorSmiteBuff2Guid)
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
               .AddCMBBonus(descriptor: ModifierDescriptor.Sacred, value: 5)
-              .AddManeuverTrigger(action2)
               .Configure();
 
             var action = ActionsBuilder.New()
@@ -59,9 +55,8 @@ namespace PrestigePlus.Blueprint.Spell
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
-              .AddAttackTypeAttackBonus(attackBonus: 5, descriptor: ModifierDescriptor.Sacred, type: WeaponRangeType.Melee)
-              .AddInitiatorAttackRollTrigger(action, false, onlyHit: true)
-              .AddInitiatorAttackRollTrigger(action2, false, onlyMiss: true)
+              .AddAttackTypeAttackBonus(attackBonus: 5, descriptor: ModifierDescriptor.Sacred, type: WeaponRangeType.Melee, checkFact: false, allTypesExcept: false, value: 1)
+              .AddComponent<InheritorSmiteComp>(c => { c.onhit = action; })
               .Configure();
 
             AbilityConfigurator.NewSpell(
