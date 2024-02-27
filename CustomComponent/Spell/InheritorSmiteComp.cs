@@ -21,7 +21,7 @@ namespace PrestigePlus.CustomComponent.Spell
         // Token: 0x0600E7AA RID: 59306 RVA: 0x003B71B6 File Offset: 0x003B53B6
         public void OnEventDidTrigger(RuleAttackRoll evt)
         {
-            if (evt.IsHit)
+            if (evt.IsHit && evt.AttackType == Kingmaker.RuleSystem.AttackType.Melee)
             {
                 (Fact as IFactContextOwner)?.RunActionInContext(onhit, evt.Target);
             }
