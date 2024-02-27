@@ -2,6 +2,7 @@
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic;
+using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace PrestigePlus.CustomComponent.Spell
 {
-    internal class InheritorSmiteComp : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleAttackRoll>, IRulebookHandler<RuleAttackRoll>, ISubscriber, IInitiatorRulebookSubscriber
+    internal class InheritorSmiteComp : UnitBuffComponentDelegate, IInitiatorRulebookHandler<RuleAttackRoll>, IRulebookHandler<RuleAttackRoll>, ISubscriber, IInitiatorRulebookSubscriber
     {
         // Token: 0x0600E7A9 RID: 59305 RVA: 0x003B71B4 File Offset: 0x003B53B4
         public void OnEventAboutToTrigger(RuleAttackRoll evt)
@@ -25,7 +26,7 @@ namespace PrestigePlus.CustomComponent.Spell
             {
                 (Fact as IFactContextOwner)?.RunActionInContext(onhit, evt.Target);
             }
-            base.Owner.RemoveFact(base.Fact);
+            Buff.Remove();
         }
 
         public ActionList onhit;

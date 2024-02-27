@@ -39,16 +39,20 @@ namespace PrestigePlus.Blueprint.Spell
         {
             var icon = AbilityRefs.CrusadersEdge.Reference.Get().Icon;
 
+            var action2 = ActionsBuilder.New()
+                .RemoveSelf()
+                .Build();
+
             var buff2 = BuffConfigurator.New(InheritorSmiteBuff2, InheritorSmiteBuff2Guid)
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
               .AddCMBBonus(descriptor: ModifierDescriptor.Sacred, value: 5)
+              .AddManeuverTrigger(action2)
               .Configure();
 
             var action = ActionsBuilder.New()
                 .CombatManeuver(ActionsBuilder.New().Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush)
-                .RemoveSelf()
                 .Build();
 
             var buff = BuffConfigurator.New(InheritorSmiteBuff, InheritorSmiteBuffGuid)
