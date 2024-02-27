@@ -42,6 +42,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetSpellResistance()
               .AddToSpellLists(level: 3, SpellList.WaterDomain)
               .AddToSpellLists(level: 3, SpellList.Druid)
+              .AddToSpellLists(level: 3, SpellList.Hunter)
               .AddToSpellLists(level: 3, SpellList.Bloodrager)
               .AddToSpellLists(level: 3, SpellList.Wizard)
               .AddToSpellLists(level: 3, SpellList.Magus)

@@ -35,6 +35,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetIcon(icon)
               .AllowTargeting(false, true, false, false)
               .SetAnimation(CastAnimationStyle.Omni)
+              .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.Kinetic_EarthBlast00_Projectile_Up.ToString() }, type: AbilityProjectileType.Simple, needAttackRoll: false)
               .SetRange(AbilityRange.Close)
               .SetType(AbilityType.Spell)
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Quicken)

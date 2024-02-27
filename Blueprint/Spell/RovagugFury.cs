@@ -29,7 +29,7 @@ namespace PrestigePlus.Blueprint.Spell
         private const string Description = "NewSpellRovagugFury.Description";
         public static void Configure()
         {
-            var icon = AbilityRefs.DeadlyEarthEarthBlastAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.TouchOfGracelessness.Reference.Get().Icon;
 
             AbilityConfigurator.NewSpell(
                 RovagugFuryAbility, RovagugFuryAbilityGuid, SpellSchool.Transmutation, canSpecialize: false)
@@ -38,7 +38,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetIcon(icon)
               .AllowTargeting(true, true, true, false)
               .SetAnimation(CastAnimationStyle.Directional)
-              .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.SonicCone30Feet00.ToString() }, type: AbilityProjectileType.Cone, length: 30.Feet(), lineWidth: 5.Feet(), needAttackRoll: false)
+              .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.Kinetic_EarthSphere00_Projectile_Up.ToString() }, type: AbilityProjectileType.Cone, length: 30.Feet(), lineWidth: 5.Feet(), needAttackRoll: false)
               .SetRange(AbilityRange.Projectile)
               .SetType(AbilityType.Spell)
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Selective, Metamagic.Heighten, Metamagic.Quicken)

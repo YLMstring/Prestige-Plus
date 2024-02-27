@@ -26,7 +26,7 @@ namespace PrestigePlus.Blueprint.Spell
         private const string Description = "NewSpellThunderstompGreater.Description";
         public static void Configure()
         {
-            var icon = AbilityRefs.MephitEarthBreathWeapon.Reference.Get().Icon;
+            var icon = AbilityRefs.DeadlyEarthEarthBlastAbility.Reference.Get().Icon;
 
             AbilityConfigurator.NewSpell(
                 ThunderstompGreaterAbility, ThunderstompGreaterAbilityGuid, SpellSchool.Evocation, canSpecialize: false)
