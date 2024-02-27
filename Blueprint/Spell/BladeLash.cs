@@ -56,6 +56,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
+              .AllowTargeting(false, true, false, false)
               .SetAnimation(CastAnimationStyle.Immediate)
               .AddComponent(AbilityRefs.DazzlingDisplayAction.Reference.Get().GetComponent<AbilitySpawnFx>())
               .SetRange(AbilityRange.Custom)

@@ -31,7 +31,7 @@ namespace PrestigePlus.Blueprint.Spell
         private const string Description = "NewSpellLinebreaker.Description";
         public static void Configure()
         {
-            var icon = AbilityRefs.BreakControlAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.BaphometPowerfulChargeAbility.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(LinebreakerBuff, LinebreakerBuffGuid)
               .SetDisplayName(DisplayName)
