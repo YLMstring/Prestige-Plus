@@ -155,7 +155,7 @@ namespace PrestigePlus
             Toggle.New(GetKey("halfling"), defaultValue: true, Helpers.CreateString("toggle-desc21", "Halfling Opportunist"))
               .ShowVisualConnection())
           .AddToggle(
-            Toggle.New(GetKey("heritor"), defaultValue: true, Helpers.CreateString("toggle-desc87", "Heritor Knight"))
+            Toggle.New(GetKey("justshowup"), defaultValue: true, Helpers.CreateString("toggle-desc87", "Heritor Knight"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("lander"), defaultValue: true, Helpers.CreateString("toggle-desc5", "Hinterlander"))
@@ -412,7 +412,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("cmdminus"))) { CMDPatch.Patch(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("dirty"))) { DirtyFeats.Configure(); DirtyFeats.StyleConfigure(); DirtyFeats.LadderConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("cloak"))) { CloakDaggerStyle.StyleConfigure(); CloakDaggerStyle.SubterfugeConfigure(); CloakDaggerStyle.TacticsConfigure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("spell"))) { LitanyRighteousness.Configure(); ShieldOther.Configure(); InheritorSmite.Configure(); RovagugFury.Configure(); HydraulicTorrent.Configure(); ThunderstompGreater.Configure(); Thunderstomp.Configure(); TelekineticManeuver.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("spell"))) { LitanyRighteousness.Configure(); ShieldOther.Configure(); InheritorSmite.Configure(); RovagugFury.Configure(); HydraulicTorrent.Configure(); ThunderstompGreater.Configure(); Thunderstomp.Configure(); TelekineticManeuver.Configure(); Linebreaker.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("obedience"))) { DeificObedience.DeificObedienceConfigure(); DiverseObedience.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("templar"))) { CrimsonTemplar.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("seeker"))) { TruthSeeker.Configure(); TruthSooker.Configure(); }
@@ -442,8 +442,8 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("mms"))) { ManyMonk.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fighterdd"))) { DawnflowerDervish.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fighteraa"))) { WeaponMaster.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("justshowup"))) { HeritorKnight.Configure(); StrikeTrue.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("mythicheritage"))) { RacialHeritage.RacialHeritageConfigure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("heritor"))) { HeritorKnight.Configure(); StrikeTrue.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
