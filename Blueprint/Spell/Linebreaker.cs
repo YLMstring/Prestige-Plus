@@ -48,7 +48,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetAnimation(CastAnimationStyle.Omni)
               .SetRange(AbilityRange.Personal)
               .SetType(AbilityType.Spell)
-              .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Extend)
+              .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Extend, Metamagic.Quicken)
               .AddToSpellLists(level: 1, SpellList.Alchemist)
               .AddToSpellLists(level: 1, SpellList.Inquisitor)
               .AddToSpellLists(level: 1, SpellList.Magus)
