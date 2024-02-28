@@ -44,7 +44,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetIcon(icon)
               .AllowTargeting(false, true, false, false)
               .SetAnimation(CastAnimationStyle.Special)
-              .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.Sithhud_SwordTraceLine00.ToString() }, type: AbilityProjectileType.Simple, needAttackRoll: false)
+              .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.Creature_PainajaiSpear00_Projectile.ToString() }, type: AbilityProjectileType.Simple, needAttackRoll: false)
               .SetRange(AbilityRange.Custom)
               .SetCustomRange(20)
               .SetType(AbilityType.Spell)
