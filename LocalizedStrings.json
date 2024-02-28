@@ -11728,8 +11728,8 @@
   },
   {
     "Key": "NewSpellTelekineticManeuver.Description",
-    "enGB": "You move objects or creatures by concentrating on them. once per round, you can use telekinesis to perform a bull rush, disarm, grapple (including pin), or trip. Resolve these attempts as normal, except that your CMB is equal to your caster level plus your spellcasting ability score modifier. This does not provoke an attack of opportunity. No save is allowed against these attempts, but spell resistance applies normally.",
-    "zhCN": "你通过专注于物体或生物来移动它们。每轮一次，你可以使用心灵遥控来进行冲撞、缴械、擒抱 (包括压制) 或者绊摔。如常处理这些战技尝试，但你的战技检定加值等于你的施法者等级加上你的施法者属性调整值，且不会引发借机攻击。对方不能进行豁免检定，但法术抗力仍会生效。"
+    "enGB": "You move objects or creatures by concentrating on them. once per round, you can use telekinesis to perform a bull rush, disarm, or trip within close range. Alternatively, you can perform a grapple (including pin). Resolve these attempts as normal, except that your CMB is equal to your caster level plus your spellcasting ability score modifier. This does not provoke an attack of opportunity. No save is allowed against these attempts, but spell resistance applies normally.",
+    "zhCN": "你通过专注于物体或生物来移动它们。每轮一次，你可以使用心灵遥控在近程范围内进行冲撞、缴械、或者绊摔。此外，你还可以进行擒抱 (包括压制) 。如常处理这些战技尝试，但你的战技检定加值等于你的施法者等级加上你的施法者属性调整值，且不会引发借机攻击。对方不能进行豁免检定，但法术抗力仍会生效。"
   },
   {
     "Key": "NewSpellLinebreaker.Name",
