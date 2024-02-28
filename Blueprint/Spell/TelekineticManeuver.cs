@@ -67,6 +67,8 @@ namespace PrestigePlus.Blueprint.Spell
               .SetIcon(icon)
               .SetLocalizedDuration(AbilityRefs.Haste.Reference.Get().LocalizedDuration)
               .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+              .SetSpellResistance(true)
+              //.SetIgnoreSpellResistanceForAlly(true)
               .SetAnimation(CastAnimationStyle.Omni)
               .SetRange(AbilityRange.Personal)
               .SetType(AbilityType.Spell)

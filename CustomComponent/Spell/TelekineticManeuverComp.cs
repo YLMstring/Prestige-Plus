@@ -36,9 +36,9 @@ namespace PrestigePlus.CustomComponent.Spell
 
         void IRulebookHandler<RuleCombatManeuver>.OnEventAboutToTrigger(RuleCombatManeuver evt)
         {
-            //var cont = Buff.Context?.SourceAbilityContext;
-            var abilitydata = new AbilityData(Spell, Owner);
-            var cont = abilitydata.CreateExecutionContext(Owner, null);
+            var cont = Buff.Context?.SourceAbilityContext;
+            //var abilitydata = new AbilityData(Spell, Owner);
+            //var cont = abilitydata.CreateExecutionContext(Owner, null);
             if (Rulebook.Trigger(new RuleSpellResistanceCheck(cont, evt.Target)).IsSpellResisted)
             {
                 evt.AutoFailure = true;

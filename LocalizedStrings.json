@@ -11685,7 +11685,7 @@
   {
     "Key": "NewSpellRovagugFury.Description",
     "enGB": "You create a minor earthquake that can trip creatures. Attempt combat maneuver checks against every creature in the area. This trip attack does not provoke an attack of opportunity (though you do provoke one for casting the spell).",
-    "zhCN": "你创造一阵可以摔绊生物的轻微地震。对区域内所有生物进行一次摔绊攻击检定。你不会因为这次摔绊攻击而引发借机攻击（但是施放此法术仍会引发借机攻击）。"
+    "zhCN": "你创造一阵可以摔绊生物的轻微地震。对区域内所有生物进行一次摔绊攻击检定。你不会因为这次摔绊攻击而引发借机攻击（但是施放此法术可能会引发借机攻击）。"
   },
   {
     "Key": "NewSpellHydraulicTorrent.Name",
