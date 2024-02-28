@@ -1,4 +1,4 @@
-# Prestige Plus v2.8.1 for WoTR 
+# Prestige Plus v2.8.2 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -291,6 +291,7 @@
 - [Snatch Arrows](https://www.d20pfsrd.com/feats/combat-feats/snatch-arrows-combat) (thrown back only)
 - [Deflect Arrows (Mythic)](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-feats/deflect-arrows-mythic/): You deflect projectiles and ray spells with uncanny skill. When using Deflect Arrows, you can deflect an additional number of ranged attacks per round equal to half your tier. You can also deflect a single ray from a ray spell or effect targeting you.
 - [Racial Heritage (Mythic)](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-feats/racial-heritage-mythic/): Celestial Crusader, Negative Energy Affinity, Champion of Dark Powers, Multi-Armed and Kitsune Magic!
+- [Strike True](https://www.aonprd.com/FeatDisplay.aspx?ItemName=Strike%20True)
 ### Trip Feats
 - [Vindictive Fall](https://www.d20pfsrd.com/feats/general-feats/vindictive-fall/)
 - [Ranged Trip](https://www.d20pfsrd.com/feats/combat-feats/ranged-trip-combat-targeting)
@@ -342,6 +343,14 @@
 - It has nothing to do with your own alignment, or any other auras you might have.
 - [Shield Other](https://www.d20pfsrd.com/magic/all-spells/s/shield-other/)
 - Use a move action to end the spell instead of moving out of range, so that you won't lose it during cutscene, tavern etc.
+- [Inheritor's Smite](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Inheritor%27s%20Smite): requires worshipping Iomedae
+- [Rovagug's Fury](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Inheritor%27s%20Smite): requires worshipping Rovagug
+- [Hydraulic Torrent](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Hydraulic%20Torrent)
+- Where is Hydraulic Push? In [Expanded Content](https://github.com/ka-dyn/ExpandedContent)!
+- [Thunderstomp](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Thunderstomp,%20Greater) and Greater!
+- [Telekinetic Maneuver](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Telekinetic%20Maneuver)
+- [Linebreaker](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Linebreaker)
+- [Blade Lash](https://www.d20pfsrd.com/magic/all-spells/b/blade-lash/)
 ### New Mythic Prestige Class Features
 
 - Swift Death: Your Death Attack becomes a standard action. At 10th assassin level, it becomes a move action.
