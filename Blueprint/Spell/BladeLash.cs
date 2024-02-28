@@ -17,6 +17,8 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using static Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell;
 using Kingmaker.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
+using Kingmaker.UnitLogic.Abilities.Components;
+using PrestigePlus.CustomAction.OtherManeuver;
 
 namespace PrestigePlus.Blueprint.Spell
 {
@@ -25,30 +27,14 @@ namespace PrestigePlus.Blueprint.Spell
         private const string BladeLashAbility = "NewSpell.UseBladeLash";
         public static readonly string BladeLashAbilityGuid = "{01346696-ECFF-4F51-8BB2-1D9DCA00041B}";
 
-        private const string BladeLashBuff = "NewSpell.BladeLashBuff";
-        private static readonly string BladeLashBuffGuid = "{64C6A71F-E46B-4E18-812E-4B1CB3C2BCC5}";
-
         internal const string DisplayName = "NewSpellBladeLash.Name";
         private const string Description = "NewSpellBladeLash.Description";
         public static void Configure()
         {
             var icon = AbilityRefs.BladeWhirlwindAbility.Reference.Get().Icon;
 
-            var action2 = ActionsBuilder.New()
-                .RemoveSelf()
-                .Build();
-
-            var buff = BuffConfigurator.New(BladeLashBuff, BladeLashBuffGuid)
-              .SetDisplayName(DisplayName)
-              .SetDescription(Description)
-              .SetIcon(icon)
-              .AddCMBBonusForManeuver(maneuvers: new[] { Kingmaker.RuleSystem.Rules.CombatManeuver.Trip }, value: 10)
-              .AddManeuverTrigger(action2)
-              .Configure();
-
             var action = ActionsBuilder.New()
-                .ApplyBuff(buff, ContextDuration.Fixed(1), toCaster: true)
-                .CombatManeuver(ActionsBuilder.New().Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.Trip)
+                .Add<ContextActionPPmaneuver>(c => { c.Maneuver = Kingmaker.RuleSystem.Rules.CombatManeuver.Trip; c.Penalty = 10; c.Mod = ModifierDescriptor.UntypedStackable; c.useWeapon = true; })
                 .Build();
 
             AbilityConfigurator.NewSpell(
@@ -57,8 +43,8 @@ namespace PrestigePlus.Blueprint.Spell
               .SetDescription(Description)
               .SetIcon(icon)
               .AllowTargeting(false, true, false, false)
-              .SetAnimation(CastAnimationStyle.Immediate)
-              .AddComponent(AbilityRefs.DazzlingDisplayAction.Reference.Get().GetComponent<AbilitySpawnFx>())
+              .SetAnimation(CastAnimationStyle.Special)
+              .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.Sithhud_SwordTraceLine00.ToString() }, type: AbilityProjectileType.Simple, needAttackRoll: false)
               .SetRange(AbilityRange.Custom)
               .SetCustomRange(20)
               .SetType(AbilityType.Spell)

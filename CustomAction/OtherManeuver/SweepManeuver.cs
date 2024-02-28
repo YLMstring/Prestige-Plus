@@ -19,6 +19,7 @@ using PrestigePlus.Blueprint.SpecificManeuver;
 using Kingmaker.Designers;
 using Kingmaker.Utility;
 using static Pathfinding.Util.RetainedGizmos;
+using Kingmaker.Enums;
 
 namespace PrestigePlus.CustomAction.OtherManeuver
 {
@@ -57,12 +58,12 @@ namespace PrestigePlus.CustomAction.OtherManeuver
             ActManeuver(Context.MaybeCaster, list.First(), -5);
         }
 
-        public static bool ActManeuver(UnitEntityData caster, UnitEntityData target, int penalty, CombatManeuver maneuver = CombatManeuver.Disarm, ItemEntityWeapon weapon = null, RuleRollD20 roll = null)
+        public static bool ActManeuver(UnitEntityData caster, UnitEntityData target, int penalty, CombatManeuver maneuver = CombatManeuver.Disarm, ItemEntityWeapon weapon = null, RuleRollD20 roll = null, ModifierDescriptor mod = ModifierDescriptor.Penalty)
         {
             if (maneuver == CombatManeuver.None) { return false; }
             weapon ??= caster.Body.EmptyHandWeapon;
             var AttackBonusRule = new RuleCalculateAttackBonus(caster, target, weapon, 0) { };
-            AttackBonusRule.AddModifier(penalty, descriptor: Kingmaker.Enums.ModifierDescriptor.Penalty);
+            AttackBonusRule.AddModifier(penalty, descriptor: mod);
             ContextActionCombatTrickery.TriggerMRule(ref AttackBonusRule);
             RuleCombatManeuver ruleCombatManeuver = new(caster, target, maneuver, AttackBonusRule);
             if (roll != null)
