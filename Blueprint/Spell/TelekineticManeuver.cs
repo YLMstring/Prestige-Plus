@@ -37,19 +37,14 @@ namespace PrestigePlus.Blueprint.Spell
         {
             var icon = AbilityRefs.TelekineticFist.Reference.Get().Icon;
 
-            var action2 = ActionsBuilder.New()
-                .RemoveSelf()
-                .Build();
-
             var buff2 = BuffConfigurator.New(TelekineticManeuverBuff2, TelekineticManeuverBuff2Guid)
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddFacts(new() { AbilityRefs.BullRushAction.ToString(), AbilityRefs.DisarmAction.ToString(), AbilityRefs.TripAction.ToString(), ImprovedGrapple.StyleAbilityGuid })
-              .AddAutoMetamagic(new() { AbilityRefs.BullRushAction.ToString(), AbilityRefs.DisarmAction.ToString(), AbilityRefs.TripAction.ToString(), ImprovedGrapple.StyleAbilityGuid },
+              .AddAutoMetamagic(new() { AbilityRefs.BullRushAction.ToString(), AbilityRefs.DisarmAction.ToString(), AbilityRefs.TripAction.ToString() },
               metamagic: Metamagic.Reach, allowedAbilities: Kingmaker.Designers.Mechanics.Facts.AutoMetamagic.AllowedType.Any, once: false)
-              .AddManeuverTrigger(action2)
               .AddComponent<TelekineticManeuverComp>()
               .Configure();
 
