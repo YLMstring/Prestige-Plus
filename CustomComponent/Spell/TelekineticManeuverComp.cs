@@ -1,8 +1,14 @@
-﻿using Kingmaker.PubSubSystem;
+﻿using BlueprintCore.Blueprints.References;
+using BlueprintCore.Utils;
+using Kingmaker.Blueprints;
+using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic;
+using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Buffs.Components;
+using PrestigePlus.Blueprint.Feat;
+using PrestigePlus.Blueprint.Spell;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -30,13 +36,16 @@ namespace PrestigePlus.CustomComponent.Spell
 
         void IRulebookHandler<RuleCombatManeuver>.OnEventAboutToTrigger(RuleCombatManeuver evt)
         {
-            var cont = Buff.Context?.SourceAbilityContext;
-            if (cont == null) { return; }
+            //var cont = Buff.Context?.SourceAbilityContext;
+            var abilitydata = new AbilityData(Spell, Owner);
+            var cont = abilitydata.CreateExecutionContext(Owner, null);
             if (Rulebook.Trigger(new RuleSpellResistanceCheck(cont, evt.Target)).IsSpellResisted)
             {
                 evt.AutoFailure = true;
             }
         }
+
+        private static BlueprintAbilityReference Spell = BlueprintTool.GetRef<BlueprintAbilityReference>(TelekineticManeuver.TelekineticManeuverAbilityGuid);
 
         void IRulebookHandler<RuleCombatManeuver>.OnEventDidTrigger(RuleCombatManeuver evt)
         {
