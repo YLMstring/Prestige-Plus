@@ -31,7 +31,7 @@ namespace PrestigePlus.Blueprint.Spell
         private const string Description = "NewSpellLinebreaker.Description";
         public static void Configure()
         {
-            var icon = AbilityRefs.BaphometPowerfulChargeAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.OverrunAbility.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(LinebreakerBuff, LinebreakerBuffGuid)
               .SetDisplayName(DisplayName)
@@ -48,6 +48,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetAnimation(CastAnimationStyle.Omni)
               .SetRange(AbilityRange.Personal)
               .SetType(AbilityType.Spell)
+              .SetLocalizedDuration(AbilityRefs.EnlargePerson.Reference.Get().LocalizedDuration)
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Extend, Metamagic.Quicken)
               .AddToSpellLists(level: 1, SpellList.Alchemist)
               .AddToSpellLists(level: 1, SpellList.Inquisitor)
