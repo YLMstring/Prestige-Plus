@@ -35,7 +35,7 @@ namespace PrestigePlus.Blueprint.Spell
         private const string Description = "NewSpellTelekineticManeuver.Description";
         public static void Configure()
         {
-            var icon = AbilityRefs.TelekineticBurstPull.Reference.Get().Icon;
+            var icon = AbilityRefs.TelekineticFist.Reference.Get().Icon;
 
             var action2 = ActionsBuilder.New()
                 .RemoveSelf()
@@ -46,7 +46,6 @@ namespace PrestigePlus.Blueprint.Spell
               .SetDescription(Description)
               .SetIcon(icon)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-              .AddFacts(new() { PinAbilityGuid1, TieUpAbilityGuid, ReadyAbilityGuid, ReleaseAbilityGuid })
               .AddFacts(new() { AbilityRefs.BullRushAction.ToString(), AbilityRefs.DisarmAction.ToString(), AbilityRefs.TripAction.ToString(), ImprovedGrapple.StyleAbilityGuid })
               .AddAutoMetamagic(new() { AbilityRefs.BullRushAction.ToString(), AbilityRefs.DisarmAction.ToString(), AbilityRefs.TripAction.ToString(), ImprovedGrapple.StyleAbilityGuid },
               metamagic: Metamagic.Reach, allowedAbilities: Kingmaker.Designers.Mechanics.Facts.AutoMetamagic.AllowedType.Any, once: false)
@@ -63,6 +62,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetDescription(Description)
               .SetIcon(icon)
               .AddNewRoundTrigger(newRoundActions: action)
+              .AddFacts(new() { PinAbilityGuid1, TieUpAbilityGuid, ReadyAbilityGuid, ReleaseAbilityGuid })
               .Configure();
 
             AbilityConfigurator.NewSpell(
@@ -70,6 +70,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
+              .SetLocalizedDuration(AbilityRefs.Haste.Reference.Get().LocalizedDuration)
               .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
               .SetAnimation(CastAnimationStyle.Omni)
               .SetRange(AbilityRange.Personal)
