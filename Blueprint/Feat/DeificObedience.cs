@@ -68,6 +68,7 @@ using TabletopTweaks.Core.NewComponents.OwlcatReplacements;
 using TabletopTweaks.Core.NewActions;
 using static Kingmaker.Armies.TacticalCombat.Grid.TacticalCombatGrid;
 using Kingmaker.Designers.EventConditionActionSystem.Actions;
+using Kingmaker.UnitLogic.Abilities.Components.AreaEffects;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -142,6 +143,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(LanternKingFeat())
               .AddToAllFeatures(GozrehFeat())
               .AddToAllFeatures(CalistriaFeat())
+              .AddToAllFeatures(MrtyuFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -4211,29 +4213,30 @@ namespace PrestigePlus.Blueprint.Feat
         }
 
         private const string Mrtyu1 = "SpellPower.Mrtyu1";
-        public static readonly string Mrtyu1Guid = "{71FF444A-0247-4EDA-984F-0834A543118B}";
+        public static readonly string Mrtyu1Guid = "{AD91925B-9F29-4E33-ADFE-495BD3C3FC2D}";
         internal const string Mrtyu1DisplayName = "SpellPowerMrtyu1.Name";
         private const string Mrtyu1Description = "SpellPowerMrtyu1.Description";
 
         private const string Mrtyu1Ablity = "SpellPower.UseMrtyu1";
-        private static readonly string Mrtyu1AblityGuid = "{017CEA4D-D232-4393-9D3B-290DA4817D04}";
+        private static readonly string Mrtyu1AblityGuid = "{D42FA85B-EC85-4E05-AB62-73951D405474}";
 
         private const string Mrtyu1Ablity2 = "SpellPower.UseMrtyu12";
-        private static readonly string Mrtyu1Ablity2Guid = "{DE7C5484-6EE6-42C8-A536-82C9233AAB73}";
+        private static readonly string Mrtyu1Ablity2Guid = "{39A20104-D22B-4586-A2DD-C6EE4ED97FBB}";
 
         private const string Mrtyu1Ablity3 = "SpellPower.UseMrtyu13";
-        private static readonly string Mrtyu1Ablity3Guid = "{20541493-3B03-4E89-AF94-2D90DCCB1915}";
+        private static readonly string Mrtyu1Ablity3Guid = "{7012979E-12FF-4898-9A49-A909F00938B1}";
 
         private static BlueprintFeature CreateMrtyu1()
         {
-            var icon = AbilityRefs.BlessWeaponCast.Reference.Get().Icon;
+            var icon = AbilityRefs.Aid.Reference.Get().Icon;
 
             var ability = AbilityConfigurator.New(Mrtyu1Ablity, Mrtyu1AblityGuid)
                 .CopyFrom(
-                AbilityRefs.BlessWeaponCast,
+                AbilityRefs.RemoveFear,
                 typeof(AbilityEffectRunAction),
                 typeof(SpellComponent),
-                typeof(AbilityEffectStickyTouch))
+                typeof(AbilitySpawnFx),
+                typeof(AbilityTargetsAround))
                 .AddPretendSpellLevel(spellLevel: 1)
                 .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
                 .SetType(AbilityType.SpellLike)
@@ -4241,10 +4244,11 @@ namespace PrestigePlus.Blueprint.Feat
 
             var ability2 = AbilityConfigurator.New(Mrtyu1Ablity2, Mrtyu1Ablity2Guid)
                 .CopyFrom(
-                LitanyRighteousness.LitanyRighteousnessAbilityGuid,
+                AbilityRefs.Aid,
                 typeof(AbilityEffectRunAction),
                 typeof(SpellComponent),
-                typeof(AbilityTargetAlignment))
+                typeof(AbilitySpawnFx),
+                typeof(AbilityTargetHasFact))
                 .AddPretendSpellLevel(spellLevel: 2)
                 .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
                 .SetType(AbilityType.SpellLike)
@@ -4252,10 +4256,10 @@ namespace PrestigePlus.Blueprint.Feat
 
             var ability3 = AbilityConfigurator.New(Mrtyu1Ablity3, Mrtyu1Ablity3Guid)
                 .CopyFrom(
-                AbilityRefs.MagicalVestment,
+                AbilityRefs.RemoveBlindness,
                 typeof(AbilityEffectRunAction),
                 typeof(SpellComponent),
-                typeof(AbilityVariants))
+                typeof(AbilitySpawnFx))
                 .AddPretendSpellLevel(spellLevel: 3)
                 .AddAbilityResourceLogic(6, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
                 .SetType(AbilityType.SpellLike)
@@ -4270,88 +4274,103 @@ namespace PrestigePlus.Blueprint.Feat
         }
 
         private const string Mrtyu2 = "DeificObedience.Mrtyu2";
-        public static readonly string Mrtyu2Guid = "{201A980B-8B20-4F6D-95FD-45EB312A2BC9}";
+        public static readonly string Mrtyu2Guid = "{4EAE893C-9CB9-4FCB-889F-588F5B81ACE5}";
 
         internal const string Mrtyu2DisplayName = "DeificObedienceMrtyu2.Name";
         private const string Mrtyu2Description = "DeificObedienceMrtyu2.Description";
-
-        private const string Mrtyu2Buff = "DeificObedience.Mrtyu2Buff";
-        private static readonly string Mrtyu2BuffGuid = "{480E3197-84B0-4688-859B-83A698270DE5}";
         public static BlueprintFeature Mrtyu2Feat()
         {
-            var icon = AbilityRefs.VengefulComets.Reference.Get().Icon;
-
-            var Buff = BuffConfigurator.New(Mrtyu2Buff, Mrtyu2BuffGuid)
-             .SetDisplayName(Mrtyu2DisplayName)
-             .SetDescription(Mrtyu2Description)
-             .SetIcon(icon)
-             .AddUniqueBuff()
-             .AddComponent<MrtyuRetribution>()
-             .Configure();
-
-            var action = ActionsBuilder.New().ApplyBuff(Buff, ContextDuration.Fixed(1, Kingmaker.UnitLogic.Mechanics.DurationRate.Days)).Build();
+            var icon = FeatureRefs.PharasmaFeature.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Mrtyu2, Mrtyu2Guid)
               .SetDisplayName(Mrtyu2DisplayName)
               .SetDescription(Mrtyu2Description)
               .SetIcon(icon)
-              .AddTargetAttackWithWeaponTrigger(actionsOnAttacker: action, onlyHit: true)
+              .AddClassSkill(StatType.SkillPerception)
+              .AddClassSkill(StatType.SkillPersuasion)
+              .AddContextStatBonus(StatType.SkillPerception, ContextValues.Rank())
+              .AddContextStatBonus(StatType.CheckDiplomacy, ContextValues.Rank())
+              .AddContextRankConfig(ContextRankConfigs.CharacterLevel().WithDiv2Progression())
+              .SetReapplyOnLevelUp(true)
               .Configure();
         }
 
         private const string Mrtyu3 = "DeificObedience.Mrtyu3";
-        public static readonly string Mrtyu3Guid = "{81F099E2-AE6A-402C-A7EE-46A22F9A7CFE}";
+        public static readonly string Mrtyu3Guid = "{1DE1BA26-2E75-4294-8783-DA79E5C128F9}";
 
         internal const string Mrtyu3DisplayName = "DeificObedienceMrtyu3.Name";
         private const string Mrtyu3Description = "DeificObedienceMrtyu3.Description";
 
         private const string Mrtyu3Buff = "DeificObedience.Mrtyu3Buff";
-        private static readonly string Mrtyu3BuffGuid = "{4C22DFD8-EBAA-4809-A23C-D838D4A98DFE}";
+        private static readonly string Mrtyu3BuffGuid = "{4351894D-3045-478E-9DC1-FEF2169A105D}";
 
         private const string Mrtyu3Res = "DeificObedience.Mrtyu3Res";
-        private static readonly string Mrtyu3ResGuid = "{9D7F9008-4F6F-4151-B2D7-857A8429DEF0}";
+        private static readonly string Mrtyu3ResGuid = "{802CD1D4-A62B-487D-8CAD-75332FDF2C06}";
+
+        private const string Mrtyu3Area = "DeificObedience.Mrtyu3Area";
+        private static readonly string Mrtyu3AreaGuid = "{93DEF362-0550-4D46-B343-37C703D420A2}";
 
         private const string Mrtyu3Ability = "DeificObedience.Mrtyu3Ability";
-        private static readonly string Mrtyu3AbilityGuid = "{8DD276F2-A592-48B0-B316-53BEE2919AAC}";
+        private static readonly string Mrtyu3AbilityGuid = "{DB9898B4-2B24-4ABD-87B6-D533FB97D675}";
+
+        private const string Mrtyu3Ability2 = "DeificObedience.Mrtyu3Ability2";
+        private static readonly string Mrtyu3Ability2Guid = "{333F9100-6F34-4161-9DF3-9B875D5D78C0}";
         public static BlueprintFeature Mrtyu3Feat()
         {
-            var icon = AbilityRefs.HolyAura.Reference.Get().Icon;
+            var icon = AbilityRefs.BladeBarrier.Reference.Get().Icon;
+
+            var area = AbilityAreaEffectConfigurator.New(Mrtyu3Area, Mrtyu3AreaGuid)
+                .CopyFrom(
+                AbilityAreaEffectRefs.BladeBarrierArea,
+                typeof(AbilityAreaEffectRunAction),
+                typeof(ContextRankConfigs))
+                .Configure();
 
             var abilityresourse = AbilityResourceConfigurator.New(Mrtyu3Res, Mrtyu3ResGuid)
                 .SetMaxAmount(ResourceAmountBuilder.New(1))
                 .Configure();
 
+            var ability2 = AbilityConfigurator.New(Mrtyu3Ability2, Mrtyu3Ability2Guid)
+                .SetDisplayName(Mrtyu3DisplayName)
+                .SetDescription(Mrtyu3Description)
+                .SetIcon(icon)
+                .AllowTargeting(true, false, false, false)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .Add<ChangeAreaLocation>(c => { c.area = area; })
+                        .Build())
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Point)
+                .SetRange(AbilityRange.Close)
+                .SetType(AbilityType.Special)
+                .Configure();
+
+            var Buff = BuffConfigurator.New(Mrtyu3Buff, Mrtyu3BuffGuid)
+                .SetDisplayName(Mrtyu3DisplayName)
+                .SetDescription(Mrtyu3Description)
+                .SetIcon(icon)
+                .AddFacts(new() { ability2 })
+                .Configure();
+
             var ability = AbilityConfigurator.New(Mrtyu3Ability, Mrtyu3AbilityGuid)
                 .CopyFrom(
-                AbilityRefs.HolyAura,
-                typeof(AbilityEffectRunAction),
+                AbilityRefs.BladeBarrier,
                 typeof(SpellComponent),
                 typeof(SpellDescriptorComponent),
                 typeof(AbilitySpawnFx),
                 typeof(ContextRankConfigs))
-                .SetDisplayName(Mrtyu3DisplayName)
-                .SetDescription(Mrtyu3Description)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .SpawnAreaEffect(area, ContextDuration.Variable(ContextValues.Rank()), false)
+                        .ApplyBuff(Buff, ContextDuration.Variable(ContextValues.Rank()), toCaster: true)
+                        .ApplyBuff(BuffRefs.BladeBarrierCasterBuff.ToString(), ContextDuration.Variable(ContextValues.Rank()), toCaster: true)
+                        .Build())
                 .SetType(AbilityType.SpellLike)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .Configure();
-
-            var Buff = BuffConfigurator.New(Mrtyu3Buff, Mrtyu3BuffGuid)
-             .SetDisplayName(Mrtyu3DisplayName)
-             .SetDescription(Mrtyu3Description)
-             .SetIcon(icon)
-             .AddDamageResistancePhysical(Kingmaker.Enums.Damage.DamageAlignment.Good, bypassedByAlignment: true, isStackable: true, value: ContextValues.Constant(10), material: Kingmaker.Enums.Damage.PhysicalDamageMaterial.ColdIron, bypassedByMaterial: true)
-             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Holy.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.PrimaryHand)
-             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Holy.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.SecondaryHand)
-             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Enhancement5.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.PrimaryHand)
-             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Enhancement5.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.SecondaryHand)
-             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-             .Configure();
 
             return FeatureConfigurator.New(Mrtyu3, Mrtyu3Guid)
               .SetDisplayName(Mrtyu3DisplayName)
               .SetDescription(Mrtyu3Description)
               .SetIcon(icon)
-              .AddBuffExtraEffects(BuffRefs.HolyAuraBuff.ToString(), null, Buff, true)
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .AddFacts(new() { ability })
               .Configure();
