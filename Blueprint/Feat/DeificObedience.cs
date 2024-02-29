@@ -4191,9 +4191,9 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteAlignment(AlignmentMaskType.TrueNeutral, group: Prerequisite.GroupType.Any)
               .SetGiveFeaturesForPreviousLevels(true)
               .AddToLevelEntry(1, Mrtyu0Feat())
-              .AddToLevelEntry(12, CreateMrtyu1())
-              .AddToLevelEntry(16, Mrtyu2Feat())
-              .AddToLevelEntry(20, Mrtyu3Feat())
+              .AddToLevelEntry(2, CreateMrtyu1())
+              .AddToLevelEntry(6, Mrtyu2Feat())
+              .AddToLevelEntry(10, Mrtyu3Feat())
               .Configure();
         }
 
@@ -4370,6 +4370,177 @@ namespace PrestigePlus.Blueprint.Feat
             return FeatureConfigurator.New(Mrtyu3, Mrtyu3Guid)
               .SetDisplayName(Mrtyu3DisplayName)
               .SetDescription(Mrtyu3Description)
+              .SetIcon(icon)
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string Mephistopheles = "DeificObedience.Mephistopheles";
+        public static readonly string MephistophelesGuid = "{D2E2CE1F-44F0-4DAB-85F3-077006BA3AA6}";
+
+        internal const string MephistophelesDisplayName = "DeificObedienceMephistopheles.Name";
+        private const string MephistophelesDescription = "DeificObedienceMephistopheles.Description";
+        public static BlueprintProgression MephistophelesFeat()
+        {
+            //"MephistophelesFeature": "3A4522E2-7F08-43E1-ACCD-0733BA18C427",
+            var icon = AbilityRefs.WarpriestAspectOfWarAbility.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(Mephistopheles, MephistophelesGuid)
+              .SetDisplayName(MephistophelesDisplayName)
+              .SetDescription(MephistophelesDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature("3A4522E2-7F08-43E1-ACCD-0733BA18C427", group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.LawfulEvil, group: Prerequisite.GroupType.Any)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(1, Mephistopheles0Feat())
+              .AddToLevelEntry(2, CreateMephistopheles1())
+              .AddToLevelEntry(6, Mephistopheles3Feat())
+              .AddToLevelEntry(10, Mephistopheles2Feat())
+              .Configure();
+        }
+
+        private const string Mephistopheles0 = "DeificObedience.Mephistopheles0";
+        public static readonly string Mephistopheles0Guid = "{ED087F76-B03F-4CB4-A8F1-426468425CC9}";
+
+        public static BlueprintFeature Mephistopheles0Feat()
+        {
+            var icon = AbilityRefs.WarpriestAspectOfWarAbility.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Mephistopheles0, Mephistopheles0Guid)
+              .SetDisplayName(MephistophelesDisplayName)
+              .SetDescription(MephistophelesDescription)
+              .SetIcon(icon)
+              .AddStatBonus(ModifierDescriptor.Profane, false, StatType.CheckDiplomacy, 4)
+              .Configure();
+        }
+
+        private const string Mephistopheles1 = "SpellPower.Mephistopheles1";
+        public static readonly string Mephistopheles1Guid = "{8EFB95AB-E0AB-4118-A99C-0B285F2B9AA8}";
+        internal const string Mephistopheles1DisplayName = "SpellPowerMephistopheles1.Name";
+        private const string Mephistopheles1Description = "SpellPowerMephistopheles1.Description";
+
+        private const string Mephistopheles1Ablity = "SpellPower.UseMephistopheles1";
+        private static readonly string Mephistopheles1AblityGuid = "{5E01FB58-157D-454F-8E65-F0CC0E3C1D54}";
+        private static BlueprintFeature CreateMephistopheles1()
+        {
+            var icon = AbilityRefs.Hypnotism.Reference.Get().Icon;
+
+            var ability = AbilityConfigurator.New(Mephistopheles1Ablity, Mephistopheles1AblityGuid)
+                .CopyFrom(
+                AbilityRefs.Hypnotism,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(ContextCalculateSharedValue),
+                typeof(AbilitySpawnFx),
+                typeof(AbilityTargetsAround))
+                .AddPretendSpellLevel(spellLevel: 1)
+                .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Mephistopheles1, Mephistopheles1Guid)
+              .SetDisplayName(Mephistopheles1DisplayName)
+              .SetDescription(Mephistopheles1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string Mephistopheles2 = "DeificObedience.Mephistopheles2";
+        public static readonly string Mephistopheles2Guid = "{E72EFFB7-86CE-46A7-A1E7-845FE159570F}";
+
+        internal const string Mephistopheles2DisplayName = "DeificObedienceMephistopheles2.Name";
+        private const string Mephistopheles2Description = "DeificObedienceMephistopheles2.Description";
+        public static BlueprintFeature Mephistopheles2Feat()
+        {
+            var icon = FeatureRefs.PharasmaFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Mephistopheles2, Mephistopheles2Guid)
+              .SetDisplayName(Mephistopheles2DisplayName)
+              .SetDescription(Mephistopheles2Description)
+              .SetIcon(icon)
+              .AddReplaceStatBaseAttribute()
+              .AddIncreaseSpellDescriptorDC(2, SpellDescriptor.Charm, spellsOnly: true)
+              .Configure();
+        }
+
+        private const string Mephistopheles3 = "DeificObedience.Mephistopheles3";
+        public static readonly string Mephistopheles3Guid = "{1DE1BA26-2E75-4294-8783-DA79E5C128F9}";
+
+        internal const string Mephistopheles3DisplayName = "DeificObedienceMephistopheles3.Name";
+        private const string Mephistopheles3Description = "DeificObedienceMephistopheles3.Description";
+
+        private const string Mephistopheles3Buff = "DeificObedience.Mephistopheles3Buff";
+        private static readonly string Mephistopheles3BuffGuid = "{4351894D-3045-478E-9DC1-FEF2169A105D}";
+
+        private const string Mephistopheles3Res = "DeificObedience.Mephistopheles3Res";
+        private static readonly string Mephistopheles3ResGuid = "{802CD1D4-A62B-487D-8CAD-75332FDF2C06}";
+
+        private const string Mephistopheles3Area = "DeificObedience.Mephistopheles3Area";
+        private static readonly string Mephistopheles3AreaGuid = "{93DEF362-0550-4D46-B343-37C703D420A2}";
+
+        private const string Mephistopheles3Ability = "DeificObedience.Mephistopheles3Ability";
+        private static readonly string Mephistopheles3AbilityGuid = "{DB9898B4-2B24-4ABD-87B6-D533FB97D675}";
+
+        private const string Mephistopheles3Ability2 = "DeificObedience.Mephistopheles3Ability2";
+        private static readonly string Mephistopheles3Ability2Guid = "{333F9100-6F34-4161-9DF3-9B875D5D78C0}";
+        public static BlueprintFeature Mephistopheles3Feat()
+        {
+            var icon = AbilityRefs.BladeBarrier.Reference.Get().Icon;
+
+            var area = AbilityAreaEffectConfigurator.New(Mephistopheles3Area, Mephistopheles3AreaGuid)
+                .CopyFrom(
+                AbilityAreaEffectRefs.BladeBarrierArea,
+                typeof(AbilityAreaEffectRunAction),
+                typeof(ContextRankConfigs))
+                .Configure();
+
+            var abilityresourse = AbilityResourceConfigurator.New(Mephistopheles3Res, Mephistopheles3ResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(Mephistopheles3Ability2, Mephistopheles3Ability2Guid)
+                .SetDisplayName(Mephistopheles3DisplayName)
+                .SetDescription(Mephistopheles3Description)
+                .SetIcon(icon)
+                .AllowTargeting(true, false, false, false)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .Add<ChangeAreaLocation>(c => { c.area = area; })
+                        .Build())
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Point)
+                .SetRange(AbilityRange.Close)
+                .SetType(AbilityType.Special)
+                .Configure();
+
+            var Buff = BuffConfigurator.New(Mephistopheles3Buff, Mephistopheles3BuffGuid)
+                .SetDisplayName(Mephistopheles3DisplayName)
+                .SetDescription(Mephistopheles3Description)
+                .SetIcon(icon)
+                .AddFacts(new() { ability2 })
+                .Configure();
+
+            var ability = AbilityConfigurator.New(Mephistopheles3Ability, Mephistopheles3AbilityGuid)
+                .CopyFrom(
+                AbilityRefs.BladeBarrier,
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(AbilitySpawnFx),
+                typeof(ContextRankConfigs))
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .SpawnAreaEffect(area, ContextDuration.Variable(ContextValues.Rank()), false)
+                        .ApplyBuff(Buff, ContextDuration.Variable(ContextValues.Rank()), toCaster: true)
+                        .ApplyBuff(BuffRefs.BladeBarrierCasterBuff.ToString(), ContextDuration.Variable(ContextValues.Rank()), toCaster: true)
+                        .Build())
+                .SetType(AbilityType.SpellLike)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .Configure();
+
+            return FeatureConfigurator.New(Mephistopheles3, Mephistopheles3Guid)
+              .SetDisplayName(Mephistopheles3DisplayName)
+              .SetDescription(Mephistopheles3Description)
               .SetIcon(icon)
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .AddFacts(new() { ability })
