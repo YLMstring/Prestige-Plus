@@ -4463,13 +4463,12 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(Mephistopheles2DisplayName)
               .SetDescription(Mephistopheles2Description)
               .SetIcon(icon)
-              .AddReplaceStatBaseAttribute()
               .AddIncreaseSpellDescriptorDC(2, SpellDescriptor.Charm, spellsOnly: true)
               .Configure();
         }
 
         private const string Mephistopheles3 = "DeificObedience.Mephistopheles3";
-        public static readonly string Mephistopheles3Guid = "{668B81F5-DEA9-48D5-B277-B956606CA646}";
+        public static readonly string Mephistopheles3Guid = "{F47A6488-187E-4526-9198-8795EF63A218}";
 
         internal const string Mephistopheles3DisplayName = "DeificObedienceMephistopheles3.Name";
         private const string Mephistopheles3Description = "DeificObedienceMephistopheles3.Description";
