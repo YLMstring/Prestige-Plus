@@ -69,6 +69,7 @@ using TabletopTweaks.Core.NewActions;
 using static Kingmaker.Armies.TacticalCombat.Grid.TacticalCombatGrid;
 using Kingmaker.Designers.EventConditionActionSystem.Actions;
 using Kingmaker.UnitLogic.Abilities.Components.AreaEffects;
+using PrestigePlus.Feats;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -4449,13 +4450,13 @@ namespace PrestigePlus.Blueprint.Feat
         }
 
         private const string Mephistopheles2 = "DeificObedience.Mephistopheles2";
-        public static readonly string Mephistopheles2Guid = "{E72EFFB7-86CE-46A7-A1E7-845FE159570F}";
+        public static readonly string Mephistopheles2Guid = "{54EF09AA-4D4A-4D64-9E03-AA64D329948B}";
 
         internal const string Mephistopheles2DisplayName = "DeificObedienceMephistopheles2.Name";
         private const string Mephistopheles2Description = "DeificObedienceMephistopheles2.Description";
         public static BlueprintFeature Mephistopheles2Feat()
         {
-            var icon = FeatureRefs.PharasmaFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.InquisitorJudgements.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Mephistopheles2, Mephistopheles2Guid)
               .SetDisplayName(Mephistopheles2DisplayName)
@@ -4467,83 +4468,20 @@ namespace PrestigePlus.Blueprint.Feat
         }
 
         private const string Mephistopheles3 = "DeificObedience.Mephistopheles3";
-        public static readonly string Mephistopheles3Guid = "{1DE1BA26-2E75-4294-8783-DA79E5C128F9}";
+        public static readonly string Mephistopheles3Guid = "{668B81F5-DEA9-48D5-B277-B956606CA646}";
 
         internal const string Mephistopheles3DisplayName = "DeificObedienceMephistopheles3.Name";
         private const string Mephistopheles3Description = "DeificObedienceMephistopheles3.Description";
-
-        private const string Mephistopheles3Buff = "DeificObedience.Mephistopheles3Buff";
-        private static readonly string Mephistopheles3BuffGuid = "{4351894D-3045-478E-9DC1-FEF2169A105D}";
-
-        private const string Mephistopheles3Res = "DeificObedience.Mephistopheles3Res";
-        private static readonly string Mephistopheles3ResGuid = "{802CD1D4-A62B-487D-8CAD-75332FDF2C06}";
-
-        private const string Mephistopheles3Area = "DeificObedience.Mephistopheles3Area";
-        private static readonly string Mephistopheles3AreaGuid = "{93DEF362-0550-4D46-B343-37C703D420A2}";
-
-        private const string Mephistopheles3Ability = "DeificObedience.Mephistopheles3Ability";
-        private static readonly string Mephistopheles3AbilityGuid = "{DB9898B4-2B24-4ABD-87B6-D533FB97D675}";
-
-        private const string Mephistopheles3Ability2 = "DeificObedience.Mephistopheles3Ability2";
-        private static readonly string Mephistopheles3Ability2Guid = "{333F9100-6F34-4161-9DF3-9B875D5D78C0}";
         public static BlueprintFeature Mephistopheles3Feat()
         {
-            var icon = AbilityRefs.BladeBarrier.Reference.Get().Icon;
-
-            var area = AbilityAreaEffectConfigurator.New(Mephistopheles3Area, Mephistopheles3AreaGuid)
-                .CopyFrom(
-                AbilityAreaEffectRefs.BladeBarrierArea,
-                typeof(AbilityAreaEffectRunAction),
-                typeof(ContextRankConfigs))
-                .Configure();
-
-            var abilityresourse = AbilityResourceConfigurator.New(Mephistopheles3Res, Mephistopheles3ResGuid)
-                .SetMaxAmount(ResourceAmountBuilder.New(1))
-                .Configure();
-
-            var ability2 = AbilityConfigurator.New(Mephistopheles3Ability2, Mephistopheles3Ability2Guid)
-                .SetDisplayName(Mephistopheles3DisplayName)
-                .SetDescription(Mephistopheles3Description)
-                .SetIcon(icon)
-                .AllowTargeting(true, false, false, false)
-                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move)
-                .AddAbilityEffectRunAction(ActionsBuilder.New()
-                        .Add<ChangeAreaLocation>(c => { c.area = area; })
-                        .Build())
-                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Point)
-                .SetRange(AbilityRange.Close)
-                .SetType(AbilityType.Special)
-                .Configure();
-
-            var Buff = BuffConfigurator.New(Mephistopheles3Buff, Mephistopheles3BuffGuid)
-                .SetDisplayName(Mephistopheles3DisplayName)
-                .SetDescription(Mephistopheles3Description)
-                .SetIcon(icon)
-                .AddFacts(new() { ability2 })
-                .Configure();
-
-            var ability = AbilityConfigurator.New(Mephistopheles3Ability, Mephistopheles3AbilityGuid)
-                .CopyFrom(
-                AbilityRefs.BladeBarrier,
-                typeof(SpellComponent),
-                typeof(SpellDescriptorComponent),
-                typeof(AbilitySpawnFx),
-                typeof(ContextRankConfigs))
-                .AddAbilityEffectRunAction(ActionsBuilder.New()
-                        .SpawnAreaEffect(area, ContextDuration.Variable(ContextValues.Rank()), false)
-                        .ApplyBuff(Buff, ContextDuration.Variable(ContextValues.Rank()), toCaster: true)
-                        .ApplyBuff(BuffRefs.BladeBarrierCasterBuff.ToString(), ContextDuration.Variable(ContextValues.Rank()), toCaster: true)
-                        .Build())
-                .SetType(AbilityType.SpellLike)
-                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
-                .Configure();
+            var icon = AbilityRefs.PersuasionUseAbility.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Mephistopheles3, Mephistopheles3Guid)
               .SetDisplayName(Mephistopheles3DisplayName)
               .SetDescription(Mephistopheles3Description)
               .SetIcon(icon)
-              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
-              .AddFacts(new() { ability })
+              .AddFeatureIfHasFact(FeatureRefs.HellsDecreeFeature.ToString(), BlackSeraphStyle.AnnihilationGuid, false)
+              .SetReapplyOnLevelUp()
               .Configure();
         }
     }
