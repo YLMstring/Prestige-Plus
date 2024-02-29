@@ -145,6 +145,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(GozrehFeat())
               .AddToAllFeatures(CalistriaFeat())
               .AddToAllFeatures(MrtyuFeat())
+              .AddToAllFeatures(MephistophelesFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
