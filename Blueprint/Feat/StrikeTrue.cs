@@ -39,7 +39,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDescription(Description)
               .SetIcon(icon)
               .AddRemoveBuffOnAttack()
-              .AddAttackTypeAttackBonus(attackBonus: 4, descriptor: Kingmaker.Enums.ModifierDescriptor.Insight, type: Kingmaker.Enums.WeaponRangeType.Melee, checkFact: false, allTypesExcept: false, value: 1)
+              .AddAttackTypeAttackBonus(attackBonus: 4, type: Kingmaker.Enums.WeaponRangeType.Melee, checkFact: false, allTypesExcept: false, value: 1)
               .Configure();
 
             var abilityTrick = AbilityConfigurator.New(StrikeTrueAbility, StrikeTrueAbilityGuid)
