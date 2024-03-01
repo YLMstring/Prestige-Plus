@@ -4504,7 +4504,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteFeature("e3805d65-1712-49eb-9780-d99511e71c03", group: Prerequisite.GroupType.Any)
               .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticNeutral, group: Prerequisite.GroupType.Any)
               .AddToIsPrerequisiteFor(NocticulaSentinelFeat())
-
+              .AddComponent<NocticulaDefensive>()
               .Configure();
         }
 
