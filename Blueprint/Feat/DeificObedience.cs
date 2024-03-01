@@ -146,6 +146,8 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(CalistriaFeat())
               .AddToAllFeatures(MrtyuFeat())
               .AddToAllFeatures(MephistophelesFeat())
+              .AddToAllFeatures(NocticulaFeat())
+              .AddToAllFeatures(NocticulaDemonFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -4483,6 +4485,179 @@ namespace PrestigePlus.Blueprint.Feat
               .AddFeatureIfHasFact(FeatureRefs.HellsDecreeFeature.ToString(), BlackSeraphStyle.AnnihilationGuid, false)
               .SetReapplyOnLevelUp()
               .Configure();
+        }
+
+        private const string Nocticula = "DeificObedience.Nocticula";
+        public static readonly string NocticulaGuid = "{F0280448-7D87-4112-AD00-A23E4D499BDF}";
+
+        internal const string NocticulaDisplayName = "DeificObedienceNocticula.Name";
+        private const string NocticulaDescription = "DeificObedienceNocticula.Description";
+        public static BlueprintFeature NocticulaFeat()
+        {
+            //"NocticulaFeature": "e3805d65-1712-49eb-9780-d99511e71c03",
+            var icon = FeatureRefs.ColdMidnightFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Nocticula, NocticulaGuid)
+              .SetDisplayName(NocticulaDisplayName)
+              .SetDescription(NocticulaDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature("e3805d65-1712-49eb-9780-d99511e71c03", group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticNeutral, group: Prerequisite.GroupType.Any)
+              .AddToIsPrerequisiteFor(NocticulaSentinelFeat())
+
+              .Configure();
+        }
+
+        private const string NocticulaDemon = "DeificObedience.NocticulaDemon";
+        public static readonly string NocticulaDemonGuid = "{8E155CDC-25AF-4022-B886-ED8E19B87DA3}";
+
+        internal const string NocticulaDemonDisplayName = "DeificObedienceNocticulaDemon.Name";
+        private const string NocticulaDemonDescription = "DeificObedienceNocticulaDemon.Description";
+        public static BlueprintFeature NocticulaDemonFeat()
+        {
+            //"NocticulaFeature": "e3805d65-1712-49eb-9780-d99511e71c03",
+            var icon = AbilityRefs.EvilSuccubusDominate.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(NocticulaDemon, NocticulaDemonGuid)
+              .SetDisplayName(NocticulaDemonDisplayName)
+              .SetDescription(NocticulaDemonDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature("e3805d65-1712-49eb-9780-d99511e71c03", group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticNeutral, group: Prerequisite.GroupType.Any)
+              .AddToIsPrerequisiteFor(NocticulaSentinelGuid)
+              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Profane, spellDescriptor: SpellDescriptor.Blindness, value: 4)
+              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Profane, spellDescriptor: SpellDescriptor.Charm, value: 4)
+              .Configure();
+        }
+
+        private const string NocticulaSentinel = "DeificObedience.NocticulaSentinel";
+        public static readonly string NocticulaSentinelGuid = "{D7547911-9DD1-4185-A39B-85F3315E3552}";
+
+        internal const string NocticulaSentinelDisplayName = "DeificObedienceNocticulaSentinel.Name";
+        private const string NocticulaSentinelDescription = "DeificObedienceNocticulaSentinel.Description";
+        public static BlueprintProgression NocticulaSentinelFeat()
+        {
+            var icon = FeatureRefs.ColdMidnightFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(NocticulaSentinel, NocticulaSentinelGuid)
+              .SetDisplayName(NocticulaSentinelDisplayName)
+              .SetDescription(NocticulaSentinelDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(NocticulaGuid, group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteFeature(NocticulaDemonGuid, group: Prerequisite.GroupType.Any)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(2, CreateNocticula1())
+              .AddToLevelEntry(6, NocticulaSentinel2Feat())
+              .AddToLevelEntry(10, NocticulaSentinel3Feat())
+              .Configure();
+        }
+
+        private const string Nocticula1 = "SpellPower.Nocticula1";
+        public static readonly string Nocticula1Guid = "{AFA5F7DA-E35F-44C0-A95E-AC1006718817}";
+        internal const string Nocticula1DisplayName = "SpellPowerNocticula1.Name";
+        private const string Nocticula1Description = "SpellPowerNocticula1.Description";
+
+        private const string Nocticula1Ablity = "SpellPower.UseNocticula1";
+        private static readonly string Nocticula1AblityGuid = "{62385D1B-0D59-4F26-B151-898B3F0590B2}";
+
+        private const string Nocticula1Ablity3 = "SpellPower.UseNocticula13";
+        private static readonly string Nocticula1Ablity3Guid = "{85EBE3C2-6A67-4EE2-A521-049A9E69ECC8}";
+
+        private static BlueprintFeature CreateNocticula1()
+        {
+            var icon = AbilityRefs.CatsGrace.Reference.Get().Icon;
+
+            var ability = AbilityConfigurator.New(Nocticula1Ablity, Nocticula1AblityGuid)
+                .CopyFrom(
+                AbilityRefs.TrueStrike,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx))
+                .AddPretendSpellLevel(spellLevel: 1)
+                .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var ability3 = AbilityConfigurator.New(Nocticula1Ablity3, Nocticula1Ablity3Guid)
+                .CopyFrom(
+                AbilityRefs.VampiricTouchCast,
+                typeof(SpellComponent),
+                typeof(AbilityEffectStickyTouch))
+                .AddPretendSpellLevel(spellLevel: 3)
+                .AddAbilityResourceLogic(6, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Nocticula1, Nocticula1Guid)
+              .SetDisplayName(Nocticula1DisplayName)
+              .SetDescription(Nocticula1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability, ShelynSentinel1Ablity2Guid, ability3 })
+              .Configure();
+        }
+
+        private const string Nocticula2 = "DeificObedience.Nocticula2";
+        public static readonly string Nocticula2Guid = "{F17C1F27-5EF5-42F9-BD85-CFEB79A4C48A}";
+
+        internal const string Nocticula2DisplayName = "DeificObedienceNocticula2.Name";
+        private const string Nocticula2Description = "DeificObedienceNocticula2.Description";
+        public static BlueprintFeature NocticulaSentinel2Feat()
+        {
+            var icon = FeatureRefs.MagicalTail.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Nocticula2, Nocticula2Guid)
+              .SetDisplayName(Nocticula2DisplayName)
+              .SetDescription(Nocticula2Description)
+              .SetIcon(icon)
+              .AddComponent<NocticulaExtraAttack>()
+              .Configure();
+        }
+
+        private static readonly string Nocticula3Name = "DeificObedienceNocticula3";
+        public static readonly string Nocticula3Guid = "{8CD6E25F-5854-4FD3-86C4-210970FC3654}";
+
+        private static readonly string Nocticula3DisplayName = "DeificObedienceNocticula3.Name";
+        private static readonly string Nocticula3Description = "DeificObedienceNocticula3.Description";
+
+        private const string Nocticula3Ability = "DeificObedienceStyle.Nocticula3Ability";
+        private static readonly string Nocticula3AbilityGuid = "{5E6EC638-4934-4DA7-B2A7-6E70095DB6FB}";
+
+        private const string Nocticula3AbilityRes = "DeificObedienceStyle.Nocticula3AbilityRes";
+        private static readonly string Nocticula3AbilityResGuid = "{887E997B-FC90-42BA-B190-824A2A2C6470}";
+
+        public static BlueprintFeature NocticulaSentinel3Feat()
+        {
+            var icon = AbilityRefs.PowerWordKill.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(Nocticula3AbilityRes, Nocticula3AbilityResGuid)
+                .SetMaxAmount(
+                    ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var ability = AbilityConfigurator.New(Nocticula3Ability, Nocticula3AbilityGuid)
+                .CopyFrom(
+                AbilityRefs.BalefulPolymorph,
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(AbilityEffectRunAction),
+                typeof(AbilityTargetHPCondition),
+                typeof(AbilityTargetHasNoFactUnless),
+                typeof(AbilityTargetHasFact),
+                typeof(AbilitySpawnFx))
+                .SetDisplayName(Nocticula3DisplayName)
+                .SetDescription(Nocticula3Description)
+                .SetType(AbilityType.SpellLike)
+                .AddPretendSpellLevel(spellLevel: 9)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .Configure();
+
+            return FeatureConfigurator.New(Nocticula3Name, Nocticula3Guid)
+                    .SetDisplayName(Nocticula3DisplayName)
+                    .SetDescription(Nocticula3Description)
+                    .SetIcon(icon)
+                    .AddFacts(new() { ability })
+                    .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+                    .Configure();
         }
     }
 }
