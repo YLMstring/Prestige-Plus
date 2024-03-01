@@ -11770,6 +11770,182 @@
     "enGB": "Your weapon elongates and becomes whip-like. As part of casting this spell, you can use this weapon to attempt a trip combat maneuver against one creature within 20 feet, and you gain a +10 bonus on your roll, after which the weapon returns to its previous form.",
     "ruRU": "Ваше оружие удлинняется и становится похоже на хлыст. Как часть этого заклинания вы можете попытаться при помощи этого оружия сбить 1 существо в радиусе 20 футов с бонусом +10 к этой проверке, после чего оружие возвращается в свою первоначальную форму.",
     "zhCN": "你的武器被拉长，变得如同鞭子一般。作为施放该法术的一部分，你能够使用该武器尝试对20尺内的一个生物进行一次摔绊战技，而且你在检定中获得+10加值，在此之后，你的武器会还原至它原本的形态。"
+  },
+  {
+    "Key": "DeificObedienceMrtyu.Name",
+    "ProcessTemplates": false,
+    "enGB": "Mrtyu Obedience",
+    "zhCN": "莫求仪典"
+  },
+  {
+    "Key": "DeificObedienceMrtyu.Description",
+    "enGB": "Hear confessions of the dying or spend at least 1 hour burying the dead after a battle. If there are no dying or dead people in the area, spend the hour uttering prayers for the last dead person you encountered. Gain a +4 insight bonus on saving throws against spells that affect multiple creatures.",
+    "zhCN": "聆听垂死者的忏悔，或在战斗后花至少1小时埋葬死者。如果该地区没有垂死者，也没有死者，则用这些时间为你遇到的最后一个死者祈祷。对抗影响多个生物的法术的豁免检定获得+4洞察加值。"
+  },
+  {
+    "Key": "SpellPowerMrtyu1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Ruled by Passion",
+    "zhCN": "激情俘虏"
+  },
+  {
+    "Key": "SpellPowerMrtyu1.Description",
+    "enGB": " remove fear 3/day, aid 2/day, or remove blindness 1/day",
+    "zhCN": "移除恐惧 3次/天，援助术 2次/天，移除目盲 1次/天"
+  },
+  {
+    "Key": "DeificObedienceMrtyu2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Death's Lover",
+    "zhCN": "死神之爱"
+  },
+  {
+    "Key": "DeificObedienceMrtyu2.Description",
+    "enGB": "You gain Diplomacy and Perception as class skills, and you gain a bonus on checks using these skills equal to half your Hit Dice.",
+    "zhCN": "你的交涉和察觉成为本职技能，并且进行这些检定时获得等同于你生命骰一半的加值。"
+  },
+  {
+    "Key": "DeificObedienceMrtyu3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Hands of Death",
+    "zhCN": "死亡之手"
+  },
+  {
+    "Key": "DeificObedienceMrtyu3.Description",
+    "enGB": "Once per day, you can call upon a whirling mass of daggers and swords that functions as a blade barrier. This effect lasts only 1 round per Hit Die, but you can direct it to move within close range as a move action.",
+    "zhCN": "每天一次，你可以召唤大量旋转着的匕首和剑，如同剑刃屏障法术。该效果仅持续每生命骰1轮，但你可以通过一个移动动作使其在近程范围内移动。"
+  },
+  {
+    "Key": "DeificObedienceMephistopheles.Name",
+    "ProcessTemplates": false,
+    "enGB": "Mephistopheles Obedience",
+    "zhCN": "墨菲斯托菲利斯仪典"
+  },
+  {
+    "Key": "DeificObedienceMephistopheles.Description",
+    "enGB": "Every day you must lie to someone for your own personal gain (this cannot be the same person more than once a week). Additionally, once per week, you must write down a new secret that you have learned about someone else and burn it as a sacrifice to Mephistopheles. Gain a +4 profane bonus to Diplomacy checks.",
+    "zhCN": "为了自身利益而对某人撒谎（同一个人每周不能超过一次）。此外，每周一次，你必须写下一个新掌握的别人的秘密，并将其烧掉，作为对墨菲斯托菲利斯的献祭。交涉检定获得+4亵渎加值。"
+  },
+  {
+    "Key": "SpellPowerMephistopheles1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Fool Maker",
+    "zhCN": "钓鱼人"
+  },
+  {
+    "Key": "SpellPowerMephistopheles1.Description",
+    "enGB": "hypnotism 3/day",
+    "zhCN": "催眠术 3次/天"
+  },
+  {
+    "Key": "DeificObedienceMephistopheles3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Persecutor",
+    "zhCN": "迫害者"
+  },
+  {
+    "Key": "DeificObedienceMephistopheles3.Description",
+    "enGB": "You can use your Bluff skill to demoralize opponents and influence an opponent’s attitude as though it were the Intimidate skill. The effects function the same. If you have access to hell's decrees, gain Black Seraph Annihilation as a bonus feat.",
+    "zhCN": "你可以使用唬骗技能来挫败对手的士气，并影响对手的态度，如同威吓技能一般。此外，如果你掌握地狱法令，获得黑堕湮灭作为额外专长。"
+  },
+  {
+    "Key": "DeificObedienceMephistopheles2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Charming Liar",
+    "zhCN": "迷人骗徒"
+  },
+  {
+    "Key": "DeificObedienceMephistopheles2.Description",
+    "enGB": "You can use your Diplomacy skill to demoralize opponents and influence an opponent’s attitude as though it were the Bluff skill. The effects function the same. Additionally, any spell of the charm subschool that you cast has its DC increased by 2.",
+    "zhCN": "你可以使用交涉技能来挫败对手的士气，并影响对手的态度，如同唬骗技能一般。此外，你施放的任何魅惑学派法术的DC都会增加2。"
+  },
+  {
+    "Key": "NewSpellResinousSkin.Name",
+    "ProcessTemplates": false,
+    "enGB": "Resinous Skin",
+    "zhCN": "树脂皮肤"
+  },
+  {
+    "Key": "NewSpellResinousSkin.Description",
+    "enGB": "You coat your body with a resinous substance, protecting you from attacks and binding weapons that strike you. You gain DR 5/piercing, as well as a +4 circumstance bonus to your CMD against disarm attempts. Additionally, you gain a +2 circumstance bonus on combat maneuver checks to initiate a grapple, maintain a grapple, and pin a foe. Any enemy you grapple takes a –2 penalty on attempts to break the grapple and to escape the grapple. Any weapon that strikes you becomes stuck unless its wielder succeeds at a Reflex saving throw. When it gets stuck in this way, you can attempt a free disarm combat maneuver.",
+    "zhCN": "你用树脂包裹自己的身体，使你免于攻击并且粘住攻击你的武器。你获得DR5/穿刺，对抗缴械的CMD+4。此外，你的擒抱、保持擒抱和压制敌人的战技检定获得+2环境加值。任何被你擒抱的敌人在试图打破擒抱和逃离擒抱时都有-2减值。任何武器在命中你之后都会被粘住，除非持有者通过一次反射检定。当你以此法粘住武器时，可以立刻施展缴械战技。"
+  },
+  {
+    "Key": "NewSpellPilferingHand.Name",
+    "ProcessTemplates": false,
+    "enGB": "Pilfering Hand",
+    "zhCN": "第三只手"
+  },
+  {
+    "Key": "NewSpellPilferingHand.Description",
+    "enGB": "You create and control an invisible telekinetic force, instantaneously attempting a disarm combat maneuver against a target within range. Use your caster level as your Combat Maneuver Bonus, adding your spellcasting ability score modifier in place of your Strength or Dexterity modifier. This combat maneuver attempt does not provoke an attack of opportunity from its target, but casting this spell might.",
+    "zhCN": "你创造并且控制一股无形的精神力量，立刻对范围内的一个目标施展缴械战技。使用你的施法者等级作为你的战技加值，加上你的施法者属性调整值。该战技不会引发目标的借机攻击（但是施放此法术可能会引发借机攻击）。"
+  },
+  {
+    "Key": "DeificObedienceNocticula.Name",
+    "ProcessTemplates": false,
+    "enGB": "Nocticula Obedience",
+    "zhCN": "诺缇库拉仪典"
+  },
+  {
+    "Key": "DeificObedienceNocticula.Description",
+    "enGB": "Spend an hour in a secluded location while crafting a work of art. If your hour of work begins at, ends at, or includes the stroke of midnight, then the subject of your art is up to you. Otherwise, your art must include the concept of midnight in some way. When you aren’t adjacent to an ally, gain a +1 morale bonus to your AC and on all saving throws.",
+    "zhCN": "在僻静处花一个小时制作一件艺术品。 如果你的工作时间闭区间包含午夜，那么艺术主题可以自定，否则需要以某种方式包含午夜的概念。 当你不与盟友相邻时，你的AC和所有豁免检定都会获得+1士气加值。"
+  },
+  {
+    "Key": "DeificObedienceNocticulaDemon.Name",
+    "ProcessTemplates": false,
+    "enGB": "Nocticula Demonic Obedience",
+    "zhCN": "诺缇库拉恶魔仪典"
+  },
+  {
+    "Key": "DeificObedienceNocticulaDemon.Description",
+    "enGB": "Ingest a dose of psychedelic plants or fungi and engage in any number of sexual acts (either alone or with others), during which at least a pint of blood must be shed. Gain a +4 profane bonus on saves against blindness and charm effects.",
+    "zhCN": "服下一株迷幻植物或真菌，进行任意数量的性行为（独自或与别人），期间有至少一品脱的血液流出。在对抗目盲和魅惑效果的豁免获得+4亵渎加值。"
+  },
+  {
+    "Key": "DeificObedienceNocticulaSentinel.Name",
+    "ProcessTemplates": false,
+    "enGB": "Nocticula (Sentinel)",
+    "zhCN": "诺缇库拉（信仰哨卫）"
+  },
+  {
+    "Key": "DeificObedienceNocticulaSentinel.Description",
+    "enGB": "Become a Sentinel to gain access to her boons, which will be granted at certain character or class levels.",
+    "zhCN": "成为信仰哨卫来获取她的神恩资格，你会在合适的角色或职业等级得到神恩。"
+  },
+  {
+    "Key": "SpellPowerNocticula1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Midnight’s Grace",
+    "zhCN": "午夜恩典"
+  },
+  {
+    "Key": "SpellPowerNocticula1.Description",
+    "enGB": "true strike 3/day, cat’s grace 2/day, or vampiric touch 1/day",
+    "zhCN": "克敌机先 3次/天，猫之优雅 2次/天，吸血鬼之触 1次/天"
+  },
+  {
+    "Key": "DeificObedienceNocticula2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Sinuous Daggerplay",
+    "zhCN": "灵尾匕舞"
+  },
+  {
+    "Key": "DeificObedienceNocticula2.Description",
+    "enGB": "You grow a sinuous tail (if you already have a tail, you grow a second one). This tail is prehensile and capable of manipulating and holding small objects, but cannot perform fine manual work as if it were a hand, with the exception of wielding a dagger. When you make a full attack with this tail-wielded dagger, you can make an additional attack.",
+    "zhCN": "你长出一条弯曲灵活的尾巴（如果你已经有一条尾巴，会长出第二条尾巴）。 这条尾巴极易操纵并且能够控制和抓握轻小物体，但除了挥舞匕首之外，它不能像手一样进行精细的手工操作。 当你用该匕首全回合攻击时，你可以进行一次额外攻击。"
+  },
+  {
+    "Key": "DeificObedienceNocticula3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Death Is But a Word",
+    "zhCN": "死就一个字"
+  },
+  {
+    "Key": "DeificObedienceNocticula3.Description",
+    "enGB": "Your devotion to Nocticula is rewarded with a single whisper from her lips to your ear alone, revealing one of the countless words Our Lady in Shadow knows to cause death. Each of her worshipers receives a unique word. When you learn it, you can use the word to cast power word kill as a spell-like ability once per day.",
+    "zhCN": "你对诺缇库拉的忠诚得到了回报，一声独属于你的低语，从她的嘴唇到你的耳边。这是阴影女士所知晓的无数个带来死亡的真言之一。她的每个信徒收到的真言都是独一无二的。当你学会它时，便可以将律令死亡作为类法术能力施展，每天一次。"
   }
 
 ]
