@@ -4366,8 +4366,9 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetDescription(Mrtyu3Description)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                         .SpawnAreaEffect(area, ContextDuration.Variable(ContextValues.Rank()), false)
-                        .ApplyBuff(Buff, ContextDuration.Variable(ContextValues.Rank()), toCaster: true, isFromSpell: true)
-                        .ApplyBuff(BuffRefs.BladeBarrierCasterBuff.ToString(), ContextDuration.Variable(ContextValues.Rank()), toCaster: true, isFromSpell: true)
+                        .ApplyBuff(Buff, ContextDuration.Variable(ContextValues.Rank()), toCaster: true)
+                        //.ApplyBuff(BuffRefs.BladeBarrierCasterBuff.ToString(), ContextDuration.Variable(ContextValues.Rank()), toCaster: true)
+                        // don't know why but adding the buff cause everyone to be considered caster???
                         .Build())
                 .SetType(AbilityType.SpellLike)
                 .AddPretendSpellLevel(spellLevel: 6)
