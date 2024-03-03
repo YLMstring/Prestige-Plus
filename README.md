@@ -55,6 +55,7 @@
 - [Mrtyu](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Mrtyu): requires worshipping Mrtyu (Expanded Content) or Neutral
 - [Mephistopheles](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Mephistopheles): requires worshipping Mephistopheles (Expanded Content) or Lawful Evil
 - [Nocticula (sentinel)](https://aonprd.com/DeityDisplay.aspx?ItemName=Nocticula): requires worshipping Nocticula (Expanded Content) or Chaotic Neutral
+- Some of her boons have changed because she's in the middle of [spoilers](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Nocticula%20(Redeemed))
 - More coming soon!
 ### [Evangelist](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/evangelist/)
 - [Diverse Obedience](https://www.d20pfsrd.com/feats/general-feats/diverse-obedience/)
