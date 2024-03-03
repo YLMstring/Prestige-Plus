@@ -3036,7 +3036,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string Falayna2Description = "DeificObedienceFalayna2.Description";
         public static BlueprintFeature Falayna2Feat()
         {
-            var icon = FeatureSelectionRefs.CombatTrick.Reference.Get().Icon;
+            var icon = AbilityRefs.BladeBarrier.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Falayna2, Falayna2Guid)
               .SetDisplayName(Falayna2DisplayName)
@@ -3061,7 +3061,7 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string Falayna3AbilityGuid = "{9168F28A-6165-432B-8FCF-CD9AA177D2C1}";
         public static BlueprintFeature Falayna3Feat()
         {
-            var icon = AbilityRefs.BladeBarrier.Reference.Get().Icon;
+            var icon = FeatureSelectionRefs.BasicFeatSelection.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(Falayna3Res, Falayna3ResGuid)
                 .SetMaxAmount(ResourceAmountBuilder.New(0))
@@ -4627,7 +4627,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static BlueprintFeature NocticulaSentinel3Feat()
         {
-            var icon = AbilityRefs.HolyWhisper.Reference.Get().Icon;
+            var icon = AbilityRefs.PowerWordKill.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(Nocticula3AbilityRes, Nocticula3AbilityResGuid)
                 .SetMaxAmount(
@@ -4646,7 +4646,6 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(AbilitySpawnFx))
                 .SetDisplayName(Nocticula3DisplayName)
                 .SetDescription(Nocticula3Description)
-                .SetIcon(icon)
                 .SetType(AbilityType.SpellLike)
                 .AddPretendSpellLevel(spellLevel: 9)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)

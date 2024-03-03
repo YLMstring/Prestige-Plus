@@ -18,7 +18,7 @@ namespace PrestigePlus.CustomComponent.Feat
         {
             int value = this.Value + this.Bonus.Calculate(base.Context);
             var data = evt.Reason?.Context?.SourceAbilityContext?.Ability;
-            if (data?.IsAOE == true && data.Blueprint.Type == Kingmaker.UnitLogic.Abilities.Blueprints.AbilityType.Spell)
+            if (data?.IsAOE == true && data?.Blueprint.Type == Kingmaker.UnitLogic.Abilities.Blueprints.AbilityType.Spell)
             {
                 evt.AddTemporaryModifier(evt.Initiator.Stats.SaveWill.AddModifier(value, base.Runtime, this.Descriptor));
                 evt.AddTemporaryModifier(evt.Initiator.Stats.SaveReflex.AddModifier(value, base.Runtime, this.Descriptor));
@@ -35,9 +35,9 @@ namespace PrestigePlus.CustomComponent.Feat
         public ModifierDescriptor Descriptor;
 
         // Token: 0x040098C5 RID: 39109
-        public int Value;
+        public int Value = 0;
 
         // Token: 0x040098C6 RID: 39110
-        public ContextValue Bonus;
+        public ContextValue Bonus = 0;
     }
 }
