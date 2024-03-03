@@ -4362,12 +4362,15 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(SpellDescriptorComponent),
                 typeof(AbilitySpawnFx),
                 typeof(ContextRankConfigs))
+                .SetDisplayName(Mrtyu3DisplayName)
+                .SetDescription(Mrtyu3Description)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                         .SpawnAreaEffect(area, ContextDuration.Variable(ContextValues.Rank()), false)
-                        .ApplyBuff(Buff, ContextDuration.Variable(ContextValues.Rank()), toCaster: true)
-                        .ApplyBuff(BuffRefs.BladeBarrierCasterBuff.ToString(), ContextDuration.Variable(ContextValues.Rank()), toCaster: true)
+                        .ApplyBuff(Buff, ContextDuration.Variable(ContextValues.Rank()), toCaster: true, isFromSpell: true)
+                        .ApplyBuff(BuffRefs.BladeBarrierCasterBuff.ToString(), ContextDuration.Variable(ContextValues.Rank()), toCaster: true, isFromSpell: true)
                         .Build())
                 .SetType(AbilityType.SpellLike)
+                .AddPretendSpellLevel(6)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .Configure();
 
