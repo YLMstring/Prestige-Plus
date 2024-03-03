@@ -4326,8 +4326,8 @@ namespace PrestigePlus.Blueprint.Feat
             var area = AbilityAreaEffectConfigurator.New(Mrtyu3Area, Mrtyu3AreaGuid)
                 .CopyFrom(
                 AbilityAreaEffectRefs.BladeBarrierArea,
-                typeof(AbilityAreaEffectRunAction),
-                typeof(ContextRankConfigs))
+                typeof(AbilityAreaEffectRunAction))
+                .AddContextRankConfig(ContextRankConfigs.CharacterLevel(AbilityRankType.Default, 15, 1))
                 .Configure();
 
             var abilityresourse = AbilityResourceConfigurator.New(Mrtyu3Res, Mrtyu3ResGuid)
@@ -4370,7 +4370,7 @@ namespace PrestigePlus.Blueprint.Feat
                         .ApplyBuff(BuffRefs.BladeBarrierCasterBuff.ToString(), ContextDuration.Variable(ContextValues.Rank()), toCaster: true, isFromSpell: true)
                         .Build())
                 .SetType(AbilityType.SpellLike)
-                .AddPretendSpellLevel(6)
+                .AddPretendSpellLevel(spellLevel: 6)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .Configure();
 
