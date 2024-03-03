@@ -1,4 +1,4 @@
-# Prestige Plus v2.8.2 for WoTR 
+# Prestige Plus v2.8.3 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -52,6 +52,10 @@
 - [The Lantern King](https://aonprd.com/DeityDisplay.aspx?ItemName=The%20Lantern%20King): requires worshipping The Lantern King (Expanded Content) or Chaotic Neutral
 - [Gozreh (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Gozreh): requires worshipping Gozreh or Neutral
 - [Calistria (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Calistria): requires worshipping Calistria or Chaotic Neutral
+- [Mrtyu](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Mrtyu): requires worshipping Mrtyu (Expanded Content) or Neutral
+- [Mephistopheles](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Mephistopheles): requires worshipping Mephistopheles (Expanded Content) or Lawful Evil
+- [Nocticula (sentinel)](https://aonprd.com/DeityDisplay.aspx?ItemName=Nocticula): requires worshipping Nocticula (Expanded Content) or Chaotic Neutral
+- Some of her boons have changed because she's in the middle of [spoilers](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Nocticula%20(Redeemed))
 - More coming soon!
 ### [Evangelist](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/evangelist/)
 - [Diverse Obedience](https://www.d20pfsrd.com/feats/general-feats/diverse-obedience/)
@@ -350,6 +354,8 @@
 - [Telekinetic Maneuver](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Telekinetic%20Maneuver)
 - [Linebreaker](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Linebreaker)
 - [Blade Lash](https://www.d20pfsrd.com/magic/all-spells/b/blade-lash/)
+- [Resinous Skin](https://aonprd.com/SpellDisplay.aspx?ItemName=Resinous%20Skin)
+- [Pilfering Hand](https://www.d20pfsrd.com/magic/all-spells/p/pilfering-hand/)
 ### New Mythic Prestige Class Features
 
 - Swift Death: Your Death Attack becomes a standard action. At 10th assassin level, it becomes a move action.
