@@ -35,7 +35,7 @@ namespace PrestigePlus.Blueprint.Spell
         private const string Description = "NewSpellResinousSkin.Description";
         public static void Configure()
         {
-            var icon = AbilityRefs.WitchHexAnimalSkinAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.BlessingOfTheSalamander.Reference.Get().Icon;
 
             var action = ActionsBuilder.New()
                     .SavingThrow(type: SavingThrowType.Reflex, customDC: ContextValues.Rank(), useDCFromContextSavingThrow: true,

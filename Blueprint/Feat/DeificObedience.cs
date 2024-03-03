@@ -3061,7 +3061,7 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string Falayna3AbilityGuid = "{9168F28A-6165-432B-8FCF-CD9AA177D2C1}";
         public static BlueprintFeature Falayna3Feat()
         {
-            var icon = FeatureSelectionRefs.BasicFeatSelection.Reference.Get().Icon;
+            var icon = AbilityRefs.BladeBarrier.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(Falayna3Res, Falayna3ResGuid)
                 .SetMaxAmount(ResourceAmountBuilder.New(0))
@@ -4185,7 +4185,7 @@ namespace PrestigePlus.Blueprint.Feat
         public static BlueprintProgression MrtyuFeat()
         {
             //"MrtyuFeature": "3cb816fe-d8c6-44e1-8717-1a223a5f4339",
-            var icon = AbilityRefs.WarpriestAspectOfWarAbility.Reference.Get().Icon;
+            var icon = FeatureRefs.GhostRiderGhostEthericTetherFeature.Reference.Get().Icon;
 
             return ProgressionConfigurator.New(Mrtyu, MrtyuGuid)
               .SetDisplayName(MrtyuDisplayName)
@@ -4206,7 +4206,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static BlueprintFeature Mrtyu0Feat()
         {
-            var icon = AbilityRefs.WarpriestAspectOfWarAbility.Reference.Get().Icon;
+            var icon = FeatureRefs.GhostRiderGhostEthericTetherFeature.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Mrtyu0, Mrtyu0Guid)
               .SetDisplayName(MrtyuDisplayName)
@@ -4232,7 +4232,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         private static BlueprintFeature CreateMrtyu1()
         {
-            var icon = AbilityRefs.Aid.Reference.Get().Icon;
+            var icon = AbilityRefs.RemoveBlindness.Reference.Get().Icon;
 
             var ability = AbilityConfigurator.New(Mrtyu1Ablity, Mrtyu1AblityGuid)
                 .CopyFrom(
@@ -4388,7 +4388,7 @@ namespace PrestigePlus.Blueprint.Feat
         public static BlueprintProgression MephistophelesFeat()
         {
             //"MephistophelesFeature": "3A4522E2-7F08-43E1-ACCD-0733BA18C427",
-            var icon = AbilityRefs.WarpriestAspectOfWarAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.HellsSealVariantFireExplosion.Reference.Get().Icon;
 
             return ProgressionConfigurator.New(Mephistopheles, MephistophelesGuid)
               .SetDisplayName(MephistophelesDisplayName)
@@ -4409,7 +4409,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static BlueprintFeature Mephistopheles0Feat()
         {
-            var icon = AbilityRefs.WarpriestAspectOfWarAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.HellsSealVariantFireExplosion.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Mephistopheles0, Mephistopheles0Guid)
               .SetDisplayName(MephistophelesDisplayName)
@@ -4459,7 +4459,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string Mephistopheles2Description = "DeificObedienceMephistopheles2.Description";
         public static BlueprintFeature Mephistopheles2Feat()
         {
-            var icon = FeatureRefs.InquisitorJudgements.Reference.Get().Icon;
+            var icon = AbilityRefs.HolyWhisper.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Mephistopheles2, Mephistopheles2Guid)
               .SetDisplayName(Mephistopheles2DisplayName)
@@ -4476,7 +4476,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string Mephistopheles3Description = "DeificObedienceMephistopheles3.Description";
         public static BlueprintFeature Mephistopheles3Feat()
         {
-            var icon = AbilityRefs.PersuasionUseAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.HellsSealVariantFireHealing.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Mephistopheles3, Mephistopheles3Guid)
               .SetDisplayName(Mephistopheles3DisplayName)
@@ -4495,7 +4495,7 @@ namespace PrestigePlus.Blueprint.Feat
         public static BlueprintFeature NocticulaFeat()
         {
             //"NocticulaFeature": "e3805d65-1712-49eb-9780-d99511e71c03",
-            var icon = FeatureRefs.ColdMidnightFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.InspireTranquilityFeature.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Nocticula, NocticulaGuid)
               .SetDisplayName(NocticulaDisplayName)
@@ -4516,7 +4516,7 @@ namespace PrestigePlus.Blueprint.Feat
         public static BlueprintFeature NocticulaDemonFeat()
         {
             //"NocticulaFeature": "e3805d65-1712-49eb-9780-d99511e71c03",
-            var icon = AbilityRefs.EvilSuccubusDominate.Reference.Get().Icon;
+            var icon = FeatureRefs.DirgeOfDoom.Reference.Get().Icon;
 
             return FeatureConfigurator.New(NocticulaDemon, NocticulaDemonGuid)
               .SetDisplayName(NocticulaDemonDisplayName)
@@ -4537,7 +4537,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string NocticulaSentinelDescription = "DeificObedienceNocticulaSentinel.Description";
         public static BlueprintProgression NocticulaSentinelFeat()
         {
-            var icon = FeatureRefs.ColdMidnightFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.InspireTranquilityFeature.Reference.Get().Icon;
 
             return ProgressionConfigurator.New(NocticulaSentinel, NocticulaSentinelGuid)
               .SetDisplayName(NocticulaSentinelDisplayName)
@@ -4565,7 +4565,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         private static BlueprintFeature CreateNocticula1()
         {
-            var icon = AbilityRefs.CatsGrace.Reference.Get().Icon;
+            var icon = AbilityRefs.VampiricTouchCast.Reference.Get().Icon;
 
             var ability = AbilityConfigurator.New(Nocticula1Ablity, Nocticula1AblityGuid)
                 .CopyFrom(
@@ -4603,7 +4603,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string Nocticula2Description = "DeificObedienceNocticula2.Description";
         public static BlueprintFeature NocticulaSentinel2Feat()
         {
-            var icon = FeatureRefs.MagicalTail.Reference.Get().Icon;
+            var icon = FeatureRefs.DemonTail.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Nocticula2, Nocticula2Guid)
               .SetDisplayName(Nocticula2DisplayName)
@@ -4627,7 +4627,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static BlueprintFeature NocticulaSentinel3Feat()
         {
-            var icon = AbilityRefs.PowerWordKill.Reference.Get().Icon;
+            var icon = AbilityRefs.HolyWhisper.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(Nocticula3AbilityRes, Nocticula3AbilityResGuid)
                 .SetMaxAmount(
@@ -4636,7 +4636,7 @@ namespace PrestigePlus.Blueprint.Feat
 
             var ability = AbilityConfigurator.New(Nocticula3Ability, Nocticula3AbilityGuid)
                 .CopyFrom(
-                AbilityRefs.BalefulPolymorph,
+                AbilityRefs.PowerWordKill,
                 typeof(SpellComponent),
                 typeof(SpellDescriptorComponent),
                 typeof(AbilityEffectRunAction),
@@ -4646,6 +4646,7 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(AbilitySpawnFx))
                 .SetDisplayName(Nocticula3DisplayName)
                 .SetDescription(Nocticula3Description)
+                .SetIcon(icon)
                 .SetType(AbilityType.SpellLike)
                 .AddPretendSpellLevel(spellLevel: 9)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)

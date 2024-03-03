@@ -25,7 +25,7 @@ namespace PrestigePlus.Blueprint.Spell
         private const string Description = "NewSpellPilferingHand.Description";
         public static void Configure()
         {
-            var icon = AbilityRefs.BurningHandsCold.Reference.Get().Icon;
+            var icon = AbilityRefs.WrackingRay.Reference.Get().Icon;
 
             AbilityConfigurator.NewSpell(
                 PilferingHandAbility, PilferingHandAbilityGuid, SpellSchool.Evocation, canSpecialize: false)
