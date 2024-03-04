@@ -4469,7 +4469,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(Mephistopheles2DisplayName)
               .SetDescription(Mephistopheles2Description)
               .SetIcon(icon)
-              .AddIncreaseSpellDescriptorDC(2, SpellDescriptor.Charm, spellsOnly: true)
+              .AddIncreaseSpellDescriptorDC(2, SpellDescriptor.Charm)
               .Configure();
         }
 

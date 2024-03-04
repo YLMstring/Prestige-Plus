@@ -11856,8 +11856,8 @@
   },
   {
     "Key": "DeificObedienceMephistopheles2.Description",
-    "enGB": "You can use your Diplomacy skill to demoralize opponents and influence an opponent’s attitude as though it were the Bluff skill. The effects function the same. Additionally, any spell of the charm subschool that you cast has its DC increased by 2.",
-    "zhCN": "你可以使用交涉技能来挫败对手的士气，并影响对手的态度，如同唬骗技能一般。此外，你施放的任何魅惑学派法术的DC都会增加2。"
+    "enGB": "You can use your Diplomacy skill to demoralize opponents and influence an opponent’s attitude as though it were the Bluff skill. The effects function the same. Additionally, any of your charm effects has its DC increased by 2.",
+    "zhCN": "你可以使用交涉技能来挫败对手的士气，并影响对手的态度，如同唬骗技能一般。此外，你的任何魅惑效果的DC都会增加2。"
   },
   {
     "Key": "NewSpellResinousSkin.Name",

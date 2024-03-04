@@ -34,7 +34,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetIcon(icon)
               .AllowTargeting(false, true, false, false)
               .SetAnimation(CastAnimationStyle.Omni)
-              .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.TelekineticFist.ToString() }, type: AbilityProjectileType.Simple, needAttackRoll: false)
+              .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.BuffRay00_Abjuration.ToString() }, type: AbilityProjectileType.Simple, needAttackRoll: false)
               .SetRange(AbilityRange.Close)
               .SetType(AbilityType.Spell)
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Quicken)
