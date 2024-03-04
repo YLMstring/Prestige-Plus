@@ -4607,7 +4607,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string Nocticula2Description = "DeificObedienceNocticula2.Description";
         public static BlueprintFeature NocticulaSentinel2Feat()
         {
-            var icon = FeatureRefs.DemonTail.Reference.Get().Icon;
+            var icon = AbilityRefs.Haste.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Nocticula2, Nocticula2Guid)
               .SetDisplayName(Nocticula2DisplayName)

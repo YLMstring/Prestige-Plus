@@ -15,6 +15,7 @@ using System.Threading.Tasks;
 using Kingmaker.UnitLogic;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker;
+using Kingmaker.EntitySystem;
 
 namespace PrestigePlus.CustomComponent.Feat
 {
@@ -22,9 +23,10 @@ namespace PrestigePlus.CustomComponent.Feat
     {
         void IRulebookHandler<RuleCalculateAC>.OnEventAboutToTrigger(RuleCalculateAC evt)
         {
-            foreach (UnitGroupMemory.UnitInfo unitInfo in Owner.Memory.UnitsList)
+            using EntityPoolEnumerator<UnitEntityData> enumerator = Game.Instance.State.Units.GetEnumerator();
+            while (enumerator.MoveNext())
             {
-                UnitEntityData unit = unitInfo.Unit;
+                UnitEntityData unit = enumerator.Current;
                 if (unit.DistanceTo(Owner) <= 5.Feet().Meters && !unit.Descriptor.State.IsDead && unit.IsAlly(Owner))
                 {
                     return;
