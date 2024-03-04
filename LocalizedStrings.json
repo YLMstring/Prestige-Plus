@@ -3181,8 +3181,8 @@
 
   {
     "Key": "AsavirJanni.Description",
-    "enGB": "At 10th level, an asavir’s mount gains Perfect Strike as a bonus feat. Both the asavir and her mount gain a +1 luck bonus on all saving throws.",
-    "ruRU": "На 10 уровне асавир получает черту Идеальный удар, даже если не соответствует её требованиям. Асавир и его скакун получают бонус удачи +1 ко всем спасброскам.",
+    "enGB": "At 10th level, an asavir gains Perfect Strike as a bonus feat, even if he does not meet the prerequisites. Both the asavir and her mount gain a +1 luck bonus on all saving throws.",
+    "ruRU": "На 10 уровне скакун асавира получает черту Идеальный удар, даже если не соответствует её требованиям. Асавир и его скакун получают бонус удачи +1 ко всем спасброскам.",
     "zhCN": "10级时，亚萨维尔的坐骑获得极意击作为额外专长。她和她的坐骑的所有豁免获得+1运气加值。"
   },
 
@@ -6380,7 +6380,7 @@
   {
     "Key": "SpellPowerRagathiel1.Description",
     "enGB": "bless weapon 3/day, litany of righteousness 2/day, or magic vestment 1/day",
-    "ruRU": "Вы получаете следующие псевдозаклинания: Благословенное оружие/3 раза в день, Литания праведности/2 раза в день, Магическое облачение/1 раз в день.",
+    "ruRU": "Вы получаете следующие псевдозаклинания: Благословенное оружие 3/день, Литания праведности 2/день, Магическое облачение 1/день.",
     "zhCN": "祝福武器3次/天，正义祷言2次/天，或魔化防具1次/天"
   },
   {
@@ -6900,7 +6900,7 @@
   {
     "Key": "DeificObedienceShelyn.Description",
     "enGB": "Paint a small picture, compose a short poem or song, dance a scene from a ballet, or create another work of art, whispering praise to Shelyn’s beauty and grace as you do so. The art piece need be neither large nor complex, but heartfelt and made to the best of your ability. Gift the piece of art to a stranger and pay her a sincere compliment as you do so. If there are no suitable individuals around to receive the gift, leave it in an obvious place with a note praising Shelyn and asking whoever finds it to take it with your warmest wishes. Gain a +4 sacred bonus on Use Magic Device checks.",
-    "ruRU": "Нарисуйте небольшую картину, сочините короткое стихотворение или песню, станцуйте сцену из балета или создайте другое произведение искусства, шепча при этом хвалу красоте и грации Шелин. Произведение искусства не должно быть ни большим, ни сложным, а душевным и выполненным в меру ваших способностей. Подарите произведение искусства незнакомке и сделайте ей при этом искренний комплимент. Если поблизости нет подходящих людей, которые могли бы получить подарок, оставьте его на видном месте с запиской, восхваляющей Шелин и прося того, кто его найдет, принять его с вашими самыми теплыми пожеланиями. Вы получаете сакральный бонус +4 к проверкам применения магических устройств.",
+    "ruRU": "Нарисуйте небольшую картину, сочините короткое стихотворение или песню, станцуйте сцену из балета или создайте другое произведение искусства, шепча при этом хвалу красоте и грации Шелин. Произведение искусства не должно быть ни большим, ни сложным, а душевным и выполненным в меру ваших способностей. Подарите произведение искусства незнакомке и сделайте ей при этом искренний комплимент. Если поблизости нет подходящих людей, которые могли бы получить подарок, оставьте его на видном месте с запиской, восхваляющей Шелин и прося того, кто его найдет, принять его с вашими самыми теплыми пожеланиями. Вы получаете сакральный бонус +4 к проверкам использования магических устройств.",
     "zhCN": "绘制一幅画，创作一首短诗或短歌，跳出舞剧中的一个场景，或者进行其他艺术创作，当你如此做的时候低声赞颂雪琳的美丽与优雅。这些艺术品不需要庞大或复杂，但是要尽你所能进行真挚的创作。将作品赠与一个陌生人，并且在这么做的时候向其致以真挚的赞美。若没有合适的人能够接受礼物，那么将它放置在明显的地方，并留下纸条，写有对雪琳的颂扬之词以及对找到作品并取走之人的热情祝福。你的使用魔法物品检定获得+4神圣加值。"
   },
   {
@@ -6926,7 +6926,7 @@
   {
     "Key": "SpellPowerShelynSentinel1.Description",
     "enGB": "entangle 3/day, cat’s grace 2/ day, or haste 1/day",
-    "ruRU": "Вы получаете следующие псевдозаклинания: Опутывание/3 раза в день, Кошачья грация/2 раза в день, Ускорение/1 раз в день.",
+    "ruRU": "Вы получаете следующие псевдозаклинания: Опутывание 3/день, Кошачья грация 2/день, Ускорение 1/день.",
     "zhCN": "纠缠术 3次/日，猫之优雅 2次/日，或加速术 1次/日"
   },
   {
@@ -7394,7 +7394,7 @@
   {
     "Key": "SpellPowerNaderi1.Description",
     "enGB": "castigate 2/day",
-    "ruRU": "Вы получаете псевдозаклинание Осуждение/2 раза в день.",
+    "ruRU": "Вы получаете псевдозаклинание Осуждение 2/день.",
     "zhCN": "严加斥责 2/天"
   },
   {
@@ -7446,7 +7446,7 @@
   {
     "Key": "SpellPowerDesna1.Description",
     "enGB": "longstrider 3/day",
-    "ruRU": "Вы получаете способность Скороход/3 раза в день.",
+    "ruRU": "Вы получаете способность Скороход 3/день.",
     "zhCN": "大步奔行 3/天"
   },
   {
@@ -7498,7 +7498,7 @@
   {
     "Key": "SpellPowerErastil1.Description",
     "enGB": "cure light wounds 3/day, shield other 2/day, or prayer 1/day",
-    "ruRU": "Вы получаете следующие псевдозаклинания: Исцеление легких ранений/3 раза в день, Защитить других/2 раза в день, Молебен/1 раз в день.",
+    "ruRU": "Вы получаете следующие псевдозаклинания: Исцеление легких ранений 3/день, Защитить других 2/день, Молебен 1/день.",
     "zhCN": "治疗轻伤 3次/日，护卫他人 2次/日，或祈祷术 1次/日"
   },
   {
@@ -7589,7 +7589,7 @@
   {
     "Key": "SpellPowerGorum1.Description",
     "enGB": "enlarge person 3/day, bull’s strength 2/day, or beast shape I 1/day",
-    "ruRU": "Вы получаете следующие псевдозаклинания: Увеличение гуманоида/3 раза в день, Бычья сила/2 раза в день, Облик зверя I/1 раз в день.",
+    "ruRU": "Вы получаете следующие псевдозаклинания: Увеличение гуманоида 3/день, Бычья сила 2/день, Облик зверя I 1/день.",
     "zhCN": "变巨术 3次/日，牛之蛮力 2次/日，或野兽形态Ⅰ 1次/日"
   },
   {
@@ -7901,7 +7901,7 @@
   {
     "Key": "SpellPowerMahathallahExalted1.Description",
     "enGB": "invisibility 2/day",
-    "ruRU": "Вы получаете псевдозаклинание Невидимость/2 раза в день.",
+    "ruRU": "Вы получаете псевдозаклинание Невидимость 2/день.",
     "zhCN": "隐形术2次/天"
   },
   {
@@ -8018,7 +8018,7 @@
   {
     "Key": "ExaltedExaltedDomainPlus.Description",
     "enGB": "At 5th level, the exalted further increases her already impressive knowledge of her chosen deity’s faith and is rewarded with increased powers in one of the spheres over which her deity holds sway. The exalted chooses a new cleric secondary domain of her chosen deity to which she gains access, then adds her exalted class levels to all her domains. (If she is a separatist, treat her domain the way it essentially is).",
-    "ruRU": "На 5 уровне вознесенный еще больше увеличивает свои и без того впечатляющие знания о вере избранного им божества и награждается возросшими силами в одной из сфер, над которыми господствует ее божество. Возвышенный выбирает новый вторичный домен жреца доступного его божеству, а затем добавляет уровни своего вознесенного класса к уровнях жреца для определения эффектов домейнов.",
+    "ruRU": "На 5 уровне вознесенный еще больше увеличивает свои и без того впечатляющие знания о вере избранного им божества и награждается возросшими силами в одной из сфер, над которыми господствует ее божество. Он выбирает новый вторичный домен жреца доступного его божеству, а затем добавляет уровни своего вознесенного класса к уровнях жреца для определения эффектов домейнов.",
     "zhCN": "5级起，大尊者进一步增强了对自身宗教的理解和认识，而这使得她在她的神祇占据主导的一个方面获得了更强的力量。大尊者可以选择一个她的神祇可以授予的新牧师次要领域，然后将大尊者职业等级加到她的所有领域等级上。（如果他是一名异见先驱，按照她领域的本质进行处理）"
   },
   {
@@ -8148,7 +8148,7 @@
   {
     "Key": "SpellPowerNorgorber1.Description",
     "enGB": "poison 1/day",
-    "ruRU": "Вы получаете псевдозаклинание Яд/1 раз в день.",
+    "ruRU": "Вы получаете псевдозаклинание Яд 1/день.",
     "zhCN": "毒击术 1次/日"
   },
   {
@@ -8226,7 +8226,7 @@
   {
     "Key": "SpellPowerLamashtu1.Description",
     "enGB": "cause fear 3/day, mortal terror 2/day, or fear 1/day",
-    "ruRU": "Вы получаете псевдозаклинания Устрашение/3 раза в день, Смертный ужас/2 раза в день, Ужас/1 раз в день.",
+    "ruRU": "Вы получаете псевдозаклинания Устрашение 3/день, Смертный ужас 2/день, Ужас 1/день.",
     "zhCN": "惊恐术 3次/日，惧死术 2次/日，或恐惧术 1次/日"
   },
   {
@@ -8278,7 +8278,7 @@
   {
     "Key": "SpellPowerOtolmens1.Description",
     "enGB": "blink 1/day",
-    "ruRU": "Вы получаете псевдозаклинание Мерцание/1 раз в день.",
+    "ruRU": "Вы получаете псевдозаклинание Мерцание 1/день.",
     "zhCN": "移位术 1次/日"
   },
   {
@@ -8525,7 +8525,7 @@
   {
     "Key": "SpellPowerArazni1.Description",
     "enGB": "divine favor 3/day, effortless armor 2/day, or rage 1/day",
-    "ruRU": "Вы получаете псевдозаклинания: Милость божества/3 раза в день, Невесомая броня/2 раза в день, Ярость/1 раз в день.",
+    "ruRU": "Вы получаете псевдозаклинания: Милость божества 3/день, Невесомая броня 2/день, Ярость 1/день.",
     "zhCN": "神恩术3/天，重甲轻装2/天，或狂暴术1/天"
   },
   {
@@ -8590,7 +8590,7 @@
   {
     "Key": "SpellPowerCharon1.Description",
     "enGB": "summon monster I 3/day",
-    "ruRU": "Вы получаете псевдозаклинание Призыв чудовища I/3 раза в день.",
+    "ruRU": "Вы получаете псевдозаклинание Призыв чудовища I 3/день.",
     "zhCN": "召唤怪物1级，3次/天"
   },
   {
@@ -9292,7 +9292,7 @@
   {
     "Key": "SpellPowerIomedae1.Description",
     "enGB": "bless weapon 3/day, bull’s strength 2/day, or magic vestment 1/day",
-    "ruRU": "Вы получаете следующие псевдозаклинания: Благословение оружия/3 раза в день, Бычья сила/2 раза в день, Магическое облачение/1 раз в день.",
+    "ruRU": "Вы получаете следующие псевдозаклинания: Благословение оружия 3/день, Бычья сила 2/день, Магическое облачение 1/день.",
     "zhCN": "祝福武器 3次/日，牛之蛮力 2次/日，或魔化防具 1次/日"
   },
   {
@@ -9305,7 +9305,7 @@
   {
     "Key": "DeificObedienceIomedae2.Description",
     "enGB": "If you have the smite evil class feature, you gain an extra use of that ability per day. You add the levels of sentinel to your paladin levels when calculating the extra damage dealt by your smite. If you successfully deal damage with your smite, your target must succeed at a Will saving throw (with a DC equal to 10 + your Charisma modifier + 1/2 your Hit Dice) or be stunned for 1 round plus 1 round for every 4 Hit Dice you possess (maximum 6 rounds). Once a target saves against this stunning effect, it is immune to the stunning effect for 24 hours.",
-    "ruRU": "Если у вас есть классовая способность Сокрушение зла, вы получаете дополнительное применение этой способности в день. Вы добавляете ваши уровни часового к уровням паладина когда рассчитываете урон от сокрушения зла. Если вы наносите урон по цели вашего сокрушения, то цель должна совершить успешный спасбросок воли (DC = 10 + 1/2 ваших костей здоровья + модификатор Харизмы) или быть шокированным на 1 раунд + 1 раунд за каждые 4 ваши кости здоровья (максимум 6 раундов). Как только цель совершает успешный спасбросок против этого эффекта, она становится невосприимчива к шоку на 24 часа.",
+    "ruRU": "Если у вас есть классовая способность Сокрушение зла, вы получаете дополнительное применение этой способности в день. Вы добавляете ваши уровни часового к уровням паладина когда рассчитываете урон от сокрушения зла. Если вы наносите урон по цели вашего сокрушения, то цель должна совершить успешный спасбросок воли (DC = 10 + 1/2 ваших костей здоровья + модификатор Харизмы) или оказаться шокированной на 1 раунд + 1 раунд за каждые 4 ваши кости здоровья (максимум 6 раундов). Как только цель совершает успешный спасбросок против этого эффекта, она становится невосприимчива к шоку на 24 часа.",
     "zhCN": "若你具有制裁邪恶职业能力，那么该能力的每日使用次数额外增加1次。在判断该能力造成的额外伤害时，将你的信仰哨卫等级加到圣武士等级之上。若你成功使用制裁邪恶造成伤害，那么你的目标必须进行意志豁免（DC为10 + 你的魅力调整值 + 1/2你的生命骰），失败则会震慑，持续时间为1轮，你每有4个生命骰额外增加1轮（最高6轮）。如果目标成功豁免，会在24小时内免疫这个震慑效果。"
   },
   {
@@ -9357,7 +9357,7 @@
   {
     "Key": "SpellPowerMilani1.Description",
     "enGB": "protection from evil 3/day, shield other 2/day, or magic vestment 1/day",
-    "ruRU": "Вы получаете следующие псевдозаклинания: Защита от зла/3 раза в день, Защитить других/2 раза в день, Магическое облачение/1 раз в день.",
+    "ruRU": "Вы получаете следующие псевдозаклинания: Защита от зла 3/день, Защитить других 2/день, Магическое облачение 1/день.",
     "zhCN": "防护邪恶 3次/日，护卫他人 2次/日，或魔化防具 1次/日"
   },
   {
@@ -9422,7 +9422,7 @@
   {
     "Key": "SpellPowerNivi1.Description",
     "enGB": "bless 3/day, shield other 2/day, or heroism 1/day",
-    "ruRU": "Вы получаете следующие псевдозаклинания: Благословение/3 раза в день, Защитить других/2 раза в день, Героизм/1 раз в день.",
+    "ruRU": "Вы получаете следующие псевдозаклинания: Благословение 3/день, Защитить других 2/день, Героизм 1/день.",
     "zhCN": "祝福术 3次/日，护卫他人 2次/日，或英雄气概 1次/日"
   },
   {
@@ -9656,7 +9656,7 @@
   {
     "Key": "SpellPowerKabriri1.Description",
     "enGB": "ghoul touch 2/day",
-    "ruRU": "Вы получаете псевдозаклинание: Прикосновение гуля/2 раза в день.",
+    "ruRU": "Вы получаете псевдозаклинание: Прикосновение гуля 2/день.",
     "zhCN": "食尸鬼之触 2次/天"
   },
   {
@@ -9721,7 +9721,7 @@
   {
     "Key": "SpellPowerSocothbenoth1.Description",
     "enGB": "command 3/day, mirror image 2/day, or heroism 1/day",
-    "ruRU": "Вы получаете псевдозаклинания: Команда/3 раза в день, Зеркальное отражение/2 раза в день, Героизм/1 раз в день.",
+    "ruRU": "Вы получаете псевдозаклинания: Команда 3/день, Зеркальное отражение 2/день, Героизм 1/день.",
     "zhCN": "命令术 3次/天，镜影术 2次/天，或英雄气概 1次/天"
   },
   {
@@ -9773,7 +9773,7 @@
   {
     "Key": "SpellPowerFalayna1.Description",
     "enGB": "divine favor 3/day, bone fists 2/day, or greater magic weapon 1/day",
-    "ruRU": "Вы получаете следующие псевдозаклинания: Милость божества/3 раза в день, Костяные кулаки/2 раза в день, Магическое оружие, высшее/1 раз в день.",
+    "ruRU": "Вы получаете следующие псевдозаклинания: Милость божества 3/день, Костяные кулаки 2/день, Магическое оружие, высшее 1/день.",
     "zhCN": "神恩术 3次/天，骨拳术 2次/天，或高等魔化武器 1次/天"
   },
   {
@@ -10624,7 +10624,7 @@
   {
     "Key": "SpellPowerChaldira1.Description",
     "enGB": "blink 1/day",
-    "ruRU": "Вы получаете псевдозаклинание: Мерцание/1 раз в день.",
+    "ruRU": "Вы получаете псевдозаклинание: Мерцание 1/день.",
     "zhCN": "移位术 1次/天"
   },
   {
@@ -10676,7 +10676,7 @@
   {
     "Key": "SpellPowerPulura1.Description",
     "enGB": "color spray 3/day",
-    "ruRU": "Вы получаете псевдозаклинание: Цветные брызги/3 раза в день.",
+    "ruRU": "Вы получаете псевдозаклинание: Цветные брызги 3/день.",
     "zhCN": "七彩喷射 3次/天"
   },
   {
@@ -10728,7 +10728,7 @@
   {
     "Key": "SpellPowerRovagug1.Description",
     "enGB": "align weapon (evil only) 2/day",
-    "ruRU": "Вы получаете псевдозаклинание: Благословение оружия (только злое)/2 раза в день",
+    "ruRU": "Вы получаете псевдозаклинание: Благословение оружия (только злое) 2/день",
     "zhCN": "阵营武器（仅限邪恶） 2次/日"
   },
   {
@@ -11053,7 +11053,7 @@
   {
     "Key": "SpellPowerLanternKing1.Description",
     "enGB": "hideous laughter 2/day",
-    "ruRU": "Вы получаете псевдозаклинание: Безудержный смех/2 раза в день.",
+    "ruRU": "Вы получаете псевдозаклинание: Безудержный смех 2/день.",
     "zhCN": "狂笑术 2次/日"
   },
   {
@@ -11118,7 +11118,7 @@
   {
     "Key": "SpellPowerGozreh1.Description",
     "enGB": "entangle 3/day",
-    "ruRU": "Вы получаете псевдозаклинание: Опутывание/3 раза в день.",
+    "ruRU": "Вы получаете псевдозаклинание: Опутывание 3/день.",
     "zhCN": "纠缠术 3次/日"
   },
   {
@@ -11183,7 +11183,7 @@
   {
     "Key": "SpellPowerCalistria1.Description",
     "enGB": "eagle’s splendor 2/day",
-    "ruRU": "Вы получаете псевдозаклинание: Орлиное великолепие/2 раза в день.",
+    "ruRU": "Вы получаете псевдозаклинание: Орлиное великолепие 2/день.",
     "zhCN": "鹰之威仪 2次/日"
   },
   {
@@ -11775,176 +11775,208 @@
     "Key": "DeificObedienceMrtyu.Name",
     "ProcessTemplates": false,
     "enGB": "Mrtyu Obedience",
+    "ruRU": "Послушание Мртью",
     "zhCN": "莫求仪典"
   },
   {
     "Key": "DeificObedienceMrtyu.Description",
     "enGB": "Hear confessions of the dying or spend at least 1 hour burying the dead after a battle. If there are no dying or dead people in the area, spend the hour uttering prayers for the last dead person you encountered. Gain a +4 insight bonus on saving throws against spells that affect multiple creatures.",
+    "ruRU": "Выслушайте исповеди умирающих или потратьте хотя бы 1 час на похороны погибших после битвы. Если поблизости нет умирающих или мертвых людей, потратьте час на молитвы за последнего мертвеца, которого вы встретили. Вы получаете интуитивный бонус +4 к спасброскам против заклинаний, затрагивающих сразу несколько существ.",
     "zhCN": "聆听垂死者的忏悔，或在战斗后花至少1小时埋葬死者。如果该地区没有垂死者，也没有死者，则用这些时间为你遇到的最后一个死者祈祷。对抗影响多个生物的法术的豁免检定获得+4洞察加值。"
   },
   {
     "Key": "SpellPowerMrtyu1.Name",
     "ProcessTemplates": false,
     "enGB": "Ruled by Passion",
+    "ruRU": "Управляемый страстью",
     "zhCN": "激情俘虏"
   },
   {
     "Key": "SpellPowerMrtyu1.Description",
     "enGB": " remove fear 3/day, aid 2/day, or remove blindness 1/day",
+    "ruRU": "Вы получаете следующие псевдозаклинания: Снятие страха 3/день, Помощь 2/день, Снятие слепоты 1/день.",
     "zhCN": "移除恐惧 3次/天，援助术 2次/天，移除目盲 1次/天"
   },
   {
     "Key": "DeificObedienceMrtyu2.Name",
     "ProcessTemplates": false,
     "enGB": "Death's Lover",
+    "ruRU": "Любовник смерти",
     "zhCN": "死神之爱"
   },
   {
     "Key": "DeificObedienceMrtyu2.Description",
     "enGB": "You gain Diplomacy and Perception as class skills, and you gain a bonus on checks using these skills equal to half your Hit Dice.",
+    "ruRU": "Убеждение и Внимание становятся для вас классовыми навыками. Кроме того, вы получаете бонус к проверкам этих навыков равный половине ваших костей здоровья.",
     "zhCN": "你的交涉和察觉成为本职技能，并且进行这些检定时获得等同于你生命骰一半的加值。"
   },
   {
     "Key": "DeificObedienceMrtyu3.Name",
     "ProcessTemplates": false,
     "enGB": "Hands of Death",
+    "ruRU": "Руки смерти",
     "zhCN": "死亡之手"
   },
   {
     "Key": "DeificObedienceMrtyu3.Description",
     "enGB": "Once per day, you can call upon a whirling mass of daggers and swords that functions as a blade barrier. This effect lasts only 1 round per Hit Die, but you can direct it to move within close range as a move action.",
+    "ruRU": "Раз в день вы можете призвать вихрь кинжалов и мечей. Эта способность работает как заклинание Стена лезвий, но его длительно равна 1 раунд/кость здоровья и вы при помощи сопутствующего действия можете передвинуть его в любое место на близкой дистанции.",
     "zhCN": "每天一次，你可以召唤大量旋转着的匕首和剑，如同剑刃屏障法术。该效果仅持续每生命骰1轮，但你可以通过一个移动动作使其在近程范围内移动。"
   },
   {
     "Key": "DeificObedienceMephistopheles.Name",
     "ProcessTemplates": false,
     "enGB": "Mephistopheles Obedience",
+    "ruRU": "Послушание Мефистофеля",
     "zhCN": "墨菲斯托菲利斯仪典"
   },
   {
     "Key": "DeificObedienceMephistopheles.Description",
     "enGB": "Every day you must lie to someone for your own personal gain (this cannot be the same person more than once a week). Additionally, once per week, you must write down a new secret that you have learned about someone else and burn it as a sacrifice to Mephistopheles. Gain a +4 profane bonus to Diplomacy checks.",
+    "ruRU": "Каждый день вы должны лгать кому-то ради своей личной выгоды (это не может быть один и тот же человек чаще одного раза в неделю). Кроме того, раз в неделю вы должны записать новую тайну, которую вы узнали о ком-то другом, и сжечь ее в жертву Мефистофелю. Вы получаете нечестивый бонус +4 к проверкам дипломатии.",
     "zhCN": "为了自身利益而对某人撒谎（同一个人每周不能超过一次）。此外，每周一次，你必须写下一个新掌握的别人的秘密，并将其烧掉，作为对墨菲斯托菲利斯的献祭。交涉检定获得+4亵渎加值。"
   },
   {
     "Key": "SpellPowerMephistopheles1.Name",
     "ProcessTemplates": false,
     "enGB": "Fool Maker",
+    "ruRU": "Обманщик",
     "zhCN": "钓鱼人"
   },
   {
     "Key": "SpellPowerMephistopheles1.Description",
     "enGB": "hypnotism 3/day",
+    "ruRU": "Вы получаете псевдозаклинание: Гипноз 3/день.",
     "zhCN": "催眠术 3次/天"
   },
   {
     "Key": "DeificObedienceMephistopheles3.Name",
     "ProcessTemplates": false,
     "enGB": "Persecutor",
+    "ruRU": "Преследователь",
     "zhCN": "迫害者"
   },
   {
     "Key": "DeificObedienceMephistopheles3.Description",
     "enGB": "You can use your Bluff skill to demoralize opponents and influence an opponent’s attitude as though it were the Intimidate skill. The effects function the same. If you have access to hell's decrees, gain Black Seraph Annihilation as a bonus feat.",
+    "ruRU": "Вы можете устрашать своих врагов при помощи обмана. Этот эффект работает как деморализация, но вместо проверки устрашения вы проходите проверку обмана. Кроме того, если у вас есть доступ к способности Адский указ, то вы получаете черту Аннигиляция черного серафима.",
     "zhCN": "你可以使用唬骗技能来挫败对手的士气，并影响对手的态度，如同威吓技能一般。此外，如果你掌握地狱法令，获得黑堕湮灭作为额外专长。"
   },
   {
     "Key": "DeificObedienceMephistopheles2.Name",
     "ProcessTemplates": false,
     "enGB": "Charming Liar",
+    "ruRU": "Очаровательный лжец",
     "zhCN": "迷人骗徒"
   },
   {
     "Key": "DeificObedienceMephistopheles2.Description",
     "enGB": "You can use your Diplomacy skill to demoralize opponents and influence an opponent’s attitude as though it were the Bluff skill. The effects function the same. Additionally, any of your charm effects has its DC increased by 2.",
+    "ruRU": "Вы можете устрашать своих врагов при помощи дипломатии. Этот эффект работает как деморализация, но вместо проверки обмана вы проходите проверку дипломатии. Кроме того, сложность ваших эффектов очарования увеличивается на 2.",
     "zhCN": "你可以使用交涉技能来挫败对手的士气，并影响对手的态度，如同唬骗技能一般。此外，你的任何魅惑效果的DC都会增加2。"
   },
   {
     "Key": "NewSpellResinousSkin.Name",
     "ProcessTemplates": false,
     "enGB": "Resinous Skin",
+    "ruRU": "Смолистая кожа",
     "zhCN": "树脂皮肤"
   },
   {
     "Key": "NewSpellResinousSkin.Description",
     "enGB": "You coat your body with a resinous substance, protecting you from attacks and binding weapons that strike you. You gain DR 5/piercing, as well as a +4 circumstance bonus to your CMD against disarm attempts. Additionally, you gain a +2 circumstance bonus on combat maneuver checks to initiate a grapple, maintain a grapple, and pin a foe. Any enemy you grapple takes a –2 penalty on attempts to break the grapple and to escape the grapple. Any weapon that strikes you becomes stuck unless its wielder succeeds at a Reflex saving throw. When it gets stuck in this way, you can attempt a free disarm combat maneuver.",
+    "ruRU": "Вы покрываете свое тело смолистым веществом, защищающим вас от атак и связывающим поражающее вас оружие. Вы получаете снижение урона 5/колющее, а также получаете ситуативный бонус +4 к защите от боевого маневра разоружение. Кроме того, вы получаете ситуативный бонус +2 к проверкам боевых маневров когда вы пытаетесь схватить, удержать в захвате или прижать цель. Захваченная вами цель получает штраф -2 к попыткам вырваться из захвата. Любое оружие которое попадает по вам, застревает, если его владелец не совершит успешный спасбросок реакции. Когда оружие застревает таким образом, вы можете свободным действием разоружить владельца этого оружия.",
     "zhCN": "你用树脂包裹自己的身体，使你免于攻击并且粘住攻击你的武器。你获得DR5/穿刺，对抗缴械的CMD+4环境加值。此外，你的擒抱、保持擒抱和压制敌人的战技检定获得+2环境加值。任何被你擒抱的敌人在试图打破擒抱和逃离擒抱时都有-2减值。任何武器在命中你之后都会被粘住，除非持有者通过一次反射检定。当你以此法粘住武器时，可以立刻施展缴械战技。"
   },
   {
     "Key": "NewSpellPilferingHand.Name",
     "ProcessTemplates": false,
     "enGB": "Pilfering Hand",
+    "ruRU": "Воровская рука",
     "zhCN": "第三只手"
   },
   {
     "Key": "NewSpellPilferingHand.Description",
     "enGB": "You create and control an invisible telekinetic force, instantaneously attempting a disarm combat maneuver against a target within range. Use your caster level as your Combat Maneuver Bonus, adding your spellcasting ability score modifier in place of your Strength or Dexterity modifier. This combat maneuver attempt does not provoke an attack of opportunity from its target, but casting this spell might.",
+    "ruRU": "Вы создаете и управляете невидимой телекинетической силой, при помощи которой пытаетесь разоружить одного противника на ближней дистанции. Вы используете свой уровень заклинателя в качестве модификатора боевых маневров, а вашу характеристику которую вы используете для сотворения заклинания в качестве модификатора Силы или Ловкости. Эта проверка не провоцирует внеочередные атаки, но само заклинание все также провоцирует.",
     "zhCN": "你创造并且控制一股无形的精神力量，立刻对范围内的一个目标施展缴械战技。使用你的施法者等级作为你的战技加值，加上你的施法者属性调整值。该战技不会引发目标的借机攻击（但是施放此法术可能会引发借机攻击）。"
   },
   {
     "Key": "DeificObedienceNocticula.Name",
     "ProcessTemplates": false,
     "enGB": "Nocticula Obedience",
+    "ruRU": "Послушание Ноктикулы",
     "zhCN": "诺缇库拉仪典"
   },
   {
     "Key": "DeificObedienceNocticula.Description",
     "enGB": "Spend an hour in a secluded location while crafting a work of art. If your hour of work begins at, ends at, or includes the stroke of midnight, then the subject of your art is up to you. Otherwise, your art must include the concept of midnight in some way. When you aren’t adjacent to an ally, gain a +1 morale bonus to your AC and on all saving throws.",
+    "ruRU": "«Проведите час в уединенном месте, создавая произведение искусства. Если ваш час работы начинается, заканчивается или включает в себя полночь, то тема вашего произведения зависит от вас. В противном случае ваше произведение должно включать в себя в каком-то смысле концепцию полуночи. Когда рядом с вами нет союзников, вы получаете бонус боевого духа +1 к вашей защите и ко всем спасброскам.",
     "zhCN": "在僻静处花一个小时制作一件艺术品。 如果你的工作时间闭区间包含午夜，那么艺术主题可以自定，否则需要以某种方式包含午夜的概念。 当你不与盟友相邻时，你的AC和所有豁免检定都会获得+1士气加值。"
   },
   {
     "Key": "DeificObedienceNocticulaDemon.Name",
     "ProcessTemplates": false,
     "enGB": "Nocticula Demonic Obedience",
+    "ruRU": "Демоническое послушание Ноктикулы",
     "zhCN": "诺缇库拉恶魔仪典"
   },
   {
     "Key": "DeificObedienceNocticulaDemon.Description",
     "enGB": "Ingest a dose of psychedelic plants or fungi and engage in any number of sexual acts (either alone or with others), during which at least a pint of blood must be shed. Gain a +4 profane bonus on saves against blindness and charm effects.",
+    "ruRU": "Проглотите дозу психоделических растений или грибов и совершите любое количество половых актов (в одиночку или с другими), во время которых вам необходимо пролить как минимум пинту крови. Вы получаете нечестивый бонус +4 к спасброскам против слепоты и эффектов очарования.",
     "zhCN": "服下一株迷幻植物或真菌，进行任意数量的性行为（独自或与别人），期间有至少一品脱的血液流出。在对抗目盲和魅惑效果的豁免获得+4亵渎加值。"
   },
   {
     "Key": "DeificObedienceNocticulaSentinel.Name",
     "ProcessTemplates": false,
     "enGB": "Nocticula (Sentinel)",
+    "ruRU": "Ноктикула (часовой)",
     "zhCN": "诺缇库拉（信仰哨卫）"
   },
   {
     "Key": "DeificObedienceNocticulaSentinel.Description",
     "enGB": "Become a Sentinel to gain access to her boons, which will be granted at certain character or class levels.",
+    "ruRU": "Вы должны стать часовым этого божества, чтобы получить доступ к её дарам.",
     "zhCN": "成为信仰哨卫来获取她的神恩资格，你会在合适的角色或职业等级得到神恩。"
   },
   {
     "Key": "SpellPowerNocticula1.Name",
     "ProcessTemplates": false,
     "enGB": "Midnight’s Grace",
+    "ruRU": "Милость полуночи",
     "zhCN": "午夜恩典"
   },
   {
     "Key": "SpellPowerNocticula1.Description",
     "enGB": "true strike 3/day, cat’s grace 2/day, or vampiric touch 1/day",
+    "ruRU": "Вы получаете следующие псевдозаклинания: Верный удар 3/день, Кошачья грация 2/день, Вампирское прикосновение 1/день.",
     "zhCN": "克敌机先 3次/天，猫之优雅 2次/天，吸血鬼之触 1次/天"
   },
   {
     "Key": "DeificObedienceNocticula2.Name",
     "ProcessTemplates": false,
     "enGB": "Sinuous Daggerplay",
+    "ruRU": "Игра извивающимся кинжалом",
     "zhCN": "灵尾匕舞"
   },
   {
     "Key": "DeificObedienceNocticula2.Description",
     "enGB": "You grow a sinuous tail (if you already have a tail, you grow a second one). This tail is prehensile and capable of manipulating and holding small objects, but cannot perform fine manual work as if it were a hand, with the exception of wielding a dagger. When you make a full attack with this tail-wielded dagger, you can make an additional attack.",
+    "ruRU": "У вас вырастает извивающийся хвост (если у вас уже есть хвост, то у вас выыростает второй). При его помощи вы можете управлять и удерживать небольшие предметы, но не может выполнять тонкую ручную работу, как если бы это была рука, за исключением владения кинжалом. Когда вы совершаете полную атаку держа кинжал хвостом, вы можете совершить дополнительную атаку.",
     "zhCN": "你长出一条弯曲灵活的尾巴（如果你已经有一条尾巴，会长出第二条尾巴）。 这条尾巴极易操纵并且能够控制和抓握轻小物体，但除了挥舞匕首之外，它不能像手一样进行精细的手工操作。 当你用该匕首全回合攻击时，你可以进行一次额外攻击。"
   },
   {
     "Key": "DeificObedienceNocticula3.Name",
     "ProcessTemplates": false,
     "enGB": "Death Is But a Word",
+    "ruRU": "Смерть - всего лишь слово",
     "zhCN": "死就一个字"
   },
   {
     "Key": "DeificObedienceNocticula3.Description",
     "enGB": "Your devotion to Nocticula is rewarded with a single whisper from her lips to your ear alone, revealing one of the countless words Our Lady in Shadow knows to cause death. Each of her worshipers receives a unique word. When you learn it, you can use the word to cast power word kill as a spell-like ability once per day.",
+    "ruRU": "Ваша преданность Ноктикуле будет вознаграждена одним шепотом с ее губ вам на ухо, открывающим одно из бесчисленных слов, которые, как знает Владычица в Тени, могут вызвать смерть. Каждый из ее поклонников узнает уникальное слово. Когда вы его узнаете, вы раз в день можете произнести его, как если бы вы сотворили заклинание Слово силы: смерть.",
     "zhCN": "你对诺缇库拉的忠诚得到了回报，一声独属于你的低语，从她的嘴唇到你的耳边。这是阴影女士所知晓的无数个带来死亡的真言之一。她的每个信徒收到的真言都是独一无二的。当你学会它时，便可以将律令死亡作为类法术能力施展，每天一次。"
   }
 
