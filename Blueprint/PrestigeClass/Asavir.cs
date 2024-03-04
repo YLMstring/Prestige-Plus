@@ -367,6 +367,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(JanniDescription)
               .SetIcon(icon)
               .AddBuffAllSavesBonus(ModifierDescriptor.Luck, 1)
+              .AddFacts(new() { FeatureRefs.PerfectStrikeFeature.ToString() })
               .Configure();
 
             return FeatureConfigurator.New(JanniBless, JanniBlessGuid)
@@ -375,7 +376,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIcon(icon)
               .SetIsClassFeature(true)
               .AddFeatureToPet(feat1, PetType.AnimalCompanion)
-              .AddFacts(new() { FeatureRefs.PerfectStrikeFeature.ToString() })
               .AddBuffAllSavesBonus(ModifierDescriptor.Luck, 1)
               .Configure();
         }
