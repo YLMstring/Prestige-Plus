@@ -27,7 +27,7 @@ namespace PrestigePlus.CustomComponent.Feat
             while (enumerator.MoveNext())
             {
                 UnitEntityData unit = enumerator.Current;
-                if (unit.DistanceTo(Owner) <= 5.Feet().Meters && !unit.Descriptor.State.IsDead && unit.IsAlly(Owner))
+                if (unit != Owner && unit.DistanceTo(Owner) <= 5.Feet().Meters && !unit.Descriptor.State.IsDead && unit.IsAlly(Owner))
                 {
                     return;
                 }
@@ -42,10 +42,11 @@ namespace PrestigePlus.CustomComponent.Feat
 
         void IRulebookHandler<RuleSavingThrow>.OnEventAboutToTrigger(RuleSavingThrow evt)
         {
-            foreach (UnitGroupMemory.UnitInfo unitInfo in Owner.Memory.UnitsList)
+            using EntityPoolEnumerator<UnitEntityData> enumerator = Game.Instance.State.Units.GetEnumerator();
+            while (enumerator.MoveNext())
             {
-                UnitEntityData unit = unitInfo.Unit;
-                if (unit.DistanceTo(Owner) <= 5.Feet().Meters && !unit.Descriptor.State.IsDead && unit.IsAlly(Owner))
+                UnitEntityData unit = enumerator.Current;
+                if (unit != Owner && unit.DistanceTo(Owner) <= 5.Feet().Meters && !unit.Descriptor.State.IsDead && unit.IsAlly(Owner))
                 {
                     return;
                 }
