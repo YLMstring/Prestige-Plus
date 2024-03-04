@@ -38,7 +38,7 @@ namespace PrestigePlus.Blueprint.Spell
             var icon = AbilityRefs.BlessingOfTheSalamander.Reference.Get().Icon;
 
             var action = ActionsBuilder.New()
-                    .SavingThrow(type: SavingThrowType.Reflex, customDC: ContextValues.Rank(), useDCFromContextSavingThrow: true,
+                    .SavingThrow(type: SavingThrowType.Reflex, useDCFromContextSavingThrow: true,
                     onResult: ActionsBuilder.New()
                         .ConditionalSaved(failed: ActionsBuilder.New()
                             .CombatManeuver(ActionsBuilder.New().Build(), CombatManeuver.Disarm)
@@ -50,7 +50,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
-              .AddDamageResistancePhysical(form: PhysicalDamageForm.Piercing, bypassedByForm: true, value: 5)
+              .AddDamageResistancePhysical(form: PhysicalDamageForm.Piercing, bypassedByForm: true, value: 5, bypassedByMagic: true, minEnhancementBonus: 1, or: true)
               .AddCMDBonusAgainstManeuvers(ModifierDescriptor.Circumstance, new CombatManeuver[] { CombatManeuver.Disarm }, 4)
               .AddCMBBonusForManeuver(null, null, ModifierDescriptor.Circumstance, new CombatManeuver[] { CombatManeuver.Grapple }, 2)
               .AddCMDBonusAgainstManeuvers(maneuvers: new[] { CombatManeuver.Grapple }, value: 2)

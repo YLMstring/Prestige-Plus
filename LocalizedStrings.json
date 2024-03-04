@@ -11868,7 +11868,7 @@
   {
     "Key": "NewSpellResinousSkin.Description",
     "enGB": "You coat your body with a resinous substance, protecting you from attacks and binding weapons that strike you. You gain DR 5/piercing, as well as a +4 circumstance bonus to your CMD against disarm attempts. Additionally, you gain a +2 circumstance bonus on combat maneuver checks to initiate a grapple, maintain a grapple, and pin a foe. Any enemy you grapple takes a –2 penalty on attempts to break the grapple and to escape the grapple. Any weapon that strikes you becomes stuck unless its wielder succeeds at a Reflex saving throw. When it gets stuck in this way, you can attempt a free disarm combat maneuver.",
-    "zhCN": "你用树脂包裹自己的身体，使你免于攻击并且粘住攻击你的武器。你获得DR5/穿刺，对抗缴械的CMD+4。此外，你的擒抱、保持擒抱和压制敌人的战技检定获得+2环境加值。任何被你擒抱的敌人在试图打破擒抱和逃离擒抱时都有-2减值。任何武器在命中你之后都会被粘住，除非持有者通过一次反射检定。当你以此法粘住武器时，可以立刻施展缴械战技。"
+    "zhCN": "你用树脂包裹自己的身体，使你免于攻击并且粘住攻击你的武器。你获得DR5/穿刺，对抗缴械的CMD+4环境加值。此外，你的擒抱、保持擒抱和压制敌人的战技检定获得+2环境加值。任何被你擒抱的敌人在试图打破擒抱和逃离擒抱时都有-2减值。任何武器在命中你之后都会被粘住，除非持有者通过一次反射检定。当你以此法粘住武器时，可以立刻施展缴械战技。"
   },
   {
     "Key": "NewSpellPilferingHand.Name",

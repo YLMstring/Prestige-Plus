@@ -19,7 +19,7 @@ namespace PrestigePlus.CustomComponent.Feat
             {
                 evt.AddExtraAttacks(1, false, false, base.Owner.Body.PrimaryHand.Weapon);
             }
-            else if (base.Owner.Body.SecondaryHand.MaybeWeapon?.Blueprint.Category == cat)
+            if (base.Owner.Body.SecondaryHand.MaybeWeapon?.Blueprint.Category == cat)
             {
                 evt.AddExtraAttacks(1, false, false, base.Owner.Body.SecondaryHand.Weapon);
             }
