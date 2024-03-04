@@ -4195,9 +4195,9 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteAlignment(AlignmentMaskType.TrueNeutral, group: Prerequisite.GroupType.Any)
               .SetGiveFeaturesForPreviousLevels(true)
               .AddToLevelEntry(1, Mrtyu0Feat())
-              .AddToLevelEntry(2, CreateMrtyu1())
-              .AddToLevelEntry(6, Mrtyu2Feat())
-              .AddToLevelEntry(10, Mrtyu3Feat())
+              .AddToLevelEntry(12, CreateMrtyu1())
+              .AddToLevelEntry(16, Mrtyu2Feat())
+              .AddToLevelEntry(20, Mrtyu3Feat())
               .Configure();
         }
 
@@ -4402,9 +4402,9 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteAlignment(AlignmentMaskType.LawfulEvil, group: Prerequisite.GroupType.Any)
               .SetGiveFeaturesForPreviousLevels(true)
               .AddToLevelEntry(1, Mephistopheles0Feat())
-              .AddToLevelEntry(2, CreateMephistopheles1())
-              .AddToLevelEntry(6, Mephistopheles3Feat())
-              .AddToLevelEntry(10, Mephistopheles2Feat())
+              .AddToLevelEntry(12, CreateMephistopheles1())
+              .AddToLevelEntry(16, Mephistopheles3Feat())
+              .AddToLevelEntry(20, Mephistopheles2Feat())
               .Configure();
         }
 
@@ -4550,9 +4550,9 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteFeature(NocticulaGuid, group: Prerequisite.GroupType.Any)
               .AddPrerequisiteFeature(NocticulaDemonGuid, group: Prerequisite.GroupType.Any)
               .SetGiveFeaturesForPreviousLevels(true)
-              .AddToLevelEntry(2, CreateNocticula1())
-              .AddToLevelEntry(6, NocticulaSentinel2Feat())
-              .AddToLevelEntry(10, NocticulaSentinel3Feat())
+              .AddToLevelEntry(12, CreateNocticula1())
+              .AddToLevelEntry(16, NocticulaSentinel2Feat())
+              .AddToLevelEntry(20, NocticulaSentinel3Feat())
               .Configure();
         }
 
