@@ -3181,9 +3181,9 @@
 
   {
     "Key": "AsavirJanni.Description",
-    "enGB": "At 10th level, an asavir gains Perfect Strike as a bonus feat, even if he does not meet the prerequisites. Both the asavir and her mount gain a +1 luck bonus on all saving throws.",
+    "enGB": "At 10th level, an asavir gains Perfect Strike as a bonus feat. Both the asavir and her mount gain a +1 luck bonus on all saving throws.",
     "ruRU": "На 10 уровне скакун асавира получает черту Идеальный удар, даже если не соответствует её требованиям. Асавир и его скакун получают бонус удачи +1 ко всем спасброскам.",
-    "zhCN": "10级时，亚萨维尔的坐骑获得极意击作为额外专长。她和她的坐骑的所有豁免获得+1运气加值。"
+    "zhCN": "10级时，亚萨维尔获得极意击作为额外专长。她和她的坐骑的所有豁免获得+1运气加值。"
   },
 
   {
