@@ -33,6 +33,8 @@ using UnityEngine;
 using TurnBased.Controllers;
 using PrestigePlus.Blueprint.CombatStyle;
 using PrestigePlus.CustomComponent;
+using PrestigePlus.Blueprint.PrestigeClass;
+using Kingmaker.UnitLogic.Buffs;
 
 namespace PrestigePlus.GrappleMechanic
 {
@@ -41,7 +43,7 @@ namespace PrestigePlus.GrappleMechanic
         private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         public override void TickOnUnit(UnitEntityData unit)
         {
-            //CalcLevel(unit);
+            TickForPreemptive(unit);
             var turn = Game.Instance.TurnBasedCombatController?.CurrentTurn;
             if (turn?.Rider == unit && !unit.View.IsMoving() && unit.HasFact(Jab) && unit.HasFact(Dancer) && turn.HasFiveFootStep(unit) == false && turn.m_RiderMovementStats.MetersMovedByFiveFootStep > 0)
             {
@@ -95,5 +97,25 @@ namespace PrestigePlus.GrappleMechanic
         private static BlueprintBuffReference Jab = BlueprintTool.GetRef<BlueprintBuffReference>(JabbingStyle.StylebuffGuid);
         private static BlueprintBuffReference Dancer = BlueprintTool.GetRef<BlueprintBuffReference>(JabbingStyle.Stylebuff3Guid);
 
+        public static void TickForPreemptive(UnitEntityData caster)
+        {
+            if (!caster.HasFact(Preemptive) || caster.View.IsMoving() || caster.HasFact(BuffSelf)) return;
+            foreach (UnitGroupMemory.UnitInfo unitInfo in caster.Memory.Enemies)
+            {
+                UnitEntityData unit = unitInfo.Unit;
+                if (unit.View.IsMoving() && caster.CombatState.EngagedUnits.Contains(unit) && !unit.HasFact(BuffTarget))
+                {
+                    Game.Instance.CombatEngagementController.ForceAttackOfOpportunity(caster, unit, false);
+                    GameHelper.ApplyBuff(unit, BuffTarget, new Rounds?(14400.Rounds()));
+                    GameHelper.ApplyBuff(caster, BuffSelf, new Rounds?(1.Rounds()));
+                    return;
+                }
+            }
+        }
+
+        private static BlueprintFeatureReference Preemptive = BlueprintTool.GetRef<BlueprintFeatureReference>(GoldenLegionnaire.PreemptiveStrikeGuid);
+
+        private static BlueprintBuffReference BuffTarget = BlueprintTool.GetRef<BlueprintBuffReference>(GoldenLegionnaire.PreemptiveStrikeBuffGuid);
+        private static BlueprintBuffReference BuffSelf = BlueprintTool.GetRef<BlueprintBuffReference>(GoldenLegionnaire.PreemptiveStrikeBuff2Guid);
     }
 }

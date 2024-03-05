@@ -51,12 +51,12 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, DefyDangerFeature(), FeatureRefs.Mobility.ToString())
-                .AddToLevelEntry(2, SeizetheOpportunity.FeatGuid, UnitedDefenseConfigure())
-                .AddToLevelEntry(3, AlliedRetributionFeature())
-                .AddToLevelEntry(4, BodyGuard.FeatGuid)
+                .AddToLevelEntry(1, DefyDangerFeature(), AuthoritativeCommandConfigure())
+                .AddToLevelEntry(2, SeizetheOpportunity.FeatGuid, UnitedDefenseConfigure(), AuthoritativeCommand2Feature())
+                .AddToLevelEntry(3, AlliedRetributionFeature(), AuthoritativeCommand3Feature())
+                .AddToLevelEntry(4, BodyGuard.FeatGuid, AuthoritativeCommand4Feature())
                 .AddToLevelEntry(5, DefyDangerGuid)
-                .AddToLevelEntry(6, BodyGuard.Feat2Guid, UnitedDefenseGuid)
+                .AddToLevelEntry(6, BodyGuard.Feat2Guid, UnitedDefenseGuid, AuthoritativeCommand5Feature())
                 .AddToLevelEntry(7, AlliedRetributionGuid)
                 .AddToLevelEntry(8, "8590fb52-921c-4365-832c-ca7635fd5a70")
                 .AddToLevelEntry(9, RetaliateFeature(), DefyDangerGuid)
@@ -126,74 +126,104 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .Configure();
         }
 
-        private const string SilentSoul = "GoldenLegionnaireSilentSoul";
-        private static readonly string SilentSoulGuid = "{8F05CF79-26E2-4741-96B4-AFE8FD2A57BA}";
+        private const string AuthoritativeCommand2 = "GoldenLegionnaireAuthoritativeCommand2";
+        public static readonly string AuthoritativeCommand2Guid = "{09666D53-7194-4B06-8CFB-303552B901C1}";
 
-        internal const string SilentSoulDisplayName = "GoldenLegionnaireSilentSoul.Name";
-        private const string SilentSoulDescription = "GoldenLegionnaireSilentSoul.Description";
-        public static BlueprintFeature SilentSoulFeature()
+        internal const string AuthoritativeCommand2DisplayName = "GoldenLegionnaireAuthoritativeCommand2.Name";
+        private const string AuthoritativeCommand2Description = "GoldenLegionnaireAuthoritativeCommand2.Description";
+        public static BlueprintFeature AuthoritativeCommand2Feature()
         {
-            var icon = AbilityRefs.MindBlank.Reference.Get().Icon;
-            return FeatureConfigurator.New(SilentSoul, SilentSoulGuid)
-              .SetDisplayName(SilentSoulDisplayName)
-              .SetDescription(SilentSoulDescription)
+            var icon = AbilityRefs.Command.Reference.Get().Icon;
+            return FeatureConfigurator.New(AuthoritativeCommand2, AuthoritativeCommand2Guid)
+              .SetDisplayName(AuthoritativeCommand2DisplayName)
+              .SetDescription(AuthoritativeCommand2Description)
               .SetIcon(icon)
-              .AddStatBonus(ModifierDescriptor.Circumstance, false, StatType.SkillStealth, 10)
-              .AddSpellResistanceAgainstSpellDescriptor(spellDescriptor: SpellDescriptor.MindAffecting, value: 20)
               .Configure();
         }
 
-        private static readonly string NarrowMissName = "GoldenLegionnaireNarrowMiss";
-        public static readonly string NarrowMissGuid = "{6316C32A-BD50-4A18-BC96-CDEDF9BEDA10}";
+        private const string AuthoritativeCommand3 = "GoldenLegionnaireAuthoritativeCommand3";
+        public static readonly string AuthoritativeCommand3Guid = "{EFC5F4EC-81E4-4DBD-A341-79414EB71BFC}";
 
-        private static readonly string NarrowMissDisplayName = "GoldenLegionnaireNarrowMiss.Name";
-        private static readonly string NarrowMissDescription = "GoldenLegionnaireNarrowMiss.Description";
-
-        private const string NarrowMissAbility = "NarrowMiss.NarrowMissAbility";
-        private static readonly string NarrowMissAbilityGuid = "{5A16E581-674C-4EB5-855D-FB91480023B3}";
-
-        private const string NarrowMissBuff = "NarrowMiss.NarrowMissBuff";
-        private static readonly string NarrowMissBuffGuid = "{82225953-51DA-4850-A1C4-2F8714EEB3CD}";
-
-        private const string NarrowMissAblityRes = "GoldenLegionnaire.NarrowMissRes";
-        public static readonly string NarrowMissAblityResGuid = "{92FD5B7B-9BA8-4D4A-B9BF-23182F894090}";
-        public static BlueprintFeature NarrowMissConfigure()
+        internal const string AuthoritativeCommand3DisplayName = "GoldenLegionnaireAuthoritativeCommand3.Name";
+        private const string AuthoritativeCommand3Description = "GoldenLegionnaireAuthoritativeCommand3.Description";
+        public static BlueprintFeature AuthoritativeCommand3Feature()
         {
-            var icon = AbilityRefs.Displacement.Reference.Get().Icon;
+            var icon = AbilityRefs.Command.Reference.Get().Icon;
+            return FeatureConfigurator.New(AuthoritativeCommand3, AuthoritativeCommand3Guid)
+              .SetDisplayName(AuthoritativeCommand3DisplayName)
+              .SetDescription(AuthoritativeCommand3Description)
+              .SetIcon(icon)
+              .Configure();
+        }
 
-            var abilityresourse = AbilityResourceConfigurator.New(NarrowMissAblityRes, NarrowMissAblityResGuid)
-                .SetMaxAmount(
-                    ResourceAmountBuilder.New(0)
-                        .IncreaseByLevelStartPlusDivStep(classes: new string[] { ArchetypeGuid }, otherClassLevelsMultiplier: 0, levelsPerStep: 2, bonusPerStep: 1))
-                .SetUseMax()
-                .SetMax(5)
-                .Configure();
+        private const string AuthoritativeCommand5 = "GoldenLegionnaireAuthoritativeCommand5";
+        public static readonly string AuthoritativeCommand5Guid = "{2E134743-07A7-405E-B3C1-B6243E6B9F57}";
 
-            var buff = BuffConfigurator.New(NarrowMissBuff, NarrowMissBuffGuid)
-                .SetDisplayName(NarrowMissDisplayName)
-                .SetDescription(NarrowMissDescription)
+        internal const string AuthoritativeCommand5DisplayName = "GoldenLegionnaireAuthoritativeCommand5.Name";
+        private const string AuthoritativeCommand5Description = "GoldenLegionnaireAuthoritativeCommand5.Description";
+        public static BlueprintFeature AuthoritativeCommand5Feature()
+        {
+            var icon = AbilityRefs.CommandGreater.Reference.Get().Icon;
+            return FeatureConfigurator.New(AuthoritativeCommand5, AuthoritativeCommand5Guid)
+              .SetDisplayName(AuthoritativeCommand5DisplayName)
+              .SetDescription(AuthoritativeCommand5Description)
+              .SetIcon(icon)
+              .Configure();
+        }
+
+        private const string AuthoritativeCommand4 = "GoldenLegionnaireAuthoritativeCommand4";
+        public static readonly string AuthoritativeCommand4Guid = "{3429D9BD-E68D-4096-B2BE-3EB121825B2E}";
+
+        internal const string AuthoritativeCommand4DisplayName = "GoldenLegionnaireAuthoritativeCommand4.Name";
+        private const string AuthoritativeCommand4Description = "GoldenLegionnaireAuthoritativeCommand4.Description";
+        public static BlueprintFeature AuthoritativeCommand4Feature()
+        {
+            var icon = AbilityRefs.Command.Reference.Get().Icon;
+            return FeatureConfigurator.New(AuthoritativeCommand4, AuthoritativeCommand4Guid)
+              .SetDisplayName(AuthoritativeCommand4DisplayName)
+              .SetDescription(AuthoritativeCommand4Description)
+              .SetIcon(icon)
+              .Configure();
+        }
+
+        private static readonly string AuthoritativeCommandName = "GoldenLegionnaireAuthoritativeCommand";
+        public static readonly string AuthoritativeCommandGuid = "{E541F28C-42F6-4C5A-854B-F585318076A3}";
+
+        private static readonly string AuthoritativeCommandDisplayName = "GoldenLegionnaireAuthoritativeCommand.Name";
+        private static readonly string AuthoritativeCommandDescription = "GoldenLegionnaireAuthoritativeCommand.Description";
+
+        private const string AuthoritativeCommandAbility = "AuthoritativeCommand.AuthoritativeCommandAbility";
+        private static readonly string AuthoritativeCommandAbilityGuid = "{399B14AE-70FE-47DB-9206-B08056267AD4}";
+
+        private const string AuthoritativeCommandBuff = "AuthoritativeCommand.AuthoritativeCommandBuff";
+        private static readonly string AuthoritativeCommandBuffGuid = "{F5F99B01-0023-4A6B-A7B3-4F994DA903E2}";
+        public static BlueprintFeature AuthoritativeCommandConfigure()
+        {
+            var icon = AbilityRefs.Command.Reference.Get().Icon;
+
+            var buff = BuffConfigurator.New(AuthoritativeCommandBuff, AuthoritativeCommandBuffGuid)
+                .SetDisplayName(AuthoritativeCommandDisplayName)
+                .SetDescription(AuthoritativeCommandDescription)
                 .SetIcon(icon)
                 .AddConcealment(concealment: Concealment.Partial, descriptor: ConcealmentDescriptor.WindsOfVengenance)
                 .Configure();
 
-            var ability = AbilityConfigurator.New(NarrowMissAbility, NarrowMissAbilityGuid)
-                .SetDisplayName(NarrowMissDisplayName)
-                .SetDescription(NarrowMissDescription)
+            var ability = AbilityConfigurator.New(AuthoritativeCommandAbility, AuthoritativeCommandAbilityGuid)
+                .SetDisplayName(AuthoritativeCommandDisplayName)
+                .SetDescription(AuthoritativeCommandDescription)
                 .SetIcon(icon)
                 .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1)).Build())
                 .SetType(AbilityType.Supernatural)
                 .SetRange(AbilityRange.Personal)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
                 .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Self)
-                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .Configure();
 
-            return FeatureConfigurator.New(NarrowMissName, NarrowMissGuid)
-                    .SetDisplayName(NarrowMissDisplayName)
-                    .SetDescription(NarrowMissDescription)
+            return FeatureConfigurator.New(AuthoritativeCommandName, AuthoritativeCommandGuid)
+                    .SetDisplayName(AuthoritativeCommandDisplayName)
+                    .SetDescription(AuthoritativeCommandDescription)
                     .SetIcon(icon)
                     .AddFacts(new() { ability })
-                    .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
                     .Configure();
         }
 
@@ -285,6 +315,42 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddDamageBonusAgainstFactOwner(0, buff, 1, ModifierDescriptor.Morale)
               .AddContextRankConfig(ContextRankConfigs.FeatureRank(AlliedRetributionGuid))
               .SetRanks(10)
+              .Configure();
+        }
+
+        private const string PreemptiveStrike = "GoldenLegionnairePreemptiveStrike";
+        public static readonly string PreemptiveStrikeGuid = "{27C488F2-7613-4210-BFDF-56A4A49133B9}";
+
+        internal const string PreemptiveStrikeDisplayName = "GoldenLegionnairePreemptiveStrike.Name";
+        private const string PreemptiveStrikeDescription = "GoldenLegionnairePreemptiveStrike.Description";
+
+        private const string PreemptiveStrikeBuff = "PreemptiveStrike.PreemptiveStrikeBuff";
+        public static readonly string PreemptiveStrikeBuffGuid = "{830870C8-010D-4F44-9511-F1FF08B846D6}";
+
+        private const string PreemptiveStrikeBuff2 = "PreemptiveStrike.PreemptiveStrikeBuff2";
+        public static readonly string PreemptiveStrikeBuff2Guid = "{3F044DF1-C6DB-4392-97FF-9CE66B29C7E1}";
+        public static BlueprintFeature PreemptiveStrikeFeature()
+        {
+            var icon = FeatureRefs.Opportunist.Reference.Get().Icon;
+
+            BuffConfigurator.New(PreemptiveStrikeBuff, PreemptiveStrikeBuffGuid)
+                .SetDisplayName(PreemptiveStrikeDisplayName)
+                .SetDescription(PreemptiveStrikeDescription)
+                .SetIcon(icon)
+                //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+                .Configure();
+
+            BuffConfigurator.New(PreemptiveStrikeBuff2, PreemptiveStrikeBuff2Guid)
+                .SetDisplayName(PreemptiveStrikeDisplayName)
+                .SetDescription(PreemptiveStrikeDescription)
+                .SetIcon(icon)
+                //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+                .Configure();
+
+            return FeatureConfigurator.New(PreemptiveStrike, PreemptiveStrikeGuid)
+              .SetDisplayName(PreemptiveStrikeDisplayName)
+              .SetDescription(PreemptiveStrikeDescription)
+              .SetIcon(icon)
               .Configure();
         }
     }
