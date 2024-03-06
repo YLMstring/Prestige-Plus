@@ -215,6 +215,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         public static BlueprintFeature AuthoritativeCommandConfigure()
         {
             var icon = AbilityRefs.Command.Reference.Get().Icon;
+            var fx = AbilityRefs.BlessingOfCourageAndLife.Reference.Get().GetComponent<AbilitySpawnFx>();
 
             var buff = BuffConfigurator.New(AuthoritativeCommandBuff, AuthoritativeCommandBuffGuid)
                 .SetDisplayName(AuthoritativeCommandDisplayName)
@@ -227,6 +228,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDisplayName(AuthoritativeCommandDisplayName)
                 .SetDescription(AuthoritativeCommandDescription)
                 .SetIcon(icon)
+                .AddComponent(fx)
                 .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1)).Build())
                 .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Ally, radius: 30.Feet(), spreadSpeed: 40.Feet())
                 .SetType(AbilityType.Extraordinary)
@@ -282,11 +284,13 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         public static BlueprintFeature AuthoritativeCommandSwiftConfigure()
         {
             var icon = AbilityRefs.CommandGreater.Reference.Get().Icon;
+            var fx = AbilityRefs.BlessingOfCourageAndLife.Reference.Get().GetComponent<AbilitySpawnFx>();
 
             var ability = AbilityConfigurator.New(AuthoritativeCommandSwiftAbility, AuthoritativeCommandSwiftAbilityGuid)
                 .SetDisplayName(AuthoritativeCommandSwiftDisplayName)
                 .SetDescription(AuthoritativeCommandSwiftDescription)
                 .SetIcon(icon)
+                .AddComponent(fx)
                 .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(AuthoritativeCommandBuffGuid, ContextDuration.Fixed(1)).Build())
                 .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Ally, radius: 30.Feet(), spreadSpeed: 40.Feet())
                 .SetType(AbilityType.Extraordinary)
