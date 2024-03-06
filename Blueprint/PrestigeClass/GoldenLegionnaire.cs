@@ -63,7 +63,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddToLevelEntry(5, DefyDangerGuid)
                 .AddToLevelEntry(6, BodyGuard.Feat2Guid, UnitedDefenseGuid, AuthoritativeCommand5Feature())
                 .AddToLevelEntry(7, AlliedRetributionGuid, PreemptiveStrikeFeature())
-                .AddToLevelEntry(8, "8590fb52-921c-4365-832c-ca7635fd5a70", AuthoritativeCommandSwiftConfigure())
+                .AddToLevelEntry(8, AuthoritativeCommandSwiftConfigure())
                 .AddToLevelEntry(9, RetaliateFeature(), DefyDangerGuid)
                 .AddToLevelEntry(10, FeatureRefs.PerfectStrikeFeature.ToString(), UnitedDefenseGuid)
                 .SetUIGroups(UIGroupBuilder.New()
