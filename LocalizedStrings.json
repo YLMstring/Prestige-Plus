@@ -11978,6 +11978,138 @@
     "enGB": "Your devotion to Nocticula is rewarded with a single whisper from her lips to your ear alone, revealing one of the countless words Our Lady in Shadow knows to cause death. Each of her worshipers receives a unique word. When you learn it, you can use the word to cast power word kill as a spell-like ability once per day.",
     "ruRU": "Ваша преданность Ноктикуле будет вознаграждена одним шепотом с ее губ вам на ухо, открывающим одно из бесчисленных слов, которые, как знает Владычица в Тени, могут вызвать смерть. Каждый из ее поклонников узнает уникальное слово. Когда вы его узнаете, вы раз в день можете произнести его, как если бы вы сотворили заклинание Слово силы: смерть.",
     "zhCN": "你对诺缇库拉的忠诚得到了回报，一声独属于你的低语，从她的嘴唇到你的耳边。这是阴影女士所知晓的无数个带来死亡的真言之一。她的每个信徒收到的真言都是独一无二的。当你学会它时，便可以将律令死亡作为类法术能力施展，每天一次。"
+  },
+  {
+    "Key": "GoldenLegionnaire.Name",
+    "ProcessTemplates": false,
+    "enGB": "Golden Legionnaire",
+    "zhCN": "黄金军士"
+  },
+  {
+    "Key": "GoldenLegionnaire.Description",
+    "enGB": "Above all else, the Golden Legion’s duty is domestic security; the Legion extensively trains its soldiers in defensive tactics and strategies that ensure the protection of both Andorens and other members of the Legion. That said, a typical Golden Legionnaire exhibits audacious courage and unflinchingly puts himself between those he protects and possible threats. An ambush or unprovoked attack incenses a Golden Legionnaire and propels him to acts of selfless bravery and daring prowess. Even when they are hundreds of miles away from their homes, Golden Legionnaires use their skills and combat prowess to protect their allies and Andoran’s ideals of equality, freedom, and justice.",
+    "zhCN": "黄金军团最重要的职责是维护国家安全；军团主要训练士兵的防御战术及策略，以确保对安多安人以及其他军人的保护。但不管怎么说，典型的黄金军士总是会展现勇气和决心，毫不犹豫地将自己置于被保护者和可能面临的威胁之间。埋伏或无端攻击会激怒黄金军士，令他以行动展现自己的无私和勇敢。即便是距离家园数百里的时候，黄金军士也会发挥他们的技能和武勇，来保护他们的盟友，来保护安多安人平等、自由和正义的理想。"
+  },
+  {
+    "Key": "GoldenLegionnaireAuthoritativeCommand.Name",
+    "ProcessTemplates": false,
+    "enGB": "Authoritative Command",
+    "zhCN": "权威指令"
+  },
+  {
+    "Key": "GoldenLegionnaireAuthoritativeCommand.Description",
+    "enGB": "As a move action, a Golden Legionnaire can issue orders to allies who are within 30 feet and can see, hear, and understand him. As long as at least one selected ally obeys the Golden Legionnaire’s orders during that round, the Golden Legionnaire and each compliant ally gain a +1 competence bonus on attack rolls for 1 round. Affected allies are not under any obligation to obey these commands, but do not gain the bonuses if they ignore the commands.",
+    "zhCN": "以一个移动动作，黄金军士可以对30尺内能听见、看见并理解他的盟友发号施令。只要至少一名盟友在该轮中服从黄金军士的指令，黄金军士和每一名遵从命令的盟友就能在1轮内的攻击检定上获得+1表现加值。受影响的盟友不一定要服从这些指令，但是若他们忽略指令，就不会获得加值。"
+  },
+  {
+    "Key": "GoldenLegionnaireAuthoritativeCommand2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Authoritative Command",
+    "zhCN": "权威指令"
+  },
+  {
+    "Key": "GoldenLegionnaireAuthoritativeCommand2.Description",
+    "enGB": "At 2nd level, this bonus applies to weapon damage rolls.",
+    "zhCN": "2级起，将该加值加到武器伤害骰上。"
+  },
+  {
+    "Key": "GoldenLegionnaireAuthoritativeCommand3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Authoritative Command",
+    "zhCN": "权威指令"
+  },
+  {
+    "Key": "GoldenLegionnaireAuthoritativeCommand3.Description",
+    "enGB": "At 3rd level, this bonus applies to saving throws.",
+    "zhCN": "3级起，将该加值加到豁免检定上。"
+  },
+  {
+    "Key": "GoldenLegionnaireAuthoritativeCommand4.Name",
+    "ProcessTemplates": false,
+    "enGB": "Authoritative Command",
+    "zhCN": "权威指令"
+  },
+  {
+    "Key": "GoldenLegionnaireAuthoritativeCommand4.Description",
+    "enGB": "At 4th level, this bonus applies to Armor Class.",
+    "zhCN": "4级起，将该加值加到防御等级上。"
+  },
+  {
+    "Key": "GoldenLegionnaireAuthoritativeCommand5.Name",
+    "ProcessTemplates": false,
+    "enGB": "Authoritative Command",
+    "zhCN": "权威指令"
+  },
+  {
+    "Key": "GoldenLegionnaireAuthoritativeCommand5.Description",
+    "enGB": "At 6th level, this bonus increases to +2.",
+    "zhCN": "6级起，该加值提升至+2。"
+  },
+  {
+    "Key": "GoldenLegionnaireAuthoritativeCommandSwift.Name",
+    "ProcessTemplates": false,
+    "enGB": "Authoritative Command (Swift)",
+    "zhCN": "权威指令（迅捷）"
+  },
+  {
+    "Key": "GoldenLegionnaireAuthoritativeCommandSwift.Description",
+    "enGB": "At 8th level, a Golden Legionnaire can use authoritative command as a swift action.",
+    "zhCN": "8级起，黄金军士可以用迅捷动作使用权威指令。"
+  },
+  {
+    "Key": "GoldenLegionnaireDefyDanger.Name",
+    "ProcessTemplates": false,
+    "enGB": "Defy Danger",
+    "zhCN": "抵抗危险"
+  },
+  {
+    "Key": "GoldenLegionnaireDefyDanger.Description",
+    "enGB": "A Golden Legionnaire gains a +2 bonus on saving throws against demons. At 5th level and again at 9th level, this bonus increases by +2.",
+    "zhCN": "黄金军士在对抗恶魔的豁免检定上获得+2加值。5级和9级时，该加值额外提升2点。"
+  },
+  {
+    "Key": "GoldenLegionnaireUnitedDefense.Name",
+    "ProcessTemplates": false,
+    "enGB": "United Defense",
+    "zhCN": "联合防御"
+  },
+  {
+    "Key": "GoldenLegionnaireUnitedDefense.Description",
+    "enGB": "At 2nd level, a Golden Legionnaire can select an adjacent ally as a swift action. The Golden Legionnaire takes a –1 penalty to his Armor Class and the selected ally receives a +2 dodge bonus to his Armor Class for 1 round. At 6th level and again at 10th level, the Golden Legionnaire’s AC takes an additional –1 penalty and the dodge bonus increases by an additional 2.",
+    "zhCN": "2级起，黄金军士可以用迅捷动作选择一名邻接盟友。黄金军士在AC上承受-1减值，该盟友在AC上获得+2闪避加值，持续1轮。在6级和10级时，黄金军士的AC承受额外的-1减值，并提供额外的+2闪避加值。"
+  },
+  {
+    "Key": "GoldenLegionnaireAlliedRetribution.Name",
+    "ProcessTemplates": false,
+    "enGB": "Allied Retribution",
+    "zhCN": "结盟惩戒"
+  },
+  {
+    "Key": "GoldenLegionnaireAlliedRetribution.Description",
+    "enGB": "At 3rd level, if a Golden Legionnaire sees a creature within 60 feet of him attack an ally or any friendly creature, including himself, he can select that attacker as a designated adversary for a number of rounds equal to his class level. When a Golden Legionnaire does this, he gains a +1 morale bonus on attack rolls and weapon damage rolls against the designated adversary. At 7th level, the morale bonus increases to +2.",
+    "zhCN": "3级起，若黄金军士看到一名在其60尺内的生物攻击了一名盟友或友善生物，包括她自己，她可以指定该生物开展专项行动，持续每职业等级1轮。当黄金军士如此做时，她对专项行动目标的攻击掷骰和武器伤害掷骰上获得+1士气加值。7级时，士气加值提升至+2。"
+  },
+  {
+    "Key": "GoldenLegionnairePreemptiveStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Preemptive Strike",
+    "zhCN": "先发制人"
+  },
+  {
+    "Key": "GoldenLegionnairePreemptiveStrike.Description",
+    "enGB": "At 7th level, a Golden Legionnaire can make an attack of opportunity against a foe that moves into any space the Golden Legionnaire threatens, regardless of whether or not this movement would normally provoke an attack of opportunity. He can use this ability against each opponent once per day, and no more than once per round.",
+    "zhCN": "7级起，黄金军士可以对通过移动进入其威胁区域内的敌人进行一次借机攻击，无论这一移动通常是否会引发借机攻击。每天对特定对手只能使用一次，且每轮只能使用一次。"
+  },
+  {
+    "Key": "GoldenLegionnaireRetaliate.Name",
+    "ProcessTemplates": false,
+    "enGB": "Retaliate",
+    "zhCN": "后发制人"
+  },
+  {
+    "Key": "GoldenLegionnaireRetaliate.Description",
+    "enGB": "At 9th level, once per round when a creature threatened by a Golden Legionnaire attacks and hits an ally adjacent to the Golden Legionnaire, he can make an attack of opportunity against that creature.",
+    "zhCN": "9级起，每轮一次，当一名被黄金军士威胁的生物攻击并命中了一名邻接于黄金军士的盟友，黄金军士可以对该生物进行一次借机攻击。"
   }
 
 ]

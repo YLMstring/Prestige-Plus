@@ -62,7 +62,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddToLevelEntry(4, BodyGuard.FeatGuid, AuthoritativeCommand4Feature())
                 .AddToLevelEntry(5, DefyDangerGuid)
                 .AddToLevelEntry(6, BodyGuard.Feat2Guid, UnitedDefenseGuid, AuthoritativeCommand5Feature())
-                .AddToLevelEntry(7, AlliedRetributionGuid)
+                .AddToLevelEntry(7, AlliedRetributionGuid, PreemptiveStrikeFeature())
                 .AddToLevelEntry(8, "8590fb52-921c-4365-832c-ca7635fd5a70", AuthoritativeCommandSwiftConfigure())
                 .AddToLevelEntry(9, RetaliateFeature(), DefyDangerGuid)
                 .AddToLevelEntry(10, FeatureRefs.PerfectStrikeFeature.ToString(), UnitedDefenseGuid)
@@ -125,7 +125,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string RetaliateDescription = "GoldenLegionnaireRetaliate.Description";
         public static BlueprintFeature RetaliateFeature()
         {
-            var icon = AbilityRefs.FighterRetaliationAbility.Reference.Get().Icon;
+            var icon = FeatureRefs.DevotedBladeFeature.Reference.Get().Icon;
             return FeatureConfigurator.New(Retaliate, RetaliateGuid)
               .SetDisplayName(RetaliateDisplayName)
               .SetDescription(RetaliateDescription)
@@ -394,7 +394,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         public static readonly string AlliedRetributionBuffGuid = "{CBCCE289-469B-4F75-942C-C99D628DA8E1}";
         public static BlueprintFeature AlliedRetributionFeature()
         {
-            var icon = FeatureRefs.CavalierRetribution.Reference.Get().Icon;
+            var icon = FeatureRefs.PreciseStrike.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(AlliedRetributionBuff, AlliedRetributionBuffGuid)
                 .SetDisplayName(AlliedRetributionDisplayName)
