@@ -32,6 +32,8 @@ using PrestigePlus.Blueprint.Feat;
 using PrestigePlus.CustomComponent;
 using BlueprintCore.Conditions.Builder.BasicEx;
 using PrestigePlus.CustomComponent.PrestigeClass;
+using Kingmaker.Utility;
+using Kingmaker.UnitLogic.Abilities.Components;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -205,7 +207,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDisplayName(AuthoritativeCommandDisplayName)
                 .SetDescription(AuthoritativeCommandDescription)
                 .SetIcon(icon)
-                .AddConcealment(concealment: Concealment.Partial, descriptor: ConcealmentDescriptor.WindsOfVengenance)
+                .AddComponent<AuthoritativeCommanComp>()
                 .Configure();
 
             var ability = AbilityConfigurator.New(AuthoritativeCommandAbility, AuthoritativeCommandAbilityGuid)
@@ -213,10 +215,10 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDescription(AuthoritativeCommandDescription)
                 .SetIcon(icon)
                 .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1)).Build())
-                .SetType(AbilityType.Supernatural)
+                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Ally, radius: 30.Feet(), spreadSpeed: 40.Feet())
+                .SetType(AbilityType.Extraordinary)
                 .SetRange(AbilityRange.Personal)
-                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
-                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Self)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move)
                 .Configure();
 
             return FeatureConfigurator.New(AuthoritativeCommandName, AuthoritativeCommandGuid)

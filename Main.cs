@@ -152,6 +152,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("furious"), defaultValue: true, Helpers.CreateString("toggle-desc36", "Furious Guardian"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("goldenl"), defaultValue: true, Helpers.CreateString("toggle-desc88", "Golden Legionnaire"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("halfling"), defaultValue: true, Helpers.CreateString("toggle-desc21", "Halfling Opportunist"))
               .ShowVisualConnection())
           .AddToggle(
@@ -444,6 +447,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fighteraa"))) { WeaponMaster.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("justshowup"))) { HeritorKnight.Configure(); StrikeTrue.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("mythicheritage"))) { RacialHeritage.RacialHeritageConfigure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("goldenl"))) { GoldenLegionnaire.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
