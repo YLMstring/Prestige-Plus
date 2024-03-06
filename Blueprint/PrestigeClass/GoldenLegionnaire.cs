@@ -215,7 +215,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         public static BlueprintFeature AuthoritativeCommandConfigure()
         {
             var icon = AbilityRefs.Command.Reference.Get().Icon;
-            var fx = AbilityRefs.BlessingOfCourageAndLife.Reference.Get().GetComponent<AbilitySpawnFx>();
+            var fx = AbilityRefs.OverwhelmingPresence.Reference.Get().GetComponent<AbilitySpawnFx>();
 
             var buff = BuffConfigurator.New(AuthoritativeCommandBuff, AuthoritativeCommandBuffGuid)
                 .SetDisplayName(AuthoritativeCommandDisplayName)
@@ -234,6 +234,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetType(AbilityType.Extraordinary)
                 .SetRange(AbilityRange.Personal)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
                 .Configure();
 
             var Buff2 = BuffConfigurator.New(CommandMoveAutoBuff2, CommandMoveAutoBuff2Guid)
@@ -352,8 +353,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDisplayName(UnitedDefenseDisplayName)
                 .SetDescription(UnitedDefenseDescription)
                 .SetIcon(icon)
-                .AddContextStatBonus(StatType.AC, ContextValues.Rank(), descriptor: ModifierDescriptor.Penalty)
-                .AddContextRankConfig(ContextRankConfigs.FeatureRank(UnitedDefenseGuid).WithMultiplyByModifierProgression(-1))
+                .AddComponent<UnitedDefensePenalty>()
+                .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
                 .Configure();
 
             var buff = BuffConfigurator.New(UnitedDefenseBuff, UnitedDefenseBuffGuid)
@@ -361,7 +362,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDescription(UnitedDefenseDescription)
                 .SetIcon(icon)
                 .AddContextStatBonus(StatType.AC, ContextValues.Rank(), descriptor: ModifierDescriptor.Dodge)
-                .AddContextRankConfig(ContextRankConfigs.FeatureRank(UnitedDefenseGuid, true).WithBonusValueProgression(0, true))
+                .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }).WithCustomProgression((5, 2), (9, 4), (10, 6)))
                 .Configure();
 
             var ability = AbilityConfigurator.New(UnitedDefenseAbility, UnitedDefenseAbilityGuid)
