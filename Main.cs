@@ -350,6 +350,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("cmdminus"), defaultValue: true, Helpers.CreateString("toggle-desc51", "Fix Difficulty CMD Tripple-Dipped"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("ecpatch"), defaultValue: true, Helpers.CreateString("toggle-desc89", "Ensure Compability with Expanded Content"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("duplicate"), defaultValue: false, Helpers.CreateString("toggle-desc46", "Remove Duplicate Feats from Other MODs"))
               .ShowVisualConnection()));
 
@@ -382,11 +385,11 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("kraken"))) { KrakenStyle.StyleConfigure(); KrakenStyle.WrackConfigure(); KrakenStyle.WrathConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("umbral"))) { UmbralAgent.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("biggg"))) { MammothRider.Configure(); GiganticAssault.Configure(); FungalPilgrim.Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("asavir"))) { Asavir.Configure(); BondGenie.Configure(); TrampleMythic.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("asavir")) || ModMenu.ModMenu.GetSettingValue<bool>(GetKey("ecpatch"))) { Asavir.Configure(); BondGenie.Configure(); TrampleMythic.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("maneuver"))) { ReplaceAttack.BullRushQuickConfigure(); ReplaceAttack.BullRushAngryConfigure(); ReplaceAttack.BullRushConfigure(); ReplaceAttack.DisarmConfigure(); ReplaceAttack.SunderConfigure(); ReplaceAttack.TripConfigure(); ReplaceAttack.DirtyBlindQuickConfigure(); ReplaceAttack.DirtyEntangleQuickConfigure(); ReplaceAttack.DirtySickenQuickConfigure();
                         StrengthSurge.StrengthSurgeFeat(); KiThrow.DragConfigure(); ImprovedKiThrow.DragConfigure(); EnhancedThrow.DragConfigure(); BindingThrow.DragConfigure(); 
                         RhinoCharge.Configure();  SunderStorm.CreateCombatTrickery(); DirtyFighting.DirtyFightingConfigure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("halfling"))) { HalflingOpportunist.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("halfling")) || ModMenu.ModMenu.GetSettingValue<bool>(GetKey("ecpatch"))) { HalflingOpportunist.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("enhance"))) { SwiftDeath.Configure(); SwiftDeath.Configure2(); UnbreakableDefance.Configure(); MythicWings.Configure(); MythicWings.Configure2(); MythicRiposte.Configure(); MetaphysicalSneak.Configure(); LesserSpellSynthesis.Configure(); SurprisingStrategy.Configure(); MythicRiposte.Configure2(); SwordLord.CreateQuickDraw(); SwordLord.CreateCatechesis(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fightereg"))) { EldritchGuardian.Configure(); EldritchAssault.EldritchAssaultFeatFeat(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("lorew"))) { LoreWarden.Configure(); }
@@ -447,7 +450,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fighteraa"))) { WeaponMaster.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("justshowup"))) { HeritorKnight.Configure(); StrikeTrue.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("mythicheritage"))) { RacialHeritage.RacialHeritageConfigure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("goldenl"))) { GoldenLegionnaire.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("goldenl")) || ModMenu.ModMenu.GetSettingValue<bool>(GetKey("ecpatch"))) { GoldenLegionnaire.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
