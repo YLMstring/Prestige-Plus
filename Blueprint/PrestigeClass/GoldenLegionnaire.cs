@@ -56,7 +56,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, DefyDangerFeature(), AuthoritativeCommandConfigure())
+                .AddToLevelEntry(1, DefyDangerFeature(), AuthoritativeCommandConfigure(), FeatureRefs.FighterProficiencies.ToString())
                 .AddToLevelEntry(2, SeizetheOpportunity.FeatGuid, UnitedDefenseConfigure(), AuthoritativeCommand2Feature())
                 .AddToLevelEntry(3, AlliedRetributionFeature(), AuthoritativeCommand3Feature())
                 .AddToLevelEntry(4, BodyGuard.FeatGuid, AuthoritativeCommand4Feature())
@@ -112,8 +112,9 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(DefyDangerDisplayName)
               .SetDescription(DefyDangerDescription)
               .SetIcon(icon)
-              .AddSavingThrowBonusAgainstFactMultiple(value: 2, facts: new () { FeatureRefs.DemonOfMagicFeature.ToString(), FeatureRefs.DemonOfSlaughterFeature.ToString(), FeatureRefs.DemonOfStrengthFeature.ToString() })
-              .AddContextRankConfig(ContextRankConfigs.FeatureRank(DefyDangerGuid))
+              .AddSavingThrowBonusAgainstFact(value: 2, checkedFact: FeatureRefs.DemonOfMagicFeature.ToString())
+              .AddSavingThrowBonusAgainstFact(value: 2, checkedFact: FeatureRefs.DemonOfSlaughterFeature.ToString())
+              .AddSavingThrowBonusAgainstFact(value: 2, checkedFact: FeatureRefs.DemonOfStrengthFeature.ToString())
               .SetRanks(10)
               .Configure();
         }
