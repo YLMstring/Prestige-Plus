@@ -34,6 +34,9 @@ using BlueprintCore.Conditions.Builder.BasicEx;
 using PrestigePlus.CustomComponent.PrestigeClass;
 using Kingmaker.Utility;
 using Kingmaker.UnitLogic.Abilities.Components;
+using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
+using PrestigePlus.CustomComponent.Archetype;
+using PrestigePlus.CustomAction;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -60,9 +63,12 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddToLevelEntry(5, DefyDangerGuid)
                 .AddToLevelEntry(6, BodyGuard.Feat2Guid, UnitedDefenseGuid, AuthoritativeCommand5Feature())
                 .AddToLevelEntry(7, AlliedRetributionGuid)
-                .AddToLevelEntry(8, "8590fb52-921c-4365-832c-ca7635fd5a70")
+                .AddToLevelEntry(8, "8590fb52-921c-4365-832c-ca7635fd5a70", AuthoritativeCommandSwiftConfigure())
                 .AddToLevelEntry(9, RetaliateFeature(), DefyDangerGuid)
                 .AddToLevelEntry(10, FeatureRefs.PerfectStrikeFeature.ToString(), UnitedDefenseGuid)
+                .SetUIGroups(UIGroupBuilder.New()
+                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { AuthoritativeCommandGuid, AuthoritativeCommandSwiftGuid, AuthoritativeCommand2Guid, AuthoritativeCommand3Guid, AuthoritativeCommand4Guid, AuthoritativeCommand5Guid })
+                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { SeizetheOpportunity.FeatGuid, BodyGuard.FeatGuid, BodyGuard.Feat2Guid, "8590fb52-921c-4365-832c-ca7635fd5a70", FeatureRefs.PerfectStrikeFeature.ToString() }))
                 .SetRanks(1)
                 .SetIsClassFeature(true)
                 .SetDisplayName("")
@@ -199,6 +205,12 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         private const string AuthoritativeCommandBuff = "AuthoritativeCommand.AuthoritativeCommandBuff";
         private static readonly string AuthoritativeCommandBuffGuid = "{F5F99B01-0023-4A6B-A7B3-4F994DA903E2}";
+
+        private const string CommandMoveAutoAbility = "GoldenLegionnaire.UseCommandMoveAuto";
+        public static readonly string CommandMoveAutoAbilityGuid = "{2B9C109C-F0B6-4001-A6D0-8C4893615AE5}";
+
+        private const string CommandMoveAutoBuff2 = "GoldenLegionnaire.CommandMoveAutoBuff2";
+        public static readonly string CommandMoveAutoBuff2Guid = "{B53B1E0E-0999-4F5E-8B8A-FF808C088410}";
         public static BlueprintFeature AuthoritativeCommandConfigure()
         {
             var icon = AbilityRefs.Command.Reference.Get().Icon;
@@ -221,11 +233,94 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move)
                 .Configure();
 
+            var Buff2 = BuffConfigurator.New(CommandMoveAutoBuff2, CommandMoveAutoBuff2Guid)
+             .SetDisplayName(AuthoritativeCommandDisplayName)
+             .SetDescription(AuthoritativeCommandDescription)
+             .SetIcon(icon)
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+             .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New()
+                .Add<SpendMoveAction>(c => {
+                    c.OnHit = ActionsBuilder.New()
+                        .CastSpell(ability)
+                        .Build();
+                })
+                .Build())
+             .Configure();
+
+            var ability2 = ActivatableAbilityConfigurator.New(CommandMoveAutoAbility, CommandMoveAutoAbilityGuid)
+                .SetDisplayName(AuthoritativeCommandDisplayName)
+                .SetDescription(AuthoritativeCommandDescription)
+                .SetIcon(icon)
+                .SetBuff(Buff2)
+                .SetDeactivateIfOwnerDisabled(true)
+                .SetDeactivateImmediately(true)
+                .Configure();
+
             return FeatureConfigurator.New(AuthoritativeCommandName, AuthoritativeCommandGuid)
                     .SetDisplayName(AuthoritativeCommandDisplayName)
                     .SetDescription(AuthoritativeCommandDescription)
                     .SetIcon(icon)
-                    .AddFacts(new() { ability })
+                    .AddFacts(new() { ability, ability2 })
+                    .Configure();
+        }
+
+        private static readonly string AuthoritativeCommandSwiftName = "GoldenLegionnaireAuthoritativeCommandSwift";
+        public static readonly string AuthoritativeCommandSwiftGuid = "{BA301623-4AF8-4898-A8DB-DA2F79F6573C}";
+
+        private static readonly string AuthoritativeCommandSwiftDisplayName = "GoldenLegionnaireAuthoritativeCommandSwift.Name";
+        private static readonly string AuthoritativeCommandSwiftDescription = "GoldenLegionnaireAuthoritativeCommandSwift.Description";
+
+        private const string AuthoritativeCommandSwiftAbility = "AuthoritativeCommandSwift.AuthoritativeCommandSwiftAbility";
+        private static readonly string AuthoritativeCommandSwiftAbilityGuid = "{A5697DB1-D8C7-438E-8E90-EE762CFF1176}";
+
+        private const string CommandSwiftMoveAutoAbility = "GoldenLegionnaire.UseCommandSwiftMoveAuto";
+        public static readonly string CommandSwiftMoveAutoAbilityGuid = "{7E7AA762-2638-40C2-ACC8-C05CD1F55FAE}";
+
+        private const string CommandSwiftMoveAutoBuff2 = "GoldenLegionnaire.CommandSwiftMoveAutoBuff2";
+        public static readonly string CommandSwiftMoveAutoBuff2Guid = "{1E426405-7AC0-4F53-A2DE-394B509D4609}";
+        public static BlueprintFeature AuthoritativeCommandSwiftConfigure()
+        {
+            var icon = AbilityRefs.CommandGreater.Reference.Get().Icon;
+
+            var ability = AbilityConfigurator.New(AuthoritativeCommandSwiftAbility, AuthoritativeCommandSwiftAbilityGuid)
+                .SetDisplayName(AuthoritativeCommandSwiftDisplayName)
+                .SetDescription(AuthoritativeCommandSwiftDescription)
+                .SetIcon(icon)
+                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(AuthoritativeCommandBuffGuid, ContextDuration.Fixed(1)).Build())
+                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Ally, radius: 30.Feet(), spreadSpeed: 40.Feet())
+                .SetType(AbilityType.Extraordinary)
+                .SetRange(AbilityRange.Personal)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+                .Configure();
+
+            var Buff2 = BuffConfigurator.New(CommandSwiftMoveAutoBuff2, CommandSwiftMoveAutoBuff2Guid)
+             .SetDisplayName(AuthoritativeCommandSwiftDisplayName)
+             .SetDescription(AuthoritativeCommandSwiftDescription)
+             .SetIcon(icon)
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+             .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New()
+                .Add<SpendSwiftAction>(c => {
+                    c.OnHit = ActionsBuilder.New()
+                        .CastSpell(ability)
+                        .Build();
+                })
+                .Build())
+             .Configure();
+
+            var ability2 = ActivatableAbilityConfigurator.New(CommandSwiftMoveAutoAbility, CommandSwiftMoveAutoAbilityGuid)
+                .SetDisplayName(AuthoritativeCommandSwiftDisplayName)
+                .SetDescription(AuthoritativeCommandSwiftDescription)
+                .SetIcon(icon)
+                .SetBuff(Buff2)
+                .SetDeactivateIfOwnerDisabled(true)
+                .SetDeactivateImmediately(true)
+                .Configure();
+
+            return FeatureConfigurator.New(AuthoritativeCommandSwiftName, AuthoritativeCommandSwiftGuid)
+                    .SetDisplayName(AuthoritativeCommandSwiftDisplayName)
+                    .SetDescription(AuthoritativeCommandSwiftDescription)
+                    .SetIcon(icon)
+                    .AddFacts(new() { ability, ability2 })
                     .Configure();
         }
 
