@@ -17,7 +17,7 @@ namespace PrestigePlus.Blueprint.Archetype
     internal class DivineMarksman
     {
         private const string ArchetypeName = "DivineMarksman";
-        private static readonly string ArchetypeGuid = "{D7099593-D7FB-4A91-AAAE-C6A9C1F26AD0}";
+        public static readonly string ArchetypeGuid = "{D7099593-D7FB-4A91-AAAE-C6A9C1F26AD0}";
         internal const string ArchetypeDisplayName = "DivineMarksman.Name";
         private const string ArchetypeDescription = "DivineMarksman.Description";
         public static void Configure()
@@ -35,13 +35,13 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToRemoveFeatures(18, FeatureSelectionRefs.RangerStyleSelection10.ToString())
             .AddToRemoveFeatures(19, FeatureRefs.ImprovedQuarry.ToString())
             .SetRemoveSpellbook()
-            .AddToAddFeatures(1, "31fbe31a-7727-46d6-b10a-86602cb1b941")
+            .AddToAddFeatures(1)
             .AddToAddFeatures(2, FeatureSelectionRefs.RangerStyleArcherySelection2.ToString())
             .AddToAddFeatures(4, CreateViciousAim())
             .AddToAddFeatures(6, FeatureSelectionRefs.RangerStyleArcherySelection6.ToString())
             .AddToAddFeatures(8, CreateIomedaeInfluence())
             .AddToAddFeatures(10, FeatureSelectionRefs.RangerStyleArcherySelection10.ToString())
-            .AddToAddFeatures(11, "583da9f2-3981-471a-bd45-6ccc2be0b3a6")
+            .AddToAddFeatures(11)
             .AddToAddFeatures(14, FeatureSelectionRefs.RangerStyleArcherySelection10.ToString())
             .AddToAddFeatures(18, FeatureSelectionRefs.RangerStyleArcherySelection10.ToString())
             .AddToAddFeatures(19, FeatureRefs.Quarry.ToString())

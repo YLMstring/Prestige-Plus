@@ -35,8 +35,8 @@ namespace PrestigePlus.Blueprint.Archetype
             .SetRemoveFeaturesEntry(20, FeatureRefs.CavalierSupremeCharge.ToString())
             .AddToAddFeatures(1, FeatureRefs.MountedCombat.ToString(), FeatureRefs.RangerProficiencies.ToString())
             .AddToAddFeatures(5, CreateBattlefieldAgility())
-            .AddToAddFeatures(9, "34d1bd97-971d-44d6-be78-e91e79fdedbd")
-            .AddToAddFeatures(14, "d3886adc-c849-4733-a1cb-a9b787b49576")
+            .AddToAddFeatures(9)
+            .AddToAddFeatures(14)
             .AddToAddFeatures(20, CreateErraticCharge())
               .Configure();
         }

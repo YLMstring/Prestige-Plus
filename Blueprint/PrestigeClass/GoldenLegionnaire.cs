@@ -48,7 +48,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string ArchetypeDescription = "GoldenLegionnaire.Description";
 
         private const string ClassProgressName = "GoldenLegionnairePrestige";
-        private static readonly string ClassProgressGuid = "{FC85D290-971B-4148-8F6F-F747E9C70399}";
+        public static readonly string ClassProgressGuid = "{FC85D290-971B-4148-8F6F-F747E9C70399}";
 
         public static void Configure()
         {
