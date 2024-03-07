@@ -206,7 +206,13 @@ namespace PrestigePlus
             Toggle.New(GetKey("drunk"), defaultValue: true, Helpers.CreateString("toggle-desc76", "Drunken Brute"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("geisha"), defaultValue: true, Helpers.CreateString("toggle-desc90", "Geisha"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("juggle"), defaultValue: true, Helpers.CreateString("toggle-desc64", "Juggler"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("soundstriker"), defaultValue: true, Helpers.CreateString("toggle-desc91", "Sound Striker"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("conduit"), defaultValue: true, Helpers.CreateString("toggle-desc63", "Blood Conduit"))
@@ -267,6 +273,9 @@ namespace PrestigePlus
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("kidnapper"), defaultValue: true, Helpers.CreateString("toggle-desc67", "Kidnapper"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("ankou"), defaultValue: true, Helpers.CreateString("toggle-desc92", "Ankou's Shadow"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("fated"), defaultValue: true, Helpers.CreateString("toggle-desc79", "Fated Champion"))
@@ -451,6 +460,9 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("justshowup"))) { HeritorKnight.Configure(); StrikeTrue.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("mythicheritage"))) { RacialHeritage.RacialHeritageConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("goldenl")) || ModMenu.ModMenu.GetSettingValue<bool>(GetKey("ecpatch"))) { GoldenLegionnaire.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("geisha"))) {  }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("soundstriker"))) { }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("ankou"))) { }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
