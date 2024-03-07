@@ -35,6 +35,7 @@ using PrestigePlus.Blueprint.CombatStyle;
 using PrestigePlus.CustomComponent;
 using PrestigePlus.Blueprint.PrestigeClass;
 using Kingmaker.UnitLogic.Buffs;
+using Kingmaker.Controllers.Combat;
 
 namespace PrestigePlus.GrappleMechanic
 {
@@ -105,9 +106,12 @@ namespace PrestigePlus.GrappleMechanic
                 UnitEntityData unit = unitInfo.Unit;
                 if (unit.View.IsMoving() && caster.CombatState.EngagedUnits.Contains(unit) && !unit.HasFact(BuffTarget))
                 {
-                    Game.Instance.CombatEngagementController.ForceAttackOfOpportunity(caster, unit, false);
-                    GameHelper.ApplyBuff(unit, BuffTarget, new Rounds?(14400.Rounds()));
-                    GameHelper.ApplyBuff(caster, BuffSelf, new Rounds?(1.Rounds()));
+                    if (caster.CombatState.AttackOfOpportunity(unit, false, true, false))
+                    {
+                        Game.Instance.CombatEngagementController.ForceAttackOfOpportunity(caster, unit, false);
+                        GameHelper.ApplyBuff(unit, BuffTarget, new Rounds?(14400.Rounds()));
+                        GameHelper.ApplyBuff(caster, BuffSelf, new Rounds?(1.Rounds()));
+                    }
                     return;
                 }
             }

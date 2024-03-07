@@ -12097,8 +12097,8 @@
   },
   {
     "Key": "GoldenLegionnairePreemptiveStrike.Description",
-    "enGB": "At 7th level, a Golden Legionnaire can make an attack of opportunity against a foe that moves into any space the Golden Legionnaire threatens, regardless of whether or not this movement would normally provoke an attack of opportunity. He can use this ability against each opponent once per day, and no more than once per round.",
-    "zhCN": "7级起，黄金军士可以对通过移动进入其威胁区域内的敌人进行一次借机攻击，无论这一移动通常是否会引发借机攻击。每天对特定对手只能使用一次，且每轮只能使用一次。"
+    "enGB": "At 7th level, a Golden Legionnaire can make an attack of opportunity against a foe that moves into or within any space the Golden Legionnaire threatens, regardless of whether or not this movement would normally provoke an attack of opportunity. He can use this ability against each opponent once per day, and no more than once per round.",
+    "zhCN": "7级起，黄金军士可以对进入或在其威胁区域内移动的敌人进行一次借机攻击，无论这一移动通常是否会引发借机攻击。每天对特定对手只能使用一次，且每轮只能使用一次。"
   },
   {
     "Key": "GoldenLegionnaireRetaliate.Name",
