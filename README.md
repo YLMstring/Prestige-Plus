@@ -1,4 +1,4 @@
-# Prestige Plus v2.8.3 for WoTR 
+# Prestige Plus v2.8.4 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -106,6 +106,9 @@
 - Divine Psychic: continue cleric progression every 2 levels!
 ### [Furious Guardian Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/furious-guardian/)
 - Chosen Ally is for barbarian standard rage only =-=
+### [Golden Legionnaire Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/golden-legionnaire/)
+- Gain Swift Aid if Expanded Content installed.
+- Preemptive Strike works best with a long reach!
 ### [Halfling Opportunist Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/halfling-opportunist/)
 #### Homebrew Options:  
 - Alternative access to the class for non-halflings!
