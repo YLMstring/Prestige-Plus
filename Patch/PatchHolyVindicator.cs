@@ -44,7 +44,7 @@ namespace PrestigePlus.Patch
             var progress = BlueprintTool.GetRef<BlueprintProgressionReference>(proguid)?.Get();
             if (progress == null) { Logger.Info("not found pro " + proguid); return; }
             var feat = BlueprintTool.GetRef<BlueprintFeatureBaseReference>(featguid);
-            if (feat == null) { Logger.Info("not found feat " + featguid); return; }
+            if (feat?.Get() == null) { Logger.Info("not found feat " + featguid); return; }
             progress.LevelEntries
                         .Where(entry => entry.Level == level)
                         .ForEach(entry =>
@@ -58,7 +58,7 @@ namespace PrestigePlus.Patch
             var progress = BlueprintTool.GetRef<BlueprintProgressionReference>(proguid)?.Get();
             if (progress == null) { Logger.Info("not found pro " + proguid); return; }
             var feat = BlueprintTool.GetRef<BlueprintFeatureBaseReference>(featguid);
-            if (feat == null) { Logger.Info("not found feat " + featguid); return; }
+            if (feat?.Get() == null) { Logger.Info("not found feat " + featguid); return; }
             progress.LevelEntries
                         .Where(entry => entry.Level == level)
                         .ForEach(entry =>
@@ -72,7 +72,7 @@ namespace PrestigePlus.Patch
             var progress = BlueprintTool.GetRef<BlueprintArchetypeReference>(proguid)?.Get();
             if (progress == null) { Logger.Info("not found pro " + proguid); return; }
             var feat = BlueprintTool.GetRef<BlueprintFeatureBaseReference>(featguid);
-            if (feat == null) { Logger.Info("not found feat " + featguid); return; }
+            if (feat?.Get() == null) { Logger.Info("not found feat " + featguid); return; }
             progress.AddFeatures
                         .Where(entry => entry.Level == level)
                         .ForEach(entry =>
