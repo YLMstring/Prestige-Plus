@@ -1980,11 +1980,11 @@
   {
     "Key": "AccursedWitch.Name",
     "ProcessTemplates": false,
-    "enGB": "AccursedWitch"
+    "enGB": "Accursed Witch"
   },
   {
     "Key": "AccursedWitch.Description",
-    "enGB": "AccursedWitch"
+    "enGB": "Accursed Witch"
   },
   {
     "Key": "Alchemist.Name",
@@ -1998,11 +1998,11 @@
   {
     "Key": "AngelfireApostle.Name",
     "ProcessTemplates": false,
-    "enGB": "AngelfireApostle"
+    "enGB": "Angelfire Apostle"
   },
   {
     "Key": "AngelfireApostle.Description",
-    "enGB": "AngelfireApostle"
+    "enGB": "Angelfire Apostle"
   },
   {
     "Key": "Arcanist.Name",
@@ -2016,11 +2016,11 @@
   {
     "Key": "ArmagsBlade.Name",
     "ProcessTemplates": false,
-    "enGB": "ArmagsBlade"
+    "enGB": "Armags Blade"
   },
   {
     "Key": "ArmagsBlade.Description",
-    "enGB": "ArmagsBlade"
+    "enGB": "Armags Blade"
   },
   {
     "Key": "Bard.Name",
@@ -2079,29 +2079,29 @@
   {
     "Key": "EldritchFont.Name",
     "ProcessTemplates": false,
-    "enGB": "EldritchFont"
+    "enGB": "Eldritch Font"
   },
   {
     "Key": "EldritchFont.Description",
-    "enGB": "EldritchFont"
+    "enGB": "Eldritch Font"
   },
   {
     "Key": "EldritchScion.Name",
     "ProcessTemplates": false,
-    "enGB": "EldritchScion"
+    "enGB": "Eldritch Scion"
   },
   {
     "Key": "EldritchScion.Description",
-    "enGB": "EldritchScion"
+    "enGB": "Eldritch Scion"
   },
   {
     "Key": "EldritchScoundrel.Name",
     "ProcessTemplates": false,
-    "enGB": "EldritchScoundrel"
+    "enGB": "Eldritch Scoundrel"
   },
   {
     "Key": "EldritchScoundrel.Description",
-    "enGB": "EldritchScoundrel"
+    "enGB": "Eldritch Scoundrel"
   },
   {
     "Key": "Empyreal.Name",
@@ -2115,11 +2115,11 @@
   {
     "Key": "ExploiterWizard.Name",
     "ProcessTemplates": false,
-    "enGB": "ExploiterWizard"
+    "enGB": "Exploiter Wizard"
   },
   {
     "Key": "ExploiterWizard.Description",
-    "enGB": "ExploiterWizard"
+    "enGB": "Exploiter Wizard"
   },
   {
     "Key": "Feyspeaker.Name",
@@ -2151,11 +2151,11 @@
   {
     "Key": "LeyLineGuardianWitch.Name",
     "ProcessTemplates": false,
-    "enGB": "LeyLineGuardianWitch"
+    "enGB": "LeyLine Guardian Witch"
   },
   {
     "Key": "LeyLineGuardianWitch.Description",
-    "enGB": "LeyLineGuardianWitch"
+    "enGB": "LeyLine Guardian Witch"
   },
   {
     "Key": "Magus.Name",
@@ -2169,20 +2169,20 @@
   {
     "Key": "MasterSpy.Name",
     "ProcessTemplates": false,
-    "enGB": "MasterSpy"
+    "enGB": "Master Spy"
   },
   {
     "Key": "MasterSpy.Description",
-    "enGB": "MasterSpy"
+    "enGB": "Master Spy"
   },
   {
     "Key": "NatureMage.Name",
     "ProcessTemplates": false,
-    "enGB": "NatureMage"
+    "enGB": "Nature Mage"
   },
   {
     "Key": "NatureMage.Description",
-    "enGB": "NatureMage"
+    "enGB": "Nature Mage"
   },
   {
     "Key": "Oracle.Name",
@@ -2250,11 +2250,11 @@
   {
     "Key": "SwordSaint.Name",
     "ProcessTemplates": false,
-    "enGB": "SwordSaint"
+    "enGB": "Sword Saint"
   },
   {
     "Key": "SwordSaint.Description",
-    "enGB": "SwordSaint"
+    "enGB": "Sword Saint"
   },
   {
     "Key": "ThassilonianAbjuration.Name",
@@ -2322,11 +2322,11 @@
   {
     "Key": "UnletteredArcanist.Name",
     "ProcessTemplates": false,
-    "enGB": "UnletteredArcanist"
+    "enGB": "Unlettered Arcanist"
   },
   {
     "Key": "UnletteredArcanist.Description",
-    "enGB": "UnletteredArcanist"
+    "enGB": "Unlettered Arcanist"
   },
   {
     "Key": "Warpriest.Name",
@@ -2358,74 +2358,74 @@
   {
     "Key": "DreadKnight.Name",
     "ProcessTemplates": false,
-    "enGB": "DreadKnight"
+    "enGB": "Dread Knight"
   },
   {
     "Key": "DreadKnight.Description",
-    "enGB": "DreadKnight"
+    "enGB": "Dread Knight"
   },
   {
     "Key": "ClawOfTheFalseWyrm.Name",
     "ProcessTemplates": false,
-    "enGB": "ClawOfTheFalseWyrm"
+    "enGB": "Claw Of The False Wyrm"
   },
   {
     "Key": "ClawOfTheFalseWyrm.Description",
-    "enGB": "ClawOfTheFalseWyrm"
+    "enGB": "Claw Of The False Wyrm"
   },
   {
     "Key": "SilverChampion.Name",
     "ProcessTemplates": false,
-    "enGB": "SilverChampion"
+    "enGB": "Silver Champion"
   },
   {
     "Key": "SilverChampion.Description",
-    "enGB": "SilverChampion"
+    "enGB": "Silver Champion"
   },
   {
     "Key": "RavenerHunter.Name",
     "ProcessTemplates": false,
-    "enGB": "RavenerHunter"
+    "enGB": "Ravener Hunter"
   },
   {
     "Key": "RavenerHunter.Description",
-    "enGB": "RavenerHunter"
+    "enGB": "Ravener Hunter"
   },
   {
     "Key": "LivingScripture.Name",
     "ProcessTemplates": false,
-    "enGB": "LivingScripture"
+    "enGB": "Living Scripture"
   },
   {
     "Key": "LivingScripture.Description",
-    "enGB": "LivingScripture"
+    "enGB": "Living Scripture"
   },
   {
     "Key": "SkulkingHunter.Name",
     "ProcessTemplates": false,
-    "enGB": "SkulkingHunter"
+    "enGB": "Skulking Hunter"
   },
   {
     "Key": "SkulkingHunter.Description",
-    "enGB": "SkulkingHunter"
+    "enGB": "Skulking Hunter"
   },
   {
     "Key": "SwornOfTheEldest.Name",
     "ProcessTemplates": false,
-    "enGB": "SwornOfTheEldest"
+    "enGB": "Sworn Of TheEldest"
   },
   {
     "Key": "SwornOfTheEldest.Description",
-    "enGB": "SwornOfTheEldest"
+    "enGB": "Sworn Of TheEldest"
   },
   {
     "Key": "ArrowsongMinstrel.Name",
     "ProcessTemplates": false,
-    "enGB": "ArrowsongMinstrel"
+    "enGB": "Arrowsong Minstrel"
   },
   {
     "Key": "ArrowsongMinstrel.Description",
-    "enGB": "ArrowsongMinstrel"
+    "enGB": "Arrowsong Minstrel"
   },
   {
     "Key": "Antipaladin.Name",
@@ -2439,11 +2439,11 @@
   {
     "Key": "ChannelerOfTheUnknown.Name",
     "ProcessTemplates": false,
-    "enGB": "ChannelerOfTheUnknown"
+    "enGB": "Channeler Of The Unknown"
   },
   {
     "Key": "ChannelerOfTheUnknown.Description",
-    "enGB": "ChannelerOfTheUnknown"
+    "enGB": "Channeler Of The Unknown"
   },
   {
     "Key": "Myrmidarch.Name",
