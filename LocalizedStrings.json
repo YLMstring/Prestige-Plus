@@ -1978,480 +1978,480 @@
   },
 
   {
-    "Key": "AccursedWitch.Name",
+    "Key": "PPbookAccursedWitch.Name",
     "ProcessTemplates": false,
     "enGB": "Accursed Witch"
   },
   {
-    "Key": "AccursedWitch.Description",
+    "Key": "PPbookAccursedWitch.Description",
     "enGB": "Accursed Witch"
   },
   {
-    "Key": "Alchemist.Name",
+    "Key": "PPbookAlchemist.Name",
     "ProcessTemplates": false,
     "enGB": "Alchemist"
   },
   {
-    "Key": "Alchemist.Description",
+    "Key": "PPbookAlchemist.Description",
     "enGB": "Alchemist"
   },
   {
-    "Key": "AngelfireApostle.Name",
+    "Key": "PPbookAngelfireApostle.Name",
     "ProcessTemplates": false,
     "enGB": "Angelfire Apostle"
   },
   {
-    "Key": "AngelfireApostle.Description",
+    "Key": "PPbookAngelfireApostle.Description",
     "enGB": "Angelfire Apostle"
   },
   {
-    "Key": "Arcanist.Name",
+    "Key": "PPbookArcanist.Name",
     "ProcessTemplates": false,
     "enGB": "Arcanist"
   },
   {
-    "Key": "Arcanist.Description",
+    "Key": "PPbookArcanist.Description",
     "enGB": "Arcanist"
   },
   {
-    "Key": "ArmagsBlade.Name",
+    "Key": "PPbookArmagsBlade.Name",
     "ProcessTemplates": false,
     "enGB": "Armags Blade"
   },
   {
-    "Key": "ArmagsBlade.Description",
+    "Key": "PPbookArmagsBlade.Description",
     "enGB": "Armags Blade"
   },
   {
-    "Key": "Bard.Name",
+    "Key": "PPbookBard.Name",
     "ProcessTemplates": false,
     "enGB": "Bard"
   },
   {
-    "Key": "Bard.Description",
+    "Key": "PPbookBard.Description",
     "enGB": "Bard"
   },
   {
-    "Key": "Bloodrager.Name",
+    "Key": "PPbookBloodrager.Name",
     "ProcessTemplates": false,
     "enGB": "Bloodrager"
   },
   {
-    "Key": "Bloodrager.Description",
+    "Key": "PPbookBloodrager.Description",
     "enGB": "Bloodrager"
   },
   {
-    "Key": "Cleric.Name",
+    "Key": "PPbookCleric.Name",
     "ProcessTemplates": false,
     "enGB": "Cleric"
   },
   {
-    "Key": "Cleric.Description",
+    "Key": "PPbookCleric.Description",
     "enGB": "Cleric"
   },
   {
-    "Key": "Crossblooded.Name",
+    "Key": "PPbookCrossblooded.Name",
     "ProcessTemplates": false,
     "enGB": "Crossblooded"
   },
   {
-    "Key": "Crossblooded.Description",
+    "Key": "PPbookCrossblooded.Description",
     "enGB": "Crossblooded"
   },
   {
-    "Key": "Crusader.Name",
+    "Key": "PPbookCrusader.Name",
     "ProcessTemplates": false,
     "enGB": "Crusader"
   },
   {
-    "Key": "Crusader.Description",
+    "Key": "PPbookCrusader.Description",
     "enGB": "Crusader"
   },
   {
-    "Key": "Druid.Name",
+    "Key": "PPbookDruid.Name",
     "ProcessTemplates": false,
     "enGB": "Druid"
   },
   {
-    "Key": "Druid.Description",
+    "Key": "PPbookDruid.Description",
     "enGB": "Druid"
   },
   {
-    "Key": "EldritchFont.Name",
+    "Key": "PPbookEldritchFont.Name",
     "ProcessTemplates": false,
     "enGB": "Eldritch Font"
   },
   {
-    "Key": "EldritchFont.Description",
+    "Key": "PPbookEldritchFont.Description",
     "enGB": "Eldritch Font"
   },
   {
-    "Key": "EldritchScion.Name",
+    "Key": "PPbookEldritchScion.Name",
     "ProcessTemplates": false,
     "enGB": "Eldritch Scion"
   },
   {
-    "Key": "EldritchScion.Description",
+    "Key": "PPbookEldritchScion.Description",
     "enGB": "Eldritch Scion"
   },
   {
-    "Key": "EldritchScoundrel.Name",
+    "Key": "PPbookEldritchScoundrel.Name",
     "ProcessTemplates": false,
     "enGB": "Eldritch Scoundrel"
   },
   {
-    "Key": "EldritchScoundrel.Description",
+    "Key": "PPbookEldritchScoundrel.Description",
     "enGB": "Eldritch Scoundrel"
   },
   {
-    "Key": "Empyreal.Name",
+    "Key": "PPbookEmpyreal.Name",
     "ProcessTemplates": false,
     "enGB": "Empyreal"
   },
   {
-    "Key": "Empyreal.Description",
+    "Key": "PPbookEmpyreal.Description",
     "enGB": "Empyreal"
   },
   {
-    "Key": "ExploiterWizard.Name",
+    "Key": "PPbookExploiterWizard.Name",
     "ProcessTemplates": false,
     "enGB": "Exploiter Wizard"
   },
   {
-    "Key": "ExploiterWizard.Description",
+    "Key": "PPbookExploiterWizard.Description",
     "enGB": "Exploiter Wizard"
   },
   {
-    "Key": "Feyspeaker.Name",
+    "Key": "PPbookFeyspeaker.Name",
     "ProcessTemplates": false,
     "enGB": "Feyspeaker"
   },
   {
-    "Key": "Feyspeaker.Description",
+    "Key": "PPbookFeyspeaker.Description",
     "enGB": "Feyspeaker"
   },
   {
-    "Key": "Hunter.Name",
+    "Key": "PPbookHunter.Name",
     "ProcessTemplates": false,
     "enGB": "Hunter"
   },
   {
-    "Key": "Hunter.Description",
+    "Key": "PPbookHunter.Description",
     "enGB": "Hunter"
   },
   {
-    "Key": "Inquisitor.Name",
+    "Key": "PPbookInquisitor.Name",
     "ProcessTemplates": false,
     "enGB": "Inquisitor"
   },
   {
-    "Key": "Inquisitor.Description",
+    "Key": "PPbookInquisitor.Description",
     "enGB": "Inquisitor"
   },
   {
-    "Key": "LeyLineGuardianWitch.Name",
+    "Key": "PPbookLeyLineGuardianWitch.Name",
     "ProcessTemplates": false,
     "enGB": "LeyLine Guardian Witch"
   },
   {
-    "Key": "LeyLineGuardianWitch.Description",
+    "Key": "PPbookLeyLineGuardianWitch.Description",
     "enGB": "LeyLine Guardian Witch"
   },
   {
-    "Key": "Magus.Name",
+    "Key": "PPbookMagus.Name",
     "ProcessTemplates": false,
     "enGB": "Magus"
   },
   {
-    "Key": "Magus.Description",
+    "Key": "PPbookMagus.Description",
     "enGB": "Magus"
   },
   {
-    "Key": "MasterSpy.Name",
+    "Key": "PPbookMasterSpy.Name",
     "ProcessTemplates": false,
     "enGB": "Master Spy"
   },
   {
-    "Key": "MasterSpy.Description",
+    "Key": "PPbookMasterSpy.Description",
     "enGB": "Master Spy"
   },
   {
-    "Key": "NatureMage.Name",
+    "Key": "PPbookNatureMage.Name",
     "ProcessTemplates": false,
     "enGB": "Nature Mage"
   },
   {
-    "Key": "NatureMage.Description",
+    "Key": "PPbookNatureMage.Description",
     "enGB": "Nature Mage"
   },
   {
-    "Key": "Oracle.Name",
+    "Key": "PPbookOracle.Name",
     "ProcessTemplates": false,
     "enGB": "Oracle"
   },
   {
-    "Key": "Oracle.Description",
+    "Key": "PPbookOracle.Description",
     "enGB": "Oracle"
   },
   {
-    "Key": "Paladin.Name",
+    "Key": "PPbookPaladin.Name",
     "ProcessTemplates": false,
     "enGB": "Paladin"
   },
   {
-    "Key": "Paladin.Description",
+    "Key": "PPbookPaladin.Description",
     "enGB": "Paladin"
   },
   {
-    "Key": "Ranger.Name",
+    "Key": "PPbookRanger.Name",
     "ProcessTemplates": false,
     "enGB": "Ranger"
   },
   {
-    "Key": "Ranger.Description",
+    "Key": "PPbookRanger.Description",
     "enGB": "Ranger"
   },
   {
-    "Key": "Sage.Name",
+    "Key": "PPbookSage.Name",
     "ProcessTemplates": false,
     "enGB": "Sage"
   },
   {
-    "Key": "Sage.Description",
+    "Key": "PPbookSage.Description",
     "enGB": "Sage"
   },
   {
-    "Key": "Shaman.Name",
+    "Key": "PPbookShaman.Name",
     "ProcessTemplates": false,
     "enGB": "Shaman"
   },
   {
-    "Key": "Shaman.Description",
+    "Key": "PPbookShaman.Description",
     "enGB": "Shaman"
   },
   {
-    "Key": "Skald.Name",
+    "Key": "PPbookSkald.Name",
     "ProcessTemplates": false,
     "enGB": "Skald"
   },
   {
-    "Key": "Skald.Description",
+    "Key": "PPbookSkald.Description",
     "enGB": "Skald"
   },
   {
-    "Key": "Sorcerer.Name",
+    "Key": "PPbookSorcerer.Name",
     "ProcessTemplates": false,
     "enGB": "Sorcerer"
   },
   {
-    "Key": "Sorcerer.Description",
+    "Key": "PPbookSorcerer.Description",
     "enGB": "Sorcerer"
   },
   {
-    "Key": "SwordSaint.Name",
+    "Key": "PPbookSwordSaint.Name",
     "ProcessTemplates": false,
     "enGB": "Sword Saint"
   },
   {
-    "Key": "SwordSaint.Description",
+    "Key": "PPbookSwordSaint.Description",
     "enGB": "Sword Saint"
   },
   {
-    "Key": "ThassilonianAbjuration.Name",
+    "Key": "PPbookThassilonianAbjuration.Name",
     "ProcessTemplates": false,
     "enGB": "ThassilonianAbjuration"
   },
   {
-    "Key": "ThassilonianAbjuration.Description",
+    "Key": "PPbookThassilonianAbjuration.Description",
     "enGB": "ThassilonianAbjuration"
   },
   {
-    "Key": "ThassilonianConjuration.Name",
+    "Key": "PPbookThassilonianConjuration.Name",
     "ProcessTemplates": false,
     "enGB": "ThassilonianConjuration"
   },
   {
-    "Key": "ThassilonianConjuration.Description",
+    "Key": "PPbookThassilonianConjuration.Description",
     "enGB": "ThassilonianConjuration"
   },
   {
-    "Key": "ThassilonianEnchantment.Name",
+    "Key": "PPbookThassilonianEnchantment.Name",
     "ProcessTemplates": false,
     "enGB": "ThassilonianEnchantment"
   },
   {
-    "Key": "ThassilonianEnchantment.Description",
+    "Key": "PPbookThassilonianEnchantment.Description",
     "enGB": "ThassilonianEnchantment"
   },
   {
-    "Key": "ThassilonianEvocation.Name",
+    "Key": "PPbookThassilonianEvocation.Name",
     "ProcessTemplates": false,
     "enGB": "ThassilonianEvocation"
   },
   {
-    "Key": "ThassilonianEvocation.Description",
+    "Key": "PPbookThassilonianEvocation.Description",
     "enGB": "ThassilonianEvocation"
   },
   {
-    "Key": "ThassilonianIllusion.Name",
+    "Key": "PPbookThassilonianIllusion.Name",
     "ProcessTemplates": false,
     "enGB": "ThassilonianIllusion"
   },
   {
-    "Key": "ThassilonianIllusion.Description",
+    "Key": "PPbookThassilonianIllusion.Description",
     "enGB": "ThassilonianIllusion"
   },
   {
-    "Key": "ThassilonianNecromancy.Name",
+    "Key": "PPbookThassilonianNecromancy.Name",
     "ProcessTemplates": false,
     "enGB": "ThassilonianNecromancy"
   },
   {
-    "Key": "ThassilonianNecromancy.Description",
+    "Key": "PPbookThassilonianNecromancy.Description",
     "enGB": "ThassilonianNecromancy"
   },
   {
-    "Key": "ThassilonianTransmutation.Name",
+    "Key": "PPbookThassilonianTransmutation.Name",
     "ProcessTemplates": false,
     "enGB": "ThassilonianTransmutation"
   },
   {
-    "Key": "ThassilonianTransmutation.Description",
+    "Key": "PPbookThassilonianTransmutation.Description",
     "enGB": "ThassilonianTransmutation"
   },
   {
-    "Key": "UnletteredArcanist.Name",
+    "Key": "PPbookUnletteredArcanist.Name",
     "ProcessTemplates": false,
     "enGB": "Unlettered Arcanist"
   },
   {
-    "Key": "UnletteredArcanist.Description",
+    "Key": "PPbookUnletteredArcanist.Description",
     "enGB": "Unlettered Arcanist"
   },
   {
-    "Key": "Warpriest.Name",
+    "Key": "PPbookWarpriest.Name",
     "ProcessTemplates": false,
     "enGB": "Warpriest"
   },
   {
-    "Key": "Warpriest.Description",
+    "Key": "PPbookWarpriest.Description",
     "enGB": "Warpriest"
   },
   {
-    "Key": "Witch.Name",
+    "Key": "PPbookWitch.Name",
     "ProcessTemplates": false,
     "enGB": "Witch"
   },
   {
-    "Key": "Witch.Description",
+    "Key": "PPbookWitch.Description",
     "enGB": "Witch"
   },
   {
-    "Key": "Wizard.Name",
+    "Key": "PPbookWizard.Name",
     "ProcessTemplates": false,
     "enGB": "Wizard"
   },
   {
-    "Key": "Wizard.Description",
+    "Key": "PPbookWizard.Description",
     "enGB": "Wizard"
   },
   {
-    "Key": "DreadKnight.Name",
+    "Key": "PPbookDreadKnight.Name",
     "ProcessTemplates": false,
     "enGB": "Dread Knight"
   },
   {
-    "Key": "DreadKnight.Description",
+    "Key": "PPbookDreadKnight.Description",
     "enGB": "Dread Knight"
   },
   {
-    "Key": "ClawOfTheFalseWyrm.Name",
+    "Key": "PPbookClawOfTheFalseWyrm.Name",
     "ProcessTemplates": false,
     "enGB": "Claw Of The False Wyrm"
   },
   {
-    "Key": "ClawOfTheFalseWyrm.Description",
+    "Key": "PPbookClawOfTheFalseWyrm.Description",
     "enGB": "Claw Of The False Wyrm"
   },
   {
-    "Key": "SilverChampion.Name",
+    "Key": "PPbookSilverChampion.Name",
     "ProcessTemplates": false,
     "enGB": "Silver Champion"
   },
   {
-    "Key": "SilverChampion.Description",
+    "Key": "PPbookSilverChampion.Description",
     "enGB": "Silver Champion"
   },
   {
-    "Key": "RavenerHunter.Name",
+    "Key": "PPbookRavenerHunter.Name",
     "ProcessTemplates": false,
     "enGB": "Ravener Hunter"
   },
   {
-    "Key": "RavenerHunter.Description",
+    "Key": "PPbookRavenerHunter.Description",
     "enGB": "Ravener Hunter"
   },
   {
-    "Key": "LivingScripture.Name",
+    "Key": "PPbookLivingScripture.Name",
     "ProcessTemplates": false,
     "enGB": "Living Scripture"
   },
   {
-    "Key": "LivingScripture.Description",
+    "Key": "PPbookLivingScripture.Description",
     "enGB": "Living Scripture"
   },
   {
-    "Key": "SkulkingHunter.Name",
+    "Key": "PPbookSkulkingHunter.Name",
     "ProcessTemplates": false,
     "enGB": "Skulking Hunter"
   },
   {
-    "Key": "SkulkingHunter.Description",
+    "Key": "PPbookSkulkingHunter.Description",
     "enGB": "Skulking Hunter"
   },
   {
-    "Key": "SwornOfTheEldest.Name",
+    "Key": "PPbookSwornOfTheEldest.Name",
     "ProcessTemplates": false,
     "enGB": "Sworn Of TheEldest"
   },
   {
-    "Key": "SwornOfTheEldest.Description",
+    "Key": "PPbookSwornOfTheEldest.Description",
     "enGB": "Sworn Of TheEldest"
   },
   {
-    "Key": "ArrowsongMinstrel.Name",
+    "Key": "PPbookArrowsongMinstrel.Name",
     "ProcessTemplates": false,
     "enGB": "Arrowsong Minstrel"
   },
   {
-    "Key": "ArrowsongMinstrel.Description",
+    "Key": "PPbookArrowsongMinstrel.Description",
     "enGB": "Arrowsong Minstrel"
   },
   {
-    "Key": "Antipaladin.Name",
+    "Key": "PPbookAntipaladin.Name",
     "ProcessTemplates": false,
     "enGB": "Antipaladin"
   },
   {
-    "Key": "Antipaladin.Description",
+    "Key": "PPbookAntipaladin.Description",
     "enGB": "Antipaladin"
   },
   {
-    "Key": "ChannelerOfTheUnknown.Name",
+    "Key": "PPbookChannelerOfTheUnknown.Name",
     "ProcessTemplates": false,
     "enGB": "Channeler Of The Unknown"
   },
   {
-    "Key": "ChannelerOfTheUnknown.Description",
+    "Key": "PPbookChannelerOfTheUnknown.Description",
     "enGB": "Channeler Of The Unknown"
   },
   {
-    "Key": "Myrmidarch.Name",
+    "Key": "PPbookMyrmidarch.Name",
     "ProcessTemplates": false,
     "enGB": "Myrmidarch"
   },
   {
-    "Key": "Myrmidarch.Description",
+    "Key": "PPbookMyrmidarch.Description",
     "enGB": "Myrmidarch"
   },
 

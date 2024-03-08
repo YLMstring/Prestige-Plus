@@ -21,8 +21,8 @@ namespace PrestigePlus.Modify
         public static readonly string AccursedWitchName = "2AccursedWitch";
         public static readonly string AccursedWitchGuid = "a479ce9c-dca2-4ac5-b638-93828839a4fa";
 
-        public static readonly string AccursedWitchDisplayName = "AccursedWitch.Name";
-        public static readonly string AccursedWitchDescription = "AccursedWitch.Description";
+        public static readonly string AccursedWitchDisplayName = "PPbookAccursedWitch.Name";
+        public static readonly string AccursedWitchDescription = "PPbookAccursedWitch.Description";
 
         private const string spellupgrade = "Spellupgrade2";
         public static readonly string spellupgradeGuid = "{05DC9561-0542-41BD-9E9F-404F59AB68C5}";
@@ -54,8 +54,8 @@ namespace PrestigePlus.Modify
         public static readonly string AlchemistName = "2Alchemist";
         public static readonly string AlchemistGuid = "1dd65a2c-3e63-4ebb-baf3-d00c7c555969";
 
-        public static readonly string AlchemistDisplayName = "Alchemist.Name";
-        public static readonly string AlchemistDescription = "Alchemist.Description";
+        public static readonly string AlchemistDisplayName = "PPbookAlchemist.Name";
+        public static readonly string AlchemistDescription = "PPbookAlchemist.Description";
 
         public static BlueprintFeatureReplaceSpellbook Alchemist()
         {
@@ -70,8 +70,8 @@ namespace PrestigePlus.Modify
         public static readonly string AngelfireApostleName = "2AngelfireApostle";
         public static readonly string AngelfireApostleGuid = "5bee4bb9-2699-4a1a-99a5-9d33f7f96395";
 
-        public static readonly string AngelfireApostleDisplayName = "AngelfireApostle.Name";
-        public static readonly string AngelfireApostleDescription = "AngelfireApostle.Description";
+        public static readonly string AngelfireApostleDisplayName = "PPbookAngelfireApostle.Name";
+        public static readonly string AngelfireApostleDescription = "PPbookAngelfireApostle.Description";
 
         public static BlueprintFeatureReplaceSpellbook AngelfireApostle()
         {
@@ -86,8 +86,8 @@ namespace PrestigePlus.Modify
         public static readonly string ArcanistName = "2Arcanist";
         public static readonly string ArcanistGuid = "82891c6e-8b5f-4875-b97a-fab268fb2210";
 
-        public static readonly string ArcanistDisplayName = "Arcanist.Name";
-        public static readonly string ArcanistDescription = "Arcanist.Description";
+        public static readonly string ArcanistDisplayName = "PPbookArcanist.Name";
+        public static readonly string ArcanistDescription = "PPbookArcanist.Description";
 
         public static BlueprintFeatureReplaceSpellbook Arcanist()
         {
@@ -102,8 +102,8 @@ namespace PrestigePlus.Modify
         public static readonly string ArmagsBladeName = "2ArmagsBlade";
         public static readonly string ArmagsBladeGuid = "149e513e-1ef3-413e-ac83-f1b9a846f844";
 
-        public static readonly string ArmagsBladeDisplayName = "ArmagsBlade.Name";
-        public static readonly string ArmagsBladeDescription = "ArmagsBlade.Description";
+        public static readonly string ArmagsBladeDisplayName = "PPbookArmagsBlade.Name";
+        public static readonly string ArmagsBladeDescription = "PPbookArmagsBlade.Description";
 
         public static BlueprintFeatureReplaceSpellbook ArmagsBlade()
         {
@@ -118,8 +118,8 @@ namespace PrestigePlus.Modify
         public static readonly string BardName = "2Bard";
         public static readonly string BardGuid = "e8196afe-fd79-4fa9-aeff-d47e84a0c683";
 
-        public static readonly string BardDisplayName = "Bard.Name";
-        public static readonly string BardDescription = "Bard.Description";
+        public static readonly string BardDisplayName = "PPbookBard.Name";
+        public static readonly string BardDescription = "PPbookBard.Description";
 
         public static BlueprintFeatureReplaceSpellbook Bard()
         {
@@ -134,8 +134,8 @@ namespace PrestigePlus.Modify
         public static readonly string BloodragerName = "2Bloodrager";
         public static readonly string BloodragerGuid = "459533eb-0d4f-47c4-82b3-fd9c08c08311";
 
-        public static readonly string BloodragerDisplayName = "Bloodrager.Name";
-        public static readonly string BloodragerDescription = "Bloodrager.Description";
+        public static readonly string BloodragerDisplayName = "PPbookBloodrager.Name";
+        public static readonly string BloodragerDescription = "PPbookBloodrager.Description";
 
         public static BlueprintFeatureReplaceSpellbook Bloodrager()
         {
@@ -150,8 +150,8 @@ namespace PrestigePlus.Modify
         public static readonly string ClericName = "2Cleric";
         public static readonly string ClericGuid = "e42dd390-4b4c-4f75-b52b-9f0907a2d2db";
 
-        public static readonly string ClericDisplayName = "Cleric.Name";
-        public static readonly string ClericDescription = "Cleric.Description";
+        public static readonly string ClericDisplayName = "PPbookCleric.Name";
+        public static readonly string ClericDescription = "PPbookCleric.Description";
 
         public static BlueprintFeatureReplaceSpellbook Cleric()
         {
@@ -166,8 +166,8 @@ namespace PrestigePlus.Modify
         public static readonly string CrossbloodedName = "2Crossblooded";
         public static readonly string CrossbloodedGuid = "e3fe1442-3d9b-4b41-8895-1ff3e660beb8";
 
-        public static readonly string CrossbloodedDisplayName = "Crossblooded.Name";
-        public static readonly string CrossbloodedDescription = "Crossblooded.Description";
+        public static readonly string CrossbloodedDisplayName = "PPbookCrossblooded.Name";
+        public static readonly string CrossbloodedDescription = "PPbookCrossblooded.Description";
 
         public static BlueprintFeatureReplaceSpellbook Crossblooded()
         {
@@ -182,8 +182,8 @@ namespace PrestigePlus.Modify
         public static readonly string CrusaderName = "2Crusader";
         public static readonly string CrusaderGuid = "d8e26da5-28af-4162-81de-abe69d1f0e86";
 
-        public static readonly string CrusaderDisplayName = "Crusader.Name";
-        public static readonly string CrusaderDescription = "Crusader.Description";
+        public static readonly string CrusaderDisplayName = "PPbookCrusader.Name";
+        public static readonly string CrusaderDescription = "PPbookCrusader.Description";
 
         public static BlueprintFeatureReplaceSpellbook Crusader()
         {
@@ -198,8 +198,8 @@ namespace PrestigePlus.Modify
         public static readonly string DruidName = "2Druid";
         public static readonly string DruidGuid = "f1ee2fde-b649-4ec7-b2ea-53d8a11e8751";
 
-        public static readonly string DruidDisplayName = "Druid.Name";
-        public static readonly string DruidDescription = "Druid.Description";
+        public static readonly string DruidDisplayName = "PPbookDruid.Name";
+        public static readonly string DruidDescription = "PPbookDruid.Description";
 
         public static BlueprintFeatureReplaceSpellbook Druid()
         {
@@ -214,8 +214,8 @@ namespace PrestigePlus.Modify
         public static readonly string EldritchFontName = "2EldritchFont";
         public static readonly string EldritchFontGuid = "d68b222c-f3ca-4df0-b968-17a7c135e82b";
 
-        public static readonly string EldritchFontDisplayName = "EldritchFont.Name";
-        public static readonly string EldritchFontDescription = "EldritchFont.Description";
+        public static readonly string EldritchFontDisplayName = "PPbookEldritchFont.Name";
+        public static readonly string EldritchFontDescription = "PPbookEldritchFont.Description";
 
         public static BlueprintFeatureReplaceSpellbook EldritchFont()
         {
@@ -230,8 +230,8 @@ namespace PrestigePlus.Modify
         public static readonly string EldritchScionName = "2EldritchScion";
         public static readonly string EldritchScionGuid = "9d00b336-6070-4155-a03f-c7d2f0de8c61";
 
-        public static readonly string EldritchScionDisplayName = "EldritchScion.Name";
-        public static readonly string EldritchScionDescription = "EldritchScion.Description";
+        public static readonly string EldritchScionDisplayName = "PPbookEldritchScion.Name";
+        public static readonly string EldritchScionDescription = "PPbookEldritchScion.Description";
 
         public static BlueprintFeatureReplaceSpellbook EldritchScion()
         {
@@ -246,8 +246,8 @@ namespace PrestigePlus.Modify
         public static readonly string EldritchScoundrelName = "2EldritchScoundrel";
         public static readonly string EldritchScoundrelGuid = "4aa9ac23-00e2-4bde-aaaf-8b863684dac9";
 
-        public static readonly string EldritchScoundrelDisplayName = "EldritchScoundrel.Name";
-        public static readonly string EldritchScoundrelDescription = "EldritchScoundrel.Description";
+        public static readonly string EldritchScoundrelDisplayName = "PPbookEldritchScoundrel.Name";
+        public static readonly string EldritchScoundrelDescription = "PPbookEldritchScoundrel.Description";
 
         public static BlueprintFeatureReplaceSpellbook EldritchScoundrel()
         {
@@ -262,8 +262,8 @@ namespace PrestigePlus.Modify
         public static readonly string EmpyrealName = "2Empyreal";
         public static readonly string EmpyrealGuid = "d24fa235-6cfb-4a39-8d41-60772e4d1193";
 
-        public static readonly string EmpyrealDisplayName = "Empyreal.Name";
-        public static readonly string EmpyrealDescription = "Empyreal.Description";
+        public static readonly string EmpyrealDisplayName = "PPbookEmpyreal.Name";
+        public static readonly string EmpyrealDescription = "PPbookEmpyreal.Description";
 
         public static BlueprintFeatureReplaceSpellbook Empyreal()
         {
@@ -278,8 +278,8 @@ namespace PrestigePlus.Modify
         public static readonly string ExploiterWizardName = "2ExploiterWizard";
         public static readonly string ExploiterWizardGuid = "8936f0e1-2458-4b1b-81bf-d7322819df02";
 
-        public static readonly string ExploiterWizardDisplayName = "ExploiterWizard.Name";
-        public static readonly string ExploiterWizardDescription = "ExploiterWizard.Description";
+        public static readonly string ExploiterWizardDisplayName = "PPbookExploiterWizard.Name";
+        public static readonly string ExploiterWizardDescription = "PPbookExploiterWizard.Description";
 
         public static BlueprintFeatureReplaceSpellbook ExploiterWizard()
         {
@@ -294,8 +294,8 @@ namespace PrestigePlus.Modify
         public static readonly string FeyspeakerName = "2Feyspeaker";
         public static readonly string FeyspeakerGuid = "41434221-40f3-44e3-ab75-5045674f3e95";
 
-        public static readonly string FeyspeakerDisplayName = "Feyspeaker.Name";
-        public static readonly string FeyspeakerDescription = "Feyspeaker.Description";
+        public static readonly string FeyspeakerDisplayName = "PPbookFeyspeaker.Name";
+        public static readonly string FeyspeakerDescription = "PPbookFeyspeaker.Description";
 
         public static BlueprintFeatureReplaceSpellbook Feyspeaker()
         {
@@ -310,8 +310,8 @@ namespace PrestigePlus.Modify
         public static readonly string HunterName = "2Hunter";
         public static readonly string HunterGuid = "a47c883d-e671-48c5-8048-880151b1f46e";
 
-        public static readonly string HunterDisplayName = "Hunter.Name";
-        public static readonly string HunterDescription = "Hunter.Description";
+        public static readonly string HunterDisplayName = "PPbookHunter.Name";
+        public static readonly string HunterDescription = "PPbookHunter.Description";
 
         public static BlueprintFeatureReplaceSpellbook Hunter()
         {
@@ -326,8 +326,8 @@ namespace PrestigePlus.Modify
         public static readonly string InquisitorName = "2Inquisitor";
         public static readonly string InquisitorGuid = "daefc670-6c9a-4487-9ed9-03370d50bc6d";
 
-        public static readonly string InquisitorDisplayName = "Inquisitor.Name";
-        public static readonly string InquisitorDescription = "Inquisitor.Description";
+        public static readonly string InquisitorDisplayName = "PPbookInquisitor.Name";
+        public static readonly string InquisitorDescription = "PPbookInquisitor.Description";
 
         public static BlueprintFeatureReplaceSpellbook Inquisitor()
         {
@@ -342,8 +342,8 @@ namespace PrestigePlus.Modify
         public static readonly string LeyLineGuardianWitchName = "2LeyLineGuardianWitch";
         public static readonly string LeyLineGuardianWitchGuid = "524523c0-7a2e-492b-a1e9-3439c5745095";
 
-        public static readonly string LeyLineGuardianWitchDisplayName = "LeyLineGuardianWitch.Name";
-        public static readonly string LeyLineGuardianWitchDescription = "LeyLineGuardianWitch.Description";
+        public static readonly string LeyLineGuardianWitchDisplayName = "PPbookLeyLineGuardianWitch.Name";
+        public static readonly string LeyLineGuardianWitchDescription = "PPbookLeyLineGuardianWitch.Description";
 
         public static BlueprintFeatureReplaceSpellbook LeyLineGuardianWitch()
         {
@@ -358,8 +358,8 @@ namespace PrestigePlus.Modify
         public static readonly string MagusName = "2Magus";
         public static readonly string MagusGuid = "899cd325-87ae-491a-a4f7-fbdc4b6ecb02";
 
-        public static readonly string MagusDisplayName = "Magus.Name";
-        public static readonly string MagusDescription = "Magus.Description";
+        public static readonly string MagusDisplayName = "PPbookMagus.Name";
+        public static readonly string MagusDescription = "PPbookMagus.Description";
 
         public static BlueprintFeatureReplaceSpellbook Magus()
         {
@@ -374,8 +374,8 @@ namespace PrestigePlus.Modify
         public static readonly string MasterSpyName = "2MasterSpy";
         public static readonly string MasterSpyGuid = "b62d1706-8fab-496c-8cef-5ef7a6ae1ec9";
 
-        public static readonly string MasterSpyDisplayName = "MasterSpy.Name";
-        public static readonly string MasterSpyDescription = "MasterSpy.Description";
+        public static readonly string MasterSpyDisplayName = "PPbookMasterSpy.Name";
+        public static readonly string MasterSpyDescription = "PPbookMasterSpy.Description";
 
         public static BlueprintFeatureReplaceSpellbook MasterSpy()
         {
@@ -390,8 +390,8 @@ namespace PrestigePlus.Modify
         public static readonly string NatureMageName = "2NatureMage";
         public static readonly string NatureMageGuid = "564c20e7-a440-448c-89eb-2f6f39862927";
 
-        public static readonly string NatureMageDisplayName = "NatureMage.Name";
-        public static readonly string NatureMageDescription = "NatureMage.Description";
+        public static readonly string NatureMageDisplayName = "PPbookNatureMage.Name";
+        public static readonly string NatureMageDescription = "PPbookNatureMage.Description";
 
         public static BlueprintFeatureReplaceSpellbook NatureMage()
         {
@@ -406,8 +406,8 @@ namespace PrestigePlus.Modify
         public static readonly string OracleName = "2Oracle";
         public static readonly string OracleGuid = "b7c50ca3-5f49-440b-8451-8abb2e87baad";
 
-        public static readonly string OracleDisplayName = "Oracle.Name";
-        public static readonly string OracleDescription = "Oracle.Description";
+        public static readonly string OracleDisplayName = "PPbookOracle.Name";
+        public static readonly string OracleDescription = "PPbookOracle.Description";
 
         public static BlueprintFeatureReplaceSpellbook Oracle()
         {
@@ -422,8 +422,8 @@ namespace PrestigePlus.Modify
         public static readonly string PaladinName = "2Paladin";
         public static readonly string PaladinGuid = "72184ecb-bfe7-4c43-8ef2-871e8efc7cbd";
 
-        public static readonly string PaladinDisplayName = "Paladin.Name";
-        public static readonly string PaladinDescription = "Paladin.Description";
+        public static readonly string PaladinDisplayName = "PPbookPaladin.Name";
+        public static readonly string PaladinDescription = "PPbookPaladin.Description";
 
         public static BlueprintFeatureReplaceSpellbook Paladin()
         {
@@ -438,8 +438,8 @@ namespace PrestigePlus.Modify
         public static readonly string RangerName = "2Ranger";
         public static readonly string RangerGuid = "70269172-e282-4868-8458-99264eefc903";
 
-        public static readonly string RangerDisplayName = "Ranger.Name";
-        public static readonly string RangerDescription = "Ranger.Description";
+        public static readonly string RangerDisplayName = "PPbookRanger.Name";
+        public static readonly string RangerDescription = "PPbookRanger.Description";
 
         public static BlueprintFeatureReplaceSpellbook Ranger()
         {
@@ -454,8 +454,8 @@ namespace PrestigePlus.Modify
         public static readonly string SageName = "2Sage";
         public static readonly string SageGuid = "8a869778-692a-4e03-bd02-05862c852371";
 
-        public static readonly string SageDisplayName = "Sage.Name";
-        public static readonly string SageDescription = "Sage.Description";
+        public static readonly string SageDisplayName = "PPbookSage.Name";
+        public static readonly string SageDescription = "PPbookSage.Description";
 
         public static BlueprintFeatureReplaceSpellbook Sage()
         {
@@ -470,8 +470,8 @@ namespace PrestigePlus.Modify
         public static readonly string ShamanName = "2Shaman";
         public static readonly string ShamanGuid = "09fb6763-67af-4f21-b2c4-5fe70d997dc1";
 
-        public static readonly string ShamanDisplayName = "Shaman.Name";
-        public static readonly string ShamanDescription = "Shaman.Description";
+        public static readonly string ShamanDisplayName = "PPbookShaman.Name";
+        public static readonly string ShamanDescription = "PPbookShaman.Description";
 
         public static BlueprintFeatureReplaceSpellbook Shaman()
         {
@@ -486,8 +486,8 @@ namespace PrestigePlus.Modify
         public static readonly string SkaldName = "2Skald";
         public static readonly string SkaldGuid = "8fc5f71a-cf9d-4e84-8fab-892d71928906";
 
-        public static readonly string SkaldDisplayName = "Skald.Name";
-        public static readonly string SkaldDescription = "Skald.Description";
+        public static readonly string SkaldDisplayName = "PPbookSkald.Name";
+        public static readonly string SkaldDescription = "PPbookSkald.Description";
 
         public static BlueprintFeatureReplaceSpellbook Skald()
         {
@@ -502,8 +502,8 @@ namespace PrestigePlus.Modify
         public static readonly string SorcererName = "2Sorcerer";
         public static readonly string SorcererGuid = "442f3e70-fa83-4836-bebb-e159a4a6990c";
 
-        public static readonly string SorcererDisplayName = "Sorcerer.Name";
-        public static readonly string SorcererDescription = "Sorcerer.Description";
+        public static readonly string SorcererDisplayName = "PPbookSorcerer.Name";
+        public static readonly string SorcererDescription = "PPbookSorcerer.Description";
 
         public static BlueprintFeatureReplaceSpellbook Sorcerer()
         {
@@ -519,8 +519,8 @@ namespace PrestigePlus.Modify
         public static readonly string SwordSaintName = "2SwordSaint";
         public static readonly string SwordSaintGuid = "26ad8592-0176-449d-bf85-df743b8d2289";
 
-        public static readonly string SwordSaintDisplayName = "SwordSaint.Name";
-        public static readonly string SwordSaintDescription = "SwordSaint.Description";
+        public static readonly string SwordSaintDisplayName = "PPbookSwordSaint.Name";
+        public static readonly string SwordSaintDescription = "PPbookSwordSaint.Description";
 
         public static BlueprintFeatureReplaceSpellbook SwordSaint()
         {
@@ -535,8 +535,8 @@ namespace PrestigePlus.Modify
         public static readonly string ThassilonianAbjurationName = "2ThassilonianAbjuration";
         public static readonly string ThassilonianAbjurationGuid = "1a2b2fcd-1f14-446d-8383-7cb4c79bb28a";
 
-        public static readonly string ThassilonianAbjurationDisplayName = "ThassilonianAbjuration.Name";
-        public static readonly string ThassilonianAbjurationDescription = "ThassilonianAbjuration.Description";
+        public static readonly string ThassilonianAbjurationDisplayName = "PPbookThassilonianAbjuration.Name";
+        public static readonly string ThassilonianAbjurationDescription = "PPbookThassilonianAbjuration.Description";
 
         public static BlueprintFeatureReplaceSpellbook ThassilonianAbjuration()
         {
@@ -551,8 +551,8 @@ namespace PrestigePlus.Modify
         public static readonly string ThassilonianConjurationName = "2ThassilonianConjuration";
         public static readonly string ThassilonianConjurationGuid = "8bc9adfd-4e1e-4aee-bcb0-39bdcfac56c1";
 
-        public static readonly string ThassilonianConjurationDisplayName = "ThassilonianConjuration.Name";
-        public static readonly string ThassilonianConjurationDescription = "ThassilonianConjuration.Description";
+        public static readonly string ThassilonianConjurationDisplayName = "PPbookThassilonianConjuration.Name";
+        public static readonly string ThassilonianConjurationDescription = "PPbookThassilonianConjuration.Description";
 
         public static BlueprintFeatureReplaceSpellbook ThassilonianConjuration()
         {
@@ -567,8 +567,8 @@ namespace PrestigePlus.Modify
         public static readonly string ThassilonianEnchantmentName = "2ThassilonianEnchantment";
         public static readonly string ThassilonianEnchantmentGuid = "487af3ca-25e9-4a4f-acc1-82d542d0865e";
 
-        public static readonly string ThassilonianEnchantmentDisplayName = "ThassilonianEnchantment.Name";
-        public static readonly string ThassilonianEnchantmentDescription = "ThassilonianEnchantment.Description";
+        public static readonly string ThassilonianEnchantmentDisplayName = "PPbookThassilonianEnchantment.Name";
+        public static readonly string ThassilonianEnchantmentDescription = "PPbookThassilonianEnchantment.Description";
 
         public static BlueprintFeatureReplaceSpellbook ThassilonianEnchantment()
         {
@@ -583,8 +583,8 @@ namespace PrestigePlus.Modify
         public static readonly string ThassilonianEvocationName = "2ThassilonianEvocation";
         public static readonly string ThassilonianEvocationGuid = "2121dbbc-0cca-41d9-873a-295163b5e973";
 
-        public static readonly string ThassilonianEvocationDisplayName = "ThassilonianEvocation.Name";
-        public static readonly string ThassilonianEvocationDescription = "ThassilonianEvocation.Description";
+        public static readonly string ThassilonianEvocationDisplayName = "PPbookThassilonianEvocation.Name";
+        public static readonly string ThassilonianEvocationDescription = "PPbookThassilonianEvocation.Description";
 
         public static BlueprintFeatureReplaceSpellbook ThassilonianEvocation()
         {
@@ -599,8 +599,8 @@ namespace PrestigePlus.Modify
         public static readonly string ThassilonianIllusionName = "2ThassilonianIllusion";
         public static readonly string ThassilonianIllusionGuid = "e820f6c0-bd7f-4bb4-808a-337ceebdda58";
 
-        public static readonly string ThassilonianIllusionDisplayName = "ThassilonianIllusion.Name";
-        public static readonly string ThassilonianIllusionDescription = "ThassilonianIllusion.Description";
+        public static readonly string ThassilonianIllusionDisplayName = "PPbookThassilonianIllusion.Name";
+        public static readonly string ThassilonianIllusionDescription = "PPbookThassilonianIllusion.Description";
 
         public static BlueprintFeatureReplaceSpellbook ThassilonianIllusion()
         {
@@ -615,8 +615,8 @@ namespace PrestigePlus.Modify
         public static readonly string ThassilonianNecromancyName = "2ThassilonianNecromancy";
         public static readonly string ThassilonianNecromancyGuid = "5b377cef-b636-40bc-bb5a-16c24ab11cfe";
 
-        public static readonly string ThassilonianNecromancyDisplayName = "ThassilonianNecromancy.Name";
-        public static readonly string ThassilonianNecromancyDescription = "ThassilonianNecromancy.Description";
+        public static readonly string ThassilonianNecromancyDisplayName = "PPbookThassilonianNecromancy.Name";
+        public static readonly string ThassilonianNecromancyDescription = "PPbookThassilonianNecromancy.Description";
 
         public static BlueprintFeatureReplaceSpellbook ThassilonianNecromancy()
         {
@@ -631,8 +631,8 @@ namespace PrestigePlus.Modify
         public static readonly string ThassilonianTransmutationName = "2ThassilonianTransmutation";
         public static readonly string ThassilonianTransmutationGuid = "ddd3c4e8-928a-400c-9173-65626bd35239";
 
-        public static readonly string ThassilonianTransmutationDisplayName = "ThassilonianTransmutation.Name";
-        public static readonly string ThassilonianTransmutationDescription = "ThassilonianTransmutation.Description";
+        public static readonly string ThassilonianTransmutationDisplayName = "PPbookThassilonianTransmutation.Name";
+        public static readonly string ThassilonianTransmutationDescription = "PPbookThassilonianTransmutation.Description";
 
         public static BlueprintFeatureReplaceSpellbook ThassilonianTransmutation()
         {
@@ -647,8 +647,8 @@ namespace PrestigePlus.Modify
         public static readonly string UnletteredArcanistName = "2UnletteredArcanist";
         public static readonly string UnletteredArcanistGuid = "0fa3c7ae-3f98-471a-919e-124260ba7d5c";
 
-        public static readonly string UnletteredArcanistDisplayName = "UnletteredArcanist.Name";
-        public static readonly string UnletteredArcanistDescription = "UnletteredArcanist.Description";
+        public static readonly string UnletteredArcanistDisplayName = "PPbookUnletteredArcanist.Name";
+        public static readonly string UnletteredArcanistDescription = "PPbookUnletteredArcanist.Description";
 
         public static BlueprintFeatureReplaceSpellbook UnletteredArcanist()
         {
@@ -663,8 +663,8 @@ namespace PrestigePlus.Modify
         public static readonly string WarpriestName = "2Warpriest";
         public static readonly string WarpriestGuid = "568a5ec2-8d3f-4169-96af-0bfa38972b15";
 
-        public static readonly string WarpriestDisplayName = "Warpriest.Name";
-        public static readonly string WarpriestDescription = "Warpriest.Description";
+        public static readonly string WarpriestDisplayName = "PPbookWarpriest.Name";
+        public static readonly string WarpriestDescription = "PPbookWarpriest.Description";
 
         public static BlueprintFeatureReplaceSpellbook Warpriest()
         {
@@ -679,8 +679,8 @@ namespace PrestigePlus.Modify
         public static readonly string WitchName = "2Witch";
         public static readonly string WitchGuid = "dce771a5-fbd4-454c-a340-12b9edf0e120";
 
-        public static readonly string WitchDisplayName = "Witch.Name";
-        public static readonly string WitchDescription = "Witch.Description";
+        public static readonly string WitchDisplayName = "PPbookWitch.Name";
+        public static readonly string WitchDescription = "PPbookWitch.Description";
 
         public static BlueprintFeatureReplaceSpellbook Witch()
         {
@@ -695,8 +695,8 @@ namespace PrestigePlus.Modify
         public static readonly string WizardName = "2Wizard";
         public static readonly string WizardGuid = "1772a025-5160-43c2-992c-441ce929a5ff";
 
-        public static readonly string WizardDisplayName = "Wizard.Name";
-        public static readonly string WizardDescription = "Wizard.Description";
+        public static readonly string WizardDisplayName = "PPbookWizard.Name";
+        public static readonly string WizardDescription = "PPbookWizard.Description";
 
         public static BlueprintFeatureReplaceSpellbook Wizard()
         {
@@ -727,8 +727,8 @@ namespace PrestigePlus.Modify
         public static readonly string DreadKnightName = "2DreadKnight";
         public static readonly string DreadKnightGuid = "{898544D6-9C30-4E19-B0B8-90CB935EF68C}";
 
-        public static readonly string DreadKnightDisplayName = "DreadKnight.Name";
-        public static readonly string DreadKnightDescription = "DreadKnight.Description";
+        public static readonly string DreadKnightDisplayName = "PPbookDreadKnight.Name";
+        public static readonly string DreadKnightDescription = "PPbookDreadKnight.Description";
 
         public static BlueprintFeatureReplaceSpellbook DreadKnight()
         {
@@ -743,8 +743,8 @@ namespace PrestigePlus.Modify
         public static readonly string ClawOfTheFalseWyrmName = "2ClawOfTheFalseWyrm";
         public static readonly string ClawOfTheFalseWyrmGuid = "{B56D6A2F-500B-43C9-80CE-ADF57D55E8C0}";
 
-        public static readonly string ClawOfTheFalseWyrmDisplayName = "ClawOfTheFalseWyrm.Name";
-        public static readonly string ClawOfTheFalseWyrmDescription = "ClawOfTheFalseWyrm.Description";
+        public static readonly string ClawOfTheFalseWyrmDisplayName = "PPbookClawOfTheFalseWyrm.Name";
+        public static readonly string ClawOfTheFalseWyrmDescription = "PPbookClawOfTheFalseWyrm.Description";
 
         public static BlueprintFeatureReplaceSpellbook ClawOfTheFalseWyrm()
         {
@@ -759,8 +759,8 @@ namespace PrestigePlus.Modify
         public static readonly string SilverChampionName = "2SilverChampion";
         public static readonly string SilverChampionGuid = "{E6B79914-EAD0-4862-92F6-5BE40FE4508B}";
 
-        public static readonly string SilverChampionDisplayName = "SilverChampion.Name";
-        public static readonly string SilverChampionDescription = "SilverChampion.Description";
+        public static readonly string SilverChampionDisplayName = "PPbookSilverChampion.Name";
+        public static readonly string SilverChampionDescription = "PPbookSilverChampion.Description";
 
         public static BlueprintFeatureReplaceSpellbook SilverChampion()
         {
@@ -775,8 +775,8 @@ namespace PrestigePlus.Modify
         public static readonly string RavenerHunterName = "2RavenerHunter";
         public static readonly string RavenerHunterGuid = "{6C51F7A5-0DC2-4815-9509-A77DCBFE7292}";
 
-        public static readonly string RavenerHunterDisplayName = "RavenerHunter.Name";
-        public static readonly string RavenerHunterDescription = "RavenerHunter.Description";
+        public static readonly string RavenerHunterDisplayName = "PPbookRavenerHunter.Name";
+        public static readonly string RavenerHunterDescription = "PPbookRavenerHunter.Description";
 
         public static BlueprintFeatureReplaceSpellbook RavenerHunter()
         {
@@ -791,8 +791,8 @@ namespace PrestigePlus.Modify
         public static readonly string LivingScriptureName = "2LivingScripture";
         public static readonly string LivingScriptureGuid = "{B0E300DC-413C-4943-9461-79E1C55505A6}";
 
-        public static readonly string LivingScriptureDisplayName = "LivingScripture.Name";
-        public static readonly string LivingScriptureDescription = "LivingScripture.Description";
+        public static readonly string LivingScriptureDisplayName = "PPbookLivingScripture.Name";
+        public static readonly string LivingScriptureDescription = "PPbookLivingScripture.Description";
 
         public static BlueprintFeatureReplaceSpellbook LivingScripture()
         {
@@ -807,8 +807,8 @@ namespace PrestigePlus.Modify
         public static readonly string SkulkingHunterName = "2SkulkingHunter";
         public static readonly string SkulkingHunterGuid = "{7A9EDBE1-8592-41E3-8EBC-8B4172462A28}";
 
-        public static readonly string SkulkingHunterDisplayName = "SkulkingHunter.Name";
-        public static readonly string SkulkingHunterDescription = "SkulkingHunter.Description";
+        public static readonly string SkulkingHunterDisplayName = "PPbookSkulkingHunter.Name";
+        public static readonly string SkulkingHunterDescription = "PPbookSkulkingHunter.Description";
 
         public static BlueprintFeatureReplaceSpellbook SkulkingHunter()
         {
@@ -823,8 +823,8 @@ namespace PrestigePlus.Modify
         public static readonly string SwornOfTheEldestName = "2SwornOfTheEldest";
         public static readonly string SwornOfTheEldestGuid = "{E4282A13-BCDB-4F10-A756-9D57B94640F0}";
 
-        public static readonly string SwornOfTheEldestDisplayName = "SwornOfTheEldest.Name";
-        public static readonly string SwornOfTheEldestDescription = "SwornOfTheEldest.Description";
+        public static readonly string SwornOfTheEldestDisplayName = "PPbookSwornOfTheEldest.Name";
+        public static readonly string SwornOfTheEldestDescription = "PPbookSwornOfTheEldest.Description";
 
         public static BlueprintFeatureReplaceSpellbook SwornOfTheEldest()
         {
@@ -839,8 +839,8 @@ namespace PrestigePlus.Modify
         public static readonly string ArrowsongMinstrelName = "2ArrowsongMinstrel";
         public static readonly string ArrowsongMinstrelGuid = "{0271757F-DFBB-459E-A7D8-D80513362686}";
 
-        public static readonly string ArrowsongMinstrelDisplayName = "ArrowsongMinstrel.Name";
-        public static readonly string ArrowsongMinstrelDescription = "ArrowsongMinstrel.Description";
+        public static readonly string ArrowsongMinstrelDisplayName = "PPbookArrowsongMinstrel.Name";
+        public static readonly string ArrowsongMinstrelDescription = "PPbookArrowsongMinstrel.Description";
 
         public static BlueprintFeatureReplaceSpellbook ArrowsongMinstrel()
         {
@@ -855,8 +855,8 @@ namespace PrestigePlus.Modify
         public static readonly string AntipaladinName = "2Antipaladin";
         public static readonly string AntipaladinGuid = "{768BF21E-CD41-471B-BAE0-03CC88461CD3}";
 
-        public static readonly string AntipaladinDisplayName = "Antipaladin.Name";
-        public static readonly string AntipaladinDescription = "Antipaladin.Description";
+        public static readonly string AntipaladinDisplayName = "PPbookAntipaladin.Name";
+        public static readonly string AntipaladinDescription = "PPbookAntipaladin.Description";
 
         public static BlueprintFeatureReplaceSpellbook Antipaladin()
         {
@@ -872,8 +872,8 @@ namespace PrestigePlus.Modify
         public static readonly string ChannelerOfTheUnknownName = "2ChannelerOfTheUnknown";
         public static readonly string ChannelerOfTheUnknownGuid = "{55313A0B-7038-4BB5-888A-FB648B338693}";
 
-        public static readonly string ChannelerOfTheUnknownDisplayName = "ChannelerOfTheUnknown.Name";
-        public static readonly string ChannelerOfTheUnknownDescription = "ChannelerOfTheUnknown.Description";
+        public static readonly string ChannelerOfTheUnknownDisplayName = "PPbookChannelerOfTheUnknown.Name";
+        public static readonly string ChannelerOfTheUnknownDescription = "PPbookChannelerOfTheUnknown.Description";
 
         public static BlueprintFeatureReplaceSpellbook ChannelerOfTheUnknown()
         {
@@ -888,8 +888,8 @@ namespace PrestigePlus.Modify
         public static readonly string MyrmidarchName = "2Myrmidarch";
         public static readonly string MyrmidarchGuid = "{973D6EB8-A5DD-462A-96EA-C42EF2C5CDC4}";
 
-        public static readonly string MyrmidarchDisplayName = "Myrmidarch.Name";
-        public static readonly string MyrmidarchDescription = "Myrmidarch.Description";
+        public static readonly string MyrmidarchDisplayName = "PPbookMyrmidarch.Name";
+        public static readonly string MyrmidarchDescription = "PPbookMyrmidarch.Description";
 
         public static BlueprintFeatureReplaceSpellbook Myrmidarch()
         {
