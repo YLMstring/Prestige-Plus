@@ -460,7 +460,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("justshowup"))) { HeritorKnight.Configure(); StrikeTrue.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("mythicheritage"))) { RacialHeritage.RacialHeritageConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("goldenl")) || ModMenu.ModMenu.GetSettingValue<bool>(GetKey("ecpatch"))) { GoldenLegionnaire.Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("geisha"))) {  }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("geisha"))) { Geisha.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("soundstriker"))) { SoundStriker.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("ankou"))) { }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
