@@ -61,10 +61,7 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
                         dc += 2;
                     }
                 }
-                bool pass = GameHelper.TriggerSkillCheck(new RuleSkillCheck(evt.Target, Kingmaker.EntitySystem.Stats.StatType.SaveFortitude, dc)
-                {
-                    IgnoreDifficultyBonusToDC = evt.Target.IsPlayersEnemy
-                }, evt.Target.Context, true).Success;
+                bool pass = Owner.Context.TriggerRule(new RuleSavingThrow(evt.Target, Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, dc)).Success;
                 if (!pass)
                 {
                     var action = ActionsBuilder.New()

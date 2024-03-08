@@ -35,10 +35,7 @@ namespace PrestigePlus.Modify
             UnitEntityData mount = Owner.GetRider();
             if (mount == null) return;
             int dc = Owner.Stats.Strength.Bonus + 20;
-            bool pass = GameHelper.TriggerSkillCheck(new RuleSkillCheck(evt.Target, Kingmaker.EntitySystem.Stats.StatType.SaveFortitude, dc)
-            {
-                IgnoreDifficultyBonusToDC = evt.Target.IsPlayersEnemy
-            }, evt.Target.Context, true).Success;
+            bool pass = Owner.Context.TriggerRule(new RuleSavingThrow(evt.Target, Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, dc)).Success;
             if (!pass)
             {
                 int time = UnityEngine.Random.Range(1, 5);

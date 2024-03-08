@@ -45,10 +45,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
             if (target.GetFact(BuffRefs.SmiteEvilBuff.Reference) is Buff smited && smited.Context?.MaybeCaster == caster)
             {
                 int dc = caster.Stats.Charisma.Bonus + 10 + caster.Progression.CharacterLevel / 2;
-                bool pass = GameHelper.TriggerSkillCheck(new RuleSkillCheck(target, Kingmaker.EntitySystem.Stats.StatType.SaveWill, dc)
-                {
-                    IgnoreDifficultyBonusToDC = true
-                }, target.Context, true).Success;
+                bool pass = caster.Context.TriggerRule(new RuleSavingThrow(target, Kingmaker.EntitySystem.Stats.SavingThrowType.Will, dc)).Success;
                 if (pass)
                 {
                     GameHelper.ApplyBuff(target, Cool, new Rounds?(14400.Rounds()));

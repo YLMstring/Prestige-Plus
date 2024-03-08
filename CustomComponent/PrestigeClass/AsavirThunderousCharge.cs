@@ -49,10 +49,7 @@ namespace PrestigePlus.Modify
                 if (mount == null) { Logger.Info("Caster not mount"); return; }
                 int dc = mount.Stats.Strength.Bonus + 10 + maybeCaster.Descriptor.Progression.GetClassLevel(BlueprintTool.GetRef<BlueprintCharacterClassReference>(Asavir.ArchetypeGuid));
                 //Logger.Info(dc.ToString());
-                bool pass = GameHelper.TriggerSkillCheck(new RuleSkillCheck(unit, Kingmaker.EntitySystem.Stats.StatType.SaveReflex, dc)
-                {
-                    IgnoreDifficultyBonusToDC = unit.IsPlayersEnemy
-                }, unit.Context, true).Success;
+                bool pass = maybeCaster.Context.TriggerRule(new RuleSavingThrow(unit, Kingmaker.EntitySystem.Stats.SavingThrowType.Reflex, dc)).Success;
                 //Logger.Info("skill check end");
                 if (!pass)
                 {

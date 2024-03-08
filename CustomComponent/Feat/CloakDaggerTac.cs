@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Kingmaker.UI.CanvasScalerWorkaround;
 
 namespace PrestigePlus.CustomComponent.Feat
 {
@@ -44,10 +45,7 @@ namespace PrestigePlus.CustomComponent.Feat
                 if (SweepManeuver.ActManeuver(caster, evt.Target, 0, maneuver))
                 {
                     int dc = 10 + Owner.Stats.BaseAttackBonus / 2 + Owner.Stats.Intelligence.Bonus;
-                    bool pass = GameHelper.TriggerSkillCheck(new RuleSkillCheck(evt.Target, Kingmaker.EntitySystem.Stats.StatType.SaveFortitude, dc)
-                    {
-                        IgnoreDifficultyBonusToDC = evt.Target.IsPlayersEnemy
-                    }, evt.Target.Context, true).Success;
+                    bool pass = caster.Context.TriggerRule(new RuleSavingThrow(evt.Target, Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, dc)).Success;
                     if (!pass)
                     {
                         if (GiveNextBuff(evt.Target, BuffRefs.Confusion.Reference.Get()))
@@ -87,10 +85,7 @@ namespace PrestigePlus.CustomComponent.Feat
                 if (SweepManeuver.ActManeuver(caster, evt.Target, 0, maneuver))
                 {
                     int dc = 10 + Owner.Stats.BaseAttackBonus / 2 + Owner.Stats.Intelligence.Bonus;
-                    bool pass = GameHelper.TriggerSkillCheck(new RuleSkillCheck(evt.Target, Kingmaker.EntitySystem.Stats.StatType.SaveFortitude, dc)
-                    {
-                        IgnoreDifficultyBonusToDC = evt.Target.IsPlayersEnemy
-                    }, evt.Target.Context, true).Success;
+                    bool pass = Owner.Context.TriggerRule(new RuleSavingThrow(evt.Target, Kingmaker.EntitySystem.Stats.SavingThrowType.Fortitude, dc)).Success;
                     if (!pass)
                     {
                         if (GiveNextBuff(evt.Target, BuffRefs.Confusion.Reference.Get()))

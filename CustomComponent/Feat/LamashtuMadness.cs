@@ -26,10 +26,7 @@ namespace PrestigePlus.CustomComponent.Feat
                 evt.AddTemporaryModifier(evt.Initiator.Stats.SaveReflex.AddModifier(4, base.Runtime, ModifierDescriptor.Profane));
                 evt.AddTemporaryModifier(evt.Initiator.Stats.SaveFortitude.AddModifier(4, base.Runtime, ModifierDescriptor.Profane));
                 int dc = Owner.Stats.Wisdom.Bonus + 10 + Owner.Progression.CharacterLevel / 2;
-                bool pass = GameHelper.TriggerSkillCheck(new RuleSkillCheck(evt.Reason.Caster, Kingmaker.EntitySystem.Stats.StatType.SaveWill, dc)
-                {
-                    IgnoreDifficultyBonusToDC = evt.Reason.Caster.IsPlayersEnemy
-                }, evt.Reason.Caster.Context, true).Success;
+                bool pass = Owner.Context.TriggerRule(new RuleSavingThrow(evt.Reason.Caster, Kingmaker.EntitySystem.Stats.SavingThrowType.Will, dc)).Success;
                 if (!pass)
                 {
                     IFactContextOwner factContextOwner = base.Fact as IFactContextOwner;

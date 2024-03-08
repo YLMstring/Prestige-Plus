@@ -26,10 +26,7 @@ namespace PrestigePlus.CustomComponent.Archetype
             if (!evt.AttackRoll.IsHit || !evt.IsCharge || !evt.Target.HasFact(BuffRefs.SmiteEvilBuff.Reference)) { return; }
             int level = Owner.Progression.GetClassLevel(CharacterClassRefs.PaladinClass.Reference);
             int dc = Owner.Stats.Charisma.Bonus + 10 + level / 2;
-            bool pass = GameHelper.TriggerSkillCheck(new RuleSkillCheck(evt.Target, Kingmaker.EntitySystem.Stats.StatType.SaveWill, dc)
-            {
-                IgnoreDifficultyBonusToDC = evt.Target.IsPlayersEnemy
-            }, evt.Target.Context, true).Success;
+            bool pass = Owner.Context.TriggerRule(new RuleSavingThrow(evt.Target, Kingmaker.EntitySystem.Stats.SavingThrowType.Will, dc)).Success;
             if (!pass)
             {
                 GameHelper.ApplyBuff(evt.Target, BuffRefs.ShamanHexFearfulGazePanickedBuff.Reference, new Rounds?((level / 2).Rounds()));
