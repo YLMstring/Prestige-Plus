@@ -427,7 +427,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("cmdminus"))) { CMDPatch.Patch(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("dirty"))) { DirtyFeats.Configure(); DirtyFeats.StyleConfigure(); DirtyFeats.LadderConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("cloak"))) { CloakDaggerStyle.StyleConfigure(); CloakDaggerStyle.SubterfugeConfigure(); CloakDaggerStyle.TacticsConfigure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("spell"))) { LitanyRighteousness.Configure(); ShieldOther.Configure(); InheritorSmite.Configure(); RovagugFury.Configure(); HydraulicTorrent.Configure(); ThunderstompGreater.Configure(); Thunderstomp.Configure(); TelekineticManeuver.Configure(); Linebreaker.Configure(); BladeLash.Configure(); PilferingHand.Configure(); ResinousSkin.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("spell"))) { LitanyRighteousness.Configure(); ShieldOther.Configure(); InheritorSmite.Configure(); RovagugFury.Configure(); HydraulicTorrent.Configure(); ThunderstompGreater.Configure(); Thunderstomp.Configure(); TelekineticManeuver.Configure(); Linebreaker.Configure(); BladeLash.Configure(); PilferingHand.Configure(); ResinousSkin.Configure(); DiscordantBlast.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("obedience"))) { DeificObedience.DeificObedienceConfigure(); DiverseObedience.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("templar"))) { CrimsonTemplar.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("seeker"))) { TruthSeeker.Configure(); TruthSooker.Configure(); }
@@ -462,7 +462,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("goldenl")) || ModMenu.ModMenu.GetSettingValue<bool>(GetKey("ecpatch"))) { GoldenLegionnaire.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("geisha"))) { Geisha.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("soundstriker"))) { SoundStriker.Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("ankou"))) { }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("ankou"))) { AnkouShadow.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
