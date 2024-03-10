@@ -18,6 +18,8 @@ using Kingmaker.EntitySystem.Stats;
 using BlueprintCore.Utils.Types;
 using Kingmaker.RuleSystem;
 using BlueprintCore.Conditions.Builder;
+using Kingmaker.Blueprints;
+using Kingmaker.UnitLogic.Abilities.Components.Base;
 
 namespace PrestigePlus.Blueprint.Spell
 {
@@ -34,15 +36,23 @@ namespace PrestigePlus.Blueprint.Spell
 
         internal const string DisplayName = "NewSpellDiscordantBlast.Name";
         private const string Description = "NewSpellDiscordantBlast.Description";
+
+        internal const string DisplayName1 = "NewSpellDiscordantBlast1.Name";
+        private const string Description1 = "NewSpellDiscordantBlast1.Description";
+
+        internal const string DisplayName2 = "NewSpellDiscordantBlast2.Name";
+        private const string Description2 = "NewSpellDiscordantBlast2.Description";
+
         public static void Configure()
         {
             var icon = AbilityRefs.SoundBurst.Reference.Get().Icon;
             var icon2 = AbilityRefs.BansheeBlast.Reference.Get().Icon;
+            var fx = AbilityRefs.SoundBurst.Reference.Get().GetComponent<AbilitySpawnFx>();
 
             var ability1 = AbilityConfigurator.NewSpell(
                 DiscordantBlastAbility1, DiscordantBlastAbility1Guid, SpellSchool.Evocation, canSpecialize: false)
-              .SetDisplayName(DisplayName)
-              .SetDescription(Description)
+              .SetDisplayName(DisplayName1)
+              .SetDescription(Description1)
               .SetIcon(icon)
               .SetRange(AbilityRange.Personal)
               .SetType(AbilityType.Spell)
@@ -50,9 +60,10 @@ namespace PrestigePlus.Blueprint.Spell
               .SetSpellResistance()
               .AddSpellDescriptorComponent(SpellDescriptor.Sonic)
               .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Any, radius: 10.Feet(), spreadSpeed: 20.Feet())
+              .AddComponent(fx)
               .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
-                  .CombatManeuver(ActionsBuilder.New().Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.Trip, newStat: StatType.Charisma, useCasterLevelAsBaseAttack: true)
+                  .CombatManeuver(ActionsBuilder.New().Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush, newStat: StatType.Charisma, useCasterLevelAsBaseAttack: true)
                   .DealDamage(DamageTypes.Energy(Kingmaker.Enums.Damage.DamageEnergyType.Sonic), ContextDice.Value(DiceType.D6, 3, 0))
                   .Build())
               .AddCraftInfoComponent(
@@ -63,20 +74,19 @@ namespace PrestigePlus.Blueprint.Spell
 
             var ability2 = AbilityConfigurator.NewSpell(
                 DiscordantBlastAbility2, DiscordantBlastAbility2Guid, SpellSchool.Evocation, canSpecialize: false)
-              .SetDisplayName(DisplayName)
-              .SetDescription(Description)
+              .SetDisplayName(DisplayName2)
+              .SetDescription(Description2)
               .SetIcon(icon)
               .AllowTargeting(true, true, true, false)
-              .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.Kinetic_EarthBlastLine00.ToString() }, type: AbilityProjectileType.Line, length: 60.Feet(), lineWidth: 5.Feet(), needAttackRoll: false)
+              .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.SonicCone30Feet00.ToString() }, type: AbilityProjectileType.Cone, length: 60.Feet(), lineWidth: 5.Feet(), needAttackRoll: false)
               .SetRange(AbilityRange.Projectile)
               .SetType(AbilityType.Spell)
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Selective, Metamagic.Heighten, Metamagic.Quicken, Metamagic.Maximize, Metamagic.Empower, Metamagic.Reach)
               .SetSpellResistance()
               .AddSpellDescriptorComponent(SpellDescriptor.Sonic)
-              .AddToSpellLists(level: 4, SpellList.Bard)
               .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
-                  .CombatManeuver(ActionsBuilder.New().Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.Trip, newStat: StatType.Charisma, useCasterLevelAsBaseAttack: true)
+                  .CombatManeuver(ActionsBuilder.New().Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.BullRush, newStat: StatType.Charisma, useCasterLevelAsBaseAttack: true)
                   .DealDamage(DamageTypes.Energy(Kingmaker.Enums.Damage.DamageEnergyType.Sonic), ContextDice.Value(DiceType.D6, 3, 0))
                   .Build())
               .AddCraftInfoComponent(
@@ -90,19 +100,14 @@ namespace PrestigePlus.Blueprint.Spell
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
-              .AllowTargeting(true, true, true, false)
-              .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.Kinetic_EarthBlastLine00.ToString() }, type: AbilityProjectileType.Line, length: 60.Feet(), lineWidth: 5.Feet(), needAttackRoll: false)
-              .SetRange(AbilityRange.Projectile)
+              .AllowTargeting(false, false, false, false)
+              .SetRange(AbilityRange.Personal)
               .SetType(AbilityType.Spell)
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Selective, Metamagic.Heighten, Metamagic.Quicken, Metamagic.Maximize, Metamagic.Empower, Metamagic.Reach)
               .SetSpellResistance()
               .AddSpellDescriptorComponent(SpellDescriptor.Sonic)
               .AddToSpellLists(level: 4, SpellList.Bard)
-              .AddAbilityEffectRunAction(
-                actions: ActionsBuilder.New()
-                  .CombatManeuver(ActionsBuilder.New().Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.Trip, newStat: StatType.Charisma, useCasterLevelAsBaseAttack: true)
-                  .DealDamage(DamageTypes.Energy(Kingmaker.Enums.Damage.DamageEnergyType.Sonic), ContextDice.Value(DiceType.D6, 3, 0))
-                  .Build())
+              .AddAbilityVariants(new() { ability1, ability2 })
               .AddCraftInfoComponent(
                 aOEType: CraftAOE.AOE,
                 savingThrow: CraftSavingThrow.None,
