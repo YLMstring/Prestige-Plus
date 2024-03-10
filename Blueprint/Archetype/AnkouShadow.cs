@@ -98,6 +98,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDescription(AnkouVisionDescription)
               .SetIcon(icon)
               .AddFacts(new() { ability })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .Configure();
         }
 
@@ -114,7 +115,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string ShadowDoubleDescription = "AnkouShadowShadowDouble.Description";
         public static BlueprintFeature ShadowDoubleFeat()
         {
-            var icon = AbilityRefs.TrickeryDomainBaseAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.ShadowDoubles.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(ShadowDoubleBuff, ShadowDoubleBuffGuid)
               .SetDisplayName(ShadowDoubleDisplayName)
@@ -149,42 +150,76 @@ namespace PrestigePlus.Blueprint.Archetype
         }
 
         private const string UnfetteredShadows = "AnkouShadow.UnfetteredShadows";
-        public static readonly string UnfetteredShadowsGuid = "{0B64B50B-6C98-4DF9-9B57-15EE44D3E465}";
+        public static readonly string UnfetteredShadowsGuid = "{D7691C95-F888-4F5D-AB76-26CA05BCA902}";
 
         private const string UnfetteredShadowsAblity = "AnkouShadow.UseUnfetteredShadows";
-        private static readonly string UnfetteredShadowsAblityGuid = "{E2ABDF24-351D-4D10-B956-63A0EA6096F1}";
+        private static readonly string UnfetteredShadowsAblityGuid = "{895015F7-4545-4CDB-B744-258C0C6A5D1D}";
 
         private const string UnfetteredShadowsBuff = "AnkouShadow.UnfetteredShadowsBuff";
-        public static readonly string UnfetteredShadowsBuffGuid = "{2DD07C15-6376-49B6-9BB7-25B7FCD24BA8}";
+        public static readonly string UnfetteredShadowsBuffGuid = "{DF6A43AA-2431-4346-8D5C-62CCC35CBBC0}";
+
+        private const string UnfetteredShadowsAblity2 = "AnkouShadow.UseUnfetteredShadows2";
+        private static readonly string UnfetteredShadowsAblity2Guid = "{F1105FAC-394C-459D-9F67-0F49E296960C}";
 
         internal const string UnfetteredShadowsDisplayName = "AnkouShadowUnfetteredShadows.Name";
         private const string UnfetteredShadowsDescription = "AnkouShadowUnfetteredShadows.Description";
+
+        private const string UnfetteredShadowsRes = "AnkouShadow.UnfetteredShadowsRes";
+        public static readonly string UnfetteredShadowsResGuid = "{34368E5D-AFF1-49B3-A1B1-45A9878B70B0}";
+
+        private const string UnfetteredShadowsBuff2 = "AnkouShadow.UnfetteredShadowsBuff2";
+        public static readonly string UnfetteredShadowsBuff2Guid = "{F9E113CE-6A99-4D51-966D-F2F2AACB4F45}";
         public static BlueprintFeature UnfetteredShadowsFeat()
         {
-            var icon = FeatureRefs.InspireHeroicsFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.ShadowDoublesSpirit.Reference.Get().Icon;
+            var icon2 = AbilityRefs.Shades.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(UnfetteredShadowsRes, UnfetteredShadowsResGuid)
+                .SetMaxAmount(
+                    ResourceAmountBuilder.New(3)
+                        .IncreaseByStat(Kingmaker.EntitySystem.Stats.StatType.Intelligence))
+                .Configure();
+
+            var buff2 = BuffConfigurator.New(UnfetteredShadowsBuff2, UnfetteredShadowsBuff2Guid)
+              .SetDisplayName(UnfetteredShadowsDisplayName)
+              .SetDescription(UnfetteredShadowsDescription)
+              .SetIcon(icon)
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .Configure();
+
+            var ability2 = AbilityConfigurator.New(UnfetteredShadowsAblity2, UnfetteredShadowsAblity2Guid)
+                .AllowTargeting(false, true, false, false)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                    
+                    .ApplyBuff(buff2, ContextDuration.Fixed(1), toCaster: true)
+                    .Build())
+                .SetDisplayName(UnfetteredShadowsDisplayName)
+                .SetDescription(UnfetteredShadowsDescription)
+                .SetIcon(icon)
+                .AddAbilityCasterHasNoFacts(new() { buff2 })
+                .SetRange(AbilityRange.Weapon)
+                .SetType(AbilityType.Supernatural)
+                .Configure();
 
             var buff = BuffConfigurator.New(UnfetteredShadowsBuff, UnfetteredShadowsBuffGuid)
-              .CopyFrom(
-                BuffRefs.InspireHeroicsEffectBuff,
-                typeof(AddContextStatBonus))
               .SetDisplayName(UnfetteredShadowsDisplayName)
+              .SetDescription(UnfetteredShadowsDescription)
+              .SetIcon(icon)
+              .AddFacts(new() { ability2 })
               .Configure();
 
             var normal = ActionsBuilder.New()
-                    .ApplyBuff(buff, ContextDuration.Fixed(100))
+                    .ApplyBuff(buff, ContextDuration.Fixed(10))
                     .Build();
 
             var ability = AbilityConfigurator.New(UnfetteredShadowsAblity, UnfetteredShadowsAblityGuid)
-                .AllowTargeting(false, false, true, true)
                 .AddAbilityEffectRunAction(normal)
                 .SetDisplayName(UnfetteredShadowsDisplayName)
                 .SetDescription(UnfetteredShadowsDescription)
                 .SetIcon(icon)
-                .SetRange(AbilityRange.Close)
+                .SetRange(AbilityRange.Personal)
                 .SetType(AbilityType.Supernatural)
-                .AddAbilityCasterHasFacts(new() { FeatureRefs.InspireHeroicsFeature.ToString() })
-                .AddAbilityCasterInCombat(true)
-                .AddAbilityResourceLogic(4, isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .Configure();
 
             return FeatureConfigurator.New(UnfetteredShadows, UnfetteredShadowsGuid)
@@ -192,6 +227,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDescription(UnfetteredShadowsDescription)
               .SetIcon(icon)
               .AddFacts(new() { ability })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .Configure();
         }
     }
