@@ -22,6 +22,7 @@ using System.Threading.Tasks;
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
+using PrestigePlus.CustomAction.ClassRelated;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -189,16 +190,14 @@ namespace PrestigePlus.Blueprint.Archetype
 
             var ability2 = AbilityConfigurator.New(UnfetteredShadowsAblity2, UnfetteredShadowsAblity2Guid)
                 .AllowTargeting(false, true, false, false)
-                .AddAbilityEffectRunAction(ActionsBuilder.New()
-                    
-                    .ApplyBuff(buff2, ContextDuration.Fixed(1), toCaster: true)
-                    .Build())
+                .AddComponent<AnkouAttacks>(c => { c.CooldownBuff = buff2; })
                 .SetDisplayName(UnfetteredShadowsDisplayName)
                 .SetDescription(UnfetteredShadowsDescription)
                 .SetIcon(icon)
                 .AddAbilityCasterHasNoFacts(new() { buff2 })
                 .SetRange(AbilityRange.Weapon)
                 .SetType(AbilityType.Supernatural)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
                 .Configure();
 
             var buff = BuffConfigurator.New(UnfetteredShadowsBuff, UnfetteredShadowsBuffGuid)
