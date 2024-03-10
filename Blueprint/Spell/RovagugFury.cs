@@ -41,7 +41,7 @@ namespace PrestigePlus.Blueprint.Spell
               .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.Kinetic_EarthSphere00_Projectile_Up.ToString() }, type: AbilityProjectileType.Cone, length: 30.Feet(), lineWidth: 5.Feet(), needAttackRoll: false)
               .SetRange(AbilityRange.Projectile)
               .SetType(AbilityType.Spell)
-              .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Selective, Metamagic.Heighten, Metamagic.Quicken)
+              .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Selective, Metamagic.Heighten, Metamagic.Quicken, Metamagic.Reach)
               .SetSpellResistance()
               .AddToSpellLists(level: 2, SpellList.Cleric)
               .AddToSpellLists(level: 2, SpellList.Warpriest)

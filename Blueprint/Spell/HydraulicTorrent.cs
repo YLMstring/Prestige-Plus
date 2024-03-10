@@ -38,7 +38,7 @@ namespace PrestigePlus.Blueprint.Spell
               .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.Kinetic_WaterLine00.ToString() }, type: AbilityProjectileType.Line, length: 60.Feet(), lineWidth: 5.Feet(), needAttackRoll: false)
               .SetRange(AbilityRange.Projectile)
               .SetType(AbilityType.Spell)
-              .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Selective, Metamagic.Heighten, Metamagic.Quicken)
+              .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Selective, Metamagic.Heighten, Metamagic.Quicken, Metamagic.Reach)
               .SetSpellResistance()
               .AddToSpellLists(level: 3, SpellList.WaterDomain)
               .AddToSpellLists(level: 3, SpellList.Druid)

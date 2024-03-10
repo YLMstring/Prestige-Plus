@@ -37,7 +37,7 @@ namespace PrestigePlus.Blueprint.Spell
               .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.BuffRay00_Abjuration.ToString() }, type: AbilityProjectileType.Simple, needAttackRoll: false)
               .SetRange(AbilityRange.Close)
               .SetType(AbilityType.Spell)
-              .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Quicken)
+              .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Quicken, Metamagic.Reach)
               .SetSpellResistance()
               .AddToSpellLists(level: 2, SpellList.Bard)
               .AddToSpellLists(level: 2, SpellList.Cleric)
