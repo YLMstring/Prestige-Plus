@@ -23,6 +23,7 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Blueprints.CustomConfigurators;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
 using PrestigePlus.CustomAction.ClassRelated;
+using PrestigePlus.CustomComponent.Archetype;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -186,6 +187,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDescription(UnfetteredShadowsDescription)
               .SetIcon(icon)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddComponent<AnkouShadowPenalty>()
               .Configure();
 
             var ability2 = AbilityConfigurator.New(UnfetteredShadowsAblity2, UnfetteredShadowsAblity2Guid)
