@@ -45,8 +45,8 @@ namespace PrestigePlus.Blueprint.Spell
 
         public static void Configure()
         {
-            var icon = AbilityRefs.SoundBurst.Reference.Get().Icon;
-            var icon2 = AbilityRefs.BansheeBlast.Reference.Get().Icon;
+            var icon = AbilityRefs.CacophonousCall.Reference.Get().Icon;
+            var icon2 = AbilityRefs.CacophonousCallMass.Reference.Get().Icon;
             var fx = AbilityRefs.SoundBurst.Reference.Get().GetComponent<AbilitySpawnFx>();
 
             var ability1 = AbilityConfigurator.NewSpell(
@@ -76,7 +76,7 @@ namespace PrestigePlus.Blueprint.Spell
                 DiscordantBlastAbility2, DiscordantBlastAbility2Guid, SpellSchool.Evocation, canSpecialize: false)
               .SetDisplayName(DisplayName2)
               .SetDescription(Description2)
-              .SetIcon(icon)
+              .SetIcon(icon2)
               .AllowTargeting(true, true, true, false)
               .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.SonicCone30Feet00.ToString() }, type: AbilityProjectileType.Cone, length: 60.Feet(), lineWidth: 5.Feet(), needAttackRoll: false)
               .SetRange(AbilityRange.Projectile)
@@ -106,7 +106,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Selective, Metamagic.Heighten, Metamagic.Quicken, Metamagic.Maximize, Metamagic.Empower, Metamagic.Reach)
               .SetSpellResistance()
               .AddSpellDescriptorComponent(SpellDescriptor.Sonic)
-              .AddToSpellLists(level: 4, SpellList.Bard)
+              .AddToSpellLists(level: 1, SpellList.Bard)
               .AddAbilityVariants(new() { ability1, ability2 })
               .AddCraftInfoComponent(
                 aOEType: CraftAOE.AOE,

@@ -117,7 +117,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string ShadowDoubleDescription = "AnkouShadowShadowDouble.Description";
         public static BlueprintFeature ShadowDoubleFeat()
         {
-            var icon = AbilityRefs.ShadowDoubles.Reference.Get().Icon;
+            var icon = AbilityRefs.FalseLife.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(ShadowDoubleBuff, ShadowDoubleBuffGuid)
               .SetDisplayName(ShadowDoubleDisplayName)
@@ -173,8 +173,8 @@ namespace PrestigePlus.Blueprint.Archetype
         public static readonly string UnfetteredShadowsBuff2Guid = "{F9E113CE-6A99-4D51-966D-F2F2AACB4F45}";
         public static BlueprintFeature UnfetteredShadowsFeat()
         {
-            var icon = AbilityRefs.ShadowDoublesSpirit.Reference.Get().Icon;
-            var icon2 = AbilityRefs.Shades.Reference.Get().Icon;
+            var icon = AbilityRefs.FalseLifeGreater.Reference.Get().Icon;
+            var icon2 = AbilityRefs.ReducePersonMass.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(UnfetteredShadowsRes, UnfetteredShadowsResGuid)
                 .SetMaxAmount(

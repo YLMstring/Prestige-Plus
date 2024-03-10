@@ -63,7 +63,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string WordstrikeDescription = "SoundStrikerWordstrike.Description";
         public static BlueprintFeature WordstrikeFeat()
         {
-            var icon = AbilityRefs.SoundBurst.Reference.Get().Icon;
+            var icon = AbilityRefs.Shout.Reference.Get().Icon;
 
             var ability = AbilityConfigurator.New(WordstrikeAblity, WordstrikeAblityGuid)
                 .AllowTargeting(enemies: true)
@@ -98,7 +98,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string WeirdWordsDescription = "SoundStrikerWeirdWords.Description";
         public static BlueprintFeature WeirdWordsFeat()
         {
-            var icon = AbilityRefs.Weird.Reference.Get().Icon;
+            var icon = AbilityRefs.Echolocation.Reference.Get().Icon;
 
             var ability = AbilityConfigurator.New(WeirdWordsAblity, WeirdWordsAblityGuid)
                 .AllowTargeting(enemies: true)
@@ -134,7 +134,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string WeirdWords2Description = "SoundStrikerWeirdWords2.Description";
         public static BlueprintFeature WeirdWords2Feat()
         {
-            var icon = AbilityRefs.Weird.Reference.Get().Icon;
+            var icon = AbilityRefs.Echolocation.Reference.Get().Icon;
 
             var ability = AbilityConfigurator.New(WeirdWords2Ablity, WeirdWords2AblityGuid)
                 .AllowTargeting(enemies: true)
@@ -170,7 +170,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string WeirdWords3Description = "SoundStrikerWeirdWords3.Description";
         public static BlueprintFeature WeirdWords3Feat()
         {
-            var icon = AbilityRefs.Weird.Reference.Get().Icon;
+            var icon = AbilityRefs.Echolocation.Reference.Get().Icon;
 
             var ability = AbilityConfigurator.New(WeirdWords3Ablity, WeirdWords3AblityGuid)
                 .AllowTargeting(enemies: true)
@@ -206,7 +206,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string WeirdWords4Description = "SoundStrikerWeirdWords4.Description";
         public static BlueprintFeature WeirdWords4Feat()
         {
-            var icon = AbilityRefs.Weird.Reference.Get().Icon;
+            var icon = AbilityRefs.Echolocation.Reference.Get().Icon;
 
             var ability = AbilityConfigurator.New(WeirdWords4Ablity, WeirdWords4AblityGuid)
                 .AllowTargeting(enemies: true)
@@ -242,7 +242,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string WeirdWords5Description = "SoundStrikerWeirdWords5.Description";
         public static BlueprintFeature WeirdWords5Feat()
         {
-            var icon = AbilityRefs.Weird.Reference.Get().Icon;
+            var icon = AbilityRefs.Echolocation.Reference.Get().Icon;
 
             var ability = AbilityConfigurator.New(WeirdWords5Ablity, WeirdWords5AblityGuid)
                 .AllowTargeting(enemies: true)

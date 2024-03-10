@@ -12242,6 +12242,94 @@
     "Key": "SoundStrikerWeirdWords4.Description",
     "enGB": "At 6th level the bard can start a performance that is always a standard action to speak up to one word per 4 bard levels laden with sonic energy. Each word deals 4d6 points of sonic damage as a ranged touch attack with a range of 30 feet. The bard adds his charisma modifier on damage rolls with weird words. Multiple words that strike the same target stack into a single powerful attack, applying energy resistance and bonuses on damage rolls only once. Each word costs 1 round of bardic performance.",
     "zhCN": "6级起，吟游诗人可以开始一种始终为标准动作的表演，每有4 个吟游诗人等级，她便能多说出一个充满音波能量的诡言。每个诡言造成4d6点音波伤害，作为一次30尺的远程接触攻击。在诡言击的伤害检定上添加诗人的魅力调整值。攻击同一目标的多个词语会叠加成单次强大的攻击，使得能量抗性和伤害加值仅生效一次。每个诡言消耗1轮吟游诗人表演。"
+  },
+  {
+    "Key": "SoundStrikerWeirdWords5.Name",
+    "ProcessTemplates": false,
+    "enGB": "Weird Words V",
+    "zhCN": "诡言击V"
+  },
+  {
+    "Key": "SoundStrikerWeirdWords5.Description",
+    "enGB": "At 6th level the bard can start a performance that is always a standard action to speak up to one word per 4 bard levels laden with sonic energy. Each word deals 4d6 points of sonic damage as a ranged touch attack with a range of 30 feet. The bard adds his charisma modifier on damage rolls with weird words. Multiple words that strike the same target stack into a single powerful attack, applying energy resistance and bonuses on damage rolls only once. Each word costs 1 round of bardic performance.",
+    "zhCN": "6级起，吟游诗人可以开始一种始终为标准动作的表演，每有4 个吟游诗人等级，她便能多说出一个充满音波能量的诡言。每个诡言造成4d6点音波伤害，作为一次30尺的远程接触攻击。在诡言击的伤害检定上添加诗人的魅力调整值。攻击同一目标的多个词语会叠加成单次强大的攻击，使得能量抗性和伤害加值仅生效一次。每个诡言消耗1轮吟游诗人表演。"
+  },
+  {
+    "Key": "AnkouShadow.Name",
+    "ProcessTemplates": false,
+    "enGB": "Ankou's Shadow",
+    "zhCN": "死魂精之影"
+  },
+  {
+    "Key": "AnkouShadow.Description",
+    "enGB": "Ankous are terrifying, winged fey assassins dispatched by the greatest lords of the First World to eliminate rivals. Some mortals emulate ankous to become the perfect assassins; others believe themselves to be ankous incarnated in mortal shells on a deep cover mission. In either case, an ankou’s shadow practices the deadliest skills of the First World’s most feared enforcers.",
+    "zhCN": "死魂精是一种可怕的有翼精类刺客，他们被第一世界的至高领主们派去消灭他们的对手。有些凡人通过效仿死魂精来成为完美的刺客；另一些人则相信他们就是死魂精，为了执行一项隐秘任务而化入凡人的躯壳中。无论如何，死魂精之影都身有第一世界最可怕的执刑者所掌握的致命技术。"
+  },
+  {
+    "Key": "AnkouShadowShadowDouble.Name",
+    "ProcessTemplates": false,
+    "enGB": "Shadow Double",
+    "zhCN": "影分身"
+  },
+  {
+    "Key": "AnkouShadowShadowDouble.Description",
+    "enGB": "An ankou’s shadow can take a full-round action to create a single, quasi-real, shadowy duplicate. This shadow double remains in his square, mimicking his movements as a single mirror image, except that it lasts until it is destroyed. This ability does not stack with the mirror image spell or with similar abilities, such as the copycat ability of the Trickery domain. He gains one more shadow double at 5th, 10th, and 15th level.",
+    "zhCN": "死魂精之影可以用一个整轮动作来创造一个接近真实的暗影复制。这个影分身和本体处在同一个方格，并模仿本体的动作，就像单个的镜影一样，但它会持续到被摧毁为止。这个能力不会与镜影术或者其它类似的能力叠加，比如诡术领域的复制幻象。在5级，10级和15级时，他会获得一个额外的影分身。"
+  },
+  {
+    "Key": "AnkouShadowUnfetteredShadows.Name",
+    "ProcessTemplates": false,
+    "enGB": "Unfettered Shadows",
+    "zhCN": "暗影解封术"
+  },
+  {
+    "Key": "AnkouShadowUnfetteredShadows.Description",
+    "enGB": "At 20th level, as a standard action an ankou’s shadow can unfetter all of his shadow doubles for 1 minute. While unfettered, each shadow double can make full-round attacks as if it were the ankou’s shadow without using any of his actions. A creature struck by a shadow double can attempt a Will save (DC 20 + the ankou’s shadow’s Intelligence modifier) each time it takes damage to recognize the illusion. If it succeeds, the target treats all subsequent attacks as 20% real, as the spell shadow conjuration. The ankou’s shadow can use this ability a number of times per day equal to 3 + his Intelligence modifier.",
+    "zhCN": "20级时，以一个标准动作，死魂精之影可以在1分钟内解放他的所有影分身。在解封状态下，每一个阴影分身都可以像死魂精之影一样进行全回合攻击，而且不会消耗死魂精之影的任何动作。被死魂精之影击中的生物每次受到伤害时都可以进行意志豁免（DC为20+死魂精之影的智力调整值）来看穿该幻术效果。如果成功，对于该生物而言所有后续攻击均只有20%的真实度，如同阴影咒法。死魂精之影每天可以使用这个能力的次数等同于3+智力调整值。"
+  },
+  {
+    "Key": "AnkouShadowAnkouVision.Name",
+    "ProcessTemplates": false,
+    "enGB": "Ankou’s Vision",
+    "zhCN": "死魂精之视"
+  },
+  {
+    "Key": "AnkouShadowAnkouVision.Description",
+    "enGB": "At 7th level, an ankou’s shadow can use see invisibility, as per the spell, as a swift action for 1 minute per level per day. This duration does not need to be consecutive, but it must be used in 1-minute increments.",
+    "zhCN": "7级起，死魂精之影可以用一个迅捷动作识破隐形，如同同名法术。每有1个职业等级，这个能力的每日持续时间便增加1分钟。持续时间不需要连续，但是每次至少使用1分钟。"
+  },
+  {
+    "Key": "NewSpellDiscordantBlast.Name",
+    "ProcessTemplates": false,
+    "enGB": "Discordant Blast",
+    "zhCN": "不谐冲击"
+  },
+  {
+    "Key": "NewSpellDiscordantBlast.Description",
+    "enGB": "You create a wave of thunder and force, either in a 10-foot-radius burst centered on you or in 30-foot cone-shaped burst. Creatures in the area take 3d6 points of sonic damage and are pushed away as if bull rushed. Make combat maneuver checks to each creature in the area. Your CMB for this bull rush is equal to your caster level plus your Charisma modifier. This bull rush does not provoke an attack of opportunity.",
+    "zhCN": "你制造一股轰鸣的力场波动，影响以你为中心半径10尺的范围，或者30尺锥形的范围。在该区域内的生物会受到3d6点音波伤害并被推开，如同被冲撞一般。对区域内的所有生物进行战技检定。你的冲撞CMB等同于你的施法者等级+魅力调整值。该冲撞不会引起借机攻击。"
+  },
+  {
+    "Key": "NewSpellDiscordantBlast1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Discordant Blast (centered)",
+    "zhCN": "不谐冲击（中心）"
+  },
+  {
+    "Key": "NewSpellDiscordantBlast1.Description",
+    "enGB": "You create a wave of thunder and force, either in a 10-foot-radius burst centered on you or in 30-foot cone-shaped burst. Creatures in the area take 3d6 points of sonic damage and are pushed away as if bull rushed. Make combat maneuver checks to each creature in the area. Your CMB for this bull rush is equal to your caster level plus your Charisma modifier. This bull rush does not provoke an attack of opportunity.",
+    "zhCN": "你制造一股轰鸣的力场波动，影响以你为中心半径10尺的范围，或者30尺锥形的范围。在该区域内的生物会受到3d6点音波伤害并被推开，如同被冲撞一般。对区域内的所有生物进行战技检定。你的冲撞CMB等同于你的施法者等级+魅力调整值。该冲撞不会引起借机攻击。"
+  },
+  {
+    "Key": "NewSpellDiscordantBlast2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Discordant Blast (cone-shaped)",
+    "zhCN": "不谐冲击（锥形）"
+  },
+  {
+    "Key": "NewSpellDiscordantBlast2.Description",
+    "enGB": "You create a wave of thunder and force, either in a 10-foot-radius burst centered on you or in 30-foot cone-shaped burst. Creatures in the area take 3d6 points of sonic damage and are pushed away as if bull rushed. Make combat maneuver checks to each creature in the area. Your CMB for this bull rush is equal to your caster level plus your Charisma modifier. This bull rush does not provoke an attack of opportunity.",
+    "zhCN": "你制造一股轰鸣的力场波动，影响以你为中心半径10尺的范围，或者30尺锥形的范围。在该区域内的生物会受到3d6点音波伤害并被推开，如同被冲撞一般。对区域内的所有生物进行战技检定。你的冲撞CMB等同于你的施法者等级+魅力调整值。该冲撞不会引起借机攻击。"
   }
 
 ]
