@@ -12110,6 +12110,138 @@
     "Key": "GoldenLegionnaireRetaliate.Description",
     "enGB": "At 9th level, once per round when a creature threatened by a Golden Legionnaire attacks and hits an ally adjacent to the Golden Legionnaire, he can make an attack of opportunity against that creature.",
     "zhCN": "9级起，每轮一次，当一名被黄金军士威胁的生物攻击并命中了一名邻接于黄金军士的盟友，黄金军士可以对该生物进行一次借机攻击。"
+  },
+  {
+    "Key": "Geisha.Name",
+    "ProcessTemplates": false,
+    "enGB": "Geisha",
+    "zhCN": "艺伎"
+  },
+  {
+    "Key": "Geisha.Description",
+    "enGB": "In some cultures, the professional entertainer is a prestigious role. Specially trained entertainers called geisha are praised for their appearance and skill at conversation, music, dancing, singing, poetry, and calligraphy. A geisha provides social intimacy and status but not physical intimacy.",
+    "zhCN": "在某些文化中，这种专业艺人享有盛誉。经过特殊训练的艺人（艺伎）因其外表谈吐，在音乐、舞蹈、歌唱、诗歌和书法方面的技巧而广受称赞。艺伎提供亲密的社交和高端服务，但并不包括身体接触。"
+  },
+  {
+    "Key": "GeishaTeaCeremony.Name",
+    "ProcessTemplates": false,
+    "enGB": "Tea Ceremony (inspire courage)",
+    "zhCN": "茶会（激发勇气）"
+  },
+  {
+    "Key": "GeishaTeaCeremony.Description",
+    "enGB": "By preparing an elaborate tea ceremony, a geisha may affect her allies with inspire courage, inspire competence, inspire greatness, or inspire heroics. The ceremony’s effects last 10 minutes. The geisha must spend 4 rounds of bardic performance for each creature to be affected.",
+    "zhCN": "通过精心准备一场茶会，艺伎可以对盟友施加激发勇气、提振技能、提振战力或激发豪情的效果。茶会的效果持续 10 分钟。艺伎必须为每个受影响的生物花费 4 轮吟游表演。"
+  },
+  {
+    "Key": "GeishaTeaCeremony2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Tea Ceremony (inspire competence)",
+    "zhCN": "茶会（提振技能）"
+  },
+  {
+    "Key": "GeishaTeaCeremony2.Description",
+    "enGB": "By preparing an elaborate tea ceremony, a geisha may affect her allies with inspire courage, inspire competence, inspire greatness, or inspire heroics. The ceremony’s effects last 10 minutes. The geisha must spend 4 rounds of bardic performance for each creature to be affected.",
+    "zhCN": "通过精心准备一场茶会，艺伎可以对盟友施加激发勇气、提振技能、提振战力或激发豪情的效果。茶会的效果持续 10 分钟。艺伎必须为每个受影响的生物花费 4 轮吟游表演。"
+  },
+  {
+    "Key": "GeishaTeaCeremony3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Tea Ceremony (inspire greatness)",
+    "zhCN": "茶会（提振战力）"
+  },
+  {
+    "Key": "GeishaTeaCeremony3.Description",
+    "enGB": "By preparing an elaborate tea ceremony, a geisha may affect her allies with inspire courage, inspire competence, inspire greatness, or inspire heroics. The ceremony’s effects last 10 minutes. The geisha must spend 4 rounds of bardic performance for each creature to be affected.",
+    "zhCN": "通过精心准备一场茶会，艺伎可以对盟友施加激发勇气、提振技能、提振战力或激发豪情的效果。茶会的效果持续 10 分钟。艺伎必须为每个受影响的生物花费 4 轮吟游表演。"
+  },
+  {
+    "Key": "GeishaTeaCeremony4.Name",
+    "ProcessTemplates": false,
+    "enGB": "Tea Ceremony (inspire heroics)",
+    "zhCN": "茶会（激发豪情）"
+  },
+  {
+    "Key": "GeishaTeaCeremony4.Description",
+    "enGB": "By preparing an elaborate tea ceremony, a geisha may affect her allies with inspire courage, inspire competence, inspire greatness, or inspire heroics. The ceremony’s effects last 10 minutes. The geisha must spend 4 rounds of bardic performance for each creature to be affected.",
+    "zhCN": "通过精心准备一场茶会，艺伎可以对盟友施加激发勇气、提振技能、提振战力或激发豪情的效果。茶会的效果持续 10 分钟。艺伎必须为每个受影响的生物花费 4 轮吟游表演。"
+  },
+  {
+    "Key": "GeishaGeishaKnowledge.Name",
+    "ProcessTemplates": false,
+    "enGB": "Geisha Knowledge",
+    "zhCN": "艺伎知识"
+  },
+  {
+    "Key": "GeishaGeishaKnowledge.Description",
+    "enGB": "A geisha adds half her class level (minimum 1) on Knowledge (world) checks and Persuasion checks.",
+    "zhCN": "艺伎在她的知识（世界）和说服检定上得到相当于其等级一半的加值（最少为1）。"
+  },
+  {
+    "Key": "SoundStriker.Name",
+    "ProcessTemplates": false,
+    "enGB": "Sound Striker",
+    "zhCN": "音爆使"
+  },
+  {
+    "Key": "SoundStriker.Description",
+    "enGB": "They say that words can cut deeper than any blade, and the sound striker proves this true. Using music and words as a weapon, he can focus his performances into a deadly delivery.",
+    "zhCN": "常言道，言语比利剑更伤人，音爆使能够证明此话千真万确。以音乐与言辞为剑，他那专注的表演最适合给人送终。"
+  },
+  {
+    "Key": "SoundStrikerWordstrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Wordstrike",
+    "zhCN": "真言击"
+  },
+  {
+    "Key": "SoundStrikerWordstrike.Description",
+    "enGB": "At 3rd level, the sound striker bard can spend 1 round of bardic performance as a standard action to direct a burst of sonically charged words at a creature or object. This performance deals 1d4 points of damage plus the bard’s level to an object, or half this damage to a living creature. The performance cannot be performed more quickly than a standard action.",
+    "zhCN": "3级起，音爆使可以用一个标准动作，花费1轮的吟游表演发出一串充满音波能量的真言。此表演会对物品造成1d4+吟游诗人等级的音波伤害，对活物的伤害减半。该表演不能比以标准动作更快的速度进行。"
+  },
+  {
+    "Key": "SoundStrikerWeirdWords.Name",
+    "ProcessTemplates": false,
+    "enGB": "Weird Words",
+    "zhCN": "诡言击"
+  },
+  {
+    "Key": "SoundStrikerWeirdWords.Description",
+    "enGB": "At 6th level the bard can start a performance that is always a standard action to speak up to one word per 4 bard levels laden with sonic energy. Each word deals 4d6 points of sonic damage as a ranged touch attack with a range of 30 feet. The bard adds his charisma modifier on damage rolls with weird words. Multiple words that strike the same target stack into a single powerful attack, applying energy resistance and bonuses on damage rolls only once. Each word costs 1 round of bardic performance.",
+    "zhCN": "6级起，吟游诗人可以开始一种始终为标准动作的表演，每有4 个吟游诗人等级，她便能多说出一个充满音波能量的诡言。每个诡言造成4d6点音波伤害，作为一次30尺的远程接触攻击。在诡言击的伤害检定上添加诗人的魅力调整值。攻击同一目标的多个词语会叠加成单次强大的攻击，使得能量抗性和伤害加值仅生效一次。每个诡言消耗1轮吟游诗人表演。"
+  },
+  {
+    "Key": "SoundStrikerWeirdWords2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Weird Words II",
+    "zhCN": "诡言击II"
+  },
+  {
+    "Key": "SoundStrikerWeirdWords2.Description",
+    "enGB": "At 6th level the bard can start a performance that is always a standard action to speak up to one word per 4 bard levels laden with sonic energy. Each word deals 4d6 points of sonic damage as a ranged touch attack with a range of 30 feet. The bard adds his charisma modifier on damage rolls with weird words. Multiple words that strike the same target stack into a single powerful attack, applying energy resistance and bonuses on damage rolls only once. Each word costs 1 round of bardic performance.",
+    "zhCN": "6级起，吟游诗人可以开始一种始终为标准动作的表演，每有4 个吟游诗人等级，她便能多说出一个充满音波能量的诡言。每个诡言造成4d6点音波伤害，作为一次30尺的远程接触攻击。在诡言击的伤害检定上添加诗人的魅力调整值。攻击同一目标的多个词语会叠加成单次强大的攻击，使得能量抗性和伤害加值仅生效一次。每个诡言消耗1轮吟游诗人表演。"
+  },
+  {
+    "Key": "SoundStrikerWeirdWords3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Weird Words III",
+    "zhCN": "诡言击III"
+  },
+  {
+    "Key": "SoundStrikerWeirdWords3.Description",
+    "enGB": "At 6th level the bard can start a performance that is always a standard action to speak up to one word per 4 bard levels laden with sonic energy. Each word deals 4d6 points of sonic damage as a ranged touch attack with a range of 30 feet. The bard adds his charisma modifier on damage rolls with weird words. Multiple words that strike the same target stack into a single powerful attack, applying energy resistance and bonuses on damage rolls only once. Each word costs 1 round of bardic performance.",
+    "zhCN": "6级起，吟游诗人可以开始一种始终为标准动作的表演，每有4 个吟游诗人等级，她便能多说出一个充满音波能量的诡言。每个诡言造成4d6点音波伤害，作为一次30尺的远程接触攻击。在诡言击的伤害检定上添加诗人的魅力调整值。攻击同一目标的多个词语会叠加成单次强大的攻击，使得能量抗性和伤害加值仅生效一次。每个诡言消耗1轮吟游诗人表演。"
+  },
+  {
+    "Key": "SoundStrikerWeirdWords4.Name",
+    "ProcessTemplates": false,
+    "enGB": "Weird Words IV",
+    "zhCN": "诡言击IV"
+  },
+  {
+    "Key": "SoundStrikerWeirdWords4.Description",
+    "enGB": "At 6th level the bard can start a performance that is always a standard action to speak up to one word per 4 bard levels laden with sonic energy. Each word deals 4d6 points of sonic damage as a ranged touch attack with a range of 30 feet. The bard adds his charisma modifier on damage rolls with weird words. Multiple words that strike the same target stack into a single powerful attack, applying energy resistance and bonuses on damage rolls only once. Each word costs 1 round of bardic performance.",
+    "zhCN": "6级起，吟游诗人可以开始一种始终为标准动作的表演，每有4 个吟游诗人等级，她便能多说出一个充满音波能量的诡言。每个诡言造成4d6点音波伤害，作为一次30尺的远程接触攻击。在诡言击的伤害检定上添加诗人的魅力调整值。攻击同一目标的多个词语会叠加成单次强大的攻击，使得能量抗性和伤害加值仅生效一次。每个诡言消耗1轮吟游诗人表演。"
   }
 
 ]
