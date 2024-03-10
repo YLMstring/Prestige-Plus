@@ -15,6 +15,9 @@ using System.Threading.Tasks;
 using static Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell;
 using BlueprintCore.Actions.Builder.ContextEx;
 using Kingmaker.EntitySystem.Stats;
+using BlueprintCore.Utils.Types;
+using Kingmaker.RuleSystem;
+using BlueprintCore.Conditions.Builder;
 
 namespace PrestigePlus.Blueprint.Spell
 {
@@ -29,12 +32,58 @@ namespace PrestigePlus.Blueprint.Spell
         private const string DiscordantBlastAbility2 = "NewSpell.UseDiscordantBlast2";
         public static readonly string DiscordantBlastAbility2Guid = "{2C9D334C-786F-48B1-BFDB-C618EF63DB1C}";
 
-
         internal const string DisplayName = "NewSpellDiscordantBlast.Name";
         private const string Description = "NewSpellDiscordantBlast.Description";
         public static void Configure()
         {
-            var icon = AbilityRefs.DeadlyEarthEarthBlastAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.SoundBurst.Reference.Get().Icon;
+            var icon2 = AbilityRefs.BansheeBlast.Reference.Get().Icon;
+
+            var ability1 = AbilityConfigurator.NewSpell(
+                DiscordantBlastAbility1, DiscordantBlastAbility1Guid, SpellSchool.Evocation, canSpecialize: false)
+              .SetDisplayName(DisplayName)
+              .SetDescription(Description)
+              .SetIcon(icon)
+              .SetRange(AbilityRange.Personal)
+              .SetType(AbilityType.Spell)
+              .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Selective, Metamagic.Heighten, Metamagic.Quicken, Metamagic.Maximize, Metamagic.Empower, Metamagic.Reach)
+              .SetSpellResistance()
+              .AddSpellDescriptorComponent(SpellDescriptor.Sonic)
+              .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Any, radius: 10.Feet(), spreadSpeed: 20.Feet())
+              .AddAbilityEffectRunAction(
+                actions: ActionsBuilder.New()
+                  .CombatManeuver(ActionsBuilder.New().Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.Trip, newStat: StatType.Charisma, useCasterLevelAsBaseAttack: true)
+                  .DealDamage(DamageTypes.Energy(Kingmaker.Enums.Damage.DamageEnergyType.Sonic), ContextDice.Value(DiceType.D6, 3, 0))
+                  .Build())
+              .AddCraftInfoComponent(
+                aOEType: CraftAOE.AOE,
+                savingThrow: CraftSavingThrow.None,
+                spellType: CraftSpellType.Other)
+              .Configure();
+
+            var ability2 = AbilityConfigurator.NewSpell(
+                DiscordantBlastAbility2, DiscordantBlastAbility2Guid, SpellSchool.Evocation, canSpecialize: false)
+              .SetDisplayName(DisplayName)
+              .SetDescription(Description)
+              .SetIcon(icon)
+              .AllowTargeting(true, true, true, false)
+              .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.Kinetic_EarthBlastLine00.ToString() }, type: AbilityProjectileType.Line, length: 60.Feet(), lineWidth: 5.Feet(), needAttackRoll: false)
+              .SetRange(AbilityRange.Projectile)
+              .SetType(AbilityType.Spell)
+              .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Selective, Metamagic.Heighten, Metamagic.Quicken, Metamagic.Maximize, Metamagic.Empower, Metamagic.Reach)
+              .SetSpellResistance()
+              .AddSpellDescriptorComponent(SpellDescriptor.Sonic)
+              .AddToSpellLists(level: 4, SpellList.Bard)
+              .AddAbilityEffectRunAction(
+                actions: ActionsBuilder.New()
+                  .CombatManeuver(ActionsBuilder.New().Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.Trip, newStat: StatType.Charisma, useCasterLevelAsBaseAttack: true)
+                  .DealDamage(DamageTypes.Energy(Kingmaker.Enums.Damage.DamageEnergyType.Sonic), ContextDice.Value(DiceType.D6, 3, 0))
+                  .Build())
+              .AddCraftInfoComponent(
+                aOEType: CraftAOE.AOE,
+                savingThrow: CraftSavingThrow.None,
+                spellType: CraftSpellType.Other)
+              .Configure();
 
             AbilityConfigurator.NewSpell(
                 DiscordantBlastAbility, DiscordantBlastAbilityGuid, SpellSchool.Evocation, canSpecialize: false)
@@ -47,10 +96,12 @@ namespace PrestigePlus.Blueprint.Spell
               .SetType(AbilityType.Spell)
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Selective, Metamagic.Heighten, Metamagic.Quicken, Metamagic.Maximize, Metamagic.Empower, Metamagic.Reach)
               .SetSpellResistance()
+              .AddSpellDescriptorComponent(SpellDescriptor.Sonic)
               .AddToSpellLists(level: 4, SpellList.Bard)
               .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
                   .CombatManeuver(ActionsBuilder.New().Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.Trip, newStat: StatType.Charisma, useCasterLevelAsBaseAttack: true)
+                  .DealDamage(DamageTypes.Energy(Kingmaker.Enums.Damage.DamageEnergyType.Sonic), ContextDice.Value(DiceType.D6, 3, 0))
                   .Build())
               .AddCraftInfoComponent(
                 aOEType: CraftAOE.AOE,

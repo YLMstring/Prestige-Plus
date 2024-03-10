@@ -23,6 +23,7 @@ using BlueprintCore.Actions.Builder.ContextEx;
 using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.Utility;
+using Kingmaker.Blueprints.Classes.Spells;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -74,6 +75,7 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetIcon(icon)
                 .SetRange(AbilityRange.Long)
                 .SetType(AbilityType.Supernatural)
+                .AddSpellDescriptorComponent(SpellDescriptor.Sonic)
                 .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.BardClass.ToString() }))
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
                 .Configure();
@@ -110,6 +112,7 @@ namespace PrestigePlus.Blueprint.Archetype
                 .AddAbilityDeliverProjectile(Kingmaker.EntitySystem.Stats.StatType.Dexterity, projectiles: new() { ProjectileRefs.SonicCommonRay00_Projectile.ToString() },
                 type: AbilityProjectileType.Simple, isHandOfTheApprentice: false, lineWidth: 5.Feet(), needAttackRoll: true, weapon: ItemWeaponRefs.RayItem.ToString())
                 .SetType(AbilityType.Supernatural)
+                .AddSpellDescriptorComponent(SpellDescriptor.Sonic)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
                 .Configure();
 
@@ -145,6 +148,7 @@ namespace PrestigePlus.Blueprint.Archetype
                 .AddAbilityDeliverProjectile(Kingmaker.EntitySystem.Stats.StatType.Dexterity, projectiles: new() { ProjectileRefs.SonicCommonRay00_Projectile.ToString() },
                 type: AbilityProjectileType.Simple, isHandOfTheApprentice: false, lineWidth: 5.Feet(), needAttackRoll: true, weapon: ItemWeaponRefs.RayItem.ToString())
                 .SetType(AbilityType.Supernatural)
+                .AddSpellDescriptorComponent(SpellDescriptor.Sonic)
                 .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
                 .Configure();
 
@@ -180,6 +184,7 @@ namespace PrestigePlus.Blueprint.Archetype
                 .AddAbilityDeliverProjectile(Kingmaker.EntitySystem.Stats.StatType.Dexterity, projectiles: new() { ProjectileRefs.SonicCommonRay00_Projectile.ToString() },
                 type: AbilityProjectileType.Simple, isHandOfTheApprentice: false, lineWidth: 5.Feet(), needAttackRoll: true, weapon: ItemWeaponRefs.RayItem.ToString())
                 .SetType(AbilityType.Supernatural)
+                .AddSpellDescriptorComponent(SpellDescriptor.Sonic)
                 .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
                 .Configure();
 
@@ -215,6 +220,7 @@ namespace PrestigePlus.Blueprint.Archetype
                 .AddAbilityDeliverProjectile(Kingmaker.EntitySystem.Stats.StatType.Dexterity, projectiles: new() { ProjectileRefs.SonicCommonRay00_Projectile.ToString() },
                 type: AbilityProjectileType.Simple, isHandOfTheApprentice: false, lineWidth: 5.Feet(), needAttackRoll: true, weapon: ItemWeaponRefs.RayItem.ToString())
                 .SetType(AbilityType.Supernatural)
+                .AddSpellDescriptorComponent(SpellDescriptor.Sonic)
                 .AddAbilityResourceLogic(4, isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
                 .Configure();
 
@@ -250,6 +256,7 @@ namespace PrestigePlus.Blueprint.Archetype
                 .AddAbilityDeliverProjectile(Kingmaker.EntitySystem.Stats.StatType.Dexterity, projectiles: new() { ProjectileRefs.SonicCommonRay00_Projectile.ToString() },
                 type: AbilityProjectileType.Simple, isHandOfTheApprentice: false, lineWidth: 5.Feet(), needAttackRoll: true, weapon: ItemWeaponRefs.RayItem.ToString())
                 .SetType(AbilityType.Supernatural)
+                .AddSpellDescriptorComponent(SpellDescriptor.Sonic)
                 .AddAbilityResourceLogic(5, isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
                 .Configure();
 
