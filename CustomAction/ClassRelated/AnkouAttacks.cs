@@ -57,7 +57,7 @@ namespace PrestigePlus.CustomAction.ClassRelated
         }
         public override void Cleanup(AbilityExecutionContext context)
         {
-            GameHelper.RemoveBuff(context.MaybeCaster, KeepBuff);
+            //GameHelper.RemoveBuff(context.MaybeCaster, KeepBuff);
         }
 
         public BlueprintBuff CooldownBuff;
