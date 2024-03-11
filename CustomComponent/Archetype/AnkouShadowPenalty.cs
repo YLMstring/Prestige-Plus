@@ -36,7 +36,7 @@ namespace PrestigePlus.CustomComponent.Archetype
 
         public override void OnDeactivate()
         {
-            Data.cat.Clear();
+            //Data.cat.Clear();
         }
 
         void IRulebookHandler<RuleAttackRoll>.OnEventAboutToTrigger(RuleAttackRoll evt)

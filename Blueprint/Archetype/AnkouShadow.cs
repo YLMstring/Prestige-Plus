@@ -204,6 +204,7 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetRange(AbilityRange.Weapon)
                 .SetType(AbilityType.Supernatural)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .AddHideDCFromTooltip()
                 .Configure();
 
             var buff = BuffConfigurator.New(UnfetteredShadowsBuff, UnfetteredShadowsBuffGuid)
@@ -226,6 +227,7 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetRange(AbilityRange.Personal)
                 .SetType(AbilityType.Supernatural)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .AddHideDCFromTooltip()
                 .Configure();
 
             return FeatureConfigurator.New(UnfetteredShadows, UnfetteredShadowsGuid)
