@@ -35,7 +35,7 @@ namespace PrestigePlus
   {
     public static bool Enabled;
     private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
-        private static readonly string RootKey = "mod-menu.test-settings";
+        private static readonly string RootKey = "mod-menu.PrestigePlus-settings";
         public static string GetKey(string partialKey)
         {
             return $"{RootKey}.{partialKey}";
