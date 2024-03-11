@@ -76,7 +76,7 @@ namespace PrestigePlus.Blueprint.Archetype
             var abilityresourse = AbilityResourceConfigurator.New(AnkouVisionRes, AnkouVisionResGuid)
                 .SetMaxAmount(
                     ResourceAmountBuilder.New(0)
-                        .IncreaseByLevel(classes: new string[] { ArchetypeGuid }))
+                        .IncreaseByLevel(classes: new string[] { CharacterClassRefs.SlayerClass.ToString() }))
                 .Configure();
 
             var normal = ActionsBuilder.New()
@@ -125,6 +125,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetIcon(icon)
               .AddMirrorImage(ContextDice.Value(Kingmaker.RuleSystem.DiceType.Zero, 0, ContextValues.Rank()), 4)
               .AddContextRankConfig(ContextRankConfigs.FeatureRank(ShadowDoubleGuid))
+              .SetFxOnStart("bde04297a8dc74b4fa22480f4e40133b")
               .Configure();
 
             var normal = ActionsBuilder.New()
@@ -176,6 +177,8 @@ namespace PrestigePlus.Blueprint.Archetype
             var icon = AbilityRefs.FalseLifeGreater.Reference.Get().Icon;
             var icon2 = AbilityRefs.ReducePersonMass.Reference.Get().Icon;
 
+            var fx = AbilityRefs.PhantasmalWeb.Reference.Get().GetComponent<AbilitySpawnFx>();
+
             var abilityresourse = AbilityResourceConfigurator.New(UnfetteredShadowsRes, UnfetteredShadowsResGuid)
                 .SetMaxAmount(
                     ResourceAmountBuilder.New(3)
@@ -186,8 +189,9 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(UnfetteredShadowsDisplayName)
               .SetDescription(UnfetteredShadowsDescription)
               .SetIcon(icon)
-              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddComponent<AnkouShadowPenalty>()
+              .SetStacking(Kingmaker.UnitLogic.Buffs.Blueprints.StackingType.Rank)
+              .SetRanks(10)
               .Configure();
 
             var ability2 = AbilityConfigurator.New(UnfetteredShadowsAblity2, UnfetteredShadowsAblity2Guid)
@@ -196,7 +200,7 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetDisplayName(UnfetteredShadowsDisplayName)
                 .SetDescription(UnfetteredShadowsDescription)
                 .SetIcon(icon)
-                .AddAbilityCasterHasNoFacts(new() { buff2 })
+                .AddComponent<AbilityAnkouShadow>(c => { c.CooldownBuff = buff2; })
                 .SetRange(AbilityRange.Weapon)
                 .SetType(AbilityType.Supernatural)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
@@ -205,7 +209,7 @@ namespace PrestigePlus.Blueprint.Archetype
             var buff = BuffConfigurator.New(UnfetteredShadowsBuff, UnfetteredShadowsBuffGuid)
               .SetDisplayName(UnfetteredShadowsDisplayName)
               .SetDescription(UnfetteredShadowsDescription)
-              .SetIcon(icon)
+              .SetIcon(icon2)
               .AddFacts(new() { ability2 })
               .Configure();
 
@@ -217,7 +221,8 @@ namespace PrestigePlus.Blueprint.Archetype
                 .AddAbilityEffectRunAction(normal)
                 .SetDisplayName(UnfetteredShadowsDisplayName)
                 .SetDescription(UnfetteredShadowsDescription)
-                .SetIcon(icon)
+                .SetIcon(icon2)
+                .AddComponent(fx)
                 .SetRange(AbilityRange.Personal)
                 .SetType(AbilityType.Supernatural)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)

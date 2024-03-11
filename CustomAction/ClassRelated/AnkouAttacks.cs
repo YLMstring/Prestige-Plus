@@ -31,7 +31,6 @@ namespace PrestigePlus.CustomAction.ClassRelated
         public override IEnumerator<AbilityDeliveryTarget> Deliver(AbilityExecutionContext context, TargetWrapper target)
         {
             var caster = context.MaybeCaster;
-
             if (caster == null)
             {
                 PFLog.Default.Error(this, "Caster is missing", Array.Empty<object>());
@@ -46,28 +45,8 @@ namespace PrestigePlus.CustomAction.ClassRelated
             var image = caster.Get<UnitPartMirrorImage>();
             if (image == null) yield break;
             GameHelper.ApplyBuff(caster, CooldownBuff, new Rounds?(1.Rounds()));
-            if (image.MechanicsImages.Count > 0)
-            {
-                UnitAttack attack = new(target.Unit) { ForceFullAttack = true };
-                attack.IgnoreCooldown();
-                attack.Init(caster);
-                caster.Commands.AddToQueueFirst(attack);
-            }
-            if (image.MechanicsImages.Count > 1)
-            {
-                UnitAttack attack = new(target.Unit) { ForceFullAttack = true };
-                attack.IgnoreCooldown();
-                attack.Init(caster);
-                caster.Commands.AddToQueueFirst(attack);
-            }
-            if (image.MechanicsImages.Count > 2)
-            {
-                UnitAttack attack = new(target.Unit) { ForceFullAttack = true };
-                attack.IgnoreCooldown();
-                attack.Init(caster);
-                caster.Commands.AddToQueueFirst(attack);
-            }
-            if (image.MechanicsImages.Count > 3)
+            int rank = caster.GetFact(CooldownBuff).GetRank();
+            if (image.MechanicsImages.Count >= rank)
             {
                 UnitAttack attack = new(target.Unit) { ForceFullAttack = true };
                 attack.IgnoreCooldown();
@@ -77,10 +56,9 @@ namespace PrestigePlus.CustomAction.ClassRelated
         }
         public override void Cleanup(AbilityExecutionContext context)
         {
-            
+
         }
 
         public BlueprintBuff CooldownBuff;
-        
     }
 }

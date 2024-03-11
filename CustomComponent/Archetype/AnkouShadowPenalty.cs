@@ -22,6 +22,8 @@ using Kingmaker.EntitySystem.Entities;
 using Kingmaker.UI.Common;
 using Kingmaker.Designers;
 using Kingmaker.Utility;
+using Kingmaker.UnitLogic.Parts;
+using static Pathfinding.Util.RetainedGizmos;
 
 namespace PrestigePlus.CustomComponent.Archetype
 {
@@ -57,7 +59,6 @@ namespace PrestigePlus.CustomComponent.Archetype
                 }
             }
         }
-
         void IRulebookHandler<RuleAttackRoll>.OnEventDidTrigger(RuleAttackRoll evt)
         {
             if (evt.IsHit && !Data.cat.Contains(evt.Target))
@@ -71,7 +72,6 @@ namespace PrestigePlus.CustomComponent.Archetype
                 }
             }
         }
-
         public class ComponentData
         {
             public List<UnitEntityData> cat = new() { };
