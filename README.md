@@ -1,4 +1,4 @@
-# Prestige Plus v2.8.4 for WoTR 
+# Prestige Plus v2.9.1 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -175,7 +175,9 @@
 #### Arcanist:  
 - [Aeromancer](https://www.d20pfsrd.com/classes/hybrid-classes/arcanist/archetypes/paizo-arcanist-archetypes/aeromancer-arcanist-archetype/)
 #### Bard:  
+- [Geisha](https://www.d20pfsrd.com/classes/core-classes/bard/archetypes/paizo-bard-archetypes/geisha/)
 - [Juggler](https://www.d20pfsrd.com/classes/core-classes/bard/archetypes/paizo-bard-archetypes/juggler-bard-archetype/)
+- [Sound Striker](https://www.d20pfsrd.com/classes/core-classes/bard/archetypes/paizo-bard-archetypes/sound-striker/)
 #### Barbarian:  
 - [Drunken Brute](https://www.d20pfsrd.com/classes/core-classes/barbarian/archetypes/paizo-barbarian-archetypes/drunken-brute/)
 - Drinking a potion is already a move action in wotr, so Raging Drunk should make it a swift action.
@@ -235,6 +237,8 @@
 - [Kidnapper](https://www.d20pfsrd.com/classes/core-classes/rogue/archetypes/paizo-rogue-archetypes/jungle-kidnapper-rogue-archetype/)
 #### Skald:  
 - [Fated Champion](https://www.d20pfsrd.com/classes/hybrid-classes/skald/archetypes/paizo-skald-archetypes/fated-champion/)
+#### Slayer:  
+- [Ankou’s Shadow](https://www.d20pfsrd.com/classes/hybrid-classes/slayer/archetypes/paizo-slayer-archetypes/ankous-shadow-slayer-archetype/)
 #### Sorcerer:  
 - [Truth Seeker](https://www.d20pfsrd.com/classes/core-classes/sorcerer/archetypes/paizo-sorcerer-archetypes/seeker/)
 #### Warpriest:  
@@ -359,6 +363,7 @@
 - [Blade Lash](https://www.d20pfsrd.com/magic/all-spells/b/blade-lash/)
 - [Resinous Skin](https://aonprd.com/SpellDisplay.aspx?ItemName=Resinous%20Skin)
 - [Pilfering Hand](https://www.d20pfsrd.com/magic/all-spells/p/pilfering-hand/)
+- [Discordant Blast](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Discordant%20Blast)
 ### New Mythic Prestige Class Features
 
 - Swift Death: Your Death Attack becomes a standard action. At 10th assassin level, it becomes a move action.
