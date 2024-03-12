@@ -107,7 +107,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Selective, Metamagic.Heighten, Metamagic.Quicken, Metamagic.Maximize, Metamagic.Empower, Metamagic.Reach)
               .SetSpellResistance()
               .AddSpellDescriptorComponent(SpellDescriptor.Sonic)
-              .AddToSpellLists(level: 1, SpellList.Bard)
+              .AddToSpellLists(level: 4, SpellList.Bard)
               .AddAbilityVariants(new() { ability1, ability2 })
               .AddCraftInfoComponent(
                 aOEType: CraftAOE.AOE,

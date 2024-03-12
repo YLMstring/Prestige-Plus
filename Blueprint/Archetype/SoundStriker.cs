@@ -41,12 +41,12 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetLocalizedDescription(ArchetypeDescription)
             .SetRemoveFeaturesEntry(3, FeatureRefs.InspireCompetenceFeature.ToString())
             .SetRemoveFeaturesEntry(6, FeatureRefs.FascinateFeature.ToString())
-            .AddToAddFeatures(1, WordstrikeFeat())
-            .AddToAddFeatures(2, WeirdWordsFeat())
-            .AddToAddFeatures(3, WeirdWords2Feat())
-            .AddToAddFeatures(4, WeirdWords3Feat())
-            .AddToAddFeatures(5, WeirdWords4Feat())
-            .AddToAddFeatures(6, WeirdWords5Feat())
+            .AddToAddFeatures(3, WordstrikeFeat())
+            .AddToAddFeatures(6, WeirdWordsFeat())
+            .AddToAddFeatures(8, WeirdWords2Feat())
+            .AddToAddFeatures(12, WeirdWords3Feat())
+            .AddToAddFeatures(16, WeirdWords4Feat())
+            .AddToAddFeatures(20, WeirdWords5Feat())
               .Configure();
 
             ProgressionConfigurator.For(ProgressionRefs.BardProgression)

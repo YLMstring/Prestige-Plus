@@ -44,9 +44,9 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetLocalizedDescription(ArchetypeDescription)
             .SetRemoveFeaturesEntry(1, FeatureRefs.BardProficiencies.ToString(), FeatureRefs.BardicKnowledge.ToString())
             .AddToAddFeatures(1, GeishaKnowledgeFeat(), TeaCeremonyFeat(), FeatureRefs.ScribingScrolls.ToString(), FeatureRefs.MonkWeaponProficiency.ToString())
-            .AddToAddFeatures(2, TeaCeremony2Feat())
-            .AddToAddFeatures(3, TeaCeremony3Feat())
-            .AddToAddFeatures(4, TeaCeremony4Feat())
+            .AddToAddFeatures(3, TeaCeremony2Feat())
+            .AddToAddFeatures(9, TeaCeremony3Feat())
+            .AddToAddFeatures(15, TeaCeremony4Feat())
               .Configure();
 
             ProgressionConfigurator.For(ProgressionRefs.BardProgression)

@@ -45,11 +45,11 @@ namespace PrestigePlus.Blueprint.Archetype
             .SetRemoveFeaturesEntry(15, FeatureRefs.SlayerStudyTargetFeature.ToString())
             .SetRemoveFeaturesEntry(20, FeatureRefs.SlayerStudyTargetFeature.ToString())
             .AddToAddFeatures(1, ShadowDoubleFeat())
-            .AddToAddFeatures(2, ShadowDoubleGuid)
-            .AddToAddFeatures(3, ShadowDoubleGuid)
-            .AddToAddFeatures(4, ShadowDoubleGuid)
-            .AddToAddFeatures(5, AnkouVisionFeat())
-            .AddToAddFeatures(6, UnfetteredShadowsFeat())
+            .AddToAddFeatures(5, ShadowDoubleGuid)
+            .AddToAddFeatures(10, ShadowDoubleGuid)
+            .AddToAddFeatures(15, ShadowDoubleGuid)
+            .AddToAddFeatures(7, AnkouVisionFeat())
+            .AddToAddFeatures(20, UnfetteredShadowsFeat())
               .Configure();
 
             ProgressionConfigurator.For(ProgressionRefs.SlayerProgression)
