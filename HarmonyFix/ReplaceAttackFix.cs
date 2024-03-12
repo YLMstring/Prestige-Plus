@@ -47,10 +47,6 @@ namespace PrestigePlus.HarmonyFix
             {
                 var caster = __instance.Executor;
                 var target = __instance.Target;
-                if (!__instance.ForceFullAttack)
-                {
-                    GameHelper.RemoveBuff(caster, Ankou);
-                }
                 if (caster.HasFact(Assault) && caster.HasFact(BuffRefs.ChargeBuff.Reference))
                 {
                     __instance.IsCharge = true;
@@ -192,8 +188,6 @@ namespace PrestigePlus.HarmonyFix
             }
             catch (Exception ex) { Logger.Error("Failed to replace attack.", ex); return true; }
         }
-
-        private static readonly BlueprintBuffReference Ankou = BlueprintTool.GetRef<BlueprintBuffReference>(AnkouShadow.UnfetteredShadowsBuff3Guid);
 
         private static BlueprintBuffReference Disarm1 = BlueprintTool.GetRef<BlueprintBuffReference>("{59ED0B02-A211-4323-9717-CBE6A1CD6846}");
         private static BlueprintBuffReference Disarm2 = BlueprintTool.GetRef<BlueprintBuffReference>("{49890773-D237-46D0-8C68-B666B0503523}");
