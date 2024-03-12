@@ -24,6 +24,7 @@ using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.Utility;
 using Kingmaker.Blueprints.Classes.Spells;
+using Kingmaker.UnitLogic.Abilities.Components.Base;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -64,6 +65,7 @@ namespace PrestigePlus.Blueprint.Archetype
         public static BlueprintFeature WordstrikeFeat()
         {
             var icon = AbilityRefs.Shout.Reference.Get().Icon;
+            var fx = AbilityRefs.Daze.Reference.Get().GetComponent<AbilitySpawnFx>();
 
             var ability = AbilityConfigurator.New(WordstrikeAblity, WordstrikeAblityGuid)
                 .AllowTargeting(enemies: true)
@@ -73,6 +75,7 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetDisplayName(WordstrikeDisplayName)
                 .SetDescription(WordstrikeDescription)
                 .SetIcon(icon)
+                .AddComponent(fx)
                 .SetRange(AbilityRange.Long)
                 .SetType(AbilityType.Supernatural)
                 .AddSpellDescriptorComponent(SpellDescriptor.Sonic)
@@ -109,6 +112,7 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetDescription(WeirdWordsDescription)
                 .SetIcon(icon)
                 .SetRange(AbilityRange.Close)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Directional)
                 .AddAbilityDeliverProjectile(Kingmaker.EntitySystem.Stats.StatType.Dexterity, projectiles: new() { ProjectileRefs.SonicCommonRay00_Projectile.ToString() },
                 type: AbilityProjectileType.Simple, isHandOfTheApprentice: false, lineWidth: 5.Feet(), needAttackRoll: true, weapon: ItemWeaponRefs.RayItem.ToString())
                 .SetType(AbilityType.Supernatural)
@@ -145,6 +149,7 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetDescription(WeirdWords2Description)
                 .SetIcon(icon)
                 .SetRange(AbilityRange.Close)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Directional)
                 .AddAbilityDeliverProjectile(Kingmaker.EntitySystem.Stats.StatType.Dexterity, projectiles: new() { ProjectileRefs.SonicCommonRay00_Projectile.ToString() },
                 type: AbilityProjectileType.Simple, isHandOfTheApprentice: false, lineWidth: 5.Feet(), needAttackRoll: true, weapon: ItemWeaponRefs.RayItem.ToString())
                 .SetType(AbilityType.Supernatural)
@@ -181,6 +186,7 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetDescription(WeirdWords3Description)
                 .SetIcon(icon)
                 .SetRange(AbilityRange.Close)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Directional)
                 .AddAbilityDeliverProjectile(Kingmaker.EntitySystem.Stats.StatType.Dexterity, projectiles: new() { ProjectileRefs.SonicCommonRay00_Projectile.ToString() },
                 type: AbilityProjectileType.Simple, isHandOfTheApprentice: false, lineWidth: 5.Feet(), needAttackRoll: true, weapon: ItemWeaponRefs.RayItem.ToString())
                 .SetType(AbilityType.Supernatural)
@@ -217,6 +223,7 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetDescription(WeirdWords4Description)
                 .SetIcon(icon)
                 .SetRange(AbilityRange.Close)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Directional)
                 .AddAbilityDeliverProjectile(Kingmaker.EntitySystem.Stats.StatType.Dexterity, projectiles: new() { ProjectileRefs.SonicCommonRay00_Projectile.ToString() },
                 type: AbilityProjectileType.Simple, isHandOfTheApprentice: false, lineWidth: 5.Feet(), needAttackRoll: true, weapon: ItemWeaponRefs.RayItem.ToString())
                 .SetType(AbilityType.Supernatural)
@@ -253,6 +260,7 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetDescription(WeirdWords5Description)
                 .SetIcon(icon)
                 .SetRange(AbilityRange.Close)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Directional)
                 .AddAbilityDeliverProjectile(Kingmaker.EntitySystem.Stats.StatType.Dexterity, projectiles: new() { ProjectileRefs.SonicCommonRay00_Projectile.ToString() },
                 type: AbilityProjectileType.Simple, isHandOfTheApprentice: false, lineWidth: 5.Feet(), needAttackRoll: true, weapon: ItemWeaponRefs.RayItem.ToString())
                 .SetType(AbilityType.Supernatural)

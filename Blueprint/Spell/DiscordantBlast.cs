@@ -20,6 +20,7 @@ using Kingmaker.RuleSystem;
 using BlueprintCore.Conditions.Builder;
 using Kingmaker.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
+using BlueprintCore.Conditions.Builder.ContextEx;
 
 namespace PrestigePlus.Blueprint.Spell
 {
@@ -59,7 +60,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Selective, Metamagic.Heighten, Metamagic.Quicken, Metamagic.Maximize, Metamagic.Empower, Metamagic.Reach)
               .SetSpellResistance()
               .AddSpellDescriptorComponent(SpellDescriptor.Sonic)
-              .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Any, radius: 10.Feet(), spreadSpeed: 20.Feet())
+              .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Any, radius: 10.Feet(), spreadSpeed: 20.Feet(), condition: ConditionsBuilder.New().IsCaster(true).Build())
               .AddComponent(fx)
               .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
@@ -78,7 +79,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetDescription(Description2)
               .SetIcon(icon2)
               .AllowTargeting(true, true, true, false)
-              .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.SonicCone30Feet00.ToString() }, type: AbilityProjectileType.Cone, length: 60.Feet(), lineWidth: 5.Feet(), needAttackRoll: false)
+              .AddAbilityDeliverProjectile(projectiles: new() { ProjectileRefs.SonicCone30Feet00.ToString() }, type: AbilityProjectileType.Cone, length: 30.Feet(), lineWidth: 5.Feet(), needAttackRoll: false)
               .SetRange(AbilityRange.Projectile)
               .SetType(AbilityType.Spell)
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Selective, Metamagic.Heighten, Metamagic.Quicken, Metamagic.Maximize, Metamagic.Empower, Metamagic.Reach)
