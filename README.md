@@ -386,7 +386,7 @@
 ## Mod Combo
 
 ### [Expanded Content](https://github.com/ka-dyn/ExpandedContent)
-- Thanks bitter for adding [aid another](https://www.aonprd.com/Rules.aspx?Name=Aid%20Another&Category=Special%20Attacks) related stuff to my Asavir and Halfling Opportunist!
+- Thanks bitter for adding [aid another](https://www.aonprd.com/Rules.aspx?Name=Aid%20Another&Category=Special%20Attacks) related stuff to my Asavir, Golden Legionnaire and Halfling Opportunist!
 - Vampirism oracle curse can qualify for my vampiric transformation!
 ### [Microscopic Content Expansion](https://github.com/alterasc/MicroscopicContentExpansion)
 - Love every feature of it!
