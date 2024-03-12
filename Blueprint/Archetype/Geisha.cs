@@ -69,7 +69,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetIcon(icon)
               .AddContextStatBonus(StatType.SkillKnowledgeWorld, ContextValues.Rank())
               .AddContextStatBonus(StatType.SkillPersuasion, ContextValues.Rank())
-              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.BardClass.ToString() }).WithDiv2Progression())
+              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.BardClass.ToString() }, min: 2).WithDiv2Progression())
               .SetReapplyOnLevelUp(true)
               .Configure();
         }

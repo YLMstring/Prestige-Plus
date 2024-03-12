@@ -77,6 +77,7 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetIcon(icon)
                 .AddComponent(fx)
                 .SetRange(AbilityRange.Long)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.BreathWeapon)
                 .SetType(AbilityType.Supernatural)
                 .AddSpellDescriptorComponent(SpellDescriptor.Sonic)
                 .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.BardClass.ToString() }))
