@@ -24,6 +24,8 @@ using Kingmaker.Designers;
 using Kingmaker.Utility;
 using Kingmaker.UnitLogic.Parts;
 using static Pathfinding.Util.RetainedGizmos;
+using Kingmaker.UnitLogic.Commands.Base;
+using Kingmaker.UnitLogic.Commands;
 
 namespace PrestigePlus.CustomComponent.Archetype
 {
@@ -36,12 +38,12 @@ namespace PrestigePlus.CustomComponent.Archetype
 
         public override void OnDeactivate()
         {
-            //Data.cat.Clear();
+            Data.cat.Clear();
         }
 
         void IRulebookHandler<RuleAttackRoll>.OnEventAboutToTrigger(RuleAttackRoll evt)
         {
-            if (Data.cat.Contains(evt.Target))
+            if (IsShadow() && Data.cat.Contains(evt.Target))
             {
                 int chance = 20;
                 if (Owner.HasFact(FeatureRefs.PowerfulShadows.Reference))
@@ -61,7 +63,7 @@ namespace PrestigePlus.CustomComponent.Archetype
         }
         void IRulebookHandler<RuleAttackRoll>.OnEventDidTrigger(RuleAttackRoll evt)
         {
-            if (evt.IsHit && !Data.cat.Contains(evt.Target))
+            if (IsShadow() && evt.IsHit && !Data.cat.Contains(evt.Target))
             {
                 int dc = Owner.Stats.Intelligence.Bonus + 20;
                 bool pass = Owner.Context.TriggerRule(new RuleSavingThrow(evt.Target, SavingThrowType.Will, dc)).Success;
@@ -71,6 +73,11 @@ namespace PrestigePlus.CustomComponent.Archetype
                     UIUtility.SendWarning(evt.Target.CharacterName + " recognizes the illusion.");
                 }
             }
+        }
+
+        private bool IsShadow()
+        {
+            return Owner.GetAllCommands().Any((UnitCommand command) => command is UnitAttack att && att.ForceFullAttack);
         }
         public class ComponentData
         {

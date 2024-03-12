@@ -189,7 +189,6 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(UnfetteredShadowsDisplayName)
               .SetDescription(UnfetteredShadowsDescription)
               .SetIcon(icon)
-              .AddComponent<AnkouShadowPenalty>()
               .SetStacking(Kingmaker.UnitLogic.Buffs.Blueprints.StackingType.Rank)
               .SetRanks(10)
               .Configure();
@@ -211,6 +210,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(UnfetteredShadowsDisplayName)
               .SetDescription(UnfetteredShadowsDescription)
               .SetIcon(icon2)
+              .AddComponent<AnkouShadowPenalty>()
               .AddFacts(new() { ability2 })
               .Configure();
 
