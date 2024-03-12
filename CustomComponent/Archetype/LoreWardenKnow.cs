@@ -1,8 +1,10 @@
 ﻿using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules;
+using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Buffs.Components;
 using System;
 using System.Collections.Generic;
@@ -22,6 +24,7 @@ namespace PrestigePlus.CustomComponent.Archetype
             {
                 bonus = 3;
             }
+            if (Owner.HasFact(MightyAdvisor)) { bonus *= 2; }
             evt.AddModifier(bonus, Fact, Kingmaker.Enums.ModifierDescriptor.Insight);
         }
 
@@ -33,6 +36,7 @@ namespace PrestigePlus.CustomComponent.Archetype
             {
                 bonus = 3;
             }
+            if (Owner.HasFact(MightyAdvisor)) { bonus *= 2; }
             evt.AddTemporaryModifier(evt.Initiator.Stats.AdditionalDamage.AddModifier(bonus, Runtime, Kingmaker.Enums.ModifierDescriptor.Insight));
         }
 
@@ -50,6 +54,8 @@ namespace PrestigePlus.CustomComponent.Archetype
             }
             evt.AddModifier(bonus, Fact, Kingmaker.Enums.ModifierDescriptor.Insight);
         }
+
+        public BlueprintFeature MightyAdvisor;
 
         void IRulebookHandler<RuleCalculateAttackBonus>.OnEventDidTrigger(RuleCalculateAttackBonus evt)
         {

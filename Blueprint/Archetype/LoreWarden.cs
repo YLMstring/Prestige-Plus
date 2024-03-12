@@ -201,7 +201,7 @@ namespace PrestigePlus.Blueprint.Archetype
              .SetDisplayName(KnowThyDisplayName)
              .SetDescription(KnowThyDescription)
              .SetIcon(icon)
-             .AddComponent<LoreWardenKnow>()
+             .AddComponent<LoreWardenKnow>(c => { c.MightyAdvisor = FeatureRefs.MightyAdvisorFeature.Reference; })
              .AddUniqueBuff()
              .Configure();
 
