@@ -2259,65 +2259,65 @@
   {
     "Key": "PPbookThassilonianAbjuration.Name",
     "ProcessTemplates": false,
-    "enGB": "ThassilonianAbjuration"
+    "enGB": "Thassilonian Abjuration"
   },
   {
     "Key": "PPbookThassilonianAbjuration.Description",
-    "enGB": "ThassilonianAbjuration"
+    "enGB": "Thassilonian Abjuration"
   },
   {
     "Key": "PPbookThassilonianConjuration.Name",
     "ProcessTemplates": false,
-    "enGB": "ThassilonianConjuration"
+    "enGB": "Thassilonian Conjuration"
   },
   {
     "Key": "PPbookThassilonianConjuration.Description",
-    "enGB": "ThassilonianConjuration"
+    "enGB": "Thassilonian Conjuration"
   },
   {
     "Key": "PPbookThassilonianEnchantment.Name",
     "ProcessTemplates": false,
-    "enGB": "ThassilonianEnchantment"
+    "enGB": "Thassilonian Enchantment"
   },
   {
     "Key": "PPbookThassilonianEnchantment.Description",
-    "enGB": "ThassilonianEnchantment"
+    "enGB": "Thassilonian Enchantment"
   },
   {
     "Key": "PPbookThassilonianEvocation.Name",
     "ProcessTemplates": false,
-    "enGB": "ThassilonianEvocation"
+    "enGB": "Thassilonian Evocation"
   },
   {
     "Key": "PPbookThassilonianEvocation.Description",
-    "enGB": "ThassilonianEvocation"
+    "enGB": "Thassilonian Evocation"
   },
   {
     "Key": "PPbookThassilonianIllusion.Name",
     "ProcessTemplates": false,
-    "enGB": "ThassilonianIllusion"
+    "enGB": "Thassilonian Illusion"
   },
   {
     "Key": "PPbookThassilonianIllusion.Description",
-    "enGB": "ThassilonianIllusion"
+    "enGB": "Thassilonian Illusion"
   },
   {
     "Key": "PPbookThassilonianNecromancy.Name",
     "ProcessTemplates": false,
-    "enGB": "ThassilonianNecromancy"
+    "enGB": "Thassilonian Necromancy"
   },
   {
     "Key": "PPbookThassilonianNecromancy.Description",
-    "enGB": "ThassilonianNecromancy"
+    "enGB": "Thassilonian Necromancy"
   },
   {
     "Key": "PPbookThassilonianTransmutation.Name",
     "ProcessTemplates": false,
-    "enGB": "ThassilonianTransmutation"
+    "enGB": "Thassilonian Transmutation"
   },
   {
     "Key": "PPbookThassilonianTransmutation.Description",
-    "enGB": "ThassilonianTransmutation"
+    "enGB": "Thassilonian Transmutation"
   },
   {
     "Key": "PPbookUnletteredArcanist.Name",
@@ -2412,11 +2412,11 @@
   {
     "Key": "PPbookSwornOfTheEldest.Name",
     "ProcessTemplates": false,
-    "enGB": "Sworn Of TheEldest"
+    "enGB": "Sworn Of The Eldest"
   },
   {
     "Key": "PPbookSwornOfTheEldest.Description",
-    "enGB": "Sworn Of TheEldest"
+    "enGB": "Sworn Of The Eldest"
   },
   {
     "Key": "PPbookArrowsongMinstrel.Name",
