@@ -45,7 +45,6 @@ namespace PrestigePlus.CustomAction.ClassRelated
             var image = caster.Get<UnitPartMirrorImage>();
             if (image == null) yield break;
             GameHelper.ApplyBuff(caster, CooldownBuff, new Rounds?(1.Rounds()));
-            GameHelper.ApplyBuff(caster, KeepBuff, new Rounds?(1.Rounds()));
             int rank = caster.GetFact(CooldownBuff).GetRank();
             if (image.MechanicsImages.Count >= rank)
             {
@@ -57,10 +56,9 @@ namespace PrestigePlus.CustomAction.ClassRelated
         }
         public override void Cleanup(AbilityExecutionContext context)
         {
-            GameHelper.RemoveBuff(context.MaybeCaster, KeepBuff);
+
         }
 
         public BlueprintBuff CooldownBuff;
-        public BlueprintBuff KeepBuff;
     }
 }

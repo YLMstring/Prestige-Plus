@@ -172,9 +172,6 @@ namespace PrestigePlus.Blueprint.Archetype
 
         private const string UnfetteredShadowsBuff2 = "AnkouShadow.UnfetteredShadowsBuff2";
         public static readonly string UnfetteredShadowsBuff2Guid = "{F9E113CE-6A99-4D51-966D-F2F2AACB4F45}";
-
-        private const string UnfetteredShadowsBuff3 = "AnkouShadow.UnfetteredShadowsBuff3";
-        public static readonly string UnfetteredShadowsBuff3Guid = "{51854631-E6FC-4FBC-8CA1-2B0636E232B1}";
         public static BlueprintFeature UnfetteredShadowsFeat()
         {
             var icon = AbilityRefs.FalseLifeGreater.Reference.Get().Icon;
@@ -188,24 +185,18 @@ namespace PrestigePlus.Blueprint.Archetype
                         .IncreaseByStat(Kingmaker.EntitySystem.Stats.StatType.Intelligence))
                 .Configure();
 
-            var buff3 = BuffConfigurator.New(UnfetteredShadowsBuff3, UnfetteredShadowsBuff3Guid)
-              .SetDisplayName(UnfetteredShadowsDisplayName)
-              .SetDescription(UnfetteredShadowsDescription)
-              .SetIcon(icon)
-              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-              .Configure();
-
             var buff2 = BuffConfigurator.New(UnfetteredShadowsBuff2, UnfetteredShadowsBuff2Guid)
               .SetDisplayName(UnfetteredShadowsDisplayName)
               .SetDescription(UnfetteredShadowsDescription)
               .SetIcon(icon)
+              .AddComponent<AnkouShadowPenalty>()
               .SetStacking(Kingmaker.UnitLogic.Buffs.Blueprints.StackingType.Rank)
               .SetRanks(10)
               .Configure();
 
             var ability2 = AbilityConfigurator.New(UnfetteredShadowsAblity2, UnfetteredShadowsAblity2Guid)
                 .AllowTargeting(false, true, false, false)
-                .AddComponent<AnkouAttacks>(c => { c.CooldownBuff = buff2; c.KeepBuff = buff3; })
+                .AddComponent<AnkouAttacks>(c => { c.CooldownBuff = buff2; })
                 .SetDisplayName(UnfetteredShadowsDisplayName)
                 .SetDescription(UnfetteredShadowsDescription)
                 .SetIcon(icon)
@@ -220,7 +211,6 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(UnfetteredShadowsDisplayName)
               .SetDescription(UnfetteredShadowsDescription)
               .SetIcon(icon2)
-              .AddComponent<AnkouShadowPenalty>(c => { c.KeepBuff = buff3; })
               .AddFacts(new() { ability2 })
               .Configure();
 

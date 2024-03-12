@@ -24,7 +24,6 @@ using Kingmaker.Designers;
 using Kingmaker.Utility;
 using Kingmaker.UnitLogic.Parts;
 using static Pathfinding.Util.RetainedGizmos;
-using Kingmaker.UnitLogic.Buffs.Blueprints;
 
 namespace PrestigePlus.CustomComponent.Archetype
 {
@@ -37,12 +36,12 @@ namespace PrestigePlus.CustomComponent.Archetype
 
         public override void OnDeactivate()
         {
-            Data.cat.Clear();
+            //Data.cat.Clear();
         }
 
         void IRulebookHandler<RuleAttackRoll>.OnEventAboutToTrigger(RuleAttackRoll evt)
         {
-            if (Owner.HasFact(KeepBuff) && Data.cat.Contains(evt.Target))
+            if (Data.cat.Contains(evt.Target))
             {
                 int chance = 20;
                 if (Owner.HasFact(FeatureRefs.PowerfulShadows.Reference))
@@ -62,7 +61,7 @@ namespace PrestigePlus.CustomComponent.Archetype
         }
         void IRulebookHandler<RuleAttackRoll>.OnEventDidTrigger(RuleAttackRoll evt)
         {
-            if (Owner.HasFact(KeepBuff) && evt.IsHit && !Data.cat.Contains(evt.Target))
+            if (evt.IsHit && !Data.cat.Contains(evt.Target))
             {
                 int dc = Owner.Stats.Intelligence.Bonus + 20;
                 bool pass = Owner.Context.TriggerRule(new RuleSavingThrow(evt.Target, SavingThrowType.Will, dc)).Success;
@@ -77,7 +76,5 @@ namespace PrestigePlus.CustomComponent.Archetype
         {
             public List<UnitEntityData> cat = new() { };
         }
-
-        public BlueprintBuff KeepBuff;
     }
 }
