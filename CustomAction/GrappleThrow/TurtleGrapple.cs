@@ -90,7 +90,7 @@ namespace PrestigePlus.CustomAction.GrappleThrow
 
         void IRulebookHandler<RuleAttackRoll>.OnEventDidTrigger(RuleAttackRoll evt)
         {
-            if (evt.IsHit) { return; }
+            if (evt.IsHit || evt.AttackType == AttackType.Ranged || evt.AttackType == AttackType.RangedTouch) { return; }
             TurtleAction(evt);
         }
 
