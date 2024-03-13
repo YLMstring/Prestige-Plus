@@ -3182,7 +3182,7 @@
   {
     "Key": "AsavirJanni.Description",
     "enGB": "At 10th level, an asavir gains Perfect Strike as a bonus feat. Both the asavir and her mount gain a +1 luck bonus on all saving throws.",
-    "ruRU": "На 10 уровне скакун асавира получает черту Идеальный удар, даже если не соответствует её требованиям. Асавир и его скакун получают бонус удачи +1 ко всем спасброскам.",
+    "ruRU": "На 10 уровне асавир получает черту Идеальный удар, даже если не соответствует её требованиям. Асавир и его скакун получают бонус удачи +1 ко всем спасброскам.",
     "zhCN": "10级时，亚萨维尔获得极意击作为额外专长。她和她的坐骑的所有豁免获得+1运气加值。"
   },
 
@@ -11983,352 +11983,416 @@
     "Key": "GoldenLegionnaire.Name",
     "ProcessTemplates": false,
     "enGB": "Golden Legionnaire",
+	"ruRU": "Золотой легионер",
     "zhCN": "黄金军士"
   },
   {
     "Key": "GoldenLegionnaire.Description",
     "enGB": "Above all else, the Golden Legion’s duty is domestic security; the Legion extensively trains its soldiers in defensive tactics and strategies that ensure the protection of both Andorens and other members of the Legion. That said, a typical Golden Legionnaire exhibits audacious courage and unflinchingly puts himself between those he protects and possible threats. An ambush or unprovoked attack incenses a Golden Legionnaire and propels him to acts of selfless bravery and daring prowess. Even when they are hundreds of miles away from their homes, Golden Legionnaires use their skills and combat prowess to protect their allies and Andoran’s ideals of equality, freedom, and justice.",
+	"ruRU": "Прежде всего, обязанностью Золотого легиона является внутренняя безопасность; Легион тщательно обучает своих солдат оборонительной тактике и стратегии, которые обеспечивают защиту как Андорана, так и других членов легиона. Тем не менее, типичный золотой легионер демонстрирует дерзкую храбрость и непоколебимо встает между теми, кого он защищает, и возможными угрозами. Засада или неспровоцированное нападение приводит золотого легионера в ярость и побуждает его к самоотверженной храбрости и смелому проявлению доблести. Даже находясь за сотни миль от своих домов, золотые легионеры используют свои навыки и боевое мастерство, чтобы защитить своих союзников и андоранские идеалы равенства, свободы и справедливости.",
     "zhCN": "黄金军团最重要的职责是维护国家安全；军团主要训练士兵的防御战术及策略，以确保对安多安人以及其他军人的保护。但不管怎么说，典型的黄金军士总是会展现勇气和决心，毫不犹豫地将自己置于被保护者和可能面临的威胁之间。埋伏或无端攻击会激怒黄金军士，令他以行动展现自己的无私和勇敢。即便是距离家园数百里的时候，黄金军士也会发挥他们的技能和武勇，来保护他们的盟友，来保护安多安人平等、自由和正义的理想。"
   },
   {
     "Key": "GoldenLegionnaireAuthoritativeCommand.Name",
     "ProcessTemplates": false,
     "enGB": "Authoritative Command",
+	"ruRU": "Авторитетная команда",
     "zhCN": "权威指令"
   },
   {
     "Key": "GoldenLegionnaireAuthoritativeCommand.Description",
     "enGB": "As a move action, a Golden Legionnaire can issue orders to allies who are within 30 feet and can see, hear, and understand him. As long as at least one selected ally obeys the Golden Legionnaire’s orders during that round, the Golden Legionnaire and each compliant ally gain a +1 competence bonus on attack rolls for 1 round. Affected allies are not under any obligation to obey these commands, but do not gain the bonuses if they ignore the commands.",
+	"ruRU": "Сопутствующим действием золотой легионер моет раздавать приказы союзникам, которые находятся в радиусе 30 футов и могут видеть, слышать и понимать его язык. Пока хотя бы один выбранный союзник подчиняется приказам золотого легионера в течение этого раунда, Золотой легионер и каждый послушный союзник получают бонус мастерства +1 к броскам на попадание на 1 раунд.",
     "zhCN": "以一个移动动作，黄金军士可以对30尺内能听见、看见并理解他的盟友发号施令。只要至少一名盟友在该轮中服从黄金军士的指令，黄金军士和每一名遵从命令的盟友就能在1轮内的攻击检定上获得+1表现加值。受影响的盟友不一定要服从这些指令，但是若他们忽略指令，就不会获得加值。"
   },
   {
     "Key": "GoldenLegionnaireAuthoritativeCommand2.Name",
     "ProcessTemplates": false,
     "enGB": "Authoritative Command",
+	"ruRU": "Авторитетная команда",
     "zhCN": "权威指令"
   },
   {
     "Key": "GoldenLegionnaireAuthoritativeCommand2.Description",
     "enGB": "At 2nd level, this bonus applies to weapon damage rolls.",
+	"ruRU": "Начиная со 2 уровня этот бонус также применяется к броскам на урон.",
     "zhCN": "2级起，将该加值加到武器伤害骰上。"
   },
   {
     "Key": "GoldenLegionnaireAuthoritativeCommand3.Name",
     "ProcessTemplates": false,
     "enGB": "Authoritative Command",
+	"ruRU": "Авторитетная команда",
     "zhCN": "权威指令"
   },
   {
     "Key": "GoldenLegionnaireAuthoritativeCommand3.Description",
     "enGB": "At 3rd level, this bonus applies to saving throws.",
+	"ruRU": "Начиная с 3 уровня этот бонус также применяется к спасброскам.",
     "zhCN": "3级起，将该加值加到豁免检定上。"
   },
   {
     "Key": "GoldenLegionnaireAuthoritativeCommand4.Name",
     "ProcessTemplates": false,
     "enGB": "Authoritative Command",
+	"ruRU": "Авторитетная команда",
     "zhCN": "权威指令"
   },
   {
     "Key": "GoldenLegionnaireAuthoritativeCommand4.Description",
     "enGB": "At 4th level, this bonus applies to Armor Class.",
+	"ruRU": "Начиная с 4 уровня этот бонус также применяется к защите.",
     "zhCN": "4级起，将该加值加到防御等级上。"
   },
   {
     "Key": "GoldenLegionnaireAuthoritativeCommand5.Name",
     "ProcessTemplates": false,
     "enGB": "Authoritative Command",
+	"ruRU": "Авторитетная команда",
     "zhCN": "权威指令"
   },
   {
     "Key": "GoldenLegionnaireAuthoritativeCommand5.Description",
     "enGB": "At 6th level, this bonus increases to +2.",
+	"ruRU": "Начиная с 6 уровня бонус увеличивается до +2.",
     "zhCN": "6级起，该加值提升至+2。"
   },
   {
     "Key": "GoldenLegionnaireAuthoritativeCommandSwift.Name",
     "ProcessTemplates": false,
     "enGB": "Authoritative Command (Swift)",
+	"ruRU": "Авторитетная команда (Быстрая)",
     "zhCN": "权威指令（迅捷）"
   },
   {
     "Key": "GoldenLegionnaireAuthoritativeCommandSwift.Description",
     "enGB": "At 8th level, a Golden Legionnaire can use authoritative command as a swift action.",
+	"ruRU": "Начиная с 8 уровня золотой легионер может раздавать приказы при помощи быстрого действия.",
     "zhCN": "8级起，黄金军士可以用迅捷动作使用权威指令。"
   },
   {
     "Key": "GoldenLegionnaireDefyDanger.Name",
     "ProcessTemplates": false,
     "enGB": "Defy Danger",
+	"ruRU": "Отрицание опасности",
     "zhCN": "抵抗危险"
   },
   {
     "Key": "GoldenLegionnaireDefyDanger.Description",
     "enGB": "A Golden Legionnaire gains a +2 bonus on saving throws against demons. At 5th level and again at 9th level, this bonus increases by +2.",
+	"ruRU": "Золотой легионер получает бонус +2 к спасброскам против демонов. На 5 и 9 уровнях этот бонус увеличивается на +2.",
     "zhCN": "黄金军士在对抗恶魔的豁免检定上获得+2加值。5级和9级时，该加值额外提升2点。"
   },
   {
     "Key": "GoldenLegionnaireUnitedDefense.Name",
     "ProcessTemplates": false,
     "enGB": "United Defense",
+	"ruRU": "Объединенная защита",
     "zhCN": "联合防御"
   },
   {
     "Key": "GoldenLegionnaireUnitedDefense.Description",
     "enGB": "At 2nd level, a Golden Legionnaire can select an adjacent ally as a swift action. The Golden Legionnaire takes a –1 penalty to his Armor Class and the selected ally receives a +2 dodge bonus to his Armor Class for 1 round. At 6th level and again at 10th level, the Golden Legionnaire’s AC takes an additional –1 penalty and the dodge bonus increases by an additional 2.",
+	"ruRU": "Начиная со 2 уровня золотой легионер, быстрым действием, может выбрать стоящего рядом с ним союзника. Легионер получает штраф -1 к защите, а выбранный союзник получает бонус уклонения +2 к защите на 1 раунд. На 6 и 10 уровнях штраф к защите увеличивается на -1, а бонус уклонения увеличивается на 2.",
     "zhCN": "2级起，黄金军士可以用迅捷动作选择一名邻接盟友。黄金军士在AC上承受-1减值，该盟友在AC上获得+2闪避加值，持续1轮。在6级和10级时，黄金军士的AC承受额外的-1减值，并提供额外的+2闪避加值。"
   },
   {
     "Key": "GoldenLegionnaireAlliedRetribution.Name",
     "ProcessTemplates": false,
     "enGB": "Allied Retribution",
+	"ruRU": "Возмездие союзника",
     "zhCN": "结盟惩戒"
   },
   {
     "Key": "GoldenLegionnaireAlliedRetribution.Description",
     "enGB": "At 3rd level, if a Golden Legionnaire sees a creature within 60 feet of him attack an ally or any friendly creature, including himself, he can select that attacker as a designated adversary for a number of rounds equal to his class level. When a Golden Legionnaire does this, he gains a +1 morale bonus on attack rolls and weapon damage rolls against the designated adversary. At 7th level, the morale bonus increases to +2.",
+	"ruRU": "Начиная с 3 уровня, если золотой легионер видит как враждебное существо в радиусе 60 футов от него атакует его союзника или любое союзное существо, включаю его самого, то он может назначить это существо своим врагом на количество раундов, равное его уровню легионера. Золотой легионер получает бонус боевого духа +1 к броскам на попадание и урон против этого существа. На 7 уровне бонус увеличивается до +2.",
     "zhCN": "3级起，若黄金军士看到一名在其60尺内的生物攻击了一名盟友或友善生物，包括她自己，她可以指定该生物开展专项行动，持续每职业等级1轮。当黄金军士如此做时，她对专项行动目标的攻击掷骰和武器伤害掷骰上获得+1士气加值。7级时，士气加值提升至+2。"
   },
   {
     "Key": "GoldenLegionnairePreemptiveStrike.Name",
     "ProcessTemplates": false,
     "enGB": "Preemptive Strike",
+	"ruRU": "Превентивный удар",
     "zhCN": "先发制人"
   },
   {
     "Key": "GoldenLegionnairePreemptiveStrike.Description",
     "enGB": "At 7th level, a Golden Legionnaire can make an attack of opportunity against a foe that moves into or within any space the Golden Legionnaire threatens, regardless of whether or not this movement would normally provoke an attack of opportunity. He can use this ability against each opponent once per day, and no more than once per round.",
+	"ruRU": "Начиная с 7 уровня золотой легионер может совершать внеочередную атаку против противника который входит в его зону досягаемости или передвигается внутри нее, независимо от того, может ли это движение обычно провоцировать внеочередные атаки. Он может применять это способность против каждого врага 1 раз в день и не чаще раза в раунд.",
     "zhCN": "7级起，黄金军士可以对进入或在其威胁区域内移动的敌人进行一次借机攻击，无论这一移动通常是否会引发借机攻击。每天对特定对手只能使用一次，且每轮只能使用一次。"
   },
   {
     "Key": "GoldenLegionnaireRetaliate.Name",
     "ProcessTemplates": false,
     "enGB": "Retaliate",
+	"ruRU": "Ответный удар",
     "zhCN": "后发制人"
   },
   {
     "Key": "GoldenLegionnaireRetaliate.Description",
     "enGB": "At 9th level, once per round when a creature threatened by a Golden Legionnaire attacks and hits an ally adjacent to the Golden Legionnaire, he can make an attack of opportunity against that creature.",
+	"ruRU": "Начиная с 9 уровня, раз за раунд, когда существо, которому угрожает золотой легионер, атакует и попадает по стоящему рядом с золотым легионером союзнику, легионер может совершить внеочередую атаку по этому существу.",
     "zhCN": "9级起，每轮一次，当一名被黄金军士威胁的生物攻击并命中了一名邻接于黄金军士的盟友，黄金军士可以对该生物进行一次借机攻击。"
   },
   {
     "Key": "Geisha.Name",
     "ProcessTemplates": false,
     "enGB": "Geisha",
+	"ruRU": "Гейша",
     "zhCN": "艺伎"
   },
   {
     "Key": "Geisha.Description",
     "enGB": "In some cultures, the professional entertainer is a prestigious role. Specially trained entertainers called geisha are praised for their appearance and skill at conversation, music, dancing, singing, poetry, and calligraphy. A geisha provides social intimacy and status but not physical intimacy.",
+	"ruRU": "В некоторых культурах работа профессионального артиста является престижной. Специально обученных артистов, называемых гейшами, хвалят за их внешний вид и умения вести беседу, заниматься музыкой, танцами, пением, поэзией и каллиграфией. Гейша обеспечивает социальную близость и статус, но не физическую близость.",
     "zhCN": "在某些文化中，这种专业艺人享有盛誉。经过特殊训练的艺人（艺伎）因其外表谈吐，在音乐、舞蹈、歌唱、诗歌和书法方面的技巧而广受称赞。艺伎提供亲密的社交和高端服务，但并不包括身体接触。"
   },
   {
     "Key": "GeishaTeaCeremony.Name",
     "ProcessTemplates": false,
     "enGB": "Tea Ceremony (inspire courage)",
+	"ruRU": "Чайная церемония (Песнь отваги)",
     "zhCN": "茶会（激发勇气）"
   },
   {
     "Key": "GeishaTeaCeremony.Description",
     "enGB": "By preparing an elaborate tea ceremony, a geisha may affect her allies with inspire courage, inspire competence, inspire greatness, or inspire heroics. The ceremony’s effects last 10 minutes. The geisha must spend 4 rounds of bardic performance for each creature to be affected.",
+	"ruRU": "Готовя сложную чайную церемонию, гейша может повлиять на своих союзников, как если бы они оказались под воздействием одного из следующих эффектов: Песнь отваги, Песнь мастерства, Песнь величия или Песнь героизма. Эффекты церемонии длятся 10 минут. Гейша должна потратить 4 раунда выступления барда, чтобы каждое существо оказалось под действием этой способности.",
     "zhCN": "通过精心准备一场茶会，艺伎可以对盟友施加激发勇气、提振技能、提振战力或激发豪情的效果。茶会的效果持续 10 分钟。艺伎必须为每个受影响的生物花费 4 轮吟游表演。"
   },
   {
     "Key": "GeishaTeaCeremony2.Name",
     "ProcessTemplates": false,
     "enGB": "Tea Ceremony (inspire competence)",
+	"ruRU": "Чайная церемония (Песнь мастерства)",
     "zhCN": "茶会（提振技能）"
   },
   {
     "Key": "GeishaTeaCeremony2.Description",
     "enGB": "By preparing an elaborate tea ceremony, a geisha may affect her allies with inspire courage, inspire competence, inspire greatness, or inspire heroics. The ceremony’s effects last 10 minutes. The geisha must spend 4 rounds of bardic performance for each creature to be affected.",
+	"ruRU": "Готовя сложную чайную церемонию, гейша может повлиять на своих союзников, как если бы они оказались под воздействием одного из следующих эффектов: Песнь отваги, Песнь мастерства, Песнь величия или Песнь героизма. Эффекты церемонии длятся 10 минут. Гейша должна потратить 4 раунда выступления барда, чтобы каждое существо оказалось под действием этой способности.",
     "zhCN": "通过精心准备一场茶会，艺伎可以对盟友施加激发勇气、提振技能、提振战力或激发豪情的效果。茶会的效果持续 10 分钟。艺伎必须为每个受影响的生物花费 4 轮吟游表演。"
   },
   {
     "Key": "GeishaTeaCeremony3.Name",
     "ProcessTemplates": false,
     "enGB": "Tea Ceremony (inspire greatness)",
+	"ruRU": "Чайная церемония (Песнь величия)",
     "zhCN": "茶会（提振战力）"
   },
   {
     "Key": "GeishaTeaCeremony3.Description",
     "enGB": "By preparing an elaborate tea ceremony, a geisha may affect her allies with inspire courage, inspire competence, inspire greatness, or inspire heroics. The ceremony’s effects last 10 minutes. The geisha must spend 4 rounds of bardic performance for each creature to be affected.",
+	"ruRU": "Готовя сложную чайную церемонию, гейша может повлиять на своих союзников, как если бы они оказались под воздействием одного из следующих эффектов: Песнь отваги, Песнь мастерства, Песнь величия или Песнь героизма. Эффекты церемонии длятся 10 минут. Гейша должна потратить 4 раунда выступления барда, чтобы каждое существо оказалось под действием этой способности.",
     "zhCN": "通过精心准备一场茶会，艺伎可以对盟友施加激发勇气、提振技能、提振战力或激发豪情的效果。茶会的效果持续 10 分钟。艺伎必须为每个受影响的生物花费 4 轮吟游表演。"
   },
   {
     "Key": "GeishaTeaCeremony4.Name",
     "ProcessTemplates": false,
     "enGB": "Tea Ceremony (inspire heroics)",
+	"ruRU": "Чайная церемония (Песнь героизма)",
     "zhCN": "茶会（激发豪情）"
   },
   {
     "Key": "GeishaTeaCeremony4.Description",
     "enGB": "By preparing an elaborate tea ceremony, a geisha may affect her allies with inspire courage, inspire competence, inspire greatness, or inspire heroics. The ceremony’s effects last 10 minutes. The geisha must spend 4 rounds of bardic performance for each creature to be affected.",
+	"ruRU": "Готовя сложную чайную церемонию, гейша может повлиять на своих союзников, как если бы они оказались под воздействием одного из следующих эффектов: Песнь отваги, Песнь мастерства, Песнь величия или Песнь героизма. Эффекты церемонии длятся 10 минут. Гейша должна потратить 4 раунда выступления барда, чтобы каждое существо оказалось под действием этой способности.",
     "zhCN": "通过精心准备一场茶会，艺伎可以对盟友施加激发勇气、提振技能、提振战力或激发豪情的效果。茶会的效果持续 10 分钟。艺伎必须为每个受影响的生物花费 4 轮吟游表演。"
   },
   {
     "Key": "GeishaGeishaKnowledge.Name",
     "ProcessTemplates": false,
     "enGB": "Geisha Knowledge",
+	"ruRU": "Эрудиция гейши",
     "zhCN": "艺伎知识"
   },
   {
     "Key": "GeishaGeishaKnowledge.Description",
     "enGB": "A geisha adds half her class level (minimum 1) on Knowledge (world) checks and Persuasion checks.",
+	"ruRU": "Гейша получает бонус, равный 1/2 её классового уровня (минимум +1) к проверкам навыков Знание (мир) и Убеждение.",
     "zhCN": "艺伎在她的知识（世界）和说服检定上得到相当于其等级一半的加值（最少为1）。"
   },
   {
     "Key": "SoundStriker.Name",
     "ProcessTemplates": false,
     "enGB": "Sound Striker",
+	"ruRU": "Звуковой боец",
     "zhCN": "音爆使"
   },
   {
     "Key": "SoundStriker.Description",
     "enGB": "They say that words can cut deeper than any blade, and the sound striker proves this true. Using music and words as a weapon, he can focus his performances into a deadly delivery.",
+	"ruRU": "Говорят, что слова могут ранить глубже, чем любое лезвие, и звуковой боец доказывает это. Используя музыку и слова в качестве оружия, он может превратить свои выступления в смертельные.",
     "zhCN": "常言道，言语比利剑更伤人，音爆使能够证明此话千真万确。以音乐与言辞为剑，他那专注的表演最适合给人送终。"
   },
   {
     "Key": "SoundStrikerWordstrike.Name",
     "ProcessTemplates": false,
     "enGB": "Wordstrike",
+	"ruRU": "Словесный удар",
     "zhCN": "真言击"
   },
   {
     "Key": "SoundStrikerWordstrike.Description",
     "enGB": "At 3rd level, the sound striker bard can spend 1 round of bardic performance as a standard action to direct a burst of sonically charged words at a creature or object. This performance deals 1d4 points of damage plus the bard’s level to an object, or half this damage to a living creature. The performance cannot be performed more quickly than a standard action.",
+	"ruRU": "Начиная с 3 уровня звуковой боец может потратить 1 раунд выступления барда, чтобы обычным действием направить заряженных силой звука слов в существо или объект. Это выступление наносит 1d4 + уровень барда урона объектам и половину этого урона живым существам. Это выступление не может выполняться быстрее обычного действия.",
     "zhCN": "3级起，音爆使可以用一个标准动作，花费1轮的吟游表演发出一串充满音波能量的真言。此表演会对物品造成1d4+吟游诗人等级的音波伤害，对活物的伤害减半。该表演不能比以标准动作更快的速度进行。"
   },
   {
     "Key": "SoundStrikerWeirdWords.Name",
     "ProcessTemplates": false,
     "enGB": "Weird Words",
+	"ruRU": "Жуткие слова",
     "zhCN": "诡言击"
   },
   {
     "Key": "SoundStrikerWeirdWords.Description",
     "enGB": "At 6th level the bard can start a performance that is always a standard action to speak up to one word per 4 bard levels laden with sonic energy. Each word deals 4d6 points of sonic damage as a ranged touch attack with a range of 30 feet. The bard adds his charisma modifier on damage rolls with weird words. Multiple words that strike the same target stack into a single powerful attack, applying energy resistance and bonuses on damage rolls only once. Each word costs 1 round of bardic performance.",
+	"ruRU": "Начиная с 6 уровня звуковой боец может, при помощи обычного действия, произнести по 1 наполненному энергией звука слову за каждые 4 уровня барда. Такое слово является дистанционной атакой касанием с дальностью в 30 футов и наносит 4d6 урона звуком. Бард добавляет свой модификатор Харизмы к броскам на урон этих слов. Несколько слов, поражающих одну и ту же цель, складываются в одну мощную атаку. Устойчивость к энергии и бонусы к урону применяются для такой атаки только 1 раз. Каждое слово тратит 1 раунд выступления барда.",
     "zhCN": "6级起，吟游诗人可以开始一种始终为标准动作的表演，每有4个吟游诗人等级，她便能多说出一个充满音波能量的诡言。每个诡言造成4d6点音波伤害，作为一次30尺的远程接触攻击。在诡言击的伤害检定上添加诗人的魅力调整值。攻击同一目标的多个词语会叠加成单次强大的攻击，使得能量抗性和伤害加值仅生效一次。每个诡言消耗1轮吟游诗人表演。"
   },
   {
     "Key": "SoundStrikerWeirdWords2.Name",
     "ProcessTemplates": false,
     "enGB": "Weird Words II",
+	"ruRU": "Жуткие слова II",
     "zhCN": "诡言击II"
   },
   {
     "Key": "SoundStrikerWeirdWords2.Description",
     "enGB": "At 6th level the bard can start a performance that is always a standard action to speak up to one word per 4 bard levels laden with sonic energy. Each word deals 4d6 points of sonic damage as a ranged touch attack with a range of 30 feet. The bard adds his charisma modifier on damage rolls with weird words. Multiple words that strike the same target stack into a single powerful attack, applying energy resistance and bonuses on damage rolls only once. Each word costs 1 round of bardic performance.",
+	"ruRU": "Начиная с 6 уровня звуковой боец может, при помощи обычного действия, произнести по 1 наполненному энергией звука слову за каждые 4 уровня барда. Такое слово является дистанционной атакой касанием с дальностью в 30 футов и наносит 4d6 урона звуком. Бард добавляет свой модификатор Харизмы к броскам на урон этих слов. Несколько слов, поражающих одну и ту же цель, складываются в одну мощную атаку. Устойчивость к энергии и бонусы к урону применяются для такой атаки только 1 раз. Каждое слово тратит 1 раунд выступления барда.",
     "zhCN": "6级起，吟游诗人可以开始一种始终为标准动作的表演，每有4个吟游诗人等级，她便能多说出一个充满音波能量的诡言。每个诡言造成4d6点音波伤害，作为一次30尺的远程接触攻击。在诡言击的伤害检定上添加诗人的魅力调整值。攻击同一目标的多个词语会叠加成单次强大的攻击，使得能量抗性和伤害加值仅生效一次。每个诡言消耗1轮吟游诗人表演。"
   },
   {
     "Key": "SoundStrikerWeirdWords3.Name",
     "ProcessTemplates": false,
     "enGB": "Weird Words III",
+	"ruRU": "Жуткие слова III",
     "zhCN": "诡言击III"
   },
   {
     "Key": "SoundStrikerWeirdWords3.Description",
     "enGB": "At 6th level the bard can start a performance that is always a standard action to speak up to one word per 4 bard levels laden with sonic energy. Each word deals 4d6 points of sonic damage as a ranged touch attack with a range of 30 feet. The bard adds his charisma modifier on damage rolls with weird words. Multiple words that strike the same target stack into a single powerful attack, applying energy resistance and bonuses on damage rolls only once. Each word costs 1 round of bardic performance.",
+	"ruRU": "Начиная с 6 уровня звуковой боец может, при помощи обычного действия, произнести по 1 наполненному энергией звука слову за каждые 4 уровня барда. Такое слово является дистанционной атакой касанием с дальностью в 30 футов и наносит 4d6 урона звуком. Бард добавляет свой модификатор Харизмы к броскам на урон этих слов. Несколько слов, поражающих одну и ту же цель, складываются в одну мощную атаку. Устойчивость к энергии и бонусы к урону применяются для такой атаки только 1 раз. Каждое слово тратит 1 раунд выступления барда.",
     "zhCN": "6级起，吟游诗人可以开始一种始终为标准动作的表演，每有4个吟游诗人等级，她便能多说出一个充满音波能量的诡言。每个诡言造成4d6点音波伤害，作为一次30尺的远程接触攻击。在诡言击的伤害检定上添加诗人的魅力调整值。攻击同一目标的多个词语会叠加成单次强大的攻击，使得能量抗性和伤害加值仅生效一次。每个诡言消耗1轮吟游诗人表演。"
   },
   {
     "Key": "SoundStrikerWeirdWords4.Name",
     "ProcessTemplates": false,
     "enGB": "Weird Words IV",
+	"ruRU": "Жуткие слова IV",
     "zhCN": "诡言击IV"
   },
   {
     "Key": "SoundStrikerWeirdWords4.Description",
     "enGB": "At 6th level the bard can start a performance that is always a standard action to speak up to one word per 4 bard levels laden with sonic energy. Each word deals 4d6 points of sonic damage as a ranged touch attack with a range of 30 feet. The bard adds his charisma modifier on damage rolls with weird words. Multiple words that strike the same target stack into a single powerful attack, applying energy resistance and bonuses on damage rolls only once. Each word costs 1 round of bardic performance.",
+	"ruRU": "Начиная с 6 уровня звуковой боец может, при помощи обычного действия, произнести по 1 наполненному энергией звука слову за каждые 4 уровня барда. Такое слово является дистанционной атакой касанием с дальностью в 30 футов и наносит 4d6 урона звуком. Бард добавляет свой модификатор Харизмы к броскам на урон этих слов. Несколько слов, поражающих одну и ту же цель, складываются в одну мощную атаку. Устойчивость к энергии и бонусы к урону применяются для такой атаки только 1 раз. Каждое слово тратит 1 раунд выступления барда.",
     "zhCN": "6级起，吟游诗人可以开始一种始终为标准动作的表演，每有4个吟游诗人等级，她便能多说出一个充满音波能量的诡言。每个诡言造成4d6点音波伤害，作为一次30尺的远程接触攻击。在诡言击的伤害检定上添加诗人的魅力调整值。攻击同一目标的多个词语会叠加成单次强大的攻击，使得能量抗性和伤害加值仅生效一次。每个诡言消耗1轮吟游诗人表演。"
   },
   {
     "Key": "SoundStrikerWeirdWords5.Name",
     "ProcessTemplates": false,
     "enGB": "Weird Words V",
+	"ruRU": "Жуткие слова V",
     "zhCN": "诡言击V"
   },
   {
     "Key": "SoundStrikerWeirdWords5.Description",
     "enGB": "At 6th level the bard can start a performance that is always a standard action to speak up to one word per 4 bard levels laden with sonic energy. Each word deals 4d6 points of sonic damage as a ranged touch attack with a range of 30 feet. The bard adds his charisma modifier on damage rolls with weird words. Multiple words that strike the same target stack into a single powerful attack, applying energy resistance and bonuses on damage rolls only once. Each word costs 1 round of bardic performance.",
+	"ruRU": "Начиная с 6 уровня звуковой боец может, при помощи обычного действия, произнести по 1 наполненному энергией звука слову за каждые 4 уровня барда. Такое слово является дистанционной атакой касанием с дальностью в 30 футов и наносит 4d6 урона звуком. Бард добавляет свой модификатор Харизмы к броскам на урон этих слов. Несколько слов, поражающих одну и ту же цель, складываются в одну мощную атаку. Устойчивость к энергии и бонусы к урону применяются для такой атаки только 1 раз. Каждое слово тратит 1 раунд выступления барда.",
     "zhCN": "6级起，吟游诗人可以开始一种始终为标准动作的表演，每有4个吟游诗人等级，她便能多说出一个充满音波能量的诡言。每个诡言造成4d6点音波伤害，作为一次30尺的远程接触攻击。在诡言击的伤害检定上添加诗人的魅力调整值。攻击同一目标的多个词语会叠加成单次强大的攻击，使得能量抗性和伤害加值仅生效一次。每个诡言消耗1轮吟游诗人表演。"
   },
   {
     "Key": "AnkouShadow.Name",
     "ProcessTemplates": false,
     "enGB": "Ankou's Shadow",
+	"ruRU": "Тень анку",
     "zhCN": "死魂精之影"
   },
   {
     "Key": "AnkouShadow.Description",
     "enGB": "Ankous are terrifying, winged fey assassins dispatched by the greatest lords of the First World to eliminate rivals. Some mortals emulate ankous to become the perfect assassins; others believe themselves to be ankous incarnated in mortal shells on a deep cover mission. In either case, an ankou’s shadow practices the deadliest skills of the First World’s most feared enforcers.",
+	"ruRU": "Анку — ужасающие крылатые феи-убийцы, посылаемые величайшими лордами Первого мира для уничтожения соперников. Некоторые смертные подражают анку, чтобы стать идеальными убийцами; другие считают себя анку, воплощенными в смертных оболочках и выполняющими миссию под глубокого прикрытия. В любом случае тень анку практикует самые смертоносные навыки самых грозных ассасинов Первого мира.",
     "zhCN": "死魂精是一种可怕的有翼精类刺客，他们被第一世界的至高领主们派去消灭他们的对手。有些凡人通过效仿死魂精来成为完美的刺客；另一些人则相信他们就是死魂精，为了执行一项隐秘任务而化入凡人的躯壳中。无论如何，死魂精之影都身有第一世界最可怕的执刑者所掌握的致命技术。"
   },
   {
     "Key": "AnkouShadowShadowDouble.Name",
     "ProcessTemplates": false,
     "enGB": "Shadow Double",
+	"ruRU": "Теневой двойник",
     "zhCN": "影分身"
   },
   {
     "Key": "AnkouShadowShadowDouble.Description",
     "enGB": "An ankou’s shadow can take a full-round action to create a single, quasi-real, shadowy duplicate. This shadow double remains in his square, mimicking his movements as a single mirror image, except that it lasts until it is destroyed. This ability does not stack with the mirror image spell or with similar abilities, such as the copycat ability of the Trickery domain. He gains one more shadow double at 5th, 10th, and 15th level.",
+	"ruRU": "Тень анку при помощи действия полного раунда может создать теневого двойника. Этот двойник работает как одна из копий создаваемых заклинанием Зеркальное отражение, за исключением того, что она действует пока не будет уничтожена. Эта способность не складывается с заклинанием Зеркальное отражение или похожими способностями. Тень анку получает 1 дополнительного двойника на 5, 10 и 15 уровнях.",
     "zhCN": "死魂精之影可以用一个整轮动作来创造一个接近真实的暗影复制。这个影分身和本体处在同一个方格，并模仿本体的动作，就像单个的镜影一样，但它会持续到被摧毁为止。这个能力不会与镜影术或者其它类似的能力叠加，比如诡术领域的复制幻象。在5级，10级和15级时，他会获得一个额外的影分身。"
   },
   {
     "Key": "AnkouShadowUnfetteredShadows.Name",
     "ProcessTemplates": false,
     "enGB": "Unfettered Shadows",
+	"ruRU": "Неограниченные тени",
     "zhCN": "暗影解封术"
   },
   {
     "Key": "AnkouShadowUnfetteredShadows.Description",
     "enGB": "At 20th level, as a standard action an ankou’s shadow can unfetter all of his shadow doubles for 1 minute. While unfettered, each shadow double can make full-round attacks as if it were the ankou’s shadow without using any of his actions. A creature struck by a shadow double can attempt a Will save (DC 20 + the ankou’s shadow’s Intelligence modifier) each time it takes damage to recognize the illusion. If it succeeds, the target treats all subsequent attacks as 20% real, as the spell shadow conjuration. The ankou’s shadow can use this ability a number of times per day equal to 3 + his Intelligence modifier.",
+	"ruRU": "На 20 уровне тень анку, обычным действием, может отвязать от себя всех своих теневых двойников на 1 минуту. В течение этой минуты каждый двойник может совершать атаки полного раунда, как если бы это была сама тень анку. Существо, по которому попадает теневой двойник, может совершать спасбросок воли (DC = 20 + модификатор Интеллекта тени анку) каждый раз, когда оно получает урон, чтобы распознать иллюзию. Если оно успешно совершит спасбросок, то все последующие атаки двойника наносят ему толь 20% урона. Тень анку может применять это способность 3 + модификатор Интеллекта раз в день.",
     "zhCN": "20级时，以一个标准动作，死魂精之影可以在1分钟内解放他的所有影分身。在解封状态下，每一个阴影分身都可以像死魂精之影一样进行全回合攻击，而且不会消耗死魂精之影的任何动作。被死魂精之影击中的生物每次受到伤害时都可以进行意志豁免（DC为20+死魂精之影的智力调整值）来看穿该幻术效果。如果成功，对于该生物而言所有后续攻击均只有20%的真实度，如同阴影咒法。死魂精之影每天可以使用这个能力的次数等同于3+智力调整值。"
   },
   {
     "Key": "AnkouShadowAnkouVision.Name",
     "ProcessTemplates": false,
     "enGB": "Ankou’s Vision",
+	"ruRU": "Зрение анку",
     "zhCN": "死魂精之视"
   },
   {
     "Key": "AnkouShadowAnkouVision.Description",
     "enGB": "At 7th level, an ankou’s shadow can use see invisibility, as per the spell, as a swift action for 1 minute per level per day. This duration does not need to be consecutive, but it must be used in 1-minute increments.",
+	"ruRU": "Начиная с 7 уровня, быстрым действием, тень анку может оказываться под эффектом аналогичным заклинанию Увидеть невидимое на 1 минуту за уровень в день.  Эта продолжительность не обязательно должна идти непрерывно, но должна быть потрачена фрагментами в 1 минуту.",
     "zhCN": "7级起，死魂精之影可以用一个迅捷动作识破隐形，如同同名法术。每有1个职业等级，这个能力的每日持续时间便增加1分钟。持续时间不需要连续，但是每次至少使用1分钟。"
   },
   {
     "Key": "NewSpellDiscordantBlast.Name",
     "ProcessTemplates": false,
     "enGB": "Discordant Blast",
+	"ruRU": "Диссонирующий заряд",
     "zhCN": "不谐冲击"
   },
   {
     "Key": "NewSpellDiscordantBlast.Description",
     "enGB": "You create a wave of thunder and force, either in a 10-foot-radius burst centered on you or in 30-foot cone-shaped burst. Creatures in the area take 3d6 points of sonic damage and are pushed away as if bull rushed. Make combat maneuver checks to each creature in the area. Your CMB for this bull rush is equal to your caster level plus your Charisma modifier. This bull rush does not provoke an attack of opportunity.",
+	"ruRU": "Вы создаете ударную звуковую волну в виде взрыва радиусом 10 футов с центром на вас, либо в виде конуса длиной 30 футов. Существа оказавшиеся в зоне действия заклинания получают 3d6 урона звуком и отталкиваются, как если бы их протаранили. Вы совершаете проверку боевого маневра для каждого существа отдельно. Ваш модификатор боевых маневров для этого маневра равен вашему уровню заклинателя + ваш модификатор Харизмы. Этот боевой маневр не провоцирует внеочередные атаки.",
     "zhCN": "你制造一股轰鸣的力场波动，影响以你为中心半径10尺的范围，或者30尺锥形的范围。在该区域内的生物会受到3d6点音波伤害并被推开，如同被冲撞一般。对区域内的所有生物进行战技检定。你的冲撞CMB等同于你的施法者等级+魅力调整值。该冲撞不会引起借机攻击。"
   },
   {
     "Key": "NewSpellDiscordantBlast1.Name",
     "ProcessTemplates": false,
     "enGB": "Discordant Blast (centered)",
+	"ruRU": "Диссонирующий заряд (взрыв)",
     "zhCN": "不谐冲击（中心）"
   },
   {
     "Key": "NewSpellDiscordantBlast1.Description",
     "enGB": "You create a wave of thunder and force, either in a 10-foot-radius burst centered on you or in 30-foot cone-shaped burst. Creatures in the area take 3d6 points of sonic damage and are pushed away as if bull rushed. Make combat maneuver checks to each creature in the area. Your CMB for this bull rush is equal to your caster level plus your Charisma modifier. This bull rush does not provoke an attack of opportunity.",
+	"ruRU": "Вы создаете ударную звуковую волну в виде взрыва радиусом 10 футов с центром на вас, либо в виде конуса длиной 30 футов. Существа оказавшиеся в зоне действия заклинания получают 3d6 урона звуком и отталкиваются, как если бы их протаранили. Вы совершаете проверку боевого маневра для каждого существа отдельно. Ваш модификатор боевых маневров для этого маневра равен вашему уровню заклинателя + ваш модификатор Харизмы. Этот боевой маневр не провоцирует внеочередные атаки.",
     "zhCN": "你制造一股轰鸣的力场波动，影响以你为中心半径10尺的范围，或者30尺锥形的范围。在该区域内的生物会受到3d6点音波伤害并被推开，如同被冲撞一般。对区域内的所有生物进行战技检定。你的冲撞CMB等同于你的施法者等级+魅力调整值。该冲撞不会引起借机攻击。"
   },
   {
     "Key": "NewSpellDiscordantBlast2.Name",
     "ProcessTemplates": false,
     "enGB": "Discordant Blast (cone-shaped)",
+	"ruRU": "Диссонирующий заряд (конус)",
     "zhCN": "不谐冲击（锥形）"
   },
   {
     "Key": "NewSpellDiscordantBlast2.Description",
     "enGB": "You create a wave of thunder and force, either in a 10-foot-radius burst centered on you or in 30-foot cone-shaped burst. Creatures in the area take 3d6 points of sonic damage and are pushed away as if bull rushed. Make combat maneuver checks to each creature in the area. Your CMB for this bull rush is equal to your caster level plus your Charisma modifier. This bull rush does not provoke an attack of opportunity.",
+	"ruRU": "Вы создаете ударную звуковую волну в виде взрыва радиусом 10 футов с центром на вас, либо в виде конуса длиной 30 футов. Существа оказавшиеся в зоне действия заклинания получают 3d6 урона звуком и отталкиваются, как если бы их протаранили. Вы совершаете проверку боевого маневра для каждого существа отдельно. Ваш модификатор боевых маневров для этого маневра равен вашему уровню заклинателя + ваш модификатор Харизмы. Этот боевой маневр не провоцирует внеочередные атаки.",
     "zhCN": "你制造一股轰鸣的力场波动，影响以你为中心半径10尺的范围，或者30尺锥形的范围。在该区域内的生物会受到3d6点音波伤害并被推开，如同被冲撞一般。对区域内的所有生物进行战技检定。你的冲撞CMB等同于你的施法者等级+魅力调整值。该冲撞不会引起借机攻击。"
   }
 
