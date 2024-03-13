@@ -43,9 +43,12 @@ namespace PrestigePlus.Blueprint.Feat
                 .AddToAllFeatures(feat)
                 .Configure();
 
+            try { 
             FeatureSelectionConfigurator.For("0d3a3619-9d99-47af-8e47-cb6cc4d26821") //ttt
                 .AddToAllFeatures(feat)
                 .Configure();
+            } catch(Exception e) { Main.Logger.Error("Failed to edit ttt mythic feat.", e); }
+
         }
 
         private const string MultiArmed = "RacialHeritage.MultiArmed";
