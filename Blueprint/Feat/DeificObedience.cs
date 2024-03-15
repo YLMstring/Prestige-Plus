@@ -3074,7 +3074,6 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetIcon(icon)
                 .SetBuff(Falayna3BuffGuid)
                 .SetDeactivateIfCombatEnded(true)
-                .SetDeactivateImmediately(true)
                 .SetActivationType(AbilityActivationType.WithUnitCommand)
                 .SetActivateWithUnitCommand(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
                 .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound, freeBlueprint: Falayna2Guid)
@@ -4770,6 +4769,193 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetIcon(icon)
                     .AddComponent<MantisStyleMastery>()
                     .Configure();
+        }
+
+        private const string Irori = "DeificObedience.Irori";
+        public static readonly string IroriGuid = "{825AFF17-54C7-4EF5-8817-71BF4564258A}";
+
+        internal const string IroriDisplayName = "DeificObedienceIrori.Name";
+        private const string IroriDescription = "DeificObedienceIrori.Description";
+        public static BlueprintProgression IroriFeat()
+        {
+            var icon = FeatureRefs.IroriFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(Irori, IroriGuid)
+              .SetDisplayName(IroriDisplayName)
+              .SetDescription(IroriDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.IroriFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.LawfulNeutral, group: Prerequisite.GroupType.Any)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(1, Irori0Feat())
+              .AddToLevelEntry(2, CreateIrori1())
+              .AddToLevelEntry(6, Irori2Feat())
+              .AddToLevelEntry(10, CreateIrori3())
+              .Configure();
+        }
+
+        private const string Irori0 = "DeificObedience.Irori0";
+        public static readonly string Irori0Guid = "{7C04DC7F-1089-4977-A0A8-2E050056640F}";
+
+        public static BlueprintFeature Irori0Feat()
+        {
+            var icon = FeatureRefs.IroriFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Irori0, Irori0Guid)
+              .SetDisplayName(IroriDisplayName)
+              .SetDescription(IroriDescription)
+              .SetIcon(icon)
+              .AddStatBonus(ModifierDescriptor.Sacred, false, StatType.SkillKnowledgeArcana, 4)
+              .AddStatBonus(ModifierDescriptor.Sacred, false, StatType.SkillKnowledgeWorld, 4)
+              .AddStatBonus(ModifierDescriptor.Sacred, false, StatType.SkillLoreNature, 4)
+              .AddStatBonus(ModifierDescriptor.Sacred, false, StatType.SkillLoreReligion, 4)
+              .Configure();
+        }
+
+        private const string Irori1 = "SpellPower.Irori1";
+        public static readonly string Irori1Guid = "{791DF151-0524-45B4-8E7D-893367341FC3}";
+        internal const string Irori1DisplayName = "SpellPowerIrori1.Name";
+        private const string Irori1Description = "SpellPowerIrori1.Description";
+
+        private const string Irori1Ablity2 = "SpellPower.UseIrori12";
+        private static readonly string Irori1Ablity2Guid = "{6DCC23EE-1426-4687-97E2-9C9ECA9358E8}";
+        private static BlueprintFeature CreateIrori1()
+        {
+            var icon = AbilityRefs.FoxsCunning.Reference.Get().Icon;
+
+            var ability2 = AbilityConfigurator.New(Irori1Ablity2, Irori1Ablity2Guid)
+                .CopyFrom(
+                AbilityRefs.FoxsCunning,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx))
+                .AddPretendSpellLevel(spellLevel: 2)
+                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Irori1, Irori1Guid)
+              .SetDisplayName(Irori1DisplayName)
+              .SetDescription(Irori1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability2 })
+              .Configure();
+        }
+
+        private const string Irori2 = "DeificObedience.Irori2";
+        public static readonly string Irori2Guid = "{A96C92BB-D2D4-4267-AAF7-62904D8306DE}";
+
+        internal const string Irori2DisplayName = "DeificObedienceIrori2.Name";
+        private const string Irori2Description = "DeificObedienceIrori2.Description";
+
+        private const string Irori2Buff = "DeificObedience.Irori2Buff";
+        private static readonly string Irori2BuffGuid = "{4675C884-4EC5-425E-8CC3-BFC31A21DE15}";
+
+        private const string Irori2Res = "DeificObedience.Irori2Res";
+        private static readonly string Irori2ResGuid = "{11F8D97F-95CF-4D4D-AC85-10A6C4DB3CA1}";
+
+        private const string Irori2Ability = "DeificObedience.Irori2Ability";
+        private static readonly string Irori2AbilityGuid = "{6FC00EE7-DB9C-4B62-94EC-EC6BC9AD3B15}";
+        public static BlueprintFeature Irori2Feat()
+        {
+            var icon = AbilityRefs.TelekineticFist.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(Irori2Res, Irori2ResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(0))
+                .Configure();
+
+            var ability = ActivatableAbilityConfigurator.New(Irori2Ability, Irori2AbilityGuid)
+                .SetDisplayName(Irori2DisplayName)
+                .SetDescription(Irori2Description)
+                .SetIcon(icon)
+                .SetBuff(Irori2BuffGuid)
+                .SetDeactivateIfCombatEnded(true)
+                .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound)
+                .Configure();
+
+            BuffConfigurator.New(Irori2Buff, Irori2BuffGuid)
+             .SetDisplayName(Irori2DisplayName)
+             .SetDescription(Irori2Description)
+             .SetIcon(icon)
+             .AddComponent<UnarmedEnchant>(c => { c.Enchantment = WeaponEnchantmentRefs.Axiomatic.Reference; })
+             .AddComponent<WeaponSizeChangeTTT>(c => { c.CheckWeaponCategory = true; c.Categories = new WeaponCategory[] { WeaponCategory.UnarmedStrike }; })
+             .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+             .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+             .Configure();
+
+            return FeatureConfigurator.New(Irori2, Irori2Guid)
+              .SetDisplayName(Irori2DisplayName)
+              .SetDescription(Irori2Description)
+              .SetIcon(icon)
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .AddIncreaseResourceAmountBySharedValue(false, abilityresourse, ContextValues.Property(UnitProperty.Level))
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string Irori3 = "SpellPower.Irori3";
+        public static readonly string Irori3Guid = "{A5612B95-DB12-48E0-863B-C0379B1136A6}";
+        internal const string Irori3DisplayName = "SpellPowerIrori3.Name";
+        private const string Irori3Description = "SpellPowerIrori3.Description";
+
+        private const string Irori3Res = "DeificObedience.Irori3Res";
+        private static readonly string Irori3ResGuid = "{A140E2B2-3DF2-4CB9-88A7-AA51D971C98F}";
+
+        private const string Irori3Ability = "DeificObedience.Irori3Ability";
+        private static readonly string Irori3AbilityGuid = "{9168F28A-6165-432B-8FCF-CD9AA177D2C1}";
+
+        private const string Irori3Ablity2 = "SpellPower.UseIrori32";
+        private static readonly string Irori3Ablity2Guid = "{30634B82-8871-4649-946F-E0D44406C249}";
+
+        private const string Irori3Ablity3 = "SpellPower.UseIrori33";
+        private static readonly string Irori3Ablity3Guid = "{60BA7F5F-54D9-47EF-8F36-D793998E9AE2}";
+        private static BlueprintFeature CreateIrori3()
+        {
+            var icon = AbilityRefs.DivineFavor.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(Irori3Res, Irori3ResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(0))
+                .Configure();
+
+            var ability = ActivatableAbilityConfigurator.New(Irori3Ability, Irori3AbilityGuid)
+                .SetDisplayName(Irori3DisplayName)
+                .SetDescription(Irori3Description)
+                .SetIcon(icon)
+                .SetDeactivateIfCombatEnded(true)
+                .SetDeactivateImmediately(true)
+                .SetActivationType(AbilityActivationType.WithUnitCommand)
+                .SetActivateWithUnitCommand(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+                .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound, freeBlueprint: Irori2Guid)
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(Irori3Ablity2, Irori3Ablity2Guid)
+                .CopyFrom(
+                AbilityRefs.BoneFists,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilityTargetsAround))
+                .AddPretendSpellLevel(spellLevel: 2)
+                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var ability3 = AbilityConfigurator.New(Irori3Ablity3, Irori3Ablity3Guid)
+                .CopyFrom(
+                AbilityRefs.MagicWeaponGreater,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilityVariants))
+                .AddPretendSpellLevel(spellLevel: 3)
+                .AddAbilityResourceLogic(6, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Irori3, Irori3Guid)
+              .SetDisplayName(Irori3DisplayName)
+              .SetDescription(Irori3Description)
+              .SetIcon(icon)
+              .AddFacts(new() { Arazni1AblityGuid, ability2, ability3 })
+              .Configure();
         }
     }
 }
