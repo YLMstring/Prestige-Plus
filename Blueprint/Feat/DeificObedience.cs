@@ -148,6 +148,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(MephistophelesFeat())
               .AddToAllFeatures(NocticulaFeat())
               .AddToAllFeatures(NocticulaDemonFeat())
+              .AddToAllFeatures(AchaekekFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -4700,9 +4701,9 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddPrerequisiteFeature(AchaekekGuid)
               .SetGiveFeaturesForPreviousLevels(true)
-              .AddToLevelEntry(12, CreateAchaekek1())
-              .AddToLevelEntry(16, AchaekekSentinel2Feat())
-              .AddToLevelEntry(20, AchaekekSentinel3Feat())
+              .AddToLevelEntry(2, CreateAchaekek1())
+              .AddToLevelEntry(6, AchaekekSentinel2Feat())
+              .AddToLevelEntry(10, AchaekekSentinel3Feat())
               .Configure();
         }
 
@@ -4767,7 +4768,7 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetDisplayName(Achaekek3DisplayName)
                     .SetDescription(Achaekek3Description)
                     .SetIcon(icon)
-                    
+                    .AddComponent<MantisStyleMastery>()
                     .Configure();
         }
     }
