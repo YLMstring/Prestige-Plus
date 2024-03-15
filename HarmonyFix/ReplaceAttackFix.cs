@@ -17,6 +17,7 @@ using Kingmaker.UnitLogic.Parts;
 using Kingmaker.Utility;
 using PrestigePlus.Blueprint;
 using PrestigePlus.Blueprint.Archetype;
+using PrestigePlus.Blueprint.Feat;
 using PrestigePlus.Blueprint.GrappleFeat;
 using PrestigePlus.Blueprint.MythicFeat;
 using PrestigePlus.Blueprint.MythicGrapple;
@@ -215,6 +216,10 @@ namespace PrestigePlus.HarmonyFix
         {
             ItemEntityWeapon maybeWeapon = unit.Body.PrimaryHand.MaybeWeapon;
             ItemEntityWeapon maybeWeapon2 = unit.Body.SecondaryHand.MaybeWeapon;
+            if (unit.HasFact(Mantis) && maybeWeapon?.Blueprint.Category == WeaponCategory.Falcata && maybeWeapon?.Blueprint.Category == WeaponCategory.Falcata)
+            {
+                return 0;
+            }
             bool flag2 = unit.Descriptor.State.AdditionalFeatures.ShieldMaster;
             bool flag3 = maybeWeapon != null && maybeWeapon.IsShield || maybeWeapon2 != null && maybeWeapon2.IsShield;
             int second = 0;
@@ -254,6 +259,8 @@ namespace PrestigePlus.HarmonyFix
                 target.Ensure<UnitPartGrappleTargetPP>().Init(caster, TargetBuff, caster.Context);
             }
         }
+
+        private static readonly BlueprintFeatureReference Mantis = BlueprintTool.GetRef<BlueprintFeatureReference>(DeificObedience.Achaekek3Guid);
 
         private static readonly BlueprintFeatureReference TWF = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.TwoWeaponFighting.ToString());
         private static readonly BlueprintFeatureReference Mythic = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.TwoWeaponFightingMythicFeat.ToString());

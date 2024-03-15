@@ -14,6 +14,9 @@ using System.Threading.Tasks;
 using Kingmaker.UnitLogic;
 using Kingmaker.Items;
 using Kingmaker.Items.Slots;
+using Kingmaker.Enums;
+using Kingmaker.Blueprints;
+using PrestigePlus.Blueprint.Feat;
 
 namespace PrestigePlus.CustomAction.OtherFeatRelated
 {
@@ -87,6 +90,10 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                 {
                     penalty = 0;
                 }
+                if (unit.HasFact(Mantis) && weapon.Blueprint.Category == WeaponCategory.Falcata)
+                {
+                    penalty = 0;
+                }
                 RuleAttackWithWeapon ruleAttackWithWeapon = new(maybeCaster, unit, weapon, penalty)
                 {
                     Reason = maybeCaster.Context,
@@ -101,5 +108,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                 maybeCaster.Context.TriggerRule(ruleAttackWithWeapon);
             }
         }
+
+        private static readonly BlueprintFeatureReference Mantis = BlueprintTool.GetRef<BlueprintFeatureReference>(DeificObedience.Achaekek3Guid);
     }
 }

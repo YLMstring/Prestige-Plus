@@ -4663,5 +4663,112 @@ namespace PrestigePlus.Blueprint.Feat
                     .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
                     .Configure();
         }
+
+        private const string Achaekek = "DeificObedience.Achaekek";
+        public static readonly string AchaekekGuid = "{D14E5618-7650-41FB-84EA-332FD19179B4}";
+
+        internal const string AchaekekDisplayName = "DeificObedienceAchaekek.Name";
+        private const string AchaekekDescription = "DeificObedienceAchaekek.Description";
+        public static BlueprintFeature AchaekekFeat()
+        {
+            var icon = AbilityRefs.BloodBlastAbility.Reference.Get().Icon;
+            //"AchaekekFeature": "4654a801-2a33-420a-8fda-75dcdb6f39d9",
+
+            return FeatureConfigurator.New(Achaekek, AchaekekGuid)
+              .SetDisplayName(AchaekekDisplayName)
+              .SetDescription(AchaekekDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature("4654a801-2a33-420a-8fda-75dcdb6f39d9", group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.LawfulEvil, group: Prerequisite.GroupType.Any)
+              .AddToIsPrerequisiteFor(AchaekekSentinelFeat())
+              .AddCriticalConfirmationBonus(2)
+              .Configure();
+        }
+
+        private const string AchaekekSentinel = "DeificObedience.AchaekekSentinel";
+        public static readonly string AchaekekSentinelGuid = "{B484E3AE-3140-425B-83EB-DA2B40D70894}";
+
+        internal const string AchaekekSentinelDisplayName = "DeificObedienceAchaekekSentinel.Name";
+        private const string AchaekekSentinelDescription = "DeificObedienceAchaekekSentinel.Description";
+        public static BlueprintProgression AchaekekSentinelFeat()
+        {
+            var icon = AbilityRefs.BloodBlastAbility.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(AchaekekSentinel, AchaekekSentinelGuid)
+              .SetDisplayName(AchaekekSentinelDisplayName)
+              .SetDescription(AchaekekSentinelDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(AchaekekGuid)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(12, CreateAchaekek1())
+              .AddToLevelEntry(16, AchaekekSentinel2Feat())
+              .AddToLevelEntry(20, AchaekekSentinel3Feat())
+              .Configure();
+        }
+
+        private const string Achaekek1 = "SpellPower.Achaekek1";
+        public static readonly string Achaekek1Guid = "{5FB00AEB-7F86-439A-A5CA-787175B9C37C}";
+        internal const string Achaekek1DisplayName = "SpellPowerAchaekek1.Name";
+        private const string Achaekek1Description = "SpellPowerAchaekek1.Description";
+
+        private const string Achaekek1Ablity = "SpellPower.UseAchaekek1";
+        private static readonly string Achaekek1AblityGuid = "{FCE2B407-290B-49BC-89E1-7F9053295905}";
+        private static BlueprintFeature CreateAchaekek1()
+        {
+            var icon = AbilityRefs.LeadBlades.Reference.Get().Icon;
+
+            var ability = AbilityConfigurator.New(Achaekek1Ablity, Achaekek1AblityGuid)
+                .CopyFrom(
+                AbilityRefs.LeadBlades,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 2)
+                .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Achaekek1, Achaekek1Guid)
+              .SetDisplayName(Achaekek1DisplayName)
+              .SetDescription(Achaekek1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string Achaekek2 = "DeificObedience.Achaekek2";
+        public static readonly string Achaekek2Guid = "{27158805-5808-428B-BB40-7890FA02FA28}";
+
+        internal const string Achaekek2DisplayName = "DeificObedienceAchaekek2.Name";
+        private const string Achaekek2Description = "DeificObedienceAchaekek2.Description";
+        public static BlueprintFeature AchaekekSentinel2Feat()
+        {
+            var icon = FeatureRefs.BleedingCriticalFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Achaekek2, Achaekek2Guid)
+              .SetDisplayName(Achaekek2DisplayName)
+              .SetDescription(Achaekek2Description)
+              .SetIcon(icon)
+              .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().ApplyBuffPermanent(BuffRefs.Bleed1d4Buff.ToString()).Build(), false, onlyHit: true, category: WeaponCategory.Falcata, checkWeaponCategory: true)
+              .Configure();
+        }
+
+        private static readonly string Achaekek3Name = "DeificObedienceAchaekek3";
+        public static readonly string Achaekek3Guid = "{B0331BB2-2FA2-48B4-BF44-551FFE2322E6}";
+
+        private static readonly string Achaekek3DisplayName = "DeificObedienceAchaekek3.Name";
+        private static readonly string Achaekek3Description = "DeificObedienceAchaekek3.Description";
+        public static BlueprintFeature AchaekekSentinel3Feat()
+        {
+            var icon = AbilityRefs.DLC5_ManticoreVenomous_Spike_Ability.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Achaekek3Name, Achaekek3Guid)
+                    .SetDisplayName(Achaekek3DisplayName)
+                    .SetDescription(Achaekek3Description)
+                    .SetIcon(icon)
+                    
+                    .Configure();
+        }
     }
 }
