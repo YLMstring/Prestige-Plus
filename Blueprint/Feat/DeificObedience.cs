@@ -4672,7 +4672,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string AchaekekDescription = "DeificObedienceAchaekek.Description";
         public static BlueprintFeature AchaekekFeat()
         {
-            var icon = AbilityRefs.BloodBlastAbility.Reference.Get().Icon;
+            var icon = FeatureRefs.RakingClawsFeature.Reference.Get().Icon;
             //"AchaekekFeature": "4654a801-2a33-420a-8fda-75dcdb6f39d9",
 
             return FeatureConfigurator.New(Achaekek, AchaekekGuid)
@@ -4693,7 +4693,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string AchaekekSentinelDescription = "DeificObedienceAchaekekSentinel.Description";
         public static BlueprintProgression AchaekekSentinelFeat()
         {
-            var icon = AbilityRefs.BloodBlastAbility.Reference.Get().Icon;
+            var icon = FeatureRefs.RakingClawsFeature.Reference.Get().Icon;
 
             return ProgressionConfigurator.New(AchaekekSentinel, AchaekekSentinelGuid)
               .SetDisplayName(AchaekekSentinelDisplayName)
@@ -4915,9 +4915,8 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string Irori3BuffGuid = "{879C7A44-A969-490F-84E8-FF4818F42C4F}";
         private static BlueprintFeature CreateIrori3()
         {
-            var icon = AbilityRefs.RuneOfJandelaySpell.Reference.Get().Icon;
+            var icon = AbilityRefs.BloodlineArcaneItemBondAbility.Reference.Get().Icon;
             var icon1 = AbilityRefs.Restoration.Reference.Get().Icon;
-            var icon2 = AbilityRefs.GrandOwlOfWisdomAbility.Reference.Get().Icon;
             var icon3 = AbilityRefs.WalkThroughSpace.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(Irori3Buff, Irori3BuffGuid)
@@ -4950,7 +4949,7 @@ namespace PrestigePlus.Blueprint.Feat
             var ability2 = AbilityConfigurator.New(Irori3Ablity2, Irori3Ablity2Guid)
                 .SetDisplayName(Irori3DisplayName)
                 .SetDescription(Irori3Description)
-                .SetIcon(icon2)
+                .SetIcon(icon)
                 .AddPretendSpellLevel(spellLevel: 5)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()

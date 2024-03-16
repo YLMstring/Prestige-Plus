@@ -12394,6 +12394,138 @@
     "enGB": "You create a wave of thunder and force, either in a 10-foot-radius burst centered on you or in 30-foot cone-shaped burst. Creatures in the area take 3d6 points of sonic damage and are pushed away as if bull rushed. Make combat maneuver checks to each creature in the area. Your CMB for this bull rush is equal to your caster level plus your Charisma modifier. This bull rush does not provoke an attack of opportunity.",
     "ruRU": "Вы создаете ударную звуковую волну в виде взрыва радиусом 10 футов с центром на вас, либо в виде конуса длиной 30 футов. Существа оказавшиеся в зоне действия заклинания получают 3d6 урона звуком и отталкиваются, как если бы их протаранили. Вы совершаете проверку боевого маневра для каждого существа отдельно. Ваш модификатор боевых маневров для этого маневра равен вашему уровню заклинателя + ваш модификатор Харизмы. Этот боевой маневр не провоцирует внеочередные атаки.",
     "zhCN": "你制造一股轰鸣的力场波动，影响以你为中心半径10尺的范围，或者30尺锥形的范围。在该区域内的生物会受到3d6点音波伤害并被推开，如同被冲撞一般。对区域内的所有生物进行战技检定。你的冲撞CMB等同于你的施法者等级+魅力调整值。该冲撞不会引起借机攻击。"
+  },
+  {
+    "Key": "DeificObedienceAchaekek.Name",
+    "ProcessTemplates": false,
+    "enGB": "Achaekek Obedience",
+    "zhCN": "阿卡艾克克仪典"
+  },
+  {
+    "Key": "DeificObedienceAchaekek.Description",
+    "enGB": "Meditate in a private place before a trophy or broken religious symbol taken from a target you have been contracted to kill. This trophy must be anointed with a single drop of your blood, drawn from your flesh by a falcata, and the trophy must be destroyed at the end of your meditation. If you have yet to complete a contract, have no appropriate trophies at hand, or seek to serve the Mantis God in other ways than as the god’s assassin, you must instead offer your own vital fluid to He Who Walks in Blood by cutting yourself along the right arm with a falcata. You gain a +2 bonus to confirm critical hits.",
+    "zhCN": "在一个私密处所中，于从你签下契约而杀死的目标身上取得的战利品或破碎的圣徽之前冥想。该战利品必须涂有你的一滴由反曲剑取出的血，并且战利品必须在冥想结束时被销毁。如果你还没有完成契约杀人，或是手头没有合适的战利品，或者寻求以其他方式侍奉螳螂神，而非作为神的刺客，你必须用反曲剑沿着右臂割伤自己，将自己的生命之液献给鲜血行者。你在确认重击时获得+2加值。"
+  },
+  {
+    "Key": "DeificObedienceAchaekekSentinel.Name",
+    "ProcessTemplates": false,
+    "enGB": "Achaekek (Sentinel)",
+    "zhCN": "阿卡艾克克（信仰哨卫）"
+  },
+  {
+    "Key": "DeificObedienceAchaekekSentinel.Description",
+    "enGB": "Become a Sentinel to gain access to his boons, which will be granted at certain character or class levels.",
+    "zhCN": "成为信仰哨卫来获取他的神恩资格，你会在合适的角色或职业等级得到神恩。"
+  },
+  {
+    "Key": "SpellPowerAchaekek1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Blood Must Flow",
+    "zhCN": "斩头沥血"
+  },
+  {
+    "Key": "SpellPowerAchaekek1.Description",
+    "enGB": "lead blades 3/day",
+    "zhCN": "重压之刃 3次/日"
+  },
+  {
+    "Key": "DeificObedienceAchaekek2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Bleeding Wounds",
+    "zhCN": "鲜血淋漓"
+  },
+  {
+    "Key": "DeificObedienceAchaekek2.Description",
+    "enGB": "All wounds you inflict with a falcata are bleeding wounds, and deal 1d4 points of bleed damage to the target (the damage does not stack).",
+    "zhCN": "你用反曲剑产生的所有伤口都会流血不止，对目标造成1d4点流血伤害（不叠加）。"
+  },
+  {
+    "Key": "DeificObedienceAchaekek3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Mantis Style Mastery",
+    "zhCN": "螳螂门不传之秘"
+  },
+  {
+    "Key": "DeificObedienceAchaekek3.Description",
+    "enGB": "You take no penalties on attack rolls from two-weapon fighting when wielding two falcatas simultaneously, and you gain a +2 profane bonus on all damage rolls with falcatas. If you deal sneak attack damage with a falcata, you deal 2 additional points of damage for each die rolled as part of your sneak attack damage.",
+    "zhCN": "同时持用两把反曲剑时，你不会受到双武器战斗的攻击检定减值，并且你在反曲剑的所有伤害检定上获得+2亵渎加值。如果你用反曲剑造成偷袭伤害，每个偷袭骰都会额外造成2点伤害。"
+  },
+  {
+    "Key": "DeificObedienceIrori.Name",
+    "ProcessTemplates": false,
+    "enGB": "Irori Obedience",
+    "zhCN": "义洛理仪典"
+  },
+  {
+    "Key": "DeificObedienceIrori.Description",
+    "enGB": "Over the course of 1 hour, spend an equal amount of time practicing with a weapon or your unarmed strikes, reading any text that you have never read before, and braiding a length of hair while contemplating the mysteries of the multiverse. Hang the length of hair around your neck when your obedience is complete and wear it for the rest of the day. Gain a +4 sacred bonus on all Knowledge checks.",
+    "zhCN": "在1小时的修行中，分配同样的时间做以下三件事：练习拳脚功夫或者操演武器、阅读任何你从未读过的文本、一边编发辫一边思索宇宙之奥秘。当仪典完成时，将发辫绕在脖颈上并在今天内保持如此。在所有知识检定中获得+4神圣加值。"
+  },
+  {
+    "Key": "SpellPowerIrori1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Expansive Knowledge",
+    "zhCN": "渊博学识"
+  },
+  {
+    "Key": "SpellPowerIrori1.Description",
+    "enGB": "fox’s cunning 2/day",
+    "zhCN": "狐之狡黠 2次/日"
+  },
+  {
+    "Key": "DeificObedienceIrori2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Inevitable Fist",
+    "zhCN": "命定之拳"
+  },
+  {
+    "Key": "DeificObedienceIrori2.Description",
+    "enGB": "For a number of rounds per day equal to your Hit Dice, you can infuse your limbs with the power of pure law. Your unarmed strikes deal damage as if you were one size category larger, and gain the axiomatic weapon special ability. Activating or dismissing this ability is a free action, and the rounds don’t need to be consecutive.",
+    "zhCN": "每日轮数等同于你的生命骰数，你能够向自身的肢体灌入纯粹的秩序能量。你的徒手打击造成的伤害就如同你的体型比当前大一级，而且获得公理武器特殊能力。启动和解消该能力是自由动作，且轮数不必连续。"
+  },
+  {
+    "Key": "SpellPowerIrori3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Runic Form",
+    "zhCN": "符文之躯"
+  },
+  {
+    "Key": "SpellPowerIrori3.Description",
+    "enGB": "Nine runic tattoos appear on your body, three for each of the three disciplines of Irori: mind, body, and spirit. As a standard action you can discharge the power stored in a tattoo up to 3 times per day. Body Tattoos contains restoration, which you can use as a spell-like ability. Mind Tattoos can be discharged to grant you a +4 sacred bonus to Wisdom for 1 minute. Spirit Tattoos allow you to assume an ethereal state for 1 minute as though using the spell walk through space.",
+    "zhCN": "九个符文纹身出现在你的身体上，其中各有三个符文对应着义洛理的身心灵三种教导。每日3次以标准动作，你能够耗用一个纹身的力量。身之符文容有复原术作为类法术能力，心之符文使用时为你的感知提供+4神圣加值，持续1分钟。灵之符文可以使你进入灵体状态1分钟，如同破空步法术一般。"
+  },
+  {
+    "Key": "NewSpellLockjaw.Name",
+    "ProcessTemplates": false,
+    "enGB": "Lockjaw",
+    "zhCN": "钳颚术"
+  },
+  {
+    "Key": "NewSpellLockjaw.Description",
+    "enGB": "You give a creature the ability to use one of its natural attacks to firmly attach itself to an opponent. The creature gains the grab ability with its claw or bite attack, including the +4 bonus on combat maneuver checks to start or maintain a grapple when not polymorphed.",
+    "zhCN": "你令一个生物能够使用某种天生武器将自身紧紧附着在敌人身上。当未处于变形效应下时，该生物的爪抓或者啮咬攻击获得擒抓能力，包括在尝试以及维持擒抱时，战技检定获得的+4加值。"
+  },
+  {
+    "Key": "NewSpellLockjaw1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Lockjaw (claw)",
+    "zhCN": "钳颚术（爪抓）"
+  },
+  {
+    "Key": "NewSpellLockjaw1.Description",
+    "enGB": "You give a creature the ability to use one of its natural attacks to firmly attach itself to an opponent. The creature gains the grab ability with its claw or bite attack, including the +4 bonus on combat maneuver checks to start or maintain a grapple when not polymorphed.",
+    "zhCN": "你令一个生物能够使用某种天生武器将自身紧紧附着在敌人身上。当未处于变形效应下时，该生物的爪抓或者啮咬攻击获得擒抓能力，包括在尝试以及维持擒抱时，战技检定获得的+4加值。"
+  },
+  {
+    "Key": "NewSpellLockjaw2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Lockjaw (bite)",
+    "zhCN": "钳颚术（啮咬）"
+  },
+  {
+    "Key": "NewSpellLockjaw2.Description",
+    "enGB": "You give a creature the ability to use one of its natural attacks to firmly attach itself to an opponent. The creature gains the grab ability with its claw or bite attack, including the +4 bonus on combat maneuver checks to start or maintain a grapple when not polymorphed.",
+    "zhCN": "你令一个生物能够使用某种天生武器将自身紧紧附着在敌人身上。当未处于变形效应下时，该生物的爪抓或者啮咬攻击获得擒抓能力，包括在尝试以及维持擒抱时，战技检定获得的+4加值。"
   }
 
 ]

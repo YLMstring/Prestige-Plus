@@ -42,10 +42,10 @@ namespace PrestigePlus.Blueprint.Spell
         private const string LockjawAbility2 = "NewSpell.UseLockjaw2";
         public static readonly string LockjawAbility2Guid = "{72296F5B-25B8-49DF-886A-EE5346325323}";
 
-        private const string LockjawBuff1 = "NewSpell.UseLockjaw1";
+        private const string LockjawBuff1 = "NewSpell.UseLockjawBuff1";
         public static readonly string LockjawBuff1Guid = "{CFA28542-7BE7-4381-9C3B-6D77601AB0AA}";
 
-        private const string LockjawBuff2 = "NewSpell.UseLockjaw2";
+        private const string LockjawBuff2 = "NewSpell.UseLockjawBuff2";
         public static readonly string LockjawBuff2Guid = "{C77362AC-B230-4D8B-A625-17ED777C4D56}";
 
         internal const string DisplayName = "NewSpellLockjaw.Name";
@@ -59,8 +59,8 @@ namespace PrestigePlus.Blueprint.Spell
 
         public static void Configure()
         {
-            var icon = AbilityRefs.CacophonousCall.Reference.Get().Icon;
-            var icon2 = AbilityRefs.CacophonousCallMass.Reference.Get().Icon;
+            var icon = FeatureRefs.FrightfulShape_.Reference.Get().Icon;
+            var icon2 = FeatureRefs.RakingClawsFeature.Reference.Get().Icon;
             var fx = AbilityRefs.AnimalGrowth.Reference.Get().GetComponent<AbilitySpawnFx>();
 
             var grab = ActionsBuilder.New()
@@ -74,7 +74,7 @@ namespace PrestigePlus.Blueprint.Spell
             var buff1 = BuffConfigurator.New(LockjawBuff1, LockjawBuff1Guid)
              .SetDisplayName(DisplayName1)
              .SetDescription(Description1)
-             .SetIcon(icon)
+             .SetIcon(icon2)
              .AddInitiatorAttackWithWeaponTrigger(grapple, false, onlyHit: true, category: WeaponCategory.Claw, checkWeaponCategory: true)
              .AddFacts(new() { CrabKing.Feat2Guid, PinAbilityGuid1, TieUpAbilityGuid, ReadyAbilityGuid, ReleaseAbilityGuid })
              .Configure();
@@ -83,7 +83,7 @@ namespace PrestigePlus.Blueprint.Spell
                 LockjawAbility1, LockjawAbility1Guid, SpellSchool.Transmutation, canSpecialize: false)
               .SetDisplayName(DisplayName1)
               .SetDescription(Description1)
-              .SetIcon(icon)
+              .SetIcon(icon2)
               .SetRange(AbilityRange.Touch)
               .SetType(AbilityType.Spell)
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Quicken, Metamagic.Reach, Metamagic.Extend)
@@ -111,7 +111,7 @@ namespace PrestigePlus.Blueprint.Spell
                 LockjawAbility2, LockjawAbility2Guid, SpellSchool.Transmutation, canSpecialize: false)
               .SetDisplayName(DisplayName2)
               .SetDescription(Description2)
-              .SetIcon(icon2)
+              .SetIcon(icon)
               .AllowTargeting(true, true, true, false)
               .SetRange(AbilityRange.Touch)
               .SetType(AbilityType.Spell)
@@ -133,7 +133,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetDescription(Description)
               .SetIcon(icon)
               .AllowTargeting(false, false, false, false)
-              .SetRange(AbilityRange.Personal)
+              .SetRange(AbilityRange.Touch)
               .SetType(AbilityType.Spell)
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Quicken, Metamagic.Reach, Metamagic.Extend)
               .AddToSpellLists(level: 2, SpellList.Druid)
