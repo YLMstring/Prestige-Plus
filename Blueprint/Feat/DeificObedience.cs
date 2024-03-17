@@ -4769,6 +4769,7 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetDescription(Achaekek3Description)
                     .SetIcon(icon)
                     .AddComponent<MantisStyleMastery>()
+                    
                     .Configure();
         }
 

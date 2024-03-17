@@ -30,22 +30,15 @@ namespace PrestigePlus.CustomComponent.Feat
         {
             if (this.ConditionsChecker(evt))
             {
-                BaseDamage weaponDamage = evt.DamageBundle.WeaponDamage;
+                BaseDamage weaponDamage = evt.DamageBundle?.WeaponDamage;
                 if (weaponDamage == null)
                 {
                     return;
                 }
-                int bonus = 0;
-                foreach (var damage in evt.ParentRule.DamageBundle)
-                {
-                    if (damage != null && damage.Sneak)
-                    {
-                        bonus += damage.Dice.BaseFormula.Rolls;
-                    }
-                }
+                int bonus = Owner.Stats.SneakAttack * 2;
                 if (bonus > 0)
                 {
-                    BaseDamage baseDamage = weaponDamage.CreateTypeDescription().CreateDamage(new DiceFormula(0, DiceType.Zero), bonus);
+                    BaseDamage baseDamage = weaponDamage.CreateTypeDescription().CreateDamage(new DiceFormula(bonus, DiceType.One), 0);
                     baseDamage.Sneak = true;
                     baseDamage.Precision = true;
                     evt.Add(baseDamage);
