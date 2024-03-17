@@ -17,34 +17,15 @@ using Kingmaker.Designers.Mechanics.Facts;
 using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.RuleSystem;
+using BlueprintCore.Utils;
+using HarmonyLib;
+using Kingmaker.UnitLogic.Abilities.Components.TargetCheckers;
+using PrestigePlus.Blueprint.Feat;
 
 namespace PrestigePlus.CustomComponent.Feat
 {
-    internal class MantisStyleMastery : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleCalculateAttackBonusWithoutTarget>, IRulebookHandler<RuleCalculateAttackBonusWithoutTarget>, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RulePrepareDamage>, IRulebookHandler<RulePrepareDamage>
+    internal class MantisStyleMastery : UnitFactComponentDelegate, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RulePrepareDamage>, IRulebookHandler<RulePrepareDamage>
     {
-        public void OnEventAboutToTrigger(RuleCalculateAttackBonusWithoutTarget evt)
-        {
-            ItemEntityWeapon maybeWeapon = Owner.Body.PrimaryHand.MaybeWeapon;
-            ItemEntityWeapon maybeWeapon2 = Owner.Body.SecondaryHand.MaybeWeapon;
-            int bonus = 0;
-            if (maybeWeapon?.Blueprint.Category == WeaponCategory.Falcata && maybeWeapon2?.Blueprint.Category == WeaponCategory.Falcata)
-            {
-                foreach (var mod in evt.m_ModifiableBonus.Modifiers)
-                {
-                    if (mod.Fact?.Blueprint?.GetComponent<TwoWeaponFightingAttackPenalty>() != null)
-                    {
-                        bonus += mod.Value;
-                    }
-                }
-                evt.AddModifier(bonus, base.Fact, ModifierDescriptor.UntypedStackable);
-            }
-        }
-
-        // Token: 0x0600E8E3 RID: 59619 RVA: 0x003BB797 File Offset: 0x003B9997
-        public void OnEventDidTrigger(RuleCalculateAttackBonusWithoutTarget evt)
-        {
-        }
-
         public void OnEventAboutToTrigger(RulePrepareDamage evt)
         {
             if (this.ConditionsChecker(evt))
@@ -62,10 +43,13 @@ namespace PrestigePlus.CustomComponent.Feat
                         bonus += damage.Dice.BaseFormula.Rolls;
                     }
                 }
-                BaseDamage baseDamage = weaponDamage.CreateTypeDescription().CreateDamage(new DiceFormula(0, DiceType.Zero), bonus);
-                baseDamage.Sneak = true;
-                baseDamage.Precision = true;
-                evt.Add(baseDamage);
+                if (bonus > 0)
+                {
+                    BaseDamage baseDamage = weaponDamage.CreateTypeDescription().CreateDamage(new DiceFormula(0, DiceType.Zero), bonus);
+                    baseDamage.Sneak = true;
+                    baseDamage.Precision = true;
+                    evt.Add(baseDamage);
+                }
             }
         }
 
@@ -84,5 +68,33 @@ namespace PrestigePlus.CustomComponent.Feat
             }
             return false;
         }
+    }
+
+    [HarmonyPatch(typeof(RuleCalculateAttackBonusWithoutTarget), nameof(RuleCalculateAttackBonusWithoutTarget.OnTrigger))]
+    internal class MantisStyleFix
+    {
+        static void Prefix(ref RuleCalculateAttackBonusWithoutTarget __instance)
+        {
+            var evt = __instance;
+            var Owner = evt.Initiator;
+            ItemEntityWeapon maybeWeapon = Owner.Body.PrimaryHand.MaybeWeapon;
+            ItemEntityWeapon maybeWeapon2 = Owner.Body.SecondaryHand.MaybeWeapon;
+            var fact = Owner.GetFact(Master);
+            if (fact == null) { return; }
+            int bonus = 0;
+            if (maybeWeapon?.Blueprint.Category == WeaponCategory.Falcata && maybeWeapon2?.Blueprint.Category == WeaponCategory.Falcata && evt.m_ModifiableBonus?.Modifiers?.First() != null)
+            {
+                foreach (var mod in evt.m_ModifiableBonus.Modifiers)
+                {
+                    if (mod.Fact?.Blueprint?.GetComponent<TwoWeaponFightingAttackPenalty>() != null)
+                    {
+                        bonus += mod.Value;
+                    }
+                }
+                evt.AddModifier(-bonus, fact, ModifierDescriptor.UntypedStackable);
+            }
+        }
+
+        private static BlueprintFeatureReference Master = BlueprintTool.GetRef<BlueprintFeatureReference>(DeificObedience.Achaekek3Guid);
     }
 }
