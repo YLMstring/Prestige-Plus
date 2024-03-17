@@ -4701,9 +4701,9 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddPrerequisiteFeature(AchaekekGuid)
               .SetGiveFeaturesForPreviousLevels(true)
-              .AddToLevelEntry(2, CreateAchaekek1())
-              .AddToLevelEntry(6, AchaekekSentinel2Feat())
-              .AddToLevelEntry(10, AchaekekSentinel3Feat())
+              .AddToLevelEntry(12, CreateAchaekek1())
+              .AddToLevelEntry(16, AchaekekSentinel2Feat())
+              .AddToLevelEntry(20, AchaekekSentinel3Feat())
               .Configure();
         }
 
@@ -4769,7 +4769,6 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetDescription(Achaekek3Description)
                     .SetIcon(icon)
                     .AddComponent<MantisStyleMastery>()
-                    
                     .Configure();
         }
 
@@ -4790,9 +4789,9 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteAlignment(AlignmentMaskType.LawfulNeutral, group: Prerequisite.GroupType.Any)
               .SetGiveFeaturesForPreviousLevels(true)
               .AddToLevelEntry(1, Irori0Feat())
-              .AddToLevelEntry(2, CreateIrori1())
-              .AddToLevelEntry(6, Irori2Feat())
-              .AddToLevelEntry(10, CreateIrori3())
+              .AddToLevelEntry(12, CreateIrori1())
+              .AddToLevelEntry(16, Irori2Feat())
+              .AddToLevelEntry(20, CreateIrori3())
               .Configure();
         }
 
