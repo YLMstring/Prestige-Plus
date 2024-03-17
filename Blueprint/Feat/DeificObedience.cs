@@ -4938,6 +4938,7 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(AbilityDeliverTouch),
                 typeof(AbilitySpawnFx),
                 typeof(AbilityUseOnRest))
+                .SetMaterialComponent(AbilityRefs.OwlsWisdom.Reference.Get().MaterialComponent) //effectively remove the material 
                 .SetDisplayName(Irori3DisplayName)
                 .SetDescription(Irori3Description)
                 .SetIcon(icon1)
@@ -4955,6 +4956,8 @@ namespace PrestigePlus.Blueprint.Feat
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                         .ApplyBuff(buff, ContextDuration.Fixed(10))
                         .Build())
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.SelfTouch)
+                .AddComponent(AbilityRefs.OwlsWisdom.Reference.Get().GetComponent<AbilitySpawnFx>())
                 .SetRange(AbilityRange.Personal)
                 .SetType(AbilityType.Supernatural)
                 .Configure();
