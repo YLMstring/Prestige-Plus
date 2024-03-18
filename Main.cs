@@ -62,7 +62,7 @@ namespace PrestigePlus
       Enabled = value;
       return true;
     }
-        private static void onclick()
+        private static void Onclick()
         {
             var log = new StringBuilder();
             log.AppendLine("Current settings: ");
@@ -90,7 +90,7 @@ namespace PrestigePlus
           .AddDefaultButton()
           .AddButton(
             Button.New(
-              Helpers.CreateString("button-desc", "Restart the game to apply changes!"), Helpers.CreateString("button-text", "Do Not Turn Any Chosen Features Off"), onclick))
+              Helpers.CreateString("button-desc", "Restart the game to apply changes!"), Helpers.CreateString("button-text", "Do Not Turn Any Chosen Features Off"), Onclick))
           .AddToggle(
             Toggle.New(GetKey("thc"), defaultValue: false, Helpers.CreateString("toggle-desc34", "Estimated THC (not precise)"))
               .ShowVisualConnection())
