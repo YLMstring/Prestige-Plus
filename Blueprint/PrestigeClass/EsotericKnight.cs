@@ -536,7 +536,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
             var ability2 = AbilityConfigurator.New(PsychicDaringAblity2, PsychicDaringAblity2Guid)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-                        .Add<SpellSlotToRes>(c => { c.ResGuid = swashres; })
+                        .Add<SpellSlotToRes>(c => { c.Res2Guid = swashres; c.ResGuid = BoltAce.GritResourceGuid; })
                         .Build())
                 .SetDisplayName(PsychicDaringDisplayName)
                 .SetDescription(PsychicDaringDescription)
@@ -548,7 +548,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
             var ability = AbilityConfigurator.New(PsychicDaringAblity, PsychicDaringAblityGuid)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-                        .RestoreResource(swashres, 4)
+                        .Add<SpellSlotToRes>(c => { c.Res2Guid = swashres; c.ResGuid = BoltAce.GritResourceGuid; c.num = 4; })
                         .Build())
                 .SetDisplayName(PsychicDaringDisplayName)
                 .SetDescription(PsychicDaringDescription)

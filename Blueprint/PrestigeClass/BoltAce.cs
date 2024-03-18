@@ -25,6 +25,8 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.ActivatableAbilities;
 using PrestigePlus.Modify;
 using BlueprintCore.Actions.Builder.ContextEx;
+using BlueprintCore.Utils.Types;
+using PrestigePlus.CustomComponent;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -43,13 +45,13 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, CreateGrit(), CreateGunsmith())
+                .AddToLevelEntry(1, CreateGrit(), SharpShootFeat(), DodgeFeat(), CreateGunsmith())
                 .AddToLevelEntry(2, CreateNimble())
-                .AddToLevelEntry(3, CreateInitiative())
+                .AddToLevelEntry(3, CreateInitiative(), CreateResolve())
                 .AddToLevelEntry(4, FeatureSelectionRefs.FighterFeatSelection.ToString())
                 .AddToLevelEntry(5, CreateGunTraining())
                 .SetUIGroups(UIGroupBuilder.New()
-                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { SeizetheOpportunity.FeatGuid, BodyGuard.FeatGuid, BodyGuard.Feat2Guid, "8590fb52-921c-4365-832c-ca7635fd5a70", FeatureRefs.PerfectStrikeFeature.ToString() }))
+                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { SharpShootGuid, ResolveGuid, GunTrainingGuid }))
                 .SetRanks(1)
                 .SetIsClassFeature(true)
                 .SetDisplayName("")
@@ -68,7 +70,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetWillSave(StatProgressionRefs.SavesLow.ToString())
                 .SetProgression(progression)
                 .SetClassSkills(new StatType[] { StatType.SkillAthletics, StatType.SkillMobility, StatType.SkillLoreNature, StatType.SkillThievery, StatType.SkillPersuasion, StatType.SkillPerception, StatType.SkillKnowledgeWorld })
-                .AddPrerequisiteStatValue(StatType.BaseAttackBonus, 1)
+                .AddPrerequisiteStatValue(StatType.SkillAthletics, 1)
                 .AddPrerequisiteStatValue(StatType.SkillKnowledgeWorld, 1)
                 .AddPrerequisiteClassLevel(ArchetypeGuid, 5, not: true)
                 .Configure();
@@ -89,7 +91,14 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(GunsmithDisplayName)
               .SetDescription(GunsmithDescription)
               .SetIcon(icon)
-              .AddFacts(new() { FeatureRefs.SimpleWeaponProficiency.ToString(), FeatureRefs.MartialWeaponProficiency.ToString(), FeatureRefs.LightArmorProficiency.ToString() })
+              .AddFacts(new() { FeatureRefs.LightArmorProficiency.ToString() })
+              .AddProficiencies(
+                weaponProficiencies:
+                  new WeaponCategory[]
+                  {
+              WeaponCategory.LightCrossbow,
+              WeaponCategory.HeavyCrossbow,
+                  })
               .Configure();
         }
 
@@ -97,7 +106,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private static readonly string GritFeatureGuid = "{689FA7B8-90ED-4B9A-89C9-83970FAC1F0D}";
 
         private const string GritResource = "Gunslinger.GritResource";
-        private static readonly string GritResourceGuid = "{5E983BF8-BDE0-4FD5-B3CB-240B5A4B8BF5}";
+        public static readonly string GritResourceGuid = "{5E983BF8-BDE0-4FD5-B3CB-240B5A4B8BF5}";
 
         internal const string GritDisplayName = "GunslingerGrit.Name";
         private const string GritDescription = "GunslingerGrit.Description";
@@ -105,14 +114,14 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string ConvertAblity1 = "Gunslinger.UseConvert";
         private static readonly string ConvertAblity1Guid = "{D8CE1AD5-0C85-4805-8669-799281586CFB}";
 
-        internal const string GritDisplayName1 = "GunslingerGrit.Name1";
-        private const string GritDescription1 = "GunslingerGrit.Description1";
+        internal const string GritDisplayName1 = "GunslingerGrit1.Name";
+        private const string GritDescription1 = "GunslingerGrit1.Description";
 
         private const string ConvertAblity2 = "Gunslinger.UseConvert2";
         private static readonly string ConvertAblity2Guid = "{B1BAE0AB-950C-4EB7-B1AC-45DA0B6E6667}";
 
-        internal const string GritDisplayName2 = "GunslingerGrit.Name2";
-        private const string GritDescription2 = "GunslingerGrit.Description2";
+        internal const string GritDisplayName2 = "GunslingerGrit2.Name";
+        private const string GritDescription2 = "GunslingerGrit2.Description";
         private static BlueprintFeature CreateGrit()
         {
             var icon = FeatureRefs.Bravery.Reference.Get().Icon;
@@ -157,8 +166,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetIcon(icon)
                 .AddFacts(new() { ability1, ability2 })
                 .AddAbilityResources(resource: res, restoreAmount: true)
-                .AddInitiatorAttackWithWeaponTrigger(action: ActionsBuilder.New().RestoreResource(res, 1), actionsOnInitiator: true, duelistWeapon: true, criticalHit: true)
-                .AddInitiatorAttackWithWeaponTrigger(action: ActionsBuilder.New().RestoreResource(res, 1), actionsOnInitiator: true, duelistWeapon: true, reduceHPToZero: true)
+                .AddInitiatorAttackWithWeaponTrigger(action: ActionsBuilder.New().RestoreResource(res, 1), actionsOnInitiator: true, criticalHit: true, group: Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroup.Crossbows, checkWeaponGroup: true)
+                .AddInitiatorAttackWithWeaponTrigger(action: ActionsBuilder.New().RestoreResource(res, 1), actionsOnInitiator: true, reduceHPToZero: true, group: Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroup.Crossbows, checkWeaponGroup: true)
                 .Configure();
         }
 
@@ -221,7 +230,10 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(GunTrainingDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddWeaponTypeDamageStatReplacement(WeaponCategory.HeavyRepeatingCrossbow, false, StatType.Dexterity, false)
+              .AddWeaponTypeDamageStatReplacement(WeaponCategory.LightCrossbow, false, StatType.Dexterity, false)
+              .AddWeaponTypeDamageStatReplacement(WeaponCategory.HeavyCrossbow, false, StatType.Dexterity, false)
+              .AddWeaponTypeCriticalMultiplierIncrease(1, WeaponTypeRefs.HeavyCrossbow.ToString())
+              .AddWeaponTypeCriticalMultiplierIncrease(1, WeaponTypeRefs.LightCrossbow.ToString())
               .Configure();
         }
 
@@ -245,7 +257,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDisplayName(DodgeDisplayName)
                 .SetDescription(DodgeDescription)
                 .SetIcon(icon)
-                .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
                 .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
                 .AddACBonusAgainstAttacks(false, true, 2, notArmorCategory: new ArmorProficiencyGroup[] { ArmorProficiencyGroup.Heavy })
                 .AddTargetAttackWithWeaponTrigger(ActionsBuilder.New()
@@ -266,6 +277,102 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             return FeatureConfigurator.New(Dodge, DodgeGuid)
               .SetDisplayName(DodgeDisplayName)
               .SetDescription(DodgeDescription)
+              .SetIcon(icon)
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string Resolve = "BoltAce.Resolve";
+        private static readonly string ResolveGuid = "{7B197C2C-9C64-4CE5-A7DF-015AD7B39BC0}";
+        internal const string ResolveDisplayName = "BoltAceResolve.Name";
+        private const string ResolveDescription = "BoltAceResolve.Description";
+
+        private const string ResolveAblity = "BoltAce.UseResolve";
+        private static readonly string ResolveAblityGuid = "{1A3C62D4-154E-46DD-A310-EFF346361749}";
+
+        private const string ResolveBuff = "BoltAce.ResolveBuff";
+        private static readonly string ResolveBuffGuid = "{5A033351-3962-484D-8BEE-01AB10225F73}";
+        private static BlueprintFeature CreateResolve()
+        {
+            var icon = FeatureRefs.KnightsResolve.Reference.Get().Icon;
+
+            var Buff1 = BuffConfigurator.New(ResolveBuff, ResolveBuffGuid)
+             .SetDisplayName(ResolveDisplayName)
+             .SetDescription(ResolveDescription)
+             .SetIcon(icon)
+             .AddIgnoreConcealment()
+             .AddInitiatorAttackWithWeaponTrigger(action: ActionsBuilder.New().RemoveSelf().Build(), actionsOnInitiator: true, onlyHit: false)
+             .Configure();
+
+            var shoot = ActionsBuilder.New()
+                .ApplyBuff(Buff1, ContextDuration.Fixed(1), toCaster: true)
+                .RangedAttack(autoHit: false, extraAttack: false)
+                .Build();
+
+            var ability = AbilityConfigurator.New(ResolveAblity, ResolveAblityGuid)
+                .AddAbilityEffectRunAction(shoot)
+                .SetType(AbilityType.Physical)
+                .SetDisplayName(ResolveDisplayName)
+                .SetDescription(ResolveDescription)
+                .SetIcon(icon)
+                .SetCanTargetEnemies(true)
+                .SetCanTargetSelf(false)
+                .AddAbilityCasterMainWeaponCheck(new WeaponCategory[] { WeaponCategory.LightCrossbow, WeaponCategory.HeavyCrossbow })
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
+                .SetRange(AbilityRange.Weapon)
+                .AddLineOfSightIgnorance()
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: GritResourceGuid)
+                .Configure();
+
+            return FeatureConfigurator.New(Resolve, ResolveGuid)
+              .SetDisplayName(ResolveDisplayName)
+              .SetDescription(ResolveDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string SharpShoot = "Gunslinger.SharpShoot";
+        public static readonly string SharpShootGuid = "{BF36079D-E70E-4DEF-A8C0-C5BDDCC6AD70}";
+
+        internal const string SharpShootDisplayName = "GunslingerSharpShoot.Name";
+        private const string SharpShootDescription = "GunslingerSharpShoot.Description";
+
+        private const string SharpShoot2Buff = "Gunslinger.SharpShoot2Buff";
+        private static readonly string SharpShoot2BuffGuid = "{C5EE5F00-5994-4675-B5A3-B48574189126}";
+
+        private const string SharpShootAblity = "Gunslinger.UseSharpShoot";
+        private static readonly string SharpShootAblityGuid = "{C6832469-7D6B-42CE-80E6-B238BD74CA43}";
+
+        public static BlueprintFeature SharpShootFeat()
+        {
+            var icon = FeatureRefs.PointBlankShotMythicFeat.Reference.Get().Icon;
+
+            var Buff2 = BuffConfigurator.New(SharpShoot2Buff, SharpShoot2BuffGuid)
+                .SetDisplayName(SharpShootDisplayName)
+                .SetDescription(SharpShootDescription)
+                .SetIcon(icon)
+                .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
+                .AddComponent<AttackTypeChangePP>(c => { c.Group = Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroup.Crossbows; c.NewType = AttackType.RangedTouch; })
+                .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New()
+                        .ContextSpendResource(GritResourceGuid, 1)
+                        .Build(), onlyHit: false, checkWeaponGroup: true, group: Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroup.Crossbows)
+                .AddComponent<AddAbilityResourceDepletedTrigger>(c => { c.m_Resource = BlueprintTool.GetRef<BlueprintAbilityResourceReference>(GritResourceGuid); c.Action = ActionsBuilder.New().RemoveSelf().Build(); c.Cost = 1; })
+                .Configure();
+
+            var ability = ActivatableAbilityConfigurator.New(SharpShootAblity, SharpShootAblityGuid)
+                .SetDisplayName(SharpShootDisplayName)
+                .SetDescription(SharpShootDescription)
+                .SetIcon(icon)
+                .AddActivatableAbilityResourceLogic(requiredResource: GritResourceGuid, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.Never)
+                .SetBuff(Buff2)
+                .SetDeactivateImmediately()
+                .Configure();
+
+            return FeatureConfigurator.New(SharpShoot, SharpShootGuid)
+              .SetDisplayName(SharpShootDisplayName)
+              .SetDescription(SharpShootDescription)
               .SetIcon(icon)
               .AddFacts(new() { ability })
               .Configure();
