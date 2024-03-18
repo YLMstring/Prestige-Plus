@@ -137,6 +137,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("asavir"), defaultValue: true, Helpers.CreateString("toggle-desc19", "Asavir"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("boltace"), defaultValue: true, Helpers.CreateString("toggle-desc93", "Bolt Ace"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("chevalier"), defaultValue: true, Helpers.CreateString("toggle-desc2", "Chevalier"))
               .ShowVisualConnection())
           .AddToggle(
@@ -463,6 +466,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("geisha"))) { Geisha.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("soundstriker"))) { SoundStriker.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("ankou"))) { AnkouShadow.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("boltace"))) { BoltAce.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
