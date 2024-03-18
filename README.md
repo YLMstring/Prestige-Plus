@@ -1,4 +1,4 @@
-# Prestige Plus v2.9.3 for WoTR 
+# Prestige Plus v2.9.4 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -27,36 +27,37 @@
 - Added Familiar: Crab King
 - Added Alchemist Discovery: Tentacle
 ### [Deific Obedience](https://www.d20pfsrd.com/feats/general-feats/deific-obedience)
-- [Ragathiel](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Ragathiel): requires worshipping Ragathiel (Expanded Content) or Lawful Good
-- [Shelyn (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Shelyn): requires worshipping Shelyn or Neutral Good
-- [Naderi (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Naderi): requires worshipping Naderi (Expanded Content) or Neutral
-- [Dsena](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Desna): requires worshipping Desna or Chaotic Good
 - [Erastil](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Erastil): requires worshipping Erastil or Lawful Good
-- [Gorum (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Gorum): requires heavy armor proficiency, worshipping Gorum or Chaotic Neutral
-- [Mahathallah (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Mahathallah): requires worshipping Asmodeus or Lawful Evil
-- [Norgorber](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Norgorber): requires worshipping Norgorber or Neutral Evil
-- [Lamashtu (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Lamashtu): requires worshipping Lamashtu or Chaotic Evil
-- [Otolmens](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Otolmens): requires worshipping Otolmens (Expanded Content) or Lawful Neutral
-- [Arazni (sentinel)](https://aonprd.com/DeityDisplay.aspx?ItemName=Arazni): requires worshipping Urgathoa or Neutral Evil
-- [Charon (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Charon): requires worshipping Charon (Expanded Content) or Neutral Evil
-- [Szuriel (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Szuriel): requires worshipping Szuriel (Expanded Content) or Neutral Evil
-- [Iomedae (sentinel)](https://aonprd.com/DeityDisplay.aspx?ItemName=Iomedae): requires worshipping Iomedae or Lawful Good
-- [Milani (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Milani): requires worshipping Milani (Expanded Content) or Chaotic Good
-- [Nivi (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Nivi%20Rhombodazzle): requires worshipping Torag or Neutral
-- [Socothbenoth (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Socothbenoth): requires worshipping Gyronna or Chaotic Evil
 - [Falayna](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Falayna): requires worshipping Falayna (Expanded Content) or Lawful Good
-- [Kabriri (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Kabriri): requires worshipping Kabriri (Expanded Content) or Chaotic Evil
+- [Iomedae (sentinel)](https://aonprd.com/DeityDisplay.aspx?ItemName=Iomedae): requires worshipping Iomedae or Lawful Good
+- [Ragathiel](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Ragathiel): requires worshipping Ragathiel (Expanded Content) or Lawful Good
 - [Chaldira (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Chaldira): requires thievery 1, worshipping Sarenrae or Neutral Good
+- [Shelyn (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Shelyn): requires worshipping Shelyn or Neutral Good
+- [Dsena](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Desna): requires worshipping Desna or Chaotic Good
+- [Milani (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Milani): requires worshipping Milani (Expanded Content) or Chaotic Good
 - [Pulura](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Pulura): requires worshipping Pulura or Chaotic Good
-- [Rovagug](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Rovagug): requires worshipping Rovagug or Chaotic Evil
-- [The Lantern King](https://aonprd.com/DeityDisplay.aspx?ItemName=The%20Lantern%20King): requires worshipping The Lantern King (Expanded Content) or Chaotic Neutral
+- [Irori](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Irori): requires worshipping Irori or Lawful Neutral
+- [Otolmens](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Otolmens): requires worshipping Otolmens (Expanded Content) or Lawful Neutral
 - [Gozreh (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Gozreh): requires worshipping Gozreh or Neutral
-- [Calistria (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Calistria): requires worshipping Calistria or Chaotic Neutral
 - [Mrtyu](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Mrtyu): requires worshipping Mrtyu (Expanded Content) or Neutral
-- [Mephistopheles](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Mephistopheles): requires worshipping Mephistopheles (Expanded Content) or Lawful Evil
+- [Naderi (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Naderi): requires worshipping Naderi (Expanded Content) or Neutral
+- [Nivi (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Nivi%20Rhombodazzle): requires worshipping Torag or Neutral
+- [Calistria (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Calistria): requires worshipping Calistria or Chaotic Neutral
+- [Gorum (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Gorum): requires heavy armor proficiency, worshipping Gorum or Chaotic Neutral
+- [The Lantern King](https://aonprd.com/DeityDisplay.aspx?ItemName=The%20Lantern%20King): requires worshipping The Lantern King (Expanded Content) or Chaotic Neutral
 - [Nocticula (sentinel)](https://aonprd.com/DeityDisplay.aspx?ItemName=Nocticula): requires worshipping Nocticula (Expanded Content) or Chaotic Neutral
 - Some of her boons have changed because she's in the middle of [spoilers](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Nocticula%20(Redeemed))
-- More coming soon!
+- [Achaekek (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Achaekek): requires worshipping Achaekek (Expanded Content) or Lawful Evil
+- [Mahathallah (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Mahathallah): requires worshipping Asmodeus or Lawful Evil
+- [Mephistopheles](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Mephistopheles): requires worshipping Mephistopheles (Expanded Content) or Lawful Evil
+- [Arazni (sentinel)](https://aonprd.com/DeityDisplay.aspx?ItemName=Arazni): requires worshipping Urgathoa or Neutral Evil
+- [Charon (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Charon): requires worshipping Charon (Expanded Content) or Neutral Evil
+- [Norgorber](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Norgorber): requires worshipping Norgorber or Neutral Evil
+- [Szuriel (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Szuriel): requires worshipping Szuriel (Expanded Content) or Neutral Evil
+- [Kabriri (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Kabriri): requires worshipping Kabriri (Expanded Content) or Chaotic Evil
+- [Lamashtu (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Lamashtu): requires worshipping Lamashtu or Chaotic Evil
+- [Rovagug](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Rovagug): requires worshipping Rovagug or Chaotic Evil
+- [Socothbenoth (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Socothbenoth): requires worshipping Gyronna or Chaotic Evil
 ### [Evangelist](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/evangelist/)
 - [Diverse Obedience](https://www.d20pfsrd.com/feats/general-feats/diverse-obedience/)
 - Continue the aligned class progression or start your [Exalted](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/exalted/) career!
@@ -364,6 +365,7 @@
 - [Resinous Skin](https://aonprd.com/SpellDisplay.aspx?ItemName=Resinous%20Skin)
 - [Pilfering Hand](https://www.d20pfsrd.com/magic/all-spells/p/pilfering-hand/)
 - [Discordant Blast](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Discordant%20Blast)
+- [Lockjaw](https://www.d20pfsrd.com/magic/all-spells/l/lockjaw/)
 ### New Mythic Prestige Class Features
 
 - Swift Death: Your Death Attack becomes a standard action. At 10th assassin level, it becomes a move action.
