@@ -18,7 +18,7 @@ namespace PrestigePlus.CustomComponent
         public void OnEventAboutToTrigger(RuleAttackRoll evt)
         {
             var group = evt.Weapon?.Blueprint.FighterGroup;
-            if (group != null && evt.Weapon.Blueprint.FighterGroup.HasFlag(Group) == true)
+            if (group != null && evt.Weapon.Blueprint.FighterGroup.Contains(Group) == true)
             {
                 evt.AttackType = this.NewType;
             }
