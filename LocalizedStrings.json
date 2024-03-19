@@ -12558,7 +12558,7 @@
   {
     "Key": "GunslingerGrit.Description",
     "enGB": "A gunslinger makes her mark upon the world with daring deeds. Some gunslingers claim they belong to a mystical way of the gun, but it’s more likely that the volatile nature of firearms simply prunes the unlucky and careless from their ranks. Whatever the reason, all gunslingers have grit. In game terms, grit is a fluctuating measure of a gunslinger’s ability to perform amazing actions in combat. At the start of each day, a gunslinger gains a number of grit points equal to her Wisdom modifier (minimum 1). Her grit goes up or down throughout the day, but usually cannot go higher than her Wisdom modifier (minimum 1), though some feats and magic items may affect this maximum. A bolt ace regains grit when she scores a critical hit or deals a killing blow with any kind of crossbow.",
-    "zhCN": "铳士用英勇之举在世上留下自己的印记。一些铳士声称她们属于某种枪械的神秘之道，但更可能只是火器那不稳定且危险的天性削减了她们的不幸和疏忽。不管如何，所有铳士都拥有勇毅能力。用游戏术语而言，勇毅值是一个表示铳士在战斗中完成惊人动作的能力的指标。在每天开始时，铳士在勇毅值上获得等于其感知修正的点数（至少为1）。勇毅值在一天当中不停上下浮动，但一般不能高于铳士的感知修正（至少为1），不过一些专长和魔法物品可能会影响这一最大值。"
+    "zhCN": "铳士用英勇之举在世上留下自己的印记。一些铳士声称她们属于某种枪械的神秘之道，但更可能只是火器那不稳定且危险的天性削减了她们的不幸和疏忽。不管如何，所有铳士都拥有勇毅能力。用游戏术语而言，勇毅值是一个表示铳士在战斗中完成惊人动作的能力的指标。在每天开始时，铳士在勇毅值上获得等于其感知修正的点数（至少为1）。勇毅值在一天当中不停上下浮动，但一般不能高于铳士的感知修正（至少为1），不过一些专长和魔法物品可能会影响这一最大值。王牌弩手会在使用任何种类的弩确认重击或一弩致命时回复勇毅值。"
   },
   {
     "Key": "GunslingerSharpShoot.Name",

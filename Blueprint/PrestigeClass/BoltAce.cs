@@ -45,7 +45,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, CreateGrit(), SharpShootFeat(), DodgeFeat(), CreateGunsmith())
+                .AddToLevelEntry(1, CreateGrit(), SharpShootFeat(), CreateGunsmith())
                 .AddToLevelEntry(2, CreateNimble())
                 .AddToLevelEntry(3, CreateInitiative(), CreateResolve())
                 .AddToLevelEntry(4, FeatureSelectionRefs.FighterFeatSelection.ToString())
@@ -85,7 +85,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string GunsmithDescription = "GunslingerGunsmith.Description";
         private static BlueprintFeature CreateGunsmith()
         {
-            var icon = FeatureRefs.LightCrossbowProficiency.Reference.Get().Icon;
+            var icon = FeatureRefs.Manyshot.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Gunsmith, GunsmithGuid)
               .SetDisplayName(GunsmithDisplayName)
@@ -160,11 +160,13 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetActionBarAutoFillIgnored(true)
                 .Configure();
 
+            DodgeFeat();
+
             return FeatureConfigurator.New(GritFeature, GritFeatureGuid)
                 .SetDisplayName(GritDisplayName)
                 .SetDescription(GritDescription)
                 .SetIcon(icon)
-                .AddFacts(new() { ability1, ability2 })
+                .AddFacts(new() { DodgeGuid, ability1, ability2 })
                 .AddAbilityResources(resource: res, restoreAmount: true)
                 .AddInitiatorAttackWithWeaponTrigger(action: ActionsBuilder.New().RestoreResource(res, 1), actionsOnInitiator: true, criticalHit: true, group: Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroup.Crossbows, checkWeaponGroup: true)
                 .AddInitiatorAttackWithWeaponTrigger(action: ActionsBuilder.New().RestoreResource(res, 1), actionsOnInitiator: true, reduceHPToZero: true, group: Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroup.Crossbows, checkWeaponGroup: true)
@@ -223,7 +225,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string GunTrainingDescription = "GunslingerGunTraining.Description";
         private static BlueprintFeature CreateGunTraining()
         {
-            var icon = FeatureRefs.WeaponTrainingCrossbows.Reference.Get().Icon;
+            var icon = FeatureRefs.ClusteredShots.Reference.Get().Icon;
 
             return FeatureConfigurator.New(GunTraining, GunTrainingGuid)
               .SetDisplayName(GunTrainingDisplayName)
