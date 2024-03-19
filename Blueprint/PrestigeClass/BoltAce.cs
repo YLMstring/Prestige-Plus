@@ -85,7 +85,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string GunsmithDescription = "GunslingerGunsmith.Description";
         private static BlueprintFeature CreateGunsmith()
         {
-            var icon = FeatureRefs.CavalierCharge.Reference.Get().Icon;
+            var icon = FeatureRefs.LightCrossbowProficiency.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Gunsmith, GunsmithGuid)
               .SetDisplayName(GunsmithDisplayName)
@@ -181,7 +181,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string NimbleDescription = "GunslingerNimble.Description";
         private static BlueprintFeature CreateNimble()
         {
-            var icon = AbilityRefs.ChargeAbility.Reference.Get().Icon;
+            var icon = FeatureRefs.Mobility.Reference.Get().Icon;
 
             var Buff1 = BuffConfigurator.New(NimbleBuff, NimbleGuidBuff)
               .SetDisplayName(NimbleDisplayName)
@@ -206,7 +206,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string InitiativeDescription = "GunslingerInitiative.Description";
         private static BlueprintFeature CreateInitiative()
         {
-            var icon = FeatureRefs.CavalierCharge.Reference.Get().Icon;
+            var icon = FeatureRefs.Improved_Initiative.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Initiative, InitiativeGuid)
               .SetDisplayName(InitiativeDisplayName)
@@ -223,7 +223,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string GunTrainingDescription = "GunslingerGunTraining.Description";
         private static BlueprintFeature CreateGunTraining()
         {
-            var icon = FeatureRefs.CavalierCharge.Reference.Get().Icon;
+            var icon = FeatureRefs.WeaponTrainingCrossbows.Reference.Get().Icon;
 
             return FeatureConfigurator.New(GunTraining, GunTrainingGuid)
               .SetDisplayName(GunTrainingDisplayName)
@@ -294,7 +294,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private static readonly string ResolveBuffGuid = "{5A033351-3962-484D-8BEE-01AB10225F73}";
         private static BlueprintFeature CreateResolve()
         {
-            var icon = FeatureRefs.KnightsResolve.Reference.Get().Icon;
+            var icon = FeatureRefs.MythicResolveMythicFeat.Reference.Get().Icon;
 
             var Buff1 = BuffConfigurator.New(ResolveBuff, ResolveBuffGuid)
              .SetDisplayName(ResolveDisplayName)
@@ -347,7 +347,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static BlueprintFeature SharpShootFeat()
         {
-            var icon = FeatureRefs.PointBlankShotMythicFeat.Reference.Get().Icon;
+            var icon = AbilityRefs.FocusedShotAction.Reference.Get().Icon;
 
             var Buff2 = BuffConfigurator.New(SharpShoot2Buff, SharpShoot2BuffGuid)
                 .SetDisplayName(SharpShootDisplayName)
