@@ -12601,8 +12601,8 @@
   },
   {
     "Key": "GunslingerDodge.Description",
-    "enGB": "At 1st level, the gunslinger gains an uncanny knack for getting out of the way of ranged attacks. When a ranged attack is made against the gunslinger, she can spend 1 grit point to gain a +2 bonus to AC against the triggering attack. The gunslinger can only perform this deed while wearing medium or light armor.",
-    "zhCN": "1级时，铳士在规避远程攻击时获得惊艳窍门。当受到远程攻击时，铳士可以消耗1点勇毅令针对此次攻击的AC将获得+2加值。铳士只能在穿着轻甲或无甲时使用此炫技。"
+    "enGB": "At 1st level, the gunslinger gains an uncanny knack for getting out of the way of ranged attacks. When a ranged attack is made against the gunslinger, once per round she can spend 1 grit point to gain a +2 bonus to AC against the triggering attack. The gunslinger can only perform this deed while wearing medium or light armor.",
+    "zhCN": "1级时，铳士在规避远程攻击时获得惊艳窍门。当受到远程攻击时，每轮一次，铳士可以消耗1点勇毅令针对此次攻击的AC将获得+2加值。铳士只能在穿着轻甲或无甲时使用此炫技。"
   },
   {
     "Key": "GunslingerInitiative.Name",

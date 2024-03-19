@@ -27,6 +27,7 @@ using PrestigePlus.Modify;
 using BlueprintCore.Actions.Builder.ContextEx;
 using BlueprintCore.Utils.Types;
 using PrestigePlus.CustomComponent;
+using PrestigePlus.CustomComponent.PrestigeClass;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -260,10 +261,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDescription(DodgeDescription)
                 .SetIcon(icon)
                 .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
-                .AddACBonusAgainstAttacks(false, true, 2, notArmorCategory: new ArmorProficiencyGroup[] { ArmorProficiencyGroup.Heavy })
-                .AddTargetAttackWithWeaponTrigger(ActionsBuilder.New()
-                        .ContextSpendResource(GritResourceGuid, 1)
-                        .Build(), onlyHit: false, onlyRanged: true, waitForAttackResolve: true)
+                .AddComponent<DodgingGrit>(c => { c.Resource = BlueprintTool.GetRef<BlueprintAbilityResourceReference>(GritResourceGuid); })
                 .AddComponent<AddAbilityResourceDepletedTrigger>(c => { c.m_Resource = BlueprintTool.GetRef<BlueprintAbilityResourceReference>(GritResourceGuid); c.Action = ActionsBuilder.New().RemoveSelf().Build(); c.Cost = 1; })
                 .Configure();
 
