@@ -1981,45 +1981,45 @@
     "Key": "PPbookAccursedWitch.Name",
     "ProcessTemplates": false,
     "enGB": "Accursed Witch",
-	"ruRU": "Меченая ведьма"
+    "ruRU": "Меченая ведьма"
   },
   {
     "Key": "PPbookAccursedWitch.Description",
     "enGB": "Accursed Witch",
-	"ruRU": "Меченая ведьма"
+    "ruRU": "Меченая ведьма"
   },
   {
     "Key": "PPbookAlchemist.Name",
     "ProcessTemplates": false,
     "enGB": "Alchemist",
-	"ruRU": "Алхимик"
+    "ruRU": "Алхимик"
   },
   {
     "Key": "PPbookAlchemist.Description",
     "enGB": "Alchemist",
-	"ruRU": "Алхимик"
+    "ruRU": "Алхимик"
   },
   {
     "Key": "PPbookAngelfireApostle.Name",
     "ProcessTemplates": false,
     "enGB": "Angelfire Apostle",
-	"ruRU": "Апостол ангельского огня"
+    "ruRU": "Апостол ангельского огня"
   },
   {
     "Key": "PPbookAngelfireApostle.Description",
     "enGB": "Angelfire Apostle",
-	"ruRU": "Апостол ангельского огня"
+    "ruRU": "Апостол ангельского огня"
   },
   {
     "Key": "PPbookArcanist.Name",
     "ProcessTemplates": false,
     "enGB": "Arcanist",
-	"ruRU": "Арканист"
+    "ruRU": "Арканист"
   },
   {
     "Key": "PPbookArcanist.Description",
     "enGB": "Arcanist",
-	"ruRU": "Арканист"
+    "ruRU": "Арканист"
   },
   {
     "Key": "PPbookArmagsBlade.Name",
@@ -2034,529 +2034,529 @@
     "Key": "PPbookBard.Name",
     "ProcessTemplates": false,
     "enGB": "Bard",
-	"ruRU": "Бард"
+    "ruRU": "Бард"
   },
   {
     "Key": "PPbookBard.Description",
     "enGB": "Bard",
-	"ruRU": "Бард"
+    "ruRU": "Бард"
   },
   {
     "Key": "PPbookBloodrager.Name",
     "ProcessTemplates": false,
     "enGB": "Bloodrager",
-	"ruRU": "Наследник ярости"
+    "ruRU": "Наследник ярости"
   },
   {
     "Key": "PPbookBloodrager.Description",
     "enGB": "Bloodrager",
-	"ruRU": "Наследник ярости"
+    "ruRU": "Наследник ярости"
   },
   {
     "Key": "PPbookCleric.Name",
     "ProcessTemplates": false,
     "enGB": "Cleric",
-	"ruRU": "Жрец"
+    "ruRU": "Жрец"
   },
   {
     "Key": "PPbookCleric.Description",
     "enGB": "Cleric",
-	"ruRU": "Жрец"
+    "ruRU": "Жрец"
   },
   {
     "Key": "PPbookCrossblooded.Name",
     "ProcessTemplates": false,
     "enGB": "Crossblooded",
-	"ruRU": "Смешанная кровь"
+    "ruRU": "Смешанная кровь"
   },
   {
     "Key": "PPbookCrossblooded.Description",
     "enGB": "Crossblooded",
-	"ruRU": "Смешанная кровь"
+    "ruRU": "Смешанная кровь"
   },
   {
     "Key": "PPbookCrusader.Name",
     "ProcessTemplates": false,
     "enGB": "Crusader",
-	"ruRU": "Крестоносец"
+    "ruRU": "Крестоносец"
   },
   {
     "Key": "PPbookCrusader.Description",
     "enGB": "Crusader",
-	"ruRU": "Крестоносец"
+    "ruRU": "Крестоносец"
   },
   {
     "Key": "PPbookDruid.Name",
     "ProcessTemplates": false,
     "enGB": "Druid",
-	"ruRU": "Друид"
+    "ruRU": "Друид"
   },
   {
     "Key": "PPbookDruid.Description",
     "enGB": "Druid",
-	"ruRU": "Друид"
+    "ruRU": "Друид"
   },
   {
     "Key": "PPbookEldritchFont.Name",
     "ProcessTemplates": false,
     "enGB": "Eldritch Font",
-	"ruRU": "Сосуд чародейства"
+    "ruRU": "Сосуд чародейства"
   },
   {
     "Key": "PPbookEldritchFont.Description",
     "enGB": "Eldritch Font",
-	"ruRU": "Сосуд чародейства"
+    "ruRU": "Сосуд чародейства"
   },
   {
     "Key": "PPbookEldritchScion.Name",
     "ProcessTemplates": false,
     "enGB": "Eldritch Scion",
-	"ruRU": "Чародейский наследник"
+    "ruRU": "Чародейский наследник"
   },
   {
     "Key": "PPbookEldritchScion.Description",
     "enGB": "Eldritch Scion",
-	"ruRU": "Чародейский наследник"
+    "ruRU": "Чародейский наследник"
   },
   {
     "Key": "PPbookEldritchScoundrel.Name",
     "ProcessTemplates": false,
     "enGB": "Eldritch Scoundrel",
-	"ruRU": "Чародейский плут"
+    "ruRU": "Чародейский плут"
   },
   {
     "Key": "PPbookEldritchScoundrel.Description",
     "enGB": "Eldritch Scoundrel",
-	"ruRU": "Чародейский плут"
+    "ruRU": "Чародейский плут"
   },
   {
     "Key": "PPbookEmpyreal.Name",
     "ProcessTemplates": false,
     "enGB": "Empyreal",
-	"ruRU": "Светозарный колдун"
+    "ruRU": "Светозарный колдун"
   },
   {
     "Key": "PPbookEmpyreal.Description",
     "enGB": "Empyreal",
-	"ruRU": "Светозарный колдун"
+    "ruRU": "Светозарный колдун"
   },
   {
     "Key": "PPbookExploiterWizard.Name",
     "ProcessTemplates": false,
     "enGB": "Exploiter Wizard",
-	"ruRU": "Техничный маг"
+    "ruRU": "Техничный маг"
   },
   {
     "Key": "PPbookExploiterWizard.Description",
     "enGB": "Exploiter Wizard",
-	"ruRU": "Техничный маг"
+    "ruRU": "Техничный маг"
   },
   {
     "Key": "PPbookFeyspeaker.Name",
     "ProcessTemplates": false,
     "enGB": "Feyspeaker",
-	"ruRU": "Фееуст"
+    "ruRU": "Фееуст"
   },
   {
     "Key": "PPbookFeyspeaker.Description",
     "enGB": "Feyspeaker",
-	"ruRU": "Фееуст"
+    "ruRU": "Фееуст"
   },
   {
     "Key": "PPbookHunter.Name",
     "ProcessTemplates": false,
     "enGB": "Hunter",
-	"ruRU": "Охотник"
+    "ruRU": "Охотник"
   },
   {
     "Key": "PPbookHunter.Description",
     "enGB": "Hunter",
-	"ruRU": "Охотник"
+    "ruRU": "Охотник"
   },
   {
     "Key": "PPbookInquisitor.Name",
     "ProcessTemplates": false,
     "enGB": "Inquisitor",
-	"ruRU": "Инквизитор"
+    "ruRU": "Инквизитор"
   },
   {
     "Key": "PPbookInquisitor.Description",
     "enGB": "Inquisitor",
-	"ruRU": "Инквизитор"
+    "ruRU": "Инквизитор"
   },
   {
     "Key": "PPbookLeyLineGuardianWitch.Name",
     "ProcessTemplates": false,
     "enGB": "LeyLine Guardian Witch",
-	"ruRU": "Стражница лей-линий"
+    "ruRU": "Стражница лей-линий"
   },
   {
     "Key": "PPbookLeyLineGuardianWitch.Description",
     "enGB": "LeyLine Guardian Witch",
-	"ruRU": "Стражница лей-линий"
+    "ruRU": "Стражница лей-линий"
   },
   {
     "Key": "PPbookMagus.Name",
     "ProcessTemplates": false,
     "enGB": "Magus",
-	"ruRU": "Магус"
+    "ruRU": "Магус"
   },
   {
     "Key": "PPbookMagus.Description",
     "enGB": "Magus",
-	"ruRU": "Магус"
+    "ruRU": "Магус"
   },
   {
     "Key": "PPbookMasterSpy.Name",
     "ProcessTemplates": false,
     "enGB": "Master Spy",
-	"ruRU": "Мастер-шпион"
+    "ruRU": "Мастер-шпион"
   },
   {
     "Key": "PPbookMasterSpy.Description",
     "enGB": "Master Spy",
-	"ruRU": "Мастер-шпион"
+    "ruRU": "Мастер-шпион"
   },
   {
     "Key": "PPbookNatureMage.Name",
     "ProcessTemplates": false,
     "enGB": "Nature Mage",
-	"ruRU": "Маг природы"
+    "ruRU": "Маг природы"
   },
   {
     "Key": "PPbookNatureMage.Description",
     "enGB": "Nature Mage",
-	"ruRU": "Маг природы"
+    "ruRU": "Маг природы"
   },
   {
     "Key": "PPbookOracle.Name",
     "ProcessTemplates": false,
     "enGB": "Oracle",
-	"ruRU": "Оракул"
+    "ruRU": "Оракул"
   },
   {
     "Key": "PPbookOracle.Description",
     "enGB": "Oracle",
-	"ruRU": "Оракул"
+    "ruRU": "Оракул"
   },
   {
     "Key": "PPbookPaladin.Name",
     "ProcessTemplates": false,
     "enGB": "Paladin",
-	"ruRU": "Паладин"
+    "ruRU": "Паладин"
   },
   {
     "Key": "PPbookPaladin.Description",
     "enGB": "Paladin",
-	"ruRU": "Паладин"
+    "ruRU": "Паладин"
   },
   {
     "Key": "PPbookRanger.Name",
     "ProcessTemplates": false,
     "enGB": "Ranger",
-	"ruRU": "Рейнджер"
+    "ruRU": "Рейнджер"
   },
   {
     "Key": "PPbookRanger.Description",
     "enGB": "Ranger",
-	"ruRU": "Рейнджер"
+    "ruRU": "Рейнджер"
   },
   {
     "Key": "PPbookSage.Name",
     "ProcessTemplates": false,
     "enGB": "Sage",
-	"ruRU": "Колдун-мыслитель"
+    "ruRU": "Колдун-мыслитель"
   },
   {
     "Key": "PPbookSage.Description",
     "enGB": "Sage",
-	"ruRU": "Колдун-мыслитель"
+    "ruRU": "Колдун-мыслитель"
   },
   {
     "Key": "PPbookShaman.Name",
     "ProcessTemplates": false,
     "enGB": "Shaman",
-	"ruRU": "Шаман"
+    "ruRU": "Шаман"
   },
   {
     "Key": "PPbookShaman.Description",
     "enGB": "Shaman",
-	"ruRU": "Шаман"
+    "ruRU": "Шаман"
   },
   {
     "Key": "PPbookSkald.Name",
     "ProcessTemplates": false,
     "enGB": "Skald",
-	"ruRU": "Скальд"
+    "ruRU": "Скальд"
   },
   {
     "Key": "PPbookSkald.Description",
     "enGB": "Skald",
-	"ruRU": "Скальд"
+    "ruRU": "Скальд"
   },
   {
     "Key": "PPbookSorcerer.Name",
     "ProcessTemplates": false,
     "enGB": "Sorcerer",
-	"ruRU": "Колдун"
+    "ruRU": "Колдун"
   },
   {
     "Key": "PPbookSorcerer.Description",
     "enGB": "Sorcerer",
-	"ruRU": "Колдун"
+    "ruRU": "Колдун"
   },
   {
     "Key": "PPbookSwordSaint.Name",
     "ProcessTemplates": false,
     "enGB": "Sword Saint",
-	"ruRU": "Святой мечник"
+    "ruRU": "Святой мечник"
   },
   {
     "Key": "PPbookSwordSaint.Description",
     "enGB": "Sword Saint",
-	"ruRU": "Святой мечник"
+    "ruRU": "Святой мечник"
   },
   {
     "Key": "PPbookThassilonianAbjuration.Name",
     "ProcessTemplates": false,
     "enGB": "Thassilonian Abjuration",
-	"ruRU": "Тассилонский специалист - Зависть"
+    "ruRU": "Тассилонский специалист - Зависть"
   },
   {
     "Key": "PPbookThassilonianAbjuration.Description",
     "enGB": "Thassilonian Abjuration",
-	"ruRU": "Тассилонский специалист - Зависть"
+    "ruRU": "Тассилонский специалист - Зависть"
   },
   {
     "Key": "PPbookThassilonianConjuration.Name",
     "ProcessTemplates": false,
     "enGB": "Thassilonian Conjuration",
-	"ruRU": "Тассилонский специалист - Праздность"
+    "ruRU": "Тассилонский специалист - Праздность"
   },
   {
     "Key": "PPbookThassilonianConjuration.Description",
     "enGB": "Thassilonian Conjuration",
-	"ruRU": "Тассилонский специалист - Праздность"
+    "ruRU": "Тассилонский специалист - Праздность"
   },
   {
     "Key": "PPbookThassilonianEnchantment.Name",
     "ProcessTemplates": false,
     "enGB": "Thassilonian Enchantment",
-	"ruRU": "Тассилонский специалист - Блуд"
+    "ruRU": "Тассилонский специалист - Блуд"
   },
   {
     "Key": "PPbookThassilonianEnchantment.Description",
     "enGB": "Thassilonian Enchantment",
-	"ruRU": "Тассилонский специалист - Блуд"
+    "ruRU": "Тассилонский специалист - Блуд"
   },
   {
     "Key": "PPbookThassilonianEvocation.Name",
     "ProcessTemplates": false,
     "enGB": "Thassilonian Evocation",
-	"ruRU": "Тассилонский специалист - Гнев"
+    "ruRU": "Тассилонский специалист - Гнев"
   },
   {
     "Key": "PPbookThassilonianEvocation.Description",
     "enGB": "Thassilonian Evocation",
-	"ruRU": "Тассилонский специалист - Гнев"
+    "ruRU": "Тассилонский специалист - Гнев"
   },
   {
     "Key": "PPbookThassilonianIllusion.Name",
     "ProcessTemplates": false,
     "enGB": "Thassilonian Illusion",
-	"ruRU": "Тассилонский специалист - Гордыня"
+    "ruRU": "Тассилонский специалист - Гордыня"
   },
   {
     "Key": "PPbookThassilonianIllusion.Description",
     "enGB": "Thassilonian Illusion",
-	"ruRU": "Тассилонский специалист - Гордыня"
+    "ruRU": "Тассилонский специалист - Гордыня"
   },
   {
     "Key": "PPbookThassilonianNecromancy.Name",
     "ProcessTemplates": false,
     "enGB": "Thassilonian Necromancy",
-	"ruRU": "Тассилонский специалист - Чревоугодие"
+    "ruRU": "Тассилонский специалист - Чревоугодие"
   },
   {
     "Key": "PPbookThassilonianNecromancy.Description",
     "enGB": "Thassilonian Necromancy",
-	"ruRU": "Тассилонский специалист - Чревоугодие"
+    "ruRU": "Тассилонский специалист - Чревоугодие"
   },
   {
     "Key": "PPbookThassilonianTransmutation.Name",
     "ProcessTemplates": false,
     "enGB": "Thassilonian Transmutation",
-	"ruRU": "Тассилонский специалист - Алчность"
+    "ruRU": "Тассилонский специалист - Алчность"
   },
   {
     "Key": "PPbookThassilonianTransmutation.Description",
     "enGB": "Thassilonian Transmutation",
-	"ruRU": "Тассилонский специалист - Алчность"
+    "ruRU": "Тассилонский специалист - Алчность"
   },
   {
     "Key": "PPbookUnletteredArcanist.Name",
     "ProcessTemplates": false,
     "enGB": "Unlettered Arcanist",
-	"ruRU": "Бесписьменный арканист"
+    "ruRU": "Бесписьменный арканист"
   },
   {
     "Key": "PPbookUnletteredArcanist.Description",
     "enGB": "Unlettered Arcanist",
-	"ruRU": "Бесписьменный арканист"
+    "ruRU": "Бесписьменный арканист"
   },
   {
     "Key": "PPbookWarpriest.Name",
     "ProcessTemplates": false,
     "enGB": "Warpriest",
-	"ruRU": "Капеллан"
+    "ruRU": "Капеллан"
   },
   {
     "Key": "PPbookWarpriest.Description",
     "enGB": "Warpriest",
-	"ruRU": "Капеллан"
+    "ruRU": "Капеллан"
   },
   {
     "Key": "PPbookWitch.Name",
     "ProcessTemplates": false,
     "enGB": "Witch",
-	"ruRU": "Ведьма"
+    "ruRU": "Ведьма"
   },
   {
     "Key": "PPbookWitch.Description",
     "enGB": "Witch",
-	"ruRU": "Ведьма"
+    "ruRU": "Ведьма"
   },
   {
     "Key": "PPbookWizard.Name",
     "ProcessTemplates": false,
     "enGB": "Wizard",
-	"ruRU": "Маг"
+    "ruRU": "Маг"
   },
   {
     "Key": "PPbookWizard.Description",
     "enGB": "Wizard",
-	"ruRU": "Маг"
+    "ruRU": "Маг"
   },
   {
     "Key": "PPbookDreadKnight.Name",
     "ProcessTemplates": false,
     "enGB": "Dread Knight",
-	"ruRU": "Рыцарь ужаса"
+    "ruRU": "Рыцарь ужаса"
   },
   {
     "Key": "PPbookDreadKnight.Description",
     "enGB": "Dread Knight",
-	"ruRU": "Рыцарь ужаса"
+    "ruRU": "Рыцарь ужаса"
   },
   {
     "Key": "PPbookClawOfTheFalseWyrm.Name",
     "ProcessTemplates": false,
     "enGB": "Claw Of The False Wyrm",
-	"ruRU": "Коготь ложного змея"
+    "ruRU": "Коготь ложного змея"
   },
   {
     "Key": "PPbookClawOfTheFalseWyrm.Description",
     "enGB": "Claw Of The False Wyrm",
-	"ruRU": "Коготь ложного змея"
+    "ruRU": "Коготь ложного змея"
   },
   {
     "Key": "PPbookSilverChampion.Name",
     "ProcessTemplates": false,
     "enGB": "Silver Champion",
-	"ruRU": "Серебряный чемпион"
+    "ruRU": "Серебряный чемпион"
   },
   {
     "Key": "PPbookSilverChampion.Description",
     "enGB": "Silver Champion",
-	"ruRU": "Серебряный чемпион"
+    "ruRU": "Серебряный чемпион"
   },
   {
     "Key": "PPbookRavenerHunter.Name",
     "ProcessTemplates": false,
     "enGB": "Ravener Hunter",
-	"ruRU": "Охотник-рэйвенер"
+    "ruRU": "Охотник-рэйвенер"
   },
   {
     "Key": "PPbookRavenerHunter.Description",
     "enGB": "Ravener Hunter",
-	"ruRU": "Охотник-рэйвенер"
+    "ruRU": "Охотник-рэйвенер"
   },
   {
     "Key": "PPbookLivingScripture.Name",
     "ProcessTemplates": false,
     "enGB": "Living Scripture",
-	"ruRU": "Живое писание"
+    "ruRU": "Живое писание"
   },
   {
     "Key": "PPbookLivingScripture.Description",
     "enGB": "Living Scripture",
-	"ruRU": "Живое писание"
+    "ruRU": "Живое писание"
   },
   {
     "Key": "PPbookSkulkingHunter.Name",
     "ProcessTemplates": false,
     "enGB": "Skulking Hunter",
-	"ruRU": "Скрытный охотник"
+    "ruRU": "Скрытный охотник"
   },
   {
     "Key": "PPbookSkulkingHunter.Description",
     "enGB": "Skulking Hunter",
-	"ruRU": "Скрытный охотник"
+    "ruRU": "Скрытный охотник"
   },
   {
     "Key": "PPbookSwornOfTheEldest.Name",
     "ProcessTemplates": false,
     "enGB": "Sworn Of The Eldest",
-	"ruRU": "Принесший клятву Старейшим"
+    "ruRU": "Принесший клятву Старейшим"
   },
   {
     "Key": "PPbookSwornOfTheEldest.Description",
     "enGB": "Sworn Of The Eldest",
-	"ruRU": "Принесший клятву Старейшим"
+    "ruRU": "Принесший клятву Старейшим"
   },
   {
     "Key": "PPbookArrowsongMinstrel.Name",
     "ProcessTemplates": false,
     "enGB": "Arrowsong Minstrel",
-	"ruRU": "Менестрель поющих стрел"
+    "ruRU": "Менестрель поющих стрел"
   },
   {
     "Key": "PPbookArrowsongMinstrel.Description",
     "enGB": "Arrowsong Minstrel",
-	"ruRU": "Менестрель поющих стрел"
+    "ruRU": "Менестрель поющих стрел"
   },
   {
     "Key": "PPbookAntipaladin.Name",
     "ProcessTemplates": false,
     "enGB": "Antipaladin",
-	"ruRU": "Антипаладин"
+    "ruRU": "Антипаладин"
   },
   {
     "Key": "PPbookAntipaladin.Description",
     "enGB": "Antipaladin",
-	"ruRU": "Антипаладин"
+    "ruRU": "Антипаладин"
   },
   {
     "Key": "PPbookChannelerOfTheUnknown.Name",
     "ProcessTemplates": false,
     "enGB": "Channeler Of The Unknown",
-	"ruRU": "Проводник неизвестного"
+    "ruRU": "Проводник неизвестного"
   },
   {
     "Key": "PPbookChannelerOfTheUnknown.Description",
     "enGB": "Channeler Of The Unknown",
-	"ruRU": "Проводник неизвестного"
+    "ruRU": "Проводник неизвестного"
   },
   {
     "Key": "PPbookMyrmidarch.Name",
     "ProcessTemplates": false,
     "enGB": "Myrmidarch",
-	"ruRU": "Мирмидарх"
+    "ruRU": "Мирмидарх"
   },
   {
     "Key": "PPbookMyrmidarch.Description",
     "enGB": "Myrmidarch",
-	"ruRU": "Мирмидарх"
+    "ruRU": "Мирмидарх"
   },
   
   {
@@ -9909,632 +9909,772 @@
   {
     "Key": "EvangelistAlchemistClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "AlchemistClass"
+    "enGB": "Alchemist",
+    "ruRU": "Алхимик"
   },
   {
     "Key": "EvangelistAlchemistClass0Align.Description",
-    "enGB": "AlchemistClass"
+    "enGB": "Alchemist",
+    "ruRU": "Алхимик"
   },
   {
     "Key": "EvangelistArcaneTricksterClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "ArcaneTricksterClass"
+    "enGB": "Arcane Trickster",
+    "ruRU": "Мистический трикстер"
   },
   {
     "Key": "EvangelistArcaneTricksterClass0Align.Description",
-    "enGB": "ArcaneTricksterClass"
+    "enGB": "Arcane Trickster",
+    "ruRU": "Мистический трикстер"
   },
   {
     "Key": "EvangelistArcanistClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "ArcanistClass"
+    "enGB": "Arcanist",
+    "ruRU": "Арканист"
   },
   {
     "Key": "EvangelistArcanistClass0Align.Description",
-    "enGB": "ArcanistClass"
+    "enGB": "Arcanist",
+    "ruRU": "Арканист"
   },
   {
     "Key": "EvangelistAssassinClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "AssassinClass"
+    "enGB": "Assassin",
+    "ruRU": "Ассасин"
   },
   {
     "Key": "EvangelistAssassinClass0Align.Description",
-    "enGB": "AssassinClass"
+    "enGB": "Assassin",
+    "ruRU": "Ассасин"
   },
   {
     "Key": "EvangelistBarbarianClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "BarbarianClass"
+    "enGB": "Barbarian",
+    "ruRU": "Варвар"
   },
   {
     "Key": "EvangelistBarbarianClass0Align.Description",
-    "enGB": "BarbarianClass"
+    "enGB": "Barbarian",
+    "ruRU": "Варвар"
   },
   {
     "Key": "EvangelistBardClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "BardClass"
+    "enGB": "Bard",
+    "ruRU": "Бард"
   },
   {
     "Key": "EvangelistBardClass0Align.Description",
-    "enGB": "BardClass"
+    "enGB": "Bard",
+    "ruRU": "Бард"
   },
   {
     "Key": "EvangelistBloodragerClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "BloodragerClass"
+    "enGB": "Bloodrager",
+    "ruRU": "Наследник ярости"
   },
   {
     "Key": "EvangelistBloodragerClass0Align.Description",
-    "enGB": "BloodragerClass"
+    "enGB": "Bloodrager",
+    "ruRU": "Наследник ярости"
   },
   {
     "Key": "EvangelistCavalierClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "CavalierClass"
+    "enGB": "Cavalier",
+    "ruRU": "Всадник"
   },
   {
     "Key": "EvangelistCavalierClass0Align.Description",
-    "enGB": "CavalierClass"
+    "enGB": "Cavalier",
+    "ruRU": "Всадник"
   },
   {
     "Key": "EvangelistClericClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "ClericClass"
+    "enGB": "Cleric",
+    "ruRU": "Жрец"
   },
   {
     "Key": "EvangelistClericClass0Align.Description",
-    "enGB": "ClericClass"
+    "enGB": "Cleric",
+    "ruRU": "Жрец"
   },
   {
     "Key": "EvangelistDragonDiscipleClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "DragonDiscipleClass"
+    "enGB": "Dragon Disciple",
+    "ruRU": "Драконий апостол"
   },
   {
     "Key": "EvangelistDragonDiscipleClass0Align.Description",
-    "enGB": "DragonDiscipleClass"
+    "enGB": "Dragon Disciple",
+    "ruRU": "Драконий апостол"
   },
   {
     "Key": "EvangelistDruidClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "DruidClass"
+    "enGB": "Druid",
+    "ruRU": "Друид"
   },
   {
     "Key": "EvangelistDruidClass0Align.Description",
-    "enGB": "DruidClass"
+    "enGB": "Druid",
+    "ruRU": "Друид"
   },
   {
     "Key": "EvangelistDuelistClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "DuelistClass"
+    "enGB": "Duelist",
+    "ruRU": "Дуэлянт"
   },
   {
     "Key": "EvangelistDuelistClass0Align.Description",
-    "enGB": "DuelistClass"
+    "enGB": "Duelist",
+    "ruRU": "Дуэлянт"
   },
   {
     "Key": "EvangelistEldritchKnightClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "EldritchKnightClass"
+    "enGB": "Eldritch Knight",
+    "ruRU": "Чародейский рыцарь"
   },
   {
     "Key": "EvangelistEldritchKnightClass0Align.Description",
-    "enGB": "EldritchKnightClass"
+    "enGB": "Eldritch Knight",
+    "ruRU": "Чародейский рыцарь"
   },
   {
     "Key": "EvangelistEldritchScionClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "EldritchScionClass"
+    "enGB": "Eldritch Scion",
+    "ruRU": "Чародейский наследник"
   },
   {
     "Key": "EvangelistEldritchScionClass0Align.Description",
-    "enGB": "EldritchScionClass"
+    "enGB": "Eldritch Scion",
+    "ruRU": "Чародейский наследник"
   },
   {
     "Key": "EvangelistFighterClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "FighterClass"
+    "enGB": "Fighter",
+    "ruRU": "Воин"
   },
   {
     "Key": "EvangelistFighterClass0Align.Description",
-    "enGB": "FighterClass"
+    "enGB": "Fighter",
+    "ruRU": "Воин"
   },
   {
     "Key": "EvangelistHellknightClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "HellknightClass"
+    "enGB": "Hellknight",
+    "ruRU": "Рыцарь Преисподней"
   },
   {
     "Key": "EvangelistHellknightClass0Align.Description",
-    "enGB": "HellknightClass"
+    "enGB": "Hellknight",
+    "ruRU": "Рыцарь Преисподней"
   },
   {
     "Key": "EvangelistHellknightSigniferClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "HellknightSigniferClass"
+    "enGB": "Hellknight Signifer",
+    "ruRU": "Сигнифер рыцаря Преисподней"
   },
   {
     "Key": "EvangelistHellknightSigniferClass0Align.Description",
-    "enGB": "HellknightSigniferClass"
+    "enGB": "Hellknight Signifer",
+    "ruRU": "Сигнифер рыцаря Преисподней"
   },
   {
     "Key": "EvangelistHunterClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "HunterClass"
+    "enGB": "Hunter",
+    "ruRU": "Охотник"
   },
   {
     "Key": "EvangelistHunterClass0Align.Description",
-    "enGB": "HunterClass"
+    "enGB": "Hunter",
+    "ruRU": "Охотник"
   },
   {
     "Key": "EvangelistInquisitorClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "InquisitorClass"
+    "enGB": "Inquisitor",
+    "ruRU": "Инквизитор"
   },
   {
     "Key": "EvangelistInquisitorClass0Align.Description",
-    "enGB": "InquisitorClass"
+    "enGB": "Inquisitor",
+    "ruRU": "Инквизитор"
   },
   {
     "Key": "EvangelistKineticistClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "KineticistClass"
+    "enGB": "Kineticist",
+    "ruRU": "Кинетик"
   },
   {
     "Key": "EvangelistKineticistClass0Align.Description",
-    "enGB": "KineticistClass"
+    "enGB": "Kineticist",
+    "ruRU": "Кинетик"
   },
   {
     "Key": "EvangelistLoremasterClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "LoremasterClass"
+    "enGB": "Loremaster",
+    "ruRU": "Хранитель знаний"
   },
   {
     "Key": "EvangelistLoremasterClass0Align.Description",
-    "enGB": "LoremasterClass"
+    "enGB": "Loremaster",
+    "ruRU": "Хранитель знаний"
   },
   {
     "Key": "EvangelistMagusClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "MagusClass"
+    "enGB": "Magus",
+    "ruRU": "Магус"
   },
   {
     "Key": "EvangelistMagusClass0Align.Description",
-    "enGB": "MagusClass"
+    "enGB": "Magus",
+    "ruRU": "Магус"
   },
   {
     "Key": "EvangelistMonkClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "MonkClass"
+    "enGB": "Monk",
+    "ruRU": "Монах"
   },
   {
     "Key": "EvangelistMonkClass0Align.Description",
-    "enGB": "MonkClass"
+    "enGB": "Monk",
+    "ruRU": "Монах"
   },
   {
     "Key": "EvangelistMysticTheurgeClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "MysticTheurgeClass"
+    "enGB": "Mystic Theurge",
+    "ruRU": "Мистический теург"
   },
   {
     "Key": "EvangelistMysticTheurgeClass0Align.Description",
-    "enGB": "MysticTheurgeClass"
+    "enGB": "Mystic Theurge",
+    "ruRU": "Мистический теург"
   },
   {
     "Key": "EvangelistOracleClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "OracleClass"
+    "enGB": "Oracle",
+    "ruRU": "Оракул"
   },
   {
     "Key": "EvangelistOracleClass0Align.Description",
-    "enGB": "OracleClass"
+    "enGB": "Oracle",
+    "ruRU": "Оракул"
   },
   {
     "Key": "EvangelistPaladinClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "PaladinClass"
+    "enGB": "Paladin",
+    "ruRU": "Паладин"
   },
   {
     "Key": "EvangelistPaladinClass0Align.Description",
-    "enGB": "PaladinClass"
+    "enGB": "Paladin",
+    "ruRU": "Паладин"
   },
   {
     "Key": "EvangelistRangerClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "RangerClass"
+    "enGB": "Ranger",
+    "ruRU": "Рейнджер"
   },
   {
     "Key": "EvangelistRangerClass0Align.Description",
-    "enGB": "RangerClass"
+    "enGB": "Ranger",
+    "ruRU": "Рейнджер"
   },
   {
     "Key": "EvangelistRogueClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "RogueClass"
+    "enGB": "Rogue",
+    "ruRU": "Вор"
   },
   {
     "Key": "EvangelistRogueClass0Align.Description",
-    "enGB": "RogueClass"
+    "enGB": "Rogue",
+    "ruRU": "Вор"
   },
   {
     "Key": "EvangelistShamanClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "ShamanClass"
+    "enGB": "Shaman",
+    "ruRU": "Шаман"
   },
   {
     "Key": "EvangelistShamanClass0Align.Description",
-    "enGB": "ShamanClass"
+    "enGB": "Shaman",
+    "ruRU": "Шаман"
   },
   {
     "Key": "EvangelistShifterClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "ShifterClass"
+    "enGB": "Shifter",
+    "ruRU": "Перевертыш"
   },
   {
     "Key": "EvangelistShifterClass0Align.Description",
-    "enGB": "ShifterClass"
+    "enGB": "Shifter",
+    "ruRU": "Перевертыш"
   },
   {
     "Key": "EvangelistSkaldClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "SkaldClass"
+    "enGB": "Skald",
+    "ruRU": "Скальд"
   },
   {
     "Key": "EvangelistSkaldClass0Align.Description",
-    "enGB": "SkaldClass"
+    "enGB": "Skald",
+    "ruRU": "Скальд"
   },
   {
     "Key": "EvangelistSlayerClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "SlayerClass"
+    "enGB": "Slayer",
+    "ruRU": "Палач"
   },
   {
     "Key": "EvangelistSlayerClass0Align.Description",
-    "enGB": "SlayerClass"
+    "enGB": "Slayer",
+    "ruRU": "Палач"
   },
   {
     "Key": "EvangelistSorcererClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "SorcererClass"
+    "enGB": "Sorcerer",
+    "ruRU": "Колдун"
   },
   {
     "Key": "EvangelistSorcererClass0Align.Description",
-    "enGB": "SorcererClass"
+    "enGB": "Sorcerer",
+    "ruRU": "Колдун"
   },
   {
     "Key": "EvangelistStalwartDefenderClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "StalwartDefenderClass"
+    "enGB": "Stalwart Defender",
+    "ruRU": "Несгибаемый защитник"
   },
   {
     "Key": "EvangelistStalwartDefenderClass0Align.Description",
-    "enGB": "StalwartDefenderClass"
+    "enGB": "Stalwart Defender",
+    "ruRU": "Несгибаемый защитник"
   },
   {
     "Key": "EvangelistStudentOfWarClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "StudentOfWarClass"
+    "enGB": "Student Of War",
+    "ruRU": "Учащийся войне"
   },
   {
     "Key": "EvangelistStudentOfWarClass0Align.Description",
-    "enGB": "StudentOfWarClass"
+    "enGB": "Student Of War",
+    "ruRU": "Учащийся войне"
   },
   {
     "Key": "EvangelistSwordlordClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "SwordlordClass"
+    "enGB": "Swordlord",
+    "ruRU": "Владыка мечей"
   },
   {
     "Key": "EvangelistSwordlordClass0Align.Description",
-    "enGB": "SwordlordClass"
+    "enGB": "Swordlord",
+    "ruRU": "Владыка мечей"
   },
   {
     "Key": "EvangelistWarpriestClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "WarpriestClass"
+    "enGB": "Warpriest",
+    "ruRU": "Капеллан"
   },
   {
     "Key": "EvangelistWarpriestClass0Align.Description",
-    "enGB": "WarpriestClass"
+    "enGB": "Warpriest",
+    "ruRU": "Капеллан"
   },
   {
     "Key": "EvangelistWinterWitchClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "WinterWitchClass"
+    "enGB": "Winter Witch",
+    "ruRU": "Зимняя ведьма"
   },
   {
     "Key": "EvangelistWinterWitchClass0Align.Description",
-    "enGB": "WinterWitchClass"
+    "enGB": "Winter Witch",
+    "ruRU": "Зимняя ведьма"
   },
   {
     "Key": "EvangelistWitchClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "WitchClass"
+    "enGB": "Witch",
+    "ruRU": "Ведьма"
   },
   {
     "Key": "EvangelistWitchClass0Align.Description",
-    "enGB": "WitchClass"
+    "enGB": "Witch",
+    "ruRU": "Ведьма"
   },
   {
     "Key": "EvangelistWizardClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "WizardClass"
+    "enGB": "Wizard",
+    "ruRU": "Маг"
   },
   {
     "Key": "EvangelistWizardClass0Align.Description",
-    "enGB": "WizardClass"
+    "enGB": "Wizard",
+    "ruRU": "Маг"
   },
   {
     "Key": "EvangelistGunslingerClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "GunslingerClass"
+    "enGB": "Gunslinger",
+    "ruRU": "Стрелок"
   },
   {
     "Key": "EvangelistGunslingerClass0Align.Description",
-    "enGB": "GunslingerClass"
+    "enGB": "Gunslinger",
+    "ruRU": "Стрелок"
   },
   {
     "Key": "EvangelistAgentoftheGraveClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "AgentoftheGraveClass"
+    "enGB": "Agent of the Grave",
+    "ruRU": "Агент могилы"
   },
   {
     "Key": "EvangelistAgentoftheGraveClass0Align.Description",
-    "enGB": "AgentoftheGraveClass"
+    "enGB": "Agent of the Grave",
+    "ruRU": "Агент могилы"
   },
   {
     "Key": "EvangelistAnchoriteofDawnClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "AnchoriteofDawnClass"
+    "enGB": "Dawnflower Anchorite",
+    "ruRU": "Отшельник Цветка Рассвета"
   },
   {
     "Key": "EvangelistAnchoriteofDawnClass0Align.Description",
-    "enGB": "AnchoriteofDawnClass"
+    "enGB": "Dawnflower Anchorite",
+    "ruRU": "Отшельник Цветка Рассвета"
   },
   {
     "Key": "EvangelistArcaneAcherClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "ArcaneAcherClass"
+    "enGB": "Arcane Archer",
+    "ruRU": "Мистический лучник"
   },
   {
     "Key": "EvangelistArcaneAcherClass0Align.Description",
-    "enGB": "ArcaneAcherClass"
+    "enGB": "Arcane Archer",
+    "ruRU": "Мистический лучник"
   },
   {
     "Key": "EvangelistAsavirClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "AsavirClass"
+    "enGB": "Asavir",
+    "ruRU": "Асавир"
   },
   {
     "Key": "EvangelistAsavirClass0Align.Description",
-    "enGB": "AsavirClass"
+    "enGB": "Asavir",
+    "ruRU": "Асавир"
   },
   {
     "Key": "EvangelistChevalierClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "ChevalierClass"
+    "enGB": "Chevalier",
+    "ruRU": "Кавалер"
   },
   {
     "Key": "EvangelistChevalierClass0Align.Description",
-    "enGB": "ChevalierClass"
+    "enGB": "Chevalier",
+    "ruRU": "Кавалер"
   },
   {
     "Key": "EvangelistCrimsonTemplarClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "CrimsonTemplarClass"
+    "enGB": "Crimson Templar",
+    "ruRU": "Багровый храмовник"
   },
   {
     "Key": "EvangelistCrimsonTemplarClass0Align.Description",
-    "enGB": "CrimsonTemplarClass"
+    "enGB": "Crimson Templar",
+    "ruRU": "Багровый храмовник"
   },
   {
     "Key": "EvangelistDeadeyeDevoteeClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "DeadeyeDevoteeClass"
+    "enGB": "Deadeye Devotee",
+    "ruRU": "Последователь Меткого стрелка"
   },
   {
     "Key": "EvangelistDeadeyeDevoteeClass0Align.Description",
-    "enGB": "DeadeyeDevoteeClass"
+    "enGB": "Deadeye Devotee",
+    "ruRU": "Последователь Меткого стрелка"
   },
   {
     "Key": "EvangelistDragonFuryClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "DragonFuryClass"
+    "enGB": "Dragon Fury",
+    "ruRU": "Яростный дракон"
   },
   {
     "Key": "EvangelistDragonFuryClass0Align.Description",
-    "enGB": "DragonFuryClass"
+    "enGB": "Dragon Fury",
+    "ruRU": "Яростный дракон"
   },
   {
     "Key": "EvangelistEsotericKnightClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "EsotericKnightClass"
+    "enGB": "Esoteric Knight",
+    "ruRU": "Эзотерический рыцарь"
   },
   {
     "Key": "EvangelistEsotericKnightClass0Align.Description",
-    "enGB": "EsotericKnightClass"
+    "enGB": "Esoteric Knight",
+    "ruRU": "Эзотерический рыцарь"
   },
   {
     "Key": "EvangelistExaltedEvangelistClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "ExaltedEvangelistClass"
+    "enGB": "Exalted Evangelist",
+    "ruRU": "Вознесенный евангелист"
   },
   {
     "Key": "EvangelistExaltedEvangelistClass0Align.Description",
-    "enGB": "ExaltedEvangelistClass"
+    "enGB": "Exalted Evangelist",
+    "ruRU": "Вознесенный евангелист"
   },
   {
     "Key": "EvangelistFuriousGuardianClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "FuriousGuardianClass"
+    "enGB": "Furious Guardian",
+    "ruRU": "Яростный защитник"
   },
   {
     "Key": "EvangelistFuriousGuardianClass0Align.Description",
-    "enGB": "FuriousGuardianClass"
+    "enGB": "Furious Guardian",
+    "ruRU": "Яростный защитник"
   },
   {
     "Key": "EvangelistHalflingOpportunistClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "HalflingOpportunistClass"
+    "enGB": "Halfling Opportunist",
+    "ruRU": "Халфлинг-оппортунист"
   },
   {
     "Key": "EvangelistHalflingOpportunistClass0Align.Description",
-    "enGB": "HalflingOpportunistClass"
+    "enGB": "Halfling Opportunist",
+    "ruRU": "Халфлинг-оппортунист"
   },
   {
     "Key": "EvangelistHinterlanderClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "HinterlanderClass"
+    "enGB": "Hinterlander",
+    "ruRU": "Защитник глубинки"
   },
   {
     "Key": "EvangelistHinterlanderClass0Align.Description",
-    "enGB": "HinterlanderClass"
+    "enGB": "Hinterlander",
+    "ruRU": "Защитник глубинки"
   },
   {
     "Key": "EvangelistHorizonWalkerClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "HorizonWalkerClass"
+    "enGB": "Horizon Walker",
+    "ruRU": "Странник горизонта"
   },
   {
     "Key": "EvangelistHorizonWalkerClass0Align.Description",
-    "enGB": "HorizonWalkerClass"
+    "enGB": "Horizon Walker",
+    "ruRU": "Странник горизонта"
   },
   {
     "Key": "EvangelistInheritorCrusaderClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "InheritorCrusaderClass"
+    "enGB": "Inheritor Crusader",
+    "ruRU": "Крестоносец Наследницы"
   },
   {
     "Key": "EvangelistInheritorCrusaderClass0Align.Description",
-    "enGB": "InheritorCrusaderClass"
+    "enGB": "Inheritor Crusader",
+    "ruRU": "Крестоносец Наследницы"
   },
   {
     "Key": "EvangelistMammothRiderClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "MammothRiderClass"
+    "enGB": "Mammoth Rider",
+    "ruRU": "Наездник на мамонте"
   },
   {
     "Key": "EvangelistMammothRiderClass0Align.Description",
-    "enGB": "MammothRiderClass"
+    "enGB": "Mammoth Rider",
+    "ruRU": "Наездник на мамонте"
   },
   {
     "Key": "EvangelistSanguineAngelClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "SanguineAngelClass"
+    "enGB": "Sanguine Angel",
+    "ruRU": "Сангвинарный ангел"
   },
   {
     "Key": "EvangelistSanguineAngelClass0Align.Description",
-    "enGB": "SanguineAngelClass"
+    "enGB": "Sanguine Angel",
+    "ruRU": "Сангвинарный ангел"
   },
   {
     "Key": "EvangelistScarSeekerClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "ScarSeekerClass"
+    "enGB": "Scar Seeker",
+    "ruRU": "Искатель шрамов"
   },
   {
     "Key": "EvangelistScarSeekerClass0Align.Description",
-    "enGB": "ScarSeekerClass"
+    "enGB": "Scar Seeker",
+    "ruRU": "Искатель шрамов"
   },
   {
     "Key": "EvangelistSentinelClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "SentinelClass"
+    "enGB": "Sentinel",
+    "ruRU": "Часовой"
   },
   {
     "Key": "EvangelistSentinelClass0Align.Description",
-    "enGB": "SentinelClass"
+    "enGB": "Sentinel",
+    "ruRU": "Часовой"
   },
   {
     "Key": "EvangelistShadowDancerClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "ShadowDancerClass"
+    "enGB": "Shadow Dancer",
+    "ruRU": "Танцор теней"
   },
   {
     "Key": "EvangelistShadowDancerClass0Align.Description",
-    "enGB": "ShadowDancerClass"
+    "enGB": "Shadow Dancer",
+    "ruRU": "Танцор теней"
   },
   {
     "Key": "EvangelistSouldrinkerClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "SouldrinkerClass"
+    "enGB": "Souldrinker",
+    "ruRU": "Испивающий души"
   },
   {
     "Key": "EvangelistSouldrinkerClass0Align.Description",
-    "enGB": "SouldrinkerClass"
+    "enGB": "Souldrinker",
+    "ruRU": "Испивающий души"
   },
   {
     "Key": "EvangelistUmbralAgentClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "UmbralAgentClass"
+    "enGB": "Umbral Agent",
+    "ruRU": "Теневой агент"
   },
   {
     "Key": "EvangelistUmbralAgentClass0Align.Description",
-    "enGB": "UmbralAgentClass"
+    "enGB": "Umbral Agent",
+    "ruRU": "Теневой агент"
   },
   {
     "Key": "EvangelistMicroAntiPaladinClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "MicroAntiPaladinClass"
+    "enGB": "AntiPaladin",
+    "ruRU": "Антипаладин"
   },
   {
     "Key": "EvangelistMicroAntiPaladinClass0Align.Description",
-    "enGB": "MicroAntiPaladinClass"
+    "enGB": "AntiPaladin",
+    "ruRU": "Антипаладин"
   },
   {
     "Key": "EvangelistOathbreakerClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "OathbreakerClass"
+    "enGB": "Oathbreaker",
+    "ruRU": "Клятвопреступник"
   },
   {
     "Key": "EvangelistOathbreakerClass0Align.Description",
-    "enGB": "OathbreakerClass"
+    "enGB": "Oathbreaker",
+    "ruRU": "Клятвопреступник"
   },
   {
     "Key": "EvangelistDreadKnightClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "DreadKnightClass"
+    "enGB": "Dread Knight",
+    "ruRU": "Рыцарь ужаса"
   },
   {
     "Key": "EvangelistDreadKnightClass0Align.Description",
-    "enGB": "DreadKnightClass"
+    "enGB": "Dread Knight",
+    "ruRU": "Рыцарь ужаса"
   },
   {
     "Key": "EvangelistStargazerClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "StargazerClass"
+    "enGB": "Stargazer",
+    "ruRU": "Звездочёт"
   },
   {
     "Key": "EvangelistStargazerClass0Align.Description",
-    "enGB": "StargazerClass"
+    "enGB": "Stargazer",
+    "ruRU": "Звездочёт"
   },
   {
     "Key": "EvangelistSwashbucklerClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "SwashbucklerClass"
+    "enGB": "Swashbuckler",
+    "ruRU": "Головорез"
   },
   {
     "Key": "EvangelistSwashbucklerClass0Align.Description",
-    "enGB": "SwashbucklerClass"
+    "enGB": "Swashbuckler",
+    "ruRU": "Головорез"
   },
   {
     "Key": "EvangelistHolyVindicatorClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "HolyVindicatorClass"
+    "enGB": "Holy Vindicator",
+    "ruRU": "Святой воздаятель"
   },
   {
     "Key": "EvangelistHolyVindicatorClass0Align.Description",
-    "enGB": "HolyVindicatorClass"
+    "enGB": "Holy Vindicator",
+    "ruRU": "Святой воздаятель"
   },
   {
     "Key": "EvangelistSummonerClass0Align.Name",
     "ProcessTemplates": false,
-    "enGB": "SummonerClass"
+    "enGB": "Summoner",
+    "ruRU": "Призыватель"
   },
   {
     "Key": "EvangelistSummonerClass0Align.Description",
-    "enGB": "SummonerClass"
+    "enGB": "Summoner",
+    "ruRU": "Призыватель"
   },
   {
     "Key": "SpireDefenderDisruptive.Name",
@@ -12509,7 +12649,7 @@
   {
     "Key": "DeificObedienceAchaekek.Description",
     "enGB": "Meditate in a private place before a trophy or broken religious symbol taken from a target you have been contracted to kill. This trophy must be anointed with a single drop of your blood, drawn from your flesh by a falcata, and the trophy must be destroyed at the end of your meditation. If you have yet to complete a contract, have no appropriate trophies at hand, or seek to serve the Mantis God in other ways than as the god’s assassin, you must instead offer your own vital fluid to He Who Walks in Blood by cutting yourself along the right arm with a falcata. You gain a +2 bonus to confirm critical hits.",
-    "ruRU": "",
+    "ruRU": "Помедитируйте в укромном месте перед трофеем или сломанным религиозным символом, взятым у цели, которую вы должны убить. Этот трофей необходимо пролиь единственную каплю вашей крови, взято при помощт фалькаты, трофей необходимо уничтожить в конце вашей медитации. Если вы еще не выполнили контракт, не имеете под рукой подходящих трофеев или стремитесь служить Богу-богомолу иначе, чем в качестве убийцы, вместо этого вы должны предложить свою собственную кровь Бродящему в крови, порезав себя вдоль правой руки фалькатой. Вы получаете бонус +2 на подтверждение критических ударов.",
     "zhCN": "在一个私密处所中，于从你签下契约而杀死的目标身上取得的战利品或破碎的圣徽之前冥想。该战利品必须涂有你的一滴由反曲剑取出的血，并且战利品必须在冥想结束时被销毁。如果你还没有完成契约杀人，或是手头没有合适的战利品，或者寻求以其他方式侍奉螳螂神，而非作为神的刺客，你必须用反曲剑沿着右臂割伤自己，将自己的生命之液献给鲜血行者。你在确认重击时获得+2加值。"
   },
   {
@@ -12522,137 +12662,137 @@
   {
     "Key": "DeificObedienceAchaekekSentinel.Description",
     "enGB": "Become a Sentinel to gain access to his boons, which will be granted at certain character or class levels.",
-    "ruRU": "",
+    "ruRU": "Вы должны стать часовым этого божества, чтобы получить доступ к его дарам.",
     "zhCN": "成为信仰哨卫来获取他的神恩资格，你会在合适的角色或职业等级得到神恩。"
   },
   {
     "Key": "SpellPowerAchaekek1.Name",
     "ProcessTemplates": false,
     "enGB": "Blood Must Flow",
-    "ruRU": "",
+    "ruRU": "Кровь должна литься",
     "zhCN": "斩头沥血"
   },
   {
     "Key": "SpellPowerAchaekek1.Description",
     "enGB": "lead blades 3/day",
-    "ruRU": "",
+    "ruRU": "Вы получаете псевдозаклинание Свинцовые клинки 3/ден.ь",
     "zhCN": "重压之刃 3次/日"
   },
   {
     "Key": "DeificObedienceAchaekek2.Name",
     "ProcessTemplates": false,
     "enGB": "Bleeding Wounds",
-    "ruRU": "",
+    "ruRU": "Кровоточящие раны",
     "zhCN": "鲜血淋漓"
   },
   {
     "Key": "DeificObedienceAchaekek2.Description",
     "enGB": "All wounds you inflict with a falcata are bleeding wounds, and deal 1d4 points of bleed damage to the target (the damage does not stack).",
-    "ruRU": "",
+    "ruRU": "Все раны, которые вы наносите при помощи фалькаты, являются кровоточящими и наносят 1d4 урона кровотечением (этот урон не складывается).",
     "zhCN": "你用反曲剑产生的所有伤口都会流血不止，对目标造成1d4点流血伤害（不叠加）。"
   },
   {
     "Key": "DeificObedienceAchaekek3.Name",
     "ProcessTemplates": false,
     "enGB": "Mantis Style Mastery",
-    "ruRU": "",
+    "ruRU": "Мастерство стиля богомола",
     "zhCN": "螳螂门不传之秘"
   },
   {
     "Key": "DeificObedienceAchaekek3.Description",
     "enGB": "You take no penalties on attack rolls from two-weapon fighting when wielding two falcatas simultaneously, and you gain a +2 profane bonus on all damage rolls with falcatas. If you deal sneak attack damage with a falcata, you deal 2 additional points of damage for each die rolled as part of your sneak attack damage.",
-    "ruRU": "",
+    "ruRU": "Вы не получаете штраоф за бой парным оружием, когда вы держите фалькату в каждой руке, а также вы получаете нечестивый бонус +2 ко всем броскам на урон фалькатой. Ваши атаки исподтишка совершенные при помощи фалькаты наносят +2 урона за каждую кость атаки исподтишка.",
     "zhCN": "同时持用两把反曲剑时，你不会受到双武器战斗的攻击检定减值，并且你在反曲剑的所有伤害检定上获得+2亵渎加值。如果你用反曲剑造成偷袭伤害，每个偷袭骰都会额外造成2点伤害。"
   },
   {
     "Key": "DeificObedienceIrori.Name",
     "ProcessTemplates": false,
     "enGB": "Irori Obedience",
-    "ruRU": "",
+    "ruRU": "Послушание Ирори",
     "zhCN": "义洛理仪典"
   },
   {
     "Key": "DeificObedienceIrori.Description",
     "enGB": "Over the course of 1 hour, spend an equal amount of time practicing with a weapon or your unarmed strikes, reading any text that you have never read before, and braiding a length of hair while contemplating the mysteries of the multiverse. Hang the length of hair around your neck when your obedience is complete and wear it for the rest of the day. Gain a +4 sacred bonus on all Knowledge checks.",
-    "ruRU": "",
+    "ruRU": "В течение 1 часа потратьте равное количество времени, тренируя свое мастерство владения оружием или мастерство кулачного боя, читая любой текст, который вы никогда раньше не читали, и заплетая волосы, размышляя о тайнах мультивселенной. Повесьте заплетенные волосы себе на шею, когда ваше послушание будет завершено, и носите их до конца дня. Вы получаете сакральный бонус +4 ко всем проверкам знаний.",
     "zhCN": "在1小时的修行中，分配同样的时间做以下三件事：练习拳脚功夫或者操演武器、阅读任何你从未读过的文本、一边编发辫一边思索宇宙之奥秘。当仪典完成时，将发辫绕在脖颈上并在今天内保持如此。在所有知识检定中获得+4神圣加值。"
   },
   {
     "Key": "SpellPowerIrori1.Name",
     "ProcessTemplates": false,
     "enGB": "Expansive Knowledge",
-    "ruRU": "",
+    "ruRU": "Обширные знания",
     "zhCN": "渊博学识"
   },
   {
     "Key": "SpellPowerIrori1.Description",
     "enGB": "fox’s cunning 2/day",
-    "ruRU": "",
+    "ruRU": "Вы получаете псевдозаклинание Лисья хитрость 2/день.",
     "zhCN": "狐之狡黠 2次/日"
   },
   {
     "Key": "DeificObedienceIrori2.Name",
     "ProcessTemplates": false,
     "enGB": "Inevitable Fist",
-    "ruRU": "",
+    "ruRU": "Неизбежный кулак",
     "zhCN": "命定之拳"
   },
   {
     "Key": "DeificObedienceIrori2.Description",
     "enGB": "For a number of rounds per day equal to your Hit Dice, you can infuse your limbs with the power of pure law. Your unarmed strikes deal damage as if you were one size category larger, and gain the axiomatic weapon special ability. Activating or dismissing this ability is a free action, and the rounds don’t need to be consecutive.",
-    "ruRU": "",
+    "ruRU": "На количество раундов в день, равное количеству ваших костей здоровья, вы можете наполнить свои конечности силами закона. Ваши безоружные удары наносят урон, как если бы вы были на 1 категорию размера больше, а также становятся аксиоматическими. Включение и отключение этой способности является свободным действием, а раунды не обязательно должны быть потрачены за 1 раз.",
     "zhCN": "每日轮数等同于你的生命骰数，你能够向自身的肢体灌入纯粹的秩序能量。你的徒手打击造成的伤害就如同你的体型比当前大一级，而且获得公理武器特殊能力。启动和解消该能力是自由动作，且轮数不必连续。"
   },
   {
     "Key": "SpellPowerIrori3.Name",
     "ProcessTemplates": false,
     "enGB": "Runic Form",
-    "ruRU": "",
+    "ruRU": "Руническая форма",
     "zhCN": "符文之躯"
   },
   {
     "Key": "SpellPowerIrori3.Description",
     "enGB": "Nine runic tattoos appear on your body, three for each of the three disciplines of Irori: mind, body, and spirit. As a standard action you can discharge the power stored in a tattoo up to 3 times per day. Body Tattoos contains restoration, which you can use as a spell-like ability. Mind Tattoos can be discharged to grant you a +4 sacred bonus to Wisdom for 1 minute. Spirit Tattoos allow you to assume an ethereal state for 1 minute as though using the spell walk through space.",
-    "ruRU": "",
+    "ruRU": "На вашем теле появляется 9 рунических татуировок, по 3 на каждую дисциплину Ирори: разум, тело и дух. 3 раза в день, обычным действием, вы можете высвободить силу содержающуюся в татуировках. Татуировки тела содержат в себе силу восстановления, которое вы можете применять как псевдозаклинание. Татуировки разума могут дать вам сакральный бонус +4 к Мудрости на 1 минуту. Татуировки духа позволяют вам принимать бестелесную форму на 1 минуту, как при сотворении заклинания Шаги сквозь пространство.",
     "zhCN": "九个符文纹身出现在你的身体上，其中各有三个符文对应着义洛理的身心灵三种教导。每日3次以标准动作，你能够耗用一个纹身的力量。身之符文容有复原术作为类法术能力，心之符文使用时为你的感知提供+4神圣加值，持续1分钟。灵之符文可以使你进入灵体状态1分钟，如同破空步法术一般。"
   },
   {
     "Key": "NewSpellLockjaw.Name",
     "ProcessTemplates": false,
     "enGB": "Lockjaw",
-    "ruRU": "",
+    "ruRU": "Тризм",
     "zhCN": "钳颚术"
   },
   {
     "Key": "NewSpellLockjaw.Description",
     "enGB": "You give a creature the ability to use one of its natural attacks to firmly attach itself to an opponent. The creature gains the grab ability with its claw or bite attack, including the +4 bonus on combat maneuver checks to start or maintain a grapple when not polymorphed.",
-    "ruRU": "",
+    "ruRU": "Вы даете возможность существу использовать одну из естественных атак, чтобы намервто вцепиться в противника. Существо получает возможность брать в захват при помощи когтей или укуса, а также бонус +4 к проверкам боевого маневра для захвата и поддержания захвата. Существо не должно находиться под дейтсвием эффекта полиморфа.",
     "zhCN": "你令一个生物能够使用某种天生武器将自身紧紧附着在敌人身上。当未处于变形效应下时，该生物的爪抓或者啮咬攻击获得擒抓能力，包括在尝试以及维持擒抱时，战技检定获得的+4加值。"
   },
   {
     "Key": "NewSpellLockjaw1.Name",
     "ProcessTemplates": false,
     "enGB": "Lockjaw (claw)",
-    "ruRU": "",
+    "ruRU": "Тризм (коготь)",
     "zhCN": "钳颚术（爪抓）"
   },
   {
     "Key": "NewSpellLockjaw1.Description",
     "enGB": "You give a creature the ability to use one of its natural attacks to firmly attach itself to an opponent. The creature gains the grab ability with its claw or bite attack, including the +4 bonus on combat maneuver checks to start or maintain a grapple when not polymorphed.",
-    "ruRU": "",
+    "ruRU": "Вы даете возможность существу использовать одну из естественных атак, чтобы намервто вцепиться в противника. Существо получает возможность брать в захват при помощи когтей или укуса, а также бонус +4 к проверкам боевого маневра для захвата и поддержания захвата. Существо не должно находиться под дейтсвием эффекта полиморфа.",
     "zhCN": "你令一个生物能够使用某种天生武器将自身紧紧附着在敌人身上。当未处于变形效应下时，该生物的爪抓或者啮咬攻击获得擒抓能力，包括在尝试以及维持擒抱时，战技检定获得的+4加值。"
   },
   {
     "Key": "NewSpellLockjaw2.Name",
     "ProcessTemplates": false,
     "enGB": "Lockjaw (bite)",
-    "ruRU": "",
+    "ruRU": "Тризм (укус)",
     "zhCN": "钳颚术（啮咬）"
   },
   {
     "Key": "NewSpellLockjaw2.Description",
     "enGB": "You give a creature the ability to use one of its natural attacks to firmly attach itself to an opponent. The creature gains the grab ability with its claw or bite attack, including the +4 bonus on combat maneuver checks to start or maintain a grapple when not polymorphed.",
-    "ruRU": "",
+    "ruRU": "Вы даете возможность существу использовать одну из естественных атак, чтобы намервто вцепиться в противника. Существо получает возможность брать в захват при помощи когтей или укуса, а также бонус +4 к проверкам боевого маневра для захвата и поддержания захвата. Существо не должно находиться под дейтсвием эффекта полиморфа.",
     "zhCN": "你令一个生物能够使用某种天生武器将自身紧紧附着在敌人身上。当未处于变形效应下时，该生物的爪抓或者啮咬攻击获得擒抓能力，包括在尝试以及维持擒抱时，战技检定获得的+4加值。"
   },
   {
