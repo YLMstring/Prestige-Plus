@@ -12857,7 +12857,8 @@
   {
     "Key": "BoltAceResolve.Description",
     "enGB": "At 3rd level, a bolt ace can spend 1 grit point when making a crossbow attack as a standard action and ignore the effects of concealment and cover against that shot.",
-    "zhCN": "3级起，一名王牌弩手可以花费1点勇毅值用一个标准动作使用弩进行一次攻击，并在这次攻击中忽略所有的隐蔽（除了全隐蔽）和掩蔽（除了全掩蔽）效果。该勇毅动作取代万用射击。"
+    "ruRU": "Начиная с 3 уровня мастер арбалетов может потратить 1 очко выдержки и выстрелить из арбалета игнорируя эффекты маскировки и укрытия цели этого выстрела.",
+    "zhCN": "3级起，一名王牌弩手可以花费1点勇毅值用一个标准动作使用弩进行一次攻击，并在这次攻击中忽略所有的隐蔽和掩蔽效果。该勇毅动作取代万用射击。"
   },
   {
     "Key": "GunslingerGunTraining.Name",
