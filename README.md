@@ -93,8 +93,7 @@
 - Trample (Mythic): a mythic feat inspired by tabletop abilities of the same name! (notice that owlcat trample works differently from tabletop)
 #### Homebrew Options:  
 - Bond of Genies: a mythic ability to mount any party member!
-### [Bolt Ace Class](https://www.d20pfsrd.com/classes/base-classes/gunslinger/archetypes/paizo-gunslinger-archetypes/bolt-ace)   
-- The class has only 5 levels.
+### [Bolt Ace Class (Lite)](https://www.d20pfsrd.com/classes/base-classes/gunslinger/archetypes/paizo-gunslinger-archetypes/bolt-ace)   
 - Based off, and basically the same as the gunslinger archetype.
 - Convert your grit to panache (swashbuckler mod) or vice versa!
 ### [Chevalier Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/c-d/chevalier/)
