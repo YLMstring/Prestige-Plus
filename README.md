@@ -94,6 +94,7 @@
 #### Homebrew Options:  
 - Bond of Genies: a mythic ability to mount any party member!
 ### [Bolt Ace Class](https://www.d20pfsrd.com/classes/base-classes/gunslinger/archetypes/paizo-gunslinger-archetypes/bolt-ace)   
+- The class has only 5 levels.
 - Based off, and basically the same as the gunslinger archetype.
 - Convert your grit to panache (swashbuckler mod) or vice versa!
 ### [Chevalier Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/c-d/chevalier/)
@@ -114,6 +115,7 @@
 - Gain Swift Aid if Expanded Content installed.
 - Preemptive Strike works best with a long reach!
 ### [Halfling Opportunist Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/halfling-opportunist/)
+- The class has only 5 levels.
 #### Homebrew Options:  
 - Alternative access to the class for non-halflings!
 - A mythic feat to use another combat maneuver with Exploitive Maneuver.
