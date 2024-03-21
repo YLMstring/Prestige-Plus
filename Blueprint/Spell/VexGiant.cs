@@ -69,7 +69,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetRange(AbilityRange.Custom)
               .SetCustomRange(60)
               .SetType(AbilityType.Special)
-              .AddAbilityEffectRunAction(action)
+              //.AddAbilityEffectRunAction(action)
               .Configure();
 
             var selfbuff = BuffConfigurator.New(VexGiantBuff, VexGiantBuffGuid)
@@ -77,6 +77,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetDescription(Description)
               .SetIcon(icon)
               .AddFacts(new() { ability2 })
+              .AddAbilityUseTrigger(ability: ability2, action: action, actionsOnTarget: true, forOneSpell: true)
               .Configure();
 
             AbilityConfigurator.NewSpell(
@@ -93,7 +94,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetCustomRange(60)
               .SetType(AbilityType.Spell)
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Extend)
-              .AddToSpellLists(level: 1, SpellList.Ranger)
+              .AddToSpellLists(level: 3, SpellList.Ranger)
               .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
                   .ApplyBuff(selfbuff, ContextDuration.Variable(ContextValues.Rank()), isFromSpell: true, toCaster: true)
