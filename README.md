@@ -1,4 +1,4 @@
-# Prestige Plus v2.9.4 for WoTR 
+# Prestige Plus v2.9.5 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -93,6 +93,9 @@
 - Trample (Mythic): a mythic feat inspired by tabletop abilities of the same name! (notice that owlcat trample works differently from tabletop)
 #### Homebrew Options:  
 - Bond of Genies: a mythic ability to mount any party member!
+### [Bolt Ace Class](https://www.d20pfsrd.com/classes/base-classes/gunslinger/archetypes/paizo-gunslinger-archetypes/bolt-ace)   
+- Based off, and basically the same as the gunslinger archetype.
+- Convert your grit to panache (swashbuckler mod) or vice versa!
 ### [Chevalier Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/c-d/chevalier/)
 - The class has only 3 levels.
 ### [Crimson Templar Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/c-d/crimson-templar/)
@@ -366,6 +369,7 @@
 - [Pilfering Hand](https://www.d20pfsrd.com/magic/all-spells/p/pilfering-hand/)
 - [Discordant Blast](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Discordant%20Blast)
 - [Lockjaw](https://www.d20pfsrd.com/magic/all-spells/l/lockjaw/)
+- [Vex Giant](https://www.d20pfsrd.com/magic/all-spells/v/vex-giant/)
 ### New Mythic Prestige Class Features
 
 - Swift Death: Your Death Attack becomes a standard action. At 10th assassin level, it becomes a move action.
