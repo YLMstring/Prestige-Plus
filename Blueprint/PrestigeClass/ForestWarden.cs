@@ -28,6 +28,9 @@ using System.Threading.Tasks;
 using Kingmaker.EntitySystem.Stats;
 using BlueprintCore.Actions.Builder.ContextEx;
 using Kingmaker.UnitLogic.Abilities.Components;
+using Kingmaker.Blueprints.Classes.Selection;
+using PrestigePlus.Blueprint.Gunslinger;
+using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -234,7 +237,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
              .SetIcon(icon)
              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
              .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New()
-                .Add<SpendMoveAction>(c => {
+                .Add<SpendMoveAction>(c =>
+                {
                     c.OnHit = ActionsBuilder.New()
                         .CastSpell(ability)
                         .Build();
@@ -296,7 +300,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
              .SetIcon(icon)
              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
              .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New()
-                .Add<SpendSwiftAction>(c => {
+                .Add<SpendSwiftAction>(c =>
+                {
                     c.OnHit = ActionsBuilder.New()
                         .CastSpell(ability)
                         .Build();
@@ -446,6 +451,71 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(PreemptiveStrikeDescription)
               .SetIcon(icon)
               .Configure();
+        }
+
+        private const string AlignSpam = "ForestWarden.AlignSpam";
+        public static readonly string AlignSpamGuid = "{69DFC912-DFE1-46A7-A6AC-4E701DCF0A27}";
+
+        internal const string SanctifiedRogueDisplayName = "ForestWardenSanctifiedRogue.Name";
+        private const string SanctifiedRogueDescription = "ForestWardenSanctifiedRogue.Description";
+
+        public static BlueprintFeatureSelection AlignSpamFeat()
+        {
+            var icon = FeatureSelectionRefs.SlayerTalentSelection2.Reference.Get().Icon;
+
+            string GunslingerClass = GunslingerMain.ArchetypeGuid;
+            string AgentoftheGraveClass = AgentoftheGrave.ArchetypeGuid;
+            string AnchoriteofDawnClass = AnchoriteofDawn.ArchetypeGuid;
+            string ArcaneAcherClass = ArcaneArcher.ArchetypeGuid;
+            string AsavirClass = Asavir.ArchetypeGuid;
+            string ChevalierClass = Chevalier.ArchetypeGuid;
+            string CrimsonTemplarClass = CrimsonTemplar.ArchetypeGuid;
+            string DeadeyeDevoteeClass = DeadeyeDevotee.ArchetypeGuid;
+            string DragonFuryClass = DragonFury.ArchetypeGuid;
+            string EsotericKnightClass = EsotericKnight.ArchetypeGuid;
+            string ExaltedEvangelistClass = ExaltedEvangelist.ArchetypeGuid;
+            string FuriousGuardianClass = FuriousGuardian.ArchetypeGuid;
+            string HalflingOpportunistClass = HalflingOpportunist.ArchetypeGuid;
+            string HinterlanderClass = Hinterlander.ArchetypeGuid;
+            string HorizonWalkerClass = HorizonWalker.ArchetypeGuid;
+            string InheritorCrusaderClass = InheritorCrusader.ArchetypeGuid;
+            string MammothRiderClass = MammothRider.ArchetypeGuid;
+            string SanguineAngelClass = SanguineAngel.ArchetypeGuid;
+            string ScarSeekerClass = ScarSeeker.ArchetypeGuid;
+            string SentinelClass = Sentinel.ArchetypeGuid;
+            string ShadowDancerClass = ShadowDancer.ArchetypeGuid;
+            string SouldrinkerClass = Souldrinker.ArchetypeGuid;
+            string UmbralAgentClass = UmbralAgent.ArchetypeGuid;
+            string MicroAntiPaladinClass = "8939eff2-5a0a-4b77-ad1a-b6be4c760a6c";
+            string OathbreakerClass = "B35CE8EE-32C2-4BFD-8884-740F13AAEE12";
+            string DreadKnightClass = "D0EB4CA4-4E11-417C-9B2F-0208491067A0";
+            string StargazerClass = "7e3cde18-3dad-43ab-a7cc-e14b6ca51216";
+            string SwashbucklerClass = "338ABF27-23C1-4C1A-B0F1-7CD7E3020444";
+            string HolyVindicatorClass = "b5daf66532f5425aa22df5372c57d766";
+            string SummonerClass = "c6a9c7f9-bdce-4c89-aedf-cde62620b2b7";
+            string LionBladeClass = LionBlade.ArchetypeGuid;
+            string EnchantingCourtesanClass = EnchantingCourtesan.ArchetypeGuid;
+            string HeritorKnightClass = HeritorKnight.ArchetypeGuid;
+            string GoldenLegionnaireClass = GoldenLegionnaire.ArchetypeGuid;
+            string BoltAceClass = BoltAce.ArchetypeGuid;
+            string MortalUsherClass = MortalUsher.ArchetypeGuid;
+            string ForestWardenClass = ForestWarden.ArchetypeGuid;
+
+            var list = new List<BlueprintFeature>();
+
+            var select = FeatureSelectionConfigurator.New(AlignSpam, AlignSpamGuid)
+              .SetDisplayName(SanctifiedRogueDisplayName)
+              .SetDescription(SanctifiedRogueDescription)
+              .SetIcon(icon)
+              .SetIgnorePrerequisites(false)
+              .SetObligatory(false);
+
+            foreach (var feature in list)
+            {
+                select = select.AddToAllFeatures(feature);
+            }
+
+            return select.Configure();
         }
     }
 }
