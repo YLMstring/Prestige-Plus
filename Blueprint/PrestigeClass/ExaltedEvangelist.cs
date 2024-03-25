@@ -451,6 +451,13 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             string SwashbucklerClass = "338ABF27-23C1-4C1A-B0F1-7CD7E3020444";
             string HolyVindicatorClass = "b5daf66532f5425aa22df5372c57d766";
             string SummonerClass = "c6a9c7f9-bdce-4c89-aedf-cde62620b2b7";
+            string LionBladeClass = LionBlade.ArchetypeGuid;
+            string EnchantingCourtesanClass = EnchantingCourtesan.ArchetypeGuid;
+            string HeritorKnightClass = HeritorKnight.ArchetypeGuid;
+            string GoldenLegionnaireClass = GoldenLegionnaire.ArchetypeGuid;
+            string BoltAceClass = BoltAce.ArchetypeGuid;
+            string MortalUsherClass = MortalUsher.ArchetypeGuid;
+            string ForestWardenClass = ForestWarden.ArchetypeGuid;
 
             var list = new List<BlueprintFeature>();
 
@@ -3421,6 +3428,307 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             .AddComponent<FakeLevelUpClass>(c => { c.clazz = SummonerClass; })
             .SetHideInUI(true).Configure());
             list.Add(EvangelistSummonerClasspro.Configure());
+            var EvangelistLionBladeClasspro = ProgressionConfigurator.New(EvangelistLionBladeClass0Align, EvangelistLionBladeClass0AlignGuid)
+            .SetDisplayName(EvangelistLionBladeClass0AlignDisplayName)
+            .SetDescription(EvangelistLionBladeClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(LionBladeClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistLionBladeClasspro = EvangelistLionBladeClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistLionBladeClass2Align, EvangelistLionBladeClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = LionBladeClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistLionBladeClasspro = EvangelistLionBladeClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistLionBladeClass3Align, EvangelistLionBladeClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = LionBladeClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistLionBladeClasspro = EvangelistLionBladeClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistLionBladeClass4Align, EvangelistLionBladeClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = LionBladeClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistLionBladeClasspro = EvangelistLionBladeClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistLionBladeClass5Align, EvangelistLionBladeClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = LionBladeClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistLionBladeClasspro = EvangelistLionBladeClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistLionBladeClass6Align, EvangelistLionBladeClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = LionBladeClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistLionBladeClasspro = EvangelistLionBladeClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistLionBladeClass7Align, EvangelistLionBladeClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = LionBladeClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistLionBladeClasspro = EvangelistLionBladeClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistLionBladeClass8Align, EvangelistLionBladeClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = LionBladeClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistLionBladeClasspro = EvangelistLionBladeClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistLionBladeClass9Align, EvangelistLionBladeClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = LionBladeClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistLionBladeClasspro = EvangelistLionBladeClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistLionBladeClass10Align, EvangelistLionBladeClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = LionBladeClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistLionBladeClasspro.Configure());
+            var EvangelistEnchantingCourtesanClasspro = ProgressionConfigurator.New(EvangelistEnchantingCourtesanClass0Align, EvangelistEnchantingCourtesanClass0AlignGuid)
+            .SetDisplayName(EvangelistEnchantingCourtesanClass0AlignDisplayName)
+            .SetDescription(EvangelistEnchantingCourtesanClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(EnchantingCourtesanClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistEnchantingCourtesanClasspro = EvangelistEnchantingCourtesanClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistEnchantingCourtesanClass2Align, EvangelistEnchantingCourtesanClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = EnchantingCourtesanClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistEnchantingCourtesanClasspro = EvangelistEnchantingCourtesanClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistEnchantingCourtesanClass3Align, EvangelistEnchantingCourtesanClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = EnchantingCourtesanClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistEnchantingCourtesanClasspro = EvangelistEnchantingCourtesanClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistEnchantingCourtesanClass4Align, EvangelistEnchantingCourtesanClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = EnchantingCourtesanClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistEnchantingCourtesanClasspro = EvangelistEnchantingCourtesanClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistEnchantingCourtesanClass5Align, EvangelistEnchantingCourtesanClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = EnchantingCourtesanClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistEnchantingCourtesanClasspro = EvangelistEnchantingCourtesanClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistEnchantingCourtesanClass6Align, EvangelistEnchantingCourtesanClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = EnchantingCourtesanClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistEnchantingCourtesanClasspro = EvangelistEnchantingCourtesanClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistEnchantingCourtesanClass7Align, EvangelistEnchantingCourtesanClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = EnchantingCourtesanClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistEnchantingCourtesanClasspro = EvangelistEnchantingCourtesanClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistEnchantingCourtesanClass8Align, EvangelistEnchantingCourtesanClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = EnchantingCourtesanClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistEnchantingCourtesanClasspro = EvangelistEnchantingCourtesanClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistEnchantingCourtesanClass9Align, EvangelistEnchantingCourtesanClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = EnchantingCourtesanClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistEnchantingCourtesanClasspro = EvangelistEnchantingCourtesanClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistEnchantingCourtesanClass10Align, EvangelistEnchantingCourtesanClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = EnchantingCourtesanClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistEnchantingCourtesanClasspro.Configure());
+            var EvangelistHeritorKnightClasspro = ProgressionConfigurator.New(EvangelistHeritorKnightClass0Align, EvangelistHeritorKnightClass0AlignGuid)
+            .SetDisplayName(EvangelistHeritorKnightClass0AlignDisplayName)
+            .SetDescription(EvangelistHeritorKnightClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(HeritorKnightClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistHeritorKnightClasspro = EvangelistHeritorKnightClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistHeritorKnightClass2Align, EvangelistHeritorKnightClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HeritorKnightClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHeritorKnightClasspro = EvangelistHeritorKnightClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistHeritorKnightClass3Align, EvangelistHeritorKnightClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HeritorKnightClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHeritorKnightClasspro = EvangelistHeritorKnightClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistHeritorKnightClass4Align, EvangelistHeritorKnightClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HeritorKnightClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHeritorKnightClasspro = EvangelistHeritorKnightClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistHeritorKnightClass5Align, EvangelistHeritorKnightClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HeritorKnightClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHeritorKnightClasspro = EvangelistHeritorKnightClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistHeritorKnightClass6Align, EvangelistHeritorKnightClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HeritorKnightClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHeritorKnightClasspro = EvangelistHeritorKnightClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistHeritorKnightClass7Align, EvangelistHeritorKnightClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HeritorKnightClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHeritorKnightClasspro = EvangelistHeritorKnightClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistHeritorKnightClass8Align, EvangelistHeritorKnightClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HeritorKnightClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHeritorKnightClasspro = EvangelistHeritorKnightClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistHeritorKnightClass9Align, EvangelistHeritorKnightClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HeritorKnightClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistHeritorKnightClasspro = EvangelistHeritorKnightClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistHeritorKnightClass10Align, EvangelistHeritorKnightClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = HeritorKnightClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistHeritorKnightClasspro.Configure());
+            var EvangelistGoldenLegionnaireClasspro = ProgressionConfigurator.New(EvangelistGoldenLegionnaireClass0Align, EvangelistGoldenLegionnaireClass0AlignGuid)
+            .SetDisplayName(EvangelistGoldenLegionnaireClass0AlignDisplayName)
+            .SetDescription(EvangelistGoldenLegionnaireClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(GoldenLegionnaireClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistGoldenLegionnaireClasspro = EvangelistGoldenLegionnaireClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistGoldenLegionnaireClass2Align, EvangelistGoldenLegionnaireClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = GoldenLegionnaireClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistGoldenLegionnaireClasspro = EvangelistGoldenLegionnaireClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistGoldenLegionnaireClass3Align, EvangelistGoldenLegionnaireClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = GoldenLegionnaireClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistGoldenLegionnaireClasspro = EvangelistGoldenLegionnaireClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistGoldenLegionnaireClass4Align, EvangelistGoldenLegionnaireClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = GoldenLegionnaireClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistGoldenLegionnaireClasspro = EvangelistGoldenLegionnaireClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistGoldenLegionnaireClass5Align, EvangelistGoldenLegionnaireClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = GoldenLegionnaireClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistGoldenLegionnaireClasspro = EvangelistGoldenLegionnaireClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistGoldenLegionnaireClass6Align, EvangelistGoldenLegionnaireClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = GoldenLegionnaireClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistGoldenLegionnaireClasspro = EvangelistGoldenLegionnaireClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistGoldenLegionnaireClass7Align, EvangelistGoldenLegionnaireClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = GoldenLegionnaireClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistGoldenLegionnaireClasspro = EvangelistGoldenLegionnaireClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistGoldenLegionnaireClass8Align, EvangelistGoldenLegionnaireClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = GoldenLegionnaireClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistGoldenLegionnaireClasspro = EvangelistGoldenLegionnaireClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistGoldenLegionnaireClass9Align, EvangelistGoldenLegionnaireClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = GoldenLegionnaireClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistGoldenLegionnaireClasspro = EvangelistGoldenLegionnaireClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistGoldenLegionnaireClass10Align, EvangelistGoldenLegionnaireClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = GoldenLegionnaireClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistGoldenLegionnaireClasspro.Configure());
+            var EvangelistBoltAceClasspro = ProgressionConfigurator.New(EvangelistBoltAceClass0Align, EvangelistBoltAceClass0AlignGuid)
+            .SetDisplayName(EvangelistBoltAceClass0AlignDisplayName)
+            .SetDescription(EvangelistBoltAceClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(BoltAceClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistBoltAceClasspro = EvangelistBoltAceClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistBoltAceClass2Align, EvangelistBoltAceClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = BoltAceClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistBoltAceClasspro = EvangelistBoltAceClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistBoltAceClass3Align, EvangelistBoltAceClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = BoltAceClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistBoltAceClasspro = EvangelistBoltAceClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistBoltAceClass4Align, EvangelistBoltAceClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = BoltAceClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistBoltAceClasspro = EvangelistBoltAceClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistBoltAceClass5Align, EvangelistBoltAceClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = BoltAceClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistBoltAceClasspro = EvangelistBoltAceClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistBoltAceClass6Align, EvangelistBoltAceClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = BoltAceClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistBoltAceClasspro = EvangelistBoltAceClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistBoltAceClass7Align, EvangelistBoltAceClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = BoltAceClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistBoltAceClasspro = EvangelistBoltAceClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistBoltAceClass8Align, EvangelistBoltAceClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = BoltAceClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistBoltAceClasspro = EvangelistBoltAceClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistBoltAceClass9Align, EvangelistBoltAceClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = BoltAceClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistBoltAceClasspro = EvangelistBoltAceClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistBoltAceClass10Align, EvangelistBoltAceClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = BoltAceClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistBoltAceClasspro.Configure());
+            var EvangelistMortalUsherClasspro = ProgressionConfigurator.New(EvangelistMortalUsherClass0Align, EvangelistMortalUsherClass0AlignGuid)
+            .SetDisplayName(EvangelistMortalUsherClass0AlignDisplayName)
+            .SetDescription(EvangelistMortalUsherClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(MortalUsherClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistMortalUsherClasspro = EvangelistMortalUsherClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistMortalUsherClass2Align, EvangelistMortalUsherClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MortalUsherClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistMortalUsherClasspro = EvangelistMortalUsherClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistMortalUsherClass3Align, EvangelistMortalUsherClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MortalUsherClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistMortalUsherClasspro = EvangelistMortalUsherClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistMortalUsherClass4Align, EvangelistMortalUsherClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MortalUsherClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistMortalUsherClasspro = EvangelistMortalUsherClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistMortalUsherClass5Align, EvangelistMortalUsherClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MortalUsherClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistMortalUsherClasspro = EvangelistMortalUsherClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistMortalUsherClass6Align, EvangelistMortalUsherClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MortalUsherClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistMortalUsherClasspro = EvangelistMortalUsherClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistMortalUsherClass7Align, EvangelistMortalUsherClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MortalUsherClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistMortalUsherClasspro = EvangelistMortalUsherClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistMortalUsherClass8Align, EvangelistMortalUsherClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MortalUsherClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistMortalUsherClasspro = EvangelistMortalUsherClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistMortalUsherClass9Align, EvangelistMortalUsherClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MortalUsherClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistMortalUsherClasspro = EvangelistMortalUsherClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistMortalUsherClass10Align, EvangelistMortalUsherClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = MortalUsherClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistMortalUsherClasspro.Configure());
+            var EvangelistForestWardenClasspro = ProgressionConfigurator.New(EvangelistForestWardenClass0Align, EvangelistForestWardenClass0AlignGuid)
+            .SetDisplayName(EvangelistForestWardenClass0AlignDisplayName)
+            .SetDescription(EvangelistForestWardenClass0AlignDescription)
+            .SetClasses(ArchetypeGuid)
+            .AddPrerequisiteClassLevel(ForestWardenClass, 1)
+            .SetHideNotAvailibleInUI(true);
+            EvangelistForestWardenClasspro = EvangelistForestWardenClasspro.AddToLevelEntry(2,
+            FeatureConfigurator.New(EvangelistForestWardenClass2Align, EvangelistForestWardenClass2AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ForestWardenClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistForestWardenClasspro = EvangelistForestWardenClasspro.AddToLevelEntry(3,
+            FeatureConfigurator.New(EvangelistForestWardenClass3Align, EvangelistForestWardenClass3AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ForestWardenClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistForestWardenClasspro = EvangelistForestWardenClasspro.AddToLevelEntry(4,
+            FeatureConfigurator.New(EvangelistForestWardenClass4Align, EvangelistForestWardenClass4AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ForestWardenClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistForestWardenClasspro = EvangelistForestWardenClasspro.AddToLevelEntry(5,
+            FeatureConfigurator.New(EvangelistForestWardenClass5Align, EvangelistForestWardenClass5AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ForestWardenClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistForestWardenClasspro = EvangelistForestWardenClasspro.AddToLevelEntry(6,
+            FeatureConfigurator.New(EvangelistForestWardenClass6Align, EvangelistForestWardenClass6AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ForestWardenClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistForestWardenClasspro = EvangelistForestWardenClasspro.AddToLevelEntry(7,
+            FeatureConfigurator.New(EvangelistForestWardenClass7Align, EvangelistForestWardenClass7AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ForestWardenClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistForestWardenClasspro = EvangelistForestWardenClasspro.AddToLevelEntry(8,
+            FeatureConfigurator.New(EvangelistForestWardenClass8Align, EvangelistForestWardenClass8AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ForestWardenClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistForestWardenClasspro = EvangelistForestWardenClasspro.AddToLevelEntry(9,
+            FeatureConfigurator.New(EvangelistForestWardenClass9Align, EvangelistForestWardenClass9AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ForestWardenClass; })
+            .SetHideInUI(true).Configure());
+            EvangelistForestWardenClasspro = EvangelistForestWardenClasspro.AddToLevelEntry(10,
+            FeatureConfigurator.New(EvangelistForestWardenClass10Align, EvangelistForestWardenClass10AlignGuid)
+            .AddComponent<FakeLevelUpClass>(c => { c.clazz = ForestWardenClass; })
+            .SetHideInUI(true).Configure());
+            list.Add(EvangelistForestWardenClasspro.Configure());
 
             var select = FeatureSelectionConfigurator.New(AlignSpam, AlignSpamGuid)
               .SetDisplayName(SanctifiedRogueDisplayName)
@@ -4977,6 +5285,160 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private static readonly string EvangelistSummonerClass9AlignGuid = "affd5256-64ea-4c65-ae83-3a1cb87a4f04";
         private const string EvangelistSummonerClass10Align = "EvangelistSummonerClass10Align";
         private static readonly string EvangelistSummonerClass10AlignGuid = "1e65cefb-45ad-414e-bc7f-e9c1061ca565";
+        private const string EvangelistLionBladeClass0Align = "EvangelistLionBladeClass0Align";
+        private static readonly string EvangelistLionBladeClass0AlignGuid = "8030879c-affd-4f16-91f8-7f3069093a6b";
+        internal const string EvangelistLionBladeClass0AlignDisplayName = "EvangelistLionBladeClass0Align.Name";
+        private const string EvangelistLionBladeClass0AlignDescription = "EvangelistLionBladeClass0Align.Description";
+        private const string EvangelistLionBladeClass2Align = "EvangelistLionBladeClass2Align";
+        private static readonly string EvangelistLionBladeClass2AlignGuid = "a4d49101-e932-4b30-88f1-c47ce088048b";
+        private const string EvangelistLionBladeClass3Align = "EvangelistLionBladeClass3Align";
+        private static readonly string EvangelistLionBladeClass3AlignGuid = "aa3c08e6-0532-46e9-a5f6-c97198a0152d";
+        private const string EvangelistLionBladeClass4Align = "EvangelistLionBladeClass4Align";
+        private static readonly string EvangelistLionBladeClass4AlignGuid = "d625465e-7ab4-4d96-b74c-6773029522b3";
+        private const string EvangelistLionBladeClass5Align = "EvangelistLionBladeClass5Align";
+        private static readonly string EvangelistLionBladeClass5AlignGuid = "e66b287a-35aa-4637-b44d-987030dc95a5";
+        private const string EvangelistLionBladeClass6Align = "EvangelistLionBladeClass6Align";
+        private static readonly string EvangelistLionBladeClass6AlignGuid = "bdca1b8a-87da-4b8f-b0a5-9eed723e50f6";
+        private const string EvangelistLionBladeClass7Align = "EvangelistLionBladeClass7Align";
+        private static readonly string EvangelistLionBladeClass7AlignGuid = "8a968098-398a-47c4-9fa0-bef9cdb4ed32";
+        private const string EvangelistLionBladeClass8Align = "EvangelistLionBladeClass8Align";
+        private static readonly string EvangelistLionBladeClass8AlignGuid = "7487a6d5-5c04-4216-a99d-f9c54873132d";
+        private const string EvangelistLionBladeClass9Align = "EvangelistLionBladeClass9Align";
+        private static readonly string EvangelistLionBladeClass9AlignGuid = "feaa548a-9f16-4c77-8518-1237529b00d9";
+        private const string EvangelistLionBladeClass10Align = "EvangelistLionBladeClass10Align";
+        private static readonly string EvangelistLionBladeClass10AlignGuid = "b08024e1-8646-4479-84dc-af9ab6b1bc22";
+        private const string EvangelistEnchantingCourtesanClass0Align = "EvangelistEnchantingCourtesanClass0Align";
+        private static readonly string EvangelistEnchantingCourtesanClass0AlignGuid = "1d18efc5-bf96-44ad-9e08-61a1d163d4b7";
+        internal const string EvangelistEnchantingCourtesanClass0AlignDisplayName = "EvangelistEnchantingCourtesanClass0Align.Name";
+        private const string EvangelistEnchantingCourtesanClass0AlignDescription = "EvangelistEnchantingCourtesanClass0Align.Description";
+        private const string EvangelistEnchantingCourtesanClass2Align = "EvangelistEnchantingCourtesanClass2Align";
+        private static readonly string EvangelistEnchantingCourtesanClass2AlignGuid = "f462c9c3-06e1-4f31-adae-a0aa213d9b68";
+        private const string EvangelistEnchantingCourtesanClass3Align = "EvangelistEnchantingCourtesanClass3Align";
+        private static readonly string EvangelistEnchantingCourtesanClass3AlignGuid = "7c49b81d-8537-49e5-923f-a3fcdb128d2f";
+        private const string EvangelistEnchantingCourtesanClass4Align = "EvangelistEnchantingCourtesanClass4Align";
+        private static readonly string EvangelistEnchantingCourtesanClass4AlignGuid = "01949905-3d19-4e54-9f79-501fa1dc6cd0";
+        private const string EvangelistEnchantingCourtesanClass5Align = "EvangelistEnchantingCourtesanClass5Align";
+        private static readonly string EvangelistEnchantingCourtesanClass5AlignGuid = "6f9a023e-fe59-4214-992c-16960457bd24";
+        private const string EvangelistEnchantingCourtesanClass6Align = "EvangelistEnchantingCourtesanClass6Align";
+        private static readonly string EvangelistEnchantingCourtesanClass6AlignGuid = "74d5a9a0-8816-4eb9-96b7-dad598c14804";
+        private const string EvangelistEnchantingCourtesanClass7Align = "EvangelistEnchantingCourtesanClass7Align";
+        private static readonly string EvangelistEnchantingCourtesanClass7AlignGuid = "a8346a7b-14db-4f1e-a8b9-be48a109d553";
+        private const string EvangelistEnchantingCourtesanClass8Align = "EvangelistEnchantingCourtesanClass8Align";
+        private static readonly string EvangelistEnchantingCourtesanClass8AlignGuid = "334e072a-c768-46b3-8494-922f9a435052";
+        private const string EvangelistEnchantingCourtesanClass9Align = "EvangelistEnchantingCourtesanClass9Align";
+        private static readonly string EvangelistEnchantingCourtesanClass9AlignGuid = "a4e19211-27c1-488c-a908-4ee439dfd122";
+        private const string EvangelistEnchantingCourtesanClass10Align = "EvangelistEnchantingCourtesanClass10Align";
+        private static readonly string EvangelistEnchantingCourtesanClass10AlignGuid = "492a0bab-0663-481e-b045-fe2ce44f3125";
+        private const string EvangelistHeritorKnightClass0Align = "EvangelistHeritorKnightClass0Align";
+        private static readonly string EvangelistHeritorKnightClass0AlignGuid = "ac2002f0-5c63-4ea8-a3a2-aa6fd54a5faf";
+        internal const string EvangelistHeritorKnightClass0AlignDisplayName = "EvangelistHeritorKnightClass0Align.Name";
+        private const string EvangelistHeritorKnightClass0AlignDescription = "EvangelistHeritorKnightClass0Align.Description";
+        private const string EvangelistHeritorKnightClass2Align = "EvangelistHeritorKnightClass2Align";
+        private static readonly string EvangelistHeritorKnightClass2AlignGuid = "fa33917b-a739-4634-93a4-c5f43d104873";
+        private const string EvangelistHeritorKnightClass3Align = "EvangelistHeritorKnightClass3Align";
+        private static readonly string EvangelistHeritorKnightClass3AlignGuid = "16829840-e5ea-4bce-9edf-03e4c53f6257";
+        private const string EvangelistHeritorKnightClass4Align = "EvangelistHeritorKnightClass4Align";
+        private static readonly string EvangelistHeritorKnightClass4AlignGuid = "5857010e-c873-4614-b663-fcaf30343e06";
+        private const string EvangelistHeritorKnightClass5Align = "EvangelistHeritorKnightClass5Align";
+        private static readonly string EvangelistHeritorKnightClass5AlignGuid = "c5cc47be-63b9-441a-b185-b93a9c6a722f";
+        private const string EvangelistHeritorKnightClass6Align = "EvangelistHeritorKnightClass6Align";
+        private static readonly string EvangelistHeritorKnightClass6AlignGuid = "01f5bd2f-0209-4615-99d6-03130554435d";
+        private const string EvangelistHeritorKnightClass7Align = "EvangelistHeritorKnightClass7Align";
+        private static readonly string EvangelistHeritorKnightClass7AlignGuid = "3b1156c5-928d-47d4-ab42-640c2b36dc4d";
+        private const string EvangelistHeritorKnightClass8Align = "EvangelistHeritorKnightClass8Align";
+        private static readonly string EvangelistHeritorKnightClass8AlignGuid = "98992341-dfcc-472c-b12f-0279d8ee7c42";
+        private const string EvangelistHeritorKnightClass9Align = "EvangelistHeritorKnightClass9Align";
+        private static readonly string EvangelistHeritorKnightClass9AlignGuid = "57246171-5b36-4892-9233-631ece377899";
+        private const string EvangelistHeritorKnightClass10Align = "EvangelistHeritorKnightClass10Align";
+        private static readonly string EvangelistHeritorKnightClass10AlignGuid = "cd414dd0-c3fd-4f9e-bc4e-af7c3a8a6b27";
+        private const string EvangelistGoldenLegionnaireClass0Align = "EvangelistGoldenLegionnaireClass0Align";
+        private static readonly string EvangelistGoldenLegionnaireClass0AlignGuid = "01d6c0b3-d037-4fda-9892-7c2baa26b849";
+        internal const string EvangelistGoldenLegionnaireClass0AlignDisplayName = "EvangelistGoldenLegionnaireClass0Align.Name";
+        private const string EvangelistGoldenLegionnaireClass0AlignDescription = "EvangelistGoldenLegionnaireClass0Align.Description";
+        private const string EvangelistGoldenLegionnaireClass2Align = "EvangelistGoldenLegionnaireClass2Align";
+        private static readonly string EvangelistGoldenLegionnaireClass2AlignGuid = "85cb3c05-ee23-473c-9210-48072caca3fb";
+        private const string EvangelistGoldenLegionnaireClass3Align = "EvangelistGoldenLegionnaireClass3Align";
+        private static readonly string EvangelistGoldenLegionnaireClass3AlignGuid = "d02a87e7-0c35-407a-8dc2-ac1d4407ef9f";
+        private const string EvangelistGoldenLegionnaireClass4Align = "EvangelistGoldenLegionnaireClass4Align";
+        private static readonly string EvangelistGoldenLegionnaireClass4AlignGuid = "c774f3b7-44c8-4db7-a0a4-1fdcd026c4b6";
+        private const string EvangelistGoldenLegionnaireClass5Align = "EvangelistGoldenLegionnaireClass5Align";
+        private static readonly string EvangelistGoldenLegionnaireClass5AlignGuid = "2aa0858c-cdb3-48d1-9aa0-e7e2a7fae1b7";
+        private const string EvangelistGoldenLegionnaireClass6Align = "EvangelistGoldenLegionnaireClass6Align";
+        private static readonly string EvangelistGoldenLegionnaireClass6AlignGuid = "a0dd829c-cac3-4387-987d-af502d1866a6";
+        private const string EvangelistGoldenLegionnaireClass7Align = "EvangelistGoldenLegionnaireClass7Align";
+        private static readonly string EvangelistGoldenLegionnaireClass7AlignGuid = "6c98983d-f8c2-40bb-986b-90d03f8511c3";
+        private const string EvangelistGoldenLegionnaireClass8Align = "EvangelistGoldenLegionnaireClass8Align";
+        private static readonly string EvangelistGoldenLegionnaireClass8AlignGuid = "843e3e7a-5040-4996-8d4c-5c6f75186a13";
+        private const string EvangelistGoldenLegionnaireClass9Align = "EvangelistGoldenLegionnaireClass9Align";
+        private static readonly string EvangelistGoldenLegionnaireClass9AlignGuid = "fd7762a2-cf65-4f25-8ae2-8615d9c04a37";
+        private const string EvangelistGoldenLegionnaireClass10Align = "EvangelistGoldenLegionnaireClass10Align";
+        private static readonly string EvangelistGoldenLegionnaireClass10AlignGuid = "32da8509-fa7d-4407-a760-0024e629d273";
+        private const string EvangelistBoltAceClass0Align = "EvangelistBoltAceClass0Align";
+        private static readonly string EvangelistBoltAceClass0AlignGuid = "123d1403-4388-419a-a59e-68d5bc7a1fbd";
+        internal const string EvangelistBoltAceClass0AlignDisplayName = "EvangelistBoltAceClass0Align.Name";
+        private const string EvangelistBoltAceClass0AlignDescription = "EvangelistBoltAceClass0Align.Description";
+        private const string EvangelistBoltAceClass2Align = "EvangelistBoltAceClass2Align";
+        private static readonly string EvangelistBoltAceClass2AlignGuid = "98fe326e-c144-43fc-8265-27201906f7ee";
+        private const string EvangelistBoltAceClass3Align = "EvangelistBoltAceClass3Align";
+        private static readonly string EvangelistBoltAceClass3AlignGuid = "b3e315e8-283e-4584-bb0d-74b281e7a672";
+        private const string EvangelistBoltAceClass4Align = "EvangelistBoltAceClass4Align";
+        private static readonly string EvangelistBoltAceClass4AlignGuid = "e2f4546c-52c9-462c-be55-2520d1a69d16";
+        private const string EvangelistBoltAceClass5Align = "EvangelistBoltAceClass5Align";
+        private static readonly string EvangelistBoltAceClass5AlignGuid = "5be68d87-6b81-486d-bc7a-c35c833deb57";
+        private const string EvangelistBoltAceClass6Align = "EvangelistBoltAceClass6Align";
+        private static readonly string EvangelistBoltAceClass6AlignGuid = "cf526328-07c8-41ec-b9e5-a76f7c608d11";
+        private const string EvangelistBoltAceClass7Align = "EvangelistBoltAceClass7Align";
+        private static readonly string EvangelistBoltAceClass7AlignGuid = "49511465-f000-4665-aed3-4ce1ead2a514";
+        private const string EvangelistBoltAceClass8Align = "EvangelistBoltAceClass8Align";
+        private static readonly string EvangelistBoltAceClass8AlignGuid = "dd12832d-3a63-4baa-b0c0-c7bfdecd2d48";
+        private const string EvangelistBoltAceClass9Align = "EvangelistBoltAceClass9Align";
+        private static readonly string EvangelistBoltAceClass9AlignGuid = "b9f2ccef-0970-460b-a86f-dd617b226a30";
+        private const string EvangelistBoltAceClass10Align = "EvangelistBoltAceClass10Align";
+        private static readonly string EvangelistBoltAceClass10AlignGuid = "16d03c5f-078a-41af-bb47-708d6725bba6";
+        private const string EvangelistMortalUsherClass0Align = "EvangelistMortalUsherClass0Align";
+        private static readonly string EvangelistMortalUsherClass0AlignGuid = "13029daf-742b-4a05-87c5-36ae76da0dec";
+        internal const string EvangelistMortalUsherClass0AlignDisplayName = "EvangelistMortalUsherClass0Align.Name";
+        private const string EvangelistMortalUsherClass0AlignDescription = "EvangelistMortalUsherClass0Align.Description";
+        private const string EvangelistMortalUsherClass2Align = "EvangelistMortalUsherClass2Align";
+        private static readonly string EvangelistMortalUsherClass2AlignGuid = "dc46cf9e-b565-4f82-966a-44f425a17fcb";
+        private const string EvangelistMortalUsherClass3Align = "EvangelistMortalUsherClass3Align";
+        private static readonly string EvangelistMortalUsherClass3AlignGuid = "b33172c8-580b-47cb-8a83-5ff91f8a1385";
+        private const string EvangelistMortalUsherClass4Align = "EvangelistMortalUsherClass4Align";
+        private static readonly string EvangelistMortalUsherClass4AlignGuid = "0232ff79-9293-4b3f-acea-653df7b6b005";
+        private const string EvangelistMortalUsherClass5Align = "EvangelistMortalUsherClass5Align";
+        private static readonly string EvangelistMortalUsherClass5AlignGuid = "e5c913c0-7453-42fa-b0cc-9008aa194d57";
+        private const string EvangelistMortalUsherClass6Align = "EvangelistMortalUsherClass6Align";
+        private static readonly string EvangelistMortalUsherClass6AlignGuid = "b81d9ace-f336-42b2-af79-09c14f6a50ee";
+        private const string EvangelistMortalUsherClass7Align = "EvangelistMortalUsherClass7Align";
+        private static readonly string EvangelistMortalUsherClass7AlignGuid = "1352fc53-7df1-4984-bb3a-a99a2bf4d1d5";
+        private const string EvangelistMortalUsherClass8Align = "EvangelistMortalUsherClass8Align";
+        private static readonly string EvangelistMortalUsherClass8AlignGuid = "c2f3fe18-9dd5-4819-8d61-c3f1157dee5b";
+        private const string EvangelistMortalUsherClass9Align = "EvangelistMortalUsherClass9Align";
+        private static readonly string EvangelistMortalUsherClass9AlignGuid = "465bdb5c-36e6-4dee-96b4-8e2ab42b2cbd";
+        private const string EvangelistMortalUsherClass10Align = "EvangelistMortalUsherClass10Align";
+        private static readonly string EvangelistMortalUsherClass10AlignGuid = "22773a77-b59d-4920-b7e1-8f88ebaa576b";
+        private const string EvangelistForestWardenClass0Align = "EvangelistForestWardenClass0Align";
+        private static readonly string EvangelistForestWardenClass0AlignGuid = "6772d8ff-8f74-494f-9a3b-e2ed4afb2563";
+        internal const string EvangelistForestWardenClass0AlignDisplayName = "EvangelistForestWardenClass0Align.Name";
+        private const string EvangelistForestWardenClass0AlignDescription = "EvangelistForestWardenClass0Align.Description";
+        private const string EvangelistForestWardenClass2Align = "EvangelistForestWardenClass2Align";
+        private static readonly string EvangelistForestWardenClass2AlignGuid = "73319b5e-8791-4d34-aa7f-bc58c3c98fb7";
+        private const string EvangelistForestWardenClass3Align = "EvangelistForestWardenClass3Align";
+        private static readonly string EvangelistForestWardenClass3AlignGuid = "ad735f9e-1d45-49f6-a996-de1999e6a0b5";
+        private const string EvangelistForestWardenClass4Align = "EvangelistForestWardenClass4Align";
+        private static readonly string EvangelistForestWardenClass4AlignGuid = "572496cc-6dbd-4219-a3b3-7a9283022ab5";
+        private const string EvangelistForestWardenClass5Align = "EvangelistForestWardenClass5Align";
+        private static readonly string EvangelistForestWardenClass5AlignGuid = "28bd0123-09dd-4554-aa32-890a33a839ad";
+        private const string EvangelistForestWardenClass6Align = "EvangelistForestWardenClass6Align";
+        private static readonly string EvangelistForestWardenClass6AlignGuid = "eba7903e-3a15-4d66-ab65-6bbaad1d9d9b";
+        private const string EvangelistForestWardenClass7Align = "EvangelistForestWardenClass7Align";
+        private static readonly string EvangelistForestWardenClass7AlignGuid = "8ea16a7b-da1f-4581-bb34-5e28ec001508";
+        private const string EvangelistForestWardenClass8Align = "EvangelistForestWardenClass8Align";
+        private static readonly string EvangelistForestWardenClass8AlignGuid = "d4f55056-6faa-4c1a-a944-8af41761c8fc";
+        private const string EvangelistForestWardenClass9Align = "EvangelistForestWardenClass9Align";
+        private static readonly string EvangelistForestWardenClass9AlignGuid = "d90d8ad7-4372-443e-9f73-d0719265b012";
+        private const string EvangelistForestWardenClass10Align = "EvangelistForestWardenClass10Align";
+        private static readonly string EvangelistForestWardenClass10AlignGuid = "763fb196-4778-478a-a462-cd12e5145de0";
 
     }
 }
