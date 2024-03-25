@@ -56,7 +56,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string SparkLifeDescription = "SavageWarriorSparkLife.Description";
         private static BlueprintFeature CreateSparkLife()
         {
-            var icon = AbilityRefs.LifeBlast.Reference.Get().Icon;
+            var icon = AbilityRefs.BreathOfLifeCast.Reference.Get().Icon;
 
             return FeatureConfigurator.New(SparkLife, SparkLifeGuid)
               .SetDisplayName(SparkLifeDisplayName)
@@ -85,7 +85,8 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetRanks(5)
               .AddCMBBonusForManeuver(maneuvers: mans, value: ContextValues.Rank(), checkFact: false)
               .AddCMDBonusAgainstManeuvers(maneuvers: mans, value: ContextValues.Rank())
-              .AddFacts(new() { FeatureRefs.WeaponTrainingNatural.ToString() })
+              .AddWeaponGroupAttackBonus(1, weaponGroup: Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroup.Natural)
+              .AddWeaponGroupDamageBonus(damageBonus: 1, weaponGroup: Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroup.Natural)
               .AddContextRankConfig(ContextRankConfigs.FeatureRank(NaturalSavageryGuid))
               .Configure();
         }
@@ -100,13 +101,15 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string SavageChargeDescription = "SavageWarriorSavageCharge.Description";
         private static BlueprintFeature CreateSavageCharge()
         {
-            var icon = FeatureRefs.SavageRapport.Reference.Get().Icon;
+            var icon = FeatureRefs.ShifterWoodlandGraceFeature.Reference.Get().Icon;
+            var mans = new CombatManeuver[] { CombatManeuver.BullRush, CombatManeuver.Overrun };
 
             var Buff1 = BuffConfigurator.New(SavageChargeBuff, SavageChargeGuidBuff)
               .SetDisplayName(SavageChargeDisplayName)
               .SetDescription(SavageChargeDescription)
               .SetIcon(icon)
               .AddWeaponGroupAttackBonus(1, ContextValues.Rank(Kingmaker.Enums.AbilityRankType.DamageBonus), null, true, Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroup.Natural)
+              .AddCMBBonusForManeuver(maneuvers: mans, value: ContextValues.Rank(Kingmaker.Enums.AbilityRankType.DamageBonus), checkFact: false)
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] {CharacterClassRefs.FighterClass.ToString()}, type: Kingmaker.Enums.AbilityRankType.DamageBonus).WithDiv2Progression(-2))
               .AddContextStatBonus(StatType.AC, value: ContextValues.Rank(Kingmaker.Enums.AbilityRankType.ProjectilesCount), descriptor: Kingmaker.Enums.ModifierDescriptor.Penalty)
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.FighterClass.ToString() }, type: Kingmaker.Enums.AbilityRankType.ProjectilesCount).WithLinearProgression((float)-0.5, 2))
@@ -131,13 +134,15 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string GreaterChargeDescription = "SavageWarriorGreaterCharge.Description";
         private static BlueprintFeature CreateGreaterCharge()
         {
-            var icon = FeatureRefs.BlindingSavagery.Reference.Get().Icon;
+            var icon = FeatureRefs.WildShapeIWolfFeature.Reference.Get().Icon;
+            var mans = new CombatManeuver[] { CombatManeuver.BullRush, CombatManeuver.Overrun };
 
             var Buff1 = BuffConfigurator.New(GreaterChargeBuff, GreaterChargeGuidBuff)
               .SetDisplayName(GreaterChargeDisplayName)
               .SetDescription(GreaterChargeDescription)
               .SetIcon(icon)
               .AddWeaponGroupAttackBonus(1, ContextValues.Rank(Kingmaker.Enums.AbilityRankType.DamageBonus), null, true, Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroup.Natural)
+              .AddCMBBonusForManeuver(maneuvers: mans, value: ContextValues.Rank(Kingmaker.Enums.AbilityRankType.DamageBonus), checkFact: false)
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.FighterClass.ToString() }, type: Kingmaker.Enums.AbilityRankType.DamageBonus).WithDiv2Progression(-2))
               .AddContextStatBonus(StatType.AC, value: ContextValues.Rank(Kingmaker.Enums.AbilityRankType.ProjectilesCount), descriptor: Kingmaker.Enums.ModifierDescriptor.Penalty)
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.FighterClass.ToString() }, type: Kingmaker.Enums.AbilityRankType.ProjectilesCount).WithLinearProgression((float)-0.25, 2))
