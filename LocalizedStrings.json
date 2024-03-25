@@ -10677,6 +10677,69 @@
     "ruRU": "Призыватель"
   },
   {
+    "Key": "EvangelistLionBladeClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "Lion Blade"
+  },
+  {
+    "Key": "EvangelistLionBladeClass0Align.Description",
+    "enGB": "Lion Blade"
+  },
+  {
+    "Key": "EvangelistEnchantingCourtesanClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "Enchanting Courtesan"
+  },
+  {
+    "Key": "EvangelistEnchantingCourtesanClass0Align.Description",
+    "enGB": "Enchanting Courtesan"
+  },
+  {
+    "Key": "EvangelistHeritorKnightClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "Heritor Knight"
+  },
+  {
+    "Key": "EvangelistHeritorKnightClass0Align.Description",
+    "enGB": "Heritor Knight"
+  },
+  {
+    "Key": "EvangelistGoldenLegionnaireClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "Golden Legionnaire"
+  },
+  {
+    "Key": "EvangelistGoldenLegionnaireClass0Align.Description",
+    "enGB": "Golden Legionnaire"
+  },
+  {
+    "Key": "EvangelistBoltAceClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "Bolt Ace"
+  },
+  {
+    "Key": "EvangelistBoltAceClass0Align.Description",
+    "enGB": "Bolt Ace"
+  },
+  {
+    "Key": "EvangelistMortalUsherClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "Mortal Usher"
+  },
+  {
+    "Key": "EvangelistMortalUsherClass0Align.Description",
+    "enGB": "Mortal Usher"
+  },
+  {
+    "Key": "EvangelistForestWardenClass0Align.Name",
+    "ProcessTemplates": false,
+    "enGB": "Forest Warden"
+  },
+  {
+    "Key": "EvangelistForestWardenClass0Align.Description",
+    "enGB": "Forest Warden"
+  },
+  {
     "Key": "SpireDefenderDisruptive.Name",
     "ProcessTemplates": false,
     "enGB": "Disruptive",
