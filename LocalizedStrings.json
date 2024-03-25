@@ -2024,11 +2024,11 @@
   {
     "Key": "PPbookArmagsBlade.Name",
     "ProcessTemplates": false,
-    "enGB": "Armags Blade",
+    "enGB": "Armags Blade"
   },
   {
     "Key": "PPbookArmagsBlade.Description",
-    "enGB": "Armags Blade",
+    "enGB": "Armags Blade"
   },
   {
     "Key": "PPbookBard.Name",
@@ -2558,7 +2558,7 @@
     "enGB": "Myrmidarch",
     "ruRU": "Мирмидарх"
   },
-  
+
   {
     "Key": "StagStyle.Name",
     // Don't process this since it is just a name. Without this it might create strange artifacts by trying to create
@@ -12950,6 +12950,138 @@
     "enGB": "When you cast vex giant, your senses and reflexes become particularly honed against a single target within 60 feet, provided the target is at least one size category larger than you. You may select your focused foe as a free action when you cast this spell—switching your focus to a different foe within 60 feet is a move action. Although the name of the spell is vex giant, it works equally well on any foe that’s at least one size category larger than you. Against a foe you are focused on, you do not provoke its attacks of opportunity. Additionally, the first successful melee attack you make against the foe in a round deals an additional 1d6 points of damage. Finally, you gain a +4 insight bonus on all combat maneuver checks made against your focused foe.",
     "ruRU": "Когда вы сотворяете это заклинание, ваши чувства и рефлексы особенно обостряются против 1 существа в радиусе 60 футов, при условии, что оно хотя бы на 1 категорию размера больше вас. Вы можете выбрать существо на котором хотите сфокусироваться при помощи свободного действия, изменение фокуса на другую цель является сопутствующим действием. Хотя это заклинание называется Раздраженный великан, оно одинакого хорошо работает против всех существ которые хотя бы 1 категорию размера больше вас. Ваши действия не провоцируют внеочередные атаки существа на котором вы фокусируетесь. Кроме того, первая успешная атака в ближнем бою за раунд против этого существа наносит дополнительно 1d6 урона. И наконец, вы получаете интуитивный бонус +4 ко всем проверкам боевых маневров против этого существа.",
     "zhCN": "当你施放侵扰巨人后，若敌人的体型比你至少大1级，你的感官与身手会就在对抗60尺内的单个敌人时变得更加凌厉。你可以在施放该法术时以自由动作选择你所专注的敌人——将你专注的目标切换为60尺内的另一个敌人是移动动作。法术名称虽然叫侵扰巨人，但对付其他比你体型至少大1级的目标时也有用。在对抗你所专注的敌人时，你不会引起其借机攻击。此外，在一轮内你对该名敌人做出的第一次成功近战攻击会额外造成1d6点伤害。最后，在对抗专注敌人时，你的战技检定均会获得+4洞察加值。"
+  },
+  {
+    "Key": "SavageBarbarian.Name",
+    "ProcessTemplates": false,
+    "enGB": "Savage Barbarian",
+    "zhCN": "野性蛮人"
+  },
+  {
+    "Key": "SavageBarbarian.Description",
+    "enGB": "Some barbarians are truly savage, having little training in modern arms. These savage barbarians learn to avoid blows and toughen up their skin.",
+    "zhCN": "有些野蛮人是真的野蛮，几乎没有受过现代武装的训练。这些野性蛮人学会如何避开攻击并且锻炼了自己的皮肤。"
+  },
+  {
+    "Key": "SavageBarbarianNakedCourage.Name",
+    "ProcessTemplates": false,
+    "enGB": "Naked Courage",
+    "zhCN": "裸衣之勇"
+  },
+  {
+    "Key": "SavageBarbarianNakedCourage.Description",
+    "enGB": "At 3rd level, the savage barbarian gains a +1 dodge bonus to AC and a +1 morale bonus on saving throws against fear when wearing no armor (shields are allowed). This bonus increases by +1 for every six levels after 3rd.",
+    "zhCN": "3级时，在没穿盔甲的时候（可以拿盾）野性蛮人获得+1AC闪避加值和对恐惧效果豁免+1士气加值。这个加值在3级之后的每6级+1。"
+  },
+  {
+    "Key": "SavageBarbarianNaturalToughness.Name",
+    "ProcessTemplates": false,
+    "enGB": "Natural Toughness",
+    "zhCN": "自然坚韧"
+  },
+  {
+    "Key": "SavageBarbarianNaturalToughness.Description",
+    "enGB": "At 7th level, the savage barbarian gains a +1 natural armor bonus to AC when wearing no armor (shields are allowed). This bonus increases by +1 for every three levels beyond 7th.",
+    "zhCN": "7级时，在没穿盔甲的时候（可以拿盾）野性蛮人获得+1AC天生防御加值。这个加值在7级之后的每3级+1。"
+  },
+  {
+    "Key": "UntamedRager.Name",
+    "ProcessTemplates": false,
+    "enGB": "Untamed Rager",
+    "zhCN": "不驯蛮人"
+  },
+  {
+    "Key": "UntamedRager.Description",
+    "enGB": "There are no rules in the wild. Some barbarians enter combat with only victory in mind and do anything in their power to achieve it.",
+    "zhCN": "在荒野中没有规则可言。有些野蛮人在战斗中只考虑如何不择手段地获取胜利。"
+  },
+  {
+    "Key": "UntamedRagerFeralAppearance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Feral Appearance",
+    "zhCN": "凶神恶煞"
+  },
+  {
+    "Key": "UntamedRagerFeralAppearance.Description",
+    "enGB": "At 3rd level, the untamed rager gains a +1 bonus on Intimidate checks. This bonus increases by 1 every 3 barbarian levels thereafter.",
+    "zhCN": "3级时，不驯蛮人在威吓检定上获得+1加值，当他之后每提升3个野蛮人等级时本加值再额外+1。"
+  },
+  {
+    "Key": "UntamedRagerDishonorable.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dishonorable",
+    "zhCN": "无耻"
+  },
+  {
+    "Key": "UntamedRagerDishonorable.Description",
+    "enGB": "At 7th level and every 3 barbarian levels thereafter, the untamed rager gains a +1 bonus on combat maneuver checks when performing dirty tricks and to her CMD to resist others’ dirty tricks.",
+    "zhCN": "7级和之后每提升3个野蛮人等级时，不驯蛮人会在发动阴招战技攻击的战技检定和对抗阴招效果的CMD上获得+1加值。"
+  },
+  {
+    "Key": "SavageWarrior.Name",
+    "ProcessTemplates": false,
+    "enGB": "Savage Warrior",
+    "zhCN": "野性战士"
+  },
+  {
+    "Key": "SavageWarrior.Description",
+    "enGB": "Warriors’ might is not measured only by their skill with steel, but also by their ability to inflict death with fang and claw, horn and hoof, and every exotic appendage the natural and unnatural world has to offer.",
+    "zhCN": "战士的力量不只是使用钢铁的技巧，也可以是使用爪和牙，角和蹄，以及所有自然或非自然的奇异肢体来置人于死地的能力。"
+  },
+  {
+    "Key": "SavageWarriorSparkLife.Name",
+    "ProcessTemplates": false,
+    "enGB": "Spark of Life",
+    "zhCN": "生命火花"
+  },
+  {
+    "Key": "SavageWarriorSparkLife.Description",
+    "enGB": "At 2nd level, a savage warrior gains a +1 bonus on saving throws made against energy drain and death effects. This bonus increases by +1 for every four levels beyond 2nd.",
+    "zhCN": "2级起，野性战士在对抗能量吸取和即死效果的豁免骰上获得+1加值。此加值在2级后每4级再+1。"
+  },
+  {
+    "Key": "SavageWarriorNaturalSavagery.Name",
+    "ProcessTemplates": false,
+    "enGB": "Natural Savagery",
+    "zhCN": "自然野性"
+  },
+  {
+    "Key": "SavageWarriorNaturalSavagery.Description",
+    "enGB": "At 5th level, a savage warrior gains a +1 bonus on attack and damage rolls with natural weapons. This bonus also applies to CMB and CMD for grappling. This bonus increases by +1 for every four levels beyond 5th.",
+    "zhCN": "5级起，野性战士在使用天生武器时攻击和伤害骰获得+1加值。此加值也对擒抱的CMB或CMD生效。此加值在5级后每4级再+1。"
+  },
+  {
+    "Key": "SavageWarriorSavageCharge.Name",
+    "ProcessTemplates": false,
+    "enGB": "Savage Charge",
+    "zhCN": "野性冲锋"
+  },
+  {
+    "Key": "SavageWarriorSavageCharge.Description",
+    "enGB": "At 9th level, when a savage warrior attacks with a natural weapon at the end of a charge, he gains a bonus on his natural weapon attack rolls equal to half his fighter level, while suffering a penalty to his AC equal to half his fighter level. These replace the normal attack roll bonus and AC penalty for charging. This bonus also applies to his CMB for a bull rush or overrun combat maneuvers made when charging.",
+    "zhCN": "9级起，若野性战士在冲锋时用天生武器攻击，他在天生武器的攻击骰上获得等于他战士等级一半的加值，同时AC获得等于他战士等级一半的减值。这取代正常冲锋时的攻击加值和AC减值。此加值也对冲锋时使用的冲撞或闯越的CMB生效。"
+  },
+  {
+    "Key": "SavageWarriorGreaterCharge.Name",
+    "ProcessTemplates": false,
+    "enGB": "Greater Savage Charge",
+    "zhCN": "高等野性冲锋"
+  },
+  {
+    "Key": "SavageWarriorGreaterCharge.Description",
+    "enGB": "At 17th level, when using savage charge, the AC penalty is reduced to 1/4 his fighter level instead of 1/2 his fighter level. In addition, a savage warrior gains Charging Stag Style as a bonus feat.",
+    "zhCN": "17级起，使用野性冲锋时受到的AC减值降低到战士等级的1/4，而不是一半。此外，野性战士获得鹿家赶蝉步作为额外专长。"
+  },
+  {
+    "Key": "NewSpellVirtuosoPerformance.Name",
+    "ProcessTemplates": false,
+    "enGB": "Virtuoso Performance",
+    "zhCN": "大师表演"
+  },
+  {
+    "Key": "NewSpellVirtuosoPerformance.Description",
+    "enGB": "While this spell is active, you may start a second bardic performance while maintaining another. Maintaining both performances costs a total of 3 rounds of bardic performance instead of 2, for each round they are maintained.",
+    "zhCN": "在该法术生效时，你可以在维持一种吟游表演的同时开始进行第二种吟游表演。每轮同时维持两种吟游表演需要花费共计3轮而非2轮吟游表演轮数。"
   }
 
 ]

@@ -83,7 +83,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDescription(NaturalSavageryDescription)
               .SetIcon(icon)
               .SetRanks(5)
-              .AddCMBBonusForManeuver(maneuvers: mans, value: ContextValues.Rank())
+              .AddCMBBonusForManeuver(maneuvers: mans, value: ContextValues.Rank(), checkFact: false)
               .AddCMDBonusAgainstManeuvers(maneuvers: mans, value: ContextValues.Rank())
               .AddFacts(new() { FeatureRefs.WeaponTrainingNatural.ToString() })
               .AddContextRankConfig(ContextRankConfigs.FeatureRank(NaturalSavageryGuid))

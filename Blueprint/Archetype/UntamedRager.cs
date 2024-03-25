@@ -63,7 +63,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string FeralAppearanceDescription = "UntamedRagerFeralAppearance.Description";
         private static BlueprintFeature CreateFeralAppearance()
         {
-            var icon = FeatureRefs.FeralChampionBlessing.Reference.Get().Icon;
+            var icon = AbilityRefs.FrightfulAspect.Reference.Get().Icon;
 
             return FeatureConfigurator.New(FeralAppearance, FeralAppearanceGuid)
               .SetDisplayName(FeralAppearanceDisplayName)
@@ -82,7 +82,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string DishonorableDescription = "UntamedRagerDishonorable.Description";
         private static BlueprintFeature CreateDishonorable()
         {
-            var icon = FeatureRefs.HalfOrcFerocity.Reference.Get().Icon;
+            var icon = AbilityRefs.SoothingMud.Reference.Get().Icon;
             var mans = new CombatManeuver[] { CombatManeuver.DirtyTrickBlind, CombatManeuver.DirtyTrickEntangle, CombatManeuver.DirtyTrickSickened };
 
             return FeatureConfigurator.New(Dishonorable, DishonorableGuid)
@@ -90,9 +90,9 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDescription(DishonorableDescription)
               .SetIcon(icon)
               .SetRanks(10)
-              .AddCMBBonusForManeuver(maneuvers: mans, value: ContextValues.Rank())
+              .AddCMBBonusForManeuver(maneuvers: mans, value: ContextValues.Rank(), checkFact: false)
               .AddCMDBonusAgainstManeuvers(maneuvers: mans, value: ContextValues.Rank())
-              .AddContextRankConfig(ContextRankConfigs.FeatureRank(FeralAppearanceGuid))
+              .AddContextRankConfig(ContextRankConfigs.FeatureRank(DishonorableGuid))
               .Configure();
         }
     }
