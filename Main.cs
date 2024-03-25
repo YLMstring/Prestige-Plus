@@ -209,6 +209,12 @@ namespace PrestigePlus
             Toggle.New(GetKey("drunk"), defaultValue: true, Helpers.CreateString("toggle-desc76", "Drunken Brute"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("savageb"), defaultValue: true, Helpers.CreateString("toggle-desc95", "Savage Barbarian"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("untamedb"), defaultValue: true, Helpers.CreateString("toggle-desc96", "Untamed Rager"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("geisha"), defaultValue: true, Helpers.CreateString("toggle-desc90", "Geisha"))
               .ShowVisualConnection())
           .AddToggle(
@@ -240,6 +246,9 @@ namespace PrestigePlus
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("lorew"), defaultValue: true, Helpers.CreateString("toggle-desc24", "Lore Warden"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("savagew"), defaultValue: true, Helpers.CreateString("toggle-desc94", "Savage Warrior"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("warlord"), defaultValue: true, Helpers.CreateString("toggle-desc25", "Warlord"))
@@ -467,6 +476,9 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("soundstriker"))) { SoundStriker.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("ankou"))) { AnkouShadow.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("boltace"))) { BoltAce.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("untamedb"))) { UntamedRager.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("savageb"))) { SavageBarbarian.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("savagew"))) { SavageWarrior.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
