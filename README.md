@@ -1,4 +1,4 @@
-# Prestige Plus v2.9.5 for WoTR 
+# Prestige Plus v2.9.6 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -189,6 +189,8 @@
 - New Rage Power: [Roaring Drunk](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/roaring-drunk-ex)
 - New Rage Power: [Liquid Courage](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/liquid-courage-ex)
 - The drinks are on us, the hangover is on you.
+- [Savage Barbarian](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Barbarian%20Savage%20Barbarian)
+- [Untamed Rager](https://www.d20pfsrd.com/classes/core-classes/barbarian/archetypes/paizo-barbarian-archetypes/untamed-rager-barbarian-archetype/)
 - New Rage Power: [Intimidating Glare](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/intimidating-glare-ex)
 - New Rage Power: [Atavism](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/atavism-totem-su/)
 - New Rage Power: [Greater Atavism](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/atavism-totem-greater-su/)
@@ -212,6 +214,7 @@
 - Share Training with your pets!
 - [High Guardian](https://www.d20pfsrd.com/classes/core-classes/fighter/archetypes/paizo-fighter-archetypes/high-guardian-fighter-archetype/)
 - [Lore Warden](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Lore%20Warden) (with good stuff from [this version](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Lore%20Warden%20(PFS%20Field%20Guide)))
+- [Savage Warrior](https://www.d20pfsrd.com/classes/core-classes/fighter/archetypes/paizo-fighter-archetypes/savage-warrior/)
 - [Warlord](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Warlord)
 - [Weapon Master](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Weapon%20Master): Fighters that have the weapon master archetype can select advanced weapon training beginning at 4th level. A weapon master can select this feat as a bonus feat and it doesn’t count for the purpose of the requirement that it can be taken at most once per 5 fighter levels.
 #### Magus:  
@@ -371,6 +374,7 @@
 - [Discordant Blast](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Discordant%20Blast)
 - [Lockjaw](https://www.d20pfsrd.com/magic/all-spells/l/lockjaw/)
 - [Vex Giant](https://www.d20pfsrd.com/magic/all-spells/v/vex-giant/)
+- [Virtuoso Performance](https://www.d20pfsrd.com/magic/all-spells/v/virtuoso-performance/)
 ### New Mythic Prestige Class Features
 
 - Swift Death: Your Death Attack becomes a standard action. At 10th assassin level, it becomes a move action.
