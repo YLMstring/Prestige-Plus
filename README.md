@@ -58,11 +58,11 @@
 - [Lamashtu (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Lamashtu): requires worshipping Lamashtu or Chaotic Evil
 - [Rovagug](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Rovagug): requires worshipping Rovagug or Chaotic Evil
 - [Socothbenoth (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Socothbenoth): requires worshipping Gyronna or Chaotic Evil
-### [Evangelist](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/evangelist/)
+### [Evangelist Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/evangelist/)
 - [Diverse Obedience](https://www.d20pfsrd.com/feats/general-feats/diverse-obedience/)
 - Continue the aligned class progression or start your [Exalted](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/exalted/) career!
 - Perform Miracle: Essentially you prepare up to 30 spells each level to choose from, because the UI will explode if you have too many spells.
-### [Sentinel](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/sentinel/)
+### [Sentinel Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/sentinel/)
 - [Guided Hand](https://www.d20pfsrd.com/feats/general-feats/guided-hand/)
 - [Guided Hand (Mythic)](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-feats/guided-hand-mythic/)
 - The favored weapon is determined by your actual deity, not the deity of your obedience.
