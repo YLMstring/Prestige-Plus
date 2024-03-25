@@ -38,14 +38,14 @@ namespace PrestigePlus.Blueprint.Archetype
             .SetRemoveFeaturesEntry(17, FeatureSelectionRefs.WeaponTrainingSelection.ToString(), FeatureSelectionRefs.WeaponTrainingRankUpSelection.ToString())
             .SetRemoveFeaturesEntry(18, FeatureRefs.Bravery.ToString())
             .AddToAddFeatures(2, CreateSparkLife())
+            .AddToAddFeatures(3, SparkLifeGuid)
+            .AddToAddFeatures(4, SparkLifeGuid)
+            .AddToAddFeatures(5, SparkLifeGuid)
             .AddToAddFeatures(6, SparkLifeGuid)
-            .AddToAddFeatures(10, SparkLifeGuid)
-            .AddToAddFeatures(14, SparkLifeGuid)
-            .AddToAddFeatures(18, SparkLifeGuid)
             .AddToAddFeatures(5, CreateNaturalSavagery())
-            .AddToAddFeatures(9, NaturalSavageryGuid, FeatureRefs.LungeFeature.ToString())
-            .AddToAddFeatures(13, NaturalSavageryGuid, CreateSavageCharge())
-            .AddToAddFeatures(17, NaturalSavageryGuid, CreateGreaterCharge())
+            .AddToAddFeatures(6, NaturalSavageryGuid, FeatureRefs.LungeFeature.ToString())
+            .AddToAddFeatures(7, NaturalSavageryGuid, CreateSavageCharge())
+            .AddToAddFeatures(8, NaturalSavageryGuid, CreateGreaterCharge())
               .Configure();
         }
 
