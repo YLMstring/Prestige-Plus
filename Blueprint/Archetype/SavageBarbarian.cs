@@ -39,14 +39,14 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetRemoveFeaturesEntry(16, FeatureRefs.DamageReduction.ToString())
               .SetRemoveFeaturesEntry(19, FeatureRefs.DamageReduction.ToString())
               .AddToAddFeatures(3, CreateNakedCourage())
-              .AddToAddFeatures(4, NakedCourageGuid)
-              .AddToAddFeatures(5, NakedCourageGuid)
+              .AddToAddFeatures(6, NakedCourageGuid)
+              .AddToAddFeatures(9, NakedCourageGuid)
               .AddToAddFeatures(12, NakedCourageGuid)
               .AddToAddFeatures(15, NakedCourageGuid)
               .AddToAddFeatures(18, NakedCourageGuid)
-              .AddToAddFeatures(1, CreateNaturalToughness())
-              .AddToAddFeatures(2, NaturalToughnessGuid)
-              .AddToAddFeatures(3, NaturalToughnessGuid)
+              .AddToAddFeatures(7, CreateNaturalToughness())
+              .AddToAddFeatures(10, NaturalToughnessGuid)
+              .AddToAddFeatures(13, NaturalToughnessGuid)
               .AddToAddFeatures(16, NaturalToughnessGuid)
               .AddToAddFeatures(19, NaturalToughnessGuid)
               .Configure();
@@ -62,7 +62,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string NakedCourageDescription = "SavageBarbarianNakedCourage.Description";
         private static BlueprintFeature CreateNakedCourage()
         {
-            var icon = FeatureRefs.DivineGuardianCourageousDefense.Reference.Get().Icon;
+            var icon = FeatureRefs.RenewedVigorFeature.Reference.Get().Icon;
 
             var feat = FeatureConfigurator.New(NakedCourage0, NakedCourageGuid0)
               .SetDisplayName(NakedCourageDisplayName)
@@ -95,7 +95,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string NaturalToughnessDescription = "SavageBarbarianNaturalToughness.Description";
         private static BlueprintFeature CreateNaturalToughness()
         {
-            var icon = FeatureRefs.DivineGuardianCourageousDefense.Reference.Get().Icon;
+            var icon = AbilityRefs.Barkskin.Reference.Get().Icon;
 
             var feat = FeatureConfigurator.New(NaturalToughness0, NaturalToughnessGuid0)
               .SetDisplayName(NaturalToughnessDisplayName)

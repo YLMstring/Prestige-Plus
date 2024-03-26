@@ -13110,8 +13110,8 @@
   },
   {
     "Key": "SavageWarriorNaturalSavagery.Description",
-    "enGB": "At 5th level, a savage warrior gains a +1 bonus on attack and damage rolls with natural weapons. This bonus also applies to CMB and CMD for grappling. This bonus increases by +1 for every four levels beyond 5th.",
-    "zhCN": "5级起，野性战士在使用天生武器时攻击和伤害骰获得+1加值。此加值也对擒抱的CMB或CMD生效。此加值在5级后每4级再+1。"
+    "enGB": "At 5th level, a savage warrior gains a +1 bonus on attack and damage rolls with natural weapons. This bonus also applies to CMD for grappling and CMB. This bonus increases by +1 for every four levels beyond 5th.",
+    "zhCN": "5级起，野性战士在使用天生武器时攻击和伤害骰获得+1加值。此加值也对CMB和擒抱的CMD生效。此加值在5级后每4级再+1。"
   },
   {
     "Key": "SavageWarriorSavageCharge.Name",
@@ -13121,8 +13121,8 @@
   },
   {
     "Key": "SavageWarriorSavageCharge.Description",
-    "enGB": "At 9th level, when a savage warrior attacks with a natural weapon at the end of a charge, he gains a bonus on his natural weapon attack rolls equal to half his fighter level, while suffering a penalty to his AC equal to half his fighter level. These replace the normal attack roll bonus and AC penalty for charging. This bonus also applies to his CMB for a bull rush or overrun combat maneuvers made when charging.",
-    "zhCN": "9级起，若野性战士在冲锋时用天生武器攻击，他在天生武器的攻击骰上获得等于他战士等级一半的加值，同时AC获得等于他战士等级一半的减值。这取代正常冲锋时的攻击加值和AC减值。此加值也对冲锋时使用的冲撞或闯越的CMB生效。"
+    "enGB": "At 9th level, when a savage warrior attacks with a natural weapon at the end of a charge, he gains a bonus on his natural weapon attack rolls equal to half his fighter level, while suffering a penalty to his AC equal to half his fighter level. These replace the normal attack roll bonus and AC penalty for charging. This bonus also applies to his CMB for combat maneuvers made when charging.",
+    "zhCN": "9级起，若野性战士在冲锋时用天生武器攻击，他在天生武器的攻击骰上获得等于他战士等级一半的加值，同时AC获得等于他战士等级一半的减值。这取代正常冲锋时的攻击加值和AC减值。此加值也对冲锋时使用战技的CMB生效。"
   },
   {
     "Key": "SavageWarriorGreaterCharge.Name",
