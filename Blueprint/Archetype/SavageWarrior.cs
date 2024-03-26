@@ -14,6 +14,7 @@ using Kingmaker.Blueprints.Classes.Spells;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using Kingmaker.EntitySystem.Stats;
 using PrestigePlus.Feats;
+using PrestigePlus.CustomComponent.Archetype;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -45,7 +46,7 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToAddFeatures(5, CreateNaturalSavagery())
             .AddToAddFeatures(6, NaturalSavageryGuid, FeatureRefs.LungeFeature.ToString())
             .AddToAddFeatures(7, NaturalSavageryGuid, CreateSavageCharge())
-            .AddToAddFeatures(8, NaturalSavageryGuid, CreateGreaterCharge())
+            .AddToAddFeatures(10, NaturalSavageryGuid, CreateGreaterCharge())
               .Configure();
         }
 
@@ -107,10 +108,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(SavageChargeDisplayName)
               .SetDescription(SavageChargeDescription)
               .SetIcon(icon)
-              .AddWeaponGroupAttackBonus(1, ContextValues.Rank(Kingmaker.Enums.AbilityRankType.DamageBonus), null, true, Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroup.Natural)
-              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] {CharacterClassRefs.FighterClass.ToString()}, type: Kingmaker.Enums.AbilityRankType.DamageBonus).WithDiv2Progression(-2))
-              .AddContextStatBonus(StatType.AC, value: ContextValues.Rank(Kingmaker.Enums.AbilityRankType.ProjectilesCount), descriptor: Kingmaker.Enums.ModifierDescriptor.Penalty)
-              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.FighterClass.ToString() }, type: Kingmaker.Enums.AbilityRankType.ProjectilesCount).WithLinearProgression((float)-0.5, 2))
+              .AddComponent<SavageChargeComp>()
               .Configure();
 
             return FeatureConfigurator.New(SavageCharge, SavageChargeGuid)
@@ -123,10 +121,7 @@ namespace PrestigePlus.Blueprint.Archetype
         }
 
         private const string GreaterCharge = "SavageWarrior.GreaterCharge";
-        private static readonly string GreaterChargeGuid = "{197896E4-1C28-4F06-94BF-2C411C0189DD}";
-
-        private const string GreaterChargeBuff = "SavageWarrior.GreaterChargeBuff";
-        private static readonly string GreaterChargeGuidBuff = "{3B12810D-826D-47A6-BFAA-6D75EB437DE3}";
+        public static readonly string GreaterChargeGuid = "{197896E4-1C28-4F06-94BF-2C411C0189DD}";
 
         internal const string GreaterChargeDisplayName = "SavageWarriorGreaterCharge.Name";
         private const string GreaterChargeDescription = "SavageWarriorGreaterCharge.Description";
@@ -134,24 +129,11 @@ namespace PrestigePlus.Blueprint.Archetype
         {
             var icon = FeatureRefs.WildShapeIWolfFeature.Reference.Get().Icon;
 
-            var Buff1 = BuffConfigurator.New(GreaterChargeBuff, GreaterChargeGuidBuff)
-              .SetDisplayName(GreaterChargeDisplayName)
-              .SetDescription(GreaterChargeDescription)
-              .SetIcon(icon)
-              .AddWeaponGroupAttackBonus(1, ContextValues.Rank(Kingmaker.Enums.AbilityRankType.DamageBonus), null, true, Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroup.Natural)
-              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.FighterClass.ToString() }, type: Kingmaker.Enums.AbilityRankType.DamageBonus).WithDiv2Progression(-2))
-              .AddContextStatBonus(StatType.AC, value: ContextValues.Rank(Kingmaker.Enums.AbilityRankType.ProjectilesCount), descriptor: Kingmaker.Enums.ModifierDescriptor.Penalty)
-              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.FighterClass.ToString() }, type: Kingmaker.Enums.AbilityRankType.ProjectilesCount).WithLinearProgression((float)-0.25, 2))
-              .Configure();
-
             return FeatureConfigurator.New(GreaterCharge, GreaterChargeGuid)
               .SetDisplayName(GreaterChargeDisplayName)
               .SetDescription(GreaterChargeDescription)
               .SetIcon(icon)
-              .SetIsClassFeature(true)
-              .AddBuffExtraEffects(checkedBuff: BuffRefs.ChargeBuff.ToString(), extraEffectBuff: Buff1)
               .AddFacts(new() { StagStyle.StyleGuid })
-              .AddRemoveFeatureOnApply(SavageChargeGuid)
               .Configure();
         }
     }
