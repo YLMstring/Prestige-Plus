@@ -374,7 +374,6 @@
 - [Discordant Blast](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Discordant%20Blast)
 - [Lockjaw](https://www.d20pfsrd.com/magic/all-spells/l/lockjaw/)
 - [Vex Giant](https://www.d20pfsrd.com/magic/all-spells/v/vex-giant/)
-- [Virtuoso Performance](https://www.d20pfsrd.com/magic/all-spells/v/virtuoso-performance/)
 ### New Mythic Prestige Class Features
 
 - Swift Death: Your Death Attack becomes a standard action. At 10th assassin level, it becomes a move action.
