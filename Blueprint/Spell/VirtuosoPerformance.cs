@@ -23,6 +23,8 @@ namespace PrestigePlus.Blueprint.Spell
 {
     internal class VirtuosoPerformance
     {
+        //don't work because of how lingering performance is done and when it ends things don't get removed, anyway too complicated
+        
         private const string VirtuosoPerformanceAbility = "NewSpell.UseVirtuosoPerformance";
         public static readonly string VirtuosoPerformanceAbilityGuid = "{31E5B2F7-B4AC-4B8C-BE0F-B9824EDE6FA7}";
 
@@ -54,7 +56,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetDescription(Description)
               .SetIcon(icon)
               .SetLocalizedDuration(AbilityRefs.Haste.Reference.Get().LocalizedDuration)
-              .SetAnimation(CastAnimationStyle.Kineticist)
+              .SetAnimation(CastAnimationStyle.SelfTouch)
               .AddComponent(fx)
               .SetRange(AbilityRange.Personal)
               .SetType(AbilityType.Spell)
