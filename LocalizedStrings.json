@@ -588,9 +588,9 @@
 
   {
     "Key": "HinterlanderFeat.Description",
-    "enGB": "At 1st level, and again at 3rd and 5th levels, a hinterlander gains a bonus feat from the following list, even if he doesn’t meet the prerequisites: Deadeye’s Blessing, Far Shot, Point-Blank Shot, Precise Shot, and Rapid Shot. At 3rd level, he adds Improved Precise Shot, Point Blank Master, and Manyshot to the list. At 5th level, he adds Pinpoint Targeting and Mobility to the list.",
+    "enGB": "At 1st level, and again at 3rd and 5th levels, a hinterlander gains a bonus feat from the following list, even if he doesn’t meet the prerequisites: Deadeye’s Blessing, Point-Blank Shot, Precise Shot, and Rapid Shot. At 3rd level, he adds Improved Precise Shot, Manyshot, and Point Blank Master to the list. At 5th level, he adds Mobility and Pinpoint Targeting to the list.",
     "ruRU": "На 1, а также 3 и 5 уровнях, защитник глубинки получает дополнительную черту из следующего списка, даже если он не соответствует её требованиям: Благословение Эрастила, Дальний выстрел, Стрельба вблизи, Меткий выстрел, Быстрый выстрел. На 3 уровне он также может выбрать Меткий выстрел+, Стрельба вблизи+ и Залп. На 5 уровне - Подвижность в бою и Точный выстрел.",
-    "zhCN": "在第1级、第3级以及第5级，戍乡人均会从后述列表中获得一个奖励专长，即便他并不满足专长的先决条件也可以：埃拉斯蒂尔之赐福（Erastil's Blessing），精准射击（Precise Shot），近距射击（Point-Blank Shot）和快速射击（Rapid Shot）。在第3级时，他将精通精准射击（Improved Precise Shot），贴身射击（Point Blank Master；APG）和多重射击（Manyshot）加入到列表中。在第5级，他将精确瞄准（Pinpoint Targeting）和灵活移动（Mobility）加入到列表中。"
+    "zhCN": "在第1级、第3级以及第5级，戍乡人均会从后述列表中获得一个奖励专长，即便他并不满足专长的先决条件也可以：埃拉斯蒂尔之赐福，精准射击，近距射击和快速射击。在第3级时，他将精通精准射击，贴身射击和多重射击加入到列表中。在第5级，他将精确瞄准和灵活移动加入到列表中。"
   },
 
   {
