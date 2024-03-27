@@ -32,6 +32,8 @@ using Kingmaker.Blueprints.Classes.Selection;
 using PrestigePlus.Blueprint.Gunslinger;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
 using PrestigePlus.CustomComponent;
+using PrestigePlus.Blueprint.SpecificManeuver;
+using PrestigePlus.Blueprint.ManeuverFeat;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -47,20 +49,20 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static void Configure()
         {
-            //"SwiftAidAnotherFeature": "8590fb52-921c-4365-832c-ca7635fd5a70",
+            PsychicEsotericaFeat();
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
                 .AddToLevelEntry(1, DefyDangerFeature(), AuthoritativeCommandConfigure(), FeatureRefs.FighterProficiencies.ToString())
-                .AddToLevelEntry(2, SeizetheOpportunity.FeatGuid, UnitedDefenseConfigure(), AuthoritativeCommand2Feature())
-                .AddToLevelEntry(3, AlliedRetributionFeature(), AuthoritativeCommand3Feature())
+                .AddToLevelEntry(2, PsychicEsotericaGuid)
+                .AddToLevelEntry(3, FeatureRefs.SneakAttack.ToString(), AuthoritativeCommand3Feature())
                 .AddToLevelEntry(4, BodyGuard.FeatGuid, AuthoritativeCommand4Feature())
-                .AddToLevelEntry(5, DefyDangerGuid)
-                .AddToLevelEntry(6, BodyGuard.Feat2Guid, UnitedDefenseGuid, AuthoritativeCommand5Feature())
+                .AddToLevelEntry(5, PsychicEsotericaGuid)
+                .AddToLevelEntry(6, FeatureRefs.SneakAttack.ToString(), AuthoritativeCommand5Feature())
                 .AddToLevelEntry(7, AlliedRetributionGuid, PreemptiveStrikeFeature())
-                .AddToLevelEntry(8, AuthoritativeCommandSwiftConfigure())
-                .AddToLevelEntry(9, RetaliateFeature(), DefyDangerGuid)
-                .AddToLevelEntry(10, FeatureRefs.PerfectStrikeFeature.ToString(), UnitedDefenseGuid)
+                .AddToLevelEntry(8, PsychicEsotericaGuid)
+                .AddToLevelEntry(9, FeatureRefs.SneakAttack.ToString())
+                .AddToLevelEntry(10, FeatureRefs.HunterWoodlandStride.ToString(), FeatureRefs.AssassinHideInPlainSight.ToString())
                 .SetUIGroups(UIGroupBuilder.New()
                     .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { AuthoritativeCommandGuid, AuthoritativeCommandSwiftGuid, AuthoritativeCommand2Guid, AuthoritativeCommand3Guid, AuthoritativeCommand4Guid, AuthoritativeCommand5Guid })
                     .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { SeizetheOpportunity.FeatGuid, BodyGuard.FeatGuid, BodyGuard.Feat2Guid, "8590fb52-921c-4365-832c-ca7635fd5a70", FeatureRefs.PerfectStrikeFeature.ToString() }))
@@ -73,26 +75,61 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               CharacterClassConfigurator.New(ArchetypeName, ArchetypeGuid)
                 .SetLocalizedName(ArchetypeDisplayName)
                 .SetLocalizedDescription(ArchetypeDescription)
-                .SetSkillPoints(2)
-                .SetHitDie(DiceType.D10)
+                .SetSkillPoints(6)
+                .SetHitDie(DiceType.D8)
                 .SetPrestigeClass(true)
-                .SetBaseAttackBonus(StatProgressionRefs.BABFull.ToString())
-                .SetFortitudeSave(StatProgressionRefs.SavesPrestigeHigh.ToString())
-                .SetReflexSave(StatProgressionRefs.SavesPrestigeLow.ToString())
-                .SetWillSave(StatProgressionRefs.SavesPrestigeLow.ToString())
+                .SetBaseAttackBonus(StatProgressionRefs.BABMedium.ToString())
+                .SetFortitudeSave(StatProgressionRefs.SavesPrestigeLow.ToString())
+                .SetReflexSave(StatProgressionRefs.SavesPrestigeHigh.ToString())
+                .SetWillSave(StatProgressionRefs.SavesPrestigeHigh.ToString())
                 .SetProgression(progression)
-                .SetClassSkills(new StatType[] { StatType.SkillAthletics, StatType.SkillMobility, StatType.SkillLoreNature })
+                .SetClassSkills(new StatType[] { StatType.SkillAthletics, StatType.SkillMobility, StatType.SkillThievery, StatType.SkillStealth, StatType.SkillKnowledgeArcana, StatType.SkillPerception, StatType.SkillLoreNature, StatType.SkillPersuasion })
                 .AddPrerequisiteStatValue(StatType.BaseAttackBonus, 5)
-                .AddPrerequisiteStatValue(StatType.SkillKnowledgeWorld, 5)
-                .AddPrerequisiteStatValue(StatType.SkillPersuasion, 5)
-                .AddPrerequisiteProficiency(armorProficiencies: new ArmorProficiencyGroup[] { ArmorProficiencyGroup.Heavy }, new WeaponCategory[] { })
-                .AddPrerequisiteAlignment(AlignmentMaskType.Good, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
-                .AddPrerequisiteAlignment(AlignmentMaskType.LawfulNeutral, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .AddPrerequisiteStatValue(StatType.SkillStealth, 5)
+                .AddPrerequisiteStatValue(StatType.SkillLoreNature, 5)
+                .AddPrerequisiteAlignment(AlignmentMaskType.NeutralGood, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticGood, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                 .AddPrerequisiteAlignment(AlignmentMaskType.TrueNeutral, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                 .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticNeutral, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                 .Configure();
 
             FakeAlignedClass.AddtoMenu(archetype);
+        }
+
+        private const string PsychicEsoterica = "ForestWarden.PsychicEsoterica";
+        private static readonly string PsychicEsotericaGuid = "{75A9BEDF-64D2-42B5-BA76-0A026627AB0F}";
+
+        internal const string PsychicEsotericaDisplayName = "ForestWardenPsychicEsoterica.Name";
+        private const string PsychicEsotericaDescription = "ForestWardenPsychicEsoterica.Description";
+
+        public static void PsychicEsotericaFeat()
+        {
+            var icon = AbilityRefs.LifeBubble.Reference.Get().Icon;
+
+            //SpringAttackFeatGuid = "9D46135E-3DC2-44B8-ABFD-45CA33805FF0";
+            //PairedOpportunistsFeat = "41df43af-78bc-477a-a33a-e57d86ba8928";
+
+            FeatureSelectionConfigurator.New(PsychicEsoterica, PsychicEsotericaGuid)
+              .SetDisplayName(PsychicEsotericaDisplayName)
+              .SetDescription(PsychicEsotericaDescription)
+              .SetIcon(icon)
+              .SetIgnorePrerequisites(false)
+              .SetObligatory(false)
+              .AddToAllFeatures(RangedDisarm.ArmBindGuid)
+              .AddToAllFeatures(FeatureRefs.CombatExpertiseFeature.ToString())
+              .AddToAllFeatures(CrushArmor.FeatGuid)
+              .AddToAllFeatures(FeatureRefs.GreaterDirtyTrick.ToString())
+              .AddToAllFeatures(FeatureRefs.HeightenSpellFeat.ToString())
+              .AddToAllFeatures(FeatureRefs.ImprovedDirtyTrick.ToString())
+              .AddToAllFeatures(FeatureRefs.Mobility.ToString())
+              .AddToAllFeatures("41df43af-78bc-477a-a33a-e57d86ba8928")
+              .AddToAllFeatures(FeatureRefs.PointBlankShot.ToString())
+              .AddToAllFeatures(FeatureRefs.PreciseShot.ToString())
+              .AddToAllFeatures(FeatureRefs.RapidShotFeature.ToString())
+              .AddToAllFeatures(FeatureRefs.SiezeTheMoment.ToString())
+              .AddToAllFeatures("9D46135E-3DC2-44B8-ABFD-45CA33805FF0")
+              .AddToAllFeatures(RangedDisarm.StrikeSeizeGuid)
+              .Configure();
         }
 
         private const string DefyDanger = "ForestWardenDefyDanger";
@@ -110,6 +147,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddSavingThrowBonusAgainstFact(value: 2, checkedFact: FeatureRefs.DemonOfMagicFeature.ToString())
               .AddSavingThrowBonusAgainstFact(value: 2, checkedFact: FeatureRefs.DemonOfSlaughterFeature.ToString())
               .AddSavingThrowBonusAgainstFact(value: 2, checkedFact: FeatureRefs.DemonOfStrengthFeature.ToString())
+              
               .SetRanks(10)
               .Configure();
         }
