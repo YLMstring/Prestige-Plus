@@ -4725,7 +4725,7 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(SpellComponent),
                 typeof(AbilitySpawnFx),
                 typeof(SpellDescriptorComponent))
-                .AddPretendSpellLevel(spellLevel: 2)
+                .AddPretendSpellLevel(spellLevel: 1)
                 .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
                 .SetType(AbilityType.SpellLike)
                 .Configure();

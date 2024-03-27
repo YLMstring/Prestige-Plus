@@ -34,6 +34,9 @@ using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
 using PrestigePlus.CustomComponent;
 using PrestigePlus.Blueprint.SpecificManeuver;
 using PrestigePlus.Blueprint.ManeuverFeat;
+using BlueprintCore.Blueprints.CustomConfigurators;
+using Kingmaker.Blueprints.Classes.Spells;
+using Kingmaker.UnitLogic.Mechanics.Components;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -53,18 +56,18 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, DefyDangerFeature(), AuthoritativeCommandConfigure(), FeatureRefs.FighterProficiencies.ToString())
+                .AddToLevelEntry(1, CreateForestMagic1(), ProficiencyFeature())
                 .AddToLevelEntry(2, PsychicEsotericaGuid)
-                .AddToLevelEntry(3, FeatureRefs.SneakAttack.ToString(), AuthoritativeCommand3Feature())
+                .AddToLevelEntry(3, CreateForestMagic3(), FeatureRefs.SneakAttack.ToString(), AuthoritativeCommand3Feature())
                 .AddToLevelEntry(4, BodyGuard.FeatGuid, AuthoritativeCommand4Feature())
-                .AddToLevelEntry(5, PsychicEsotericaGuid)
+                .AddToLevelEntry(5, PsychicEsotericaGuid, CreateForestMagic5())
                 .AddToLevelEntry(6, FeatureRefs.SneakAttack.ToString(), AuthoritativeCommand5Feature())
-                .AddToLevelEntry(7, AlliedRetributionGuid, PreemptiveStrikeFeature())
+                .AddToLevelEntry(7, CreateForestMagic7(), PreemptiveStrikeFeature())
                 .AddToLevelEntry(8, PsychicEsotericaGuid)
-                .AddToLevelEntry(9, FeatureRefs.SneakAttack.ToString())
+                .AddToLevelEntry(9, CreateForestMagic9(), FeatureRefs.SneakAttack.ToString())
                 .AddToLevelEntry(10, FeatureRefs.HunterWoodlandStride.ToString(), FeatureRefs.AssassinHideInPlainSight.ToString())
                 .SetUIGroups(UIGroupBuilder.New()
-                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { AuthoritativeCommandGuid, AuthoritativeCommandSwiftGuid, AuthoritativeCommand2Guid, AuthoritativeCommand3Guid, AuthoritativeCommand4Guid, AuthoritativeCommand5Guid })
+                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { ForestMagic1Guid, ForestMagic3Guid, ForestMagic5Guid, ForestMagic7Guid, ForestMagic9Guid })
                     .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { SeizetheOpportunity.FeatGuid, BodyGuard.FeatGuid, BodyGuard.Feat2Guid, "8590fb52-921c-4365-832c-ca7635fd5a70", FeatureRefs.PerfectStrikeFeature.ToString() }))
                 .SetRanks(1)
                 .SetIsClassFeature(true)
@@ -132,23 +135,295 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .Configure();
         }
 
-        private const string DefyDanger = "ForestWardenDefyDanger";
-        private static readonly string DefyDangerGuid = "{E891A2FF-14E6-4A00-9F0E-05EE87508A2F}";
+        private const string Proficiency = "ForestWardenProficiency";
+        private static readonly string ProficiencyGuid = "{C2575C53-BA81-49E4-9011-BF20F8CB8BC3}";
 
-        internal const string DefyDangerDisplayName = "ForestWardenDefyDanger.Name";
-        private const string DefyDangerDescription = "ForestWardenDefyDanger.Description";
-        public static BlueprintFeature DefyDangerFeature()
+        internal const string ProficiencyDisplayName = "ForestWardenProficiency.Name";
+        private const string ProficiencyDescription = "ForestWardenProficiency.Description";
+        public static BlueprintFeature ProficiencyFeature()
         {
-            var icon = FeatureRefs.ArchaelogistDangerSense.Reference.Get().Icon;
-            return FeatureConfigurator.New(DefyDanger, DefyDangerGuid)
-              .SetDisplayName(DefyDangerDisplayName)
-              .SetDescription(DefyDangerDescription)
+            return FeatureConfigurator.New(Proficiency, ProficiencyGuid)
+              .SetDisplayName(ProficiencyDisplayName)
+              .SetDescription(ProficiencyDescription)
+              .AddFacts(new() { FeatureRefs.SimpleWeaponProficiency.ToString(), FeatureRefs.MartialWeaponProficiency.ToString(), FeatureRefs.LightArmorProficiency.ToString(), FeatureRefs.BucklerProficiency.ToString() })
+              .Configure();
+        }
+
+        private const string ForestMagic1 = "ForestWarden.ForestMagic1";
+        public static readonly string ForestMagic1Guid = "{C074C94D-2392-4231-8ADB-56F3A3615141}";
+        internal const string ForestMagic1DisplayName = "ForestWardenForestMagic1.Name";
+        private const string ForestMagic1Description = "ForestWardenForestMagic1.Description";
+
+        private const string ForestMagic1Res = "ForestWarden.ForestMagic1Res";
+        private static readonly string ForestMagic1ResGuid = "{E3953B54-7A77-4B18-9069-AD2D8C2F87E8}";
+
+        private const string ForestMagic1Ability = "ForestWarden.ForestMagic1Ability";
+        private static readonly string ForestMagic1AbilityGuid = "{BD638A01-9F13-4ABF-A096-9226564D7C41}";
+
+        private const string ForestMagic1Ablity3 = "ForestWarden.UseForestMagic13";
+        private static readonly string ForestMagic1Ablity3Guid = "{CBC7D2AE-2B56-44D8-B072-E3212C696371}";
+        private static BlueprintFeature CreateForestMagic1()
+        {
+            var icon = AbilityRefs.ForesterCamouflageAbility.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(ForestMagic1Res, ForestMagic1ResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var ability = AbilityConfigurator.New(ForestMagic1Ability, ForestMagic1AbilityGuid)
+                .CopyFrom(
+                AbilityRefs.Entangle,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilityAoERadius),
+                typeof(ContextRankConfig),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 1)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var ability3 = AbilityConfigurator.New(ForestMagic1Ablity3, ForestMagic1Ablity3Guid)
+                .CopyFrom(
+                AbilityRefs.Longstrider,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx))
+                .AddPretendSpellLevel(spellLevel: 1)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(ForestMagic1, ForestMagic1Guid)
+              .SetDisplayName(ForestMagic1DisplayName)
+              .SetDescription(ForestMagic1Description)
               .SetIcon(icon)
-              .AddSavingThrowBonusAgainstFact(value: 2, checkedFact: FeatureRefs.DemonOfMagicFeature.ToString())
-              .AddSavingThrowBonusAgainstFact(value: 2, checkedFact: FeatureRefs.DemonOfSlaughterFeature.ToString())
-              .AddSavingThrowBonusAgainstFact(value: 2, checkedFact: FeatureRefs.DemonOfStrengthFeature.ToString())
-              
-              .SetRanks(10)
+              .AddFacts(new() { ability, ability3 })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .Configure();
+        }
+
+        private const string ForestMagic3 = "ForestWarden.ForestMagic3";
+        public static readonly string ForestMagic3Guid = "{E155BB25-1D73-4F55-88A3-A916FD5A8309}";
+        internal const string ForestMagic3DisplayName = "ForestWardenForestMagic3.Name";
+        private const string ForestMagic3Description = "ForestWardenForestMagic3.Description";
+
+        private const string ForestMagic3Res = "ForestWarden.ForestMagic3Res";
+        private static readonly string ForestMagic3ResGuid = "{DCD53689-C6A4-4222-8D75-5E947E131618}";
+
+        private const string ForestMagic3Ability = "ForestWarden.ForestMagic3Ability";
+        private static readonly string ForestMagic3AbilityGuid = "{3330680A-BB6E-47A0-8CBC-53C84FE62F04}";
+
+        private const string ForestMagic3Ablity3 = "ForestWarden.UseForestMagic33";
+        private static readonly string ForestMagic3Ablity3Guid = "{68048422-75E8-4DBA-BE83-E6E67CB04035}";
+        private static BlueprintFeature CreateForestMagic3()
+        {
+            var icon = AbilityRefs.ForesterCamouflageAbility.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(ForestMagic3Res, ForestMagic3ResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var ability = AbilityConfigurator.New(ForestMagic3Ability, ForestMagic3AbilityGuid)
+                .CopyFrom(
+                AbilityRefs.CureLightWoundsCast,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilityEffectStickyTouch),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 2)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var ability3 = AbilityConfigurator.New(ForestMagic3Ablity3, ForestMagic3Ablity3Guid)
+                .CopyFrom(
+                AbilityRefs.SpikeGrowth,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx),
+                typeof(ContextRankConfig),
+                typeof(AbilityAoERadius))
+                .AddPretendSpellLevel(spellLevel: 3)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(ForestMagic3, ForestMagic3Guid)
+              .SetDisplayName(ForestMagic3DisplayName)
+              .SetDescription(ForestMagic3Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability, ability3 })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .AddIncreaseResourceAmount(ForestMagic1ResGuid, 2)
+              .Configure();
+        }
+
+        private const string ForestMagic5 = "ForestWarden.ForestMagic5";
+        public static readonly string ForestMagic5Guid = "{D7649678-BAE8-4918-A0F4-EA97B43FF850}";
+        internal const string ForestMagic5DisplayName = "ForestWardenForestMagic5.Name";
+        private const string ForestMagic5Description = "ForestWardenForestMagic5.Description";
+
+        private const string ForestMagic5Res = "ForestWarden.ForestMagic5Res";
+        private static readonly string ForestMagic5ResGuid = "{F8FD50D5-5CDA-4D67-88B8-91F8E0774AFA}";
+
+        private const string ForestMagic5Ability = "ForestWarden.ForestMagic5Ability";
+        private static readonly string ForestMagic5AbilityGuid = "{D98221F9-F06B-4356-AEAD-6BD9835EA625}";
+
+        private const string ForestMagic5Ablity3 = "ForestWarden.UseForestMagic53";
+        private static readonly string ForestMagic5Ablity3Guid = "{1AE19EB3-5F19-4360-99DF-1BB1B9F91A15}";
+        private static BlueprintFeature CreateForestMagic5()
+        {
+            var icon = AbilityRefs.ForesterCamouflageAbility.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(ForestMagic5Res, ForestMagic5ResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var ability = AbilityConfigurator.New(ForestMagic5Ability, ForestMagic5AbilityGuid)
+                .CopyFrom(
+                AbilityRefs.HurricaneBow,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 1)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var ability3 = AbilityConfigurator.New(ForestMagic5Ablity3, ForestMagic5Ablity3Guid)
+                .CopyFrom(
+                AbilityRefs.LeadBlades,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 1)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(ForestMagic5, ForestMagic5Guid)
+              .SetDisplayName(ForestMagic5DisplayName)
+              .SetDescription(ForestMagic5Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability, ability3 })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .AddIncreaseResourceAmount(ForestMagic1ResGuid, 2)
+              .AddIncreaseResourceAmount(ForestMagic3ResGuid, 2)
+              .Configure();
+        }
+
+        private const string ForestMagic7 = "ForestWarden.ForestMagic7";
+        public static readonly string ForestMagic7Guid = "{7B197F29-3A0E-4531-90BE-3575F55A7EF4}";
+        internal const string ForestMagic7DisplayName = "ForestWardenForestMagic7.Name";
+        private const string ForestMagic7Description = "ForestWardenForestMagic7.Description";
+
+        private const string ForestMagic7Res = "ForestWarden.ForestMagic7Res";
+        private static readonly string ForestMagic7ResGuid = "{382DD7F7-6B21-45F0-8937-E6B43390FA59}";
+
+        private const string ForestMagic7Ability = "ForestWarden.ForestMagic7Ability";
+        private static readonly string ForestMagic7AbilityGuid = "{391F6D3D-914B-48EA-AEB9-9BC7B8D0B0B4}";
+
+        private const string ForestMagic7Ablity3 = "ForestWarden.UseForestMagic73";
+        private static readonly string ForestMagic7Ablity3Guid = "{BC839B8C-9CE3-41F2-9774-C81819A09CFA}";
+        private static BlueprintFeature CreateForestMagic7()
+        {
+            var icon = AbilityRefs.ForesterCamouflageAbility.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(ForestMagic7Res, ForestMagic7ResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var ability = AbilityConfigurator.New(ForestMagic7Ability, ForestMagic7AbilityGuid)
+                .CopyFrom(
+                AbilityRefs.Barkskin,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 2)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var ability3 = AbilityConfigurator.New(ForestMagic7Ablity3, ForestMagic7Ablity3Guid)
+                .CopyFrom(
+                AbilityRefs.CureModerateWoundsCast,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilityEffectStickyTouch),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 3)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(ForestMagic7, ForestMagic7Guid)
+              .SetDisplayName(ForestMagic7DisplayName)
+              .SetDescription(ForestMagic7Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability, ability3 })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .AddIncreaseResourceAmount(ForestMagic3ResGuid, 2)
+              .AddIncreaseResourceAmount(ForestMagic5ResGuid, 2)
+              .Configure();
+        }
+
+        private const string ForestMagic9 = "ForestWarden.ForestMagic9";
+        public static readonly string ForestMagic9Guid = "{032B27E9-9F9E-47E9-850C-86D222AAD86A}";
+        internal const string ForestMagic9DisplayName = "ForestWardenForestMagic9.Name";
+        private const string ForestMagic9Description = "ForestWardenForestMagic9.Description";
+
+        private const string ForestMagic9Res = "ForestWarden.ForestMagic9Res";
+        private static readonly string ForestMagic9ResGuid = "{D87278E7-62A3-48A4-BBF7-E51158B9B1AC}";
+
+        private const string ForestMagic9Ability = "ForestWarden.ForestMagic9Ability";
+        private static readonly string ForestMagic9AbilityGuid = "{DC847114-DB72-4875-855A-27B8F7E37FA6}";
+
+        private const string ForestMagic9Ablity3 = "ForestWarden.UseForestMagic93";
+        private static readonly string ForestMagic9Ablity3Guid = "{23A10F3D-7A69-4ACA-B8B6-9FFE48258D5E}";
+        private static BlueprintFeature CreateForestMagic9()
+        {
+            var icon = AbilityRefs.ForesterCamouflageAbility.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(ForestMagic9Res, ForestMagic9ResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var ability = AbilityConfigurator.New(ForestMagic9Ability, ForestMagic9AbilityGuid)
+                .CopyFrom(
+                AbilityRefs.FreedomOfMovementCast,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilityEffectStickyTouch),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 4)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var ability3 = AbilityConfigurator.New(ForestMagic9Ablity3, ForestMagic9Ablity3Guid)
+                .CopyFrom(
+                AbilityRefs.CureSeriousWoundsCast,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilityEffectStickyTouch),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 4)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(ForestMagic9, ForestMagic9Guid)
+              .SetDisplayName(ForestMagic9DisplayName)
+              .SetDescription(ForestMagic9Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability, ability3 })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .AddIncreaseResourceAmount(ForestMagic5ResGuid, 2)
+              .AddIncreaseResourceAmount(ForestMagic7ResGuid, 2)
               .Configure();
         }
 
