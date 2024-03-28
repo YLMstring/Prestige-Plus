@@ -152,6 +152,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("kineticknight"), defaultValue: true, Helpers.CreateString("toggle-desc31", "Esoteric Knight"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("forestwarden"), defaultValue: true, Helpers.CreateString("toggle-desc97", "Forest Warden"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("furious"), defaultValue: true, Helpers.CreateString("toggle-desc36", "Furious Guardian"))
               .ShowVisualConnection())
           .AddToggle(
@@ -479,6 +482,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("untamedb"))) { UntamedRager.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("savageb"))) { SavageBarbarian.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("savagew"))) { SavageWarrior.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("forestwarden"))) { ForestWarden.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
