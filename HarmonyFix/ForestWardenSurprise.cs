@@ -31,4 +31,22 @@ namespace PrestigePlus.HarmonyFix
         private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         private static BlueprintFeatureReference Feature = BlueprintTool.GetRef<BlueprintFeatureReference>(ForestWarden.PreemptiveStrikeGuid);
     }
+
+    [HarmonyPatch(typeof(UnitEntityData), nameof(UnitEntityData.HasFullRoundAction))]
+    internal class ForestWardenSurprise2
+    {
+        static void Postfix(ref bool __result, ref UnitEntityData __instance)
+        {
+            try
+            {
+                if (__instance.HasFact(Feature) && __instance.IsSurprising() && !__instance.IsActingSurpriseCommands())
+                {
+                    __result = false;
+                }
+            }
+            catch (Exception ex) { Logger.Error("Failed to ForestWardenSurprise2.", ex); }
+        }
+        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
+        private static BlueprintFeatureReference Feature = BlueprintTool.GetRef<BlueprintFeatureReference>(ForestWarden.PreemptiveStrikeGuid);
+    }
 }
