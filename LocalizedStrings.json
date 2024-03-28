@@ -13145,6 +13145,171 @@
     "Key": "NewSpellVirtuosoPerformance.Description",
     "enGB": "While this spell is active, you may start a second bardic performance while maintaining another. Maintaining both performances costs a total of 3 rounds of bardic performance instead of 2, for each round they are maintained.",
     "zhCN": "在该法术生效时，你可以在维持一种吟游表演的同时开始进行第二种吟游表演。每轮同时维持两种吟游表演需要花费共计3轮而非2轮吟游表演轮数。"
+  },
+  {
+    "Key": "ForestWarden.Name",
+    "ProcessTemplates": false,
+    "enGB": "Forest Warden",
+    "zhCN": "森林守护者"
+  },
+  {
+    "Key": "ForestWarden.Description",
+    "enGB": "Forest warden is a title that few can reasonably hope to earn. Among the freedom fighters, wardens have proven themselves again and again, taking on enemies that threaten the fate of the land. With their unmatched martial prowess and tactical skills, forest wardens are masters of the forest. They specialize in neutralizing enemies without being seen, but they are not a threat to be taken lightly even in close-quarters combat.",
+    "zhCN": "森林守护者是一个少有人能获得的头衔。在自由战士中，守护者与威胁着大地命运的敌人作战，并一次又一次证明了自己。凭借无与伦比的战力与策略，森林守护者掌控着身边的森林。他们擅长在不被发现的情况下消灭敌人，但即使在贴身战斗中，他们也不是一个可以轻视的威胁。"
+  },
+  {
+    "Key": "ForestWardenProficiency.Name",
+    "ProcessTemplates": false,
+    "enGB": "Weapon and Armor Proficiency",
+    "zhCN": "森林守护者擅长"
+  },
+  {
+    "Key": "ForestWardenProficiency.Description",
+    "enGB": "Forest wardens are proficient with all simple and martial weapons, and light armor and bucklers.",
+    "zhCN": "森林守护者擅长所有简易武器，军用武器，轻甲和小圆盾。"
+  },
+  {
+    "Key": "ForestWardenForestMagic1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Forest Magic",
+    "zhCN": "森林魔法"
+  },
+  {
+    "Key": "ForestWardenForestMagic1.Description",
+    "enGB": "A forest warden is one with the forest and gains a number of spell-like abilities due to this arboreal affinity. She uses her forest warden level as her caster level. She gains the following spells as spell-like abilities at 1st level, usable once per day: entangle and longstrider. They can be used three times per day at 3rd level and five times per day at 5th level.",
+    "zhCN": "森林守护者与森林同在，并且由于这种与树木间的亲和而获得许多类法术能力。她使用森林守护者等级作为施法者等级。她在1级时获得以下类法术能力，可用一次每天：纠缠术和大步奔行。它们从3级起每天可使用3次，从5级起每天可使用5次。"
+  },
+  {
+    "Key": "ForestWardenForestMagic3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Forest Magic",
+    "zhCN": "森林魔法"
+  },
+  {
+    "Key": "ForestWardenForestMagic3.Description",
+    "enGB": "At 3rd level she gains cure light wounds and spike growth. Spell-like abilities from this list can be used once per day at 3rd level, three times per day at 5th level, and five times per day at 7th level.",
+    "zhCN": "3级起，她获得治疗轻伤和荆棘丛生。此列表中的类法术能力在3级时每天可使用一次，从5级起每天可使用3次，从7级起每天可使用5次。"
+  },
+  {
+    "Key": "ForestWardenForestMagic5.Name",
+    "ProcessTemplates": false,
+    "enGB": "Forest Magic",
+    "zhCN": "森林魔法"
+  },
+  {
+    "Key": "ForestWardenForestMagic5.Description",
+    "enGB": "At 5th level she gains hurricane bow and lead blades. Spell-like abilities from this list can be used once per day at 5th level, three times per day at 7th level, and five times per day at 9th level.",
+    "zhCN": "5级起，她获得飓风之弓和重压之刃。此列表中的类法术能力在3级时每天可使用一次，从7级起每天可使用3次，从9级起每天可使用5次。"
+  },
+  {
+    "Key": "ForestWardenForestMagic7.Name",
+    "ProcessTemplates": false,
+    "enGB": "Forest Magic",
+    "zhCN": "森林魔法"
+  },
+  {
+    "Key": "ForestWardenForestMagic7.Description",
+    "enGB": "At 7th level she gains barkskin and cure moderate wounds. Spell-like abilities selected from this list can be used once per day at 7th level and three times per day at 9th level.",
+    "zhCN": "7级起，她获得治疗中伤和树肤术。此列表中的类法术能力在7级时每天可使用一次，从9级起每天可使用3次。"
+  },
+  {
+    "Key": "ForestWardenForestMagic9.Name",
+    "ProcessTemplates": false,
+    "enGB": "Forest Magic",
+    "zhCN": "森林魔法"
+  },
+  {
+    "Key": "ForestWardenForestMagic9.Description",
+    "enGB": "At 9th level, she gains cure serious wounds and freedom of movement. Spell-like abilities selected from this list can be used once per day.",
+    "zhCN": "9级起，她获得治疗重伤和行动自如。此列表中的类法术能力每天可使用一次，"
+  },
+  {
+    "Key": "ForestWardenUnchainedHeart.Name",
+    "ProcessTemplates": false,
+    "enGB": "Unchained Heart",
+    "zhCN": "无羁之心"
+  },
+  {
+    "Key": "ForestWardenUnchainedHeart.Description",
+    "enGB": "A forest warden’s free spirit goes far beyond simple stubbornness. At 1st level, she gains a +2 bonus on Will saving throws made against compulsions and mind-affecting effects. If she succeeds at this saving throw, the forest warden gains a +1 bonus on attack rolls against the source of the spell or effect for 1d4 rounds. The bonus on saving throws increases to +3 at 4th level and +4 at 7th level.",
+    "zhCN": "森林守护者的自由精神远不止于浅薄的固执。1级时，她在对抗胁迫和影响心智效果的意志豁免检定上获得+2加值。如果她在这次豁免检定中成功，森林守护者将在1d4轮内，于针对法术或效果来源的攻击检定上获得+1加值。该豁免检定加值在4级增加至 +3，在7级增加至+4。"
+  },
+  {
+    "Key": "ForestWardenSanctifiedRogue.Name",
+    "ProcessTemplates": false,
+    "enGB": "Aligned Class",
+    "zhCN": "关联职业"
+  },
+  {
+    "Key": "ForestWardenSanctifiedRogue.Description",
+    "enGB": "Forest wardens come from all walks of life, each offering a unique perspective and skill set. At 2nd level, a forest warden must choose a class she belonged to before adding the prestige class to be her aligned class. She gains all the class features for one additional level of her aligned class as if she had gained a level in it. She gains the class features of an additional level of her aligned class at 4th, 6th, 8th, and 10th levels. She still retains the Hit Dice, base attack bonus, saving throw bonuses, and skill ranks of the prestige class.",
+    "zhCN": "森林守护者来自各行各业，有着各自独特的视角和技能。2级起，森林守护者必须从获得进阶职业之前所具有的职业中选择一个，将这个职业作为她的关联职业。她会获得这个职业的所有职业能力，森林守护者将森林守护者等级的一半加到关联职业的等级上，来判断她能够获得的职业能力。她仍旧会获得进阶职业的生命骰、基本攻击加值、豁免加值以及技能等级，但是她还会获得关联职业的所有其他职业能力，就如同这些能力是传道者进阶职业的能力一般。"
+  },
+  {
+    "Key": "ForestWardenPsychicEsoterica.Name",
+    "ProcessTemplates": false,
+    "enGB": "Bonus Feats",
+    "zhCN": "额外专长"
+  },
+  {
+    "Key": "ForestWardenPsychicEsoterica.Description",
+    "enGB": "At 2nd, 5th, and 8th levels, a forest warden gains a bonus feat. She must meet the bonus feat’s prerequisites. She can choose one from the following list: Arm Bind, Combat Expertise, Crush Armor, Greater Dirty Trick, Highten Spell, Improved Dirty Trick, Mobility, Paired Opportunists, Point-Blank Shot, Precise Shot, Rapid Shot, Seize the Moment, Spring Attack, Strike and Seize.",
+    "zhCN": "2级，5级和8级时，森林守护者获得额外专长，她可以从以下列表中选择，但必须满足先决条件：Arm Bind, Combat Expertise, Crush Armor, Greater Dirty Trick, Highten Spell, Improved Dirty Trick, Mobility, Paired Opportunists, Point-Blank Shot, Precise Shot, Rapid Shot, Seize the Moment, Spring Attack, Strike and Seize."
+  },
+  {
+    "Key": "ForestWardenTrickShot.Name",
+    "ProcessTemplates": false,
+    "enGB": "Trick Shot",
+    "zhCN": "诡射法"
+  },
+  {
+    "Key": "ForestWardenTrickShot.Description",
+    "enGB": "This tactic allows the forest warden to perform a dirty trick combat maneuver with any ranged weapon at a –2 penalty as a full-round action. Add her Dexterity modifier to her CMB in place of her Strength modifier. If her target is more than 30 feet away, she takes an additional –2 penalty. If the dirty trick is successful, the target also takes damage as if she had made a successful attack with that weapon.",
+    "zhCN": "以一个全回合动作，你可以用你的远程武器进行一次-2减值的阴招，使用你的敏捷加值，而不是力量加值。如果目标距离30尺以上，额外获得-2减值。如果阴招成功，目标还会受到你的武器攻击的伤害。"
+  },
+  {
+    "Key": "ForestWardenTrickShot1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Trick Shot (blinded)",
+    "zhCN": "诡射法（目盲）"
+  },
+  {
+    "Key": "ForestWardenTrickShot1.Description",
+    "enGB": "This tactic allows the forest warden to perform a dirty trick combat maneuver with any ranged weapon at a –2 penalty as a full-round action. Add her Dexterity modifier to her CMB in place of her Strength modifier. If her target is more than 30 feet away, she takes an additional –2 penalty. If the dirty trick is successful, the target also takes damage as if she had made a successful attack with that weapon.",
+    "zhCN": "以一个全回合动作，你可以用你的远程武器进行一次-2减值的阴招，使用你的敏捷加值，而不是力量加值。如果目标距离30尺以上，额外获得-2减值。如果阴招成功，目标还会受到你的武器攻击的伤害。"
+  },
+  {
+    "Key": "ForestWardenTrickShot2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Trick Shot (entangled)",
+    "zhCN": "诡射法（纠缠）"
+  },
+  {
+    "Key": "ForestWardenTrickShot2.Description",
+    "enGB": "This tactic allows the forest warden to perform a dirty trick combat maneuver with any ranged weapon at a –2 penalty as a full-round action. Add her Dexterity modifier to her CMB in place of her Strength modifier. If her target is more than 30 feet away, she takes an additional –2 penalty. If the dirty trick is successful, the target also takes damage as if she had made a successful attack with that weapon.",
+    "zhCN": "以一个全回合动作，你可以用你的远程武器进行一次-2减值的阴招，使用你的敏捷加值，而不是力量加值。如果目标距离30尺以上，额外获得-2减值。如果阴招成功，目标还会受到你的武器攻击的伤害。"
+  },
+  {
+    "Key": "ForestWardenTrickShot3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Trick Shot (sickened)",
+    "zhCN": "诡射法（恶心）"
+  },
+  {
+    "Key": "ForestWardenTrickShot3.Description",
+    "enGB": "This tactic allows the forest warden to perform a dirty trick combat maneuver with any ranged weapon at a –2 penalty as a full-round action. Add her Dexterity modifier to her CMB in place of her Strength modifier. If her target is more than 30 feet away, she takes an additional –2 penalty. If the dirty trick is successful, the target also takes damage as if she had made a successful attack with that weapon.",
+    "zhCN": "以一个全回合动作，你可以用你的远程武器进行一次-2减值的阴招，使用你的敏捷加值，而不是力量加值。如果目标距离30尺以上，额外获得-2减值。如果阴招成功，目标还会受到你的武器攻击的伤害。"
+  },
+  {
+    "Key": "ForestWardenPreemptiveStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Preemptive Strike",
+    "zhCN": "先发制人"
+  },
+  {
+    "Key": "ForestWardenPreemptiveStrike.Description",
+    "enGB": "The forest warden strikes before her targets can react. When acting during a surprise round, she can take one move action and one standard action. She cannot take a full-round action during a surprise round, as normal.",
+    "zhCN": "森林守护者能在目标反应过来之前发起攻击。在突袭轮中行动时，她可以使用一个移动动作和一个标准动作。但像平常一样，她还是不能使用整轮动作。"
   }
 
 ]
