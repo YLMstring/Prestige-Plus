@@ -37,6 +37,10 @@ using PrestigePlus.Blueprint.ManeuverFeat;
 using BlueprintCore.Blueprints.CustomConfigurators;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.UnitLogic.Mechanics.Components;
+using PrestigePlus.CustomComponent.Feat;
+using Kingmaker.UnitLogic.Mechanics.Properties;
+using PrestigePlus.Blueprint.RogueTalent;
+using PrestigePlus.CustomAction.OtherManeuver;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -56,19 +60,19 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, CreateForestMagic1(), ProficiencyFeature())
+                .AddToLevelEntry(1, AlignSpamFeat(), CreateForestMagic1(), UnchainedHeartFeature(), ProficiencyFeature())
                 .AddToLevelEntry(2, PsychicEsotericaGuid)
-                .AddToLevelEntry(3, CreateForestMagic3(), FeatureRefs.SneakAttack.ToString(), AuthoritativeCommand3Feature())
-                .AddToLevelEntry(4, BodyGuard.FeatGuid, AuthoritativeCommand4Feature())
+                .AddToLevelEntry(3, CreateForestMagic3(), FeatureRefs.SneakAttack.ToString(), SneakyManeuver.SneakyManeuverGuid)
+                .AddToLevelEntry(4, UnchainedHeartGuid)
                 .AddToLevelEntry(5, PsychicEsotericaGuid, CreateForestMagic5())
-                .AddToLevelEntry(6, FeatureRefs.SneakAttack.ToString(), AuthoritativeCommand5Feature())
-                .AddToLevelEntry(7, CreateForestMagic7(), PreemptiveStrikeFeature())
+                .AddToLevelEntry(6, FeatureRefs.SneakAttack.ToString(), TrickShotConfigure())
+                .AddToLevelEntry(7, CreateForestMagic7(), UnchainedHeartGuid)
                 .AddToLevelEntry(8, PsychicEsotericaGuid)
-                .AddToLevelEntry(9, CreateForestMagic9(), FeatureRefs.SneakAttack.ToString())
+                .AddToLevelEntry(9, CreateForestMagic9(), FeatureRefs.SneakAttack.ToString(), PreemptiveStrikeFeature())
                 .AddToLevelEntry(10, FeatureRefs.HunterWoodlandStride.ToString(), FeatureRefs.AssassinHideInPlainSight.ToString())
                 .SetUIGroups(UIGroupBuilder.New()
-                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { ForestMagic1Guid, ForestMagic3Guid, ForestMagic5Guid, ForestMagic7Guid, ForestMagic9Guid })
-                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { SeizetheOpportunity.FeatGuid, BodyGuard.FeatGuid, BodyGuard.Feat2Guid, "8590fb52-921c-4365-832c-ca7635fd5a70", FeatureRefs.PerfectStrikeFeature.ToString() }))
+                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { ForestMagic1Guid, ForestMagic3Guid, ForestMagic5Guid, ForestMagic7Guid, ForestMagic9Guid }))
+                    //.AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { SeizetheOpportunity.FeatGuid, BodyGuard.FeatGuid, BodyGuard.Feat2Guid, "8590fb52-921c-4365-832c-ca7635fd5a70", FeatureRefs.PerfectStrikeFeature.ToString() }))
                 .SetRanks(1)
                 .SetIsClassFeature(true)
                 .SetDisplayName("")
@@ -427,338 +431,122 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .Configure();
         }
 
-        private const string Retaliate = "ForestWardenRetaliate";
-        public static readonly string RetaliateGuid = "{798F5C7F-3FEA-4AD8-ADAA-E57FA93D20F8}";
+        private static readonly string TrickShotName = "ForestWardenTrickShot";
+        public static readonly string TrickShotGuid = "{7A18A66C-3BD6-4944-BF64-553B6644EB3A}";
 
-        internal const string RetaliateDisplayName = "ForestWardenRetaliate.Name";
-        private const string RetaliateDescription = "ForestWardenRetaliate.Description";
-        public static BlueprintFeature RetaliateFeature()
+        private static readonly string TrickShotDisplayName = "ForestWardenTrickShot.Name";
+        private static readonly string TrickShotDescription = "ForestWardenTrickShot.Description";
+        private static readonly string TrickShotDisplayName1 = "ForestWardenTrickShot1.Name";
+        private static readonly string TrickShotDescription1 = "ForestWardenTrickShot1.Description";
+        private static readonly string TrickShotDisplayName2 = "ForestWardenTrickShot2.Name";
+        private static readonly string TrickShotDescription2 = "ForestWardenTrickShot2.Description";
+        private static readonly string TrickShotDisplayName3 = "ForestWardenTrickShot3.Name";
+        private static readonly string TrickShotDescription3 = "ForestWardenTrickShot3.Description";
+
+        private const string TrickShotAbility = "TrickShot.TrickShotAbility";
+        private static readonly string TrickShotAbilityGuid = "{A9DD95BE-BF5F-4B80-8953-69366100AC0E}";
+
+        private const string TrickShotAbility2 = "TrickShot.TrickShotAbility2";
+        private static readonly string TrickShotAbility2Guid = "{A2323B32-215B-4CD0-B178-02C0AB60D15E}";
+
+        private const string TrickShotAbility3 = "TrickShot.TrickShotAbility3";
+        private static readonly string TrickShotAbility3Guid = "{BA652CD4-D37F-4E37-AC79-E41C3BE99A52}";
+        public static BlueprintFeature TrickShotConfigure()
         {
-            var icon = FeatureRefs.DevotedBladeFeature.Reference.Get().Icon;
-            return FeatureConfigurator.New(Retaliate, RetaliateGuid)
-              .SetDisplayName(RetaliateDisplayName)
-              .SetDescription(RetaliateDescription)
-              .SetIcon(icon)
+            var icon = FeatureRefs.ThrowAnything.Reference.Get().Icon;
 
-              .Configure();
-        }
-
-        private const string AuthoritativeCommand2 = "ForestWardenAuthoritativeCommand2";
-        public static readonly string AuthoritativeCommand2Guid = "{09666D53-7194-4B06-8CFB-303552B901C1}";
-
-        internal const string AuthoritativeCommand2DisplayName = "ForestWardenAuthoritativeCommand2.Name";
-        private const string AuthoritativeCommand2Description = "ForestWardenAuthoritativeCommand2.Description";
-        public static BlueprintFeature AuthoritativeCommand2Feature()
-        {
-            var icon = AbilityRefs.Command.Reference.Get().Icon;
-            return FeatureConfigurator.New(AuthoritativeCommand2, AuthoritativeCommand2Guid)
-              .SetDisplayName(AuthoritativeCommand2DisplayName)
-              .SetDescription(AuthoritativeCommand2Description)
-              .SetIcon(icon)
-              .Configure();
-        }
-
-        private const string AuthoritativeCommand3 = "ForestWardenAuthoritativeCommand3";
-        public static readonly string AuthoritativeCommand3Guid = "{EFC5F4EC-81E4-4DBD-A341-79414EB71BFC}";
-
-        internal const string AuthoritativeCommand3DisplayName = "ForestWardenAuthoritativeCommand3.Name";
-        private const string AuthoritativeCommand3Description = "ForestWardenAuthoritativeCommand3.Description";
-        public static BlueprintFeature AuthoritativeCommand3Feature()
-        {
-            var icon = AbilityRefs.Command.Reference.Get().Icon;
-            return FeatureConfigurator.New(AuthoritativeCommand3, AuthoritativeCommand3Guid)
-              .SetDisplayName(AuthoritativeCommand3DisplayName)
-              .SetDescription(AuthoritativeCommand3Description)
-              .SetIcon(icon)
-              .Configure();
-        }
-
-        private const string AuthoritativeCommand5 = "ForestWardenAuthoritativeCommand5";
-        public static readonly string AuthoritativeCommand5Guid = "{2E134743-07A7-405E-B3C1-B6243E6B9F57}";
-
-        internal const string AuthoritativeCommand5DisplayName = "ForestWardenAuthoritativeCommand5.Name";
-        private const string AuthoritativeCommand5Description = "ForestWardenAuthoritativeCommand5.Description";
-        public static BlueprintFeature AuthoritativeCommand5Feature()
-        {
-            var icon = AbilityRefs.CommandGreater.Reference.Get().Icon;
-            return FeatureConfigurator.New(AuthoritativeCommand5, AuthoritativeCommand5Guid)
-              .SetDisplayName(AuthoritativeCommand5DisplayName)
-              .SetDescription(AuthoritativeCommand5Description)
-              .SetIcon(icon)
-              .Configure();
-        }
-
-        private const string AuthoritativeCommand4 = "ForestWardenAuthoritativeCommand4";
-        public static readonly string AuthoritativeCommand4Guid = "{3429D9BD-E68D-4096-B2BE-3EB121825B2E}";
-
-        internal const string AuthoritativeCommand4DisplayName = "ForestWardenAuthoritativeCommand4.Name";
-        private const string AuthoritativeCommand4Description = "ForestWardenAuthoritativeCommand4.Description";
-        public static BlueprintFeature AuthoritativeCommand4Feature()
-        {
-            var icon = AbilityRefs.Command.Reference.Get().Icon;
-            return FeatureConfigurator.New(AuthoritativeCommand4, AuthoritativeCommand4Guid)
-              .SetDisplayName(AuthoritativeCommand4DisplayName)
-              .SetDescription(AuthoritativeCommand4Description)
-              .SetIcon(icon)
-              .Configure();
-        }
-
-        private static readonly string AuthoritativeCommandName = "ForestWardenAuthoritativeCommand";
-        public static readonly string AuthoritativeCommandGuid = "{E541F28C-42F6-4C5A-854B-F585318076A3}";
-
-        private static readonly string AuthoritativeCommandDisplayName = "ForestWardenAuthoritativeCommand.Name";
-        private static readonly string AuthoritativeCommandDescription = "ForestWardenAuthoritativeCommand.Description";
-
-        private const string AuthoritativeCommandAbility = "AuthoritativeCommand.AuthoritativeCommandAbility";
-        private static readonly string AuthoritativeCommandAbilityGuid = "{399B14AE-70FE-47DB-9206-B08056267AD4}";
-
-        private const string AuthoritativeCommandBuff = "AuthoritativeCommand.AuthoritativeCommandBuff";
-        private static readonly string AuthoritativeCommandBuffGuid = "{F5F99B01-0023-4A6B-A7B3-4F994DA903E2}";
-
-        private const string CommandMoveAutoAbility = "ForestWarden.UseCommandMoveAuto";
-        public static readonly string CommandMoveAutoAbilityGuid = "{2B9C109C-F0B6-4001-A6D0-8C4893615AE5}";
-
-        private const string CommandMoveAutoBuff2 = "ForestWarden.CommandMoveAutoBuff2";
-        public static readonly string CommandMoveAutoBuff2Guid = "{B53B1E0E-0999-4F5E-8B8A-FF808C088410}";
-        public static BlueprintFeature AuthoritativeCommandConfigure()
-        {
-            var icon = AbilityRefs.Command.Reference.Get().Icon;
-            var fx = AbilityRefs.OverwhelmingPresence.Reference.Get().GetComponent<AbilitySpawnFx>();
-
-            var buff = BuffConfigurator.New(AuthoritativeCommandBuff, AuthoritativeCommandBuffGuid)
-                .SetDisplayName(AuthoritativeCommandDisplayName)
-                .SetDescription(AuthoritativeCommandDescription)
-                .SetIcon(icon)
-                .AddComponent<AuthoritativeCommanComp>()
-                .Configure();
-
-            var ability = AbilityConfigurator.New(AuthoritativeCommandAbility, AuthoritativeCommandAbilityGuid)
-                .SetDisplayName(AuthoritativeCommandDisplayName)
-                .SetDescription(AuthoritativeCommandDescription)
-                .SetIcon(icon)
-                .AddComponent(fx)
-                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1)).Build())
-                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Ally, radius: 30.Feet(), spreadSpeed: 40.Feet())
-                .SetType(AbilityType.Extraordinary)
-                .SetRange(AbilityRange.Personal)
-                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move)
-                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
-                .Configure();
-
-            var Buff2 = BuffConfigurator.New(CommandMoveAutoBuff2, CommandMoveAutoBuff2Guid)
-             .SetDisplayName(AuthoritativeCommandDisplayName)
-             .SetDescription(AuthoritativeCommandDescription)
-             .SetIcon(icon)
-             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-             .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New()
-                .Add<SpendMoveAction>(c =>
-                {
-                    c.OnHit = ActionsBuilder.New()
-                        .CastSpell(ability)
-                        .Build();
-                })
-                .Build())
-             .Configure();
-
-            var ability2 = ActivatableAbilityConfigurator.New(CommandMoveAutoAbility, CommandMoveAutoAbilityGuid)
-                .SetDisplayName(AuthoritativeCommandDisplayName)
-                .SetDescription(AuthoritativeCommandDescription)
-                .SetIcon(icon)
-                .SetBuff(Buff2)
-                .SetDeactivateIfOwnerDisabled(true)
-                .SetDeactivateImmediately(true)
-                .Configure();
-
-            return FeatureConfigurator.New(AuthoritativeCommandName, AuthoritativeCommandGuid)
-                    .SetDisplayName(AuthoritativeCommandDisplayName)
-                    .SetDescription(AuthoritativeCommandDescription)
-                    .SetIcon(icon)
-                    .AddFacts(new() { ability, ability2 })
-                    .Configure();
-        }
-
-        private static readonly string AuthoritativeCommandSwiftName = "ForestWardenAuthoritativeCommandSwift";
-        public static readonly string AuthoritativeCommandSwiftGuid = "{BA301623-4AF8-4898-A8DB-DA2F79F6573C}";
-
-        private static readonly string AuthoritativeCommandSwiftDisplayName = "ForestWardenAuthoritativeCommandSwift.Name";
-        private static readonly string AuthoritativeCommandSwiftDescription = "ForestWardenAuthoritativeCommandSwift.Description";
-
-        private const string AuthoritativeCommandSwiftAbility = "AuthoritativeCommandSwift.AuthoritativeCommandSwiftAbility";
-        private static readonly string AuthoritativeCommandSwiftAbilityGuid = "{A5697DB1-D8C7-438E-8E90-EE762CFF1176}";
-
-        private const string CommandSwiftMoveAutoAbility = "ForestWarden.UseCommandSwiftMoveAuto";
-        public static readonly string CommandSwiftMoveAutoAbilityGuid = "{7E7AA762-2638-40C2-ACC8-C05CD1F55FAE}";
-
-        private const string CommandSwiftMoveAutoBuff2 = "ForestWarden.CommandSwiftMoveAutoBuff2";
-        public static readonly string CommandSwiftMoveAutoBuff2Guid = "{1E426405-7AC0-4F53-A2DE-394B509D4609}";
-        public static BlueprintFeature AuthoritativeCommandSwiftConfigure()
-        {
-            var icon = AbilityRefs.CommandGreater.Reference.Get().Icon;
-            var fx = AbilityRefs.BlessingOfCourageAndLife.Reference.Get().GetComponent<AbilitySpawnFx>();
-
-            var ability = AbilityConfigurator.New(AuthoritativeCommandSwiftAbility, AuthoritativeCommandSwiftAbilityGuid)
-                .SetDisplayName(AuthoritativeCommandSwiftDisplayName)
-                .SetDescription(AuthoritativeCommandSwiftDescription)
-                .SetIcon(icon)
-                .AddComponent(fx)
-                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(AuthoritativeCommandBuffGuid, ContextDuration.Fixed(1)).Build())
-                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Ally, radius: 30.Feet(), spreadSpeed: 40.Feet())
-                .SetType(AbilityType.Extraordinary)
-                .SetRange(AbilityRange.Personal)
-                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
-                .Configure();
-
-            var Buff2 = BuffConfigurator.New(CommandSwiftMoveAutoBuff2, CommandSwiftMoveAutoBuff2Guid)
-             .SetDisplayName(AuthoritativeCommandSwiftDisplayName)
-             .SetDescription(AuthoritativeCommandSwiftDescription)
-             .SetIcon(icon)
-             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-             .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New()
-                .Add<SpendSwiftAction>(c =>
-                {
-                    c.OnHit = ActionsBuilder.New()
-                        .CastSpell(ability)
-                        .Build();
-                })
-                .Build())
-             .Configure();
-
-            var ability2 = ActivatableAbilityConfigurator.New(CommandSwiftMoveAutoAbility, CommandSwiftMoveAutoAbilityGuid)
-                .SetDisplayName(AuthoritativeCommandSwiftDisplayName)
-                .SetDescription(AuthoritativeCommandSwiftDescription)
-                .SetIcon(icon)
-                .SetBuff(Buff2)
-                .SetDeactivateIfOwnerDisabled(true)
-                .SetDeactivateImmediately(true)
-                .Configure();
-
-            return FeatureConfigurator.New(AuthoritativeCommandSwiftName, AuthoritativeCommandSwiftGuid)
-                    .SetDisplayName(AuthoritativeCommandSwiftDisplayName)
-                    .SetDescription(AuthoritativeCommandSwiftDescription)
-                    .SetIcon(icon)
-                    .AddFacts(new() { ability, ability2 })
-                    .Configure();
-        }
-
-        private static readonly string UnitedDefenseName = "ForestWardenUnitedDefense";
-        public static readonly string UnitedDefenseGuid = "{7C46838D-D2D2-4DDB-931C-25E21B33E6C4}";
-
-        private static readonly string UnitedDefenseDisplayName = "ForestWardenUnitedDefense.Name";
-        private static readonly string UnitedDefenseDescription = "ForestWardenUnitedDefense.Description";
-
-        private const string UnitedDefenseAbility = "UnitedDefense.UnitedDefenseAbility";
-        private static readonly string UnitedDefenseAbilityGuid = "{B31A6E9C-FFD0-47D2-AAC5-01F8DCA14B4D}";
-
-        private const string UnitedDefenseBuff = "UnitedDefense.UnitedDefenseBuff";
-        private static readonly string UnitedDefenseBuffGuid = "{7870DA78-C273-4A1B-B213-E0AEEB6A215F}";
-
-        private const string UnitedDefenseSelfBuff = "UnitedDefense.UnitedDefenseSelfBuff";
-        private static readonly string UnitedDefenseSelfBuffGuid = "{63ECE8A4-505B-4357-8C55-2957925EB7B4}";
-        public static BlueprintFeature UnitedDefenseConfigure()
-        {
-            var icon = FeatureRefs.BackToBack.Reference.Get().Icon;
-            var fx = AbilityRefs.DivineGuardianTrothAbility.Reference.Get().GetComponent<AbilitySpawnFx>();
-
-            var buff2 = BuffConfigurator.New(UnitedDefenseSelfBuff, UnitedDefenseSelfBuffGuid)
-                .SetDisplayName(UnitedDefenseDisplayName)
-                .SetDescription(UnitedDefenseDescription)
-                .SetIcon(icon)
-                .AddComponent<UnitedDefensePenalty>()
-                .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-                .Configure();
-
-            var buff = BuffConfigurator.New(UnitedDefenseBuff, UnitedDefenseBuffGuid)
-                .SetDisplayName(UnitedDefenseDisplayName)
-                .SetDescription(UnitedDefenseDescription)
-                .SetIcon(icon)
-                .AddContextStatBonus(StatType.AC, ContextValues.Rank(), descriptor: ModifierDescriptor.Dodge)
-                .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }).WithCustomProgression((5, 2), (9, 4), (10, 6)))
-                .Configure();
-
-            var ability = AbilityConfigurator.New(UnitedDefenseAbility, UnitedDefenseAbilityGuid)
-                .SetDisplayName(UnitedDefenseDisplayName)
-                .SetDescription(UnitedDefenseDescription)
-                .SetIcon(icon)
-                .AddComponent(fx)
-                .AllowTargeting(false, false, true, false)
+            var ability = AbilityConfigurator.New(TrickShotAbility, TrickShotAbilityGuid)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-                    .ApplyBuff(buff, ContextDuration.Fixed(1))
-                    .ApplyBuff(buff2, ContextDuration.Fixed(1), toCaster: true)
+                    .Add<ContextActionRangedTrip>(c => { c.maneuver = Kingmaker.RuleSystem.Rules.CombatManeuver.DirtyTrickBlind; c.Ace = FeatureRefs.MonsterMythicWeaponSizeFeature.ToString(); })
                     .Build())
-                .SetType(AbilityType.Extraordinary)
-                .SetRange(AbilityRange.Custom)
-                .SetCustomRange(5)
-                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+                .SetType(AbilityType.Physical)
+                .SetDisplayName(TrickShotDisplayName1)
+                .SetDescription(TrickShotDescription1)
+                .SetIcon(icon)
+                .SetCanTargetEnemies(true)
+                .SetCanTargetSelf(false)
+                .SetIsFullRoundAction(true)
+                .AddAbilityCasterMainWeaponCheck(new WeaponCategory[] { WeaponCategory.Longbow, WeaponCategory.Shortbow, WeaponCategory.LightCrossbow, WeaponCategory.HeavyCrossbow, WeaponCategory.ThrowingAxe, WeaponCategory.Dart, WeaponCategory.Javelin, WeaponCategory.SlingStaff, WeaponCategory.Sling })
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Thrown)
+                .SetRange(AbilityRange.Weapon)
                 .Configure();
 
-            return FeatureConfigurator.New(UnitedDefenseName, UnitedDefenseGuid)
-                    .SetDisplayName(UnitedDefenseDisplayName)
-                    .SetDescription(UnitedDefenseDescription)
+            var ability2 = AbilityConfigurator.New(TrickShotAbility2, TrickShotAbility2Guid)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                    .Add<ContextActionRangedTrip>(c => { c.maneuver = Kingmaker.RuleSystem.Rules.CombatManeuver.DirtyTrickEntangle; c.Ace = FeatureRefs.MonsterMythicWeaponSizeFeature.ToString(); })
+                    .Build())
+                .SetType(AbilityType.Physical)
+                .SetDisplayName(TrickShotDisplayName2)
+                .SetDescription(TrickShotDescription2)
+                .SetIcon(icon)
+                .SetCanTargetEnemies(true)
+                .SetCanTargetSelf(false)
+                .SetIsFullRoundAction(true)
+                .AddAbilityCasterMainWeaponCheck(new WeaponCategory[] { WeaponCategory.Longbow, WeaponCategory.Shortbow, WeaponCategory.LightCrossbow, WeaponCategory.HeavyCrossbow, WeaponCategory.ThrowingAxe, WeaponCategory.Dart, WeaponCategory.Javelin, WeaponCategory.SlingStaff, WeaponCategory.Sling })
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Thrown)
+                .SetRange(AbilityRange.Weapon)
+                .Configure();
+
+            var ability3 = AbilityConfigurator.New(TrickShotAbility3, TrickShotAbility3Guid)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                    .Add<ContextActionRangedTrip>(c => { c.maneuver = Kingmaker.RuleSystem.Rules.CombatManeuver.DirtyTrickSickened; c.Ace = FeatureRefs.MonsterMythicWeaponSizeFeature.ToString(); })
+                    .Build())
+                .SetType(AbilityType.Physical)
+                .SetDisplayName(TrickShotDisplayName3)
+                .SetDescription(TrickShotDescription3)
+                .SetIcon(icon)
+                .SetCanTargetEnemies(true)
+                .SetCanTargetSelf(false)
+                .SetIsFullRoundAction(true)
+                .AddAbilityCasterMainWeaponCheck(new WeaponCategory[] { WeaponCategory.Longbow, WeaponCategory.Shortbow, WeaponCategory.LightCrossbow, WeaponCategory.HeavyCrossbow, WeaponCategory.ThrowingAxe, WeaponCategory.Dart, WeaponCategory.Javelin, WeaponCategory.SlingStaff, WeaponCategory.Sling })
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Thrown)
+                .SetRange(AbilityRange.Weapon)
+                .Configure();
+
+            return FeatureConfigurator.New(TrickShotName, TrickShotGuid)
+                    .SetDisplayName(TrickShotDisplayName)
+                    .SetDescription(TrickShotDescription)
                     .SetIcon(icon)
-                    .AddFacts(new() { ability })
-                    .SetRanks(10)
+                    .AddFacts(new() { ability, ability2, ability3 })
                     .Configure();
         }
 
-        private const string AlliedRetribution = "ForestWardenAlliedRetribution";
-        private static readonly string AlliedRetributionGuid = "{93F9ECCA-0D43-4688-9B3C-8BDBB1A067EE}";
+        private const string UnchainedHeart = "ForestWardenUnchainedHeart";
+        private static readonly string UnchainedHeartGuid = "{8AC62A19-97BD-48D5-B2CB-45B5D0D5D796}";
 
-        internal const string AlliedRetributionDisplayName = "ForestWardenAlliedRetribution.Name";
-        private const string AlliedRetributionDescription = "ForestWardenAlliedRetribution.Description";
+        internal const string UnchainedHeartDisplayName = "ForestWardenUnchainedHeart.Name";
+        private const string UnchainedHeartDescription = "ForestWardenUnchainedHeart.Description";
 
-        private const string AlliedRetributionBuff = "AlliedRetribution.AlliedRetributionBuff";
-        public static readonly string AlliedRetributionBuffGuid = "{CBCCE289-469B-4F75-942C-C99D628DA8E1}";
-        public static BlueprintFeature AlliedRetributionFeature()
+        private const string UnchainedHeartBuff = "UnchainedHeart.UnchainedHeartBuff";
+        public static readonly string UnchainedHeartBuffGuid = "{F10E288F-7A67-423F-8B14-098E39A18716}";
+        public static BlueprintFeature UnchainedHeartFeature()
         {
-            var icon = FeatureRefs.PreciseStrike.Reference.Get().Icon;
+            var icon = FeatureRefs.RenewedVigorFeature.Reference.Get().Icon;
 
-            var buff = BuffConfigurator.New(AlliedRetributionBuff, AlliedRetributionBuffGuid)
-                .SetDisplayName(AlliedRetributionDisplayName)
-                .SetDescription(AlliedRetributionDescription)
+            var buff = BuffConfigurator.New(UnchainedHeartBuff, UnchainedHeartBuffGuid)
+                .SetDisplayName(UnchainedHeartDisplayName)
+                .SetDescription(UnchainedHeartDescription)
                 .SetIcon(icon)
-                //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
                 .Configure();
 
-            return FeatureConfigurator.New(AlliedRetribution, AlliedRetributionGuid)
-              .SetDisplayName(AlliedRetributionDisplayName)
-              .SetDescription(AlliedRetributionDescription)
+            return FeatureConfigurator.New(UnchainedHeart, UnchainedHeartGuid)
+              .SetDisplayName(UnchainedHeartDisplayName)
+              .SetDescription(UnchainedHeartDescription)
               .SetIcon(icon)
-              .AddComponent<AlliedRetributionTrigger>()
-              .AddAttackBonusAgainstFactOwner(1, 0, buff, ModifierDescriptor.Morale)
-              .AddDamageBonusAgainstFactOwner(0, buff, 1, ModifierDescriptor.Morale)
-              .AddContextRankConfig(ContextRankConfigs.FeatureRank(AlliedRetributionGuid))
+              .AddComponent<UnchainedHeartComp>(c => { c.buff = buff; c.SpellDescriptor = SpellDescriptor.MindAffecting | SpellDescriptor.Compulsion; })
+              .AddAttackBonusAgainstFactOwner(bonus: 1, checkedFact: buff)
               .SetRanks(10)
               .Configure();
         }
 
         private const string PreemptiveStrike = "ForestWardenPreemptiveStrike";
-        public static readonly string PreemptiveStrikeGuid = "{27C488F2-7613-4210-BFDF-56A4A49133B9}";
+        public static readonly string PreemptiveStrikeGuid = "{8A752251-C459-44B7-8EC6-DEADF71EFACA}";
 
         internal const string PreemptiveStrikeDisplayName = "ForestWardenPreemptiveStrike.Name";
         private const string PreemptiveStrikeDescription = "ForestWardenPreemptiveStrike.Description";
-
-        private const string PreemptiveStrikeBuff = "PreemptiveStrike.PreemptiveStrikeBuff";
-        public static readonly string PreemptiveStrikeBuffGuid = "{830870C8-010D-4F44-9511-F1FF08B846D6}";
-
-        private const string PreemptiveStrikeBuff2 = "PreemptiveStrike.PreemptiveStrikeBuff2";
-        public static readonly string PreemptiveStrikeBuff2Guid = "{3F044DF1-C6DB-4392-97FF-9CE66B29C7E1}";
         public static BlueprintFeature PreemptiveStrikeFeature()
         {
             var icon = FeatureRefs.Opportunist.Reference.Get().Icon;
-
-            BuffConfigurator.New(PreemptiveStrikeBuff, PreemptiveStrikeBuffGuid)
-                .SetDisplayName(PreemptiveStrikeDisplayName)
-                .SetDescription(PreemptiveStrikeDescription)
-                .SetIcon(icon)
-                //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-                .Configure();
-
-            BuffConfigurator.New(PreemptiveStrikeBuff2, PreemptiveStrikeBuff2Guid)
-                .SetDisplayName(PreemptiveStrikeDisplayName)
-                .SetDescription(PreemptiveStrikeDescription)
-                .SetIcon(icon)
-                //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-                .Configure();
 
             return FeatureConfigurator.New(PreemptiveStrike, PreemptiveStrikeGuid)
               .SetDisplayName(PreemptiveStrikeDisplayName)

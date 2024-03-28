@@ -6056,7 +6056,7 @@
     "Key": "DisarmFeatRangeDisarm.Description",
     "enGB": "A well-placed shot disarms your foe. As a full-round action, you can attempt to perform a disarm combat maneuver with any ranged weapon at a –2 penalty. Add your Dexterity modifier to your CMB in place of your Strength modifier. If your target is more than 30 feet away, you take an additional –2 penalty. If the disarm attempt is successful, the target also takes damage as if you had made a successful attack with that weapon.",
     "ruRU": "Меткий выстрел обезоруживает вашего врага. Действием полного раунда вы можете применить боевой прием разоружение при помощи любого дистанционного оружия со штрафом -2. Вы добавляете свой модификатор Ловкости в к вашему модификатору боевых маневров вместо Силы. Если ваша цель находится на расстоянии более 30 футов, вы получаете дополнительный штраф -2. Если вам успешно удалось разоружить противника, вы также наносите ему урон как если бы попали по ней атакой этим оружием.",
-    "zhCN": "一次精准的射击即可卸除敌人的武器。以一个全回合动作，你可以使用远程武器对目标尝试一次受-2罚值的卸除武器战技。使用敏捷调整值代替力量调整值来计算该次战技修正。若目标在30尺外，还会额外承受-2罚值。若卸武战技检定成功，目标会承受1次伤害，如同你通过武器成功命中目标一样。"
+    "zhCN": "一次精准的射击即可卸除敌人的武器。以一个全回合动作，你可以使用远程武器对目标尝试一次受-2减值的卸除武器战技。使用敏捷调整值代替力量调整值来计算该次战技修正。若目标在30尺外，还会额外承受-2减值。若卸武战技检定成功，目标会承受1次伤害，如同你通过武器成功命中目标一样。"
   },
   {
     "Key": "AceDisarm.Name",
