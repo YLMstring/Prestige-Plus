@@ -556,7 +556,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         }
 
         private const string AlignSpam = "ForestWarden.AlignSpam";
-        public static readonly string AlignSpamGuid = "{69DFC912-DFE1-46A7-A6AC-4E701DCF0A27}";
+        public static readonly string AlignSpamGuid = "{24453B21-1438-405E-8296-B0523964CB00}";
 
         internal const string SanctifiedRogueDisplayName = "ForestWardenSanctifiedRogue.Name";
         private const string SanctifiedRogueDescription = "ForestWardenSanctifiedRogue.Description";
