@@ -46,7 +46,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         public static readonly string ClassProgressGuid = "{5E79E4AC-0249-461C-8BC0-B70771FD5D6A}";
         public static void Configure()
         {
-            //"SwiftAidAnotherFeature": "8590fb52-921c-4365-832c-ca7635fd5a70",
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
@@ -72,23 +71,22 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               CharacterClassConfigurator.New(ArchetypeName, ArchetypeGuid)
                 .SetLocalizedName(ArchetypeDisplayName)
                 .SetLocalizedDescription(ArchetypeDescription)
-                .SetSkillPoints(2)
-                .SetHitDie(DiceType.D10)
+                .SetSkillPoints(4)
+                .SetHitDie(DiceType.D8)
                 .SetPrestigeClass(true)
-                .SetBaseAttackBonus(StatProgressionRefs.BABFull.ToString())
+                .SetBaseAttackBonus(StatProgressionRefs.BABMedium.ToString())
                 .SetFortitudeSave(StatProgressionRefs.SavesPrestigeHigh.ToString())
                 .SetReflexSave(StatProgressionRefs.SavesPrestigeLow.ToString())
-                .SetWillSave(StatProgressionRefs.SavesPrestigeLow.ToString())
+                .SetWillSave(StatProgressionRefs.SavesPrestigeHigh.ToString())
                 .SetProgression(progression)
-                .SetClassSkills(new StatType[] { StatType.SkillAthletics, StatType.SkillMobility, StatType.SkillLoreNature })
-                .AddPrerequisiteStatValue(StatType.BaseAttackBonus, 5)
-                .AddPrerequisiteStatValue(StatType.SkillKnowledgeWorld, 5)
-                .AddPrerequisiteStatValue(StatType.SkillPersuasion, 5)
-                .AddPrerequisiteProficiency(armorProficiencies: new ArmorProficiencyGroup[] { ArmorProficiencyGroup.Heavy }, new WeaponCategory[] { })
-                .AddPrerequisiteAlignment(AlignmentMaskType.Good, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
-                .AddPrerequisiteAlignment(AlignmentMaskType.LawfulNeutral, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .SetClassSkills(new StatType[] { StatType.SkillKnowledgeArcana, StatType.SkillLoreReligion, StatType.SkillPerception, StatType.SkillPersuasion, StatType.SkillUseMagicDevice })
+                .AddPrerequisiteStatValue(StatType.SkillKnowledgeArcana, 6)
+                .AddPrerequisiteStatValue(StatType.SkillLoreReligion, 6)
                 .AddPrerequisiteAlignment(AlignmentMaskType.TrueNeutral, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .AddPrerequisiteAlignment(AlignmentMaskType.LawfulNeutral, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                 .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticNeutral, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .AddPrerequisiteAlignment(AlignmentMaskType.NeutralGood, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                .AddPrerequisiteAlignment(AlignmentMaskType.NeutralEvil, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                 .Configure();
 
             FakeAlignedClass.AddtoMenu(archetype);
@@ -452,7 +450,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         }
 
         private const string AlignSpam = "MortalUsher.AlignSpam";
-        public static readonly string AlignSpamGuid = "{69DFC912-DFE1-46A7-A6AC-4E701DCF0A27}";
+        public static readonly string AlignSpamGuid = "{7BD7F5AA-1A31-49D2-8414-6D4C6FA90504}";
 
         internal const string SanctifiedRogueDisplayName = "MortalUsherSanctifiedRogue.Name";
         private const string SanctifiedRogueDescription = "MortalUsherSanctifiedRogue.Description";
