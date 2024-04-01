@@ -1,4 +1,4 @@
-# Prestige Plus v2.9.6 for WoTR 
+# Prestige Plus v2.9.7 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -108,6 +108,9 @@
 - Kinetic Esoterica: continue kineticist progression every 2 levels!
 #### Homebrew Options:  
 - Divine Psychic: continue cleric progression every 2 levels!
+### [Forest Warden Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/forest-warden/)
+- Simplify Guerrilla Tactics, making it easy to use in the game!
+- The class gives access to [Paired Opportunists in CO+](https://github.com/WittleWolfie/CharacterOptionsPlus) and [Spring Attack in Swashbuckler Mod](https://github.com/novumvita/SwashbucklerWOTR), but you'll need the respective mod active to select them. If you don't want these feats, my mod doesn't require anything, as the original feature will still be there.
 ### [Furious Guardian Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/furious-guardian/)
 - Chosen Ally is for barbarian standard rage only =-=
 ### [Golden Legionnaire Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/golden-legionnaire/)
