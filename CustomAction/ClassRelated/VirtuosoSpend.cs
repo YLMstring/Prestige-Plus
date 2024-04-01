@@ -33,7 +33,7 @@ namespace PrestigePlus.CustomAction.ClassRelated
             var Res = BlueprintTool.GetRef<BlueprintAbilityResourceReference>(ResGuid);
             if (Res?.Get() != null && Context.MaybeCaster.Descriptor.Resources.GetResource(Res) != null)
             {
-                Context.MaybeCaster.Descriptor.Resources.Restore(Res, 1);
+                Context.MaybeCaster.Descriptor.Resources.Spend(Res, 1);
             }
         }
 

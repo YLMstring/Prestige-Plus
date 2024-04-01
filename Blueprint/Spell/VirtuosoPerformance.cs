@@ -75,7 +75,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetRange(AbilityRange.Personal)
               .SetType(AbilityType.Spell)
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Extend)
-              .AddToSpellLists(level: 1, SpellList.Bard)
+              .AddToSpellLists(level: 4, SpellList.Bard)
               .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
                   .ApplyBuff(buff, ContextDuration.Variable(ContextValues.Rank()), isFromSpell: true)

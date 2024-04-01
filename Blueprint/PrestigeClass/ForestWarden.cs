@@ -71,8 +71,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddToLevelEntry(9, CreateForestMagic9(), FeatureRefs.SneakAttack.ToString(), PreemptiveStrikeFeature())
                 .AddToLevelEntry(10, FeatureRefs.HunterWoodlandStride.ToString(), FeatureRefs.AssassinHideInPlainSight.ToString())
                 .SetUIGroups(UIGroupBuilder.New()
-                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { ForestMagic1Guid, ForestMagic3Guid, ForestMagic5Guid, ForestMagic7Guid, ForestMagic9Guid }))
-                    //.AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { SeizetheOpportunity.FeatGuid, BodyGuard.FeatGuid, BodyGuard.Feat2Guid, "8590fb52-921c-4365-832c-ca7635fd5a70", FeatureRefs.PerfectStrikeFeature.ToString() }))
+                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { ForestMagic1Guid, ForestMagic3Guid, ForestMagic5Guid, ForestMagic7Guid, ForestMagic9Guid })
+                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { UnchainedHeartGuid, FeatureRefs.HunterWoodlandStride.ToString() }))
                 .SetRanks(1)
                 .SetIsClassFeature(true)
                 .SetDisplayName("")
@@ -111,15 +111,14 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         public static void PsychicEsotericaFeat()
         {
-            var icon = AbilityRefs.LifeBubble.Reference.Get().Icon;
-
+            //var icon = AbilityRefs.LifeBubble.Reference.Get().Icon;
             //SpringAttackFeatGuid = "9D46135E-3DC2-44B8-ABFD-45CA33805FF0";
             //PairedOpportunistsFeat = "41df43af-78bc-477a-a33a-e57d86ba8928";
 
             FeatureSelectionConfigurator.New(PsychicEsoterica, PsychicEsotericaGuid)
               .SetDisplayName(PsychicEsotericaDisplayName)
               .SetDescription(PsychicEsotericaDescription)
-              .SetIcon(icon)
+              //.SetIcon(icon)
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
               .AddToAllFeatures(RangedDisarm.ArmBindGuid)
@@ -462,7 +461,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetType(AbilityType.Physical)
                 .SetDisplayName(TrickShotDisplayName1)
                 .SetDescription(TrickShotDescription1)
-                .SetIcon(icon)
+                .SetIcon(AbilityRefs.DirtyTrickBlindnessAction.Reference.Get().Icon)
                 .SetCanTargetEnemies(true)
                 .SetCanTargetSelf(false)
                 .SetIsFullRoundAction(true)
@@ -478,7 +477,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetType(AbilityType.Physical)
                 .SetDisplayName(TrickShotDisplayName2)
                 .SetDescription(TrickShotDescription2)
-                .SetIcon(icon)
+                .SetIcon(AbilityRefs.DirtyTrickEntangleAction.Reference.Get().Icon)
                 .SetCanTargetEnemies(true)
                 .SetCanTargetSelf(false)
                 .SetIsFullRoundAction(true)
@@ -494,7 +493,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetType(AbilityType.Physical)
                 .SetDisplayName(TrickShotDisplayName3)
                 .SetDescription(TrickShotDescription3)
-                .SetIcon(icon)
+                .SetIcon(AbilityRefs.DirtyTrickSickenedAction.Reference.Get().Icon)
                 .SetCanTargetEnemies(true)
                 .SetCanTargetSelf(false)
                 .SetIsFullRoundAction(true)
