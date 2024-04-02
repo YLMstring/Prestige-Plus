@@ -32,6 +32,13 @@ using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
 using Kingmaker.Blueprints.Classes.Selection;
 using PrestigePlus.Blueprint.Gunslinger;
 using PrestigePlus.CustomComponent;
+using Kingmaker.Designers.Mechanics.Facts;
+using Kingmaker.Designers.Mechanics.Buffs;
+using Kingmaker.Enums.Damage;
+using Kingmaker.UnitLogic.FactLogic;
+using Kingmaker.Blueprints.Classes.Spells;
+using PrestigePlus.Blueprint.ManeuverFeat;
+using PrestigePlus.Blueprint.SpecificManeuver;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -49,19 +56,18 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, DefyDangerFeature(), AuthoritativeCommandConfigure(), FeatureRefs.FighterProficiencies.ToString())
-                .AddToLevelEntry(2, SeizetheOpportunity.FeatGuid, UnitedDefenseConfigure(), AuthoritativeCommand2Feature())
-                .AddToLevelEntry(3, AlliedRetributionFeature(), AuthoritativeCommand3Feature())
-                .AddToLevelEntry(4, BodyGuard.FeatGuid, AuthoritativeCommand4Feature())
-                .AddToLevelEntry(5, DefyDangerGuid)
-                .AddToLevelEntry(6, BodyGuard.Feat2Guid, UnitedDefenseGuid, AuthoritativeCommand5Feature())
-                .AddToLevelEntry(7, AlliedRetributionGuid, PreemptiveStrikeFeature())
-                .AddToLevelEntry(8, AuthoritativeCommandSwiftConfigure())
-                .AddToLevelEntry(9, RetaliateFeature(), DefyDangerGuid)
-                .AddToLevelEntry(10, FeatureRefs.PerfectStrikeFeature.ToString(), UnitedDefenseGuid)
+                .AddToLevelEntry(1, AlignSpamFeat(), PsychicEsotericaFeat(), ProficiencyScythesFeature())
+                .AddToLevelEntry(2)
+                .AddToLevelEntry(3, PlagueMaskFeature())
+                .AddToLevelEntry(4)
+                .AddToLevelEntry(5, CatrinaFeature())
+                .AddToLevelEntry(6, BetterEsotericaFeat())
+                .AddToLevelEntry(7, MorrignaFeature())
+                .AddToLevelEntry(8)
+                .AddToLevelEntry(9, VanthWingsFeature())
+                .AddToLevelEntry(10, FeatherCloakFeature())
                 .SetUIGroups(UIGroupBuilder.New()
-                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { AuthoritativeCommandGuid, AuthoritativeCommandSwiftGuid, AuthoritativeCommand2Guid, AuthoritativeCommand3Guid, AuthoritativeCommand4Guid, AuthoritativeCommand5Guid })
-                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { SeizetheOpportunity.FeatGuid, BodyGuard.FeatGuid, BodyGuard.Feat2Guid, "8590fb52-921c-4365-832c-ca7635fd5a70", FeatureRefs.PerfectStrikeFeature.ToString() }))
+                    .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { PsychicEsotericaGuid, BetterEsotericaGuid }))
                 .SetRanks(1)
                 .SetIsClassFeature(true)
                 .SetDisplayName("")
@@ -92,324 +98,191 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             FakeAlignedClass.AddtoMenu(archetype);
         }
 
-        private const string DefyDanger = "MortalUsherDefyDanger";
-        private static readonly string DefyDangerGuid = "{E891A2FF-14E6-4A00-9F0E-05EE87508A2F}";
+        private const string PsychicEsoterica = "MortalUsher.PsychicEsoterica";
+        public static readonly string PsychicEsotericaGuid = "{50B9881C-4C1E-4406-B7FD-45504ED63D7A}";
 
-        internal const string DefyDangerDisplayName = "MortalUsherDefyDanger.Name";
-        private const string DefyDangerDescription = "MortalUsherDefyDanger.Description";
-        public static BlueprintFeature DefyDangerFeature()
+        private const string PsychicEsoterica0 = "MortalUsher.PsychicEsoterica0";
+        private static readonly string PsychicEsoterica0Guid = "{13DFB19D-C3BC-484E-A51B-8955FEA7F0F1}";
+
+        private const string PsychicEsoterica1 = "MortalUsher.PsychicEsoterica1";
+        private static readonly string PsychicEsoterica1Guid = "{6CC68BC2-3DDC-48FF-8C21-0CEBCA443709}";
+
+        internal const string PsychicEsotericaDisplayName = "MortalUsherPsychicEsoterica.Name";
+        private const string PsychicEsotericaDescription = "MortalUsherPsychicEsoterica.Description";
+
+        public static BlueprintFeatureSelection PsychicEsotericaFeat()
         {
-            var icon = FeatureRefs.ArchaelogistDangerSense.Reference.Get().Icon;
-            return FeatureConfigurator.New(DefyDanger, DefyDangerGuid)
-              .SetDisplayName(DefyDangerDisplayName)
-              .SetDescription(DefyDangerDescription)
+            var icon = FeatureRefs.VitalStrikeFeature.Reference.Get().Icon;
+
+            var feat = FeatureConfigurator.New(PsychicEsoterica1, PsychicEsoterica1Guid)
+              .SetDisplayName(PsychicEsotericaDisplayName)
+              .SetDescription(PsychicEsotericaDescription)
               .SetIcon(icon)
-              .AddSavingThrowBonusAgainstFact(value: 2, checkedFact: FeatureRefs.DemonOfMagicFeature.ToString())
-              .AddSavingThrowBonusAgainstFact(value: 2, checkedFact: FeatureRefs.DemonOfSlaughterFeature.ToString())
-              .AddSavingThrowBonusAgainstFact(value: 2, checkedFact: FeatureRefs.DemonOfStrengthFeature.ToString())
-              .SetRanks(10)
+              .AddFacts(new() { FeatureRefs.VitalStrikeFeature.ToString() })
+              .Configure();
+
+            var select = FeatureSelectionConfigurator.New(PsychicEsoterica0, PsychicEsoterica0Guid)
+              .CopyFrom(FeatureSelectionRefs.BasicFeatSelection)
+              .AddPrerequisiteFeature(FeatureRefs.VitalStrikeFeature.ToString())
+              .Configure();
+
+            return FeatureSelectionConfigurator.New(PsychicEsoterica, PsychicEsotericaGuid)
+              .SetDisplayName(PsychicEsotericaDisplayName)
+              .SetDescription(PsychicEsotericaDescription)
+              .SetIcon(icon)
+              .AddToAllFeatures(feat)
+              .AddToAllFeatures(select)
               .Configure();
         }
 
-        private const string Retaliate = "MortalUsherRetaliate";
-        public static readonly string RetaliateGuid = "{798F5C7F-3FEA-4AD8-ADAA-E57FA93D20F8}";
+        private const string BetterEsoterica = "MortalUsher.BetterEsoterica";
+        private static readonly string BetterEsotericaGuid = "{4A00AECE-9359-40BE-B9BD-65BA811C95FF}";
 
-        internal const string RetaliateDisplayName = "MortalUsherRetaliate.Name";
-        private const string RetaliateDescription = "MortalUsherRetaliate.Description";
-        public static BlueprintFeature RetaliateFeature()
+        private const string BetterEsoterica0 = "MortalUsher.BetterEsoterica0";
+        private static readonly string BetterEsoterica0Guid = "{C9C623CB-162B-44AF-A2B9-1A20627DB72D}";
+
+        private const string BetterEsoterica1 = "MortalUsher.BetterEsoterica1";
+        private static readonly string BetterEsoterica1Guid = "{6DE61991-5B9F-4E32-B8BB-F3E69756AE85}";
+        public static BlueprintFeatureSelection BetterEsotericaFeat()
         {
-            var icon = FeatureRefs.DevotedBladeFeature.Reference.Get().Icon;
-            return FeatureConfigurator.New(Retaliate, RetaliateGuid)
-              .SetDisplayName(RetaliateDisplayName)
-              .SetDescription(RetaliateDescription)
+            var icon = FeatureRefs.VitalStrikeFeatureImproved.Reference.Get().Icon;
+
+            var feat = FeatureConfigurator.New(BetterEsoterica1, BetterEsoterica1Guid)
+              .SetDisplayName(PsychicEsotericaDisplayName)
+              .SetDescription(PsychicEsotericaDescription)
               .SetIcon(icon)
-              
+              .AddFacts(new() { FeatureRefs.VitalStrikeFeatureImproved.ToString() })
+              .Configure();
+
+            var select = FeatureSelectionConfigurator.New(BetterEsoterica0, BetterEsoterica0Guid)
+              .CopyFrom(FeatureSelectionRefs.BasicFeatSelection)
+              .AddPrerequisiteFeature(FeatureRefs.VitalStrikeFeatureImproved.ToString())
+              .Configure();
+
+            return FeatureSelectionConfigurator.New(BetterEsoterica, BetterEsotericaGuid)
+              .SetDisplayName(PsychicEsotericaDisplayName)
+              .SetDescription(PsychicEsotericaDescription)
+              .SetIcon(icon)
+              .AddToAllFeatures(feat)
+              .AddToAllFeatures(select)
               .Configure();
         }
 
-        private const string AuthoritativeCommand2 = "MortalUsherAuthoritativeCommand2";
-        public static readonly string AuthoritativeCommand2Guid = "{09666D53-7194-4B06-8CFB-303552B901C1}";
+        private const string Morrigna = "MortalUsherMorrigna";
+        private static readonly string MorrignaGuid = "{0AF76AB0-C337-44A1-AEE7-1C79B1D9669B}";
 
-        internal const string AuthoritativeCommand2DisplayName = "MortalUsherAuthoritativeCommand2.Name";
-        private const string AuthoritativeCommand2Description = "MortalUsherAuthoritativeCommand2.Description";
-        public static BlueprintFeature AuthoritativeCommand2Feature()
+        internal const string MorrignaDisplayName = "MortalUsherMorrigna.Name";
+        private const string MorrignaDescription = "MortalUsherMorrigna.Description";
+        public static BlueprintFeature MorrignaFeature()
         {
-            var icon = AbilityRefs.Command.Reference.Get().Icon;
-            return FeatureConfigurator.New(AuthoritativeCommand2, AuthoritativeCommand2Guid)
-              .SetDisplayName(AuthoritativeCommand2DisplayName)
-              .SetDescription(AuthoritativeCommand2Description)
+            var icon = AbilityRefs.CloakOfAstoundingProwessAbility.Reference.Get().Icon;
+            return FeatureConfigurator.New(Morrigna, MorrignaGuid)
+              .SetDisplayName(MorrignaDisplayName)
+              .SetDescription(MorrignaDescription)
               .SetIcon(icon)
+              .AddContextStatBonus(StatType.AC, ContextValues.Rank(), ModifierDescriptor.NaturalArmor)
+              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }).WithDiv2Progression())
+              .SetReapplyOnLevelUp(true)
               .Configure();
         }
 
-        private const string AuthoritativeCommand3 = "MortalUsherAuthoritativeCommand3";
-        public static readonly string AuthoritativeCommand3Guid = "{EFC5F4EC-81E4-4DBD-A341-79414EB71BFC}";
+        private const string Catrina = "MortalUsherCatrina";
+        public static readonly string CatrinaGuid = "{DD210097-C947-4F7A-9567-A236E8652CC5}";
 
-        internal const string AuthoritativeCommand3DisplayName = "MortalUsherAuthoritativeCommand3.Name";
-        private const string AuthoritativeCommand3Description = "MortalUsherAuthoritativeCommand3.Description";
-        public static BlueprintFeature AuthoritativeCommand3Feature()
+        private const string CatrinaFeat = "MortalUsherCatrinaFeat";
+        public static readonly string CatrinaFeatGuid = "{0B9DB3B1-F357-40A5-A946-9D42997E4F53}";
+
+        internal const string CatrinaDisplayName = "MortalUsherCatrina.Name";
+        private const string CatrinaDescription = "MortalUsherCatrina.Description";
+        public static BlueprintFeature CatrinaFeature()
         {
-            var icon = AbilityRefs.Command.Reference.Get().Icon;
-            return FeatureConfigurator.New(AuthoritativeCommand3, AuthoritativeCommand3Guid)
-              .SetDisplayName(AuthoritativeCommand3DisplayName)
-              .SetDescription(AuthoritativeCommand3Description)
+            var icon = AbilityRefs.UndeathToDeath.Reference.Get().Icon;
+
+            var feat = FeatureConfigurator.New(CatrinaFeat, CatrinaFeatGuid)
+              .SetDisplayName(CatrinaDisplayName)
+              .SetDescription(CatrinaDescription)
               .SetIcon(icon)
+              .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Disruption.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.PrimaryHand)
+              .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Disruption.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.SecondaryHand)
+              .Configure();
+
+            return FeatureConfigurator.New(Catrina, CatrinaGuid)
+              .SetDisplayName(CatrinaDisplayName)
+              .SetDescription(CatrinaDescription)
+              .SetIcon(icon)
+              .AddComponent<HasWeaponFeatureUnlock>(c => { 
+                  c.FilterByBlueprintWeaponTypes = true; 
+                  c.m_BlueprintWeaponTypes = new[] { WeaponTypeRefs.Scythe.Reference.Get().ToReference<BlueprintWeaponTypeReference>() };
+                  c.m_NewFact = feat.ToReference<BlueprintUnitFactReference>();
+              })
               .Configure();
         }
 
-        private const string AuthoritativeCommand5 = "MortalUsherAuthoritativeCommand5";
-        public static readonly string AuthoritativeCommand5Guid = "{2E134743-07A7-405E-B3C1-B6243E6B9F57}";
+        private const string FeatherCloak = "MortalUsherFeatherCloak";
+        public static readonly string FeatherCloakGuid = "{D0FEBA1A-2727-4E3A-B1F5-818BD9587DD0}";
 
-        internal const string AuthoritativeCommand5DisplayName = "MortalUsherAuthoritativeCommand5.Name";
-        private const string AuthoritativeCommand5Description = "MortalUsherAuthoritativeCommand5.Description";
-        public static BlueprintFeature AuthoritativeCommand5Feature()
+        internal const string FeatherCloakDisplayName = "MortalUsherFeatherCloak.Name";
+        private const string FeatherCloakDescription = "MortalUsherFeatherCloak.Description";
+        public static BlueprintFeature FeatherCloakFeature()
         {
-            var icon = AbilityRefs.CommandGreater.Reference.Get().Icon;
-            return FeatureConfigurator.New(AuthoritativeCommand5, AuthoritativeCommand5Guid)
-              .SetDisplayName(AuthoritativeCommand5DisplayName)
-              .SetDescription(AuthoritativeCommand5Description)
+            var icon = AbilityRefs.CloakOfTheLionAbility.Reference.Get().Icon;
+            return FeatureConfigurator.New(FeatherCloak, FeatherCloakGuid)
+              .SetDisplayName(FeatherCloakDisplayName)
+              .SetDescription(FeatherCloakDescription)
               .SetIcon(icon)
+              .AddEnergyDamageImmunity(DamageEnergyType.Electricity, true, AddEnergyDamageImmunity.HealingRate.DamageDiv3)
+              .AddSpellImmunityToSpellDescriptor(null, SpellDescriptor.Death)
+              .AddBuffDescriptorImmunity(descriptor: SpellDescriptor.Death)
               .Configure();
         }
 
-        private const string AuthoritativeCommand4 = "MortalUsherAuthoritativeCommand4";
-        public static readonly string AuthoritativeCommand4Guid = "{3429D9BD-E68D-4096-B2BE-3EB121825B2E}";
+        private const string VanthWings = "MortalUsherVanthWings";
+        public static readonly string VanthWingsGuid = "{5585F03B-0268-48D7-93B9-8DCC269E9EDE}";
 
-        internal const string AuthoritativeCommand4DisplayName = "MortalUsherAuthoritativeCommand4.Name";
-        private const string AuthoritativeCommand4Description = "MortalUsherAuthoritativeCommand4.Description";
-        public static BlueprintFeature AuthoritativeCommand4Feature()
+        internal const string VanthWingsDisplayName = "MortalUsherVanthWings.Name";
+        private const string VanthWingsDescription = "MortalUsherVanthWings.Description";
+        public static BlueprintFeature VanthWingsFeature()
         {
-            var icon = AbilityRefs.Command.Reference.Get().Icon;
-            return FeatureConfigurator.New(AuthoritativeCommand4, AuthoritativeCommand4Guid)
-              .SetDisplayName(AuthoritativeCommand4DisplayName)
-              .SetDescription(AuthoritativeCommand4Description)
+            var icon = FeatureRefs.FeatureWingsDemon.Reference.Get().Icon;
+            return FeatureConfigurator.New(VanthWings, VanthWingsGuid)
+              .SetDisplayName(VanthWingsDisplayName)
+              .SetDescription(VanthWingsDescription)
               .SetIcon(icon)
+              .AddConcentrationBonus(value: 5)
+              .AddStatBonus(ModifierDescriptor.Competence, false, StatType.SkillMobility, 5)
+              .AddDamageResistanceEnergy(healOnDamage: false, value: ContextValues.Rank(), type: DamageEnergyType.Cold)
+              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }).WithBonusValueProgression(10))
+              .AddFacts(new() { FeatureRefs.FeatureWingsDemon.ToString() })
               .Configure();
         }
 
-        private static readonly string AuthoritativeCommandName = "MortalUsherAuthoritativeCommand";
-        public static readonly string AuthoritativeCommandGuid = "{E541F28C-42F6-4C5A-854B-F585318076A3}";
+        private const string PlagueMask = "MortalUsherPlagueMask";
+        public static readonly string PlagueMaskGuid = "{C0682921-CBBB-4531-8610-2EA514A908D0}";
 
-        private static readonly string AuthoritativeCommandDisplayName = "MortalUsherAuthoritativeCommand.Name";
-        private static readonly string AuthoritativeCommandDescription = "MortalUsherAuthoritativeCommand.Description";
-
-        private const string AuthoritativeCommandAbility = "AuthoritativeCommand.AuthoritativeCommandAbility";
-        private static readonly string AuthoritativeCommandAbilityGuid = "{399B14AE-70FE-47DB-9206-B08056267AD4}";
-
-        private const string AuthoritativeCommandBuff = "AuthoritativeCommand.AuthoritativeCommandBuff";
-        private static readonly string AuthoritativeCommandBuffGuid = "{F5F99B01-0023-4A6B-A7B3-4F994DA903E2}";
-
-        private const string CommandMoveAutoAbility = "MortalUsher.UseCommandMoveAuto";
-        public static readonly string CommandMoveAutoAbilityGuid = "{2B9C109C-F0B6-4001-A6D0-8C4893615AE5}";
-
-        private const string CommandMoveAutoBuff2 = "MortalUsher.CommandMoveAutoBuff2";
-        public static readonly string CommandMoveAutoBuff2Guid = "{B53B1E0E-0999-4F5E-8B8A-FF808C088410}";
-        public static BlueprintFeature AuthoritativeCommandConfigure()
+        internal const string PlagueMaskDisplayName = "MortalUsherPlagueMask.Name";
+        private const string PlagueMaskDescription = "MortalUsherPlagueMask.Description";
+        public static BlueprintFeature PlagueMaskFeature()
         {
-            var icon = AbilityRefs.Command.Reference.Get().Icon;
-            var fx = AbilityRefs.OverwhelmingPresence.Reference.Get().GetComponent<AbilitySpawnFx>();
-
-            var buff = BuffConfigurator.New(AuthoritativeCommandBuff, AuthoritativeCommandBuffGuid)
-                .SetDisplayName(AuthoritativeCommandDisplayName)
-                .SetDescription(AuthoritativeCommandDescription)
-                .SetIcon(icon)
-                .AddComponent<AuthoritativeCommanComp>()
-                .Configure();
-
-            var ability = AbilityConfigurator.New(AuthoritativeCommandAbility, AuthoritativeCommandAbilityGuid)
-                .SetDisplayName(AuthoritativeCommandDisplayName)
-                .SetDescription(AuthoritativeCommandDescription)
-                .SetIcon(icon)
-                .AddComponent(fx)
-                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(buff, ContextDuration.Fixed(1)).Build())
-                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Ally, radius: 30.Feet(), spreadSpeed: 40.Feet())
-                .SetType(AbilityType.Extraordinary)
-                .SetRange(AbilityRange.Personal)
-                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move)
-                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
-                .Configure();
-
-            var Buff2 = BuffConfigurator.New(CommandMoveAutoBuff2, CommandMoveAutoBuff2Guid)
-             .SetDisplayName(AuthoritativeCommandDisplayName)
-             .SetDescription(AuthoritativeCommandDescription)
-             .SetIcon(icon)
-             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-             .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New()
-                .Add<SpendMoveAction>(c => {
-                    c.OnHit = ActionsBuilder.New()
-                        .CastSpell(ability)
-                        .Build();
-                })
-                .Build())
-             .Configure();
-
-            var ability2 = ActivatableAbilityConfigurator.New(CommandMoveAutoAbility, CommandMoveAutoAbilityGuid)
-                .SetDisplayName(AuthoritativeCommandDisplayName)
-                .SetDescription(AuthoritativeCommandDescription)
-                .SetIcon(icon)
-                .SetBuff(Buff2)
-                .SetDeactivateIfOwnerDisabled(true)
-                .SetDeactivateImmediately(true)
-                .Configure();
-
-            return FeatureConfigurator.New(AuthoritativeCommandName, AuthoritativeCommandGuid)
-                    .SetDisplayName(AuthoritativeCommandDisplayName)
-                    .SetDescription(AuthoritativeCommandDescription)
-                    .SetIcon(icon)
-                    .AddFacts(new() { ability, ability2 })
-                    .Configure();
-        }
-
-        private static readonly string AuthoritativeCommandSwiftName = "MortalUsherAuthoritativeCommandSwift";
-        public static readonly string AuthoritativeCommandSwiftGuid = "{BA301623-4AF8-4898-A8DB-DA2F79F6573C}";
-
-        private static readonly string AuthoritativeCommandSwiftDisplayName = "MortalUsherAuthoritativeCommandSwift.Name";
-        private static readonly string AuthoritativeCommandSwiftDescription = "MortalUsherAuthoritativeCommandSwift.Description";
-
-        private const string AuthoritativeCommandSwiftAbility = "AuthoritativeCommandSwift.AuthoritativeCommandSwiftAbility";
-        private static readonly string AuthoritativeCommandSwiftAbilityGuid = "{A5697DB1-D8C7-438E-8E90-EE762CFF1176}";
-
-        private const string CommandSwiftMoveAutoAbility = "MortalUsher.UseCommandSwiftMoveAuto";
-        public static readonly string CommandSwiftMoveAutoAbilityGuid = "{7E7AA762-2638-40C2-ACC8-C05CD1F55FAE}";
-
-        private const string CommandSwiftMoveAutoBuff2 = "MortalUsher.CommandSwiftMoveAutoBuff2";
-        public static readonly string CommandSwiftMoveAutoBuff2Guid = "{1E426405-7AC0-4F53-A2DE-394B509D4609}";
-        public static BlueprintFeature AuthoritativeCommandSwiftConfigure()
-        {
-            var icon = AbilityRefs.CommandGreater.Reference.Get().Icon;
-            var fx = AbilityRefs.BlessingOfCourageAndLife.Reference.Get().GetComponent<AbilitySpawnFx>();
-
-            var ability = AbilityConfigurator.New(AuthoritativeCommandSwiftAbility, AuthoritativeCommandSwiftAbilityGuid)
-                .SetDisplayName(AuthoritativeCommandSwiftDisplayName)
-                .SetDescription(AuthoritativeCommandSwiftDescription)
-                .SetIcon(icon)
-                .AddComponent(fx)
-                .AddAbilityEffectRunAction(ActionsBuilder.New().ApplyBuff(AuthoritativeCommandBuffGuid, ContextDuration.Fixed(1)).Build())
-                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Ally, radius: 30.Feet(), spreadSpeed: 40.Feet())
-                .SetType(AbilityType.Extraordinary)
-                .SetRange(AbilityRange.Personal)
-                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
-                .Configure();
-
-            var Buff2 = BuffConfigurator.New(CommandSwiftMoveAutoBuff2, CommandSwiftMoveAutoBuff2Guid)
-             .SetDisplayName(AuthoritativeCommandSwiftDisplayName)
-             .SetDescription(AuthoritativeCommandSwiftDescription)
-             .SetIcon(icon)
-             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-             .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New()
-                .Add<SpendSwiftAction>(c => {
-                    c.OnHit = ActionsBuilder.New()
-                        .CastSpell(ability)
-                        .Build();
-                })
-                .Build())
-             .Configure();
-
-            var ability2 = ActivatableAbilityConfigurator.New(CommandSwiftMoveAutoAbility, CommandSwiftMoveAutoAbilityGuid)
-                .SetDisplayName(AuthoritativeCommandSwiftDisplayName)
-                .SetDescription(AuthoritativeCommandSwiftDescription)
-                .SetIcon(icon)
-                .SetBuff(Buff2)
-                .SetDeactivateIfOwnerDisabled(true)
-                .SetDeactivateImmediately(true)
-                .Configure();
-
-            return FeatureConfigurator.New(AuthoritativeCommandSwiftName, AuthoritativeCommandSwiftGuid)
-                    .SetDisplayName(AuthoritativeCommandSwiftDisplayName)
-                    .SetDescription(AuthoritativeCommandSwiftDescription)
-                    .SetIcon(icon)
-                    .AddFacts(new() { ability, ability2 })
-                    .Configure();
-        }
-
-        private static readonly string UnitedDefenseName = "MortalUsherUnitedDefense";
-        public static readonly string UnitedDefenseGuid = "{7C46838D-D2D2-4DDB-931C-25E21B33E6C4}";
-
-        private static readonly string UnitedDefenseDisplayName = "MortalUsherUnitedDefense.Name";
-        private static readonly string UnitedDefenseDescription = "MortalUsherUnitedDefense.Description";
-
-        private const string UnitedDefenseAbility = "UnitedDefense.UnitedDefenseAbility";
-        private static readonly string UnitedDefenseAbilityGuid = "{B31A6E9C-FFD0-47D2-AAC5-01F8DCA14B4D}";
-
-        private const string UnitedDefenseBuff = "UnitedDefense.UnitedDefenseBuff";
-        private static readonly string UnitedDefenseBuffGuid = "{7870DA78-C273-4A1B-B213-E0AEEB6A215F}";
-
-        private const string UnitedDefenseSelfBuff = "UnitedDefense.UnitedDefenseSelfBuff";
-        private static readonly string UnitedDefenseSelfBuffGuid = "{63ECE8A4-505B-4357-8C55-2957925EB7B4}";
-        public static BlueprintFeature UnitedDefenseConfigure()
-        {
-            var icon = FeatureRefs.BackToBack.Reference.Get().Icon;
-            var fx = AbilityRefs.DivineGuardianTrothAbility.Reference.Get().GetComponent<AbilitySpawnFx>();
-
-            var buff2 = BuffConfigurator.New(UnitedDefenseSelfBuff, UnitedDefenseSelfBuffGuid)
-                .SetDisplayName(UnitedDefenseDisplayName)
-                .SetDescription(UnitedDefenseDescription)
-                .SetIcon(icon)
-                .AddComponent<UnitedDefensePenalty>()
-                .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-                .Configure();
-
-            var buff = BuffConfigurator.New(UnitedDefenseBuff, UnitedDefenseBuffGuid)
-                .SetDisplayName(UnitedDefenseDisplayName)
-                .SetDescription(UnitedDefenseDescription)
-                .SetIcon(icon)
-                .AddContextStatBonus(StatType.AC, ContextValues.Rank(), descriptor: ModifierDescriptor.Dodge)
-                .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }).WithCustomProgression((5, 2), (9, 4), (10, 6)))
-                .Configure();
-
-            var ability = AbilityConfigurator.New(UnitedDefenseAbility, UnitedDefenseAbilityGuid)
-                .SetDisplayName(UnitedDefenseDisplayName)
-                .SetDescription(UnitedDefenseDescription)
-                .SetIcon(icon)
-                .AddComponent(fx)
-                .AllowTargeting(false, false, true, false)
-                .AddAbilityEffectRunAction(ActionsBuilder.New()
-                    .ApplyBuff(buff, ContextDuration.Fixed(1))
-                    .ApplyBuff(buff2, ContextDuration.Fixed(1), toCaster: true)
-                    .Build())
-                .SetType(AbilityType.Extraordinary)
-                .SetRange(AbilityRange.Custom)
-                .SetCustomRange(5)
-                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
-                .Configure();
-
-            return FeatureConfigurator.New(UnitedDefenseName, UnitedDefenseGuid)
-                    .SetDisplayName(UnitedDefenseDisplayName)
-                    .SetDescription(UnitedDefenseDescription)
-                    .SetIcon(icon)
-                    .AddFacts(new() { ability })
-                    .SetRanks(10)
-                    .Configure();
-        }
-
-        private const string AlliedRetribution = "MortalUsherAlliedRetribution";
-        private static readonly string AlliedRetributionGuid = "{93F9ECCA-0D43-4688-9B3C-8BDBB1A067EE}";
-
-        internal const string AlliedRetributionDisplayName = "MortalUsherAlliedRetribution.Name";
-        private const string AlliedRetributionDescription = "MortalUsherAlliedRetribution.Description";
-
-        private const string AlliedRetributionBuff = "AlliedRetribution.AlliedRetributionBuff";
-        public static readonly string AlliedRetributionBuffGuid = "{CBCCE289-469B-4F75-942C-C99D628DA8E1}";
-        public static BlueprintFeature AlliedRetributionFeature()
-        {
-            var icon = FeatureRefs.PreciseStrike.Reference.Get().Icon;
-
-            var buff = BuffConfigurator.New(AlliedRetributionBuff, AlliedRetributionBuffGuid)
-                .SetDisplayName(AlliedRetributionDisplayName)
-                .SetDescription(AlliedRetributionDescription)
-                .SetIcon(icon)
-                //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-                .Configure();
-
-            return FeatureConfigurator.New(AlliedRetribution, AlliedRetributionGuid)
-              .SetDisplayName(AlliedRetributionDisplayName)
-              .SetDescription(AlliedRetributionDescription)
+            var icon = AbilityRefs.ArcanistExploitArmoredMaskAbility.Reference.Get().Icon;
+            return FeatureConfigurator.New(PlagueMask, PlagueMaskGuid)
+              .SetDisplayName(PlagueMaskDisplayName)
+              .SetDescription(PlagueMaskDescription)
               .SetIcon(icon)
-              .AddComponent<AlliedRetributionTrigger>()
-              .AddAttackBonusAgainstFactOwner(1, 0, buff, ModifierDescriptor.Morale)
-              .AddDamageBonusAgainstFactOwner(0, buff, 1, ModifierDescriptor.Morale)
-              .AddContextRankConfig(ContextRankConfigs.FeatureRank(AlliedRetributionGuid))
-              .SetRanks(10)
+              .AddFacts(new() { AbilityRefs.Invisibility.ToString() })
+              .Configure();
+        }
+
+        private const string ProficiencyScythes = "MortalUsherProficiencyScythes";
+        public static readonly string ProficiencyScythesGuid = "{31A91ACF-DEA1-44AC-9A52-EDAB47B6DDFF}";
+
+        internal const string ProficiencyScythesDisplayName = "MortalUsherProficiencyScythes.Name";
+        private const string ProficiencyScythesDescription = "MortalUsherProficiencyScythes.Description";
+        public static BlueprintFeature ProficiencyScythesFeature()
+        {
+            return FeatureConfigurator.New(ProficiencyScythes, ProficiencyScythesGuid)
+              .SetDisplayName(ProficiencyScythesDisplayName)
+              .SetDescription(ProficiencyScythesDescription)
+              .AddProficiencies(weaponProficiencies: new WeaponCategory[] { WeaponCategory.Scythe })
               .Configure();
         }
 
