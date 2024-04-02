@@ -56,15 +56,15 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             var progression =
                 ProgressionConfigurator.New(ClassProgressName, ClassProgressGuid)
                 .SetClasses(ArchetypeGuid)
-                .AddToLevelEntry(1, AlignSpamFeat(), PsychicEsotericaFeat(), ProficiencyScythesFeature())
+                .AddToLevelEntry(1, AlignSpamFeat(), ReapingStrikeFeature(), PsychicEsotericaFeat(), ProficiencyScythesFeature())
                 .AddToLevelEntry(2)
-                .AddToLevelEntry(3, PlagueMaskFeature())
+                .AddToLevelEntry(3, ReapingStrikeGuid, PlagueMaskFeature())
                 .AddToLevelEntry(4)
-                .AddToLevelEntry(5, CatrinaFeature())
+                .AddToLevelEntry(5, ReapingStrikeGuid, CatrinaFeature())
                 .AddToLevelEntry(6, BetterEsotericaFeat())
-                .AddToLevelEntry(7, MorrignaFeature())
+                .AddToLevelEntry(7, ReapingStrikeGuid, MorrignaFeature())
                 .AddToLevelEntry(8)
-                .AddToLevelEntry(9, VanthWingsFeature())
+                .AddToLevelEntry(9, ReapingStrikeGuid, VanthWingsFeature())
                 .AddToLevelEntry(10, FeatherCloakFeature())
                 .SetUIGroups(UIGroupBuilder.New()
                     .AddGroup(new Blueprint<BlueprintFeatureBaseReference>[] { PsychicEsotericaGuid, BetterEsotericaGuid }))
@@ -286,39 +286,21 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .Configure();
         }
 
-        private const string PreemptiveStrike = "MortalUsherPreemptiveStrike";
-        public static readonly string PreemptiveStrikeGuid = "{27C488F2-7613-4210-BFDF-56A4A49133B9}";
+        private const string ReapingStrike = "MortalUsherReapingStrike";
+        public static readonly string ReapingStrikeGuid = "{D32E9839-D818-41CD-97BA-43E6AD842B82}";
 
-        internal const string PreemptiveStrikeDisplayName = "MortalUsherPreemptiveStrike.Name";
-        private const string PreemptiveStrikeDescription = "MortalUsherPreemptiveStrike.Description";
-
-        private const string PreemptiveStrikeBuff = "PreemptiveStrike.PreemptiveStrikeBuff";
-        public static readonly string PreemptiveStrikeBuffGuid = "{830870C8-010D-4F44-9511-F1FF08B846D6}";
-
-        private const string PreemptiveStrikeBuff2 = "PreemptiveStrike.PreemptiveStrikeBuff2";
-        public static readonly string PreemptiveStrikeBuff2Guid = "{3F044DF1-C6DB-4392-97FF-9CE66B29C7E1}";
-        public static BlueprintFeature PreemptiveStrikeFeature()
+        internal const string ReapingStrikeDisplayName = "MortalUsherReapingStrike.Name";
+        private const string ReapingStrikeDescription = "MortalUsherReapingStrike.Description";
+        public static BlueprintFeature ReapingStrikeFeature()
         {
-            var icon = FeatureRefs.Opportunist.Reference.Get().Icon;
+            var icon = AbilityRefs.ScreamReaperAbility.Reference.Get().Icon;
 
-            BuffConfigurator.New(PreemptiveStrikeBuff, PreemptiveStrikeBuffGuid)
-                .SetDisplayName(PreemptiveStrikeDisplayName)
-                .SetDescription(PreemptiveStrikeDescription)
-                .SetIcon(icon)
-                //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-                .Configure();
-
-            BuffConfigurator.New(PreemptiveStrikeBuff2, PreemptiveStrikeBuff2Guid)
-                .SetDisplayName(PreemptiveStrikeDisplayName)
-                .SetDescription(PreemptiveStrikeDescription)
-                .SetIcon(icon)
-                //.AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-                .Configure();
-
-            return FeatureConfigurator.New(PreemptiveStrike, PreemptiveStrikeGuid)
-              .SetDisplayName(PreemptiveStrikeDisplayName)
-              .SetDescription(PreemptiveStrikeDescription)
+            return FeatureConfigurator.New(ReapingStrike, ReapingStrikeGuid)
+              .SetDisplayName(ReapingStrikeDisplayName)
+              .SetDescription(ReapingStrikeDescription)
               .SetIcon(icon)
+              .AddComponent<ReapingStrikeComp>()
+              .SetRanks(10)
               .Configure();
         }
 

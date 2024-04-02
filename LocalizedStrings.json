@@ -13310,6 +13310,116 @@
     "Key": "ForestWardenPreemptiveStrike.Description",
     "enGB": "The forest warden strikes before her targets can react. When acting during a surprise round, she can take one move action and one standard action. She cannot take a full-round action during a surprise round, as normal.",
     "zhCN": "森林守护者能在目标反应过来之前发起攻击。在突袭轮中行动时，她可以使用一个移动动作和一个标准动作。但像平常一样，她还是不能使用整轮动作。"
+  },
+  {
+    "Key": "MortalUsher.Name",
+    "ProcessTemplates": false,
+    "enGB": "Mortal Usher",
+    "zhCN": "凡世摆渡人"
+  },
+  {
+    "Key": "MortalUsher.Description",
+    "enGB": "Whether the trouble is a formidable lich draining power from thousands of enslaved ghosts or a qlippoth funneling stolen souls through an Abyssal stronghold, occasionally the psychopomps must enlist a mortal usher—a living agent imbued with their power and cunning—to travel where even the guardians of the River of Souls cannot tread.",
+    "zhCN": "有时某个麻烦的巫妖会奴役千万魂灵并从中汲取力量，或是某个古魔通过某个深渊要塞窃取灵魂，让招魂者们感到头大。这些灵魂之河的守卫们偶尔会考虑给凡间的代理人弄个编制，赋予其招魂者们的力量与智慧，以代为前往这些自身无法涉足之处履行职责。"
+  },
+  {
+    "Key": "MortalUsherProficiencyScythes.Name",
+    "ProcessTemplates": false,
+    "enGB": "Weapon and Armor Proficiency",
+    "zhCN": "凡世摆渡人擅长"
+  },
+  {
+    "Key": "MortalUsherProficiencyScythes.Description",
+    "enGB": "A mortal usher gains proficiency with scythes.",
+    "zhCN": "凡世摆渡人擅长巨镰。"
+  },
+  {
+    "Key": "MortalUsherReapingStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Reaping Strike",
+    "zhCN": "收割斩"
+  },
+  {
+    "Key": "MortalUsherReapingStrike.Description",
+    "enGB": "At 1st level, whenever a mortal usher deals hit point damage, he can once per round deal an additional 1d6 points of damage to the target, plus an additional 1d6 points of damage for every 2 additional class levels he has beyond 1st. This damage is positive energy damage if the target is undead, or negative energy damage if the target is living; creatures that are neither living nor dead, such as constructs, are unaffected by this ability.",
+    "zhCN": "1级时，每当凡世渡魂人造成伤害，每轮一次，他可以对目标造成额外的1d6伤害，1级后每有2个等级该伤害额外提升1d6。如果目标为不死生物则该伤害类型为正能量，如果目标为活物则该伤害类型为负能量，构装体等非生非死的目标则不受该能力影响。"
+  },
+  {
+    "Key": "MortalUsherPsychicEsoterica.Name",
+    "ProcessTemplates": false,
+    "enGB": "Vital Strike",
+    "zhCN": "要害打击"
+  },
+  {
+    "Key": "MortalUsherPsychicEsoterica.Description",
+    "enGB": "At 1st level, a mortal usher gains the Vital Strike feat, and at 6th level he gains the Improved Vital Strike feat, even if he would not normally meet the prerequisites for them. If the mortal usher already has Vital Strike or Improved Vital Strike when he would gain it through this ability, he can immediately swap it for another feat for which he qualifies. For the purposes of qualifying for any feat that includes Vital Strike as a prerequisite, the mortal usher can use his class level in place of his base attack bonus, adding this value to his base attack bonus from any other classes he has as normal.",
+    "zhCN": "1级时，凡世渡魂人获得要害打击专长，6级时获得精通要害打击专长，即使其未满足通常所需的前置要求。如果凡世渡魂人在应通过该能力获得专长时已经拥有对应专长，则他能立刻将相应专长换为满足条件的另一个专长。在满足任何以要害打击作为前置专长的专长前置要求时，将凡世渡魂人等级作为基础攻击加值，如常加上来自其他职业的基础攻击加值。"
+  },
+  {
+    "Key": "MortalUsherSanctifiedRogue.Name",
+    "ProcessTemplates": false,
+    "enGB": "Mortal Talents",
+    "zhCN": "凡世艺业"
+  },
+  {
+    "Key": "MortalUsherSanctifiedRogue.Description",
+    "enGB": "At 2nd level, a mortal usher must choose a class he belonged to before adding the prestige class. At 2nd level and every 2 levels thereafter, the mortal usher gains the class features of an additional level in his chosen class. He still retains the Hit Dice, base attack bonus, saving throw bonuses, and skill ranks of the prestige class, but gains all other class features of his chosen class at the specified levels.",
+    "zhCN": "2级时，凡世渡魂人必须选择一个获得进阶之前所拥有的职业。在2级及此后每2级，凡世渡魂人获得所选职业额外一个等级的职业特性。他仍然保留该进阶职业的生命骰、基础攻击加值、豁免加值与技能点，但在相应等级获得所选职业的其他职业特性。"
+  },
+  {
+    "Key": "MortalUsherPlagueMask.Name",
+    "ProcessTemplates": false,
+    "enGB": "Nosoi Plague Mask",
+    "zhCN": "疫鸟面具"
+  },
+  {
+    "Key": "MortalUsherPlagueMask.Description",
+    "enGB": "At 3rd level, a mortal usher can conjure or dismiss a nosoi plague mask as a free action. This plague mask is a physical manifestation of the mortal usher’s soul and cannot be destroyed or stolen. As long as the mortal usher’s nosoi plague mask is conjured, the mortal usher gains the ability to cast invisibility on himself as a standard action at will.",
+    "zhCN": "3级时，凡世渡魂人可以以自由动作召唤或解消一个疫鸟面具。这个瘟疫医生面具是凡世渡魂人灵魂的具现，无法被毁坏或窃取。只要疫鸟面具被召唤出来，凡世渡魂人就得到以标准动作任意对自己使用隐形术的能力。"
+  },
+  {
+    "Key": "MortalUsherMorrigna.Name",
+    "ProcessTemplates": false,
+    "enGB": "Morrigna Wrappings",
+    "zhCN": "莫瑞甘娜之拥"
+  },
+  {
+    "Key": "MortalUsherMorrigna.Description",
+    "enGB": "At 7th level, a mortal usher gains the ability to designate any cloak, scarf, robe, or shirt in his possession as his wrappings, granting it unique powers in addition to any abilities or enchantments it may already have. The wrappings grant the mortal usher a natural armor bonus equal to half his class level as long as it is in his possession.",
+    "zhCN": "7级时，凡世渡魂人可以指定身上任一斗篷、围巾、袍子或衬衫作为武装，赋予其本身能力之外的独特力量。只要仍被凡世渡魂人穿着，该武装就能提供等于职业等级一半的天生护甲加值。"
+  },
+  {
+    "Key": "MortalUsherVanthWings.Name",
+    "ProcessTemplates": false,
+    "enGB": "Vanth Wings",
+    "zhCN": "万斯之翼"
+  },
+  {
+    "Key": "MortalUsherVanthWings.Description",
+    "enGB": "At 9th level, a mortal usher gains Wings as a bonus feat, and resistance to cold equal to 10 + his class level. The mortal usher gains a +5 circumstance bonus on Mobility checks and on concentration checks attempted while casting a spell..",
+    "zhCN": "9级时，凡世渡魂人获得飞翼额外专长，以及10+职业等级的寒冷抗性。凡世渡魂人也在灵巧检定和施法专注检定上获得+5环境加值。"
+  },
+  {
+    "Key": "MortalUsherFeatherCloak.Name",
+    "ProcessTemplates": false,
+    "enGB": "Yamaraj-Feather Cloak",
+    "zhCN": "阎罗羽袍"
+  },
+  {
+    "Key": "MortalUsherFeatherCloak.Description",
+    "enGB": "At 10th level, a mortal usher becomes immune to electricity and death effects, and whenever he is struck by an attack or effect dealing electricity damage, he regains 1 hit point per 3 points of electricity damage the attack or effect would normally deal.",
+    "zhCN": "10级时，凡世渡魂人免疫电击和即死效果，且每当遭受造成电击伤害的攻击或效果，都能获得相当于原本应受伤害1/3的治疗。"
+  },
+  {
+    "Key": "MortalUsherCatrina.Name",
+    "ProcessTemplates": false,
+    "enGB": "Catrina’s Calm",
+    "zhCN": "卡崔娜之抚"
+  },
+  {
+    "Key": "MortalUsherCatrina.Description",
+    "enGB": "At 5th level, any scythe wielded by a mortal usher gains the disruption weapon quality.",
+    "zhCN": "5级起，凡世摆渡人持用的任何巨镰均获得瓦解武器特性。"
   }
 
 ]
