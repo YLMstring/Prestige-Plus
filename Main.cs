@@ -182,6 +182,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("biggg"), defaultValue: true, Helpers.CreateString("toggle-desc18", "Mammoth Rider"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("usher"), defaultValue: true, Helpers.CreateString("toggle-desc98", "Mortal Usher"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("angel"), defaultValue: true, Helpers.CreateString("toggle-desc9", "Sanguine Angel (Lite)"))
               .ShowVisualConnection())
           .AddToggle(
@@ -483,6 +486,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("savageb"))) { SavageBarbarian.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("savagew"))) { SavageWarrior.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("forestwarden"))) { ForestWarden.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("usher"))) { MortalUsher.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
