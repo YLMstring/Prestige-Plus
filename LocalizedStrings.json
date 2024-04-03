@@ -3760,7 +3760,7 @@
 
   {
     "Key": "SwiftDeath1.Description",
-    "enGB": "Your Target Assassination becomes a standard action. At 10th assassin level, it becomes a move action.",
+    "enGB": "Your target assassination becomes a standard action. At 10th assassin level, it becomes a move action.",
     "ruRU": "Ваша способность Покушение становится обычным действием, а при достижении 10 уровня ассасина - сопутствующим.",
     "zhCN": "你的刺杀变成标准动作，刺客10级时还会变成移动动作。"
   },
@@ -3777,7 +3777,7 @@
 
   {
     "Key": "SwiftDeath2.Description",
-    "enGB": "Your Target Assassination becomes a move action. At 10th assassin level, it becomes a swift action.",
+    "enGB": "Your target assassination becomes a move action. At 10th assassin level, it becomes a swift action.",
     "ruRU": "Ваша способность Покушение становится сопутствующим действием, а при достижении 10 уровня ассасина - быстрым.",
     "zhCN": "你的刺杀变成移动动作，刺客10级时还会变成迅捷动作。"
   },
