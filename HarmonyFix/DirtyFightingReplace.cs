@@ -32,7 +32,10 @@ namespace PrestigePlus.HarmonyFix
                 bool isVital = false;
                 foreach (var pre in prere)
                 {
-                    if (pre.Feature == FeatureRefs.VitalStrikeFeature.Reference.Get())
+                    if (pre.Feature == FeatureRefs.VitalStrikeFeature.Reference.Get() || 
+                        pre.Feature == FeatureRefs.VitalStrikeFeatureImproved.Reference.Get() || 
+                        pre.Feature == FeatureRefs.VitalStrikeFeatureGreater.Reference.Get() || 
+                        pre.Feature == FeatureRefs.VitalStrikeMythicFeat.Reference.Get())
                     {
                         isVital = true;
                         break;

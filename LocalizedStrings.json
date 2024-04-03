@@ -3760,9 +3760,9 @@
 
   {
     "Key": "SwiftDeath1.Description",
-    "enGB": "Your Death Attack becomes a standard action. At 10th assassin level, it becomes a move action.",
+    "enGB": "Your Target Assassination becomes a standard action. At 10th assassin level, it becomes a move action.",
     "ruRU": "Ваша способность Покушение становится обычным действием, а при достижении 10 уровня ассасина - сопутствующим.",
-    "zhCN": "你的夺命攻击变成标准动作，刺客10级时还会变成移动动作。"
+    "zhCN": "你的刺杀变成标准动作，刺客10级时还会变成移动动作。"
   },
 
   {
@@ -3777,9 +3777,9 @@
 
   {
     "Key": "SwiftDeath2.Description",
-    "enGB": "Your Death Attack becomes a move action. At 10th assassin level, it becomes a swift action.",
+    "enGB": "Your Target Assassination becomes a move action. At 10th assassin level, it becomes a swift action.",
     "ruRU": "Ваша способность Покушение становится сопутствующим действием, а при достижении 10 уровня ассасина - быстрым.",
-    "zhCN": "你的夺命攻击变成移动动作，刺客10级时还会变成迅捷动作。"
+    "zhCN": "你的刺杀变成移动动作，刺客10级时还会变成迅捷动作。"
   },
 
   {
@@ -13396,7 +13396,7 @@
   },
   {
     "Key": "MortalUsherVanthWings.Description",
-    "enGB": "At 9th level, a mortal usher gains Wings as a bonus feat, and resistance to cold equal to 10 + his class level. The mortal usher gains a +5 circumstance bonus on Mobility checks and on concentration checks attempted while casting a spell..",
+    "enGB": "At 9th level, a mortal usher gains Wings as a bonus feat, and resistance to cold equal to 10 + his class level. The mortal usher gains a +5 circumstance bonus on Mobility checks and on concentration checks attempted while casting a spell.",
     "zhCN": "9级时，凡世渡魂人获得飞翼额外专长，以及10+职业等级的寒冷抗性。凡世渡魂人也在灵巧检定和施法专注检定上获得+5环境加值。"
   },
   {
