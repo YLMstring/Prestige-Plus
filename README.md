@@ -1,4 +1,4 @@
-# Prestige Plus v2.9.7 for WoTR 
+# Prestige Plus v2.9.8 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -145,6 +145,8 @@
 - Steed’s Reach is togglable, because longer reach might have negative impact in the game.
 #### Homebrew Options:  
 - Gigantic Assault: a mythic ability to charge like a beast!
+### [Mortal Usher](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/i-m/mortal-usher/)
+- This is absolutely my favorite.
 ### [Sanguine Angel Class (Lite)](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/sanguine-angel/)
 - Requires [Dark Codex](https://github.com/Truinto/DarkCodex), or you won't gain Prodigious Two-Weapon Fighting.
 - The class has 10 levels, but I only implement the first 3 levels because it doesn't have good stuff at higher levels.
