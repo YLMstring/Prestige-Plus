@@ -191,14 +191,9 @@
 #### Barbarian:  
 - [Drunken Brute](https://www.d20pfsrd.com/classes/core-classes/barbarian/archetypes/paizo-barbarian-archetypes/drunken-brute/)
 - Drinking a potion is already a move action in wotr, so Raging Drunk should make it a swift action.
-- New Rage Power: [Roaring Drunk](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/roaring-drunk-ex)
-- New Rage Power: [Liquid Courage](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/liquid-courage-ex)
 - The drinks are on us, the hangover is on you.
 - [Savage Barbarian](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Barbarian%20Savage%20Barbarian)
 - [Untamed Rager](https://www.d20pfsrd.com/classes/core-classes/barbarian/archetypes/paizo-barbarian-archetypes/untamed-rager-barbarian-archetype/)
-- New Rage Power: [Intimidating Glare](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/intimidating-glare-ex)
-- New Rage Power: [Atavism](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/atavism-totem-su/)
-- New Rage Power: [Greater Atavism](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/atavism-totem-greater-su/)
 #### Bloodrager:  
 - [Blood Conduit](https://www.d20pfsrd.com/classes/hybrid-classes/bloodrager/archetypes/paizo-bloodrager-archetypes/blood-conduit/)
 #### Cavalier:  
@@ -224,17 +219,10 @@
 - [Weapon Master](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Weapon%20Master): Fighters that have the weapon master archetype can select advanced weapon training beginning at 4th level. A weapon master can select this feat as a bonus feat and it doesn’t count for the purpose of the requirement that it can be taken at most once per 5 fighter levels.
 #### Magus:  
 - [Spire Defender](https://www.d20pfsrd.com/classes/base-classes/magus/archetypes/paizo-magus-archetypes/spire-defender/)
-- New Magus Arcana: [Maneuver Mastery](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/maneuver-mastery-ex)
-- New Magus Arcana: [Familiar](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/familiar-ex)
-- New Magus Arcana: [Reach Spellstrike](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/reach-spellstrike-su/)
-- New Magus Arcana: [Close Range](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/close-range-ex/)
-- New Magus Arcana: [Disruptive](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/disruptive-ex)
 #### Monk:  
 - [Maneuver Master](https://www.d20pfsrd.com/classes/core-classes/monk/archetypes/paizo-monk-archetypes/maneuver-master/)
 - This is absolutely my favorite.
 - [Master of Many Styles](https://www.d20pfsrd.com/classes/core-classes/monk/archetypes/paizo-monk-archetypes/master-of-many-styles/)
-- New Ki Power: [One Touch](https://www.aonprd.com/MonkUCKiPowers.aspx)
-- New Ki Power: [Freedom of Movement](https://www.aonprd.com/MonkUCKiPowers.aspx)
 - [Weapon Adept](https://www.d20pfsrd.com/classes/core-classes/monk/archetypes/paizo-monk-archetypes/weapon-adept/)
 #### Oracle:  
 - [Truth Seeker](https://www.d20pfsrd.com/classes/base-classes/oracle/archetypes/paizo-oracle-archetypes/seeker/)
@@ -347,6 +335,24 @@
 - [Quick Dirty Trick](https://www.d20pfsrd.com/feats/combat-feats/quick-dirty-trick-combat/)
 - [Dirty Trick Master](https://www.d20pfsrd.com/feats/combat-feats/dirty-trick-master-combat/)
 - [Ladder Lock](https://www.d20pfsrd.com/feats/combat-feats/equipment-trick-combat/)
+### New Ki Powers
+
+- [One Touch](https://www.aonprd.com/MonkUCKiPowers.aspx)
+- [Freedom of Movement](https://www.aonprd.com/MonkUCKiPowers.aspx)
+### New Magus Arcana
+
+- [Maneuver Mastery](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/maneuver-mastery-ex)
+- [Familiar](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/familiar-ex)
+- [Reach Spellstrike](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/reach-spellstrike-su/)
+- [Close Range](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/close-range-ex/)
+- [Disruptive](https://www.d20pfsrd.com/classes/base-classes/magus/magus-arcana/paizo-magus-arcana/disruptive-ex)
+### New Rage Powers
+
+- [Roaring Drunk](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/roaring-drunk-ex)
+- [Liquid Courage](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/liquid-courage-ex)
+- [Intimidating Glare](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/intimidating-glare-ex)
+- [Atavism](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/atavism-totem-su/)
+- [Greater Atavism](https://www.d20pfsrd.com/classes/core-classes/barbarian/rage-powers/paizo-rage-powers/atavism-totem-greater-su/)
 ### New Rogue Talents
 
 - [Another Day](https://www.d20pfsrd.com/classes/core-classes/rogue/rogue-talents/paizo-rogue-advanced-talents/another-day-ex/)
