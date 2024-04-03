@@ -10746,12 +10746,12 @@
     "Key": "EvangelistForestWardenClass0Align.Name",
     "ProcessTemplates": false,
     "enGB": "Forest Warden",
-    "ruRU": "Страж леса"
+    "ruRU": "Хранитель леса"
   },
   {
     "Key": "EvangelistForestWardenClass0Align.Description",
     "enGB": "Forest Warden",
-    "ruRU": "Страж леса"
+    "ruRU": "Хранитель леса"
   },
   {
     "Key": "SpireDefenderDisruptive.Name",
