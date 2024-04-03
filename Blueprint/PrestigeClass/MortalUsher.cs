@@ -196,7 +196,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string CatrinaDescription = "MortalUsherCatrina.Description";
         public static BlueprintFeature CatrinaFeature()
         {
-            var icon = AbilityRefs.UndeathToDeath.Reference.Get().Icon;
+            var icon = AbilityRefs.EuphoricTranquilityCast.Reference.Get().Icon;
 
             var feat = FeatureConfigurator.New(CatrinaFeat, CatrinaFeatGuid)
               .SetDisplayName(CatrinaDisplayName)
@@ -225,7 +225,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string FeatherCloakDescription = "MortalUsherFeatherCloak.Description";
         public static BlueprintFeature FeatherCloakFeature()
         {
-            var icon = AbilityRefs.CloakOfTheLionAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.IceBody.Reference.Get().Icon;
             return FeatureConfigurator.New(FeatherCloak, FeatherCloakGuid)
               .SetDisplayName(FeatherCloakDisplayName)
               .SetDescription(FeatherCloakDescription)
@@ -263,7 +263,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string PlagueMaskDescription = "MortalUsherPlagueMask.Description";
         public static BlueprintFeature PlagueMaskFeature()
         {
-            var icon = AbilityRefs.ArcanistExploitArmoredMaskAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.FalseLife.Reference.Get().Icon;
             return FeatureConfigurator.New(PlagueMask, PlagueMaskGuid)
               .SetDisplayName(PlagueMaskDisplayName)
               .SetDescription(PlagueMaskDescription)
@@ -293,7 +293,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string ReapingStrikeDescription = "MortalUsherReapingStrike.Description";
         public static BlueprintFeature ReapingStrikeFeature()
         {
-            var icon = AbilityRefs.ScreamReaperAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.BrokenPhylacteryBodyScytheAbility.Reference.Get().Icon;
 
             return FeatureConfigurator.New(ReapingStrike, ReapingStrikeGuid)
               .SetDisplayName(ReapingStrikeDisplayName)
