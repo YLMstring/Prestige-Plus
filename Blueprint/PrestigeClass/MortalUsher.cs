@@ -230,7 +230,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(FeatherCloakDisplayName)
               .SetDescription(FeatherCloakDescription)
               .SetIcon(icon)
-              .AddEnergyDamageImmunity(DamageEnergyType.Electricity, true, AddEnergyDamageImmunity.HealingRate.DamageDiv3)
+              .AddComponent<AddEnergyDamageImmunity>(c => { c.EnergyType = DamageEnergyType.Electricity; c.HealOnDamage = true; c.m_HealRate = AddEnergyDamageImmunity.HealingRate.DamageDiv3; })
               .AddSpellImmunityToSpellDescriptor(null, SpellDescriptor.Death)
               .AddBuffDescriptorImmunity(descriptor: SpellDescriptor.Death)
               .Configure();
