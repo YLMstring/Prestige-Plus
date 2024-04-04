@@ -118,6 +118,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(PsychicEsotericaDisplayName)
               .SetDescription(PsychicEsotericaDescription)
               .SetIcon(icon)
+              .AddPrerequisiteNoFeature(FeatureRefs.VitalStrikeFeature.ToString())
               .AddFacts(new() { FeatureRefs.VitalStrikeFeature.ToString() })
               .Configure();
 
@@ -151,6 +152,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(PsychicEsotericaDisplayName)
               .SetDescription(PsychicEsotericaDescription)
               .SetIcon(icon)
+              .AddPrerequisiteNoFeature(FeatureRefs.VitalStrikeFeatureImproved.ToString())
               .AddFacts(new() { FeatureRefs.VitalStrikeFeatureImproved.ToString() })
               .Configure();
 
