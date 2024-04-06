@@ -12883,7 +12883,7 @@
     "Key": "BoltAce.Description",
     "enGB": "While gunslingers are full of sound and fury, there is a class of gunslingers that never soil their hands with powder or feel the sting of gun smoke. They commit their deeds in a more hushed manner, but with just as much flair.",
     "ruRU": "Хотя стрелки обычно шумные и яростные, существуют такие, которые никогда не пачкают руки порохом и не чувствуют орудийного дыма. Свои дела они совершают более тихо, но с таким же талантом.",
-    "zhCN": "尽管铳士一般总是伴随着噪音和怒火登场，仍然有一些铳士既不会在手上沾染火药，也不会闻到刺鼻的硝烟。他们使用更安静的工具来展示他们的勇毅技巧和同其他铳士一样高超的天分。"
+    "zhCN": "尽管枪手一般总是伴随着噪音和怒火登场，仍然有一些枪手既不会在手上沾染火药，也不会闻到刺鼻的硝烟。他们使用更安静的工具来展示他们的勇毅技巧和同其他枪手一样高超的天分。"
   },
   {
     "Key": "GunslingerGunsmith.Name",
@@ -12909,7 +12909,7 @@
     "Key": "GunslingerGrit.Description",
     "enGB": "A gunslinger makes her mark upon the world with daring deeds. Some gunslingers claim they belong to a mystical way of the gun, but it’s more likely that the volatile nature of firearms simply prunes the unlucky and careless from their ranks. Whatever the reason, all gunslingers have grit. In game terms, grit is a fluctuating measure of a gunslinger’s ability to perform amazing actions in combat. At the start of each day, a gunslinger gains a number of grit points equal to her Wisdom modifier (minimum 1). Her grit goes up or down throughout the day, but usually cannot go higher than her Wisdom modifier (minimum 1), though some feats and magic items may affect this maximum. A bolt ace regains grit when she scores a critical hit or deals a killing blow with any kind of crossbow.",
     "ruRU": "Стрелок оставляет свой след в мире с помощью деяний. Некоторые стрелки утверждают, что они созданы для таинственного пути оружия, но более вероятно, что изменчивая природа огнестрельного оружия просто отталкивает неудачливых и небрежных из их рядов. Тем не менее, у всех стрелков есть выдержка. С точки зрения игры, выдержка - это колеблющаяся мера способности стрелка совершать удивительные действия в бою. В начале каждого дня стрелок получает количество очков выдержки, равное его модификатору Мудрости (минимум 1). Его очки выдержки повышаются или понижаются в течение дня, но обычно не могут быть выше модификатора Мудрости (минимум 1), хотя некоторые черты и магические предметы могут влиять на этот максимум. Мастер арбалетов восполняет свои очки выдержки, когда наносит критический или смертельный удар при помощи арбалета.",
-    "zhCN": "铳士用英勇之举在世上留下自己的印记。一些铳士声称她们属于某种枪械的神秘之道，但更可能只是火器那不稳定且危险的天性削减了她们的不幸和疏忽。不管如何，所有铳士都拥有勇毅能力。用游戏术语而言，勇毅值是一个表示铳士在战斗中完成惊人动作的能力的指标。在每天开始时，铳士在勇毅值上获得等于其感知修正的点数（至少为1）。勇毅值在一天当中不停上下浮动，但一般不能高于铳士的感知修正（至少为1），不过一些专长和魔法物品可能会影响这一最大值。王牌弩手会在使用任何种类的弩确认重击或一弩致命时回复勇毅值。"
+    "zhCN": "枪手用英勇之举在世上留下自己的印记。一些枪手声称她们属于某种枪械的神秘之道，但更可能只是火器那不稳定且危险的天性削减了她们的不幸和疏忽。不管如何，所有枪手都拥有勇毅能力。用游戏术语而言，勇毅值是一个表示枪手在战斗中完成惊人动作的能力的指标。在每天开始时，枪手在勇毅值上获得等于其感知修正的点数（至少为1）。勇毅值在一天当中不停上下浮动，但一般不能高于枪手的感知修正（至少为1），不过一些专长和魔法物品可能会影响这一最大值。王牌弩手会在使用任何种类的弩确认重击或一弩致命时回复勇毅值。"
   },
   {
     "Key": "GunslingerSharpShoot.Name",
@@ -12955,26 +12955,26 @@
     "ProcessTemplates": false,
     "enGB": "Gunslinger’s Dodge",
     "ruRU": "Уклонение стрелка",
-    "zhCN": "铳士闪避"
+    "zhCN": "枪手闪避"
   },
   {
     "Key": "GunslingerDodge.Description",
     "enGB": "At 1st level, the gunslinger gains an uncanny knack for getting out of the way of ranged attacks. When a ranged attack is made against the gunslinger, once per round she can spend 1 grit point to gain a +2 bonus to AC against the triggering attack. The gunslinger can only perform this deed while wearing medium or light armor.",
     "ruRU": "На 1 уровне стрелок получает невероятное умение уклоняться от дистанционных атак. Когда стрелок становится целью дистанционной атаки, раз за раунд он может потратить 1 очко выдержки чтобы получить бонус +2 к защите против этой атаки. Стрелок может выполнить это деяние только если он облачен в среднюю или легкую броню.",
-    "zhCN": "1级时，铳士在规避远程攻击时获得惊艳窍门。当受到远程攻击时，每轮一次，铳士可以消耗1点勇毅令针对此次攻击的AC将获得+2加值。铳士只能在穿着轻甲或无甲时使用此炫技。"
+    "zhCN": "1级时，枪手在规避远程攻击时获得惊艳窍门。当受到远程攻击时，每轮一次，枪手可以消耗1点勇毅令针对此次攻击的AC将获得+2加值。枪手只能在穿着轻甲或无甲时使用此炫技。"
   },
   {
     "Key": "GunslingerInitiative.Name",
     "ProcessTemplates": false,
     "enGB": "Gunslinger Initiative",
     "ruRU": "Инициатива стрелка",
-    "zhCN": "铳士先攻"
+    "zhCN": "枪手先攻"
   },
   {
     "Key": "GunslingerInitiative.Description",
     "enGB": "At 3rd level, the gunslinger gains a +2 bonus on initiative checks.",
     "ruRU": "На 3 уровне стрелок получает бонус +2 к инициативе.",
-    "zhCN": "3级起，铳士在先攻检定上获得+2加值。"
+    "zhCN": "3级起，枪手在先攻检定上获得+2加值。"
   },
   {
     "Key": "GunslingerNimble.Name",
@@ -12987,7 +12987,7 @@
     "Key": "GunslingerNimble.Description",
     "enGB": "Starting at 2nd level, a gunslinger gains a +1 dodge bonus to AC while wearing light or no armor. Anything that causes the gunslinger to lose her Dexterity bonus to AC also causes the gunslinger to lose this dodge bonus.",
     "ruRU": "На 2 уровне, если стрелок облачен в легкую броню или не носит брони вовсе, он получает бонус уклонения +1 к защите. Если стрелок теряет свой бонус Ловкости к защите, то он также теряет и этот бонус уклонения.",
-    "zhCN": "2级起，当铳士穿着轻甲或无甲时AC获得+1闪避加值。任何使铳士无法将敏捷加至AC的效果均会令本能力无效。"
+    "zhCN": "2级起，当枪手穿着轻甲或无甲时AC获得+1闪避加值。任何使枪手无法将敏捷加至AC的效果均会令本能力无效。"
   },
   {
     "Key": "GunslingerGrit1.Name",
