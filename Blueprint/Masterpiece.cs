@@ -98,7 +98,7 @@ namespace PrestigePlus.Blueprint
     {
         private const string BardMasterpieceCore = "BardMasterpiece.BardMasterpieceCore";
         public static readonly string BardMasterpieceCoreGuid = "{0901EA8F-1CAE-465D-A272-BAB8FEE863E4}";
-        private static void CreateBardMasterpieceCore()
+        public static void CreateBardMasterpieceCore()
         {
             var icon = AbilityRefs.DeadlyPerformanceAbility.Reference.Get().Icon;
 

@@ -362,6 +362,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("mythicheritage"), defaultValue: true, Helpers.CreateString("toggle-desc86", "Racial Heritage (Mythic)"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("masterpiece"), defaultValue: true, Helpers.CreateString("toggle-desc99", "Bardic Masterpieces"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("magehand"), defaultValue: true, Helpers.CreateString("toggle-desc39", "Magic Trick Feats"))
               .ShowVisualConnection())
           .AddToggle(
@@ -487,6 +490,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("savagew"))) { SavageWarrior.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("forestwarden"))) { ForestWarden.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("usher"))) { MortalUsher.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("masterpiece"))) { Masterpiece.CreateBardMasterpieceCore(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
