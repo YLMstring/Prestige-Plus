@@ -72,15 +72,16 @@ namespace PrestigePlus.Blueprint
               .SetDisplayName(TripleTimeDisplayName)
               .SetDescription(TripleTimeDescription)
               .SetIcon(icon)
-              .AddBuffMovementSpeed(value: 5, descriptor: ModifierDescriptor.Enhancement)
+              .AddBuffMovementSpeed(value: 10, descriptor: ModifierDescriptor.Enhancement)
               .Configure();
 
             var shoot = ActionsBuilder.New()
-                .ApplyBuff(buff, ContextDuration.Fixed(1, Kingmaker.UnitLogic.Mechanics.DurationRate.Hours))
+                .ApplyBuff(buff, ContextDuration.Variable(ContextValues.Rank(), Kingmaker.UnitLogic.Mechanics.DurationRate.TenMinutes))
                 .Build();
 
             var ability = AbilityConfigurator.New(TripleTimeAblity, TripleTimeAblityGuid)
                 .AddAbilityEffectRunAction(shoot)
+                .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[]{ CharacterClassRefs.BardClass.ToString(), CharacterClassRefs.BardClass_Penta.ToString() }, max: 6, min: 1))
                 .SetType(AbilityType.Supernatural)
                 .SetDisplayName(TripleTimeDisplayName)
                 .SetDescription(TripleTimeDescription)
