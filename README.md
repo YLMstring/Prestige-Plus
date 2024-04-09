@@ -1,4 +1,4 @@
-# Prestige Plus v2.9.8 for WoTR 
+# Prestige Plus v2.9.9 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -58,7 +58,7 @@
 - [Kabriri (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Kabriri): requires worshipping Kabriri (Expanded Content) or Chaotic Evil
 - [Lamashtu (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Lamashtu): requires worshipping Lamashtu or Chaotic Evil
 - [Rovagug](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Rovagug): requires worshipping Rovagug or Chaotic Evil
-- [Socothbenoth (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Socothbenoth): requires worshipping Gyronna or Chaotic Evil
+- [Socothbenoth (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Socothbenoth): requires worshipping Areshkagal (Expanded Content) or Chaotic Evil
 ### [Evangelist Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/evangelist/)
 - [Diverse Obedience](https://www.d20pfsrd.com/feats/general-feats/diverse-obedience/)
 - Continue the aligned class progression or start your [Exalted](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/exalted/) career!
@@ -250,7 +250,14 @@
 - This is absolutely my favorite.
 - [Cartomancer](https://www.d20pfsrd.com/classes/base-classes/witch/archetypes/paizo-witch-archetypes/cartomancer-witch-archetype/)
 
-### New Style Feats
+### [Bardic Masterpieces](https://www.d20pfsrd.com/classes/core-classes/bard/bardic-masterpieces/)
+
+- [Triple Time](https://www.d20pfsrd.com/classes/core-classes/bard/bardic-masterpieces/masterpieces/triple-time-percussion-string-wind)
+- [Tales of Twisting Steel](https://www.d20pfsrd.com/classes/core-classes/bard/bardic-masterpieces/masterpieces/tales-of-twisting-steel-act-oratory)
+- [Rat Quadrille](https://www.d20pfsrd.com/classes/core-classes/bard/bardic-masterpieces/masterpieces/rat-quadrille-percussion-sing)
+- [Stone Face](https://www.d20pfsrd.com/classes/core-classes/bard/bardic-masterpieces/masterpieces/stone-face-comedy-oratory)
+- [The Requiem of the Fallen Priest-King](https://www.d20pfsrd.com/classes/core-classes/bard/bardic-masterpieces/masterpieces/the-requiem-of-the-fallen-priest-king-oratory-sing)
+### New Styles
 
 - [Black Seraph Style](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/black-seraph-style-combat-style/): From Path of War
 - [Black Seraph’s Malevolence](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/black-seraphs-malevolence-combat/)
