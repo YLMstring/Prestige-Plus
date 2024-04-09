@@ -1,4 +1,4 @@
-# Prestige Plus v2.9.8 for WoTR 
+# Prestige Plus v2.9.9 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -58,7 +58,7 @@
 - [Kabriri (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Kabriri): requires worshipping Kabriri (Expanded Content) or Chaotic Evil
 - [Lamashtu (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Lamashtu): requires worshipping Lamashtu or Chaotic Evil
 - [Rovagug](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Rovagug): requires worshipping Rovagug or Chaotic Evil
-- [Socothbenoth (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Socothbenoth): requires worshipping Gyronna or Chaotic Evil
+- [Socothbenoth (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Socothbenoth): requires worshipping Areshkagal (Expanded Content) or Chaotic Evil
 ### [Evangelist Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/evangelist/)
 - [Diverse Obedience](https://www.d20pfsrd.com/feats/general-feats/diverse-obedience/)
 - Continue the aligned class progression or start your [Exalted](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/exalted/) career!
