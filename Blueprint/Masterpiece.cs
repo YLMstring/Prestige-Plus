@@ -187,7 +187,6 @@ namespace PrestigePlus.Blueprint
               .AddAbilityResourceLogic(1, isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
               .AddComponent<AbilityRequirementNotSpell>()
               .AddToSpellList(1, SpellListRefs.BardSpellList.ToString())
-              .AddComponent<CustomDC>(c => { c.classguid = CharacterClassRefs.BardClass.ToString(); c.Property = StatType.Charisma; c.halfed = true; })
               .Configure();
 
             return FeatureConfigurator.New(TripleTime, TripleTimeGuid)
@@ -228,7 +227,7 @@ namespace PrestigePlus.Blueprint
               .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
               .AddToSpellList(2, SpellListRefs.BardSpellList.ToString())
               .AddComponent<AbilityRequirementNotSpell>()
-              .AddComponent<CustomDC>(c => { c.classguid = CharacterClassRefs.BardClass.ToString(); c.Property = StatType.Charisma; c.halfed = true; })
+              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.BardClass.ToString() }))
               .Configure();
 
             return FeatureConfigurator.New(TwistingSteel, TwistingSteelGuid)
@@ -270,7 +269,6 @@ namespace PrestigePlus.Blueprint
               .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
               .AddToSpellList(3, SpellListRefs.BardSpellList.ToString())
               .AddComponent<AbilityRequirementNotSpell>()
-              .AddComponent<CustomDC>(c => { c.classguid = CharacterClassRefs.BardClass.ToString(); c.Property = StatType.Charisma; c.halfed = true; })
               .Configure();
 
             return FeatureConfigurator.New(StoneFace, StoneFaceGuid)
@@ -304,7 +302,7 @@ namespace PrestigePlus.Blueprint
               .SetDisplayName(RatQuadrilleDisplayName)
               .SetDescription(RatQuadrilleDescription)
               .SetIcon(icon)
-              .AddContextStatBonus(StatType.AdditionalAttackBonus, -2, ModifierDescriptor.Penalty)
+              .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.AdditionalAttackBonus, value: -2)
               .AddConcentrationBonus(value: -4)
               .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting | SpellDescriptor.Compulsion)
               .Configure();
@@ -313,7 +311,7 @@ namespace PrestigePlus.Blueprint
               .SetDisplayName(RatQuadrilleDisplayName)
               .SetDescription(RatQuadrilleDescription)
               .SetIcon(icon)
-              .AddContextStatBonus(StatType.AdditionalAttackBonus, -1, ModifierDescriptor.Penalty)
+              .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.AdditionalAttackBonus, value: -1)
               .AddConcentrationBonus(value: -2)
               .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting | SpellDescriptor.Compulsion)
               .Configure();
@@ -400,7 +398,7 @@ namespace PrestigePlus.Blueprint
               .Configure();
 
             var shoot = ActionsBuilder.New()
-                .ApplyBuff(buff, ContextDuration.Variable(ContextValues.Rank(), Kingmaker.UnitLogic.Mechanics.DurationRate.TenMinutes))
+                .ApplyBuff(buff, ContextDuration.Fixed(1, Kingmaker.UnitLogic.Mechanics.DurationRate.TenMinutes))
                 .Build();
 
             var ability = AbilityConfigurator.New(PriestKingAblity, PriestKingAblityGuid)
@@ -417,7 +415,6 @@ namespace PrestigePlus.Blueprint
               .AddAbilityResourceLogic(10, isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
               .AddToSpellList(3, SpellListRefs.BardSpellList.ToString())
               .AddComponent<AbilityRequirementNotSpell>()
-              .AddComponent<CustomDC>(c => { c.classguid = CharacterClassRefs.BardClass.ToString(); c.Property = StatType.Charisma; c.halfed = true; })
               .Configure();
 
             return FeatureConfigurator.New(PriestKing, PriestKingGuid)
