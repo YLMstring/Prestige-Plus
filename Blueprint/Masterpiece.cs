@@ -306,6 +306,7 @@ namespace PrestigePlus.Blueprint
               .SetIcon(icon)
               .AddContextStatBonus(StatType.AdditionalAttackBonus, -2, ModifierDescriptor.Penalty)
               .AddConcentrationBonus(value: -4)
+              .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting | SpellDescriptor.Compulsion)
               .Configure();
 
             var buff2 = BuffConfigurator.New(RatQuadrilleBuff2, RatQuadrilleBuff2Guid)
@@ -314,6 +315,7 @@ namespace PrestigePlus.Blueprint
               .SetIcon(icon)
               .AddContextStatBonus(StatType.AdditionalAttackBonus, -1, ModifierDescriptor.Penalty)
               .AddConcentrationBonus(value: -2)
+              .AddSpellDescriptorComponent(SpellDescriptor.MindAffecting | SpellDescriptor.Compulsion)
               .Configure();
 
             var shoot1 = ActionsBuilder.New()
