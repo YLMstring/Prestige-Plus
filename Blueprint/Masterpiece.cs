@@ -26,6 +26,7 @@ using Kingmaker.UnitLogic.Abilities.Components.Base;
 using Kingmaker.Utility;
 using PrestigePlus.Blueprint.Spell;
 using PrestigePlus.CustomAction.OtherFeatRelated;
+using PrestigePlus.CustomComponent.Feat;
 using PrestigePlus.CustomComponent.PrestigeClass;
 using System;
 using System.Collections.Generic;
@@ -185,6 +186,7 @@ namespace PrestigePlus.Blueprint
               .SetIsFullRoundAction(true)
               .AddAbilityCasterInCombat(true)
               .AddAbilityResourceLogic(1, isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
+              .AddComponent<AbilityRequirementNotSpell>()
               .AddToSpellList(1, SpellListRefs.BardSpellList.ToString())
               .Configure();
 
@@ -225,6 +227,7 @@ namespace PrestigePlus.Blueprint
               .AddAbilityCasterInCombat(true)
               .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
               .AddToSpellList(2, SpellListRefs.BardSpellList.ToString())
+              .AddComponent<AbilityRequirementNotSpell>()
               .Configure();
 
             return FeatureConfigurator.New(TwistingSteel, TwistingSteelGuid)
@@ -263,6 +266,7 @@ namespace PrestigePlus.Blueprint
               .AddAbilityCasterInCombat(true)
               .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
               .AddToSpellList(3, SpellListRefs.BardSpellList.ToString())
+              .AddComponent<AbilityRequirementNotSpell>()
               .Configure();
 
             return FeatureConfigurator.New(StoneFace, StoneFaceGuid)
@@ -333,6 +337,7 @@ namespace PrestigePlus.Blueprint
               .AddComponent(fx)
               .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
               .AddToSpellList(2, SpellListRefs.BardSpellList.ToString())
+              .AddComponent<AbilityRequirementNotSpell>()
               .Configure();
 
             return FeatureConfigurator.New(RatQuadrille, RatQuadrilleGuid)
@@ -404,6 +409,7 @@ namespace PrestigePlus.Blueprint
               .AddAbilityCasterInCombat(true)
               .AddAbilityResourceLogic(10, isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
               .AddToSpellList(3, SpellListRefs.BardSpellList.ToString())
+              .AddComponent<AbilityRequirementNotSpell>()
               .Configure();
 
             return FeatureConfigurator.New(PriestKing, PriestKingGuid)
