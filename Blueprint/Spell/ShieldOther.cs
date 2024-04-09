@@ -23,6 +23,7 @@ using PrestigePlus.CustomComponent.PrestigeClass;
 using PrestigePlus.Blueprint.PrestigeClass;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Mechanics.Properties;
+using Kingmaker.UnitLogic.Abilities.Components.Base;
 
 namespace PrestigePlus.Blueprint.Spell
 {
@@ -46,6 +47,7 @@ namespace PrestigePlus.Blueprint.Spell
         public static void Configure()
         {
             var icon = AbilityRefs.ShieldOfLaw.Reference.Get().Icon;
+            var fx = AbilityRefs.Haste.Reference.Get().GetComponent<AbilitySpawnFx>();
 
             var buff = BuffConfigurator.New(ShieldOtherBuff, ShieldOtherBuffGuid)
               .SetDisplayName(DisplayName)
@@ -88,6 +90,7 @@ namespace PrestigePlus.Blueprint.Spell
               .AddToSpellLists(level: 2, SpellList.Inquisitor)
               .AddToSpellLists(level: 2, SpellList.CommunityDomain)
               .AddToSpellLists(level: 2, SpellList.ProtectionDomain)
+              .AddComponent(fx)
               .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
                   .ApplyBuff(buff, ContextDuration.Variable(ContextValues.Rank(), DurationRate.Hours), isFromSpell: true)
