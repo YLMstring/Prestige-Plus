@@ -25,7 +25,7 @@ namespace PrestigePlus.Blueprint.RogueTalent
     internal class SneakyManeuver
     {
         private const string SneakyManeuverPower = "Rogue.SneakyManeuver";
-        private static readonly string SneakyManeuverGuid = "{73359324-59F2-4256-8B9E-5B6214CBB001}";
+        public static readonly string SneakyManeuverGuid = "{73359324-59F2-4256-8B9E-5B6214CBB001}";
 
         internal const string SneakyManeuverDisplayName = "RogueSneakyManeuver.Name";
         private const string SneakyManeuverDescription = "RogueSneakyManeuver.Description";

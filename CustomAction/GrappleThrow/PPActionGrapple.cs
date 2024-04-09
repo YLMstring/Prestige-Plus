@@ -56,6 +56,7 @@ namespace PrestigePlus.CustomAction.GrappleThrow
                 PFLog.Default.Error("Target already grappled", Array.Empty<object>());
                 return;
             }
+            if (isjaw && maybeCaster.Body.IsPolymorphed) { return; }
             if (!ConditionTwoFreeHand.HasFreeHand(maybeCaster))
             {
                 return;
@@ -73,5 +74,6 @@ namespace PrestigePlus.CustomAction.GrappleThrow
         private static BlueprintBuffReference CasterBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{D6D08842-8E03-4A9D-81B8-1D9FB2245649}");
         private static BlueprintBuffReference TargetBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{F505D659-0610-41B1-B178-E767CCB9292E}");
         public bool isAway;
+        public bool isjaw = false;
     }
 }

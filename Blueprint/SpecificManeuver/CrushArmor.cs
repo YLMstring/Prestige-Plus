@@ -18,7 +18,7 @@ namespace PrestigePlus.Blueprint.ManeuverFeat
     internal class CrushArmor
     {
         private static readonly string FeatName = "WeaponTrickCrushArmor";
-        private static readonly string FeatGuid = "{F28922F8-D1CE-4635-995C-6E5FB0595037}";
+        public static readonly string FeatGuid = "{F28922F8-D1CE-4635-995C-6E5FB0595037}";
 
         private static readonly string DisplayName = "WeaponTrickCrushArmor.Name";
         private static readonly string Description = "WeaponTrickCrushArmor.Description";

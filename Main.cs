@@ -62,7 +62,7 @@ namespace PrestigePlus
       Enabled = value;
       return true;
     }
-        private static void onclick()
+        private static void Onclick()
         {
             var log = new StringBuilder();
             log.AppendLine("Current settings: ");
@@ -90,7 +90,7 @@ namespace PrestigePlus
           .AddDefaultButton()
           .AddButton(
             Button.New(
-              Helpers.CreateString("button-desc", "Restart the game to apply changes!"), Helpers.CreateString("button-text", "Do Not Turn Any Chosen Features Off"), onclick))
+              Helpers.CreateString("button-desc", "Restart the game to apply changes!"), Helpers.CreateString("button-text", "Do Not Turn Any Chosen Features Off"), Onclick))
           .AddToggle(
             Toggle.New(GetKey("thc"), defaultValue: false, Helpers.CreateString("toggle-desc34", "Estimated THC (not precise)"))
               .ShowVisualConnection())
@@ -137,6 +137,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("asavir"), defaultValue: true, Helpers.CreateString("toggle-desc19", "Asavir"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("boltace"), defaultValue: true, Helpers.CreateString("toggle-desc93", "Bolt Ace"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("chevalier"), defaultValue: true, Helpers.CreateString("toggle-desc2", "Chevalier"))
               .ShowVisualConnection())
           .AddToggle(
@@ -147,6 +150,9 @@ namespace PrestigePlus
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("kineticknight"), defaultValue: true, Helpers.CreateString("toggle-desc31", "Esoteric Knight"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("forestwarden"), defaultValue: true, Helpers.CreateString("toggle-desc97", "Forest Warden"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("furious"), defaultValue: true, Helpers.CreateString("toggle-desc36", "Furious Guardian"))
@@ -174,6 +180,9 @@ namespace PrestigePlus
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("biggg"), defaultValue: true, Helpers.CreateString("toggle-desc18", "Mammoth Rider"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("usher"), defaultValue: true, Helpers.CreateString("toggle-desc98", "Mortal Usher"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("angel"), defaultValue: true, Helpers.CreateString("toggle-desc9", "Sanguine Angel (Lite)"))
@@ -204,6 +213,12 @@ namespace PrestigePlus
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("drunk"), defaultValue: true, Helpers.CreateString("toggle-desc76", "Drunken Brute"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("savageb"), defaultValue: true, Helpers.CreateString("toggle-desc95", "Savage Barbarian"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("untamedb"), defaultValue: true, Helpers.CreateString("toggle-desc96", "Untamed Rager"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("geisha"), defaultValue: true, Helpers.CreateString("toggle-desc90", "Geisha"))
@@ -237,6 +252,9 @@ namespace PrestigePlus
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("lorew"), defaultValue: true, Helpers.CreateString("toggle-desc24", "Lore Warden"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("savagew"), defaultValue: true, Helpers.CreateString("toggle-desc94", "Savage Warrior"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("warlord"), defaultValue: true, Helpers.CreateString("toggle-desc25", "Warlord"))
@@ -344,6 +362,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("mythicheritage"), defaultValue: true, Helpers.CreateString("toggle-desc86", "Racial Heritage (Mythic)"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("masterpiece"), defaultValue: true, Helpers.CreateString("toggle-desc99", "Bardic Masterpieces"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("magehand"), defaultValue: true, Helpers.CreateString("toggle-desc39", "Magic Trick Feats"))
               .ShowVisualConnection())
           .AddToggle(
@@ -427,7 +448,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("cmdminus"))) { CMDPatch.Patch(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("dirty"))) { DirtyFeats.Configure(); DirtyFeats.StyleConfigure(); DirtyFeats.LadderConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("cloak"))) { CloakDaggerStyle.StyleConfigure(); CloakDaggerStyle.SubterfugeConfigure(); CloakDaggerStyle.TacticsConfigure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("spell"))) { LitanyRighteousness.Configure(); ShieldOther.Configure(); InheritorSmite.Configure(); RovagugFury.Configure(); HydraulicTorrent.Configure(); ThunderstompGreater.Configure(); Thunderstomp.Configure(); TelekineticManeuver.Configure(); Linebreaker.Configure(); BladeLash.Configure(); PilferingHand.Configure(); ResinousSkin.Configure(); DiscordantBlast.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("spell"))) { LitanyRighteousness.Configure(); ShieldOther.Configure(); InheritorSmite.Configure(); RovagugFury.Configure(); HydraulicTorrent.Configure(); ThunderstompGreater.Configure(); Thunderstomp.Configure(); TelekineticManeuver.Configure(); Linebreaker.Configure(); BladeLash.Configure(); PilferingHand.Configure(); ResinousSkin.Configure(); DiscordantBlast.Configure(); Lockjaw.Configure(); VexGiant.Configure(); VirtuosoPerformance.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("obedience"))) { DeificObedience.DeificObedienceConfigure(); DiverseObedience.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("templar"))) { CrimsonTemplar.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("seeker"))) { TruthSeeker.Configure(); TruthSooker.Configure(); }
@@ -463,6 +484,13 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("geisha"))) { Geisha.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("soundstriker"))) { SoundStriker.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("ankou"))) { AnkouShadow.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("boltace"))) { BoltAce.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("untamedb"))) { UntamedRager.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("savageb"))) { SavageBarbarian.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("savagew"))) { SavageWarrior.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("forestwarden"))) { ForestWarden.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("usher"))) { MortalUsher.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("masterpiece"))) { Masterpiece.CreateBardMasterpieceCore(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)

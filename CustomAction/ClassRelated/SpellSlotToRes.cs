@@ -26,15 +26,28 @@ namespace PrestigePlus.CustomAction.ClassRelated
 
         public override void RunAction()
         {
+            if (num > 0)
+            {
+                Context.SpellLevel = num;
+            }
             if (Context.MaybeCaster == null || Context.SpellLevel < 1) { return; }
             var Res = BlueprintTool.GetRef<BlueprintAbilityResourceReference>(ResGuid);
-            if (!Res?.Get())
+            if (Res?.Get() != null && Context.MaybeCaster.Descriptor.Resources.GetResource(Res) != null)
             {
-                return;
+                Context.MaybeCaster.Descriptor.Resources.Restore(Res, Context.SpellLevel);
             }
-            Context.MaybeCaster.Descriptor.Resources.Restore(Res, Context.SpellLevel);
+            else if (Res2Guid != null)
+            {
+                var Res2 = BlueprintTool.GetRef<BlueprintAbilityResourceReference>(Res2Guid);
+                if (Res2?.Get() != null && Context.MaybeCaster.Descriptor.Resources.GetResource(Res2) != null)
+                {
+                    Context.MaybeCaster.Descriptor.Resources.Restore(Res2, Context.SpellLevel);
+                }
+            }
         }
 
         public string ResGuid;
+        public string Res2Guid;
+        public int num = 0;
     }
 }

@@ -24,6 +24,29 @@ namespace PrestigePlus.HarmonyFix
     {
         static void Postfix(ref int __result, ref UnitDescriptor unit, ref PrerequisiteStatValue __instance)
         {
+            if (unit.HasFact(Vital) && (__instance.Stat == StatType.BaseAttackBonus))
+            {
+                if (__instance.OwnerBlueprint is not BlueprintFeature blue) { return; }
+                var prere = blue.GetComponents<PrerequisiteFeature>();
+                if (prere == null) { return; }
+                bool isVital = false;
+                foreach (var pre in prere)
+                {
+                    if (pre.Feature == FeatureRefs.VitalStrikeFeature.Reference.Get() || 
+                        pre.Feature == FeatureRefs.VitalStrikeFeatureImproved.Reference.Get() || 
+                        pre.Feature == FeatureRefs.VitalStrikeFeatureGreater.Reference.Get() || 
+                        pre.Feature == FeatureRefs.VitalStrikeMythicFeat.Reference.Get())
+                    {
+                        isVital = true;
+                        break;
+                    }
+                }
+                if (!isVital) { return; }
+                int usher = unit.Progression.GetClassLevel(Usher);
+                if (usher >= 1) { __result = 1 + __result; }
+                if (usher >= 5) { __result = 1 + __result; }
+                if (usher >= 9) { __result = 1 + __result; }
+            }
             if (unit.HasFact(Dirty) && (__instance.Stat == StatType.Dexterity || __instance.Stat == StatType.Intelligence))
             {
                 if (__instance.OwnerBlueprint is not BlueprintFeature blue) { return; }
@@ -47,6 +70,8 @@ namespace PrestigePlus.HarmonyFix
         }
         private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         private static BlueprintFeatureReference Dirty = BlueprintTool.GetRef<BlueprintFeatureReference>(DirtyFighting.DirtyFightingGuid);
+        private static BlueprintFeatureReference Vital = BlueprintTool.GetRef<BlueprintFeatureReference>(MortalUsher.PsychicEsotericaGuid);
+        private static BlueprintCharacterClassReference Usher = BlueprintTool.GetRef<BlueprintCharacterClassReference>(MortalUsher.ArchetypeGuid);
     }
 
     [HarmonyPatch(typeof(PrerequisiteFeature), nameof(PrerequisiteFeature.CheckInternal))]
