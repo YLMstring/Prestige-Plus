@@ -65,7 +65,10 @@ namespace PrestigePlus.Modify
             }
             if (isRogue)
             {
-                level += caster.Descriptor.Progression.GetClassLevel(BlueprintTool.GetRef<BlueprintCharacterClassReference>(CharacterClassRefs.SlayerClass.ToString()));
+                level += caster.Descriptor.Progression.GetClassLevel(CharacterClassRefs.SlayerClass.Reference);
+                level += caster.Descriptor.Progression.GetClassLevel(CharacterClassRefs.BardClass.Reference);
+                level += caster.Descriptor.Progression.GetClassLevel(CharacterClassRefs.BardClass_Penta.Reference);
+                level += caster.Descriptor.Progression.GetClassLevel(CharacterClassRefs.SkaldClass.Reference);
                 level += caster.Descriptor.Progression.GetClassLevel(BlueprintTool.GetRef<BlueprintCharacterClassReference>(ShadowDancer.ArchetypeGuid));
             }
             ruleCalculateAbilityParams.ReplaceSpellLevel = new int?(level);
