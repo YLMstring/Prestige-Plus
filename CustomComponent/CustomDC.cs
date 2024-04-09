@@ -57,7 +57,6 @@ namespace PrestigePlus.Modify
                 ruleCalculateAbilityParams.ReplaceStatBonusModifier = new int?(this.m_CustomProperty.Get().GetInt(caster));
             }
             int level = caster.Descriptor.Progression.CharacterLevel;
-            ruleCalculateAbilityParams.ReplaceCasterLevel = level;
             if (!characterlv)
             {
                 var archetype = BlueprintTool.GetRef<BlueprintCharacterClassReference>(classguid);

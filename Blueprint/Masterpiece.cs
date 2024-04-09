@@ -22,12 +22,15 @@ using Kingmaker.RuleSystem;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
+using Kingmaker.UnitLogic.Abilities.Components.TargetCheckers;
 using Kingmaker.Utility;
 using PrestigePlus.Blueprint.Spell;
 using PrestigePlus.CustomAction.OtherFeatRelated;
 using PrestigePlus.CustomComponent.Feat;
 using PrestigePlus.CustomComponent.PrestigeClass;
+using PrestigePlus.Modify;
 using System;
 using System.Collections.Generic;
 
@@ -107,10 +110,6 @@ namespace PrestigePlus.Blueprint
             ProgressionConfigurator.For(ProgressionRefs.BardProgression)
                 .AddToLevelEntry(1, feat)
                 .Configure();
-
-            ProgressionConfigurator.For(ProgressionRefs.BardProgression_Penta)
-                .AddToLevelEntry(1, feat)
-                .Configure();
         }
 
         private const string BardMasterpieceFeat = "BardMasterpiece.BardMasterpiece";
@@ -175,7 +174,7 @@ namespace PrestigePlus.Blueprint
 
             var ability = AbilityConfigurator.New(TripleTimeAblity, TripleTimeAblityGuid)
                 .AddAbilityEffectRunAction(shoot)
-                .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[]{ CharacterClassRefs.BardClass.ToString(), CharacterClassRefs.BardClass_Penta.ToString() }, max: 6, min: 1))
+                .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[]{ CharacterClassRefs.BardClass.ToString() }, max: 6, min: 1))
                 .SetType(AbilityType.Supernatural)
                 .SetDisplayName(TripleTimeDisplayName)
                 .SetDescription(TripleTimeDescription)
@@ -188,6 +187,7 @@ namespace PrestigePlus.Blueprint
               .AddAbilityResourceLogic(1, isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
               .AddComponent<AbilityRequirementNotSpell>()
               .AddToSpellList(1, SpellListRefs.BardSpellList.ToString())
+              .AddComponent<CustomDC>(c => { c.classguid = CharacterClassRefs.BardClass.ToString(); c.Property = StatType.Charisma; c.halfed = true; })
               .Configure();
 
             return FeatureConfigurator.New(TripleTime, TripleTimeGuid)
@@ -210,12 +210,12 @@ namespace PrestigePlus.Blueprint
         {
             var icon = AbilityRefs.SwordOfEternalSquireAbility.Reference.Get().Icon;
 
-            var shoot = ActionsBuilder.New()
-                .CastSpell(ShieldOther.ShieldOtherAbilityGuid)
-                .Build();
-
             var ability = AbilityConfigurator.New(TwistingSteelAblity, TwistingSteelAblityGuid)
-                .AddAbilityEffectRunAction(shoot)
+                .CopyFrom(
+                ShieldOther.ShieldOtherAbilityGuid,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx))
                 .SetType(AbilityType.Supernatural)
                 .SetDisplayName(TwistingSteelDisplayName)
                 .SetDescription(TwistingSteelDescription)
@@ -228,6 +228,7 @@ namespace PrestigePlus.Blueprint
               .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
               .AddToSpellList(2, SpellListRefs.BardSpellList.ToString())
               .AddComponent<AbilityRequirementNotSpell>()
+              .AddComponent<CustomDC>(c => { c.classguid = CharacterClassRefs.BardClass.ToString(); c.Property = StatType.Charisma; c.halfed = true; })
               .Configure();
 
             return FeatureConfigurator.New(TwistingSteel, TwistingSteelGuid)
@@ -250,12 +251,14 @@ namespace PrestigePlus.Blueprint
         {
             var icon = AbilityRefs.Stoneskin.Reference.Get().Icon;
 
-            var shoot = ActionsBuilder.New()
-                .CastSpell(AbilityRefs.StoneToFlesh.ToString())
-                .Build();
-
             var ability = AbilityConfigurator.New(StoneFaceAblity, StoneFaceAblityGuid)
-                .AddAbilityEffectRunAction(shoot)
+                .CopyFrom(
+                AbilityRefs.StoneToFlesh,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(AbilityTargetStoneToFlesh),
+                typeof(AbilitySpawnFx))
                 .SetType(AbilityType.Supernatural)
                 .SetDisplayName(StoneFaceDisplayName)
                 .SetDescription(StoneFaceDescription)
@@ -267,6 +270,7 @@ namespace PrestigePlus.Blueprint
               .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
               .AddToSpellList(3, SpellListRefs.BardSpellList.ToString())
               .AddComponent<AbilityRequirementNotSpell>()
+              .AddComponent<CustomDC>(c => { c.classguid = CharacterClassRefs.BardClass.ToString(); c.Property = StatType.Charisma; c.halfed = true; })
               .Configure();
 
             return FeatureConfigurator.New(StoneFace, StoneFaceGuid)
@@ -326,7 +330,7 @@ namespace PrestigePlus.Blueprint
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                     .ConditionalSaved(shoot1, shoot2)
                     .Build(), savingThrowType: SavingThrowType.Will)
-                .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.BardClass.ToString(), CharacterClassRefs.BardClass_Penta.ToString() }, max: 6, min: 1))
+                .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.BardClass.ToString() }, max: 6, min: 1))
                 .SetType(AbilityType.Supernatural)
                 .SetDisplayName(RatQuadrilleDisplayName)
                 .SetDescription(RatQuadrilleDescription)
@@ -338,6 +342,7 @@ namespace PrestigePlus.Blueprint
               .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
               .AddToSpellList(2, SpellListRefs.BardSpellList.ToString())
               .AddComponent<AbilityRequirementNotSpell>()
+              .AddComponent<CustomDC>(c => { c.classguid = CharacterClassRefs.BardClass.ToString(); c.Property = StatType.Charisma; c.halfed = true; })
               .Configure();
 
             return FeatureConfigurator.New(RatQuadrille, RatQuadrilleGuid)
@@ -410,6 +415,7 @@ namespace PrestigePlus.Blueprint
               .AddAbilityResourceLogic(10, isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
               .AddToSpellList(3, SpellListRefs.BardSpellList.ToString())
               .AddComponent<AbilityRequirementNotSpell>()
+              .AddComponent<CustomDC>(c => { c.classguid = CharacterClassRefs.BardClass.ToString(); c.Property = StatType.Charisma; c.halfed = true; })
               .Configure();
 
             return FeatureConfigurator.New(PriestKing, PriestKingGuid)
