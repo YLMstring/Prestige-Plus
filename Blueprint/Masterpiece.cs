@@ -12,6 +12,7 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Blueprints.Facts;
+using Kingmaker.Blueprints.JsonSystem;
 using Kingmaker.Craft;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.EntitySystem.Stats;
@@ -31,7 +32,8 @@ using System.Collections.Generic;
 
 namespace PrestigePlus.Blueprint
 {
-    internal class MasterpieceLogic : UnitFactComponentDelegate<MasterpieceLogic.ComponentData>, ILevelUpCompleteUIHandler, IGlobalSubscriber, ISubscriber
+    [TypeId("{2B304194-B7F4-4EA0-8D2B-FAEFF51C2169}")]
+    internal class MasterpieceLogic : UnitFactComponentDelegate, ILevelUpCompleteUIHandler, IGlobalSubscriber, ISubscriber
     {
         public override void OnTurnOn()
         {
@@ -39,40 +41,36 @@ namespace PrestigePlus.Blueprint
         }
         public override void OnTurnOff()
         {
-            Data.songs.Clear();
+            
         }
         private void Apply()
         {
             var book = Owner.GetSpellbook(CharacterClassRefs.BardClass.Reference);
             book ??= Owner.GetSpellbook(CharacterClassRefs.BardClass_Penta.Reference);
             if (book == null) return;
+            var songs = new List<BlueprintUnitFact>() { };
             if (book.IsKnown(BlueprintTool.GetRef<BlueprintAbilityReference>(Masterpiece.TripleTimeAblityGuid)))
             {
-                Data.songs.Add(BlueprintTool.GetRef<BlueprintUnitFactReference>(Masterpiece.TripleTimeGuid));
-                book.RemoveSpell(BlueprintTool.GetRef<BlueprintAbilityReference>(Masterpiece.TripleTimeAblityGuid));
+                songs.Add(BlueprintTool.GetRef<BlueprintUnitFactReference>(Masterpiece.TripleTimeGuid));
             }
             if (book.IsKnown(BlueprintTool.GetRef<BlueprintAbilityReference>(Masterpiece.TwistingSteelAblityGuid)))
             {
-                Data.songs.Add(BlueprintTool.GetRef<BlueprintUnitFactReference>(Masterpiece.TwistingSteelGuid));
-                book.RemoveSpell(BlueprintTool.GetRef<BlueprintAbilityReference>(Masterpiece.TwistingSteelAblityGuid));
+                songs.Add(BlueprintTool.GetRef<BlueprintUnitFactReference>(Masterpiece.TwistingSteelGuid));
             }
             if (book.IsKnown(BlueprintTool.GetRef<BlueprintAbilityReference>(Masterpiece.RatQuadrilleAblityGuid)))
             {
-                Data.songs.Add(BlueprintTool.GetRef<BlueprintUnitFactReference>(Masterpiece.RatQuadrilleGuid));
-                book.RemoveSpell(BlueprintTool.GetRef<BlueprintAbilityReference>(Masterpiece.RatQuadrilleAblityGuid));
+                songs.Add(BlueprintTool.GetRef<BlueprintUnitFactReference>(Masterpiece.RatQuadrilleGuid));
             }
             if (book.IsKnown(BlueprintTool.GetRef<BlueprintAbilityReference>(Masterpiece.StoneFaceAblityGuid)))
             {
-                Data.songs.Add(BlueprintTool.GetRef<BlueprintUnitFactReference>(Masterpiece.StoneFaceGuid));
-                book.RemoveSpell(BlueprintTool.GetRef<BlueprintAbilityReference>(Masterpiece.StoneFaceAblityGuid));
+                songs.Add(BlueprintTool.GetRef<BlueprintUnitFactReference>(Masterpiece.StoneFaceGuid));
             }
             if (book.IsKnown(BlueprintTool.GetRef<BlueprintAbilityReference>(Masterpiece.PriestKingAblityGuid)))
             {
-                Data.songs.Add(BlueprintTool.GetRef<BlueprintUnitFactReference>(Masterpiece.PriestKingGuid));
-                book.RemoveSpell(BlueprintTool.GetRef<BlueprintAbilityReference>(Masterpiece.PriestKingAblityGuid));
+                songs.Add(BlueprintTool.GetRef<BlueprintUnitFactReference>(Masterpiece.PriestKingGuid));
             }
-            if (Data.songs.Count == 0) { return; }
-            foreach (var song in Data.songs)
+            if (songs.Count == 0) { return; }
+            foreach (var song in songs)
             {
                 if (!Owner.HasFact(song) && song is BlueprintFeature feat && feat.MeetsPrerequisites(null, Owner, null, false, false))
                 {
@@ -87,11 +85,6 @@ namespace PrestigePlus.Blueprint
             {
                 Apply();
             }
-        }
-
-        public class ComponentData
-        {
-            public List<BlueprintUnitFact> songs = new() { };
         }
     }
     internal class Masterpiece
@@ -132,6 +125,7 @@ namespace PrestigePlus.Blueprint
               .SetDisplayName(BardMasterpieceDisplayName)
               .SetDescription(BardMasterpieceDescription)
               .SetIcon(icon)
+              .AddPrerequisiteFeature(BardMasterpieceCoreGuid)
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
               .AddToAllFeatures(CreateTripleTime())
@@ -164,8 +158,8 @@ namespace PrestigePlus.Blueprint
 
         public static BlueprintFeature CreateTripleTime()
         {
-            var icon = AbilityRefs.Lich1SiphonTimeAbility.Reference.Get().Icon;
-            var fx = AbilityRefs.SoothingPerformanceAbility.Reference.Get().GetComponent<AbilitySpawnFx>();
+            var icon = FeatureRefs.ExtendSpellFeat.Reference.Get().Icon;
+            var fx = AbilityRefs.ExpeditiousRetreat.Reference.Get().GetComponent<AbilitySpawnFx>();
 
             var buff = BuffConfigurator.New(TripleTimeBuff, TripleTimeBuffGuid)
               .SetDisplayName(TripleTimeDisplayName)
@@ -251,7 +245,7 @@ namespace PrestigePlus.Blueprint
         public static readonly string StoneFaceAblityGuid = "{DF05FC9B-9F39-4D26-AD3A-51E21EC6AC06}";
         public static BlueprintFeature CreateStoneFace()
         {
-            var icon = AbilityRefs.StoneGolemSlow.Reference.Get().Icon;
+            var icon = AbilityRefs.Stoneskin.Reference.Get().Icon;
 
             var shoot = ActionsBuilder.New()
                 .CastSpell(AbilityRefs.StoneToFlesh.ToString())
@@ -295,7 +289,7 @@ namespace PrestigePlus.Blueprint
         private static readonly string RatQuadrilleBuff2Guid = "{EE7A4D24-AA8F-4735-B1E4-8368E3AC8F28}";
         public static BlueprintFeature CreateRatQuadrille()
         {
-            var icon = AbilityRefs.SummonRatSwarm_Grimoire.Reference.Get().Icon;
+            var icon = AbilityRefs.SummonMonsterISingle.Reference.Get().Icon;
             var fx = AbilityRefs.CurseIdiocyBomb.Reference.Get().GetComponent<AbilitySpawnFx>();
 
             var buff = BuffConfigurator.New(RatQuadrilleBuff, RatQuadrilleBuffGuid)
