@@ -69,6 +69,11 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                     maybeCaster.Body.RemoveAdditionalLimb(wep);
                     return;
                 }
+                if (maybeCaster.Body.AdditionalLimbs[wep].MaybeWeapon?.Blueprint.IsTwoHanded == true)
+                {
+                    maybeCaster.Body.RemoveAdditionalLimb(wep);
+                    return;
+                }
                 maybeCaster.Body.RemoveAdditionalLimb(wep);
                 if (weapons.Count() < 2) return;
                 wep = maybeCaster.Body.AddAdditionalLimb(weapons[1].Blueprint, null);
@@ -79,7 +84,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
         }
         private static void RunAttackRule(UnitEntityData maybeCaster, UnitEntityData unit, ItemEntityWeapon weapon)
         {
-            if (weapon != null && (!weapon.Blueprint.IsTwoHanded || weapon.Blueprint.Double))
+            if (weapon != null)// && (!weapon.Blueprint.IsTwoHanded || weapon.Blueprint.Double))
             {
                 int penalty = 8;
                 if (maybeCaster.HasFact(FeatureRefs.TwoWeaponFighting.Reference))

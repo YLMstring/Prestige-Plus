@@ -13,6 +13,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Kingmaker.PubSubSystem;
 using TurnBased.Controllers;
+using static Kingmaker.UI.CanvasScalerWorkaround;
+using Kingmaker.TurnBasedMode.Controllers;
+using Newtonsoft.Json.Linq;
 
 namespace PrestigePlus.CustomAction.OtherFeatRelated
 {
@@ -20,7 +23,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
     {
         public override string GetCaption()
         {
-            return "QuickShot";
+            return "RestoreAction";
         }
 
         public override void RunAction()
@@ -30,9 +33,14 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
             {
                 PFLog.Default.Error("Caster is missing", Array.Empty<object>());
                 return;
-            }
+            }           
             caster.CombatState.Cooldown.StandardAction = 0f;
-            Game.Instance.TurnBasedCombatController?.CurrentTurn?.UpdateActionPredictions();
+            var state = Game.Instance.TurnBasedCombatController?.CurrentTurn?.GetActionsStates(caster)?.ActionsStates;
+            if (state != null)
+            {
+                Game.Instance.TurnBasedCombatController.CurrentTurn.GetActionsStates(caster).ActionsStates.Standard = 
+                    new CombatAction(CombatAction.ActivityState.Lost, CombatAction.ActivityState.Available, CombatAction.ActivityState.Available, 0f);
+            }
         }
     }
 }
