@@ -195,6 +195,7 @@ namespace PrestigePlus.Blueprint
               .SetIcon(icon)
               .AddPrerequisiteStatValue(StatType.SkillUseMagicDevice, 3)
               .AddFacts(new() { ability })
+              .AddLearnSpells(CharacterClassRefs.BardClass.ToString(), new() { ability })
               .Configure();
         }
 
@@ -236,6 +237,7 @@ namespace PrestigePlus.Blueprint
               .SetIcon(icon)
               .AddPrerequisiteStatValue(StatType.SkillPersuasion, 3)
               .AddFacts(new() { ability })
+              .AddLearnSpells(CharacterClassRefs.BardClass.ToString(), new() { ability })
               .Configure();
         }
 
@@ -277,6 +279,7 @@ namespace PrestigePlus.Blueprint
               .SetIcon(icon)
               .AddPrerequisiteStatValue(StatType.SkillPersuasion, 7)
               .AddFacts(new() { ability })
+              .AddLearnSpells(CharacterClassRefs.BardClass.ToString(), new() { ability })
               .Configure();
         }
 
@@ -352,6 +355,7 @@ namespace PrestigePlus.Blueprint
               .AddPrerequisiteStatValue(StatType.SkillPersuasion, 4, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
               .AddPrerequisiteStatValue(StatType.SkillUseMagicDevice, 4, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
               .AddFacts(new() { ability })
+              .AddLearnSpells(CharacterClassRefs.BardClass.ToString(), new() { ability })
               .Configure();
         }
 
@@ -423,6 +427,7 @@ namespace PrestigePlus.Blueprint
               .SetIcon(icon)
               .AddPrerequisiteStatValue(StatType.SkillPersuasion, 10)
               .AddFacts(new() { ability })
+              .AddLearnSpells(CharacterClassRefs.BardClass.ToString(), new() { ability })
               .Configure();
         }
     }
