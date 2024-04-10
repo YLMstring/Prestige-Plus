@@ -77,6 +77,11 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                 maybeCaster.Body.RemoveAdditionalLimb(wep);
                 if (weapons.Count() < 2) return;
                 wep = maybeCaster.Body.AddAdditionalLimb(weapons[1].Blueprint, null);
+                if (maybeCaster.Body.AdditionalLimbs[wep].MaybeWeapon?.Blueprint.IsTwoHanded == true)
+                {
+                    maybeCaster.Body.RemoveAdditionalLimb(wep);
+                    return;
+                }
                 RunAttackRule(maybeCaster, unit, maybeCaster.Body.AdditionalLimbs[wep].MaybeWeapon);
                 maybeCaster.Body.RemoveAdditionalLimb(wep);
             }
