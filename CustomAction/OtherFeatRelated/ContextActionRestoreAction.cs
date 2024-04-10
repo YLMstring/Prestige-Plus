@@ -30,6 +30,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                 return;
             }
             caster.CombatState.Cooldown.StandardAction = 0f;
+            Game.Instance.TurnBasedCombatController?.CurrentTurn?.UpdateCurrentActionStates(caster, false, true);
         }
     }
 }
