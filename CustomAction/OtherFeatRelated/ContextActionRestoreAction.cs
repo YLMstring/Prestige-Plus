@@ -11,6 +11,8 @@ using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
+using Kingmaker.PubSubSystem;
+using TurnBased.Controllers;
 
 namespace PrestigePlus.CustomAction.OtherFeatRelated
 {
@@ -30,7 +32,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                 return;
             }
             caster.CombatState.Cooldown.StandardAction = 0f;
-            Game.Instance.TurnBasedCombatController?.CurrentTurn?.ForceToEnd(false);
+            Game.Instance.TurnBasedCombatController?.CurrentTurn?.UpdateActionPredictions();
         }
     }
 }
