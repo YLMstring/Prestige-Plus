@@ -25,21 +25,19 @@ using Kingmaker.Items;
 using BlueprintCore.Blueprints.References;
 using Kingmaker.Localization;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
-using Kingmaker.Settings;
 
 namespace PrestigePlus.HarmonyFix
 {
     [HarmonyPatch(typeof(CursorController), nameof(CursorController.SetCursor))]
     internal class ShowTHC
     {
-        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
 
-        public static bool show = false;
+        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         static void Prefix(ref CursorRoot.CursorType cursorType, ref string text, ref CursorController __instance)
         {
             try
             {
-                if (!show || !SettingsRoot.Game.TurnBased.EnableTurnBasedMode) { return; }
+                if (!ModMenu.ModMenu.GetSettingValue<bool>(Main.GetKey("thc")) || !CombatController.IsInTurnBasedCombat()) { return; }
                 var caster = CombatController.SelectedUnit;
                 if (cursorType == CursorRoot.CursorType.AttackCursor || cursorType == CursorRoot.CursorType.RangeAttackCursor) 
                 {
