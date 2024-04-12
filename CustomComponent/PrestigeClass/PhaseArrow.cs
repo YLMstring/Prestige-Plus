@@ -23,11 +23,11 @@ namespace PrestigePlus.Modify
         {
             try
             {
+                base.OnEventAboutToTrigger(evt);
                 if (evt.BrilliantEnergy == null)
                 {
-                    evt.AddModifier(-RuleCalculateAC.CalculateArmorAndShieldBonuses(evt.Target), evt.BrilliantEnergy, ModifierDescriptor.Penalty);
+                    evt.AddModifier(-RuleCalculateAC.CalculateArmorAndShieldBonuses(evt.Target), null, ModifierDescriptor.Penalty);
                 }
-                base.OnEventAboutToTrigger(evt);
             }
             catch (Exception e) { Logger.Error("Failed to phase arrow.", e); }
         }
