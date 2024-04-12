@@ -25,7 +25,7 @@ namespace PrestigePlus.Modify
             {
                 if (evt.BrilliantEnergy == null)
                 {
-                    evt.AddModifier(-RuleCalculateAC.CalculateArmorAndShieldBonuses(evt.Target), evt.BrilliantEnergy, ModifierDescriptor.UntypedStackable);
+                    evt.AddModifier(-RuleCalculateAC.CalculateArmorAndShieldBonuses(evt.Target), evt.BrilliantEnergy, ModifierDescriptor.Penalty);
                 }
                 base.OnEventAboutToTrigger(evt);
             }
