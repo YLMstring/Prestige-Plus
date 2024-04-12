@@ -28,6 +28,7 @@ using PrestigePlus.Blueprint;
 using PrestigePlus.CustomComponent.Feat;
 using PrestigePlus.Blueprint.SpecificManeuver;
 using PrestigePlus.Blueprint.Spell;
+using PrestigePlus.HarmonyFix;
 
 namespace PrestigePlus
 {
@@ -544,6 +545,7 @@ namespace PrestigePlus
                     }
                     Initialized = true; PatchHolyVindicator.Patch(); PrerequisitePatch.Patch(); StyleMasterPatch.Patch();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("duplicate"))) { RemoveFeats.Patch(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("thc"))) { ShowTHC.show = true; }
                 }
                 catch (Exception e)
                 {
