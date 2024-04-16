@@ -36,6 +36,8 @@ namespace PrestigePlus.Blueprint.Spell
 
         internal const string DisplayName = "NewSpellGlimpseAkashic.Name";
         private const string Description = "NewSpellGlimpseAkashic.Description";
+
+        internal const string Duration = "PPNewDuration24h.Name";
         public static void Configure()
         {
             var icon = AbilityRefs.TrueSeeing.Reference.Get().Icon;
@@ -82,7 +84,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
-              .SetLocalizedDuration("24 hours")
+              .SetLocalizedDuration(Duration)
               .SetAnimation(CastAnimationStyle.SelfTouch)
               .SetRange(AbilityRange.Personal)
               .SetType(AbilityType.Spell)

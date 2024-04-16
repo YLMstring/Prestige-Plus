@@ -20,38 +20,41 @@ using Kingmaker.Blueprints.Facts;
 
 namespace PrestigePlus.CustomAction
 {
-    internal class ClosestEnemyFromPoint : ContextAction
+    internal class HighestHDenemy : ContextAction
     {
         public override string GetCaption()
         {
-            return "ClosestEnemyFromPoint";
+            return "HighestHDenemy";
         }
 
         public override void RunAction()
         {
-            if (Context.MaybeCaster == null)
+            if (Context.MaybeCaster == null || Target.Unit == null)
             {
-                PFLog.Default.Error("Caster is missing", Array.Empty<object>());
                 return;
             }
             List<UnitEntityData> list = new() { };
             foreach (UnitGroupMemory.UnitInfo unitInfo in Context.MaybeCaster.Memory.Enemies)
             {
                 UnitEntityData unit = unitInfo.Unit;
-                if (unit == Target.Unit || (!unit.Descriptor.State.IsDead && unit.DistanceTo(Context.MaybeCaster) <= 30.Feet().Meters))
+                if (!unit.Descriptor.State.IsDead && unit.DistanceTo(Context.MaybeCaster) <= 30.Feet().Meters)
                 {
                     list.Add(unit);
                 }
             }
             if (list.Count == 0) { return; }
-            list.Sort((u1, u2) => u1.SqrDistanceTo(Target.Point).CompareTo(u2.SqrDistanceTo(Target.Point)));
+            list.Sort((u1, u2) => u1.Progression.CharacterLevel.CompareTo(u2.Progression.CharacterLevel));
+            list.Reverse();
             int num = 0;
             foreach (UnitEntityData unit in list)
             {
                 num++;
-                var fact = Context.MaybeCaster.GetFact(Context.AssociatedBlueprint as BlueprintUnitFact);
-                (fact as IFactContextOwner)?.RunActionInContext(Action, unit);
-                if (num == Context.Params.CasterLevel / 4)
+                if (unit == Target.Unit)
+                {
+                    Action.Run();
+                    return;
+                }
+                if (num >= Context.Params.CasterLevel / 4)
                 {
                     return;
                 }
