@@ -32,6 +32,7 @@ namespace PrestigePlus.CustomComponent.Spell
 
         private void Learn()
         {
+            if (Spell == null) { return; }
             if (this.CharacterClass != null)
             {
                 LearnList(this.CharacterClass);
