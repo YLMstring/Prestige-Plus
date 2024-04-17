@@ -238,6 +238,24 @@ namespace PrestigePlus.Blueprint.Archetype
               .Configure();
         }
 
+        private const string TotemTransformation = "Supernaturalist.TotemTransformation";
+        private static readonly string TotemTransformationGuid = "{7D72C6EA-8612-4B2D-96AA-EEE6878F1F5F}";
+
+        internal const string TotemTransformationDisplayName = "SupernaturalistTotemTransformation.Name";
+        private const string TotemTransformationDescription = "SupernaturalistTotemTransformation.Description";
+        private static BlueprintFeature CreateTotemTransformation()
+        {
+            var icon = AbilityRefs.AnimalAspectMonkey.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(TotemTransformation, TotemTransformationGuid)
+              .SetDisplayName(TotemTransformationDisplayName)
+              .SetDescription(TotemTransformationDescription)
+              .SetIcon(icon)
+              .AddAdditionalLimb(ItemWeaponRefs.Bite1d6.ToString())
+              .AddBuffMovementSpeed(value: 20, descriptor: ModifierDescriptor.Enhancement)
+              .Configure();
+        }
+
         private const string FungalCompanion = "Supernaturalist.FungalCompanion";
         public static readonly string FungalCompanionGuid = "{9236353B-C49B-46AB-A0D2-9BED174FD06D}";
 

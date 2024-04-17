@@ -38,8 +38,8 @@ namespace PrestigePlus.Blueprint.Spell
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
-              .AddAdditionalLimb(ItemWeaponRefs.Claw1d6.ToString())
-              .AddAdditionalLimb(ItemWeaponRefs.Claw1d6.ToString())
+              .AddAdditionalLimb(ItemWeaponRefs.Claw1d4.ToString())
+              .AddAdditionalLimb(ItemWeaponRefs.Claw1d4.ToString())
               .Configure();
 
             AbilityConfigurator.NewSpell(
