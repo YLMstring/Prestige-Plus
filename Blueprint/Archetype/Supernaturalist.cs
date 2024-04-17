@@ -21,6 +21,10 @@ using PrestigePlus.Blueprint.Spell;
 using PrestigePlus.CustomComponent.Spell;
 using BlueprintCore.Utils.Types;
 using Kingmaker.RuleSystem.Rules;
+using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
+using BlueprintCore.Actions.Builder;
+using Kingmaker.UnitLogic.Buffs.Blueprints;
+using PrestigePlus.CustomAction.OtherFeatRelated;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -47,15 +51,16 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToAddFeatures(1, CreateProficiencies())
             .AddToAddFeatures(3, CreateParanormalScholar3())
             .AddToAddFeatures(6, CreateParanormalScholar6())
-            .AddToAddFeatures(9, CreateParanormalScholar9())
+            .AddToAddFeatures(9, CreateParanormalScholar9(), PackLeaderConfigure())
             .AddToAddFeatures(12, CreateParanormalScholar12())
             .AddToAddFeatures(15, CreateParanormalScholar15())
             .AddToAddFeatures(18, CreateParanormalScholar18())
-            .AddToAddFeatures(4, CreateSpiritBonus())
+            .AddToAddFeatures(4, CreateSpiritBonus(), CreateTotemTransformation())
             .AddToAddFeatures(7, SpiritBonusGuid)
             .AddToAddFeatures(11, SpiritBonusGuid)
             .AddToAddFeatures(15, SpiritBonusGuid)
             .AddToAddFeatures(19, SpiritBonusGuid)
+            .AddToAddFeatures(14, WildstrikeFeat())
               .Configure();
 
             ProgressionConfigurator.For(ProgressionRefs.DruidProgression)
@@ -239,7 +244,7 @@ namespace PrestigePlus.Blueprint.Archetype
         }
 
         private const string TotemTransformation = "Supernaturalist.TotemTransformation";
-        private static readonly string TotemTransformationGuid = "{7D72C6EA-8612-4B2D-96AA-EEE6878F1F5F}";
+        private static readonly string TotemTransformationGuid = "{DCD3C31D-565A-4DC5-994B-395919B8A8D7}";
 
         internal const string TotemTransformationDisplayName = "SupernaturalistTotemTransformation.Name";
         private const string TotemTransformationDescription = "SupernaturalistTotemTransformation.Description";
@@ -251,41 +256,84 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(TotemTransformationDisplayName)
               .SetDescription(TotemTransformationDescription)
               .SetIcon(icon)
+              .AddStatBonus(ModifierDescriptor.ArmorFocus, false, StatType.AC, 1)
               .AddAdditionalLimb(ItemWeaponRefs.Bite1d6.ToString())
+              .AddEmptyHandWeaponOverride(isMonkUnarmedStrike: false, isPermanent: true, weapon: ItemWeaponRefs.Claw1d4.ToString())
               .AddBuffMovementSpeed(value: 20, descriptor: ModifierDescriptor.Enhancement)
               .Configure();
         }
 
-        private const string FungalCompanion = "Supernaturalist.FungalCompanion";
-        public static readonly string FungalCompanionGuid = "{9236353B-C49B-46AB-A0D2-9BED174FD06D}";
+        private const string PackLeader = "Supernaturalist.PackLeader";
+        public static readonly string PackLeaderGuid = "{8050D709-2C9A-4D96-A87E-9DFBF7F1BF08}";
 
-        private const string FungalCompanionFeat = "Supernaturalist.UseFungalCompanion";
-        private static readonly string FungalCompanionFeatGuid = "{8C386267-494C-4C45-8C36-C17585C1966E}";
+        private const string PackLeaderFeat = "Supernaturalist.UsePackLeader";
+        private static readonly string PackLeaderFeatGuid = "{447CD9F4-3FD3-4727-8652-9613F5CEF198}";
 
-        internal const string FungalCompanionDisplayName = "SupernaturalistFungalCompanion.Name";
-        private const string FungalCompanionDescription = "SupernaturalistFungalCompanion.Description";
-
-        public static BlueprintFeature FungalCompanionConfigure()
+        internal const string PackLeaderDisplayName = "SupernaturalistPackLeader.Name";
+        private const string PackLeaderDescription = "SupernaturalistPackLeader.Description";
+        public static BlueprintFeature PackLeaderConfigure()
         {
-            var icon = AbilityRefs.FungalInfestationAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.BullsStrengthMass.Reference.Get().Icon;
 
-            var feat = FeatureConfigurator.New(FungalCompanionFeat, FungalCompanionFeatGuid)
-              .SetDisplayName(FungalCompanionDisplayName)
-              .SetDescription(FungalCompanionDescription)
+            var buff = BuffConfigurator.New(PackLeaderFeat, PackLeaderFeatGuid)
+              .SetDisplayName(PackLeaderDisplayName)
+              .SetDescription(PackLeaderDescription)
               .SetIcon(icon)
-              .AddFacts(new() { FeatureRefs.PlantType.ToString() })
-              .AddStatBonus(ModifierDescriptor.Penalty, false, StatType.Speed, -10)
-              .AddStatBonus(ModifierDescriptor.UntypedStackable, false, StatType.Strength, 4)
-              .AddStatBonus(ModifierDescriptor.Penalty, false, StatType.Dexterity, -2)
-              .AddStatBonus(ModifierDescriptor.UntypedStackable, false, StatType.Constitution, 4)
-              .AddStatBonus(ModifierDescriptor.ArmorFocus, false, StatType.AC, 2)
+              .AddStatBonus(stat: StatType.AdditionalAttackBonus, value: 2)
+              .AddStatBonus(stat: StatType.AdditionalDamage, value: 2)
+              .AddBuffAllSavesBonus(value: 2)
               .Configure();
 
-            return FeatureConfigurator.New(FungalCompanion, FungalCompanionGuid)
-              .SetDisplayName(FungalCompanionDisplayName)
-              .SetDescription(FungalCompanionDescription)
+            return FeatureConfigurator.New(PackLeader, PackLeaderGuid)
+              .SetDisplayName(PackLeaderDisplayName)
+              .SetDescription(PackLeaderDescription)
               .SetIcon(icon)
-              .AddFeatureToPet(feat, PetType.AnimalCompanion)
+              .AddOnSpawnBuff(buff, checkSummonedUnitFact: true, ifHaveFact: PackLeaderGuid, ifSummonHaveFact: FeatureRefs.AnimalType.ToString(), isInfinity: true)
+              .Configure();
+        }
+
+        private const string Wildstrike = "Supernaturalist.Wildstrike";
+        private static readonly string WildstrikeGuid = "{26DC90BF-2721-4CCD-B34B-F5B9FA845257}";
+
+        internal const string WildstrikeDisplayName = "SupernaturalistWildstrike.Name";
+        private const string WildstrikeDescription = "SupernaturalistWildstrike.Description";
+
+        private const string WildstrikeAbility = "Supernaturalist.WildstrikeAbility";
+        private static readonly string WildstrikeAbilityGuid = "{49143210-6E57-4DC7-9AE6-4420A183A5F2}";
+
+        private const string WildstrikeRes = "Supernaturalist.WildstrikeRes";
+        private static readonly string WildstrikeResGuid = "{0858C4CF-9CE5-4758-954D-E2DD88C7E5A4}";
+        public static BlueprintFeature WildstrikeFeat()
+        {
+            var icon = AbilityRefs.Command.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(WildstrikeRes, WildstrikeResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(3))
+                .Configure();
+
+            var ability = AbilityConfigurator.New(WildstrikeAbility, WildstrikeAbilityGuid)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .Add<ContextWildstrike>()
+                        .Build())
+                .SetDisplayName(WildstrikeDisplayName)
+                .SetDescription(WildstrikeDescription)
+                .SetIcon(icon)
+                .AllowTargeting(false, false, true, false)
+                .AddAbilityTargetHasFact(new() { FeatureRefs.AnimalType.ToString(), FeatureRefs.PlantType.ToString(), FeatureRefs.PlantTypeFake.ToString() })
+                .SetRange(AbilityRange.Close)
+                .SetType(AbilityType.Extraordinary)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Point)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .Configure();
+
+            return FeatureConfigurator.New(Wildstrike, WildstrikeGuid)
+              .SetDisplayName(WildstrikeDisplayName)
+              .SetDescription(WildstrikeDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddFacts(new() { ability })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .Configure();
         }
     }
