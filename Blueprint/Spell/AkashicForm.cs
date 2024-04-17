@@ -29,8 +29,6 @@ namespace PrestigePlus.Blueprint.Spell
 
         internal const string DisplayName = "NewSpellAkashicForm.Name";
         private const string Description = "NewSpellAkashicForm.Description";
-
-        internal const string Duration = "PPNewDuration24h.Name";
         public static void Configure()
         {
             var icon = AbilityRefs.PerfectForm.Reference.Get().Icon;
@@ -55,7 +53,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetAnimation(CastAnimationStyle.SelfTouch)
               .SetRange(AbilityRange.Personal)
               .SetType(AbilityType.Spell)
-              .SetLocalizedDuration(Duration)
+              .SetLocalizedDuration(Duration.TwentyFourHours)
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Extend)
               .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
