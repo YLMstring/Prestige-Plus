@@ -157,7 +157,6 @@ namespace PrestigePlus.Blueprint.Archetype
         public static BlueprintFeature CreateParanormalScholar12()
         {
             var icon = AbilityRefs.ShadowConjurationGreater.Reference.Get().Icon;
-            // "ShadowEnchantmentGreater": "ba079628-2748-4eb3-8bf0-b6aadd9f5f22", ttt
 
             return FeatureConfigurator.New(ParanormalScholar12, ParanormalScholar12Guid)
               .SetDisplayName(ParanormalScholar12DisplayName)
@@ -165,7 +164,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetIcon(icon)
               .AddComponent<PPLearnSpell>(c =>
               {
-                  c.Spell = BlueprintTool.GetRef<BlueprintAbilityReference>("ba079628-2748-4eb3-8bf0-b6aadd9f5f22");
+                  c.Spell = BlueprintTool.GetRef<BlueprintAbilityReference>(PhantomLimb.PhantomLimbAbilityGuid);
                   c.level = 6;
                   c.CharacterClass = CharacterClassRefs.DruidClass.Reference.Get();
               })

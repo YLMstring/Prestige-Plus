@@ -43,5 +43,40 @@ namespace PrestigePlus.Blueprint.MythicFeat
                     })
                     .Configure();
         }
+
+        private static readonly string Feat2Name = "SecretAkashic2";
+        private static readonly string Feat2Guid = "{16050278-9442-4FB1-ABDB-3AE7D5D2943A}";
+
+        private static readonly string DisplayName2 = "MythicSecretAkashic2.Name";
+        private static readonly string Description2 = "MythicSecretAkashic2.Description";
+
+        public static void Configure2()
+        {
+            var icon = AbilityRefs.PhantasmalKiller.Reference.Get().Icon;
+
+            FeatureConfigurator.New(Feat2Name, Feat2Guid, Kingmaker.Blueprints.Classes.FeatureGroup.MythicFeat)
+                    .SetDisplayName(DisplayName2)
+                    .SetDescription(Description2)
+                    .SetIcon(icon)
+                    .AddPrerequisiteFeature(FeatureRefs.RangedLegerdemainFeature.ToString())
+                    .AddPrerequisiteFeature(FeatureRefs.LoremasterLore.ToString())
+                    .AddToFeatureSelection("0d3a3619-9d99-47af-8e47-cb6cc4d26821") //ttt
+                    .AddComponent<PPLearnSpell>(c =>
+                    {
+                        c.Spell = AbilityRefs.PhantasmalKiller.Reference;
+                        c.level = 4;
+                    })
+                    .AddComponent<PPLearnSpell>(c =>
+                    {
+                        c.Spell = AbilityRefs.PhantasmalWeb.Reference;
+                        c.level = 5;
+                    })
+                    .AddComponent<PPLearnSpell>(c =>
+                    {
+                        c.Spell = BlueprintTool.GetRef<BlueprintAbilityReference>(PhantomLimb.PhantomLimbAbilityGuid);
+                        c.level = 6;
+                    })
+                    .Configure();
+        }
     }
 }
