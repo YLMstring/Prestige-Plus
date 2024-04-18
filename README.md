@@ -1,4 +1,4 @@
-# Prestige Plus v2.9.9 for WoTR 
+# Prestige Plus v3.0.0 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -205,9 +205,12 @@
 #### Cleric:  
 - [Divine Paragon](https://www.d20pfsrd.com/classes/core-classes/cleric/archetypes/paizo-cleric-archetypes/divine-paragon-cleric-archetype/)
 #### Druid:  
+- [Fungal Pilgrim](https://www.d20pfsrd.com/classes/core-classes/druid/archetypes/paizo-druid-archetypes/fungal-pilgrim-druid-archetype/)
 - [Menhir Savant](https://www.d20pfsrd.com/classes/core-classes/druid/archetypes/paizo-druid-archetypes/menhir-savant)
 - [Plains Druid](https://www.d20pfsrd.com/classes/core-classes/druid/archetypes/paizo-druid-archetypes/plains-druid)
-- [Fungal Pilgrim](https://www.d20pfsrd.com/classes/core-classes/druid/archetypes/paizo-druid-archetypes/fungal-pilgrim-druid-archetype/)
+- [Supernaturalist](https://www.d20pfsrd.com/classes/core-classes/druid/archetypes/paizo-druid-archetypes/supernaturalist-druid-archetype/)
+- Shamelessly grab the best spells in the whole game!
+- Eldritch Botanist: A supernaturalist can choose plant bond, as a treesinger druid, in place of nature bond (from [Expanded Content](https://github.com/ka-dyn/ExpandedContent)).
 - [Toxicologist](https://www.d20pfsrd.com/classes/core-classes/druid/archetypes/paizo-druid-archetypes/toxicologist-druid-archetype)
 #### Fighter:  
 - [Dawnflower Dervish](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Qadira%20%20Dawnflower%20Dervish)
