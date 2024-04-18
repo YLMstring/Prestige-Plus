@@ -242,6 +242,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("menhir"), defaultValue: true, Helpers.CreateString("toggle-desc72", "Menhir Savant"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("superop"), defaultValue: true, Helpers.CreateString("toggle-desc100", "Supernaturalist"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("toxic"), defaultValue: true, Helpers.CreateString("toggle-desc78", "Toxicologist"))
               .ShowVisualConnection())
           .AddToggle(
@@ -491,6 +494,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("forestwarden"))) { ForestWarden.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("usher"))) { MortalUsher.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("masterpiece"))) { Masterpiece.CreateBardMasterpieceCore(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("superop"))) { Supernaturalist.Configure(); HermeanPotential.Configure(); DebilitatingPain.Configure(); DebilitatingPainMass.Configure(); GlimpseAkashic.Configure(); AkashicForm.Configure(); SecretAkashic.Configure(); SecretAkashic.Configure2(); PhantomLimb.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
