@@ -25,6 +25,8 @@ using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Actions.Builder;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using PrestigePlus.CustomAction.OtherFeatRelated;
+using Kingmaker.UnitLogic.Mechanics.Components;
+using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -61,10 +63,38 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToAddFeatures(15, SpiritBonusGuid)
             .AddToAddFeatures(19, SpiritBonusGuid)
             .AddToAddFeatures(14, WildstrikeFeat())
+            .AddToAddFeatures(20, WildHeartFeat())
               .Configure();
 
             ProgressionConfigurator.For(ProgressionRefs.DruidProgression)
                 .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { ParanormalScholar3Guid, ParanormalScholar6Guid, ParanormalScholar9Guid, ParanormalScholar12Guid, ParanormalScholar15Guid, ParanormalScholar18Guid })
+                .AddToUIGroups(new Blueprint<BlueprintFeatureBaseReference>[] { TotemTransformationGuid, PackLeaderGuid, WildstrikeGuid, WildHeartGuid })
+                .Configure();
+
+            EldritchBotanistConfigure();
+        }
+
+        private const string EldritchBotanistFeat = "Supernaturalist.EldritchBotanist";
+        public static readonly string EldritchBotanistGuid = "{7A563862-2DC2-4061-8D0A-FFC10C8B98A1}";
+
+        internal const string EldritchBotanistDisplayName = "SupernaturalistEldritchBotanist.Name";
+        private const string EldritchBotanistDescription = "SupernaturalistEldritchBotanist.Description";
+        public static void EldritchBotanistConfigure()
+        {
+            var icon = AbilityRefs.PlantDomainBaseAbility.Reference.Get().Icon;
+            //"TreesingerPlantBondSelection": "c0b7042d-7c29-4682-b555-dbcc531236b6",
+            var feat = FeatureSelectionConfigurator.New(EldritchBotanistFeat, EldritchBotanistGuid)
+              .SetDisplayName(EldritchBotanistDisplayName)
+              .SetDescription(EldritchBotanistDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteArchetypeLevel(ArchetypeGuid, CharacterClassRefs.DruidClass.ToString())
+              .SetIgnorePrerequisites(false)
+              .SetObligatory(false)
+              .AddToAllFeatures("c0b7042d-7c29-4682-b555-dbcc531236b6")
+              .Configure();
+
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.DruidBondSelection)
+                .AddToAllFeatures(feat)
                 .Configure();
         }
 
@@ -332,6 +362,46 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDescription(WildstrikeDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
+              .AddFacts(new() { ability })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .Configure();
+        }
+
+        private const string WildHeart = "Supernaturalist.WildHeart";
+        private static readonly string WildHeartGuid = "{93CD6818-0582-404D-8C67-78972376C756}";
+
+        internal const string WildHeartDisplayName = "SupernaturalistWildHeart.Name";
+        private const string WildHeartDescription = "SupernaturalistWildHeart.Description";
+
+        private const string WildHeartAbility = "Supernaturalist.WildHeartAbility";
+        private static readonly string WildHeartAbilityGuid = "{C617C930-5662-42F1-82BB-50D5B7642742}";
+
+        private const string WildHeartRes = "Supernaturalist.WildHeartRes";
+        private static readonly string WildHeartResGuid = "{6A1A74BF-C847-4226-BE6D-FCFF02BE5B7F}";
+        public static BlueprintFeature WildHeartFeat()
+        {
+            var icon = AbilityRefs.SummonMonsterIXBase.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(WildHeartRes, WildHeartResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var ability = AbilityConfigurator.New(WildHeartAbility, WildHeartAbilityGuid)
+                .CopyFrom(
+                AbilityRefs.SummonMonsterIXBase,
+                typeof(AbilityVariants),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent))
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .Configure();
+
+            return FeatureConfigurator.New(WildHeart, WildHeartGuid)
+              .SetDisplayName(WildHeartDisplayName)
+              .SetDescription(WildHeartDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .AddSavingThrowBonusAgainstDescriptor(value: 4, spellDescriptor: SpellDescriptor.MindAffecting, modifierDescriptor: ModifierDescriptor.NaturalArmorForm)
+              .AddSavingThrowBonusAgainstSchool(value: 4, school: SpellSchool.Enchantment, modifierDescriptor: ModifierDescriptor.NaturalArmorForm)
               .AddFacts(new() { ability })
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .Configure();
