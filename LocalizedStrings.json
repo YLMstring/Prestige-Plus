@@ -13586,6 +13586,259 @@
     "enGB": "Talented bards can learn or create masterpieces, unusual applications of the bardic performance ability requiring special training. Each masterpiece has an associated cost to learn it. Typically, a bard must spend one of his bard spells known of a specific spell level or select it in place of a feat. The bard can spend a bard spell known of a level higher than the listed level to learn a masterpiece.",
     "ruRU": "Талантливые барды могут выучить или создать шедевры, необычные применения бардовских способностей, требующие специальной подготовки. Каждый шедевр имеет соответствующую стоимость изучения. Как правило, бард должен потратить одно из известных ему бардовских заклинаний определенного уровня или выбрать его вместо черты. Бард может потратить на изучение шедевра известное ему бардовское заклинание уровня выше, чем указанный уровень.",
     "zhCN": "天赋异禀的诗人能够学习或是自行创作名曲，运用这种不同寻常的诗人表演需要特殊的训练。每一种传世名作都不是白送的。通常来说，吟游诗人必须花费一个已知法术或是通过专长来学习传世名作，他可以花费比该传世名作要求最低等级还高的法术位以学习传世名作。"
+  },
+  {
+    "Key": "NewSpellHermeanPotential.Name",
+    "ProcessTemplates": false,
+    "enGB": "Hermean Potential",
+    "zhCN": "赫氏潜能术"
+  },
+  {
+    "Key": "NewSpellHermeanPotential.Description",
+    "enGB": "You gift the target with the ability to perfect its actions via mental clarity. On the next attack roll, saving throw, ability check, or skill check the target attempts, it rolls twice and takes the more favorable result. For every 5 caster levels you have, the target can roll twice on an additional attack roll, saving throw, or skill check (to a maximum of 5 rolls at 20th level).",
+    "zhCN": "你赐予目标通过清晰的头脑完美执行动作的能力。在目标尝试下一次攻击投骰，豁免检定或技能检定时，可以投骰两次，并取更有利的结果。你每有5个施法者等级，目标就可以额外重骰一次（次数最多在20级时达到5次）。"
+  },
+  {
+    "Key": "NewSpellDebilitatingPain.Name",
+    "ProcessTemplates": false,
+    "enGB": "Debilitating Pain",
+    "zhCN": "衰竭剧痛"
+  },
+  {
+    "Key": "NewSpellDebilitatingPain.Description",
+    "enGB": "The target is overcome with intense pain, causing it to be stunned on a failed save or dazed for 1 round on a successful save.",
+    "zhCN": "目标被剧烈的痛苦压垮，使得它在豁免失败时被震慑。而成功通过豁免时则为眩晕1轮。"
+  },
+  {
+    "Key": "NewSpellDebilitatingPainMass.Name",
+    "ProcessTemplates": false,
+    "enGB": "Debilitating Pain, Mass",
+    "zhCN": "群体衰竭剧痛"
+  },
+  {
+    "Key": "NewSpellDebilitatingPainMass.Description",
+    "enGB": "This spell functions as per debilitating pain, except you can target one creature with highest HD in close range for every 4 caster levels you have.",
+    "zhCN": "该法术如同衰竭剧痛，但你可以指定近距范围内生命骰数最高的敌人，其总数等于施法者等级除以4。"
+  },
+  {
+    "Key": "NewSpellGlimpseAkashic.Name",
+    "ProcessTemplates": false,
+    "enGB": "Glimpse of the Akashic",
+    "zhCN": "阿卡西窥视术"
+  },
+  {
+    "Key": "NewSpellGlimpseAkashic.Description",
+    "enGB": "You expand your consciousness in an attempt to tap into the perfect knowledge contained within the Akashic Record. Such a connection is incredibly difficult to create and maintain, and it can be almost impossible to know at the time of the casting what knowledge will be gained. The information contained within the Akashic Record can be overwhelming when accessed in this fashion, so your mind partitions it away until needed. For the next day, you can activate the knowledge gained from the Akashic Record as a free action; when you do so, you gain a circumstance bonus equal to your caster level on all skill checks, attack rolls, damage rolls, saving throws, and combat maneuver checks for 1 minute. At the end of this time, the overwhelming nature of the Akashic Record assaults your psyche, causing you to be stunned for 2 rounds and sickened for 1 minute.",
+    "zhCN": "你扩展你的意识来尝试联结隐藏在阿卡西记录中的完美知识。这种联结非常难以建立和保持，并且在施放法术的时候也几乎不可能知道究竟会获得什么样的知识。通过这种方式来获取保存在阿卡西记录中的信息时，它足以淹没你的意识。所以你的心灵会将它先放在一边，直到需要时再启用。在接下来的一天中，你可以通过自由动作激活你从阿卡西记录中获取的知识；当你这么做时，你在所有的技能鉴定、攻击检定、伤害检定、豁免检定以及战技检定上获得等于你的施法者等级的环境加值，持续1分钟。在这段时间结束之后，阿卡西记录那磅礴浩荡之性侵入了你的心智，令你震慑2轮并恶心1分钟。"
+  },
+  {
+    "Key": "NewSpellAkashicForm.Name",
+    "ProcessTemplates": false,
+    "enGB": "Akashic Form",
+    "zhCN": "阿卡西构形"
+  },
+  {
+    "Key": "NewSpellAkashicForm.Description",
+    "enGB": "You create a perfect record of your physical body in the Akashic Record at the time the spell is cast. If at any point within the duration of the spell you are brought below zero hit points, you are instead healed to maximum.",
+    "zhCN": "施放法术时，你在阿卡西记录中创造出自身肉体的完美记录。在法术持续时间内的任何时候，若你的生命值降低到零以下，改为恢复全满。"
+  },
+  {
+    "Key": "Supernaturalist.Name",
+    "ProcessTemplates": false,
+    "enGB": "Supernaturalist",
+    "zhCN": "超自然学家"
+  },
+  {
+    "Key": "Supernaturalist.Description",
+    "enGB": "Supernaturalists wholly embrace paranormal phenomena as extensions of nature.",
+    "zhCN": "超自然学家将超自然现象看做自然本性的延伸，从而全心投入其中。"
+  },
+  {
+    "Key": "SupernaturalistProficiencies.Name",
+    "ProcessTemplates": false,
+    "enGB": "Weapon and Armor Proficiency",
+    "zhCN": "超自然学家擅长"
+  },
+  {
+    "Key": "SupernaturalistProficiencies.Description",
+    "enGB": "A supernaturalist is not proficient with any type of armor. This alters the druid’s weapon and armor proficiencies.",
+    "zhCN": "超自然学家不擅长任何护甲。本能力调整了德鲁伊的武器和护甲擅长。"
+  },
+  {
+    "Key": "SupernaturalistEldritchBotanist.Name",
+    "ProcessTemplates": false,
+    "enGB": "Eldritch Botanist",
+    "zhCN": "秘法植物学"
+  },
+  {
+    "Key": "SupernaturalistEldritchBotanist.Description",
+    "enGB": "A supernaturalist can choose plant bond, as a treesinger druid, in place of nature bond.",
+    "zhCN": "超自然学家可以选择树之歌者的植物纽带，来取代原本的自然纽带。"
+  },
+  {
+    "Key": "ParanormalScholar3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Paranormal Scholar",
+    "zhCN": "灵异学者"
+  },
+  {
+    "Key": "ParanormalScholar3.Description",
+    "enGB": "At 3rd level, a supernaturalist add hermean potential to her spell list, and is able to prepare and cast it as a druid spell.",
+    "zhCN": "3级时，超自然学家将赫氏潜能术加入法术列表，并能将其当作德鲁伊法术一般准备和施放。"
+  },
+  {
+    "Key": "ParanormalScholar6.Name",
+    "ProcessTemplates": false,
+    "enGB": "Paranormal Scholar",
+    "zhCN": "灵异学者"
+  },
+  {
+    "Key": "ParanormalScholar6.Description",
+    "enGB": "At 6th level, a supernaturalist add debilitating pain to her spell list, and is able to prepare and cast it as a druid spell.",
+    "zhCN": "6级时，超自然学家将衰竭剧痛加入法术列表，并能将其当作德鲁伊法术一般准备和施放。"
+  },
+  {
+    "Key": "ParanormalScholar9.Name",
+    "ProcessTemplates": false,
+    "enGB": "Paranormal Scholar",
+    "zhCN": "灵异学者"
+  },
+  {
+    "Key": "ParanormalScholar9.Description",
+    "enGB": "At 9th level, a supernaturalist add debilitating pain, mass to her spell list, and is able to prepare and cast it as a druid spell.",
+    "zhCN": "9级时，超自然学家将群体衰竭剧痛加入法术列表，并能将其当作德鲁伊法术一般准备和施放。"
+  },
+  {
+    "Key": "ParanormalScholar12.Name",
+    "ProcessTemplates": false,
+    "enGB": "Paranormal Scholar",
+    "zhCN": "灵异学者"
+  },
+  {
+    "Key": "ParanormalScholar12.Description",
+    "enGB": "At 12th level, a supernaturalist add phantom limb to her spell list, and is able to prepare and cast it as a druid spell.",
+    "zhCN": "12级时，超自然学家将魅影手加入法术列表，并能将其当作德鲁伊法术一般准备和施放。"
+  },
+  {
+    "Key": "ParanormalScholar15.Name",
+    "ProcessTemplates": false,
+    "enGB": "Paranormal Scholar",
+    "zhCN": "灵异学者"
+  },
+  {
+    "Key": "ParanormalScholar15.Description",
+    "enGB": "At 15th level, a supernaturalist add glimpse of the akashic to her spell list, and is able to prepare and cast it as a druid spell.",
+    "zhCN": "15级时，超自然学家将阿卡西窥视术加入法术列表，并能将其当作德鲁伊法术一般准备和施放。"
+  },
+  {
+    "Key": "ParanormalScholar18.Name",
+    "ProcessTemplates": false,
+    "enGB": "Paranormal Scholar",
+    "zhCN": "灵异学者"
+  },
+  {
+    "Key": "ParanormalScholar18.Description",
+    "enGB": "At 18th level, a supernaturalist add akashic form to her spell list, and is able to prepare and cast it as a druid spell.",
+    "zhCN": "18级时，超自然学家将阿卡西构形加入法术列表，并能将其当作德鲁伊法术一般准备和施放。"
+  },
+  {
+    "Key": "SupernaturalistSpiritBonus.Name",
+    "ProcessTemplates": false,
+    "enGB": "Animal Spirit",
+    "zhCN": "动物之灵"
+  },
+  {
+    "Key": "SupernaturalistSpiritBonus.Description",
+    "enGB": "At 4th level, a supernaturalist can perform a seance to call an animal spirit of any animal with which she is familiar to serve as her companion and guide. Her spirit bonus applies on attack and damage rolls with natural weapons and on Lore (nature) checks.",
+    "zhCN": "4级起，超自然学家可以通过降灵仪式呼唤一种她熟悉的动物灵体作为他的护卫与向导。她在天生武器的攻击与伤害检定，以及所有知识（自然）检定上获得魂灵同调的加值。"
+  },
+  {
+    "Key": "SupernaturalistTotemTransformation.Name",
+    "ProcessTemplates": false,
+    "enGB": "Totem Transformation",
+    "zhCN": "图腾化形"
+  },
+  {
+    "Key": "SupernaturalistTotemTransformation.Description",
+    "enGB": "Your natural armor bonus to AC increases by 1. You gain any of the following abilities possessed by the animal you select as your animal spirit: bite (1d6 for a Medium druid), 2 claws (1d4 for a Medium druid), and improved land movement speed (up to a +20-foot enhancement bonus to the druid’s base land movement speed.",
+    "zhCN": "你在防御等级上的天生护甲加值额外增加1点。你获得动物之灵所具有的以下任意能力：啮咬攻击（中等体型德鲁伊的啮咬造成1d6点伤害）；2个爪抓攻击（中等体型德鲁伊的爪抓造成1d4点伤害）；精通走地（德鲁伊的地面移动速度获得至多20尺增强加值）。"
+  },
+  {
+    "Key": "SupernaturalistPackLeader.Name",
+    "ProcessTemplates": false,
+    "enGB": "Pack Leader",
+    "zhCN": "兽群之主"
+  },
+  {
+    "Key": "SupernaturalistPackLeader.Description",
+    "enGB": "When you summon animals that match your animal spirit, they gain a +2 bonus on attack rolls, damage rolls, and saving throws.",
+    "zhCN": "当你使用召唤法术召唤的动物与你的动物之灵类型相同时，这些动物在攻击检定，伤害检定和豁免检定上获得+2加值。"
+  },
+  {
+    "Key": "SupernaturalistWildstrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Wildstrike",
+    "zhCN": "狂突猛袭"
+  },
+  {
+    "Key": "SupernaturalistWildstrike.Description",
+    "enGB": "Three times per day as a swift action you can allow an animal or plant within 30 feet that can see or hear you to immediately make an attack of opportunity against the closest opponent.",
+    "zhCN": "每天3次，你可以通过迅捷动作命令一个处于30尺范围内且可以听到或看到你的动物或植物对最近的敌人发动借机攻击。"
+  },
+  {
+    "Key": "SupernaturalistWildHeart.Name",
+    "ProcessTemplates": false,
+    "enGB": "Wild Heart",
+    "zhCN": "狂野之心"
+  },
+  {
+    "Key": "SupernaturalistWildHeart.Description",
+    "enGB": "You gain a +4 bonus on saves against enchantment and mind-affecting effects. Once per day, you can cast summon nature’s ally spell IX as a standard action without expending a spell slot.",
+    "zhCN": "你在所有对抗惑控和影响心智效果的豁免检定上获得+4加值。每天一次，你可以用标准动作施放一次召唤自然盟友IX法术，无需消耗法术位。"
+  },
+  {
+    "Key": "MythicSecretAkashic.Name",
+    "ProcessTemplates": false,
+    "enGB": "Secret of the Akashic",
+    "zhCN": "阿卡西之秘"
+  },
+  {
+    "Key": "MythicSecretAkashic.Description",
+    "enGB": "Your study and devotion to psychic magic allows you to access spells beyond your ken. Add glimpse of the akashic and akashic form to all your spell lists.",
+    "zhCN": "你对心灵魔法的研究和奉献使你能够掌握超出原本知识范围的法术，将阿卡西窥视术和阿卡西构形添加到你的所有法术列表中。"
+  },
+  {
+    "Key": "PPNewDuration1/3round.Name",
+    "ProcessTemplates": false,
+    "enGB": "1 round/3 levels",
+    "zhCN": "1轮/3个施法者等级"
+  },
+  {
+    "Key": "PPNewDuration1/3round.Description",
+    "enGB": "1 round/3 levels",
+    "zhCN": "1轮/3个施法者等级"
+  },
+  {
+    "Key": "MythicSecretAkashic2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Secret of the Phantom",
+    "zhCN": "魅影之秘"
+  },
+  {
+    "Key": "MythicSecretAkashic2.Description",
+    "enGB": "Your study and devotion to phantasmal magic allows you to access spells beyond your ken. Add phantasmal killer, phantasmal web and phantom limb to all your spell lists.",
+    "zhCN": "你对魅影魔法的研究和奉献使你能够掌握超出原本知识范围的法术，将魅影杀手，魅影蛛网和魅影手添加到你的所有法术列表中。"
+  },
+  {
+    "Key": "NewSpellPhantomLimb.Name",
+    "ProcessTemplates": false,
+    "enGB": "Phantom Limb",
+    "zhCN": "魅影手"
+  },
+  {
+    "Key": "NewSpellPhantomLimb.Description",
+    "enGB": "This spell creates a semi-visible psychic manifestation that allows a creature to grow two phantom arms, granting it two extra natural claw attacks (1d4).",
+    "zhCN": "该法术创造一个半可见的异能显现物，令目标长出两条魅影手臂，提供两次额外的天生爪抓攻击（1d4）。"
   }
 
 ]
