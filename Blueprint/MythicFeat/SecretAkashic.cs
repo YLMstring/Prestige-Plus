@@ -2,6 +2,7 @@
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
+using PrestigePlus.Blueprint.PrestigeClass;
 using PrestigePlus.Blueprint.Spell;
 using PrestigePlus.CustomComponent.Spell;
 using System;
@@ -28,8 +29,9 @@ namespace PrestigePlus.Blueprint.MythicFeat
                     .SetDisplayName(DisplayName)
                     .SetDescription(Description)
                     .SetIcon(icon)
-                    .AddPrerequisiteFeature(ProgressionRefs.KineticBlastProgression.ToString())
                     .AddPrerequisiteFeature(FeatureRefs.LoremasterGreaterLore.ToString())
+                    .AddPrerequisiteFeature(FeatureRefs.RangedLegerdemainFeature.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                    .AddPrerequisiteFeature(ExaltedEvangelist.ExaltedDomainPlusGuid, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                     .AddToFeatureSelection("0d3a3619-9d99-47af-8e47-cb6cc4d26821") //ttt
                     .AddComponent<PPLearnSpell>(c =>
                     {
@@ -58,8 +60,9 @@ namespace PrestigePlus.Blueprint.MythicFeat
                     .SetDisplayName(DisplayName2)
                     .SetDescription(Description2)
                     .SetIcon(icon)
-                    .AddPrerequisiteFeature(FeatureRefs.RangedLegerdemainFeature.ToString())
-                    .AddPrerequisiteFeature(FeatureRefs.LoremasterLore.ToString())
+                    .AddPrerequisiteFeature(FeatureRefs.LoremasterGreaterLore.ToString())
+                    .AddPrerequisiteFeature(FeatureRefs.RangedLegerdemainFeature.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
+                    .AddPrerequisiteFeature(ExaltedEvangelist.ExaltedDomainPlusGuid, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                     .AddToFeatureSelection("0d3a3619-9d99-47af-8e47-cb6cc4d26821") //ttt
                     .AddComponent<PPLearnSpell>(c =>
                     {

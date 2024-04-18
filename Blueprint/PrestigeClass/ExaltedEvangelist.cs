@@ -319,7 +319,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         }
 
         private const string ExaltedDomainPlus = "Exalted.ExaltedDomainPlus";
-        private static readonly string ExaltedDomainPlusGuid = "{18E8AE34-E61D-4149-989B-4E55560F03CA}";
+        public static readonly string ExaltedDomainPlusGuid = "{18E8AE34-E61D-4149-989B-4E55560F03CA}";
 
         internal const string ExaltedDomainPlusDisplayName = "ExaltedExaltedDomainPlus.Name";
         private const string ExaltedDomainPlusDescription = "ExaltedExaltedDomainPlus.Description";
