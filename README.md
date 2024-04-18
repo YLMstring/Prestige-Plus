@@ -406,7 +406,9 @@
 - Endless Breath: You have 1/3 chance to recover one use of your breath weapon at the start of your turn. Additionally, your Gold Dragon Breath (Mythic) becomes a move action.
 - Riposte (Mythic): The duelist adds her mythic tier as a bonus on her attack roll when attempting a parry and riposte. This bonus does not stack with Ever Ready mythic feat.
 - Metaphysical Sneak Attack: If the student of war deals sneak attack damage to a target, he can study that target, allowing him to apply his Know Your Enemy effects. Additionally, his sneak attack no longer deals precision damage.
-- Mystic Catalyst: You can use Lesser Spell Synthesis ability at will. 
+- Mystic Catalyst: You can use Lesser Spell Synthesis ability at will.
+- Secret of the Phantom: Your study and devotion to phantasmal magic allows you to access spells beyond your ken. Add phantasmal killer, phantasmal web and phantom limb to all your spell lists.
+- Secret of the Akashic: Your study and devotion to psychic magic allows you to access spells beyond your ken. Add glimpse of the akashic and akashic form to all your spell lists.
 ### Other Features
 
 - [Quick Draw](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/swordlord/): If a Swordlord already has Quick Draw or Alertness, he gains Aldori Dueling Mastery as a bonus feat.
