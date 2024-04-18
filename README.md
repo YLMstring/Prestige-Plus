@@ -397,6 +397,12 @@
 - [Lockjaw](https://www.d20pfsrd.com/magic/all-spells/l/lockjaw/)
 - [Vex Giant](https://www.d20pfsrd.com/magic/all-spells/v/vex-giant/)
 - [Virtuoso Performance](https://www.d20pfsrd.com/magic/all-spells/v/virtuoso-performance/)
+- [Hermean Potential](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Hermean%20Potential)
+- [Debilitating Pain](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Debilitating%20Pain)
+- [Debilitating Pain, Mass](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Debilitating%20Pain)
+- [Phantom Limb](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Phantom%20Limb)
+- [Glimpse of the Akashic](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Glimpse%20of%20the%20Akashic)
+- [Akashic Form](https://www.d20pfsrd.com/magic/all-spells/a/akashic-form/)
 ### New Mythic Prestige Class Features
 
 - Swift Death: Your target assassination becomes a standard action. At 10th assassin level, it becomes a move action.
