@@ -31,7 +31,7 @@ namespace PrestigePlus.Blueprint.Spell
         private const string Description = "NewSpellAkashicForm.Description";
         public static void Configure()
         {
-            var icon = AbilityRefs.PerfectForm.Reference.Get().Icon;
+            var icon = AbilityRefs.BrilliantInspiration.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(AkashicFormBuff, AkashicFormBuffGuid)
               .SetDisplayName(DisplayName)

@@ -82,7 +82,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string EldritchBotanistDescription = "SupernaturalistEldritchBotanist.Description";
         public static void EldritchBotanistConfigure()
         {
-            var icon = AbilityRefs.PlantDomainBaseAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.SickeningEntanglement.Reference.Get().Icon;
             //"TreesingerPlantBondSelection": "c0b7042d-7c29-4682-b555-dbcc531236b6",
             var feat = FeatureSelectionConfigurator.New(EldritchBotanistFeat, EldritchBotanistGuid)
               .SetDisplayName(EldritchBotanistDisplayName)
@@ -148,7 +148,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature CreateParanormalScholar6()
         {
-            var icon = AbilityRefs.WitchHexAgonyAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.CacophonousCall.Reference.Get().Icon;
 
             return FeatureConfigurator.New(ParanormalScholar6, ParanormalScholar6Guid)
               .SetDisplayName(ParanormalScholar6DisplayName)
@@ -171,7 +171,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature CreateParanormalScholar9()
         {
-            var icon = AbilityRefs.WitchHexAgonyAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.CacophonousCallMass.Reference.Get().Icon;
 
             return FeatureConfigurator.New(ParanormalScholar9, ParanormalScholar9Guid)
               .SetDisplayName(ParanormalScholar9DisplayName)
@@ -240,7 +240,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature CreateParanormalScholar18()
         {
-            var icon = AbilityRefs.PerfectForm.Reference.Get().Icon;
+            var icon = AbilityRefs.BrilliantInspiration.Reference.Get().Icon;
 
             return FeatureConfigurator.New(ParanormalScholar18, ParanormalScholar18Guid)
               .SetDisplayName(ParanormalScholar18DisplayName)

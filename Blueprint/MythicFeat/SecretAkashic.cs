@@ -23,7 +23,7 @@ namespace PrestigePlus.Blueprint.MythicFeat
 
         public static void Configure()
         {
-            var icon = AbilityRefs.TrueSeeing.Reference.Get().Icon;
+            var icon = AbilityRefs.TrueSeeingCommunal.Reference.Get().Icon;
 
             FeatureConfigurator.New(FeatName, FeatGuid, Kingmaker.Blueprints.Classes.FeatureGroup.MythicFeat)
                     .SetDisplayName(DisplayName)

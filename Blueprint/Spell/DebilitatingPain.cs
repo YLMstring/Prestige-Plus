@@ -29,7 +29,7 @@ namespace PrestigePlus.Blueprint.Spell
         internal const string Duration = "PPNewDuration1/3round.Name";
         public static void Configure()
         {
-            var icon = AbilityRefs.WitchHexAgonyAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.CacophonousCall.Reference.Get().Icon;
 
             AbilityConfigurator.NewSpell(
                 DebilitatingPainAbility, DebilitatingPainAbilityGuid, SpellSchool.Enchantment, canSpecialize: false)
