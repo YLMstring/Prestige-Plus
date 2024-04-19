@@ -30,7 +30,7 @@ namespace PrestigePlus.Blueprint.Spell
         private const string Description = "NewSpellHermeanPotential.Description";
         public static void Configure()
         {
-            var icon = AbilityRefs.RestorationLesser.Reference.Get().Icon;
+            var icon = AbilityRefs.BestowGraceCast.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(HermeanPotentialBuff, HermeanPotentialBuffGuid)
               .SetDisplayName(DisplayName)
@@ -49,6 +49,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetAnimation(CastAnimationStyle.Touch)
               .SetRange(AbilityRange.Touch)
               .SetType(AbilityType.Spell)
+              .AddToSpellLists(level: 1, SpellList.Witch)
               .SetSpellDescriptor(SpellDescriptor.MindAffecting | SpellDescriptor.Compulsion)
               .SetLocalizedDuration(Duration.MinutePerLevel)
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Extend, Metamagic.Heighten)

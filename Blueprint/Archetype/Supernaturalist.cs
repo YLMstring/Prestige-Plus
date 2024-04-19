@@ -27,6 +27,7 @@ using Kingmaker.UnitLogic.Buffs.Blueprints;
 using PrestigePlus.CustomAction.OtherFeatRelated;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
+using Kingmaker.UnitLogic.Abilities.Components.CasterCheckers;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -91,6 +92,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
               .AddToAllFeatures("c0b7042d-7c29-4682-b555-dbcc531236b6")
+              .SetHideNotAvailibleInUI(true)
               .Configure();
 
             FeatureSelectionConfigurator.For(FeatureSelectionRefs.DruidBondSelection)
@@ -111,6 +113,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetIsClassFeature(true)
               .AddComponent(dProficiencies.GetComponent<AddProficiencies>())
               .AddFacts(new() { FeatureRefs.ShieldsProficiency.ToString() })
+              .AddToIsPrerequisiteFor(EldritchBotanistGuid)
               .Configure();
         }
 
@@ -122,7 +125,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature CreateParanormalScholar3()
         {
-            var icon = AbilityRefs.ThornBody.Reference.Get().Icon;
+            var icon = AbilityRefs.BestowGraceCast.Reference.Get().Icon;
 
             return FeatureConfigurator.New(ParanormalScholar3, ParanormalScholar3Guid)
               .SetDisplayName(ParanormalScholar3DisplayName)
@@ -145,7 +148,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature CreateParanormalScholar6()
         {
-            var icon = AbilityRefs.ThornBody.Reference.Get().Icon;
+            var icon = AbilityRefs.WitchHexAgonyAbility.Reference.Get().Icon;
 
             return FeatureConfigurator.New(ParanormalScholar6, ParanormalScholar6Guid)
               .SetDisplayName(ParanormalScholar6DisplayName)
@@ -168,7 +171,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature CreateParanormalScholar9()
         {
-            var icon = AbilityRefs.ThornBody.Reference.Get().Icon;
+            var icon = AbilityRefs.WitchHexAgonyAbility.Reference.Get().Icon;
 
             return FeatureConfigurator.New(ParanormalScholar9, ParanormalScholar9Guid)
               .SetDisplayName(ParanormalScholar9DisplayName)
@@ -191,7 +194,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature CreateParanormalScholar12()
         {
-            var icon = AbilityRefs.ShadowConjurationGreater.Reference.Get().Icon;
+            var icon = AbilityRefs.ConstrictingCoils.Reference.Get().Icon;
 
             return FeatureConfigurator.New(ParanormalScholar12, ParanormalScholar12Guid)
               .SetDisplayName(ParanormalScholar12DisplayName)
@@ -214,7 +217,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature CreateParanormalScholar15()
         {
-            var icon = AbilityRefs.ThornBody.Reference.Get().Icon;
+            var icon = AbilityRefs.TrueSeeingCommunal.Reference.Get().Icon;
 
             return FeatureConfigurator.New(ParanormalScholar15, ParanormalScholar15Guid)
               .SetDisplayName(ParanormalScholar15DisplayName)
@@ -237,7 +240,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature CreateParanormalScholar18()
         {
-            var icon = AbilityRefs.ThornBody.Reference.Get().Icon;
+            var icon = AbilityRefs.PerfectForm.Reference.Get().Icon;
 
             return FeatureConfigurator.New(ParanormalScholar18, ParanormalScholar18Guid)
               .SetDisplayName(ParanormalScholar18DisplayName)
@@ -259,7 +262,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string SpiritBonusDescription = "SupernaturalistSpiritBonus.Description";
         private static BlueprintFeature CreateSpiritBonus()
         {
-            var icon = AbilityRefs.PrimalRegression.Reference.Get().Icon;
+            var icon = AbilityRefs.NaturesExile.Reference.Get().Icon;
 
             return FeatureConfigurator.New(SpiritBonus, SpiritBonusGuid)
               .SetDisplayName(SpiritBonusDisplayName)
@@ -280,7 +283,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string TotemTransformationDescription = "SupernaturalistTotemTransformation.Description";
         private static BlueprintFeature CreateTotemTransformation()
         {
-            var icon = AbilityRefs.AnimalAspectMonkey.Reference.Get().Icon;
+            var icon = AbilityRefs.WildShapeIWolfAbillity.Reference.Get().Icon;
 
             return FeatureConfigurator.New(TotemTransformation, TotemTransformationGuid)
               .SetDisplayName(TotemTransformationDisplayName)
@@ -335,7 +338,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private static readonly string WildstrikeResGuid = "{0858C4CF-9CE5-4758-954D-E2DD88C7E5A4}";
         public static BlueprintFeature WildstrikeFeat()
         {
-            var icon = AbilityRefs.Command.Reference.Get().Icon;
+            var icon = AbilityRefs.CatsGraceMass.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(WildstrikeRes, WildstrikeResGuid)
                 .SetMaxAmount(ResourceAmountBuilder.New(3))
@@ -380,7 +383,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private static readonly string WildHeartResGuid = "{6A1A74BF-C847-4226-BE6D-FCFF02BE5B7F}";
         public static BlueprintFeature WildHeartFeat()
         {
-            var icon = AbilityRefs.SummonMonsterIXBase.Reference.Get().Icon;
+            var icon = AbilityRefs.SummonNaturesAllyIX.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(WildHeartRes, WildHeartResGuid)
                 .SetMaxAmount(ResourceAmountBuilder.New(1))
@@ -388,10 +391,12 @@ namespace PrestigePlus.Blueprint.Archetype
 
             var ability = AbilityConfigurator.New(WildHeartAbility, WildHeartAbilityGuid)
                 .CopyFrom(
-                AbilityRefs.SummonMonsterIXBase,
+                AbilityRefs.SummonNaturesAllyIX,
                 typeof(AbilityVariants),
                 typeof(SpellComponent),
-                typeof(SpellDescriptorComponent))
+                typeof(SpellDescriptorComponent),
+                typeof(ContextRankConfig),
+                typeof(AbilityCasterHasNoFacts))
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .Configure();
 

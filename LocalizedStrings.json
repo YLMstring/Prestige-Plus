@@ -13676,68 +13676,68 @@
     "zhCN": "超自然学家可以选择树之歌者的植物纽带，来取代原本的自然纽带。"
   },
   {
-    "Key": "ParanormalScholar3.Name",
+    "Key": "SupernaturalistParanormalScholar3.Name",
     "ProcessTemplates": false,
     "enGB": "Paranormal Scholar",
     "zhCN": "灵异学者"
   },
   {
-    "Key": "ParanormalScholar3.Description",
+    "Key": "SupernaturalistParanormalScholar3.Description",
     "enGB": "At 3rd level, a supernaturalist add hermean potential to her spell list, and is able to prepare and cast it as a druid spell.",
     "zhCN": "3级时，超自然学家将赫氏潜能术加入法术列表，并能将其当作德鲁伊法术一般准备和施放。"
   },
   {
-    "Key": "ParanormalScholar6.Name",
+    "Key": "SupernaturalistParanormalScholar6.Name",
     "ProcessTemplates": false,
     "enGB": "Paranormal Scholar",
     "zhCN": "灵异学者"
   },
   {
-    "Key": "ParanormalScholar6.Description",
+    "Key": "SupernaturalistParanormalScholar6.Description",
     "enGB": "At 6th level, a supernaturalist add debilitating pain to her spell list, and is able to prepare and cast it as a druid spell.",
     "zhCN": "6级时，超自然学家将衰竭剧痛加入法术列表，并能将其当作德鲁伊法术一般准备和施放。"
   },
   {
-    "Key": "ParanormalScholar9.Name",
+    "Key": "SupernaturalistParanormalScholar9.Name",
     "ProcessTemplates": false,
     "enGB": "Paranormal Scholar",
     "zhCN": "灵异学者"
   },
   {
-    "Key": "ParanormalScholar9.Description",
+    "Key": "SupernaturalistParanormalScholar9.Description",
     "enGB": "At 9th level, a supernaturalist add debilitating pain, mass to her spell list, and is able to prepare and cast it as a druid spell.",
     "zhCN": "9级时，超自然学家将群体衰竭剧痛加入法术列表，并能将其当作德鲁伊法术一般准备和施放。"
   },
   {
-    "Key": "ParanormalScholar12.Name",
+    "Key": "SupernaturalistParanormalScholar12.Name",
     "ProcessTemplates": false,
     "enGB": "Paranormal Scholar",
     "zhCN": "灵异学者"
   },
   {
-    "Key": "ParanormalScholar12.Description",
+    "Key": "SupernaturalistParanormalScholar12.Description",
     "enGB": "At 12th level, a supernaturalist add phantom limb to her spell list, and is able to prepare and cast it as a druid spell.",
     "zhCN": "12级时，超自然学家将魅影手加入法术列表，并能将其当作德鲁伊法术一般准备和施放。"
   },
   {
-    "Key": "ParanormalScholar15.Name",
+    "Key": "SupernaturalistParanormalScholar15.Name",
     "ProcessTemplates": false,
     "enGB": "Paranormal Scholar",
     "zhCN": "灵异学者"
   },
   {
-    "Key": "ParanormalScholar15.Description",
+    "Key": "SupernaturalistParanormalScholar15.Description",
     "enGB": "At 15th level, a supernaturalist add glimpse of the akashic to her spell list, and is able to prepare and cast it as a druid spell.",
     "zhCN": "15级时，超自然学家将阿卡西窥视术加入法术列表，并能将其当作德鲁伊法术一般准备和施放。"
   },
   {
-    "Key": "ParanormalScholar18.Name",
+    "Key": "SupernaturalistParanormalScholar18.Name",
     "ProcessTemplates": false,
     "enGB": "Paranormal Scholar",
     "zhCN": "灵异学者"
   },
   {
-    "Key": "ParanormalScholar18.Description",
+    "Key": "SupernaturalistParanormalScholar18.Description",
     "enGB": "At 18th level, a supernaturalist add akashic form to her spell list, and is able to prepare and cast it as a druid spell.",
     "zhCN": "18级时，超自然学家将阿卡西构形加入法术列表，并能将其当作德鲁伊法术一般准备和施放。"
   },

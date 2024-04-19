@@ -32,7 +32,7 @@ namespace PrestigePlus.Blueprint.Spell
         private const string Description = "NewSpellPhantomLimb.Description";
         public static void Configure()
         {
-            var icon = AbilityRefs.TouchOfFatigueEffect.Reference.Get().Icon;
+            var icon = AbilityRefs.ConstrictingCoils.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(PhantomLimbBuff, PhantomLimbBuffGuid)
               .SetDisplayName(DisplayName)

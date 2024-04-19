@@ -38,8 +38,8 @@ namespace PrestigePlus.Blueprint.Spell
         private const string Description = "NewSpellGlimpseAkashic.Description";
         public static void Configure()
         {
-            var icon = AbilityRefs.TrueSeeing.Reference.Get().Icon;
-            var fx = AbilityRefs.TrueSeeing.Reference.Get().GetComponent<AbilitySpawnFx>();
+            var icon = AbilityRefs.TrueSeeingCommunal.Reference.Get().Icon;
+            var fx = AbilityRefs.MageShield.Reference.Get().GetComponent<AbilitySpawnFx>();
 
             var enemybuff = BuffConfigurator.New(GlimpseAkashicBuff2, GlimpseAkashicBuff2Guid)
               .SetDisplayName(DisplayName)
