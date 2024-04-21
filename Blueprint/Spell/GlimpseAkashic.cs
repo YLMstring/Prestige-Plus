@@ -17,6 +17,7 @@ using System.Threading.Tasks;
 using Kingmaker.Blueprints;
 using BlueprintCore.Actions.Builder.ContextEx;
 using static Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell;
+using BlueprintCore.Actions.Builder.AVEx;
 
 namespace PrestigePlus.Blueprint.Spell
 {
@@ -39,7 +40,7 @@ namespace PrestigePlus.Blueprint.Spell
         public static void Configure()
         {
             var icon = FeatureRefs.ArcanistExploitSwiftConsumeFeature.Reference.Get().Icon;
-            var fx = AbilityRefs.MageShield.Reference.Get().GetComponent<AbilitySpawnFx>();
+            var fx = AbilityRefs.EuphoricTranquility.Reference.Get().GetComponent<AbilitySpawnFx>();
 
             var enemybuff = BuffConfigurator.New(GlimpseAkashicBuff2, GlimpseAkashicBuff2Guid)
               .SetDisplayName(DisplayName)
@@ -54,13 +55,13 @@ namespace PrestigePlus.Blueprint.Spell
 
             var action = ActionsBuilder.New()
                 .ApplyBuff(enemybuff, ContextDuration.Fixed(10), isFromSpell: true)
+                .SpawnFx(fx.PrefabLink)
                 .Build();
 
             var ability2 = AbilityConfigurator.New(GlimpseAkashicAbility2, GlimpseAkashicAbility2Guid)
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
-              .AddComponent(fx)
               .SetAnimation(CastAnimationStyle.Omni)
               .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
               .SetRange(AbilityRange.Personal)

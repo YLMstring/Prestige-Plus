@@ -40,7 +40,7 @@ namespace PrestigePlus.Blueprint.Spell
               .AddImmortality()
               .AddIncomingDamageTrigger(ActionsBuilder.New()
                     .HealTarget(ContextDice.Value(Kingmaker.RuleSystem.DiceType.Zero, 0, 9999))
-                    .SpawnFx("749ad3759dc93d64dba70a84d48135b5")
+                    .SpawnFx("ee0c5b9397ffec54d86acf56c94f4b06")
                     .RemoveSelf()
                     .Build(), reduceBelowZero: true)
               .Configure();
