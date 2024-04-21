@@ -17,6 +17,8 @@ using BlueprintCore.Conditions.Builder;
 using Kingmaker.Utility;
 using Kingmaker.UnitLogic.Abilities.Components;
 using PrestigePlus.CustomAction;
+using Kingmaker.Blueprints;
+using Kingmaker.UnitLogic.Abilities.Components.Base;
 
 namespace PrestigePlus.Blueprint.Spell
 {
@@ -40,8 +42,9 @@ namespace PrestigePlus.Blueprint.Spell
               .SetIcon(icon)
               .SetLocalizedDuration(Duration)
               .SetAnimation(CastAnimationStyle.Omni)
+              .AddComponent(AbilityRefs.CacophonousCallMass.Reference.Get().GetComponent<AbilitySpawnFx>())
               .SetRange(AbilityRange.Personal)
-              .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Enemy, radius: 20.Feet(), spreadSpeed: 20.Feet())
+              .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Enemy, radius: 30.Feet(), spreadSpeed: 40.Feet())
               .SetType(AbilityType.Spell)
               .AddSpellResistance()
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Quicken, Metamagic.Extend, Metamagic.Persistent)

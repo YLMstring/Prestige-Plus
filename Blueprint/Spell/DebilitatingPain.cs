@@ -15,6 +15,8 @@ using static Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCas
 using BlueprintCore.Actions.Builder.ContextEx;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using BlueprintCore.Utils.Types;
+using Kingmaker.Blueprints;
+using Kingmaker.UnitLogic.Abilities.Components.Base;
 
 namespace PrestigePlus.Blueprint.Spell
 {
@@ -38,7 +40,8 @@ namespace PrestigePlus.Blueprint.Spell
               .SetIcon(icon)
               .SetLocalizedDuration(Duration)
               .AllowTargeting(false, true, false, false)
-              .SetAnimation(CastAnimationStyle.Omni)
+              .SetAnimation(CastAnimationStyle.Directional)
+              .AddComponent(AbilityRefs.CacophonousCall.Reference.Get().GetComponent<AbilitySpawnFx>())
               .SetRange(AbilityRange.Close)
               .SetType(AbilityType.Spell)
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Quicken, Metamagic.Reach, Metamagic.Extend, Metamagic.Persistent)

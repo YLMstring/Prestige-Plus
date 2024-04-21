@@ -17,6 +17,8 @@ using Kingmaker.UnitLogic.Mechanics.Components;
 using static Kingmaker.Blueprints.Area.FactHolder;
 using Kingmaker.ElementsSystem;
 using Kingmaker.Blueprints.Facts;
+using Kingmaker.UnitLogic.Abilities.Components;
+using Kingmaker.Designers;
 
 namespace PrestigePlus.CustomAction
 {
@@ -37,7 +39,7 @@ namespace PrestigePlus.CustomAction
             foreach (UnitGroupMemory.UnitInfo unitInfo in Context.MaybeCaster.Memory.Enemies)
             {
                 UnitEntityData unit = unitInfo.Unit;
-                if (!unit.Descriptor.State.IsDead && unit.DistanceTo(Context.MaybeCaster) <= 30.Feet().Meters)
+                if (!unit.Descriptor.State.IsDead && Target.Unit.IsUnitInRange(Context.MaybeCaster.Position, 30.Feet().Meters, true))
                 {
                     list.Add(unit);
                 }

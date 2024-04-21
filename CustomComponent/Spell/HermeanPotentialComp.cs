@@ -45,8 +45,8 @@ namespace PrestigePlus.CustomComponent.Spell
         {
             if (base.Data.Roll == evt && base.Data.num - 1 >= GetBonus() / 5)
             {
+                //base.Data.Roll = null;
                 base.Owner.RemoveFact(base.Fact);
-                base.Data.Roll = null;
             }
         }
 

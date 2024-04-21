@@ -15,6 +15,8 @@ using static Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCas
 using BlueprintCore.Actions.Builder.ContextEx;
 using Kingmaker.Craft;
 using PrestigePlus.CustomComponent.Spell;
+using Kingmaker.Blueprints;
+using Kingmaker.UnitLogic.Abilities.Components.Base;
 
 namespace PrestigePlus.Blueprint.Spell
 {
@@ -45,6 +47,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
+              .AddComponent(AbilityRefs.Sleep.Reference.Get().GetComponent<AbilitySpawnFx>())
               .AllowTargeting(false, false, true, true)
               .SetAnimation(CastAnimationStyle.Touch)
               .SetRange(AbilityRange.Touch)
@@ -55,7 +58,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Extend, Metamagic.Heighten)
               .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
-                  .ApplyBuff(buff, ContextDuration.Variable(ContextValues.Rank()), isFromSpell: true)
+                  .ApplyBuff(buff, ContextDuration.Variable(ContextValues.Rank(), Kingmaker.UnitLogic.Mechanics.DurationRate.Minutes), isFromSpell: true)
                   .Build())
               .AddCraftInfoComponent(
                 aOEType: CraftAOE.None,

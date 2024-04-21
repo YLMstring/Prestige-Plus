@@ -38,7 +38,7 @@ namespace PrestigePlus.Blueprint.Spell
         private const string Description = "NewSpellGlimpseAkashic.Description";
         public static void Configure()
         {
-            var icon = AbilityRefs.TrueSeeingCommunal.Reference.Get().Icon;
+            var icon = FeatureRefs.ArcanistExploitSwiftConsumeFeature.Reference.Get().Icon;
             var fx = AbilityRefs.MageShield.Reference.Get().GetComponent<AbilitySpawnFx>();
 
             var enemybuff = BuffConfigurator.New(GlimpseAkashicBuff2, GlimpseAkashicBuff2Guid)
@@ -49,12 +49,11 @@ namespace PrestigePlus.Blueprint.Spell
               .AddBuffActions(deactivated: ActionsBuilder.New()
                     .ApplyBuff(BuffRefs.Stunned.ToString(), ContextDuration.Fixed(2))
                     .ApplyBuff(BuffRefs.Nauseated.ToString(), ContextDuration.Fixed(10))
-                    .Build())
+                    .Build(), activated: ActionsBuilder.New().RemoveBuff(GlimpseAkashicBuffGuid).Build())
               .Configure();
 
             var action = ActionsBuilder.New()
                 .ApplyBuff(enemybuff, ContextDuration.Fixed(10), isFromSpell: true)
-                .RemoveBuff(GlimpseAkashicBuffGuid)
                 .Build();
 
             var ability2 = AbilityConfigurator.New(GlimpseAkashicAbility2, GlimpseAkashicAbility2Guid)
