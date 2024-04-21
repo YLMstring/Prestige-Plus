@@ -52,7 +52,11 @@ namespace PrestigePlus.CustomComponent.Spell
             {
                 return;
             }
-            Spellbook spellbook = base.Owner.DemandSpellbook(clazz);
+            Spellbook spellbook = base.Owner.GetSpellbook(clazz);
+            if (spellbook == null)
+            {
+                return;
+            }
             if (spellbook.GetKnownSpells(level).All((AbilityData spellFromSpellbook) => spellFromSpellbook.Blueprint != Spell))
             {
                 spellbook.AddKnown(level, Spell, true);
