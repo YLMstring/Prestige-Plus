@@ -13885,6 +13885,28 @@
     "enGB": "This spell creates a semi-visible psychic manifestation that allows a creature to grow two phantom arms, granting it two extra natural claw attacks (1d4).",
     "ruRU": " полувидимое психическое проявление, которое позволяет существу отрастить две призрачные руки, дающие ему две дополнительные естественные атаки когтями (1d4)",
     "zhCN": "该法术创造一个半可见的异能显现物，令目标长出两条魅影手臂，提供两次额外的天生爪抓攻击（1d4）。"
+  },
+  {
+    "Key": "FeatShootingStar.Name",
+    "ProcessTemplates": false,
+    "enGB": "Desna's Shooting Star",
+    "zhCN": "德丝娜的流星飞刃"
+  },
+  {
+    "Key": "FeatShootingStar.Description",
+    "enGB": "Among the divine fighting manuals of the Inner Sea, few are as ancient as Clamor of the Spheres, a collection of fighting techniques favored by Desna’s faithful. True to its name, the manual focuses on interpreting the chaos and sounds of combat, but nevertheless provides insightful and downright brilliant methods of defense with Desna’s favored weapon, using techniques that treat a fight with a starknife more as a beautiful dance than a battle. You can add your Charisma bonus to attack rolls and damage rolls when wielding a starknife. If you do so, you don’t modify attack rolls and damage rolls with your starknife with your Strength modifier, your Dexterity modifier (if you have Weapon Finesse), or any other ability score (if you have an ability that allows you to modify attack rolls and damage rolls with that ability score).",
+    "zhCN": "Among the divine fighting manuals of the Inner Sea, few are as ancient as Clamor of the Spheres, a collection of fighting techniques favored by Desna’s faithful. True to its name, the manual focuses on interpreting the chaos and sounds of combat, but nevertheless provides insightful and downright brilliant methods of defense with Desna’s favored weapon, using techniques that treat a fight with a starknife more as a beautiful dance than a battle. 你可以将你的魅力调整值添加到使用星刃的攻击和伤害检定上。如果你如此做，你无法应用你的力量调整值，敏捷调整值（如果你有武器娴熟）或其他属性（如果你拥有将你替代攻击和伤害检定的能力）。"
+  },
+  {
+    "Key": "FeatShootingStar2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Desna's Shooting Star",
+    "zhCN": "德丝娜的流星飞刃"
+  },
+  {
+    "Key": "FeatShootingStar2.Description",
+    "enGB": "Advanced Prerequisites: Dex 17; Divine Fighting Technique; Point-Blank Shot; Rapid Shot; base attack bonus +11 or Thievery 11 ranks. You can impart a powerful spin to a thrown starknife so that multiple blades strike the target rather than just a single blade of the four, dealing extra damage with the other blades. As a full-round action, you can make a single attack with a thrown starknife, rolling 1d4 to determine how many effective strikes you gain with the attack (if you roll a 1, then only one blade strikes). If the attack hits, all of the effective strikes damage the target. Apply critical hit damage only once for this attack. The damage bonus from your appropriate ability score modifier applies to each strike, as do other damage bonuses, such as a bard’s inspire competence bonus. Damage reduction and resistances apply separately to each strike.",
+    "zhCN": "进阶条件：敏捷17，神圣武器技法，近程射击，快速射击，BAB+11或巧手11级。你可以给一个被抛出的星刃赋予强大的回旋效果，使得多个刃叶击中目标而非四个刃叶中的某一个，并造成额外的伤害。作为一个整轮动作，你可以投掷星刃进行一次攻击，投掷1d4来决定获得几次有效攻击（如果你投掷出1，则只有一次）。如果攻击命中，则每一击都会成功伤害目标。其中重击伤害只能触发一次，来自固定加值的伤害则适用于每个伤害骰，例如吟游诗人的激发勇气加值。抗性和伤害减免能力适用于每一击。"
   }
 
 ]
