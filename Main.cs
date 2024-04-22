@@ -493,7 +493,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("savagew"))) { SavageWarrior.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("forestwarden"))) { ForestWarden.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("usher"))) { MortalUsher.Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("masterpiece"))) { Masterpiece.CreateBardMasterpieceCore(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("masterpiece"))) { Masterpiece.CreateBardMasterpieceCore(); ShootingStar.ShootingStarConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("superop"))) { HermeanPotential.Configure(); DebilitatingPain.Configure(); DebilitatingPainMass.Configure(); GlimpseAkashic.Configure(); AkashicForm.Configure(); PhantomLimb.Configure(); Supernaturalist.Configure(); SecretAkashic.Configure(); SecretAkashic.Configure2(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }

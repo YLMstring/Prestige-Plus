@@ -57,7 +57,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                         .ApplyBuff(Buff2, ContextDuration.Fixed(1), toCaster: true)
-                        
+                        .Add<ShootingStarAttack>()
                         .Build())
                 .SetDisplayName(ShootingStarDisplayName2)
                 .SetDescription(ShootingStarDescription2)
@@ -78,6 +78,7 @@ namespace PrestigePlus.Blueprint.Feat
                   c.ReplacementStat = StatType.Charisma; c.SubCategory = WeaponSubCategory.Finessable; c.CheckWeaponTypes = true;
                   c.m_WeaponTypes = new BlueprintWeaponTypeReference[] { WeaponTypeRefs.Starknife.Reference.Get().ToReference<BlueprintWeaponTypeReference>() };
               })
+              .AddFacts(new() { ability })
               .AddToFeatureSelection("96f784ce-7660-40d4-9cf3-29bc289a8be5") //co+
               .Configure();
         }
