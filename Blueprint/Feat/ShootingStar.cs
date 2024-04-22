@@ -64,6 +64,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetIcon(icon)
                 .SetRange(AbilityRange.Close)
                 .SetType(AbilityType.Physical)
+                .AddComponent<ShootingStarRequirement>()
                 .Configure();
 
             FeatureConfigurator.New(ShootingStarFeat, ShootingStarGuid)
