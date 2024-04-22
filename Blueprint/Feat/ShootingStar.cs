@@ -65,6 +65,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetRange(AbilityRange.Close)
                 .SetType(AbilityType.Physical)
                 .AddComponent<ShootingStarRequirement>()
+                .AddAbilityCasterMainWeaponCheck(WeaponCategory.Starknife)
                 .Configure();
 
             FeatureConfigurator.New(ShootingStarFeat, ShootingStarGuid)
