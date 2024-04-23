@@ -31,6 +31,9 @@ namespace PrestigePlus.Patch
         private const string spelllist = "AgentoftheGrave.spelllist";
         private static readonly string spelllistguid = "{72869416-FA1F-4864-BB0A-AAAFD05D7177}";
 
+        private const string shadowspelllist = "AgentoftheGrave.shadowspelllist";
+        private static readonly string shadowspelllistguid = "{3E80C400-4586-44A6-9EBC-5B19D066825D}";
+
         private static readonly BlueprintSpellList WizardNecromancySpells = SpellListRefs.WizardNecromancySpellList.Reference.Get();
         private static readonly BlueprintSpellList ClericSpells = SpellListRefs.ClericSpellList.Reference.Get();
         private static readonly BlueprintSpellList WizardSpells = SpellListRefs.WizardSpellList.Reference.Get();
@@ -90,7 +93,7 @@ namespace PrestigePlus.Patch
                 m_Spells = new List<BlueprintAbilityReference>() { }
             };
 
-            var spellList = SpellListConfigurator.New(spelllist, spelllistguid)
+            var spellList = SpellListConfigurator.New(shadowspelllist, shadowspelllistguid)
               .AddToSpellsByLevel(
                 new(0),
                 firstLevelSpells,
