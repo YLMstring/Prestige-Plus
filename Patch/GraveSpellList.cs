@@ -39,11 +39,12 @@ namespace PrestigePlus.Patch
         {
             //"ShadowEnchantment": "d934f706-a12b-40ec-87a9-c8baf221b8a9",
             //"ShadowEnchantmentGreater": "ba079628-2748-4eb3-8bf0-b6aadd9f5f22",
-
+            
             var shadow = BlueprintTool.GetRef<BlueprintAbilityReference>("d934f706-a12b-40ec-87a9-c8baf221b8a9")?.Get();
             var shadow2 = BlueprintTool.GetRef<BlueprintAbilityReference>("ba079628-2748-4eb3-8bf0-b6aadd9f5f22")?.Get();
 
-            if (shadow == null || shadow2 == null) { return; }
+            if (shadow == null || shadow2 == null) { Main.Logger.Info("ttt shadow not found"); return; }
+            Main.Logger.Info("editing ttt shadow");
 
             var firstLevelSpells = new SpellLevelList(1)
             {
