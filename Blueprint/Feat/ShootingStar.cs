@@ -54,7 +54,8 @@ namespace PrestigePlus.Blueprint.Feat
 
             var ability = AbilityConfigurator.New(ShootingStarAblity, ShootingStarAblityGuid)
                 .AllowTargeting(false, true, false, false)
-                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Thrown)
+                .SetHasFastAnimation(true)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                         .ApplyBuff(Buff2, ContextDuration.Fixed(1), toCaster: true)
                         .Add<ShootingStarAttack>()
