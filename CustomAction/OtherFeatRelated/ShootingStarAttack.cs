@@ -43,8 +43,8 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                     PFLog.Default.Error("Caster is missing", Array.Empty<object>());
                     return;
                 }
-                var attackAnimation = maybeCaster.View.AnimationManager.CreateHandle(UnitAnimationType.SpecialAttack);
-                maybeCaster.View.AnimationManager.Execute(attackAnimation);
+                //var attackAnimation = maybeCaster.View.AnimationManager.CreateHandle(UnitAnimationType.SpecialAttack);
+                //maybeCaster.View.AnimationManager.Execute(attackAnimation);
                 if (RunAttackRule(maybeCaster, unit, false))
                 {
                     int time = UnityEngine.Random.Range(0, 4);
