@@ -64,6 +64,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetIcon(icon)
                 .SetRange(AbilityRange.Close)
                 .SetType(AbilityType.Physical)
+                .SetIsFullRoundAction(true)
                 .AddComponent<ShootingStarRequirement>()
                 .AddAbilityCasterMainWeaponCheck(WeaponCategory.Starknife)
                 .Configure();
@@ -78,6 +79,7 @@ namespace PrestigePlus.Blueprint.Feat
                   c.ReplacementStat = StatType.Charisma; c.SubCategory = WeaponSubCategory.Finessable; c.CheckWeaponTypes = true;
                   c.m_WeaponTypes = new BlueprintWeaponTypeReference[] { WeaponTypeRefs.Starknife.Reference.Get().ToReference<BlueprintWeaponTypeReference>() };
               })
+              .AddWeaponTypeDamageStatReplacement(WeaponCategory.Starknife, false, StatType.Charisma, true)
               .AddFacts(new() { ability })
               .AddToFeatureSelection("96f784ce-7660-40d4-9cf3-29bc289a8be5") //co+
               .Configure();
