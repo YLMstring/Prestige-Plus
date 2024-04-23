@@ -92,6 +92,10 @@ namespace PrestigePlus.Blueprint.Archetype
                 facts.m_Facts = new BlueprintUnitFactReference[] { feat.ToReference<BlueprintUnitFactReference>(), FeatureRefs.ImmunityToPoison.Reference.Get().ToReference<BlueprintUnitFactReference>(), FeatureRefs.ImmunityToPolymorph.Reference.Get().ToReference<BlueprintUnitFactReference>() };
                 Main.Logger.Info("editing plant immunity");
             }
+            else
+            {
+                Main.Logger.Info("not edited plant immunity");
+            }
         }
 
         private const string EldritchBotanistFeat = "Supernaturalist.EldritchBotanist";
