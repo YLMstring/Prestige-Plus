@@ -521,6 +521,7 @@ namespace PrestigePlus
           }
             Initialized = true; PatchDomain.Patch(); PatchArmorTraining.Patch(); PatchSkaldSharing.Patch(); ImprovedWalk.Patch(); PatchRagingSong.Patch();
             GraveSpellList.CreateSecretDeath(); GraveSpellList.CreateMiracleList(); GraveSpellList.CreateMiracleList3();
+            if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("superop"))) { GraveSpellList.CreateShadowList(); }
             RootConfigurator.ConfigureDelayedBlueprints();
         }
         catch (Exception e)

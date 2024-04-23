@@ -14,6 +14,10 @@ using Kingmaker.EntitySystem.Stats;
 using PrestigePlus.Blueprint.PrestigeClass;
 using System.Security.Claims;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
+using Kingmaker.Utility;
+using Pathfinding.Util;
+using PrestigePlus.Blueprint.Spell;
+using Kingmaker.UnitLogic.Abilities.Components;
 
 namespace PrestigePlus.Patch
 {
@@ -31,6 +35,86 @@ namespace PrestigePlus.Patch
         private static readonly BlueprintSpellList ClericSpells = SpellListRefs.ClericSpellList.Reference.Get();
         private static readonly BlueprintSpellList WizardSpells = SpellListRefs.WizardSpellList.Reference.Get();
 
+        public static void CreateShadowList()
+        {
+            //"ShadowEnchantment": "d934f706-a12b-40ec-87a9-c8baf221b8a9",
+            //"ShadowEnchantmentGreater": "ba079628-2748-4eb3-8bf0-b6aadd9f5f22",
+
+            var shadow = BlueprintTool.GetRef<BlueprintAbilityReference>("d934f706-a12b-40ec-87a9-c8baf221b8a9")?.Get();
+            var shadow2 = BlueprintTool.GetRef<BlueprintAbilityReference>("ba079628-2748-4eb3-8bf0-b6aadd9f5f22")?.Get();
+
+            if (shadow == null || shadow2 == null) { return; }
+
+            var firstLevelSpells = new SpellLevelList(1)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { BlueprintTool.GetRef<BlueprintAbilityReference>(HermeanPotential.HermeanPotentialAbilityGuid) }
+            };
+
+            var secondLevelSpells = new SpellLevelList(2)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+
+            var thirdLevelSpells = new SpellLevelList(3)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { BlueprintTool.GetRef<BlueprintAbilityReference>(DebilitatingPain.DebilitatingPainAbilityGuid) }
+            };
+
+            var fourthLevelSpells = new SpellLevelList(4)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+
+            var fifthLevelSpells = new SpellLevelList(5)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { BlueprintTool.GetRef<BlueprintAbilityReference>(DebilitatingPainMass.DebilitatingPainMassAbilityGuid) }
+            };
+
+            var sixthLevelSpells = new SpellLevelList(6)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+            var sevenththLevelSpells = new SpellLevelList(7)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+
+            var eighthLevelSpells = new SpellLevelList(8)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+
+            var ninthLevelSpells = new SpellLevelList(9)
+            {
+                m_Spells = new List<BlueprintAbilityReference>() { }
+            };
+
+            var spellList = SpellListConfigurator.New(spelllist, spelllistguid)
+              .AddToSpellsByLevel(
+                new(0),
+                firstLevelSpells,
+                secondLevelSpells,
+                thirdLevelSpells,
+                fourthLevelSpells,
+                fifthLevelSpells,
+                sixthLevelSpells,
+                sevenththLevelSpells,
+                eighthLevelSpells,
+                ninthLevelSpells)
+              .SetFilterByMaxLevel(9)
+              .Configure();
+
+            foreach (var level in spellList.SpellsByLevel)
+            {
+                foreach (var spell in WizardSpells.SpellsByLevel[level.SpellLevel].Spells)
+                {
+                    level.m_Spells.Add(spell.ToReference<BlueprintAbilityReference>());
+                }
+            }
+
+            shadow.GetComponent<AbilityShadowSpell>().SpellList = spellList.ToReference<BlueprintSpellListReference>();
+            shadow2.GetComponent<AbilityShadowSpell>().SpellList = spellList.ToReference<BlueprintSpellListReference>();
+        }
         public static void CreateSecretDeath()
         {
             var icon = AbilityRefs.AnimateDead.Reference.Get().Icon;
