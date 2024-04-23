@@ -1,4 +1,4 @@
-# Prestige Plus v3.0.0 for WoTR 
+# Prestige Plus v3.0.1 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -426,6 +426,9 @@
 - Fix Power Attack: now working as descripted: This bonus to damage is halved (–50%) if you are making an attack with an off-hand weapon. Note that Piranha Strike has the same bug but it isn't fixed because this might give Piranha Strike an edge over Power Attack, which is pretty coool.
 ## Mod Combo
 
+### [Character Options+](https://github.com/WittleWolfie/CharacterOptionsPlus)
+- [Desna's Shooting Star](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Desna)
+- Added to the existing divine fighting technique selection!
 ### [Expanded Content](https://github.com/ka-dyn/ExpandedContent)
 - Thanks bitter for adding [aid another](https://www.aonprd.com/Rules.aspx?Name=Aid%20Another&Category=Special%20Attacks) related stuff to my Asavir, Golden Legionnaire and Halfling Opportunist!
 - Vampirism oracle curse can qualify for my vampiric transformation!
