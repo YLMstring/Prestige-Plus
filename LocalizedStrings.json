@@ -13668,15 +13668,15 @@
   {
     "Key": "SupernaturalistProficiencies.Name",
     "ProcessTemplates": false,
-    "enGB": "Weapon and Armor Proficiency",
-    "ruRU": "Умение обращаться с оружием и броней",
-    "zhCN": "超自然学家擅长"
+    "enGB": "Eldritch Botanist",
+    "ruRU": "Чародейский ботаник",
+    "zhCN": "秘法植物学"
   },
   {
     "Key": "SupernaturalistProficiencies.Description",
-    "enGB": "A supernaturalist is not proficient with any type of armor. This alters the druid’s weapon and armor proficiencies.",
-    "ruRU": "Супернатуралист не умеет носить никакую броню. Эта особенность изменяет обычные умения друида обращаться с оружием и броней.",
-    "zhCN": "超自然学家不擅长任何护甲。本能力调整了德鲁伊的武器和护甲擅长。"
+    "enGB": "A supernaturalist can affect plants with mind-affecting effects she creates. Any such spell that allows a Will save can instead be negated by the target plant with a successful Fortitude save at the same DC. A supernaturalist is not proficient with any type of armor.",
+    "ruRU": "A supernaturalist can affect plants with mind-affecting effects she creates. Any such spell that allows a Will save can instead be negated by the target plant with a successful Fortitude save at the same DC. Супернатуралист не умеет носить никакую броню.",
+    "zhCN": "超自然学家造成的影响心智效应可以影响植物。如果该效果允许意志豁免检定，那么目标植物也可以将其改为DC相同的强韧检定。超自然学家不擅长任何护甲。"
   },
   {
     "Key": "SupernaturalistEldritchBotanist.Name",

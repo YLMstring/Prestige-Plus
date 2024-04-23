@@ -73,6 +73,25 @@ namespace PrestigePlus.Blueprint.Archetype
                 .Configure();
 
             EldritchBotanistConfigure();
+            EditedPlantTypeConfigure();
+        }
+
+        private const string EditedPlantTypeFeat = "Supernaturalist.EditedPlantType";
+        public static readonly string EditedPlantTypeGuid = "{C91C9F56-F394-478F-BAFE-6424C96D4BBE}";
+        public static void EditedPlantTypeConfigure()
+        {
+            var feat = FeatureConfigurator.New(EditedPlantTypeFeat, EditedPlantTypeGuid)
+              .CopyFrom(FeatureRefs.ImmunityToMindAffecting)
+              .AddBuffDescriptorImmunity(false, SpellDescriptor.MindAffecting | SpellDescriptor.Compulsion | SpellDescriptor.Charm | SpellDescriptor.Sleep | SpellDescriptor.Stun | SpellDescriptor.Paralysis, ignoreFeature: ProficienciesGuid)
+              .AddSpellImmunityToSpellDescriptor(ProficienciesGuid, SpellDescriptor.MindAffecting | SpellDescriptor.Compulsion | SpellDescriptor.Charm | SpellDescriptor.Sleep | SpellDescriptor.Stun | SpellDescriptor.Paralysis)
+              .Configure();
+
+            var facts = FeatureRefs.PlantType.Reference.Get().GetComponent<AddFacts>();
+            if (facts?.m_Facts?.Count() == 6)
+            {
+                facts.m_Facts = new BlueprintUnitFactReference[] { feat.ToReference<BlueprintUnitFactReference>(), FeatureRefs.ImmunityToPoison.Reference.Get().ToReference<BlueprintUnitFactReference>(), FeatureRefs.ImmunityToPolymorph.Reference.Get().ToReference<BlueprintUnitFactReference>() };
+                Main.Logger.Info("editing plant immunity");
+            }
         }
 
         private const string EldritchBotanistFeat = "Supernaturalist.EldritchBotanist";
@@ -106,11 +125,13 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string ProficienciesDescription = "SupernaturalistProficiencies.Description";
         public static BlueprintFeature CreateProficiencies()
         {
+            var icon = AbilityRefs.SickeningEntanglement.Reference.Get().Icon;
             var dProficiencies = FeatureRefs.DruidProficiencies.Reference.Get();
             return FeatureConfigurator.New(Proficiencies, ProficienciesGuid)
               .SetDisplayName(ProficienciesDisplayName)
               .SetDescription(ProficienciesDescription)
               .SetIsClassFeature(true)
+              .SetIcon(icon)
               .AddComponent(dProficiencies.GetComponent<AddProficiencies>())
               .AddFacts(new() { FeatureRefs.ShieldsProficiency.ToString() })
               .AddToIsPrerequisiteFor(EldritchBotanistGuid)
