@@ -429,6 +429,7 @@
 ### [Character Options+](https://github.com/WittleWolfie/CharacterOptionsPlus)
 - [Desna's Shooting Star](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Desna)
 - Added to the existing divine fighting technique selection!
+- Recommend using [Toggleable Throwing Weapons](https://github.com/pheonix99/ToggleableThrowingWeapons) for best flavor.
 ### [Expanded Content](https://github.com/ka-dyn/ExpandedContent)
 - Thanks bitter for adding [aid another](https://www.aonprd.com/Rules.aspx?Name=Aid%20Another&Category=Special%20Attacks) related stuff to my Asavir, Golden Legionnaire and Halfling Opportunist!
 - Vampirism oracle curse can qualify for my vampiric transformation!
