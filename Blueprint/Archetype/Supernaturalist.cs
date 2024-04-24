@@ -28,9 +28,32 @@ using PrestigePlus.CustomAction.OtherFeatRelated;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities.Components.CasterCheckers;
+using Kingmaker.Designers;
+using Kingmaker.PubSubSystem;
+using Kingmaker.UnitLogic;
+using Kingmaker.Utility;
+using static Kingmaker.GameModes.GameModeType;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
+    internal class EldritchBotanistComp : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleSavingThrow>, IRulebookHandler<RuleSavingThrow>, ISubscriber, IInitiatorRulebookSubscriber
+    {
+        void IRulebookHandler<RuleSavingThrow>.OnEventAboutToTrigger(RuleSavingThrow evt)
+        {
+            bool flag = evt.Reason.Context != null && (evt.Reason.Context.SpellDescriptor & des) != SpellDescriptor.None;
+            if (flag && evt.StatType == StatType.SaveWill && Owner.Stats.SaveFortitude > Owner.Stats.SaveWill)
+            {
+                evt.StatType = StatType.SaveFortitude;
+            }
+        }
+
+        void IRulebookHandler<RuleSavingThrow>.OnEventDidTrigger(RuleSavingThrow evt)
+        {
+            
+        }
+
+        public SpellDescriptorWrapper des;
+    }
     internal class Supernaturalist
     {
         private const string ArchetypeName = "Supernaturalist";
@@ -84,6 +107,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .CopyFrom(FeatureRefs.ImmunityToMindAffecting)
               .AddBuffDescriptorImmunity(false, SpellDescriptor.MindAffecting | SpellDescriptor.Compulsion | SpellDescriptor.Charm | SpellDescriptor.Sleep | SpellDescriptor.Stun | SpellDescriptor.Paralysis, ignoreFeature: ProficienciesGuid)
               .AddSpellImmunityToSpellDescriptor(ProficienciesGuid, SpellDescriptor.MindAffecting | SpellDescriptor.Compulsion | SpellDescriptor.Charm | SpellDescriptor.Sleep | SpellDescriptor.Stun | SpellDescriptor.Paralysis)
+              .AddComponent<EldritchBotanistComp>(c => { c.des = SpellDescriptor.MindAffecting; })
               .Configure();
 
             var facts = FeatureRefs.PlantType.Reference.Get().GetComponent<AddFacts>();
