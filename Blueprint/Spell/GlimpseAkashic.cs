@@ -78,7 +78,7 @@ namespace PrestigePlus.Blueprint.Spell
               .Configure();
 
             AbilityConfigurator.NewSpell(
-                GlimpseAkashicAbility, GlimpseAkashicAbilityGuid, SpellSchool.Divination, canSpecialize: false)
+                GlimpseAkashicAbility, GlimpseAkashicAbilityGuid, SpellSchool.Divination, canSpecialize: true)
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
