@@ -37,27 +37,15 @@ namespace PrestigePlus.Blueprint.Feat
 
         private const string ShootingStarAblity = "Feat.UseShootingStar";
         private static readonly string ShootingStarAblityGuid = "{489E8817-5EC4-4717-AA39-DB0908D730F0}";
-
-        private const string ShootingStarBuff2 = "Feat.ShootingStarBuff2";
-        public static readonly string ShootingStarBuff2Guid = "{D3B23593-CFAE-4CC2-8891-66B5677F7227}";
         public static void ShootingStarConfigure()
         {
             var icon = FeatureRefs.DesnaFeature.Reference.Get().Icon;
-
-            var Buff2 = BuffConfigurator.New(ShootingStarBuff2, ShootingStarBuff2Guid)
-             .SetDisplayName(ShootingStarDisplayName2)
-             .SetDescription(ShootingStarDescription2)
-             .SetIcon(icon)
-             .AddAttackTypeChange(false, false, AttackType.Melee, AttackType.Ranged)
-             .AddAttackTypeChange(false, false, AttackType.Touch, AttackType.RangedTouch)
-             .Configure();
 
             var ability = AbilityConfigurator.New(ShootingStarAblity, ShootingStarAblityGuid)
                 .AllowTargeting(false, true, false, false)
                 .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Thrown)
                 .SetHasFastAnimation(true)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-                        .ApplyBuff(Buff2, ContextDuration.Fixed(1), toCaster: true)
                         .Add<ShootingStarAttack>()
                         .Build())
                 .SetDisplayName(ShootingStarDisplayName2)

@@ -17,6 +17,10 @@ namespace PrestigePlus.CustomComponent.Feat
         public bool IsAbilityRestrictionPassed(AbilityData ability)
         {
             var caster = ability.Caster;
+            if (caster.Alignment.ValueRaw == Kingmaker.Enums.Alignment.ChaoticGood && caster.Progression.GetClassLevel(CharacterClassRefs.BardClass.Reference) >= 10)
+            {
+                return true;
+            }
             if (caster.Stats.Dexterity < 17)
             {
                 return false;
@@ -39,7 +43,7 @@ namespace PrestigePlus.CustomComponent.Feat
         // Token: 0x0600D392 RID: 54162 RVA: 0x0036DB5C File Offset: 0x0036BD5C
         public string GetAbilityRestrictionUIText()
         {
-            return "Advanced Prerequisites: Dex 17; Divine Fighting Technique; Point-Blank Shot; Rapid Shot; base attack bonus +11 or Thievery 11 ranks";
+            return "Advanced Prerequisites: Dex 17; Point-Blank Shot; Rapid Shot; base attack bonus +11 or Thievery 11 ranks";
         }
     }
 }

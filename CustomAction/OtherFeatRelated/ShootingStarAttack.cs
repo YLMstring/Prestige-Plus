@@ -52,7 +52,6 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                     if (time > 1) { RunAttackRule(maybeCaster, unit, true); }
                     if (time > 2) { RunAttackRule(maybeCaster, unit, true); }
                 }
-                GameHelper.RemoveBuff(maybeCaster, Buff);
             }
             catch (Exception ex) { Logger.Error("Failed to storm.", ex); }
         }
@@ -77,7 +76,5 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
             }
             return false;
         }
-
-        private static BlueprintBuffReference Buff = BlueprintTool.GetRef<BlueprintBuffReference>(ShootingStar.ShootingStarBuff2Guid);
     }
 }
