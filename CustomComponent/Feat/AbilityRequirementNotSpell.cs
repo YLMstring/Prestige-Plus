@@ -32,7 +32,6 @@ namespace PrestigePlus.CustomComponent.Feat
         {
             return "It's not a spell. Please look for the masterpiece in your ability tab!";
         }
-
         bool IAbilityVisibilityProvider.IsAbilityVisible(AbilityData ability)
         {
             if (ability.Spellbook != null)
