@@ -964,9 +964,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(Erastil3DisplayName)
               .SetDescription(Erastil3Description)
               .SetIcon(icon)
-              .AddWeaponTypeDamageStatReplacement(WeaponCategory.Longbow, false, StatType.Wisdom, false)
-              .AddWeaponTypeDamageStatReplacement(WeaponCategory.Shortbow, false, StatType.Wisdom, false)
-              .AddFacts(new() { FeatureRefs.ZenArcherZenArcheryFeature.ToString() })
+              .AddComponent<Erastil3Comp>()
               .Configure();
         }
 
