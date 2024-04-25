@@ -13675,7 +13675,7 @@
   {
     "Key": "SupernaturalistProficiencies.Description",
     "enGB": "A supernaturalist can affect plants with mind-affecting effects she creates. Any such spell that allows a Will save can instead be negated by the target plant with a successful Fortitude save at the same DC. A supernaturalist is not proficient with any type of armor.",
-    "ruRU": "A supernaturalist can affect plants with mind-affecting effects she creates. Any such spell that allows a Will save can instead be negated by the target plant with a successful Fortitude save at the same DC. Супернатуралист не умеет носить никакую броню.",
+    "ruRU": "Воздействующие на разум эффекты, которые сотворяет супернатуралист могут воздействовать на растения. Если заклинание с таким эффектом позволяет совершить спасбросок воли, то растение ставшее его целью вместо этого совершает спасбросок стойкости с той же сложностью. Супернатуралист не умеет носить никакую броню.",
     "zhCN": "超自然学家造成的影响心智效应可以影响植物。如果该效果允许意志豁免检定，那么目标植物也可以将其改为DC相同的强韧检定。超自然学家不擅长任何护甲。"
   },
   {
@@ -13883,29 +13883,33 @@
   {
     "Key": "NewSpellPhantomLimb.Description",
     "enGB": "This spell creates a semi-visible psychic manifestation that allows a creature to grow two phantom arms, granting it two extra natural claw attacks (1d4).",
-    "ruRU": " полувидимое психическое проявление, которое позволяет существу отрастить две призрачные руки, дающие ему две дополнительные естественные атаки когтями (1d4)",
+    "ruRU": "Это заклинание сотворяет полувидимое психическое проявление, которое позволяет существу отрастить две призрачные руки, дающие ему две дополнительные естественные атаки когтями (1d4)",
     "zhCN": "该法术创造一个半可见的异能显现物，令目标长出两条魅影手臂，提供两次额外的天生爪抓攻击（1d4）。"
   },
   {
     "Key": "FeatShootingStar.Name",
     "ProcessTemplates": false,
     "enGB": "Desna's Shooting Star",
+    "ruRU": "Падающая звезда Дезны",
     "zhCN": "德丝娜的流星飞刃"
   },
   {
     "Key": "FeatShootingStar.Description",
     "enGB": "Among the divine fighting manuals of the Inner Sea, few are as ancient as Clamor of the Spheres, a collection of fighting techniques favored by Desna’s faithful. True to its name, the manual focuses on interpreting the chaos and sounds of combat, but nevertheless provides insightful and downright brilliant methods of defense with Desna’s favored weapon, using techniques that treat a fight with a starknife more as a beautiful dance than a battle. You can add your Charisma bonus to attack rolls and damage rolls when wielding a starknife. If you do so, you don’t modify attack rolls and damage rolls with your starknife with your Strength modifier, your Dexterity modifier (if you have Weapon Finesse), or any other ability score (if you have an ability that allows you to modify attack rolls and damage rolls with that ability score).",
+    "ruRU": "Среди божественных техник боя Внутреннего моря мало найдется таких древних, как «Шум сфер» - сборник боевых приемов, излюбленных приверженцами Дезны. В соответствии со своим названием, руководство посвящено интерпретации хаоса и звуков боя, но, тем не менее, в нем представлены проницательные и просто блестящие методы защиты с помощью любимого оружия Дезны, используя приемы, которые относятся к бою с клинком-звездой скорее как к красивому танцу, чем как к битве. Вы добавляете свой модификатор Харизмы к броскам на попадание и урон клинком-звездой. При этом вы не применяете к броском на попадание и урон клинком-звездой свой модификатор Силы, Ловкости (если у вас есть черта Искусное владение оружием) или любой другой модификатор характеристики (если у вас есть способность, позволяющая добавлять этот модификатор к броскам на попадание или урон).",
     "zhCN": "Among the divine fighting manuals of the Inner Sea, few are as ancient as Clamor of the Spheres, a collection of fighting techniques favored by Desna’s faithful. True to its name, the manual focuses on interpreting the chaos and sounds of combat, but nevertheless provides insightful and downright brilliant methods of defense with Desna’s favored weapon, using techniques that treat a fight with a starknife more as a beautiful dance than a battle. 你可以将你的魅力调整值添加到使用星刃的攻击和伤害检定上。如果你如此做，你无法应用你的力量调整值，敏捷调整值（如果你有武器娴熟）或其他属性（如果你拥有将你替代攻击和伤害检定的能力）。"
   },
   {
     "Key": "FeatShootingStar2.Name",
     "ProcessTemplates": false,
     "enGB": "Desna's Shooting Star",
+    "ruRU": "Падающая звезда Дезны",
     "zhCN": "德丝娜的流星飞刃"
   },
   {
     "Key": "FeatShootingStar2.Description",
     "enGB": "Advanced Prerequisites: Dex 17; Point-Blank Shot; Rapid Shot; base attack bonus +11 or Thievery 11 ranks. A chaotic good bard of at least 10th level can ignore the prerequisites. You can impart a powerful spin to a thrown starknife so that multiple blades strike the target rather than just a single blade of the four, dealing extra damage with the other blades. As a full-round action, you can make a single attack with a thrown starknife, rolling 1d4 to determine how many effective strikes you gain with the attack (if you roll a 1, then only one blade strikes). If the attack hits, all of the effective strikes damage the target. Apply critical hit damage only once for this attack. The damage bonus from your appropriate ability score modifier applies to each strike, as do other damage bonuses, such as a bard’s inspire competence bonus. Damage reduction and resistances apply separately to each strike. They are considered melee attacks if you don't know how to throw a starknife.",
+    "ruRU": "Продвинутые требования: ЛВК 17; Стрельба вблизи; Быстрый выстрел; Базовый модификатор атаки +11 или Плутовство +11. Хаотичный добрый бард 10 или выше уровня может игнорировать эти требования. Вы можете придать брошенному клинку-звезде мощное вращение, чтобы в цель попало не одно лезвие из четырех, а сразу несколько, нанося дополнительный урон остальными лезвиями. В качестве действия полного раунда вы можете совершить одну атаку метательным клинком-звездой, бросив кость 1d4, чтобы определить, сколькими лезвиями вам удастся попасть при атаке (если вы бросите 1, то попадет только одно лезвие). Если атака попадает, все лезвия наносят урон цели. Нанести урон от критического удара можно только один раз за эту атаку. Бонус к урону от соответствующего модификатора характеристики применяется к каждому удару, так же как и другие бонусы к урону, например бонус мастерства от способности барда Песнь мастерства. Снижение урона и устойчивости применяются к каждому удару отдельно. Эти атаки считаются атаками ближнего боя, если вы не умеете метать клинок-звезду.",
     "zhCN": "进阶条件：敏捷17，近程射击，快速射击，BAB+11或巧手11级。10级或以上的混乱善良诗人可以无视条件。你可以给一枚抛出的星刃赋予强大的回旋效果，使得多个刃叶击中目标而非四个刃叶中的某一个，并造成额外的伤害。作为一个整轮动作，你可以投掷星刃进行一次攻击，投掷1d4来决定获得几次有效攻击（如果你投掷出1，则只有一次）。如果攻击命中，则每一击都会成功伤害目标。其中重击伤害只能触发一次，来自固定加值的伤害则适用于每个伤害骰，例如吟游诗人的激发勇气加值。抗性和伤害减免能力适用于每一击。如果你不知道如何投掷星刃，这些攻击视为近战攻击。"
   }
 
