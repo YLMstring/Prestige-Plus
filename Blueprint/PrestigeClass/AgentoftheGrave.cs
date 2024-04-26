@@ -313,7 +313,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddPrerequisiteNoFeature(FeatureSelectionRefs.MythicLichSkeletonSelection.ToString())
               .AddFacts(new() { FeatureRefs.UndeadType.ToString(), FeatureRefs.GhoulParalysisFeature.ToString(), FeatureRefs.GhoulDiseaseFeature.ToString(), FeatureRefs.DLC4_Ghast_StenchFeature.ToString() })
               .AddAdditionalLimb(ItemWeaponRefs.Bite1d6.ToString())
-              .AddEmptyHandWeaponOverride(isMonkUnarmedStrike: false, isPermanent: true, weapon: ItemWeaponRefs.Claw1d6.ToString())
+              //.AddEmptyHandWeaponOverride(isMonkUnarmedStrike: false, isPermanent: true, weapon: ItemWeaponRefs.Claw1d6.ToString())
+              .AddComponent<PPWeaponOverride>(c => { c.IsMonkUnarmedStrike = false; c.IsPermanent = true; c.m_Weapon = ItemWeaponRefs.Claw1d6.Reference.Get().ToReference<BlueprintItemWeaponReference>(); })
               .Configure();
         }
 
@@ -339,7 +340,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddPrerequisiteFeature("15f2d9d3-f20f-42ea-bf4a-9849e802291b", group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
               .AddPrerequisiteFeature("8c70b8f6-44aa-489b-a537-0e08c06def3a", group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
               .AddFacts(new() { FeatureRefs.UndeadType.ToString(), FeatureRefs.VampireSpawnFeatures.ToString() })
-              .AddEmptyHandWeaponOverride(isMonkUnarmedStrike: false, isPermanent: true, weapon: ItemWeaponRefs.Slam1d6.ToString())
+              .AddComponent<PPWeaponOverride>(c => { c.IsMonkUnarmedStrike = false; c.IsPermanent = true; c.m_Weapon = ItemWeaponRefs.Slam1d6.Reference.Get().ToReference<BlueprintItemWeaponReference>(); })
+              //.AddEmptyHandWeaponOverride(isMonkUnarmedStrike: false, isPermanent: true, weapon: ItemWeaponRefs.Slam1d6.ToString())
               .AddOutgoingPhysicalDamageProperty(addMagic: true, naturalAttacks: true)
               .Configure();
         }
