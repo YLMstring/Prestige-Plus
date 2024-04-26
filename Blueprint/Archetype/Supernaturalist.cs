@@ -33,7 +33,6 @@ using Kingmaker.PubSubSystem;
 using Kingmaker.UnitLogic;
 using Kingmaker.Utility;
 using static Kingmaker.GameModes.GameModeType;
-using PrestigePlus.CustomComponent;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -341,8 +340,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetIcon(icon)
               .AddStatBonus(ModifierDescriptor.ArmorFocus, false, StatType.AC, 1)
               .AddAdditionalLimb(ItemWeaponRefs.Bite1d6.ToString())
-              .AddComponent<PPWeaponOverride>(c => { c.IsMonkUnarmedStrike = false; c.IsPermanent = true; c.m_Weapon = ItemWeaponRefs.Claw1d4.Reference.Get().ToReference<BlueprintItemWeaponReference>(); })
-              //.AddEmptyHandWeaponOverride(isMonkUnarmedStrike: false, isPermanent: true, weapon: ItemWeaponRefs.Claw1d4.ToString())
+              .AddEmptyHandWeaponOverride(isMonkUnarmedStrike: false, isPermanent: true, weapon: ItemWeaponRefs.Claw1d4.ToString())
               .AddBuffMovementSpeed(value: 20, descriptor: ModifierDescriptor.Enhancement)
               .Configure();
         }
