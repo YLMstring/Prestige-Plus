@@ -128,7 +128,7 @@ namespace PrestigePlus.Blueprint
               .AddPrerequisiteFeature(BardMasterpieceCoreGuid)
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
-              .AddToAllFeatures(FeatureRefs.Toughness.ToString())
+              .AddToAllFeatures(FeatureRefs.ExtraPerformance.ToString())
               .AddToAllFeatures(CreateTripleTime())
               .AddToAllFeatures(CreateTwistingSteel())
               .AddToAllFeatures(CreateStoneFace())
