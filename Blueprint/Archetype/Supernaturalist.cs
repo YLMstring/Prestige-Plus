@@ -33,6 +33,9 @@ using Kingmaker.PubSubSystem;
 using Kingmaker.UnitLogic;
 using Kingmaker.Utility;
 using static Kingmaker.GameModes.GameModeType;
+using BlueprintCore.Blueprints.Configurators.UnitLogic.ActivatableAbilities;
+using Kingmaker.UnitLogic.ActivatableAbilities;
+using TabletopTweaks.Core.NewComponents.OwlcatReplacements;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -330,9 +333,33 @@ namespace PrestigePlus.Blueprint.Archetype
 
         internal const string TotemTransformationDisplayName = "SupernaturalistTotemTransformation.Name";
         private const string TotemTransformationDescription = "SupernaturalistTotemTransformation.Description";
+
+        private const string TotemTransformationBuff = "Supernaturalist.TotemTransformationBuff";
+        private static readonly string TotemTransformationBuffGuid = "{2D34A28C-D755-45E5-831B-264F8AEF2C4F}";
+
+        private const string TotemTransformationAbility = "Supernaturalist.TotemTransformationAbility";
+        private static readonly string TotemTransformationAbilityGuid = "{2BB6FFB4-EA29-4B66-AD11-82F1DAF8D2C7}";
         private static BlueprintFeature CreateTotemTransformation()
         {
             var icon = AbilityRefs.WildShapeIWolfAbillity.Reference.Get().Icon;
+
+            var ability = ActivatableAbilityConfigurator.New(TotemTransformationAbility, TotemTransformationAbilityGuid)
+                .SetDisplayName(TotemTransformationDisplayName)
+                .SetDescription(TotemTransformationDescription)
+                .SetIcon(icon)
+                .SetBuff(TotemTransformationBuffGuid)
+                .SetIsOnByDefault(true)
+                .SetDeactivateImmediately(true)
+                .Configure();
+
+            BuffConfigurator.New(TotemTransformationBuff, TotemTransformationBuffGuid)
+             .SetDisplayName(TotemTransformationDisplayName)
+             .SetDescription(TotemTransformationDescription)
+             .SetIcon(icon)
+             .AddEmptyHandWeaponOverride(isMonkUnarmedStrike: false, isPermanent: false, weapon: ItemWeaponRefs.Claw1d4.ToString())
+             .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+             .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+             .Configure();
 
             return FeatureConfigurator.New(TotemTransformation, TotemTransformationGuid)
               .SetDisplayName(TotemTransformationDisplayName)
@@ -340,8 +367,8 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetIcon(icon)
               .AddStatBonus(ModifierDescriptor.ArmorFocus, false, StatType.AC, 1)
               .AddAdditionalLimb(ItemWeaponRefs.Bite1d6.ToString())
-              .AddEmptyHandWeaponOverride(isMonkUnarmedStrike: false, isPermanent: true, weapon: ItemWeaponRefs.Claw1d4.ToString())
               .AddBuffMovementSpeed(value: 20, descriptor: ModifierDescriptor.Enhancement)
+              .AddFacts(new() { ability })
               .Configure();
         }
 
