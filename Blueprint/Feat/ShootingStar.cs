@@ -71,7 +71,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddWeaponTypeDamageStatReplacement(WeaponCategory.Starknife, false, StatType.Charisma, true)
               .AddFacts(new() { ability })
               .AddToFeatureSelection("96f784ce-7660-40d4-9cf3-29bc289a8be5") //co+
-              .Configure();
+              .Configure(delayed: true);
         }
     }
 }
