@@ -351,7 +351,6 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetIcon(icon)
                 .SetBuff(Buff1)
                 .SetDeactivateIfCombatEnded(true)
-                .SetDeactivateImmediately(true)
                 .SetActivationType(AbilityActivationType.WithUnitCommand)
                 .SetActivateWithUnitCommand(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard)
                 .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound)

@@ -279,7 +279,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDescription(SpiritualFormDescription)
                 .SetIcon(icon)
                 .SetBuff(Buff1)
-                .SetDeactivateImmediately(true)
                 .SetActivationType(AbilityActivationType.WithUnitCommand)
                 .SetActivateWithUnitCommand(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard)
                 .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.OncePerMinute)

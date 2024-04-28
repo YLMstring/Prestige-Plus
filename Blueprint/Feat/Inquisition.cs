@@ -216,7 +216,6 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetDescription(BlessedCorrectionDescription)
                 .SetIcon(icon)
                 .SetBuff(BlessedCorrectionBuffGuid)
-                .SetDeactivateImmediately(true)
                 .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound)
                 .Configure();
 

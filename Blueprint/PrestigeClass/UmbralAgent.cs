@@ -449,7 +449,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetActivationType(AbilityActivationType.WithUnitCommand)
                 .SetActivateWithUnitCommand(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
                 .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound, freeBlueprint: Gaze4Guid)
-                .SetDeactivateImmediately()
                 .Configure();
 
             FeatureConfigurator.New(GazeName, GazeGuid)

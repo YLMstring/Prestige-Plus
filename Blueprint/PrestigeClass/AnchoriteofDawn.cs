@@ -288,7 +288,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetActivationType(AbilityActivationType.WithUnitCommand)
                 .SetActivateWithUnitCommand(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard)
                 .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound, freeBlueprint: FreeSolarInvocationGuid)
-                .SetDeactivateImmediately()
                 .Configure();
 
             ActivatableAbilityConfigurator.New(SolarAbility2, SolarAbilityGuid2)
@@ -300,7 +299,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetActivationType(AbilityActivationType.WithUnitCommand)
                 .SetActivateWithUnitCommand(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move)
                 .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound, freeBlueprint: FreeSolarInvocationGuid)
-                .SetDeactivateImmediately()
                 .Configure();
 
             ActivatableAbilityConfigurator.New(SolarAbility3, SolarAbilityGuid3)
@@ -312,7 +310,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetActivationType(AbilityActivationType.WithUnitCommand)
                 .SetActivateWithUnitCommand(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
                 .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound, freeBlueprint: FreeSolarInvocationGuid)
-                .SetDeactivateImmediately()
                 .Configure();
 
             FeatureConfigurator.New(FreeSolarInvocation, FreeSolarInvocationGuid, FeatureGroup.MythicAbility)
