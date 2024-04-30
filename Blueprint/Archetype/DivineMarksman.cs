@@ -75,21 +75,18 @@ namespace PrestigePlus.Blueprint.Archetype
         {
             var icon = FeatureRefs.DeftStrike.Reference.Get().Icon;
 
-            var feat = FeatureConfigurator.New(IomedaeInfluence, IomedaeInfluenceGuid)
-                .CopyFrom(
-                FeatureRefs.ZenArcherWayOfTheBowLongbowFocus,
-                typeof(AddParametrizedFeatures))
+            var data = new AddParametrizedFeatures.FeatureData()
+            {
+                m_Feature = ParametrizedFeatureRefs.WeaponFocus.Reference.Get().ToReference<BlueprintParametrizedFeatureReference>(),
+                ParamWeaponCategory = Kingmaker.Enums.WeaponCategory.Longsword
+            };
+
+            return FeatureConfigurator.New(IomedaeInfluence, IomedaeInfluenceGuid)
               .SetDisplayName(IomedaeInfluenceDisplayName)
               .SetDescription(IomedaeInfluenceDescription)
               .SetIcon(icon)
+              .AddComponent<AddParametrizedFeatures>(c => { c.m_Features = new[] { data }; })
               .Configure();
-
-            var cat = feat.GetComponent<AddParametrizedFeatures>()?.m_Features?.First();
-            if (cat != null)
-            {
-                cat.ParamWeaponCategory = Kingmaker.Enums.WeaponCategory.Longsword;
-            }
-            return feat;
         }
     }
 }
