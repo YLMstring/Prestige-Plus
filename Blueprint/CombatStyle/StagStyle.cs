@@ -25,6 +25,7 @@ using PrestigePlus.CustomAction.GrappleThrow;
 using PrestigePlus.CustomComponent.Feat;
 using PrestigePlus.CustomComponent.Charge;
 using PrestigePlus.Blueprint.MythicGrapple;
+using Kingmaker.Enums;
 
 namespace PrestigePlus.Feats
 {
@@ -110,7 +111,7 @@ namespace PrestigePlus.Feats
                     .AddPrerequisiteFeature(FeatureRefs.Dodge.ToString())
                     .AddPrerequisiteFeature(FeatureRefs.Mobility.ToString())
                     .AddPrerequisiteFeature(StyleGuid)
-                    .AddInitiatorAttackWithWeaponTrigger(grapple, allNaturalAndUnarmed: true, onCharge: true, onlyHit: true)
+                    .AddInitiatorAttackWithWeaponTrigger(grapple, category: WeaponCategory.UnarmedStrike, checkWeaponCategory: true, onCharge: true, onlyHit: true)
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .AddToGroups(FeatureGroup.StyleFeat)
                     .AddFacts(new() { PinAbilityGuid1, TieUpAbilityGuid, ReadyAbilityGuid, ReleaseAbilityGuid })
