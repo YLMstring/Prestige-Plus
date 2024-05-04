@@ -24,7 +24,16 @@ namespace PrestigePlus.CustomComponent.Feat
         void IRulebookHandler<RuleAttackWithWeaponResolve>.OnEventAboutToTrigger(RuleAttackWithWeaponResolve evt)
         {
             var caster = Buff.Context?.MaybeCaster;
-            if (evt.AttackWithWeapon?.Weapon?.Blueprint.Category == Kingmaker.Enums.WeaponCategory.UnarmedStrike && evt.Initiator == caster)
+            bool unarmed = false;
+            if (evt.AttackWithWeapon?.Weapon?.Blueprint.Category == Kingmaker.Enums.WeaponCategory.UnarmedStrike)
+            {
+                unarmed = true;
+            }
+            else if (caster.HasFact(Feral) && evt.AttackWithWeapon?.Weapon?.Blueprint.IsNatural == true)
+            {
+                unarmed = true;
+            }
+            if (unarmed && evt.Initiator == caster)
             {
                 int num = 1;
                 if (caster.HasFact(Master))
@@ -45,5 +54,7 @@ namespace PrestigePlus.CustomComponent.Feat
             
         }
         private static BlueprintFeatureReference Master = BlueprintTool.GetRef<BlueprintFeatureReference>(JabbingStyle.MasterGuid);
+        //FeralCombatTrainingFeature	edb2546d1215491ca404f8dd1a0c2af3	Kingmaker.Blueprints.Classes.BlueprintFeature
+        private static BlueprintFeatureReference Feral = BlueprintTool.GetRef<BlueprintFeatureReference>("edb2546d1215491ca404f8dd1a0c2af3");
     }
 }
