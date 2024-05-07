@@ -384,9 +384,9 @@
 
   {
     "Key": "Spellupgrade.Description",
-    "enGB": "When a new level in this class is gained, the character gains new spells as if he had also gained a level in a spellcasting class he belonged to before adding the prestige class.",
-    "ruRU": "При взятии нового уровня в этом классе, персонаж получает новые заклинания как если бы он взял уровень в классе заклинателя к которому он принадлежал до этого.",
-    "zhCN": "在这个职业中每获得一个等级，该角色都会如同他在已有的施法者职业上提升等级般获得新的每日法术。"
+    "enGB": "When certain levels in this class are reached, the character gains new spells as if he had also gained a level in a spellcasting class he belonged to before adding the prestige class.",
+    "ruRU": "When certain levels in this class are reached, персонаж получает новые заклинания как если бы он взял уровень в классе заклинателя к которому он принадлежал до этого.",
+    "zhCN": "在这个职业中每达到特定等级时，该角色会如同他在已有的施法者职业上提升等级般获得新的每日法术。"
   },
 
   {
