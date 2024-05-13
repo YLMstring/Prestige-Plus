@@ -119,6 +119,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetCastingAttribute(StatType.Intelligence)
               .SetSpontaneous(false)
               .SetIsArcane(false)
+              .AddComponent<IsAlchemistSpellbook>()
               .Configure(delayed: true);
 
             return spellbook;
