@@ -25,8 +25,7 @@ namespace PrestigePlus.HarmonyFix
         {
             if (evt.Type == CombatManeuver.Grapple)
             {
-                //if (__instance.Type != CombatManeuver.Grapple && __instance.Type != CombatManeuver.None) { return; } wtf?
-                //if (evt.Initiator.Get<UnitPartGrappleTargetPP>()) { evt.AutoFailure = false; return; } doesn't make sense?
+                if (evt.Initiator.Get<UnitPartGrappleTargetPP>()?.Initiator == __instance.Owner) { evt.AutoFailure = false; return; } 
                 if (evt.Initiator.HasFact(ChargeGrappleBuff)) { evt.AutoFailure = false; return; }
                 if (evt.Initiator.HasFact(Aerial) && evt.Initiator.HasFact(BlueprintRoot.Instance.SystemMechanics.ChargeBuff)) { evt.AutoFailure = false; return; }
                 if (evt.Initiator.HasFact(Master)) { evt.AutoFailure = false; return; }
