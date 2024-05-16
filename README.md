@@ -1,4 +1,4 @@
-# Prestige Plus v3.1.0 for WoTR 
+# Prestige Plus v3.1.1 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
