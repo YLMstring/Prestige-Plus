@@ -94,6 +94,7 @@ namespace PrestigePlus.Blueprint.Spell
                 actions: ActionsBuilder.New()
                   .ApplyBuff(buff1, ContextDuration.Variable(ContextValues.Rank()))
                   .Build())
+              .SetLocalizedDuration(Duration.RoundPerLevel)
               .AddCraftInfoComponent(
                 aOEType: CraftAOE.None,
                 savingThrow: CraftSavingThrow.None,
@@ -123,6 +124,7 @@ namespace PrestigePlus.Blueprint.Spell
                 actions: ActionsBuilder.New()
                   .ApplyBuff(buff2, ContextDuration.Variable(ContextValues.Rank()))
                   .Build())
+              .SetLocalizedDuration(Duration.RoundPerLevel)
               .AddCraftInfoComponent(
                 aOEType: CraftAOE.None,
                 savingThrow: CraftSavingThrow.None,
@@ -141,6 +143,7 @@ namespace PrestigePlus.Blueprint.Spell
               .AddToSpellLists(level: 2, SpellList.Druid)
               .AddToSpellLists(level: 2, SpellList.Ranger)
               .AddAbilityVariants(new() { ability1, ability2 })
+              .SetLocalizedDuration(Duration.RoundPerLevel)
               .AddCraftInfoComponent(
                 aOEType: CraftAOE.None,
                 savingThrow: CraftSavingThrow.None,
