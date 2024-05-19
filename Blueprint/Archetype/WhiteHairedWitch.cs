@@ -110,6 +110,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetIcon(icon)
               .AddAdditionalLimb(ItemWeaponRefs.Gore1d6.ToString())
               .AddWeaponDamageOverride(formula: new DiceFormula(1, DiceType.D4), overrideDice: true, weaponTypes: new() { WeaponTypeRefs.GoreType.Cast<BlueprintWeaponTypeReference>() })
+              .AddSetChargeWeapon(weapon: ItemWeaponRefs.Gore1d6.ToString())
               .AddComponent<HairExtraDamage>()
               .AddComponent<ReplaceSingleCombatManeuverStat>(c => { c.Type = Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple; c.StatType = StatType.Intelligence; })
               //.AddReplaceSingleCombatManeuverStat(statType: StatType.Intelligence, type: Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple)
