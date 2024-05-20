@@ -11,6 +11,7 @@ using Kingmaker.Items;
 using Kingmaker.RuleSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic;
+using Kingmaker.UnitLogic.Buffs;
 using Kingmaker.UnitLogic.Commands;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Parts;
@@ -54,6 +55,30 @@ namespace PrestigePlus.HarmonyFix
                 }
                 if (!attack.Weapon.Blueprint.IsMelee) { return true; }
                 if (caster.Body?.EmptyHandWeapon == null) { return true; }
+                var challenged = target.GetFact(BuffRefs.CavalierChallengeBuffTarget.Reference) as Buff;
+                if (challenged?.Context?.MaybeCaster == caster && caster.HasFact(Hammer) && !caster.HasFact(HammerCoolDown) && __instance.IsAttackFull)
+                {
+                    GameHelper.ApplyBuff(caster, HammerCoolDown, new Rounds?(1.Rounds()));
+                    var maneuver = CombatManeuver.None;
+                    if (caster.HasFact(Sunder))
+                    {
+                        maneuver = CombatManeuver.SunderArmor;
+                    }
+                    else if (caster.HasFact(Grapple))
+                    {
+                        maneuver = CombatManeuver.Grapple;
+                        if (caster.Get<UnitPartGrappleInitiatorPP>() || target.Get<UnitPartGrappleTargetPP>() || !ConditionTwoFreeHand.HasFreeHand(caster))
+                        {
+                            maneuver = CombatManeuver.None;
+                        }
+                    }
+                    if (maneuver != CombatManeuver.None)
+                    {
+                        var AttackBonusRule2 = new RuleCalculateAttackBonus(caster, target, caster.Body.EmptyHandWeapon, 0) { };
+                        ContextActionCombatTrickery.TriggerMRule(ref AttackBonusRule2);
+                        TriggerManeuver(caster, target, AttackBonusRule2, maneuver);
+                    }
+                }
                 var AttackBonusRule = new RuleCalculateAttackBonus(caster, target, caster.Body.EmptyHandWeapon, 0) { };
                 int penalty = -attack.AttackBonusPenalty + DualPenalty(caster, attack);
                 AttackBonusRule.AddModifier(penalty, descriptor: ModifierDescriptor.Penalty);
@@ -277,6 +302,9 @@ namespace PrestigePlus.HarmonyFix
         private static readonly BlueprintBuffReference FlurryCoolDown = BlueprintTool.GetRef<BlueprintBuffReference>(ManeuverMaster.FlurryCoolDownbuffGuid);
         private static readonly BlueprintBuffReference Flurry8 = BlueprintTool.GetRef<BlueprintBuffReference>(ManeuverMaster.Flurry8buffGuid);
         private static readonly BlueprintBuffReference Flurry15 = BlueprintTool.GetRef<BlueprintBuffReference>(ManeuverMaster.Flurry15buffGuid);
+
+        private static readonly BlueprintFeatureReference Hammer = BlueprintTool.GetRef<BlueprintFeatureReference>(Inquisition.HammerChallengeGuid);
+        private static readonly BlueprintBuffReference HammerCoolDown = BlueprintTool.GetRef<BlueprintBuffReference>(Inquisition.ChallengeAuraBuffGuid);
 
         private static readonly string SeizetheBullRushbuffGuid = "{FDD7D762-A448-48FB-B72C-709D14285FF6}";
         private static readonly string SeizetheDirtyBlindbuffGuid = "{6142C847-22F1-410F-A132-9545D7404F4A}";

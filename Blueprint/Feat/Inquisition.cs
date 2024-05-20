@@ -37,6 +37,9 @@ using PrestigePlus.CustomAction.OtherFeatRelated;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
 using PrestigePlus.Blueprint.PrestigeClass;
 using PrestigePlus.CustomComponent.Feat;
+using PrestigePlus.Maneuvers;
+using Kingmaker.AreaLogic;
+using System.Drawing;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -414,7 +417,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIsClassFeature(true)
               .SetClasses(ProgressionRefs.CavalierOrderOfTheLionProgression.Reference.Get().m_Classes)
               .SetGiveFeaturesForPreviousLevels(true)
-              .AddToLevelEntry(1, HammerSkillFeat())
+              .AddToLevelEntry(1, HammerChallengeFeat(), HammerSkillFeat())
               .AddToLevelEntry(2, FeatureRefs.ImprovedUnarmedStrike.ToString())
               .AddToLevelEntry(8, BodyGuard.GreaterUnarmedStrikeGuid)
               .AddToLevelEntry(15, HammerFlexFeat())
@@ -522,6 +525,30 @@ namespace PrestigePlus.Blueprint.Feat
                     .AddFacts(new() { ability })
                     .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
                     .Configure();
+        }
+
+        private const string HammerChallenge = "Inquisition.HammerChallenge";
+        public static readonly string HammerChallengeGuid = "{B51FD722-D931-4AC8-82FF-B4B1CA72449E}";
+
+        internal const string InquisitionHammerChallengeDisplayName = "InquisitionHammerChallenge.Name";
+        private const string InquisitionHammerChallengeDescription = "InquisitionHammerChallenge.Description";
+
+        private const string ChallengeAuraBuff = "Inquisition.HammerChallengebuff";
+        public static readonly string ChallengeAuraBuffGuid = "{406ED37D-681B-40F8-A06A-74BA78312080}";
+        public static BlueprintFeature HammerChallengeFeat()
+        {
+            //var icon = FeatureRefs.Persuasive.Reference.Get().Icon;
+            BuffConfigurator.New(ChallengeAuraBuff, ChallengeAuraBuffGuid)
+              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+              .Configure();
+
+            return FeatureConfigurator.New(HammerChallenge, HammerChallengeGuid)
+              .SetDisplayName(InquisitionHammerChallengeDisplayName)
+              .SetDescription(InquisitionHammerChallengeDescription)
+              //.SetIcon(icon)
+              .AddFacts(new() { SeizetheOpportunity.ManeuverGuid })
+              .Configure();
         }
     }
 }
