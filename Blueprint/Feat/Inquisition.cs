@@ -477,7 +477,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(HammerFlexDisplayName)
               .SetDescription(HammerFlexDescription)
               .SetIcon(icon)
-              .AddAttackTypeAttackBonus(attackBonus: 4, descriptor: ModifierDescriptor.Morale, type: WeaponRangeType.Melee)
+              .AddAttackTypeAttackBonus(attackBonus: 4, descriptor: ModifierDescriptor.Morale, type: WeaponRangeType.Melee, checkFact: false, allTypesExcept: false, value: 1)
               .AddCMBBonus(descriptor: ModifierDescriptor.Morale, value: 4)
               .AddStatBonus(ModifierDescriptor.Morale, false, StatType.SaveFortitude, 4)
               .AddStatBonus(ModifierDescriptor.Morale, false, StatType.SkillAthletics, 4)

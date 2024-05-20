@@ -44,7 +44,15 @@ namespace PrestigePlus.Patch
                 BlueprintTool.GetRef<BlueprintArchetypeReference>(Constable.ArchetypeGuid).Get().RemoveFeatures[2].m_Features = new() { ExpertTrainer.ToReference<BlueprintFeatureBaseReference>() };
             }
             catch (Exception e) { Logger.Error("Failed to edit ExpertTrainer.", e); }
-            
+            try
+            {
+                //"SecondOrderSelection": "b369e2de-08cd-4ce7-97d5-e3a93ce51a72",
+                var order = BlueprintTool.GetRef<BlueprintFeatureSelectionReference>("b369e2de-08cd-4ce7-97d5-e3a93ce51a72")?.Get();
+                if (order == null) { Logger.Info("not found ttt order"); return; }
+                order.m_AllFeatures = FeatureSelectionRefs.CavalierOrderSelection.Reference.Get().m_AllFeatures;
+            }
+            catch (Exception e) { Logger.Error("Failed to edit SecondOrder.", e); }
+
         }
     }
 }
