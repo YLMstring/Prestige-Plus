@@ -13911,6 +13911,61 @@
     "enGB": "Advanced Prerequisites: Dex 17; Point-Blank Shot; Rapid Shot; base attack bonus +11 or Thievery 11 ranks. A chaotic good bard of at least 10th level can ignore the prerequisites. You can impart a powerful spin to a thrown starknife so that multiple blades strike the target rather than just a single blade of the four, dealing extra damage with the other blades. As a full-round action, you can make a single attack with a thrown starknife, rolling 1d4 to determine how many effective strikes you gain with the attack (if you roll a 1, then only one blade strikes). If the attack hits, all of the effective strikes damage the target. Apply critical hit damage only once for this attack. The damage bonus from your appropriate ability score modifier applies to each strike, as do other damage bonuses, such as a bard’s inspire competence bonus. Damage reduction and resistances apply separately to each strike. They are considered melee attacks if you don't know how to throw a starknife.",
     "ruRU": "Продвинутые требования: ЛВК 17; Стрельба вблизи; Быстрый выстрел; Базовый модификатор атаки +11 или Плутовство +11. Хаотичный добрый бард 10 или выше уровня может игнорировать эти требования. Вы можете придать брошенному клинку-звезде мощное вращение, чтобы в цель попало не одно лезвие из четырех, а сразу несколько, нанося дополнительный урон остальными лезвиями. В качестве действия полного раунда вы можете совершить одну атаку метательным клинком-звездой, бросив кость 1d4, чтобы определить, сколькими лезвиями вам удастся попасть при атаке (если вы бросите 1, то попадет только одно лезвие). Если атака попадает, все лезвия наносят урон цели. Нанести урон от критического удара можно только один раз за эту атаку. Бонус к урону от соответствующего модификатора характеристики применяется к каждому удару, так же как и другие бонусы к урону, например бонус мастерства от способности барда Песнь мастерства. Снижение урона и устойчивости применяются к каждому удару отдельно. Эти атаки считаются атаками ближнего боя, если вы не умеете метать клинок-звезду.",
     "zhCN": "进阶条件：敏捷17，近程射击，快速射击，BAB+11或巧手11级。10级或以上的混乱善良诗人可以无视条件。你可以给一枚抛出的星刃赋予强大的回旋效果，使得多个刃叶击中目标而非四个刃叶中的某一个，并造成额外的伤害。作为一个整轮动作，你可以投掷星刃进行一次攻击，投掷1d4来决定获得几次有效攻击（如果你投掷出1，则只有一次）。如果攻击命中，则每一击都会成功伤害目标。其中重击伤害只能触发一次，来自固定加值的伤害则适用于每个伤害骰，例如吟游诗人的激发勇气加值。抗性和伤害减免能力适用于每一击。如果你不知道如何投掷星刃，这些攻击视为近战攻击。"
+  },
+  {
+    "Key": "WhiteHairedWitchHairStrike.Name",
+    "ProcessTemplates": false,
+    "enGB": "Hair Attack",
+    "zhCN": "发束打击"
+  },
+  {
+    "Key": "WhiteHairedWitchHairStrike.Description",
+    "enGB": "A white-haired witch can use her hair to perform a charge attack, a standard attack or vital strikes.",
+    "zhCN": "白发魔女的头发可以在冲锋，标准攻击或者要害打击时使用。"
+  },
+  {
+    "Key": "InquisitionHammer.Name",
+    "ProcessTemplates": false,
+    "enGB": "Order of the Hammer",
+    "zhCN": "大锤骑士团"
+  },
+  {
+    "Key": "InquisitionHammer.Description",
+    "enGB": "Cavaliers of the order of the hammer respect might over all, and believe that those who prove their strength have earned the right to make decisions for the weak. When the cavalier’s own goals conflict with those of a mighty ruler, the cavalier must prove that her own strength and ideals are superior.",
+    "zhCN": "大锤骑士团的骑士敬重力量高过一切，她们认为强大就意味着拥有替弱者做出决定的权利。若骑将的个人目标与强大的统治者发生冲突，她就必须证明自己的力量和理念更加优越。"
+  },
+  {
+    "Key": "InquisitionHammerChallenge.Name",
+    "ProcessTemplates": false,
+    "enGB": "Challenge",
+    "zhCN": "挑♂战"
+  },
+  {
+    "Key": "InquisitionHammerChallenge.Description",
+    "enGB": "An order of the hammer cavalier can attempt a free grapple check or free sunder combat maneuver check anytime she takes the full-attack action against the target of her challenge. This free combat maneuver does not provoke an attack of opportunity.",
+    "zhCN": "大锤骑士团的骑将在全回合攻击她正在挑战的对手时，可以用自由动作进行一次擒抱或击破战技，此战技不会引发借机攻击。"
+  },
+  {
+    "Key": "InquisitionHammerSkill.Name",
+    "ProcessTemplates": false,
+    "enGB": "Skills",
+    "zhCN": "额外技能"
+  },
+  {
+    "Key": "InquisitionHammerSkill.Description",
+    "enGB": "An order of the hammer cavalier adds Knowledge (world) to her list of class skills.",
+    "zhCN": "大锤骑士团的骑将将知识（世界）加入其职业技能列表。"
+  },
+  {
+    "Key": "InquisitionHammerFlex.Name",
+    "ProcessTemplates": false,
+    "enGB": "Inspiring Flex",
+    "zhCN": "肌情四射"
+  },
+  {
+    "Key": "InquisitionHammerFlex.Description",
+    "enGB": "At 15th level, the cavalier can display her own brawn to inspire greater strength in his allies. As a standard action, she can grant herself and any allies within 30 feet a +4 morale bonus on melee attack rolls, combat maneuver checks, Fortitude saves, and Athletic checks. The cavalier can maintain her inspiring flex as a free action, and she can use this ability for a number of rounds per day equal 1/2 her cavalier level; this duration need not be continuous.",
+    "zhCN": "15级起，骑将可以秀出完美的肌肉给盟友打气。以标准动作，她可以给自己和30尺内所有盟友的近战攻击，战技检定，强韧豁免和运动检定提供+4士气加值。她可以用自由动作维持，每日可使用此能力的轮数等同1/2骑将等级，不必连续。"
   }
 
 ]
