@@ -83,8 +83,8 @@ namespace PrestigePlus.Blueprint.Archetype
         internal const string WhiteHairDisplayName = "WhiteHairedWitchWhiteHair.Name";
         private const string WhiteHairDescription = "WhiteHairedWitchWhiteHair.Description";
 
-        private const string HairStrikeAblity = "WeaponMaster.UseHairStrike";
-        private static readonly string HairStrikeAblityGuid = "{B015C367-68EB-48B7-98E7-52653057E304}";
+        private const string HairStrikeAblity = "WhiteHairedWitch.UseHairStrike";
+        private static readonly string HairStrikeAblityGuid = "{89399D5C-CF13-4FC3-BA51-0EAEF05AD1E4}";
 
         internal const string HairStrikeDisplayName = "WhiteHairedWitchHairStrike.Name";
         private const string HairStrikeDescription = "WhiteHairedWitchHairStrike.Description";
@@ -122,6 +122,7 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetIcon(icon)
                 .SetRange(AbilityRange.Weapon)
                 .SetType(AbilityType.Supernatural)
+                .AddAbilityCasterMainWeaponIsMelee()
                 .Configure();
 
             return FeatureConfigurator.New(WhiteHair, WhiteHairGuid)

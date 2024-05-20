@@ -368,6 +368,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("masterpiece"), defaultValue: true, Helpers.CreateString("toggle-desc99", "Bardic Masterpieces"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("order"), defaultValue: true, Helpers.CreateString("toggle-desc100", "Cavalier Orders"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("magehand"), defaultValue: true, Helpers.CreateString("toggle-desc39", "Magic Trick Feats"))
               .ShowVisualConnection())
           .AddToggle(
@@ -495,6 +498,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("usher"))) { MortalUsher.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("masterpiece"))) { Masterpiece.CreateBardMasterpieceCore(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("superop"))) { HermeanPotential.Configure(); DebilitatingPain.Configure(); DebilitatingPainMass.Configure(); GlimpseAkashic.Configure(); AkashicForm.Configure(); PhantomLimb.Configure(); Supernaturalist.Configure(); SecretAkashic.Configure(); SecretAkashic.Configure2(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("order"))) { Inquisition.HammerFeat(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2();
                 }
                 catch (Exception e)
