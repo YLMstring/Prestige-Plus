@@ -489,8 +489,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetAffectDead(false)
                 .SetShape(AreaEffectShape.Cylinder)
                 .SetSize(33.Feet())
-                .AddAbilityAreaEffectBuff(BuffRefs.SpellResistanceBuff.ToString())
-                .AddContextCalculateAbilityParams(replaceCasterLevel: true, casterLevel: ContextValues.Property(UnitProperty.Level))
+                .AddAbilityAreaEffectBuff(Buff2)
                 .Configure();
 
             var Buff1 = BuffConfigurator.New(FlexAuraBuff, FlexAuraBuffGuid)
