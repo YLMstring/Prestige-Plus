@@ -397,5 +397,131 @@ namespace PrestigePlus.Blueprint.Feat
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .Configure();
         }
+
+        private const string Hammer = "Inquisition.Hammer";
+        private static readonly string HammerGuid = "{8D5E3BA4-F6FC-4367-9C54-3A1D824F738C}";
+
+        internal const string HammerDisplayName = "InquisitionHammer.Name";
+        private const string HammerDescription = "InquisitionHammer.Description";
+        public static BlueprintProgression HammerFeat()
+        {
+            var icon = AbilityRefs.ChaosHammer.Reference.Get().Icon;
+
+            var pro = ProgressionConfigurator.New(Hammer, HammerGuid)
+              .SetDisplayName(HammerDisplayName)
+              .SetDescription(HammerDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .SetClasses(ProgressionRefs.CavalierOrderOfTheLionProgression.Reference.Get().m_Classes)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(1, HammerSkillFeat())
+              .AddToLevelEntry(2, FeatureRefs.ImprovedUnarmedStrike.ToString())
+              .AddToLevelEntry(8, BodyGuard.GreaterUnarmedStrikeGuid)
+              .AddToLevelEntry(15, HammerFlexFeat())
+              .Configure();
+
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.CavalierOrderSelection)
+                .AddToAllFeatures(pro)
+                .Configure();
+
+            return pro;
+        }
+
+        private const string HammerSkill = "Inquisition.HammerSkill";
+        private static readonly string HammerSkillGuid = "{338CE0C4-74BC-4B69-9E90-C958AF5F64AE}";
+
+        internal const string InquisitionHammerSkillDisplayName = "InquisitionHammerSkill.Name";
+        private const string InquisitionHammerSkillDescription = "InquisitionHammerSkill.Description";
+        public static BlueprintFeature HammerSkillFeat()
+        {
+            //var icon = FeatureRefs.Persuasive.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(HammerSkill, HammerSkillGuid)
+              .SetDisplayName(InquisitionHammerSkillDisplayName)
+              .SetDescription(InquisitionHammerSkillDescription)
+              //.SetIcon(icon)
+              .AddClassSkill(StatType.SkillKnowledgeWorld)
+              .Configure();
+        }
+
+        private static readonly string HammerFlexName = "InquisitionHammerFlex";
+        public static readonly string HammerFlexGuid = "{5FF16D00-11CC-4A97-836F-05371AA06BEA}";
+
+        private static readonly string HammerFlexDisplayName = "InquisitionHammerFlex.Name";
+        private static readonly string HammerFlexDescription = "InquisitionHammerFlex.Description";
+
+        private const string FlexAuraBuff = "Inquisition.HammerFlexbuff";
+        private static readonly string FlexAuraBuffGuid = "{45D16FEA-2FE4-4C43-8FE7-DF8F52E14CAD}";
+
+        private const string FlexAuraBuff2 = "Inquisition.HammerFlexbuff2";
+        private static readonly string FlexAuraBuff2Guid = "{3A32602E-BF34-4F91-AD4C-68C0FC3F3547}";
+
+        private const string HammerFlexFlexAura = "Inquisition.HammerFlexFlexAura";
+        private static readonly string HammerFlexFlexAuraGuid = "{FADB840F-DEA9-4381-9B6B-76D7EA03AA95}";
+
+        private const string HammerFlexAbility = "Inquisition.HammerFlexAbility";
+        private static readonly string HammerFlexAbilityGuid = "{48056153-9B20-4ECB-B979-F2BD4376FDC4}";
+
+        private const string HammerFlexAbilityRes = "Inquisition.HammerFlexAbilityRes";
+        private static readonly string HammerFlexAbilityResGuid = "{92B9FA8E-C0FA-4CB8-841F-465D7E33C5FD}";
+
+        public static BlueprintFeature HammerFlexFeat()
+        {
+            var icon = AbilityRefs.HeroNeverSurrender.Reference.Get().Icon;
+
+            var Buff2 = BuffConfigurator.New(FlexAuraBuff2, FlexAuraBuff2Guid)
+              .SetDisplayName(HammerFlexDisplayName)
+              .SetDescription(HammerFlexDescription)
+              .SetIcon(icon)
+              .AddAttackTypeAttackBonus(attackBonus: 4, descriptor: ModifierDescriptor.Morale, type: WeaponRangeType.Melee)
+              .AddCMBBonus(descriptor: ModifierDescriptor.Morale, value: 4)
+              .AddStatBonus(ModifierDescriptor.Morale, false, StatType.SaveFortitude, 4)
+              .AddStatBonus(ModifierDescriptor.Morale, false, StatType.SkillAthletics, 4)
+              .SetFxOnStart(BuffRefs.HeroismBuff.Reference.Get().FxOnStart)
+              .Configure(); 
+            
+            var area = AbilityAreaEffectConfigurator.New(HammerFlexFlexAura, HammerFlexFlexAuraGuid)
+                .SetTargetType(BlueprintAbilityAreaEffect.TargetType.Ally)
+                .SetAffectDead(false)
+                .SetShape(AreaEffectShape.Cylinder)
+                .SetSize(33.Feet())
+                .AddAbilityAreaEffectBuff(BuffRefs.SpellResistanceBuff.ToString())
+                .AddContextCalculateAbilityParams(replaceCasterLevel: true, casterLevel: ContextValues.Property(UnitProperty.Level))
+                .Configure();
+
+            var Buff1 = BuffConfigurator.New(FlexAuraBuff, FlexAuraBuffGuid)
+              .SetDisplayName(HammerFlexDisplayName)
+              .SetDescription(HammerFlexDescription)
+              .SetIcon(icon)
+              .AddAreaEffect(area)
+              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+              .Configure();
+
+            var abilityresourse = AbilityResourceConfigurator.New(HammerFlexAbilityRes, HammerFlexAbilityResGuid)
+                .SetMaxAmount(
+                    ResourceAmountBuilder.New(0)
+                        .IncreaseByLevelStartPlusDivStep(classes: new string[] { CharacterClassRefs.CavalierClass.ToString() }, otherClassLevelsMultiplier: 0, levelsPerStep: 2, bonusPerStep: 1))
+                .Configure();
+
+            var ability = ActivatableAbilityConfigurator.New(HammerFlexAbility, HammerFlexAbilityGuid)
+                .SetDisplayName(HammerFlexDisplayName)
+                .SetDescription(HammerFlexDescription)
+                .SetIcon(icon)
+                .SetBuff(Buff1)
+                .SetDeactivateIfCombatEnded(true)
+                .SetActivationType(AbilityActivationType.WithUnitCommand)
+                .SetActivateWithUnitCommand(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard)
+                .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound)
+                .Configure();
+
+            return FeatureConfigurator.New(HammerFlexName, HammerFlexGuid)
+                    .SetDisplayName(HammerFlexDisplayName)
+                    .SetDescription(HammerFlexDescription)
+                    .SetIcon(icon)
+                    .AddFacts(new() { ability })
+                    .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+                    .Configure();
+        }
     }
 }
