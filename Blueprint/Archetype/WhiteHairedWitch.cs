@@ -26,6 +26,8 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic;
 using Kingmaker.Designers.Mechanics.Facts;
+using PrestigePlus.CustomAction.OtherFeatRelated;
+using PrestigePlus.CustomAction.ClassRelated;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -81,6 +83,11 @@ namespace PrestigePlus.Blueprint.Archetype
         internal const string WhiteHairDisplayName = "WhiteHairedWitchWhiteHair.Name";
         private const string WhiteHairDescription = "WhiteHairedWitchWhiteHair.Description";
 
+        private const string HairStrikeAblity = "WeaponMaster.UseHairStrike";
+        private static readonly string HairStrikeAblityGuid = "{B015C367-68EB-48B7-98E7-52653057E304}";
+
+        internal const string HairStrikeDisplayName = "WhiteHairedWitchHairStrike.Name";
+        private const string HairStrikeDescription = "WhiteHairedWitchHairStrike.Description";
         private static BlueprintFeature CreateWhiteHair()
         {
             var icon = AbilityRefs.MagicMissile.Reference.Get().Icon;
@@ -104,6 +111,19 @@ namespace PrestigePlus.Blueprint.Archetype
                 .SetRange(AbilityRange.Long)
                 .Configure();
 
+            var ability = AbilityConfigurator.New(HairStrikeAblity, HairStrikeAblityGuid)
+                .AllowTargeting(enemies: true)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .Add<WhiteHairAttack>()
+                        .Build())
+                .SetDisplayName(HairStrikeDisplayName)
+                .SetDescription(HairStrikeDescription)
+                .SetIcon(icon)
+                .SetRange(AbilityRange.Weapon)
+                .SetType(AbilityType.Supernatural)
+                .Configure();
+
             return FeatureConfigurator.New(WhiteHair, WhiteHairGuid)
               .SetDisplayName(WhiteHairDisplayName)
               .SetDescription(WhiteHairDescription)
@@ -114,7 +134,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddComponent<HairExtraDamage>()
               .AddComponent<ReplaceSingleCombatManeuverStat>(c => { c.Type = Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple; c.StatType = StatType.Intelligence; })
               //.AddReplaceSingleCombatManeuverStat(statType: StatType.Intelligence, type: Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple)
-              .AddFacts(new() { PinAbilityGuid1, TieUpAbilityGuid, ReadyAbilityGuid, ReleaseAbilityGuid })
+              .AddFacts(new() { ability, PinAbilityGuid1, TieUpAbilityGuid, ReadyAbilityGuid, ReleaseAbilityGuid })
               .AddComponent<AddInitiatorAttackWithWeaponTrigger>(c => { c.Action = grapple; c.OnlyHit = true; c.CheckWeaponCategory = true; c.Category = WeaponCategory.Gore; c.TriggerBeforeAttack = false; c.IgnoreAutoHit = true; })
               .AddManeuverTrigger(ActionsBuilder.New().CastSpell(abilityunlimited).Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple, false)
               .Configure();

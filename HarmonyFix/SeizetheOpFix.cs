@@ -55,7 +55,7 @@ namespace PrestigePlus.HarmonyFix
                     }
                     vitalStrikePart.MythicFact = caster.GetFact(VitalFeat4);
                     vitalStrikePart.Rowdy = caster.HasFact(VitalFeat5);
-                    vitalStrikePart.Fact = caster.Facts.m_Facts.First();
+                    vitalStrikePart.Fact = caster.GetFact(VitalFeat);
                     var ruleAttackWithWeapon = Rulebook.Trigger(new RuleAttackWithWeapon(caster, target, __instance.Hand.Weapon, 0)
                     {
                         IsAttackOfOpportunity = true,

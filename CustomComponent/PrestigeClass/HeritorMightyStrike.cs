@@ -38,7 +38,7 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
                     }
                     vitalStrikePart.MythicFact = caster.GetFact(VitalFeat4);
                     vitalStrikePart.Rowdy = caster.HasFact(VitalFeat5);
-                    vitalStrikePart.Fact = caster.Facts.m_Facts.First();
+                    vitalStrikePart.Fact = caster.GetFact(VitalFeat);
                 }
 
             }
@@ -47,7 +47,7 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
                 Logger.Error("HeritorMightyStrike.OnEventAboutToTrigger", e);
             }
         }
-
+        private static readonly BlueprintFeatureReference VitalFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.VitalStrikeFeature.ToString());
         private static readonly BlueprintFeatureReference VitalFeat3 = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.VitalStrikeFeatureGreater.ToString());
         private static readonly BlueprintFeatureReference VitalFeat4 = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.VitalStrikeMythicFeat.ToString());
         private static readonly BlueprintFeatureReference VitalFeat5 = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.RowdyVitalDamage.ToString());
