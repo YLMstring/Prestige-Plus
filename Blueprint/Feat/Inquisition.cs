@@ -40,6 +40,7 @@ using PrestigePlus.CustomComponent.Feat;
 using PrestigePlus.Maneuvers;
 using Kingmaker.AreaLogic;
 using System.Drawing;
+using Kingmaker.UnitLogic.FactLogic;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -443,7 +444,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(InquisitionHammerSkillDisplayName)
               .SetDescription(InquisitionHammerSkillDescription)
               //.SetIcon(icon)
-              .AddClassSkill(StatType.SkillKnowledgeWorld)
+              .AddComponent(FeatureRefs.CavalierLionSkills.Reference.Get().GetComponent<AddClassSkill>())
               .Configure();
         }
 

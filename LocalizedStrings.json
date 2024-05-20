@@ -13938,7 +13938,7 @@
     "Key": "InquisitionHammerChallenge.Name",
     "ProcessTemplates": false,
     "enGB": "Challenge",
-    "zhCN": "挑♂战"
+    "zhCN": "挑战"
   },
   {
     "Key": "InquisitionHammerChallenge.Description",
@@ -13949,7 +13949,7 @@
     "Key": "InquisitionHammerSkill.Name",
     "ProcessTemplates": false,
     "enGB": "Skills",
-    "zhCN": "额外技能"
+    "zhCN": "技能"
   },
   {
     "Key": "InquisitionHammerSkill.Description",
