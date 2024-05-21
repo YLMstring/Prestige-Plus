@@ -25,6 +25,8 @@ using PrestigePlus.CustomComponent.Grapple;
 using PrestigePlus.Blueprint.GrappleFeat;
 using PrestigePlus.Maneuvers;
 using PrestigePlus.Blueprint.SpecificManeuver;
+using PrestigePlus.Blueprint.Archetype;
+using Kingmaker.Items.Slots;
 
 namespace PrestigePlus.HarmonyFix
 {
@@ -37,6 +39,17 @@ namespace PrestigePlus.HarmonyFix
             try
             {
                 var caster = __instance.Executor;
+                if (caster.HasFact(WhiteHair))
+                {
+                    foreach (WeaponSlot weaponSlot in caster.Body.AdditionalLimbs)
+                    {
+                        if (weaponSlot.Weapon?.Blueprint?.Type == WeaponTypeRefs.GoreType.Reference.Get())
+                        {
+                            __instance.Hand = weaponSlot;
+                            break;
+                        }
+                    }
+                }
                 var target = __instance.Target;
                 var maneuver = CombatManeuver.None;
                 if (target.Descriptor.State.IsDead || !caster.HasFact(TheFeat)) { return true; }
@@ -210,6 +223,7 @@ namespace PrestigePlus.HarmonyFix
         private static readonly BlueprintFeatureReference VitalFeat5 = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.RowdyVitalDamage.ToString());
 
         private static readonly BlueprintAbilityReference VitalAbility = BlueprintTool.GetRef<BlueprintAbilityReference>(AbilityRefs.VitalStrikeAbility.ToString());
+        private static readonly BlueprintFeatureReference WhiteHair = BlueprintTool.GetRef<BlueprintFeatureReference>(WhiteHairedWitch.WhiteHairGuid);
 
         private static readonly BlueprintFeatureReference SunderReal = BlueprintTool.GetRef<BlueprintFeatureReference>(GreaterSunderTabletop.GreaterSunderTabletopGuid);
         private static readonly BlueprintFeatureReference Ace = BlueprintTool.GetRef<BlueprintFeatureReference>(RangedTrip.AceTripGuid);

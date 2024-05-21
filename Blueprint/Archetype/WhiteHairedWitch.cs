@@ -75,7 +75,7 @@ namespace PrestigePlus.Blueprint.Archetype
         }
 
         private const string WhiteHair = "WhiteHairedWitch.WhiteHair";
-        private static readonly string WhiteHairGuid = "{64E7BE0E-B19E-4378-BAA3-EF261322A815}";
+        public static readonly string WhiteHairGuid = "{64E7BE0E-B19E-4378-BAA3-EF261322A815}";
 
         private const string WhiteHairAbility = "WhiteHairedWitch.WhiteHairAbility";
         private static readonly string WhiteHairAbilityGuid = "{592470DA-B336-4B03-BF72-D40899058514}";
