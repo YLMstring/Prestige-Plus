@@ -16,7 +16,7 @@ using UnityEngine;
 
 namespace PrestigePlus.Grapple
 {
-    internal class PPGrabTargetBuff : PPGrabBuffBase, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleCalculateAC>, IRulebookHandler<RuleCalculateAC>, ITargetRulebookSubscriber
+    internal class PPGrabTargetBuff : PPGrabBuffBase, ISubscriber, ITargetRulebookHandler<RuleCalculateAC>, IRulebookHandler<RuleCalculateAC>, ITargetRulebookSubscriber
     {
         
 
