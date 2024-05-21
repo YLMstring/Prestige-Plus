@@ -1773,7 +1773,7 @@
     "Key": "RapidGrappler.Description",
     "enGB": "You are a quick hand at grappling. Whenever you use Greater Grapple to successfully maintain a grapple as a move action, you can then spend a swift action to make a grapple combat maneuver check at a –5 penalty.",
     "ruRU": "Вы умелы в захватах. Когда вы используете сопуствующее действия для успешного удержания врага при помощи маневра Захват+, вы можете быстрым действием пройти проверку боевого маневра захвата со штрафом -5.",
-    "zhCN": "你是快速擒抱的专家。当你成功地使用“高等擒抱”以移动动作维持了一次擒抱之后，接下来你只用迅捷动作就可以以承受-5减值进行维持擒抱的战技检定。"
+    "zhCN": "你是快速擒抱的专家。当你成功地使用“高等擒抱”以移动动作维持了一次擒抱之后，接下来你只用迅捷动作承受-5减值进行一次擒抱战技检定。"
   },
 
   {
