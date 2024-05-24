@@ -244,6 +244,9 @@ namespace PrestigePlus.Blueprint.Feat
             FeatureSelectionConfigurator.For(FeatureSelectionRefs.StudentOfWarCombatFeatSelection)
                 .AddToAllFeatures(feat)
                 .Configure();
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.EldritchKnightFeatSelection)
+                .AddToAllFeatures(feat)
+                .Configure();
 
             return feat;
         }
