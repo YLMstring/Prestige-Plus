@@ -185,20 +185,14 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private static readonly string InheritorGuid = "{772F4078-A60A-4D0F-B06C-61E56C4688D7}";
         private static BlueprintFeature CreateSmite()
         {
-            var feat = FeatureConfigurator.New(Smite, SmiteGuid)
-                .CopyFrom(
-                FeatureRefs.SmiteEvilFeature,
-                typeof(AddFacts),
-                typeof(AddAbilityResources))
+            return FeatureConfigurator.New(Smite, SmiteGuid)
               .SetDisplayName(SmiteDisplayName)
               .SetDescription(SmiteDescription)
               .SetIsClassFeature(true)
               .AddFacts(new() { FeatureRefs.SmiteEvilFeature.ToString() })
               .AddDamageBonusAgainstFactOwner(bonus: ContextValues.Rank(AbilityRankType.DamageBonus), checkedFact: BuffRefs.SmiteEvilBuff.ToString())
-              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { InheritorGuid, CharacterClassRefs.PaladinClass.ToString() }, excludeClasses: true, type: AbilityRankType.DamageBonus).WithLinearProgression(1, 0))
+              .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { InheritorGuid, CharacterClassRefs.PaladinClass.ToString(), CharacterClassRefs.AeonMythicClass.ToString(), CharacterClassRefs.MythicCompanionClass.ToString(), CharacterClassRefs.MythicShardsClass.ToString(), CharacterClassRefs.MythicStartingClass.ToString(), CharacterClassRefs.AngelMythicClass.ToString(), CharacterClassRefs.AzataMythicClass.ToString(), CharacterClassRefs.DemonMythicClass.ToString(), CharacterClassRefs.DevilMythicClass.ToString(), CharacterClassRefs.LichMythicClass.ToString(), CharacterClassRefs.TricksterMythicClass.ToString(), CharacterClassRefs.LegendClass.ToString(), CharacterClassRefs.FakeLegendClass.ToString() }, excludeClasses: true, type: AbilityRankType.DamageBonus))
               .Configure();
-
-            return feat;
         }
     }
 }
