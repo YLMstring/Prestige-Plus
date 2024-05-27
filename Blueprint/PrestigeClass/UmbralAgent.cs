@@ -305,7 +305,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDescription(UmbralAgentShadowChains2Description)
                 .SetIcon(icon)
                 .SetFlags(BlueprintBuff.Flags.HiddenInUi)
-                .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
+                .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
                 .AddComponent<ReplaceSingleCombatManeuverStat>(c => { c.Type = Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple; c.StatType = StatType.Wisdom; })
                 //.AddReplaceSingleCombatManeuverStat(statType: StatType.Wisdom, type: Kingmaker.RuleSystem.Rules.CombatManeuver.Grapple)
                 .Configure();

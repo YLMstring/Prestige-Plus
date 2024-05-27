@@ -2792,9 +2792,9 @@
 
   {
     "Key": "UmbralAgentTenebrous.Description",
-    "enGB": "An Umbral agent receives a metamagic feat of her choice as a bonus feat at 1st level. In addition, whenever she casts a spell of the illusion school, all spells of any school she casts for the next 1d4 rounds have their effective caster level and save DC increased by 2. This increase does not apply to the original illusion spell.",
-    "ruRU": "Теневой агент получает метамагическую черту в качестве дополнительной на 1 уровне. Кроме того, всякий раз, когда он сотворяет заклинание школы иллюзии, на 1d4 раундов сложность и уровень заклинателя всех творимых им заклинаний увеличиваютс на 2. Этот бонус не применяется к сотворенному заклинанию иллюзии.",
-    "zhCN": "阴影代理人在1级时自选一个额外超魔专长，施放幻术系法术后的1d4轮内，施法者等级+2，法术DC+2。"
+    "enGB": "An Umbral agent receives a metamagic feat of her choice as a bonus feat at 1st level. In addition, whenever she casts a spell of the illusion school, all spells of any school she casts for the next 1d4 rounds have their effective caster level and save DC increased by 2. He also gains a +5 bonus on grapple checks of grasping darkness. This increase does not apply to the original illusion spell.",
+    "ruRU": "An Umbral agent receives a metamagic feat of her choice as a bonus feat at 1st level. In addition, whenever she casts a spell of the illusion school, all spells of any school she casts for the next 1d4 rounds have their effective caster level and save DC increased by 2. He also gains a +5 bonus on grapple checks of grasping darkness. This increase does not apply to the original illusion spell.",
+    "zhCN": "阴影代理人在1级时自选一个额外超魔专长，施放幻术系法术后的1d4轮内，施法者等级+2，法术DC+2，暗影之握的擒抱检定+5。"
   },
 
   {
@@ -2860,9 +2860,9 @@
 
   {
     "Key": "UmbralAgentShadowChains2.Description",
-    "enGB": "At 6th level, an Umbral agent can use his touch of darkness ability an additional time per day, and the reach provided by his shadow chains ability increases by 5 feet (to a total 10 foot increase). In place of entangling the target, the Umbral agent can attempt to grapple the target without provoking an attack of opportunity, using his Wisdom modifier in place of his Strength modifier for the purpose of determining his CMB. He gains a +5 bonus on this grapple check. The Umbral agent does not gain the grappled condition when using his shadow chains this way.",
-    "ruRU": "Начиная с 6 уровня теневой агент может использовать Прикосновение тьмы еще 1 дополнительный раз в день, а дальность теневых цепей увеличивается на 5 футов (до 10 футов в общей сложности). Вместо опутывания цели теневой агент может провести боевой маневр захват, не провоцируя внеочередную атаку и используя свой модификатор Мудрости вместо модификатора Силы для определения его модификатора боевых маневров. Он получает бонус +5 к этой проверке, а также агент не получает состояние захвата при использовании цепей таким образом.",
-    "zhCN": "6级起，阴影代理人每日能够使用黑暗之触能力的次数额外提高1次，并且由阴影锁链能力所提供的触及范围提高5尺（合计提高10尺）。阴影代理人能够尝试擒抱目标以替代纠缠，这不会引起借机攻击，在确定他的CMB时，使用他的感知调整值替代力量调整值，且擒抱检定中获得+5加值。当阴影代理人以此方式使用阴影锁链时，他不会获得擒抱状态。"
+    "enGB": "At 6th level, an Umbral agent can use his touch of darkness ability an additional time per day, and the reach provided by his shadow chains ability increases by 5 feet (to a total 10 foot increase). In place of entangling the target, the Umbral agent can attempt to grapple the target without provoking an attack of opportunity, using his Wisdom modifier in place of his Strength modifier for the purpose of determining his CMB. The Umbral agent does not gain the grappled condition when using his shadow chains this way.",
+    "ruRU": "At 6th level, an Umbral agent can use his touch of darkness ability an additional time per day, and the reach provided by his shadow chains ability increases by 5 feet (to a total 10 foot increase). In place of entangling the target, the Umbral agent can attempt to grapple the target without provoking an attack of opportunity, using his Wisdom modifier in place of his Strength modifier for the purpose of determining his CMB. The Umbral agent does not gain the grappled condition when using his shadow chains this way.",
+    "zhCN": "6级起，阴影代理人每日能够使用黑暗之触能力的次数额外提高1次，并且由阴影锁链能力所提供的触及范围提高5尺（合计提高10尺）。阴影代理人能够尝试擒抱目标以替代纠缠，这不会引起借机攻击。在确定他的CMB时，使用他的感知调整值替代力量调整值。当阴影代理人以此方式使用阴影锁链时，他不会获得擒抱状态。"
   },
 
   {
