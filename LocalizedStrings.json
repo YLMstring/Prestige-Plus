@@ -1756,9 +1756,9 @@
 
   {
     "Key": "ManeuverExpert.Description",
-    "enGB": "You always takes a –2 penalty on all saves, as you expend your mythic power whenever you attempt a combat maneuver check to gain the benefits of the Improved and Greater feats tied to that maneuver.",
-    "ruRU": "Вы получаете штраф -2 ко всем спасброскам, из-за того что ваши мифические силы сосредотачиваются успешном проведение боевых маневров. Вы получаете преимущества черт связанных с этим маневром.",
-    "zhCN": "你的所有豁免-2，因为你将这部分神话之力用于在尝试战技检定时，获取对应战技的精通和高等专长效果。"
+    "enGB": "You take a –2 penalty on all attack rolls, as you expend your mythic power whenever you attempt a combat maneuver check to gain the benefits of the Improved and Greater feats tied to that maneuver.",
+    "ruRU": "You take a –2 penalty on all attack rolls, as you expend your mythic power whenever you attempt a combat maneuver check to gain the benefits of the Improved and Greater feats tied to that maneuver.",
+    "zhCN": "你的所有攻击检定获得-2减值，因为你将这部分神话之力用于在尝试战技检定时，获取对应战技的精通和高等专长效果。"
   },
 
   {
