@@ -272,9 +272,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                         .ApplyBuff(BuffRefs.EntangleBuff.ToString(), durationValue: ContextDuration.FixedDice(diceType: DiceType.D4)).Build()).Build())
                     .Build())
                 .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(ShadowChains2BuffGuid).Build(), ifTrue: ActionsBuilder.New()
-                    .SavingThrow(type: SavingThrowType.Reflex, useDCFromContextSavingThrow: true,
-                    onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New()
-                        .Add<KnotGrapple>(c => { c.isAway = false; }).Build()).Build())
+                    .Add<KnotGrapple>(c => { c.isAway = false; })
                     .Build())
                 .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(ShadowChains3Guid).Build(), ifTrue: ActionsBuilder.New()
                     .OnContextCaster(ActionsBuilder.New().RestoreResource(AbilityResourceRefs.DarknessDomainBaseResource.ToString(), 1).Build())
