@@ -22,6 +22,7 @@ using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.Blueprints.Items.Weapons;
 using PrestigePlus.Grapple;
 using PrestigePlus.CustomAction.OtherManeuver;
+using PrestigePlus.Blueprint.PrestigeClass;
 
 namespace PrestigePlus.CustomAction.GrappleThrow
 {
@@ -68,7 +69,7 @@ namespace PrestigePlus.CustomAction.GrappleThrow
                 {
                     AttackBonusRule.AddModifier(maybeCaster.Descriptor.Progression.MythicLevel, descriptor: Kingmaker.Enums.ModifierDescriptor.UntypedStackable);
                 }
-                else
+                else if (maybeCaster.HasFact(ShadowBuff))
                 {
                     AttackBonusRule.AddModifier(5, descriptor: Kingmaker.Enums.ModifierDescriptor.UntypedStackable);
                 }
@@ -90,6 +91,7 @@ namespace PrestigePlus.CustomAction.GrappleThrow
 
         private static BlueprintBuffReference CasterBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{D4DD258E-B9F1-42D1-9BD0-ADBD217AFE23}");
         private static BlueprintBuffReference TargetBuff = BlueprintTool.GetRef<BlueprintBuffReference>("{F505D659-0610-41B1-B178-E767CCB9292E}");
+        private static BlueprintBuffReference ShadowBuff = BlueprintTool.GetRef<BlueprintBuffReference>(UmbralAgent.TenebrousBuffGuid);
         public bool isAway = true;
         public bool isHair = false;
     }

@@ -142,7 +142,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private static readonly string TenebrousGuid = "{3096368F-9B6A-4D06-9F47-4C2E17EF852B}";
 
         private const string TenebrousBuff = "UmbralAgent.TenebrousBuff";
-        private static readonly string TenebrousBuffGuid = "{D32CC7CB-8AE7-4698-850E-7F6FB7A0507F}";
+        public static readonly string TenebrousBuffGuid = "{D32CC7CB-8AE7-4698-850E-7F6FB7A0507F}";
 
         internal const string TenebrousDisplayName = "UmbralAgentTenebrous.Name";
         private const string TenebrousDescription = "UmbralAgentTenebrous.Description";
