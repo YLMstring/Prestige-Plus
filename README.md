@@ -1,4 +1,4 @@
-# Prestige Plus v3.1.5 for WoTR 
+# Prestige Plus v3.1.6 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -423,7 +423,9 @@
 ### Other Features
 
 - [Quick Draw](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/swordlord/): If a Swordlord already has Quick Draw or Alertness, he gains Aldori Dueling Mastery as a bonus feat.
-- [Catechesis](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/e-h/hellknight-signifer/): If a Hell Knight signifer has the Warrior Priest feat, his Hell Knight signifer level stacks with other divine spellcasting classes for determining the effects of those classes’ domain powers. This doesn’t grant any new powers or abilities. In addition, a signifer with the Warrior Priest feat gains Selective Channel as a bonus feat.
+- Tabletop [Grappling Infusion](https://www.aonprd.com/KineticistTalentsDisplay.aspx?ItemName=Grappling%20Infusion): There's a toggle to let you attempt a combat maneuver check to have the blast grapple that opponent, instead of allowing a reflex save. Your bonus on this check is equal to 2 + your kineticist level + your Constitution modifier (treat the blast as a Huge creature). The DC for the purposes of escaping the grapple, is equal to 10 + its CMB.
+- It takes effect as per tabletop rules, but the break-free part is still owl-brew.
+- [Quick Draw](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/swordlord/): If a Swordlord already has Quick Draw or Alertness, he gains Aldori Dueling Mastery as a bonus feat.
 - Estimated THC: Show hit chance and spell (not) saved chance in turn based mode. This is not precise because it doesn't take into consideration certain effects such as concealment, spell penetration or conditional save bonus, but still better than nothing, eh? (default off)
 - Infernal Healing: You can fully heal outside of combat by spending gold, as if you buy a wand of infernal healing and use it! (gold : hp = 3:2)
 - Weak Crits against Enemies: Symmetrical with owlcat weak crits settings, making it fair (default off)
