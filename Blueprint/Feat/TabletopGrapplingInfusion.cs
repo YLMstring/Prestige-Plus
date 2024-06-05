@@ -100,7 +100,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .Configure();
 
             var action = ActionsBuilder.New().Add<InfusionGrapple>(c => { c.buff = Buff2; c.action = ActionsBuilder.New().ApplyBuffPermanent(Buff2).Build(); }).Build();
-            var cond = ConditionsBuilder.New().CasterHasFact(Buff).HasFact(BuffRefs.GrapplingInfusionEffectBuff.ToString(), true).Build();
+            var cond = ConditionsBuilder.New().CasterHasFact(Buff).HasFact(Buff2, true).Build();
             var oldaction = BuffRefs.GrapplingInfusionBuff.Reference.Get().GetComponent<AddKineticistInfusionDamageTrigger>().Actions;
             var newaction = ActionsBuilder.New()
                 .Conditional(cond, action, oldaction)
