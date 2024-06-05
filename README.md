@@ -423,7 +423,7 @@
 ### Other Features
 
 - [Quick Draw](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/swordlord/): If a Swordlord already has Quick Draw or Alertness, he gains Aldori Dueling Mastery as a bonus feat.
-- Tabletop [Grappling Infusion](https://www.aonprd.com/KineticistTalentsDisplay.aspx?ItemName=Grappling%20Infusion): There's a toggle to let you attempt a combat maneuver check to have the blast grapple that opponent, instead of allowing a reflex save. Your bonus on this check is equal to 2 + your kineticist level + your Constitution modifier (treat the blast as a Huge creature).
+- Tabletop [Grappling Infusion](https://www.aonprd.com/KineticistTalentsDisplay.aspx?ItemName=Grappling%20Infusion): There's a toggle to let you attempt a combat maneuver check to have the blast grapple that opponent, instead of allowing a reflex save. Your bonus on this check is equal to 2 + your kineticist level + your Constitution modifier (treat the blast as a Huge creature). The DC for the purposes of escaping the grapple, is equal to 10 + its CMB.
 - It takes effect as per tabletop rules, but the break-free part is still owl-brew.
 - [Quick Draw](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/swordlord/): If a Swordlord already has Quick Draw or Alertness, he gains Aldori Dueling Mastery as a bonus feat.
 - Estimated THC: Show hit chance and spell (not) saved chance in turn based mode. This is not precise because it doesn't take into consideration certain effects such as concealment, spell penetration or conditional save bonus, but still better than nothing, eh? (default off)
