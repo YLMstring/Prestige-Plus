@@ -36,6 +36,8 @@ using static Kingmaker.UI.CanvasScalerWorkaround;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.UI.Common;
+using Kingmaker.ElementsSystem;
+using BlueprintCore.Actions.Builder.ContextEx;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -87,7 +89,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .AddFacts(new() { ability })
                 .Configure();
 
-            var action = ActionsBuilder.New().Add<InfusionGrapple>(c => { c.buff = Buff2; }).Build();
+            var action = ActionsBuilder.New().Add<InfusionGrapple>(c => { c.buff = Buff2; c.action = ActionsBuilder.New().ApplyBuffPermanent(Buff2).Build(); }).Build();
             var cond = ConditionsBuilder.New().CasterHasFact(Buff).HasFact(BuffRefs.GrapplingInfusionEffectBuff.ToString(), true).Build();
             var oldaction = BuffRefs.GrapplingInfusionBuff.Reference.Get().GetComponent<AddKineticistInfusionDamageTrigger>().Actions;
             var newaction = ActionsBuilder.New()
@@ -136,7 +138,7 @@ namespace PrestigePlus.Blueprint.Feat
             ruleCombatManeuver = (Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
             if (ruleCombatManeuver.Success)
             {
-                GameHelper.ApplyBuff(unit, buff);
+                action.Run();
             }
         }
 
@@ -146,13 +148,14 @@ namespace PrestigePlus.Blueprint.Feat
         }
 
         public BlueprintBuff buff;
+        public ActionList action;
     }
 
     internal class PPGrabInfusionBuff : PPGrabBuffBase, ITickEachRound
     {
         void ITickEachRound.OnNewRound()
         {
-            var maybeCaster = Buff.Context.MaybeCaster;
+            var maybeCaster = Buff.Context?.MaybeCaster;
             var unit = Owner;
             if (maybeCaster == null) { return; }
             int sizebonus = maybeCaster.State.Size.GetModifiers().CMDAndCMD;
