@@ -39,6 +39,7 @@ using Kingmaker.UI.Common;
 using Kingmaker.ElementsSystem;
 using BlueprintCore.Actions.Builder.ContextEx;
 using Kingmaker.Utility;
+using Kingmaker.Items;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -136,7 +137,8 @@ namespace PrestigePlus.Blueprint.Feat
                 return;
             }
             int sizebonus = maybeCaster.State.Size.GetModifiers().CMDAndCMD;
-            var AttackBonusRule = new RuleCalculateAttackBonus(maybeCaster, unit, maybeCaster.Body.EmptyHandWeapon, 0) { };
+            var wep = ItemWeaponRefs.KineticBlastPhysicalWeapon.Reference.Get().CreateEntity<ItemEntityWeapon>();
+            var AttackBonusRule = new RuleCalculateAttackBonus(maybeCaster, unit, wep, 0) { };
             AttackBonusRule.AddModifier(2 - sizebonus, descriptor: Kingmaker.Enums.ModifierDescriptor.UntypedStackable);
             ContextActionCombatTrickery.TriggerMRule(ref AttackBonusRule);
             RuleCombatManeuver ruleCombatManeuver = new(maybeCaster, unit, CombatManeuver.Grapple, AttackBonusRule)
@@ -149,6 +151,7 @@ namespace PrestigePlus.Blueprint.Feat
             {
                 action.Run();
             }
+            wep.Destroy();
         }
 
         public override void RunAction()
@@ -168,7 +171,8 @@ namespace PrestigePlus.Blueprint.Feat
             var unit = Owner;
             if (maybeCaster == null) { return; }
             int sizebonus = maybeCaster.State.Size.GetModifiers().CMDAndCMD;
-            var AttackBonusRule = new RuleCalculateAttackBonus(maybeCaster, unit, maybeCaster.Body.EmptyHandWeapon, 0) { };
+            var wep = ItemWeaponRefs.KineticBlastPhysicalWeapon.Reference.Get().CreateEntity<ItemEntityWeapon>();
+            var AttackBonusRule = new RuleCalculateAttackBonus(maybeCaster, unit, wep, 0) { };
             AttackBonusRule.AddModifier(7 - sizebonus, descriptor: ModifierDescriptor.UntypedStackable);
             ContextActionCombatTrickery.TriggerMRule(ref AttackBonusRule);
             RuleCombatManeuver ruleCombatManeuver = new(maybeCaster, unit, CombatManeuver.Grapple, AttackBonusRule)
@@ -180,12 +184,14 @@ namespace PrestigePlus.Blueprint.Feat
             if (!ruleCombatManeuver.Success)
             {
                 UIUtility.SendWarning(maybeCaster.CharacterName + "'s blast fails to maintain grapple.");
+                wep.Destroy();
                 Buff.Remove();
                 return;
             }
             UIUtility.SendWarning(maybeCaster.CharacterName + "'s blast maintains grapple.");
             GameHelper.ApplyBuff(unit, NoStandard, new Rounds?(1.Rounds()));
             int dc = ruleCombatManeuver.CMBRule.Result + 5;
+            wep.Destroy();
             if (TryBreakFree(unit, dc))
             {
                 Buff.Remove();
