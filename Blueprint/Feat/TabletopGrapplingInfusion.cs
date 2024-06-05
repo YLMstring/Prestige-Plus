@@ -100,13 +100,18 @@ namespace PrestigePlus.Blueprint.Feat
                 .Configure();
 
             var action = ActionsBuilder.New().Add<InfusionGrapple>(c => { c.buff = Buff2; c.action = ActionsBuilder.New().ApplyBuffPermanent(Buff2).Build(); }).Build();
-            var cond = ConditionsBuilder.New().CasterHasFact(Buff).HasFact(Buff2, true).Build();
+            var cond = ConditionsBuilder.New().CasterHasFact(Buff).Build();
             var oldaction = BuffRefs.GrapplingInfusionBuff.Reference.Get().GetComponent<AddKineticistInfusionDamageTrigger>().Actions;
             var newaction = ActionsBuilder.New()
                 .Conditional(cond, action, oldaction)
                 .Build();
 
-            BuffRefs.GrapplingInfusionBuff.Reference.Get().GetComponent<AddKineticistInfusionDamageTrigger>().Actions = newaction;
+            var cond2 = ConditionsBuilder.New().HasFact(Buff2, true).Build();
+            var newaction2 = ActionsBuilder.New()
+                .Conditional(cond2, newaction, null)
+                .Build();
+
+            BuffRefs.GrapplingInfusionBuff.Reference.Get().GetComponent<AddKineticistInfusionDamageTrigger>().Actions = newaction2;
         }
     }
 
