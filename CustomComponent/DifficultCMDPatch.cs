@@ -41,6 +41,8 @@ namespace PrestigePlus.CustomComponent
             {
                 value /= 2;
             }
+            value = Math.Min(value, Owner.Stats.Strength.Bonus + Owner.Stats.Dexterity.Bonus);
+            value = Math.Max(value, 0);
             evt.AddModifier(-value, Fact, Kingmaker.Enums.ModifierDescriptor.Penalty);
         }
 
