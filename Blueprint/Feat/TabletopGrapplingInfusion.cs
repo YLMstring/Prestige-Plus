@@ -29,6 +29,13 @@ using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Conditions.Builder.ContextEx;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Enums;
+using Kingmaker.PubSubSystem;
+using UnityEngine;
+using Kingmaker.Controllers.Units;
+using static Kingmaker.UI.CanvasScalerWorkaround;
+using Kingmaker.UnitLogic.Buffs.Blueprints;
+using Kingmaker.EntitySystem.Stats;
+using Kingmaker.UI.Common;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -43,6 +50,9 @@ namespace PrestigePlus.Blueprint.Feat
         private const string TabletopGrapplingActivatableAbility = "InfusionTrick.TabletopGrapplingActivatableAbility";
         private static readonly string TabletopGrapplingActivatableAbilityGuid = "{D0872A09-DE1A-4B22-83D4-A883F1A4DCE0}";
 
+        private const string TabletopGrapplingbuff2 = "InfusionTrick.TabletopGrapplingbuff2";
+        public static readonly string TabletopGrapplingbuff2Guid = "{7FFC0AEE-F313-4065-B6E9-8FAC57D0F2E0}";
+
         public static void ConfigureTabletopGrappling()
         {
             var icon = AbilityRefs.ArmyShifterGrabAbility.Reference.Get().Icon;
@@ -52,6 +62,15 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDescription(TabletopGrapplingDescription)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .Configure();
+
+            var Buff2 = BuffConfigurator.New(TabletopGrapplingbuff2, TabletopGrapplingbuff2Guid)
+              .SetDisplayName(TabletopGrapplingDisplayName)
+              .SetDescription(TabletopGrapplingDescription)
+              .SetIcon(icon)
+              .AddCondition(UnitCondition.MovementBan)
+              .AddCondition(UnitCondition.DisableAttacksOfOpportunity)
+              .AddComponent<PPGrabInfusionBuff>()
               .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(TabletopGrapplingActivatableAbility, TabletopGrapplingActivatableAbilityGuid)
@@ -68,7 +87,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .AddFacts(new() { ability })
                 .Configure();
 
-            var action = ActionsBuilder.New().Add<InfusionGrapple>().Build();
+            var action = ActionsBuilder.New().Add<InfusionGrapple>(c => { c.buff = Buff2; }).Build();
             var cond = ConditionsBuilder.New().CasterHasFact(Buff).HasFact(BuffRefs.GrapplingInfusionEffectBuff.ToString(), true).Build();
             var oldaction = BuffRefs.GrapplingInfusionBuff.Reference.Get().GetComponent<AddKineticistInfusionDamageTrigger>().Actions;
             var newaction = ActionsBuilder.New()
@@ -117,13 +136,63 @@ namespace PrestigePlus.Blueprint.Feat
             ruleCombatManeuver = (Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
             if (ruleCombatManeuver.Success)
             {
-                GameHelper.ApplyBuff(unit, BuffRefs.GrapplingInfusionEffectBuff.Reference);
+                GameHelper.ApplyBuff(unit, buff);
             }
         }
 
         public override void RunAction()
         {
             RunGrapple();
+        }
+
+        public BlueprintBuff buff;
+    }
+
+    internal class PPGrabInfusionBuff : PPGrabBuffBase, ITickEachRound
+    {
+        void ITickEachRound.OnNewRound()
+        {
+            var maybeCaster = Buff.Context.MaybeCaster;
+            var unit = Owner;
+            if (maybeCaster == null) { return; }
+            int sizebonus = maybeCaster.State.Size.GetModifiers().CMDAndCMD;
+            var AttackBonusRule = new RuleCalculateAttackBonus(maybeCaster, unit, maybeCaster.Body.EmptyHandWeapon, 0) { };
+            AttackBonusRule.AddModifier(7 - sizebonus, descriptor: ModifierDescriptor.UntypedStackable);
+            ContextActionCombatTrickery.TriggerMRule(ref AttackBonusRule);
+            RuleCombatManeuver ruleCombatManeuver = new(maybeCaster, unit, CombatManeuver.Grapple, AttackBonusRule)
+            {
+                ReplaceAttackBonus = maybeCaster.Progression.GetClassLevel(CharacterClassRefs.KineticistClass.Reference),
+                ReplaceBaseStat = maybeCaster.Get<UnitPartKineticist>().MainStatType
+            };
+            ruleCombatManeuver = (Context?.TriggerRule(ruleCombatManeuver)) ?? Rulebook.Trigger(ruleCombatManeuver);
+            if (!ruleCombatManeuver.Success)
+            {
+                UIUtility.SendWarning(maybeCaster.CharacterName + "'s blast fails to maintain grapple.");
+                Buff.Remove();
+                return;
+            }
+            UIUtility.SendWarning(maybeCaster.CharacterName + "'s blast maintains grapple.");
+            unit.SpendAction(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard, false, 0);
+            int dc = ruleCombatManeuver.CMBRule.Result + 5;
+            if (TryBreakFree(unit, dc))
+            {
+                Buff.Remove();
+                return;
+            }
+        }
+
+        public static bool TryBreakFree(UnitEntityData unit, int dc)
+        {
+            var context2 = unit.Context;
+            StatType statType = StatType.SkillMobility;
+            if (unit.Stats.SkillMobility < unit.Stats.SkillAthletics)
+            {
+                statType = StatType.SkillAthletics;
+            }
+            return GameHelper.TriggerSkillCheck(new RuleSkillCheck(unit, statType, dc)
+            {
+                IgnoreDifficultyBonusToDC = unit.IsPlayersEnemy
+            }, context2, true).Success;
         }
     }
 }

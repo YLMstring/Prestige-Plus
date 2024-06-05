@@ -13985,8 +13985,8 @@
   },
   {
     "Key": "InfusionTabletopGrappling.Description",
-    "enGB": "You can attempt a combat maneuver check to have the blast grapple that opponent, instead of allowing a reflex save. Your bonus on this check is equal to 2 + your kineticist level + your Constitution modifier (treat the blast as a Huge creature).",
-    "zhCN": "你可以令念袭擒抱对手，不再允许反射豁免。该擒抱检定的加值为2+操念使等级+体质调整（念袭视为巨型生物）。"
+    "enGB": "You can attempt a combat maneuver check to have the blast grapple that opponent, instead of allowing a reflex save. Your bonus on this check is equal to 2 + your kineticist level + your Constitution modifier (treat the blast as a Huge creature). The DC for the purposes of escaping the grapple, is equal to 10 + its CMB.",
+    "zhCN": "你可以令念袭擒抱对手，不再允许反射豁免。该擒抱检定的加值为2+操念使等级+体质调整（念袭视为巨型生物）。用于脱离的检定难度则为10+战技加值。"
   }
 
 ]

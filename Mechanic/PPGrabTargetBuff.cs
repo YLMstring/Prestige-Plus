@@ -18,8 +18,6 @@ namespace PrestigePlus.Grapple
 {
     internal class PPGrabTargetBuff : PPGrabBuffBase, ISubscriber, ITargetRulebookHandler<RuleCalculateAC>, IRulebookHandler<RuleCalculateAC>, ITargetRulebookSubscriber
     {
-        
-
         // Token: 0x0600C201 RID: 49665 RVA: 0x00327F7C File Offset: 0x0032617C
         public void OnEventAboutToTrigger(RuleCalculateAC evt)
         {
