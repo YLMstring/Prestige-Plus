@@ -14,7 +14,7 @@ namespace PrestigePlus.Blueprint.GrappleFeat
     internal class UnfairGrip
     {
         private static readonly string FeatName = "UnfairGrip";
-        private static readonly string FeatGuid = "{D6FB8873-0F92-4BBD-A162-BD72C3852028}";
+        public static readonly string FeatGuid = "{D6FB8873-0F92-4BBD-A162-BD72C3852028}";
 
         private static readonly string DisplayName = "UnfairGrip.Name";
         private static readonly string Description = "UnfairGrip.Description";

@@ -40,6 +40,7 @@ using Kingmaker.ElementsSystem;
 using BlueprintCore.Actions.Builder.ContextEx;
 using Kingmaker.Utility;
 using Kingmaker.Items;
+using PrestigePlus.Blueprint.GrappleFeat;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -175,10 +176,12 @@ namespace PrestigePlus.Blueprint.Feat
             var maybeCaster = Buff.Context?.MaybeCaster;
             var unit = Owner;
             if (maybeCaster == null) { return; }
-            int sizebonus = maybeCaster.State.Size.GetModifiers().CMDAndCMD;
             var wep = ItemWeaponRefs.KineticBlastPhysicalWeapon.Reference.Get().CreateEntity<ItemEntityWeapon>();
             var AttackBonusRule = new RuleCalculateAttackBonus(maybeCaster, unit, wep, 0) { };
-            AttackBonusRule.AddModifier(7 - sizebonus, descriptor: ModifierDescriptor.UntypedStackable);
+            int sizebonus = maybeCaster.State.Size.GetModifiers().CMDAndCMD;
+            int bonus = 7 - sizebonus;
+            if (maybeCaster.HasFact(Grip)) { bonus = 1 + bonus; }
+            AttackBonusRule.AddModifier(bonus, descriptor: ModifierDescriptor.UntypedStackable);
             ContextActionCombatTrickery.TriggerMRule(ref AttackBonusRule);
             RuleCombatManeuver ruleCombatManeuver = new(maybeCaster, unit, CombatManeuver.Grapple, AttackBonusRule)
             {
@@ -204,6 +207,7 @@ namespace PrestigePlus.Blueprint.Feat
             }
         }
 
+        private static BlueprintFeatureReference Grip = BlueprintTool.GetRef<BlueprintFeatureReference>(UnfairGrip.FeatGuid);
         private static BlueprintBuffReference NoStandard = BlueprintTool.GetRef<BlueprintBuffReference>(TabletopGrapplingInfusion.TabletopGrapplingbuff3Guid);
         public static bool TryBreakFree(UnitEntityData unit, int dc)
         {
