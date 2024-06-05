@@ -13976,6 +13976,17 @@
     "enGB": "At 15th level, the cavalier can display her own brawn to inspire greater strength in his allies. As a standard action, she can grant herself and any allies within 30 feet a +4 morale bonus on melee attack rolls, combat maneuver checks, Fortitude saves, and Athletic checks. The cavalier can maintain her inspiring flex as a free action, and she can use this ability for a number of rounds per day equal 1/2 her cavalier level; this duration need not be continuous.",
     "ruRU": "Начиная с 15 уровня всадник может продемонстрировать свою силу, чтобы воодушевить своих союзников. Обычным действием, он может дать себе и всем союзникам в радиусе 30 футов бонус боевого духа +4 к броскам на попадание, проверкам боевых маневров, спасброскам стойкости и проверкам Атлетики. Всадник может поддерживать эту способность в течение количества раундов в день, равное 1/2 его уровня всадника; эта продолжительность не обязательно должна идти непрерывно.",
     "zhCN": "15级起，骑将可以秀出完美的肌肉给盟友打气。以标准动作，她可以给自己和30尺内所有盟友的近战攻击，战技检定，强韧豁免和运动检定提供+4士气加值。她可以用自由动作维持，每日可使用此能力的轮数等同1/2骑将等级，不必连续。"
+  },
+  {
+    "Key": "InfusionTabletopGrappling.Name",
+    "ProcessTemplates": false,
+    "enGB": "Tabletop Grappling Infusion",
+    "zhCN": "桌面擒获注能"
+  },
+  {
+    "Key": "InfusionTabletopGrappling.Description",
+    "enGB": "You can attempt a combat maneuver check to have the blast grapple that opponent, instead of allowing a reflex save. Your bonus on this check is equal to 2 + your kineticist level + your Constitution modifier (treat the blast as a Huge creature).",
+    "zhCN": "你可以令念袭擒抱对手，不再允许反射豁免。该擒抱检定的加值为2+操念使等级+体质调整（念袭视为巨型生物）。"
   }
 
 ]
