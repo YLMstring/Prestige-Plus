@@ -43,6 +43,7 @@ using static Kingmaker.UI.CanvasScalerWorkaround;
 using Kingmaker.Visual.Animation.Kingmaker;
 using static Pathfinding.Util.RetainedGizmos;
 using Kingmaker.UI.Common;
+using PrestigePlus.Blueprint.Feat;
 
 namespace PrestigePlus.Grapple
 {
@@ -148,6 +149,7 @@ namespace PrestigePlus.Grapple
             if (isMaintain)
             {
                 grappleInitiator.SpendAction(Action, false, 0);
+                //GameHelper.ApplyBuff(grappleInitiator, NoStandard, new Rounds?(1.Rounds()));
             }
             if (!UnitPartGrappleTargetPP.IsTiedUp && !grappleInitiator.Context.TriggerRule(new RuleCombatManeuver(grappleInitiator, value, CombatManeuver.Grapple, null)).Success)
             {
@@ -254,6 +256,7 @@ namespace PrestigePlus.Grapple
             return false;
         }
 
+        //private static BlueprintBuffReference NoStandard = BlueprintTool.GetRef<BlueprintBuffReference>(TabletopGrapplingInfusion.TabletopGrapplingbuff3Guid);
         public static bool TryBreakFree(UnitEntityData grappleInitiator, UnitEntityData grappleTarget)
         {
             if (grappleInitiator == null)

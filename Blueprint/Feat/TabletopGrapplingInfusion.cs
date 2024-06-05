@@ -38,6 +38,7 @@ using Kingmaker.EntitySystem.Stats;
 using Kingmaker.UI.Common;
 using Kingmaker.ElementsSystem;
 using BlueprintCore.Actions.Builder.ContextEx;
+using Kingmaker.Utility;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -55,6 +56,8 @@ namespace PrestigePlus.Blueprint.Feat
         private const string TabletopGrapplingbuff2 = "InfusionTrick.TabletopGrapplingbuff2";
         public static readonly string TabletopGrapplingbuff2Guid = "{7FFC0AEE-F313-4065-B6E9-8FAC57D0F2E0}";
 
+        private const string TabletopGrapplingbuff3 = "InfusionTrick.TabletopGrapplingbuff3";
+        public static readonly string TabletopGrapplingbuff3Guid = "{205CE7E3-F347-4880-8607-87B135BAC675}";
         public static void ConfigureTabletopGrappling()
         {
             var icon = AbilityRefs.ArmyShifterGrabAbility.Reference.Get().Icon;
@@ -62,8 +65,8 @@ namespace PrestigePlus.Blueprint.Feat
             var Buff = BuffConfigurator.New(TabletopGrapplingbuff, TabletopGrapplingbuffGuid)
               .SetDisplayName(TabletopGrapplingDisplayName)
               .SetDescription(TabletopGrapplingDescription)
-              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
-              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+              .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
               .Configure();
 
             var Buff2 = BuffConfigurator.New(TabletopGrapplingbuff2, TabletopGrapplingbuff2Guid)
@@ -73,6 +76,12 @@ namespace PrestigePlus.Blueprint.Feat
               .AddCondition(UnitCondition.MovementBan)
               .AddCondition(UnitCondition.DisableAttacksOfOpportunity)
               .AddComponent<PPGrabInfusionBuff>()
+              .Configure();
+
+            BuffConfigurator.New(TabletopGrapplingbuff3, TabletopGrapplingbuff3Guid)
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+              .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddCondition(UnitCondition.CantUseStandardActions)
               .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(TabletopGrapplingActivatableAbility, TabletopGrapplingActivatableAbilityGuid)
@@ -175,7 +184,7 @@ namespace PrestigePlus.Blueprint.Feat
                 return;
             }
             UIUtility.SendWarning(maybeCaster.CharacterName + "'s blast maintains grapple.");
-            unit.SpendAction(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard, false, 0);
+            GameHelper.ApplyBuff(unit, NoStandard, new Rounds?(1.Rounds()));
             int dc = ruleCombatManeuver.CMBRule.Result + 5;
             if (TryBreakFree(unit, dc))
             {
@@ -184,6 +193,7 @@ namespace PrestigePlus.Blueprint.Feat
             }
         }
 
+        private static BlueprintBuffReference NoStandard = BlueprintTool.GetRef<BlueprintBuffReference>(TabletopGrapplingInfusion.TabletopGrapplingbuff3Guid);
         public static bool TryBreakFree(UnitEntityData unit, int dc)
         {
             var context2 = unit.Context;
