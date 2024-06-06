@@ -197,11 +197,11 @@ namespace PrestigePlus.Blueprint.Feat
                 return;
             }
             UIUtility.SendWarning(maybeCaster.CharacterName + "'s blast maintains grapple.");
-            GameHelper.ApplyBuff(unit, NoStandard, new Rounds?(1.Rounds()));
             int dc = ruleCombatManeuver.CMBRule.Result + 5;
             wep.Destroy();
             if (TryBreakFree(unit, dc))
             {
+                GameHelper.ApplyBuff(unit, NoStandard, new Rounds?(1.Rounds()));
                 Buff.Remove();
                 return;
             }
