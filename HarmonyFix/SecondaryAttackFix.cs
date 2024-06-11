@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 
 namespace PrestigePlus.HarmonyFix
 {
-    [HarmonyPatch(typeof(RuleAttackWithWeapon), nameof(RuleAttackWithWeapon.WeaponStats), MethodType.Getter)]
+    [HarmonyPatch(typeof(RuleAttackRoll), nameof(RuleAttackRoll.OnTrigger))]
     internal class SecondaryAttackFix
     {
-        static void Postfix(RuleAttackWithWeapon __instance, ref RuleCalculateWeaponStats __result)
+        static void Prefix(RuleAttackRoll __instance)
         {
-            if (__instance.IsFullAttack == false)
+            if (__instance.RuleAttackWithWeapon?.IsFullAttack == false)
             {
-                __result.IsSecondaryOverride = false;
-                __result.IsSecondary = false;
+                __instance.RuleAttackWithWeapon.WeaponStats.IsSecondaryOverride = false;
+                __instance.RuleAttackWithWeapon.WeaponStats.IsSecondary = false;
             }
         }
     }
