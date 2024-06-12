@@ -42,6 +42,7 @@ using Kingmaker.AreaLogic;
 using System.Drawing;
 using Kingmaker.UnitLogic.FactLogic;
 using PrestigePlus.CustomComponent.BasePrestigeEnhance;
+using Kingmaker.RuleSystem.Rules;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -670,8 +671,8 @@ namespace PrestigePlus.Blueprint.Feat
               .SetClasses(ProgressionRefs.CavalierOrderOfTheLionProgression.Reference.Get().m_Classes)
               .SetGiveFeaturesForPreviousLevels(true)
               .AddToLevelEntry(1, SealChallengeFeat(), SealSkillFeat())
-              .AddToLevelEntry(2, FeatureRefs.ImprovedUnarmedStrike.ToString())
-              .AddToLevelEntry(8, BodyGuard.GreaterUnarmedStrikeGuid)
+              .AddToLevelEntry(2, CreateKeeper())
+              .AddToLevelEntry(8, SealMovedFeat())
               .AddToLevelEntry(15)
               .Configure();
 
@@ -719,6 +720,44 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDescription(InquisitionSealChallengeDescription)
               //.SetIcon(icon)
               .AddFacts(new() { SeizetheOpportunity.ManeuverGuid })
+              .Configure();
+        }
+
+        private const string Keeper = "Inquisition.Keeper";
+        private static readonly string KeeperGuid = "{9C6074B9-211C-45A9-8E26-3C3663E4B40B}";
+
+        internal const string KeeperDisplayName = "InquisitionKeeper.Name";
+        private const string KeeperDescription = "InquisitionKeeper.Description";
+
+        private static BlueprintFeatureSelection CreateKeeper()
+        {
+            var icon = FeatureRefs.AnimalBlessingMajorFeature.Reference.Get().Icon;
+
+            return FeatureSelectionConfigurator.New(Keeper, KeeperGuid)
+              .SetDisplayName(KeeperDisplayName)
+              .SetDescription(KeeperDescription)
+              .SetIcon(icon)
+              .SetObligatory(false)
+              .AddToAllFeatures(FeatureRefs.LightningReflexes.ToString())
+              .AddToAllFeatures(FeatureRefs.GreatFortitude.ToString())
+              .AddToAllFeatures(FeatureRefs.IronWill.ToString())
+              .Configure();
+        }
+
+        private const string SealMoved = "Inquisition.SealMoved";
+        private static readonly string SealMovedGuid = "{6CEA0745-88A0-4F85-B476-F3E7C0126756}";
+
+        internal const string InquisitionSealMovedDisplayName = "InquisitionSealMoved.Name";
+        private const string InquisitionSealMovedDescription = "InquisitionSealMoved.Description";
+        public static BlueprintFeature SealMovedFeat()
+        {
+            var icon = FeatureRefs.StoneBodyFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(SealMoved, SealMovedGuid)
+              .SetDisplayName(InquisitionSealMovedDisplayName)
+              .SetDescription(InquisitionSealMovedDescription)
+              .SetIcon(icon)
+              .AddCMDBonusAgainstManeuvers(ModifierDescriptor.Dodge, new CombatManeuver[] { CombatManeuver.BullRush, CombatManeuver.Overrun, CombatManeuver.Trip })
               .Configure();
         }
     }
