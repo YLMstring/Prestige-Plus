@@ -652,5 +652,74 @@ namespace PrestigePlus.Blueprint.Feat
               .AddComponent<PenitentCMD>()
               .Configure();
         }
+
+        private const string Seal = "Inquisition.Seal";
+        private static readonly string SealGuid = "{C251A885-2F31-438D-AD0E-C7ACD6BCF47B}";
+
+        internal const string SealDisplayName = "InquisitionSeal.Name";
+        private const string SealDescription = "InquisitionSeal.Description";
+        public static BlueprintProgression SealFeat()
+        {
+            var icon = AbilityRefs.HellsSealBaseAbility.Reference.Get().Icon;
+
+            var pro = ProgressionConfigurator.New(Seal, SealGuid)
+              .SetDisplayName(SealDisplayName)
+              .SetDescription(SealDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .SetClasses(ProgressionRefs.CavalierOrderOfTheLionProgression.Reference.Get().m_Classes)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(1, SealChallengeFeat(), SealSkillFeat())
+              .AddToLevelEntry(2, FeatureRefs.ImprovedUnarmedStrike.ToString())
+              .AddToLevelEntry(8, BodyGuard.GreaterUnarmedStrikeGuid)
+              .AddToLevelEntry(15)
+              .Configure();
+
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.CavalierOrderSelection)
+                .AddToAllFeatures(pro)
+                .Configure();
+
+            return pro;
+        }
+
+        private const string SealSkill = "Inquisition.SealSkill";
+        private static readonly string SealSkillGuid = "{2F160960-BFAE-453A-B248-B100E8D2CA04}";
+
+        internal const string InquisitionSealSkillDisplayName = "InquisitionSealSkill.Name";
+        private const string InquisitionSealSkillDescription = "InquisitionSealSkill.Description";
+        public static BlueprintFeature SealSkillFeat()
+        {
+            //var icon = FeatureRefs.Persuasive.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(SealSkill, SealSkillGuid)
+              .SetDisplayName(InquisitionSealSkillDisplayName)
+              .SetDescription(InquisitionSealSkillDescription)
+              .AddClassSkill(StatType.SkillThievery)
+              .Configure();
+        }
+
+        private const string SealChallenge = "Inquisition.SealChallenge";
+        public static readonly string SealChallengeGuid = "{0F8960CF-CED2-475F-9F1F-9E9A55F60FB5}";
+
+        internal const string InquisitionSealChallengeDisplayName = "InquisitionSealChallenge.Name";
+        private const string InquisitionSealChallengeDescription = "InquisitionSealChallenge.Description";
+
+        private const string SealChallengeAuraBuff = "Inquisition.SealChallengebuff";
+        public static readonly string SealChallengeAuraBuffGuid = "{6BDC8A2C-1C99-4DEB-AE1C-84D1988D2E58}";
+        public static BlueprintFeature SealChallengeFeat()
+        {
+            //var icon = FeatureRefs.Persuasive.Reference.Get().Icon;
+            BuffConfigurator.New(SealChallengeAuraBuff, SealChallengeAuraBuffGuid)
+              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+              .Configure();
+
+            return FeatureConfigurator.New(SealChallenge, SealChallengeGuid)
+              .SetDisplayName(InquisitionSealChallengeDisplayName)
+              .SetDescription(InquisitionSealChallengeDescription)
+              //.SetIcon(icon)
+              .AddFacts(new() { SeizetheOpportunity.ManeuverGuid })
+              .Configure();
+        }
     }
 }

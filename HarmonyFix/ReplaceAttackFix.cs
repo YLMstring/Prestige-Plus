@@ -79,6 +79,25 @@ namespace PrestigePlus.HarmonyFix
                         TriggerManeuver(caster, target, AttackBonusRule2, maneuver);
                     }
                 }
+                if (challenged?.Context?.MaybeCaster == caster && caster.HasFact(Seal) && !caster.HasFact(SealCoolDown) && __instance.IsAttackFull)
+                {
+                    GameHelper.ApplyBuff(caster, SealCoolDown, new Rounds?(1.Rounds()));
+                    var maneuver = CombatManeuver.None;
+                    if (caster.HasFact(BullRush))
+                    {
+                        maneuver = CombatManeuver.BullRush;
+                    }
+                    else if (caster.HasFact(Trip))
+                    {
+                        maneuver = CombatManeuver.Trip;
+                    }
+                    if (maneuver != CombatManeuver.None)
+                    {
+                        var AttackBonusRule3 = new RuleCalculateAttackBonus(caster, target, caster.Body.EmptyHandWeapon, 0) { };
+                        ContextActionCombatTrickery.TriggerMRule(ref AttackBonusRule3);
+                        TriggerManeuver(caster, target, AttackBonusRule3, maneuver);
+                    }
+                }
                 var AttackBonusRule = new RuleCalculateAttackBonus(caster, target, caster.Body.EmptyHandWeapon, 0) { };
                 int penalty = -attack.AttackBonusPenalty + DualPenalty(caster, attack);
                 AttackBonusRule.AddModifier(penalty, descriptor: ModifierDescriptor.Penalty);
@@ -305,6 +324,9 @@ namespace PrestigePlus.HarmonyFix
 
         private static readonly BlueprintFeatureReference Hammer = BlueprintTool.GetRef<BlueprintFeatureReference>(Inquisition.HammerChallengeGuid);
         private static readonly BlueprintBuffReference HammerCoolDown = BlueprintTool.GetRef<BlueprintBuffReference>(Inquisition.ChallengeAuraBuffGuid);
+
+        private static readonly BlueprintFeatureReference Seal = BlueprintTool.GetRef<BlueprintFeatureReference>(Inquisition.SealChallengeGuid);
+        private static readonly BlueprintBuffReference SealCoolDown = BlueprintTool.GetRef<BlueprintBuffReference>(Inquisition.SealChallengeAuraBuffGuid);
 
         private static readonly string SeizetheBullRushbuffGuid = "{FDD7D762-A448-48FB-B72C-709D14285FF6}";
         private static readonly string SeizetheDirtyBlindbuffGuid = "{6142C847-22F1-410F-A132-9545D7404F4A}";
