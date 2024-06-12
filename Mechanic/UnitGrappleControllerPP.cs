@@ -183,6 +183,22 @@ namespace PrestigePlus.Grapple
                 GameHelper.ApplyBuff(value, BlueprintRoot.Instance.SystemMechanics.SunderArmorBuff, duration: new Rounds?(1.Rounds()));
                 return false;
             }
+            if (!UnitPartGrappleTargetPP.IsPinned && grappleInitiator.HasFact(ExpertCaptorBuff) && !grappleInitiator.HasFact(NoTieUp))
+            {
+                PPGrabInitiatorBuff.GrabRollBonus = 0;
+                PPGrabInitiatorFree.GrabRollBonus = 0;
+                if (!grappleInitiator.Context.TriggerRule(new RuleCombatManeuver(grappleInitiator, value, CombatManeuver.Grapple, null)).Success)
+                {
+                    UIUtility.SendWarning(grappleInitiator.CharacterName + " fails to tie up the opponent.");
+                    return false;
+                }
+                UIUtility.SendWarning(grappleInitiator.CharacterName + " ties up the opponent.");
+                UnitPartGrappleTargetPP.TrySetPinned();
+                UnitPartGrappleInitiatorPP.TrySetPinning();
+                UnitPartGrappleTargetPP.TrySetTiedUp();
+                UnitPartGrappleInitiatorPP.TryClearPinning();
+                return false;
+            }
             if (!UnitPartGrappleTargetPP.IsPinned && !grappleInitiator.HasFact(NoPin))
             {
                 UIUtility.SendWarning(grappleInitiator.CharacterName + " pins the opponent.");
@@ -256,7 +272,8 @@ namespace PrestigePlus.Grapple
             return false;
         }
 
-        //private static BlueprintBuffReference NoStandard = BlueprintTool.GetRef<BlueprintBuffReference>(TabletopGrapplingInfusion.TabletopGrapplingbuff3Guid);
+        private static BlueprintFeatureReference ExpertCaptor = BlueprintTool.GetRef<BlueprintFeatureReference>(Inquisition.PenitentExpertCaptorGuid);
+        private static BlueprintBuffReference ExpertCaptorBuff = BlueprintTool.GetRef<BlueprintBuffReference>(Inquisition.ExpertCaptorAuraBuffGuid);
         public static bool TryBreakFree(UnitEntityData grappleInitiator, UnitEntityData grappleTarget)
         {
             if (grappleInitiator == null)
@@ -278,6 +295,10 @@ namespace PrestigePlus.Grapple
                 RuleCalculateCMB ruleCalculateCMB2 = new RuleCalculateCMB(grappleInitiator, grappleTarget, CombatManeuver.Grapple);
                 ruleCalculateCMB2 = (context1?.TriggerRule(ruleCalculateCMB2)) ?? Rulebook.Trigger(ruleCalculateCMB2);
                 dc = Math.Max(ruleCalculateCMB2.Result + 20, dc);
+                if (grappleInitiator.HasFact(ExpertCaptor))
+                {
+                    dc += grappleInitiator.Progression.GetClassLevel(CharacterClassRefs.CavalierClass.Reference) / 2;
+                }
             }
             RuleCalculateCMB ruleCalculateCMB = new RuleCalculateCMB(grappleTarget, grappleInitiator, CombatManeuver.Grapple);
             ruleCalculateCMB = (context2?.TriggerRule(ruleCalculateCMB)) ?? Rulebook.Trigger(ruleCalculateCMB);

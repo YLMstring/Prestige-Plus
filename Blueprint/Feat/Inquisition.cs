@@ -41,6 +41,7 @@ using PrestigePlus.Maneuvers;
 using Kingmaker.AreaLogic;
 using System.Drawing;
 using Kingmaker.UnitLogic.FactLogic;
+using PrestigePlus.CustomComponent.BasePrestigeEnhance;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -548,6 +549,107 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDescription(InquisitionHammerChallengeDescription)
               //.SetIcon(icon)
               .AddFacts(new() { SeizetheOpportunity.ManeuverGuid })
+              .Configure();
+        }
+
+        private const string Penitent = "Inquisition.Penitent";
+        private static readonly string PenitentGuid = "{0E0B8091-E75D-49DF-AC9E-1670D6121B54}";
+
+        internal const string PenitentDisplayName = "InquisitionPenitent.Name";
+        private const string PenitentDescription = "InquisitionPenitent.Description";
+        public static BlueprintProgression PenitentFeat()
+        {
+            var icon = AbilityRefs.Guidance.Reference.Get().Icon;
+
+            var pro = ProgressionConfigurator.New(Penitent, PenitentGuid)
+              .SetDisplayName(PenitentDisplayName)
+              .SetDescription(PenitentDescription)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .SetClasses(ProgressionRefs.CavalierOrderOfTheLionProgression.Reference.Get().m_Classes)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(1, PenitentChallengeFeat(), PenitentSkillFeat())
+              .AddToLevelEntry(2, FeatureRefs.ImprovedUnarmedStrike.ToString())
+              .AddToLevelEntry(8, FeatureRefs.ImprovedDisarm.ToString())
+              .AddToLevelEntry(15, FeatureRefs.GreaterDisarm.ToString())
+              .Configure();
+
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.CavalierOrderSelection)
+                .AddToAllFeatures(pro)
+                .Configure();
+
+            return pro;
+        }
+
+        private const string PenitentSkill = "Inquisition.PenitentSkill";
+        private static readonly string PenitentSkillGuid = "{CAFF91B2-4F6C-499E-B1EA-E5B53E8704D5}";
+
+        internal const string InquisitionPenitentSkillDisplayName = "InquisitionPenitentSkill.Name";
+        private const string InquisitionPenitentSkillDescription = "InquisitionPenitentSkill.Description";
+        public static BlueprintFeature PenitentSkillFeat()
+        {
+            //var icon = FeatureRefs.Persuasive.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(PenitentSkill, PenitentSkillGuid)
+              .SetDisplayName(InquisitionPenitentSkillDisplayName)
+              .SetDescription(InquisitionPenitentSkillDescription)
+              //.SetIcon(icon)
+              .AddClassSkill(StatType.SkillPerception)
+              .Configure();
+        }
+
+        private static readonly string PenitentExpertCaptorName = "InquisitionPenitentExpertCaptor";
+        public static readonly string PenitentExpertCaptorGuid = "{89029938-3294-4A3C-A4A0-6646BBC76CA1}";
+
+        private static readonly string PenitentExpertCaptorDisplayName = "InquisitionPenitentExpertCaptor.Name";
+        private static readonly string PenitentExpertCaptorDescription = "InquisitionPenitentExpertCaptor.Description";
+
+        private const string ExpertCaptorAuraBuff = "Inquisition.PenitentExpertCaptorbuff";
+        public static readonly string ExpertCaptorAuraBuffGuid = "{570AC45D-670C-437E-BAEF-4D46C1728F57}";
+
+        private const string PenitentExpertCaptorAbility = "Inquisition.PenitentExpertCaptorAbility";
+        private static readonly string PenitentExpertCaptorAbilityGuid = "{167F8D3D-5C54-4F3C-8476-E194D17A4049}";
+        public static BlueprintFeature PenitentExpertCaptorFeat()
+        {
+            var icon = AbilityRefs.Sleep.Reference.Get().Icon;
+
+            var Buff1 = BuffConfigurator.New(ExpertCaptorAuraBuff, ExpertCaptorAuraBuffGuid)
+              .SetDisplayName(PenitentExpertCaptorDisplayName)
+              .SetDescription(PenitentExpertCaptorDescription)
+              .SetIcon(icon)
+              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+              .Configure();
+
+            var ability = ActivatableAbilityConfigurator.New(PenitentExpertCaptorAbility, PenitentExpertCaptorAbilityGuid)
+                .SetDisplayName(PenitentExpertCaptorDisplayName)
+                .SetDescription(PenitentExpertCaptorDescription)
+                .SetIcon(icon)
+                .SetBuff(Buff1)
+                .SetDeactivateImmediately()
+                .Configure();
+
+            return FeatureConfigurator.New(PenitentExpertCaptorName, PenitentExpertCaptorGuid)
+                    .SetDisplayName(PenitentExpertCaptorDisplayName)
+                    .SetDescription(PenitentExpertCaptorDescription)
+                    .SetIcon(icon)
+                    .AddFacts(new() { ability })
+                    .Configure();
+        }
+
+        private const string PenitentChallenge = "Inquisition.PenitentChallenge";
+        public static readonly string PenitentChallengeGuid = "{AD18DB02-4BA6-42B2-A09C-7FC8D7E703C7}";
+
+        internal const string InquisitionPenitentChallengeDisplayName = "InquisitionPenitentChallenge.Name";
+        private const string InquisitionPenitentChallengeDescription = "InquisitionPenitentChallenge.Description";
+        public static BlueprintFeature PenitentChallengeFeat()
+        {
+            //var icon = FeatureRefs.Persuasive.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(PenitentChallenge, PenitentChallengeGuid)
+              .SetDisplayName(InquisitionPenitentChallengeDisplayName)
+              .SetDescription(InquisitionPenitentChallengeDescription)
+              .AddComponent<PenitentCMD>()
               .Configure();
         }
     }

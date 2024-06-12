@@ -158,7 +158,7 @@ namespace PrestigePlus.Grapple
         {
             
         }
-        public int GrabRollBonus = 0;
+        public static int GrabRollBonus = 0;
         private static BlueprintFeatureReference GreaterGrapple = BlueprintTool.GetRef<BlueprintFeatureReference>("{CB3B7666-0AD1-4ADD-8157-BAC7E2A15D5A}");
         //private static BlueprintFeatureReference GreaterGrappleMythic = BlueprintTool.GetRef<BlueprintFeatureReference>("{27B59104-C22F-4E35-8743-BF08A3B2B870}");
         private static BlueprintFeatureReference UnfairGrip = BlueprintTool.GetRef<BlueprintFeatureReference>("{D6FB8873-0F92-4BBD-A162-BD72C3852028}");
