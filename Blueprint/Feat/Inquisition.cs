@@ -777,7 +777,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .AllowTargeting(enemies: true)
                 .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-                        .Add<OneTouchAttack>(c => { c.anyweapon = true; })
+                        .Add<StaggeringAssaultAttack>()
                         .Build())
                 .SetDisplayName(StaggeringAssaultDisplayName)
                 .SetDescription(StaggeringAssaultDescription)
