@@ -2,7 +2,6 @@
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
-- 30 prestige classes, 42 archetypes, 30 obediences, 90 feats, 30 class options, 35 mythic options, and 22 spells.
 - All features are toggleable.
 
 ## Featuring
