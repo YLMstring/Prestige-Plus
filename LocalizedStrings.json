@@ -13987,6 +13987,116 @@
     "Key": "InfusionTabletopGrappling.Description",
     "enGB": "You can attempt a combat maneuver check to have the blast grapple that opponent, instead of allowing a reflex save. Your bonus on this check is equal to 2 + your kineticist level + your Constitution modifier (treat the blast as a Huge creature). The DC for the purposes of escaping the grapple, is equal to 10 + its CMB.",
     "zhCN": "你可以令念袭擒抱对手，不再允许反射豁免。该擒抱检定的加值为2+操念使等级+体质调整（念袭视为巨型生物）。用于脱离的检定难度则为10+战技加值。"
+  },
+  {
+    "Key": "InquisitionSeal.Name",
+    "ProcessTemplates": false,
+    "enGB": "Order of the Seal",
+    "zhCN": "封印骑士团"
+  },
+  {
+    "Key": "InquisitionSeal.Description",
+    "enGB": "Cavaliers of the order of the seal are a secretive order, each charged with the protection of a specific object (such as a dangerous magic item), place (a lost temple), or secret (that a certain peasant is actually the last descendant of the royal line). Such cavaliers are the defenders of ancient traditions or the servants of rulers with important secrets to hide, sometimes having to search out such secrets in order to properly protect and preserve them.",
+    "zhCN": "封印骑士团是守护特定物件（例如某个危险魔法物品）、地点（失落的神庙）或秘密（某地的农夫其实是皇室末裔）的隐密结社。这些骑将是古老传统的捍卫者，或是统治者的从者，守护着重大的机密。有时候为了妥善的保护和传下秘密，他们也会主动出击去寻找。"
+  },
+  {
+    "Key": "InquisitionSealChallenge.Name",
+    "ProcessTemplates": false,
+    "enGB": "Challenge",
+    "zhCN": "挑战"
+  },
+  {
+    "Key": "InquisitionSealChallenge.Description",
+    "enGB": "An order of the seal cavalier can make a free bull rush or trip combat maneuver anytime he takes the full-attack action against the target of his challenge. This free combat maneuver does not provoke an attack of opportunity.",
+    "zhCN": "封印骑士团的骑将在全回合攻击她正在挑战的对手时，可以用自由动作进行一次冲撞或摔绊战技，此战技不会引发借机攻击。"
+  },
+  {
+    "Key": "InquisitionSealSkill.Name",
+    "ProcessTemplates": false,
+    "enGB": "Skills",
+    "zhCN": "技能"
+  },
+  {
+    "Key": "InquisitionSealSkill.Description",
+    "enGB": "An order of the seal cavalier adds Thievery to his list of class skills.",
+    "zhCN": "封印骑士团的骑将将巧手加入其职业技能列表。"
+  },
+  {
+    "Key": "InquisitionKeeper.Name",
+    "ProcessTemplates": false,
+    "enGB": "Keeper",
+    "zhCN": "守秘人"
+  },
+  {
+    "Key": "InquisitionKeeper.Description",
+    "enGB": "At 2nd level, once per day the cavalier must select a secret that he has sworn to protect.",
+    "zhCN": "2级时，封印骑士团的骑将必须选择一个他要保卫的地点或是秘密。"
+  },
+  {
+    "Key": "InquisitionSealMoved.Name",
+    "ProcessTemplates": false,
+    "enGB": "I Shall Not Be Moved",
+    "zhCN": "矢志不移"
+  },
+  {
+    "Key": "InquisitionSealMoved.Description",
+    "enGB": "At 8th level, the cavalier can draw on his dedication to overcome physical weakness, he receives a +2 dodge bonus to his CMD to resist bull rush, overrun, and trip combat maneuvers.",
+    "zhCN": "8级时，骑将借由他的奉献精神克服身体的弱点。他在对抗冲撞、闯越和绊摔的战技防御上得到+2闪避加值。"
+  },
+  {
+    "Key": "InquisitionStaggeringAssault.Name",
+    "ProcessTemplates": false,
+    "enGB": "Staggering Assault",
+    "zhCN": "震撼斩"
+  },
+  {
+    "Key": "InquisitionStaggeringAssault.Description",
+    "enGB": "At 15th level, the cavalier can drive opponents back without giving ground. As a full-round action, the cavalier can make a single attack at his highest attack bonus. If the attack hits, the attack does damage as normal, and the cavalier may attempt a bull rush against the target. The cavalier gains a bonus on the bull rush combat maneuver check equal to half the amount of damage dealt on the initial attack.",
+    "zhCN": "15级时，骑将可以将对手彻底打飞。他可以用一个整轮动作，以最高攻击加值进行一次攻击，如果该攻击命中，会如常造成伤害，且骑将可以冲撞攻击目标。骑将的战技检定得到相当于该攻击伤害一半的加值。"
+  },
+  {
+    "Key": "InquisitionPenitent.Name",
+    "ProcessTemplates": false,
+    "enGB": "Order of the Penitent",
+    "zhCN": "悔罪骑士团"
+  },
+  {
+    "Key": "InquisitionPenitent.Description",
+    "enGB": "Not all knights begin their careers as nobles’ children or as squires. Some start out as thieves, murderers, or cheats, and only after they see the suffering caused by their crimes do they dedicate themselves to honorable service. Cavaliers who follow this order seek to make up for the crimes they’ve committed in the past, and do whatever they can to restore their tainted honor.",
+    "zhCN": "并非所有骑将都以贵族子女或侍从的身份开始他们的骑将生涯。有的原本是盗贼、杀手或骗徒，但在看到他们的恶行所造成的苦难后，他们转而投身于高尚的事业。这个骑士团的骑将寻求机会弥补他们的过去所犯下的罪行，尽力恢复自己玷污的名声。"
+  },
+  {
+    "Key": "InquisitionPenitentChallenge.Name",
+    "ProcessTemplates": false,
+    "enGB": "Challenge",
+    "zhCN": "挑战"
+  },
+  {
+    "Key": "InquisitionPenitentChallenge.Description",
+    "enGB": "Whenever an order of the penitent cavalier issues a challenge, he receives a +1 morale bonus to his CMD against combat maneuvers made by the target of his challenge. This bonus increases by +1 for every four levels the cavalier possesses.",
+    "zhCN": "当悔罪骑士团的骑将发动挑战时，他对抗挑战目标战技的CMD获得+1士气加值。这个加值每4个骑将等级再+1。"
+  },
+  {
+    "Key": "InquisitionPenitentSkill.Name",
+    "ProcessTemplates": false,
+    "enGB": "Skills",
+    "zhCN": "技能"
+  },
+  {
+    "Key": "InquisitionPenitentSkill.Description",
+    "enGB": "An order of the penitent cavalier adds Perception to his list of class skills.",
+    "zhCN": "悔罪骑士团的骑将将察觉加入其职业技能列表。"
+  },
+  {
+    "Key": "InquisitionPenitentExpertCaptor.Name",
+    "ProcessTemplates": false,
+    "enGB": "Expert Captor",
+    "zhCN": "擒拿专家"
+  },
+  {
+    "Key": "InquisitionPenitentExpertCaptor.Description",
+    "enGB": "At 2nd level, as long as a grappled opponent is not pinned, the cavalier can make an additional grapple check to tie up him instead of pinning. When determining the DC to escape bonds secured by the cavalier, the cavalier’s Combat Maneuver Bonus increases by 1/2 his cavalier level.",
+    "zhCN": "2级时，只要被你擒抱的对手尚未被压制，作为压制他的替代，骑将可以进行一次额外的擒抱检定来捆绑对手。当判断被骑将捆绑的逃脱DC时，骑将的CMB增加等于骑将职业等级的1/2的加值。"
   }
 
 ]
