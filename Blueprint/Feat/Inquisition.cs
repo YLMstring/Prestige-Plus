@@ -673,7 +673,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToLevelEntry(1, SealChallengeFeat(), SealSkillFeat())
               .AddToLevelEntry(2, CreateKeeper())
               .AddToLevelEntry(8, SealMovedFeat())
-              .AddToLevelEntry(15)
+              .AddToLevelEntry(15, StaggeringAssaultFeat())
               .Configure();
 
             FeatureSelectionConfigurator.For(FeatureSelectionRefs.CavalierOrderSelection)
@@ -758,6 +758,39 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDescription(InquisitionSealMovedDescription)
               .SetIcon(icon)
               .AddCMDBonusAgainstManeuvers(ModifierDescriptor.Dodge, new CombatManeuver[] { CombatManeuver.BullRush, CombatManeuver.Overrun, CombatManeuver.Trip })
+              .Configure();
+        }
+
+        private const string StaggeringAssault = "Inquisition.StaggeringAssault";
+        public static readonly string StaggeringAssaultGuid = "{B7AB4CEC-AAD4-4287-BB53-2DF0AFE87D2A}";
+
+        private const string StaggeringAssaultAblity = "Inquisition.UseStaggeringAssault";
+        private static readonly string StaggeringAssaultAblityGuid = "{911BD065-2FE1-4E61-B8C7-FDCD2F5AB712}";
+
+        internal const string StaggeringAssaultDisplayName = "InquisitionStaggeringAssault.Name";
+        private const string StaggeringAssaultDescription = "InquisitionStaggeringAssault.Description";
+        public static BlueprintFeature StaggeringAssaultFeat()
+        {
+            var icon = FeatureRefs.StaggeringCriticalFeature.Reference.Get().Icon;
+
+            var ability = AbilityConfigurator.New(StaggeringAssaultAblity, StaggeringAssaultAblityGuid)
+                .AllowTargeting(enemies: true)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .Add<OneTouchAttack>(c => { c.anyweapon = true; })
+                        .Build())
+                .SetDisplayName(StaggeringAssaultDisplayName)
+                .SetDescription(StaggeringAssaultDescription)
+                .SetIcon(icon)
+                .SetRange(AbilityRange.Weapon)
+                .SetType(AbilityType.Extraordinary)
+                .Configure();
+
+            return FeatureConfigurator.New(StaggeringAssault, StaggeringAssaultGuid)
+              .SetDisplayName(StaggeringAssaultDisplayName)
+              .SetDescription(StaggeringAssaultDescription)
+              .SetIcon(icon)
+              .AddFacts(new() { ability })
               .Configure();
         }
     }
