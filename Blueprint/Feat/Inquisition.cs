@@ -560,7 +560,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string PenitentDescription = "InquisitionPenitent.Description";
         public static BlueprintProgression PenitentFeat()
         {
-            var icon = AbilityRefs.Guidance.Reference.Get().Icon;
+            var icon = AbilityRefs.StrandOfTheTangledKnot.Reference.Get().Icon;
 
             var pro = ProgressionConfigurator.New(Penitent, PenitentGuid)
               .SetDisplayName(PenitentDisplayName)
@@ -570,7 +570,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetClasses(ProgressionRefs.CavalierOrderOfTheLionProgression.Reference.Get().m_Classes)
               .SetGiveFeaturesForPreviousLevels(true)
               .AddToLevelEntry(1, PenitentChallengeFeat(), PenitentSkillFeat())
-              .AddToLevelEntry(2, FeatureRefs.ImprovedUnarmedStrike.ToString())
+              .AddToLevelEntry(2, PenitentExpertCaptorFeat())
               .AddToLevelEntry(8, FeatureRefs.ImprovedDisarm.ToString())
               .AddToLevelEntry(15, FeatureRefs.GreaterDisarm.ToString())
               .Configure();
@@ -612,7 +612,7 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string PenitentExpertCaptorAbilityGuid = "{167F8D3D-5C54-4F3C-8476-E194D17A4049}";
         public static BlueprintFeature PenitentExpertCaptorFeat()
         {
-            var icon = AbilityRefs.Sleep.Reference.Get().Icon;
+            var icon = AbilityRefs.StrandOfTheTangledKnot.Reference.Get().Icon;
 
             var Buff1 = BuffConfigurator.New(ExpertCaptorAuraBuff, ExpertCaptorAuraBuffGuid)
               .SetDisplayName(PenitentExpertCaptorDisplayName)
@@ -661,7 +661,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string SealDescription = "InquisitionSeal.Description";
         public static BlueprintProgression SealFeat()
         {
-            var icon = AbilityRefs.HellsSealBaseAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.ChainsOfLight.Reference.Get().Icon;
 
             var pro = ProgressionConfigurator.New(Seal, SealGuid)
               .SetDisplayName(SealDisplayName)
@@ -731,7 +731,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         private static BlueprintFeatureSelection CreateKeeper()
         {
-            var icon = FeatureRefs.AnimalBlessingMajorFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.CombatExpertiseFeature.Reference.Get().Icon;
 
             return FeatureSelectionConfigurator.New(Keeper, KeeperGuid)
               .SetDisplayName(KeeperDisplayName)
@@ -751,7 +751,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string InquisitionSealMovedDescription = "InquisitionSealMoved.Description";
         public static BlueprintFeature SealMovedFeat()
         {
-            var icon = FeatureRefs.StoneBodyFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.IronWill.Reference.Get().Icon;
 
             return FeatureConfigurator.New(SealMoved, SealMovedGuid)
               .SetDisplayName(InquisitionSealMovedDisplayName)
