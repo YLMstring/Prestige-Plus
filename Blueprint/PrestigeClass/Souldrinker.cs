@@ -402,9 +402,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private static readonly string SoulPoolDisplayName = "SouldrinkerSoulPool.Name";
         private static readonly string SoulPoolDescription = "SouldrinkerSoulPool.Description";
 
-        private static readonly string SoulPool2DisplayName = "SouldrinkerSoulPool2.Name";
-        private static readonly string SoulPool2Description = "SouldrinkerSoulPool2.Description";
-
         private static readonly string SoulPool3DisplayName = "SouldrinkerSoulPool3.Name";
         private static readonly string SoulPool3Description = "SouldrinkerSoulPool3.Description";
 
