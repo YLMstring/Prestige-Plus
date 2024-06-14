@@ -1,8 +1,7 @@
-# Prestige Plus v3.1.6 for WoTR 
+# Prestige Plus v3.2.0 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
-- 30 prestige classes, 42 archetypes, 30 obediences, 90 feats, 30 class options, 35 mythic options, and 22 spells.
 - All features are toggleable.
 
 ## Featuring
@@ -381,7 +380,8 @@
 ### New Orders
 
 - [Order of the Hammer](https://www.d20pfsrd.com/classes/base-classes/cavalier/orders/paizo-cavalier-orders/order-of-the-hammer-cavalier-order/)
-- More coming soon!
+- [Order of the Penitent](https://www.d20pfsrd.com/classes/base-classes/cavalier/orders/paizo-cavalier-orders/order-of-the-penitent/)
+- [Order of the Seal](https://www.d20pfsrd.com/classes/base-classes/cavalier/orders/paizo-cavalier-orders/order-of-the-seal/)
 ### New Spells
 
 - [Litany of Righteousness](https://www.d20pfsrd.com/magic/all-spells/l/litany-of-righteousness/)
