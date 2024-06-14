@@ -751,13 +751,13 @@ namespace PrestigePlus.Blueprint.Feat
         private const string InquisitionSealMovedDescription = "InquisitionSealMoved.Description";
         public static BlueprintFeature SealMovedFeat()
         {
-            var icon = FeatureRefs.IronWill.Reference.Get().Icon;
+            var icon = FeatureRefs.LastStand.Reference.Get().Icon;
 
             return FeatureConfigurator.New(SealMoved, SealMovedGuid)
               .SetDisplayName(InquisitionSealMovedDisplayName)
               .SetDescription(InquisitionSealMovedDescription)
               .SetIcon(icon)
-              .AddCMDBonusAgainstManeuvers(ModifierDescriptor.Dodge, new CombatManeuver[] { CombatManeuver.BullRush, CombatManeuver.Overrun, CombatManeuver.Trip })
+              .AddCMDBonusAgainstManeuvers(ModifierDescriptor.Dodge, new CombatManeuver[] { CombatManeuver.BullRush, CombatManeuver.Overrun, CombatManeuver.Trip }, value: 2)
               .Configure();
         }
 
@@ -776,6 +776,7 @@ namespace PrestigePlus.Blueprint.Feat
             var ability = AbilityConfigurator.New(StaggeringAssaultAblity, StaggeringAssaultAblityGuid)
                 .AllowTargeting(enemies: true)
                 .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
+                .SetIsFullRoundAction(true)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                         .Add<StaggeringAssaultAttack>()
                         .Build())
