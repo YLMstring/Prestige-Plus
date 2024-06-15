@@ -3405,7 +3405,7 @@
   {
     "Key": "TrampleMythic.Description",
     "enGB": "You can use Trample or Overrun as a move action.",
-    "ruRU": "Вы можете использовать затаптывание сопуствующим действием",
+    "ruRU": "Вы можете использовать затаптывание сопутствующим действием",
     "zhCN": "你可以用移动动作践踏或闯越。"
   },
 
@@ -12681,7 +12681,7 @@
     "Key": "NewSpellDiscordantBlast.Name",
     "ProcessTemplates": false,
     "enGB": "Discordant Blast",
-    "ruRU": "Диссонирующий заряд",
+    "ruRU": "Пронзительный заряд",
     "zhCN": "不谐冲击"
   },
   {
@@ -12694,7 +12694,7 @@
     "Key": "NewSpellDiscordantBlast1.Name",
     "ProcessTemplates": false,
     "enGB": "Discordant Blast (centered)",
-    "ruRU": "Диссонирующий заряд (взрыв)",
+    "ruRU": "Пронзительный заряд (взрыв)",
     "zhCN": "不谐冲击（中心）"
   },
   {
@@ -12707,7 +12707,7 @@
     "Key": "NewSpellDiscordantBlast2.Name",
     "ProcessTemplates": false,
     "enGB": "Discordant Blast (cone-shaped)",
-    "ruRU": "Диссонирующий заряд (конус)",
+    "ruRU": "Пронзительный заряд (конус)",
     "zhCN": "不谐冲击（锥形）"
   },
   {
@@ -12726,7 +12726,7 @@
   {
     "Key": "DeificObedienceAchaekek.Description",
     "enGB": "Meditate in a private place before a trophy or broken religious symbol taken from a target you have been contracted to kill. This trophy must be anointed with a single drop of your blood, drawn from your flesh by a sawtooth saber, and the trophy must be destroyed at the end of your meditation. If you have yet to complete a contract, have no appropriate trophies at hand, or seek to serve the Mantis God in other ways than as the god’s assassin, you must instead offer your own vital fluid to He Who Walks in Blood by cutting yourself along the right arm with a sawtooth saber. You gain a +2 bonus to confirm critical hits.",
-    "ruRU": "Помедитируйте в укромном месте перед трофеем или сломанным религиозным символом, взятым у цели, которую вы должны убить. Этот трофей необходимо пролиь единственную каплю вашей крови, взято при помощт фалькаты, трофей необходимо уничтожить в конце вашей медитации. Если вы еще не выполнили контракт, не имеете под рукой подходящих трофеев или стремитесь служить Богу-богомолу иначе, чем в качестве убийцы, вместо этого вы должны предложить свою собственную кровь Бродящему в крови, порезав себя вдоль правой руки фалькатой. Вы получаете бонус +2 на подтверждение критических ударов.",
+    "ruRU": "Помедитируйте в укромном месте перед трофеем или сломанным религиозным символом, взятым у цели, которую вы должны убить. Этот трофей необходимо пролиь единственную каплю вашей крови, взято при помощи зазубренной сабли, трофей необходимо уничтожить в конце вашей медитации. Если вы еще не выполнили контракт, не имеете под рукой подходящих трофеев или стремитесь служить Богу-богомолу иначе, чем в качестве убийцы, вместо этого вы должны предложить свою собственную кровь Бродящему в крови, порезав себя вдоль правой руки фалькатой. Вы получаете бонус +2 на подтверждение критических ударов.",
     "zhCN": "在一个私密处所中，于从你签下契约而杀死的目标身上取得的战利品或破碎的圣徽之前冥想。该战利品必须涂有你的一滴由锯齿刀取出的血，并且战利品必须在冥想结束时被销毁。如果你还没有完成契约杀人，或是手头没有合适的战利品，或者寻求以其他方式侍奉螳螂神，而非作为神的刺客，你必须用锯齿刀沿着右臂割伤自己，将自己的生命之液献给鲜血行者。你在确认重击时获得+2加值。"
   },
   {
@@ -12765,7 +12765,7 @@
   {
     "Key": "DeificObedienceAchaekek2.Description",
     "enGB": "All wounds you inflict with a sawtooth saber are bleeding wounds, and deal 1d4 points of bleed damage to the target (the damage does not stack).",
-    "ruRU": "Все раны, которые вы наносите при помощи фалькаты, являются кровоточящими и наносят 1d4 урона кровотечением (этот урон не складывается).",
+    "ruRU": "Все раны, которые вы наносите при помощи зазубренной сабли, являются кровоточящими и наносят 1d4 урона кровотечением (этот урон не складывается).",
     "zhCN": "你用锯齿刀产生的所有伤口都会流血不止，对目标造成1d4点流血伤害（不叠加）。"
   },
   {
@@ -12778,7 +12778,7 @@
   {
     "Key": "DeificObedienceAchaekek3.Description",
     "enGB": "You take no penalties on attack rolls from two-weapon fighting when wielding two sawtooth sabers simultaneously, and you gain a +2 profane bonus on all damage rolls with sawtooth sabers. If you deal sneak attack damage with a sawtooth saber, you deal 2 additional points of damage for each die rolled as part of your sneak attack damage.",
-    "ruRU": "Вы не получаете штраоф за бой парным оружием, когда вы держите фалькату в каждой руке, а также вы получаете нечестивый бонус +2 ко всем броскам на урон фалькатой. Ваши атаки исподтишка совершенные при помощи фалькаты наносят +2 урона за каждую кость атаки исподтишка.",
+    "ruRU": "Вы не получаете штраф за бой парным оружием, когда вы держите зазубренную саблю в каждой руке, а также вы получаете нечестивый бонус +2 ко всем броскам на урон зазубренной саблей. Ваши атаки исподтишка совершенные при помощи зазубренной сабли наносят +2 урона за каждую кость атаки исподтишка.",
     "zhCN": "同时持用两把锯齿刀时，你不会受到双武器战斗的攻击检定减值，并且你在锯齿刀的所有伤害检定上获得+2亵渎加值。如果你用锯齿刀造成偷袭伤害，每个偷袭骰都会额外造成2点伤害。"
   },
   {
@@ -13981,121 +13981,143 @@
     "Key": "InfusionTabletopGrappling.Name",
     "ProcessTemplates": false,
     "enGB": "Tabletop Grappling Infusion",
+    "ruRU": "Хватающие вливание из настольной игры",
     "zhCN": "桌面擒获注能"
   },
   {
     "Key": "InfusionTabletopGrappling.Description",
     "enGB": "You can attempt a combat maneuver check to have the blast grapple that opponent, instead of allowing a reflex save. Your bonus on this check is equal to 2 + your kineticist level + your Constitution modifier (treat the blast as a Huge creature). The DC for the purposes of escaping the grapple, is equal to 10 + its CMB.",
+    "ruRU": "Вместо позволения цели совершить спасбросок Реакции, вы можете попытаться пройти проверку боевого маневра Захват. Ваш бонус к этой проверке равен 2 + ваш уровень кинетика + ваш модификатор Выносливости (кинетический заряд считается существом огромного размера). Сложность выхода из захвата равна 10 + модификатор боевых маневров.",
     "zhCN": "你可以令念袭擒抱对手，不再允许反射豁免。该擒抱检定的加值为2+操念使等级+体质调整（念袭视为巨型生物）。用于脱离的检定难度则为10+战技加值。"
   },
   {
     "Key": "InquisitionSeal.Name",
     "ProcessTemplates": false,
     "enGB": "Order of the Seal",
+    "ruRU": "Орден печати",
     "zhCN": "封印骑士团"
   },
   {
     "Key": "InquisitionSeal.Description",
     "enGB": "Cavaliers of the order of the seal are a secretive order, each charged with the protection of a specific object (such as a dangerous magic item), place (a lost temple), or secret (that a certain peasant is actually the last descendant of the royal line). Such cavaliers are the defenders of ancient traditions or the servants of rulers with important secrets to hide, sometimes having to search out such secrets in order to properly protect and preserve them.",
+    "ruRU": "Всадники ордена печати - это секретный орден, каждый из которых несет ответственность за определенный объект (например опасный магический предмет), место (затерянный храм) или секрет (что определенный крестьянин на самом деле последний потомок правящей династии). Эти всадники являются защитниками древних традиций или слугами правителей у которых есть важные секреты, иногда отправляющиеся на поиски таких секретов, чтобы должным образом защищать и хранить их.",
     "zhCN": "封印骑士团是守护特定物件（例如某个危险魔法物品）、地点（失落的神庙）或秘密（某地的农夫其实是皇室末裔）的隐密结社。这些骑将是古老传统的捍卫者，或是统治者的从者，守护着重大的机密。有时候为了妥善的保护和传下秘密，他们也会主动出击去寻找。"
   },
   {
     "Key": "InquisitionSealChallenge.Name",
     "ProcessTemplates": false,
     "enGB": "Challenge",
+    "ruRU": "Вызов",
     "zhCN": "挑战"
   },
   {
     "Key": "InquisitionSealChallenge.Description",
     "enGB": "An order of the seal cavalier can make a free bull rush or trip combat maneuver anytime he takes the full-attack action against the target of his challenge. This free combat maneuver does not provoke an attack of opportunity.",
+    "ruRU": "Всадник ордена печати может провести свободную проверку боевого маневра Таран или Сбивание с ног каждый раз, когда он совершает атаку полного раунда по цели своего вызова. Эта проверка не провоцирует внеочередные атаки.",
     "zhCN": "封印骑士团的骑将在全回合攻击她正在挑战的对手时，可以用自由动作进行一次冲撞或摔绊战技，此战技不会引发借机攻击。"
   },
   {
     "Key": "InquisitionSealSkill.Name",
     "ProcessTemplates": false,
     "enGB": "Skills",
+    "ruRU": "Навыки",
     "zhCN": "技能"
   },
   {
     "Key": "InquisitionSealSkill.Description",
     "enGB": "An order of the seal cavalier adds Thievery to his list of class skills.",
+    "ruRU": "Всадник ордена печати добавляет Плутовство к своему списку классовых навыков.",
     "zhCN": "封印骑士团的骑将将巧手加入其职业技能列表。"
   },
   {
     "Key": "InquisitionKeeper.Name",
     "ProcessTemplates": false,
     "enGB": "Keeper",
+    "ruRU": "Хранитель",
     "zhCN": "守秘人"
   },
   {
     "Key": "InquisitionKeeper.Description",
     "enGB": "At 2nd level, once per day the cavalier must select a secret that he has sworn to protect.",
+    "ruRU": "Начиная со 2 уровня раз в день всадник должен выбрать секрет и поклясться защищать его.",
     "zhCN": "2级时，封印骑士团的骑将必须选择一个他要保卫的地点或是秘密。"
   },
   {
     "Key": "InquisitionSealMoved.Name",
     "ProcessTemplates": false,
     "enGB": "I Shall Not Be Moved",
+    "ruRU": "Я не поколеблюсь",
     "zhCN": "矢志不移"
   },
   {
     "Key": "InquisitionSealMoved.Description",
     "enGB": "At 8th level, the cavalier can draw on his dedication to overcome physical weakness, he receives a +2 dodge bonus to his CMD to resist bull rush, overrun, and trip combat maneuvers.",
+    "ruRU": "Начиная с 8 уровня всадник может использовать преданность своей клятве для преодоления физической слабости, он получает бонус уклонения +2 к защите от боевых маневров Таран, Затаптывание и Сбивание с ног.",
     "zhCN": "8级时，骑将借由他的奉献精神克服身体的弱点。他在对抗冲撞、闯越和绊摔的战技防御上得到+2闪避加值。"
   },
   {
     "Key": "InquisitionStaggeringAssault.Name",
     "ProcessTemplates": false,
     "enGB": "Staggering Assault",
+    "ruRU": "Ошеломляющее нападение",
     "zhCN": "震撼斩"
   },
   {
     "Key": "InquisitionStaggeringAssault.Description",
     "enGB": "At 15th level, the cavalier can drive opponents back without giving ground. As a full-round action, the cavalier can make a single attack at his highest attack bonus. If the attack hits, the attack does damage as normal, and the cavalier may attempt a bull rush against the target. The cavalier gains a bonus on the bull rush combat maneuver check equal to half the amount of damage dealt on the initial attack.",
+    "ruRU": "Начиная с 15 уровня всадник может оттеснять противников назад, не сдавая позиций. В качестве действия полного раунда может совершить одну атаку с максимальных базовым модификатором атаки. Если атака попадает, она наносит обычный урон, и всадник может попытаться протаранить цель. Он получает бонус к проверке боевого маневра Таран, равный половине урона, нанесенного первоначальной атакой.",
     "zhCN": "15级时，骑将可以将对手彻底打飞。他可以用一个整轮动作，以最高攻击加值进行一次攻击，如果该攻击命中，会如常造成伤害，且骑将可以冲撞攻击目标。骑将的战技检定得到相当于该攻击伤害一半的加值。"
   },
   {
     "Key": "InquisitionPenitent.Name",
     "ProcessTemplates": false,
     "enGB": "Order of the Penitent",
+    "ruRU": "Орден покаяния",
     "zhCN": "悔罪骑士团"
   },
   {
     "Key": "InquisitionPenitent.Description",
     "enGB": "Not all knights begin their careers as nobles’ children or as squires. Some start out as thieves, murderers, or cheats, and only after they see the suffering caused by their crimes do they dedicate themselves to honorable service. Cavaliers who follow this order seek to make up for the crimes they’ve committed in the past, and do whatever they can to restore their tainted honor.",
+    "ruRU": "Не все рыцари начинают свой путь детьми аристократов или оруженосцами. Некоторые раньше являлись ворами, убийцами или мошенниками, и  только после того, как они увидят страдания, причиненные их преступлениями, они посвящают себя почетной службе. Всадники этого ордена стремятся искупить вину за преступления, совершенные ими в прошлом, и сделать все возможное, чтобы восстановить свою запятнанную честь.",
     "zhCN": "并非所有骑将都以贵族子女或侍从的身份开始他们的骑将生涯。有的原本是盗贼、杀手或骗徒，但在看到他们的恶行所造成的苦难后，他们转而投身于高尚的事业。这个骑士团的骑将寻求机会弥补他们的过去所犯下的罪行，尽力恢复自己玷污的名声。"
   },
   {
     "Key": "InquisitionPenitentChallenge.Name",
     "ProcessTemplates": false,
     "enGB": "Challenge",
+    "ruRU": "Вызов",
     "zhCN": "挑战"
   },
   {
     "Key": "InquisitionPenitentChallenge.Description",
     "enGB": "Whenever an order of the penitent cavalier issues a challenge, he receives a +1 morale bonus to his CMD against combat maneuvers made by the target of his challenge. This bonus increases by +1 for every four levels the cavalier possesses.",
+    "ruRU": "Всякий раз, когда всадник ордена покаяния бросает вызов, он получает бонус боевого духа +1 к защите от боевых маневров проводимых целью его вызова. Этот бонус увеличивается на +1 за каждые 4 уровня всадника.",
     "zhCN": "当悔罪骑士团的骑将发动挑战时，他对抗挑战目标战技的CMD获得+1士气加值。这个加值每4个骑将等级再+1。"
   },
   {
     "Key": "InquisitionPenitentSkill.Name",
     "ProcessTemplates": false,
     "enGB": "Skills",
+    "ruRU": "Навыки",
     "zhCN": "技能"
   },
   {
     "Key": "InquisitionPenitentSkill.Description",
     "enGB": "An order of the penitent cavalier adds Perception to his list of class skills.",
+    "ruRU": "Всадник ордена покаяния добавляет Внимание к своему списку классовых навыков.",
     "zhCN": "悔罪骑士团的骑将将察觉加入其职业技能列表。"
   },
   {
     "Key": "InquisitionPenitentExpertCaptor.Name",
     "ProcessTemplates": false,
     "enGB": "Expert Captor",
+    "ruRU": "Эксперт-захватчик",
     "zhCN": "擒拿专家"
   },
   {
     "Key": "InquisitionPenitentExpertCaptor.Description",
     "enGB": "At 2nd level, as long as a grappled opponent is not pinned, the cavalier can make an additional grapple check to tie up him instead of pinning. When determining the DC to escape bonds secured by the cavalier, the cavalier’s Combat Maneuver Bonus increases by 1/2 his cavalier level.",
+    "ruRU": "Начиная со 2 уровня, пока захваченный противник не прижат, всадник может сделать дополнительную проверку захвата, чтобы связать его, а не прижать. Для определения сложности выхода из захвата всадника, его модификатор боевых маневров увеличивается на 1/2 его уровня всадника.",
     "zhCN": "2级时，只要被你擒抱的对手尚未被压制，作为压制他的替代，骑将可以进行一次额外的擒抱检定来捆绑对手。当判断被骑将捆绑的逃脱DC时，骑将的CMB增加等于骑将职业等级的1/2的加值。"
   }
 
