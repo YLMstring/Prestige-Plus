@@ -44,6 +44,7 @@ namespace PrestigePlus.GrappleMechanic
         private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         public override void TickOnUnit(UnitEntityData unit)
         {
+            if (!unit.IsInCombat) return;
             TickForPreemptive(unit);
             var turn = Game.Instance.TurnBasedCombatController?.CurrentTurn;
             if (turn?.Rider == unit && !unit.View.IsMoving() && unit.HasFact(Jab) && unit.HasFact(Dancer) && turn.HasFiveFootStep(unit) == false && turn.m_RiderMovementStats.MetersMovedByFiveFootStep > 0)

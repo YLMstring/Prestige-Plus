@@ -414,9 +414,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string SoulPoolAbility3 = "Souldrinker.SoulPoolAbility3";
         private static readonly string SoulPoolAbility3Guid = "{AEE3D3B6-B89A-46C4-917B-CDE9A738E665}";
 
-        private const string SoulPoolAbility4 = "Souldrinker.SoulPoolAbility4";
-        private static readonly string SoulPoolAbility4Guid = "{B65986E4-4A3F-4F05-8078-FC9DD62AF8D1}";
-
         private const string SoulPoolAbilityRes = "CrimsonTemplarStyle.SoulPoolAbilityRes";
         public static readonly string SoulPoolAbilityResGuid = "{DF8CAC1D-C121-41BD-AB7A-118DEE5FB340}";
         public static BlueprintFeature SoulPoolFeat()
@@ -456,24 +453,11 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetType(AbilityType.Supernatural)
                 .Configure();
 
-            var abilityTrick4 = AbilityConfigurator.New(SoulPoolAbility4, SoulPoolAbility4Guid)
-                .AddComponent<AbilityRestoreSoulSpell2>(c => { c.RequiredResource = abilityresourse; })
-                .AddAbilityRestoreSpontaneousSpell(true)
-                .SetActionBarAutoFillIgnored(true)
-                .SetHidden(true)
-                .SetDisplayName(SoulPool4DisplayName)
-                .SetDescription(SoulPool4Description)
-                .SetIcon(icon)
-                .SetIsFullRoundAction(true)
-                .SetRange(AbilityRange.Personal)
-                .SetType(AbilityType.Supernatural)
-                .Configure();
-
             return FeatureConfigurator.New(SoulPoolFeatName, SoulPoolFeatGuid)
                     .SetDisplayName(SoulPoolDisplayName)
                     .SetDescription(SoulPoolDescription)
                     .SetIcon(icon)
-                    .AddFacts(new() { abilityTrick2, abilityTrick3, abilityTrick4 })
+                    .AddFacts(new() { abilityTrick2, abilityTrick3 })
                     .AddComponent<SoulPointStuff>(c => { c.Resource = abilityresourse; })
                     .AddAbilityResources(resource: abilityresourse, restoreAmount: false)
                     .Configure();

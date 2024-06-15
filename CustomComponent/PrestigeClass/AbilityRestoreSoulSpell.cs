@@ -21,24 +21,43 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
     {
         public override void Apply(AbilityExecutionContext context, TargetWrapper target)
         {
-            if (context.Ability.ParamSpellSlot == null || context.Ability.ParamSpellSlot.SpellShell == null)
+            Spellbook paramSpellbook = context.Ability.ParamSpellbook;
+            int? paramSpellLevel = context.Ability.ParamSpellLevel;
+            if (paramSpellbook == null)
             {
-                PFLog.Default.Error(context.AbilityBlueprint, string.Format("Target spell is missing: {0}", context.AbilityBlueprint), Array.Empty<object>());
+                PFLog.Default.Error(context.AbilityBlueprint, string.Format("Target spellbook is missing: {0}", context.AbilityBlueprint), Array.Empty<object>());
                 return;
             }
-            if (context.Ability.ParamSpellSlot.SpellShell.Spellbook == null)
+            if (paramSpellLevel == null)
             {
-                PFLog.Default.Error(context.AbilityBlueprint, string.Format("Spellbook is missing: {0}", context.AbilityBlueprint), Array.Empty<object>());
+                PFLog.Default.Error(context.AbilityBlueprint, string.Format("Target spell level is missing: {0}", context.AbilityBlueprint), Array.Empty<object>());
                 return;
             }
-            SpellSlot notAvailableSpellSlot = AbilityRestoreSpellSlot.GetNotAvailableSpellSlot(context.Ability.ParamSpellSlot.SpellShell);
-            if (notAvailableSpellSlot == null)
-            {
-                PFLog.Default.Error(context.AbilityBlueprint, string.Format("Can't find slot for restore: {0}", context.AbilityBlueprint), Array.Empty<object>());
-                return;
-            }
-            notAvailableSpellSlot.Available = true;
             int num = 11;
+            if (paramSpellbook.Blueprint.Spontaneous)
+            {
+                paramSpellbook.RestoreSpontaneousSlots(paramSpellLevel.Value, 1);
+                if (context.Ability.ParamSpellLevel != null && context.Ability.ParamSpellLevel > 0)
+                {
+                    num = (int)context.Ability.ParamSpellLevel * 2;
+                }
+                context.MaybeOwner?.Descriptor.Resources.Spend(RequiredResource, num);
+                return;
+            }
+            foreach (SpellSlot spellSlot in paramSpellbook.GetMemorizedSpellSlots(paramSpellLevel.Value))
+            {
+                SpellSlot paramSpellSlot = context.Ability.ParamSpellSlot;
+                if ((paramSpellSlot?.SpellShell) == null || context.Ability.ParamSpellSlot.SpellShell == null)
+                {
+                    PFLog.Default.Error(context.AbilityBlueprint, string.Format("Target spell is missing: {0}", context.AbilityBlueprint), Array.Empty<object>());
+                    break;
+                }
+                if (!spellSlot.Available && spellSlot.SpellShell == context.Ability.ParamSpellSlot.SpellShell)
+                {
+                    spellSlot.Available = true;
+                    break;
+                }
+            }
             if (context.Ability.ParamSpellSlot != null)
             {
                 num = context.Ability.ParamSpellSlot.SpellLevel * 2;
@@ -49,58 +68,11 @@ namespace PrestigePlus.CustomComponent.PrestigeClass
         public bool IsAbilityRestrictionPassed(AbilityData ability)
         {
             int num = 11;
-            if (ability.ParamSpellSlot != null)
+            if (ability.ParamSpellLevel is not null and > 0)
             {
-                num = ability.ParamSpellSlot.SpellLevel * 2;
+                num = ability.ParamSpellLevel.Value * 2;
             }
             if (!ability.Caster.Resources.HasEnoughResource(RequiredResource, num))
-            {
-                return false;
-            }
-            return true;
-        }
-
-        public string GetAbilityRestrictionUIText()
-        {
-            return "Not Suitable Spell Slot";
-        }
-
-        public BlueprintAbilityResource RequiredResource;
-    }
-
-    internal class AbilityRestoreSoulSpell2 : AbilityApplyEffect, IAbilityRestriction
-    {
-        public override void Apply(AbilityExecutionContext context, TargetWrapper target)
-        {
-            if (context.Ability.ParamSpellbook == null)
-            {
-                PFLog.Default.Error(context.AbilityBlueprint, string.Format("Target spellbook is missing: {0}", context.AbilityBlueprint), Array.Empty<object>());
-                return;
-            }
-            if (context.Ability.ParamSpellLevel == null)
-            {
-                PFLog.Default.Error(context.AbilityBlueprint, string.Format("Target spell level is missing: {0}", context.AbilityBlueprint), Array.Empty<object>());
-                return;
-            }
-            context.Ability.ParamSpellbook.RestoreSpontaneousSlots(context.Ability.ParamSpellLevel.Value, 1);
-            int num = 11;
-            if (context.Ability.ParamSpellLevel != null && context.Ability.ParamSpellLevel > 0)
-            {
-                num = (int)context.Ability.ParamSpellLevel * 2;
-            }
-            context.MaybeOwner?.Descriptor.Resources.Spend(RequiredResource, num);
-        }
-
-        public bool IsAbilityRestrictionPassed(AbilityData ability)
-        {
-            int num = 11;
-            if (ability.ParamSpellLevel != null && ability.ParamSpellLevel > 0)
-            {
-                num = (int)ability.ParamSpellLevel;
-                var free = ability.ParamSpellbook?.Blueprint.Spontaneous;
-                if (free == false) return false;
-            }
-            if (!ability.Caster.Resources.HasEnoughResource(RequiredResource, num * 2))
             {
                 return false;
             }

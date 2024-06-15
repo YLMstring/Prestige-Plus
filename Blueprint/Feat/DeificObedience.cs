@@ -4670,13 +4670,13 @@ namespace PrestigePlus.Blueprint.Feat
         public static BlueprintFeature AchaekekFeat()
         {
             var icon = FeatureRefs.RakingClawsFeature.Reference.Get().Icon;
-            //"AchaekekFeature": "4654a801-2a33-420a-8fda-75dcdb6f39d9",
+            //"AchaekekFeature": "a3189d5b7c4d4d91beaa8bfffac3e38e",
 
             return FeatureConfigurator.New(Achaekek, AchaekekGuid)
               .SetDisplayName(AchaekekDisplayName)
               .SetDescription(AchaekekDescription)
               .SetIcon(icon)
-              .AddPrerequisiteFeature("4654a801-2a33-420a-8fda-75dcdb6f39d9", group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteFeature("a3189d5b7c4d4d91beaa8bfffac3e38e", group: Prerequisite.GroupType.Any)
               .AddPrerequisiteAlignment(AlignmentMaskType.LawfulEvil, group: Prerequisite.GroupType.Any)
               .AddToIsPrerequisiteFor(AchaekekSentinelFeat())
               .AddCriticalConfirmationBonus(2)
@@ -4748,7 +4748,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(Achaekek2DisplayName)
               .SetDescription(Achaekek2Description)
               .SetIcon(icon)
-              .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().ApplyBuffPermanent(BuffRefs.Bleed1d4Buff.ToString()).Build(), false, onlyHit: true, category: WeaponCategory.Falcata, checkWeaponCategory: true)
+              .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().ApplyBuffPermanent(BuffRefs.Bleed1d4Buff.ToString()).Build(), false, onlyHit: true, category: WeaponCategory.SawtoothSabre, checkWeaponCategory: true)
               .Configure();
         }
 

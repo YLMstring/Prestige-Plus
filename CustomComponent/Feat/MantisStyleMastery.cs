@@ -55,7 +55,7 @@ namespace PrestigePlus.CustomComponent.Feat
         private bool ConditionsChecker(RulePrepareDamage evt)
         {
             ItemEntityWeapon weapon = evt.DamageBundle.Weapon;
-            if (weapon?.Blueprint.Category == WeaponCategory.Falcata)
+            if (weapon?.Blueprint.Category == WeaponCategory.SawtoothSabre)
             {
                 return true;
             }
@@ -75,7 +75,7 @@ namespace PrestigePlus.CustomComponent.Feat
             var fact = Owner.GetFact(Master);
             if (fact == null) { return; }
             int bonus = 0;
-            if (maybeWeapon?.Blueprint.Category == WeaponCategory.Falcata && maybeWeapon2?.Blueprint.Category == WeaponCategory.Falcata && evt.m_ModifiableBonus?.Modifiers?.First() != null)
+            if (maybeWeapon?.Blueprint.Category == WeaponCategory.SawtoothSabre && maybeWeapon2?.Blueprint.Category == WeaponCategory.SawtoothSabre && evt.m_ModifiableBonus?.Modifiers?.First() != null)
             {
                 foreach (var mod in evt.m_ModifiableBonus.Modifiers)
                 {
