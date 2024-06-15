@@ -19,11 +19,11 @@ namespace PrestigePlus.Patch
         {
             try
             {
-                var ArmorTrainingSelection = BlueprintTool.GetRef<BlueprintFeatureSelectionReference>("354f1a44-26d2-4ea3-8718-905108f48e72")?.Get();
-                if (ArmorTrainingSelection == null) { Logger.Info("not found ttt at"); return; }
                 var FighterClass = CharacterClassRefs.FighterClass.Reference.Get();
                 var ArmorTraining = FeatureRefs.ArmorTraining.Reference.Get();
-
+                if (FighterClass.Progression.GetLevelEntry(3).Features.Contains(ArmorTraining)) { return; }
+                var ArmorTrainingSelection = BlueprintTool.GetRef<BlueprintFeatureSelectionReference>("354f1a44-26d2-4ea3-8718-905108f48e72")?.Get();
+                if (ArmorTrainingSelection == null) { Logger.Info("not found ttt at"); return; }
                 foreach (var Archetype in FighterClass.Archetypes)
                 {
                     Archetype.RemoveFeatures
