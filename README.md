@@ -48,7 +48,7 @@
 - [The Lantern King](https://aonprd.com/DeityDisplay.aspx?ItemName=The%20Lantern%20King): requires worshipping The Lantern King (Expanded Content) or Chaotic Neutral
 - [Nocticula (sentinel)](https://aonprd.com/DeityDisplay.aspx?ItemName=Nocticula): requires worshipping Nocticula (Expanded Content) or Chaotic Neutral
 - Some of her boons have changed because she's in the middle of [spoilers](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Nocticula%20(Redeemed))
-- [Achaekek (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Achaekek): requires worshipping Achaekek (Expanded Content) or Lawful Evil
+- [Achaekek (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Achaekek): requires worshipping Achaekek or Lawful Evil
 - [Mahathallah (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Mahathallah): requires worshipping Asmodeus or Lawful Evil
 - [Mephistopheles](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Mephistopheles): requires worshipping Mephistopheles (Expanded Content) or Lawful Evil
 - [Arazni (sentinel)](https://aonprd.com/DeityDisplay.aspx?ItemName=Arazni): requires worshipping Urgathoa or Neutral Evil
