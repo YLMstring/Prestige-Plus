@@ -18,12 +18,6 @@ namespace PrestigePlus.Modify
 
     internal class SpellbookReplace
     {
-        public static readonly string AccursedWitchName = "2AccursedWitch";
-        public static readonly string AccursedWitchGuid = "a479ce9c-dca2-4ac5-b638-93828839a4fa";
-
-        public static readonly string AccursedWitchDisplayName = "PPbookAccursedWitch.Name";
-        public static readonly string AccursedWitchDescription = "PPbookAccursedWitch.Description";
-
         private const string spellupgrade = "Spellupgrade2";
         public static readonly string spellupgradeGuid = "{05DC9561-0542-41BD-9E9F-404F59AB68C5}";
 
@@ -37,10 +31,30 @@ namespace PrestigePlus.Modify
                   .SetDescription(SpellupgradeDescription)
                   .SetIgnorePrerequisites(false)
                   .SetObligatory(false)
-                  .SetAllFeatures(new Blueprint<BlueprintFeatureReference>[] { AccursedWitch(), Alchemist(), AngelfireApostle(), Arcanist(), ArmagsBlade(), Bard(), Bloodrager(), Cleric(), Crossblooded(), Crusader(), Druid(), EldritchFont(), EldritchScion(), EldritchScoundrel(), Empyreal(), ExploiterWizard(), Feyspeaker(), Hunter(), Inquisitor(), LeyLineGuardianWitch(), Magus(), MasterSpy(), NatureMage(), Oracle(), Paladin(), Ranger(), Sage(), Shaman(), Skald(), Sorcerer(), SwordSaint(), ThassilonianAbjuration(), ThassilonianConjuration(), ThassilonianEnchantment(), ThassilonianEvocation(), ThassilonianIllusion(), ThassilonianNecromancy(), ThassilonianTransmutation(), UnletteredArcanist(), Warpriest(), Witch(), Wizard(), DreadKnight(), ClawOfTheFalseWyrm(), SilverChampion(), RavenerHunter(), LivingScripture(), SkulkingHunter(), SwornOfTheEldest(), ArrowsongMinstrel(), Antipaladin(), ChannelerOfTheUnknown(), Myrmidarch() })
+                  .SetAllFeatures(new Blueprint<BlueprintFeatureReference>[] { MagicDeceiver(), AccursedWitch(), Alchemist(), AngelfireApostle(), Arcanist(), ArmagsBlade(), Bard(), Bloodrager(), Cleric(), Crossblooded(), Crusader(), Druid(), EldritchFont(), EldritchScion(), EldritchScoundrel(), Empyreal(), ExploiterWizard(), Feyspeaker(), Hunter(), Inquisitor(), LeyLineGuardianWitch(), Magus(), MasterSpy(), NatureMage(), Oracle(), Paladin(), Ranger(), Sage(), Shaman(), Skald(), Sorcerer(), SwordSaint(), ThassilonianAbjuration(), ThassilonianConjuration(), ThassilonianEnchantment(), ThassilonianEvocation(), ThassilonianIllusion(), ThassilonianNecromancy(), ThassilonianTransmutation(), UnletteredArcanist(), Warpriest(), Witch(), Wizard(), DreadKnight(), ClawOfTheFalseWyrm(), SilverChampion(), RavenerHunter(), LivingScripture(), SkulkingHunter(), SwornOfTheEldest(), ArrowsongMinstrel(), Antipaladin(), ChannelerOfTheUnknown(), Myrmidarch() })
                   .Configure(delayed: true);
         }
 
+        public static readonly string MagicDeceiverName = "2MagicDeceiver";
+        public static readonly string MagicDeceiverGuid = "{9B842364-B5CB-47E6-8D03-851BF2322F8F}";
+
+        public static readonly string MagicDeceiverDisplayName = "PPbookMagicDeceiver.Name";
+        public static readonly string MagicDeceiverDescription = "PPbookMagicDeceiver.Description";
+        public static BlueprintFeatureReplaceSpellbook MagicDeceiver()
+        {
+            return FeatureReplaceSpellbookConfigurator.New(MagicDeceiverName, MagicDeceiverGuid)
+                .SetDisplayName(MagicDeceiverDisplayName)
+                .SetDescription(MagicDeceiverDescription)
+                .SetSpellbook("587066af76a74f47a904bb017697ba08").SetHideNotAvailibleInUI(true)
+                .AddComponent<PrerequisiteSpellBook>(c => { c.Book = "587066af76a74f47a904bb017697ba08"; })
+                .SetRanks(20).Configure();
+        }
+
+        public static readonly string AccursedWitchName = "2AccursedWitch";
+        public static readonly string AccursedWitchGuid = "a479ce9c-dca2-4ac5-b638-93828839a4fa";
+
+        public static readonly string AccursedWitchDisplayName = "PPbookAccursedWitch.Name";
+        public static readonly string AccursedWitchDescription = "PPbookAccursedWitch.Description";
         public static BlueprintFeatureReplaceSpellbook AccursedWitch()
         {
             return FeatureReplaceSpellbookConfigurator.New(AccursedWitchName, AccursedWitchGuid)

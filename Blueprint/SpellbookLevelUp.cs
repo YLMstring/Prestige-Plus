@@ -27,8 +27,6 @@ namespace PrestigePlus.Modify
 {
     internal class SpellbookLevelUp
     {
-        
-
         private const string spellupgrade = "Spellupgrade";
         private static readonly string spellupgradeGuid = "{E995A687-EC47-4A29-9AFE-1C2715E0CC24}";
 

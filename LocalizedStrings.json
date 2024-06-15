@@ -1976,7 +1976,17 @@
     "ruRU": "Вы можете взять в захват любую цель, даже если она невосприимчива к нему.",
     "zhCN": "你可以擒抱任何生物，即使它对其免疫。"
   },
-
+  {
+    "Key": "PPbookMagicDeceiver.Name",
+    "ProcessTemplates": false,
+    "enGB": "Magic Deceiver",
+    "ruRU": "Magic Deceiver"
+  },
+  {
+    "Key": "PPbookMagicDeceiver.Description",
+    "enGB": "Magic Deceiver",
+    "ruRU": "Magic Deceiver"
+  },
   {
     "Key": "PPbookAccursedWitch.Name",
     "ProcessTemplates": false,
