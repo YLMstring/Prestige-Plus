@@ -4766,6 +4766,11 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetDescription(Achaekek3Description)
                     .SetIcon(icon)
                     .AddComponent<MantisStyleMastery>()
+                    .AddComponent<WeaponTypeDamageBonusPP>(c => {
+                        c.WeaponType = BlueprintTool.GetRef<BlueprintWeaponTypeReference>("ef50f200e4ab429b8bcb66a56f886c2f");
+                        c.DamageBonus = 2;
+                        c.Des = ModifierDescriptor.Profane;
+                    })
                     .Configure();
         }
 

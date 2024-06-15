@@ -12725,9 +12725,9 @@
   },
   {
     "Key": "DeificObedienceAchaekek.Description",
-    "enGB": "Meditate in a private place before a trophy or broken religious symbol taken from a target you have been contracted to kill. This trophy must be anointed with a single drop of your blood, drawn from your flesh by a falcata, and the trophy must be destroyed at the end of your meditation. If you have yet to complete a contract, have no appropriate trophies at hand, or seek to serve the Mantis God in other ways than as the god’s assassin, you must instead offer your own vital fluid to He Who Walks in Blood by cutting yourself along the right arm with a falcata. You gain a +2 bonus to confirm critical hits.",
+    "enGB": "Meditate in a private place before a trophy or broken religious symbol taken from a target you have been contracted to kill. This trophy must be anointed with a single drop of your blood, drawn from your flesh by a sawtooth saber, and the trophy must be destroyed at the end of your meditation. If you have yet to complete a contract, have no appropriate trophies at hand, or seek to serve the Mantis God in other ways than as the god’s assassin, you must instead offer your own vital fluid to He Who Walks in Blood by cutting yourself along the right arm with a sawtooth saber. You gain a +2 bonus to confirm critical hits.",
     "ruRU": "Помедитируйте в укромном месте перед трофеем или сломанным религиозным символом, взятым у цели, которую вы должны убить. Этот трофей необходимо пролиь единственную каплю вашей крови, взято при помощт фалькаты, трофей необходимо уничтожить в конце вашей медитации. Если вы еще не выполнили контракт, не имеете под рукой подходящих трофеев или стремитесь служить Богу-богомолу иначе, чем в качестве убийцы, вместо этого вы должны предложить свою собственную кровь Бродящему в крови, порезав себя вдоль правой руки фалькатой. Вы получаете бонус +2 на подтверждение критических ударов.",
-    "zhCN": "在一个私密处所中，于从你签下契约而杀死的目标身上取得的战利品或破碎的圣徽之前冥想。该战利品必须涂有你的一滴由反曲剑取出的血，并且战利品必须在冥想结束时被销毁。如果你还没有完成契约杀人，或是手头没有合适的战利品，或者寻求以其他方式侍奉螳螂神，而非作为神的刺客，你必须用反曲剑沿着右臂割伤自己，将自己的生命之液献给鲜血行者。你在确认重击时获得+2加值。"
+    "zhCN": "在一个私密处所中，于从你签下契约而杀死的目标身上取得的战利品或破碎的圣徽之前冥想。该战利品必须涂有你的一滴由锯齿刀取出的血，并且战利品必须在冥想结束时被销毁。如果你还没有完成契约杀人，或是手头没有合适的战利品，或者寻求以其他方式侍奉螳螂神，而非作为神的刺客，你必须用锯齿刀沿着右臂割伤自己，将自己的生命之液献给鲜血行者。你在确认重击时获得+2加值。"
   },
   {
     "Key": "DeificObedienceAchaekekSentinel.Name",
@@ -12764,9 +12764,9 @@
   },
   {
     "Key": "DeificObedienceAchaekek2.Description",
-    "enGB": "All wounds you inflict with a falcata are bleeding wounds, and deal 1d4 points of bleed damage to the target (the damage does not stack).",
+    "enGB": "All wounds you inflict with a sawtooth saber are bleeding wounds, and deal 1d4 points of bleed damage to the target (the damage does not stack).",
     "ruRU": "Все раны, которые вы наносите при помощи фалькаты, являются кровоточящими и наносят 1d4 урона кровотечением (этот урон не складывается).",
-    "zhCN": "你用反曲剑产生的所有伤口都会流血不止，对目标造成1d4点流血伤害（不叠加）。"
+    "zhCN": "你用锯齿刀产生的所有伤口都会流血不止，对目标造成1d4点流血伤害（不叠加）。"
   },
   {
     "Key": "DeificObedienceAchaekek3.Name",
@@ -12777,9 +12777,9 @@
   },
   {
     "Key": "DeificObedienceAchaekek3.Description",
-    "enGB": "You take no penalties on attack rolls from two-weapon fighting when wielding two falcatas simultaneously, and you gain a +2 profane bonus on all damage rolls with falcatas. If you deal sneak attack damage with a falcata, you deal 2 additional points of damage for each die rolled as part of your sneak attack damage.",
+    "enGB": "You take no penalties on attack rolls from two-weapon fighting when wielding two sawtooth sabers simultaneously, and you gain a +2 profane bonus on all damage rolls with sawtooth sabers. If you deal sneak attack damage with a sawtooth saber, you deal 2 additional points of damage for each die rolled as part of your sneak attack damage.",
     "ruRU": "Вы не получаете штраоф за бой парным оружием, когда вы держите фалькату в каждой руке, а также вы получаете нечестивый бонус +2 ко всем броскам на урон фалькатой. Ваши атаки исподтишка совершенные при помощи фалькаты наносят +2 урона за каждую кость атаки исподтишка.",
-    "zhCN": "同时持用两把反曲剑时，你不会受到双武器战斗的攻击检定减值，并且你在反曲剑的所有伤害检定上获得+2亵渎加值。如果你用反曲剑造成偷袭伤害，每个偷袭骰都会额外造成2点伤害。"
+    "zhCN": "同时持用两把锯齿刀时，你不会受到双武器战斗的攻击检定减值，并且你在锯齿刀的所有伤害检定上获得+2亵渎加值。如果你用锯齿刀造成偷袭伤害，每个偷袭骰都会额外造成2点伤害。"
   },
   {
     "Key": "DeificObedienceIrori.Name",
