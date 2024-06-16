@@ -106,6 +106,5 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
         }
 
         private static readonly BlueprintFeatureReference Mantis = BlueprintTool.GetRef<BlueprintFeatureReference>(DeificObedience.Achaekek3Guid);
-        private static readonly BlueprintFeatureReference Titan = BlueprintTool.GetRef<BlueprintFeatureReference>("38323bb032d740ab9045f1086705b0c7");
     }
 }
