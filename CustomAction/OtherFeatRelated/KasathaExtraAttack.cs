@@ -52,7 +52,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                 var weapons = new List<ItemEntityWeapon> { };
                 foreach (var slot in maybeCaster.Body.EquipmentSlots)
                 {
-                    if (slot is HandSlot && slot != maybeCaster.Body.PrimaryHand && slot != maybeCaster.Body.SecondaryHand)
+                    if ((slot == maybeCaster.Body.HandsEquipmentSets[0].PrimaryHand || slot == maybeCaster.Body.HandsEquipmentSets[0].SecondaryHand) && slot != maybeCaster.Body.PrimaryHand && slot != maybeCaster.Body.SecondaryHand)
                     {
                         if (slot.HasItem && slot.Item is ItemEntityWeapon weapon)
                         {
@@ -62,7 +62,6 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                     }
                 }
                 if (!weapons.Any()) return;
-                weapons.Shuffle();
                 var wep = maybeCaster.Body.AddAdditionalLimb(weapons[0].Blueprint, null);
                 RunAttackRule(maybeCaster, unit, maybeCaster.Body.AdditionalLimbs[wep].MaybeWeapon);
                 if (maybeCaster.Body.AdditionalLimbs[wep].MaybeWeapon?.Blueprint.Double == true)
@@ -71,7 +70,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                     maybeCaster.Body.RemoveAdditionalLimb(wep);
                     return;
                 }
-                if (maybeCaster.Body.AdditionalLimbs[wep].MaybeWeapon?.Blueprint.IsTwoHanded == true)
+                if (maybeCaster.Body.AdditionalLimbs[wep].MaybeWeapon?.Blueprint.IsTwoHanded == true && !maybeCaster.HasFact(Titan))
                 {
                     maybeCaster.Body.RemoveAdditionalLimb(wep);
                     return;
@@ -79,7 +78,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                 maybeCaster.Body.RemoveAdditionalLimb(wep);
                 if (weapons.Count() < 2) return;
                 wep = maybeCaster.Body.AddAdditionalLimb(weapons[1].Blueprint, null);
-                if (maybeCaster.Body.AdditionalLimbs[wep].MaybeWeapon?.Blueprint.IsTwoHanded == true)
+                if (maybeCaster.Body.AdditionalLimbs[wep].MaybeWeapon?.Blueprint.IsTwoHanded == true && !maybeCaster.HasFact(Titan))
                 {
                     maybeCaster.Body.RemoveAdditionalLimb(wep);
                     return;
@@ -122,5 +121,6 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
         }
 
         private static readonly BlueprintFeatureReference Mantis = BlueprintTool.GetRef<BlueprintFeatureReference>(DeificObedience.Achaekek3Guid);
+        private static readonly BlueprintFeatureReference Titan = BlueprintTool.GetRef<BlueprintFeatureReference>("38323bb032d740ab9045f1086705b0c7");
     }
 }
