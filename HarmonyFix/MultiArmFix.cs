@@ -24,7 +24,7 @@ namespace PrestigePlus.HarmonyFix
             try
             {
                 if (__result) { return; }
-                if (__instance.Owner.HasFact(ForceFull))
+                if (__instance.Owner.HasFact(ForceFull) && (__instance == __instance.Owner.Body.HandsEquipmentSets[0].PrimaryHand || __instance == __instance.Owner.Body.HandsEquipmentSets[0].SecondaryHand))
                 {
                     __result = true;
                 }
@@ -43,7 +43,7 @@ namespace PrestigePlus.HarmonyFix
             try
             {
                 if (!__result) { return; }
-                if (__instance.Owner.HasFact(ForceFull) && __instance.MaybeItem?.Blueprint is BlueprintItemWeapon && __instance != __instance.Owner.Body.PrimaryHand&& __instance != __instance.Owner.Body.SecondaryHand)
+                if (__instance.Owner.HasFact(ForceFull) && __instance.MaybeItem?.Blueprint is BlueprintItemWeapon && __instance != __instance.Owner.Body.PrimaryHand && __instance != __instance.Owner.Body.SecondaryHand)
                 {
                     __result = false;
                 }
