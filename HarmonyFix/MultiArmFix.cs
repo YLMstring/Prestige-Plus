@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Kingmaker.Items.Slots;
+using Kingmaker.Blueprints.Items.Weapons;
 
 namespace PrestigePlus.HarmonyFix
 {
@@ -29,6 +30,25 @@ namespace PrestigePlus.HarmonyFix
                 }
             }
             catch (Exception ex) { Logger.Error("Failed to MultiArmFix.", ex); }
+        }
+        private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
+        private static BlueprintFeatureReference ForceFull = BlueprintTool.GetRef<BlueprintFeatureReference>(RacialHeritage.MultiArmedGuid);
+    }
+
+    [HarmonyPatch(typeof(ItemSlot), nameof(ItemSlot.CanRemoveItem))]
+    internal class MultiArmFix2
+    {
+        static void Postfix(ref bool __result, ref ItemSlot __instance)
+        {
+            try
+            {
+                if (!__result) { return; }
+                if (__instance.Owner.HasFact(ForceFull) && __instance.MaybeItem?.Blueprint is BlueprintItemWeapon && __instance != __instance.Owner.Body.PrimaryHand&& __instance != __instance.Owner.Body.SecondaryHand)
+                {
+                    __result = false;
+                }
+            }
+            catch (Exception ex) { Logger.Error("Failed to MultiArmFix2.", ex); }
         }
         private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         private static BlueprintFeatureReference ForceFull = BlueprintTool.GetRef<BlueprintFeatureReference>(RacialHeritage.MultiArmedGuid);

@@ -17,6 +17,7 @@ using Kingmaker.Items.Slots;
 using Kingmaker.Enums;
 using Kingmaker.Blueprints;
 using PrestigePlus.Blueprint.Feat;
+using Kingmaker.Utility;
 
 namespace PrestigePlus.CustomAction.OtherFeatRelated
 {
@@ -61,6 +62,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                     }
                 }
                 if (!weapons.Any()) return;
+                weapons.Shuffle();
                 var wep = maybeCaster.Body.AddAdditionalLimb(weapons[0].Blueprint, null);
                 RunAttackRule(maybeCaster, unit, maybeCaster.Body.AdditionalLimbs[wep].MaybeWeapon);
                 if (maybeCaster.Body.AdditionalLimbs[wep].MaybeWeapon?.Blueprint.Double == true)
