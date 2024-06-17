@@ -6663,7 +6663,7 @@
   {
     "Key": "SpireDefenderCloseRange.Description",
     "enGB": "The magus can deliver ray spells that feature a ranged touch attack as melee touch spells. He can use a ranged touch attack spell that targets more than one creature (such as scorching ray), but he makes only one melee touch attack to deliver one of these ranged touch effects; additional ranged touch attacks from that spell are wasted and have no effect. These spells can only be used with the spellstrike class feature.",
-    "ruRU": "Магус может доставить заклинания лучей, требующие дистанционной атаки касанием, в качестве атаки касанием в ближнем бою. Он может использовать заклинания лучей выпускающие несколько луч за раз (такие как опаляющий луч), но при этом он доставляет , таким образом, только 1 луч; остальные лучи теряются и не имеют эффекта. Эти заклинания могут быть сотворены только при помощи классовой способности Удар заклинателя.",
+    "ruRU": "Магус может доставить заклинания лучей, требующие дистанционной атаки касанием, в качестве атаки касанием в ближнем бою. Он может использовать заклинания лучей выпускающие несколько луч за раз (такие как опаляющий луч), но при этом он доставляет , таким образом, только 1 луч; остальные лучи теряются и не имеют эффекта. Эти заклинания могут быть доставлены только при помощи классовой способности Удар заклинателя.",
     "zhCN": "选择本奥能的魔战士可以将需要远程接触攻击的射线法术以近战接触攻击方式传递。他可利用此奥能施放目标多于一个的远程接触法术（如灼热射线），但他只能用一次近战攻击传递一个远程接触效果，该法术额外的远程接触攻击则被浪费掉且没有效果。这些法术只能用于法术打击职业能力。"
   },
   {
