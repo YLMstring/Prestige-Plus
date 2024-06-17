@@ -12,7 +12,7 @@
   {
     "Key": "ShadowDancer.Description",
     "enGB": "Shadowdancers exist in the boundary between light and darkness, where they weave together the shadows to become half-seen artists of deception. Unbound by any specified morality or traditional code, shadowdancers encompass a wide variety of adventuring types who have seen the value of the dark. Spellcasters use their abilities to safely cast spells from hiding and then move quickly away, while classes devoted to hand-to-hand combat enjoy the ability to attack foes with the element of surprise. Some even take the name of their kind quite literally, becoming eerie and mysterious performers and dancers, though more often the temptation presented by their talents with deception and infiltration causes shadowdancers to turn to lives of thievery.",
-    "ruRU": "Танцоры теней существуют на границе между светом и тьмой, где они сплетают тени, чтобы стать невидимыми художниками обмана. Не связанные какой-либо моралью или традиционным кодексом, танцоры теней включают в себя широкий спектр искателей приключений, которые осознали ценность тьмы. Заклинатели используют свои способности для безопасного произнесения заклинаний из укрытия, а затем быстро удаляются, в то время как классы, посвящающие себя ближнему бою, наслаждаются способностью атаковать противников с элементом неожиданности. Некоторые даже воспринимают свое название буквально, становясь жуткими и загадочными артистами и танцорами, хотя чаще всего искушение, представленное их талантами обмана и проникновения, заставляет танцоров теней обратащься к воровской жизни.",
+    "ruRU": "Танцоры теней существуют на границе между светом и тьмой, где они сплетают тени, чтобы стать невидимыми художниками обмана. Не связанные какой-либо моралью или традиционным кодексом, танцоры теней включают в себя широкий спектр искателей приключений, которые осознали ценность тьмы. Заклинатели используют свои способности для безопасного произнесения заклинаний из укрытия, а затем быстро удаляются, в то время как классы, посвящающие себя ближнему бою, наслаждаются способностью атаковать противников с элементом неожиданности. Некоторые даже воспринимают свое название буквально, становясь жуткими и загадочными артистами и танцорами, хотя чаще всего искушение, представленное их талантами обмана и проникновения, заставляет танцоров теней обращаться к воровской жизни.",
     "zhCN": "影舞者生存在光与暗的边界，在那里，他们编织着阴影，令自己成为若隐若现的诡计大师。不受任何特定道德或传统法规的束缚，影舞者由认识到黑暗的价值的多种冒险者组成。施法者们使用自己的能力从暗处安全地施放法术并迅速离开，同时专于白刃战的职业们则享受从暗处突袭敌人的能力。有些人甚至从字面上理解自己的群体，成为了怪异又神秘的表演者和舞者。尽管如此，他们诡诈与渗透性的天赋带来的诱惑通常使得影舞者们趋于以行窃为生。"
   },
 
@@ -470,7 +470,7 @@
   {
     "Key": "AgentoftheGraveDesecrate.Description",
     "enGB": "At 3rd level, an Agent of the Grave bolsters undead around him. As a standard action, an Agent of the Grave manifests an aura identical to the desecrate spell, except this foul aura has a duration of 10 minutes per level. Every undead creature entering a desecrated area gains a +1 profane bonus on all attack rolls, damage rolls, and saving throws. An Agent of the Grave can use this ability once per day. In addition, any undead the Agent of the Grave summons gains +1 hit points per caster level.",
-    "ruRU": "На 3 уровне агент могилы укрепляет нежить вокруг него. Основным действием, он может высвободить ауру работающую как заклинание Осквернение, за исключением того что длительной ауры равна 10 минут за уровень. Каждое существо-нежить в пределах ауры получает нечистивый бонус +1 ко всем броскам на попадание, урон и спасброскам. Агент могилы может применять  эту способность 1 раз в день. В дополнение, любая нежить которую призывает агент могилы получает +1 очко здоровья за уровень заклинателя.",
+    "ruRU": "На 3 уровне агент могилы укрепляет нежить вокруг него. Основным действием, он может высвободить ауру работающую как заклинание Осквернение, за исключением того что длительной ауры равна 10 минут за уровень. Каждое существо-нежить в пределах ауры получает нечестивый бонус +1 ко всем броскам на попадание, урон и спасброскам. Агент могилы может применять  эту способность 1 раз в день. В дополнение, любая нежить которую призывает агент могилы получает +1 очко здоровья за уровень заклинателя.",
     "zhCN": "3级时，墓穴使徒能够增强围绕着他的不死生物。以一个标准动作，墓穴使徒展现出如同亵渎术一般的灵光，攻击骰，伤害骰和所有豁免均获得+1亵渎加值。不过这个秽恶的灵光只会持续每个等级10分钟。墓穴使徒每天能够使用这个能力一次。此外，墓穴使徒创造的不死生物获得每施法者等级+1生命值。"
   },
 
@@ -708,7 +708,7 @@
   {
     "Key": "EnhanceArrows3.Description",
     "enGB": "At 9th level, every arrow fired by an arcane archer gains one of the following aligned weapon qualities: anarchic, axiomatic, holy, or unholy. The arcane archer cannot choose an ability that is the opposite of his alignment (for example, a lawful good arcane archer could not choose anarchic or unholy as his weapon quality).",
-    "ruRU": "Начиная с 9 уровня все стрелы, выпускаемые мистическим лучником, приобретают одно из следующих свойств: бунтарское, аксиоматическое, святое или нечестивое. Мистический лучник не может выбрать свойство которое противоположенно его мировоззрению (например, законопослушный добрый мистический лучних не может выбрать бунтарское или нечестивое оружие).",
+    "ruRU": "Начиная с 9 уровня все стрелы, выпускаемые мистическим лучником, приобретают одно из следующих свойств: бунтарское, аксиоматическое, святое или нечестивое. Мистический лучник не может выбрать свойство которое противоположено его мировоззрению (например, законопослушный добрый мистический лучник не может выбрать бунтарское или нечестивое оружие).",
     "zhCN": "在9级，每个由魔射手射出的箭获得以下的武器特性之一：秩序，混沌，神圣，邪恶。魔射手不能选择与自身阵营相背的特性。比如守序善良的魔射手不能选择邪恶和混乱特性。"
   },
 
@@ -793,7 +793,7 @@
   {
     "Key": "ArcaneArcherDeathArrow.Description",
     "enGB": "At 10th level, an arcane archer can create a special type of slaying arrow that forces the target, if damaged by the arrow’s attack, to make a Fortitude save or be slain immediately. The DC of this save is equal to 20 + the arcane archer’s Charisma modifier. It takes 1 day to make a slaying arrow, and the arrow only functions for the arcane archer who created it. The slaying arrow lasts no longer than 1 year, and the archer can only have one such arrow in existence at a time.",
-    "ruRU": "На 10 уровне мистический лучник может выпустить специальную стрелу, при попадании которой цель должна совершить спасбросок стойкости или умереть. Сложность спасброска равно 20 + модификатор Харизмы лучника. Изготовление такой стрелы занимает целый день, и использовать её может только создавший её лучник.",
+    "ruRU": "На 10 уровне мистический лучник может выпустить специальную стрелу, при попадании которой цель должна совершить спасбросок Стойкости или умереть. Сложность спасброска равно 20 + модификатор Харизмы лучника. Изготовление такой стрелы занимает целый день, и использовать её может только создавший её лучник.",
     "zhCN": "10级开始，魔射手可以使用死亡箭，目标若中此箭，须进行DC为“20+魅力修正”的强韧豁免，未通过则立即死亡。制造死亡箭需要一整天，而且只有制造者能使用。死亡箭至多能保存一年，魔射手不能同时拥有一支以上的死亡箭。"
   },
 
@@ -929,7 +929,7 @@
   {
     "Key": "ScarSeekerMartyr.Description",
     "enGB": "When the scar seeker is brought below 0 hit points, he can expend all his remaining uses of lay on hands (minimum 1) in order to heal his allies and harm evil enemies in a 30-foot radius. He restores or deals an amount of divine damage equal to 4d6 plus his level, and the damage increases by 1d6 for each use of lay on hands he expends; a creature takes half damage if it succeeds at a Will save (DC = 10 + the scar seeker’s level + his Charisma modifier). The scar seeker must be 5th level in order to select this scar.",
-    "ruRU": "Когда здоровья искателя шрамов опускается ниже 0 он может использовать все оставшиеся применения его способности Наложение рук (минимум 1) чтобы вылечить всех союзников и нанести урон всем врагам в радиусе 30 футов. Он вылечивает или наносит количество урона, равное 4d6 + его уровень + 1d6 за каждое потраченное применение наложения рук; враги могут совершить спасбросок воли (DC = 10 + уровень искателя шрамов + модификатор Харизмы) чтобы получить только половину урона. Искатель шрамов должен быть как минимум 5 уровня чтобы выбрать этот шрам.",
+    "ruRU": "Когда здоровья искателя шрамов опускается ниже 0 он может использовать все оставшиеся применения его способности Наложение рук (минимум 1) чтобы вылечить всех союзников и нанести урон всем врагам в радиусе 30 футов. Он вылечивает или наносит количество урона, равное 4d6 + его уровень + 1d6 за каждое потраченное применение наложения рук; враги могут совершить спасбросок Воли (DC = 10 + уровень искателя шрамов + модификатор Харизмы) чтобы получить только половину урона. Искатель шрамов должен быть как минимум 5 уровня чтобы выбрать этот шрам.",
     "zhCN": "当负痕求道者的生命值降至0点以下时，他能够耗尽所有剩余的圣疗使用次数（最低1次），以此在对半径30尺内的盟友进行治疗的同时，以神力伤害该范围内的所有邪恶敌人。他治愈或造成的伤害量等同于4d6 + 他的等级，每发由此方式消耗的圣疗使用次数都会让数值增加1d6点；成功通过意志豁免能够让该能力造成的伤害减半（DC = 10 + 负痕求道者的等级 + 他的魅力调整值）。负痕求道者必须达到5级才能选择该项不灭圣痕。"
   },
 
@@ -1422,7 +1422,7 @@
   {
     "Key": "HorizonWalkerDominanceUrban.Description",
     "enGB": "For the purpose of bypassing damage reduction, the horizon walker’s manufactured and natural weapons count as Lawful alignment.The horizon walker gains favored enemy (humanoids [humans] +2), as per the ranger ability. If the horizon walker already has the same favored enemy bonus from another class, her existing bonus instead increases by 2.",
-    "ruRU": "Для преодоления снижения урона, странник горизонта рассчитывает свою оружие как если бы оно было законопослушным. Странник горизонта получает бонус заклятого врага (люди) +2. Если странних уже имеет бонус заклятого врага против этой категории, он увеличивается на 2.",
+    "ruRU": "Для преодоления снижения урона, странник горизонта рассчитывает свою оружие как если бы оно было законопослушным. Странник горизонта получает бонус заклятого врага (люди) +2. Если странник уже имеет бонус заклятого врага против этой категории, он увеличивается на 2.",
     "zhCN": "大地旅者持用的人工武器或天生武器，在穿透伤害减免时视为守序阵营。大地旅者获得宿敌（类人生物，人类，+2加值），如同游侠的同名能力。如果大地旅者已经从其他职业那里获得了相同的宿敌加值，那么作为代替，她的这个加值提升2。"
   },
 
@@ -1622,7 +1622,7 @@
   {
     "Key": "ImprovedGrapple.Description",
     "enGB": "You are skilled at grappling opponents. You do not provoke an attack of opportunity when performing a grapple combat maneuver. In addition, you receive a +2 bonus on checks made to grapple a foe. You also receive a +2 bonus to your Combat Maneuver Defense whenever an opponent tries to grapple you.",
-    "ruRU": "Вы умелы в захвате своих врагов. Вы не провоцируете внеочередные атаки при выполнение боевого маневра Захват.  В дополнение вы получаете бонус +2 к проверкам для захвата. Вы также получаете бонус +2 к к своей защите от боевых маневров против захватов.",
+    "ruRU": "Вы умелы в захвате своих врагов. Вы не провоцируете внеочередные атаки при выполнение боевого маневра Захват. В дополнение вы получаете бонус +2 к проверкам для захвата. Вы также получаете бонус +2 к к своей защите от боевых маневров против захватов.",
     "zhCN": "你擅长擒抱你的敌人，使用擒抱战技时不会引发借机攻击。此外你在擒抱检定上获得+2加值，同时在对抗擒抱的战技防御上获得+2加值。"
   },
 
@@ -1742,7 +1742,7 @@
   {
     "Key": "GreaterGrapple.Description",
     "enGB": "Maintaining a grapple is second nature to you. You receive a +2 bonus on checks made to grapple a foe. This bonus stacks with the bonus granted by Improved Grapple. Once you have grappled a creature, maintaining the grapple is a move action. This feat allows you to make a second grapple check as a standard action each round to move, harm, or pin your opponent further.",
-    "ruRU": "Удержание противника в своих руках - для вас обыденное дело. Вы получаете бонус +2 к проверкам боевого маневра захват. Этот бонус складывается с бонусами от черты Захват. Поддержание захвата теперь является сопутствующим действием. Эта черта позволяет вам основным действием проходить повторную проверку маневра захват чтобы передвинуть, нанести урон или прижать цель захвата.",
+    "ruRU": "Удержание противника в своих руках - для вас обыденное дело. Вы получаете бонус +2 к проверкам боевого маневра захват. Этот бонус складывается с бонусами от черты Захват. Поддержание захвата теперь является сопутствующим действием. Эта черта позволяет вам основным действием проходить повторную проверку маневра Захват чтобы передвинуть, нанести урон или прижать цель захвата.",
     "zhCN": "维持擒抱是你的第二天性。你在擒抱检定中获得+2加值，此加值与“精通擒抱”专长带来的加值累计。当你成功擒抱一个生物，可以用移动动作维持擒抱。本专长允许你以标准动作进行第二次擒抱检定来进一步移动、伤害或压制你的对手。"
   },
 
@@ -1772,7 +1772,7 @@
   {
     "Key": "RapidGrappler.Description",
     "enGB": "You are a quick hand at grappling. Whenever you use Greater Grapple to successfully maintain a grapple as a move action, you can then spend a swift action to make a grapple combat maneuver check at a –5 penalty.",
-    "ruRU": "Вы умелы в захватах. Когда вы используете сопуствующее действия для успешного удержания врага при помощи маневра Захват+, вы можете быстрым действием пройти проверку боевого маневра захвата со штрафом -5.",
+    "ruRU": "Вы умелы в захватах. Когда вы используете сопутствующее действия для успешного удержания врага при помощи маневра Захват+, вы можете быстрым действием пройти проверку боевого маневра захвата со штрафом -5.",
     "zhCN": "你是快速擒抱的专家。当你成功地使用“高等擒抱”以移动动作维持了一次擒抱之后，接下来你只用迅捷动作承受-5减值进行一次擒抱战技检定。"
   },
 
@@ -1780,7 +1780,7 @@
     "Key": "UnfairGrip.Name",
     "ProcessTemplates": false,
     "enGB": "Unfair Grip",
-    "ruRU": "Нечестный захват ",
+    "ruRU": "Нечестный захват",
     "zhCN": "盘身扭"
   },
 
@@ -1892,7 +1892,7 @@
   {
     "Key": "KnotExpert.Description",
     "enGB": "You tie knots in rope with a flick of your wrist, and can do so from the far end of the rope. As a full round action, you can make a range touch attack with it, then attempt a grapple combat maneuver against that creature you hit, adding your tier to your combat maneuver check. If successful, you are not considered to be grappled, though you still can't move.",
-    "ruRU": "Вы завязываете узлы на веревке легким движением запястья и можете сделать это с дальнего конца веревки. В качестве действия полного раудна вы можете совершить дистанционную атаку касанием, а затем попытаться выполнить боевой маневр захвата против того существа, по которому вы попали, добавив свой уровень к проверке боевого маневра. В случае успеха вы не считается схваченным, хотя вы все равно не можете двигаться.",
+    "ruRU": "Вы завязываете узлы на веревке легким движением запястья и можете сделать это с дальнего конца веревки. В качестве действия полного раунда вы можете совершить дистанционную атаку касанием, а затем попытаться выполнить боевой маневр захвата против того существа, по которому вы попали, добавив свой уровень к проверке боевого маневра. В случае успеха вы не считается схваченным, хотя вы все равно не можете двигаться.",
     "zhCN": "你用手腕轻轻一抖就能在绳索上打结，在绳索的另一端操纵也一样能做到。以一个整轮动作，你可以对范围内的任何生物进行一次远程接触攻击，如果击中可以尝试使用擒抱战技检定，将你的神话阶层加入战技检定中。如果成功，你不被视为进入擒抱状态，但不能移动。"
   },
 
@@ -1907,7 +1907,7 @@
   {
     "Key": "AerialAssault.Description",
     "enGB": "When making a charge attack, you can replace your melee attack from this charge with a grapple check, even if the creature is immune to grapple normally.",
-    "ruRU": "Во время атака и с разбега вы можете заменить свою атаку в ближнем бою на проверку боевого маневра захват, даже если цель невосприимчива к захватам.",
+    "ruRU": "Во время атаки с разбега вы можете заменить свою атаку в ближнем бою на проверку боевого маневра захват, даже если цель невосприимчива к захватам.",
     "zhCN": "当进行冲锋攻击时，你可以将冲锋中的近战攻击改为进行擒抱检定，即使目标生物在通常状况下免疫擒抱也是如此。"
   },
 
@@ -1980,12 +1980,12 @@
     "Key": "PPbookMagicDeceiver.Name",
     "ProcessTemplates": false,
     "enGB": "Magic Deceiver",
-    "ruRU": "Magic Deceiver"
+    "ruRU": "Обманщик магии"
   },
   {
     "Key": "PPbookMagicDeceiver.Description",
     "enGB": "Magic Deceiver",
-    "ruRU": "Magic Deceiver"
+    "ruRU": "Обманщик магии"
   },
   {
     "Key": "PPbookAccursedWitch.Name",
@@ -2854,7 +2854,7 @@
   {
     "Key": "UmbralAgentShadowChains.Description",
     "enGB": "At 3rd level, an Umbral agent can use his touch of darkness ability one additional time per day. When using the touch of darkness ability, the Umbral agent manifests shadowy chains that increase the reach of his melee touch attack by 5 feet. A creature struck by these chains must succeed at a Reflex save (DC 10 + the Umbral agent’s level + the Umbral agent’s Wisdom modifier) or be entangled for 1d4 rounds in addition to the normal effects of the ability.",
-    "ruRU": "Начиная с 3 уровня теневой агент может применять способность Прикосновение тьмы дополнительный раз в день. При использовании этой способности теневой агент призывает теневые цепи которые увеличивают дальность его атаки касанием на 5 футов. Существо по которому попали этими цепями должно совершить успешный спасбросок реакции (DC = 10 + уровни теневого агента + модификатор Мудрости) или быть опутанным на 1d4 раунда в дополнение к обычным эффектам этой атаки.",
+    "ruRU": "Начиная с 3 уровня теневой агент может применять способность Прикосновение тьмы дополнительный раз в день. При использовании этой способности теневой агент призывает теневые цепи которые увеличивают дальность его атаки касанием на 5 футов. Существо по которому попали этими цепями должно совершить успешный спасбросок Реакции (DC = 10 + уровни теневого агента + модификатор Мудрости) или быть опутанным на 1d4 раунда в дополнение к обычным эффектам этой атаки.",
     "zhCN": "3级起，阴影代理人每日能够使用黑暗之触能力的次数提高1次。当阴影代理人使用黑暗之触时，他会挥出阴影锁链，使得他的近战接触攻击的触及范围提高5尺。被这些阴影锁链击中的生物必须成功通过反射豁免（DC为10 + 阴影代理人的等级 + 阴影代理人的感知调整值），否则会在该能力原有的效果基础之上额外被纠缠1d4轮。"
   },
 
@@ -2905,7 +2905,7 @@
   {
     "Key": "UmbralAgentGaze.Description",
     "enGB": "At 5th level, an Umbral agent gains a gaze attack similar to the kyton ability of the same name. Creatures within 30 feet of the Umbral agent must succeed at a Will save (DC 10 + the Umbral agent’s level + the Umbral agent’s Wisdom modifier) or be shaken for 1 round. The Umbral agent can use this ability for a number of rounds per day equal to his level; these rounds do not need to be consecutive. Activating this ability is a swift action. The Umbral agent is immune to the unnerving gaze of kytons (whether or not his own unnerving gaze is active). This is a mind-affecting fear effect that follows all the normal rules for a gaze attack. As the Umbral agent gains levels, his unnerving gaze grows more potent.",
-    "ruRU": "На 5 уровне теневой агент получает атаку взглядом похожую на способность кайтонов Пугающий взгляд. Существа в радиусе 30 футов от теневого агента должно совершить успешный спасбросок воли (DC 10 + уровень теневого агента + модификатор Мудрости) или быть потрясены на 1 раунд. Теневой агент может применять  эту способность количество раундов, равное его уровню; эти раунды не обязательно должны идти подряд. Активация этот способности - быстрое действие. Теневой агент невосприимчив к способности кайтонов (даже когда он не использует эту способность). Это воздействующий на разум эффект страха работающий как любая другая атака взглядом. По мере того, как теневой агент получает уровни, его нервирующий взгляд становится все более сильным.",
+    "ruRU": "На 5 уровне теневой агент получает атаку взглядом похожую на способность кайтонов Пугающий взгляд. Существа в радиусе 30 футов от теневого агента должно совершить успешный спасбросок Воли (DC 10 + уровень теневого агента + модификатор Мудрости) или быть потрясены на 1 раунд. Теневой агент может применять  эту способность количество раундов, равное его уровню; эти раунды не обязательно должны идти подряд. Активация этот способности - быстрое действие. Теневой агент невосприимчив к способности кайтонов (даже когда он не использует эту способность). Это воздействующий на разум эффект страха работающий как любая другая атака взглядом. По мере того, как теневой агент получает уровни, его нервирующий взгляд становится все более сильным.",
     "zhCN": "5级起，阴影代理人获得类似于链魔同名能力的凝视攻击。在距离阴影代理人30尺内的生物必须成功进行意志豁免（DC为10 + 阴影代理人的等级 + 阴影代理人的感知调整值），否则会战栗1轮。阴影代理人每日能够使用该能力的次数等同于他的等级；这些轮数不必连续。以迅捷动作可以激活该能力。阴影代理人免疫链魔的不安凝视（无论他自身的不安凝视是否已经被激活）。这是一个影响心灵的恐惧效果，并且遵循所有凝视攻击的规则。当阴影代理人的等级获得提升时，他的不安凝视会变得更加强大。"
   },
 
@@ -3007,7 +3007,7 @@
   {
     "Key": "MammothRiderFeat.Description",
     "enGB": "At 2nd level and again at 6th level, a mammoth rider gains a bonus feat from the following list: Great Fortitude, Improved Great Fortitude, Improved Iron Will, Improved Lightning Reflexes, Iron Will, Lightning Reflexes. She must meet the prerequisites for these feats.",
-    "ruRU": "На 2 уровне, а затем снова на 6 уровне, наездник на моманте получает дополнительную черту из следующего списка: Внушительная стойкость, Внушительная стойкость+, Стальная воля, Стальная воля+, Молниеносная реакция, Молниеносная реакция+. Он должен соответствовать всем требованиям этих черт.",
+    "ruRU": "На 2 уровне, а затем снова на 6 уровне, наездник на мамонте получает дополнительную черту из следующего списка: Внушительная стойкость, Внушительная стойкость+, Стальная воля, Стальная воля+, Молниеносная реакция, Молниеносная реакция+. Он должен соответствовать всем требованиям этих черт.",
     "zhCN": "在2级和6级时，巨兽驭手获得一个奖励专长，从以下列表中选择：强韧加强，精通强韧加强，精通钢铁意志，精通闪电反射，钢铁意志，闪电反射。她必须满足专长的先决条件。"
   },
 
@@ -3058,7 +3058,7 @@
   {
     "Key": "MammothRiderMistrust.Description",
     "enGB": "At 4th level, as long as a mammoth rider doesn’t have levels in a class that grants arcane spellcasting ability, she gains a +2 morale bonus on saving throws against arcane spells. If she has no levels in classes granting divine spellcasting ability, she gains a +2 morale bonus on saving throws against divine spells.",
-    "ruRU": "Начаная с 4 уровня, пока у наездника на мамонте нет уровней в классе, способном сотворять мистические заклинания, он получает бонус боевого духа +2 ко всем спасброскам против мистических заклинаний. Если у него нет уровней в классе, способном сотворять сакральные заклинания, он получает бонус боевого духа +2 к спасброскам против сакральных заклинаний.",
+    "ruRU": "Начиная с 4 уровня, пока у наездника на мамонте нет уровней в классе, способном сотворять мистические заклинания, он получает бонус боевого духа +2 ко всем спасброскам против мистических заклинаний. Если у него нет уровней в классе, способном сотворять сакральные заклинания, он получает бонус боевого духа +2 к спасброскам против сакральных заклинаний.",
     "zhCN": "4级时，只要巨兽驭手不在提供奥术施法能力的职业上拥有等级，她就在对抗奥术的豁免掷骰中获得+2士气加值。若她不在提供神术施法能力的职业上拥有等级，她在对抗神术的豁免掷骰中获得+2士气加值。"
   },
 
@@ -3143,7 +3143,7 @@
   {
     "Key": "MammothRiderPulverizingAssault.Description",
     "enGB": "At 9th level, if a mammoth rider is mounted on her steed and directs it to charge, then the first time that her steed deals damage with that attack this round, the target must succeed at a Fortitude save (DC = 20 + the steed’s Strength modifier) or be staggered for 1d4 rounds.",
-    "ruRU": "Начиная с 9 уровня, если оседлавший своего скакуна наездник атакует с разбега, то когда его скакун в первый раз за раунд наносит урон в ходе этой атаки, цель этой атаки должна совершить успешный спасбросок стойкости (DC = 20 + модификатор Силы скакуна) или быть ошеломлена на 1d4 раундов.",
+    "ruRU": "Начиная с 9 уровня, если оседлавший своего скакуна наездник атакует с разбега, то когда его скакун в первый раз за раунд наносит урон в ходе этой атаки, цель этой атаки должна совершить успешный спасбросок Стойкости (DC = 20 + модификатор Силы скакуна) или быть ошеломлена на 1d4 раундов.",
     "zhCN": "9级时，若巨兽驭手驱策她所骑乘的坐骑冲锋，则在这一轮中当她的坐骑第一次以此攻击造成伤害，目标必须进行一个强韧豁免(DC=20+坐骑力量调整值)，若未通过则恍惚1d4轮。"
   },
 
@@ -3160,7 +3160,7 @@
   {
     "Key": "MammothRiderMammothLord.Description",
     "enGB": "At 10th level, a mammoth rider becomes immune to the dazed, fatigued, shaken, sickened, staggered, and stunned conditions. If she succeeds at a Fortitude or Will save against an attack that has a reduced effect on a successful save, she instead avoids the effect entirely. If a mammoth rider and her steed both hit an opponent on the same round, the foe must succeed at a Fortitude save (DC = 20 + the steed’s Strength modifier) or be stunned for 1 round. Whether or not the target succeeds, it is immune to this ability for 24 hours thereafter.",
-    "ruRU": "На 10 уровне наездник на мамонте становится невосприимчив к ступору, утомлению, потрясению, дезориентации, ошеломлению и шоку. Если он совершает успешный спасбросок стойкости или воли против атаки которая имеет уменьшенный эффект при успешном спасброске, то он избегает этот эффект вовсе. Если наездник на мамонте и его скакун за раунд попадают по одному и тому же противнику, враг должен совершить успешный спасбросок стойкости (DC = 20 + модификатор Силы скакуна) или быть шокированным на 1 раунд. Независимо от результата спасброска цель становится невосприимчивой к этой способности на 24 часа.",
+    "ruRU": "На 10 уровне наездник на мамонте становится невосприимчив к ступору, утомлению, потрясению, дезориентации, ошеломлению и шоку. Если он совершает успешный спасбросок Стойкости или воли против атаки которая имеет уменьшенный эффект при успешном спасброске, то он избегает этот эффект вовсе. Если наездник на мамонте и его скакун за раунд попадают по одному и тому же противнику, враг должен совершить успешный спасбросок Стойкости (DC = 20 + модификатор Силы скакуна) или быть шокированным на 1 раунд. Независимо от результата спасброска цель становится невосприимчивой к этой способности на 24 часа.",
     "zhCN": "10级时，巨兽驭手不会受到眩晕，疲乏，战栗，恶心，恍惚，震慑状态的影响。如果她的某个意志或者强韧豁免成功之后是受部分效果影响的话，改为不受影响。若巨兽驭手和其坐骑在同一轮同时成功命中一名对手，敌人必须进行一个强韧豁免(DC=20+坐骑力量调整值)，若失败则震慑一轮。不论豁免是否成功，被影响的生物都在接下来的24小时内免疫该效果。"
   },
 
@@ -3262,7 +3262,7 @@
   {
     "Key": "AsavirMarid.Description",
     "enGB": "At 6th level, an asavir’s mount receives the blessing of the marids, making it an agile partner with a flowing pace. She gains +2 bonus to concentration checks. The mount gains a +2 racial bonus on Reflex saves.",
-    "ruRU": "На 6 уровне скакун асавира получает благословение марида, что делает его ловким партнером с плавной поступью. Асавир получает бонус +2 к проверкам концентрации, а его скакун расовый бонус +2 к спасброскам реакции.",
+    "ruRU": "На 6 уровне скакун асавира получает благословение марида, что делает его ловким партнером с плавной поступью. Асавир получает бонус +2 к проверкам концентрации, а его скакун расовый бонус +2 к спасброскам Реакции.",
     "zhCN": "6级时，亚萨维尔的坐骑受到了水灵的祝福，使它的步伐流畅而灵巧。亚萨维尔的专注检定获得+2加值，坐骑在反射豁免上获得+2种族加值。"
   },
 
@@ -3330,7 +3330,7 @@
   {
     "Key": "AsavirAllEyes.Description",
     "enGB": "At 7th level, three times per day as a swift action, an asavir can call out a challenge. Each opponent within 30 feet must succeed at a Will save (DC = 10 + the asavir’s character level + the asavir’s Charisma bonus) or be distracted by the display until the beginning of the asavir’s next turn. Any creature that fails is considered to be flat-footed and takes a -2 penalty to AC against attacks from the asavir’s allies. This is a mind-affecting, visual effect.",
-    "ruRU": "Начиная с 7 уровня, 3 раза в день, быстрым действием, асавир может объявить вызов. Каждый враг в пределах 30 футов должен совершить успешный спасбросок воли (DC = 10 + уровень персонажа асавира + модификатор Харизмы) или быть отвлеченными вызовом до начала следующего хода асавира. Провалившие спасбросок существа считаются застигнутыми врасплох и получают штраф к защите -2 союзниками асавира. Это эффект воздействующий на разум.",
+    "ruRU": "Начиная с 7 уровня, 3 раза в день, быстрым действием, асавир может объявить вызов. Каждый враг в пределах 30 футов должен совершить успешный спасбросок Воли (DC = 10 + уровень персонажа асавира + модификатор Харизмы) или быть отвлеченными вызовом до начала следующего хода асавира. Провалившие спасбросок существа считаются застигнутыми врасплох и получают штраф к защите -2 союзниками асавира. Это эффект воздействующий на разум.",
     "zhCN": "7级时，每天三次，亚萨维尔可以用一个迅捷动作发起挑战。30尺内的每个对手必须成功通过一个意志豁免（DC=10+亚萨维尔的角色等级+亚萨维尔的魅力加值），否则受到该动作的干扰，直到亚萨维尔的下一回合开始。被干扰的的生物在对抗亚萨维尔的队友的攻击时视为措手不及，且AC受到-2减值。这是一种影响心灵，视觉效果。"
   },
 
@@ -3364,7 +3364,7 @@
   {
     "Key": "AsavirThunderousCharge.Description",
     "enGB": "At 2nd level, a number of times per day equal to her asavir level, an asavir and her mount can make a charge that causes the ground to shake. This is a full-round action and works as a normal charge. Enemies within a 5-foot radius of the charge’s ending point must succeed at a Reflex save (DC = 10 + the asavir’s class level + the mount’s Strength modifier) or fall prone. At 6th level, the radius of thunderous charge increases to 10 feet, and at 10th level it increases to 20 feet.",
-    "ruRU": "Начиная со 2 уровня, количество раз в день, равное уровню асавира, асавир и его скакун могут совершать атаку с разбега которая заставляет сотрясаться землю. Это действие полного раунда работает как обычная атака с разбега. Враги в радиусе 5 футов от конечной точки атаки с разбега должны совершить успешный спасбросок реакции (DC = 10 + уровень асавира + модификатор Силы его скакуна) или оказаться распластанными. Начиная с 6 уровня радиус этого эффекта увеличивает до 10 футов, а на 10 до 20 футов.",
+    "ruRU": "Начиная со 2 уровня, количество раз в день, равное уровню асавира, асавир и его скакун могут совершать атаку с разбега которая заставляет сотрясаться землю. Это действие полного раунда работает как обычная атака с разбега. Враги в радиусе 5 футов от конечной точки атаки с разбега должны совершить успешный спасбросок Реакции (DC = 10 + уровень асавира + модификатор Силы его скакуна) или оказаться распластанными. Начиная с 6 уровня радиус этого эффекта увеличивает до 10 футов, а на 10 до 20 футов.",
     "zhCN": "2级时，亚萨维尔和他的坐骑能够进行一次令大地颤动的冲锋。这是一个全回合动作，如普通冲锋一般。在冲锋结束点半径五尺的生物必须成功通过一个反射检定（DC=10+亚萨维尔的职业等级+亚萨维尔的力量调整）否则倒地。亚萨维尔每天能够使用该能力等同于职业等级的次数，6级时，雷鸣冲锋的半径扩大到10尺，10级时扩大到20尺。"
   },
 
@@ -3958,7 +3958,7 @@
   {
     "Key": "EldritchGuardianSteelWill.Description",
     "enGB": "At 2nd level, the eldritch guardian gains a +1 bonus on Will saves against fear and mind-affecting effects. This bonus increases by 1 for every 4 levels beyond 2nd.",
-    "ruRU": "На 2 уровне чародейский страж получает бонус +1 к спасброскам воли против воздействующий на разум эффектов и эффектов страха. Этот бонус увеличивается на 1 за каждые 4 уровня после 2.",
+    "ruRU": "На 2 уровне чародейский страж получает бонус +1 к спасброскам Воли против воздействующий на разум эффектов и эффектов страха. Этот бонус увеличивается на 1 за каждые 4 уровня после 2.",
     "zhCN": "2级起，奥法卫士对抗恐惧和影响心智效应的意志豁免获得+1加值，之后每4个职业等级，该加值提高1点。"
   },
 
@@ -4060,7 +4060,7 @@
   {
     "Key": "LoreWardenSwiftAssessment.Description",
     "enGB": "The lore warden can now use her know thy enemy swords secret as a move action. At 15th level, she can use this ability as a swift action. She must have the know thy enemy swords secret before choosing this swords secret.",
-    "ruRU": "Страж знаний может применять свою способность Знай врага своего сопутсвующим действием. Начиная с 15 уровня он может применять его быстрым действием.",
+    "ruRU": "Страж знаний может применять свою способность Знай врага своего сопутствующим действием. Начиная с 15 уровня он может применять его быстрым действием.",
     "zhCN": "学识守卫现在能够以一个移动动作来使用她的看破汝敌剑之秘技。在15级时，她能够以迅捷动作使用这个能力。在选择这项剑之秘技之前，她必须已经拥有看破汝敌剑之秘技。"
   },
 
@@ -4111,7 +4111,7 @@
   {
     "Key": "Warlord.Description",
     "enGB": "Honorable, fearless experts in gun and blade, warlords roam the dried seabeds of time-worn Mars, warring in great tribes for supremacy over a dying planet. Capable of relentless brutality and quick to flare into open hostilities, warlords cloak their violent ways with paens to great noble houses or honored ancient traditions, bringing an air of respectability and etiquette to the butchery of brazen blades against bare skin. Warlords eschew armor as impractical to their harsh and often desert-like environment, preferring the free movement of near-nakedness. Warlords tend to specialize in the traditional weapons of Barsoom, leaving them ignorant of even simple Weapons common on other worlds. The same impulse that guides a warlord to stick to the traditional garb and gear of his culture can lead to a single-mindedness of purpose that can propel him far within his tribe or noble house. Even warlords of low status in Martian society claim a connection— no matter how ancient—with some great chieftain or emperor, seeing in the glorious past a path to a more hopeful future. Barsoom confers noble status upon its warlords through ritual combat in the case of green Martians or on merit and upon great achievement or heroics in the case of red Martians, so climbing the ladder ofstatus is an important part of a warlord’s journey through life.",
-    "ruRU": "Честные, бесстрашные эксперты пороха и клинка, военачальники бродят по высохшим морским днам изношенного временем Марса, сражаясь в великих племенах за господство над умирающей планетой. Способные к беспощадной жестокости и быстро перерастающие в открытые боевые действия, военачальники прикрывают свои жестокие действия паниями перед великими благородными домами или чтят древние традиции, привнося атмосферу респектабельности и этикета в бойню медными клинками по обнаженной коже. Военачальники избегают доспехов как непрактичных для их суровой и зачастую пустынной среды, предпочитая свободное передвижение почти обнаженным. Военачальники, как правило, специализируются на традиционном оружии Барсума, оставлаясь в неведении даже о простом оружии, распространенном в других мирах. Тот же импульс, который побуждает военачальника придерживаться традиционной одежды и снаряжения своей культуры, может привести к целеустремленности, которая может продвинуть его далеко внутри своего племени или благородного дома. Даже военачальники с низким статусом в марсианском обществе заявляют о связи – какой бы древней она ни была – с каким-нибудь великим вождем или императором, видя в славном прошлом путь к более обнадеживающему будущему. Барсум дарует благородный статус своим военачальникам через ритуальный бой в случае зеленых марсиан или за заслуги и великие достижения или героизм в случае красных марсиан, поэтому восхождение по лестнице статуса является важной частью жизненного пути военачальника.",
+    "ruRU": "Честные, бесстрашные эксперты пороха и клинка, военачальники бродят по высохшему морскому дну изношенного временем Марса, сражаясь в великих племенах за господство над умирающей планетой. Способные к беспощадной жестокости и быстро перерастающие в открытые боевые действия, военачальники прикрывают свои жестокие действия паниями перед великими благородными домами или чтят древние традиции, привнося атмосферу респектабельности и этикета в бойню медными клинками по обнаженной коже. Военачальники избегают доспехов как непрактичных для их суровой и зачастую пустынной среды, предпочитая свободное передвижение почти обнаженным. Военачальники, как правило, специализируются на традиционном оружии Барсума, оставаясь в неведении даже о простом оружии, распространенном в других мирах. Тот же импульс, который побуждает военачальника придерживаться традиционной одежды и снаряжения своей культуры, может привести к целеустремленности, которая может продвинуть его далеко внутри своего племени или благородного дома. Даже военачальники с низким статусом в марсианском обществе заявляют о связи – какой бы древней она ни была – с каким-нибудь великим вождем или императором, видя в славном прошлом путь к более обнадеживающему будущему. Барсум дарует благородный статус своим военачальникам через ритуальный бой в случае зеленых марсиан или за заслуги и великие достижения или героизм в случае красных марсиан, поэтому восхождение по лестнице статуса является важной частью жизненного пути военачальника.",
     "zhCN": "荣耀而无畏，持枪执剑的专家，战争领主们游荡在被时间摧残的火星干涸海床上，在庞大的部落中为了争夺这个垂死星球的霸权而战。战争领主有着无情的残暴，且瞬息之间就会进入公开的敌对状态，但他们以献身于伟大的贵族世家或尊敬的古老传统来掩盖他们的暴力行事作风，为以刀剑斩向裸肤的屠杀带来了一丝尊贵和礼仪的气息。战争领主们摒弃盔甲，因为盔甲对他们恶劣的、常常是沙漠般的环境来说不切实际，他们更喜欢近乎赤裸带来的行动自由。战争领主倾向于专攻巴松（Barsoom，当地火星人对火星的称呼）的传统武器，让他们甚至对其他世界常见的简单武器也一无所知。引导战争领主坚持着他文化的传统服装和装备的冲动同样令他一心一意专注于目的，使他在部落或贵族家系中走得更远。即使是在火星社会中地位低下的战争领主，也声称与某个——无论多么古老的——伟大首领或皇帝有联系，他们在光荣的过去中看到了一条通往更有希望的未来的道路。巴松人通过祭祀战斗赋予绿火星人战争领主高贵的地位，而对红火星人，则是根据才赋，伟大的功绩或英雄事迹，所以攀登地位的阶梯是战争领主生涯的重要部分。"
   },
 
@@ -4128,7 +4128,7 @@
   {
     "Key": "WarlordProficiencies.Description",
     "enGB": "At 1st level, and at every even level thereafter, warlord can add a +1 dodge bonus to his Armor Class instead of taking a bonus feat. A warlord is proficient with rapier, longspear, longsword, shortspear, spear, trident, and whip. Warlords are not proficient with armor or shields.",
-    "ruRU": "На 1 и каждом четном уровне после этого, военачальник может вместо дополнительной боевой черты получить бонус уклония +1 к своей защите. Военачальник умеет обращаться с рапирами, длинными копьями, длинными мечами, короткими копьями, трезубцами и кнутами. Военачальник не умеет обращаться с броней и щитами.",
+    "ruRU": "На 1 и каждом четном уровне после этого, военачальник может вместо дополнительной боевой черты получить бонус уклонения +1 к своей защите. Военачальник умеет обращаться с рапирами, длинными копьями, длинными мечами, короткими копьями, трезубцами и кнутами. Военачальник не умеет обращаться с броней и щитами.",
     "zhCN": "在1级以及此后每一个偶数等级，战争领主可以放弃额外专长，获取防御等级的+1闪避加值。战争领主擅长使用刺剑、长矛、长剑、短矛、矛、三叉戟和鞭子，不擅长任何护甲或盾牌。"
   },
 
@@ -4291,7 +4291,7 @@
   {
     "Key": "FuryTraining.Description",
     "enGB": "The path of the dragon fury has semi-mystical roots in several different traditions and schools of thought, allowing divergent paths to come together as one in the hands of its practitioners. If the character possesses one of the following abilities: bardic performance, ki pool, or rage; the character may add his class level to the class that offers that ability to determine the number of bardic performance rounds, ki points, or rounds of rage that he may use per day. This does not improve their effectiveness; this only increases the number of uses per day.",
-    "ruRU": "Путь драконьей ярости имеет полумистические корни в нескольких различных традициях и школах мысли, позволяя разным путям объединиться в один в руках практикующих. Если персонаж имеет одну из следующих классовых способностей: выступление барда, запас энергии ци или ярость, то он может доавить свой уровень яростного дракона для определения количества раундов выступлений барда, количества очков ци или раундов ярости которые он может применять в день. Эта способность не увеличивает их эффективность; только количество ежедневных применений.",
+    "ruRU": "Путь драконьей ярости имеет полумистические корни в нескольких различных традициях и школах мысли, позволяя разным путям объединиться в один в руках практикующих. Если персонаж имеет одну из следующих классовых способностей: выступление барда, запас энергии ци или ярость, то он может добавить свой уровень яростного дракона для определения количества раундов выступлений барда, количества очков ци или раундов ярости которые он может применять в день. Эта способность не увеличивает их эффективность; только количество ежедневных применений.",
     "zhCN": "龙怒之道的神秘源流中参杂了数个宗门学派的思想，集数家之大成。若该角色持有下列的能力：吟游表演、气池、狂暴；该角色可以将龙怒狂徒加入提供该些能力的职业等级上来计算每日表演轮数、气点、狂暴轮数。这此能力并不会使该些能力变强，仅仅是提升了每日可用的轮数/点数。"
   },
   {
@@ -4708,7 +4708,7 @@
   {
     "Key": "AnchoriteSolarDefense.Description",
     "enGB": "While using solar invocation, the Dawnflower anchorite adds his competence bonus on attack rolls to his Armor Class as a sacred bonus and to Reflex saving throws as a dodge bonus. The Dawnflower anchorite can select this credence twice—the second time he does so, the bonus to Armor Class and on Reflex saves also applies to any companions who gain bonuses from the Dawnflower anchorite’s solar invocation.",
-    "ruRU": "При использовании солнечного призыва отшельник добавляет свой бонус мастерства к своей защите в качестве сакрального и к спасброскам реакции в качестве бонуса уклонения. Отшельник Цветка Рассвета может выбрать это убеждение 2 раза - во 2 раз он предоставляет бонусы к защите и спасброскам реакции всем союзникам которые получают бонусы от его солнечного призыва.",
+    "ruRU": "При использовании солнечного призыва отшельник добавляет свой бонус мастерства к своей защите в качестве сакрального и к спасброскам Реакции в качестве бонуса уклонения. Отшельник Цветка Рассвета может выбрать это убеждение 2 раза - во 2 раз он предоставляет бонусы к защите и спасброскам Реакции всем союзникам которые получают бонусы от его солнечного призыва.",
     "zhCN": "当晨花隐者正在使用日光祈福时，他能够将攻击检定的表现加值作为神圣加值加到AC上，并且还能作为闪避加值加到反射豁免上。这项信念能够选取2次，当晨花隐者第2次选取该项信念时，若有任何同伴获得晨花隐者的日光祈福带来的加值，那么为AC和反射豁免提供的加值也能为其所用。"
   },
   {
@@ -4957,7 +4957,7 @@
   {
     "Key": "RogueCloyingShades.Description",
     "enGB": "When a rogue with this talent uses dimension door as a spell or spell-like ability, including the abundant step or shadow jump class feature, then all creatures adjacent to the rogue at the start and end of her teleportation are entangled by grasping shadows for 1 round (although the creatures are not anchored in place). A successful Reflex saving throw negates this effect. The DC of this saving throw is equal to 10 + 1/2 the rogue’s level + the rogue’s Intelligence or Charisma modifier (whichever is higher).",
-    "ruRU": "Когда вор с этим талантом использует заклинание или псевдозаклинание Дверь в пространстве, способность шаг сквозь пространство или классовую способность Теневой прыжок, то все существа находящиеся рядом начальной и конечной точкой телепортации оказываются опутаны цепляющимися тенями на 1 раунд (хотя существа не закреплены на месте). Успешный спасбросок реакции нейтрализует этот эффект. Сложность спасброска равна 10 + половина уровня вора + модификатор Интеллекта или Харизмы (смотря что больше) вора.",
+    "ruRU": "Когда вор с этим талантом использует заклинание или псевдозаклинание Дверь в пространстве, способность шаг сквозь пространство или классовую способность Теневой прыжок, то все существа находящиеся рядом начальной и конечной точкой телепортации оказываются опутаны цепляющимися тенями на 1 раунд (хотя существа не закреплены на месте). Успешный спасбросок Реакции нейтрализует этот эффект. Сложность спасброска равна 10 + половина уровня вора + модификатор Интеллекта или Харизмы (смотря что больше) вора.",
     "zhCN": "每当具有该天赋的游荡者使用次元门法术或类法术能力，包括无相挪移或者阴影跳跃能力，所有在传送开始和结束时临近她的生物被纠缠一轮，通过反射检定可以豁免此效果，豁免dc为10+1/2游荡者+智力或者魅力加值取高。"
   },
   {
@@ -5179,7 +5179,7 @@
   {
     "Key": "EsotericKnightPsychicRage.Description",
     "enGB": "As a free action, an esoteric knight can extend the duration of her rage by sacrificing a spell slot; this prolongs the duration of her rage for a number of rounds equal to the level of the spell slot used. This also applies to Demon Rage. (2 burn)",
-    "ruRU": "При помощи свободного дейтсвия эзотерический рыцарь может продлить свою ярость потратит слот заклинания; это действие продляет действие ярости на количество раундов, равное кругу потраченного заклинания. Это также работает и с демонической яростью. (2 очка выгорания)",
+    "ruRU": "При помощи свободного действия эзотерический рыцарь может продлить свою ярость потратит слот заклинания; это действие продляет действие ярости на количество раундов, равное кругу потраченного заклинания. Это также работает и с демонической яростью. (2 очка выгорания)",
     "zhCN": "以一个自由动作，秘契骑士可以牺牲一个法术位来恢复等同于法术环阶的狂暴轮数，包括恶魔狂怒。（2点超载）"
   },
 
@@ -5284,7 +5284,7 @@
   {
     "Key": "SpireDefender.Description",
     "enGB": "Spire defenders are magi who train themselves to accompany sages and archaeologists who venture from the Mordant Spire, acting as aids and bodyguards. Because they often operate in difficult terrain—narrow trenches in dig sites, flooded dungeons, and tight corridors in ancient ruins—spire defenders place mobility and agility at a premium. As a result, they eschew armor entirely. Most spire defenders are elves—it’s exceptionally rare for a non-elf to be granted access to the training required to take this archetype.",
-    "ruRU": "Защитники шпиля — это магусы, которые учатся сопровождать мудрецов и археологов, отправляющихся из Мордантского шпиля, выступая в качестве помощников и телохранителей. Поскольку они часто действуют в труднопроходимой местности — узких траншеях на раскопках, затопленных подземельях и узких коридорах в древних руинах — защитники шпилей уделяют первостепенное внимание мобильности и ловкости. В результате они полностью избегают ношения брони. Большинство защитников шпиля — эльфы. Неэльфам исключительно редко предоставляется шанс пройти обучение, необходимое для освоения этого архетипа.",
+    "ruRU": "Защитники шпиля — это магусы, которые учатся сопровождать мудрецов и археологов, отправляющихся из Мордантского шпиля, выступая в качестве помощников и телохранителей. Поскольку они часто действуют в труднопроходимой местности — узких траншеях на раскопках, затопленных подземельях и узких коридорах в древних руинах — защитники шпилей уделяют первостепенное внимание мобильности и ловкости. В результате они полностью избегают ношения брони. Большинство защитников шпиля — эльфы. Не-эльфам исключительно редко предоставляется шанс пройти обучение, необходимое для освоения этого архетипа.",
     "zhCN": "尖塔防卫者是一群魔剑士，他们训练自己成为辅助者和保镳，保护那些在曼德特石塔探查的贤者与考古学家。由于他们常常在诸如挖掘处的壕沟、被淹没的地下城、古老废墟和狭长走道之类的困难地形中作战，因此他们将机动性和灵巧视为第一要务，完全舍弃了护甲。绝大多数的尖塔防卫者都是精灵，对非精灵种族而言接受与此变体相关的培训是非常罕见的事情。"
   },
   {
@@ -5727,7 +5727,7 @@
   {
     "Key": "FuriousGuardianChosenAlly.Description",
     "enGB": "At 1st level, before entering a rage, a furious guardian can choose an ally to protect as a free action. The furious guardian must make this choice when beginning her rage and cannot change her designated ally while raging. Whenever the furious guardian is adjacent to her chosen ally, she can choose to take a –1 penalty to her AC to grant her ally a +1 dodge bonus to AC and Reflex saves. This bonus increases by 1 at 5th and 10th level.",
-    "ruRU": "Начиная с 1 уровне, до впадения в ярость, яростный стражник может, свободным действием, выбрать союзника которого он будет защищать. Яростный защитник должен сделать этот выбор до начала впадения в ярость и не может изменить союзника пока он находится в ней. Находясь рядом с этим союзником защитник может принять штраф -1 к защите и дать союзнику бонус уклонения +1 к защите и спасброскам реакции. Этот бонус увеличивается на 1 на 5 и 10 уровнях.",
+    "ruRU": "Начиная с 1 уровне, до впадения в ярость, яростный стражник может, свободным действием, выбрать союзника которого он будет защищать. Яростный защитник должен сделать этот выбор до начала впадения в ярость и не может изменить союзника пока он находится в ней. Находясь рядом с этим союзником защитник может принять штраф -1 к защите и дать союзнику бонус уклонения +1 к защите и спасброскам Реакции. Этот бонус увеличивается на 1 на 5 и 10 уровнях.",
     "zhCN": "1级起，在进入狂暴状态前，狂怒卫士能够以自由动作选择一名意欲保护的盟友。狂怒卫士必须在她的狂暴开始时进行此次选择，而且在狂暴期间无法变更她所作出的决定。每当狂怒卫士与她选择的盟友相邻时，她能够选择AC承受-1减值来让她的盟友的AC与反射豁免获得+1闪避加值。这个加值在5级和10级都会再增加1点。"
   },
   {
@@ -5909,7 +5909,7 @@
   {
     "Key": "ReachingHand.Description",
     "enGB": "(Precise Shot or Reach Spell): You can focus as a swift action to increase Throw Punch range to medium.",
-    "ruRU": "(Меткий выстрел или Метамагия (Дальнобойное заклинание)): При помощи быстрого действия вы можете сконцетрироваться и увеличить дальность вашего удара рукой мага до средней.",
+    "ruRU": "(Меткий выстрел или Метамагия (Дальнобойное заклинание)): При помощи быстрого действия вы можете сконцентрироваться и увеличить дальность вашего удара рукой мага до средней.",
     "zhCN": "（精准射击或法术及远）：你能以迅捷动作集中注意力，将劈空掌距离增加至中距。"
   },
   {
@@ -6091,7 +6091,7 @@
   {
     "Key": "DisarmFeatMythicDisarm.Description",
     "enGB": "You can effortlessly use ranged attacks to disarm an opponent. Add your tier to the Ranged Disarm roll. If the disarm attempt is successful, make a second disarm attempt.",
-    "ruRU": "Вы без труда разоружаете врагов при помощи дистанционных атак. Вы добавляете свой мифический уровень дистанционным попыткам разоружения. Если вы успешно разоруживаете противника, вы можете еще раз его разоружить.",
+    "ruRU": "Вы без труда разоружаете врагов при помощи дистанционных атак. Вы добавляете свой мифический уровень дистанционным попыткам разоружения. Если вы успешно разоружаете противника, вы можете еще раз его разоружить.",
     "zhCN": "你可以轻松使用远程攻击缴械对手。在远程缴械时增加等同于神话等级的加值，如果该缴械成功，再尝试一次额外的缴械。"
   },
   {
@@ -6169,7 +6169,7 @@
   {
     "Key": "WitchguardDefendCharge.Description",
     "enGB": "At 4th level, a witchguard forms a bond with a spellcaster he has sworn to defend. Once per day, this bond allows the witchguard to spend a move action to grant an adjacent spellcaster a +2 dodge bonus to AC and a +2 circumstance bonus on concentration checks. At 5th level and every 5 levels thereafter, these bonuses increase by 2. The bonuses last for a number of rounds equal to the witchguard’s Wisdom modifier (minimum 1). At 4th level and every 3 levels thereafter, the witchguard can use this ability one additional time per day.",
-    "ruRU": "На 4 уровне страж ведьмы формирует связь с заклинателем, которого он поклялся защищать. Раз в день эта связь позволяет стражу ведьмы при помощи сопутствующего действия дать стоящему рядом заклинателю бонус уклонения +2 к защите и ситуативный бонус +2 к проверкам концентрации. На 5 и каждые 5 уровней в дальнейшем эти бонусы увеличиваются на 2. Эти бонусы сохраняются в течение количества раундов, равнле модификатору Мудрости стража ведьмы (минимум 1). На 4 и каждые 3 уровня в дальнейшем страж ведьмы может применять эту способность дополнительный раз в день.",
+    "ruRU": "На 4 уровне страж ведьмы формирует связь с заклинателем, которого он поклялся защищать. Раз в день эта связь позволяет стражу ведьмы при помощи сопутствующего действия дать стоящему рядом заклинателю бонус уклонения +2 к защите и ситуативный бонус +2 к проверкам концентрации. На 5 и каждые 5 уровней в дальнейшем эти бонусы увеличиваются на 2. Эти бонусы сохраняются в течение количества раундов, равном модификатору Мудрости стража ведьмы (минимум 1). На 4 и каждые 3 уровня в дальнейшем страж ведьмы может применять эту способность дополнительный раз в день.",
     "zhCN": "4级起，守巫人可以和他保护的施法者建立连结，每日一次，守巫人可以花费一个移动等效动作来保护一个与他邻接的施法者，让该施法的AC得到+2闪避加值，且专注检定+2。5级和之后的每5级此加值提升2，此加值持续的轮数等于守巫人的感知调整值。4级之后的每3级他可以多使用此能力一次。"
   },
   {
@@ -6208,7 +6208,7 @@
   {
     "Key": "ConstructRiderCraftMount.Description",
     "enGB": "A construct rider assembles a construct mount shaped like a riding animal. This construct mount acts in most ways as a cavalier mount, using the character’s alchemist level as his effective cavalier level. A construct mount is a construct, but uses the appropriate animal companion’s statistics, gaining Hit Dice, skills, feats, and Strength and Dexterity adjustments as the alchemist advances in level. A construct mount has no Constitution score, and instead gains bonus hit points appropriate for a construct of its size. The mount has all the immunities of a construct (except immunity to mind-affecting effects, since it has a mind).",
-    "ruRU": "Наездник конструкта собирает конструкта-ездовое животное в форме ездового животного. Этот конструкт во многом действует как верный зверь васдника, используя уровень алхимика в качестве его эффективного уровня всадника. Это животное является конструктом, но использует соответствующие характеристики верного зверя, получая кости здоровья, навыки, умения, а также бонусы Силы и Ловкости по мере роста уровня алхимика. Конструкт не имеет модификатора Выносливости, и вместо этого получает количество дополнительных очков здоровья, соответствующее конструкту такого же размера. Этот скакун имеет все невосприимчивости конструкта (за исключение невосприимчивости к воздействующим на разум эффектам, так как у него есть разум.)",
+    "ruRU": "Наездник конструкта собирает конструкта-ездовое животное в форме ездового животного. Этот конструкт во многом действует как верный зверь всадника, используя уровень алхимика в качестве его эффективного уровня всадника. Это животное является конструктом, но использует соответствующие характеристики верного зверя, получая кости здоровья, навыки, умения, а также бонусы Силы и Ловкости по мере роста уровня алхимика. Конструкт не имеет модификатора Выносливости, и вместо этого получает количество дополнительных очков здоровья, соответствующее конструкту такого же размера. Этот скакун имеет все невосприимчивости конструкта (за исключение невосприимчивости к воздействующим на разум эффектам, так как у него есть разум.)",
     "zhCN": "构装骑士为自己组装了一个外形如同骑乘动物的构装坐骑，她可以选择出现在骑将坐骑列表中适合她体型的坐骑。构装坐骑在大部分方面如同德鲁伊的动物伙伴，使用构装骑士的职业等级作为她的有效德鲁伊等级。构装坐骑是构装体，但使用对应生物的数据，并如常获得自然纽带所带来的提升。构装坐骑没有体质，但是会获得基于体型的构装体额外生命值。构装坐骑拥有构装体的一切免疫效果（除了免疫心灵，因为它有心智）。"
   },
   {
@@ -6390,7 +6390,7 @@
   {
     "Key": "CloakDaggerTactics.Description",
     "enGB": "You devastate enemies that you catch off-guard. While you are using Cloak and Dagger Style and wielding your chosen weapon, whenever you hit an opponent that is denied its Dexterity bonus to AC or that you are flanking, or make an attack using Vital Strike (or its improved or greater versions), you can attempt a dirty trick combat maneuver check against that opponent as a free action. If you succeed, the target must succeed at a Fortitude save (DC = 10 + 1/2 your base attack bonus + your Intelligence modifier) or gain the confused condition, if immune, gain the staggered condition, if immune, gain the exhausted condition, if immune, anchored in place and unable to move. This additional penalty lasts only 1 round, regardless of how long the dirty trick’s normal penalty lasts. You can only attempt one free dirty trick combat maneuver check per round using this feat.",
-    "ruRU": "Вы опустошаете врагов, которых застаете врасплох. Пока вы используете стиль плаща и кинжала и используете выбранное вами оружие, каждый раз, когда вы наносите удар по противнику, который не добавляет модификатор Ловкости к защите или над которым вы пользуетесь преимуществом, или совершаете атаку с помощью Жестокого удара (или его усиленных версий), вы можете, свободным действием, попытаться пройти проверку боевого маневра грязный трюк против этого противника. Если вы успешно её пройдете, цель должна совершить спасбросок стойкости (DC = 10 + 1/2 вашего базового модификатора атаки + модификатор Интеллекта) или получить состояние замешательства, если она невосприимчива к этому состоянию, то получить состояние ошеломления, если она невосприимчива к этому состоянию, получить состояние истощения, если она невосприимчива и к этому состоянию, она застывает на месте и не может двигаться. Этот дополнительный эффект длится только 1 раунд, независимо от того, как долго длится эффект от обычного грязного трюка. Используя эту черту, вы можете попытаться выполнить только одну проверку боевого маневра грязный трюк за раунд.",
+    "ruRU": "Вы опустошаете врагов, которых застаете врасплох. Пока вы используете стиль плаща и кинжала и используете выбранное вами оружие, каждый раз, когда вы наносите удар по противнику, который не добавляет модификатор Ловкости к защите или над которым вы пользуетесь преимуществом, или совершаете атаку с помощью Жестокого удара (или его усиленных версий), вы можете, свободным действием, попытаться пройти проверку боевого маневра грязный трюк против этого противника. Если вы успешно её пройдете, цель должна совершить спасбросок Стойкости (DC = 10 + 1/2 вашего базового модификатора атаки + модификатор Интеллекта) или получить состояние замешательства, если она невосприимчива к этому состоянию, то получить состояние ошеломления, если она невосприимчива к этому состоянию, получить состояние истощения, если она невосприимчива и к этому состоянию, она застывает на месте и не может двигаться. Этот дополнительный эффект длится только 1 раунд, независимо от того, как долго длится эффект от обычного грязного трюка. Используя эту черту, вы можете попытаться выполнить только одну проверку боевого маневра грязный трюк за раунд.",
     "zhCN": "你蹂躏那些措手不及的敌人。当你开启美人三招并持用你所选的武器时，每当你击中一个失去AC上的敏捷加值或被你夹击的敌人，或是使用要害打击（以及其精通和高等版本）进行一次攻击时，你可以用自由动作对该敌人进行一次阴招战技检定。如果你成功了，该目标必须成功通过强韧检定（DC=10+1/2你的BAB+你的智力调整），否则就会困惑，如果免疫则会恍惚，如果免疫则会力竭，如果免疫则会被钉在原地不能移动。无论阴招造成的普通惩罚持续多久，该额外的惩罚只持续一轮。你每轮只能使用该专长一次来以进行额外的阴招战技检定。"
   },
   {
@@ -6598,7 +6598,7 @@
   {
     "Key": "CrimsonTemplarHeavenlyFire.Description",
     "enGB": "At 4th level, the crimson templar can incinerate unaware evil foes with pure celestial flame. If the crimson templar deals sneak attack damage to a creature, the sneak attack wreathes the target in crimson fire. The target must attempt a Fortitude saving throw (DC = 10 + the crimson templar’s class level + his Charisma modifier). If the target fails this save, it takes an additional 1d6 points of damage per class level the crimson templar has. Half of this damage is fire damage, but the other half results directly from divine power and is therefore not subject to being reduced by resistance or immunity to fire-based attacks. On a successful save, the target takes the sneak attack damage as normal but does not take any of the heavenly fire damage. A crimson templar can use heavenly fire a number of times per day equal to his crimson templar level.",
-    "ruRU": "Начиная с 4 уровня багровый храмовник может испепелить ничего не подозревающих злых врагов чистым небесным пламенем. Если багровый храмовник попадает атакой исподтишка по существу, его окутывает багровое пламя. Цель должна совершить успешный спасбросок стойкости (DC = 10 + уровень багрового храмовника + модификатор Харизмы). Если цель проваливает спасбросок, она получает дополнительно 1d6 урона за уровень багрового храмовника. Половина этого урона - урон огнем, а другая половина является святой и поэтому на нее не действуют устойчивости и невосприимчивости к огненным атакам. При успешном спасброске цель получает урон от атаки исподтишка как обычно, но не получает никакого урона от небесного огня. Багровый храмовник может применять небесный огоноь количество раз в день, равное его уровню храмовника.",
+    "ruRU": "Начиная с 4 уровня багровый храмовник может испепелить ничего не подозревающих злых врагов чистым небесным пламенем. Если багровый храмовник попадает атакой исподтишка по существу, его окутывает багровое пламя. Цель должна совершить успешный спасбросок Стойкости (DC = 10 + уровень багрового храмовника + модификатор Харизмы). Если цель проваливает спасбросок, она получает дополнительно 1d6 урона за уровень багрового храмовника. Половина этого урона - урон огнем, а другая половина является святой и поэтому на нее не действуют устойчивости и невосприимчивости к огненным атакам. При успешном спасброске цель получает урон от атаки исподтишка как обычно, но не получает никакого урона от небесного огня. Багровый храмовник может применять небесный огоноь количество раз в день, равное его уровню храмовника.",
     "zhCN": "绯红圣教军能够以纯净的天界圣焰焚化那些缺乏防备的邪恶敌人。绯红圣教军对敌人造成了偷袭伤害时，绯红之炎将吞没目标。目标必须尝试一次强韧豁免检定（DC = 10 + 绯红圣教军的等级 + 他的魅力调整值）。若目标豁免失败，便会额外受到每个绯红圣教军职业等级1d6点伤害。该伤害一半为火焰伤害，另一半则源自神力，因此抵抗或免疫基于火焰攻击的能力无法减轻神力这部分伤害。若目标成功通过豁免，则会如常承受偷袭伤害，且不会受到任何天堂圣炎的灼烧。绯红圣教军每日可以使用天堂圣炎的次数等同于他的绯红圣教军等级。"
   },
   {
@@ -6663,20 +6663,20 @@
   {
     "Key": "SpireDefenderCloseRange.Description",
     "enGB": "The magus can deliver ray spells that feature a ranged touch attack as melee touch spells. He can use a ranged touch attack spell that targets more than one creature (such as scorching ray), but he makes only one melee touch attack to deliver one of these ranged touch effects; additional ranged touch attacks from that spell are wasted and have no effect. These spells can only be used with the spellstrike class feature.",
-    "ruRU": "Магус может доставить заклинания лучей, требующие дистанционной атаки касанием, в качестве атаки касанием в ближнем бою. Он может использовать заклинания лучей выпускающие несколько луч за раз (такие как опаляющий луч), но при этом он доставляет , таким образом, только 1 луч; остальные лучи теряются и не имеют эффекта. Эти заклинания могут быть использовани только с классовой способностью Удар заклинателя.",
+    "ruRU": "Магус может доставить заклинания лучей, требующие дистанционной атаки касанием, в качестве атаки касанием в ближнем бою. Он может использовать заклинания лучей выпускающие несколько луч за раз (такие как опаляющий луч), но при этом он доставляет , таким образом, только 1 луч; остальные лучи теряются и не имеют эффекта. Эти заклинания могут быть сотворены только при помощи классовой способности Удар заклинателя.",
     "zhCN": "选择本奥能的魔战士可以将需要远程接触攻击的射线法术以近战接触攻击方式传递。他可利用此奥能施放目标多于一个的远程接触法术（如灼热射线），但他只能用一次近战攻击传递一个远程接触效果，该法术额外的远程接触攻击则被浪费掉且没有效果。这些法术只能用于法术打击职业能力。"
   },
   {
     "Key": "NinjaTrick.Name",
     "ProcessTemplates": false,
     "enGB": "Ninja Trick",
-    "ruRU": "Трюк ниндзи",
+    "ruRU": "Трюк ниндзя",
     "zhCN": "忍术"
   },
   {
     "Key": "NinjaTrick.Description",
     "enGB": "A rogue with this talent can choose a trick from the ninja trick list. She can pick this talent more than once.",
-    "ruRU": "Вор выбравший этот талант может выбрать трюк из списка трюк ниндзи. Он может брать этот талант несколько раз.",
+    "ruRU": "Вор выбравший этот талант может выбрать трюк из списка трюк ниндзя. Он может брать этот талант несколько раз.",
     "zhCN": "具有此项天赋的游荡者可以从忍者的忍术列表中选择一项，她能够多次选择该天赋。"
   },
   {
@@ -7274,7 +7274,7 @@
   {
     "Key": "SentinelUnstoppableWarrior.Description",
     "enGB": "At 10th level, the sentinel becomes a stalwart paragon demonstrating incredible combat prowess. He gains 5/-. In addition, the sentinel no longer falls unconscious when reduced to a negative hit point total, though he can take only a single standard or move action while at negative hit points. Once per day as a swift action, the sentinel can use cure critical wounds, but targeting only himself, with a caster level equal to his character level.",
-    "ruRU": "На 10-м уровне часовой становится стойким образцом, демонстрирующим невероятное боевое мастерство. Он получает снижение урона 5/-. Кроме того, часовой больше не теряет сознание когда его очки здоровья падают ниже 0, однако в таком состоянии он может совершать только обычное или сопутствующее действие, но не оба сразу. Раз в день, быстрым действием, часовой может может применить на себя исцеление критических ранений, используя свой уровень персонажа в качестве уровня заклинателя.",
+    "ruRU": "На 10 уровне часовой становится стойким образцом, демонстрирующим невероятное боевое мастерство. Он получает снижение урона 5/-. Кроме того, часовой больше не теряет сознание когда его очки здоровья падают ниже 0, однако в таком состоянии он может совершать только обычное или сопутствующее действие, но не оба сразу. Раз в день, быстрым действием, часовой может может применить на себя исцеление критических ранений, используя свой уровень персонажа в качестве уровня заклинателя.",
     "zhCN": "10级起，信仰哨卫成为了具有高超武艺的坚定典范。他获得伤害减免5/-，此外，卫道者不再会在生命值降至负值时陷入昏迷，不过他只能在生命值为负值时进行单个标准动作或移动动作。每天一次，信仰哨卫可使用迅捷动作对自己施放治疗致命伤，施法者等级等于角色等级。"
   },
   {
@@ -7417,7 +7417,7 @@
   {
     "Key": "ShiningKnightKnightCharge.Description",
     "enGB": "At 11th level, whenever a shining knight charges a foe, her movement does not provoke attacks of opportunity, for either her or her mount. In addition, if her target is also the target of her smite evil ability and the charge attack hits, the target must make a Will save or be panicked for a number of rounds equal to 1/2 the shining knight’s level. The DC of this save is equal to 10 + 1/2 the shining knight’s level + the shining knight’s Charisma modifier.",
-    "ruRU": "Начиная с 11 уровня, всякий раз, когда сиящий рыцарь атакует с разбега, его передвижения не провоцируют внеочередные атаки. Кроме того, если его цель находится под действием его способности Сокрушение зла и атака с разбега оказывается успешной, то цель должна совершить успешный спасбросок воли или запаниковать на количество раундов, равное 1/2 уровней сияющего рыцаря. Сложность этого спасброска равна 10 + 1/2 уровня сияющего рыцаря + модификатор Харизмы.",
+    "ruRU": "Начиная с 11 уровня, всякий раз, когда сиящий рыцарь атакует с разбега, его передвижения не провоцируют внеочередные атаки. Кроме того, если его цель находится под действием его способности Сокрушение зла и атака с разбега оказывается успешной, то цель должна совершить успешный спасбросок Воли или запаниковать на количество раундов, равное 1/2 уровней сияющего рыцаря. Сложность этого спасброска равна 10 + 1/2 уровня сияющего рыцаря + модификатор Харизмы.",
     "zhCN": "11级起，当光耀骑士向敌人发动冲锋时，她和她的坐骑都不会因移动而触发借机攻击。此外，若被冲锋的目标同样是她制裁邪恶所选定的目标，并且冲锋命中，则目标必须通过一个意志豁免，否则会在等同于1/2光耀骑士等级的轮数内陷入恐慌状态。意志豁免的DC为“10+1/2光耀骑士等级+魅力修正值”。"
   },
   {
@@ -7521,7 +7521,7 @@
   {
     "Key": "DeificObedienceNaderi2.Description",
     "enGB": "You channel the despair and grief you have suffered into a cloud of sadness that saps the will of those who oppose you. All foes within a 30-foot, cone-shaped burst are staggered for a number of rounds equal to your Hit Dice, and take a –1 penalty on attack rolls, saving throws, skill checks, and weapon damage rolls. A successful Will saving throw (DC = 10 + 1/2 your Hit Dice + your Charisma modifier) negates this effect.",
-    "ruRU": "Вы превращаете перенесенное отчаяние и горе в облако печали, которое подрывает волю тех, кто противостоит вам. Все враги в пределах 30-футового конуса оказываются ошеломлены на количество раундов, равное количеству ваших костей здоровья, а также получают штраф -1 к броскам на попадание и урон, спасброскам и проверкам навыков. Успешный спасбросок воли (DC = 10 + 1/2 ваших костей здоровья + модификатор Харизмы) нейтрализует этот эффект.",
+    "ruRU": "Вы превращаете перенесенное отчаяние и горе в облако печали, которое подрывает волю тех, кто противостоит вам. Все враги в пределах 30-футового конуса оказываются ошеломлены на количество раундов, равное количеству ваших костей здоровья, а также получают штраф -1 к броскам на попадание и урон, спасброскам и проверкам навыков. Успешный спасбросок Воли (DC = 10 + 1/2 ваших костей здоровья + модификатор Харизмы) нейтрализует этот эффект.",
     "zhCN": "你可以引导自己受过的绝望和悲伤，形成一道愁云消磨你敌人的意志。所有30尺锥形爆发范围内的敌人在等同于你生命骰的轮数中陷入恍惚，且在攻击骰、豁免骰、技能检定和武器伤害骰中受到-1减值。成功通过意志豁免（DC=10+1/2生命骰+你的魅力调整值）可以避免这一效果。"
   },
   {
@@ -7573,7 +7573,7 @@
   {
     "Key": "DeificObedienceDesna2.Description",
     "enGB": "Over time you have learned to focus your magical power to better damage agents of evil. You add your Charisma bonus on your concentration checks, as well as on your caster level checks to overcome spell resistance. In addition, at night time, when you cast a spell that deals hit point damage, you can have it deal an extra 2d6 points of divine damage.",
-    "ruRU": "Со временем вы научились фокусировать свою магическую силу, чтобы лучше наносить урон агентам зла. Вы добавляете свой модификатор Харизмы к проверкам конецентрации, а также к проверкам уровня заклинателя для преодоления устойчивости к магии. Кроме того, в ночное время, когда вы сотворяете заклинание наносящее урон, оно наносит дополнительно 2d6 святого урона.",
+    "ruRU": "Со временем вы научились фокусировать свою магическую силу, чтобы лучше наносить урон агентам зла. Вы добавляете свой модификатор Харизмы к проверкам концентрации, а также к проверкам уровня заклинателя для преодоления устойчивости к магии. Кроме того, в ночное время, когда вы сотворяете заклинание наносящее урон, оно наносит дополнительно 2d6 святого урона.",
     "zhCN": "随着时间的流逝，你逐渐掌握了汇聚魔法能量对奸邪之徒造成更大损伤的方法。你将自身的魅力加值加到你的专注检定、以及用于克服法术抗力的施法者等级检定中。此外，当你在夜晚施放造成生命值伤害的法术时，你能够让它造成额外2d6点神圣伤害。"
   },
   {
@@ -7716,7 +7716,7 @@
   {
     "Key": "DeificObedienceGorum2.Description",
     "enGB": "If you make a full attack while wielding a two-handed melee weapon, you may make a single unarmed strike in addition to your normal attacks. In essence, after you complete your two-handed weapon attacks, you smash with your elbow, kick out with a foot, or make some other unarmed strike against an opponent. This bonus attack is made at your highest base attack bonus, and the attack roll is subject to the normal penalties for two-weapon fighting unless you have the feats to reduce these penalties.",
-    "ruRU": "Если вы совершаете атаку полного раунда, используя двуручное оружие ближнего боя, вы можете нанести одиночный безоружный удар в дополнение к вашим обычным атакам. По сути, после того, как вы завершили атаки двуручным оружием, вы наносите удар локтем, ногой или наносите какой-либо другой безоружный удар по противнику. Эта дополнительная атака выполняется с вашим самым высоким базовым модификатором атаки, и на бросок атаки распространяются обычные штрафы для боя с парным оружиями, если только у вас нет навыков, позволяющих уменьшить эти штрафы.",
+    "ruRU": "Если вы совершаете атаку полного раунда, используя двуручное оружие ближнего боя, вы можете нанести одиночный безоружный удар в дополнение к вашим обычным атакам. По сути, после того, как вы завершили атаки двуручным оружием, вы наносите удар локтем, ногой или наносите какой-либо другой безоружный удар по противнику. Эта дополнительная атака выполняется с вашим самым высоким базовым модификатором атаки, и на бросок атаки распространяются обычные штрафы для боя с парным оружием, если только у вас нет навыков, позволяющих уменьшить эти штрафы.",
     "zhCN": "若你在持用双手近战武器时作出全回合攻击，那么除了正常的攻击之外，你还可以额外作出单次徒手打击。实质上，就是你完成双手武器攻击之后进行肘击、提脚踢踹、或者使用其他部位打击敌人。这次额外攻击使用你最高的基本攻击加值，且攻击检定会受到进行双武器战斗如常产生的惩罚，除非你具有相关专长来减少惩罚。"
   },
   {
@@ -8028,7 +8028,7 @@
   {
     "Key": "DeificObedienceMahathallahExalted2.Description",
     "enGB": "At the end of each combat, upon ingesting a drug you can heal 3d6 damage due to its addictiveness. When taking the drug adyton, you take 1d4 Str damage, automatically succeed at the Will save and have your consciousness transported into the mindscape called the Adyton, where you can linger for as long as you like and return whenever you so please.",
-    "ruRU": "В конце каждого боя, при помощи дозы наркотиков, вы можете излечить 3d6 урона. Принимая препарат Адитон, вы получаете урон Силы 1d4, автоматически преуспеваете в спасброске воли и переносите свое сознание в мысленный ландшафт, называемый Адитон, где вы можете задерживаться столько, сколько захотите, и возвращаться, когда захотите.",
+    "ruRU": "В конце каждого боя, при помощи дозы наркотиков, вы можете излечить 3d6 урона. Принимая препарат Адитон, вы получаете урон Силы 1d4, автоматически преуспеваете в спасброске Воли и переносите свое сознание в мысленный ландшафт, называемый Адитон, где вы можете задерживаться столько, сколько захотите, и возвращаться, когда захотите.",
     "zhCN": "在每次战斗结束时，你可以吸收药物，在其成瘾性中获取3d6点治疗。在服用阿德顿时，你受到1d4点力量伤害，意志豁免自动成功，从而令你的意识传送至名为阿德顿的心灵世界，你可以在其中随意逗留，并在你愿意时返回现实。"
   },
   {
@@ -8080,7 +8080,7 @@
   {
     "Key": "ExaltedEvangelistBonusFeat.Description",
     "enGB": "In order to maintain the abilities granted by this prestige class, an evangelist must perform a daily obedience to the deity she worships.",
-    "ruRU": "Чтобы сохранить способности, предоставляемые этим лассом, евангелист должен ежедневно выполнять послушание божества, которому он поклоняется.",
+    "ruRU": "Чтобы сохранить способности, предоставляемые этим престижным классом, евангелист должен ежедневно выполнять послушание божества, которому он поклоняется.",
     "zhCN": "为了维持这个进阶职业获得的能力，传道者必须执行她所信仰神祇的日常服从仪典。"
   },
   {
@@ -8158,7 +8158,7 @@
   {
     "Key": "ExaltedEvangelistChooseGoodEvil.Description",
     "enGB": "Divine energy suffuses the body of the exalted, making her more resilient. The exalted gains a +2 sacred or profane bonus on Fortitude saves. The exalted of an evil deity can't choose to gain sacred bonus, and the exalted of a good deity can't choose to gain profane bonus.",
-    "ruRU": "Божественная энергия наполняет тело вознесенного, делая его более выносливым. Вознесенный получает сакральный или нечестивый бонус +2 к спасброскам стойкости. Вознесенный злого божества не может получить сакральный бонус, а доброго божества - нечестивый.",
+    "ruRU": "Божественная энергия наполняет тело вознесенного, делая его более выносливым. Вознесенный получает сакральный или нечестивый бонус +2 к спасброскам Стойкости. Вознесенный злого божества не может получить сакральный бонус, а доброго божества - нечестивый.",
     "zhCN": "大尊者的体内充盈着神力，令她变得更加强韧。大尊者在强韧豁免中获得+2神圣或污邪加值。邪神的大尊者不能选择获得神圣加值，善神的大尊者不能选择获得亵渎加值。"
   },
   {
@@ -8171,7 +8171,7 @@
   {
     "Key": "ExaltedEvangelistVitalityGood.Description",
     "enGB": "Divine energy suffuses the body of the exalted, making her more resilient. The exalted gains a +2 sacred bonus on Fortitude saves.",
-    "ruRU": "Божественная энергия наполняет тело вознесенного, делая его более выносливым. Вознесенный получает сакральный +2 к спасброскам стойкости.",
+    "ruRU": "Божественная энергия наполняет тело вознесенного, делая его более выносливым. Вознесенный получает сакральный +2 к спасброскам Стойкости.",
     "zhCN": "大尊者的体内充盈着神力，令她变得更加强韧。大尊者在强韧豁免中获得+2神圣加值。"
   },
   {
@@ -8184,7 +8184,7 @@
   {
     "Key": "ExaltedEvangelistVitalityEvil.Description",
     "enGB": "Divine energy suffuses the body of the exalted, making her more resilient. The exalted gains a +2 profane bonus on Fortitude saves.",
-    "ruRU": "Божественная энергия наполняет тело вознесенного, делая его более выносливым. Вознесенный получает нечестивый бонус +2 к спасброскам стойкости.",
+    "ruRU": "Божественная энергия наполняет тело вознесенного, делая его более выносливым. Вознесенный получает нечестивый бонус +2 к спасброскам Стойкости.",
     "zhCN": "大尊者的体内充盈着神力，令她变得更加强韧。大尊者在强韧豁免中获得+2污邪加值。"
   },
   {
@@ -8353,7 +8353,7 @@
   {
     "Key": "DeificObedienceLamashtu2.Description",
     "enGB": "Your mind constantly swirls with dark whispers and disturbing thoughts. You gain a +4 profane bonus on saving throws against mind-affecting (compulsion) spells and effects. Anyone who targets you with such a spell or effect must succeed at a Will saving throw (with a DC equal to 10 + your Wisdom modifier + 1/2 your Hit Dice) or take 1d4 points of Wisdom damage.",
-    "ruRU": "Ваш разум постоянно кружится от темных шепотов и тревожных мыслей. Вы получаете нечестивый бонус +4 к спасброскам против воздействующих на разум эффектам принуждения. Те, кто атакуют вас при помощи таких эффектов должны совершыть успешный спасбросок воли (DC = 10 + модификатор Мудрости + 1/2 ваших костей здоровья) или получить 1d4 урона Мудрости.",
+    "ruRU": "Ваш разум постоянно кружится от темных шепотов и тревожных мыслей. Вы получаете нечестивый бонус +4 к спасброскам против воздействующих на разум эффектам принуждения. Те, кто атакуют вас при помощи таких эффектов должны совершить успешный спасбросок Воли (DC = 10 + модификатор Мудрости + 1/2 ваших костей здоровья) или получить 1d4 урона Мудрости.",
     "zhCN": "你的头脑中不断萦绕着黑暗的低语和让人不安的想法所组成的漩涡。你在对抗影响心智（胁迫）的法术和效果时，豁免检定获得+4亵渎加值。任何以你为目标使用上述法术或效果的人，都必须进行一次意志豁免检定（DC为10 + 你的感知调整值 + 1/2你的生命骰），失败则会受到1d4点感知伤害。"
   },
   {
@@ -8496,7 +8496,7 @@
   {
     "Key": "HighGuardianUnassailableAllegiance.Description",
     "enGB": "At 2nd level, a high guardian gains a +1 bonus on Will saves against compulsion spells and effects. This bonus increases by 1 for every 4 fighter levels beyond 2nd.",
-    "ruRU": "На 2 уровне верховный страж получает бонус +1 к спасброскам воли против эффектов принуждения. Этот бонус увеличивается на 1 за каждые 4 уровня воина после 2.",
+    "ruRU": "На 2 уровне верховный страж получает бонус +1 к спасброскам Воли против эффектов принуждения. Этот бонус увеличивается на 1 за каждые 4 уровня воина после 2.",
     "zhCN": "2级起，御林铁卫在对抗胁迫法术和效果的意志检定上得到+1加值。这个加值在2级后的每4个战士等级增加1点。"
   },
   {
@@ -8535,7 +8535,7 @@
   {
     "Key": "ConstableSquadCommander.Description",
     "enGB": "At 3rd level, a constable can spend 1 minute laying out a plan to activate the tactician ability without having it count against his number of uses per day, and the benefits last for 1 minute per cavalier level he has.",
-    "ruRU": "Начиная с 3 уровня, констебль, потратив 1 минуту, может составить план и активировать свою способность Тактик без траты его ежедневных применеий этой способности. Кроме того, преимущества этой способности сохраняются в течение 1 минуты за уровень всадника.",
+    "ruRU": "Начиная с 3 уровня, констебль, потратив 1 минуту, может составить план и активировать свою способность Тактик без траты его ежедневных применений этой способности. Кроме того, преимущества этой способности сохраняются в течение 1 минуты за уровень всадника.",
     "zhCN": "3级起，警长可以花费1分钟时间制定计划，激活战术家能力而不花费该能力的每日使用次数。该效果可以持续每骑将等级1分钟。"
   },
   {
@@ -8678,7 +8678,7 @@
   {
     "Key": "DeificObedienceCharon.Description",
     "enGB": "Meditate upon your infirmities and the slow, inevitable progression of physical and mental decay inherent to the ravages of time. Mimic this progression by immersing yourself or a victim in icy water until nearly unconscious, or by consuming alcohol or drugs that dull memory and mental faculties. Gain a +4 profane bonus on saving throws against necromancy and negative energy effects.",
-    "ruRU": "Размышляйте о своих немощах и медленном, неизбежном прогрессировании физического и умственного разложения, свойственного разрушительному воздействию времени. Имитируйте это прогрессирование, погрузив себя или жертву в ледяную воду почти до потери сознания или приняв алкоголь или наркотики, которые притупляют память и умственные способности. Вы получаете нечестивый бонус +4 к спасброскам против некромантии и воздействиям негативной энергии.",
+    "ruRU": "Размышляйте о своих немощах и медленном, неизбежном процессе физического и умственного разложения, свойственного разрушительному воздействию времени. Имитируйте этот процесс, погрузив себя или жертву в ледяную воду почти до потери сознания или приняв алкоголь или наркотики, которые притупляют память и умственные способности. Вы получаете нечестивый бонус +4 к спасброскам против некромантии и воздействиям негативной энергии.",
     "zhCN": "细细反思凡躯的脆弱，以及时光对肉体与心灵所造成的缓慢却不可阻挡的衰退。将自己或一名受害者浸入冰水直至几乎失去知觉，或通过饮酒，服用药物模糊记忆力和精神来模拟这种感觉。你在对抗死灵系法术和负能量效果的豁免检定上获得+4亵渎加值。"
   },
   {
@@ -8717,7 +8717,7 @@
   {
     "Key": "DeificObedienceCharon2.Description",
     "enGB": "You gain the ability to invoke the power of the Pale Horse. As a swift action, you cause a flickering image of the Pale Horse to appear in a 10-foot square adjacent to you. Any creature whose space the image of the Pale Horse passes through must succeed at a Fortitude save or take a –6 penalty to Strength, Dexterity, and Constitution, as if it had suddenly aged to become venerable. A creature can resist the effects of the Pale Horse with a successful Fortitude save (DC = 10 + half your Hit Dice + your Charisma modifier). This is an aging curse effect. The Pale Horse then moves around you in a 30-foot radius as you mentally direct its movement (doing so is a move action that requires concentration).",
-    "ruRU": "Вы получаете возможность призывать силу Бледного коня. Быстрым действием вы заставляете появиться мерцающее изображение бледного коня в соседней с вами клетке размером 10 футов. Любое существо, которое проходит через изображение коня, должно совершить успешный спасбросок стойкости (DC = 10 + 1/2 ваших костей здоровья + модификатор Харизмы) или получить штраф -6 к Силе, Ловкости и Выносливости, как если бы оно внезапно состарилось до почтенного возраста. Это эффект состаревающего проклятия. Бледный конь двигается вокруг вас в радиусе 30 футов, в том направлении, которое вы укажите (сопутствующее действие требующее концентрации).",
+    "ruRU": "Вы получаете возможность призывать силу Бледного коня. Быстрым действием вы заставляете появиться мерцающее изображение бледного коня в соседней с вами клетке размером 10 футов. Любое существо, которое проходит через изображение коня, должно совершить успешный спасбросок Стойкости (DC = 10 + 1/2 ваших костей здоровья + модификатор Харизмы) или получить штраф -6 к Силе, Ловкости и Выносливости, как если бы оно внезапно состарилось до почтенного возраста. Это эффект состаревающего проклятия. Бледный конь двигается вокруг вас в радиусе 30 футов, в том направлении, которое вы укажите (сопутствующее действие требующее концентрации).",
     "zhCN": "你获得呼唤灰马力量的能力。你可以迅捷动作召唤灰马的幻影出现在你身边的一个10尺方格内。被灰马幻象穿过的生物若未通过强韧豁免，则力量，敏捷和体质受到-6减值，就好似突然步入暮年。通过强韧豁免（DC=10+1/2HD+魅力调整值）能抵抗该效果。这是一个衰老诅咒效果。你可以用意志操纵灰马在你周围30尺范围内移动，这需要一个专注的移动动作。"
   },
   {
@@ -8769,7 +8769,7 @@
   {
     "Key": "DeificObedienceSzurielSentinel.Description",
     "enGB": "Become a Sentinel to gain access to her boons, which will be granted at certain character or class levels. Szuriel is the Horseman of War: a deadly and destructive archdaemon from Abaddon. Szuriel was once a mortal paladin. No one remembers why she was excommunicated from her faith, but she regardless gathered an army of bloodthirsty soldiers to conquer her homeland, declaring herself empress, and putting all members of her former religion to the sword. As she prepared to invade neighbouring nations, they sent assassins to kill her; one was successful, and Szuriel was sent to Abaddon. As a shade, Szuriel avoided the daemons long enough to be transformed into a daemon herself. She resembles a 20-foot tall angel with flowing blonde hair, ivory skin, black wings, jagged razor-sharp teeth and onyx-black mirrored eyes constantly dripping blood.",
-    "ruRU": "Вы должны стать часовым этого божества, чтобы получить доступ к её дарам. Зуриэль — Всадник Войны: смертоносный и разрушительный архидаймон из Абаддона. Зуриэль когда-то была смертным паладином. Никто не помнит, почему ее отлучили от веры, но она все равно собрала армию кровожадных воинов, чтобы завоевать свою родину, объявив себя императрицей и предав мечу всех приверженцев своей прежней религии. Когда она готовилась вторгнуться в соседние страны, они послали убийц, чтобы убить ее; одно из них увенчалось успехом, и Зуриэль была отправлен в Абаддон. Будучи тенью, Зуриэль избегала даймонов достаточно долго, чтобы самой превратиться в даймона. Она напоминает ангела ростом 20 футов с распущенными светлыми волосами, кожей цвета слоновой кости, черными крыльями, неровными, острыми как бритва зубами и черными ониксовыми зеркальными глазами, из которых постоянно капает кровь.",
+    "ruRU": "Вы должны стать часовым этого божества, чтобы получить доступ к её дарам. Зуриэль — Всадник Войны: смертоносный и разрушительный архидаймон из Абаддона. Зуриэль когда-то была смертным паладином. Никто не помнит, почему ее отлучили от веры, но она все равно собрала армию кровожадных воинов, чтобы завоевать свою родину, объявив себя императрицей и предав мечу всех приверженцев своей прежней религии. Когда она готовилась вторгнуться в соседние страны, они послали убийц, чтобы убить ее; одно из них увенчалось успехом, и Зуриэль была отправлена в Абаддон. Будучи тенью, Зуриэль избегала даймонов достаточно долго, чтобы самой превратиться в даймона. Она напоминает ангела ростом 20 футов с распущенными светлыми волосами, кожей цвета слоновой кости, черными крыльями, неровными, острыми как бритва зубами и черными ониксовыми зеркальными глазами, из которых постоянно капает кровь.",
     "zhCN": "成为信仰哨卫来获取她的神恩资格，你会在合适的角色或职业等级得到神恩。祖瑞尔是战争驭者: 一位来自末日荒原致命且极具破坏性的大邪魔。祖瑞尔曾是一位凡人圣武士。没有人记得她为何被逐出教籍，但她很快就不惜代价的集结了一支嗜血的军队来征服她的祖国，自立为女皇, 并处决了所有她之前信仰的宗教人员。当她准备入侵邻国时，他们派来了一位刺客来刺杀她; 成功的一击必杀，让祖瑞尔来到了末日荒原。就像一个影子，祖瑞尔长久躲避着邪魔以至于最后她自己也成为了邪魔。她看起来像一位20英尺高的天使拥有飘逸的金色长发、象牙般的肌肤、黑色的翅膀、锋利的钩状獠牙和不断滴血的漆黑镜面般的眼睛。"
   },
   {
@@ -8964,7 +8964,7 @@
   {
     "Key": "EmissaryBattlefieldAgility.Description",
     "enGB": "At 5th level, an emissary learns to be more aware of the threats that surround him in combat, and shares this awareness with his loyal steed. Both the emissary and his mount gain Mobility as a bonus feat.",
-    "ruRU": "На 5 уровне эмиссар учится лучше осознавать угрозы, окружающие его в бою, и делится этим знанием со своим верным скакуном. Эмиссар и его скакун получают Черту Подвижность в бою.",
+    "ruRU": "На 5 уровне эмиссар учится лучше осознавать угрозы, окружающие его в бою, и делится этим знанием со своим верным скакуном. Эмиссар и его скакун получают черту Подвижность в бою.",
     "zhCN": "5级起，先锋使者学会了在战斗中更好地察觉周遭的威胁，并分享给他忠诚的坐骑。先锋使者和他的坐骑得到“灵活移动”作为额外专长。"
   },
   {
@@ -9419,7 +9419,7 @@
   {
     "Key": "DeificObedienceIomedae2.Description",
     "enGB": "If you have the smite evil class feature, you gain an extra use of that ability per day. You add the levels of sentinel to your paladin levels when calculating the extra damage dealt by your smite. If you successfully deal damage with your smite, your target must succeed at a Will saving throw (with a DC equal to 10 + your Charisma modifier + 1/2 your Hit Dice) or be stunned for 1 round plus 1 round for every 4 Hit Dice you possess (maximum 6 rounds). Once a target saves against this stunning effect, it is immune to the stunning effect for 24 hours.",
-    "ruRU": "Если у вас есть классовая способность Сокрушение зла, вы получаете дополнительное применение этой способности в день. Вы добавляете ваши уровни часового к уровням паладина когда рассчитываете урон от сокрушения зла. Если вы наносите урон по цели вашего сокрушения, то цель должна совершить успешный спасбросок воли (DC = 10 + 1/2 ваших костей здоровья + модификатор Харизмы) или оказаться шокированной на 1 раунд + 1 раунд за каждые 4 ваши кости здоровья (максимум 6 раундов). Как только цель совершает успешный спасбросок против этого эффекта, она становится невосприимчива к шоку на 24 часа.",
+    "ruRU": "Если у вас есть классовая способность Сокрушение зла, вы получаете дополнительное применение этой способности в день. Вы добавляете ваши уровни часового к уровням паладина когда рассчитываете урон от сокрушения зла. Если вы наносите урон по цели вашего сокрушения, то цель должна совершить успешный спасбросок Воли (DC = 10 + 1/2 ваших костей здоровья + модификатор Харизмы) или оказаться шокированной на 1 раунд + 1 раунд за каждые 4 ваши кости здоровья (максимум 6 раундов). Как только цель совершает успешный спасбросок против этого эффекта, она становится невосприимчива к шоку на 24 часа.",
     "zhCN": "若你具有制裁邪恶职业能力，那么该能力的每日使用次数额外增加1次。在判断该能力造成的额外伤害时，将你的信仰哨卫等级加到圣武士等级之上。若你成功使用制裁邪恶造成伤害，那么你的目标必须进行意志豁免（DC为10 + 你的魅力调整值 + 1/2你的生命骰），失败则会震慑，持续时间为1轮，你每有4个生命骰额外增加1轮（最高6轮）。如果目标成功豁免，会在24小时内免疫这个震慑效果。"
   },
   {
@@ -9640,7 +9640,7 @@
   {
     "Key": "WeaponAdeptPurePower.Description",
     "enGB": "At 20th level, a weapon adept forsakes the ideals of the perfect self to become a bastion of the physical and mental virtues monks hold dear. The monk gains a +3 bonus to Strength, Dexterity, Constitution, Intelligence, Wisdom, and Charisma.",
-    "ruRU": "На 20-м уровне адепт оружия отказывается от идеалов совершенного 'я', чтобы стать бастионом физических и умственных добродетелей, которыми дорожат монахи. Он получает бонус +3 к его модификаторам Силы, Ловкости, Выносливости, Интеллекта, Мудрости и Харизмы.",
+    "ruRU": "На 20 уровне адепт оружия отказывается от идеалов совершенного 'я', чтобы стать бастионом физических и умственных добродетелей, которыми дорожат монахи. Он получает бонус +3 к его модификаторам Силы, Ловкости, Выносливости, Интеллекта, Мудрости и Харизмы.",
     "zhCN": "20级时，执械僧放弃让自己成为完善的理念，而是成为保卫武僧所珍视的各项身心美德的堡垒。武僧在力量、敏捷、体质、智力、感知和魅力上获得+3加值。"
   },
   {
@@ -9705,7 +9705,7 @@
   {
     "Key": "FatedChampionWatcher.Description",
     "enGB": "At 2nd level, a fated champion learns to see the tapestry of events moments before it is woven. He gains an insight bonus on initiative checks equal to 1/2 his skald level.",
-    "ruRU": "На 2-м уровне обреченный чемпион учится видеть полотно событий за мгновение до того, как оно будет соткано. Он получает интуитивный бонус к проверкам инициативы, равный 1/2 уровня скальда.",
+    "ruRU": "На 2 уровне обреченный чемпион учится видеть полотно событий за мгновение до того, как оно будет соткано. Он получает интуитивный бонус к проверкам инициативы, равный 1/2 уровня скальда.",
     "zhCN": "2级时，天命勇者学会观察命运之弦在编织成既定现实之前的样子。他在先攻检定上获得1/2歌者等级的洞察加值。"
   },
   {
@@ -9718,7 +9718,7 @@
   {
     "Key": "FatedChampionShieldForesight.Description",
     "enGB": "At 10th level, a fated champion’s certainty of his own fate grants him the ability to stare down fear and remain unbowed. When using raging song, he is immune to fear effects, and allies affected by his raging song gain a +5 bonus on saves attempted against fear effects.",
-    "ruRU": "На 10 уровне уверенность обреченного чемпиона в своей судьбе дает ему возможность противостоять страху и оставаться непокоренным. Находять под воздействием вдохновляющей ярости, он становится невосприимчив к эффектам страха, а все союзники, на которых также действует вдохновляющая ярость, получают бонус +5 к спасброскам против эффектов страха.",
+    "ruRU": "На 10 уровне уверенность обреченного чемпиона в своей судьбе дает ему возможность противостоять страху и оставаться непокоренным. Находясь под воздействием вдохновляющей ярости, он становится невосприимчив к эффектам страха, а все союзники, на которых также действует вдохновляющая ярость, получают бонус +5 к спасброскам против эффектов страха.",
     "zhCN": "在10级时，天命勇者已经知晓了他注定的命运，这让他能够压制恐惧，不会轻易屈服。当他正在使用战怒之歌能力时，天命勇者免疫恐惧效果，所有受到战怒之歌影响的盟友则在对抗恐惧效果的豁免检定上获得+5加值。"
   },
   {
@@ -9848,7 +9848,7 @@
   {
     "Key": "DeificObedienceSocothbenoth3.Description",
     "enGB": "Causing harm to others fills you with a euphoric pleasure that allows you to endure the harshest blows. Up to three times per day as you deal hit point damage to a creature, the rush of pleasure grants you temporary hit points equal to twice your Charisma modifier. These temporary hit points stack with multiple uses of this ability, and last for 1 minute or until depleted. As long as you are fully healed and have at least one of these temporary hit points, you gain a +4 morale bonus on attack rolls and Will saving throws.",
-    "ruRU": "Причинение вреда другим наполняет вас эйфорическим удовольствием, позволяющим выдерживать самые жестокие удары. До 3 раз в день, когда вы наносите урон существу, прилив удовольствия дает вам временные очки  здоровья в количестве равном вашему удвоенному модификатору Харизмы. Эти временные очки здоровья складываются между собой и сохраняются в течение 1 минуты. Пока у вас полное здоровье и есть хотя бы 1 временное очко здоровья, полученное таким образом, вы получаете бонус боевого духа +4 к броскам на попадание и спасброскам воли.",
+    "ruRU": "Причинение вреда другим наполняет вас эйфорическим удовольствием, позволяющим выдерживать самые жестокие удары. До 3 раз в день, когда вы наносите урон существу, прилив удовольствия дает вам временные очки  здоровья в количестве равном вашему удвоенному модификатору Харизмы. Эти временные очки здоровья складываются между собой и сохраняются в течение 1 минуты. Пока у вас полное здоровье и есть хотя бы 1 временное очко здоровья, полученное таким образом, вы получаете бонус боевого духа +4 к броскам на попадание и спасброскам Воли.",
     "zhCN": "伤害他人能让你的心中充满一种愉悦的快感，这种快感使你能够忍受最严酷的打击。每天3次，当你对一个生物造成伤害时，激增的快感会赋予你相当于双倍魅力调整值的临时生命值。这些临时生命值会因多次使用该能力而叠加，持续1分钟或耗尽为止。只要你生命值全满，且至少有1点该能力赋予的临时生命值，你便在攻击检定和意志豁免上获得+4士气加值。"
   },
   {
@@ -9861,7 +9861,7 @@
   {
     "Key": "DeificObedienceSocothbenoth2.Description",
     "enGB": "Your form has achieved the utmost perfection, granting you a measure of protection and filling you with a surge of prideful wrath whenever your beauty would be sullied by others’ assaults. Your physical appearance becomes darkly beautiful and sexually appealing, granting you a +2 profane bonus to your Charisma score. As long as you do not have an armor bonus to your Armor Class, you gain a profane bonus to your AC and on Fortitude saving throws equal to your Charisma modifier. Whenever a creature deals damage to you with an attack, you gain a profane bonus equal to your Charisma modifier on your next weapon attack roll against that creature.",
-    "ruRU": "Ваша форма достигла высочайшего совершенства, предоставляя вам некоторую защиту и наполняя вас приливом гордого гнева всякий раз, когда ваша красота будет запятнана нападениями других. Ваша внешность становится мрачно красивой и сексуально привлекательной, что дает вам нечестивый бонус +2 к вашему модификатору Харизмы. Пока у вас нет бонуса брони к защите, вы получаете нечестивый бонус к защите и спасброскам стойкости равный вашему модификатору Харизмы. Когда существо наносит вам урон атакой, вы получаете нечестивый бонус равный модификатору Харизмы к вашему следующему броску на попадание оружием по этому существу.",
+    "ruRU": "Ваша форма достигла высочайшего совершенства, предоставляя вам некоторую защиту и наполняя вас приливом гордого гнева всякий раз, когда ваша красота будет запятнана нападениями других. Ваша внешность становится мрачно красивой и сексуально привлекательной, что дает вам нечестивый бонус +2 к вашему модификатору Харизмы. Пока у вас нет бонуса брони к защите, вы получаете нечестивый бонус к защите и спасброскам Стойкости равный вашему модификатору Харизмы. Когда существо наносит вам урон атакой, вы получаете нечестивый бонус равный модификатору Харизмы к вашему следующему броску на попадание оружием по этому существу.",
     "zhCN": "你的外貌已经达到极致完美，这给予你一定程度的保护。每当你的美貌被他人的攻击所玷污时，你的内心就会充满一股骄傲的愤怒。你展现出一种极具性张力的阴暗之美，你的魅力获得+2亵渎加值。只要你的AC没有护甲加值，你的AC与强韧豁免就会得到等于你魅力调整值的亵渎加值。每当一个生物通过攻击对你造成伤害，你在下一次对该生物的武器攻击检定上获得等于你魅力调整值的亵渎加值。"
   },
   {
@@ -10916,7 +10916,7 @@
   {
     "Key": "SwordLordCatechesis.Description",
     "enGB": "If a Hell Knight signifer has the Warrior Priest feat, his Hell Knight signifer level stacks with other divine spellcasting classes for determining the effects of those classes’ domain powers. This doesn’t grant any new powers or abilities. In addition, a signifer with the Warrior Priest feat gains Selective Channel as a bonus feat.",
-    "ruRU": "Если сигнифер рыцаря Преисподней имеет черту Боевой священник, его уровни сигнифера складываются с уровнями сакрального заклинателя для определения эффектов домейнов, дарованных этими классами. Эта способность не дает доступа к новым способностям. Кроме того, сигнифер с чертой Боевой свещенник получает черту Избирательное проведение энергии.",
+    "ruRU": "Если сигнифер рыцаря Преисподней имеет черту Боевой священник, его уровни сигнифера складываются с уровнями сакрального заклинателя для определения эффектов домейнов, дарованных этими классами. Эта способность не дает доступа к новым способностям. Кроме того, сигнифер с чертой Боевой священник получает черту Избирательное проведение энергии.",
     "zhCN": "若地狱骑士持节士拥有以战筑信专长，他的地狱骑士持节士等级与其他神术施法者等级叠加，以计算那些职业的领域效果，但不会因此获得新能力。拥有以战筑信专长的持节士还会获得选择导能作为额外专长。"
   },
   {
@@ -11163,7 +11163,7 @@
   {
     "Key": "LionBladePerfectSurprise.Description",
     "enGB": "At 4th level, a Lion Blade can deliver a devastating blow to anyone she catches unaware. Whenever she hits a foe with a sneak attack at the end of a charge, she can make the blow a perfect surprise as a free action. The target must succeed at a Fortitude saving throw (DC = 10 + the Lion Blade’s class level + her Intelligence modifier) or fall unconscious for 1 round per Lion Blade level. Once targeted by this ability, a victim is immune to perfect surprise for 24 hours.",
-    "ruRU": "Начиная с 4 уровня Львиный клинок может нанести сокрушительный удар любому, кого застанет врасплох. Когда львиный клинок попадает атакой исподтишка нанесенной в рамках атаки с разбега, он может сделать этот удар идеальным сюрпризом в качестве свободного действия. Цель должна совершить успешный спасбросок стойкости (DC = 10 + уровень львиного клинка + модификатор Интеллекта) или потерять сознание на 1 раунд за уровень львиного клинка. Попав под действие этой способности, жертва становится невосприимчивой к ней на 24 часа.",
+    "ruRU": "Начиная с 4 уровня Львиный клинок может нанести сокрушительный удар любому, кого застанет врасплох. Когда львиный клинок попадает атакой исподтишка нанесенной в рамках атаки с разбега, он может сделать этот удар идеальным сюрпризом в качестве свободного действия. Цель должна совершить успешный спасбросок Стойкости (DC = 10 + уровень львиного клинка + модификатор Интеллекта) или потерять сознание на 1 раунд за уровень львиного клинка. Попав под действие этой способности, жертва становится невосприимчивой к ней на 24 часа.",
     "zhCN": "4级起，狮子剑能抓准敌人的疏忽，施加毁灭般的打击。她若在冲锋后进行成功偷袭敌人，便可以用自由动作让这次攻击成为完美突袭。目标必须通过DC为10+狮子剑职业等级+智力调整值的强韧豁免，否则会失去意识，持续每狮子剑等级1轮。成为此能力目标后，受害者将在24小时内对完美突袭免疫。"
   },
   {
@@ -11293,7 +11293,7 @@
   {
     "Key": "EnchantingCourtesanEcstasy.Description",
     "enGB": "At 10th level, an enchanting courtesan has perfectly mastered the sensual arts. As a standard action, the enchanting courtesan can touch a living target to saturate its being with pure bliss. The target is filled with ecstatic pleasure for 1d4 rounds. The pleasure suppresses all negative emotion effects during this time. The target must attempt a Fortitude save (DC = 20 + the enchanting courtesan’s Wisdom modifier). If it succeeds at this saving throw, the target is staggered for the duration. If it fails, it is stunned instead. This is a mind-affecting emotion effect. Any effect or immunity that prevents precision damage negates this ability.",
-    "ruRU": "На 10 уровне очаровывающая куртизанка в совершенстве овладела чувственным искусством. При помощи основного действия, куртизанка может прикоснуться к живому существу, чтобы наполнить его существование блаженством. Цель наполненяется экстатическим удовольствием на 1d4 раунда. Удовольствие подавляет все негативные эффекты эмоций на это время. Цель должна попытаться совершить спасбросок стойкости (DC = 20 + модификатор Мудрости). Если она совершает успешный спасбросок, она оказывается ошеломлена на все время действия этого эффекта. Если же она проваливает спасбросок, то она оказывается в шоке. Это воздействующий на разум эффект эмоций. Любые эффекты или невосприимчивости нейтрализующие урон точности, нейтрализуют и эту способность.",
+    "ruRU": "На 10 уровне очаровывающая куртизанка в совершенстве овладела чувственным искусством. При помощи основного действия, куртизанка может прикоснуться к живому существу, чтобы наполнить его существование блаженством. Цель наполняется экстатическим удовольствием на 1d4 раунда. Удовольствие подавляет все негативные эффекты эмоций на это время. Цель должна попытаться совершить спасбросок Стойкости (DC = 20 + модификатор Мудрости). Если она совершает успешный спасбросок, она оказывается ошеломлена на все время действия этого эффекта. Если же она проваливает спасбросок, то она оказывается в шоке. Это воздействующий на разум эффект эмоций. Любые эффекты или невосприимчивости нейтрализующие урон точности, нейтрализуют и эту способность.",
     "zhCN": "10级起，妩媚交际花完美掌握了性爱艺术，以一个标准动作，妩媚交际花可以接触一个活物，令其充满纯粹的极乐。目标会在1d4轮内充盈着销魂的快感，在持续时间内压制所有负面情绪效果。目标必须通过一次强韧豁免（DC=20+妩媚交际花的感知调整）。如果豁免成功，目标在持续时间内恍惚。如果失败，则被震慑。这是一个影响心智的情绪效果，目标若能阻止精准伤害，也能阻止此效果。"
   },
   {
@@ -11670,7 +11670,7 @@
   {
     "Key": "DawnflowerDervishBurst.Description",
     "enGB": "At 3rd level, a Dawnflower dervish takes only a –1 penalty to her AC after charging. At 7th level, the Dawnflower dervish can charge with no penalty.",
-    "ruRU": "Начиная с 3 уровня Дервиш Цветка Рассвета штраф к защите от атаки с разбега уменьшается до -1. Начиная с 7 уровня он не получает штрафа вовсе.",
+    "ruRU": "Начиная с 3 уровня дервиш Цветка Рассвета штраф к защите от атаки с разбега уменьшается до -1. Начиная с 7 уровня он не получает штрафа вовсе.",
     "zhCN": "3级开始，晨花狂舞者在冲锋后只受到-1的AC罚值。7级开始，晨花狂舞者的冲锋完全没有罚值。"
   },
   {
@@ -11690,7 +11690,7 @@
     "Key": "DawnflowerDervishLightning.Name",
     "ProcessTemplates": false,
     "enGB": "Lightning Strike",
-    "ruRU": "Молниеностный удар",
+    "ruRU": "Молниеносный удар",
     "zhCN": "迅雷电闪"
   },
   {
@@ -11722,7 +11722,7 @@
   {
     "Key": "RacialHeritageMultiArmed.Description",
     "enGB": "A kasatha has four arms. It can fight with four weapons, using the extra weapons in its first weapon sets with all their special abilities (always attack once for each).",
-    "ruRU": "A kasatha has four arms. It can fight with four weapons, using the extra weapons in its first weapon sets with all their special abilities (always attack once for each).",
+    "ruRU": "Касатхи имеют четыре руки, что позволяет им держать оружие в каждой из них. Вы можете совершать дополнительные атаки первыми 2 орудиями находящимися в слотах запасного снаряжения (1 атака за оружие). К атакам таким оружием применяются все его особенности.",
     "zhCN": "卡萨萨有四只手，可以进行四武器战斗，使用其第一个武器组中的武器，所有特殊能力也都会生效（每把固定一刀）。"
   },
   {
@@ -11878,7 +11878,7 @@
   {
     "Key": "HeritorKnightHeritorHonor.Description",
     "enGB": "At 2nd level, a heritor knight gains a bonus on Will saving throws that’s equal to her Charisma modifier.",
-    "ruRU": "На 2 уровне рыцарь Наследницы получает бонус к спасброскам воли, равный его модификатору Харизмы.",
+    "ruRU": "На 2 уровне рыцарь Наследницы получает бонус к спасброскам Воли, равный его модификатору Харизмы.",
     "zhCN": "2级起，后继骑士的意志豁免获得等同于她的魅力调整值的加值。"
   },
   {
@@ -11904,7 +11904,7 @@
   {
     "Key": "HeritorKnightWraithwall.Description",
     "enGB": "At 4th level, once per day as a standard action, a heritor knight can inspire allies within 30 feet. Allies inspired this way treat all armor they wear as having the ghost touch special ability. In addition, inspired allies gain a +4 sacred bonus on saving throws against effects that would cause stat debuff or negative levels. This effect lasts for 1 minute.",
-    "ruRU": "Начиная с 4 уровня, при помощи основного действия, рыцарь Наследницы может воодушевить своих союзников в радиусе 30 футов. Броня союзников, воодушевленных этой способностью, преобретает свойства призрачной. Кроме того, воодушевленные союзники получают сакральный бонус +4 к спасброскам против эффектов наносящих урон характеристикам или накладывающим негативные уровни. Этот действует в течение 1 минуты.",
+    "ruRU": "Начиная с 4 уровня, при помощи основного действия, рыцарь Наследницы может воодушевить своих союзников в радиусе 30 футов. Броня союзников, воодушевленных этой способностью, приобретает свойства призрачной. Кроме того, воодушевленные союзники получают сакральный бонус +4 к спасброскам против эффектов наносящих урон характеристикам или накладывающим негативные уровни. Этот действует в течение 1 минуты.",
     "zhCN": "4级起，每日1次以标准动作，后继骑士能够鼓舞30尺内的盟友。以此方式受到激励的盟友均会被视为佩戴着具有幽冥特殊能力的护甲。此外，被激励的盟友还会在对抗那些导致属性减益或负向等级的效果时，豁免检定获得+4神圣加值。该效果持续1分钟。"
   },
   {
@@ -11917,7 +11917,7 @@
   {
     "Key": "HeritorKnightRedeemerUndeath.Description",
     "enGB": "At 5th level, as a standard action, a heritor knight can make a melee attack with a longsword against an undead creature. Resolve the attack normally, but if the attack hits and the undead was good-aligned in life, it must succeed at a Will save (DC = 10 + the heritor knight’s class level + her Charisma modifier) or be destroyed and redeemed of the evils of undeath, allowing the soul to reach a righteous afterlife. If the creature succeeds, it is immune to this ability for 24 hours.",
-    "ruRU": "Начиная с 5 уровня, при помощи основного действия, рыцарь Наследницы может совершить атаку своим длинным мечом по нежити. Вы совершаете атаку как обычно, но если она попадает и её цель при жизни являлась доброй, то она должна совершить успешный спасбросок воли (DC = 10 + уровень рыцаря Наследницы + модификатор Харизмы) или быть уничтоженной и избавленной от зла нежити, позволяя душе достичь праведной загробной жизни. Если существо совершает успешный спасбросок, оно становится невосприимчиво к этой способности на 24 часа.",
+    "ruRU": "Начиная с 5 уровня, при помощи основного действия, рыцарь Наследницы может совершить атаку своим длинным мечом по нежити. Вы совершаете атаку как обычно, но если она попадает и её цель при жизни являлась доброй, то она должна совершить успешный спасбросок Воли (DC = 10 + уровень рыцаря Наследницы + модификатор Харизмы) или быть уничтоженной и избавленной от зла нежити, позволяя душе достичь праведной загробной жизни. Если существо совершает успешный спасбросок, оно становится невосприимчиво к этой способности на 24 часа.",
     "zhCN": "5级起，后继骑士能够以标准动作使用长剑对不死生物做出一次近战攻击。如常进行攻击检定，但如果攻击命中，它就必须进行意志豁免（DC = 10 + 后继骑士的等级 + 她的魅力调整值），失败则会被摧毁，身为亡者的罪孽将被宽恕，让灵魂前往正当的归宿。如果该生物豁免成功，则会在24小时内免疫该能力。"
   },
   {
@@ -11956,7 +11956,7 @@
   {
     "Key": "HeritorKnightImageDivinity2.Description",
     "enGB": "Three times per day as a swift action, the heritor knight can touch a creature. If the touched creature is good-aligned, it regains 1d6 hit points per class level of the heritor knight; evil-aligned creatures instead take that amount of damage. If this ability heals the target, the target is also affected by restoration. If this ability damages the target, the target must succeed at a Fortitude save (DC = 10 + the heritor knight’s level + the heritor knight’s Charisma modifier) or become staggered for a number of rounds equal to the heritor knight’s Charisma bonus (minimum 1 round). Neutral-aligned creatures are unaffected.",
-    "ruRU": "Три раза в день, при помощи быстрого действия, рыцарь Наследницы может прикоснуться к существу. Если это существо является добрым, то оно излечивает 1d6 здоровья за уровень рыцаря Наследницы; если злым, то вместо этого оно получает столько же урона. Если эта способность применяется для исцеления, то цель также оказывается под воздействием восстановления. Если же способность применяется для нанесения урона, то цель должна совершить успешный спасбросок стойкости (DC = 10 + уровень рыцаря Наследница + модификатор Харизмы) или оказаться ошеломленной на количество раундов, равное модификатору Харизмы рыцаря (минимум 1 раунд). На нейтральных существ эта способность не оказывает никакого эффекта.",
+    "ruRU": "Три раза в день, при помощи быстрого действия, рыцарь Наследницы может прикоснуться к существу. Если это существо является добрым, то оно излечивает 1d6 здоровья за уровень рыцаря Наследницы; если злым, то вместо этого оно получает столько же урона. Если эта способность применяется для исцеления, то цель также оказывается под воздействием восстановления. Если же способность применяется для нанесения урона, то цель должна совершить успешный спасбросок Стойкости (DC = 10 + уровень рыцаря Наследница + модификатор Харизмы) или оказаться ошеломленной на количество раундов, равное модификатору Харизмы рыцаря (минимум 1 раунд). На нейтральных существ эта способность не оказывает никакого эффекта.",
     "zhCN": "每日3次以迅捷动作，后继骑士能够碰触一名生物。若被碰触到的生物属于善良阵营，则会恢复生命值，恢复数值为每个后继骑士等级1d6点生命值；邪恶阵营的生物会受到相同数值的伤害。若该能力治疗了目标，那么他还会受到复原术的影响。若该能力伤害了目标，那么他必须进行强韧豁免（DC = 10 + 后继骑士的等级 + 后继骑士的魅力调整值），失败则会恍惚，持续轮数等同于后继骑士的魅力调整值（最低1轮）。中立阵营的生物不受影响。"
   },
   {
@@ -12073,7 +12073,7 @@
   {
     "Key": "NewSpellTelekineticManeuver.Description",
     "enGB": "You move objects or creatures by concentrating on them. Once per round, you can use telekinesis to perform a bull rush, disarm, or trip within close range. Alternatively, you can perform a grapple (including pin). Resolve these attempts as normal, except that your CMB is equal to your caster level plus your spellcasting ability score modifier. This does not provoke an attack of opportunity. No save is allowed against these attempts, but spell resistance applies normally.",
-    "ruRU": "Вы можете передвигать объекты или других существ, если сконцентрируетесь на них. Раз в раунд вы можете применить телекинез чтобы совершить боевой маневр таран, разоружение или сбивание с ног на близкой дистанции. В качестве алтернативы вы можете провести прием захват (в том числе и прижатие). Вы совершаете проверки этих маневров как обычно, за исключением того, что вы используете свой уровень заклинателя и характеристику, использующуюся для сотворения заклинаний, вместо модификатора боевых маневров. Это действие не провоцирует внеочередные атаки. Против этих действий спасбросок невозможен, но устойчивость к магии применяется как обычно.",
+    "ruRU": "Вы можете передвигать объекты или других существ, если сконцентрируетесь на них. Раз в раунд вы можете применить телекинез чтобы совершить боевой маневр таран, разоружение или сбивание с ног на близкой дистанции. В качестве алтернативы вы можете провести прием захват (в том числе и прижать к земле). Вы совершаете проверки этих маневров как обычно, за исключением того, что вы используете свой уровень заклинателя и характеристику, использующуюся для сотворения заклинаний, вместо модификатора боевых маневров. Это действие не провоцирует внеочередные атаки. Против этих действий спасбросок невозможен, но устойчивость к магии применяется как обычно.",
     "zhCN": "你通过专注于物体或生物来移动它们。每轮一次，你可以使用心灵遥控在近程范围内进行冲撞、缴械、或者绊摔。此外，你还可以进行擒抱 (包括压制) 。如常处理这些战技尝试，但你的战技检定加值等于你的施法者等级加上你的施法者属性调整值，且不会引发借机攻击。对方不能进行豁免检定，但法术抗力仍会生效。"
   },
   {
@@ -12099,7 +12099,7 @@
   {
     "Key": "NewSpellBladeLash.Description",
     "enGB": "Your weapon elongates and becomes whip-like. As part of casting this spell, you can use this weapon to attempt a trip combat maneuver against one creature within 20 feet, and you gain a +10 bonus on your roll, after which the weapon returns to its previous form.",
-    "ruRU": "Ваше оружие удлинняется и становится похоже на хлыст. Как часть этого заклинания вы можете попытаться при помощи этого оружия сбить 1 существо в радиусе 20 футов с бонусом +10 к этой проверке, после чего оружие возвращается в свою первоначальную форму.",
+    "ruRU": "Ваше оружие удлиняется и становится похоже на хлыст. Как часть этого заклинания вы можете попытаться при помощи этого оружия сбить 1 существо в радиусе 20 футов с бонусом +10 к этой проверке, после чего оружие возвращается в свою первоначальную форму.",
     "zhCN": "你的武器被拉长，变得如同鞭子一般。作为施放该法术的一部分，你能够使用该武器尝试对20尺内的一个生物进行一次摔绊战技，而且你在检定中获得+10加值，在此之后，你的武器会还原至它原本的形态。"
   },
   {
@@ -12216,7 +12216,7 @@
   {
     "Key": "NewSpellResinousSkin.Description",
     "enGB": "You coat your body with a resinous substance, protecting you from attacks and binding weapons that strike you. You gain DR 5/piercing, as well as a +4 circumstance bonus to your CMD against disarm attempts. Additionally, you gain a +2 circumstance bonus on combat maneuver checks to initiate a grapple, maintain a grapple, and pin a foe. Any enemy you grapple takes a –2 penalty on attempts to break the grapple and to escape the grapple. Any weapon that strikes you becomes stuck unless its wielder succeeds at a Reflex saving throw. When it gets stuck in this way, you can attempt a free disarm combat maneuver.",
-    "ruRU": "Вы покрываете свое тело смолистым веществом, защищающим вас от атак и связывающим поражающее вас оружие. Вы получаете снижение урона 5/колющее, а также получаете ситуативный бонус +4 к защите от боевого маневра разоружение. Кроме того, вы получаете ситуативный бонус +2 к проверкам боевых маневров когда вы пытаетесь схватить, удержать в захвате или прижать цель. Захваченная вами цель получает штраф -2 к попыткам вырваться из захвата. Любое оружие которое попадает по вам, застревает, если его владелец не совершит успешный спасбросок реакции. Когда оружие застревает таким образом, вы можете свободным действием разоружить владельца этого оружия.",
+    "ruRU": "Вы покрываете свое тело смолистым веществом, защищающим вас от атак и связывающим поражающее вас оружие. Вы получаете снижение урона 5/колющее, а также получаете ситуативный бонус +4 к защите от боевого маневра разоружение. Кроме того, вы получаете ситуативный бонус +2 к проверкам боевых маневров когда вы пытаетесь схватить, удержать в захвате или прижать цель. Захваченная вами цель получает штраф -2 к попыткам вырваться из захвата. Любое оружие которое попадает по вам, застревает, если его владелец не совершит успешный спасбросок Реакции. Когда оружие застревает таким образом, вы можете свободным действием разоружить владельца этого оружия.",
     "zhCN": "你用树脂包裹自己的身体，使你免于攻击并且粘住攻击你的武器。你获得DR5/穿刺，对抗缴械的CMD+4环境加值。此外，你的擒抱、保持擒抱和压制敌人的战技检定获得+2环境加值。任何被你擒抱的敌人在试图打破擒抱和逃离擒抱时都有-2减值。任何武器在命中你之后都会被粘住，除非持有者通过一次反射检定。当你以此法粘住武器时，可以立刻施展缴械战技。"
   },
   {
@@ -12294,7 +12294,7 @@
   {
     "Key": "DeificObedienceNocticula2.Description",
     "enGB": "You grow a sinuous tail (if you already have a tail, you grow a second one). This tail is prehensile and capable of manipulating and holding small objects, but cannot perform fine manual work as if it were a hand, with the exception of wielding a dagger. When you make a full attack with this tail-wielded dagger, you can make an additional attack.",
-    "ruRU": "У вас вырастает извивающийся хвост (если у вас уже есть хвост, то у вас выыростает второй). При его помощи вы можете управлять и удерживать небольшие предметы, но не может выполнять тонкую ручную работу, как если бы это была рука, за исключением владения кинжалом. Когда вы совершаете полную атаку держа кинжал хвостом, вы можете совершить дополнительную атаку.",
+    "ruRU": "У вас вырастает извивающийся хвост (если у вас уже есть хвост, то у вас вырастает второй). При его помощи вы можете управлять и удерживать небольшие предметы, но не может выполнять тонкую ручную работу, как если бы это была рука, за исключением владения кинжалом. Когда вы совершаете полную атаку держа кинжал хвостом, вы можете совершить дополнительную атаку.",
     "zhCN": "你长出一条弯曲灵活的尾巴（如果你已经有一条尾巴，会长出第二条尾巴）。 这条尾巴极易操纵并且能够控制和抓握轻小物体，但除了挥舞匕首之外，它不能像手一样进行精细的手工操作。 当你用该匕首全回合攻击时，你可以进行一次额外攻击。"
   },
   {
@@ -12671,7 +12671,7 @@
   {
     "Key": "AnkouShadowUnfetteredShadows.Description",
     "enGB": "At 20th level, as a standard action an ankou’s shadow can unfetter all of his shadow doubles for 1 minute. While unfettered, each shadow double can make full-round attacks as if it were the ankou’s shadow without using any of his actions. A creature struck by a shadow double can attempt a Will save (DC 20 + the ankou’s shadow’s Intelligence modifier) each time it takes damage to recognize the illusion. If it succeeds, the target treats all subsequent attacks as 20% real, as the spell shadow conjuration. The ankou’s shadow can use this ability a number of times per day equal to 3 + his Intelligence modifier.",
-    "ruRU": "На 20 уровне тень анку, основным действием, может отвязать от себя всех своих теневых двойников на 1 минуту. В течение этой минуты двойники тени анку могут совершать полные атаки не тратя действий тени анку. Существо, по которому попадает теневой двойник, может совершать спасбросок воли (DC = 20 + модификатор Интеллекта тени анку) каждый раз, когда оно получает урон, чтобы распознать иллюзию. Если оно успешно совершит спасбросок, то все последующие атаки двойника наносят ему только 20% урона. Тень анку может применять это способность 3 + модификатор Интеллекта раз в день.",
+    "ruRU": "На 20 уровне тень анку, основным действием, может отвязать от себя всех своих теневых двойников на 1 минуту. В течение этой минуты двойники тени анку могут совершать полные атаки не тратя действий тени анку. Существо, по которому попадает теневой двойник, может совершать спасбросок Воли (DC = 20 + модификатор Интеллекта тени анку) каждый раз, когда оно получает урон, чтобы распознать иллюзию. Если оно успешно совершит спасбросок, то все последующие атаки двойника наносят ему только 20% урона. Тень анку может применять это способность 3 + модификатор Интеллекта раз в день.",
     "zhCN": "20级时，以一个标准动作，死魂精之影可以在1分钟内解放他的所有影分身。在解封状态下，每一个阴影分身都可以像死魂精之影一样进行全回合攻击，而且不会消耗死魂精之影的任何动作。被死魂精之影击中的生物每次受到伤害时都可以进行意志豁免（DC为20+死魂精之影的智力调整值）来看穿该幻术效果。如果成功，对于该生物而言所有后续攻击均只有20%的真实度，如同阴影咒法。死魂精之影每天可以使用这个能力的次数等同于3+智力调整值。"
   },
   {
@@ -12938,7 +12938,7 @@
     "Key": "BoltAceResolve.Name",
     "ProcessTemplates": false,
     "enGB": "Shooter’s Resolve",
-    "ruRU": "",
+    "ruRU": "Решимость стрелка",
     "zhCN": "射手决意"
   },
   {
@@ -13178,7 +13178,7 @@
   {
     "Key": "SavageWarriorGreaterCharge.Description",
     "enGB": "At 17th level, when using savage charge, the AC penalty is reduced to 1/4 his fighter level instead of 1/2 his fighter level. In addition, a savage warrior gains Charging Stag Style as a bonus feat.",
-    "ruRU": "Начиная с 17 уровня, штраф к защите от дикиго разбега уменьшается до 1/4 уровней воина вместо 1/2. Кроме того, дикий воин получает черту Стиль атакующего оленя.",
+    "ruRU": "Начиная с 17 уровня, штраф к защите от дикого разбега уменьшается до 1/4 уровней воина вместо 1/2. Кроме того, дикий воин получает черту Стиль атакующего оленя.",
     "zhCN": "17级起，使用野性冲锋时受到的AC减值降低到战士等级的1/4，而不是一半。此外，野性战士获得鹿家赶蝉步作为额外专长。"
   },
   {
@@ -13295,7 +13295,7 @@
   {
     "Key": "ForestWardenUnchainedHeart.Description",
     "enGB": "A forest warden’s free spirit goes far beyond simple stubbornness. At 1st level, she gains a +2 bonus on Will saving throws made against compulsions and mind-affecting effects. If she succeeds at this saving throw, the forest warden gains a +1 bonus on attack rolls against the source of the spell or effect for 1d4 rounds. The bonus on saving throws increases to +3 at 4th level and +4 at 7th level.",
-    "ruRU": "Свободный дух хранителя леса выходит далеко за рамки простого упрямства. На 1 уровне он получает бонус +2 к спасброскам воли против эффектов принуждения и влияющих на разум эффектов. При успешном спасброске против такого эффекта хранитель леса получает бонус +1 к броскам на попадание по источнику этого заклинания или эффекта на 1d4 раундов. Этот бонус к спасброскам увеличивается до +3 на 4 уровне и до +4 на 7 уровне.",
+    "ruRU": "Свободный дух хранителя леса выходит далеко за рамки простого упрямства. На 1 уровне он получает бонус +2 к спасброскам Воли против эффектов принуждения и влияющих на разум эффектов. При успешном спасброске против такого эффекта хранитель леса получает бонус +1 к броскам на попадание по источнику этого заклинания или эффекта на 1d4 раундов. Этот бонус к спасброскам увеличивается до +3 на 4 уровне и до +4 на 7 уровне.",
     "zhCN": "森林守护者的自由精神远不止于浅薄的固执。1级时，她在对抗胁迫和影响心智效果的意志豁免检定上获得+2加值。如果她在这次豁免检定中成功，森林守护者将在1d4轮内，于针对法术或效果来源的攻击检定上获得+1加值。该豁免检定加值在4级增加至 +3，在7级增加至+4。"
   },
   {
@@ -13438,7 +13438,7 @@
   {
     "Key": "MortalUsherPsychicEsoterica.Description",
     "enGB": "At 1st level, a mortal usher gains the Vital Strike feat, and at 6th level he gains the Improved Vital Strike feat, even if he would not normally meet the prerequisites for them. If the mortal usher already has Vital Strike or Improved Vital Strike when he would gain it through this ability, he can immediately swap it for another feat for which he qualifies. For the purposes of qualifying for any feat that includes Vital Strike as a prerequisite, the mortal usher can use his class level in place of his base attack bonus, adding this value to his base attack bonus from any other classes he has as normal.",
-    "ruRU": "На 1 уровне смертный привратник получает черту Жесокий удар, а на 6 уровне он получает черту Жестокий удар+ даже если не соответствует их требованиям. Если у смертного привратника уже есть черта Жестокий удар или Жестокий удар+ на момент, когда он должен был получить его с помощью этой способности, он вместо этого получает другую черту требованиям которой он соответствует. Для определения соответствия требованиям черт требующих наличия черты Жестокий удар, смертный привратник использует свой классовый уровень вместо базового модификатора атаки, добавляя это значения к базовому модификатору атаки полученному от других классов.",
+    "ruRU": "На 1 уровне смертный привратник получает черту Жестокий удар, а на 6 уровне он получает черту Жестокий удар+ даже если не соответствует их требованиям. Если у смертного привратника уже есть черта Жестокий удар или Жестокий удар+ на момент, когда он должен был получить его с помощью этой способности, он вместо этого получает другую черту требованиям которой он соответствует. Для определения соответствия требованиям черт требующих наличия черты Жестокий удар, смертный привратник использует свой классовый уровень вместо базового модификатора атаки, добавляя это значения к базовому модификатору атаки полученному от других классов.",
     "zhCN": "1级时，凡世渡魂人获得要害打击专长，6级时获得精通要害打击专长，即使其未满足通常所需的前置要求。如果凡世渡魂人在应通过该能力获得专长时已经拥有对应专长，则他能立刻将相应专长换为满足条件的另一个专长。在满足任何以要害打击作为前置专长的专长前置要求时，将凡世渡魂人等级作为基础攻击加值，如常加上来自其他职业的基础攻击加值。"
   },
   {
@@ -13464,7 +13464,7 @@
   {
     "Key": "MortalUsherPlagueMask.Description",
     "enGB": "At 3rd level, a mortal usher can conjure or dismiss a nosoi plague mask as a free action. This plague mask is a physical manifestation of the mortal usher’s soul and cannot be destroyed or stolen. As long as the mortal usher’s nosoi plague mask is conjured, the mortal usher gains the ability to cast invisibility on himself as a standard action at will.",
-    "ruRU": "Начиная с 3 уровня смертный привратник может при помощи свободного действия призвать или отозвать чумную маску Носоя. Эта маска - физическое воплошение души привратника и не может быть уничтожена или украдена. Пока маска призвана смертный привратник получает способность, по желанию сотворять заклинание невидимости на себя при помощи основного действия.",
+    "ruRU": "Начиная с 3 уровня смертный привратник может при помощи свободного действия призвать или отозвать чумную маску Носоя. Эта маска - физическое воплощение души привратника и не может быть уничтожена или украдена. Пока маска призвана смертный привратник получает способность, по желанию сотворять заклинание невидимости на себя при помощи основного действия.",
     "zhCN": "3级时，凡世渡魂人可以以自由动作召唤或解消一个疫鸟面具。这个瘟疫医生面具是凡世渡魂人灵魂的具现，无法被毁坏或窃取。只要疫鸟面具被召唤出来，凡世渡魂人就得到以标准动作任意对自己使用隐形术的能力。"
   },
   {
@@ -13503,7 +13503,7 @@
   {
     "Key": "MortalUsherFeatherCloak.Description",
     "enGB": "At 10th level, a mortal usher becomes immune to electricity and death effects, and whenever he is struck by an attack or effect dealing electricity damage, he regains 1 hit point per 3 points of electricity damage the attack or effect would normally deal.",
-    "ruRU": "На 10 уровне смертный привратник становится невсприимчив к электричеству и эффектам смерти, а также когда по нему попадает атака или эффект наносящая урон электричеством, он исцеляет 1 очко здоровья за каждые 3 очка урона электричеством, который обычно наносит эта атака или эффект.",
+    "ruRU": "На 10 уровне смертный привратник становится невосприимчив к электричеству и эффектам смерти, а также когда по нему попадает атака или эффект наносящая урон электричеством, он исцеляет 1 очко здоровья за каждые 3 очка урона электричеством, который обычно наносит эта атака или эффект.",
     "zhCN": "10级时，凡世渡魂人免疫电击和即死效果，且每当遭受造成电击伤害的攻击或效果，都能获得相当于原本应受伤害1/3的治疗。"
   },
   {
@@ -13555,7 +13555,7 @@
   {
     "Key": "MasterpieceRatQuadrille.Description",
     "enGB": "(Bard with Use Magic Device or Persuasion 4) This repetitive, distracting melody wears down foes. You tap out or sing a diverting tune that sticks in the mind of the target, causing the target to take a –2 penalty on attack rolls and a –4 penalty on concentration checks for 10 minutes. A successful Will save halves the penalties and reduces the duration to 1 minute. This ability is a mind-affecting compulsion effect.",
-    "ruRU": "(Использование магических устройств 4 или Убеждение 4) Эта повторяющаяся, отвлекающая мелодия изматывает противников. Вы напеваете или поете отвлекающую мелодию, которая застревает в сознании цели, заставляя ее получать штраф -2 при бросках на попадание и штраф -4 при проверкам концентрации на 10 минут. Успешный спасбросок воли уменьшает штраф вдвое и сокращает продолжительность до 1 минуты. Эта способность является воздействующим на разум эффектом принуждения.",
+    "ruRU": "(Использование магических устройств 4 или Убеждение 4) Эта повторяющаяся, отвлекающая мелодия изматывает противников. Вы напеваете или поете отвлекающую мелодию, которая застревает в сознании цели, заставляя ее получать штраф -2 при бросках на попадание и штраф -4 при проверкам концентрации на 10 минут. Успешный спасбросок Воли уменьшает штраф вдвое и сокращает продолжительность до 1 минуты. Эта способность является воздействующим на разум эффектом принуждения.",
     "zhCN": "（诗人，使用魔法装置或说服4）这个回环往复，令人分神的旋律使敌人感到疲惫。你咏唱或击打出一串令人分心的曲调，深深嵌入目标的心智之中，令其在接下来10分钟内的攻击检定上承受-2减值并在专注检定上承受-4减值。通过一次意志检定目标能将减值减半并减少持续时间至1分钟。这是一个的影响心智的胁迫效果。"
   },
   {
@@ -13594,7 +13594,7 @@
   {
     "Key": "BardMasterpiece.Description",
     "enGB": "Talented bards can learn or create masterpieces, unusual applications of the bardic performance ability requiring special training. Each masterpiece has an associated cost to learn it. Typically, a bard must spend one of his bard spells known of a specific spell level or select it in place of a feat. The bard can spend a bard spell known of a level higher than the listed level to learn a masterpiece.",
-    "ruRU": "Талантливые барды могут выучить или создать шедевры, необычные применения бардовских способностей, требующие специальной подготовки. Каждый шедевр имеет соответствующую стоимость изучения. Как правило, бард должен потратить одно из известных ему бардовских заклинаний определенного уровня или выбрать его вместо черты. Бард может потратить на изучение шедевра известное ему бардовское заклинание уровня выше, чем указанный уровень.",
+    "ruRU": "Талантливые барды могут выучить или создать шедевры, необычные применения способностей барда, требующие специальной подготовки. Каждый шедевр имеет соответствующую стоимость изучения. Как правило, бард должен потратить одно из известных ему заклинаний барда определенного уровня или выбрать его вместо черты. Бард может потратить на изучение шедевра известное ему заклинание барда уровня выше, чем указанный уровень.",
     "zhCN": "天赋异禀的诗人能够学习或是自行创作名曲，运用这种不同寻常的诗人表演需要特殊的训练。每一种传世名作都不是白送的。通常来说，吟游诗人必须花费一个已知法术或是通过专长来学习传世名作，他可以花费比该传世名作要求最低等级还高的法术位以学习传世名作。"
   },
   {
@@ -13607,7 +13607,7 @@
   {
     "Key": "NewSpellHermeanPotential.Description",
     "enGB": "You gift the target with the ability to perfect its actions via mental clarity. On the next attack roll, saving throw, ability check, or skill check the target attempts, it rolls twice and takes the more favorable result. For every 5 caster levels you have, the target can roll twice on an additional attack roll, saving throw, or skill check (to a maximum of 5 rolls at 20th level).",
-    "ruRU": "Вы приясняете разум цели, что позволяет ей совершать доведенные до совершенства действиея. При следующем броске на попадание, спасброске, проверке характеристики или навыка цель дважды бросает кость и выбирает лучший результат. За каждые 5 имеющихся у вас уровней заклинателя цель может дважды сделать бросок еще на одном броске на попадание, спасброске или проверке (до максимума в 5 бросков на 20-м уровне).",
+    "ruRU": "Вы проясняете разум цели, что позволяет ей совершать доведенные до совершенства действия. При следующем броске на попадание, спасброске, проверке характеристики или навыка цель дважды бросает кость и выбирает лучший результат. За каждые 5 имеющихся у вас уровней заклинателя цель может дважды сделать бросок еще на одном броске на попадание, спасброске или проверке (до максимума в 5 бросков на 20 уровне).",
     "zhCN": "你赐予目标通过清晰的头脑完美执行动作的能力。在目标尝试下一次攻击投骰，豁免检定或技能检定时，可以投骰两次，并取更有利的结果。你每有5个施法者等级，目标就可以额外重骰一次（次数最多在20级时达到5次）。"
   },
   {
@@ -13646,7 +13646,7 @@
   {
     "Key": "NewSpellGlimpseAkashic.Description",
     "enGB": "You expand your consciousness in an attempt to tap into the perfect knowledge contained within the Akashic Record. Such a connection is incredibly difficult to create and maintain, and it can be almost impossible to know at the time of the casting what knowledge will be gained. The information contained within the Akashic Record can be overwhelming when accessed in this fashion, so your mind partitions it away until needed. For the next day, you can activate the knowledge gained from the Akashic Record as a free action; when you do so, you gain a circumstance bonus equal to your caster level on all skill checks, attack rolls, damage rolls, saving throws, and combat maneuver checks for 1 minute. At the end of this time, the overwhelming nature of the Akashic Record assaults your psyche, causing you to be stunned for 2 rounds and sickened for 1 minute.",
-    "ruRU": "Вы расширяете свое сознание, пытаясь приобщиться к совершенному знанию, содержащемуся в хрониках Акаши. Такую связь невероятно сложно создать и поддерживать, и во время броска практически невозможно понять, какие знания будут получены. Информация, содержащаяся в хрониках Акаши, может оказаться подавляющей, когда получается таким образом, поэтому ваш разум откладывает ее до тех пор, пока она не понадобится. На следующий день, свободным действием, вы можете активировать знания, полученные из хроник Акаши; когда вы это делаете, на 1 минуту, вы получаете ситуативный бонус, равный вашему уровню заклинателя, ко всем проверкам навыков, броскам на попадание и урон, спасброскам и проверкам боевых маневров. По истечении этого времени всепоглощающая природа храник Акаши атакует вашу психику, в результате чего вы оказываетесь ошеломлены на 2 раунда и испытываете тошноту в течение 1 минуты.",
+    "ruRU": "Вы расширяете свое сознание, пытаясь приобщиться к совершенному знанию, содержащемуся в хрониках Акаши. Такую связь невероятно сложно создать и поддерживать, и во время броска практически невозможно понять, какие знания будут получены. Информация, содержащаяся в хрониках Акаши, может оказаться подавляющей, когда получается таким образом, поэтому ваш разум откладывает ее до тех пор, пока она не понадобится. На следующий день, свободным действием, вы можете активировать знания, полученные из хроник Акаши; когда вы это делаете, на 1 минуту, вы получаете ситуативный бонус, равный вашему уровню заклинателя, ко всем проверкам навыков, броскам на попадание и урон, спасброскам и проверкам боевых маневров. По истечении этого времени всепоглощающая природа хроник Акаши атакует вашу психику, в результате чего вы оказываетесь ошеломлены на 2 раунда и испытываете тошноту в течение 1 минуты.",
     "zhCN": "你扩展你的意识来尝试联结隐藏在阿卡西记录中的完美知识。这种联结非常难以建立和保持，并且在施放法术的时候也几乎不可能知道究竟会获得什么样的知识。通过这种方式来获取保存在阿卡西记录中的信息时，它足以淹没你的意识。所以你的心灵会将它先放在一边，直到需要时再启用。在接下来的一天中，你可以通过自由动作激活你从阿卡西记录中获取的知识；当你这么做时，你在所有的技能鉴定、攻击检定、伤害检定、豁免检定以及战技检定上获得等于你的施法者等级的环境加值，持续1分钟。在这段时间结束之后，阿卡西记录那磅礴浩荡之性侵入了你的心智，令你震慑2轮并恶心1分钟。"
   },
   {
@@ -13685,7 +13685,7 @@
   {
     "Key": "SupernaturalistProficiencies.Description",
     "enGB": "A supernaturalist can affect plants with mind-affecting effects she creates. Any such spell that allows a Will save can instead be negated by the target plant with a successful Fortitude save at the same DC. A supernaturalist is not proficient with any type of armor.",
-    "ruRU": "Воздействующие на разум эффекты, которые сотворяет супернатуралист могут воздействовать на растения. Если заклинание с таким эффектом позволяет совершить спасбросок воли, то растение ставшее его целью вместо этого совершает спасбросок стойкости с той же сложностью. Супернатуралист не умеет носить никакую броню.",
+    "ruRU": "Воздействующие на разум эффекты, которые сотворяет супернатуралист могут воздействовать на растения. Если заклинание с таким эффектом позволяет совершить спасбросок Воли, то растение ставшее его целью вместо этого совершает спасбросок Стойкости с той же сложностью. Супернатуралист не умеет носить никакую броню.",
     "zhCN": "超自然学家造成的影响心智效应可以影响植物。如果该效果允许意志豁免检定，那么目标植物也可以将其改为DC相同的强韧检定。超自然学家不擅长任何护甲。"
   },
   {
@@ -13789,7 +13789,7 @@
   {
     "Key": "SupernaturalistSpiritBonus.Description",
     "enGB": "At 4th level, a supernaturalist can perform a seance to call an animal spirit of any animal with which she is familiar to serve as her companion and guide. Her spirit bonus applies on attack and damage rolls with natural weapons and on Lore (nature) checks.",
-    "ruRU": "На 4 уровне супернатуралист может провести сеанс, чтобы вызвать дух любого животного, с которым она знакома, в качестве своего компаньона. Он получает духовный бонус к броскам на попадние и урон естественным оружием и к проверкам Знания (природа).",
+    "ruRU": "На 4 уровне супернатуралист может провести сеанс, чтобы вызвать дух любого животного, с которым она знакома, в качестве своего компаньона. Он получает духовный бонус к броскам на попадание и урон естественным оружием и к проверкам Знания (природа).",
     "zhCN": "4级起，超自然学家可以通过降灵仪式呼唤一种她熟悉的动物灵体作为他的护卫与向导。她在天生武器的攻击与伤害检定，以及所有知识（自然）检定上获得魂灵同调的加值。"
   },
   {
@@ -13919,7 +13919,7 @@
   {
     "Key": "FeatShootingStar2.Description",
     "enGB": "Advanced Prerequisites: Dex 17; Point-Blank Shot; Rapid Shot; base attack bonus +11 or Thievery 11 ranks. A chaotic good bard of at least 10th level can ignore the prerequisites. You can impart a powerful spin to a thrown starknife so that multiple blades strike the target rather than just a single blade of the four, dealing extra damage with the other blades. As a full-round action, you can make a single attack with a thrown starknife, rolling 1d4 to determine how many effective strikes you gain with the attack (if you roll a 1, then only one blade strikes). If the attack hits, all of the effective strikes damage the target. Apply critical hit damage only once for this attack. The damage bonus from your appropriate ability score modifier applies to each strike, as do other damage bonuses, such as a bard’s inspire competence bonus. Damage reduction and resistances apply separately to each strike. They are considered melee attacks if you don't know how to throw a starknife.",
-    "ruRU": "Продвинутые требования: ЛВК 17; Стрельба вблизи; Быстрый выстрел; Базовый модификатор атаки +11 или Плутовство +11. Хаотичный добрый бард 10 или выше уровня может игнорировать эти требования. Вы можете придать брошенному клинку-звезде мощное вращение, чтобы в цель попало не одно лезвие из четырех, а сразу несколько, нанося дополнительный урон остальными лезвиями. В качестве действия полного раунда вы можете совершить одну атаку метательным клинком-звездой, бросив кость 1d4, чтобы определить, сколькими лезвиями вам удастся попасть при атаке (если вы бросите 1, то попадет только одно лезвие). Если атака попадает, все лезвия наносят урон цели. Нанести урон от критического удара можно только один раз за эту атаку. Бонус к урону от соответствующего модификатора характеристики применяется к каждому удару, так же как и другие бонусы к урону, например бонус мастерства от способности барда Песнь мастерства. Снижение урона и устойчивости применяются к каждому удару отдельно. Эти атаки считаются атаками ближнего боя, если вы не умеете метать клинок-звезду.",
+    "ruRU": "Продвинутые требования: Ловкость 17; Стрельба вблизи; Быстрый выстрел; Базовый модификатор атаки +11 или Плутовство +11. Хаотичный добрый бард 10 или выше уровня может игнорировать эти требования. Вы можете придать брошенному клинку-звезде мощное вращение, чтобы в цель попало не одно лезвие из четырех, а сразу несколько, нанося дополнительный урон остальными лезвиями. В качестве действия полного раунда вы можете совершить одну атаку метательным клинком-звездой, бросив кость 1d4, чтобы определить, сколькими лезвиями вам удастся попасть при атаке (если вы бросите 1, то попадет только одно лезвие). Если атака попадает, все лезвия наносят урон цели. Нанести урон от критического удара можно только один раз за эту атаку. Бонус к урону от соответствующего модификатора характеристики применяется к каждому удару, так же как и другие бонусы к урону, например бонус мастерства от способности барда Песнь мастерства. Снижение урона и устойчивости применяются к каждому удару отдельно. Эти атаки считаются атаками ближнего боя, если вы не умеете метать клинок-звезду.",
     "zhCN": "进阶条件：敏捷17，近程射击，快速射击，BAB+11或巧手11级。10级或以上的混乱善良诗人可以无视条件。你可以给一枚抛出的星刃赋予强大的回旋效果，使得多个刃叶击中目标而非四个刃叶中的某一个，并造成额外的伤害。作为一个整轮动作，你可以投掷星刃进行一次攻击，投掷1d4来决定获得几次有效攻击（如果你投掷出1，则只有一次）。如果攻击命中，则每一击都会成功伤害目标。其中重击伤害只能触发一次，来自固定加值的伤害则适用于每个伤害骰，例如吟游诗人的激发勇气加值。抗性和伤害减免能力适用于每一击。如果你不知道如何投掷星刃，这些攻击视为近战攻击。"
   },
   {
@@ -13945,7 +13945,7 @@
   {
     "Key": "InquisitionHammer.Description",
     "enGB": "Cavaliers of the order of the hammer respect might over all, and believe that those who prove their strength have earned the right to make decisions for the weak. When the cavalier’s own goals conflict with those of a mighty ruler, the cavalier must prove that her own strength and ideals are superior.",
-    "ruRU": "Всадники ордена молота превыше всего ценят силу и считают, что тот, кто докажет свою силу, заслуживает право принимать решения за слабых. Когда собственные цели вседника вступают в конфликт с целями могущественного правителя, он должен доказать, что его собственная сила и идеалы превосходят его.",
+    "ruRU": "Всадники ордена молота превыше всего ценят силу и считают, что тот, кто докажет свою силу, заслуживает право принимать решения за слабых. Когда собственные цели всадника вступают в конфликт с целями могущественного правителя, он должен доказать, что его собственная сила и идеалы превосходят его.",
     "zhCN": "大锤骑士团的骑士敬重力量高过一切，她们认为强大就意味着拥有替弱者做出决定的权利。若骑将的个人目标与强大的统治者发生冲突，她就必须证明自己的力量和理念更加优越。"
   },
   {
@@ -13984,7 +13984,7 @@
   {
     "Key": "InquisitionHammerFlex.Description",
     "enGB": "At 15th level, the cavalier can display her own brawn to inspire greater strength in his allies. As a standard action, she can grant herself and any allies within 30 feet a +4 morale bonus on melee attack rolls, combat maneuver checks, Fortitude saves, and Athletic checks. The cavalier can maintain her inspiring flex as a free action, and she can use this ability for a number of rounds per day equal 1/2 her cavalier level; this duration need not be continuous.",
-    "ruRU": "Начиная с 15 уровня всадник может продемонстрировать свою силу, чтобы воодушевить своих союзников. Обычным действием, он может дать себе и всем союзникам в радиусе 30 футов бонус боевого духа +4 к броскам на попадание, проверкам боевых маневров, спасброскам стойкости и проверкам Атлетики. Всадник может поддерживать эту способность в течение количества раундов в день, равное 1/2 его уровня всадника; эта продолжительность не обязательно должна идти непрерывно.",
+    "ruRU": "Начиная с 15 уровня всадник может продемонстрировать свою силу, чтобы воодушевить своих союзников. Обычным действием, он может дать себе и всем союзникам в радиусе 30 футов бонус боевого духа +4 к броскам на попадание, проверкам боевых маневров, спасброскам Стойкости и проверкам Атлетики. Всадник может поддерживать эту способность в течение количества раундов в день, равное 1/2 его уровня всадника; эта продолжительность не обязательно должна идти непрерывно.",
     "zhCN": "15级起，骑将可以秀出完美的肌肉给盟友打气。以标准动作，她可以给自己和30尺内所有盟友的近战攻击，战技检定，强韧豁免和运动检定提供+4士气加值。她可以用自由动作维持，每日可使用此能力的轮数等同1/2骑将等级，不必连续。"
   },
   {
