@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Kingmaker.UI.CanvasScalerWorkaround;
 
 namespace PrestigePlus.CustomComponent.Feat
 {
@@ -18,7 +19,7 @@ namespace PrestigePlus.CustomComponent.Feat
             if (base.Owner.Body.PrimaryHand.MaybeWeapon?.Blueprint.Category == cat)
             {
                 evt.AddExtraAttacks(1, false, false, base.Owner.Body.PrimaryHand.Weapon);
-                if (base.Owner.Body.SecondaryHand.HasWeapon)
+                if (Owner.Body.SecondaryHand.HasWeapon && Owner.Body.SecondaryHand.MaybeWeapon != Owner.Body.EmptyHandWeapon)
                 {
                     evt.AddExtraAttacks(1, false, false, base.Owner.Body.SecondaryHand.Weapon);
                 }
