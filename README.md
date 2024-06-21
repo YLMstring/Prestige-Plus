@@ -267,8 +267,8 @@
 - [Black Seraph’s Malevolence](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/black-seraphs-malevolence-combat/)
 - [Black Seraph Annihilation](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/black-seraph-annihilation-combat/)
 - [Grabbing Style](https://www.d20pfsrd.com/feats/combat-feats/grabbing-style-combat-style/)
-- Grabbing Drag (homebrew): You can use a move action to attempt a grapple combat maneuver against a creature within 30 feet to pull it towards you. This movement as well as the ability itself provoke attack of opportunity.
-- Grabbing Master (homebrew): Your grapple may target anyone, even if the creature is immune to grapple.
+- Grabbing Drag (homebrew, requires bab 8 or monk 4, and kineticist 1): You can use a move action to attempt a grapple combat maneuver against a creature within 30 feet to pull it towards you. This movement as well as the ability itself provoke attack of opportunity.
+- Grabbing Master (homebrew, requires bab 12 or monk 8, and kineticist 2): Your grapple may target anyone, even if the creature is immune to grapple.
 - [Charging Stag Style](https://www.d20pfsrd.com/feats/combat-feats/charging-stag-style-combat-style/)
 - [Stag Horns](https://www.d20pfsrd.com/feats/combat-feats/stag-horns-combat-style/)
 - [Stag Submission](https://www.d20pfsrd.com/feats/combat-feats/stag-submission-combat-style/)
