@@ -18,11 +18,12 @@ namespace PrestigePlus.CustomComponent.Feat
             if (base.Owner.Body.PrimaryHand.MaybeWeapon?.Blueprint.Category == cat)
             {
                 evt.AddExtraAttacks(1, false, false, base.Owner.Body.PrimaryHand.Weapon);
+                if (base.Owner.Body.SecondaryHand.HasWeapon)
+                {
+                    evt.AddExtraAttacks(1, false, false, base.Owner.Body.SecondaryHand.Weapon);
+                }
             }
-            else if (base.Owner.Body.SecondaryHand.MaybeWeapon?.Blueprint.Category == cat)
-            {
-                evt.AddExtraAttacks(1, false, false, base.Owner.Body.SecondaryHand.Weapon);
-            }
+            
         }
 
         // Token: 0x0600EA12 RID: 59922 RVA: 0x003BEFDC File Offset: 0x003BD1DC

@@ -12293,9 +12293,9 @@
   },
   {
     "Key": "DeificObedienceNocticula2.Description",
-    "enGB": "You grow a sinuous tail (if you already have a tail, you grow a second one). This tail is prehensile and capable of manipulating and holding small objects, but cannot perform fine manual work as if it were a hand, with the exception of wielding a dagger. When you make a full attack with this tail-wielded dagger, you can make an additional attack.",
-    "ruRU": "У вас вырастает извивающийся хвост (если у вас уже есть хвост, то у вас вырастает второй). При его помощи вы можете управлять и удерживать небольшие предметы, но не может выполнять тонкую ручную работу, как если бы это была рука, за исключением владения кинжалом. Когда вы совершаете полную атаку держа кинжал хвостом, вы можете совершить дополнительную атаку.",
-    "zhCN": "你长出一条弯曲灵活的尾巴（如果你已经有一条尾巴，会长出第二条尾巴）。 这条尾巴极易操纵并且能够控制和抓握轻小物体，但除了挥舞匕首之外，它不能像手一样进行精细的手工操作。 当你用该匕首全回合攻击时，你可以进行一次额外攻击。"
+    "enGB": "You grow a sinuous tail (if you already have a tail, you grow a second one). This tail is prehensile and capable of manipulating and holding small objects, but cannot perform fine manual work as if it were a hand, with the exception of wielding a dagger. When you make a full attack with this tail-wielded dagger as your primary weapon, you can make an additional attack and do the same with an off-hand weapon, if you have it. When you do so, you have a reach that is 5 feet greater than your base reach.",
+    "ruRU": "У вас вырастает извивающийся хвост (если у вас уже есть хвост, то у вас вырастает второй). При его помощи вы можете управлять и удерживать небольшие предметы, но не может выполнять тонкую ручную работу, как если бы это была рука, за исключением владения кинжалом. Когда вы совершаете полную атаку держа кинжал хвостом, вы можете совершить дополнительную атаку as your primary weapon and do the same with an off-hand weapon, if you have it. When you do so, you have a reach that is 5 feet greater than your base reach.",
+    "zhCN": "你长出一条弯曲灵活的尾巴（如果你已经有一条尾巴，会长出第二条尾巴）。这条尾巴极易操纵并且能够控制和抓握轻小物体，但除了挥舞匕首之外，它不能像手一样进行精细的手工操作。当你用该匕首作为主武器全回合攻击时，你可以进行一次额外攻击。如果你有副手武器，也可以额外攻击。这么做的时候，你的触及比原本多5尺。"
   },
   {
     "Key": "DeificObedienceNocticula3.Name",
