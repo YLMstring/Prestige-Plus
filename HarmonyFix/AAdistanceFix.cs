@@ -31,6 +31,10 @@ namespace PrestigePlus.HarmonyFix
                 {
                     __result += weapon.AttackRange;
                 }
+                if (__instance.HasFact(Noc) && weapon.Category == Kingmaker.Enums.WeaponCategory.Dagger)
+                {
+                    __result += 5.Feet();
+                }
                 if (__instance.HasFact(Buff) && weapon.Category == Kingmaker.Enums.WeaponCategory.UnarmedStrike)
                 {
                     if (__instance.HasFact(Buff2))
@@ -47,6 +51,7 @@ namespace PrestigePlus.HarmonyFix
         }
         private static readonly LogWrapper Logger = LogWrapper.Get("PrestigePlus");
         private static BlueprintFeatureReference Arcane = BlueprintTool.GetRef<BlueprintFeatureReference>("{1DA01231-4001-46F3-8A31-E748AE8DFBF3}");
+        private static BlueprintFeatureReference Noc = BlueprintTool.GetRef<BlueprintFeatureReference>(DeificObedience.Nocticula2Guid);
         private static BlueprintBuffReference Buff = BlueprintTool.GetRef<BlueprintBuffReference>(MageHandTrick.ThrowPunchbuffGuid);
         private static BlueprintBuffReference Buff2 = BlueprintTool.GetRef<BlueprintBuffReference>(MageHandTrick.ReachingHandbuffGuid);
     }
