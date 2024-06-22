@@ -3,6 +3,7 @@ using HarmonyLib;
 using Kingmaker.Blueprints;
 using Kingmaker.Enums;
 using Kingmaker.UnitLogic;
+using PrestigePlus.Blueprint.Archetype;
 using PrestigePlus.Blueprint.Feat;
 using PrestigePlus.Blueprint.PrestigeClass;
 using System;
@@ -23,7 +24,12 @@ namespace PrestigePlus.HarmonyFix
             {
                 __result += 1;
             }
+            if (__instance.HasFact(Ace2))
+            {
+                __result += 1;
+            }
         }
         private static BlueprintFeatureReference Ace = BlueprintTool.GetRef<BlueprintFeatureReference>(MammothRider.GiganticSteed1Guid);
+        private static BlueprintBuffReference Ace2 = BlueprintTool.GetRef<BlueprintBuffReference>(TitanMauler.TitanicRageGuid0);
     }
 }
