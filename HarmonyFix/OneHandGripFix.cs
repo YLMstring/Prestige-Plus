@@ -16,6 +16,7 @@ using System.Threading.Tasks;
 using Kingmaker.Items.Slots;
 using Kingmaker.Blueprints.Items.Weapons;
 using PrestigePlus.Blueprint.Archetype;
+using PrestigePlus.Blueprint.CombatStyle;
 
 namespace PrestigePlus.HarmonyFix
 {
@@ -27,7 +28,11 @@ namespace PrestigePlus.HarmonyFix
             try
             {
                 if (__result) { return; }
-                if (unit?.HasFact(Staff) == true && (__instance.Blueprint.Category == Kingmaker.Enums.WeaponCategory.Quarterstaff))
+                if (unit?.HasFact(Staff) == true && __instance.Blueprint.Category == Kingmaker.Enums.WeaponCategory.Quarterstaff)
+                {
+                    __result = true;
+                }
+                else if (unit?.HasFact(Staff2) == true && (__instance.Blueprint.FighterGroup == WeaponFighterGroupFlags.Spears || __instance.Blueprint.FighterGroup == WeaponFighterGroupFlags.Polearms))
                 {
                     __result = true;
                 }
@@ -36,5 +41,6 @@ namespace PrestigePlus.HarmonyFix
         }
 
         private static BlueprintFeatureReference Staff = BlueprintTool.GetRef<BlueprintFeatureReference>(StaffMagus.QuarterstaffMasterGuid);
+        private static BlueprintBuffReference Staff2 = BlueprintTool.GetRef<BlueprintBuffReference>(SpearDancingStyle.StylebuffGuid);
     }
 }

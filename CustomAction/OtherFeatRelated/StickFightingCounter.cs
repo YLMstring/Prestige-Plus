@@ -39,10 +39,15 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
             {
                 return;
             }
-            if (evt.Target.HasFact(Feat) && evt.Initiator.HasFact(TargetBuff) && !evt.IsHit && evt.Result != AttackResult.MirrorImage && evt.Result != AttackResult.Concealment && evt.AttackType == Kingmaker.RuleSystem.AttackType.Melee && Owner.CombatState.EngagedUnits.Contains(evt.Initiator))
+            if (evt.Initiator.HasFact(TargetBuff) && !evt.IsHit && evt.Result != AttackResult.MirrorImage && evt.Result != AttackResult.Concealment && evt.AttackType == Kingmaker.RuleSystem.AttackType.Melee && Owner.CombatState.EngagedUnits.Contains(evt.Initiator))
             {
-                var bp = evt.Target.GetThreatHand()?.Weapon?.Blueprint;
+                var bp = Owner.GetThreatHand()?.Weapon?.Blueprint;
                 if (bp != null && (bp.Category == Kingmaker.Enums.WeaponCategory.Club || bp.Category == Kingmaker.Enums.WeaponCategory.Quarterstaff))
+                {
+                    Game.Instance.CombatEngagementController.ForceAttackOfOpportunity(Owner, evt.Initiator, false);
+                    Data.LastUseTime = Game.Instance.TimeController.GameTime;
+                }
+                else if (Owner.HasFact(Spiral) && bp != null && (bp.FighterGroup == Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroupFlags.Spears || bp.FighterGroup == Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroupFlags.Polearms))
                 {
                     Game.Instance.CombatEngagementController.ForceAttackOfOpportunity(Owner, evt.Initiator, false);
                     Data.LastUseTime = Game.Instance.TimeController.GameTime;
@@ -51,6 +56,6 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
         }
 
         private static BlueprintBuffReference TargetBuff = BlueprintTool.GetRef<BlueprintBuffReference>(SmashingStyle.CounterBuffGuid);
-        private static BlueprintFeatureReference Feat = BlueprintTool.GetRef<BlueprintFeatureReference>(SmashingStyle.CounterGuid);
+        private static BlueprintBuffReference Spiral = BlueprintTool.GetRef<BlueprintBuffReference>(SpearDancingStyle.SpiralbuffGuid);
     }
 }
