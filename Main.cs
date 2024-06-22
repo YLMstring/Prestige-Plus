@@ -275,6 +275,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("spire"), defaultValue: true, Helpers.CreateString("toggle-desc33", "Spire Defender"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("staffmagus"), defaultValue: true, Helpers.CreateString("toggle-desc103", "Staff Magus"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("mm"), defaultValue: true, Helpers.CreateString("toggle-desc73", "Maneuver Master"))
               .ShowVisualConnection())
           .AddToggle(
@@ -503,6 +506,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("superop"))) { HermeanPotential.Configure(); DebilitatingPain.Configure(); DebilitatingPainMass.Configure(); GlimpseAkashic.Configure(); AkashicForm.Configure(); PhantomLimb.Configure(); Supernaturalist.Configure(); SecretAkashic.Configure(); SecretAkashic.Configure2(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("order"))) { Inquisition.HammerFeat(); Inquisition.PenitentFeat(); Inquisition.SealFeat(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("titanm"))) { TitanMauler.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("staffmagus"))) { StaffMagus.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2(); TabletopGrapplingInfusion.ConfigureTabletopGrappling();
                 }
                 catch (Exception e)
