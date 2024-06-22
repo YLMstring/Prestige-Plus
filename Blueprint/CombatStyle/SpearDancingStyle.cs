@@ -26,6 +26,10 @@ using PrestigePlus.CustomComponent.Feat;
 using PrestigePlus.CustomComponent.Charge;
 using PrestigePlus.Blueprint.MythicGrapple;
 using Kingmaker.Enums;
+using Kingmaker.PubSubSystem;
+using Kingmaker.RuleSystem.Rules;
+using Kingmaker.UnitLogic.Parts;
+using Kingmaker.UnitLogic;
 
 namespace PrestigePlus.Blueprint.CombatStyle
 {
@@ -115,6 +119,7 @@ namespace PrestigePlus.Blueprint.CombatStyle
                     .AddPrerequisiteFeature(FeatureRefs.TwoWeaponFighting.ToString())
                     .AddPrerequisiteFeature(FeatureRefs.WeaponFinesse.ToString())
                     .AddPrerequisiteFeature(StyleGuid)
+                    .AddComponent<SpearAttackStatReplacement>(c => { c.ReplacementStat = StatType.Dexterity; c.Mythic = FeatureRefs.WeaponFinesseMythicFeat.Reference; })
                     .AddToIsPrerequisiteFor([FeatureRefs.MonkFlurryOfBlowstUnlock.ToString(), SmashingStyle.CounterGuid, SmashingStyle.MasterGuid])
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .AddToGroups(FeatureGroup.StyleFeat)
@@ -156,6 +161,47 @@ namespace PrestigePlus.Blueprint.CombatStyle
                     .AddToGroups(FeatureGroup.StyleFeat)
                     .Configure();
         }
+    }
+    public class SpearAttackStatReplacement : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleCalculateAttackBonusWithoutTarget>, IRulebookHandler<RuleCalculateAttackBonusWithoutTarget>, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleCalculateWeaponStats>, IRulebookHandler<RuleCalculateWeaponStats>
+    {
+        // Token: 0x0600C7A9 RID: 51113 RVA: 0x0034014C File Offset: 0x0033E34C
+        public void OnEventAboutToTrigger(RuleCalculateAttackBonusWithoutTarget evt)
+        {
+            ModifiableValueAttributeStat modifiableValueAttributeStat = base.Owner.Stats.GetStat(evt.AttackBonusStat) as ModifiableValueAttributeStat;
+            ModifiableValueAttributeStat modifiableValueAttributeStat2 = base.Owner.Stats.GetStat(this.ReplacementStat) as ModifiableValueAttributeStat;
+            bool flag = modifiableValueAttributeStat2 != null && (modifiableValueAttributeStat == null || modifiableValueAttributeStat2.Bonus >= modifiableValueAttributeStat.Bonus);
+            if (flag && (evt.Weapon.Blueprint.FighterGroup == Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroupFlags.Spears || evt.Weapon.Blueprint.FighterGroup == Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroupFlags.Polearms))
+            {
+                evt.AttackBonusStat = this.ReplacementStat;
+            }
+        }
+
+        // Token: 0x0600C7AA RID: 51114 RVA: 0x003401DF File Offset: 0x0033E3DF
+        public void OnEventDidTrigger(RuleCalculateAttackBonusWithoutTarget evt)
+        {
+        }
+
+        void IRulebookHandler<RuleCalculateWeaponStats>.OnEventAboutToTrigger(RuleCalculateWeaponStats evt)
+        {
+            ModifiableValueAttributeStat modifiableValueAttributeStat = evt.Initiator.Descriptor.Stats.GetStat(this.ReplacementStat) as ModifiableValueAttributeStat;
+            ModifiableValueAttributeStat modifiableValueAttributeStat2 = (evt.DamageBonusStat != null) ? (evt.Initiator.Descriptor.Stats.GetStat(evt.DamageBonusStat.Value) as ModifiableValueAttributeStat) : null;
+            bool flag = modifiableValueAttributeStat != null && (modifiableValueAttributeStat2 == null || modifiableValueAttributeStat.Bonus > modifiableValueAttributeStat2.Bonus);
+            bool flag2 = evt.Weapon.Blueprint.FighterGroup == Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroupFlags.Spears || evt.Weapon.Blueprint.FighterGroup == Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroupFlags.Polearms;
+            if (flag && flag2 && Owner.HasFact(Mythic))
+            {
+                evt.OverrideDamageBonusStat(this.ReplacementStat);
+                evt.TwoHandedStatReplacement = true;
+            }
+        }
+
+        void IRulebookHandler<RuleCalculateWeaponStats>.OnEventDidTrigger(RuleCalculateWeaponStats evt)
+        {
+            
+        }
+
+        // Token: 0x04008653 RID: 34387
+        public StatType ReplacementStat;
+        public BlueprintFeature Mythic;
     }
 }
 
