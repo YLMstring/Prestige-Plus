@@ -167,8 +167,7 @@ namespace PrestigePlus.Blueprint.CombatStyle
                     .AddPrerequisiteFeature(ParametrizedFeatureRefs.WeaponFocus.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                     .AddPrerequisiteFeature(CounterGuid)
                     .AddFacts(new() { SeizetheOpportunity.ManeuverGuid })
-                    .AddInitiatorAttackWithWeaponTrigger(action, category: Kingmaker.Enums.WeaponCategory.Quarterstaff, checkWeaponCategory: true, triggerBeforeAttack: true, onlyOnFullAttack: true, onlyOnFirstAttack: true)
-                    .AddInitiatorAttackWithWeaponTrigger(action, category: Kingmaker.Enums.WeaponCategory.Club, checkWeaponCategory: true, triggerBeforeAttack: true, onlyOnFullAttack: true, onlyOnFirstAttack: true)
+                    .AddInitiatorAttackWithWeaponTrigger(action, triggerBeforeAttack: true, onlyOnFullAttack: true, onlyOnFirstAttack: true)
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .AddToGroups(FeatureGroup.StyleFeat)
                     .Configure();
