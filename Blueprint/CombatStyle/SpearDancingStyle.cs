@@ -96,6 +96,13 @@ namespace PrestigePlus.Blueprint.CombatStyle
               .SetDisplayName(SpiralDisplayName)
               .SetDescription(SpiralDescription)
               .SetIcon(icon)
+              .AddComponent<SpearFlurryUnlock>(c => {
+                  c.Flurry1 = FeatureRefs.FlurryOfBlows.Reference;
+                  c.Flurry11 = FeatureRefs.FlurryOfBlowsLevel11.Reference;
+                  c.SoheiArchetype = ArchetypeRefs.SoheiArchetype.Reference;
+                  c.Flurry1stfact = [FeatureRefs.MonkFlurryOfBlowstUnlock.Reference, FeatureRefs.QuarterstaffMasterFlurryUnlock.Reference, FeatureRefs.SoheiFlurryOfBlowsUnlock.Reference, FeatureRefs.ZenArcherFlurryOfBlowsUnlock.Reference];
+                  c.Flurry2ndfact = [FeatureRefs.MonkFlurryOfBlowstLevel11Unlock.Reference, FeatureRefs.SoheiFlurryOfBlowstLevel11Unlock.Reference, FeatureRefs.QuarterstaffMasterFlurry11Unlock.Reference, FeatureRefs.ZenArcherFlurryOfBlowsLevel11Unlock.Reference];
+              })
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();

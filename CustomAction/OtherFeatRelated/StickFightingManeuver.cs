@@ -5,6 +5,7 @@ using Kingmaker.Blueprints;
 using Kingmaker.Designers;
 using Kingmaker.Designers.EventConditionActionSystem.Evaluators;
 using Kingmaker.EntitySystem.Entities;
+using Kingmaker.Enums;
 using Kingmaker.Items;
 using Kingmaker.RuleSystem;
 using Kingmaker.RuleSystem.Rules;
@@ -12,6 +13,7 @@ using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Buffs;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.Utility;
+using PrestigePlus.Blueprint.CombatStyle;
 using PrestigePlus.Blueprint.GrappleFeat;
 using PrestigePlus.CustomAction.OtherManeuver;
 using PrestigePlus.CustomComponent.Grapple;
@@ -23,6 +25,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static Kingmaker.Controllers.Combat.UnitCombatState;
 using static Kingmaker.UI.CanvasScalerWorkaround;
+using static Pathfinding.Util.RetainedGizmos;
 
 namespace PrestigePlus.CustomAction.OtherFeatRelated
 {
@@ -35,21 +38,36 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
 
         public override void RunAction()
         {
-            ActManeuver(Context.MaybeCaster, Target.Unit, true);
-        }
-
-        public static void ActManeuver(UnitEntityData caster, UnitEntityData target, bool UseWeapon)
-        {
-            if (target == null)
+            if (Target.Unit == null)
             {
                 PFLog.Default.Error("Target unit is missing", Array.Empty<object>());
                 return;
             }
-            if (caster == null)
+            if (Context.MaybeCaster == null)
             {
                 PFLog.Default.Error("Caster is missing", Array.Empty<object>());
                 return;
             }
+            foreach (var slot in Context.MaybeCaster.Body.EquipmentSlots)
+            {
+                if (slot.Active && slot.HasItem && slot.Item is ItemEntityWeapon weapon)
+                {
+                    if (weapon.Blueprint.Category == WeaponCategory.Quarterstaff || weapon.Blueprint.Category == WeaponCategory.Club)
+                    {
+                        ActManeuver(Context.MaybeCaster, Target.Unit, true);
+                        return;
+                    }
+                    else if (Context.MaybeCaster.HasFact(Spiral) && (weapon.Blueprint.FighterGroup == Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroupFlags.Spears || weapon.Blueprint.FighterGroup == Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroupFlags.Polearms))
+                    {
+                        ActManeuver(Context.MaybeCaster, Target.Unit, true);
+                        return;
+                    }
+                }
+            }
+        }
+
+        public static void ActManeuver(UnitEntityData caster, UnitEntityData target, bool UseWeapon)
+        {
             var maneuver = CombatManeuver.None;
             if (caster.HasFact(BullRush) && caster.HasFact(BullRushFeat))
             {
@@ -140,5 +158,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
         private static BlueprintFeatureReference GrappleFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(ImprovedGrapple.StyleGuid);
         private static BlueprintFeatureReference SunderFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ImprovedSunder.ToString());
         private static BlueprintFeatureReference TripFeat = BlueprintTool.GetRef<BlueprintFeatureReference>(FeatureRefs.ImprovedTrip.ToString());
+
+        private static BlueprintBuffReference Spiral = BlueprintTool.GetRef<BlueprintBuffReference>(SpearDancingStyle.SpiralbuffGuid);
     }
 }
