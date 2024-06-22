@@ -218,6 +218,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("savageb"), defaultValue: true, Helpers.CreateString("toggle-desc95", "Savage Barbarian"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("titanm"), defaultValue: true, Helpers.CreateString("toggle-desc101", "Titan Mauler"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("untamedb"), defaultValue: true, Helpers.CreateString("toggle-desc96", "Untamed Rager"))
               .ShowVisualConnection())
           .AddToggle(
@@ -368,7 +371,7 @@ namespace PrestigePlus
             Toggle.New(GetKey("masterpiece"), defaultValue: true, Helpers.CreateString("toggle-desc99", "Bardic Masterpieces"))
               .ShowVisualConnection())
           .AddToggle(
-            Toggle.New(GetKey("order"), defaultValue: true, Helpers.CreateString("toggle-desc100", "Cavalier Orders"))
+            Toggle.New(GetKey("order"), defaultValue: true, Helpers.CreateString("toggle-desc101", "Cavalier Orders"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("magehand"), defaultValue: true, Helpers.CreateString("toggle-desc39", "Magic Trick Feats"))
@@ -499,6 +502,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("masterpiece"))) { Masterpiece.CreateBardMasterpieceCore(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("superop"))) { HermeanPotential.Configure(); DebilitatingPain.Configure(); DebilitatingPainMass.Configure(); GlimpseAkashic.Configure(); AkashicForm.Configure(); PhantomLimb.Configure(); Supernaturalist.Configure(); SecretAkashic.Configure(); SecretAkashic.Configure2(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("order"))) { Inquisition.HammerFeat(); Inquisition.PenitentFeat(); Inquisition.SealFeat(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("titanm"))) { TitanMauler.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2(); TabletopGrapplingInfusion.ConfigureTabletopGrappling();
                 }
                 catch (Exception e)
