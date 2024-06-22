@@ -14129,6 +14129,127 @@
     "enGB": "At 2nd level, as long as a grappled opponent is not pinned, the cavalier can make an additional grapple check to tie up him instead of pinning. When determining the DC to escape bonds secured by the cavalier, the cavalier’s Combat Maneuver Bonus increases by 1/2 his cavalier level.",
     "ruRU": "Начиная со 2 уровня, пока захваченный противник не прижат, всадник может сделать дополнительную проверку захвата, чтобы связать его, а не прижать. Для определения сложности выхода из захвата всадника, его модификатор боевых маневров увеличивается на 1/2 его уровня всадника.",
     "zhCN": "2级时，只要被你擒抱的对手尚未被压制，作为压制他的替代，骑将可以进行一次额外的擒抱检定来捆绑对手。当判断被骑将捆绑的逃脱DC时，骑将的CMB增加等于骑将职业等级的1/2的加值。"
+  },
+  {
+    "Key": "TitanMauler.Name",
+    "ProcessTemplates": false,
+    "enGB": "Titan Mauler",
+    "zhCN": "泰坦猛士"
+  },
+  {
+    "Key": "TitanMauler.Description",
+    "enGB": "In lands overrun by giants, dragons, and other hulking beasts, entire fellowships of barbarians hone tactics and traditions with one purpose—to bring low these massive foes. While her enemies’ size makes the creatures strong, the titan mauler is even stronger, taking up weapons from her fallen foes that no lesser warrior can lift, and using them when she beseeches the spirits to grant her increased size and greater ferocity against her titanic foes.",
+    "zhCN": "在这片被巨人、龙和其他巨大野兽占领的土地上，整个野蛮人团体都向着同一个目标在磨练战术和传统，那便是打倒这些巨大的敌人。虽然她的敌人的体型使其强大，但泰坦猛士甚至更为强大，她从倒下的敌人手中拿起任何弱小战士都无法举起的武器，并恳求神灵赐予她更大的体型和更凶猛的能力，来对抗她那些巨大的敌人。"
+  },
+  {
+    "Key": "TitanMaulerBigGameHunter.Name",
+    "ProcessTemplates": false,
+    "enGB": "Big Game Hunter",
+    "zhCN": "王牌猎人"
+  },
+  {
+    "Key": "TitanMaulerBigGameHunter.Description",
+    "enGB": "A titan mauler gains a +1 bonus on attack rolls and a +1 dodge bonus to AC in melee with creatures larger than themselves.",
+    "zhCN": "泰坦猛士在同比自己更大的生物近战时，攻击骰获得＋1加值，防御等级获得+1闪避加值。"
+  },
+  {
+    "Key": "TitanMaulerTitanicRage.Name",
+    "ProcessTemplates": false,
+    "enGB": "Titanic Rage",
+    "zhCN": "泰坦之怒"
+  },
+  {
+    "Key": "TitanMaulerTitanicRage.Description",
+    "enGB": "At 14th level, a titan mauler‘s size increases one level when she enters a rage.",
+    "zhCN": "14级起，泰坦猛士狂暴时体型增大1级。"
+  },
+  {
+    "Key": "StaffMagusQuarterstaffMaster.Name",
+    "ProcessTemplates": false,
+    "enGB": "Quarterstaff Master",
+    "zhCN": "长棍大师"
+  },
+  {
+    "Key": "StaffMagusQuarterstaffMaster.Description",
+    "enGB": "By employing a number of different stances and techniques, you can wield a quarterstaff as a one-handed weapon.",
+    "zhCN": "通过多种不同的姿势和技巧，你可以将长棍作为单手武器来使用。"
+  },
+  {
+    "Key": "StaffMagusQuarterstaffSpecialization.Name",
+    "ProcessTemplates": false,
+    "enGB": "Quarterstaff Specialization",
+    "zhCN": "长棍专精"
+  },
+  {
+    "Key": "StaffMagusQuarterstaffSpecialization.Description",
+    "enGB": "You gain the feat Weapon Specialization in the quarterstaff even if you have no levels in fighter.",
+    "zhCN": "你获得长棍的武器专精，即便你不具备战士等级。"
+  },
+  {
+    "Key": "StaffMagus.Name",
+    "ProcessTemplates": false,
+    "enGB": "Staff Magus",
+    "zhCN": "杖法师"
+  },
+  {
+    "Key": "StaffMagus.Description",
+    "enGB": "While most magi use a one-handed weapon as their melee implement of choice, one group of magi uses the quarterstaff instead. These lightly armored magi use staves for both defense and inflicting their spells upon enemies. Skilled in manipulating these weapons with one hand or two, they eventually learn how to use arcane staves as well, and are just as formidable in combat as their sword-swinging brethren.",
+    "zhCN": "虽然大多数魔战士选择单手武器来近战，但有一群法师则使用长棍代替。这些轻甲法师使用法杖进行防御，并向敌人施放法术。他们熟练地用一只或两只手操纵长棍，最终还会学会如何使用法杖。在战斗中他们就如挥舞利刃的同胞一样强大。"
+  },
+  {
+    "Key": "StaffMagusProficiencies.Name",
+    "ProcessTemplates": false,
+    "enGB": "Weapon and Armor Proficiency",
+    "zhCN": "杖法师擅长"
+  },
+  {
+    "Key": "StaffMagusProficiencies.Description",
+    "enGB": "A staff magus is proficient with simple weapons only.",
+    "zhCN": "杖法师只擅长简易武器。"
+  },
+  {
+    "Key": "StaffMagusQuarterstaffDefense.Name",
+    "ProcessTemplates": false,
+    "enGB": "Quarterstaff Defense",
+    "zhCN": "长棍守御"
+  },
+  {
+    "Key": "StaffMagusQuarterstaffDefense.Description",
+    "enGB": "At 7th level, while wielding a quarterstaff, the staff magus gains a shield bonus to his Armor Class equal to the enhancement bonus of the quarterstaff, including any enhancement bonus on that staff from his arcane pool class feature. At 13th level, this bonus increases by +3.",
+    "zhCN": "7级起，杖法师持用长棍时的防御等级获得盾牌加值，该加值等于长棍的增强加值，包括该法杖通过奥法池职业特性获得的任何增强加值。13级起，此加值增加3点。"
+  },
+  {
+    "Key": "SpearDancingStyle.Name",
+    "ProcessTemplates": false,
+    "enGB": "Spear Dancing Style",
+    "zhCN": "枪舞流"
+  },
+  {
+    "Key": "SpearDancingStyle.Description",
+    "enGB": "While using this style, you can wield any weapon from the polearm or spear fighter weapon groups as a one-handed weapon.",
+    "zhCN": "使用此流派时，你可以单手持用任何来自长柄或枪矛战士武器组中的武器。"
+  },
+  {
+    "Key": "SpearDancingSpiral.Name",
+    "ProcessTemplates": false,
+    "enGB": "Spear Dancing Spiral",
+    "zhCN": "枪舞流-少林棍法禅宗"
+  },
+  {
+    "Key": "SpearDancingSpiral.Description",
+    "enGB": "While using Spear Dancing Style, you gain the benefit of Weapon Finesse with these weapons. In addition, you can use Flurry of Blows, Stick-Fighting Counter and Stick-Fighting Maneuver with them.",
+    "zhCN": "使用枪舞流时，你的这些武器获得武器娴熟的好处。此外，你还可以用它们施展两仪回风，韦陀杵和伏魔杖。"
+  },
+  {
+    "Key": "SpearDancingReach.Name",
+    "ProcessTemplates": false,
+    "enGB": "Spear Dancing Reach",
+    "zhCN": "枪舞流-纪效新书"
+  },
+  {
+    "Key": "SpearDancingReach.Description",
+    "enGB": "While using Spear Dancing Style, you add 5 feet to your reach.",
+    "zhCN": "使用枪舞流时，你的触及增加5尺。"
   }
 
 ]
