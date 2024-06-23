@@ -17,6 +17,7 @@ using Kingmaker.Designers.Mechanics.Facts;
 using Newtonsoft.Json;
 using Kingmaker;
 using PrestigePlus.Blueprint.CombatStyle;
+using Kingmaker.Designers;
 
 namespace PrestigePlus.CustomAction.OtherFeatRelated
 {
@@ -46,11 +47,13 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                 {
                     Game.Instance.CombatEngagementController.ForceAttackOfOpportunity(Owner, evt.Initiator, false);
                     Data.LastUseTime = Game.Instance.TimeController.GameTime;
+                    GameHelper.RemoveBuff(evt.Initiator, TargetBuff);
                 }
                 else if (Owner.HasFact(Spiral) && bp != null && (bp.FighterGroup == Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroupFlags.Spears || bp.FighterGroup == Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroupFlags.Polearms))
                 {
                     Game.Instance.CombatEngagementController.ForceAttackOfOpportunity(Owner, evt.Initiator, false);
                     Data.LastUseTime = Game.Instance.TimeController.GameTime;
+                    GameHelper.RemoveBuff(evt.Initiator, TargetBuff);
                 }
             }
         }

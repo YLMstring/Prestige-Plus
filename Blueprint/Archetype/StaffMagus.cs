@@ -53,6 +53,10 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToAddFeatures(10, QuarterstaffSpecializationFeat())
             .AddToAddFeatures(13, QuarterstaffDefenseGuid)
               .Configure();
+
+            ProgressionConfigurator.For(ProgressionRefs.MagusProgression)
+                .AddToUIGroups([QuarterstaffSpecializationGuid, QuarterstaffMasterGuid, QuarterstaffDefenseGuid])
+                .Configure();
         }
 
         private const string Proficiencies = "StaffMagus.Proficiencies";
