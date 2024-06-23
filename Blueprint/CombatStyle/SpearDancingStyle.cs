@@ -48,7 +48,7 @@ namespace PrestigePlus.Blueprint.CombatStyle
         private static readonly string StyleActivatableAbilityGuid = "{D01A6ECB-D068-4AFE-BFF2-46C56C21C131}";
         public static void StyleConfigure()
         {
-            var icon = FeatureRefs.Evasion.Reference.Get().Icon;
+            var icon = FeatureRefs.HammerTheGap.Reference.Get().Icon;
 
             var Buff = BuffConfigurator.New(Stylebuff, StylebuffGuid)
               .SetDisplayName(StyleDisplayName)
@@ -79,6 +79,7 @@ namespace PrestigePlus.Blueprint.CombatStyle
                     .AddPrerequisiteFeature(FeatureRefs.WeaponFinesse.ToString())
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .AddToGroups(FeatureGroup.StyleFeat)
+                    .AddFacts([ability])
                     .Configure();
 
         }
@@ -94,7 +95,7 @@ namespace PrestigePlus.Blueprint.CombatStyle
 
         public static void SpiralConfigure()
         {
-            var icon = FeatureRefs.Evasion.Reference.Get().Icon;
+            var icon = FeatureRefs.PurityOfBody.Reference.Get().Icon;
 
             var BuffSpiral = BuffConfigurator.New(Spiralbuff, SpiralbuffGuid)
               .SetDisplayName(SpiralDisplayName)
@@ -127,17 +128,17 @@ namespace PrestigePlus.Blueprint.CombatStyle
         }
 
         private static readonly string ReachName = "SpearDancingReach";
-        public static readonly string ReachGuid = "{09DE4AAC-9B10-4590-8BB0-7A19203D5582}";
+        public static readonly string ReachGuid = "{051201E2-7662-4852-89CD-ACC653B019A8}";
 
         private const string Reachbuff = "SpearDancingReach.Reachbuff";
-        private static readonly string ReachbuffGuid = "{09DE4AAC-9B10-4590-8BB0-7A19203D5582}";
+        private static readonly string ReachbuffGuid = "{F1E0FF38-1C2A-4E52-84A8-1D42FF0C3D34}";
 
         private static readonly string ReachDisplayName = "SpearDancingReach.Name";
         private static readonly string ReachDescription = "SpearDancingReach.Description";
 
         public static void ReachConfigure()
         {
-            var icon = FeatureRefs.Evasion.Reference.Get().Icon;
+            var icon = FeatureSelectionRefs.MutationWarriorDiscoverySelection.Reference.Get().Icon;
 
             var BuffReach = BuffConfigurator.New(Reachbuff, ReachbuffGuid)
               .SetDisplayName(ReachDisplayName)
@@ -166,11 +167,11 @@ namespace PrestigePlus.Blueprint.CombatStyle
         public static readonly string DeadlyAgilityGuid = "{95278BF2-67F5-45BC-8E53-93208B27C2E4}";
 
         private static readonly string DeadlyAgilityDisplayName = "PoWDeadlyAgility.Name";
-        private static readonly string DeadlyAgilityDescription = "PowDeadlyAgility.Description";
+        private static readonly string DeadlyAgilityDescription = "PoWDeadlyAgility.Description";
 
         public static void DeadlyAgilityConfigure()
         {
-            var icon = FeatureRefs.DoubleSlice.Reference.Get().Icon;
+            var icon = AbilityRefs.CoupDeGraceAbility.Reference.Get().Icon;
 
             FeatureConfigurator.New(DeadlyAgilityName, DeadlyAgilityGuid, FeatureGroup.Feat)
                     .SetDisplayName(DeadlyAgilityDisplayName)
