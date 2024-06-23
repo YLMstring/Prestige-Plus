@@ -17,6 +17,8 @@ using System;
 using System.Linq;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using Kingmaker.UnitLogic.Buffs;
+using BlueprintCore.Utils;
+using PrestigePlus.Blueprint.CombatStyle;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -52,6 +54,12 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddToAddFeatures(5, FeatureRefs.LungeFeature.ToString())
               .AddToAddFeatures(14, CreateTitanicRage())
               .Configure();
+
+            var feat = BlueprintTool.GetRef<BlueprintFeatureReference>("f0235447f6f3430fa4a98d15642b849e")?.Get();
+            if (feat != null)
+            {
+                feat.Ranks = 10;
+            }
         }
 
         private const string BigGameHunter = "TitanMauler.BigGameHunter";
