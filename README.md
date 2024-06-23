@@ -1,4 +1,4 @@
-# Prestige Plus v3.2.0 for WoTR 
+# Prestige Plus v3.3.0 for WoTR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -195,6 +195,7 @@
 - Drinking a potion is already a move action in wotr, so Raging Drunk should make it a swift action.
 - The drinks are on us, the hangover is on you.
 - [Savage Barbarian](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Barbarian%20Savage%20Barbarian)
+- [Titan Mauler](https://www.d20pfsrd.com/classes/core-classes/barbarian/archetypes/paizo-barbarian-archetypes/titan-mauler/)
 - [Untamed Rager](https://www.d20pfsrd.com/classes/core-classes/barbarian/archetypes/paizo-barbarian-archetypes/untamed-rager-barbarian-archetype/)
 #### Bloodrager:  
 - [Blood Conduit](https://www.d20pfsrd.com/classes/hybrid-classes/bloodrager/archetypes/paizo-bloodrager-archetypes/blood-conduit/)
@@ -224,6 +225,8 @@
 - [Weapon Master](https://www.aonprd.com/ArchetypeDisplay.aspx?FixedName=Fighter%20Weapon%20Master): Fighters that have the weapon master archetype can select advanced weapon training beginning at 4th level. A weapon master can select this feat as a bonus feat and it doesn’t count for the purpose of the requirement that it can be taken at most once per 5 fighter levels.
 #### Magus:  
 - [Spire Defender](https://www.d20pfsrd.com/classes/base-classes/magus/archetypes/paizo-magus-archetypes/spire-defender/)
+- [Staff Magus](https://www.d20pfsrd.com/classes/base-classes/magus/archetypes/paizo-magus-archetypes/staff-magus/)
+- With [Quarterstaff Master](https://www.d20pfsrd.com/feats/combat-feats/quarterstaff-master-combat)!
 #### Monk:  
 - [Maneuver Master](https://www.d20pfsrd.com/classes/core-classes/monk/archetypes/paizo-monk-archetypes/maneuver-master/)
 - This is absolutely my favorite.
@@ -283,7 +286,7 @@
 - [Stick-Fighting Counter](https://www.d20pfsrd.com/feats/combat-feats/stick-fighting-counter-combat/)
 - [Stick-Fighting Maneuver](https://www.d20pfsrd.com/feats/combat-feats/stick-fighting-maneuver-combat/)
 - [Jabbing Style](https://www.d20pfsrd.com/feats/combat-feats/jabbing-style-combat-style/)
-- [Jabbing Dancer](https://www.d20pfsrd.com/feats/combat-feats/jabbing-dancer-combat/): Pointless in wotr due to how full attack is implemented, so I use [Outslug Sprint](https://www.d20pfsrd.com/feats/combat-feats/outslug-sprint-combat/) effect.
+- [Jabbing Dancer](https://www.d20pfsrd.com/feats/combat-feats/jabbing-dancer-combat/): Pointless in wotr due to how full attack is implemented, thus replaced with [Outslug Sprint](https://www.d20pfsrd.com/feats/combat-feats/outslug-sprint-combat/) effect.
 - [Jabbing Master](https://www.d20pfsrd.com/feats/combat-feats/jabbing-master-combat/)
 - [Panther Style](https://www.d20pfsrd.com/feats/combat-feats/panther-style-combat-style/)
 - [Panther Claw](https://www.d20pfsrd.com/feats/combat-feats/panther-claw-combat/)
@@ -291,10 +294,14 @@
 - [Cloak and Dagger Style](https://www.d20pfsrd.com/feats/combat-feats/cloak-and-dagger-style-combat-style)
 - [Cloak and Dagger Subterfuge](https://www.d20pfsrd.com/feats/combat-feats/cloak-and-dagger-subterfuge-combat)
 - [Cloak and Dagger Tactics](https://www.d20pfsrd.com/feats/combat-feats/cloak-and-dagger-tactics-combat/)
+- [Spear Dancing Style](https://www.d20pfsrd.com/feats/combat-feats/cloak-and-dagger-style-combat-style): While using this style, you can wield any weapon from the polearm or spear fighter weapon groups as a one-handed weapon. (homebrew, requires Weapon Finesse)
+- [Spear Dancing Spiral](https://www.d20pfsrd.com/feats/combat-feats/spear-dancing-spiral-combat): While using Spear Dancing Style, you gain the benefit of Weapon Finesse with these weapons. In addition, you can use Flurry of Blows, Stick-Fighting Counter and Stick-Fighting Maneuver with them.
+- [Spear Dancing Reach](https://www.d20pfsrd.com/feats/combat-feats/spear-dancing-reach-combat/): While using Spear Dancing Style, you add 5 feet to your reach.
 ### New Feats
 
 - [Ripple in Still Water](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/ripple-in-still-water-combat/): From Path of War
 - [Greater Unarmed Strike](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/greater-unarmed-strike-combat/): From Path of War
+- [Deadly Agility](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/feats/deadly-agility-combat/): From Path of War, requires 10 str for balance
 - [Lesser Spell Synthesis](https://www.d20pfsrd.com/feats/general-feats/lesser-spell-synthesis/)
 - Where is Spell Synthesis? In [Mystical Mayhem](https://gitgud.io/Kreaddy/mysticalmayhem/)!
 - [Surprising Strategy](https://www.d20pfsrd.com/feats/combat-feats/surprising-strategy-combat/)
