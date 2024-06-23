@@ -12294,7 +12294,7 @@
   {
     "Key": "DeificObedienceNocticula2.Description",
     "enGB": "You grow a sinuous tail (if you already have a tail, you grow a second one). This tail is prehensile and capable of manipulating and holding small objects, but cannot perform fine manual work as if it were a hand, with the exception of wielding a dagger. When you make a full attack with this tail-wielded dagger as your primary weapon, you can make an additional attack and do the same with an off-hand weapon, if you have it. When you do so, you have a reach that is 5 feet greater than your base reach.",
-    "ruRU": "У вас вырастает извивающийся хвост (если у вас уже есть хвост, то у вас вырастает второй). При его помощи вы можете управлять и удерживать небольшие предметы, но не может выполнять тонкую ручную работу, как если бы это была рука, за исключением владения кинжалом. Когда вы совершаете полную атаку держа кинжал хвостом, вы можете совершить дополнительную атаку as your primary weapon and do the same with an off-hand weapon, if you have it. When you do so, you have a reach that is 5 feet greater than your base reach.",
+    "ruRU": "У вас вырастает извивающийся хвост (если у вас уже есть хвост, то у вас вырастает второй). При его помощи вы можете управлять и удерживать небольшие предметы, но не может выполнять тонкую ручную работу, как если бы это была рука, за исключением владения кинжалом. Когда вы совершаете полную атаку, используя этот хвостовой кинжал в качестве основного оружия, вы можете совершить им дополнительную атаку, кроме того если вы также держите кинжал в неведущей руке, то он тоже получает дополнительную атаку. Когда вы держите кинжал таким образом, ваша зона досягаемости увеличивается на 5 футов.",
     "zhCN": "你长出一条弯曲灵活的尾巴（如果你已经有一条尾巴，会长出第二条尾巴）。这条尾巴极易操纵并且能够控制和抓握轻小物体，但除了挥舞匕首之外，它不能像手一样进行精细的手工操作。当你用该匕首作为主武器全回合攻击时，你可以进行一次额外攻击。如果你有副手武器，也可以额外攻击。这么做的时候，你的触及比原本多5尺。"
   },
   {
@@ -14134,132 +14134,156 @@
     "Key": "TitanMauler.Name",
     "ProcessTemplates": false,
     "enGB": "Titan Mauler",
+    "ruRU": "Сокрушитель титанов",
     "zhCN": "泰坦猛士"
   },
   {
     "Key": "TitanMauler.Description",
     "enGB": "In lands overrun by giants, dragons, and other hulking beasts, entire fellowships of barbarians hone tactics and traditions with one purpose—to bring low these massive foes. While her enemies’ size makes the creatures strong, the titan mauler is even stronger, taking up weapons from her fallen foes that no lesser warrior can lift, and using them when she beseeches the spirits to grant her increased size and greater ferocity against her titanic foes.",
+    "ruRU": "В землях гигантов, драконов и других громадных зверей, целые сообщества варваров оттачивают тактику и традиции с одной целью - обуздать этих массивных врагов. В то время как их размер делает существ сильными, сокрушитель титанов еще сильнее, забирая у своих павших врагов оружие, которое не под силу поднять ни одному воину, и используют его умоляя духов даровать им увеличение в размерах и большую свирепость в борьбе с титаническими врагами.",
     "zhCN": "在这片被巨人、龙和其他巨大野兽占领的土地上，整个野蛮人团体都向着同一个目标在磨练战术和传统，那便是打倒这些巨大的敌人。虽然她的敌人的体型使其强大，但泰坦猛士甚至更为强大，她从倒下的敌人手中拿起任何弱小战士都无法举起的武器，并恳求神灵赐予她更大的体型和更凶猛的能力，来对抗她那些巨大的敌人。"
   },
   {
     "Key": "TitanMaulerBigGameHunter.Name",
     "ProcessTemplates": false,
     "enGB": "Big Game Hunter",
+    "ruRU": "Охотник на крупную дичь",
     "zhCN": "王牌猎人"
   },
   {
     "Key": "TitanMaulerBigGameHunter.Description",
     "enGB": "A titan mauler gains a +1 bonus on attack rolls and a +1 dodge bonus to AC in melee with creatures larger than themselves.",
+    "ruRU": "Сокрушитель титанов получает бонус +1 к броскам на попадание и бонус уклонения +1 к защите, когда сражается в ближнем бою с существами, которые больше него самого.",
     "zhCN": "泰坦猛士在同比自己更大的生物近战时，攻击骰获得+1加值，防御等级获得+1闪避加值。"
   },
   {
     "Key": "TitanMaulerTitanicRage.Name",
     "ProcessTemplates": false,
     "enGB": "Titanic Rage",
+    "ruRU": "Титаническая ярость",
     "zhCN": "泰坦之怒"
   },
   {
     "Key": "TitanMaulerTitanicRage.Description",
     "enGB": "At 14th level, a titan mauler deals damage as if one size larger than she actually is.",
+    "ruRU": "Начиная с 14 уровня оружие сокрушителя титанов наносит урон, как если бы оно было на 1 категорию размера больше, чем оно является на самом деле.",
     "zhCN": "14级起，泰坦猛士造成伤害时视为体型比实际大1级。"
   },
   {
     "Key": "StaffMagusQuarterstaffMaster.Name",
     "ProcessTemplates": false,
     "enGB": "Quarterstaff Master",
+    "ruRU": "Мастер посоха",
     "zhCN": "长棍大师"
   },
   {
     "Key": "StaffMagusQuarterstaffMaster.Description",
     "enGB": "By employing a number of different stances and techniques, you can wield a quarterstaff as a one-handed weapon.",
+    "ruRU": "Применяя различные стойки и техники, вы можете использовать посох как одноручное оружие.",
     "zhCN": "通过多种不同的姿势和技巧，你可以将长棍作为单手武器来使用。"
   },
   {
     "Key": "StaffMagusQuarterstaffSpecialization.Name",
     "ProcessTemplates": false,
     "enGB": "Quarterstaff Specialization",
+    "ruRU": "Привычный посох",
     "zhCN": "长棍专精"
   },
   {
     "Key": "StaffMagusQuarterstaffSpecialization.Description",
     "enGB": "You gain the feat Weapon Specialization in the quarterstaff even if you have no levels in fighter.",
+    "ruRU": "Вы получаете черту Привычное оружие - посох даже если у вас нету уровней воина.",
     "zhCN": "你获得长棍的武器专精，即便你不具备战士等级。"
   },
   {
     "Key": "StaffMagus.Name",
     "ProcessTemplates": false,
     "enGB": "Staff Magus",
+    "ruRU": "Магус с посохом",
     "zhCN": "杖法师"
   },
   {
     "Key": "StaffMagus.Description",
     "enGB": "While most magi use a one-handed weapon as their melee implement of choice, one group of magi uses the quarterstaff instead. These lightly armored magi use staves for both defense and inflicting their spells upon enemies. Skilled in manipulating these weapons with one hand or two, they eventually learn how to use arcane staves as well, and are just as formidable in combat as their sword-swinging brethren.",
+    "ruRU": "В то время как большинство магусов используют одноручное оружие в качестве оружия ближнего боя, одна группа магусов вместо этого использует посох. Эти магусы используют посохи для обороны и наложения заклинаний на врагов. Будучи опытными в управлении этим оружием одной или двумя руками, они в конечном итоге узнают, как использовать посох, и так же грозны в бою, как и их собратья, использующие мечи.",
     "zhCN": "虽然大多数魔战士选择单手武器来近战，但有一群法师则使用长棍代替。这些轻甲法师使用法杖进行防御，并向敌人施放法术。他们熟练地用一只或两只手操纵长棍，最终还会学会如何使用法杖。在战斗中他们就如挥舞利刃的同胞一样强大。"
   },
   {
     "Key": "StaffMagusProficiencies.Name",
     "ProcessTemplates": false,
     "enGB": "Weapon and Armor Proficiency",
+    "ruRU": "Умение обращаться с оружием и броней",
     "zhCN": "杖法师擅长"
   },
   {
     "Key": "StaffMagusProficiencies.Description",
     "enGB": "A staff magus is proficient with simple weapons only.",
+    "ruRU": "Магус с посохом умеет обращаться только с простым оружием.",
     "zhCN": "杖法师只擅长简易武器。"
   },
   {
     "Key": "StaffMagusQuarterstaffDefense.Name",
     "ProcessTemplates": false,
     "enGB": "Quarterstaff Defense",
+    "ruRU": "Защита посохом",
     "zhCN": "长棍守御"
   },
   {
     "Key": "StaffMagusQuarterstaffDefense.Description",
     "enGB": "At 7th level, while wielding a quarterstaff, the staff magus gains a shield bonus to his Armor Class equal to the enhancement bonus of the quarterstaff, including any enhancement bonus on that staff from his arcane pool class feature. At 13th level, this bonus increases by +3.",
+    "ruRU": "Начиная с 7 уровня, пока магус держит посох, он получает бонус щита к защите равный бонусу усиления посоха, в том числе бонус усиления посоха полученный при помощи его классовой способности Запас мистической энергии. На 13 уровне этот бонус увеличивается на +3.",
     "zhCN": "7级起，杖法师持用长棍时的防御等级获得盾牌加值，该加值等于长棍的增强加值，包括该法杖通过奥法池职业特性获得的任何增强加值。13级起，此加值增加3点。"
   },
   {
     "Key": "SpearDancingStyle.Name",
     "ProcessTemplates": false,
     "enGB": "Spear Dancing Style",
+    "ruRU": "Стиль танца с копьем",
     "zhCN": "枪舞流"
   },
   {
     "Key": "SpearDancingStyle.Description",
     "enGB": "While using this style, you can wield any weapon from the polearm or spear fighter weapon groups as a one-handed weapon.",
+    "ruRU": "При использовании этого стиля вы можете использовать любое оружие относящееся к древковому оружию или копьям как одноручное оружие.",
     "zhCN": "使用此流派时，你可以单手持用任何来自长柄或枪矛战士武器组中的武器。"
   },
   {
     "Key": "SpearDancingSpiral.Name",
     "ProcessTemplates": false,
     "enGB": "Spear Dancing Spiral",
+    "ruRU": "Спиральный танец с копьем",
     "zhCN": "枪舞流-少林棍法禅宗"
   },
   {
     "Key": "SpearDancingSpiral.Description",
     "enGB": "While using Spear Dancing Style, you gain the benefit of Weapon Finesse with these weapons. In addition, you can use Flurry of Blows, Stick-Fighting Counter and Stick-Fighting Maneuver with them.",
+    "ruRU": "При использовании стиля танца с копьем вы можете применять эффекты черты Искусное владение оружием к этому оружи. Кроме того, вы можете при помощи этого оружия совершать град ударов, а также использовать черты Контратака палкой и Маневр палкой.",
     "zhCN": "使用枪舞流时，你的这些武器获得武器娴熟的好处。此外，你还可以用它们施展两仪回风，韦陀杵和伏魔杖。"
   },
   {
     "Key": "SpearDancingReach.Name",
     "ProcessTemplates": false,
     "enGB": "Spear Dancing Reach",
+    "ruRU": "Танец с копьем на расстоянии",
     "zhCN": "枪舞流-纪效新书"
   },
   {
     "Key": "SpearDancingReach.Description",
     "enGB": "While using Spear Dancing Style, you add 5 feet to your reach.",
+    "ruRU": "При использовании стиля танца с копьем ваша зона досягаемости увеличивается на 5 футов.",
     "zhCN": "使用枪舞流时，你的触及增加5尺。"
   },
   {
     "Key": "PoWDeadlyAgility.Name",
     "ProcessTemplates": false,
     "enGB": "Deadly Agility",
+    "ruRU": "Смертоносное проворство",
     "zhCN": "灵巧夺命"
   },
   {
     "Key": "PoWDeadlyAgility.Description",
     "enGB": "You may add your Dexterity modifier in place of your Strength modifier when wielding a light weapon or a weapon that gains the benefits of the Weapon Finesse feat (such as the rapier) when determining additional damage inflicted upon a successful attack. When wielding a weapon in your off-hand, Deadly Agility will add the same fraction of Dexterity as you normally would for Strength.",
+    "ruRU": "Вы можете добавлять свой модификатор Ловкости вместо модификатора Силы к броскам на урон легким оружием или на которое действует черта Искусное владение оружием (например рапира). Для оружия, которое вы держите в неведущей руке, эта черта добавляет ту же часть модификатора Ловкости, что и обычно добавляемая часть модификатора Силы.",
     "zhCN": "你获得一系列好处，总之效果就如同武器娴熟（神话）和双斩专长。"
   }
 
