@@ -24,12 +24,7 @@ namespace PrestigePlus.HarmonyFix
             {
                 __result += 1;
             }
-            if (__instance.HasFact(Ace2))
-            {
-                __result += 1;
-            }
         }
         private static BlueprintFeatureReference Ace = BlueprintTool.GetRef<BlueprintFeatureReference>(MammothRider.GiganticSteed1Guid);
-        private static BlueprintBuffReference Ace2 = BlueprintTool.GetRef<BlueprintBuffReference>(TitanMauler.TitanicRageGuid0);
     }
 }

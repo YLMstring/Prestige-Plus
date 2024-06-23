@@ -23,6 +23,9 @@ using Kingmaker.Controllers.Units;
 using Kingmaker.ElementsSystem;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Parts;
+using Kingmaker.UnitLogic.Abilities.Components;
+using Kingmaker.Designers.Mechanics.Buffs;
+using Kingmaker.UnitLogic.Buffs.Components;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -96,10 +99,14 @@ namespace PrestigePlus.Blueprint.Archetype
             var icon = AbilityRefs.EnlargePerson.Reference.Get().Icon;
 
             var Buff = BuffConfigurator.New(TitanicRage0, TitanicRageGuid0)
+                .CopyFrom(
+                BuffRefs.EnlargePersonBuff,
+                typeof(ChangeUnitSize),
+                typeof(AddGenericStatBonus))
               .SetDisplayName(TitanicRageDisplayName)
               .SetDescription(TitanicRageDescription)
               .SetIcon(icon)
-              .AddComponent<PPUpdateSize>()
+              .RemoveFromFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.IsFromSpell)
               .Configure();
 
             return FeatureConfigurator.New(TitanicRage, TitanicRageGuid)
@@ -142,15 +149,6 @@ namespace PrestigePlus.Blueprint.Archetype
         void IRulebookHandler<RuleCalculateAttackBonus>.OnEventDidTrigger(RuleCalculateAttackBonus evt)
         {
             
-        }
-    }
-
-    public class PPUpdateSize : EntityFactComponentDelegate
-    {
-        // Token: 0x0600CFEB RID: 53227 RVA: 0x0035EA3C File Offset: 0x0035CC3C
-        public override void OnActivate()
-        {
-            Owner.Ensure<UnitPartSizeModifier>().UpdateSize();
         }
     }
 }
