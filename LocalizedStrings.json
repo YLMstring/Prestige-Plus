@@ -14160,8 +14160,8 @@
   },
   {
     "Key": "TitanMaulerTitanicRage.Description",
-    "enGB": "At 14th level, a titan mauler‘s size increases one level when she enters a rage.",
-    "zhCN": "14级起，泰坦猛士狂暴时体型增大1级。"
+    "enGB": "At 14th level, a titan mauler deals damage as if one size larger than she actually is.",
+    "zhCN": "14级起，泰坦猛士造成伤害时视为体型比实际大1级。"
   },
   {
     "Key": "StaffMagusQuarterstaffMaster.Name",

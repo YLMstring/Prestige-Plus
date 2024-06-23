@@ -30,6 +30,7 @@ using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic;
 using Kingmaker.Items;
 using Kingmaker.View.Equipment;
+using Kingmaker.RuleSystem;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -151,14 +152,27 @@ namespace PrestigePlus.Blueprint.Archetype
                 {
                     if (slot.Active && slot.HasItem && slot.Item is ItemEntityWeapon weapon && weapon.Blueprint.Category == WeaponCategory.Quarterstaff)
                     {
-                        ac = Math.Max(ac, weapon.EnchantmentValue);
+                        var rule = Rulebook.Trigger(new RuleCalculateAttackBonusWithoutTarget(Owner, weapon, 0));
+                        Main.Logger.Info("enhance");
+                        if (rule.m_ModifiableBonus?.Modifiers?.Count() > 0)
+                        {
+                            foreach (var mod in rule.m_ModifiableBonus.Modifiers)
+                            {
+                                Main.Logger.Info(mod.Value.ToString() + "not enhance");
+                                if (mod.Descriptor == ModifierDescriptor.Enhancement)
+                                {
+                                    Main.Logger.Info(mod.Value.ToString() + "enhance");
+                                    ac = Math.Max(ac, mod.Value);
+                                }
+                            }
+                        }
                     }
                 }
                 if (Fact.GetRank() > 1)
                 {
                     ac += 3;
                 }
-                Main.Logger.Info(ac.ToString());
+                Main.Logger.Info(ac.ToString() + "final");
                 if (ac > 0)
                 {
                     evt.AddModifier(ac, base.Fact, ModifierDescriptor.Shield);

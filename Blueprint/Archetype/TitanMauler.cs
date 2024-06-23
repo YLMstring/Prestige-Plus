@@ -99,14 +99,10 @@ namespace PrestigePlus.Blueprint.Archetype
             var icon = AbilityRefs.EnlargePerson.Reference.Get().Icon;
 
             var Buff = BuffConfigurator.New(TitanicRage0, TitanicRageGuid0)
-                .CopyFrom(
-                BuffRefs.EnlargePersonBuff,
-                typeof(ChangeUnitSize),
-                typeof(AddGenericStatBonus))
               .SetDisplayName(TitanicRageDisplayName)
               .SetDescription(TitanicRageDescription)
               .SetIcon(icon)
-              .RemoveFromFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.IsFromSpell)
+              .AddWeaponSizeChange(null, false, 1)
               .Configure();
 
             return FeatureConfigurator.New(TitanicRage, TitanicRageGuid)
