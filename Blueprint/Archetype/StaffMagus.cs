@@ -96,6 +96,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(QuarterstaffSpecializationDisplayName)
               .SetDescription(QuarterstaffSpecializationDescription)
               .SetIcon(icon)
+              .AddPrerequisiteParametrizedWeaponFeature(ParametrizedFeatureRefs.WeaponFocus.ToString(), WeaponCategory.Quarterstaff)
               .AddPrerequisiteFeature(CreateQuarterstaffMaster())
               .AddParametrizedFeatures([kama])
               .AddToGroups(FeatureGroup.CombatFeat)
@@ -157,6 +158,7 @@ namespace PrestigePlus.Blueprint.Archetype
                 {
                     ac += 3;
                 }
+                Main.Logger.Info(ac.ToString());
                 if (ac > 0)
                 {
                     evt.AddModifier(ac, base.Fact, ModifierDescriptor.Shield);

@@ -19,6 +19,10 @@ using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using Kingmaker.UnitLogic.Buffs;
 using BlueprintCore.Utils;
 using PrestigePlus.Blueprint.CombatStyle;
+using Kingmaker.Controllers.Units;
+using Kingmaker.ElementsSystem;
+using Kingmaker.UnitLogic.Mechanics.Components;
+using Kingmaker.UnitLogic.Parts;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -95,6 +99,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(TitanicRageDisplayName)
               .SetDescription(TitanicRageDescription)
               .SetIcon(icon)
+              .AddComponent<PPUpdateSize>()
               .Configure();
 
             return FeatureConfigurator.New(TitanicRage, TitanicRageGuid)
@@ -137,6 +142,15 @@ namespace PrestigePlus.Blueprint.Archetype
         void IRulebookHandler<RuleCalculateAttackBonus>.OnEventDidTrigger(RuleCalculateAttackBonus evt)
         {
             
+        }
+    }
+
+    public class PPUpdateSize : EntityFactComponentDelegate
+    {
+        // Token: 0x0600CFEB RID: 53227 RVA: 0x0035EA3C File Offset: 0x0035CC3C
+        public override void OnActivate()
+        {
+            Owner.Ensure<UnitPartSizeModifier>().UpdateSize();
         }
     }
 }

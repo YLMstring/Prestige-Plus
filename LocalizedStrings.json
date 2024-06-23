@@ -14150,7 +14150,7 @@
   {
     "Key": "TitanMaulerBigGameHunter.Description",
     "enGB": "A titan mauler gains a +1 bonus on attack rolls and a +1 dodge bonus to AC in melee with creatures larger than themselves.",
-    "zhCN": "泰坦猛士在同比自己更大的生物近战时，攻击骰获得＋1加值，防御等级获得+1闪避加值。"
+    "zhCN": "泰坦猛士在同比自己更大的生物近战时，攻击骰获得+1加值，防御等级获得+1闪避加值。"
   },
   {
     "Key": "TitanMaulerTitanicRage.Name",
