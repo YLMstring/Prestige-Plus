@@ -108,6 +108,7 @@ namespace PrestigePlus.Blueprint.CombatStyle
                   c.Flurry1stfact = [FeatureRefs.MonkFlurryOfBlowstUnlock.Reference, FeatureRefs.QuarterstaffMasterFlurryUnlock.Reference, FeatureRefs.SoheiFlurryOfBlowsUnlock.Reference, FeatureRefs.ZenArcherFlurryOfBlowsUnlock.Reference];
                   c.Flurry2ndfact = [FeatureRefs.MonkFlurryOfBlowstLevel11Unlock.Reference, FeatureRefs.SoheiFlurryOfBlowstLevel11Unlock.Reference, FeatureRefs.QuarterstaffMasterFlurry11Unlock.Reference, FeatureRefs.ZenArcherFlurryOfBlowsLevel11Unlock.Reference];
               })
+              .AddComponent<SpearAttackStatReplacement>(c => { c.ReplacementStat = StatType.Dexterity; c.Mythic = FeatureRefs.WeaponFinesseMythicFeat.Reference; })
               .SetFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
@@ -120,7 +121,7 @@ namespace PrestigePlus.Blueprint.CombatStyle
                     .AddPrerequisiteFeature(FeatureRefs.TwoWeaponFighting.ToString())
                     .AddPrerequisiteFeature(FeatureRefs.WeaponFinesse.ToString())
                     .AddPrerequisiteFeature(StyleGuid)
-                    .AddComponent<SpearAttackStatReplacement>(c => { c.ReplacementStat = StatType.Dexterity; c.Mythic = FeatureRefs.WeaponFinesseMythicFeat.Reference; })
+                    .AddBuffExtraEffects(checkedBuff: StylebuffGuid, extraEffectBuff: BuffSpiral)
                     .AddToIsPrerequisiteFor([FeatureRefs.MonkFlurryOfBlowstUnlock.ToString(), SmashingStyle.CounterGuid, SmashingStyle.MasterGuid])
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .AddToGroups(FeatureGroup.StyleFeat)
@@ -158,6 +159,7 @@ namespace PrestigePlus.Blueprint.CombatStyle
                     .AddPrerequisiteFeature(FeatureRefs.WeaponFinesse.ToString())
                     .AddPrerequisiteFeature(StyleGuid)
                     .AddPrerequisiteFeature(SpiralGuid)
+                    .AddBuffExtraEffects(checkedBuff: StylebuffGuid, extraEffectBuff: BuffReach)
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .AddToGroups(FeatureGroup.StyleFeat)
                     .Configure();
