@@ -161,6 +161,27 @@ namespace PrestigePlus.Blueprint.CombatStyle
                     .AddToGroups(FeatureGroup.StyleFeat)
                     .Configure();
         }
+
+        private static readonly string DeadlyAgilityName = "PoWDeadlyAgility";
+        public static readonly string DeadlyAgilityGuid = "{95278BF2-67F5-45BC-8E53-93208B27C2E4}";
+
+        private static readonly string DeadlyAgilityDisplayName = "PoWDeadlyAgility.Name";
+        private static readonly string DeadlyAgilityDescription = "PowDeadlyAgility.Description";
+
+        public static void DeadlyAgilityConfigure()
+        {
+            var icon = FeatureRefs.DoubleSlice.Reference.Get().Icon;
+
+            FeatureConfigurator.New(DeadlyAgilityName, DeadlyAgilityGuid, FeatureGroup.Feat)
+                    .SetDisplayName(DeadlyAgilityDisplayName)
+                    .SetDescription(DeadlyAgilityDescription)
+                    .SetIcon(icon)
+                    .AddPrerequisiteStatValue(StatType.Strength, 10)
+                    .AddPrerequisiteFeature(FeatureRefs.WeaponFinesse.ToString())
+                    .AddFacts([FeatureRefs.WeaponFinesseMythicFeat.ToString(), FeatureRefs.DoubleSlice.ToString()])
+                    .AddToGroups(FeatureGroup.CombatFeat)
+                    .Configure();
+        }
     }
     public class SpearAttackStatReplacement : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleCalculateAttackBonusWithoutTarget>, IRulebookHandler<RuleCalculateAttackBonusWithoutTarget>, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleCalculateWeaponStats>, IRulebookHandler<RuleCalculateWeaponStats>
     {

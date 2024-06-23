@@ -510,7 +510,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("order"))) { Inquisition.HammerFeat(); Inquisition.PenitentFeat(); Inquisition.SealFeat(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("titanm"))) { TitanMauler.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("staffmagus"))) { StaffMagus.Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("speardance"))) { SpearDancingStyle.StyleConfigure(); SpearDancingStyle.SpiralConfigure(); SpearDancingStyle.ReachConfigure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("speardance"))) { SpearDancingStyle.StyleConfigure(); SpearDancingStyle.SpiralConfigure(); SpearDancingStyle.ReachConfigure(); SpearDancingStyle.DeadlyAgilityConfigure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2(); TabletopGrapplingInfusion.ConfigureTabletopGrappling();
                 }
                 catch (Exception e)
