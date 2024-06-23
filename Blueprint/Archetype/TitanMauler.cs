@@ -58,7 +58,7 @@ namespace PrestigePlus.Blueprint.Archetype
             var feat = BlueprintTool.GetRef<BlueprintFeatureReference>("f0235447f6f3430fa4a98d15642b849e")?.Get();
             if (feat != null)
             {
-                feat.Ranks = 10;
+                feat.Ranks = 20;
             }
         }
 
