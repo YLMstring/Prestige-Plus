@@ -42,7 +42,7 @@ namespace PrestigePlus.CustomComponent.Feat
         {
             if (Owner.Body.PrimaryHand.MaybeWeapon == null) return false;
             var primaryWeapon = Owner.Body.PrimaryHand.Weapon.Blueprint;
-            if (primaryWeapon.FighterGroup == WeaponFighterGroupFlags.Spears || primaryWeapon.FighterGroup == WeaponFighterGroupFlags.Polearms)
+            if (primaryWeapon.FighterGroup.Contains(WeaponFighterGroup.Spears) || primaryWeapon.FighterGroup.Contains(WeaponFighterGroup.Polearms))
             {
                 return true;
             }

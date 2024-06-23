@@ -2,6 +2,7 @@
 using BlueprintCore.Utils;
 using Kingmaker;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Items.Weapons;
 using Kingmaker.Designers;
 using Kingmaker.Designers.EventConditionActionSystem.Evaluators;
 using Kingmaker.EntitySystem.Entities;
@@ -57,7 +58,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                         ActManeuver(Context.MaybeCaster, Target.Unit, true);
                         return;
                     }
-                    else if (Context.MaybeCaster.HasFact(Spiral) && (weapon.Blueprint.FighterGroup == Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroupFlags.Spears || weapon.Blueprint.FighterGroup == Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroupFlags.Polearms))
+                    else if (Context.MaybeCaster.HasFact(Spiral) && (weapon.Blueprint.FighterGroup.Contains(WeaponFighterGroup.Spears) || weapon.Blueprint.FighterGroup.Contains(WeaponFighterGroup.Polearms)))
                     {
                         ActManeuver(Context.MaybeCaster, Target.Unit, true);
                         return;

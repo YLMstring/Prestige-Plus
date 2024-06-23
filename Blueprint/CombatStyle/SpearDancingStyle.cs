@@ -34,6 +34,7 @@ using Kingmaker.RuleSystem.Rules.Abilities;
 using Kingmaker.UnitLogic.Buffs.Components;
 using Kingmaker.UnitLogic.Buffs;
 using static Kingmaker.UI.CanvasScalerWorkaround;
+using Kingmaker.Blueprints.Items.Weapons;
 
 namespace PrestigePlus.Blueprint.CombatStyle
 {
@@ -199,7 +200,7 @@ namespace PrestigePlus.Blueprint.CombatStyle
             ModifiableValueAttributeStat modifiableValueAttributeStat = base.Owner.Stats.GetStat(evt.AttackBonusStat) as ModifiableValueAttributeStat;
             ModifiableValueAttributeStat modifiableValueAttributeStat2 = base.Owner.Stats.GetStat(this.ReplacementStat) as ModifiableValueAttributeStat;
             bool flag = modifiableValueAttributeStat2 != null && (modifiableValueAttributeStat == null || modifiableValueAttributeStat2.Bonus >= modifiableValueAttributeStat.Bonus);
-            if (flag && (evt.Weapon.Blueprint.FighterGroup == Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroupFlags.Spears || evt.Weapon.Blueprint.FighterGroup == Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroupFlags.Polearms))
+            if (flag && (evt.Weapon.Blueprint.FighterGroup.Contains(WeaponFighterGroup.Spears) || evt.Weapon.Blueprint.FighterGroup.Contains(WeaponFighterGroup.Polearms)))
             {
                 evt.AttackBonusStat = this.ReplacementStat;
             }
@@ -215,7 +216,7 @@ namespace PrestigePlus.Blueprint.CombatStyle
             ModifiableValueAttributeStat modifiableValueAttributeStat = evt.Initiator.Descriptor.Stats.GetStat(this.ReplacementStat) as ModifiableValueAttributeStat;
             ModifiableValueAttributeStat modifiableValueAttributeStat2 = (evt.DamageBonusStat != null) ? (evt.Initiator.Descriptor.Stats.GetStat(evt.DamageBonusStat.Value) as ModifiableValueAttributeStat) : null;
             bool flag = modifiableValueAttributeStat != null && (modifiableValueAttributeStat2 == null || modifiableValueAttributeStat.Bonus > modifiableValueAttributeStat2.Bonus);
-            bool flag2 = evt.Weapon.Blueprint.FighterGroup == Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroupFlags.Spears || evt.Weapon.Blueprint.FighterGroup == Kingmaker.Blueprints.Items.Weapons.WeaponFighterGroupFlags.Polearms;
+            bool flag2 = evt.Weapon.Blueprint.FighterGroup.Contains(WeaponFighterGroup.Spears) || evt.Weapon.Blueprint.FighterGroup.Contains(WeaponFighterGroup.Polearms);
             if (flag && flag2 && Owner.HasFact(Mythic))
             {
                 evt.OverrideDamageBonusStat(this.ReplacementStat);

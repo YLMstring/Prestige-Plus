@@ -32,7 +32,7 @@ namespace PrestigePlus.HarmonyFix
                 {
                     __result = true;
                 }
-                else if (unit?.HasFact(Staff2) == true && (__instance.Blueprint.FighterGroup == WeaponFighterGroupFlags.Spears || __instance.Blueprint.FighterGroup == WeaponFighterGroupFlags.Polearms))
+                else if (unit?.HasFact(Staff2) == true && (__instance.Blueprint.FighterGroup.Contains(WeaponFighterGroup.Spears) || __instance.Blueprint.FighterGroup.Contains(WeaponFighterGroup.Polearms)))
                 {
                     __result = true;
                 }

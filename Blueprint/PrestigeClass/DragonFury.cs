@@ -107,6 +107,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDescription(FuryTrainingDescription)
               .SetIcon(icon)
               .AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.KiPowerResource.ToString(), ContextValues.Rank(AbilityRankType.DamageDice))
+              .AddIncreaseResourceAmountBySharedValue(false, "fd01f3f969a04febab7877a17aebb812", ContextValues.Rank(AbilityRankType.DamageDice))
               .AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.RageResourse.ToString(), ContextValues.Rank(AbilityRankType.ProjectilesCount))
               .AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.BloodragerRageResource.ToString(), ContextValues.Rank(AbilityRankType.ProjectilesCount))
               .AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.FocusedRageResourse.ToString(), ContextValues.Rank(AbilityRankType.ProjectilesCount))
