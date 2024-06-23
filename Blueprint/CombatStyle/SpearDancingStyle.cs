@@ -30,6 +30,10 @@ using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.UnitLogic.Parts;
 using Kingmaker.UnitLogic;
+using Kingmaker.RuleSystem.Rules.Abilities;
+using Kingmaker.UnitLogic.Buffs.Components;
+using Kingmaker.UnitLogic.Buffs;
+using static Kingmaker.UI.CanvasScalerWorkaround;
 
 namespace PrestigePlus.Blueprint.CombatStyle
 {
@@ -77,6 +81,7 @@ namespace PrestigePlus.Blueprint.CombatStyle
                     .AddPrerequisiteStatValue(StatType.Dexterity, 13)
                     .AddPrerequisiteFeature(FeatureRefs.TwoWeaponFighting.ToString())
                     .AddPrerequisiteFeature(FeatureRefs.WeaponFinesse.ToString())
+                    .AddComponent<SpearAntiCheat>()
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .AddToGroups(FeatureGroup.StyleFeat)
                     .AddFacts([ability])
@@ -226,6 +231,20 @@ namespace PrestigePlus.Blueprint.CombatStyle
         // Token: 0x04008653 RID: 34387
         public StatType ReplacementStat;
         public BlueprintFeature Mythic;
+    }
+    internal class SpearAntiCheat : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleAttackRoll>, IRulebookHandler<RuleAttackRoll>, ISubscriber, IInitiatorRulebookSubscriber, IUnitSubscriber
+    {
+        void IRulebookHandler<RuleAttackRoll>.OnEventAboutToTrigger(RuleAttackRoll evt)
+        {
+            if (evt.Weapon?.CanTakeOneHand(Owner) == false && Owner.Body.PrimaryHand.HasItem && Owner.Body.SecondaryHand.HasItem)
+            {
+                evt.AutoMiss = true;
+            }
+        }
+        void IRulebookHandler<RuleAttackRoll>.OnEventDidTrigger(RuleAttackRoll evt)
+        {
+
+        }
     }
 }
 

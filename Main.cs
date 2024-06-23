@@ -347,6 +347,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("speardance"), defaultValue: true, Helpers.CreateString("toggle-desc104", "Spear Dancing Style"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("deadlyag"), defaultValue: true, Helpers.CreateString("toggle-desc105", "Deadly Agility"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("enhance"), defaultValue: true, Helpers.CreateString("toggle-desc22", "Mythic Prestige Class Features"))
               .ShowVisualConnection())
           .AddToggle(
@@ -510,7 +513,8 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("order"))) { Inquisition.HammerFeat(); Inquisition.PenitentFeat(); Inquisition.SealFeat(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("titanm"))) { TitanMauler.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("staffmagus"))) { StaffMagus.Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("speardance"))) { SpearDancingStyle.StyleConfigure(); SpearDancingStyle.SpiralConfigure(); SpearDancingStyle.ReachConfigure(); SpearDancingStyle.DeadlyAgilityConfigure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("deadlyag"))) { SpearDancingStyle.DeadlyAgilityConfigure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("speardance"))) { SpearDancingStyle.StyleConfigure(); SpearDancingStyle.SpiralConfigure(); SpearDancingStyle.ReachConfigure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2(); TabletopGrapplingInfusion.ConfigureTabletopGrappling();
                 }
                 catch (Exception e)
