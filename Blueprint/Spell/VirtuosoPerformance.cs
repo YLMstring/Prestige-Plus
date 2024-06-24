@@ -128,40 +128,44 @@ namespace PrestigePlus.Blueprint.Spell
     {
         private static bool Prefix(ref ActivatableAbility __instance)
         {
-            if (__instance.Owner.Unit.IsInCombat && __instance.Owner.HasFact(virt) && __instance.Blueprint.Group == ActivatableAbilityGroup.BardicPerformance) 
+            try
             {
-                if (!__instance.IsOn || !__instance.IsStarted)
+                if (__instance.Owner.Unit.IsInCombat && __instance.Owner.HasFact(virt) && __instance.Blueprint.Group == ActivatableAbilityGroup.BardicPerformance)
                 {
-                    return false;
-                }
-                using (ContextData<ActivatableAbility.ReapplyBuffContextData>.Request().Setup(__instance))
-                {
-                    if (__instance.m_AppliedBuff != null)
+                    if (!__instance.IsOn || !__instance.IsStarted)
                     {
-                        Buff appliedBuff = __instance.m_AppliedBuff;
-                        __instance.m_AppliedBuff = null;
-                        appliedBuff.Remove();
+                        return false;
                     }
-                    if (__instance.Blueprint.Buff)
+                    using (ContextData<ActivatableAbility.ReapplyBuffContextData>.Request().Setup(__instance))
                     {
-                        foreach (ActivatableAbility activatableAbility in __instance.Owner.ActivatableAbilities.RawFacts)
-                        {
-                            if (activatableAbility.Blueprint.Group == ActivatableAbilityGroup.BardicPerformance && !activatableAbility.IsStarted && !activatableAbility.IsOn)
-                            {
-                                GameHelper.RemoveBuff(__instance.Owner, activatableAbility.Blueprint.Buff);
-                            }
-                        }
-                        MechanicsContext parentContext = new(__instance.Owner.Unit, null, __instance.Blueprint, null, null);
-                        __instance.m_AppliedBuff = __instance.Owner.AddBuff(__instance.Blueprint.Buff, parentContext, null);
                         if (__instance.m_AppliedBuff != null)
                         {
-                            __instance.m_AppliedBuff.IsNotDispelable = true;
+                            Buff appliedBuff = __instance.m_AppliedBuff;
+                            __instance.m_AppliedBuff = null;
+                            appliedBuff.Remove();
+                        }
+                        if (__instance.Blueprint.Buff)
+                        {
+                            foreach (ActivatableAbility activatableAbility in __instance.Owner.ActivatableAbilities.RawFacts)
+                            {
+                                if (activatableAbility.Blueprint.Group == ActivatableAbilityGroup.BardicPerformance && !activatableAbility.IsStarted && !activatableAbility.IsOn)
+                                {
+                                    GameHelper.RemoveBuff(__instance.Owner, activatableAbility.Blueprint.Buff);
+                                }
+                            }
+                            MechanicsContext parentContext = new(__instance.Owner.Unit, null, __instance.Blueprint, null, null);
+                            __instance.m_AppliedBuff = __instance.Owner.AddBuff(__instance.Blueprint.Buff, parentContext, null);
+                            if (__instance.m_AppliedBuff != null)
+                            {
+                                __instance.m_AppliedBuff.IsNotDispelable = true;
+                            }
                         }
                     }
+                    return false;
                 }
-                return false;
+                return true;
             }
-            return true;
+            catch (Exception ex) { Main.Logger.Error("Failed to VirtuosoPerformancePatch.", ex); return true; }
         }
 
         private static BlueprintBuffReference virt = BlueprintTool.GetRef<BlueprintBuffReference>(VirtuosoPerformance.VirtuosoPerformanceBuffGuid);
