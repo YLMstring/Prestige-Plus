@@ -30,6 +30,7 @@ using Kingmaker.UnitLogic.Mechanics;
 using static Kingmaker.GameModes.GameModeType;
 using Kingmaker.Designers;
 using Kingmaker.UnitLogic.Mechanics.Actions;
+using static Pathfinding.Util.RetainedGizmos;
 
 namespace PrestigePlus.Blueprint.Spell
 {
@@ -127,7 +128,7 @@ namespace PrestigePlus.Blueprint.Spell
     {
         private static bool Prefix(ref ActivatableAbility __instance)
         {
-            if (__instance.Owner.HasFact(virt) && __instance.Blueprint.Group == ActivatableAbilityGroup.BardicPerformance) 
+            if (__instance.Owner.Unit.IsInCombat && __instance.Owner.HasFact(virt) && __instance.Blueprint.Group == ActivatableAbilityGroup.BardicPerformance) 
             {
                 if (!__instance.IsOn || !__instance.IsStarted)
                 {
