@@ -187,7 +187,7 @@ namespace PrestigePlus.Blueprint.CombatStyle
                     .SetIcon(icon)
                     .AddPrerequisiteStatValue(StatType.Strength, 10)
                     .AddPrerequisiteFeature(FeatureRefs.WeaponFinesse.ToString())
-                    .AddFacts([FeatureRefs.WeaponFinesseMythicFeat.ToString(), FeatureRefs.DoubleSlice.ToString()])
+                    .AddFacts([FeatureRefs.WeaponFinesseMythicFeat.ToString()])
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .Configure();
         }

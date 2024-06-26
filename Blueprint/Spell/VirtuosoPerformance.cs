@@ -130,7 +130,7 @@ namespace PrestigePlus.Blueprint.Spell
         {
             try
             {
-                if (__instance.Owner.Unit.IsInCombat && __instance.Owner.HasFact(virt) && __instance.Blueprint.Group == ActivatableAbilityGroup.BardicPerformance)
+                if (__instance.Owner.HasFact(virt) && __instance.Blueprint.Group == ActivatableAbilityGroup.BardicPerformance)
                 {
                     if (!__instance.IsOn || !__instance.IsStarted)
                     {
