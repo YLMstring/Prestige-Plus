@@ -260,7 +260,7 @@ namespace PrestigePlus.HarmonyFix
         {
             ItemEntityWeapon maybeWeapon = unit.Body.PrimaryHand.MaybeWeapon;
             ItemEntityWeapon maybeWeapon2 = unit.Body.SecondaryHand.MaybeWeapon;
-            if (unit.HasFact(Mantis) && maybeWeapon?.Blueprint.Category == WeaponCategory.Falcata && maybeWeapon2?.Blueprint.Category == WeaponCategory.Falcata)
+            if (unit.HasFact(Mantis) && maybeWeapon?.Blueprint.Category == WeaponCategory.SawtoothSabre && maybeWeapon2?.Blueprint.Category == WeaponCategory.SawtoothSabre)
             {
                 return 0;
             }

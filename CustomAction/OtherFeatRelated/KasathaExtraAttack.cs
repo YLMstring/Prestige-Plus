@@ -86,7 +86,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                 {
                     penalty = 0;
                 }
-                if (unit.HasFact(Mantis) && weapon.Blueprint.Category == WeaponCategory.Falcata)
+                if (unit.HasFact(Mantis) && weapon.Blueprint.Category == WeaponCategory.SawtoothSabre)
                 {
                     penalty = 0;
                 }
