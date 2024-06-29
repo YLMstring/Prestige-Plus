@@ -68,7 +68,7 @@ namespace PrestigePlus.CustomAction.OtherManeuver
             if (ruleCombatManeuver.Success)
             {
                 GameHelper.ApplyBuff(caster, CasterBuff2, new Rounds?(1.Rounds()));
-                caster.CombatState.PreventAttacksOfOpporunityNextFrame = true;
+                //caster.CombatState.PreventAttacksOfOpporunityNextFrame = true;
                 caster.Position = target.Position;
             }
             else

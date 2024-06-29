@@ -29,6 +29,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(GuidedHandDisplayName)
               .SetDescription(GuidedHandDescription)
               .SetIcon(icon)
+              .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteFeature("8623a8c41c2740fcb04861a3d7ce083a", group: Prerequisite.GroupType.Any)
               .AddPrerequisiteFeature("dff4ee6c9a66c8146b30a8af6f7feebf", group: Prerequisite.GroupType.Any)
               .AddPrerequisiteFeature(FeatureRefs.SelectiveChannel.ToString(), group: Prerequisite.GroupType.Any)
