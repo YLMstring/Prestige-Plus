@@ -26,7 +26,8 @@ namespace PrestigePlus.CustomComponent
     {
         public void OnEventAboutToTrigger(RuleDealDamage evt)
         {
-            if (evt.Reason?.Fact?.GetComponent<ContextCalculateAbilityParamsBasedOnClass>()?.CharacterClass == CharacterClassRefs.KineticistClass.Reference.Get()) 
+            //Main.Logger.Info("source1" + evt.DamageBundle.First()?.SourceFact?.ToString() + "source2" + evt.SourceAbility?.ToString() + "source3" + evt.SourceArea?.ToString());
+            if (evt.SourceArea?.GetComponent<ContextCalculateAbilityParamsBasedOnClass>()?.CharacterClass == CharacterClassRefs.KineticistClass.Reference.Get()) 
             {
                 List<BaseDamage> list = TempList.Get<BaseDamage>();
                 foreach (BaseDamage damage in evt.DamageBundle)
