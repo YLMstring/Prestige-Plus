@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BlueprintCore.Blueprints.Configurators.Classes;
+using PrestigePlus.CustomComponent;
 
 namespace PrestigePlus.Modify
 {            ///FeatureReplaceSpellbookConfigurator.New(SorcererName, SorcererGuid)
@@ -33,6 +34,10 @@ namespace PrestigePlus.Modify
                   .SetObligatory(false)
                   .SetAllFeatures(new Blueprint<BlueprintFeatureReference>[] { MagicDeceiver(), AccursedWitch(), Alchemist(), AngelfireApostle(), Arcanist(), ArmagsBlade(), Bard(), Bloodrager(), Cleric(), Crossblooded(), Crusader(), Druid(), EldritchFont(), EldritchScion(), EldritchScoundrel(), Empyreal(), ExploiterWizard(), Feyspeaker(), Hunter(), Inquisitor(), LeyLineGuardianWitch(), Magus(), MasterSpy(), NatureMage(), Oracle(), Paladin(), Ranger(), Sage(), Shaman(), Skald(), Sorcerer(), SwordSaint(), ThassilonianAbjuration(), ThassilonianConjuration(), ThassilonianEnchantment(), ThassilonianEvocation(), ThassilonianIllusion(), ThassilonianNecromancy(), ThassilonianTransmutation(), UnletteredArcanist(), Warpriest(), Witch(), Wizard(), DreadKnight(), ClawOfTheFalseWyrm(), SilverChampion(), RavenerHunter(), LivingScripture(), SkulkingHunter(), SwornOfTheEldest(), ArrowsongMinstrel(), Antipaladin(), ChannelerOfTheUnknown(), Myrmidarch() })
                   .Configure(delayed: true);
+
+            FeatureConfigurator.For(FeatureRefs.KineticBlastFeature)
+                .AddComponent<BugFixKineticMagic>()
+                .Configure();
         }
 
         public static readonly string MagicDeceiverName = "2MagicDeceiver";
