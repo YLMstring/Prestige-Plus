@@ -51,4 +51,21 @@ namespace PrestigePlus.CustomComponent
             
         }
     }
+
+    internal class DifficultCMDPatch2 : UnitFactComponentDelegate, ITargetRulebookHandler<RuleCombatManeuver>, IRulebookHandler<RuleCombatManeuver>, ISubscriber, ITargetRulebookSubscriber
+    {
+        // Token: 0x0600E9DC RID: 59868 RVA: 0x003C1B9A File Offset: 0x003BFD9A
+        public void OnEventAboutToTrigger(RuleCombatManeuver evt)
+        {
+            if (evt.Type == CombatManeuver.Trip && !Owner.CanBeKnockedOff())
+            {
+                evt.AutoFailure = true;
+            }
+        }
+
+        // Token: 0x0600E9DD RID: 59869 RVA: 0x003C1BB9 File Offset: 0x003BFDB9
+        public void OnEventDidTrigger(RuleCombatManeuver evt)
+        {
+        }
+    }
 }

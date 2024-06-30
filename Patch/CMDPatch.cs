@@ -17,5 +17,12 @@ namespace PrestigePlus.Patch
                 .AddComponent<DifficultCMDPatch>()
                 .Configure();
         }
+
+        public static void Patch2()
+        {
+            FeatureConfigurator.For(FeatureRefs.SkillAbilities)
+                .AddComponent<DifficultCMDPatch2>()
+                .Configure();
+        }
     }
 }
