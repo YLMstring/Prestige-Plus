@@ -27,6 +27,7 @@ using PrestigePlus.CustomAction.OtherManeuver;
 using PrestigePlus.CustomComponent.Grapple;
 using PrestigePlus.Grapple;
 using PrestigePlus.Maneuvers;
+using PrestigePlus.Patch;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -206,8 +207,11 @@ namespace PrestigePlus.HarmonyFix
                 if (caster.HasFact(Trip1) || caster.HasFact(Trip2))
                 {
                     GameHelper.RemoveBuff(caster, Trip1);
-                    if (target.Descriptor.State.Prone.Active) { return true; }
-                    if (!target.CanBeKnockedOff() && !caster.HasFact(Ace)) { return true; }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(Main.GetKey("headkick"))) 
+                    {
+                        if (target.Descriptor.State.Prone.Active) { return true; }
+                        if (!target.CanBeKnockedOff() && !caster.HasFact(Ace)) { return true; }
+                    }
                     TriggerManeuver(caster, target, AttackBonusRule, CombatManeuver.Trip);
                     return false;
                 }

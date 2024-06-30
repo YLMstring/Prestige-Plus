@@ -398,6 +398,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("cmdminus"), defaultValue: true, Helpers.CreateString("toggle-desc51", "Fix Difficulty CMD Tripple-Dipped"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("headkick"), defaultValue: true, Helpers.CreateString("toggle-desc106", "Fix Head Kicking"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("ecpatch"), defaultValue: true, Helpers.CreateString("toggle-desc89", "Ensure Compability with Expanded Content"))
               .ShowVisualConnection())
           .AddToggle(
