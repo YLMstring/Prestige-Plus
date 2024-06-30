@@ -8274,9 +8274,9 @@
   },
   {
     "Key": "DeificObedienceNorgorber2.Description",
-    "enGB": "You can combine a vial of poison with a thrown alchemist bomb. The bomb deals normal direct hit and splash damage, plus the target of the direct hit must save successfully or suffer the effects of the poison, as per the 7th-level poison breath spell. Creatures hit by the bomb’s splash damage are unaffected by the poison.",
-    "ruRU": "Вы можете объединить пузырек с ядом с алхимической бомбой. Бомба наносит обычный прямой урон и урон от брызг, кроме того, цель прямого попадания должна успешно совершить успешный спасбросок или пострадать от эффектов яда, как под действием заклинания 7 круга 'Ядовитое дыхание'. Существа, пораженные брызгами бомбы, не страдают от этого эффекта.",
-    "zhCN": "你能够将一剂毒素和投掷用的炼金炸弹相结合。这个炸弹会如常造成直接和溅射伤害，炸弹直接命中的目标还必须进行豁免检定，失败就要承受毒素的效果，如同7环的剧毒吐息法术。被炸弹的溅射伤害击中的生物不会受到毒素的影响。"
+    "enGB": "You can combine a vial of poison with a thrown alchemist bomb. The bomb deals normal direct hit and splash damage, plus the target of the direct hit must save successfully or suffer the effects of the poison, as per the 7th-level poison breath spell. Creatures hit by the bomb’s splash damage are unaffected by the poison. Additionally, any of your poison effects has its DC increased by 2.",
+    "ruRU": "Вы можете объединить пузырек с ядом с алхимической бомбой. Бомба наносит обычный прямой урон и урон от брызг, кроме того, цель прямого попадания должна успешно совершить успешный спасбросок или пострадать от эффектов яда, как под действием заклинания 7 круга 'Ядовитое дыхание'. Существа, пораженные брызгами бомбы, не страдают от этого эффекта. Additionally, any of your poison effects has its DC increased by 2.",
+    "zhCN": "你能够将一剂毒素和投掷用的炼金炸弹相结合。这个炸弹会如常造成直接和溅射伤害，炸弹直接命中的目标还必须进行豁免检定，失败就要承受毒素的效果，如同7环的剧毒吐息法术。被炸弹的溅射伤害击中的生物不会受到毒素的影响。此外，你的任何毒素效果的DC都会增加2。"
   },
   {
     "Key": "DeificObedienceNorgorber3.Name",

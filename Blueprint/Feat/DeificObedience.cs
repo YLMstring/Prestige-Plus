@@ -1344,6 +1344,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDescription(Norgorber2Description)
               .SetIcon(icon)
               .AddComponent<NorgorberBomb>()
+              .AddIncreaseSpellDescriptorDC(2, SpellDescriptor.Poison)
               .Configure();
         }
 
