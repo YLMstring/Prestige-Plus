@@ -4431,19 +4431,16 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string Mephistopheles1AblityGuid = "{5E01FB58-157D-454F-8E65-F0CC0E3C1D54}";
         private static BlueprintFeature CreateMephistopheles1()
         {
-            var icon = AbilityRefs.Hypnotism.Reference.Get().Icon;
+            var icon = AbilityRefs.LitanyOfEloquence.Reference.Get().Icon;
 
             var ability = AbilityConfigurator.New(Mephistopheles1Ablity, Mephistopheles1AblityGuid)
                 .CopyFrom(
-                AbilityRefs.Hypnotism,
+                AbilityRefs.LitanyOfEloquence,
                 typeof(AbilityEffectRunAction),
                 typeof(SpellComponent),
-                typeof(SpellDescriptorComponent),
-                typeof(ContextCalculateSharedValue),
-                typeof(AbilitySpawnFx),
-                typeof(AbilityTargetsAround))
-                .AddPretendSpellLevel(spellLevel: 1)
-                .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 2)
+                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
                 .SetType(AbilityType.SpellLike)
                 .Configure();
 

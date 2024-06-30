@@ -12176,9 +12176,9 @@
   },
   {
     "Key": "SpellPowerMephistopheles1.Description",
-    "enGB": "hypnotism 3/day",
-    "ruRU": "Вы получаете псевдозаклинание: Гипноз 3/день.",
-    "zhCN": "催眠术 3次/天"
+    "enGB": "litany of eloquence 2/day",
+    "ruRU": "litany of eloquence 2/day",
+    "zhCN": "妙语祷言 2次/天"
   },
   {
     "Key": "DeificObedienceMephistopheles3.Name",
