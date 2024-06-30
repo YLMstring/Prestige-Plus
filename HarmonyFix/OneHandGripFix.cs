@@ -43,4 +43,20 @@ namespace PrestigePlus.HarmonyFix
         private static BlueprintFeatureReference Staff = BlueprintTool.GetRef<BlueprintFeatureReference>(StaffMagus.QuarterstaffMasterGuid);
         private static BlueprintBuffReference Staff2 = BlueprintTool.GetRef<BlueprintBuffReference>(SpearDancingStyle.StylebuffGuid);
     }
+
+    [HarmonyPatch(typeof(ItemEntityWeapon), nameof(ItemEntityWeapon.CanTakeTwoHands))]
+    internal class TwoHandGripFix
+    {
+        static void Postfix(ref bool __result, ref ItemEntityWeapon __instance)
+        {
+            try
+            {
+                if (__instance.Blueprint.Category == Kingmaker.Enums.WeaponCategory.SawtoothSabre)
+                {
+                    __result = true;
+                }
+            }
+            catch (Exception ex) { Main.Logger.Error("Fail to TwoHandGripFix.", ex); }
+        }
+    }
 }
