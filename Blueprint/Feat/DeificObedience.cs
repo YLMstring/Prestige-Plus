@@ -4748,6 +4748,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(Achaekek2DisplayName)
               .SetDescription(Achaekek2Description)
               .SetIcon(icon)
+              .AddFacts([FeatureRefs.DoubleSlice.ToString()])
               .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().ApplyBuffPermanent(BuffRefs.Bleed1d4Buff.ToString()).Build(), false, onlyHit: true, category: WeaponCategory.SawtoothSabre, checkWeaponCategory: true)
               .Configure();
         }

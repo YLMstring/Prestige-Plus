@@ -12774,9 +12774,9 @@
   },
   {
     "Key": "DeificObedienceAchaekek2.Description",
-    "enGB": "All wounds you inflict with a sawtooth saber are bleeding wounds, and deal 1d4 points of bleed damage to the target (the damage does not stack).",
-    "ruRU": "Все раны, которые вы наносите при помощи зазубренной сабли, являются кровоточящими и наносят 1d4 урона кровотечением (этот урон не складывается).",
-    "zhCN": "你用锯齿刀产生的所有伤口都会流血不止，对目标造成1d4点流血伤害（不叠加）。"
+    "enGB": "All wounds you inflict with a sawtooth saber are bleeding wounds, and deal 1d4 points of bleed damage to the target (the damage does not stack). You also gain Double Slice as a bonus feat.",
+    "ruRU": "Все раны, которые вы наносите при помощи зазубренной сабли, являются кровоточящими и наносят 1d4 урона кровотечением (этот урон не складывается). You also gain Double Slice as a bonus feat.",
+    "zhCN": "你用锯齿刀产生的所有伤口都会流血不止，对目标造成1d4点流血伤害（不叠加）。你还会获得双斩作为额外专长。"
   },
   {
     "Key": "DeificObedienceAchaekek3.Name",
