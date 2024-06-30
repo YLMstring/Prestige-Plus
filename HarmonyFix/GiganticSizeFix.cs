@@ -25,6 +25,6 @@ namespace PrestigePlus.HarmonyFix
                 __result += 1;
             }
         }
-        private static BlueprintFeatureReference Ace = BlueprintTool.GetRef<BlueprintFeatureReference>(MammothRider.GiganticSteed1Guid);
+        private static BlueprintBuffReference Ace = BlueprintTool.GetRef<BlueprintBuffReference>(MammothRider.BiggerAbilitybuffGuid);
     }
 }

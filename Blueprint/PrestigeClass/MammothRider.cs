@@ -100,18 +100,42 @@ namespace PrestigePlus.Blueprint.PrestigeClass
 
         private const string GiganticSteed1 = "MammothRider.GiganticSteed1";
         public static readonly string GiganticSteed1Guid = "{D5D06F79-F7FF-4AB5-96FE-34CE19034EF4}";
+
+        private const string BiggerAbility = "GiganticAssault.BiggerAbility";
+        private static readonly string BiggerAbilityGuid = "{2B27D329-B82A-4789-B1F2-12A489D96581}";
+
+        private const string BiggerAbilitybuff = "GiganticAssault.BiggerAbilitybuff";
+        public static readonly string BiggerAbilitybuffGuid = "{E3A91378-2494-4694-A980-AEEFD22A1391}";
         public static BlueprintFeature GiganticSteedFeat()
         {
             var icon = AbilityRefs.AnimalGrowth.Reference.Get().Icon;
+
+            var Buff = BuffConfigurator.New(BiggerAbilitybuff, BiggerAbilitybuffGuid)
+              .SetDisplayName(ReachSteedDisplayName)
+              .SetDescription(ReachSteedDescription)
+              .SetIcon(icon)
+              .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+              //just update, don't actually change
+              .AddChangeUnitSize(type: Kingmaker.Designers.Mechanics.Buffs.ChangeUnitSize.ChangeType.Delta, sizeDelta: 0)
+              .Configure();
+
+            var ability = ActivatableAbilityConfigurator.New(BiggerAbility, BiggerAbilityGuid)
+                .SetDisplayName(ReachSteedDisplayName)
+                .SetDescription(ReachSteedDescription)
+                .SetIcon(icon)
+                .SetBuff(Buff)
+                .SetDeactivateImmediately(true)
+                .SetActivationType(AbilityActivationType.Immediately)
+                .SetIsOnByDefault(true)
+                .Configure();
 
             var feat = FeatureConfigurator.New(GiganticSteed1, GiganticSteed1Guid)
               .SetDisplayName(GiganticSteedDisplayName)
               .SetDescription(GiganticSteedDescription)
               .SetIcon(icon)
-              //just update, don't actually change
-              .AddChangeUnitSize(type: Kingmaker.Designers.Mechanics.Buffs.ChangeUnitSize.ChangeType.Delta, sizeDelta: 0)
-              //.AddComponent<ChangeUnitBaseSize>(c => { c.Size = Kingmaker.Enums.Size.Huge; c.m_Type = TabletopTweaks.Core.NewUnitParts.UnitPartBaseSizeAdjustment.ChangeType.Value; })
-              .AddStatBonus(Kingmaker.Enums.ModifierDescriptor.Penalty, false, StatType.Dexterity, -2)
+              .AddFacts([ability])
+              .AddStatBonus(ModifierDescriptor.Penalty, false, StatType.Dexterity, -2)
               .Configure();
 
             return FeatureConfigurator.New(GiganticSteed, GiganticSteedGuid)
