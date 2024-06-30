@@ -2989,9 +2989,9 @@
 
   {
     "Key": "MammothRiderGiganticSteed.Description",
-    "enGB": "The size of a mammoth rider’s steed increases two level from its smallest base size. It also gains a +2 size bonus to its Strength and Constitution. At 3rd level and every 2 levels thereafter, the Strength bonus increases by an additional 2; the bonus to Constitution increases by an additional 2 at 5th and again at 9th level.",
-    "ruRU": "The size of a mammoth rider’s steed increases two level from its smallest base size. It also gains a +2 size bonus to its Strength and Constitution. At 3rd level and every 2 levels thereafter, the Strength bonus increases by an additional 2; the bonus to Constitution increases by an additional 2 at 5th and again at 9th level.",
-    "zhCN": "巨兽驭手的坐骑体型从其最小体型的基础上提升两级。它同时在力量和体质上获得+2体型加值。在3级和之后的每2级，力量加值都会再增加+2；体质加值在5级和9级会再增加+2。"
+    "enGB": "The size of a mammoth rider’s steed increases to Huge. It also gains a +2 size bonus to its Strength and Constitution. At 3rd level and every 2 levels thereafter, the Strength bonus increases by an additional 2; the bonus to Constitution increases by an additional 2 at 5th and again at 9th level.",
+    "ruRU": "The size of a mammoth rider’s steed increases to Huge. It also gains a +2 size bonus to its Strength and Constitution. At 3rd level and every 2 levels thereafter, the Strength bonus increases by an additional 2; the bonus to Constitution increases by an additional 2 at 5th and again at 9th level.",
+    "zhCN": "巨兽驭手的坐骑体型变为巨型。它同时在力量和体质上获得+2体型加值。在3级和之后的每2级，力量加值都会再增加+2；体质加值在5级和9级会再增加+2。"
   },
 
   {

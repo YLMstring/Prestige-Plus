@@ -108,7 +108,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(GiganticSteedDisplayName)
               .SetDescription(GiganticSteedDescription)
               .SetIcon(icon)
-              .AddComponent<ChangeUnitBaseSize>(c => { c.SizeDelta = 2; c.m_Type = TabletopTweaks.Core.NewUnitParts.UnitPartBaseSizeAdjustment.ChangeType.Delta; })
+              .AddComponent<ChangeUnitBaseSize>(c => { c.Size = Kingmaker.Enums.Size.Huge; c.m_Type = TabletopTweaks.Core.NewUnitParts.UnitPartBaseSizeAdjustment.ChangeType.Value; })
               .AddStatBonus(ModifierDescriptor.Penalty, false, StatType.Dexterity, -2)
               .Configure();
 
