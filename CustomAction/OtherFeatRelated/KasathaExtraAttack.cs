@@ -86,6 +86,10 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                 {
                     penalty = 0;
                 }
+                if (!weapon.Blueprint.IsLight && !weapon.Blueprint.Double && !maybeCaster.State.Features.EffortlessDualWielding)
+                {
+                    penalty += 2;
+                }
                 if (unit.HasFact(Mantis) && weapon.Blueprint.Category == WeaponCategory.SawtoothSabre)
                 {
                     penalty = 0;
