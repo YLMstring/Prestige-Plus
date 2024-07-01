@@ -440,6 +440,7 @@
 - Fix Power Attack: now working as descripted: This bonus to damage is halved (–50%) if you are making an attack with an off-hand weapon. Note that Piranha Strike has the same bug but it isn't fixed because this might give Piranha Strike an edge over Power Attack, which is pretty coool.
 - Fix the bug that prone unit can be tripped. If you would allow some kind of head kicking, turn this off in mod menu.
 - Fix the bug that physical kinetic blasts that create an area effect don't count as magical.
+- Fix the bug(?) that a sawtooth saber can't be wielded with two hands.
 ## Mod Combo
 
 ### [Character Options+](https://github.com/WittleWolfie/CharacterOptionsPlus)
