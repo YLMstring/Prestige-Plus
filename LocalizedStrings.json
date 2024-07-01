@@ -2990,7 +2990,7 @@
   {
     "Key": "MammothRiderGiganticSteed.Description",
     "enGB": "The size of a mammoth rider’s steed increases to Huge. It also gains a +2 size bonus to its Strength and Constitution. At 3rd level and every 2 levels thereafter, the Strength bonus increases by an additional 2; the bonus to Constitution increases by an additional 2 at 5th and again at 9th level.",
-    "ruRU": "The size of a mammoth rider’s steed increases to Huge. It also gains a +2 size bonus to its Strength and Constitution. At 3rd level and every 2 levels thereafter, the Strength bonus increases by an additional 2; the bonus to Constitution increases by an additional 2 at 5th and again at 9th level.",
+    "ruRU": "Размер скакуна наездника увеличивается до крупного. Также он получает бонус +2 к Силе и Выносливости. На 3 уровне и каждые 2 уровня после, бонус к Силе увеличивается на 2; бонус к Выносливости увеличивается на 2 на 5 и затем снова на 9 уровнях.",
     "zhCN": "巨兽驭手的坐骑体型变为巨型。它同时在力量和体质上获得+2体型加值。在3级和之后的每2级，力量加值都会再增加+2；体质加值在5级和9级会再增加+2。"
   },
 
@@ -3686,7 +3686,7 @@
   {
     "Key": "HalflingOpportunistExploitive.Description",
     "enGB": "A halfling opportunist can use an enemy’s actions in combat for her own gain. Once per round she can attempt a pull combat maneuver against an opponent that makes a melee attack against her. The opportunist substitutes her Dexterity score modifier for her Strength if higher. If she succeeds, the halfling opportunist adds +3 bonus to her next attack this round and subtracts that bonus from the enemy’s attack roll. This increases by +1 at 3rd level and again at 5th level.",
-    "ruRU": "Халфлинг-оппортунист может использовать одно из действий своего противника, чтобы получить выгоду. 1 Раз за раунд он может попытаться провернуть боевой маневр против врага, который атакует его в ближнем бою. Оппортунист может использовать свой модификатор Ловкости вместо Силы если он выше. Если он успешно пройдет проверку, то следующая его атака в этом раунде получит бонус +3 к своей атаке, а противник штраф -3 к своей. Этот бонус увеличивается на 1 на 3 уровне и затем снова на 5 уровне.",
+    "ruRU": "Халфлинг-оппортунист может использовать одно из действий своего противника, чтобы получить выгоду. Раз за раунд он может попытаться провернуть боевой маневр против врага, который атакует его в ближнем бою. Оппортунист может использовать свой модификатор Ловкости вместо Силы, если он выше. Если он успешно пройдет проверку, то следующая его атака в этом раунде получит бонус +3 к броску на попадание, а атака противника получит штраф -3. Этот бонус увеличивается на 1 на 3 уровне и затем снова на 5 уровне.",
     "zhCN": "半身任侠能够利用敌人的行动令自己受益。每轮限一次，她可以对近战攻击她的敌人发起拖拽战技检定，如果成功，本轮下一次攻击获得+3加值，敌人的攻击检定获得同样的减值。这个加值在3级和5级的时候各上升1点。"
   },
 
@@ -3703,7 +3703,7 @@
   {
     "Key": "HalflingOpportunistExploitive2.Description",
     "enGB": "You may perform another combat maneuver you've learned when activating Exploitive Maneuver class ability, but can't gain the +3 attack bonus if so choose.",
-    "ruRU": "Вместо бонуса от эксплуатирующего маневра вы можете провести другой известный вам боевой маневр.",
+    "ruRU": "Вместо бонуса от эксплуатирующего маневра вы можете провести другой известный вам боевой маневр, но при этом вы не получите бонус +3 к броску на попадание.",
     "zhCN": "在使用斗转星移职业能力时，可以换成另一项已学会的战技，但如此做不能获得原本的+3攻击加值。"
   },
 
@@ -4944,7 +4944,7 @@
   {
     "Key": "RogueSneakyManeuver.Description",
     "enGB": "Anytime a rogue with this talent attempts a melee sneak attack against an opponent that she is flanking or that is denied its Dexterity bonus to AC against her attack, she may take a –2 penalty on the attack roll. If the attack succeeds, the rogue deals damage as normal and then instead of dealing sneak attack damage, she can attempt a dirty trick, disarm, sunder, or trip combat maneuver check as a swift action this turn.",
-    "ruRU": "Всякий раз, когда вор с этим талантом атакует своей атакой исподтишка, он может принять штраф -2 к броску на попадание. Если атака успешно попадает, вор наносит как обычно, а затем может, быстрым действием, применить боевой маневр разоружения, разрушения брони или сбивания с ног до конца своего хода.",
+    "ruRU": "Всякий раз, когда вор с этим талантом атакует своей атакой исподтишка врага над которым он пользуется численным преимуществом или которого застигнул врасплох, он может принять штраф -2 к броску на попадание. Если атака успешно попадает, вор наносит урон как обычно, а затем может, быстрым действием, применить боевой маневр разоружения, разрушения брони или сбивания с ног до конца своего хода.",
     "zhCN": "每当具有该天赋的游荡者尝试近战偷袭一个正在被她夹击或者对她的攻击失去敏捷加值的生物，她可以在本次攻击中获得-2减值，如果攻击命中，她放弃偷袭伤害，正常造成其余伤害，并可以在本回合用迅捷动作尝试阴招，缴械，击破或绊摔战技。"
   },
   {
@@ -6364,7 +6364,7 @@
   {
     "Key": "CloakDaggerStyle.Description",
     "enGB": "Your attacks effortlessly inflict debilitating conditions on unaware opponents. Choose one light melee weapon. While using this style, the first time you attack an opponent that is denied its Dexterity bonus to AC with your chosen weapon during the turn you enter a battle, you can attempt a dirty trick combat maneuver check against that opponent as a free action.",
-    "ruRU": "Ваши атаки без особых усилий накладывают изнурительные состояния на ничего не подозревающих противников. Выберите одно легкое оружие ближнего боя. Используя этот стиль, в первый раз, когда вы атакуете противника, лишенного модификатора Ловкости к защите, выбранным вами оружием, во время хода, когда вы вступаете в бой, вы можете, свободное действие, попытаться выполнить проверку боевого маневра грязный трюк против этого противника.",
+    "ruRU": "Ваши атаки без особых усилий накладывают изнурительные состояния на ничего не подозревающих противников. Выберите одно легкое оружие ближнего боя. Используя этот стиль, в первый раз, когда вы атакуете противника, лишенного модификатора Ловкости к защите, выбранным вами оружием, во время хода, когда вы вступаете в бой, вы можете свободным действием попытаться выполнить проверку боевого маневра грязный трюк против этого противника.",
     "zhCN": "你的攻击能轻易对未察觉的对手造成不良状态。选择一种轻型近战武器。当你开启该流派时，你用所选的武器在你进入战斗的第一回合中首次攻击一个失去AC上的敏捷加值的敌人时，你可以用自由动作对该敌人进行一次阴招战技检定。"
   },
   {
@@ -6390,7 +6390,7 @@
   {
     "Key": "CloakDaggerTactics.Description",
     "enGB": "You devastate enemies that you catch off-guard. While you are using Cloak and Dagger Style and wielding your chosen weapon, whenever you hit an opponent that is denied its Dexterity bonus to AC or that you are flanking, or make an attack using Vital Strike (or its improved or greater versions), you can attempt a dirty trick combat maneuver check against that opponent as a free action. If you succeed, the target must succeed at a Fortitude save (DC = 10 + 1/2 your base attack bonus + your Intelligence modifier) or gain the confused condition, if immune, gain the staggered condition, if immune, gain the exhausted condition, if immune, anchored in place and unable to move. This additional penalty lasts only 1 round, regardless of how long the dirty trick’s normal penalty lasts. You can only attempt one free dirty trick combat maneuver check per round using this feat.",
-    "ruRU": "Вы опустошаете врагов, которых застаете врасплох. Пока вы используете стиль плаща и кинжала и используете выбранное вами оружие, каждый раз, когда вы наносите удар по противнику, который не добавляет модификатор Ловкости к защите или над которым вы пользуетесь преимуществом, или совершаете атаку с помощью Жестокого удара (или его усиленных версий), вы можете, свободным действием, попытаться пройти проверку боевого маневра грязный трюк против этого противника. Если вы успешно её пройдете, цель должна совершить спасбросок Стойкости (DC = 10 + 1/2 вашего базового модификатора атаки + модификатор Интеллекта) или получить состояние замешательства, если она невосприимчива к этому состоянию, то получить состояние ошеломления, если она невосприимчива к этому состоянию, получить состояние истощения, если она невосприимчива и к этому состоянию, она застывает на месте и не может двигаться. Этот дополнительный эффект длится только 1 раунд, независимо от того, как долго длится эффект от обычного грязного трюка. Используя эту черту, вы можете попытаться выполнить только одну проверку боевого маневра грязный трюк за раунд.",
+    "ruRU": "Вы опустошаете врагов, которых застаете врасплох. Пока вы используете стиль плаща и кинжала и используете выбранное вами оружие, каждый раз, когда вы наносите удар по противнику, который не добавляет модификатор Ловкости к защите или над которым вы пользуетесь преимуществом, или совершаете атаку с помощью Жестокого удара (или его усиленных версий), вы можете, свободным действием, попытаться пройти проверку боевого маневра грязный трюк против этого противника. Если вы успешно её пройдете, цель должна совершить успешный спасбросок Стойкости (DC = 10 + 1/2 вашего базового модификатора атаки + модификатор Интеллекта) или получить состояние замешательства, если она невосприимчива к этому состоянию, то получить состояние ошеломления, если она невосприимчива к этому состоянию, получить состояние истощения, если она невосприимчива и к этому состоянию, она застывает на месте и не может двигаться. Этот дополнительный эффект длится только 1 раунд, независимо от того, как долго длится эффект от обычного грязного трюка. Используя эту черту, вы можете попытаться выполнить только одну проверку боевого маневра грязный трюк за раунд.",
     "zhCN": "你蹂躏那些措手不及的敌人。当你开启美人三招并持用你所选的武器时，每当你击中一个失去AC上的敏捷加值或被你夹击的敌人，或是使用要害打击（以及其精通和高等版本）进行一次攻击时，你可以用自由动作对该敌人进行一次阴招战技检定。如果你成功了，该目标必须成功通过强韧检定（DC=10+1/2你的BAB+你的智力调整），否则就会困惑，如果免疫则会恍惚，如果免疫则会力竭，如果免疫则会被钉在原地不能移动。无论阴招造成的普通惩罚持续多久，该额外的惩罚只持续一轮。你每轮只能使用该专长一次来以进行额外的阴招战技检定。"
   },
   {
@@ -7729,7 +7729,7 @@
   {
     "Key": "DeificObedienceGorum3.Description",
     "enGB": "You enter a holy or unholy frenzy whenever you rage, depending on your alignment. You gain a +2 bonus on your attack and damage rolls while raging.",
-    "ruRU": "Вы впадаете в святое или нечестивое безумие всякий раз, когда приходите в ярость, в зависимости от вашего мировоззрения. Во время ярости вы получаете бонус +2 к броскам атаки и урона.",
+    "ruRU": "Вы впадаете в святое или нечестивое безумие всякий раз, когда приходите в ярость, в зависимости от вашего мировоззрения. Во время ярости вы получаете бонус +2 к броскам на попадание и урон.",
     "zhCN": "每当你狂暴时，便会进入一种神圣或污邪的愤怒中，取决于你的阵营。当你狂暴时，你的攻击和伤害检定获得+2加值。"
   },
   {
@@ -7781,7 +7781,7 @@
   {
     "Key": "DivineChampionFerventBoon.Description",
     "enGB": "Beginning at 9th level, a divine champion can call upon his deity for minor boons. By expending one or more uses of his fervor ability, he can restore one of the spell-like abilities included in his deity’s first sentinel boon. By expending one use of fervor, he can restore the spell-like ability that the boon normally grants three uses of per day; by expending two uses of fervor he can restore the spell-like ability that the boon normally grants twice per day; and by expending three uses of fervor, he can restore the spell-like ability that the boon normally grants once per day. These uses don’t count against any uses granted by the boon.",
-    "ruRU": "Начиная с 9-го уровня, божественный чемпион может взывать к своему божеству для получения незначительных благ. Потратив одно или несколько применений своей способности рвения, он может восстановить одно из псевдозаклинаний, полученных в дар от его божества. Потратив одно применение рвения, он может восстановить псевдозаклинание, которое можно применять 3 раза в день; потратив два применения рвения, он может восстановить псевдозаклинание, которое можно применять 2 раза в день; и, потратив три применения рвения, он может восстановить псевдозаклинание, которое можно применять раз в день. Эти виды применения не засчитываются ни в какое применение, предоставленное даром.",
+    "ruRU": "Начиная с 9 уровня, божественный чемпион может взывать к своему божеству для получения незначительных благ. Потратив одно или несколько применений своей способности рвения, он может восстановить одно из псевдозаклинаний, полученных в дар от его божества. Потратив одно применение рвения, он может восстановить псевдозаклинание, которое можно применять 3 раза в день; потратив два применения рвения, он может восстановить псевдозаклинание, которое можно применять 2 раза в день; и, потратив три применения рвения, он может восстановить псевдозаклинание, которое можно применять раз в день. Эти виды применения не засчитываются ни в какое применение, предоставленное даром.",
     "zhCN": "9级起，神伐先勇能唤来其神祇的次级恩典。通过消耗1次热诚使用次数，神伐先勇能恢复次级恩典每日可用3次的类法术能力一次。或者消耗2次热诚，恢复次级恩典每日可用2次的类法术能力一次。或者消耗3次热诚，恢复次级恩典每日可用1次的类法术能力一次。这些使用次数不算入次级恩典的正常使用次数。"
   },
   {
@@ -8275,7 +8275,7 @@
   {
     "Key": "DeificObedienceNorgorber2.Description",
     "enGB": "You can combine a vial of poison with a thrown alchemist bomb. The bomb deals normal direct hit and splash damage, plus the target of the direct hit must save successfully or suffer the effects of the poison, as per the 7th-level poison breath spell. Creatures hit by the bomb’s splash damage are unaffected by the poison. Additionally, any of your poison effects has its DC increased by 2.",
-    "ruRU": "Вы можете объединить пузырек с ядом с алхимической бомбой. Бомба наносит обычный прямой урон и урон от брызг, кроме того, цель прямого попадания должна успешно совершить успешный спасбросок или пострадать от эффектов яда, как под действием заклинания 7 круга 'Ядовитое дыхание'. Существа, пораженные брызгами бомбы, не страдают от этого эффекта. Additionally, any of your poison effects has its DC increased by 2.",
+    "ruRU": "Вы можете объединить пузырек с ядом с алхимической бомбой. Бомба наносит обычный прямой урон и урон от брызг, кроме того, цель прямого попадания должна успешно совершить успешный спасбросок или пострадать от эффектов яда, как под действием заклинания 7 круга 'Ядовитое дыхание'. Существа, пораженные брызгами бомбы, не страдают от этого эффекта. Кроме того, любые эффекты ядов получают бонус +2 к сложности.",
     "zhCN": "你能够将一剂毒素和投掷用的炼金炸弹相结合。这个炸弹会如常造成直接和溅射伤害，炸弹直接命中的目标还必须进行豁免检定，失败就要承受毒素的效果，如同7环的剧毒吐息法术。被炸弹的溅射伤害击中的生物不会受到毒素的影响。此外，你的任何毒素效果的DC都会增加2。"
   },
   {
@@ -8548,7 +8548,7 @@
   {
     "Key": "ConstableBadge.Description",
     "enGB": "At 5th level, a constable’s badge becomes a powerful symbol of rules and authority. As long as he wears his badge, allies within 30 feet who can see him gain a +2 morale bonus on saving throws against charm, compulsion, and fear effects and a +1 morale bonus on attack rolls against targets the constable has challenged. At 10th level and every 5 levels thereafter, the bonuses increase by 1.",
-    "ruRU": "На 5 уровне значок констебля становится мощным символом закона и власти. Пока он носит свой значок, союзники в пределах 30 футов, которые могут видеть его, получают бонус боевого духа +2 к спасброскам против эффектов очарования, принуждения и страха, а также бонус боевого духа +1 к броскам атаки против целей, которым бросил вызов констебль. На 10 уровне и каждые 5 уровней в дальнейшем бонусы увеличиваются на 1.",
+    "ruRU": "На 5 уровне значок констебля становится мощным символом закона и власти. Пока он носит свой значок, союзники в пределах 30 футов, которые могут видеть его, получают бонус боевого духа +2 к спасброскам против эффектов очарования, принуждения и страха, а также бонус боевого духа +1 к броскам на попадание по целям, которым бросил вызов констебль. На 10 уровне и каждые 5 уровней в дальнейшем бонусы увеличиваются на 1.",
     "zhCN": "5级时，警长的徽章成为规则和权威的强大象征。只要他佩戴他的徽章，30英尺内能看到他的盟友在对抗魅惑、胁迫和恐惧效果的豁免检定上获得+2士气加值，且对警长所挑战的目标进行攻击检定时获得+1士气加值。在10级以及此后每5级，该加值增加1。"
   },
   {
@@ -9861,7 +9861,7 @@
   {
     "Key": "DeificObedienceSocothbenoth2.Description",
     "enGB": "Your form has achieved the utmost perfection, granting you a measure of protection and filling you with a surge of prideful wrath whenever your beauty would be sullied by others’ assaults. Your physical appearance becomes darkly beautiful and sexually appealing, granting you a +2 profane bonus to your Charisma score. As long as you do not have an armor bonus to your Armor Class, you gain a profane bonus to your AC and on Fortitude saving throws equal to your Charisma modifier. Whenever a creature deals damage to you with an attack, you gain a profane bonus equal to your Charisma modifier on your next weapon attack roll against that creature.",
-    "ruRU": "Ваша форма достигла высочайшего совершенства, предоставляя вам некоторую защиту и наполняя вас приливом гордого гнева всякий раз, когда ваша красота будет запятнана нападениями других. Ваша внешность становится мрачно красивой и сексуально привлекательной, что дает вам нечестивый бонус +2 к вашему модификатору Харизмы. Пока у вас нет бонуса брони к защите, вы получаете нечестивый бонус к защите и спасброскам Стойкости равный вашему модификатору Харизмы. Когда существо наносит вам урон атакой, вы получаете нечестивый бонус равный модификатору Харизмы к вашему следующему броску на попадание оружием по этому существу.",
+    "ruRU": "Ваша форма достигла высочайшего совершенства, предоставляя вам некоторую защиту и наполняя вас приливом гордого гнева всякий раз, когда ваша красота будет запятнана нападениями других. Ваша внешность становится мрачно красивой и сексуально привлекательной, что дает вам нечестивый бонус +2 к вашему модификатору Харизмы. Пока у вас нет бонуса брони к защите, вы получаете нечестивый бонус к защите и спасброскам Стойкости, равный вашему модификатору Харизмы. Когда существо наносит вам урон атакой, вы получаете нечестивый бонус равный модификатору Харизмы к вашему следующему броску на попадание оружием по этому существу.",
     "zhCN": "你的外貌已经达到极致完美，这给予你一定程度的保护。每当你的美貌被他人的攻击所玷污时，你的内心就会充满一股骄傲的愤怒。你展现出一种极具性张力的阴暗之美，你的魅力获得+2亵渎加值。只要你的AC没有护甲加值，你的AC与强韧豁免就会得到等于你魅力调整值的亵渎加值。每当一个生物通过攻击对你造成伤害，你在下一次对该生物的武器攻击检定上获得等于你魅力调整值的亵渎加值。"
   },
   {
@@ -12177,7 +12177,7 @@
   {
     "Key": "SpellPowerMephistopheles1.Description",
     "enGB": "litany of eloquence 2/day",
-    "ruRU": "litany of eloquence 2/day",
+    "ruRU": "Вы получаете псевдозаклинание: Литания красноречия 2/день.",
     "zhCN": "妙语祷言 2次/天"
   },
   {
@@ -12762,7 +12762,7 @@
   {
     "Key": "SpellPowerAchaekek1.Description",
     "enGB": "lead blades 3/day",
-    "ruRU": "Вы получаете псевдозаклинание Свинцовые клинки 3/ден.ь",
+    "ruRU": "Вы получаете псевдозаклинание Свинцовые клинки 3/день.",
     "zhCN": "重压之刃 3次/日"
   },
   {
@@ -12775,7 +12775,7 @@
   {
     "Key": "DeificObedienceAchaekek2.Description",
     "enGB": "All wounds you inflict with a sawtooth saber are bleeding wounds, and deal 1d4 points of bleed damage to the target (the damage does not stack). You also gain Double Slice as a bonus feat.",
-    "ruRU": "Все раны, которые вы наносите при помощи зазубренной сабли, являются кровоточящими и наносят 1d4 урона кровотечением (этот урон не складывается). You also gain Double Slice as a bonus feat.",
+    "ruRU": "Все раны, которые вы наносите при помощи зазубренной сабли, являются кровоточящими и наносят 1d4 урона кровотечением (этот урон не складывается). Вы также получаете черту Сила двух рук.",
     "zhCN": "你用锯齿刀产生的所有伤口都会流血不止，对目标造成1d4点流血伤害（不叠加）。你还会获得双斩作为额外专长。"
   },
   {
@@ -13490,7 +13490,7 @@
   {
     "Key": "MortalUsherVanthWings.Description",
     "enGB": "At 9th level, a mortal usher gains Wings as a bonus feat, and resistance to cold equal to 10 + his class level. The mortal usher gains a +5 circumstance bonus on Mobility checks and on concentration checks attempted while casting a spell.",
-    "ruRU": "На 9 уровне смертный привратник получает черту Крылья в качестве дополнительной, а также устойчивость к холоду, равную 10 + его уровень привратника. Смертный привратник получает ситуативный бонус к проверкам подвижности и проверкам концентратрации при сотворении заклинаний.",
+    "ruRU": "На 9 уровне смертный привратник получает черту Крылья в качестве дополнительной, а также устойчивость к холоду, равную 10 + его уровень привратника. Смертный привратник получает ситуативный бонус +5 к проверкам подвижности и проверкам концентрации при сотворении заклинаний.",
     "zhCN": "9级时，凡世渡魂人获得飞翼额外专长，以及10+职业等级的寒冷抗性。凡世渡魂人也在灵巧检定和施法专注检定上获得+5环境加值。"
   },
   {
