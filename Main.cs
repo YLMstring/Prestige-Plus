@@ -411,7 +411,7 @@ namespace PrestigePlus
         {
           if (Initialized)
           {
-            Logger.Info("Already configured blueprints.");
+            Logger.Info("Already configured blueprints");
             return;
           }
           Initialized = true;
