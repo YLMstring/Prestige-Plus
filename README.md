@@ -1,4 +1,4 @@
-# Prestige Plus v3.3.0 for WoTR 
+# Prestige Plus for WotR 
 ## Requirements: [ModMenu](https://github.com/WittleWolfie/ModMenu). [TTT-Core](https://github.com/Vek17/TabletopTweaks-Core).
 
 - This mod adds a lot of character options to the game, especially combat maneuvers and prestige classes!
@@ -438,6 +438,8 @@
 - Weak Crits against Enemies: Symmetrical with owlcat weak crits settings, making it fair (default off)
 - Fix Difficulty CMD Tripple-Dipped: This will significantly reduce enemy CMD at higher difficulties. CMD is calculated by adding STR bonus, DEX bonus and AC bonus, which means difficulty stat advancement is applied 3 times in vanilla, leading to total madness.
 - Fix Power Attack: now working as descripted: This bonus to damage is halved (–50%) if you are making an attack with an off-hand weapon. Note that Piranha Strike has the same bug but it isn't fixed because this might give Piranha Strike an edge over Power Attack, which is pretty coool.
+- Fix the bug that prone unit can be tripped. If you would allow some kind of head kicking, turn this off in mod menu.
+- Fix the bug that physical kinetic blasts that create an area effect don't count as magical.
 ## Mod Combo
 
 ### [Character Options+](https://github.com/WittleWolfie/CharacterOptionsPlus)
