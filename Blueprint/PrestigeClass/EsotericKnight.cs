@@ -37,9 +37,28 @@ using PrestigePlus.CustomComponent.PrestigeClass;
 using Kingmaker.AreaLogic.SummonPool;
 using PrestigePlus.HarmonyFix;
 using PrestigePlus.CustomComponent;
+using HarmonyLib;
+using Kingmaker.UnitLogic.Commands;
+using Kingmaker;
+using PrestigePlus.Blueprint.Archetype;
+using Kingmaker.UnitLogic.Class.Kineticist;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
+
+    [HarmonyPatch(typeof(AbilityKineticist), nameof(AbilityKineticist.GetQuiverResource))]
+    internal class ForceFullAttackFix
+    {
+        static bool Prefix(ref UnitPartKineticist caster, ref int __result)
+        {
+            if (caster == null)
+            {
+                __result = 0;
+                return false;
+            }
+            return true;
+        }
+    }
     internal class EsotericKnight
     {
         private const string ArchetypeName = "EsotericKnight";
