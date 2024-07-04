@@ -91,8 +91,8 @@ namespace PrestigePlus.Modify
         public static readonly string AngelfireApostleName = "AngelfireApostle";
         public static readonly string AngelfireApostleGuid = "8ed3202d-a978-4961-83cc-1b0776856021";
 
-        public static readonly string AngelfireApostleDisplayName = "AngelfireApostle.Name";
-        public static readonly string AngelfireApostleDescription = "AngelfireApostle.Description";
+        public static readonly string AngelfireApostleDisplayName = "PPbookAngelfireApostle.Name";
+        public static readonly string AngelfireApostleDescription = "PPbookAngelfireApostle.Description";
 
         public static BlueprintFeature AngelfireApostle()
         {
@@ -110,8 +110,8 @@ namespace PrestigePlus.Modify
         public static readonly string ClericName = "Cleric";
         public static readonly string ClericGuid = "c165fefd-08a3-4e39-9eaf-48848ec56f70";
 
-        public static readonly string ClericDisplayName = "Cleric.Name";
-        public static readonly string ClericDescription = "Cleric.Description";
+        public static readonly string ClericDisplayName = "PPbookCleric.Name";
+        public static readonly string ClericDescription = "PPbookCleric.Description";
 
         public static BlueprintFeature Cleric()
         {
@@ -129,8 +129,8 @@ namespace PrestigePlus.Modify
         public static readonly string CrusaderName = "Crusader";
         public static readonly string CrusaderGuid = "e94e1663-1335-4e3b-883e-1d1bf2e904f2";
 
-        public static readonly string CrusaderDisplayName = "Crusader.Name";
-        public static readonly string CrusaderDescription = "Crusader.Description";
+        public static readonly string CrusaderDisplayName = "PPbookCrusader.Name";
+        public static readonly string CrusaderDescription = "PPbookCrusader.Description";
 
         public static BlueprintFeature Crusader()
         {
@@ -148,8 +148,8 @@ namespace PrestigePlus.Modify
         public static readonly string PaladinName = "Paladin";
         public static readonly string PaladinGuid = "c0a69873-97ab-494f-aa49-dad3945d45f1";
 
-        public static readonly string PaladinDisplayName = "Paladin.Name";
-        public static readonly string PaladinDescription = "Paladin.Description";
+        public static readonly string PaladinDisplayName = "PPbookPaladin.Name";
+        public static readonly string PaladinDescription = "PPbookPaladin.Description";
 
         public static BlueprintFeature Paladin()
         {
@@ -166,8 +166,8 @@ namespace PrestigePlus.Modify
         public static readonly string WarpriestName = "Warpriest";
         public static readonly string WarpriestGuid = "52c1f2dc-a31c-457a-a9da-3aa6346117f0";
 
-        public static readonly string WarpriestDisplayName = "Warpriest.Name";
-        public static readonly string WarpriestDescription = "Warpriest.Description";
+        public static readonly string WarpriestDisplayName = "PPbookWarpriest.Name";
+        public static readonly string WarpriestDescription = "PPbookWarpriest.Description";
 
         public static BlueprintFeature Warpriest()
         {
