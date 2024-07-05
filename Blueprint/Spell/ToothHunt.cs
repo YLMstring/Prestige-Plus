@@ -46,9 +46,11 @@ namespace PrestigePlus.Blueprint.Spell
               .AddReplaceAsksList(monster.Visual.Barks)
               .AddMechanicsFeature(Kingmaker.UnitLogic.FactLogic.AddMechanicsFeature.MechanicsFeatureType.NaturalSpell)
               .AddPolymorph([ItemWeaponRefs.Bite3d8.ToString()], false, 0, 8, balor.m_EnterTransition, balor.m_ExitTransition, 
-                [AbilityRefs.TurnBackAbilityStandart.ToString(), FeatureRefs.DemonicFormWeaponEnchantFact.ToString(), FeatureRefs.ShifterGrabTiger.ToString(), AbilityRefs.Disintegrate.ToString()],
-                false, ItemWeaponRefs.ClawHuge3d6.ToString(), null, BlueprintCore.Blueprints.CustomConfigurators.ComponentMerge.Fail, 10, ItemWeaponRefs.ClawHuge3d6.ToString(),
-                monster.PortraitSafe, monster.Prefab, monster.Prefab, null, null, null, true, Kingmaker.Enums.Size.Huge, SpecialDollType.None, 12, balor.m_TransitionExternal, true)
+                [AbilityRefs.TurnBackAbilityStandart.ToString(), FeatureRefs.ShifterGriffonWingsFeature.ToString(), FeatureRefs.GriffonheartShifterGriffonShapeFakeFeature.ToString(), AbilityRefs.GriffonDeathFromAboveAbility.ToString()],
+                true, null, null, BlueprintCore.Blueprints.CustomConfigurators.ComponentMerge.Fail, 0, null,
+                monster.PortraitSafe, monster.Prefab, monster.Prefab, null, null, null, false, Kingmaker.Enums.Size.Diminutive, 
+                SpecialDollType.None, -4, balor.m_TransitionExternal, true)
+              .AddDamageResistancePhysical(isStackable: true, value: 2, material: Kingmaker.Enums.Damage.PhysicalDamageMaterial.ColdIron, bypassedByMaterial: true)
               .Configure();
 
             AbilityConfigurator.NewSpell(ToothHuntAbility, ToothHuntAbilityGuid, SpellSchool.Transmutation, canSpecialize: false)
