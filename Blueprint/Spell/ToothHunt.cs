@@ -38,7 +38,7 @@ namespace PrestigePlus.Blueprint.Spell
         {
             var icon = AbilityRefs.BlackDragonsFangAbility.Reference.Get().Icon;
 
-            var monster = UnitRefs.CR25_Areshkagal_RetrieverBoss.Reference.Get();
+            var monster = UnitRefs.DLC5_CR10_RagedNymphStorasta.Reference.Get();
             var balor = BuffRefs.DemonicFormIVBalorBuff.Reference.Get().GetComponent<Polymorph>();
 
             var buff = BuffConfigurator.New(ToothHuntBuff, ToothHuntBuffGuid)
