@@ -26,7 +26,7 @@ namespace PrestigePlus.HarmonyFix
             try
             {
                 var caster = __instance.Initiator;
-                if (caster.HasFact(Buff1) && caster.Body.PrimaryHand?.Weapon?.Blueprint.Category == Kingmaker.Enums.WeaponCategory.UnarmedStrike)
+                if (caster.HasFact(Buff1) && caster.GetThreatHandMelee()?.Weapon.Blueprint.Category == Kingmaker.Enums.WeaponCategory.UnarmedStrike)
                 {
                     int num = 0;
                     foreach (ClassData classData2 in caster.Descriptor.Progression.Classes)
@@ -44,7 +44,7 @@ namespace PrestigePlus.HarmonyFix
                     __result = num2;
                     return false;
                 }
-                if (caster.GetFact(Buff2) is Buff buff && caster.Body.PrimaryHand?.Weapon?.Blueprint.AssetGuidThreadSafe == EmblemGreed.MaximGuid)
+                if (caster.GetFact(Buff2) is Buff buff && caster.GetThreatHandMelee()?.Weapon.Blueprint.AssetGuidThreadSafe == EmblemGreed.MaximGuid)
                 {
                     int num = buff.Context.Params.CasterLevel;
                     int num2 = Math.Max(0, num / 5 - ((num % 5 == 0) ? 1 : 0));
