@@ -47,6 +47,8 @@ using PrestigePlus.CustomComponent.PrestigeClass;
 using TabletopTweaks.Core.NewComponents.Prerequisites;
 using Kingmaker.Designers.Mechanics.Facts;
 using PrestigePlus.CustomComponent.BasePrestigeEnhance;
+using PrestigePlus.Mechanic;
+using static Kingmaker.Blueprints.Classes.BlueprintProgression;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -213,17 +215,19 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         {
             var icon = AbilityRefs.DarknessDomainBaseAbility.Reference.Get().Icon;
 
-            ProgressionConfigurator.For(ProgressionRefs.DarknessDomainProgression)
-              .SetClasses(new Blueprint<BlueprintCharacterClassReference>[] { CharacterClassRefs.ClericClass.Reference.Get(), CharacterClassRefs.InquisitorClass.Reference.Get(), CharacterClassRefs.HunterClass.Reference.Get(), BlueprintTool.GetRef<BlueprintCharacterClassReference>(ArchetypeGuid) })
-              .Configure();
+            var CwL = new ClassWithLevel() { m_Class = BlueprintTool.GetRef<BlueprintCharacterClassReference>(ArchetypeGuid), AdditionalLevel = 0 };
 
-            ProgressionConfigurator.For(ProgressionRefs.DarknessDomainProgressionDruid)
-              .SetClasses(new Blueprint<BlueprintCharacterClassReference>[] { CharacterClassRefs.DruidClass.Reference.Get(), BlueprintTool.GetRef<BlueprintCharacterClassReference>(ArchetypeGuid) })
-              .Configure();
+            var list = ProgressionRefs.DarknessDomainProgression.Reference.Get().m_Classes.ToList();
+            list.Add(CwL);
+            ProgressionRefs.DarknessDomainProgression.Reference.Get().m_Classes = list.ToArray();
 
-            ProgressionConfigurator.For(ProgressionRefs.DarknessDomainProgressionSecondary)
-              .SetClasses(new Blueprint<BlueprintCharacterClassReference>[] { CharacterClassRefs.ClericClass.Reference.Get(), BlueprintTool.GetRef<BlueprintCharacterClassReference>(ArchetypeGuid) })
-              .Configure();
+            list = ProgressionRefs.DarknessDomainProgressionSecondary.Reference.Get().m_Classes.ToList();
+            list.Add(CwL);
+            ProgressionRefs.DarknessDomainProgressionSecondary.Reference.Get().m_Classes = list.ToArray();
+
+            list = ProgressionRefs.DarknessDomainProgressionDruid.Reference.Get().m_Classes.ToList();
+            list.Add(CwL);
+            ProgressionRefs.DarknessDomainProgressionDruid.Reference.Get().m_Classes = list.ToArray();
 
             return FeatureSelectionConfigurator.New(BlessingDarkness, BlessingDarknessGuid)
               .SetDisplayName(UmbralAgentBlessingDarknessDisplayName)
@@ -273,9 +277,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                     .Build())
                 .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(ShadowChains2BuffGuid).Build(), ifTrue: ActionsBuilder.New()
                     .Add<KnotGrapple>(c => { c.isAway = false; })
-                    .Build())
-                .Conditional(conditions: ConditionsBuilder.New().CasterHasFact(ShadowChains3Guid).Build(), ifTrue: ActionsBuilder.New()
-                    .OnContextCaster(ActionsBuilder.New().RestoreResource(AbilityResourceRefs.DarknessDomainBaseResource.ToString(), 1).Build())
                     .Build())
                 .Build();
 
@@ -330,7 +331,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               })
               .Configure();
 
-            FeatureConfigurator.New(ShadowChains3, ShadowChains3Guid)
+            var feat = FeatureConfigurator.New(ShadowChains3, ShadowChains3Guid)
               .SetDisplayName(UmbralAgentShadowChains3DisplayName)
               .SetDescription(UmbralAgentShadowChains3Description)
               .SetIcon(icon)
@@ -342,6 +343,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                   c.Descriptor = ModifierDescriptor.Feat;
               })
               .Configure();
+
+            AddToResourceFact.Patch(AbilityRefs.DarknessDomainBaseAbility.ToString(), false, feat);
         }
 
         private static readonly string PinAbilityGuid1 = "{531632AA-0E0F-402C-8A07-18E8E0D35C80}";

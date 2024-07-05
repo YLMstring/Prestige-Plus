@@ -2,6 +2,7 @@
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.Utility;
 using PrestigePlus.Blueprint.Archetype;
 using System;
@@ -20,7 +21,7 @@ namespace PrestigePlus.Patch
             try
             {
                 var FighterClass = CharacterClassRefs.FighterClass.Reference.Get();
-                var ArmorTraining = FeatureRefs.ArmorTraining.Reference.Get();
+                var ArmorTraining = FeatureRefs.ArmorTraining.Reference.Get() as BlueprintFeatureBase;
                 if (FighterClass.Progression.GetLevelEntry(7).Features.Contains(ArmorTraining)) { Logger.Info("found normal at"); return; }
                 var ArmorTrainingSelection = BlueprintTool.GetRef<BlueprintFeatureSelectionReference>("354f1a44-26d2-4ea3-8718-905108f48e72")?.Get();
                 if (ArmorTrainingSelection == null) { Logger.Info("not found ttt at"); return; }

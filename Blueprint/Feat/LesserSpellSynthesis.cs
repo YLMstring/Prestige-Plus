@@ -15,6 +15,7 @@ using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.Utility;
 using PrestigePlus.CustomComponent.BasePrestigeEnhance;
 using PrestigePlus.Grapple;
+using PrestigePlus.Mechanic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -75,8 +76,6 @@ namespace PrestigePlus.Blueprint.Feat
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                     .ApplyBuff(BuffSpellSynthesis, ContextDuration.Fixed(1))
                     .ApplyBuff(BuffSpellSynthesis2, ContextDuration.Fixed(1))
-                    .Conditional(ConditionsBuilder.New().CasterHasFact(feat).Build(), ifTrue:
-                        ActionsBuilder.New().RestoreResource(SpellSynthesisResGuid, ContextValues.Constant(1)))
                     .Build())
                 .SetDisplayName(DisplayName)
                 .SetDescription(Description)
@@ -88,6 +87,8 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetType(AbilityType.Special)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: SpellSynthesisResGuid)
                 .Configure();
+
+            AddToResourceFact.Patch(ReleaseAbilityGuid, false, feat);
 
             FeatureConfigurator.New(FeatName, FeatGuid, Kingmaker.Blueprints.Classes.FeatureGroup.Feat)
                     .SetDisplayName(DisplayName)
