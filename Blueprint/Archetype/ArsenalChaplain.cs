@@ -40,7 +40,7 @@ namespace PrestigePlus.Blueprint.Archetype
             .AddToAddFeatures(1, "2097edd687ff4cdeb33872c048599fc1")
             .AddToAddFeatures(7, CreateWarB7())
             .AddToAddFeatures(10, WarB10Feat())
-            .AddToAddFeatures(15, WarB13Feat())
+            .AddToAddFeatures(13, WarB13Feat())
             .AddToAddFeatures(16, CreateWarB16())
             .AddToAddFeatures(19, CreateWarB19())
             .AddToAddFeatures(5, FeatureSelectionRefs.WeaponTrainingSelection.ToString())

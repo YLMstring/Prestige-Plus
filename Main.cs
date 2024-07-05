@@ -308,6 +308,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("fated"), defaultValue: true, Helpers.CreateString("toggle-desc79", "Fated Champion"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("arsenal"), defaultValue: true, Helpers.CreateString("toggle-desc107", "Arsenal Chaplain"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("divinechamp"), defaultValue: true, Helpers.CreateString("toggle-desc66", "Divine Champion"))
               .ShowVisualConnection())
           .AddToggle(
@@ -518,6 +521,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("staffmagus"))) { StaffMagus.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("deadlyag"))) { SpearDancingStyle.DeadlyAgilityConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("speardance"))) { SpearDancingStyle.StyleConfigure(); SpearDancingStyle.SpiralConfigure(); SpearDancingStyle.ReachConfigure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("arsenal"))) { ArsenalChaplain.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2(); TabletopGrapplingInfusion.ConfigureTabletopGrappling();
                 }
                 catch (Exception e)
