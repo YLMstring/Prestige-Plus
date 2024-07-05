@@ -18,16 +18,19 @@ using Kingmaker.UnitLogic.Parts;
 using System.Threading;
 using Kingmaker.Blueprints;
 using Kingmaker.UnitLogic.Buffs;
+using static Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell;
+using PrestigePlus.CustomComponent.Spell;
+using Kingmaker.UnitLogic.Abilities.Components.Base;
 
 namespace PrestigePlus.Blueprint.Spell
 {
     internal class ToothHunt
     {
         private const string ToothHuntAbility = "NewSpell.UseToothHunt";
-        public static readonly string ToothHuntAbilityGuid = "{561B6EBB-9444-4B32-A140-8AE3FF7C0515}";
+        public static readonly string ToothHuntAbilityGuid = "{64A98883-B889-4B55-8BAE-F573D7142589}";
 
         private const string ToothHuntBuff = "NewSpell.ToothHuntBuff";
-        private static readonly string ToothHuntBuffGuid = "{9DF7EC63-2A6D-4364-BB2A-B8EDB5924E0A}";
+        private static readonly string ToothHuntBuffGuid = "{AB1820E8-B07C-43C6-B83D-949A5C9EFAA7}";
 
         internal const string DisplayName = "NewSpellToothHunt.Name";
         private const string Description = "NewSpellToothHunt.Description";
@@ -35,7 +38,7 @@ namespace PrestigePlus.Blueprint.Spell
         {
             var icon = AbilityRefs.BlackDragonsFangAbility.Reference.Get().Icon;
 
-            var monster = UnitRefs.DLC4_TotemFey.Reference.Get();
+            var monster = UnitRefs.CR25_Areshkagal_RetrieverBoss.Reference.Get();
             var balor = BuffRefs.DemonicFormIVBalorBuff.Reference.Get().GetComponent<Polymorph>();
 
             var buff = BuffConfigurator.New(ToothHuntBuff, ToothHuntBuffGuid)
@@ -57,10 +60,8 @@ namespace PrestigePlus.Blueprint.Spell
                 .SetDisplayName(DisplayName)
                 .SetDescription(Description)
               .SetIcon(icon)
-              .AddSpellDescriptorComponent(SpellDescriptor.Polymorph)
-              .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.SelfTouch)
+              .SetAnimation(CastAnimationStyle.SelfTouch)
               .SetRange(AbilityRange.Personal)
-              .SetType(AbilityType.Spell)
               .SetLocalizedDuration(AbilityRefs.EnlargePerson.Reference.Get().LocalizedDuration)
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Extend, Metamagic.Quicken)
               .AddToSpellLists(level: 6, SpellList.Alchemist)
@@ -72,6 +73,7 @@ namespace PrestigePlus.Blueprint.Spell
                 actions: ActionsBuilder.New()
                   .ApplyBuff(buff, ContextDuration.Variable(ContextValues.Rank(), Kingmaker.UnitLogic.Mechanics.DurationRate.Minutes), isFromSpell: true)
                   .Build())
+              .AddSpellDescriptorComponent(SpellDescriptor.Polymorph)
               .Configure();
         }
     }
