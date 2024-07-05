@@ -31,6 +31,9 @@ using Kingmaker;
 using Owlcat.QA.Validation;
 using UnityEngine.Serialization;
 using UnityEngine;
+using Kingmaker.EntitySystem.Stats;
+using Kingmaker.Enums;
+using Kingmaker.RuleSystem.Rules;
 
 namespace PrestigePlus.Blueprint.Spell
 {
@@ -92,11 +95,28 @@ namespace PrestigePlus.Blueprint.Spell
         }
     }
 
-    public class AddGreedBlade : UnitBuffComponentDelegate<AddKineticistBladeData>, IAreaActivationHandler, IGlobalSubscriber, ISubscriber
+    public class AddGreedBlade : UnitBuffComponentDelegate<AddKineticistBladeData>, IAreaActivationHandler, IGlobalSubscriber, ISubscriber, IInitiatorRulebookHandler<RuleCalculateAttackBonusWithoutTarget>, IRulebookHandler<RuleCalculateAttackBonusWithoutTarget>
     {
         public BlueprintItemWeapon Blade;
 
-        // Token: 0x0600CC04 RID: 52228 RVA: 0x00350D10 File Offset: 0x0034EF10
+        void IRulebookHandler<RuleCalculateAttackBonusWithoutTarget>.OnEventAboutToTrigger(RuleCalculateAttackBonusWithoutTarget evt)
+        {
+            if (evt.Initiator == Owner && evt.Weapon?.Blueprint == Blade)
+            {
+                int num = Buff.Context.Params.CasterLevel - Owner.Stats.BaseAttackBonus;
+                ModifierDescriptor des = ModifierDescriptor.UntypedStackable;
+                if (num < 0)
+                {
+                    des = ModifierDescriptor.Penalty;
+                }
+                evt.AddModifier(num, base.Fact, des);
+            }
+        }
+
+        void IRulebookHandler<RuleCalculateAttackBonusWithoutTarget>.OnEventDidTrigger(RuleCalculateAttackBonusWithoutTarget evt)
+        {
+
+        }
         public override void OnActivate()
         {
             base.OnActivate();
