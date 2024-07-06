@@ -21,6 +21,11 @@ using Kingmaker.UnitLogic.Buffs;
 using static Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell;
 using PrestigePlus.CustomComponent.Spell;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
+using BlueprintCore.Utils;
+using HarmonyLib;
+using Kingmaker.RuleSystem.Rules;
+using System.Drawing;
+using Kingmaker.Enums;
 
 namespace PrestigePlus.Blueprint.Spell
 {
@@ -39,7 +44,28 @@ namespace PrestigePlus.Blueprint.Spell
             var icon = FeatureRefs.WitchHexRestlessSlumberFeature.Reference.Get().Icon;
 
             var monster = UnitRefs.DLC5_CR10_RagedNymphStorasta.Reference.Get();
-            var balor = BuffRefs.DemonicFormIVBalorBuff.Reference.Get().GetComponent<Polymorph>();
+            var balor = BuffRefs.BeastShapeIVWyvernBuff.Reference.Get().GetComponent<Polymorph>();
+            var port = BlueprintTool.GetRef<BlueprintPortraitReference>("e95da21465774e04d8149de74ad5850e");
+
+            var enter = new Polymorph.VisualTransitionSettings()
+            {
+                OldPrefabVisibilityTime = 0.5f,
+                ScaleTime = 0.5f,
+                ScaleOldPrefab = false,
+                ScaleNewPrefab = false,
+                OldScaleCurve = balor.m_EnterTransition.OldScaleCurve,
+                NewScaleCurve = balor.m_EnterTransition.NewScaleCurve
+            };
+
+            var exit = new Polymorph.VisualTransitionSettings()
+            {
+                OldPrefabVisibilityTime = 0.5f,
+                ScaleTime = 0.5f,
+                ScaleOldPrefab = false,
+                ScaleNewPrefab = false,
+                OldScaleCurve = balor.m_ExitTransition.OldScaleCurve,
+                NewScaleCurve = balor.m_ExitTransition.NewScaleCurve
+            };
 
             var buff = BuffConfigurator.New(ToothHuntBuff, ToothHuntBuffGuid)
               .SetDisplayName(DisplayName)
@@ -48,11 +74,12 @@ namespace PrestigePlus.Blueprint.Spell
               .AddSpellDescriptorComponent(SpellDescriptor.Polymorph)
               .AddReplaceAsksList(monster.Visual.Barks)
               .AddMechanicsFeature(Kingmaker.UnitLogic.FactLogic.AddMechanicsFeature.MechanicsFeatureType.NaturalSpell)
-              .AddPolymorph([ItemWeaponRefs.Bite3d8.ToString()], false, 0, 8, balor.m_EnterTransition, balor.m_ExitTransition, 
+              .AddPolymorph([ItemWeaponRefs.Bite1d4.ToString()], false, 0, 8, enter, exit, 
                 [AbilityRefs.TurnBackAbilityStandart.ToString(), FeatureRefs.ShifterGriffonWingsFeature.ToString(), FeatureRefs.GriffonheartShifterGriffonShapeFakeFeature.ToString(), AbilityRefs.GriffonDeathFromAboveAbility.ToString()],
                 true, null, null, BlueprintCore.Blueprints.CustomConfigurators.ComponentMerge.Fail, 0, null,
-                monster.PortraitSafe, monster.Prefab, monster.Prefab, null, null, null, false, Kingmaker.Enums.Size.Diminutive, 
-                SpecialDollType.None, -4, balor.m_TransitionExternal, true)
+                port, monster.Prefab, monster.Prefab, null, null, null, false, Kingmaker.Enums.Size.Diminutive, 
+                SpecialDollType.None, -4, balor.m_TransitionExternal, false)
+              .AddChangeUnitSize(size: Kingmaker.Enums.Size.Diminutive, type: Kingmaker.Designers.Mechanics.Buffs.ChangeUnitSize.ChangeType.Value)
               .AddDamageResistancePhysical(isStackable: true, value: 2, material: Kingmaker.Enums.Damage.PhysicalDamageMaterial.ColdIron, bypassedByMaterial: true)
               .Configure();
 
@@ -75,6 +102,19 @@ namespace PrestigePlus.Blueprint.Spell
                   .Build())
               .AddSpellDescriptorComponent(SpellDescriptor.Polymorph)
               .Configure();
+        }
+    }
+
+    [HarmonyPatch(typeof(RuleCalculateWeaponSizeBonus), nameof(RuleCalculateWeaponSizeBonus.GetBaseDiceSize))]
+    internal class GetBaseDiceSizeFix
+    {
+        static void Postfix(ref RuleCalculateWeaponSizeBonus __instance, ref Kingmaker.Enums.Size __result)
+        {
+            try
+            {
+                Main.Logger.Info(__instance.Initiator.CharacterName + __instance.Weapon.Name + __result.ToString());
+            }
+            catch (Exception ex) { Main.Logger.Error("Failed to GetBaseDiceSizeFix.", ex); }
         }
     }
 }
