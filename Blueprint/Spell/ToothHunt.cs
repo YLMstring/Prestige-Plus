@@ -104,17 +104,4 @@ namespace PrestigePlus.Blueprint.Spell
               .Configure();
         }
     }
-
-    [HarmonyPatch(typeof(RuleCalculateWeaponSizeBonus), nameof(RuleCalculateWeaponSizeBonus.GetBaseDiceSize))]
-    internal class GetBaseDiceSizeFix
-    {
-        static void Postfix(ref RuleCalculateWeaponSizeBonus __instance, ref Kingmaker.Enums.Size __result)
-        {
-            try
-            {
-                Main.Logger.Info(__instance.Initiator.CharacterName + __instance.Weapon.Name + __result.ToString());
-            }
-            catch (Exception ex) { Main.Logger.Error("Failed to GetBaseDiceSizeFix.", ex); }
-        }
-    }
 }
