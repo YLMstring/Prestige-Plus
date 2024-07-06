@@ -29,6 +29,7 @@ using Kingmaker.Enums;
 using Kingmaker.ResourceLinks;
 using Kingmaker.Visual;
 using UnityEngine;
+using Kingmaker.UnitLogic;
 
 namespace PrestigePlus.Blueprint.Spell
 {
@@ -52,32 +53,7 @@ namespace PrestigePlus.Blueprint.Spell
             var assetId = "{1029D29B-8E4E-44D9-8241-00C882FCC65E}"; // New GUID identifying your prefab
             var sourceAssetId = monster.Prefab.AssetId; 
             AssetTool.RegisterDynamicPrefabLink(assetId, sourceAssetId, prefab => prefab.transform.localScale = new(0.125f, 0.125f, 0.125f));
-            var prefab = new UnitViewLink() { AssetId = assetId };
             var prefab2 = new PrefabLink() { AssetId = assetId };
-
-            var enter = new Polymorph.VisualTransitionSettings()
-            {
-                OldPrefabFX = prefab2,
-                NewPrefabFX = prefab2,
-                ScaleOldPrefab = true,
-                ScaleNewPrefab = true,
-                NewScaleCurve = AnimationCurve.Linear(0f, 0f, 0.5f, 0.5f)
-            };
-
-            var exit = new Polymorph.VisualTransitionSettings()
-            {
-                OldPrefabFX = prefab2,
-                NewPrefabFX = prefab2,
-                ScaleOldPrefab = true,
-                ScaleNewPrefab = true,
-                OldScaleCurve = AnimationCurve.Linear(0f, 0f, 0.5f, 0.5f)
-            };
-
-            var external = new PolymorphTransitionSettings()
-            {
-                EnterTransition = enter,
-                ExitTransition = exit
-            };
 
             var buff = BuffConfigurator.New(ToothHuntBuff, ToothHuntBuffGuid)
               .SetDisplayName(DisplayName)
@@ -85,11 +61,11 @@ namespace PrestigePlus.Blueprint.Spell
               .SetIcon(icon)
               .AddSpellDescriptorComponent(SpellDescriptor.Polymorph)
               .AddReplaceAsksList(monster.Visual.Barks)
-              .AddMechanicsFeature(Kingmaker.UnitLogic.FactLogic.AddMechanicsFeature.MechanicsFeatureType.NaturalSpell)
-              .AddPolymorph([ItemWeaponRefs.Bite1d4.ToString()], false, 0, 8, enter, exit, 
-                [AbilityRefs.TurnBackAbilityStandart.ToString(), FeatureRefs.ShifterGriffonWingsFeature.ToString(), FeatureRefs.GriffonheartShifterGriffonShapeFakeFeature.ToString(), AbilityRefs.GriffonDeathFromAboveAbility.ToString()],
-                true, null, null, BlueprintCore.Blueprints.CustomConfigurators.ComponentMerge.Fail, 0, null,
-                port, prefab, prefab, null, null, null, false, Size.Diminutive, SpecialDollType.None, -4, external, false)
+              .AddStatBonus(ModifierDescriptor.Size, false, Kingmaker.EntitySystem.Stats.StatType.Strength, -4)
+              .AddStatBonus(ModifierDescriptor.Size, false, Kingmaker.EntitySystem.Stats.StatType.Dexterity, 8)
+              .AddFacts([AbilityRefs.TurnBackAbilityStandart.ToString(), FeatureRefs.ShifterGriffonWingsFeature.ToString(), FeatureRefs.GriffonheartShifterGriffonShapeFakeFeature.ToString(), AbilityRefs.GriffonDeathFromAboveAbility.ToString()])
+              .AddAdditionalLimb(ItemWeaponRefs.Bite2d6.ToString())
+              .AddReplaceUnitPrefab(prefab: prefab2)
               .AddChangeUnitSize(size: Size.Diminutive, type: Kingmaker.Designers.Mechanics.Buffs.ChangeUnitSize.ChangeType.Value)
               .AddDamageResistancePhysical(isStackable: true, value: 2, material: Kingmaker.Enums.Damage.PhysicalDamageMaterial.ColdIron, bypassedByMaterial: true)
               .Configure();
@@ -113,6 +89,22 @@ namespace PrestigePlus.Blueprint.Spell
                   .Build())
               .AddSpellDescriptorComponent(SpellDescriptor.Polymorph)
               .Configure();
+        }
+    }
+
+    [HarmonyPatch(typeof(WeaponSizeExtension), nameof(WeaponSizeExtension.Shift))]
+    internal class FixTinyLimit
+    {
+        static void Prefix(ref Size minSize)
+        {
+            try
+            {
+                if (minSize == Size.Tiny)
+                {
+                    minSize = Size.Fine;
+                }
+            }
+            catch (Exception ex) { Main.Logger.Error("Failed to FixTinyLimit", ex); }
         }
     }
 }
