@@ -24,8 +24,11 @@ using Kingmaker.UnitLogic.Abilities.Components.Base;
 using BlueprintCore.Utils;
 using HarmonyLib;
 using Kingmaker.RuleSystem.Rules;
-using System.Drawing;
+using BlueprintCore.Utils.Assets;
 using Kingmaker.Enums;
+using Kingmaker.ResourceLinks;
+using Kingmaker.Visual;
+using UnityEngine;
 
 namespace PrestigePlus.Blueprint.Spell
 {
@@ -46,25 +49,34 @@ namespace PrestigePlus.Blueprint.Spell
             var monster = UnitRefs.DLC5_CR10_RagedNymphStorasta.Reference.Get();
             var balor = BuffRefs.BeastShapeIVWyvernBuff.Reference.Get().GetComponent<Polymorph>();
             var port = BlueprintTool.GetRef<BlueprintPortraitReference>("e95da21465774e04d8149de74ad5850e");
+            var assetId = "{1029D29B-8E4E-44D9-8241-00C882FCC65E}"; // New GUID identifying your prefab
+            var sourceAssetId = monster.Prefab.AssetId; 
+            AssetTool.RegisterDynamicPrefabLink(assetId, sourceAssetId, prefab => prefab.transform.localScale = new(0.125f, 0.125f, 0.125f));
+            var prefab = new UnitViewLink() { AssetId = assetId };
+            var prefab2 = new PrefabLink() { AssetId = assetId };
 
             var enter = new Polymorph.VisualTransitionSettings()
             {
-                OldPrefabVisibilityTime = 0.5f,
-                ScaleTime = 0.5f,
-                ScaleOldPrefab = false,
-                ScaleNewPrefab = false,
-                OldScaleCurve = balor.m_EnterTransition.OldScaleCurve,
-                NewScaleCurve = balor.m_EnterTransition.NewScaleCurve
+                OldPrefabFX = prefab2,
+                NewPrefabFX = prefab2,
+                ScaleOldPrefab = true,
+                ScaleNewPrefab = true,
+                NewScaleCurve = AnimationCurve.Linear(0f, 0f, 0.5f, 0.5f)
             };
 
             var exit = new Polymorph.VisualTransitionSettings()
             {
-                OldPrefabVisibilityTime = 0.5f,
-                ScaleTime = 0.5f,
-                ScaleOldPrefab = false,
-                ScaleNewPrefab = false,
-                OldScaleCurve = balor.m_ExitTransition.OldScaleCurve,
-                NewScaleCurve = balor.m_ExitTransition.NewScaleCurve
+                OldPrefabFX = prefab2,
+                NewPrefabFX = prefab2,
+                ScaleOldPrefab = true,
+                ScaleNewPrefab = true,
+                OldScaleCurve = AnimationCurve.Linear(0f, 0f, 0.5f, 0.5f)
+            };
+
+            var external = new PolymorphTransitionSettings()
+            {
+                EnterTransition = enter,
+                ExitTransition = exit
             };
 
             var buff = BuffConfigurator.New(ToothHuntBuff, ToothHuntBuffGuid)
@@ -77,9 +89,8 @@ namespace PrestigePlus.Blueprint.Spell
               .AddPolymorph([ItemWeaponRefs.Bite1d4.ToString()], false, 0, 8, enter, exit, 
                 [AbilityRefs.TurnBackAbilityStandart.ToString(), FeatureRefs.ShifterGriffonWingsFeature.ToString(), FeatureRefs.GriffonheartShifterGriffonShapeFakeFeature.ToString(), AbilityRefs.GriffonDeathFromAboveAbility.ToString()],
                 true, null, null, BlueprintCore.Blueprints.CustomConfigurators.ComponentMerge.Fail, 0, null,
-                port, monster.Prefab, monster.Prefab, null, null, null, false, Kingmaker.Enums.Size.Diminutive, 
-                SpecialDollType.None, -4, balor.m_TransitionExternal, false)
-              .AddChangeUnitSize(size: Kingmaker.Enums.Size.Diminutive, type: Kingmaker.Designers.Mechanics.Buffs.ChangeUnitSize.ChangeType.Value)
+                port, prefab, prefab, null, null, null, false, Size.Diminutive, SpecialDollType.None, -4, external, false)
+              .AddChangeUnitSize(size: Size.Diminutive, type: Kingmaker.Designers.Mechanics.Buffs.ChangeUnitSize.ChangeType.Value)
               .AddDamageResistancePhysical(isStackable: true, value: 2, material: Kingmaker.Enums.Damage.PhysicalDamageMaterial.ColdIron, bypassedByMaterial: true)
               .Configure();
 
