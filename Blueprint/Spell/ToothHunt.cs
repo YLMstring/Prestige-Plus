@@ -47,25 +47,21 @@ namespace PrestigePlus.Blueprint.Spell
         {
             var icon = FeatureRefs.WitchHexRestlessSlumberFeature.Reference.Get().Icon;
 
-            var monster = UnitRefs.DLC5_CR10_RagedNymphStorasta.Reference.Get();
-            var balor = BuffRefs.BeastShapeIVWyvernBuff.Reference.Get().GetComponent<Polymorph>();
-            var port = BlueprintTool.GetRef<BlueprintPortraitReference>("e95da21465774e04d8149de74ad5850e");
-            var assetId = "{1029D29B-8E4E-44D9-8241-00C882FCC65E}"; // New GUID identifying your prefab
+            var monster = UnitRefs.CR15_WildHunt_ScoutStandart.Reference.Get();
             var sourceAssetId = monster.Prefab.AssetId; 
-            AssetTool.RegisterDynamicPrefabLink(assetId, sourceAssetId, prefab => prefab.transform.localScale = new(0.125f, 0.125f, 0.125f));
-            var prefab2 = new PrefabLink() { AssetId = assetId };
+            var prefab1 = new PrefabLink() { AssetId = sourceAssetId };
 
             var buff = BuffConfigurator.New(ToothHuntBuff, ToothHuntBuffGuid)
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
               .AddSpellDescriptorComponent(SpellDescriptor.Polymorph)
-              .AddReplaceAsksList(monster.Visual.Barks)
-              .AddStatBonus(ModifierDescriptor.Size, false, Kingmaker.EntitySystem.Stats.StatType.Strength, -4)
+              .AddPolymorphBonuses()
+              .AddStatBonus(ModifierDescriptor.Penalty, false, Kingmaker.EntitySystem.Stats.StatType.Strength, -4)
               .AddStatBonus(ModifierDescriptor.Size, false, Kingmaker.EntitySystem.Stats.StatType.Dexterity, 8)
               .AddFacts([AbilityRefs.TurnBackAbilityStandart.ToString(), FeatureRefs.ShifterGriffonWingsFeature.ToString(), FeatureRefs.GriffonheartShifterGriffonShapeFakeFeature.ToString(), AbilityRefs.GriffonDeathFromAboveAbility.ToString()])
-              .AddAdditionalLimb(ItemWeaponRefs.Bite2d6.ToString())
-              .AddReplaceUnitPrefab(prefab: prefab2)
+              .AddAdditionalLimb(ItemWeaponRefs.Bite1d10.ToString())
+              .AddReplaceUnitPrefab(prefab: prefab1)
               .AddChangeUnitSize(size: Size.Diminutive, type: Kingmaker.Designers.Mechanics.Buffs.ChangeUnitSize.ChangeType.Value)
               .AddDamageResistancePhysical(isStackable: true, value: 2, material: Kingmaker.Enums.Damage.PhysicalDamageMaterial.ColdIron, bypassedByMaterial: true)
               .Configure();
