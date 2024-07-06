@@ -36,7 +36,7 @@ namespace PrestigePlus.Blueprint.Spell
         private const string Description = "NewSpellToothHunt.Description";
         public static void Configure()
         {
-            var icon = AbilityRefs.BlackDragonsFangAbility.Reference.Get().Icon;
+            var icon = FeatureRefs.WitchHexRestlessSlumberFeature.Reference.Get().Icon;
 
             var monster = UnitRefs.DLC5_CR10_RagedNymphStorasta.Reference.Get();
             var balor = BuffRefs.DemonicFormIVBalorBuff.Reference.Get().GetComponent<Polymorph>();

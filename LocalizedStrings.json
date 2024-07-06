@@ -14285,6 +14285,94 @@
     "enGB": "You may add your Dexterity modifier in place of your Strength modifier when wielding a light weapon or a weapon that gains the benefits of the Weapon Finesse feat (such as the rapier) when determining additional damage inflicted upon a successful attack. When wielding a weapon in your off-hand, Deadly Agility will add the same fraction of Dexterity as you normally would for Strength.",
     "ruRU": "Вы можете добавлять свой модификатор Ловкости вместо модификатора Силы к броскам на урон легким оружием или на которое действует черта Искусное владение оружием (например рапира). Для оружия, которое вы держите в неведущей руке, эта черта добавляет ту же часть модификатора Ловкости, что и обычно добавляемая часть модификатора Силы.",
     "zhCN": "你获得一系列好处，总之效果就如同武器娴熟（神话）专长。"
+  },
+  {
+    "Key": "ArsenalChaplain.Name",
+    "ProcessTemplates": false,
+    "enGB": "Arsenal Chaplain",
+    "zhCN": "随军神父"
+  },
+  {
+    "Key": "ArsenalChaplain.Description",
+    "enGB": "Molthuni arsenal chaplains are warpriests trained in the Arsenal District in Korholm. They bolster their nation’s military by focusing on the militant aspects of their gods.",
+    "zhCN": "摩尔苏恩帝国军中有一群专注于侍奉神祇战斗形态的战斗祭司。这些在帝国首都，坎诺雷特城的军事区接受训练的特殊神职人员便唤作随军神父。"
+  },
+  {
+    "Key": "ArsenalChaplainWarB7.Name",
+    "ProcessTemplates": false,
+    "enGB": "War Blessing",
+    "zhCN": "战争祝福"
+  },
+  {
+    "Key": "ArsenalChaplainWarB7.Description",
+    "enGB": "At 7th level, an arsenal chaplain can use the War blessing as a move action.",
+    "zhCN": "7级起，随军神父可用移动动作打出战争祝福。"
+  },
+  {
+    "Key": "ArsenalChaplainWarB10.Name",
+    "ProcessTemplates": false,
+    "enGB": "War Blessing",
+    "zhCN": "战争祝福"
+  },
+  {
+    "Key": "ArsenalChaplainWarB10.Description",
+    "enGB": "At 10th level, an arsenal chaplain can use the War blessing as a free action by spending an additional use of the blessing ability.",
+    "zhCN": "10级起，随军神父可用自由动作打出战争祝福，但费用上升1点。"
+  },
+  {
+    "Key": "ArsenalChaplainWarB13.Name",
+    "ProcessTemplates": false,
+    "enGB": "War Blessing",
+    "zhCN": "战争祝福"
+  },
+  {
+    "Key": "ArsenalChaplainWarB13.Description",
+    "enGB": "At 13th level, an arsenal chaplain can use the War blessing on an ally at a range of up to 30 feet by spending an additional use of the blessing ability.",
+    "zhCN": "13级起，随军神父的战争祝福可以获得法术及远效果，但费用上升1点。"
+  },
+  {
+    "Key": "ArsenalChaplainWarB16.Name",
+    "ProcessTemplates": false,
+    "enGB": "War Blessing",
+    "zhCN": "战争祝福"
+  },
+  {
+    "Key": "ArsenalChaplainWarB16.Description",
+    "enGB": "At 16th level, an arsenal chaplain can use the War blessing with its cost reduced by 1.",
+    "zhCN": "16级起，随军神父的战争祝福费用减少1点。"
+  },
+  {
+    "Key": "ArsenalChaplainWarB19.Name",
+    "ProcessTemplates": false,
+    "enGB": "War Blessing",
+    "zhCN": "战争祝福"
+  },
+  {
+    "Key": "ArsenalChaplainWarB19.Description",
+    "enGB": "At 19th level, an arsenal chaplain can use the War blessing with its cost reduced by an additional 1.",
+    "zhCN": "16级起，随军神父的战争祝福费用再减少1点。"
+  },
+  {
+    "Key": "NewSpellToothHunt.Name",
+    "ProcessTemplates": false,
+    "enGB": "Tooth Hunt",
+    "zhCN": "猎牙行动"
+  },
+  {
+    "Key": "NewSpellToothHunt.Description",
+    "enGB": "You assume the form of a tooth fairy. As Fey Form III, you gain the following abilities: a +8 size bonus to Dexterity, a –4 penalty to Strength, DR 2/cold iron, and fly speed (good maneuverability, better than a griffon for sure). A tooth fairy is a diminutive creature that can wield weapons, along with one bite attack (1d4).",
+    "zhCN": "你呈现出小牙仙的形态。如同妖精形态III，你获得以下能力：敏捷+8体型加值，力量–4减值，DR 2/寒铁，飞行速度（机动性良好，肯定比狮鹫更好）。小牙仙是一种微型生物，可以使用武器，以及一次噬咬攻击（1d4）。"
+  },
+  {
+    "Key": "NewSpellEmblemGreed.Name",
+    "ProcessTemplates": false,
+    "enGB": "Emblem of Greed",
+    "zhCN": "贪婪纹章"
+  },
+  {
+    "Key": "NewSpellEmblemGreed.Description",
+    "enGB": "You form a burning glaive using your magic. The weapon is appropriate to your size and has a +1 enhancement bonus and the flaming weapon special ability. When wielding the glaive, you are considered proficient with it and use your caster level as your base attack bonus (which may give you multiple attacks). The glaive’s enhancement bonus increases to +2 at caster level 15th, and +3 at caster level 19th. This spell is not cumulative with greater magic weapon or any other spell that might modify the weapon in any way.",
+    "zhCN": "你用魔法塑造一把燃烧的大砍刀。该武器适合你的体型，并具有+1增强加值和烈焰武器特殊能力。当挥舞这把大砍刀时，你视为擅长它，并使用你的施法者等级作为你的基本攻击加值（这可能会给你带来多次攻击）。施法者等级15级起，战刃的增强加值增加至+2，施法者等级19级起增加至+3。该法术不能与高等魔化武器或任何其他任何修改该武器的法术叠加。"
   }
 
 ]

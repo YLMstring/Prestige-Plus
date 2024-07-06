@@ -113,7 +113,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string WarB16Description = "ArsenalChaplainWarB16.Description";
         private static BlueprintFeature CreateWarB16()
         {
-            var icon = FeatureRefs.FighterTraining.Reference.Get().Icon;
+            var icon = FeatureRefs.ShatterDefenses.Reference.Get().Icon;
 
             var feat = FeatureConfigurator.New(WarB16, WarB16Guid)
               .SetDisplayName(WarB16DisplayName)
@@ -167,7 +167,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private static readonly string WarB10AbilityGuid = "{D07B4440-682F-49B4-9C1B-CF8DCCFE45B7}";
         public static BlueprintFeature WarB10Feat()
         {
-            var icon = FeatureRefs.DisplayWeaponProwess.Reference.Get().Icon;
+            var icon = AbilityRefs.FeatherStep.Reference.Get().Icon;
 
             var feat = BuffConfigurator.New(WarB10Buff, WarB10BuffGuid)
               .SetDisplayName(WarB10DisplayName)
@@ -217,7 +217,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private static readonly string WarB13AbilityGuid = "{43F2928F-8A4B-4ED9-95BB-DDD5EF8A22F2}";
         public static BlueprintFeature WarB13Feat()
         {
-            var icon = FeatureRefs.DispellingAttack.Reference.Get().Icon;
+            var icon = AbilityRefs.Bane.Reference.Get().Icon;
 
             var feat = BuffConfigurator.New(WarB13Buff, WarB13BuffGuid)
               .SetDisplayName(WarB13DisplayName)

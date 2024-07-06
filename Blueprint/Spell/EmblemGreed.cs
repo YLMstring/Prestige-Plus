@@ -52,7 +52,7 @@ namespace PrestigePlus.Blueprint.Spell
         public static readonly string MaximGuid = "{3E39268B-E1E6-404B-8021-E5C03D613C6B}";
         public static void Configure()
         {
-            var icon = AbilityRefs.ArmyGreedySands.Reference.Get().Icon;
+            var icon = ActivatableAbilityRefs.KineticBladeBlueFlameBlastAbility.Reference.Get().Icon;
 
             var glaive = ItemWeaponRefs.GlaiveFlamingPlus1.Reference.Get();
 
