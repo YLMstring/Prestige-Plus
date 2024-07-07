@@ -543,7 +543,7 @@ namespace PrestigePlus
         {
           if (Initialized)
           {
-            Logger.Info("Already configured delayed blueprints.");
+            Logger.Info("Already configured delayed blueprints");
             return;
           }
             Initialized = true; PatchDomain.Patch(); PatchArmorTraining.Patch(); PatchSkaldSharing.Patch(); ImprovedWalk.Patch(); PatchRagingSong.Patch();

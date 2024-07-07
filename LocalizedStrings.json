@@ -4212,7 +4212,7 @@
 
   {
     "Key": "MythicKiThrow.Description",
-    "enGB": "You can use Dirty Trick, Disarm or Sunder for Ki Throw. Additionally, you gain +2 bonus to CMB for each size category that the target is larger than you.",
+    "enGB": "You can use Dirty Trick, Disarm or Sunder for Ki Throw. Additionally, you gain a +2 bonus to CMB for each size category that the target is larger than you.",
     "ruRU": "Вы можете использовать боевые маневры Грязный трюк, Разоружение или Разрушение брони с броском ци. Кроме того, вы получаете бонус +2 к модификатору боевых маневров за каждую категорию размера цели больше вашей.",
     "zhCN": "你能通过阴招，缴械或击破来使用太极拳。另外，你的目标每比你大一个体型，你的战技检定就获得+2加值。"
   },
@@ -14300,13 +14300,13 @@
   {
     "Key": "ArsenalChaplainWarB7.Name",
     "ProcessTemplates": false,
-    "enGB": "War Blessing",
-    "zhCN": "战争祝福"
+    "enGB": "War Mind",
+    "zhCN": "战争之心"
   },
   {
     "Key": "ArsenalChaplainWarB7.Description",
-    "enGB": "An arsenal chaplain must choose War as his blessing, and can do so even if it is a domain not normally granted by his deity. He does not receive a second blessing.",
-    "zhCN": "随军神父必须选择战争祝福，即使他的神祇正常而言不具备战争领域，且他没有第二个祝福。"
+    "enGB": "An arsenal chaplain must choose War as his blessing, and can do so even if it is a domain not normally granted by his deity. He does not receive a second blessing. An arsenal chaplain adds his level to any levels of fighter he might have for the purpose of meeting the prerequisites for feats.",
+    "zhCN": "随军神父必须选择战争祝福，即使他的神祇正常而言不具备战争领域，且他没有第二个祝福。计算专长前置时，随军神父将其等级加到战士等级上。"
   },
   {
     "Key": "ArsenalChaplainWarB10.Name",
