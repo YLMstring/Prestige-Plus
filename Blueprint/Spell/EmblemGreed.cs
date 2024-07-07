@@ -34,6 +34,9 @@ using UnityEngine;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
 using Kingmaker.RuleSystem.Rules;
+using BlueprintCore.Utils;
+using HarmonyLib;
+using Kingmaker.Blueprints.Items.Ecnchantments;
 
 namespace PrestigePlus.Blueprint.Spell
 {
@@ -249,5 +252,23 @@ namespace PrestigePlus.Blueprint.Spell
         }
     }
 
-
+    [HarmonyPatch(typeof(ItemEntity), nameof(ItemEntity.AddEnchantment))]
+    internal class EmblemCantEnchantFix
+    {
+        static void Prefix(ref ItemEntity __instance, ref BlueprintItemEnchantment blueprint)
+        {
+            try
+            {
+                if (__instance.Blueprint == Wep.Get() || __instance.Blueprint == Wep2.Get() || __instance.Blueprint == Wep3.Get())
+                {
+                    blueprint = WeaponEnchantmentRefs.Flaming.Reference;
+                }
+            }
+            catch (Exception ex) { Main.Logger.Error("Failed to EmblemCantEnchantFix.", ex); }
+        }
+        private static BlueprintBuffReference Buff2 = BlueprintTool.GetRef<BlueprintBuffReference>(EmblemGreed.EmblemGreedBuffGuid);
+        private static BlueprintItemWeaponReference Wep = BlueprintTool.GetRef<BlueprintItemWeaponReference>(EmblemGreed.MaximGuid);
+        private static BlueprintItemWeaponReference Wep2 = BlueprintTool.GetRef<BlueprintItemWeaponReference>(EmblemGreed.MaximGuid2);
+        private static BlueprintItemWeaponReference Wep3 = BlueprintTool.GetRef<BlueprintItemWeaponReference>(EmblemGreed.MaximGuid3);
+    }
 }

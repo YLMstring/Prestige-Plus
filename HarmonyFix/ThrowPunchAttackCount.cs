@@ -44,7 +44,8 @@ namespace PrestigePlus.HarmonyFix
                     __result = num2;
                     return false;
                 }
-                if (caster.GetFact(Buff2) is Buff buff && caster.GetThreatHandMelee()?.Weapon.Blueprint == Wep.Get())
+                var wep = caster.GetThreatHandMelee()?.Weapon?.Blueprint;
+                if (caster.GetFact(Buff2) is Buff buff && (wep == Wep.Get() || wep == Wep2.Get() || wep == Wep3.Get()))
                 {
                     int num = buff.Context.Params.CasterLevel;
                     int num2 = Math.Max(0, num / 5 - ((num % 5 == 0) ? 1 : 0));
@@ -62,5 +63,7 @@ namespace PrestigePlus.HarmonyFix
         private static BlueprintBuffReference Buff1 = BlueprintTool.GetRef<BlueprintBuffReference>(MageHandTrick.ThrowPunchbuffGuid);
         private static BlueprintBuffReference Buff2 = BlueprintTool.GetRef<BlueprintBuffReference>(EmblemGreed.EmblemGreedBuffGuid);
         private static BlueprintItemWeaponReference Wep = BlueprintTool.GetRef<BlueprintItemWeaponReference>(EmblemGreed.MaximGuid);
+        private static BlueprintItemWeaponReference Wep2 = BlueprintTool.GetRef<BlueprintItemWeaponReference>(EmblemGreed.MaximGuid2);
+        private static BlueprintItemWeaponReference Wep3 = BlueprintTool.GetRef<BlueprintItemWeaponReference>(EmblemGreed.MaximGuid3);
     }
 }
