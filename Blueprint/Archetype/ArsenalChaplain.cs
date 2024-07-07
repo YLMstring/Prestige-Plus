@@ -19,6 +19,7 @@ using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.Designers.Mechanics.Facts;
 using BlueprintCore.Actions.Builder;
 using BlueprintCore.Actions.Builder.ContextEx;
+using TabletopTweaks.Core.NewComponents.OwlcatReplacements;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -40,9 +41,9 @@ namespace PrestigePlus.Blueprint.Archetype
             .SetRemoveFeaturesEntry(13, FeatureRefs.SacredArmorEnchantPlus3.ToString())
             .SetRemoveFeaturesEntry(16, FeatureRefs.SacredArmorEnchantPlus4.ToString())
             .SetRemoveFeaturesEntry(19, FeatureRefs.SacredArmorEnchantPlus5.ToString())
-            .AddToAddFeatures(1, "2097edd687ff4cdeb33872c048599fc1")
-            .AddToAddFeatures(7, WarB7Feat())
-            .AddToAddFeatures(10, WarB10Feat())
+            .AddToAddFeatures(1, WarB7Feat())
+            .AddToAddFeatures(7, WarB10Feat())
+            .AddToAddFeatures(10, "595b077c3b1f435495739ce496e852f0")
             .AddToAddFeatures(13, WarB13Feat())
             .AddToAddFeatures(16, CreateWarB16())
             .AddToAddFeatures(19, CreateWarB19())
@@ -53,7 +54,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .Configure();
 
             ProgressionConfigurator.For(ProgressionRefs.WarpriestProgression)
-                .AddToUIGroups([WarB7Guid, WarB10Guid, WarB13Guid, WarB16Guid, WarB19Guid, "2097edd687ff4cdeb33872c048599fc1"])
+                .AddToUIGroups([WarB7Guid, WarB10Guid, WarB13Guid, WarB16Guid, WarB19Guid, "77b232a88ab04671b44712232e63077d"])
                 .Configure();
         }
 
@@ -62,50 +63,23 @@ namespace PrestigePlus.Blueprint.Archetype
 
         internal const string WarB7DisplayName = "ArsenalChaplainWarB7.Name";
         private const string WarB7Description = "ArsenalChaplainWarB7.Description";
-
-        private const string WarB7Buff = "ArsenalChaplain.WarB7Buff";
-        public static readonly string WarB7BuffGuid = "{3B12723D-3058-49E4-8C62-A0F7EEDF991D}";
-
-        private const string WarB7Ability = "ArsenalChaplain.WarB7Ability";
-        private static readonly string WarB7AbilityGuid = "{5BAFF80A-9F06-4E41-9225-E8283B41D55D}";
         public static BlueprintFeature WarB7Feat()
         {
-            var icon = FeatureRefs.DisplayWeaponProwess.Reference.Get().Icon;
-
-            var feat = BuffConfigurator.New(WarB7Buff, WarB7BuffGuid)
-              .SetDisplayName(WarB7DisplayName)
-              .SetDescription(WarB7Description)
-              .SetIcon(icon)
-              .AddComponent<ChangeActionSpell>(c => { c.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>("13610da20c4840ed986568412207eba0"); c.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard; })
-              .AddComponent<ChangeActionSpell>(c => { c.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>("d6ab932ea5304c14ab3155647435b76c"); c.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard; })
-              .AddComponent<ChangeActionSpell>(c => { c.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>("85d935854e574b31a32ea6b031ba8f84"); c.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard; })
-              .AddComponent<ChangeActionSpell>(c => { c.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>("a15fa9c66b794f6986ee1d1d97db3419"); c.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard; })
-              .AddComponent<ChangeActionSpell>(c => { c.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>("b25af29679004b2085277bb8979b2912"); c.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Standard; })
-              .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
-              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
-              .AddBuffActions(activated: ActionsBuilder.New().RemoveBuff(WarB10BuffGuid).Build())
-              .Configure();
-
-            var ability = ActivatableAbilityConfigurator.New(WarB7Ability, WarB7AbilityGuid)
-                .SetDisplayName(WarB7DisplayName)
-                .SetDescription(WarB7Description)
-                .SetIcon(icon)
-                .SetBuff(feat)
-                .SetDeactivateImmediately(true)
-                .Configure();
+            var icon = AbilityRefs.DivineFavor.Reference.Get().Icon;
 
             return FeatureConfigurator.New(WarB7, WarB7Guid)
               .SetDisplayName(WarB7DisplayName)
               .SetDescription(WarB7Description)
               .SetIcon(icon)
-              .AddComponent<ClassLevelsForPrerequisites>(c => {
+              .AddComponent<ClassLevelsForPrerequisitesTTT>(c => {
                   c.m_ActualClass = CharacterClassRefs.WarpriestClass.Reference.Get().ToReference<BlueprintCharacterClassReference>();
                   c.m_FakeClass = CharacterClassRefs.FighterClass.Reference.Get().ToReference<BlueprintCharacterClassReference>();
-                  c.m_ForSelection = FeatureSelectionRefs.WeaponTrainingSelection.Reference.Get().ToReference<BlueprintFeatureSelectionReference>();
+                  c.CheckedGroups = [FeatureGroup.WeaponTraining];
                   c.Modifier = 1;
                   c.Summand = 0;
               })
-              .AddFacts(new() { ability })
+              .AddFacts(["77b232a88ab04671b44712232e63077d"])
+              .AddAbilityResources(0, AbilityResourceRefs.BlessingResource.ToString(), true, false, false)
               .Configure();
         }
 
@@ -170,7 +144,7 @@ namespace PrestigePlus.Blueprint.Archetype
         private static readonly string WarB10AbilityGuid = "{D07B4440-682F-49B4-9C1B-CF8DCCFE45B7}";
         public static BlueprintFeature WarB10Feat()
         {
-            var icon = AbilityRefs.FeatherStep.Reference.Get().Icon;
+            var icon = AbilityRefs.Grace.Reference.Get().Icon;
 
             var feat = BuffConfigurator.New(WarB10Buff, WarB10BuffGuid)
               .SetDisplayName(WarB10DisplayName)
@@ -183,7 +157,6 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddComponent<ChangeActionSpell>(c => { c.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>("b25af29679004b2085277bb8979b2912"); c.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free; })
               .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
-              .AddBuffActions(activated: ActionsBuilder.New().RemoveBuff(WarB7BuffGuid).Build())
               .Configure();
 
             AddToResourceFact.Patch("13610da20c4840ed986568412207eba0", true, feat);
