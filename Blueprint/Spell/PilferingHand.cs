@@ -41,6 +41,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetSpellResistance()
               .AddToSpellLists(level: 2, SpellList.Bard)
               .AddToSpellLists(level: 2, SpellList.Cleric)
+              .AddToSpellLists(level: 2, SpellList.Warpriest)
               .AddToSpellLists(level: 2, SpellList.Wizard)
               .AddToSpellLists(level: 2, SpellList.Magus)
               .AddAbilityEffectRunAction(

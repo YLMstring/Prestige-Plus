@@ -118,6 +118,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Extend, Metamagic.Quicken)
               .AddToSpellLists(level: 6, SpellList.Cleric)
               .AddToSpellLists(level: 6, SpellList.Inquisitor)
+              .AddToSpellLists(level: 6, SpellList.Warpriest)
               .AddToSpellLists(level: 7, SpellList.Shaman)
               .AddToSpellLists(level: 6, SpellList.Wizard)
               .AddToSpellLists(level: 6, SpellList.Magus)
