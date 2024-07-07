@@ -14305,8 +14305,8 @@
   },
   {
     "Key": "ArsenalChaplainWarB7.Description",
-    "enGB": "An arsenal chaplain must choose War as his blessing, and can do so even if it is a domain not normally granted by his deity. He does not receive a second blessing, but he may add his level to any levels of fighter he might have for the purpose of meeting the prerequisites for feats.",
-    "zhCN": "随军神父必须选择战争祝福，即使他的神祇正常而言不具备战争领域。他没有第二个祝福，但在计算专长前置时可以将职业等级加到战士等级上。"
+    "enGB": "An arsenal chaplain must choose War as his blessing, and can do so even if it is a domain not normally granted by his deity. He does not receive a second blessing.",
+    "zhCN": "随军神父必须选择战争祝福，即使他的神祇正常而言不具备战争领域。他没有第二个祝福。"
   },
   {
     "Key": "ArsenalChaplainWarB10.Name",

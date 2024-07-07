@@ -71,7 +71,13 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(WarB7DisplayName)
               .SetDescription(WarB7Description)
               .SetIcon(icon)
-              .AddClassLevelsForPrerequisites(actualClass: CharacterClassRefs.WarpriestClass.ToString(), fakeClass: CharacterClassRefs.FighterClass.ToString(), modifier: 1, summand: 0)
+              .AddComponent<ClassLevelsForPrerequisites>(c => {
+                   c.m_ActualClass = CharacterClassRefs.WarpriestClass.Reference.Get().ToReference<BlueprintCharacterClassReference>();
+                   c.m_FakeClass = CharacterClassRefs.FighterClass.Reference.Get().ToReference<BlueprintCharacterClassReference>();
+                   c.m_ForSelection = FeatureSelectionRefs.WeaponTrainingSelection.Reference.Get().ToReference<BlueprintFeatureSelectionReference>();
+                   c.Modifier = 1;
+                   c.Summand = 0;
+               })
               .AddFacts(["77b232a88ab04671b44712232e63077d"])
               .AddAbilityResources(0, AbilityResourceRefs.BlessingResource.ToString(), true, false, false)
               .Configure();
