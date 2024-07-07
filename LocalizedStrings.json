@@ -14305,8 +14305,8 @@
   },
   {
     "Key": "ArsenalChaplainWarB7.Description",
-    "enGB": "At 7th level, an arsenal chaplain can use the War blessing as a move action.",
-    "zhCN": "7级起，随军神父可用移动动作打出战争祝福。"
+    "enGB": "At 7th level, an arsenal chaplain can use the War blessing as a standard action.",
+    "zhCN": "7级起，随军神父可用标准动作打出战争祝福。"
   },
   {
     "Key": "ArsenalChaplainWarB10.Name",
