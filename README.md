@@ -251,6 +251,8 @@
 #### Sorcerer:  
 - [Truth Seeker](https://www.d20pfsrd.com/classes/core-classes/sorcerer/archetypes/paizo-sorcerer-archetypes/seeker/)
 #### Warpriest:  
+- [Arsenal Chaplain](https://www.d20pfsrd.com/classes/hybrid-classes/warpriest/archetypes/paizo-warpriest-archetypes/arsenal-chaplain-warpriest-archetype/)
+- Make adjustments due to owl-brew war blessing :p
 - [Divine Champion](https://www.d20pfsrd.com/classes/hybrid-classes/warpriest/archetypes/paizo-warpriest-archetypes/divine-champion-warpriest-archetype/)
 #### Witch:  
 - [White-Haired Witch](https://www.d20pfsrd.com/classes/base-classes/witch/archetypes/paizo-witch-archetypes/white-haired-witch/)
@@ -415,6 +417,8 @@
 - [Phantom Limb](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Phantom%20Limb)
 - [Glimpse of the Akashic](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Glimpse%20of%20the%20Akashic)
 - [Akashic Form](https://www.d20pfsrd.com/magic/all-spells/a/akashic-form/)
+- Tooth Hunt: a variant of [Fey Form III](https://www.d20pfsrd.com/magic/all-spells/f/fey-form/)
+- [Emblem of Greed](https://www.d20pfsrd.com/magic/all-spells/e/emblem-of-greed/)
 ### New Mythic Prestige Class Features
 
 - Swift Death: Your target assassination becomes a standard action. At 10th assassin level, it becomes a move action.
