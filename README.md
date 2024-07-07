@@ -417,7 +417,8 @@
 - [Phantom Limb](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Phantom%20Limb)
 - [Glimpse of the Akashic](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Glimpse%20of%20the%20Akashic)
 - [Akashic Form](https://www.d20pfsrd.com/magic/all-spells/a/akashic-form/)
-- Tooth Hunt [(Fey Form III)](https://www.d20pfsrd.com/magic/all-spells/f/fey-form/)
+- Tooth Hunt: a variant of [Fey Form III](https://www.d20pfsrd.com/magic/all-spells/f/fey-form/)
+- [Emblem of Greed](https://www.d20pfsrd.com/magic/all-spells/e/emblem-of-greed/)
 ### New Mythic Prestige Class Features
 
 - Swift Death: Your target assassination becomes a standard action. At 10th assassin level, it becomes a move action.
