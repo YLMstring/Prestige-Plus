@@ -17,6 +17,8 @@ using PrestigePlus.Mechanic;
 using PrestigePlus.Modify;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.Designers.Mechanics.Facts;
+using BlueprintCore.Actions.Builder;
+using BlueprintCore.Actions.Builder.ContextEx;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -81,6 +83,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddComponent<ChangeActionSpell>(c => { c.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>("b25af29679004b2085277bb8979b2912"); c.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Move; })
               .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+              .AddBuffActions(activated: ActionsBuilder.New().RemoveBuff(WarB10BuffGuid).Build())
               .Configure();
 
             var ability = ActivatableAbilityConfigurator.New(WarB7Ability, WarB7AbilityGuid)
@@ -180,6 +183,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddComponent<ChangeActionSpell>(c => { c.Ability = BlueprintTool.GetRef<BlueprintAbilityReference>("b25af29679004b2085277bb8979b2912"); c.Type = Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free; })
               .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+              .AddBuffActions(activated: ActionsBuilder.New().RemoveBuff(WarB7BuffGuid).Build())
               .Configure();
 
             AddToResourceFact.Patch("13610da20c4840ed986568412207eba0", true, feat);

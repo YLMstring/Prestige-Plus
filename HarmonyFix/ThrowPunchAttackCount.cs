@@ -44,7 +44,7 @@ namespace PrestigePlus.HarmonyFix
                     __result = num2;
                     return false;
                 }
-                if (caster.GetFact(Buff2) is Buff buff && caster.GetThreatHandMelee()?.Weapon.Blueprint.AssetGuidThreadSafe == EmblemGreed.MaximGuid)
+                if (caster.GetFact(Buff2) is Buff buff && caster.GetThreatHandMelee()?.Weapon.Blueprint == Wep.Get())
                 {
                     int num = buff.Context.Params.CasterLevel;
                     int num2 = Math.Max(0, num / 5 - ((num % 5 == 0) ? 1 : 0));
@@ -61,35 +61,6 @@ namespace PrestigePlus.HarmonyFix
         }
         private static BlueprintBuffReference Buff1 = BlueprintTool.GetRef<BlueprintBuffReference>(MageHandTrick.ThrowPunchbuffGuid);
         private static BlueprintBuffReference Buff2 = BlueprintTool.GetRef<BlueprintBuffReference>(EmblemGreed.EmblemGreedBuffGuid);
-    }
-
-    [HarmonyPatch(typeof(RuleCalculateWeaponStats), nameof(RuleCalculateWeaponStats.OnTrigger))]
-    internal class ThrowPunchAttackCount2
-    {
-        static void Prefix(ref RuleCalculateWeaponStats __instance)
-        {
-            try
-            {
-                var caster = __instance.Initiator;
-                if (caster.GetFact(Buff2) is Buff buff && __instance.Weapon.Blueprint.AssetGuidThreadSafe == EmblemGreed.MaximGuid)
-                {
-                    int num = buff.Context.Params.CasterLevel;
-                    if (num >= 19)
-                    {
-                        __instance.EnhancementTotal = 3;
-                    }
-                    else if (num >= 15)
-                    {
-                        __instance.EnhancementTotal = 2;
-                    }
-                    else
-                    {
-                        __instance.EnhancementTotal = 1;
-                    }
-                }
-            }
-            catch (Exception ex) { Main.Logger.Error("Failed to ThrowPunchAttackCount2.", ex); }
-        }
-        private static BlueprintBuffReference Buff2 = BlueprintTool.GetRef<BlueprintBuffReference>(EmblemGreed.EmblemGreedBuffGuid);
+        private static BlueprintItemWeaponReference Wep = BlueprintTool.GetRef<BlueprintItemWeaponReference>(EmblemGreed.MaximGuid);
     }
 }

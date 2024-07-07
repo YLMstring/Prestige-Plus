@@ -62,8 +62,10 @@ namespace PrestigePlus.Blueprint.Spell
                 .SetFlavorText(Description)
                 .SetIcon(glaive.Icon)
                 .SetVisualParameters(glaive.m_VisualParameters)
+                .SetDC(1)
                 .SetType(WeaponTypeRefs.Glaive.ToString())
                 .AddToEnchantments(WeaponEnchantmentRefs.Flaming.ToString())
+                .AddToEnchantments(WeaponEnchantmentRefs.Enhancement1.ToString())
                 .Configure();
 
             var buff = BuffConfigurator.New(EmblemGreedBuff, EmblemGreedBuffGuid)
