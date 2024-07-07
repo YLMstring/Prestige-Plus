@@ -50,6 +50,12 @@ namespace PrestigePlus.Blueprint.Spell
 
         private const string MaximName = "EmblemGreedWeapon";
         public static readonly string MaximGuid = "{3E39268B-E1E6-404B-8021-E5C03D613C6B}";
+
+        private const string MaximName2 = "EmblemGreedWeapon2";
+        public static readonly string MaximGuid2 = "{A3B0F724-6567-47FE-8EC0-3BDC3D2D1341}";
+
+        private const string MaximName3 = "EmblemGreedWeapon3";
+        public static readonly string MaximGuid3 = "{408E8A43-D3BF-46DD-9259-989DB3D464F3}";
         public static void Configure()
         {
             var icon = ActivatableAbilityRefs.KineticBladeBlueFlameBlastAbility.Reference.Get().Icon;
@@ -68,11 +74,35 @@ namespace PrestigePlus.Blueprint.Spell
                 .AddToEnchantments(WeaponEnchantmentRefs.Enhancement1.ToString())
                 .Configure();
 
+            var maxim2 = ItemWeaponConfigurator.New(MaximName2, MaximGuid2)
+                .SetDisplayNameText(DisplayName)
+                .SetDescriptionText(Description)
+                .SetFlavorText(Description)
+                .SetIcon(glaive.Icon)
+                .SetVisualParameters(glaive.m_VisualParameters)
+                .SetDC(1)
+                .SetType(WeaponTypeRefs.Glaive.ToString())
+                .AddToEnchantments(WeaponEnchantmentRefs.Flaming.ToString())
+                .AddToEnchantments(WeaponEnchantmentRefs.Enhancement2.ToString())
+                .Configure();
+
+            var maxim3 = ItemWeaponConfigurator.New(MaximName3, MaximGuid3)
+                .SetDisplayNameText(DisplayName)
+                .SetDescriptionText(Description)
+                .SetFlavorText(Description)
+                .SetIcon(glaive.Icon)
+                .SetVisualParameters(glaive.m_VisualParameters)
+                .SetDC(1)
+                .SetType(WeaponTypeRefs.Glaive.ToString())
+                .AddToEnchantments(WeaponEnchantmentRefs.Flaming.ToString())
+                .AddToEnchantments(WeaponEnchantmentRefs.Enhancement3.ToString())
+                .Configure();
+
             var buff = BuffConfigurator.New(EmblemGreedBuff, EmblemGreedBuffGuid)
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
-              .AddComponent<AddGreedBlade>(c => { c.Blade = maxim; })
+              .AddComponent<AddGreedBlade>(c => { c.Blade1 = maxim; c.Blade2 = maxim2; c.Blade3 = maxim3; })
               .Configure();
 
             AbilityConfigurator.NewSpell(EmblemGreedAbility, EmblemGreedAbilityGuid, SpellSchool.Transmutation, canSpecialize: true)
@@ -99,8 +129,19 @@ namespace PrestigePlus.Blueprint.Spell
 
     public class AddGreedBlade : UnitBuffComponentDelegate<AddKineticistBladeData>, IAreaActivationHandler, IGlobalSubscriber, ISubscriber, IInitiatorRulebookHandler<RuleCalculateAttackBonusWithoutTarget>, IRulebookHandler<RuleCalculateAttackBonusWithoutTarget>
     {
-        public BlueprintItemWeapon Blade;
+        public BlueprintItemWeapon Blade1;
+        public BlueprintItemWeapon Blade2;
+        public BlueprintItemWeapon Blade3;
 
+        public BlueprintItemWeapon Blade 
+        {
+            get
+            {
+                if (Buff.Context.Params.CasterLevel < 15) return Blade1;
+                if (Buff.Context.Params.CasterLevel < 19) return Blade2;
+                return Blade3;
+            }
+        }
         void IRulebookHandler<RuleCalculateAttackBonusWithoutTarget>.OnEventAboutToTrigger(RuleCalculateAttackBonusWithoutTarget evt)
         {
             if (evt.Initiator == Owner && evt.Weapon?.Blueprint == Blade)
@@ -207,4 +248,6 @@ namespace PrestigePlus.Blueprint.Spell
             }
         }
     }
+
+
 }
