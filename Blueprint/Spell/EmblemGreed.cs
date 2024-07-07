@@ -105,7 +105,6 @@ namespace PrestigePlus.Blueprint.Spell
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
-              .AddProficiencies(weaponProficiencies: [WeaponCategory.Glaive])
               .AddComponent<AddGreedBlade>(c => { c.Blade1 = maxim; c.Blade2 = maxim2; c.Blade3 = maxim3; })
               .Configure();
 
@@ -267,7 +266,25 @@ namespace PrestigePlus.Blueprint.Spell
             }
             catch (Exception ex) { Main.Logger.Error("Failed to EmblemCantEnchantFix.", ex); }
         }
-        private static BlueprintBuffReference Buff2 = BlueprintTool.GetRef<BlueprintBuffReference>(EmblemGreed.EmblemGreedBuffGuid);
+        private static BlueprintItemWeaponReference Wep = BlueprintTool.GetRef<BlueprintItemWeaponReference>(EmblemGreed.MaximGuid);
+        private static BlueprintItemWeaponReference Wep2 = BlueprintTool.GetRef<BlueprintItemWeaponReference>(EmblemGreed.MaximGuid2);
+        private static BlueprintItemWeaponReference Wep3 = BlueprintTool.GetRef<BlueprintItemWeaponReference>(EmblemGreed.MaximGuid3);
+    }
+
+    [HarmonyPatch(typeof(ItemEntity), nameof(ItemEntity.CanBeEquippedBy))]
+    internal class EmblemCantEnchantFix2
+    {
+        static void Postfix(ref ItemEntity __instance, ref bool __result)
+        {
+            try
+            {
+                if (__instance.Blueprint == Wep.Get() || __instance.Blueprint == Wep2.Get() || __instance.Blueprint == Wep3.Get())
+                {
+                    __result = true;
+                }
+            }
+            catch (Exception ex) { Main.Logger.Error("Failed to EmblemCantEnchantFix2.", ex); }
+        }
         private static BlueprintItemWeaponReference Wep = BlueprintTool.GetRef<BlueprintItemWeaponReference>(EmblemGreed.MaximGuid);
         private static BlueprintItemWeaponReference Wep2 = BlueprintTool.GetRef<BlueprintItemWeaponReference>(EmblemGreed.MaximGuid2);
         private static BlueprintItemWeaponReference Wep3 = BlueprintTool.GetRef<BlueprintItemWeaponReference>(EmblemGreed.MaximGuid3);
