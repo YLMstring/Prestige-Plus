@@ -105,6 +105,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetDisplayName(DisplayName)
               .SetDescription(Description)
               .SetIcon(icon)
+              .AddProficiencies(weaponProficiencies: [WeaponCategory.Glaive])
               .AddComponent<AddGreedBlade>(c => { c.Blade1 = maxim; c.Blade2 = maxim2; c.Blade3 = maxim3; })
               .Configure();
 
@@ -261,7 +262,7 @@ namespace PrestigePlus.Blueprint.Spell
             {
                 if (__instance.Blueprint == Wep.Get() || __instance.Blueprint == Wep2.Get() || __instance.Blueprint == Wep3.Get())
                 {
-                    blueprint = WeaponEnchantmentRefs.Flaming.Reference;
+                    blueprint = WeaponEnchantmentRefs.Enhancement1.Reference;
                 }
             }
             catch (Exception ex) { Main.Logger.Error("Failed to EmblemCantEnchantFix.", ex); }
