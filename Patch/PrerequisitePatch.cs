@@ -66,7 +66,8 @@ namespace PrestigePlus.Patch
             {
                 try
                 {
-                    //Logger.Info("edit " + feat.NameSafe());
+                    if (feat == null) continue;
+                    Logger.Info("edit for " + feat.NameSafe());
                     foreach (var prerequisite in feat.Get().GetComponents<PrerequisiteFeature>())
                     {
                         var pre = prerequisite?.Feature;
