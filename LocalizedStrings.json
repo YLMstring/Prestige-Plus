@@ -14361,12 +14361,8 @@
   {
     "Key": "ArsenalChaplainWarB19.Description",
     "enGB": "At 19th level, an arsenal chaplain can use the War blessing with its cost reduced by an additional 1.",
-<<<<<<< HEAD
-    "zhCN": "19级起，随军神父的战争祝福费用再减少1点。"
-=======
     "ruRU": "Начиная с 19 уровня стоимость применения благословения войны капелланом оружейной уменьшается еще на 1.",
-    "zhCN": "16级起，随军神父的战争祝福费用再减少1点。"
->>>>>>> 68ed4ef5194b620cec45fcb5ce8bb0e73b18420c
+    "zhCN": "19级起，随军神父的战争祝福费用再减少1点。"
   },
   {
     "Key": "NewSpellToothHunt.Name",
