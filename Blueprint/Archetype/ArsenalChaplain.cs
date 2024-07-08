@@ -71,7 +71,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(WarB7DisplayName)
               .SetDescription(WarB7Description)
               .SetIcon(icon)
-              .AddFacts(["77b232a88ab04671b44712232e63077d"])
+              .AddFacts(["77b232a88ab04671b44712232e63077d", FeatureSelectionRefs.BlessingSelection.ToString()])
               .AddAbilityResources(0, AbilityResourceRefs.BlessingResource.ToString(), true, false, false)
               .Configure();
         }
