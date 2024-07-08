@@ -8418,7 +8418,7 @@
   {
     "Key": "DeificObedienceOtolmens3.Description",
     "enGB": "Once per day, you can duplicate any wizard spell of 6th level or lower, or any other spell of 5th level or lower, as if it were a 9th-level spell.",
-    "ruRU": "Раз в день, вы можете продублировать заклинание мага 6 круга или ниже, или любое другое заклинание 5 круги или ниже, как если бы оно было заклинанием 9 круга.",
+    "ruRU": "Раз в день, вы можете продублировать заклинание мага 6 круга или ниже, или любое другое заклинание 5 круга или ниже, как если бы оно было заклинанием 9 круга.",
     "zhCN": "每日1次，你能够复制任何6级或更低等级的法师法术，或复制任何5级或更低等级的其他法术。复制的法术会按照9级法术进行计算。"
   },
   {
@@ -14290,88 +14290,108 @@
     "Key": "ArsenalChaplain.Name",
     "ProcessTemplates": false,
     "enGB": "Arsenal Chaplain",
+    "ruRU": "Капеллан оружейной",
     "zhCN": "随军神父"
   },
   {
     "Key": "ArsenalChaplain.Description",
     "enGB": "Molthuni arsenal chaplains are warpriests trained in the Arsenal District in Korholm. They bolster their nation’s military by focusing on the militant aspects of their gods.",
+    "ruRU": "Мольтунские капелланы оружейной - это капелланы обучавшиеся в оружейном районе Корхольма. Они укрепляют военную мощь своего государства, сосредотачиваясть на военных аспектах своих богов.",
     "zhCN": "摩尔苏恩帝国军中有一群专注于侍奉神祇战斗形态的战斗祭司。这些在帝国首都，坎诺雷特城的军事区接受训练的特殊神职人员便唤作随军神父。"
   },
   {
     "Key": "ArsenalChaplainWarB7.Name",
     "ProcessTemplates": false,
     "enGB": "War Mind",
+    "ruRU": "Военный разум",
     "zhCN": "战争之心"
   },
   {
     "Key": "ArsenalChaplainWarB7.Description",
     "enGB": "An arsenal chaplain must choose War as his blessing, and can do so even if it is a domain not normally granted by his deity. He does not receive a second blessing.",
+    "ruRU": "Капеллан оружейной должен выбрать Войну в качестве своего благословения, и может сделать это, даже если его божестве не дарует доступа к этому домейну.. Он не получает второго благословения.",
     "zhCN": "随军神父必须选择战争祝福，即使他的神祇正常而言不具备战争领域。他没有第二个祝福。"
   },
   {
     "Key": "ArsenalChaplainWarB10.Name",
     "ProcessTemplates": false,
     "enGB": "War Blessing",
+    "ruRU": "Благословение войны",
     "zhCN": "战争祝福"
   },
   {
     "Key": "ArsenalChaplainWarB10.Description",
     "enGB": "At 7th level, an arsenal chaplain can use the War blessing as a free action by spending an additional use of the blessing ability.",
+    "ruRU": "Начиная с 7 уровня капеллан арсенала может применять благословение войны свободным действием, если потратит дополнительное применение своего благословения.",
     "zhCN": "7级起，随军神父可用自由动作打出战争祝福，但费用上升1点。"
   },
   {
     "Key": "ArsenalChaplainWarB13.Name",
     "ProcessTemplates": false,
     "enGB": "War Blessing",
+    "ruRU": "Благословение войны",
     "zhCN": "战争祝福"
   },
   {
     "Key": "ArsenalChaplainWarB13.Description",
     "enGB": "At 13th level, an arsenal chaplain can use the War blessing on an ally at a range of up to 30 feet by spending an additional use of the blessing ability.",
+    "ruRU": "Начиная с 13 уровня капеллан оружейном может применять свое благословение к любому союзнику в радиусе 30 футов, если потратит дополнительное применение своего благословения.",
     "zhCN": "13级起，随军神父的战争祝福可以获得法术及远效果，但费用上升1点。"
   },
   {
     "Key": "ArsenalChaplainWarB16.Name",
     "ProcessTemplates": false,
     "enGB": "War Blessing",
+    "ruRU": "Благословение войны",
     "zhCN": "战争祝福"
   },
   {
     "Key": "ArsenalChaplainWarB16.Description",
     "enGB": "At 16th level, an arsenal chaplain can use the War blessing with its cost reduced by 1.",
+    "ruRU": "Начиная с 16 уровня стоимость применения благословения войны капелланом оружейной уменьшается на 1.",
     "zhCN": "16级起，随军神父的战争祝福费用减少1点。"
   },
   {
     "Key": "ArsenalChaplainWarB19.Name",
     "ProcessTemplates": false,
     "enGB": "War Blessing",
+    "ruRU": "Благословение войны",
     "zhCN": "战争祝福"
   },
   {
     "Key": "ArsenalChaplainWarB19.Description",
     "enGB": "At 19th level, an arsenal chaplain can use the War blessing with its cost reduced by an additional 1.",
+<<<<<<< HEAD
     "zhCN": "19级起，随军神父的战争祝福费用再减少1点。"
+=======
+    "ruRU": "Начиная с 19 уровня стоимость применения благословения войны капелланом оружейной уменьшается еще на 1.",
+    "zhCN": "16级起，随军神父的战争祝福费用再减少1点。"
+>>>>>>> 68ed4ef5194b620cec45fcb5ce8bb0e73b18420c
   },
   {
     "Key": "NewSpellToothHunt.Name",
     "ProcessTemplates": false,
     "enGB": "Tooth Hunt",
+    "ruRU": "Охота за зубами",
     "zhCN": "猎牙行动"
   },
   {
     "Key": "NewSpellToothHunt.Description",
     "enGB": "You assume the form of a tooth fairy. As Fey Form III, you gain the following abilities: a +8 size bonus to Dexterity, a –4 penalty to Strength, DR 2/cold iron, and fly speed (good maneuverability, better than a griffon for sure). A tooth fairy is a diminutive creature that can wield weapons, along with one bite attack (1d4).",
+    "ruRU": "Вы принимаете форму зубной феи. Подобно форме феи III вы получаете следующие способности: бонус размера +8 к Ловкости, штраф -4 к Силе, снижение урона 2/холодное железо и скорость полета (улучшенная маневренность, точно лучше грифона). Зубная фея - это миниатюрное существо, которое может держать оружие, а также получает атаку укусом (1d4).",
     "zhCN": "你呈现出小牙仙的形态。如同妖精形态III，你获得以下能力：敏捷+8体型加值，力量–4减值，DR 2/寒铁，飞行速度（机动性良好，肯定比狮鹫更好）。小牙仙是一种微型生物，可以使用武器，以及一次噬咬攻击（1d4）。"
   },
   {
     "Key": "NewSpellEmblemGreed.Name",
     "ProcessTemplates": false,
     "enGB": "Emblem of Greed",
+    "ruRU": "Эмблема алчности",
     "zhCN": "贪婪纹章"
   },
   {
     "Key": "NewSpellEmblemGreed.Description",
     "enGB": "You form a burning glaive using your magic. The weapon is appropriate to your size and has a +1 enhancement bonus and the flaming weapon special ability. When wielding the glaive, you are considered proficient with it and use your caster level as your base attack bonus (which may give you multiple attacks). The glaive’s enhancement bonus increases to +2 at caster level 15th, and +3 at caster level 19th. This spell is not cumulative with greater magic weapon or any other spell that might modify the weapon in any way.",
+    "ruRU": "Вы создаете горящую глефу при помощи своей магии. Это оружие подходит вам по размеру и имеет бонус усиления +1, а также свойство огненного оружия. Вы считаетесь умеющим обращаться с ней и используете свой уровень заклинателя в качестве базового модификатора атаки (что может дать вам дополнительные атаки). Бонус усиления глефы увеличивается до +2 на 15 уровне заклинателя и до +3 на 19 уровне. На эту глефу не работает заклинание Магическое оружие или любое другое, которое может как-либо изменять свойства оружия.",
     "zhCN": "你用魔法塑造一把燃烧的大砍刀。该武器适合你的体型，并具有+1增强加值和烈焰武器特殊能力。当挥舞这把大砍刀时，你视为擅长它，并使用你的施法者等级作为你的基本攻击加值（这可能会给你带来多次攻击）。施法者等级15级起，战刃的增强加值增加至+2，施法者等级19级起增加至+3。该法术不能与高等魔化武器或任何其他任何修改该武器的法术叠加。"
   }
 
