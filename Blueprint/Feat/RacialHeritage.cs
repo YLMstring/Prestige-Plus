@@ -65,6 +65,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(MultiArmedDisplayName)
               .SetDescription(MultiArmedDescription)
               .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.DoubleSlice.ToString())
               .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().Add<KasathaExtraAttack>().Build(),
                     onlyOnFullAttack: true, onlyOnFirstAttack: true, onlyHit: false)
               .Configure();
