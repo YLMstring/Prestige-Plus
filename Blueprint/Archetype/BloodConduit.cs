@@ -146,7 +146,7 @@ namespace PrestigePlus.Blueprint.Archetype
                     .ApplyBuff(SpellConduitBuffGuid, ContextDuration.Fixed(1), toCaster: true)
                     .Build();
 
-            return FeatureConfigurator.New(ReflexiveConduit, ReflexiveConduitGuid, FeatureGroup.MagusArcana)
+            return FeatureConfigurator.New(ReflexiveConduit, ReflexiveConduitGuid)
               .SetDisplayName(ReflexiveConduitDisplayName)
               .SetDescription(ReflexiveConduitDescription)
               .SetIcon(icon)
