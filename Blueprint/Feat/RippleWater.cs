@@ -52,7 +52,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDescription(Description)
               .SetIcon(icon)
               .AddPrerequisiteClassLevel(CharacterClassRefs.KineticistClass.ToString(), 1)
-              .AddPrerequisiteFeature(FeatureRefs.KiPowerFeature.ToString())
+              .AddPrerequisiteClassLevel(CharacterClassRefs.MonkClass.ToString(), 3)
               .AddPointBlankMaster(Kingmaker.Enums.WeaponCategory.KineticBlast)
               .AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.KiPowerResource.ToString(), ContextValues.Rank())
               .AddIncreaseResourceAmountBySharedValue(false, "fd01f3f969a04febab7877a17aebb812", ContextValues.Rank())
