@@ -5,6 +5,7 @@ using BlueprintCore.Utils;
 using BlueprintCore.Utils.Types;
 using Kingmaker.Blueprints;
 using Kingmaker.EntitySystem.Stats;
+using Kingmaker.Enums;
 using Kingmaker.Utility;
 using PrestigePlus.Blueprint.PrestigeClass;
 using PrestigePlus.Grapple;
@@ -54,6 +55,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteFeature(FeatureRefs.KiPowerFeature.ToString())
               .AddPointBlankMaster(Kingmaker.Enums.WeaponCategory.KineticBlast)
               .AddIncreaseResourceAmountBySharedValue(false, AbilityResourceRefs.KiPowerResource.ToString(), ContextValues.Rank())
+              .AddIncreaseResourceAmountBySharedValue(false, "fd01f3f969a04febab7877a17aebb812", ContextValues.Rank())
               .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { CharacterClassRefs.KineticistClass.ToString() }).WithOnePlusDiv2Progression())
               .SetClasses(BlueprintTool.GetRef<BlueprintCharacterClassReference>(CharacterClassRefs.MonkClass.ToString()))
               .SetGiveFeaturesForPreviousLevels(true)
