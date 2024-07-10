@@ -44,14 +44,14 @@ namespace PrestigePlus.HarmonyFix
         private static BlueprintFeatureReference Ace = BlueprintTool.GetRef<BlueprintFeatureReference>(RangedTrip.AceTripGuid);
     }
 
-    [HarmonyPatch(typeof(RuleCombatManeuver), nameof(RuleCombatManeuver.IsSuccessRoll))]
+    [HarmonyPatch(typeof(RuleCombatManeuver), nameof(RuleCombatManeuver.GetResultFromRoll))]
     internal class ManeuverImmunityFix2
     {
-        static void Postfix(ref RuleCombatManeuver __instance, ref bool __result)
+        static void Postfix(ref RuleCombatManeuver __instance, ref CombatManeuverResult __result)
         {
-            if (__result && __instance.Type == CombatManeuver.Trip && ModMenu.ModMenu.GetSettingValue<bool>(Main.GetKey("headkick")) && !__instance.Target.CanBeKnockedOff())
+            if (__instance.Type == CombatManeuver.Trip && ModMenu.ModMenu.GetSettingValue<bool>(Main.GetKey("headkick")) && __instance.Target.State.Prone.Active)
             {
-                __result = false;
+                __result = CombatManeuverResult.CriticalFail;
             }
         }
     }
