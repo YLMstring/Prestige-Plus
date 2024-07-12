@@ -36,7 +36,7 @@ namespace PrestigePlus.CustomComponent.Archetype
                         evt.AutoCriticalThreat = true;
                         evt.AutoCriticalConfirmation = true;
                     }
-                    Buff.SetRank(3);
+                    Buff.Rank = 3;
                 }
                 else
                 {

@@ -52,7 +52,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                 {
                     var attackAnimation = maybeCaster.View.AnimationManager.CreateHandle(UnitAnimationType.SpecialAttack);
                     maybeCaster.View.AnimationManager.Execute(attackAnimation);
-                    buff.SetRank(10);
+                    buff.Rank = 10;
                     RunAttackRule(maybeCaster, unit);
                     RunAttackRule(maybeCaster, unit);
                 }
