@@ -48,7 +48,7 @@ namespace PrestigePlus
         modEntry.OnToggle = OnToggle;
         var harmony = new Harmony(modEntry.Info.Id);
         harmony.PatchAll();
-        Logger.Info("Finished patching.");
+        Logger.Info("Finished patching");
       }
       catch (Exception e)
       {
