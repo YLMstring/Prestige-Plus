@@ -24,6 +24,7 @@ using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
 using Kingmaker.UnitLogic.Abilities;
 using PrestigePlus.CustomAction.ClassRelated;
 using PrestigePlus.CustomComponent.Archetype;
+using Kingmaker.UnitLogic.Mechanics.Actions;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -83,12 +84,31 @@ namespace PrestigePlus.Blueprint.Archetype
         private const string ArcaneAugmentationBuff2 = "SpireDefender.ArcaneAugmentationBuff2";
         private static readonly string ArcaneAugmentationBuff2Guid = "{E39EDFE6-D74D-4A96-B818-0225BD71BC31}";
 
+        private const string ArcaneAugmentationBuff = "SpireDefender.ArcaneAugmentationBuff";
+        private static readonly string ArcaneAugmentationBuffGuid = "{578D36FE-E97C-4CD9-BB84-2B2470978ADC}";
+
         internal const string ArcaneAugmentationDisplayName = "SpireDefenderArcaneAugmentation.Name";
         private const string ArcaneAugmentationDescription = "SpireDefenderArcaneAugmentation.Description";
 
         public static BlueprintFeature ArcaneAugmentationFeat()
         {
             var icon = AbilityRefs.Transformation.Reference.Get().Icon;
+
+            var Buff = BuffConfigurator.New(ArcaneAugmentationBuff, ArcaneAugmentationBuffGuid)
+             .SetDisplayName(ArcaneAugmentationDisplayName)
+             .SetDescription(ArcaneAugmentationDescription)
+             .SetIcon(icon)
+             .AddContextStatBonus(StatType.AdditionalAttackBonus, ContextValues.Property(Kingmaker.UnitLogic.Mechanics.Properties.UnitProperty.StatBonusCharisma, true), 
+                ModifierDescriptor.Insight)
+             .AddRecalculateOnStatChange(stat: StatType.Charisma)
+             .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+             .Configure();
+
+            var apply = AbilityRefs.EldritchArcaneAccuracyAbility.Reference.Get()?.GetComponent<AbilityEffectRunAction>()?.Actions?.Actions?.First();
+            if (apply is ContextActionApplyBuff applyBuff)
+            {
+                applyBuff.m_Buff = Buff.ToReference<BlueprintBuffReference>();
+            }
 
             var Buff2 = BuffConfigurator.New(ArcaneAugmentationBuff2, ArcaneAugmentationBuff2Guid)
              .SetDisplayName(ArcaneAugmentationDisplayName)
