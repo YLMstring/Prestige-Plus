@@ -24,6 +24,7 @@ namespace PrestigePlus.CustomComponent
             int num = SettingsRoot.Difficulty.EnemyDifficulty - 1;
             DifficultyPresetsList.StatsAdjustmentPreset adjustmentPreset = BlueprintRoot.Instance.DifficultyList.GetAdjustmentPreset(SettingsRoot.Difficulty.StatsAdjustments);
             int value = 4 * (adjustmentPreset.BasicStatBonusMultiplier + num);
+            int num2 = 2 * (adjustmentPreset.DerivativeStatBonusMultiplier + num);
             UnitPartSummonedMonster unitPartSummonedMonster = base.Owner.Get<UnitPartSummonedMonster>();
             int? num4;
             if (unitPartSummonedMonster == null)
@@ -41,6 +42,8 @@ namespace PrestigePlus.CustomComponent
             {
                 value /= 2;
             }
+            num2 = DifficultyStatAdvancement.ApplyBonusProgression(adjustmentPreset, cr, num2, false);
+            value = (value +  num2) / 2;
             value = Math.Min(value, Owner.Stats.Strength.Bonus + Owner.Stats.Dexterity.Bonus);
             value = Math.Max(value, 0);
             evt.AddModifier(-value, Fact, Kingmaker.Enums.ModifierDescriptor.Penalty);
