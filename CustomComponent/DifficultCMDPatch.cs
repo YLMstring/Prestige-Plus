@@ -43,6 +43,7 @@ namespace PrestigePlus.CustomComponent
                 value /= 2;
             }
             num2 = DifficultyStatAdvancement.ApplyBonusProgression(adjustmentPreset, cr, num2, false);
+            //Main.Logger.Info("value:" + value.ToString() + " num:" + num2.ToString());
             value = (value +  num2) / 2;
             value = Math.Min(value, Owner.Stats.Strength.Bonus + Owner.Stats.Dexterity.Bonus);
             value = Math.Max(value, 0);
