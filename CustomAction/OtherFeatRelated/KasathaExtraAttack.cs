@@ -18,6 +18,8 @@ using Kingmaker.Enums;
 using Kingmaker.Blueprints;
 using PrestigePlus.Blueprint.Feat;
 using Kingmaker.Utility;
+using Kingmaker.UnitLogic.Buffs;
+using static Kingmaker.UnitLogic.Abilities.Components.AbilityCustomVitalStrike;
 
 namespace PrestigePlus.CustomAction.OtherFeatRelated
 {
@@ -62,6 +64,8 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                     }
                 }
                 if (!weapons.Any()) return;
+
+                maybeCaster.Get<VitalStrikePart>()?.RemoveSelf();
                 RunAttackRule(maybeCaster, unit, weapons[0]);
                 if (weapons[0].Blueprint.Double == true)
                 {
