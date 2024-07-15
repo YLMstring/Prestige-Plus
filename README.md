@@ -398,8 +398,8 @@
 - It has nothing to do with your own alignment, or any other auras you might have.
 - [Shield Other](https://www.d20pfsrd.com/magic/all-spells/s/shield-other/)
 - Use a move action to end the spell instead of moving out of range, so that you won't lose it during cutscene, tavern etc.
-- [Inheritor's Smite](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Inheritor%27s%20Smite)
-- [Rovagug's Fury](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Inheritor%27s%20Smite)
+- [Inheritor's Smite](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Inheritor%27s%20Smite): requires worshipping Iomedae
+- [Rovagug's Fury](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Inheritor%27s%20Smite): requires worshipping Rovagug
 - [Hydraulic Torrent](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Hydraulic%20Torrent)
 - Where is Hydraulic Push? In [Expanded Content](https://github.com/ka-dyn/ExpandedContent)!
 - [Thunderstomp](https://www.aonprd.com/SpellDisplay.aspx?ItemName=Thunderstomp,%20Greater) and Greater!
