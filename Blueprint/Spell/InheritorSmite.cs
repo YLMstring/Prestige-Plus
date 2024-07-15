@@ -77,7 +77,7 @@ namespace PrestigePlus.Blueprint.Spell
               .AddToSpellLists(level: 2, SpellList.Warpriest)
               .AddToSpellLists(level: 2, SpellList.Paladin)
               .AddToSpellLists(level: 2, SpellList.Inquisitor)
-              //.AddAbilityCasterHasFacts(new() { FeatureRefs.IomedaeFeature.Reference.Get() })
+              .AddAbilityCasterHasFacts(new() { FeatureRefs.IomedaeFeature.Reference.Get() })
               .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
                   .ApplyBuff(buff, ContextDuration.Fixed(2), isFromSpell: true)

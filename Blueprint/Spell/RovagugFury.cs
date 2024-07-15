@@ -49,7 +49,7 @@ namespace PrestigePlus.Blueprint.Spell
               .AddToSpellLists(level: 2, SpellList.Bloodrager)
               .AddToSpellLists(level: 2, SpellList.Wizard)
               .AddToSpellLists(level: 2, SpellList.Witch)
-              //.AddAbilityCasterHasFacts(new() { FeatureRefs.RovagugFeature.Reference.Get() })
+              .AddAbilityCasterHasFacts(new() { FeatureRefs.RovagugFeature.Reference.Get() })
               .AddAbilityEffectRunAction(
                 actions: ActionsBuilder.New()
                   .CombatManeuver(ActionsBuilder.New().Build(), Kingmaker.RuleSystem.Rules.CombatManeuver.Trip)
