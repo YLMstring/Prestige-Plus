@@ -64,7 +64,6 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                     }
                 }
                 if (!weapons.Any()) return;
-                maybeCaster.Get<VitalStrikePart>()?.RemoveSelf();
                 RunAttackRule(maybeCaster, unit, weapons[0]);
                 if (weapons[0].Blueprint.Double == true)
                 {
