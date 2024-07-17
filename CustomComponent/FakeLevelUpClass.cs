@@ -152,7 +152,7 @@ namespace PrestigePlus.CustomComponent
     {
         static void Postfix(ref ClassProgressionVM __instance)
         {
-            if (__instance.Level.Value < 0)
+            if (__instance.Level.Value < 0 && !__instance.ProgressionVms.Any())
             {
                 __instance.ProgressionVms = [null];
             }
