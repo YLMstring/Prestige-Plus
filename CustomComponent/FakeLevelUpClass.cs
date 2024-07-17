@@ -23,6 +23,14 @@ using PrestigePlus.Blueprint.PrestigeClass;
 using Kingmaker.UnitLogic.Class.Kineticist;
 using BlueprintCore.Blueprints.References;
 using PrestigePlus.Blueprint.CombatStyle;
+using HarmonyLib;
+using Kingmaker.Controllers.Combat;
+using Kingmaker.Controllers.Projectiles;
+using Kingmaker.Designers;
+using Kingmaker.RuleSystem.Rules;
+using Kingmaker.Utility;
+using PrestigePlus.Blueprint.Archetype;
+using Kingmaker.UI.MVVM._VM.ServiceWindows.CharacterInfo.Sections.Progression.Main;
 
 namespace PrestigePlus.CustomComponent
 {
@@ -136,5 +144,17 @@ namespace PrestigePlus.CustomComponent
         }
 
         private static BlueprintCharacterClassReference FakeClass = BlueprintTool.GetRef<BlueprintCharacterClassReference>(FakeAlignedClass.ArchetypeGuid);
+    }
+
+    [HarmonyPatch(typeof(ClassProgressionVM), nameof(ClassProgressionVM.ProgressionVms), MethodType.Getter)]
+    internal class FixNoToybox
+    {
+        static void Postfix(ref List<ProgressionVM> __result)
+        {
+            if (!__result.Any())
+            {
+                __result = [null];
+            }
+        }
     }
 }
