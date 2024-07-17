@@ -158,4 +158,16 @@ namespace PrestigePlus.CustomComponent
             }
         }
     }
+
+    [HarmonyPatch(typeof(ClassProgressionVM), nameof(ClassProgressionVM.DisposeImplementation))]
+    internal class FixNoToybox2
+    {
+        static void Prefix(ref ClassProgressionVM __instance)
+        {
+            if (__instance.ProgressionVms.First() == null)
+            {
+                __instance.ProgressionVms = [];
+            }
+        }
+    }
 }
