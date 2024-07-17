@@ -31,6 +31,7 @@ using Kingmaker.RuleSystem.Rules;
 using Kingmaker.Utility;
 using PrestigePlus.Blueprint.Archetype;
 using Kingmaker.UI.MVVM._VM.ServiceWindows.CharacterInfo.Sections.Progression.Main;
+using UniRx;
 
 namespace PrestigePlus.CustomComponent
 {
@@ -146,14 +147,14 @@ namespace PrestigePlus.CustomComponent
         private static BlueprintCharacterClassReference FakeClass = BlueprintTool.GetRef<BlueprintCharacterClassReference>(FakeAlignedClass.ArchetypeGuid);
     }
 
-    [HarmonyPatch(typeof(ClassProgressionVM), nameof(ClassProgressionVM.ProgressionVms), MethodType.Getter)]
+    [HarmonyPatch(typeof(ClassProgressionVM), nameof(ClassProgressionVM.AddAdditionalProgressions))]
     internal class FixNoToybox
     {
-        static void Postfix(ref List<ProgressionVM> __result)
+        static void Postfix(ref ClassProgressionVM __instance)
         {
-            if (!__result.Any())
+            if (__instance.Level.Value < 0)
             {
-                __result = [null];
+                __instance.ProgressionVms = [null];
             }
         }
     }

@@ -69,6 +69,9 @@
     <Reference Include="TabletopTweaks-Core">
       <HintPath>Menu\TabletopTweaks-Core.dll</HintPath>
     </Reference>
+    <Reference Include="UniRx">
+      <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\Pathfinder Second Adventure\Wrath_Data\Managed\UniRx.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine">
       <HintPath>$(WrathPath)\Wrath_Data\Managed\UnityEngine.dll</HintPath>
     </Reference>
