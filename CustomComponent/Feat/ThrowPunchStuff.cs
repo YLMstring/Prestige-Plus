@@ -1,6 +1,7 @@
 ﻿using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Enums;
@@ -21,7 +22,9 @@ using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
+using static Kingmaker.GameModes.GameModeType;
 using static Pathfinding.Util.RetainedGizmos;
+
 
 namespace PrestigePlus.CustomComponent.Feat
 {
@@ -37,7 +40,7 @@ namespace PrestigePlus.CustomComponent.Feat
                     list.Add(this.ChangeType(damage));
                 }
                 evt.Damage.Remove((BaseDamage _) => true);
-                var abilitydata = new AbilityData(AbilityRefs.ExpeditiousRetreat.Reference.Get(), Owner);
+                var abilitydata = GetData(Owner);
                 var cont = abilitydata.CreateExecutionContext(Owner, null);
                 if (Rulebook.Trigger(new RuleSpellResistanceCheck(cont, evt.Target)).IsSpellResisted) { return; }
                 foreach (BaseDamage damage2 in list)
@@ -59,10 +62,31 @@ namespace PrestigePlus.CustomComponent.Feat
 			return Damage2;
 		}
 
+        public static AbilityData GetData(UnitEntityData caster)
+        {
+            ClassData classData1 = null;
+            foreach (ClassData classData2 in caster.Descriptor.Progression.Classes)
+            {
+                if (classData2.Spellbook != null)
+                {
+                    if (classData1 == null) { classData1 = classData2; }
+                    else if (classData2.Level + classData2.Spellbook.CasterLevelModifier > classData1.Level + classData1.Spellbook.CasterLevelModifier)
+                    {
+                        classData1 = classData2;
+                    }
+                }
+            }
+            if (classData1 != null)
+            {
+                return new AbilityData(AbilityRefs.ExpeditiousRetreat.Reference.Get(), caster, null, classData1.Spellbook);
+            }
+            return null; 
+        }
+
         void IRulebookHandler<RuleCalculateAttackBonusWithoutTarget>.OnEventAboutToTrigger(RuleCalculateAttackBonusWithoutTarget evt)
         {
             if (evt.Weapon?.Blueprint.Category != WeaponCategory.UnarmedStrike) { return; }
-            var abilitydata = new AbilityData(AbilityRefs.ExpeditiousRetreat.Reference.Get(), Owner);
+            var abilitydata = GetData(Owner);
             var cont = abilitydata.CreateExecutionContext(Owner, null);
             int num = cont.Params.CasterLevel;
             ModifierDescriptor des = ModifierDescriptor.UntypedStackable;

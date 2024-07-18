@@ -11,6 +11,7 @@ using Kingmaker.UnitLogic.Buffs;
 using Kingmaker.UnitLogic.Parts;
 using PrestigePlus.Blueprint.Feat;
 using PrestigePlus.Blueprint.Spell;
+using PrestigePlus.CustomComponent.Feat;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,7 +31,7 @@ namespace PrestigePlus.HarmonyFix
                 var caster = __instance.Initiator;
                 if (caster.HasFact(Buff1) && caster.GetThreatHandMelee()?.Weapon.Blueprint.Category == Kingmaker.Enums.WeaponCategory.UnarmedStrike)
                 {
-                    var abilitydata = new AbilityData(AbilityRefs.ExpeditiousRetreat.Reference.Get(), caster);
+                    var abilitydata = ThrowPunchStuff.GetData(caster);
                     var cont = abilitydata.CreateExecutionContext(caster, null);
                     int num = cont.Params.CasterLevel;
                     int num2 = Math.Max(0, num / 5 - ((num % 5 == 0) ? 1 : 0));
