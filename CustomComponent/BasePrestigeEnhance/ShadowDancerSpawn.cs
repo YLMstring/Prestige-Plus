@@ -32,8 +32,6 @@ namespace PrestigePlus.CustomComponent.BasePrestigeEnhance
                 Owner.Stats.SaveWill.AddModifier(will, Runtime, ModifierDescriptor.UntypedStackable);
             }
         }
-
-        // Token: 0x0600E570 RID: 58736 RVA: 0x003AB2CE File Offset: 0x003A94CE
         public override void OnDeactivate()
         {
             Owner.Stats.HitPoints.RemoveModifiersFrom(Runtime);
