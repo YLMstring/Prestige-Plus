@@ -76,11 +76,7 @@ namespace PrestigePlus.CustomComponent.Feat
                     }
                 }
             }
-            if (classData1 != null)
-            {
-                return new AbilityData(AbilityRefs.ExpeditiousRetreat.Reference.Get(), caster, null, classData1.Spellbook);
-            }
-            return null; 
+            return new AbilityData(AbilityRefs.ExpeditiousRetreat.Reference.Get(), caster, null, classData1?.Spellbook);
         }
 
         void IRulebookHandler<RuleCalculateAttackBonusWithoutTarget>.OnEventAboutToTrigger(RuleCalculateAttackBonusWithoutTarget evt)
