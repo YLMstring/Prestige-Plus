@@ -37,6 +37,12 @@ namespace PrestigePlus.Blueprint.Feat
         {
             var icon = AbilityRefs.DispelMagic.Reference.Get().Icon;
             ReachingHandConfigure(); ConfigureMageHandMythic();
+
+            AbilityConfigurator.For(AbilityRefs.ExpeditiousRetreat)
+                .SetSpellResistance()
+                .SetIgnoreSpellResistanceForAlly()
+                .Configure();
+
             FeatureConfigurator.New(MageHandMainFeatName, MageHandMainFeatGuid, FeatureGroup.Feat)
                     .SetDisplayName(MageHandMainDisplayName)
                     .SetDescription(MageHandMainDescription)
