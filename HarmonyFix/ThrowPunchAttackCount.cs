@@ -1,10 +1,12 @@
-﻿using BlueprintCore.Utils;
+﻿using BlueprintCore.Blueprints.References;
+using BlueprintCore.Utils;
 using HarmonyLib;
 using Kingmaker.Blueprints;
 using Kingmaker.RuleSystem.Rules;
 using Kingmaker.RuleSystem.Rules.Damage;
 using Kingmaker.Settings;
 using Kingmaker.UnitLogic;
+using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Buffs;
 using Kingmaker.UnitLogic.Parts;
 using PrestigePlus.Blueprint.Feat;
@@ -28,14 +30,9 @@ namespace PrestigePlus.HarmonyFix
                 var caster = __instance.Initiator;
                 if (caster.HasFact(Buff1) && caster.GetThreatHandMelee()?.Weapon.Blueprint.Category == Kingmaker.Enums.WeaponCategory.UnarmedStrike)
                 {
-                    int num = 0;
-                    foreach (ClassData classData2 in caster.Descriptor.Progression.Classes)
-                    {
-                        if (classData2.Spellbook != null)
-                        {
-                            num += Math.Max(classData2.Level + classData2.Spellbook.CasterLevelModifier, 0);
-                        }
-                    }
+                    var abilitydata = new AbilityData(AbilityRefs.ExpeditiousRetreat.Reference.Get(), caster);
+                    var cont = abilitydata.CreateExecutionContext(caster, null);
+                    int num = cont.Params.CasterLevel;
                     int num2 = Math.Max(0, num / 5 - ((num % 5 == 0) ? 1 : 0));
                     if (num2 > 3 && caster.Get<UnitPartCompanion>() == null)
                     {
