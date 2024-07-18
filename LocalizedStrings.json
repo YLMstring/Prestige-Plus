@@ -181,9 +181,9 @@
 
   {
     "Key": "ShadowDancerSummonShadow.Description",
-    "enGB": "Once per day, as a free action you can summons a shadow which scales with your level. Summoned monsters appear where you designate and act according to their initiative results. They attack your opponents to the best of their ability.",
-    "ruRU": "Раз в день, свободным действием вы можете призвать тень использующую ваш уровень для определения своих характеристик. Призванный союзник появляется там, где вы укажете, совершает проверку инициативы и действует в соответствии с её результатом. Она атакует ваших врагов так хорошо, как может.",
-    "zhCN": "每日一次，你可以用自由动作召唤一个随你成长的幽影。它会在你的回合出现在你指定的位置，并根据其先攻展开行动。它会尽全力攻击你的敌人。"
+    "enGB": "Once per day, as a free action you can summons a shadow, an undead shade. This shadow has a number of hit points equal to half the shadowdancer’s total. The shadow uses the shadowdancer’s base attack bonus and base save bonuses. Summoned monsters appear where you designate and act according to their initiative results. They attack your opponents to the best of their ability.",
+    "ruRU": "Once per day, as a free action you can summons a shadow, an undead shade. This shadow has a number of hit points equal to half the shadowdancer’s total. The shadow uses the shadowdancer’s base attack bonus and base save bonuses. Призванный союзник появляется там, где вы укажете, совершает проверку инициативы и действует в соответствии с её результатом. Она атакует ваших врагов так хорошо, как может.",
+    "zhCN": "每日一次，你可以用自由动作召唤一个不死幽影。其生命值是影舞者的一半，且使用影舞者的基础攻击加值和豁免的基础值。它会在你的回合出现在你指定的位置，并根据其先攻展开行动。它会尽全力攻击你的敌人。"
   },
 
   {
