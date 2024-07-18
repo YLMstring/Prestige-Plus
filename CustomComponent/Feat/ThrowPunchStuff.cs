@@ -62,15 +62,10 @@ namespace PrestigePlus.CustomComponent.Feat
         void IRulebookHandler<RuleCalculateAttackBonusWithoutTarget>.OnEventAboutToTrigger(RuleCalculateAttackBonusWithoutTarget evt)
         {
             if (evt.Weapon?.Blueprint.Category != WeaponCategory.UnarmedStrike) { return; }
-            int num = 0;
+            var abilitydata = new AbilityData(AbilityRefs.ExpeditiousRetreat.Reference.Get(), Owner);
+            var cont = abilitydata.CreateExecutionContext(Owner, null);
+            int num = cont.Params.CasterLevel;
             ModifierDescriptor des = ModifierDescriptor.UntypedStackable;
-            foreach (ClassData classData2 in Owner.Descriptor.Progression.Classes)
-            {
-                if (classData2.Spellbook != null)
-                {
-                    num += Math.Max(classData2.Level + classData2.Spellbook.CasterLevelModifier, 0);
-                }
-            }
             num -= Owner.Stats.BaseAttackBonus;
             if (num < 0)
             {
