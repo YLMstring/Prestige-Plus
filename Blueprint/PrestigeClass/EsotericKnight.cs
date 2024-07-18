@@ -697,10 +697,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                         monster: UnitRefs.CR3_Shadow.ToString(),
                         summonPool: ShadowDancer.SummonPoolGuid,
                         afterSpawn: ActionsBuilder.New()
-                            .ApplyBuffPermanent(ShadowDancer.ShadowEnhanceGuidBuff)
-                            .ApplyBuffPermanent(ShadowDancer.ShadowEnhanceGuidBuff2)
-                            .ApplyBuffPermanent(ShadowDancer.ShadowEnhanceGuidBuff3)
-                            .ApplyBuffPermanent(ShadowDancer.ShadowEnhanceGuidBuff4)
                             .ApplyBuffPermanent(ShadowDancer.ShadowEnhanceGuidBuff5)
                             .Build()))
                 .Configure();

@@ -47,6 +47,7 @@ using Kingmaker.Designers.EventConditionActionSystem.ContextData;
 using BlueprintCore.Conditions.Builder;
 using Kingmaker.UnitLogic.Abilities.Components.TargetCheckers;
 using static Kingmaker.EntitySystem.Properties.BaseGetter.PropertyContextAccessor;
+using PrestigePlus.CustomComponent.BasePrestigeEnhance;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -460,18 +461,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string SummonPool = "ShadowDancer.SummonPool";
         public static readonly string SummonPoolGuid = "{EE0B8E46-A28F-4913-82A3-D3E9DDFE8A37}";
 
-        private const string ShadowEnhanceBuff = "ShadowEnhanceBuff";
-        public static readonly string ShadowEnhanceGuidBuff = "{A9ADB781-2778-421F-8078-5AAB2FC906DC}";
-
-        private const string ShadowEnhanceBuff2 = "ShadowEnhanceBuff2";
-        public static readonly string ShadowEnhanceGuidBuff2 = "{C83A900B-35C2-4ABA-9D6F-FC661AC07802}";
-
-        private const string ShadowEnhanceBuff3 = "ShadowEnhanceBuff3";
-        public static readonly string ShadowEnhanceGuidBuff3 = "{15DFA947-288C-4FD4-A0B2-C7C518A791C6}";
-
-        private const string ShadowEnhanceBuff4 = "ShadowEnhanceBuff4";
-        public static readonly string ShadowEnhanceGuidBuff4 = "{855A8B79-12FC-47D2-AA57-80D6103DBBBC}";
-
         private const string ShadowEnhanceBuff5 = "ShadowEnhanceBuff5";
         public static readonly string ShadowEnhanceGuidBuff5 = "{9D56C8F1-25DF-493E-9949-36B6BB9B8D13}";
         private static BlueprintFeature CreateSummonShadow()
@@ -488,50 +477,13 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDoNotRemoveDeadUnits(false)
                 .Configure();
 
-            var Buff1 = BuffConfigurator.New(ShadowEnhanceBuff, ShadowEnhanceGuidBuff)
-              .SetDisplayName(SummonShadowDisplayName)
-              .SetDescription(SummonShadowDescription)
-              .SetIcon(icon)
-              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
-              .AddContextRankConfig(ContextRankConfigs.BaseStat(StatType.BaseAttackBonus).WithLinearProgression(1, -2, minProgressionValue: 0))
-              .AddContextStatBonus(stat: StatType.BaseAttackBonus, value: ContextValues.Rank())
-              .Configure();
-
-            var Buff2 = BuffConfigurator.New(ShadowEnhanceBuff2, ShadowEnhanceGuidBuff2)
-              .SetDisplayName(SummonShadowDisplayName)
-              .SetDescription(SummonShadowDescription)
-              .SetIcon(icon)
-              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
-              .AddContextRankConfig(ContextRankConfigs.BaseStat(StatType.HitPoints).WithLinearProgression(1, -20, minProgressionValue: 0))
-              .AddContextStatBonus(stat: StatType.HitPoints, value: ContextValues.Rank())
-              .Configure();
-
-            var Buff3 = BuffConfigurator.New(ShadowEnhanceBuff3, ShadowEnhanceGuidBuff3)
-              .SetDisplayName(SummonShadowDisplayName)
-              .SetDescription(SummonShadowDescription)
-              .SetIcon(icon)
-              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
-              .AddContextRankConfig(ContextRankConfigs.BaseStat(StatType.SaveFortitude).WithLinearProgression(1, -1, minProgressionValue: 0))
-              .AddContextStatBonus(stat: StatType.SaveFortitude, value: ContextValues.Rank())
-              .Configure();
-
-            var Buff4 = BuffConfigurator.New(ShadowEnhanceBuff4, ShadowEnhanceGuidBuff4)
-              .SetDisplayName(SummonShadowDisplayName)
-              .SetDescription(SummonShadowDescription)
-              .SetIcon(icon)
-              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
-              .AddContextRankConfig(ContextRankConfigs.BaseStat(StatType.SaveReflex).WithLinearProgression(1, -1, minProgressionValue: 0))
-              .AddContextStatBonus(stat: StatType.SaveReflex, value: ContextValues.Rank())
-              .Configure();
-
             var Buff5 = BuffConfigurator.New(ShadowEnhanceBuff5, ShadowEnhanceGuidBuff5)
               .SetDisplayName(SummonShadowDisplayName)
               .SetDescription(SummonShadowDescription)
               .SetIcon(icon)
               .SetFlags(BlueprintBuff.Flags.HiddenInUi)
               .AddFacts(new() { FeatureRefs.ChannelResistance4.ToString() })
-              .AddContextRankConfig(ContextRankConfigs.BaseStat(StatType.SaveWill).WithLinearProgression(1, -3, minProgressionValue: 0))
-              .AddContextStatBonus(stat: StatType.SaveWill, value: ContextValues.Rank())
+              .AddComponent<ShadowDancerSpawn>()
               .Configure();
 
             var ability = AbilityConfigurator.New(SummonShadowAblity, SummonShadowAblityGuid)
@@ -549,10 +501,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                         monster: UnitRefs.CR3_Shadow.ToString(),
                         summonPool: summonpool,
                         afterSpawn: ActionsBuilder.New()
-                            .ApplyBuffPermanent(Buff1)
-                            .ApplyBuffPermanent(Buff2)
-                            .ApplyBuffPermanent(Buff3)
-                            .ApplyBuffPermanent(Buff4)
                             .ApplyBuffPermanent(Buff5)
                             .Build()))
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
