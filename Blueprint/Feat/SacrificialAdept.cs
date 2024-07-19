@@ -41,7 +41,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static void Configure()
         {
-            var icon = AbilityRefs.Blasphemy.Reference.Get().Icon;
+            var icon = AbilityRefs.Dictum.Reference.Get().Icon;
 
             var BuffSacrificialAdept = BuffConfigurator.New(SacrificialAdeptbuff, SacrificialAdeptbuffGuid)
               .SetDisplayName(DisplayName)
@@ -49,7 +49,6 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddComponent<SacrificialAdeptComp>()
               .AddUniqueBuff()
-              .AddComponent(AbilityRefs.Blasphemy.Reference.Get().GetComponent<AbilitySpawnFx>())
               .Configure();
 
             var action = ActionsBuilder.New()
@@ -60,6 +59,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetDisplayName(DisplayName)
                 .SetDescription(Description)
                 .SetIcon(icon)
+                .AddComponent(AbilityRefs.NegativeEruption.Reference.Get().GetComponent<AbilitySpawnFx>())
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                         .OnContextCaster(action, true)
                         .Kill(Kingmaker.UnitLogic.UnitState.DismemberType.LimbsApart)
@@ -103,7 +103,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         void IRulebookHandler<RuleSpellResistanceCheck>.OnEventAboutToTrigger(RuleSpellResistanceCheck evt)
         {
-            if (evt.Reason?.Ability?.Blueprint.Type == AbilityType.Spell && Buff?.Context?.MaybeCaster?.State?.IsDead == true)
+            if (Buff?.Context?.MaybeCaster?.State?.IsDead == true)
             {
                 evt.AddSpellPenetration(2);
             }
