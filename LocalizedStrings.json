@@ -14389,6 +14389,17 @@
     "enGB": "You form a burning glaive using your magic. The weapon is appropriate to your size and has a +1 enhancement bonus and the flaming weapon special ability. When wielding the glaive, you are considered proficient with it and use your caster level as your base attack bonus (which may give you multiple attacks). The glaive’s enhancement bonus increases to +2 at caster level 15th, and +3 at caster level 19th. This spell is not cumulative with greater magic weapon or any other spell that might modify the weapon in any way.",
     "ruRU": "Вы создаете горящую глефу при помощи своей магии. Это оружие подходит вам по размеру и имеет бонус усиления +1, а также свойство огненного оружия. Вы считаетесь умеющим обращаться с ней и используете свой уровень заклинателя в качестве базового модификатора атаки (что может дать вам дополнительные атаки). Бонус усиления глефы увеличивается до +2 на 15 уровне заклинателя и до +3 на 19 уровне. На эту глефу не работает заклинание Магическое оружие или любое другое, которое может как-либо изменять свойства оружия.",
     "zhCN": "你用魔法塑造一把燃烧的大砍刀。该武器适合你的体型，并具有+1增强加值和烈焰武器特殊能力。当挥舞这把大砍刀时，你视为擅长它，并使用你的施法者等级作为你的基本攻击加值（这可能会给你带来多次攻击）。施法者等级15级起，战刃的增强加值增加至+2，施法者等级19级起增加至+3。该法术不能与高等魔化武器或任何其他任何修改该武器的法术叠加。"
+  },
+  {
+    "Key": "SacrificialAdept.Name",
+    "ProcessTemplates": false,
+    "enGB": "Sacrificial Adept",
+    "zhCN": "献祭专家"
+  },
+  {
+    "Key": "SacrificialAdept.Description",
+    "enGB": "The deaths of living, sentient creatures fuel your spells and heighten their potency. By partaking in a heinous ritual that takes at least 10 minutes to complete and which requires you to perform a successful coup de grace upon a sacrifice, you can enhance the power of your spells for the next 24 hours. Your sacrifice must be a party member, and it must die from your coup de grace; if it doesn’t die or comes back to life, you lose all benefits related to that sacrifice. After successfully performing the ritual, you gain a +2 bonus to any attack rolls and combat maneuvers made with your spells and a +2 bonus on caster level checks to overcome spell resistance for 24 hours.",
+    "zhCN": "感性活物之死可以增强你的法术，提高其效力。通过一个至少需要 10 分钟才能完成的令人发指的邪恶仪式，你对牺牲品成功施展致命一击后，可以在接下来的24小时内增强你的法术的力量。你的牺牲品必须是队伍成员，而且必须死于你的致命一击；如果它没有死亡或是被复活，你失去与该牺牲品相关的所有好处。成功执行仪式后，你在使用法术进行的任何攻击检定和战技检定上获得+2加值，并且在克服法术抗力的施法者等级检定上获得+2加值，持续24小时。"
   }
 
 ]

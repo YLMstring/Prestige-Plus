@@ -422,7 +422,7 @@ namespace PrestigePlus
                     Logger.Info("Configuring blueprints!"); 
                     SpellbookReplace.Select(); SpellbookLevelUp.Select(); ImbueArrow.Configure(); ShadowDancer.CreateProficiencies(); ShadowDancer.ExtraShadowJump(); ShadowDancer.ExtraFeat(); SeizetheOpportunity.Configure(); AerialAssault.ConfigureAbility(); FakeAlignedClass.Configure(); BodyGuard.StyleMasterConfigure();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("grapple"))) { ImprovedGrapple.StyleConfigure(); ImprovedGrappleMythic.Configure(); GreaterGrapple.Configure(); ManeuverExpert.Configure(); RapidGrappler.Configure(); UnfairGrip.Configure(); PinningKnockout.Configure(); PinningRend.Configure(); SavageSlam.Configure(); UncannyGrapple.Configure(); HamatulaStrike.Configure(); DramaticSlam.Configure(); KnotExpert.Configure(); AerialAssault.Configure(); MeatShield.Configure(); ThroatSlicer.Configure(); CrabKing.Configure(); CrabKing.Configure2(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("grave"))) AgentoftheGrave.Configure();
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("grave"))) { AgentoftheGrave.Configure(); SacrificialAdept.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("archer"))) { ArcaneArcher.Configure(); StormArrow.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("archer")) && ModMenu.ModMenu.GetSettingValue<bool>(GetKey("devotee"))) DeadeyeDevotee.Configure();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("chevalier"))) Chevalier.Configure();
