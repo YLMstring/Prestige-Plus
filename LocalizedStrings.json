@@ -182,7 +182,7 @@
   {
     "Key": "ShadowDancerSummonShadow.Description",
     "enGB": "Once per day, as a free action you can summons a shadow, an undead shade. This shadow has a number of hit points equal to half the shadowdancer’s total. The shadow uses the shadowdancer’s base attack bonus and base save bonuses. Summoned monsters appear where you designate and act according to their initiative results. They attack your opponents to the best of their ability.",
-    "ruRU": "Once per day, as a free action you can summons a shadow, an undead shade. This shadow has a number of hit points equal to half the shadowdancer’s total. The shadow uses the shadowdancer’s base attack bonus and base save bonuses. Призванный союзник появляется там, где вы укажете, совершает проверку инициативы и действует в соответствии с её результатом. Она атакует ваших врагов так хорошо, как может.",
+    "ruRU": "Раз в день, свободным действием, вы можете призвать тень. Эта тень имеет количество здоровья, равное половине здоровья танцора теней. Тень использует базовый модификатор атаки и базовые бонусы к спасброскам танцора теней. Призванный союзник появляется там, где вы укажете, совершает проверку инициативы и действует в соответствии с её результатом. Она атакует ваших врагов так хорошо, как может.",
     "zhCN": "每日一次，你可以用自由动作召唤一个不死幽影。其生命值是影舞者的一半，且使用影舞者的基础攻击加值和豁免的基础值。它会在你的回合出现在你指定的位置，并根据其先攻展开行动。它会尽全力攻击你的敌人。"
   },
 
@@ -14394,11 +14394,13 @@
     "Key": "SacrificialAdept.Name",
     "ProcessTemplates": false,
     "enGB": "Sacrificial Adept",
+    "ruRU": "Жертвенный адепт",
     "zhCN": "献祭专家"
   },
   {
     "Key": "SacrificialAdept.Description",
     "enGB": "The deaths of living, sentient creatures fuel your spells and heighten their potency. By partaking in a heinous ritual that takes at least 10 minutes to complete and which requires you to perform a successful coup de grace upon a sacrifice, you can enhance the power of your spells for the next 24 hours. Your sacrifice must be a party member, and it must die from your coup de grace; if it doesn’t die or comes back to life, you lose all benefits related to that sacrifice. After successfully performing the ritual, you gain a +2 bonus to any attack rolls and combat maneuvers made with your spells and a +2 bonus on caster level checks to overcome spell resistance for 24 hours.",
+    "ruRU": "Смерти живых разумных существ питают ваши заклинания и увеличивают их мощность. Приняв участие в отвратительном ритуале, который занимает не менее 10 минут и требует, чтобы вы совершили успешный добивающий удар, вы сможете усилить силу своих заклинаний на следующие 24 часа. Жертвой должен быть член вашего отрядаи она должна умереть от вашего добивающего удара; если она не умирают или возвращается к жизни, то вы теряете все преимущества от этого жертвоприношения. После успешного проведения ритуала ваши заклинания получают бонус +2 ко всем броскам на попадание и проверкам боевых маневров, а также бонус +2 к проверкам уровня заклинатиля для преодоления устойчивости к магии на 24 часа.",
     "zhCN": "感性活物之死可以增强你的法术，提高其效力。通过一个至少需要 10 分钟才能完成的令人发指的邪恶仪式，你对牺牲品成功施展致命一击后，可以在接下来的24小时内增强你的法术的力量。你的牺牲品必须是队伍成员，而且必须死于你的致命一击；如果它没有死亡或是被复活，你失去与该牺牲品相关的所有好处。成功执行仪式后，你在使用法术进行的任何攻击检定和战技检定上获得+2加值，并且在克服法术抗力的施法者等级检定上获得+2加值，持续24小时。"
   }
 
