@@ -445,6 +445,7 @@
 - Fix the bug that prone unit can be tripped. If you would allow some kind of head kicking, turn this off in mod menu.
 - Fix the bug that physical kinetic blasts that create an area effect don't count as magical.
 - Fix the bug(?) that a sawtooth saber can't be wielded with two hands.
+- Fix the bug that eldritch scion's arcane accuracy incorrectly uses INT.
 ## Mod Combo
 
 ### [Character Options+](https://github.com/WittleWolfie/CharacterOptionsPlus)
