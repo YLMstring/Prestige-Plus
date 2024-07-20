@@ -60,7 +60,7 @@ namespace PrestigePlus.Blueprint.MythicFeat
                     .SetDisplayName(DisplayName2)
                     .SetDescription(Description2)
                     .SetIcon(icon)
-                    .AddPrerequisiteFeature(FeatureRefs.LoremasterGreaterLore.ToString())
+                    .AddPrerequisiteFeature(FeatureRefs.LoremasterLore.ToString())
                     .AddPrerequisiteFeature(FeatureRefs.RangedLegerdemainFeature.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                     .AddPrerequisiteFeature(ExaltedEvangelist.ExaltedDomainPlusGuid, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                     .AddToFeatureSelection("0d3a3619-9d99-47af-8e47-cb6cc4d26821") //ttt
