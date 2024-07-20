@@ -11864,9 +11864,9 @@
   },
   {
     "Key": "HeritorKnightSkillHeart.Description",
-    "enGB": "If the heritor knight has the weapon training class feature, she gets full weapon training progression at 3rd and 8th level. In addition, heritor knight levels stack with fighter levels +1 for the purpose of feat prerequisites.",
-    "ruRU": "Если у рыцаря Наследницы есть классовая способность Мастерство владения оружием, то он получает улучшения этой способности на 3 и 8 уровнях. Кроме того, уровни рыцаря Наследницы складываются уровнями воина для определения соответствия требованиям черт.",
-    "zhCN": "如果后继骑士具有武器训练职业能力，那么3级和8级时她会获得完整的武器训练成长。此外，在判断专长的先决条件时，将她的后继骑士等级与战士等级叠加+1进行计算。"
+    "enGB": "If the heritor knight has the weapon training class feature, she gets full weapon training progression at 3rd and 8th level. In addition, heritor knight levels stack with fighter levels for the purpose of feat prerequisites.",
+    "ruRU": "Если у рыцаря Наследницы есть классовая способность Мастерство владения оружием, то он получает улучшения этой способности на 3 и 8 уровнях. In addition, heritor knight levels stack with fighter levels for the purpose of feat prerequisites.",
+    "zhCN": "如果后继骑士具有武器训练职业能力，那么3级和8级时她会获得完整的武器训练成长。此外，在判断专长的先决条件时，将她的后继骑士等级与战士等级叠加进行计算。"
   },
   {
     "Key": "HeritorKnightHeritorHonor.Name",

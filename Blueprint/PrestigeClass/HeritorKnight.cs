@@ -113,7 +113,14 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(SkillHeartDisplayName)
               .SetDescription(SkillHeartDescription)
               .SetIcon(icon)
-              .AddClassLevelsForPrerequisites(actualClass: ArchetypeGuid, fakeClass: CharacterClassRefs.FighterClass.ToString(), modifier: 1, summand: 1)
+              .AddClassLevelsForPrerequisites(actualClass: ArchetypeGuid, fakeClass: CharacterClassRefs.FighterClass.ToString(), modifier: 1, summand: 0)
+              .AddComponent<ClassLevelsForPrerequisites>(c => {
+                  c.m_ActualClass = BlueprintTool.GetRef<BlueprintCharacterClassReference>(ArchetypeGuid);
+                  c.m_FakeClass = CharacterClassRefs.FighterClass.Reference.Get().ToReference<BlueprintCharacterClassReference>();
+                  c.m_ForSelection = FeatureSelectionRefs.WeaponTrainingSelection.Reference.Get().ToReference<BlueprintFeatureSelectionReference>();
+                  c.Modifier = 1;
+                  c.Summand = 0;
+              })
               .SetIgnorePrerequisites(false)
               .SetObligatory(false)
               .AddToAllFeatures(AsOneFeature())
