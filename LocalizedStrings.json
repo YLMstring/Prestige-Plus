@@ -4461,7 +4461,7 @@
     "Key": "FeatGreaterSunderTabletop.Description",
     "enGB": "Your sunder combat maneuver no longer disables armor, but rends it. If the check is successful, deal your weapon damage to the target and reduce the target’s armor bonus, natural armor bonus, or shield bonus by half your tier (minimum 1). If the creature has an enhancement bonus to the bonus you chose, reduce the normal bonus first, then apply any leftover reduction to the enhancement bonus. You can’t reduce the bonus below 0.",
     "ruRU": "Ваша боевой маневр разрушения брони больше не нейтрализует броню, но разрывает её. Если вы успешно проходите проверку боевого маневра, вы наносите ваш урон оружием цели и уменьшаете её бонус брони, естественной защиты или щита на половину вашего мифического уровня (минимум 1). Если у существа есть бонус усиления к выбранному вами бонусу, то сначала уменьшите обычный бонус, а затем бонус усиления. Вы не можете уменьшить бонус ниже 0.",
-    "zhCN": "你的击破战技不再禁用对手的盔甲，二是直接撕裂它。如果战技检定成功，你造成武器攻击伤害并在对手的盔甲，天生护甲或者盾牌加值中减少等同于神话等级1/2的加值（至少为1），如果对手在上述加值中有增强加值，也可以扣减，但不能扣减成负值。"
+    "zhCN": "你的击破战技不再禁用对手的盔甲，而是直接撕裂它。如果战技检定成功，你造成武器攻击伤害并在对手的盔甲，天生护甲或者盾牌加值中减少等同于神话等级1/2的加值（至少为1），如果对手在上述加值中有增强加值，也可以扣减，但不能扣减成负值。"
   },
 
   {

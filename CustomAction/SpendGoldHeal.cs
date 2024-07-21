@@ -31,9 +31,6 @@ namespace PrestigePlus.CustomAction
             {
                 unit.Descriptor.Damage = 0;
             }
-            unit.RemoveFact(Constitution);
         }
-        //internal const string LegendaryConstitution = "a8aab8e0-e601-4b71-82db-ecd5dfdb5953";
-        private static BlueprintFeatureReference Constitution = BlueprintTool.GetRef<BlueprintFeatureReference>("a8aab8e0-e601-4b71-82db-ecd5dfdb5953");
     }
 }
