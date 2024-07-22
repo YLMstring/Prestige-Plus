@@ -76,7 +76,7 @@ namespace PrestigePlus.Blueprint
 
             FeatureConfigurator.For(FeatureRefs.SkillAbilities)
                     .AddFacts(new() { ability, ability2 })
-                    //.AddIncreaseResourceAmount("AC63BFCF-EC31-43DC-A5CE-04617A3BC854", 3)
+                    .AddCombatStateTrigger(combatStartActions: ActionsBuilder.New().Add<GatherSummons>().Build())
                     .Configure();
         }
 
