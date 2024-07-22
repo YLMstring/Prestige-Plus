@@ -28,6 +28,7 @@ namespace PrestigePlus.CustomAction
         // Token: 0x0600D174 RID: 53620 RVA: 0x00366B08 File Offset: 0x00364D08
         public override void RunAction()
         {
+            if (Context.MaybeCaster?.IsDirectlyControllable != true) { return; }
             var pools = Game.Instance.SummonPools.m_Pools;
             if (pools == null || pools.Count == 0)
             {
@@ -40,7 +41,7 @@ namespace PrestigePlus.CustomAction
                 {
                     if (unitEntityData.GetFact(BuffRefs.SummonedUnitBuff.Reference.Get()) is Buff buff)
                     {
-                        if (buff.Context.MaybeCaster?.IsDirectlyControllable == true && buff.Context.MaybeCaster == Context.MaybeCaster)
+                        if (buff.Context.MaybeCaster == Context.MaybeCaster)
                         {
                             unitEntityData.CombatState.PreventAttacksOfOpporunityNextFrame = true;
                             unitEntityData.Position = Context.MaybeCaster.Position;
