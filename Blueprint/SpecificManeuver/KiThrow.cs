@@ -67,6 +67,7 @@ namespace PrestigePlus.Blueprint.ManeuverFeat
                 .SetCanTargetFriends(false)
                 .SetCanTargetPoint(true)
                 .SetRange(AbilityRange.Weapon)
+                .AddAbilityCasterMainWeaponIsMelee()
                 .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.BreathWeapon)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
                 .Configure();
