@@ -76,7 +76,6 @@ namespace PrestigePlus.Blueprint
 
             FeatureConfigurator.For(FeatureRefs.SkillAbilities)
                     .AddFacts(new() { ability, ability2 })
-                    .AddCombatStateTrigger(combatStartActions: ActionsBuilder.New().Add<GatherSummons>().Build())
                     .Configure();
         }
 
