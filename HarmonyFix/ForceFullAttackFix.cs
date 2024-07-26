@@ -18,6 +18,8 @@ using Kingmaker;
 using static Kingmaker.UI.CanvasScalerWorkaround;
 using PrestigePlus.Blueprint;
 using Kingmaker.Utility;
+using Kingmaker.EntitySystem.Entities;
+using UniRx;
 
 namespace PrestigePlus.HarmonyFix
 {
@@ -31,9 +33,15 @@ namespace PrestigePlus.HarmonyFix
             {
                 __instance.ForceFullAttack = true;
             }
-            if (turn?.Rider == __instance.Executor && !__instance.Executor.IsDirectlyControllable && !__instance.Executor.IsMoveActionRestricted() && !__instance.Executor.IsStandardActionRestricted() && __instance.IsUnitInFiveFeetRange(__instance.Target))
+            if (turn?.Rider == __instance.Executor && !__instance.Executor.IsDirectlyControllable && !__instance.Executor.IsMoveActionRestricted() && !__instance.Executor.IsStandardActionRestricted())
             {
-                __instance.ForceFullAttack = true;
+                float radius = UnitAttack.GetApproachRadius(__instance.Executor.GetFirstWeapon(), __instance.Executor, __instance.Target);
+                float attackDistance = UnitAttack.GetAttackDistance(__instance.Executor, __instance.Target);
+                float num = 5.Feet().Meters + radius;
+                if (attackDistance <= num)
+                {
+                    __instance.ForceFullAttack = true;
+                }
             }
         }
 
