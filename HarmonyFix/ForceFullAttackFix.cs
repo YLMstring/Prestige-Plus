@@ -31,7 +31,7 @@ namespace PrestigePlus.HarmonyFix
             {
                 __instance.ForceFullAttack = true;
             }
-            if (turn?.Rider == __instance.Executor && !__instance.Executor.IsDirectlyControllable && !__instance.Executor.IsMoveActionRestricted() && !__instance.Executor.IsStandardActionRestricted() && __instance.MaxApproachRadius <= 5.Feet().Meters)
+            if (turn?.Rider == __instance.Executor && !__instance.Executor.IsDirectlyControllable && !__instance.Executor.IsMoveActionRestricted() && !__instance.Executor.IsStandardActionRestricted() && __instance.IsUnitInFiveFeetRange(__instance.Target))
             {
                 __instance.ForceFullAttack = true;
             }
