@@ -28,21 +28,25 @@ namespace PrestigePlus.HarmonyFix
     {
         static void Prefix(ref UnitAttack __instance)
         {
-            var turn = Game.Instance.TurnBasedCombatController?.CurrentTurn;
-            if (__instance.Executor.HasFact(RapidBuff) && turn?.Rider == __instance.Executor)
+            try
             {
-                __instance.ForceFullAttack = true;
-            }
-            if (turn?.Rider == __instance.Executor && !__instance.Executor.IsDirectlyControllable && !__instance.Executor.IsMoveActionRestricted() && !__instance.Executor.IsStandardActionRestricted())
-            {
-                float radius = UnitAttack.GetApproachRadius(__instance.Executor.GetFirstWeapon(), __instance.Executor, __instance.Target);
-                float attackDistance = UnitAttack.GetAttackDistance(__instance.Executor, __instance.Target);
-                float num = 5.Feet().Meters + radius;
-                if (attackDistance <= num)
+                var turn = Game.Instance.TurnBasedCombatController?.CurrentTurn;
+                if (__instance.Executor.HasFact(RapidBuff) && turn?.Rider == __instance.Executor)
                 {
                     __instance.ForceFullAttack = true;
                 }
+                if (turn?.Rider == __instance.Executor && !__instance.Executor.IsDirectlyControllable && !__instance.Executor.IsMoveActionRestricted() && !__instance.Executor.IsStandardActionRestricted())
+                {
+                    float radius = UnitAttack.GetApproachRadius(__instance.Executor.GetFirstWeapon(), __instance.Executor, __instance.Target);
+                    float attackDistance = UnitAttack.GetAttackDistance(__instance.Executor, __instance.Target);
+                    float num = 6.Feet().Meters + radius;
+                    if (attackDistance <= num)
+                    {
+                        __instance.ForceFullAttack = true;
+                    }
+                }
             }
+            catch (Exception ex) { Main.Logger.Error("Failed to ForceFullAttackFix.", ex); }
         }
 
         private static BlueprintBuffReference RapidBuff = BlueprintTool.GetRef<BlueprintBuffReference>(DawnflowerDervish.RapidAttackBuffGuid);
