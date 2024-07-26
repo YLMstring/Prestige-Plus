@@ -35,15 +35,6 @@ namespace PrestigePlus.HarmonyFix
                 {
                     __instance.ForceFullAttack = true;
                 }
-                if (turn?.Rider == __instance.Executor && !__instance.Executor.IsDirectlyControllable && !__instance.Executor.IsMoveActionRestricted() && !__instance.Executor.IsStandardActionRestricted())
-                {
-                    var distance = turn.GetTimeMoved(__instance.Executor) * __instance.Executor.CurrentSpeedMps;
-                    if (distance <= 6.Feet().Meters)
-                    {
-                        __instance.ForceFullAttack = true;
-                        Main.Logger.Info(distance.ToString());
-                    }
-                }
             }
             catch (Exception ex) { Main.Logger.Error("Failed to ForceFullAttackFix.", ex); }
         }
