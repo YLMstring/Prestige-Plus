@@ -5,7 +5,6 @@ using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
-using BlueprintCore.Conditions.Builder;
 using BlueprintCore.Utils.Types;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
@@ -31,21 +30,10 @@ namespace PrestigePlus.Blueprint
 
         private const string StyleAbility = "AutoHeal.StyleAbility";
         private static readonly string StyleAbilityGuid = "{C02FA1FA-25CE-46FF-802A-21B9D7BDA125}";
-
-        private const string Enemy5ftbuff = "AutoHeal.Enemy5ftbuff";
-        public static readonly string Enemy5ftbuffGuid = "{FB43F115-BF35-4B08-9F37-A261F8FDE7D1}";
         public static void StyleConfigure()
         {
             var icon = FeatureRefs.LayOnHandsFeature.Reference.Get().Icon;
             var icon2 = FeatureRefs.ChannelEnergyHospitalerFeature.Reference.Get().Icon;
-
-            var Buff = BuffConfigurator.New(Enemy5ftbuff, Enemy5ftbuffGuid)
-              .SetDisplayName(StyleDisplayName)
-              .SetDescription(StyleDescription)
-              .SetIcon(icon)
-              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
-              .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New().RemoveSelf().Build())
-              .Configure();
 
             var ability = AbilityConfigurator.New(StyleAbility, StyleAbilityGuid)
                 .CopyFrom(
@@ -88,12 +76,12 @@ namespace PrestigePlus.Blueprint
 
             FeatureConfigurator.For(FeatureRefs.SkillAbilities)
                     .AddFacts(new() { ability, ability2 })
-                    .AddMovementDistanceTrigger(action: ActionsBuilder.New().ApplyBuff(Buff, ContextDuration.Fixed(1), toCaster: true), distanceInFeet: 6, limitTiggerCountInOneRound: true, tiggerCountMaximumInOneRound: 1)
                     .Configure();
         }
 
         public static void DisableConfigure()
         {
+
             AbilityConfigurator.New(StyleAbility, StyleAbilityGuid)
                 .SetHidden(true)
                 .AddHideFeatureInInspect()
