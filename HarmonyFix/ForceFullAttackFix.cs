@@ -37,12 +37,11 @@ namespace PrestigePlus.HarmonyFix
                 }
                 if (turn?.Rider == __instance.Executor && !__instance.Executor.IsDirectlyControllable && !__instance.Executor.IsMoveActionRestricted() && !__instance.Executor.IsStandardActionRestricted())
                 {
-                    float radius = UnitAttack.GetApproachRadius(__instance.Executor.GetFirstWeapon(), __instance.Executor, __instance.Target);
-                    float attackDistance = UnitAttack.GetAttackDistance(__instance.Executor, __instance.Target);
-                    float num = 6.Feet().Meters + radius;
-                    if (attackDistance <= num)
+                    var distance = turn.GetTimeMoved(__instance.Executor) * __instance.Executor.CurrentSpeedMps;
+                    if (distance <= 6.Feet().Meters)
                     {
                         __instance.ForceFullAttack = true;
+                        Main.Logger.Info(distance.ToString());
                     }
                 }
             }
