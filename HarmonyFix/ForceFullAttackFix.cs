@@ -16,6 +16,8 @@ using PrestigePlus.Blueprint.Archetype;
 using Kingmaker.UnitLogic;
 using Kingmaker;
 using static Kingmaker.UI.CanvasScalerWorkaround;
+using PrestigePlus.Blueprint;
+using Kingmaker.Utility;
 
 namespace PrestigePlus.HarmonyFix
 {
@@ -26,6 +28,10 @@ namespace PrestigePlus.HarmonyFix
         {
             var turn = Game.Instance.TurnBasedCombatController?.CurrentTurn;
             if (__instance.Executor.HasFact(RapidBuff) && turn?.Rider == __instance.Executor)
+            {
+                __instance.ForceFullAttack = true;
+            }
+            if (turn?.Rider == __instance.Executor && !__instance.Executor.IsDirectlyControllable && !__instance.Executor.IsMoveActionRestricted() && !__instance.Executor.IsStandardActionRestricted() && __instance.MaxApproachRadius <= 5.Feet().Meters)
             {
                 __instance.ForceFullAttack = true;
             }
