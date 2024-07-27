@@ -1516,8 +1516,14 @@ namespace PrestigePlus.Blueprint.Feat
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .Configure();
 
+            var remove = ActionsBuilder.New().RemoveBuff(BuffRefs.TrueStrikeBuff.ToString()).Build();
+            var selfremove = ActionsBuilder.New().OnContextCaster(remove).Build();
+
+            var remove2 = ActionsBuilder.New().RemoveBuff(Otolmens2BuffGuid).Build();
+            var selfremove2 = ActionsBuilder.New().OnContextCaster(remove2).Build();
+
             BuffConfigurator.For(BuffRefs.TrueStrikeBuff)
-                .AddManeuverTrigger(ActionsBuilder.New().RemoveSelf().Build())
+                .AddManeuverTrigger(selfremove)
                 .Configure();
 
             BuffConfigurator.New(Otolmens2Buff, Otolmens2BuffGuid)
@@ -1529,7 +1535,7 @@ namespace PrestigePlus.Blueprint.Feat
              .SetDescription(Otolmens2Description)
              .SetIcon(icon)
              .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().RemoveBuff(Otolmens2BuffGuid, toCaster: false).Build(), actionsOnInitiator: true, onlyHit: false)
-             .AddManeuverTrigger(ActionsBuilder.New().RemoveSelf().Build())
+             .AddManeuverTrigger(selfremove2)
              .AddPartialDRIgnore(false, reductionPenaltyModifier: ContextValues.Property(UnitProperty.Level), useContextValue: true)
              .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Axiomatic.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.PrimaryHand)
              .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Axiomatic.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.SecondaryHand)
