@@ -1516,6 +1516,10 @@ namespace PrestigePlus.Blueprint.Feat
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .Configure();
 
+            BuffConfigurator.For(BuffRefs.TrueStrikeBuff)
+                .AddManeuverTrigger(ActionsBuilder.New().RemoveSelf().Build())
+                .Configure();
+
             BuffConfigurator.New(Otolmens2Buff, Otolmens2BuffGuid)
                 .CopyFrom(
                 BuffRefs.TrueStrikeBuff,
@@ -1525,6 +1529,7 @@ namespace PrestigePlus.Blueprint.Feat
              .SetDescription(Otolmens2Description)
              .SetIcon(icon)
              .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().RemoveBuff(Otolmens2BuffGuid, toCaster: false).Build(), actionsOnInitiator: true, onlyHit: false)
+             .AddManeuverTrigger(ActionsBuilder.New().RemoveSelf().Build())
              .AddPartialDRIgnore(false, reductionPenaltyModifier: ContextValues.Property(UnitProperty.Level), useContextValue: true)
              .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Axiomatic.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.PrimaryHand)
              .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.Axiomatic.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.SecondaryHand)
