@@ -407,10 +407,7 @@ namespace PrestigePlus
             Toggle.New(GetKey("ecpatch"), defaultValue: true, Helpers.CreateString("toggle-desc89", "Ensure Compability with Expanded Content"))
               .ShowVisualConnection())
           .AddToggle(
-            Toggle.New(GetKey("enlearn"), defaultValue: true, Helpers.CreateString("toggle-desc108", "English Learning Mode"))
-              .ShowVisualConnection())
-          .AddToggle(
-            Toggle.New(GetKey("modsuspect"), defaultValue: true, Helpers.CreateString("toggle-desc109", "Tag All Modded Content"))
+            Toggle.New(GetKey("enlearn"), defaultValue: false, Helpers.CreateString("toggle-desc108", "English Learning Mode"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("duplicate"), defaultValue: false, Helpers.CreateString("toggle-desc46", "Remove Duplicate Feats from Other MODs"))

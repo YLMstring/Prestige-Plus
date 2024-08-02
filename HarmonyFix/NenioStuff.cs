@@ -68,7 +68,6 @@ namespace PrestigePlus.HarmonyFix
         {
             try
             {
-                if (!ModMenu.ModMenu.GetSettingValue<bool>(Main.GetKey("modsuspect"))) { return; }
                 if (!__result.Contains(".") && !__result.Contains("。")) { return; }
                 string actualKey = __instance.GetActualKey();
                 LocalizationPack.StringEntry stringEntry;
