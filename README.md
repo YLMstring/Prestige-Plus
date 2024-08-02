@@ -433,6 +433,7 @@
 - Secret of the Akashic: Your study and devotion to psychic magic allows you to access spells beyond your ken. Add glimpse of the akashic and akashic form to all your spell lists.
 ### Other Features
 
+- Mark all modded contents in their description, no toggle :p
 - [Quick Draw](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/swordlord/): If a Swordlord already has Quick Draw or Alertness, he gains Aldori Dueling Mastery as a bonus feat.
 - Tabletop [Grappling Infusion](https://www.aonprd.com/KineticistTalentsDisplay.aspx?ItemName=Grappling%20Infusion): There's a toggle to let you attempt a combat maneuver check to have the blast grapple that opponent, instead of allowing a reflex save. Your bonus on this check is equal to 2 + your kineticist level + your Constitution modifier (treat the blast as a Huge creature). The DC for the purposes of escaping the grapple, is equal to 10 + its CMB.
 - It takes effect as per tabletop rules, but the break-free part is still owl-brew.
@@ -440,6 +441,7 @@
 - Estimated THC: Show hit chance and spell (not) saved chance in turn based mode. This is not precise because it doesn't take into consideration certain effects such as concealment, spell penetration or conditional save bonus, but still better than nothing, eh? (default off)
 - Infernal Healing: You can fully heal outside of combat by spending gold, as if you buy a wand of infernal healing and use it! (gold : hp = 3:2)
 - Weak Crits against Enemies: Symmetrical with owlcat weak crits settings, making it fair (default off)
+- English Learning Mode: Show English dialogues along with any other language of yours (default off)
 - Fix Difficulty CMD Tripple-Dipped: This will significantly reduce enemy CMD at higher difficulties. CMD is calculated by adding STR bonus, DEX bonus and AC bonus, which means difficulty stat advancement is applied 3 times in vanilla, leading to total madness.
 - Fix Power Attack: now working as descripted: This bonus to damage is halved (–50%) if you are making an attack with an off-hand weapon. Note that Piranha Strike has the same bug but it isn't fixed because this might give Piranha Strike an edge over Power Attack, which is pretty coool.
 - Fix the bug that prone unit can be tripped. If you would allow some kind of head kicking, turn this off in mod menu.
