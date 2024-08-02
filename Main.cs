@@ -407,6 +407,12 @@ namespace PrestigePlus
             Toggle.New(GetKey("ecpatch"), defaultValue: true, Helpers.CreateString("toggle-desc89", "Ensure Compability with Expanded Content"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("enlearn"), defaultValue: true, Helpers.CreateString("toggle-desc108", "English Learning Mode"))
+              .ShowVisualConnection())
+          .AddToggle(
+            Toggle.New(GetKey("modsuspect"), defaultValue: true, Helpers.CreateString("toggle-desc109", "Tag All Modded Content"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("duplicate"), defaultValue: false, Helpers.CreateString("toggle-desc46", "Remove Duplicate Feats from Other MODs"))
               .ShowVisualConnection()));
 
@@ -419,7 +425,7 @@ namespace PrestigePlus
           }
           Initialized = true;
 
-                    Logger.Info("Configuring blueprints!"); 
+                    Logger.Info("Configuring blueprints"); 
                     SpellbookReplace.Select(); SpellbookLevelUp.Select(); ImbueArrow.Configure(); ShadowDancer.CreateProficiencies(); ShadowDancer.ExtraShadowJump(); ShadowDancer.ExtraFeat(); SeizetheOpportunity.Configure(); AerialAssault.ConfigureAbility(); FakeAlignedClass.Configure(); BodyGuard.StyleMasterConfigure();
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("grapple"))) { ImprovedGrapple.StyleConfigure(); ImprovedGrappleMythic.Configure(); GreaterGrapple.Configure(); ManeuverExpert.Configure(); RapidGrappler.Configure(); UnfairGrip.Configure(); PinningKnockout.Configure(); PinningRend.Configure(); SavageSlam.Configure(); UncannyGrapple.Configure(); HamatulaStrike.Configure(); DramaticSlam.Configure(); KnotExpert.Configure(); AerialAssault.Configure(); MeatShield.Configure(); ThroatSlicer.Configure(); CrabKing.Configure(); CrabKing.Configure2(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("grave"))) { AgentoftheGrave.Configure(); SacrificialAdept.Configure(); }
