@@ -31,6 +31,7 @@ using Kingmaker.UnitLogic;
 using Kingmaker.Items;
 using Kingmaker.View.Equipment;
 using Kingmaker.RuleSystem;
+using BlueprintCore.Blueprints.ModReferences;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -58,6 +59,19 @@ namespace PrestigePlus.Blueprint.Archetype
             ProgressionConfigurator.For(ProgressionRefs.MagusProgression)
                 .AddToUIGroups([QuarterstaffSpecializationGuid, QuarterstaffMasterGuid, QuarterstaffDefenseGuid])
                 .Configure();
+
+            string DimensionalBladeSpell = "aaed2bc8-7c24-4737-83f6-df4c520888ee";
+            AbilityConfigurator.For(DimensionalBladeSpell)
+                .RemoveComponents(c => c is SpellListComponent)
+                .AddToSpellList(4, ModSpellListRefs.AntipaladinSpelllist.ToString())
+                .AddToSpellLists(level: 4, SpellList.Bloodrager)
+                .AddToSpellLists(level: 6, SpellList.Cleric)
+                .AddToSpellLists(level: 5, SpellList.Inquisitor)
+                .AddToSpellLists(level: 5, SpellList.Magus)
+                .AddToSpellLists(level: 4, SpellList.Paladin)
+                .AddToSpellLists(level: 6, SpellList.Wizard)
+                .AddToSpellLists(level: 6, SpellList.Warpriest)
+                .Configure(true);
         }
 
         private const string Proficiencies = "StaffMagus.Proficiencies";
