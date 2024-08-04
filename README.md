@@ -296,7 +296,7 @@
 - [Cloak and Dagger Style](https://www.d20pfsrd.com/feats/combat-feats/cloak-and-dagger-style-combat-style)
 - [Cloak and Dagger Subterfuge](https://www.d20pfsrd.com/feats/combat-feats/cloak-and-dagger-subterfuge-combat)
 - [Cloak and Dagger Tactics](https://www.d20pfsrd.com/feats/combat-feats/cloak-and-dagger-tactics-combat/)
-- [Spear Dancing Style](https://www.d20pfsrd.com/feats/combat-feats/cloak-and-dagger-style-combat-style): While using this style, you can wield any weapon from the polearm or spear fighter weapon groups as a one-handed weapon. (homebrew, requires Weapon Finesse)
+- [Spear Dancing Style](https://www.d20pfsrd.com/feats/combat-feats/spear-dancing-style-combat-style): While using this style, you can wield any weapon from the polearm or spear fighter weapon groups as a one-handed weapon. (homebrew, requires Weapon Finesse)
 - [Spear Dancing Spiral](https://www.d20pfsrd.com/feats/combat-feats/spear-dancing-spiral-combat): While using Spear Dancing Style, you gain the benefit of Weapon Finesse with these weapons. In addition, you can use Flurry of Blows, Stick-Fighting Counter and Stick-Fighting Maneuver with them.
 - [Spear Dancing Reach](https://www.d20pfsrd.com/feats/combat-feats/spear-dancing-reach-combat/): While using Spear Dancing Style, you add 5 feet to your reach.
 ### New Feats
