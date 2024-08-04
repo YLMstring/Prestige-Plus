@@ -480,6 +480,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetIsClassFeature(true)
               .AddIncomingDamageTrigger(reduceBelowZero: true, actions: martyr, actionsOnInitiator: false)
               .AddFacts(new List<Blueprint<BlueprintUnitFactReference>>() { ability3 })
+              .AddPrerequisiteClassLevel(ArchetypeGuid, 5)
               .Configure();
         }
 
