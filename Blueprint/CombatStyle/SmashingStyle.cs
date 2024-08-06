@@ -150,13 +150,20 @@ namespace PrestigePlus.Blueprint.CombatStyle
         private static readonly string MasterDisplayName = "SmashingMaster.Name";
         private static readonly string MasterDescription = "SmashingMaster.Description";
 
+        private const string MasterBuff = "SmashingMaster.MasterBuff";
+        public static readonly string MasterBuffGuid = "{44CC62FA-0878-4806-A736-0B5FC3ABB046}";
         public static void MasterConfigure()
         {
             var icon = FeatureRefs.Evasion.Reference.Get().Icon;
 
-            var action = ActionsBuilder.New()
-                .Add<StickFightingManeuver>()
-                .Build();
+            BuffConfigurator.New(MasterBuff, MasterBuffGuid)
+                .SetDisplayName(MasterDisplayName)
+                .SetDescription(MasterDescription)
+                .SetIcon(icon)
+                .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.HiddenInUi)
+                .Configure();
+
+            //var action = ActionsBuilder.New().Add<StickFightingManeuver>().Build();
 
             FeatureConfigurator.New(MasterName, MasterGuid, FeatureGroup.Feat)
                     .SetDisplayName(MasterDisplayName)
@@ -167,7 +174,7 @@ namespace PrestigePlus.Blueprint.CombatStyle
                     .AddPrerequisiteFeature(ParametrizedFeatureRefs.WeaponFocus.ToString(), group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                     .AddPrerequisiteFeature(CounterGuid)
                     .AddFacts(new() { SeizetheOpportunity.ManeuverGuid })
-                    .AddInitiatorAttackWithWeaponTrigger(action, triggerBeforeAttack: true, onlyOnFullAttack: true, onlyOnFirstAttack: true)
+                    //.AddInitiatorAttackWithWeaponTrigger(action, triggerBeforeAttack: true, onlyOnFullAttack: true, onlyOnFirstAttack: true)
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .AddToGroups(FeatureGroup.StyleFeat)
                     .Configure();

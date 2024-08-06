@@ -1,10 +1,13 @@
-﻿using BlueprintCore.Blueprints.References;
+﻿using BlueprintCore.Actions.Builder;
+using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using HarmonyLib;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Root;
 using Kingmaker.Designers;
 using Kingmaker.Designers.Mechanics.Buffs;
+using Kingmaker.ElementsSystem;
+using Kingmaker.EntitySystem;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.Enums;
 using Kingmaker.Items;
@@ -18,11 +21,13 @@ using Kingmaker.UnitLogic.Parts;
 using Kingmaker.Utility;
 using PrestigePlus.Blueprint;
 using PrestigePlus.Blueprint.Archetype;
+using PrestigePlus.Blueprint.CombatStyle;
 using PrestigePlus.Blueprint.Feat;
 using PrestigePlus.Blueprint.GrappleFeat;
 using PrestigePlus.Blueprint.MythicFeat;
 using PrestigePlus.Blueprint.MythicGrapple;
 using PrestigePlus.Blueprint.SpecificManeuver;
+using PrestigePlus.CustomAction.OtherFeatRelated;
 using PrestigePlus.CustomAction.OtherManeuver;
 using PrestigePlus.CustomComponent.Grapple;
 using PrestigePlus.Grapple;
@@ -98,6 +103,11 @@ namespace PrestigePlus.HarmonyFix
                         ContextActionCombatTrickery.TriggerMRule(ref AttackBonusRule3);
                         TriggerManeuver(caster, target, AttackBonusRule3, maneuver);
                     }
+                }
+                if (caster.GetFact(Master) is EntityFact master && !caster.HasFact(MasterCoolDown) && __instance.IsAttackFull)
+                {
+                    GameHelper.ApplyBuff(caster, MasterCoolDown, new Rounds?(1.Rounds()));
+                    master.RunActionInContext(Stick, target);
                 }
                 var AttackBonusRule = new RuleCalculateAttackBonus(caster, target, caster.Body.EmptyHandWeapon, 0) { };
                 int penalty = -attack.AttackBonusPenalty + DualPenalty(caster, attack);
@@ -331,6 +341,10 @@ namespace PrestigePlus.HarmonyFix
 
         private static readonly BlueprintFeatureReference Seal = BlueprintTool.GetRef<BlueprintFeatureReference>(Inquisition.SealChallengeGuid);
         private static readonly BlueprintBuffReference SealCoolDown = BlueprintTool.GetRef<BlueprintBuffReference>(Inquisition.SealChallengeAuraBuffGuid);
+
+        private static readonly BlueprintFeatureReference Master = BlueprintTool.GetRef<BlueprintFeatureReference>(SmashingStyle.MasterGuid);
+        private static readonly BlueprintBuffReference MasterCoolDown = BlueprintTool.GetRef<BlueprintBuffReference>(SmashingStyle.MasterBuffGuid);
+        private static ActionList Stick = ActionsBuilder.New().Add<StickFightingManeuver>().Build();
 
         private static readonly string SeizetheBullRushbuffGuid = "{FDD7D762-A448-48FB-B72C-709D14285FF6}";
         private static readonly string SeizetheDirtyBlindbuffGuid = "{6142C847-22F1-410F-A132-9545D7404F4A}";
