@@ -107,7 +107,7 @@ namespace PrestigePlus.HarmonyFix
                 if (caster.GetFact(Master) is EntityFact master && !caster.HasFact(MasterCoolDown) && __instance.IsAttackFull)
                 {
                     GameHelper.ApplyBuff(caster, MasterCoolDown, new Rounds?(1.Rounds()));
-                    master.RunActionInContext(Stick, target);
+                    StickFightingManeuver.RunAct(caster, target);
                 }
                 var AttackBonusRule = new RuleCalculateAttackBonus(caster, target, caster.Body.EmptyHandWeapon, 0) { };
                 int penalty = -attack.AttackBonusPenalty + DualPenalty(caster, attack);
@@ -344,7 +344,7 @@ namespace PrestigePlus.HarmonyFix
 
         private static readonly BlueprintFeatureReference Master = BlueprintTool.GetRef<BlueprintFeatureReference>(SmashingStyle.MasterGuid);
         private static readonly BlueprintBuffReference MasterCoolDown = BlueprintTool.GetRef<BlueprintBuffReference>(SmashingStyle.MasterBuffGuid);
-        private static ActionList Stick = ActionsBuilder.New().Add<StickFightingManeuver>().Build();
+        //private static ActionList Stick = ActionsBuilder.New().Add<StickFightingManeuver>().Build();
 
         private static readonly string SeizetheBullRushbuffGuid = "{FDD7D762-A448-48FB-B72C-709D14285FF6}";
         private static readonly string SeizetheDirtyBlindbuffGuid = "{6142C847-22F1-410F-A132-9545D7404F4A}";

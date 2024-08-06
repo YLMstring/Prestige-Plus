@@ -66,7 +66,25 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                 }
             }
         }
-
+        public static void RunAct(UnitEntityData caster, UnitEntityData target)
+        {
+            foreach (var slot in caster.Body.EquipmentSlots)
+            {
+                if (slot.Active && slot.HasItem && slot.Item is ItemEntityWeapon weapon)
+                {
+                    if (weapon.Blueprint.Category == WeaponCategory.Quarterstaff || weapon.Blueprint.Category == WeaponCategory.Club)
+                    {
+                        ActManeuver(caster, target, true);
+                        return;
+                    }
+                    else if (caster.HasFact(Spiral) && (weapon.Blueprint.FighterGroup.Contains(WeaponFighterGroup.Spears) || weapon.Blueprint.FighterGroup.Contains(WeaponFighterGroup.Polearms)))
+                    {
+                        ActManeuver(caster, target, true);
+                        return;
+                    }
+                }
+            }
+        }
         public static void ActManeuver(UnitEntityData caster, UnitEntityData target, bool UseWeapon)
         {
             var maneuver = CombatManeuver.None;
