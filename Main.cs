@@ -395,6 +395,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("teleport"), defaultValue: true, Helpers.CreateString("toggle-desc80", "Better Teleport Stuff"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("endure"), defaultValue: true, Helpers.CreateString("toggle-desc109", "Enduring Spells Stay On Death"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("nerfsop"), defaultValue: false, Helpers.CreateString("toggle-desc38", "(Nerf) Seize the Opportunity as a Mythic Feat"))
               .ShowVisualConnection())
           .AddToggle(

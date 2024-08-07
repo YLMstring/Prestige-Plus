@@ -106,6 +106,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetDescription(Description)
               .SetIcon(icon)
               .AddComponent<AddGreedBlade>(c => { c.Blade1 = maxim; c.Blade2 = maxim2; c.Blade3 = maxim3; })
+              .AddToFlags(Kingmaker.UnitLogic.Buffs.Blueprints.BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             AbilityConfigurator.NewSpell(EmblemGreedAbility, EmblemGreedAbilityGuid, SpellSchool.Transmutation, canSpecialize: true)
