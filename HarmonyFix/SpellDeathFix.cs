@@ -17,7 +17,7 @@ namespace PrestigePlus.HarmonyFix
     internal class SpellDeathFix
     {
         [HarmonyPatch(typeof(BuffCollection), nameof(BuffCollection.UpdateOnDeadOwner))]
-        internal class ReduceSkillPoint
+        internal class SpellDeathFix1
         {
             static bool Prefix(ref BuffCollection __instance)
             {
