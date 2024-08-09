@@ -398,6 +398,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("endure"), defaultValue: true, Helpers.CreateString("toggle-desc109", "Enduring Spells Stay On Death"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("telemaster"), defaultValue: true, Helpers.CreateString("toggle-desc110", "Dimensional Retribution Bypasses Dimensional Lock"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("nerfsop"), defaultValue: false, Helpers.CreateString("toggle-desc38", "(Nerf) Seize the Opportunity as a Mythic Feat"))
               .ShowVisualConnection())
           .AddToggle(

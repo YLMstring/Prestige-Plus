@@ -18,7 +18,8 @@ namespace PrestigePlus.HarmonyFix
     {
         static bool Prefix(ref ForbidSpecificSpellsCast __instance)
         {
-            if (__instance.Spells.Contains(AbilityRefs.KiAbudantStep.Reference.Get()))
+            if (!ModMenu.ModMenu.GetSettingValue<bool>(Main.GetKey("telemaster"))) { return true; }
+            if (__instance.Owner.HasFact(FeatureRefs.DimensionalRetribution.Reference) && __instance.Spells.Contains(AbilityRefs.KiAbudantStep.Reference.Get()))
             {
                 return false;
             }

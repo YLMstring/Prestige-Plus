@@ -21,11 +21,11 @@ using Kingmaker.Utility;
 
 namespace PrestigePlus.HarmonyFix
 {
-    [HarmonyPatch(typeof(ModifyD20))]
-    //[HarmonyPatch("OnEventAboutToTrigger")]
-    //[HarmonyPatch([typeof(RuleCalculateAttackBonus)])]
-    internal class WeirdBonusFix
+    [HarmonyPatch]
+    internal static class WeirdBonusFix
     {
+        public static IEnumerable<(A, B)> Zip<A, B>(this IEnumerable<A> first, IEnumerable<B> second) => first.Zip(second, (a, b) => (a, b));
+
         [HarmonyTargetMethod]
         static MethodInfo TargetMethod()
         {
