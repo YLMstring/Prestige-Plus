@@ -1,9 +1,11 @@
 ﻿using BlueprintCore.Blueprints.References;
 using HarmonyLib;
 using Kingmaker.Designers.Mechanics.Facts;
+using Kingmaker.EntitySystem.Entities;
 using Kingmaker.PubSubSystem;
 using Kingmaker.RuleSystem;
 using Kingmaker.RuleSystem.Rules;
+using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics;
@@ -35,6 +37,20 @@ namespace PrestigePlus.HarmonyFix
         static void Postfix(ref BlueprintAbility __result)
         {
             __result ??= AbilityRefs.LoreReligionUseAbility.Reference;
+        }
+    }
+
+    [HarmonyPatch(typeof(UnitHelper), nameof(UnitHelper.IsAttackOfOpportunityReach))]
+    internal class WeirdBonusFix3
+    {
+        static bool Prefix(ref UnitEntityData enemy, ref UnitEntityData unit, ref bool __result)
+        {
+            if (unit?.View == null || enemy?.View == null)
+            {
+                __result = false;
+                return false;
+            }
+            return true;
         }
     }
 }
