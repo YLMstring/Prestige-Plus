@@ -115,7 +115,7 @@ namespace PrestigePlus.HarmonyFix
                 }
                 else if (caster.HasFact(Trip) && caster.HasFact(TripFeat))
                 {
-                    if (target.Descriptor.State.Prone.Active) { return true; }
+                    if (target.Descriptor.State.Prone.Active || target.View?.IsGetUp == true) { return true; }
                     if (!target.CanBeKnockedOff() && !caster.HasFact(Ace)) { return true; }
                     maneuver = CombatManeuver.Trip;
                 }

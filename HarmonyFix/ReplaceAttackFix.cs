@@ -219,7 +219,7 @@ namespace PrestigePlus.HarmonyFix
                     GameHelper.RemoveBuff(caster, Trip1);
                     if (ModMenu.ModMenu.GetSettingValue<bool>(Main.GetKey("headkick"))) 
                     {
-                        if (target.Descriptor.State.Prone.Active) { return true; }
+                        if (target.Descriptor.State.Prone.Active || target.View?.IsGetUp == true) { return true; }
                         if (!target.CanBeKnockedOff() && !caster.HasFact(Ace)) { return true; }
                     }
                     TriggerManeuver(caster, target, AttackBonusRule, CombatManeuver.Trip);

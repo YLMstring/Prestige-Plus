@@ -20,6 +20,7 @@ using System.Threading.Tasks;
 using Kingmaker.Utility;
 using Kingmaker.AI.Blueprints;
 using Kingmaker.AI;
+using Kingmaker.View;
 
 namespace PrestigePlus.HarmonyFix
 {
@@ -57,34 +58,30 @@ namespace PrestigePlus.HarmonyFix
         }
     }
 
-    [HarmonyPatch(typeof(AiBrainController), nameof(AiBrainController.CalculateTargetsScore))]
+    [HarmonyPatch(typeof(AiBrainController), nameof(AiBrainController.FindBestAction))]
     internal class WeirdBonusFix2
     {
-        static void Postfix(ref bool __result, ref AiActionCustom __instance, ref UnitEntityData bestTarget, ref AiAction bestAction)
+        static void Postfix(ref UnitEntityData bestTargetResult, ref AiAction bestActionResult, ref UnitEntityData unit)
         {
-            if (__result && bestAction is AiActionCustom cus && bestTarget != cus.m_Ability?.Caster)
+            if (bestTargetResult == unit) return;
+            if (bestActionResult?.Blueprint is BlueprintAiCastSpell spell)
             {
-                var ability = cus.m_Ability?.Blueprint;
-                if (ability == null) return;
+                var ability = spell.Ability;
+                if (ability == null) { return; }
                 if (!ability.CanTargetEnemies && !ability.CanTargetFriends && !ability.CanTargetPoint && ability.CanTargetSelf)
                 {
-                    bestTarget = cus.m_Ability?.Caster;
+                    bestTargetResult = unit;
                 }
             }
         }
     }
 
-    [HarmonyPatch(typeof(UnitHelper), nameof(UnitHelper.IsAttackOfOpportunityReach))]
+    [HarmonyPatch(typeof(UnitEntityData), nameof(UnitEntityData.View), MethodType.Getter)]
     internal class WeirdBonusFix3
     {
-        static bool Prefix(ref UnitEntityData enemy, ref UnitEntityData unit, ref bool __result)
+        static void PostFix(ref UnitEntityView __result)
         {
-            if (unit?.View == null || enemy?.View == null)
-            {
-                __result = false;
-                return false;
-            }
-            return true;
+            __result ??= new UnitEntityView();
         }
     }
 }

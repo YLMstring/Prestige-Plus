@@ -49,7 +49,7 @@ namespace PrestigePlus.HarmonyFix
     {
         static void Postfix(ref RuleCombatManeuver __instance, ref bool __result)
         {
-            if (__result && __instance.Type == CombatManeuver.Trip && ModMenu.ModMenu.GetSettingValue<bool>(Main.GetKey("headkick")) && __instance.Target.State.Prone.Active)
+            if (__result && __instance.Type == CombatManeuver.Trip && ModMenu.ModMenu.GetSettingValue<bool>(Main.GetKey("headkick")) && (__instance.Target.State.Prone.Active || __instance.Target.View?.IsGetUp == true))
             {
                 __result = false;
             }
