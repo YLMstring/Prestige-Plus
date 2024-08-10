@@ -55,15 +55,6 @@ namespace PrestigePlus.HarmonyFix
         }
     }
 
-    [HarmonyPatch(typeof(MechanicsContext), nameof(MechanicsContext.SourceAbility), MethodType.Getter)]
-    internal class WeirdBonusFix2
-    {
-        static void Postfix(ref BlueprintAbility __result)
-        {
-            __result ??= AbilityRefs.LoreReligionUseAbility.Reference;
-        }
-    }
-
     [HarmonyPatch(typeof(UnitHelper), nameof(UnitHelper.IsAttackOfOpportunityReach))]
     internal class WeirdBonusFix3
     {
