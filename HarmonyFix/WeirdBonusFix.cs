@@ -19,6 +19,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Kingmaker.Utility;
 using Kingmaker.AI.Blueprints;
+using Kingmaker.AI;
 
 namespace PrestigePlus.HarmonyFix
 {
@@ -56,14 +57,19 @@ namespace PrestigePlus.HarmonyFix
         }
     }
 
-    [HarmonyPatch(typeof(BlueprintAiCastSpell), nameof(BlueprintAiCastSpell.ForceTargetEnemy), MethodType.Getter)]
+    [HarmonyPatch(typeof(AiBrainController), nameof(AiBrainController.CalculateTargetsScore))]
     internal class WeirdBonusFix2
     {
-        static void Postfix(ref bool __result, ref BlueprintAiCastSpell __instance)
+        static void Postfix(ref bool __result, ref AiActionCustom __instance, ref UnitEntityData bestTarget, ref AiAction bestAction)
         {
-            if (__result && __instance.Ability?.CanTargetEnemies != true && __instance.Ability?.CanTargetPoint != true)
+            if (__result && bestAction is AiActionCustom cus && bestTarget != cus.m_Ability?.Caster)
             {
-                __result = false;
+                var ability = cus.m_Ability?.Blueprint;
+                if (ability == null) return;
+                if (!ability.CanTargetEnemies && !ability.CanTargetFriends && !ability.CanTargetPoint && ability.CanTargetSelf)
+                {
+                    bestTarget = cus.m_Ability?.Caster;
+                }
             }
         }
     }
