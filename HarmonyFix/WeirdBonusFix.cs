@@ -18,6 +18,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Kingmaker.Utility;
+using Kingmaker.AI.Blueprints;
 
 namespace PrestigePlus.HarmonyFix
 {
@@ -52,6 +53,18 @@ namespace PrestigePlus.HarmonyFix
                 return false;
             }
             return true;
+        }
+    }
+
+    [HarmonyPatch(typeof(BlueprintAiCastSpell), nameof(BlueprintAiCastSpell.ForceTargetEnemy), MethodType.Getter)]
+    internal class WeirdBonusFix2
+    {
+        static void Postfix(ref bool __result, ref BlueprintAiCastSpell __instance)
+        {
+            if (__result && __instance.Ability?.CanTargetEnemies != true && __instance.Ability?.CanTargetPoint != true)
+            {
+                __result = false;
+            }
         }
     }
 
