@@ -21,6 +21,9 @@ using Kingmaker.Utility;
 using Kingmaker.AI.Blueprints;
 using Kingmaker.AI;
 using Kingmaker.View;
+using Kingmaker.Designers.Mechanics.Buffs;
+using Kingmaker.RuleSystem.Rules.Abilities;
+using BlueprintCore.Utils;
 
 namespace PrestigePlus.HarmonyFix
 {
@@ -74,5 +77,49 @@ namespace PrestigePlus.HarmonyFix
                 }
             }
         }
+    }
+
+    [HarmonyPatch(typeof(SpellTurning), nameof(SpellTurning.OnEventDidTrigger))]
+    internal class WeirdBonusFix3
+    {
+        static bool Prefix(ref RuleCastSpell evt)
+        {
+            if (evt?.Spell?.IsAOE == true)
+            {
+                return false;
+            }
+            if (evt?.Spell?.Range == AbilityRange.Touch)
+            {
+                return false;
+            }
+            return true;
+        }
+    }
+
+    [HarmonyPatch(typeof(AiAction), nameof(AiAction.IsTargetValidInternal))]
+    internal class WeirdBonusFix4
+    {
+        static void Postfix(ref DecisionContext context, ref bool __result)
+        {
+            if (!__result) { return; }
+            if (context?.Ability?.IsAOE == true)
+            {
+                return;
+            }
+            if (context?.Ability?.Range == AbilityRange.Touch)
+            {
+                return;
+            }
+            if (__result && context?.Target?.Unit?.HasFact(FeatureRefs.BeltOfArodenSpellTurningFeature.Reference) == true && context?.Ability?.SpellResistance == true)
+            {
+                __result = false;
+            }
+            if (__result && context?.Target?.Unit?.HasFact(Raz) == true && context?.Ability?.SpellResistance == true)
+            {
+                __result = false;
+            }
+        }
+
+        private static BlueprintFeatureReference Raz = BlueprintTool.GetRef<BlueprintFeatureReference>("13d5818737694021b001641437a4ba29");
     }
 }

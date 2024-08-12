@@ -3,6 +3,7 @@ using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
+using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.Utility;
 using PrestigePlus.Blueprint.Archetype;
 using PrestigePlus.Blueprint.PrestigeClass;
@@ -37,8 +38,15 @@ namespace PrestigePlus.Patch
             //"MountedSkirmisher": "d3886adc-c849-4733-a1cb-a9b787b49576",
             AddFeatureToArc("34d1bd97-971d-44d6-be78-e91e79fdedbd", Emissary.ArchetypeGuid, 9);
             AddFeatureToArc("d3886adc-c849-4733-a1cb-a9b787b49576", Emissary.ArchetypeGuid, 14);
+
+            var comp = Raz.Get()?.GetComponent<SpellTurning>();
+            if (comp != null)
+            {
+                comp.m_SpellResistanceOnly = true;
+            }
         }
 
+        private static BlueprintFeatureReference Raz = BlueprintTool.GetRef<BlueprintFeatureReference>("13d5818737694021b001641437a4ba29");
         private static void AddFeatureToPro(string featguid, string proguid, int level)
         {
             var progress = BlueprintTool.GetRef<BlueprintProgressionReference>(proguid)?.Get();
