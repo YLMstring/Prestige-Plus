@@ -102,21 +102,31 @@ namespace PrestigePlus.HarmonyFix
         static void Postfix(ref DecisionContext context, ref bool __result)
         {
             if (!__result) { return; }
-            if (context?.Ability?.IsAOE == true)
+            if (context?.Ability == null)
             {
                 return;
             }
-            if (context?.Ability?.Range == AbilityRange.Touch)
+            if (context.Ability.IsAOE)
             {
                 return;
             }
-            if (__result && context?.Target?.Unit?.HasFact(FeatureRefs.BeltOfArodenSpellTurningFeature.Reference) == true && context?.Ability?.SpellResistance == true)
+            if (context.Ability.Range == AbilityRange.Touch)
             {
-                __result = false;
+                return;
             }
-            if (__result && context?.Target?.Unit?.HasFact(Raz) == true && context?.Ability?.SpellResistance == true)
+            if (context.Ability.SpellResistance != true)
+            {
+                return;
+            }
+            if (context.Target?.Unit?.HasFact(FeatureRefs.BeltOfArodenSpellTurningFeature.Reference) == true)
             {
                 __result = false;
+                return;
+            }
+            if (context.Target?.Unit?.HasFact(Raz) == true)
+            {
+                __result = false;
+                return;
             }
         }
 
