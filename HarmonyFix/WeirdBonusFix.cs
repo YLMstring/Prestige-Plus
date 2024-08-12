@@ -75,13 +75,4 @@ namespace PrestigePlus.HarmonyFix
             }
         }
     }
-
-    [HarmonyPatch(typeof(UnitEntityData), nameof(UnitEntityData.View), MethodType.Getter)]
-    internal class WeirdBonusFix3
-    {
-        static void PostFix(ref UnitEntityView __result)
-        {
-            __result ??= new UnitEntityView();
-        }
-    }
 }
