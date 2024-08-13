@@ -50,8 +50,9 @@ namespace PrestigePlus.HarmonyFix
         }
 
         [HarmonyPrefix]
-        static bool Prefix()
+        static bool Prefix(ref ModifyD20 __instance)
         {
+            if (__instance.Rule != RuleType.AttackRoll) { return false; }
             RulebookEvent previousEvent = Rulebook.CurrentContext.PreviousEvent;
             if (previousEvent == null)
             {
