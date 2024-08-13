@@ -443,12 +443,17 @@
 - Infernal Healing: You can fully heal outside of combat by spending gold, as if you buy a wand of infernal healing and use it! (gold : hp = 3:2)
 - Weak Crits against Enemies: Symmetrical with owlcat weak crits settings, making it fair (default off)
 - English Learning Mode: Show English dialogues along with any other language of yours (default off)
+- Spell Turning effects no longer reflect touch spells and AoE spells, as per tabletop
+- Razmiri Mask no longer reflects anything more than Aroden Belt would
+- Enemy AI now recognize your permanent Spell Turning effects and act like a sane person
 - Fix Difficulty CMD Tripple-Dipped: This will significantly reduce enemy CMD at higher difficulties. CMD is calculated by adding STR bonus, DEX bonus and AC bonus, which means difficulty stat advancement is applied 3 times in vanilla, leading to total madness.
 - Fix Power Attack: now working as descripted: This bonus to damage is halved (–50%) if you are making an attack with an off-hand weapon. Note that Piranha Strike has the same bug but it isn't fixed because this might give Piranha Strike an edge over Power Attack, which is pretty coool.
 - Fix the bug that prone unit can be tripped. If you would allow some kind of head kicking, turn this off in mod menu.
 - Fix the bug that physical kinetic blasts that create an area effect don't count as magical.
 - Fix the bug(?) that a sawtooth saber can't be wielded with two hands.
 - Fix the bug that eldritch scion's arcane accuracy incorrectly uses INT.
+- Fix the bug that certain enemies trying to cast self-only spells to MC, then getting stuck forever
+- Fix the bug that aeon bane giving crazy attack bonus
 ## Mod Combo
 
 ### [Character Options+](https://github.com/WittleWolfie/CharacterOptionsPlus)
