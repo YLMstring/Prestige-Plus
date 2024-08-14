@@ -52,7 +52,7 @@ namespace PrestigePlus.HarmonyFix
                 }
                 var target = __instance.Target;
                 var maneuver = CombatManeuver.None;
-                if (target.Descriptor.State.IsDead || !caster.HasFact(TheFeat)) { return true; }
+                if (target == null || target.Descriptor.State.IsDead || !caster.HasFact(TheFeat)) { return true; }
                 if (caster.HasFact(Vital) && caster.HasFact(VitalFeat))
                 {
                     AbilityCustomVitalStrike.VitalStrikePart vitalStrikePart = caster.Ensure<AbilityCustomVitalStrike.VitalStrikePart>();
