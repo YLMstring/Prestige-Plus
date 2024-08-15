@@ -24,6 +24,8 @@ using Kingmaker.View;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.RuleSystem.Rules.Abilities;
 using BlueprintCore.Utils;
+using Kingmaker.UnitLogic.Class.LevelUp;
+using Kingmaker.Blueprints.Classes;
 
 namespace PrestigePlus.HarmonyFix
 {
@@ -132,5 +134,19 @@ namespace PrestigePlus.HarmonyFix
         }
 
         private static BlueprintFeatureReference Raz = BlueprintTool.GetRef<BlueprintFeatureReference>("13d5818737694021b001641437a4ba29");
+    }
+
+    [HarmonyPatch(typeof(LevelUpController), nameof(LevelUpController.FindPet))]
+    internal class WeirdBonusFix5
+    {
+        static bool Prefix(ref BlueprintFeature feature, ref UnitEntityData __result)
+        {
+            if (feature == null)
+            {
+                __result = null;
+                return false;
+            }
+            return true;
+        }
     }
 }
