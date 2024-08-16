@@ -4,6 +4,7 @@ using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
 using Kingmaker.Designers.Mechanics.Buffs;
+using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Utility;
 using PrestigePlus.Blueprint.Archetype;
 using PrestigePlus.Blueprint.PrestigeClass;
@@ -43,6 +44,11 @@ namespace PrestigePlus.Patch
             if (comp != null)
             {
                 comp.m_SpellResistanceOnly = true;
+            }
+            var comp2 = BuffRefs.PortalStoneSpiderRingEffectBuff.Reference.Get()?.GetComponent<AddInitiatorAttackWithWeaponTrigger>();
+            if (comp2 != null)
+            {
+                comp2.CriticalHit = true;
             }
         }
 
