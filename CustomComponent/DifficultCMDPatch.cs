@@ -44,8 +44,9 @@ namespace PrestigePlus.CustomComponent
             }
             num2 = DifficultyStatAdvancement.ApplyBonusProgression(adjustmentPreset, cr, num2, false);
             //Main.Logger.Info("value:" + value.ToString() + " num:" + num2.ToString());
-            value = (value +  num2) / 2;
             value = Math.Min(value, num2);
+            value = Math.Min(value, Owner.Stats.Strength.Bonus);
+            value = Math.Min(value, Owner.Stats.Dexterity.Bonus);
             value = Math.Max(value, 0);
             evt.AddModifier(-value, Fact, Kingmaker.Enums.ModifierDescriptor.Penalty);
         }
