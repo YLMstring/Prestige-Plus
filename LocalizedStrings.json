@@ -4212,9 +4212,9 @@
 
   {
     "Key": "MythicKiThrow.Description",
-    "enGB": "You can use Dirty Trick, Disarm or Sunder for Ki Throw. Additionally, you gain a +2 bonus to CMB for each size category that the target is larger than you.",
-    "ruRU": "Вы можете использовать боевые маневры Грязный трюк, Разоружение или Разрушение брони с броском ци. Кроме того, вы получаете бонус +2 к модификатору боевых маневров за каждую категорию размера цели больше вашей.",
-    "zhCN": "你能通过阴招，缴械或击破来使用太极拳。另外，你的目标每比你大一个体型，你的战技检定就获得+2加值。"
+    "enGB": "You can use Dirty Trick, Disarm or Sunder for Ki Throw. Additionally, you gain a +1 bonus to CMB for each size category that the target is larger than you.",
+    "ruRU": "Вы можете использовать боевые маневры Грязный трюк, Разоружение или Разрушение брони с броском ци. Кроме того, вы получаете бонус +1 к модификатору боевых маневров за каждую категорию размера цели больше вашей.",
+    "zhCN": "你能通过阴招，缴械或击破来使用太极拳。另外，你的目标每比你大一个体型，你的战技检定就获得+1加值。"
   },
 
   {

@@ -15,7 +15,7 @@ namespace PrestigePlus.CustomComponent.OtherManeuver
         {
             int size = evt.Target.Blueprint.Size - evt.Initiator.Blueprint.Size;
             if (size < 1) return;
-            evt.AddModifier(size * 2, Fact, Kingmaker.Enums.ModifierDescriptor.UntypedStackable);
+            evt.AddModifier(size, Fact, Kingmaker.Enums.ModifierDescriptor.UntypedStackable);
         }
 
         void IRulebookHandler<RuleCombatManeuver>.OnEventDidTrigger(RuleCombatManeuver evt)
