@@ -454,6 +454,7 @@
 - Fix the bug that eldritch scion's arcane accuracy incorrectly uses INT.
 - Fix the bug that certain enemies trying to cast self-only spells to MC, then getting stuck forever
 - Fix the bug that aeon bane giving crazy attack bonus
+- Fix the bug that Clemency of Shadows triggers every AoO regardless of whether it crits or not
 ## Mod Combo
 
 ### [Character Options+](https://github.com/WittleWolfie/CharacterOptionsPlus)
