@@ -154,14 +154,15 @@ namespace PrestigePlus.Feats
               .AddComponent<BuffDescriptorImmunityIgnore>(c => {
                   c.Descriptor = SpellDescriptor.Fear | SpellDescriptor.Shaken | SpellDescriptor.Frightened | SpellDescriptor.MindAffecting | SpellDescriptor.Emotion | SpellDescriptor.NegativeEmotion;
               })
+              .AddSavingThrowBonusAgainstDescriptor(1, modifierDescriptor: ModifierDescriptor.Resistance, spellDescriptor: SpellDescriptor.MindAffecting, value: 5)
               .Configure();
 
             var area = AbilityAreaEffectConfigurator.New(AnnihilationAura, AnnihilationAuraGuid)
-                .AddAbilityAreaEffectBuff(Buff2, checkConditionEveryRound: true, condition: ConditionsBuilder.New().IsCaster(true).Build())
+                .AddAbilityAreaEffectBuff(Buff2)
                 .SetAggroEnemies(true)
                 .SetAffectEnemies(true)
                 .SetAffectDead(true)
-                .SetTargetType(BlueprintAbilityAreaEffect.TargetType.Any)
+                .SetTargetType(BlueprintAbilityAreaEffect.TargetType.Enemy)
                 .SetShape(AreaEffectShape.Cylinder)
                 .SetSize(FeetExtension.Feet(33))
                 .Configure();
