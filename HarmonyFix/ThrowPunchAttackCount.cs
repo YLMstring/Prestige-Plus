@@ -63,5 +63,18 @@ namespace PrestigePlus.HarmonyFix
         private static BlueprintItemWeaponReference Wep = BlueprintTool.GetRef<BlueprintItemWeaponReference>(EmblemGreed.MaximGuid);
         private static BlueprintItemWeaponReference Wep2 = BlueprintTool.GetRef<BlueprintItemWeaponReference>(EmblemGreed.MaximGuid2);
         private static BlueprintItemWeaponReference Wep3 = BlueprintTool.GetRef<BlueprintItemWeaponReference>(EmblemGreed.MaximGuid3);
+
+        static void Postfix(ref RuleCalculateAttacksCount __instance, ref int __result)
+        {
+            try
+            {
+                var caster = __instance.Initiator;
+                if (__result > 3 && !caster.HasFact(FeatureRefs.Legend_UniqueRestFeature.Reference))
+                {
+                    __result = 3;
+                }
+            }
+            catch (Exception ex) { Main.Logger.Error("Failed to ThrowPunchAttackCount2.", ex); }
+        }
     }
 }
