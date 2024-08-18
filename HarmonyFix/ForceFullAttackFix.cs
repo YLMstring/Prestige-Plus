@@ -20,6 +20,7 @@ using PrestigePlus.Blueprint;
 using Kingmaker.Utility;
 using Kingmaker.EntitySystem.Entities;
 using UniRx;
+using Kingmaker.UnitLogic.Commands.Base;
 
 namespace PrestigePlus.HarmonyFix
 {
