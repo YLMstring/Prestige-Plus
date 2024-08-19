@@ -424,13 +424,9 @@
 - Swift Death: Your target assassination becomes a standard action. At 10th assassin level, it becomes a move action.
 - Greater Swift Death: Your target assassination becomes a move action. At 10th assassin level, it becomes a swift action.
 - Unbreakable Defense: You no longer have a limited amount of Defensive Stance rounds per day.
-- Draconic Wings: The disciple gains two primary wing attacks that deal 1d4 damage.
-- Endless Breath: You have 1/3 chance to recover one use of your breath weapon at the start of your turn. Additionally, your Gold Dragon Breath (Mythic) becomes a move action.
 - Riposte (Mythic): The duelist adds her mythic tier as a bonus on her attack roll when attempting a parry and riposte. This bonus does not stack with Ever Ready mythic feat.
 - Metaphysical Sneak Attack: If the student of war deals sneak attack damage to a target, he can study that target, allowing him to apply his Know Your Enemy effects. Additionally, his sneak attack no longer deals precision damage.
 - Mystic Catalyst: You can use Lesser Spell Synthesis ability at will.
-- Secret of the Phantom: Your study and devotion to phantasmal magic allows you to access spells beyond your ken. Add phantasmal killer, phantasmal web and phantom limb to all your spell lists.
-- Secret of the Akashic: Your study and devotion to psychic magic allows you to access spells beyond your ken. Add glimpse of the akashic and akashic form to all your spell lists.
 ### Other Features
 
 - Mark all modded contents in their description, no toggle :p
