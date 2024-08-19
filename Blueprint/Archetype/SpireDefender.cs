@@ -153,10 +153,6 @@ namespace PrestigePlus.Blueprint.Archetype
         {
             var icon = FeatureRefs.MagusSpellRecallFeature.Reference.Get().Icon;
 
-            FeatureSelectionConfigurator.For(FeatureSelectionRefs.MagusArcanaSelection)
-                .AddToAllFeatures(FeatureSelectionRefs.WitchFamiliarSelection.ToString())
-                .Configure();
-
             return FeatureConfigurator.New(ManeuverMastery, ManeuverMasteryGuid, FeatureGroup.MagusArcana)
               .SetDisplayName(ManeuverMasteryDisplayName)
               .SetDescription(ManeuverMasteryDescription)
