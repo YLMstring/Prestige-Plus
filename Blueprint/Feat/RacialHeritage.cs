@@ -12,6 +12,11 @@ using Kingmaker.Enums;
 using Kingmaker.Blueprints.Classes.Spells;
 using BlueprintCore.Actions.Builder;
 using PrestigePlus.CustomAction.OtherFeatRelated;
+using Kingmaker.Items;
+using Kingmaker.PubSubSystem;
+using Kingmaker.RuleSystem.Rules;
+using Kingmaker.UnitLogic.ActivatableAbilities.Restrictions;
+using Kingmaker.UnitLogic;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -65,7 +70,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(MultiArmedDisplayName)
               .SetDescription(MultiArmedDescription)
               .SetIcon(icon)
-              //.AddPrerequisiteFeature(FeatureRefs.DoubleSlice.ToString())
+              .AddComponent<FourWeaponFightingDamagePenalty>()
               .AddInitiatorAttackWithWeaponTrigger(ActionsBuilder.New().Add<KasathaExtraAttack>().Build(),
                     onlyOnFullAttack: true, onlyOnFirstAttack: true, onlyHit: false)
               .Configure();
@@ -145,6 +150,24 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddIncreaseSpellDescriptorDC(2, SpellDescriptor.Evil, spellsOnly: true)
               .Configure();
+        }
+    }
+    public class FourWeaponFightingDamagePenalty : UnitFactComponentDelegate, IInitiatorRulebookHandler<RuleCalculateWeaponStats>, IRulebookHandler<RuleCalculateWeaponStats>, ISubscriber, IInitiatorRulebookSubscriber
+    {
+        // Token: 0x0600EC06 RID: 60422 RVA: 0x003C95A4 File Offset: 0x003C77A4
+        public void OnEventAboutToTrigger(RuleCalculateWeaponStats evt)
+        {
+            ItemEntityWeapon maybeWeapon = evt.Initiator.Body.PrimaryHand.MaybeWeapon;
+            if (evt.Weapon == null || maybeWeapon == evt.Weapon || evt.Initiator.Descriptor.State.Features.DoubleSlice)
+            {
+                return;
+            }
+            evt.HalfDamageBonus = true;
+        }
+
+        // Token: 0x0600EC07 RID: 60423 RVA: 0x003C9610 File Offset: 0x003C7810
+        public void OnEventDidTrigger(RuleCalculateWeaponStats evt)
+        {
         }
     }
 }
