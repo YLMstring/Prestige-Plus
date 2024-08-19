@@ -21,6 +21,8 @@ using Kingmaker.Utility;
 using Kingmaker.EntitySystem.Entities;
 using UniRx;
 using Kingmaker.UnitLogic.Commands.Base;
+using Microsoft.Build.Utilities;
+using Kingmaker.Pathfinding;
 
 namespace PrestigePlus.HarmonyFix
 {
@@ -35,6 +37,14 @@ namespace PrestigePlus.HarmonyFix
                 if (__instance.Executor.HasFact(RapidBuff) && turn?.Rider == __instance.Executor)
                 {
                     __instance.ForceFullAttack = true;
+                }
+                if (!__instance.Executor.IsDirectlyControllable && __instance is UnitCommand cmd && cmd.ForcedPath != null && turn?.Rider == __instance.Executor)
+                {
+                    var length = cmd.ForcedPath.GetTotalLength();
+                    if (length > 0 && length <= 7.75f.Feet().Meters)
+                    {
+                        __instance.ForceFullAttack = true;
+                    } 
                 }
             }
             catch (Exception ex) { Main.Logger.Error("Failed to ForceFullAttackFix.", ex); }
