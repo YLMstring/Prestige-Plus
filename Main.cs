@@ -453,7 +453,7 @@ namespace PrestigePlus
                         StrengthSurge.StrengthSurgeFeat(); KiThrow.DragConfigure(); ImprovedKiThrow.DragConfigure(); EnhancedThrow.DragConfigure(); BindingThrow.DragConfigure(); 
                         RhinoCharge.Configure();  SunderStorm.CreateCombatTrickery(); DirtyFighting.DirtyFightingConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("halfling")) || ModMenu.ModMenu.GetSettingValue<bool>(GetKey("ecpatch"))) { HalflingOpportunist.Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("enhance"))) { SwiftDeath.Configure(); SwiftDeath.Configure2(); UnbreakableDefance.Configure(); MythicWings.Configure(); MythicWings.Configure2(); MythicRiposte.Configure(); MetaphysicalSneak.Configure(); LesserSpellSynthesis.Configure(); SurprisingStrategy.Configure(); MythicRiposte.Configure2(); SwordLord.CreateQuickDraw(); SwordLord.CreateCatechesis(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("enhance"))) { SwiftDeath.Configure(); SwiftDeath.Configure2(); UnbreakableDefance.Configure(); MythicRiposte.Configure(); MetaphysicalSneak.Configure(); LesserSpellSynthesis.Configure(); SurprisingStrategy.Configure(); MythicRiposte.Configure2(); SwordLord.CreateQuickDraw(); SwordLord.CreateCatechesis(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fightereg"))) { EldritchGuardian.Configure(); EldritchAssault.EldritchAssaultFeatFeat(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("lorew"))) { LoreWarden.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("warlord"))) { Warlord.Configure(); }
@@ -524,7 +524,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("forestwarden"))) { ForestWarden.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("usher"))) { MortalUsher.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("masterpiece"))) { Masterpiece.CreateBardMasterpieceCore(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("superop"))) { HermeanPotential.Configure(); DebilitatingPain.Configure(); DebilitatingPainMass.Configure(); GlimpseAkashic.Configure(); AkashicForm.Configure(); PhantomLimb.Configure(); Supernaturalist.Configure(); SecretAkashic.Configure(); SecretAkashic.Configure2(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("superop"))) { HermeanPotential.Configure(); DebilitatingPain.Configure(); DebilitatingPainMass.Configure(); GlimpseAkashic.Configure(); AkashicForm.Configure(); PhantomLimb.Configure(); Supernaturalist.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("order"))) { Inquisition.HammerFeat(); Inquisition.PenitentFeat(); Inquisition.SealFeat(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("titanm"))) { TitanMauler.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("staffmagus"))) { StaffMagus.Configure(); }
