@@ -453,7 +453,7 @@ namespace PrestigePlus
                         StrengthSurge.StrengthSurgeFeat(); KiThrow.DragConfigure(); ImprovedKiThrow.DragConfigure(); EnhancedThrow.DragConfigure(); BindingThrow.DragConfigure(); 
                         RhinoCharge.Configure();  SunderStorm.CreateCombatTrickery(); DirtyFighting.DirtyFightingConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("halfling")) || ModMenu.ModMenu.GetSettingValue<bool>(GetKey("ecpatch"))) { HalflingOpportunist.Configure(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("enhance"))) { UnbreakableDefance.Configure(); MythicRiposte.Configure(); MetaphysicalSneak.Configure(); LesserSpellSynthesis.Configure(); SurprisingStrategy.Configure(); MythicRiposte.Configure2(); SwordLord.CreateQuickDraw(); SwordLord.CreateCatechesis(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("enhance"))) { UnbreakableDefance.Configure(); MythicRiposte.Configure(); MetaphysicalSneak.Configure(); LesserSpellSynthesis.Configure(); SurprisingStrategy.Configure(); MythicRiposte.Configure2(); SwordLord.CreateQuickDraw(); SwordLord.CreateCatechesis(); SwordLord.CreateEsotericDragons(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("fightereg"))) { EldritchGuardian.Configure(); EldritchAssault.EldritchAssaultFeatFeat(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("lorew"))) { LoreWarden.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("warlord"))) { Warlord.Configure(); }
