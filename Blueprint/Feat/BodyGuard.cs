@@ -63,6 +63,42 @@ namespace PrestigePlus.Blueprint.Feat
                     .Configure();
         }
 
+        private const string MagusPetFeat = "MagusPet.MagusPet";
+        public static readonly string MagusPetGuid = "{244A809A-015B-45E6-8707-AAC636C5FBF8}";
+
+        internal const string MagusPetDisplayName = "MagusPet.Name";
+        private const string MagusPetDescription = "MagusPet.Description";
+        public static void MagusPetConfigure()
+        {
+            var icon = FeatureRefs.HareFamiliarBondFeature.Reference.Get().Icon;
+
+            var feat = FeatureSelectionConfigurator.New(MagusPetFeat, MagusPetGuid)
+              .SetDisplayName(MagusPetDisplayName)
+              .SetDescription(MagusPetDescription)
+              .SetIcon(icon)
+              .SetIgnorePrerequisites(false)
+              .SetObligatory(false)
+              .Configure();
+
+            feat.m_AllFeatures = FeatureSelectionRefs.WitchFamiliarSelection.Reference.Get().m_AllFeatures;
+
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.MagusArcanaSelection)
+                .AddToAllFeatures(feat)
+                .Configure();
+
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.EldritchMagusArcanaSelection)
+                .AddToAllFeatures(feat)
+                .Configure();
+
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.HexcrafterMagusHexArcanaSelection)
+                .AddToAllFeatures(feat)
+                .Configure();
+
+            FeatureSelectionConfigurator.For(FeatureSelectionRefs.ExtraArcanaSelection)
+                .AddToAllFeatures(feat)
+                .Configure();
+        }
+
         private const string NinjaTrickFeat = "NinjaTrick.NinjaTrick";
         public static readonly string NinjaTrickGuid = "{4C242C11-9754-47BF-BD40-5C10489999A3}";
 
