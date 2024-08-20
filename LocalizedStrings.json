@@ -14407,117 +14407,117 @@
     "Key": "MagusPet.Name",
     "ProcessTemplates": false,
     "enGB": "Familiar",
-	  "ruRU": "Фамильяр",
+    "ruRU": "Фамильяр",
     "zhCN": "魔宠"
   },
   {
     "Key": "MagusPet.Description",
     "enGB": "The magus gains a familiar, using his magus level as his effective wizard level. This familiar follows the rules for familiars presented in the arcane bond wizard class feature.",
-	  "ruRU": "Магус получает фамильяра используя свой уровень магуса в качестве эффективного уровня мага. Этот фамильяр подчиняется тем же правилам что и фамильяры полученные от классовой способности мага Мистическая связь.",
+    "ruRU": "Магус получает фамильяра используя свой уровень магуса в качестве эффективного уровня мага. Этот фамильяр подчиняется тем же правилам что и фамильяры полученные от классовой способности мага Мистическая связь.",
     "zhCN": "魔战士获得一个魔宠，使用他的魔战士等级作为他的有效法师等级。该魔宠遵循奥术联结职业特性中的魔宠规则。"
   },
   {
     "Key": "DragonDiscipleVariantBloodlineArcana3.Name",
     "ProcessTemplates": false,
     "enGB": "Bloodline Arcana",
-	  "ruRU": "Аркан наследия",
+    "ruRU": "Аркан наследия",
     "zhCN": "血承奥法"
   },
   {
     "Key": "DragonDiscipleVariantBloodlineArcana3.Description",
     "enGB": "At 1st level, a dragon disciple add hermean potential to her spell list, and it functions as psychic magic instead of arcane.",
-	  "ruRU": "На 1 уровне драконий апостол добавляет заклинание Эрмейский потенциал к списку известных ему заклинаний, при этом это заклинание является психическим, а не мистическим.",
+    "ruRU": "На 1 уровне драконий апостол добавляет заклинание Эрмейский потенциал к списку известных ему заклинаний, при этом это заклинание является психическим, а не мистическим.",
     "zhCN": "1级时，龙脉术士将赫氏潜能术添加到法术列表，该法术如同心灵异能法术，而非奥术进行运作。"
   },
   {
     "Key": "DragonDiscipleVariantBloodlineArcana6.Name",
     "ProcessTemplates": false,
     "enGB": "Bloodline Arcana",
-	  "ruRU": "Аркан наследия",
+    "ruRU": "Аркан наследия",
     "zhCN": "血承奥法"
   },
   {
     "Key": "DragonDiscipleVariantBloodlineArcana6.Description",
     "enGB": "At 3rd level, a dragon disciple add debilitating pain to her spell list, and it functions as psychic magic instead of arcane.",
-	  "ruRU": "На 3 уровне драконий апостол добавляет заклинание Изнуряющая боль к списку известных ему заклинаний, при этом это заклинание является психическим, а не мистическим.",
+    "ruRU": "На 3 уровне драконий апостол добавляет заклинание Изнуряющая боль к списку известных ему заклинаний, при этом это заклинание является психическим, а не мистическим.",
     "zhCN": "3级时，龙脉术士将衰竭剧痛添加到法术列表，该法术如同心灵异能法术，而非奥术进行运作。"
   },
   {
     "Key": "DragonDiscipleVariantBloodlineArcana9.Name",
     "ProcessTemplates": false,
     "enGB": "Bloodline Arcana",
-	  "ruRU": "Аркан наследия",
+    "ruRU": "Аркан наследия",
     "zhCN": "血承奥法"
   },
   {
     "Key": "DragonDiscipleVariantBloodlineArcana9.Description",
     "enGB": "At 5th level, a dragon disciple add debilitating pain, mass to her spell list, and it functions as psychic magic instead of arcane.",
-	  "ruRU": "На 5 уровне драконий апостол добавляет заклинание Изнуряющая боль, массовое к списку известных ему заклинаний, при этом это заклинание является психическим, а не мистическим.",
+    "ruRU": "На 5 уровне драконий апостол добавляет заклинание Изнуряющая боль, массовое к списку известных ему заклинаний, при этом это заклинание является психическим, а не мистическим.",
     "zhCN": "5级时，龙脉术士将群体衰竭剧痛添加到法术列表，该法术如同心灵异能法术，而非奥术进行运作。"
   },
   {
     "Key": "DragonDiscipleVariantBloodlineArcana12.Name",
     "ProcessTemplates": false,
     "enGB": "Bloodline Arcana",
-	  "ruRU": "Аркан наследия",
+    "ruRU": "Аркан наследия",
     "zhCN": "血承奥法"
   },
   {
     "Key": "DragonDiscipleVariantBloodlineArcana12.Description",
     "enGB": "At 7th level, a dragon disciple add phantom limb to her spell list, and it functions as psychic magic instead of arcane.",
-	  "ruRU": "На 7 уровне драконий апостол добавляет заклинание Призрачная конечность к списку известных ему заклинаний, при этом это заклинание является психическим, а не мистическим.",
+    "ruRU": "На 7 уровне драконий апостол добавляет заклинание Призрачная конечность к списку известных ему заклинаний, при этом это заклинание является психическим, а не мистическим.",
     "zhCN": "7级时，龙脉术士将魅影手添加到法术列表，该法术如同心灵异能法术，而非奥术进行运作。"
   },
   {
     "Key": "DragonDiscipleVariantBloodlineArcana15.Name",
     "ProcessTemplates": false,
     "enGB": "Bloodline Arcana",
-	  "ruRU": "Аркан наследия",
+    "ruRU": "Аркан наследия",
     "zhCN": "血承奥法"
   },
   {
     "Key": "DragonDiscipleVariantBloodlineArcana15.Description",
     "enGB": "At 9th level, a dragon disciple add glimpse of the akashic to her spell list, and it functions as psychic magic instead of arcane.",
-	  "ruRU": "На 9 уровне драконий апостол добавляет заклинание Проблеск Акаши к списку известных ему заклинаний, при этом это заклинание является психическим, а не мистическим.",
+    "ruRU": "На 9 уровне драконий апостол добавляет заклинание Проблеск Акаши к списку известных ему заклинаний, при этом это заклинание является психическим, а не мистическим.",
     "zhCN": "9级时，龙脉术士将阿卡西窥视术添加到法术列表，该法术如同心灵异能法术，而非奥术进行运作。"
   },
   {
     "Key": "DragonDiscipleVariantBloodlineArcana18.Name",
     "ProcessTemplates": false,
     "enGB": "Bloodline Arcana",
-	  "ruRU": "Аркан наследия",
+    "ruRU": "Аркан наследия",
     "zhCN": "血承奥法"
   },
   {
     "Key": "DragonDiscipleVariantBloodlineArcana18.Description",
     "enGB": "At 10th level, a dragon disciple add akashic form to her spell list, and it functions as psychic magic instead of arcane.",
-	  "ruRU": "На 10 уровне драконий апостол добавляет заклинание Форма Акаши к списку известных ему заклинаний, при этом это заклинание является психическим, а не мистическим.",
+    "ruRU": "На 10 уровне драконий апостол добавляет заклинание Форма Акаши к списку известных ему заклинаний, при этом это заклинание является психическим, а не мистическим.",
     "zhCN": "10级时，龙脉术士将阿卡西构形添加到法术列表，该法术如同心灵异能法术，而非奥术进行运作。"
   },
   {
     "Key": "SwordLordEsotericDragons.Name",
     "ProcessTemplates": false,
     "enGB": "Esoteric Dragon's Blood",
-	  "ruRU": "Эзотерическая кровь дракона",
+    "ruRU": "Эзотерическая кровь дракона",
     "zhCN": "秘龙之血"
   },
   {
     "Key": "SwordLordEsotericDragons.Description",
     "enGB": "Though many of the enigmatic esoteric dragons remain aloof or intentionally distant from mortal affairs, occult dragons are the most likely to imprint their bloodline onto humanoids. Often such draconic blood is the result of ongoing experimentation. Scions of other esoteric dragons are far more unusual; such bloodlines usually result from explorers traveling the realms where these distant dragons dwell and being exposed to some spectacular and ill-understood power.",
-	  "ruRU": "Хотя многие из загадочных эзотерических драконов остаются в стороне или намеренно отдаляются от дел смертных, оккультные драконы наиболее склонны запечатлевать свою родословную в гуманоидах. Часто такая драконья кровь является результатом постоянных экспериментов. Потомство других эзотерических драконов - явление гораздо более необычное; такие кровные линии обычно возникают в результате путешествий исследователей по сферам, где обитают эти далекие драконы, и их воздействия на некую впечатляющую и непонятную силу.",
+    "ruRU": "Хотя многие из загадочных эзотерических драконов остаются в стороне или намеренно отдаляются от дел смертных, оккультные драконы наиболее склонны запечатлевать свою родословную в гуманоидах. Часто такая драконья кровь является результатом постоянных экспериментов. Потомство других эзотерических драконов - явление гораздо более необычное; такие кровные линии обычно возникают в результате путешествий исследователей по сферам, где обитают эти далекие драконы, и их воздействия на некую впечатляющую и непонятную силу.",
     "zhCN": "尽管许多秘龙仍然冷漠或故意远离凡人事务，但另一些则很有可能将它们的血统印入类人生物。通常这样的龙族血脉是持续实验的结果。其他秘龙的后代则更为不寻常。这些血脉通常是当探险家在这些遥远的龙族居所旅行时，接触到一些壮观且难以理解的力量而产生的。"
   },
   {
     "Key": "SwordLordEsotericDragons2.Name",
     "ProcessTemplates": false,
     "enGB": "Variant Bloodline Arcana",
-	  "ruRU": "Выбор аркана наследия",
+    "ruRU": "Выбор аркана наследия",
     "zhCN": "特异血承奥法"
   },
   {
     "Key": "SwordLordEsotericDragons2.Description",
     "enGB": "A dragon disciple can choose such a bloodline and replace her bloodline arcana with extra psychic spells.",
-	  "ruRU": "Драконий апостол может выбрать такое наследие и заменить свой аркан наследия дополнительным психическим заклинанием.",
+    "ruRU": "Драконий апостол может выбрать такое наследие и заменить свой аркан наследия дополнительным психическим заклинанием.",
     "zhCN": "龙脉术士可以选择这种血承，放弃血承奥法来换取额外的心灵异能法术。"
   }
 
