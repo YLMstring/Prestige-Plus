@@ -139,7 +139,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private const string EsotericDragonsDescription = "SwordLordEsotericDragons.Description";
         public static void CreateEsotericDragons()
         {
-            var icon = AbilityRefs.DragonAzataBuffAlliesAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.AzaraDragonBreathWeapon.Reference.Get().Icon;
 
             var feat = FeatureSelectionConfigurator.New(EsotericDragons, EsotericDragonsGuid)
               .SetDisplayName(EsotericDragonsDisplayName)
@@ -173,7 +173,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               {
                   c.Spell = BlueprintTool.GetRef<BlueprintAbilityReference>(HermeanPotential.HermeanPotentialAbilityGuid);
                   c.level = 1;
-                  c.CharacterClass = CharacterClassRefs.DragonDiscipleClass.Reference.Get();
               })
               .Configure();
         }
@@ -196,7 +195,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               {
                   c.Spell = BlueprintTool.GetRef<BlueprintAbilityReference>(DebilitatingPain.DebilitatingPainAbilityGuid);
                   c.level = 3;
-                  c.CharacterClass = CharacterClassRefs.DragonDiscipleClass.Reference.Get();
               })
               .Configure();
         }
@@ -219,7 +217,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               {
                   c.Spell = BlueprintTool.GetRef<BlueprintAbilityReference>(DebilitatingPainMass.DebilitatingPainMassAbilityGuid);
                   c.level = 5;
-                  c.CharacterClass = CharacterClassRefs.DragonDiscipleClass.Reference.Get();
               })
               .Configure();
         }
@@ -242,7 +239,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               {
                   c.Spell = BlueprintTool.GetRef<BlueprintAbilityReference>(PhantomLimb.PhantomLimbAbilityGuid);
                   c.level = 6;
-                  c.CharacterClass = CharacterClassRefs.DragonDiscipleClass.Reference.Get();
               })
               .Configure();
         }
@@ -265,7 +261,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               {
                   c.Spell = BlueprintTool.GetRef<BlueprintAbilityReference>(GlimpseAkashic.GlimpseAkashicAbilityGuid);
                   c.level = 8;
-                  c.CharacterClass = CharacterClassRefs.DragonDiscipleClass.Reference.Get();
               })
               .Configure();
         }
@@ -288,7 +283,6 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               {
                   c.Spell = BlueprintTool.GetRef<BlueprintAbilityReference>(AkashicForm.AkashicFormAbilityGuid);
                   c.level = 9;
-                  c.CharacterClass = CharacterClassRefs.DragonDiscipleClass.Reference.Get();
               })
               .Configure();
         }
