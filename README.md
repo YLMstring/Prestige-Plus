@@ -421,8 +421,6 @@
 - [Emblem of Greed](https://www.d20pfsrd.com/magic/all-spells/e/emblem-of-greed/)
 ### New Mythic Prestige Class Features
 
-- Swift Death: Your target assassination becomes a standard action. At 10th assassin level, it becomes a move action.
-- Greater Swift Death: Your target assassination becomes a move action. At 10th assassin level, it becomes a swift action.
 - Unbreakable Defense: You no longer have a limited amount of Defensive Stance rounds per day.
 - Riposte (Mythic): The duelist adds her mythic tier as a bonus on her attack roll when attempting a parry and riposte. This bonus does not stack with Ever Ready mythic feat.
 - Metaphysical Sneak Attack: If the student of war deals sneak attack damage to a target, he can study that target, allowing him to apply his Know Your Enemy effects. Additionally, his sneak attack no longer deals precision damage.
