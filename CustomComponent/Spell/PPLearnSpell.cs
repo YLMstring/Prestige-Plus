@@ -47,7 +47,17 @@ namespace PrestigePlus.CustomComponent.Spell
         }
         private void LearnList(BlueprintCharacterClass clazz)
         {
-            Owner.GetSpellbook(clazz)?.AddKnown(level, Spell, true);
+            ClassData classData = base.Owner.Progression.GetClassData(clazz);
+            if (classData == null)
+            {
+                return;
+            }
+            Spellbook spellbook = base.Owner.GetSpellbook(clazz);
+            if (spellbook == null)
+            {
+                return;
+            }
+            spellbook.AddKnown(level, Spell, true);
         }
     }
 }
