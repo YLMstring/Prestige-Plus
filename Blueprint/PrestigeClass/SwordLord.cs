@@ -108,7 +108,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         }
 
         private const string VariantBloodline = "SwordLord.VariantBloodline";
-        private static readonly string VariantBloodlineGuid = "{D8F534B2-F81C-45A5-9CEE-2D4CA8B30980}";
+        public static readonly string VariantBloodlineGuid = "{D8F534B2-F81C-45A5-9CEE-2D4CA8B30980}";
 
         internal const string EsotericDragons2DisplayName = "SwordLordEsotericDragons2.Name";
         private const string EsotericDragons2Description = "SwordLordEsotericDragons2.Description";
