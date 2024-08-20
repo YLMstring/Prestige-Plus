@@ -21,7 +21,7 @@ namespace PrestigePlus.CustomComponent.Spell
         public BlueprintCharacterClass CharacterClass;
         public BlueprintAbility Spell;
         public int level;
-        public override void OnTurnOn()
+        public override void OnActivate()
         {
             this.Learn();
         }
@@ -57,10 +57,7 @@ namespace PrestigePlus.CustomComponent.Spell
             {
                 return;
             }
-            if (spellbook.GetKnownSpells(level).All((AbilityData spellFromSpellbook) => spellFromSpellbook.Blueprint != Spell))
-            {
-                spellbook.AddKnown(level, Spell, true);
-            }
+            spellbook.AddKnown(level, Spell, true);
         }
     }
 }
