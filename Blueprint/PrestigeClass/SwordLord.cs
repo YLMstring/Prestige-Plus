@@ -14,6 +14,8 @@ using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Blueprints.Classes;
 using PrestigePlus.Patch;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes.Selection;
+using PrestigePlus.Blueprint.Spell;
+using PrestigePlus.CustomComponent.Spell;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -103,6 +105,192 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             ProgressionConfigurator.For(ProgressionRefs.HellknightSigniferProgression)
                .AddToLevelEntry(1, feat)
                .Configure();
+        }
+
+        private const string VariantBloodline = "SwordLord.VariantBloodline";
+        private static readonly string VariantBloodlineGuid = "{D8F534B2-F81C-45A5-9CEE-2D4CA8B30980}";
+
+        internal const string EsotericDragons2DisplayName = "SwordLordEsotericDragons2.Name";
+        private const string EsotericDragons2Description = "SwordLordEsotericDragons2.Description";
+        public static BlueprintProgression VariantBloodlineFeat()
+        {
+            var icon = AbilityRefs.AzaraDragonBreathWeapon.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(VariantBloodline, VariantBloodlineGuid)
+              .SetDisplayName(EsotericDragons2DisplayName)
+              .SetDescription(EsotericDragons2Description)
+              .SetIcon(icon)
+              .SetIsClassFeature(true)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToClasses(CharacterClassRefs.DragonDiscipleClass.ToString())
+                .AddToLevelEntry(1, CreateVariantBloodlineArcana3())
+                .AddToLevelEntry(3, CreateVariantBloodlineArcana6())
+                .AddToLevelEntry(5, CreateVariantBloodlineArcana9())
+                .AddToLevelEntry(7, CreateVariantBloodlineArcana12())
+                .AddToLevelEntry(9, CreateVariantBloodlineArcana15())
+                .AddToLevelEntry(10, CreateVariantBloodlineArcana18())
+              .Configure();
+        }
+
+        private const string EsotericDragons = "SwordLord.EsotericDragons";
+        private static readonly string EsotericDragonsGuid = "{2D1E7F39-EAF1-4099-ADB7-9D4144A34BEB}";
+
+        internal const string EsotericDragonsDisplayName = "SwordLordEsotericDragons.Name";
+        private const string EsotericDragonsDescription = "SwordLordEsotericDragons.Description";
+        public static void CreateEsotericDragons()
+        {
+            var icon = AbilityRefs.DragonAzataBuffAlliesAbility.Reference.Get().Icon;
+
+            var feat = FeatureSelectionConfigurator.New(EsotericDragons, EsotericDragonsGuid)
+              .SetDisplayName(EsotericDragonsDisplayName)
+              .SetDescription(EsotericDragonsDescription)
+              .SetIcon(icon)
+              .AddToAllFeatures(VariantBloodlineFeat())
+              .SetIgnorePrerequisites(false)
+              .SetObligatory(false)
+              .Configure();
+
+            ProgressionConfigurator.For(ProgressionRefs.DragonDiscipleProgression)
+               .AddToLevelEntry(1, feat)
+               .Configure();
+        }
+
+        private const string VariantBloodlineArcana3 = "DragonDisciple.VariantBloodlineArcana3";
+        public static readonly string VariantBloodlineArcana3Guid = "{F4D45CBA-CE7D-457E-BF33-9F4A2F84DDBD}";
+
+        internal const string VariantBloodlineArcana3DisplayName = "DragonDiscipleVariantBloodlineArcana3.Name";
+        private const string VariantBloodlineArcana3Description = "DragonDiscipleVariantBloodlineArcana3.Description";
+
+        public static BlueprintFeature CreateVariantBloodlineArcana3()
+        {
+            var icon = AbilityRefs.BestowGraceCast.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(VariantBloodlineArcana3, VariantBloodlineArcana3Guid)
+              .SetDisplayName(VariantBloodlineArcana3DisplayName)
+              .SetDescription(VariantBloodlineArcana3Description)
+              .SetIcon(icon)
+              .AddComponent<PPLearnSpell>(c =>
+              {
+                  c.Spell = BlueprintTool.GetRef<BlueprintAbilityReference>(HermeanPotential.HermeanPotentialAbilityGuid);
+                  c.level = 1;
+                  c.CharacterClass = CharacterClassRefs.DragonDiscipleClass.Reference.Get();
+              })
+              .Configure();
+        }
+
+        private const string VariantBloodlineArcana6 = "DragonDisciple.VariantBloodlineArcana6";
+        public static readonly string VariantBloodlineArcana6Guid = "{6A4DF308-96E6-48CC-8E4C-7289A4C6762C}";
+
+        internal const string VariantBloodlineArcana6DisplayName = "DragonDiscipleVariantBloodlineArcana6.Name";
+        private const string VariantBloodlineArcana6Description = "DragonDiscipleVariantBloodlineArcana6.Description";
+
+        public static BlueprintFeature CreateVariantBloodlineArcana6()
+        {
+            var icon = AbilityRefs.CacophonousCall.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(VariantBloodlineArcana6, VariantBloodlineArcana6Guid)
+              .SetDisplayName(VariantBloodlineArcana6DisplayName)
+              .SetDescription(VariantBloodlineArcana6Description)
+              .SetIcon(icon)
+              .AddComponent<PPLearnSpell>(c =>
+              {
+                  c.Spell = BlueprintTool.GetRef<BlueprintAbilityReference>(DebilitatingPain.DebilitatingPainAbilityGuid);
+                  c.level = 3;
+                  c.CharacterClass = CharacterClassRefs.DragonDiscipleClass.Reference.Get();
+              })
+              .Configure();
+        }
+
+        private const string VariantBloodlineArcana9 = "DragonDisciple.VariantBloodlineArcana9";
+        public static readonly string VariantBloodlineArcana9Guid = "{442B4834-678A-4F3E-AF9A-0A05FC61FED3}";
+
+        internal const string VariantBloodlineArcana9DisplayName = "DragonDiscipleVariantBloodlineArcana9.Name";
+        private const string VariantBloodlineArcana9Description = "DragonDiscipleVariantBloodlineArcana9.Description";
+
+        public static BlueprintFeature CreateVariantBloodlineArcana9()
+        {
+            var icon = AbilityRefs.CacophonousCallMass.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(VariantBloodlineArcana9, VariantBloodlineArcana9Guid)
+              .SetDisplayName(VariantBloodlineArcana9DisplayName)
+              .SetDescription(VariantBloodlineArcana9Description)
+              .SetIcon(icon)
+              .AddComponent<PPLearnSpell>(c =>
+              {
+                  c.Spell = BlueprintTool.GetRef<BlueprintAbilityReference>(DebilitatingPainMass.DebilitatingPainMassAbilityGuid);
+                  c.level = 5;
+                  c.CharacterClass = CharacterClassRefs.DragonDiscipleClass.Reference.Get();
+              })
+              .Configure();
+        }
+
+        private const string VariantBloodlineArcana12 = "DragonDisciple.VariantBloodlineArcana12";
+        public static readonly string VariantBloodlineArcana12Guid = "{43036927-40FD-4B5E-8E13-DDB8880D191D}";
+
+        internal const string VariantBloodlineArcana12DisplayName = "DragonDiscipleVariantBloodlineArcana12.Name";
+        private const string VariantBloodlineArcana12Description = "DragonDiscipleVariantBloodlineArcana12.Description";
+
+        public static BlueprintFeature CreateVariantBloodlineArcana12()
+        {
+            var icon = AbilityRefs.ConstrictingCoils.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(VariantBloodlineArcana12, VariantBloodlineArcana12Guid)
+              .SetDisplayName(VariantBloodlineArcana12DisplayName)
+              .SetDescription(VariantBloodlineArcana12Description)
+              .SetIcon(icon)
+              .AddComponent<PPLearnSpell>(c =>
+              {
+                  c.Spell = BlueprintTool.GetRef<BlueprintAbilityReference>(PhantomLimb.PhantomLimbAbilityGuid);
+                  c.level = 6;
+                  c.CharacterClass = CharacterClassRefs.DragonDiscipleClass.Reference.Get();
+              })
+              .Configure();
+        }
+
+        private const string VariantBloodlineArcana15 = "DragonDisciple.VariantBloodlineArcana15";
+        public static readonly string VariantBloodlineArcana15Guid = "{476372AD-3343-4718-B1D1-F19853077AF4}";
+
+        internal const string VariantBloodlineArcana15DisplayName = "DragonDiscipleVariantBloodlineArcana15.Name";
+        private const string VariantBloodlineArcana15Description = "DragonDiscipleVariantBloodlineArcana15.Description";
+
+        public static BlueprintFeature CreateVariantBloodlineArcana15()
+        {
+            var icon = AbilityRefs.TrueSeeingCommunal.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(VariantBloodlineArcana15, VariantBloodlineArcana15Guid)
+              .SetDisplayName(VariantBloodlineArcana15DisplayName)
+              .SetDescription(VariantBloodlineArcana15Description)
+              .SetIcon(icon)
+              .AddComponent<PPLearnSpell>(c =>
+              {
+                  c.Spell = BlueprintTool.GetRef<BlueprintAbilityReference>(GlimpseAkashic.GlimpseAkashicAbilityGuid);
+                  c.level = 8;
+                  c.CharacterClass = CharacterClassRefs.DragonDiscipleClass.Reference.Get();
+              })
+              .Configure();
+        }
+
+        private const string VariantBloodlineArcana18 = "DragonDisciple.VariantBloodlineArcana18";
+        public static readonly string VariantBloodlineArcana18Guid = "{9179337D-A6B9-4523-BB01-7692FDDAF11D}";
+
+        internal const string VariantBloodlineArcana18DisplayName = "DragonDiscipleVariantBloodlineArcana18.Name";
+        private const string VariantBloodlineArcana18Description = "DragonDiscipleVariantBloodlineArcana18.Description";
+
+        public static BlueprintFeature CreateVariantBloodlineArcana18()
+        {
+            var icon = AbilityRefs.BrilliantInspiration.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(VariantBloodlineArcana18, VariantBloodlineArcana18Guid)
+              .SetDisplayName(VariantBloodlineArcana18DisplayName)
+              .SetDescription(VariantBloodlineArcana18Description)
+              .SetIcon(icon)
+              .AddComponent<PPLearnSpell>(c =>
+              {
+                  c.Spell = BlueprintTool.GetRef<BlueprintAbilityReference>(AkashicForm.AkashicFormAbilityGuid);
+                  c.level = 9;
+                  c.CharacterClass = CharacterClassRefs.DragonDiscipleClass.Reference.Get();
+              })
+              .Configure();
         }
     }
 }
