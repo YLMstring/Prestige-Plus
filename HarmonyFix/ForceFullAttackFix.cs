@@ -41,7 +41,7 @@ namespace PrestigePlus.HarmonyFix
                 if (!__instance.Executor.IsDirectlyControllable && __instance is UnitCommand cmd && cmd.ForcedPath != null && turn?.Rider == __instance.Executor)
                 {
                     var length = cmd.ForcedPath.GetTotalLength();
-                    if (length > 0 && length <= 7.75f.Feet().Meters)
+                    if (length > 0 && length <= 8f.Feet().Meters)
                     {
                         __instance.ForceFullAttack = true;
                     } 
