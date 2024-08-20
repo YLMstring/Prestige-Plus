@@ -447,9 +447,11 @@
 - Fix the bug that physical kinetic blasts that create an area effect don't count as magical.
 - Fix the bug(?) that a sawtooth saber can't be wielded with two hands.
 - Fix the bug that eldritch scion's arcane accuracy incorrectly uses INT.
-- Fix the bug that certain enemies trying to cast self-only spells to MC, then getting stuck forever
-- Fix the bug that aeon bane giving crazy attack bonus
-- Fix the bug that Clemency of Shadows triggers every AoO regardless of whether it crits or not
+- Fix the bug that certain enemies trying to cast self-only spells to MC, then getting stuck forever.
+- Fix the bug that aeon bane giving crazy attack bonus.
+- Fix the bug that Clemency of Shadows triggers every AoO regardless of whether it crits or not.
+- Fix the bug(?) that enemies can't take a 5 foot step.
+- Fix the bug(?) that you can't skip selections.
 ## Mod Combo
 
 ### [Character Options+](https://github.com/WittleWolfie/CharacterOptionsPlus)
