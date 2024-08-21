@@ -62,13 +62,12 @@ namespace PrestigePlus.HarmonyFix
             try
             {
                 if (!__result) { return; }
-                foreach (var cmd in target.Commands)
+                if (target.IsDirectlyControllable) { return; }
+                var path = target.View?.AgentASP?.Path ?? target.View?.AgentASP?.RequestedPath;
+                if (path == null) { return; }
+                if (path.GetTotalLength() > 8f.Feet().Meters)
                 {
-                    if (cmd.ForcedPath == null) continue;
-                    if (cmd.ForcedPath.GetTotalLength() > 8f.Feet().Meters) 
-                    {
-                        return;
-                    }
+                    return;
                 }
                 __result = false;
             }
