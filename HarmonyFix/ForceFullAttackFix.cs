@@ -23,6 +23,7 @@ using UniRx;
 using Kingmaker.UnitLogic.Commands.Base;
 using Microsoft.Build.Utilities;
 using Kingmaker.Pathfinding;
+using Kingmaker.Controllers.Combat;
 
 namespace PrestigePlus.HarmonyFix
 {
@@ -51,5 +52,27 @@ namespace PrestigePlus.HarmonyFix
         }
 
         private static BlueprintBuffReference RapidBuff = BlueprintTool.GetRef<BlueprintBuffReference>(DawnflowerDervish.RapidAttackBuffGuid);
+    }
+
+    [HarmonyPatch(typeof(UnitCombatState), nameof(UnitCombatState.ShouldAttackOnDisengage))]
+    internal class ForceFullAttackFix2
+    {
+        static void Postfix(ref UnitEntityData target, ref bool __result)
+        {
+            try
+            {
+                if (!__result) { return; }
+                foreach (var cmd in target.Commands)
+                {
+                    if (cmd.ForcedPath == null) continue;
+                    if (cmd.ForcedPath.GetTotalLength() > 8f.Feet().Meters) 
+                    {
+                        return;
+                    }
+                }
+                __result = false;
+            }
+            catch (Exception ex) { Main.Logger.Error("Failed to ForceFullAttackFix2.", ex); }
+        }
     }
 }
