@@ -48,7 +48,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetRange(AbilityRange.Long)
               .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Any, radius: 10.Feet(), spreadSpeed: 15.Feet())
               .SetType(AbilityType.Spell)
-              .AddSpellResistance()
+              .SetSpellResistance()
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Quicken, Metamagic.Extend, Metamagic.Persistent, Metamagic.Selective, Metamagic.Empower, Metamagic.Maximize, Metamagic.Bolstered)
               .AddToSpellLists(level: 2, SpellList.Wizard)
               .AddToSpellLists(level: 2, SpellList.Cleric)
@@ -68,7 +68,7 @@ namespace PrestigePlus.Blueprint.Spell
                         .DealDamage(DamageTypes.Energy(Kingmaker.Enums.Damage.DamageEnergyType.Magic), ContextDice.Value(DiceType.D4, ContextValues.Rank(), 0))
                         .Build())
                   .Build(), savingThrowType: Kingmaker.EntitySystem.Stats.SavingThrowType.Reflex)
-              .AddContextRankConfig(ContextRankConfigs.CasterLevel(true, max: 5))
+              .AddContextRankConfig(ContextRankConfigs.CasterLevel(max: 5))
               .AddCraftInfoComponent(
                 aOEType: CraftAOE.AOE,
                 savingThrow: CraftSavingThrow.Reflex,

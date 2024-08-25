@@ -47,7 +47,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetRange(AbilityRange.Medium)
               .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Any, radius: 20.Feet(), spreadSpeed: 30.Feet())
               .SetType(AbilityType.Spell)
-              .AddSpellResistance()
+              .SetSpellResistance()
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Quicken, Metamagic.Extend, Metamagic.Persistent, Metamagic.Selective)
               .AddToSpellLists(level: 3, SpellList.Wizard)
               .AddToSpellLists(level: 3, SpellList.Cleric)

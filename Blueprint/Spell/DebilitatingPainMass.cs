@@ -46,7 +46,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetRange(AbilityRange.Personal)
               .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Enemy, radius: 30.Feet(), spreadSpeed: 40.Feet())
               .SetType(AbilityType.Spell)
-              .AddSpellResistance()
+              .SetSpellResistance()
               .SetAvailableMetamagic(Metamagic.CompletelyNormal, Metamagic.Heighten, Metamagic.Quicken, Metamagic.Extend, Metamagic.Persistent)
               .AddToSpellLists(level: 5, SpellList.Witch)
               .SetSpellDescriptor(SpellDescriptor.MindAffecting | SpellDescriptor.Compulsion | SpellDescriptor.NegativeEmotion)
