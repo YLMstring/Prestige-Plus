@@ -35,7 +35,7 @@ namespace PrestigePlus.Blueprint.Spell
         internal const string Duration = "PPNewDuration1d4round.Name";
         public static void Configure()
         {
-            var icon = AbilityRefs.Flare.Reference.Get().Icon;
+            var icon = AbilityRefs.Stormbolts.Reference.Get().Icon;
 
             AbilityConfigurator.NewSpell(
                 BurstRadianceAbility, BurstRadianceAbilityGuid, SpellSchool.Evocation, canSpecialize: true)

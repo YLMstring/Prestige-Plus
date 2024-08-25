@@ -34,7 +34,7 @@ namespace PrestigePlus.Blueprint.Spell
         private const string Description = "NewSpellDarkLight.Description";
         public static void Configure()
         {
-            var icon = AbilityRefs.DarkVeilAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.CircleOfDeath.Reference.Get().Icon;
 
             AbilityConfigurator.NewSpell(
                 DarkLightAbility, DarkLightAbilityGuid, SpellSchool.Evocation, canSpecialize: true)

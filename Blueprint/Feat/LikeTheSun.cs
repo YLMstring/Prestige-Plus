@@ -42,7 +42,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static void Configure()
         {
-            var icon = AbilityRefs.FlareBurst.Reference.Get().Icon;
+            var icon = AbilityRefs.AngelSunForm.Reference.Get().Icon;
 
             FeatureConfigurator.New(FeatName, FeatGuid, FeatureGroup.Feat)
                     .SetDisplayName(DisplayName)
