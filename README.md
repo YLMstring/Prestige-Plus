@@ -171,7 +171,7 @@
 - Endless Gaze: a mythic ability to use Unnerving Gaze for free!
 - Shadow Jump: You can choose any feat from the dimentional feat chain instead! This requires [Microscopic Content Expansion mod](https://github.com/alterasc/MicroscopicContentExpansion/). If you don't want these feats, my mod doesn't require anything, as the original feature will still be there.
 - Extra Shadow Jump: This is a homebrew feat that gives you 4 extra uses of Shadow Jump ability and you can take it as soon as umbral agent level 1!
-### [Dragon Fury Class](https://www.d20pfsrd.com/classes/prestige-classes/other-paizo/s-z/scar-seeker/)   
+### [Dragon Fury Class](https://www.d20pfsrd.com/alternative-rule-systems/path-of-war/prestige-classes/dragon-fury/)   
 - Learn 3 Thrashing Dragon stances!
 - The class has more stuff on tabletop but it's enough of a power house atm :)
 - From Path of War
@@ -324,6 +324,7 @@
 - [Deflect Arrows (Mythic)](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-feats/deflect-arrows-mythic/): You deflect projectiles and ray spells with uncanny skill. When using Deflect Arrows, you can deflect an additional number of ranged attacks per round equal to half your tier. You can also deflect a single ray from a ray spell or effect targeting you.
 - [Racial Heritage (Mythic)](https://www.d20pfsrd.com/alternative-rule-systems/mythic/mythic-feats/racial-heritage-mythic/): Celestial Crusader, Negative Energy Affinity, Champion of Dark Powers, Multi-Armed and Kitsune Magic!
 - [Strike True](https://www.aonprd.com/FeatDisplay.aspx?ItemName=Strike%20True)
+- [Like the Sun](https://www.d20pfsrd.com/feats/combat-feats/equipment-trick-combat/): You can use a sunrod as an additional material component for any light spell. The spell is treated as one spell level higher (to a maximum of 9th level) for all purposes, including the calculation of saving throw DCs and its ability to overcome sources of magical darkness. (Light, Flare Burst, Burst of Radiance, Dark-Light, Mydriatic Spontaneity, Judgment Light, Chains of Light, Sunbeam, Sunburst, and Mydriatic Spontaneity, Mass)
 ### Trip Feats
 - [Vindictive Fall](https://www.d20pfsrd.com/feats/general-feats/vindictive-fall/)
 - [Ranged Trip](https://www.d20pfsrd.com/feats/combat-feats/ranged-trip-combat-targeting)
@@ -419,6 +420,8 @@
 - [Akashic Form](https://www.d20pfsrd.com/magic/all-spells/a/akashic-form/)
 - Tooth Hunt: a variant of [Fey Form III](https://www.d20pfsrd.com/magic/all-spells/f/fey-form/)
 - [Emblem of Greed](https://www.d20pfsrd.com/magic/all-spells/e/emblem-of-greed/)
+- [Burst of Radiance](https://aonprd.com/SpellDisplay.aspx?ItemName=Burst%20of%20Radiance)
+- [Dark-Light](https://aonprd.com/SpellDisplay.aspx?ItemName=Dark-Light)
 ### New Mythic Prestige Class Features
 
 - Unbreakable Defense: You no longer have a limited amount of Defensive Stance rounds per day.
@@ -450,6 +453,7 @@
 - Fix the bug that certain enemies trying to cast self-only spells to MC, then getting stuck forever.
 - Fix the bug that aeon bane giving crazy attack bonus.
 - Fix the bug that Clemency of Shadows triggers every AoO regardless of whether it crits or not.
+- Fix the bug that Dragon Disciple can't progress spell books other than spontaneous arcane ones (2-4, 6-8, 9-10)
 - Fix the bug(?) that enemies can't take a 5 foot step.
 - Fix the bug(?) that you can't skip selections.
 ## Mod Combo
