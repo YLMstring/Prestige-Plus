@@ -1,11 +1,13 @@
 ﻿using BlueprintCore.Actions.Builder;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
+using BlueprintCore.Blueprints.ModReferences;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Prerequisites;
+using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.Buffs;
 using Kingmaker.UnitLogic.FactLogic;
@@ -41,6 +43,48 @@ namespace PrestigePlus.Patch
                 feat.AddComponent<PrerequisiteFeature>(c => { c.m_Feature = BlueprintTool.GetRef<BlueprintFeatureReference>(HorizonWalker.DominanceAstralGuid); c.Group = Prerequisite.GroupType.Any; });
                 feat.AddComponent<PrerequisiteFeature>(c => { c.m_Feature = BlueprintTool.GetRef<BlueprintFeatureReference>(MenhirSavant.WalkLinesGuid); c.Group = Prerequisite.GroupType.Any; });
             }
+
+            try
+            {
+                string DimensionalBladeSpell = "aaed2bc8-7c24-4737-83f6-df4c520888ee";
+                var db = BlueprintTool.GetRef<BlueprintAbilityReference>(DimensionalBladeSpell).Get();
+                foreach (var listcomp in db.GetComponents<SpellListComponent>())
+                {
+                    if (listcomp.SpellList == ModSpellListRefs.AntipaladinSpelllist.Reference.Get())
+                    {
+                        listcomp.SpellLevel = 4;
+                    }
+                    else if (listcomp.SpellList == SpellListRefs.BloodragerSpellList.Reference.Get())
+                    {
+                        listcomp.SpellLevel = 4;
+                    }
+                    else if (listcomp.SpellList == SpellListRefs.PaladinSpellList.Reference.Get())
+                    {
+                        listcomp.SpellLevel = 4;
+                    }
+                    else if (listcomp.SpellList == SpellListRefs.InquisitorSpellList.Reference.Get())
+                    {
+                        listcomp.SpellLevel = 5;
+                    }
+                    else if (listcomp.SpellList == SpellListRefs.MagusSpellList.Reference.Get())
+                    {
+                        listcomp.SpellLevel = 5;
+                    }
+                    else if (listcomp.SpellList == SpellListRefs.WizardSpellList.Reference.Get())
+                    {
+                        listcomp.SpellLevel = 6;
+                    }
+                    else if (listcomp.SpellList == SpellListRefs.ClericSpellList.Reference.Get())
+                    {
+                        listcomp.SpellLevel = 6;
+                    }
+                    else if (listcomp.SpellList == SpellListRefs.WarpriestSpelllist.Reference.Get())
+                    {
+                        listcomp.SpellLevel = 6;
+                    }
+                }
+            }
+            catch (Exception e) { Main.Logger.Error("Failed to edit DimensionalBladeSpell.", e); }
         }
 
         private static readonly string FeatName = "FeatWalkThroughSpace";
