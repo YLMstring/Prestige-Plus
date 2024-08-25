@@ -24,6 +24,7 @@ using TabletopTweaks.Core.NewComponents.Prerequisites;
 using UnityEngine.Serialization;
 using UnityEngine;
 using PrestigePlus.Blueprint.Spell;
+using BlueprintCore.Blueprints.Configurators.Classes;
 
 namespace PrestigePlus.Blueprint.Feat
 {

@@ -10,6 +10,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using JetBrains.Annotations;
+using Kingmaker.UnitLogic.Abilities;
+using BlueprintCore.Utils;
+using Kingmaker.Blueprints;
+using PrestigePlus.Blueprint.Feat;
+using PrestigePlus.Blueprint.Spell;
+using BlueprintCore.Blueprints.References;
 
 namespace PrestigePlus.CustomComponent.BasePrestigeEnhance
 {
@@ -40,7 +47,19 @@ namespace PrestigePlus.CustomComponent.BasePrestigeEnhance
                 if (spellbook != null)
                 {
                     flag = true;
-                    num = Mathf.Max(num, unit.DemandSpellbook(classData.CharacterClass).MaxSpellLevel);
+                    var book = unit.DemandSpellbook(classData.CharacterClass);
+                    num = Mathf.Max(num, book.MaxSpellLevel);
+                    if (unit.HasFact(Sunfeat))
+                    {
+                        if (book.IsKnown(AbilityRefs.FlareBurst.Reference) || book.m_KnownSpells.Any((List<AbilityData> l) => l.Any((AbilityData s) => s.Blueprint == AbilityRefs.FlareBurst.Reference.Get())))
+                        {
+                            num = Math.Max(num, 2);
+                        }
+                        if (book.IsKnown(BurstRadiance1) || book.m_KnownSpells.Any((List<AbilityData> l) => l.Any((AbilityData s) => s.Blueprint == BurstRadiance1.Get())))
+                        {
+                            num = Math.Max(num, 3);
+                        }
+                    }
                 }
             }
             if (flag)
@@ -51,5 +70,7 @@ namespace PrestigePlus.CustomComponent.BasePrestigeEnhance
         }
 
         public int RequiredSpellLevel = 1;
+        private static readonly BlueprintFeatureReference Sunfeat = BlueprintTool.GetRef<BlueprintFeatureReference>(LikeTheSun.FeatGuid);
+        private static readonly BlueprintAbilityReference BurstRadiance1 = BlueprintTool.GetRef<BlueprintAbilityReference>(BurstRadiance.BurstRadianceAbilityGuid);
     }
 }
