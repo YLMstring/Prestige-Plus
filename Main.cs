@@ -538,7 +538,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("speardance"))) { SpearDancingStyle.StyleConfigure(); SpearDancingStyle.SpiralConfigure(); SpearDancingStyle.ReachConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("arsenal"))) { ArsenalChaplain.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("enhancemore"))) { SwiftDeath.Configure(); SwiftDeath.Configure2(); SecretAkashic.Configure(); SecretAkashic.Configure2(); MythicWings.Configure(); MythicWings.Configure2(); }
-                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("lightcheat"))) { BurstRadiance.Configure(); DarkLight.Configure(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("lightcheat"))) { BurstRadiance.Configure(); DarkLight.Configure(); LikeTheSun.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2(); TabletopGrapplingInfusion.ConfigureTabletopGrappling();
                 }
                 catch (Exception e)
