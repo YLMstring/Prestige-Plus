@@ -359,6 +359,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("enhancemore"), defaultValue: true, Helpers.CreateString("toggle-desc111", "More Mythic Features"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("lightcheat"), defaultValue: true, Helpers.CreateString("toggle-desc112", "Like the Sun"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("rogue"), defaultValue: true, Helpers.CreateString("toggle-desc30", "Rogue Talents"))
               .ShowVisualConnection())
           .AddToggle(
@@ -535,6 +538,7 @@ namespace PrestigePlus
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("speardance"))) { SpearDancingStyle.StyleConfigure(); SpearDancingStyle.SpiralConfigure(); SpearDancingStyle.ReachConfigure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("arsenal"))) { ArsenalChaplain.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("enhancemore"))) { SwiftDeath.Configure(); SwiftDeath.Configure2(); SecretAkashic.Configure(); SecretAkashic.Configure2(); MythicWings.Configure(); MythicWings.Configure2(); }
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("lightcheat"))) { BurstRadiance.Configure(); DarkLight.Configure(); }
                     HolyVindicator.DivineWrathFeat(); HolyVindicator.DivineJudgmentFeat(); HolyVindicator.DivineRetributionFeat(); GiganticAssault.Configure2(); TabletopGrapplingInfusion.ConfigureTabletopGrappling();
                 }
                 catch (Exception e)
