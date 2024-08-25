@@ -25,6 +25,10 @@ using UnityEngine.Serialization;
 using UnityEngine;
 using PrestigePlus.Blueprint.Spell;
 using BlueprintCore.Blueprints.Configurators.Classes;
+using HarmonyLib;
+using Kingmaker.EntitySystem;
+using Kingmaker.Blueprints.Classes.Prerequisites;
+using Kingmaker.Blueprints.Classes.Spells;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -80,5 +84,51 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly BlueprintAbilityReference Mydriatic = BlueprintTool.GetRef<BlueprintAbilityReference>("fd75c304-9a13-41e1-8d76-ebee9de92831");
         private static readonly BlueprintAbilityReference JudgmentLight = BlueprintTool.GetRef<BlueprintAbilityReference>("9fe907d3-0833-40a2-9fb6-730f213a29c1");
         private static readonly BlueprintAbilityReference MassMydriatic = BlueprintTool.GetRef<BlueprintAbilityReference>("c60dbab6-2ea3-47c9-9f0b-f1335052ee30");
+    }
+
+    [HarmonyPatch(typeof(PrerequisiteCasterTypeSpellLevel), nameof(PrerequisiteCasterTypeSpellLevel.GetCasterTypeSpellLevel))]
+    internal class LikeTheSunFix
+    {
+        static bool Prefix(ref int? __result, ref PrerequisiteCasterTypeSpellLevel __instance, ref UnitDescriptor unit)
+        {
+            if (unit.HasFact(Sunfeat))
+            {
+                __result = GetTypeSpellLevel(unit, __instance);
+                return false;
+            }
+            return true;
+        }
+
+        static int? GetTypeSpellLevel(UnitDescriptor unit, PrerequisiteCasterTypeSpellLevel comp)
+        {
+            int num = 0;
+            bool flag = false;
+            foreach (ClassData classData in unit.Progression.Classes)
+            {
+                BlueprintSpellbook spellbook = classData.Spellbook;
+                if (spellbook != null && !spellbook.IsAlchemist && spellbook.IsArcane == comp.IsArcane && !spellbook.IsMythic && (!comp.OnlySpontaneous || spellbook.Spontaneous || comp.RequiredSpellLevel == 1))
+                {
+                    flag = true;
+                    var book = unit.DemandSpellbook(classData.CharacterClass);
+                    num = Mathf.Max(num, book.MaxSpellLevel);
+                    if (book.IsKnown(AbilityRefs.FlareBurst.Reference) || book.m_KnownSpells.Any((List<AbilityData> l) => l.Any((AbilityData s) => s.Blueprint == AbilityRefs.FlareBurst.Reference.Get())))
+                    {
+                        num = Math.Max(num, 2);
+                    }
+                    if (book.IsKnown(BurstRadiance1) || book.m_KnownSpells.Any((List<AbilityData> l) => l.Any((AbilityData s) => s.Blueprint == BurstRadiance1.Get())))
+                    {
+                        num = Math.Max(num, 3);
+                    }
+                }
+            }
+            if (flag)
+            {
+                return new int?(num);
+            }
+            return null;
+        }
+
+        private static readonly BlueprintFeatureReference Sunfeat = BlueprintTool.GetRef<BlueprintFeatureReference>(LikeTheSun.FeatGuid);
+        private static readonly BlueprintAbilityReference BurstRadiance1 = BlueprintTool.GetRef<BlueprintAbilityReference>(BurstRadiance.BurstRadianceAbilityGuid);
     }
 }

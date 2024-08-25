@@ -39,7 +39,8 @@ namespace PrestigePlus.Patch
             //"MountedSkirmisher": "d3886adc-c849-4733-a1cb-a9b787b49576",
             AddFeatureToArc("34d1bd97-971d-44d6-be78-e91e79fdedbd", Emissary.ArchetypeGuid, 9);
             AddFeatureToArc("d3886adc-c849-4733-a1cb-a9b787b49576", Emissary.ArchetypeGuid, 14);
-
+            AddFeatureToPro(SpellbookReplace.spellupgradeGuid, ProgressionRefs.DragonDiscipleProgression.ToString(), 1);
+            RemoveFeatureFromPro(FeatureSelectionRefs.DragonDiscipleSpellbookSelection.ToString(), ProgressionRefs.DragonDiscipleProgression.ToString(), 2);
             var comp = Raz.Get()?.GetComponent<SpellTurning>();
             if (comp != null)
             {
