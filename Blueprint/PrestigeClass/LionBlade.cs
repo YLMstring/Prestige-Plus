@@ -259,7 +259,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetDescription(MisfortuneDescription)
                 .SetIcon(icon)
                 .AddModifyD20(ActionsBuilder.New().RemoveSelf().Build(), rule: RuleType.SavingThrow, rollsAmount: 1, addSavingThrowBonus: true, value: -2, bonusDescriptor: ModifierDescriptor.Penalty)
-                .AddSpellDescriptorComponent(SpellDescriptor.GazeAttack | SpellDescriptor.MindAffecting)
+                .AddSpellDescriptorComponent(SpellDescriptor.SightBased | SpellDescriptor.MindAffecting)
                 .Configure();
 
             var ability = AbilityConfigurator.New(MisfortuneAbility, MisfortuneAbilityGuid)
@@ -272,7 +272,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetType(AbilityType.Supernatural)
                 .SetRange(AbilityRange.Close)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
-                .AddSpellDescriptorComponent(SpellDescriptor.GazeAttack | SpellDescriptor.MindAffecting)
+                .AddSpellDescriptorComponent(SpellDescriptor.SightBased | SpellDescriptor.MindAffecting)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: AbilityResourceRefs.BardicPerformanceResource.ToString())
                 .Configure();
 

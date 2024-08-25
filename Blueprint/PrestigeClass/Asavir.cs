@@ -449,7 +449,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .SetDisplayName(AllEyesDisplayName)
               .SetDescription(AllEyesDescription)
               .SetIcon(icon)
-              .AddSpellDescriptorComponent(SpellDescriptor.GazeAttack | SpellDescriptor.MindAffecting)
+              .AddSpellDescriptorComponent(SpellDescriptor.SightBased | SpellDescriptor.MindAffecting)
               .AddComponent<AllEyesonMe>()
               .Configure();
 
@@ -469,7 +469,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetRange(AbilityRange.Personal)
                 .SetType(AbilityType.Special)
                 .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
-                .AddSpellDescriptorComponent(SpellDescriptor.GazeAttack | SpellDescriptor.MindAffecting)
+                .AddSpellDescriptorComponent(SpellDescriptor.SightBased | SpellDescriptor.MindAffecting)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .Configure();
 
