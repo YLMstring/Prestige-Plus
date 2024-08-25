@@ -1,5 +1,6 @@
 ﻿using BlueprintCore.Actions.Builder;
 using BlueprintCore.Blueprints.CustomConfigurators.Classes;
+using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.ModReferences;
 using BlueprintCore.Blueprints.References;
@@ -47,42 +48,17 @@ namespace PrestigePlus.Patch
             try
             {
                 string DimensionalBladeSpell = "aaed2bc8-7c24-4737-83f6-df4c520888ee";
-                var db = BlueprintTool.GetRef<BlueprintAbilityReference>(DimensionalBladeSpell).Get();
-                foreach (var listcomp in db.GetComponents<SpellListComponent>())
-                {
-                    if (listcomp.SpellList == ModSpellListRefs.AntipaladinSpelllist.Reference.Get())
-                    {
-                        listcomp.SpellLevel = 4;
-                    }
-                    else if (listcomp.SpellList == SpellListRefs.BloodragerSpellList.Reference.Get())
-                    {
-                        listcomp.SpellLevel = 4;
-                    }
-                    else if (listcomp.SpellList == SpellListRefs.PaladinSpellList.Reference.Get())
-                    {
-                        listcomp.SpellLevel = 4;
-                    }
-                    else if (listcomp.SpellList == SpellListRefs.InquisitorSpellList.Reference.Get())
-                    {
-                        listcomp.SpellLevel = 5;
-                    }
-                    else if (listcomp.SpellList == SpellListRefs.MagusSpellList.Reference.Get())
-                    {
-                        listcomp.SpellLevel = 5;
-                    }
-                    else if (listcomp.SpellList == SpellListRefs.WizardSpellList.Reference.Get())
-                    {
-                        listcomp.SpellLevel = 6;
-                    }
-                    else if (listcomp.SpellList == SpellListRefs.ClericSpellList.Reference.Get())
-                    {
-                        listcomp.SpellLevel = 6;
-                    }
-                    else if (listcomp.SpellList == SpellListRefs.WarpriestSpelllist.Reference.Get())
-                    {
-                        listcomp.SpellLevel = 6;
-                    }
-                }
+                AbilityConfigurator.For(DimensionalBladeSpell)
+                    .RemoveComponents(c => c is SpellListComponent)
+                    .AddToSpellList(4, ModSpellListRefs.AntipaladinSpelllist.ToString())
+                    .AddToSpellLists(level: 4, SpellList.Bloodrager)
+                    .AddToSpellLists(level: 6, SpellList.Cleric)
+                    .AddToSpellLists(level: 5, SpellList.Inquisitor)
+                    .AddToSpellLists(level: 5, SpellList.Magus)
+                    .AddToSpellLists(level: 4, SpellList.Paladin)
+                    .AddToSpellLists(level: 6, SpellList.Wizard)
+                    .AddToSpellLists(level: 6, SpellList.Warpriest)
+                    .Configure();
             }
             catch (Exception e) { Main.Logger.Error("Failed to edit DimensionalBladeSpell.", e); }
         }
