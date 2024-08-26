@@ -100,7 +100,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .AddPrerequisiteStatValue(StatType.SkillKnowledgeArcana, 5)
                 .AddPrerequisiteStatValue(StatType.SkillLoreReligion, 5)
                 .AddPrerequisiteClassLevel(ArchetypeGuid, 5, not: true)
-                .AddComponent<PrerequisiteSpellKnown>(c => { c.m_Spell = BlueprintTool.GetRef<BlueprintAbilityReference>(AbilityRefs.AnimateDead.ToString()); c.RequireSpellbook = true; })
+                .AddComponent<PrerequisiteSpellKnown>(c => { c.m_Spell = BlueprintTool.GetRef<BlueprintAbilityReference>(AbilityRefs.AnimateDead.ToString()); c.RequireSpellbook = false; })
                 .AddPrerequisiteAlignment(AlignmentMaskType.Evil, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                 .AddPrerequisiteAlignment(AlignmentMaskType.LawfulNeutral, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)
                 .AddPrerequisiteAlignment(AlignmentMaskType.TrueNeutral, group: Kingmaker.Blueprints.Classes.Prerequisites.Prerequisite.GroupType.Any)

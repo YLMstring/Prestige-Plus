@@ -49,7 +49,7 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetDescription(Description)
                     .SetIcon(icon)
                     .AddPrerequisiteStatValue(Kingmaker.EntitySystem.Stats.StatType.BaseAttackBonus, 1)
-                    .AddComponent<PrerequisiteSpellKnown>(c => { c.m_Spell = BlueprintTool.GetRef<BlueprintAbilityReference>(AbilityRefs.MageLight.ToString()); c.RequireSpellbook = true; })
+                    .AddComponent<PrerequisiteSpellKnown>(c => { c.m_Spell = BlueprintTool.GetRef<BlueprintAbilityReference>(AbilityRefs.MageLight.ToString()); c.RequireSpellbook = false; })
                     .AddToGroups(FeatureGroup.CombatFeat)
                     .AddAuraFeatureComponent(AnchoriteofDawn.SunBladeBuffGuid)
                     .AddComponent<PPIncreaseSpellLv>()
