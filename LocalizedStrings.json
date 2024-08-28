@@ -14530,7 +14530,7 @@
   {
     "Key": "NewSpellBurstRadiance.Description",
     "enGB": "This spell fills the area with a brilliant flash of shimmering light. Creatures in the area are blinded for 1d4 rounds, or dazzled for 1d4 rounds if they succeed at a Reflex save. Evil creatures in the area of the burst take 1d4 points of damage per caster level (max 5d4), whether they succeed at the Reflex save or not.",
-    "ruRU": "",
+    "ruRU": "Это заклинание наполняет пространство яркой вспышкой мерцающего света. Существа в области действия оказываются ослеплены на 1d4 раунда, или растеряны на 1d4 раунда если совершат успешный спасбросок Реакции. Злые существа в области действия получают 1d4 урона за уровень заклинателя (максимум 5d4) вне зависимости от успешности спасброска Реакции.",
     "zhCN": "该法术让整个区域充满了耀眼的闪光。该区域内的生物目盲1d4轮，如果成功通过反射豁免，则会改为目眩1d4轮。区域内的邪恶生物受到每施法者等级 1d4 点伤害（最多 5d4），不论它们是否成功通过反射豁免。"
   },
   {
@@ -14543,7 +14543,7 @@
   {
     "Key": "NewSpellDarkLight.Description",
     "enGB": "You evoke a powerful light that affects all living creatures. Those that succeed on their saves are dazzled for 1 round per level; those who fail are blinded for the same duration.",
-    "ruRU": "",
+    "ruRU": "Вы призываете мощный свет, который воздействует на всех живых существ. Те существа, которые выполнят успешный спасбросок оказываются растеряны на 1 раунд за уровень заклинателя; те, кто проваливают, оказываются ослеплены на то же самое время.",
     "zhCN": "你召唤一道影响所有活物的强光，成功通过豁免的目标目眩每施法者等级1轮，失败则改为目盲。"
   },
   {
@@ -14556,7 +14556,7 @@
   {
     "Key": "FeatLikeTheSun.Description",
     "enGB": "You can use a sunrod as an additional material component for any light spell. The spell is treated as one spell level higher (to a maximum of 9th level) for all purposes, including the calculation of saving throw DCs and its ability to overcome sources of magical darkness. (Light, Flare Burst, Burst of Radiance, Dark-Light, Mydriatic Spontaneity, Judgment Light, Chains of Light, Sunbeam, Sunburst, and Mydriatic Spontaneity, Mass)",
-    "ruRU": "",
+    "ruRU": "Вы можете использовать солнечный жезл в качестве дополнительного материального компонента при сотворении любых световых заклинаний. Сотворенное таким образом заклинание считается, как если бы оно было на 1 круг выше (вплоть до 9 круга) для всех целей, включая рассчет сложности спасброска и способности преодолевать магическую тьму. (Свет, Вспышка, Взрыв сияния, Темный свет, Мидриатическая спонтанность, Свет приговора, Цепи света, Солнечная вспышка и Мидриатическая спонтанность, массовое)",
     "zhCN": "你能将照明杖作为光系法术的额外材料成分。该法术的等级对于任何目的而言均视为提高1级，最高9级，包括豁免和穿透黑暗的效果等。(Light, Flare Burst, Burst of Radiance, Dark-Light, Mydriatic Spontaneity, Judgment Light, Chains of Light, Sunbeam, Sunburst, Mydriatic Spontaneity, Mass)"
   },
   {
