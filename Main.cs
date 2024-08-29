@@ -588,7 +588,7 @@ namespace PrestigePlus
                 {
                     if (Initialized)
                     {
-                        Logger.Info("Already configured Holy Vindicator.");
+                        Logger.Info("Already configured Holy Vindicator");
                         return;
                     }
                     Initialized = true; 
