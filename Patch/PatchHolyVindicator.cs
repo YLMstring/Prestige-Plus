@@ -5,6 +5,7 @@ using BlueprintCore.Blueprints.ModReferences;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.UnitLogic.Mechanics.Components;
@@ -54,9 +55,14 @@ namespace PrestigePlus.Patch
             {
                 comp2.CriticalHit = true;
             }
+            CharacterClassRefs.MonkClass.Reference.Get().GetComponent<PrerequisiteAlignment>().IngorePrerequisiteCheck = true;
+            FeatureConfigurator.For(Raz8)
+                .AddFacts([AbilityRefs.SeeInvisibility.ToString()])
+                .Configure();
         }
 
         private static BlueprintFeatureReference Raz = BlueprintTool.GetRef<BlueprintFeatureReference>("13d5818737694021b001641437a4ba29");
+        private static BlueprintFeatureReference Raz8 = BlueprintTool.GetRef<BlueprintFeatureReference>("621aaa4baad04705a975f6023a1205d0");
         private static void AddFeatureToPro(string featguid, string proguid, int level)
         {
             var progress = BlueprintTool.GetRef<BlueprintProgressionReference>(proguid)?.Get();
