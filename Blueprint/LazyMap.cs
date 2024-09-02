@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TabletopTweaks.Core.Utilities;
 using UnityEngine;
+using static RootMotion.FinalIK.GenericPoser;
 
 namespace PrestigePlus.Blueprint
 {
@@ -20,13 +21,12 @@ namespace PrestigePlus.Blueprint
         public static void Configure()
         {
             var map = RootRefs.BlueprintRoot.Reference.Get().GlobalMap.m_StartGlobalMap.Get();
-            map.ArmySpeedFactor *= 1000;
-            map.PartySpeedFactor *= 1000;
-            map.ExploreDistance *= 1000;
+            map.MechanicsSpeedBase *= 1000;
+            map.VisualSpeedBase *= 1000;
         }
     }
 
-    [HarmonyPatch(typeof(GlobalMapMovementController), nameof(GlobalMapMovementController.CalcPlayerSpeedModifiers))]
+    [HarmonyPatch(typeof(LocationRevealController), nameof(LocationRevealController.GetRevealRange))]
     internal class LazyMapFix1
     {
         static void Postfix(ref float __result)
