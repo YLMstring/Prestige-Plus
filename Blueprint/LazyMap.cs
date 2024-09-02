@@ -25,7 +25,6 @@ namespace PrestigePlus.Blueprint
             var map = root.m_StartGlobalMap.Get();
             map.MechanicsSpeedBase *= 1000;
             map.VisualSpeedBase *= 1000;
-            root.ArmyMovementPointsPerMileCost = 0;
         }
     }
 
