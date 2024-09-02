@@ -20,9 +20,11 @@ namespace PrestigePlus.Blueprint
     {
         public static void Configure()
         {
-            var map = RootRefs.BlueprintRoot.Reference.Get().GlobalMap.m_StartGlobalMap.Get();
+            var root = RootRefs.BlueprintRoot.Reference.Get().GlobalMap;
+            var map = root.m_StartGlobalMap.Get();
             map.MechanicsSpeedBase *= 1000;
             map.VisualSpeedBase *= 1000;
+            root.ArmyMovementPointsPerMileCost = 0;
         }
     }
 
