@@ -4,6 +4,7 @@ using HarmonyLib;
 using Kingmaker.Assets.Controllers.GlobalMap;
 using Kingmaker.Blueprints;
 using Kingmaker.Globalmap.Blueprints;
+using Kingmaker.Globalmap.State;
 using Kingmaker.RuleSystem.Rules;
 using System;
 using System.Collections.Generic;
@@ -37,6 +38,15 @@ namespace PrestigePlus.Blueprint
             {
                 __result = 1000 * __result;
             }
+        }
+    }
+
+    [HarmonyPatch(typeof(GlobalMapArmyState), nameof(GlobalMapArmyState.SpendMovementPoints))]
+    internal class LazyMapFix2
+    {
+        static bool Prefix()
+        {
+            return !ModMenu.ModMenu.GetSettingValue<bool>(Main.GetKey("lazymap"));
         }
     }
 }
