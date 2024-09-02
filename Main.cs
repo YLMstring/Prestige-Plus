@@ -416,6 +416,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("headkick"), defaultValue: true, Helpers.CreateString("toggle-desc106", "Fix Head Kicking"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("lazymap"), defaultValue: false, Helpers.CreateString("toggle-desc113", "Lazy Crusade"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("ecpatch"), defaultValue: true, Helpers.CreateString("toggle-desc89", "Ensure Compability with Expanded Content"))
               .ShowVisualConnection())
           .AddToggle(
@@ -436,6 +439,7 @@ namespace PrestigePlus
 
                     Logger.Info("Configuring blueprints"); 
                     SpellbookReplace.Select(); SpellbookLevelUp.Select(); ImbueArrow.Configure(); ShadowDancer.CreateProficiencies(); ShadowDancer.ExtraShadowJump(); ShadowDancer.ExtraFeat(); SeizetheOpportunity.Configure(); AerialAssault.ConfigureAbility(); FakeAlignedClass.Configure(); BodyGuard.StyleMasterConfigure();
+                    if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("lazymap"))) { LazyMap.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("grapple"))) { ImprovedGrapple.StyleConfigure(); ImprovedGrappleMythic.Configure(); GreaterGrapple.Configure(); ManeuverExpert.Configure(); RapidGrappler.Configure(); UnfairGrip.Configure(); PinningKnockout.Configure(); PinningRend.Configure(); SavageSlam.Configure(); UncannyGrapple.Configure(); HamatulaStrike.Configure(); DramaticSlam.Configure(); KnotExpert.Configure(); AerialAssault.Configure(); MeatShield.Configure(); ThroatSlicer.Configure(); CrabKing.Configure(); CrabKing.Configure2(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("grave"))) { AgentoftheGrave.Configure(); SacrificialAdept.Configure(); }
                     if (ModMenu.ModMenu.GetSettingValue<bool>(GetKey("archer"))) { ArcaneArcher.Configure(); StormArrow.Configure(); }
