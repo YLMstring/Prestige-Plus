@@ -8,6 +8,8 @@ using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.Mechanics.Buffs;
+using Kingmaker.UnitLogic.Abilities.Components;
+using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Utility;
 using PrestigePlus.Blueprint.Archetype;
@@ -59,10 +61,24 @@ namespace PrestigePlus.Patch
             FeatureConfigurator.For(Raz8)
                 .AddFacts([AbilityRefs.SeeInvisibility.ToString()])
                 .Configure();
+
+            var actions = Drunken4.Get().GetComponent<AbilityEffectRunAction>()?.Actions.Actions;
+            if (actions != null)
+            {
+                foreach (var stuff in actions)
+                {
+                    if (stuff is ContextActionConditionalSaved stuff2)
+                    {
+                        stuff2.Succeed = stuff2.Failed;
+                    }
+                }
+            }
         }
 
         private static BlueprintFeatureReference Raz = BlueprintTool.GetRef<BlueprintFeatureReference>("13d5818737694021b001641437a4ba29");
         private static BlueprintFeatureReference Raz8 = BlueprintTool.GetRef<BlueprintFeatureReference>("621aaa4baad04705a975f6023a1205d0");
+
+        private static BlueprintAbilityReference Drunken4 = BlueprintTool.GetRef<BlueprintAbilityReference>("8b8918498ead4b2d90cfc6f2671fdbbe");
         private static void AddFeatureToPro(string featguid, string proguid, int level)
         {
             var progress = BlueprintTool.GetRef<BlueprintProgressionReference>(proguid)?.Get();
