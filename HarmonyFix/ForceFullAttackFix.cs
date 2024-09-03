@@ -39,7 +39,7 @@ namespace PrestigePlus.HarmonyFix
                 {
                     __instance.ForceFullAttack = true;
                 }
-                if (!__instance.Executor.IsDirectlyControllable && __instance is UnitCommand cmd && cmd.ForcedPath != null && turn?.Rider == __instance.Executor)
+                if (!__instance.Executor.IsDirectlyControllable && !__instance.Executor.IsMoveActionRestricted() && __instance is UnitCommand cmd && cmd.ForcedPath != null && turn?.Rider == __instance.Executor)
                 {
                     var length = cmd.ForcedPath.GetTotalLength();
                     if (length > 0 && length <= 8f.Feet().Meters)
