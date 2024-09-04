@@ -145,7 +145,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(GozrehFeat())
               .AddToAllFeatures(CalistriaFeat())
               .AddToAllFeatures(MrtyuFeat())
-              .AddToAllFeatures(MephistophelesFeat())
+              .AddToAllFeatures(AkumaFeat())
               .AddToAllFeatures(NocticulaFeat())
               .AddToAllFeatures(NocticulaDemonFeat())
               .AddToAllFeatures(AchaekekFeat())
@@ -4394,107 +4394,150 @@ namespace PrestigePlus.Blueprint.Feat
               .Configure();
         }
 
-        private const string Mephistopheles = "DeificObedience.Mephistopheles";
-        public static readonly string MephistophelesGuid = "{D2E2CE1F-44F0-4DAB-85F3-077006BA3AA6}";
+        private const string Akuma = "DeificObedience.Akuma";
+        public static readonly string AkumaGuid = "{D2E2CE1F-44F0-4DAB-85F3-077006BA3AA6}";
 
-        internal const string MephistophelesDisplayName = "DeificObedienceMephistopheles.Name";
-        private const string MephistophelesDescription = "DeificObedienceMephistopheles.Description";
-        public static BlueprintProgression MephistophelesFeat()
+        internal const string AkumaDisplayName = "DeificObedienceAkuma.Name";
+        private const string AkumaDescription = "DeificObedienceAkuma.Description";
+        public static BlueprintProgression AkumaFeat()
         {
-            //"MephistophelesFeature": "3A4522E2-7F08-43E1-ACCD-0733BA18C427",
-            var icon = AbilityRefs.HellsSealVariantFireExplosion.Reference.Get().Icon;
+            var icon = AbilityRefs.FrightfulAspect.Reference.Get().Icon;
 
-            return ProgressionConfigurator.New(Mephistopheles, MephistophelesGuid)
-              .SetDisplayName(MephistophelesDisplayName)
-              .SetDescription(MephistophelesDescription)
+            return ProgressionConfigurator.New(Akuma, AkumaGuid)
+              .SetDisplayName(AkumaDisplayName)
+              .SetDescription(AkumaDescription)
               .SetIcon(icon)
-              .AddPrerequisiteFeature("3A4522E2-7F08-43E1-ACCD-0733BA18C427", group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteFeature(FeatureRefs.AsmodeusFeature.ToString(), group: Prerequisite.GroupType.Any)
               .AddPrerequisiteAlignment(AlignmentMaskType.LawfulEvil, group: Prerequisite.GroupType.Any)
               .SetGiveFeaturesForPreviousLevels(true)
-              .AddToLevelEntry(1, Mephistopheles0Feat())
-              .AddToLevelEntry(12, CreateMephistopheles1())
-              .AddToLevelEntry(16, Mephistopheles3Feat())
-              .AddToLevelEntry(20, Mephistopheles2Feat())
+              .AddToLevelEntry(1, Akuma0Feat())
+              .AddToLevelEntry(12, CreateAkuma1())
+              .AddToLevelEntry(16, CreateAkuma2())
+              .AddToLevelEntry(20, CreateAkuma3())
               .Configure();
         }
 
-        private const string Mephistopheles0 = "DeificObedience.Mephistopheles0";
-        public static readonly string Mephistopheles0Guid = "{ED087F76-B03F-4CB4-A8F1-426468425CC9}";
-
-        public static BlueprintFeature Mephistopheles0Feat()
+        private const string Akuma0 = "DeificObedience.Akuma0";
+        public static readonly string Akuma0Guid = "{ED087F76-B03F-4CB4-A8F1-426468425CC9}";
+        public static BlueprintFeature Akuma0Feat()
         {
-            var icon = AbilityRefs.HellsSealVariantFireExplosion.Reference.Get().Icon;
+            var icon = AbilityRefs.FrightfulAspect.Reference.Get().Icon;
 
-            return FeatureConfigurator.New(Mephistopheles0, Mephistopheles0Guid)
-              .SetDisplayName(MephistophelesDisplayName)
-              .SetDescription(MephistophelesDescription)
+            return FeatureConfigurator.New(Akuma0, Akuma0Guid)
+              .SetDisplayName(AkumaDisplayName)
+              .SetDescription(AkumaDescription)
               .SetIcon(icon)
-              .AddStatBonus(ModifierDescriptor.Profane, false, StatType.CheckDiplomacy, 4)
+              .AddCMDBonus(descriptor: ModifierDescriptor.Profane, value: 4)
               .Configure();
         }
 
-        private const string Mephistopheles1 = "SpellPower.Mephistopheles1";
-        public static readonly string Mephistopheles1Guid = "{8EFB95AB-E0AB-4118-A99C-0B285F2B9AA8}";
-        internal const string Mephistopheles1DisplayName = "SpellPowerMephistopheles1.Name";
-        private const string Mephistopheles1Description = "SpellPowerMephistopheles1.Description";
+        private const string Akuma1 = "SpellPower.Akuma1";
+        public static readonly string Akuma1Guid = "{8EFB95AB-E0AB-4118-A99C-0B285F2B9AA8}";
+        internal const string Akuma1DisplayName = "SpellPowerAkuma1.Name";
+        private const string Akuma1Description = "SpellPowerAkuma1.Description";
 
-        private const string Mephistopheles1Ablity = "SpellPower.UseMephistopheles1";
-        private static readonly string Mephistopheles1AblityGuid = "{5E01FB58-157D-454F-8E65-F0CC0E3C1D54}";
-        private static BlueprintFeature CreateMephistopheles1()
+        private const string Akuma1Ablity = "SpellPower.UseAkuma1";
+        private static readonly string Akuma1AblityGuid = "{5E01FB58-157D-454F-8E65-F0CC0E3C1D54}";
+        private static BlueprintFeature CreateAkuma1()
         {
-            var icon = AbilityRefs.LitanyOfEloquence.Reference.Get().Icon;
+            var icon = AbilityRefs.BearsEndurance.Reference.Get().Icon;
 
-            var ability = AbilityConfigurator.New(Mephistopheles1Ablity, Mephistopheles1AblityGuid)
+            var ability = AbilityConfigurator.New(Akuma1Ablity, Akuma1AblityGuid)
                 .CopyFrom(
-                AbilityRefs.LitanyOfEloquence,
+                AbilityRefs.BearsEndurance,
                 typeof(AbilityEffectRunAction),
                 typeof(SpellComponent),
-                typeof(SpellDescriptorComponent))
+                typeof(AbilitySpawnFx))
                 .AddPretendSpellLevel(spellLevel: 2)
                 .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
                 .SetType(AbilityType.SpellLike)
                 .Configure();
 
-            return FeatureConfigurator.New(Mephistopheles1, Mephistopheles1Guid)
-              .SetDisplayName(Mephistopheles1DisplayName)
-              .SetDescription(Mephistopheles1Description)
+            return FeatureConfigurator.New(Akuma1, Akuma1Guid)
+              .SetDisplayName(Akuma1DisplayName)
+              .SetDescription(Akuma1Description)
               .SetIcon(icon)
               .AddFacts(new() { ability })
               .Configure();
         }
 
-        private const string Mephistopheles2 = "DeificObedience.Mephistopheles2";
-        public static readonly string Mephistopheles2Guid = "{54EF09AA-4D4A-4D64-9E03-AA64D329948B}";
+        private const string Akuma2 = "SpellPower.Akuma2";
+        public static readonly string Akuma2Guid = "{54EF09AA-4D4A-4D64-9E03-AA64D329948B}";
+        internal const string Akuma2DisplayName = "SpellPowerAkuma2.Name";
+        private const string Akuma2Description = "SpellPowerAkuma2.Description";
 
-        internal const string Mephistopheles2DisplayName = "DeificObedienceMephistopheles2.Name";
-        private const string Mephistopheles2Description = "DeificObedienceMephistopheles2.Description";
-        public static BlueprintFeature Mephistopheles2Feat()
+        private const string Akuma2Ablity2 = "SpellPower.UseAkuma22";
+        private static readonly string Akuma2Ablity2Guid = "{8BC7EEF0-4C01-4066-BAC7-8A922F9B00E5}";
+
+        private const string Akuma2AblityRes = "DeificObedience.Akuma2Res";
+        private static readonly string Akuma2AblityResGuid = "{B2DADD66-DE96-41B2-80FD-5F9978BB7783}";
+        private static BlueprintFeature CreateAkuma2()
         {
-            var icon = AbilityRefs.HolyWhisper.Reference.Get().Icon;
+            var icon = AbilityRefs.DivinePower.Reference.Get().Icon;
 
-            return FeatureConfigurator.New(Mephistopheles2, Mephistopheles2Guid)
-              .SetDisplayName(Mephistopheles2DisplayName)
-              .SetDescription(Mephistopheles2Description)
+            var abilityresourse = AbilityResourceConfigurator.New(Akuma2AblityRes, Akuma2AblityResGuid)
+                .SetMaxAmount(
+                    ResourceAmountBuilder.New(2))
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(Akuma2Ablity2, Akuma2Ablity2Guid)
+                .CopyFrom(
+                AbilityRefs.DivinePower,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(ContextRankConfig),
+                typeof(AbilitySpawnFx))
+                .AddPretendSpellLevel(spellLevel: 4)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Akuma2, Akuma2Guid)
+              .SetDisplayName(Akuma2DisplayName)
+              .SetDescription(Akuma2Description)
               .SetIcon(icon)
-              .AddIncreaseSpellDescriptorDC(2, SpellDescriptor.Charm)
+              .AddFacts(new() { ability2 })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .Configure();
         }
 
-        private const string Mephistopheles3 = "DeificObedience.Mephistopheles3";
-        public static readonly string Mephistopheles3Guid = "{F47A6488-187E-4526-9198-8795EF63A218}";
+        private const string Akuma3 = "SpellPower.Akuma3";
+        public static readonly string Akuma3Guid = "{F47A6488-187E-4526-9198-8795EF63A218}";
+        internal const string Akuma3DisplayName = "SpellPowerAkuma3.Name";
+        private const string Akuma3Description = "SpellPowerAkuma3.Description";
 
-        internal const string Mephistopheles3DisplayName = "DeificObedienceMephistopheles3.Name";
-        private const string Mephistopheles3Description = "DeificObedienceMephistopheles3.Description";
-        public static BlueprintFeature Mephistopheles3Feat()
+        private const string Akuma3Ablity2 = "SpellPower.UseAkuma32";
+        private static readonly string Akuma3Ablity2Guid = "{47CA2B1E-BE10-4B8D-9725-2FECA3DC5EC2}";
+
+        private const string Akuma3AblityRes = "DeificObedience.Akuma3Res";
+        private static readonly string Akuma3AblityResGuid = "{B6FFB225-8E70-4F71-9D87-7BBA52EF1161}";
+        private static BlueprintFeature CreateAkuma3()
         {
-            var icon = AbilityRefs.HellsSealVariantFireHealing.Reference.Get().Icon;
+            var icon = AbilityRefs.Transformation.Reference.Get().Icon;
 
-            return FeatureConfigurator.New(Mephistopheles3, Mephistopheles3Guid)
-              .SetDisplayName(Mephistopheles3DisplayName)
-              .SetDescription(Mephistopheles3Description)
+            var abilityresourse = AbilityResourceConfigurator.New(Akuma3AblityRes, Akuma3AblityResGuid)
+                .SetMaxAmount(
+                    ResourceAmountBuilder.New(2))
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(Akuma3Ablity2, Akuma3Ablity2Guid)
+                .CopyFrom(
+                AbilityRefs.Transformation,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(ContextRankConfig),
+                typeof(AbilitySpawnFx))
+                .AddPretendSpellLevel(spellLevel: 6)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Akuma3, Akuma3Guid)
+              .SetDisplayName(Akuma3DisplayName)
+              .SetDescription(Akuma3Description)
               .SetIcon(icon)
-              .AddFeatureIfHasFact(FeatureRefs.HellsDecreeFeature.ToString(), BlackSeraphStyle.AnnihilationGuid, false)
-              .SetReapplyOnLevelUp()
+              .AddFacts(new() { ability2 })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .Configure();
         }
 
