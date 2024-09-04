@@ -5063,11 +5063,23 @@ namespace PrestigePlus.Blueprint.Feat
         private const string PharasmaExalted = "DeificObedience.PharasmaExalted";
         public static readonly string PharasmaExaltedGuid = "{1E40EC9F-BA55-453F-88AE-A499A18E3B55}";
 
+        private const string PharasmaExaltedpro = "DeificObedience.PharasmaExaltedpro";
+        public static readonly string PharasmaExaltedproGuid = "{76092C94-C442-4D3C-9258-C636E00FF103}";
+
         internal const string PharasmaExaltedDisplayName = "DeificObediencePharasmaExalted.Name";
         private const string PharasmaExaltedDescription = "DeificObediencePharasmaExalted.Description";
         public static BlueprintProgression PharasmaExaltedFeat()
         {
             var icon = FeatureRefs.PharasmaFeature.Reference.Get().Icon;
+
+            var pro = ProgressionConfigurator.New(PharasmaExaltedpro, PharasmaExaltedproGuid)
+              .SetDisplayName(PharasmaExaltedDisplayName)
+              .SetDescription(PharasmaExaltedDescription)
+              .SetIcon(icon)
+              .SetHideInUI()
+              .SetGiveFeaturesForPreviousLevels(false)
+              .AddToLevelEntry(1, FeatureSelectionRefs.OracleRevelationSelection.ToString())
+              .Configure();
 
             return ProgressionConfigurator.New(PharasmaExalted, PharasmaExaltedGuid)
               .SetDisplayName(PharasmaExaltedDisplayName)
@@ -5075,6 +5087,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddPrerequisiteFeature(PharasmaGuid)
               .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(3, pro)
               .AddToLevelEntry(12, CreatePharasmaExalted1())
               .AddToLevelEntry(16, PharasmaExalted2Feat())
               .AddToLevelEntry(20, PharasmaExalted3Feat())

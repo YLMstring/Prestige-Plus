@@ -1,9 +1,12 @@
 ﻿using BlueprintCore.Blueprints.References;
+using BlueprintCore.Utils;
+using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.EntitySystem;
 using Kingmaker.PubSubSystem;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Class.LevelUp;
+using PrestigePlus.Blueprint.Feat;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,7 +38,7 @@ namespace PrestigePlus.CustomComponent.Feat
             {
                 base.Data.AppliedFact = base.Owner.AddFact(feat1, null, null);
                 LevelUpController controller = Kingmaker.Game.Instance?.LevelUpController;
-                controller?.State.AddSelection(null, CharacterClassRefs.OracleClass.Reference.Get(), FeatureSelectionRefs.OracleRevelationSelection.Reference.Get(), 2);
+                controller?.State.AddSelection(null, Pro.Get(), FeatureSelectionRefs.OracleRevelationSelection.Reference.Get(), 1);
             }
             else
             {
@@ -49,5 +52,6 @@ namespace PrestigePlus.CustomComponent.Feat
 
         public BlueprintFeature feat1;
         public BlueprintFeature feat2;
+        private static readonly BlueprintProgressionReference Pro = BlueprintTool.GetRef<BlueprintProgressionReference>(DeificObedience.PharasmaExaltedproGuid);
     }
 }
