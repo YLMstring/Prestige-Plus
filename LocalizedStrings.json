@@ -14571,6 +14571,105 @@
     "enGB": "1d4 rounds",
     "ruRU": "1d4 раунда",
     "zhCN": "1d4轮"
+  },
+  {
+    "Key": "DeificObedienceAkuma.Name",
+    "ProcessTemplates": false,
+    "enGB": "Akuma Obedience",
+    "zhCN": "魔王仪典"
+  },
+  {
+    "Key": "DeificObedienceAkuma.Description",
+    "enGB": "Practice martial art stances and routines. Gain a +4 profane bonus to CMD. Akuma is a three-eyed, seven-horned ogre mage kishin oni who dwells in a pagoda hidden in the forests of northwestern Lingshen.",
+    "zhCN": "练习武术抱架和套路。在战技防御上获得+4亵渎加值。Akuma is a three-eyed, seven-horned ogre mage kishin oni who dwells in a pagoda hidden in the forests of northwestern Lingshen."
+  },
+  {
+    "Key": "SpellPowerAkuma1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Oni Daimyo",
+    "zhCN": "恶鬼大名"
+  },
+  {
+    "Key": "SpellPowerAkuma1.Description",
+    "enGB": "bear’s endurance 2/day",
+    "zhCN": "熊之坚韧 2次/天"
+  },
+  {
+    "Key": "SpellPowerAkuma2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Oni Daimyo",
+    "zhCN": "恶鬼大名"
+  },
+  {
+    "Key": "SpellPowerAkuma2.Description",
+    "enGB": "divine power 2/day",
+    "zhCN": "神能 2次/天"
+  },
+  {
+    "Key": "SpellPowerAkuma3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Oni Daimyo",
+    "zhCN": "恶鬼大名"
+  },
+  {
+    "Key": "SpellPowerAkuma3.Description",
+    "enGB": "transformation 2/day",
+    "zhCN": "战法转换 2次/天"
+  },
+  {
+    "Key": "DeificObediencePharasma.Name",
+    "ProcessTemplates": false,
+    "enGB": "Pharasma Obedience",
+    "zhCN": "法拉丝玛"
+  },
+  {
+    "Key": "DeificObediencePharasma.Description",
+    "enGB": "Collect small bones whenever it is convenient and respectful to do so. When it comes time to perform your obedience, lay out the bones in a spiral. At one end of the spiral lay a slip of parchment on which you have written the name of someone newly born. At the other end of the spiral, lay a slip of parchment on which you have written the name of someone newly deceased. Chant hymns from The Bones Land in a Spiral while proceeding solemnly around the spiral, trailing a black scarf on the ground behind you. Gain a +2 profane bonus on attack rolls made with daggers.",
+    "zhCN": "在方便且尊重死者的情况下，收集小块骨头。进行仪典时，将骨头排成螺旋状。螺旋的一端放着一张羊皮纸，上面写着一个刚出生的人的名字。在螺旋的另一端，放另一张羊皮纸，上面写着刚去世的人的名字。一边庄严地绕着螺旋行走，一边吟唱《旋中骨园》里的赞美诗，并在身后拖一条垂至地面的黑色围巾。在使用匕首的攻击检定上获得+2亵渎加值。"
+  },
+  {
+    "Key": "DeificObediencePharasmaExalted.Name",
+    "ProcessTemplates": false,
+    "enGB": "Pharasma (Exalted)",
+    "zhCN": "法拉丝玛（大尊者）"
+  },
+  {
+    "Key": "DeificObediencePharasmaExalted.Description",
+    "enGB": "Become an exalted to gain access to her boons, which will be granted at certain character or class levels.",
+    "zhCN": "成为大尊者来获取她的神恩资格，你会在合适的角色或职业等级得到神恩。"
+  },
+  {
+    "Key": "SpellPowerPharasmaExalted1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Quietude",
+    "zhCN": "宁静"
+  },
+  {
+    "Key": "SpellPowerPharasmaExalted1.Description",
+    "enGB": "hold person 1/day",
+    "zhCN": "人类定身术 1次/天"
+  },
+  {
+    "Key": "DeificObediencePharasmaExalted2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Strike the Unrestful",
+    "zhCN": "痛击不眠"
+  },
+  {
+    "Key": "DeificObediencePharasmaExalted2.Description",
+    "enGB": "As a free action, you can grant the ghost touch weapon special ability to weapons that you hold. If that weapon is not magical, it is considered magical while under the effect of this ability. You can affect weapons in this way a number of rounds each day equal to 1 + 1 for every 4 Hit Dice you possess. These rounds don’t need to be consecutive.",
+    "zhCN": "以自由动作，你可以给手中的武器添加幽冥特性，如果该武器不是魔法武器，则一并视为魔法武器。每天你可以这样影响武器的轮数为1+你的等级/4，无需连续。"
+  },
+  {
+    "Key": "DeificObediencePharasmaExalted3.Name",
+    "ProcessTemplates": false,
+    "enGB": "The Veil Is Drawn Aside",
+    "zhCN": "帷幕揭开"
+  },
+  {
+    "Key": "DeificObediencePharasmaExalted3.Description",
+    "enGB": "You gain the Extra Revelation feat, choosing a revelation from either your chosen mystery or the Bones mystery. If you don’t have the revelation class feature, you instead gain a +4 profane bonus on saving throws against necromancy spells and death effects.",
+    "zhCN": "你获得额外启示专长，从你的秘示域或骸骨秘示域中选择启示。如果你没有秘示域职业特性，改为在对抗死灵法术或即死效应的豁免检定上获得+4亵渎加值。"
   }
 
 ]

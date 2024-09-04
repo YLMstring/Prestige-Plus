@@ -150,6 +150,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(NocticulaDemonFeat())
               .AddToAllFeatures(AchaekekFeat())
               .AddToAllFeatures(IroriFeat())
+              .AddToAllFeatures(PharasmaFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -5036,6 +5037,159 @@ namespace PrestigePlus.Blueprint.Feat
               .SetIcon(icon)
               .AddFacts(new() { ability, ability2, ability3 })
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .Configure();
+        }
+
+        private const string Pharasma = "DeificObedience.Pharasma";
+        public static readonly string PharasmaGuid = "{645BA8D0-7B92-4073-97CD-7CC0A09C2373}";
+
+        internal const string PharasmaDisplayName = "DeificObediencePharasma.Name";
+        private const string PharasmaDescription = "DeificObediencePharasma.Description";
+        public static BlueprintFeature PharasmaFeat()
+        {
+            var icon = FeatureRefs.PharasmaFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Pharasma, PharasmaGuid)
+              .SetDisplayName(PharasmaDisplayName)
+              .SetDescription(PharasmaDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.PharasmaFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.TrueNeutral, group: Prerequisite.GroupType.Any)
+              .AddToIsPrerequisiteFor(PharasmaExaltedFeat())
+              .AddComponent<WeaponFocusPP>(c => { c.WeaponType = WeaponTypeRefs.Dagger.Reference; c.AttackBonus = 2; c.Des = ModifierDescriptor.Profane; })
+              .Configure();
+        }
+
+        private const string PharasmaExalted = "DeificObedience.PharasmaExalted";
+        public static readonly string PharasmaExaltedGuid = "{1E40EC9F-BA55-453F-88AE-A499A18E3B55}";
+
+        internal const string PharasmaExaltedDisplayName = "DeificObediencePharasmaExalted.Name";
+        private const string PharasmaExaltedDescription = "DeificObediencePharasmaExalted.Description";
+        public static BlueprintProgression PharasmaExaltedFeat()
+        {
+            var icon = FeatureRefs.PharasmaFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(PharasmaExalted, PharasmaExaltedGuid)
+              .SetDisplayName(PharasmaExaltedDisplayName)
+              .SetDescription(PharasmaExaltedDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(PharasmaGuid)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(12, CreatePharasmaExalted1())
+              .AddToLevelEntry(16, PharasmaExalted2Feat())
+              .AddToLevelEntry(20, PharasmaExalted3Feat())
+              .Configure();
+        }
+
+        private const string PharasmaExalted1 = "SpellPower.PharasmaExalted1";
+        public static readonly string PharasmaExalted1Guid = "{060A2090-656F-45D1-8A4D-09E92D399ACC}";
+        internal const string PharasmaExalted1DisplayName = "SpellPowerPharasmaExalted1.Name";
+        private const string PharasmaExalted1Description = "SpellPowerPharasmaExalted1.Description";
+
+        private const string PharasmaExalted1Ablity2 = "SpellPower.UsePharasmaExalted12";
+        private static readonly string PharasmaExalted1Ablity2Guid = "{9F0C7CB0-7025-47F2-BD19-4EBDE66B7D26}";
+        private static BlueprintFeature CreatePharasmaExalted1()
+        {
+            var icon = AbilityRefs.HoldPerson.Reference.Get().Icon;
+
+            var ability2 = AbilityConfigurator.New(PharasmaExalted1Ablity2, PharasmaExalted1Ablity2Guid)
+                .CopyFrom(
+                AbilityRefs.HoldPerson,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(AbilityTargetHasFact),
+                typeof(AbilityTargetHasNoFactUnless))
+                .AddPretendSpellLevel(spellLevel: 3)
+                .AddAbilityResourceLogic(6, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(PharasmaExalted1, PharasmaExalted1Guid)
+              .SetDisplayName(PharasmaExalted1DisplayName)
+              .SetDescription(PharasmaExalted1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability2 })
+              .Configure();
+        }
+
+        private const string PharasmaExalted2 = "DeificObedience.PharasmaExalted2";
+        public static readonly string PharasmaExalted2Guid = "{81117CCD-CB39-435B-8757-0FEAC815A922}";
+
+        internal const string PharasmaExalted2DisplayName = "DeificObediencePharasmaExalted2.Name";
+        private const string PharasmaExalted2Description = "DeificObediencePharasmaExalted2.Description";
+
+        private const string PharasmaExalted2Buff = "DeificObedience.PharasmaExalted2Buff";
+        private static readonly string PharasmaExalted2BuffGuid = "{3CC35F79-C9C8-4849-91B1-C984116DE977}";
+
+        private const string PharasmaExalted2Res = "DeificObedience.PharasmaExalted2Res";
+        private static readonly string PharasmaExalted2ResGuid = "{1676DB65-9792-44BD-B90E-75F773107933}";
+
+        private const string PharasmaExalted2Ability = "DeificObedience.PharasmaExalted2Ability";
+        private static readonly string PharasmaExalted2AbilityGuid = "{C86DC377-5A04-40EF-BC39-21A487F9EE3F}";
+        public static BlueprintFeature PharasmaExalted2Feat()
+        {
+            var icon = ActivatableAbilityRefs.ShamanWeaponGhostTouchChoice.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(PharasmaExalted2Res, PharasmaExalted2ResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(1)
+                        .IncreaseByLevelStartPlusDivStep(classes: [CharacterClassRefs.FighterClass.ToString()], otherClassLevelsMultiplier: 1, levelsPerStep: 4, bonusPerStep: 1)
+                        .Build())
+                .Configure();
+
+            var ability = ActivatableAbilityConfigurator.New(PharasmaExalted2Ability, PharasmaExalted2AbilityGuid)
+                .SetDisplayName(PharasmaExalted2DisplayName)
+                .SetDescription(PharasmaExalted2Description)
+                .SetIcon(icon)
+                .SetBuff(PharasmaExalted2BuffGuid)
+                .SetDeactivateIfCombatEnded(true)
+                .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound)
+                .Configure();
+
+            BuffConfigurator.New(PharasmaExalted2Buff, PharasmaExalted2BuffGuid)
+             .SetDisplayName(PharasmaExalted2DisplayName)
+             .SetDescription(PharasmaExalted2Description)
+             .SetIcon(icon)
+             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.GhostTouch.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.PrimaryHand)
+             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.GhostTouch.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.SecondaryHand)
+             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.MagicWeapon.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.PrimaryHand)
+             .AddBuffEnchantAnyWeapon(WeaponEnchantmentRefs.MagicWeapon.Reference.ToString(), Kingmaker.UI.GenericSlot.EquipSlotBase.SlotType.SecondaryHand)
+             .Configure();
+
+            return FeatureConfigurator.New(PharasmaExalted2, PharasmaExalted2Guid)
+              .SetDisplayName(PharasmaExalted2DisplayName)
+              .SetDescription(PharasmaExalted2Description)
+              .SetIcon(icon)
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string PharasmaExalted3 = "DeificObedience.PharasmaExalted3";
+        public static readonly string PharasmaExalted3Guid = "{DD0337FB-348D-4E1B-BB7B-A8554F4CD698}";
+
+        internal const string PharasmaExalted3DisplayName = "DeificObediencePharasmaExalted3.Name";
+        private const string PharasmaExalted3Description = "DeificObediencePharasmaExalted3.Description";
+
+        private const string PharasmaExalted4 = "DeificObedience.PharasmaExalted4";
+        public static readonly string PharasmaExalted4Guid = "{62134CDB-4F7F-4C4F-9FC0-587585A0A84D}";
+        public static BlueprintFeature PharasmaExalted3Feat()
+        {
+            var icon = AbilityRefs.VeilOfHeaven.Reference.Get().Icon;
+
+            var feat = FeatureConfigurator.New(PharasmaExalted4, PharasmaExalted4Guid)
+              .SetDisplayName(PharasmaExalted3DisplayName)
+              .SetDescription(PharasmaExalted3Description)
+              .SetIcon(icon)
+              .AddSavingThrowBonusAgainstDescriptor(spellDescriptor: SpellDescriptor.Death, value: 4, modifierDescriptor: ModifierDescriptor.Profane)
+              .AddSavingThrowBonusAgainstSchool(modifierDescriptor: ModifierDescriptor.Profane, school: SpellSchool.Necromancy, value: 4)
+              .Configure();
+
+            return FeatureConfigurator.New(PharasmaExalted3, PharasmaExalted3Guid)
+              .SetDisplayName(PharasmaExalted3DisplayName)
+              .SetDescription(PharasmaExalted3Description)
+              .SetIcon(icon)
+              .AddComponent<PharasmaVeilLogic>(c => { c.feat1 = FeatureRefs.OracleBonesMysteryFeature.Reference; c.feat2 = feat; })
               .Configure();
         }
     }
