@@ -20,6 +20,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TabletopTweaks.Core.Utilities;
 using static Kingmaker.Armies.TacticalCombat.Grid.TacticalCombatGrid;
 
 namespace PrestigePlus.Patch
@@ -79,6 +80,7 @@ namespace PrestigePlus.Patch
         private static BlueprintFeatureReference Raz8 = BlueprintTool.GetRef<BlueprintFeatureReference>("621aaa4baad04705a975f6023a1205d0");
 
         private static BlueprintAbilityReference Drunken4 = BlueprintTool.GetRef<BlueprintAbilityReference>("8b8918498ead4b2d90cfc6f2671fdbbe");
+        //private static BlueprintAbilityReference Drunken8 = BlueprintTool.GetRef<BlueprintAbilityReference>("753540142c0344c187c62f28dadd7d9e");
         private static void AddFeatureToPro(string featguid, string proguid, int level)
         {
             var progress = BlueprintTool.GetRef<BlueprintProgressionReference>(proguid)?.Get();
