@@ -40,6 +40,7 @@
 - [Irori](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Irori): requires worshipping Irori or Lawful Neutral
 - [Otolmens](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Otolmens): requires worshipping Otolmens (Expanded Content) or Lawful Neutral
 - [Gozreh (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Gozreh): requires worshipping Gozreh or Neutral
+- [Pharasma (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Pharasma): requires worshipping Pharasma or Neutral
 - [Mrtyu](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Mrtyu): requires worshipping Mrtyu (Expanded Content) or Neutral
 - [Naderi (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Naderi): requires worshipping Naderi (Expanded Content) or Neutral
 - [Nivi (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Nivi%20Rhombodazzle): requires worshipping Torag or Neutral
@@ -50,7 +51,7 @@
 - Some of her boons have changed because she's in the middle of [spoilers](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Nocticula%20(Redeemed))
 - [Achaekek (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Achaekek): requires worshipping Achaekek or Lawful Evil
 - [Mahathallah (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Mahathallah): requires worshipping Asmodeus or Lawful Evil
-- [Mephistopheles](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Mephistopheles): requires worshipping Mephistopheles (Expanded Content) or Lawful Evil
+- [Akuma](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Akuma): requires worshipping Asmodeus or Lawful Evil
 - [Arazni (sentinel)](https://aonprd.com/DeityDisplay.aspx?ItemName=Arazni): requires worshipping Urgathoa or Neutral Evil
 - [Charon (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Charon): requires worshipping Charon (Expanded Content) or Neutral Evil
 - [Norgorber](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Norgorber): requires worshipping Norgorber or Neutral Evil
@@ -441,6 +442,7 @@
 - Infernal Healing: You can fully heal outside of combat by spending gold, as if you buy a wand of infernal healing and use it! (gold : hp = 3:2)
 - Weak Crits against Enemies: Symmetrical with owlcat weak crits settings, making it fair (default off)
 - English Learning Mode: Show English dialogues along with any other language of yours (default off)
+- Lazy Crusade: Global map speed * 1000, reveal range * 1000, unlimited army movement (default off)
 - Spell Turning effects no longer reflect touch spells and AoE spells, as per tabletop
 - Razmiri Mask no longer reflects anything more than Aroden Belt would
 - Enemy AI now recognize your permanent Spell Turning effects and act like a sane person
@@ -456,6 +458,8 @@
 - Fix the bug that Dragon Disciple can't progress spell books other than spontaneous arcane ones (2-4, 6-8, 9-10)
 - Fix the bug(?) that enemies can't take a 5 foot step.
 - Fix the bug(?) that you can't skip selections.
+- Fix the bug that Drunken Technique: Firewater Breath doesn't deal any damage when saved.
+- Fix the bug that activate abilities are effectively missing the last charge.
 ## Mod Combo
 
 ### [Character Options+](https://github.com/WittleWolfie/CharacterOptionsPlus)
