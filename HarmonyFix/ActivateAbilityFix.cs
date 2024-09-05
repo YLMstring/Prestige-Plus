@@ -3,6 +3,7 @@ using HarmonyLib;
 using Kingmaker.AI;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.ActivatableAbilities;
+using Kingmaker.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,11 +39,24 @@ namespace PrestigePlus.HarmonyFix
             if (__instance.Owner.Resources.HasEnoughResource(__instance.RequiredResource, amount))
             {
                 __instance.Owner.Resources.Spend(__instance.RequiredResource, amount);
-                Main.Logger.Info("stop activate ability0");
-                if (!__instance.Owner.Resources.HasEnoughResource(__instance.RequiredResource, amount))
+                if (!__instance.Owner.Resources.HasEnoughResource(__instance.RequiredResource, amount) && __instance.OwnerBlueprint is BlueprintActivatableAbility ability)
                 {
-                    __instance.Fact.Stop();
-                    __instance.Owner.Resources.Restore(__instance.RequiredResource, amount);
+                    __instance.Fact.TurnOffImmediately();
+                    Main.Logger.Info("stop activate ability");
+                    int time = 6;
+                    if (__instance.SpendType == ResourceSpendType.OncePerTenMinutes)
+                    {
+                        time = 600;
+                    }
+                    else if (__instance.SpendType == ResourceSpendType.OncePerHour)
+                    {
+                        time = 3600;
+                    }
+                    else if (__instance.SpendType == ResourceSpendType.OncePerMinute)
+                    {
+                        time = 60;
+                    }
+                    __instance.Owner.AddBuff(ability.Buff, __instance.Owner, TimeSpan.FromSeconds(time));
                 }
                 return false;
             }
