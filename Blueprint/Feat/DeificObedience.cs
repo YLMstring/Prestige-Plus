@@ -1772,6 +1772,10 @@ namespace PrestigePlus.Blueprint.Feat
         {
             var icon = AbilityRefs.BalefulPolymorph.Reference.Get().Icon;
 
+            var buffaction = ActionsBuilder.New()
+                        .DealDamage(DamageTypes.Direct(), ContextDice.Value(DiceType.D6, 1, 0))
+                        .Build();
+
             var buff = BuffConfigurator.New(Lamashtu3Buff, Lamashtu3BuffGuid)
               .CopyFrom(
                 BuffRefs.BalefulPolymorphBuff,
@@ -1788,9 +1792,7 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(BuffMovementSpeed))
               .SetDisplayName(Lamashtu3DisplayName)
               .SetDescription(Lamashtu3Description)
-              .AddNewRoundTrigger(newRoundActions: ActionsBuilder.New()
-                        .DealDamage(DamageTypes.Direct(), ContextDice.Value(DiceType.D6, 1, 0))
-                        .Build())
+              .AddBuffActions(activated: buffaction, newRound: buffaction)
               .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.AdditionalAttackBonus, value: -2)
               .AddStatBonus(ModifierDescriptor.Penalty, stat: StatType.AdditionalDamage, value: -2)
               .AddBuffAllSavesBonus(ModifierDescriptor.Penalty, value: -2)
@@ -5505,11 +5507,15 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetMaxAmount(ResourceAmountBuilder.New(1))
                 .Configure();
 
+            var buff1action = ActionsBuilder.New()
+                .DealDamage(value: ContextDice.Value(DiceType.D6, bonus: 0, diceCount: ContextValues.Constant(2)), damageType: DamageTypes.Direct())
+                .Build();
+
             var buff1 = BuffConfigurator.New(ZonKuthon3Buff1, ZonKuthon3Buff1Guid)
              .SetDisplayName(ZonKuthon3DisplayName)
              .SetDescription(ZonKuthon3Description)
              .SetIcon(icon)
-
+             .AddBuffActions(activated: buff1action, newRound: buff1action)
              .Configure();
 
             var buff2 = BuffConfigurator.New(ZonKuthon3Buff2, ZonKuthon3Buff2Guid)
