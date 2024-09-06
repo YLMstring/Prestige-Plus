@@ -16,13 +16,15 @@ using System.Threading.Tasks;
 
 namespace PrestigePlus.HarmonyFix
 {
-    [HarmonyPatch(typeof(UnitCombatState), nameof(UnitCombatState.JoinCombat))]
+    [HarmonyPatch(typeof(UnitCombatState), nameof(UnitCombatState.CanActInCombat))]
     internal class NotSurprisedFix
     {
-        static void Postfix(ref UnitCombatState __instance)
+        static void Postfix(ref UnitCombatState __instance, ref bool __result)
         {
-            if (__instance.NotSurprised || !__instance.Unit.HasFact(Mythic)) { return; }
-            __instance.NotSurprised = true;
+            if (!__result && __instance.Unit.HasFact(Mythic))
+            {
+                __result = __instance.m_InCombat;
+            }
         }
 
         private static BlueprintFeatureReference Mythic = BlueprintTool.GetRef<BlueprintFeatureReference>(DeificObedience.Magdh2Guid);
