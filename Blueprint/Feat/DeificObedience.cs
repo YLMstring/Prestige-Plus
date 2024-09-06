@@ -1145,7 +1145,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteAlignment(AlignmentMaskType.LawfulEvil, group: Prerequisite.GroupType.Any)
               .AddToIsPrerequisiteFor(MahathallahExaltedFeat())
               .AddIncreaseSpellSchoolDC(2, ModifierDescriptor.UntypedStackable, SpellSchool.Illusion)
-              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Profane, spellDescriptor: SpellDescriptor.MindAffecting, value: 2, bonus: 0)
+              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Profane, spellDescriptor: SpellDescriptor.MindAffecting, value: 2)
               .Configure();
         }
 
@@ -1257,7 +1257,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(MahathallahExalted3DisplayName)
               .SetDescription(MahathallahExalted3Description)
               .SetIcon(icon)
-              .AddSavingThrowBonusAgainstDescriptor(spellDescriptor: SpellDescriptor.Poison, value: 4, bonus: 0)
+              .AddSavingThrowBonusAgainstDescriptor(spellDescriptor: SpellDescriptor.Poison, value: 4)
               .Configure();
         }
 
@@ -1637,8 +1637,8 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteFeature(FeatureRefs.LamashtuFeature.ToString(), group: Prerequisite.GroupType.Any)
               .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticEvil, group: Prerequisite.GroupType.Any)
               .AddToIsPrerequisiteFor(LamashtuExaltedGuid)
-              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Profane, spellDescriptor: SpellDescriptor.Confusion, value: 4, bonus: 0)
-              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Profane, spellDescriptor: SpellDescriptor.Polymorph, value: 4, bonus: 0)
+              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Profane, spellDescriptor: SpellDescriptor.Confusion, value: 4)
+              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Profane, spellDescriptor: SpellDescriptor.Polymorph, value: 4)
               .Configure();
         }
 
@@ -1962,7 +1962,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddBuffDescriptorImmunity(false, SpellDescriptor.Compulsion)
               .AddSpellImmunityToSpellDescriptor(descriptor: SpellDescriptor.Charm)
               .AddSpellImmunityToSpellDescriptor(descriptor: SpellDescriptor.Compulsion)
-              .AddSavingThrowBonusAgainstDescriptor(value: 4, spellDescriptor: SpellDescriptor.Fear, bonus: 0)
+              .AddSavingThrowBonusAgainstDescriptor(value: 4, spellDescriptor: SpellDescriptor.Fear)
               .Configure();
         }
 
@@ -2000,8 +2000,8 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteFeature("158538c5-d54a-46f6-8663-4703118e9b34", group: Prerequisite.GroupType.Any)
               .AddPrerequisiteAlignment(AlignmentMaskType.NeutralEvil, group: Prerequisite.GroupType.Any)
               .AddToIsPrerequisiteFor(CharonSentinelFeat())
-              .AddSavingThrowBonusAgainstDescriptor(value: 4, spellDescriptor: SpellDescriptor.NegativeLevel, modifierDescriptor: ModifierDescriptor.Profane, bonus: 0)
-              .AddSavingThrowBonusAgainstDescriptor(value: 4, spellDescriptor: SpellDescriptor.ChannelNegativeHarm, modifierDescriptor: ModifierDescriptor.Profane, bonus: 0)
+              .AddSavingThrowBonusAgainstDescriptor(value: 4, spellDescriptor: SpellDescriptor.NegativeLevel, modifierDescriptor: ModifierDescriptor.Profane)
+              .AddSavingThrowBonusAgainstDescriptor(value: 4, spellDescriptor: SpellDescriptor.ChannelNegativeHarm, modifierDescriptor: ModifierDescriptor.Profane)
               .AddSavingThrowBonusAgainstSchool(value: 4, school: SpellSchool.Necromancy, modifierDescriptor: ModifierDescriptor.Profane)
               .Configure();
         }
@@ -2223,7 +2223,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteFeature("8a80dae7-21a7-4433-8b44-170f4e486301", group: Prerequisite.GroupType.Any)
               .AddPrerequisiteAlignment(AlignmentMaskType.NeutralEvil, group: Prerequisite.GroupType.Any)
               .AddToIsPrerequisiteFor(SzurielSentinelFeat())
-              .AddSavingThrowBonusAgainstDescriptor(value: 4, spellDescriptor: SpellDescriptor.Fire, modifierDescriptor: ModifierDescriptor.Profane, bonus: 0)
+              .AddSavingThrowBonusAgainstDescriptor(value: 4, spellDescriptor: SpellDescriptor.Fire, modifierDescriptor: ModifierDescriptor.Profane)
               .Configure();
         }
 
@@ -2454,8 +2454,8 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteFeature("C5C537C7-77DB-48B7-BBE8-61414DB4D366", group: Prerequisite.GroupType.Any)
               .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticGood, group: Prerequisite.GroupType.Any)
               .AddToIsPrerequisiteFor(MilaniSentinelFeat())
-              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Charm, value: 2, bonus: 0)
-              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Compulsion, value: 2, bonus: 0)
+              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Charm, value: 2)
+              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Compulsion, value: 2)
               .AddComponent<ContextDispelBonusOnType>(c => {
                   c.Bonus = 2;
                   c.Type = Kingmaker.RuleSystem.Rules.RuleDispelMagic.CheckType.CasterLevel;
@@ -2535,7 +2535,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddBuffDescriptorImmunity(false, SpellDescriptor.Fear)
               .AddSpellImmunityToSpellDescriptor(descriptor: SpellDescriptor.Charm)
               .AddSpellImmunityToSpellDescriptor(descriptor: SpellDescriptor.Fear)
-              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Compulsion, value: 4, bonus: 0)
+              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Compulsion, value: 4)
               .Configure();
         }
 
@@ -2818,8 +2818,8 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteFeature(FeatureRefs.KabririFeature.ToString(), group: Prerequisite.GroupType.Any)
               .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticEvil, group: Prerequisite.GroupType.Any)
               .AddToIsPrerequisiteFor(KabririExaltedFeat())
-              .AddSavingThrowBonusAgainstDescriptor(value: 4, modifierDescriptor: ModifierDescriptor.Profane, spellDescriptor: SpellDescriptor.Paralysis, bonus: 0)
-              .AddSavingThrowBonusAgainstDescriptor(value: 4, modifierDescriptor: ModifierDescriptor.Profane, spellDescriptor: SpellDescriptor.Disease, bonus: 0)
+              .AddSavingThrowBonusAgainstDescriptor(value: 4, modifierDescriptor: ModifierDescriptor.Profane, spellDescriptor: SpellDescriptor.Paralysis)
+              .AddSavingThrowBonusAgainstDescriptor(value: 4, modifierDescriptor: ModifierDescriptor.Profane, spellDescriptor: SpellDescriptor.Disease)
               .Configure();
         }
 
@@ -3952,8 +3952,8 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteFeature(FeatureRefs.GozrehFeature.ToString(), group: Prerequisite.GroupType.Any)
               .AddPrerequisiteAlignment(AlignmentMaskType.TrueNeutral, group: Prerequisite.GroupType.Any)
               .AddToIsPrerequisiteFor(GozrehExaltedFeat())
-              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Electricity, value: 4, bonus: 0)
-              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Cold, value: 4, bonus: 0)
+              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Electricity, value: 4)
+              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Cold, value: 4)
               .Configure();
         }
 
@@ -4028,9 +4028,9 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetDisplayName(Gozreh3DisplayName)
                     .SetDescription(Gozreh3Description)
                     .SetIcon(icon)
-                    .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Electricity, value: 4, bonus: 0)
-                    .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Cold, value: 4, bonus: 0)
-                    .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Fire, value: 4, bonus: 0)
+                    .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Electricity, value: 4)
+                    .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Cold, value: 4)
+                    .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Fire, value: 4)
                     .AddStatBonus(stat: StatType.Intelligence, value: 1)
                     .AddStatBonus(stat: StatType.Wisdom, value: 1)
                     .AddComponent<WeaponFocusPP>(c => { c.NoCondition = true; c.AttackBonus = 2; c.Des = ModifierDescriptor.Sacred; })
@@ -4583,8 +4583,8 @@ namespace PrestigePlus.Blueprint.Feat
               .AddPrerequisiteFeature("e3805d65-1712-49eb-9780-d99511e71c03", group: Prerequisite.GroupType.Any)
               .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticNeutral, group: Prerequisite.GroupType.Any)
               .AddToIsPrerequisiteFor(NocticulaSentinelGuid)
-              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Profane, spellDescriptor: SpellDescriptor.Blindness, value: 4, bonus: 0)
-              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Profane, spellDescriptor: SpellDescriptor.Charm, value: 4, bonus: 0)
+              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Profane, spellDescriptor: SpellDescriptor.Blindness, value: 4)
+              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Profane, spellDescriptor: SpellDescriptor.Charm, value: 4)
               .Configure();
         }
 
@@ -5197,7 +5197,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(PharasmaExalted3DisplayName)
               .SetDescription(PharasmaExalted3Description)
               .SetIcon(icon)
-              .AddSavingThrowBonusAgainstDescriptor(spellDescriptor: SpellDescriptor.Death, value: 4, modifierDescriptor: ModifierDescriptor.Profane, bonus: 0)
+              .AddSavingThrowBonusAgainstDescriptor(spellDescriptor: SpellDescriptor.Death, value: 4, modifierDescriptor: ModifierDescriptor.Profane)
               .AddSavingThrowBonusAgainstSchool(modifierDescriptor: ModifierDescriptor.Profane, school: SpellSchool.Necromancy, value: 4)
               .Configure();
 

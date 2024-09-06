@@ -63,7 +63,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDisplayName(ShieldForesightDisplayName)
               .SetDescription(ShieldForesightDescription)
               .SetIcon(icon)
-              .AddSavingThrowBonusAgainstDescriptor(spellDescriptor: SpellDescriptor.Fear, value: 5, bonus: 0)
+              .AddSavingThrowBonusAgainstDescriptor(spellDescriptor: SpellDescriptor.Fear, value: 5)
               .Configure();
 
             var Buff = BuffConfigurator.New(ShieldForesightBuff, ShieldForesightBuffGuid)

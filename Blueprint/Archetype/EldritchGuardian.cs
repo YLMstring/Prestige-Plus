@@ -79,7 +79,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDescription(SteelWillDescription)
               .SetIcon(icon)
               .SetRanks(5)
-              .AddSavingThrowBonusAgainstDescriptor(value: 1, spellDescriptor: SpellDescriptor.MindAffecting, bonus: 0)
+              .AddSavingThrowBonusAgainstDescriptor(value: 1, spellDescriptor: SpellDescriptor.MindAffecting)
               .Configure();
         }
     }

@@ -59,7 +59,7 @@ namespace PrestigePlus.Blueprint.Archetype
             return FeatureConfigurator.New(DiseaseResistance, DiseaseResistanceGuid)
               .SetDisplayName(DiseaseResistanceDisplayName)
               .SetDescription(DiseaseResistanceDescription)
-              .AddSavingThrowBonusAgainstDescriptor(value: 2, spellDescriptor: SpellDescriptor.Disease, bonus: 0)
+              .AddSavingThrowBonusAgainstDescriptor(value: 2, spellDescriptor: SpellDescriptor.Disease)
               .SetIsPrerequisiteFor(InternalBonusFeatGuid)
               .SetRanks(5)
               .Configure();

@@ -125,7 +125,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDescription(UnassailableAllegianceDescription)
               .SetIcon(icon)
               .SetRanks(5)
-              .AddSavingThrowBonusAgainstDescriptor(value: 1, spellDescriptor: SpellDescriptor.Compulsion, bonus: 0)
+              .AddSavingThrowBonusAgainstDescriptor(value: 1, spellDescriptor: SpellDescriptor.Compulsion)
               .Configure();
         }
     }
