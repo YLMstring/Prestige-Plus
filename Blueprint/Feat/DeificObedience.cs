@@ -5218,7 +5218,7 @@ namespace PrestigePlus.Blueprint.Feat
         public static BlueprintProgression MagdhFeat()
         {
             //"MagdhFeature": "51865166-14c5-405c-9f4c-792629b30286",
-            var icon = AbilityRefs.SeeInvisibilityCommunal.Reference.Get().Icon;
+            var icon = AbilityRefs.InvisibilityMass.Reference.Get().Icon;
 
             return ProgressionConfigurator.New(Magdh, MagdhGuid)
               .SetDisplayName(MagdhDisplayName)
@@ -5239,7 +5239,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static BlueprintFeature Magdh0Feat()
         {
-            var icon = AbilityRefs.SeeInvisibilityCommunal.Reference.Get().Icon;
+            var icon = AbilityRefs.InvisibilityMass.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Magdh0, Magdh0Guid)
               .SetDisplayName(MagdhDisplayName)
@@ -5322,7 +5322,7 @@ namespace PrestigePlus.Blueprint.Feat
 
             var ability = AbilityConfigurator.New(Magdh3Ability, Magdh3AbilityGuid)
                 .CopyFrom(
-                AbilityRefs.HolyAura,
+                AbilityRefs.PredictionOfFailure,
                 typeof(AbilityEffectRunAction),
                 typeof(SpellComponent),
                 typeof(SpellDescriptorComponent),
@@ -5407,7 +5407,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static BlueprintFeature ZonKuthonSentinel2Feat()
         {
-            var icon = FeatureRefs.AnnisHagRend.Reference.Get().Icon;
+            var icon = AbilityRefs.TouchOfGracelessnessCast.Reference.Get().Icon;
 
             return FeatureConfigurator.New(ZonKuthonSentinel2, ZonKuthonSentinel2Guid)
               .SetDisplayName(ZonKuthonSentinel2DisplayName)
@@ -5425,7 +5425,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string ZonKuthonSentinel3Description = "DeificObedienceZonKuthonSentinel3.Description";
         public static BlueprintFeature ZonKuthonSentinel3Feat()
         {
-            var icon = FeatureRefs.DarkLurkerBladeFromShadowsFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.Thoughtsense.Reference.Get().Icon;
 
             return FeatureConfigurator.New(ZonKuthonSentinel3, ZonKuthonSentinel3Guid)
               .SetDisplayName(ZonKuthonSentinel3DisplayName)
