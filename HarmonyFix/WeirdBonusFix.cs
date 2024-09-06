@@ -149,4 +149,30 @@ namespace PrestigePlus.HarmonyFix
             return true;
         }
     }
+
+    [HarmonyPatch(typeof(RuleDealStatDamage), nameof(RuleDealStatDamage.OnTrigger))]
+    internal class WeirdBonusFix6
+    {
+        static void Postfix(ref RuleDealStatDamage __instance)
+        {
+            if (__instance.Stat == null)
+            {
+                return;
+            }
+            int lost = __instance.Stat.Damage + __instance.Stat.Drain;
+            int gain = __instance.Stat.BaseValue;
+            foreach (var mod in __instance.Stat.Modifiers)
+            {
+                if (mod.ModValue > 0)
+                {
+                    gain += mod.ModValue;
+                }
+            }
+            //Main.Logger.Info("Total " + gain.ToString() + " Lost " + lost.ToString());
+            if (gain < lost)
+            {
+                __instance.Target.Descriptor.State.MarkedForDeath = true;
+            }
+        }
+    }
 }

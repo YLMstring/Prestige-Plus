@@ -4,6 +4,7 @@ using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.ModReferences;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils;
+using Kingmaker.AI.Blueprints;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Spells;
@@ -74,13 +75,21 @@ namespace PrestigePlus.Patch
                     }
                 }
             }
+
+            var brainacts = UnitRefs.DLC4_CR12_GhostDruidess.Reference.Get().m_Brain.Get().m_Actions;
+            foreach (var stuff in brainacts)
+            {
+                if (stuff.Get() is BlueprintAiCastSpell spell && spell.m_Ability.Get() == AbilityRefs.Contagion.Reference.Get())
+                {
+                    spell.m_Ability = BlueprintTool.GetRef<BlueprintAbilityReference>("d2cff9243a7ee804cb6d5be47af30c73");
+                }
+            }
         }
 
         private static BlueprintFeatureReference Raz = BlueprintTool.GetRef<BlueprintFeatureReference>("13d5818737694021b001641437a4ba29");
         private static BlueprintFeatureReference Raz8 = BlueprintTool.GetRef<BlueprintFeatureReference>("621aaa4baad04705a975f6023a1205d0");
 
         private static BlueprintAbilityReference Drunken4 = BlueprintTool.GetRef<BlueprintAbilityReference>("8b8918498ead4b2d90cfc6f2671fdbbe");
-        //private static BlueprintAbilityReference Drunken8 = BlueprintTool.GetRef<BlueprintAbilityReference>("753540142c0344c187c62f28dadd7d9e");
         private static void AddFeatureToPro(string featguid, string proguid, int level)
         {
             var progress = BlueprintTool.GetRef<BlueprintProgressionReference>(proguid)?.Get();

@@ -151,6 +151,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(AchaekekFeat())
               .AddToAllFeatures(IroriFeat())
               .AddToAllFeatures(PharasmaFeat())
+              .AddToAllFeatures(MagdhFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -5203,6 +5204,349 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDescription(PharasmaExalted3Description)
               .SetIcon(icon)
               .AddComponent<PharasmaVeilLogic>(c => { c.feat1 = FeatureRefs.OracleBonesMysteryFeature.Reference; c.feat2 = feat; })
+              .Configure();
+        }
+
+        private const string Magdh = "DeificObedience.Magdh";
+        public static readonly string MagdhGuid = "{D93D0436-FAF6-44F9-816F-04D84333AF45}";
+
+        internal const string MagdhDisplayName = "DeificObedienceMagdh.Name";
+        private const string MagdhDescription = "DeificObedienceMagdh.Description";
+        public static BlueprintProgression MagdhFeat()
+        {
+            //"MagdhFeature": "51865166-14c5-405c-9f4c-792629b30286",
+            var icon = AbilityRefs.SeeInvisibilityCommunal.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(Magdh, MagdhGuid)
+              .SetDisplayName(MagdhDisplayName)
+              .SetDescription(MagdhDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature("51865166-14c5-405c-9f4c-792629b30286", group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.LawfulNeutral, group: Prerequisite.GroupType.Any)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(1, Magdh0Feat())
+              .AddToLevelEntry(12, CreateMagdh1())
+              .AddToLevelEntry(16, Magdh2Feat())
+              .AddToLevelEntry(20, Magdh3Feat())
+              .Configure();
+        }
+
+        private const string Magdh0 = "DeificObedience.Magdh0";
+        public static readonly string Magdh0Guid = "{CB78EEF4-49D2-4FF6-A1AC-45D9301CD830}";
+
+        public static BlueprintFeature Magdh0Feat()
+        {
+            var icon = AbilityRefs.SeeInvisibilityCommunal.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Magdh0, Magdh0Guid)
+              .SetDisplayName(MagdhDisplayName)
+              .SetDescription(MagdhDescription)
+              .SetIcon(icon)
+              .AddStatBonus(ModifierDescriptor.None, false, StatType.SkillKnowledgeArcana, 4)
+              .AddStatBonus(ModifierDescriptor.None, false, StatType.SkillKnowledgeWorld, 4)
+              .Configure();
+        }
+
+        private const string Magdh1 = "SpellPower.Magdh1";
+        public static readonly string Magdh1Guid = "{08FBD00D-B3B0-4CE7-8960-627F89B764D7}";
+        internal const string Magdh1DisplayName = "SpellPowerMagdh1.Name";
+        private const string Magdh1Description = "SpellPowerMagdh1.Description";
+
+        private const string Magdh1Ablity2 = "SpellPower.UseMagdh12";
+        private static readonly string Magdh1Ablity2Guid = "{F3D3C5AE-43B0-471B-B14A-BB0AC84FBFFE}";
+
+        private static BlueprintFeature CreateMagdh1()
+        {
+            var icon = AbilityRefs.SeeInvisibility.Reference.Get().Icon;
+
+            var ability2 = AbilityConfigurator.New(Magdh1Ablity2, Magdh1Ablity2Guid)
+                .CopyFrom(
+                AbilityRefs.SeeInvisibility,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(ContextRankConfig),
+                typeof(AbilitySpawnFx))
+                .AddPretendSpellLevel(spellLevel: 2)
+                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Magdh1, Magdh1Guid)
+              .SetDisplayName(Magdh1DisplayName)
+              .SetDescription(Magdh1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability2 })
+              .Configure();
+        }
+
+        private const string Magdh2 = "DeificObedience.Magdh2";
+        public static readonly string Magdh2Guid = "{CFFDE39C-F21F-42B4-A640-AA098987A7C7}";
+
+        internal const string Magdh2DisplayName = "DeificObedienceMagdh2.Name";
+        private const string Magdh2Description = "DeificObedienceMagdh2.Description";
+        public static BlueprintFeature Magdh2Feat()
+        {
+            var icon = AbilityRefs.Foresight.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Magdh2, Magdh2Guid)
+              .SetDisplayName(Magdh2DisplayName)
+              .SetDescription(Magdh2Description)
+              .SetIcon(icon)
+              .AddStatBonus(ModifierDescriptor.Insight, false, StatType.AC, 2)
+              .AddStatBonus(ModifierDescriptor.Insight, false, StatType.SaveReflex, 2)
+              .AddFlatFootedIgnore(type: FlatFootedIgnoreType.UncannyDodge)
+              .Configure();
+        }
+
+        private const string Magdh3 = "DeificObedience.Magdh3";
+        public static readonly string Magdh3Guid = "{8CE81F12-7629-418F-9397-9CD6E6D3B5A0}";
+
+        internal const string Magdh3DisplayName = "DeificObedienceMagdh3.Name";
+        private const string Magdh3Description = "DeificObedienceMagdh3.Description";
+
+        private const string Magdh3Res = "DeificObedience.Magdh3Res";
+        private static readonly string Magdh3ResGuid = "{B39D698D-E623-43EC-BD6B-2DD04866C8D1}";
+
+        private const string Magdh3Ability = "DeificObedience.Magdh3Ability";
+        private static readonly string Magdh3AbilityGuid = "{C00878B6-4344-4D26-B832-40DFB6AFE8FC}";
+        public static BlueprintFeature Magdh3Feat()
+        {
+            var icon = AbilityRefs.PredictionOfFailure.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(Magdh3Res, Magdh3ResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var ability = AbilityConfigurator.New(Magdh3Ability, Magdh3AbilityGuid)
+                .CopyFrom(
+                AbilityRefs.HolyAura,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(AbilitySpawnFx),
+                typeof(ContextRankConfigs))
+                .SetType(AbilityType.SpellLike)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .AddPretendSpellLevel(spellLevel: 8)
+                .Configure();
+
+            return FeatureConfigurator.New(Magdh3, Magdh3Guid)
+              .SetDisplayName(Magdh3DisplayName)
+              .SetDescription(Magdh3Description)
+              .SetIcon(icon)
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string ZonKuthon = "DeificObedience.ZonKuthon";
+        public static readonly string ZonKuthonGuid = "{352C15D7-8C54-4443-8E27-054D4E5E075A}";
+
+        internal const string ZonKuthonDisplayName = "DeificObedienceZonKuthon.Name";
+        private const string ZonKuthonDescription = "DeificObedienceZonKuthon.Description";
+        public static BlueprintProgression ZonKuthonFeat()
+        {
+            var icon = FeatureRefs.ZonKuthonFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(ZonKuthon, ZonKuthonGuid)
+              .SetDisplayName(ZonKuthonDisplayName)
+              .SetDescription(ZonKuthonDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.ZonKuthonFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.LawfulEvil, group: Prerequisite.GroupType.Any)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(1, ZonKuthon0Feat())
+              .AddToLevelEntry(12, CreateZonKuthon1())
+              .AddToLevelEntry(16, ZonKuthon2Feat())
+              .AddToLevelEntry(20, ZonKuthon3Feat())
+              .Configure();
+        }
+
+        private const string ZonKuthon0 = "DeificObedience.ZonKuthon0";
+        public static readonly string ZonKuthon0Guid = "{F240AA8D-0E33-4F4C-88A6-C323CFB81B74}";
+
+        public static BlueprintFeature ZonKuthon0Feat()
+        {
+            var icon = FeatureRefs.ZonKuthonFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(ZonKuthon0, ZonKuthon0Guid)
+              .SetDisplayName(ZonKuthonDisplayName)
+              .SetDescription(ZonKuthonDescription)
+              .SetIcon(icon)
+              .AddComponent<ZonKuthonSpellComp>()
+              .Configure();
+        }
+
+        private const string ZonKuthon1 = "SpellPower.ZonKuthon1";
+        public static readonly string ZonKuthon1Guid = "{ADD81421-4306-4C74-9EF3-66B3317A79F7}";
+        internal const string ZonKuthon1DisplayName = "SpellPowerZonKuthon1.Name";
+        private const string ZonKuthon1Description = "SpellPowerZonKuthon1.Description";
+
+        private const string ZonKuthon1Ablity = "SpellPower.UseZonKuthon1";
+        private static readonly string ZonKuthon1AblityGuid = "{5A9BCA3E-F61D-414A-80DD-A5D21F4E82E8}";
+
+        private const string ZonKuthon1Ablity2 = "SpellPower.UseZonKuthon12";
+        private static readonly string ZonKuthon1Ablity2Guid = "{9E49951B-6517-46D9-A9D4-6D7C329CF39C}";
+        private static BlueprintFeature CreateZonKuthon1()
+        {
+            var icon = AbilityRefs.ArrowOfLaw.Reference.Get().Icon;
+
+            var ability = AbilityConfigurator.New(ZonKuthon1Ablity, ZonKuthon1AblityGuid)
+                .CopyFrom(
+                AbilityRefs.ProtectionFromChaos,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 1)
+                .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(ZonKuthon1Ablity2, ZonKuthon1Ablity2Guid)
+                .CopyFrom(
+                AbilityRefs.ArrowOfLaw,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(ContextRankConfig),
+                typeof(AbilityDeliverProjectile))
+                .AddPretendSpellLevel(spellLevel: 2)
+                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(ZonKuthon1, ZonKuthon1Guid)
+              .SetDisplayName(ZonKuthon1DisplayName)
+              .SetDescription(ZonKuthon1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability, ability2, Nocticula1Ablity3Guid })
+              .Configure();
+        }
+
+        private const string ZonKuthon2 = "DeificObedience.ZonKuthon2";
+        public static readonly string ZonKuthon2Guid = "{BEC4C0E5-CFE1-4F94-B950-8E4609C2D53A}";
+
+        internal const string ZonKuthon2DisplayName = "DeificObedienceZonKuthon2.Name";
+        private const string ZonKuthon2Description = "DeificObedienceZonKuthon2.Description";
+
+        private const string ZonKuthon2Buff = "DeificObedience.ZonKuthon2Buff";
+        private static readonly string ZonKuthon2BuffGuid = "{C13C3DD9-49B4-47B6-A593-A73AD1DC6757}";
+
+        private const string ZonKuthon2Ability = "DeificObedience.ZonKuthon2Ability";
+        private static readonly string ZonKuthon2AbilityGuid = "{B0CD7406-030D-45BA-A0EF-18AFA9600BAE}";
+
+        private const string ZonKuthon2Res = "DeificObedience.ZonKuthon2Res";
+        private static readonly string ZonKuthon2ResGuid = "{7E3C63D3-7595-4677-864F-7FE0664E91ED}";
+        public static BlueprintFeature ZonKuthon2Feat()
+        {
+            var icon = AbilityRefs.StoneFist.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(ZonKuthon2Res, ZonKuthon2ResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(3))
+                .Configure();
+
+            var buff = BuffConfigurator.New(ZonKuthon2Buff, ZonKuthon2BuffGuid)
+             .SetDisplayName(ZonKuthon2DisplayName)
+             .SetDescription(ZonKuthon2Description)
+             .SetIcon(icon)
+             
+             .Configure();
+
+            var ability = AbilityConfigurator.New(ZonKuthon2Ability, ZonKuthon2AbilityGuid)
+                .SetDisplayName(ZonKuthon2DisplayName)
+                .SetDescription(ZonKuthon2Description)
+                .SetIcon(icon)
+                .SetType(AbilityType.Extraordinary)
+                .SetRange(AbilityRange.Personal)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Self)
+                .AddAbilityEffectRunAction(
+                actions: ActionsBuilder.New()
+                  .ApplyBuffPermanent(buff)
+                  .Build())
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .Configure();
+
+            return FeatureConfigurator.New(ZonKuthon2, ZonKuthon2Guid)
+              .SetDisplayName(ZonKuthon2DisplayName)
+              .SetDescription(ZonKuthon2Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .Configure();
+        }
+
+        private const string ZonKuthon3 = "DeificObedience.ZonKuthon3";
+        public static readonly string ZonKuthon3Guid = "{1C7A4B4B-8160-4A1A-8CBD-331F62CD9CFA}";
+
+        internal const string ZonKuthon3DisplayName = "DeificObedienceZonKuthon3.Name";
+        private const string ZonKuthon3Description = "DeificObedienceZonKuthon3.Description";
+
+        private const string ZonKuthon3Buff = "DeificObedience.ZonKuthon3Buff";
+        private static readonly string ZonKuthon3BuffGuid = "{C09D214B-DFF2-455F-B902-3F1815AA0817}";
+
+        private const string ZonKuthon3Buff1 = "DeificObedience.ZonKuthon3Buff1";
+        private static readonly string ZonKuthon3Buff1Guid = "{C09D214B-DFF2-455F-B902-3F1815AA0817}";
+
+        private const string ZonKuthon3Buff2 = "DeificObedience.ZonKuthon3Buff2";
+        private static readonly string ZonKuthon3Buff2Guid = "{C09D214B-DFF2-455F-B902-3F1815AA0817}";
+
+        private const string ZonKuthon3Ability = "DeificObedience.ZonKuthon3Ability";
+        private static readonly string ZonKuthon3AbilityGuid = "{F891098F-9580-41C1-816F-6937A98C85CD}";
+
+        private const string ZonKuthon3Res = "DeificObedience.ZonKuthon3Res";
+        private static readonly string ZonKuthon3ResGuid = "{168B52DC-52D4-4ACB-AB68-6AF04A7D56A0}";
+        public static BlueprintFeature ZonKuthon3Feat()
+        {
+            var icon = AbilityRefs.BoneFists.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(ZonKuthon3Res, ZonKuthon3ResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var buff1 = BuffConfigurator.New(ZonKuthon3Buff1, ZonKuthon3Buff1Guid)
+             .SetDisplayName(ZonKuthon3DisplayName)
+             .SetDescription(ZonKuthon3Description)
+             .SetIcon(icon)
+
+             .Configure();
+
+            var buff2 = BuffConfigurator.New(ZonKuthon3Buff2, ZonKuthon3Buff2Guid)
+             .SetDisplayName(ZonKuthon3DisplayName)
+             .SetDescription(ZonKuthon3Description)
+             .SetIcon(icon)
+
+             .Configure();
+
+            var buff = BuffConfigurator.New(ZonKuthon3Buff, ZonKuthon3BuffGuid)
+             .SetDisplayName(ZonKuthon3DisplayName)
+             .SetDescription(ZonKuthon3Description)
+             .SetIcon(icon)
+             
+             .Configure();
+
+            var ability = AbilityConfigurator.New(ZonKuthon3Ability, ZonKuthon3AbilityGuid)
+                .SetDisplayName(ZonKuthon3DisplayName)
+                .SetDescription(ZonKuthon3Description)
+                .SetIcon(icon)
+                .SetType(AbilityType.Extraordinary)
+                .SetRange(AbilityRange.Personal)
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Self)
+                .AddAbilityEffectRunAction(
+                actions: ActionsBuilder.New()
+                  .ApplyBuffPermanent(buff)
+                  .Build())
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .Configure();
+
+            return FeatureConfigurator.New(ZonKuthon3, ZonKuthon3Guid)
+              .SetDisplayName(ZonKuthon3DisplayName)
+              .SetDescription(ZonKuthon3Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
               .Configure();
         }
     }
