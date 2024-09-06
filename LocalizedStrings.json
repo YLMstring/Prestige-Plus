@@ -14741,8 +14741,8 @@
   },
   {
     "Key": "DeificObedienceZonKuthonSentinel3.Description",
-    "enGB": "All the training you have done in perfect darkness has left you with the uncanny ability to sense your surroundings even in the blackest night. You gain blindsense with a range of 30 feet.",
-    "zhCN": "你在极度黑暗中完成的大量训练让你能够在最深的夜里感知周围的情况。你获得30尺盲感。"
+    "enGB": "All the training you have done in perfect darkness has left you with the uncanny ability to sense your surroundings even in the blackest night. You gain blindsense with a range of 20 feet.",
+    "zhCN": "你在极度黑暗中完成的大量训练让你能够在最深的夜里感知周围的情况。你获得20尺盲感。"
   },
   {
     "Key": "DeificObedienceMagdh.Name",
@@ -14774,8 +14774,8 @@
   },
   {
     "Key": "DeificObedienceMagdh2.Description",
-    "enGB": "You constantly see a few moments down your own line of fate, and thus are never surprised or flat-footed. In addition, you gain a +2 insight bonus to AC and on Reflex saves.",
-    "zhCN": "你总是能提前一会儿看到自己的命运，因此永远不会被突袭或陷入措手不及。此外，你在AC和反射豁免上获得+2洞察加值。"
+    "enGB": "You constantly see a few moments down your own line of fate, and thus are never flat-footed. In addition, you gain a +2 insight bonus to AC and on Reflex saves.",
+    "zhCN": "你总是能提前一会儿看到自己的命运，因此永远不会陷入措手不及。此外，你在AC和反射豁免上获得+2洞察加值。"
   },
   {
     "Key": "DeificObedienceMagdh3.Name",

@@ -5431,7 +5431,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(ZonKuthonSentinel3DisplayName)
               .SetDescription(ZonKuthonSentinel3Description)
               .SetIcon(icon)
-              .AddBlindsense(30.Feet(), false)
+              .AddBlindsense(20.Feet(), false)
               .Configure();
         }
     }
