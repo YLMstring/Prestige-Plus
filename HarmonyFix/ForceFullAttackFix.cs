@@ -44,6 +44,7 @@ namespace PrestigePlus.HarmonyFix
                     var length = cmd.ForcedPath.GetTotalLength();
                     if (length > 0 && length <= 8f.Feet().Meters)
                     {
+                        Main.Logger.Info(length.ToString()); 
                         __instance.ForceFullAttack = true;
                     } 
                 }

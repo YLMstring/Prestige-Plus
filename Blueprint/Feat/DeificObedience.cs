@@ -152,6 +152,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(IroriFeat())
               .AddToAllFeatures(PharasmaFeat())
               .AddToAllFeatures(MagdhFeat())
+              .AddToAllFeatures(ZonKuthonFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -5341,6 +5342,97 @@ namespace PrestigePlus.Blueprint.Feat
               .Configure();
         }
 
-        
+        private const string ZonKuthon = "DeificObedience.ZonKuthon";
+        public static readonly string ZonKuthonGuid = "{9C3F761E-B20E-4926-B75F-23F083C2CF89}";
+
+        internal const string ZonKuthonDisplayName = "DeificObedienceZonKuthon.Name";
+        private const string ZonKuthonDescription = "DeificObedienceZonKuthon.Description";
+        public static BlueprintFeature ZonKuthonFeat()
+        {
+            var icon = FeatureRefs.ZonKuthonFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(ZonKuthon, ZonKuthonGuid)
+              .SetDisplayName(ZonKuthonDisplayName)
+              .SetDescription(ZonKuthonDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.ZonKuthonFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.LawfulEvil, group: Prerequisite.GroupType.Any)
+              .AddToIsPrerequisiteFor(ZonKuthonSentinelFeat())
+              .AddComponent<ZonKuthonSpellComp>()
+              .Configure();
+        }
+
+        private const string ZonKuthonSentinel = "DeificObedience.ZonKuthonSentinel";
+        public static readonly string ZonKuthonSentinelGuid = "{C3B4E6DF-F542-4828-86D8-50F0696A7685}";
+
+        internal const string ZonKuthonSentinelDisplayName = "DeificObedienceZonKuthonSentinel.Name";
+        private const string ZonKuthonSentinelDescription = "DeificObedienceZonKuthonSentinel.Description";
+        public static BlueprintProgression ZonKuthonSentinelFeat()
+        {
+            var icon = FeatureRefs.ZonKuthonFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(ZonKuthonSentinel, ZonKuthonSentinelGuid)
+              .SetDisplayName(ZonKuthonSentinelDisplayName)
+              .SetDescription(ZonKuthonSentinelDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(ZonKuthonGuid)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(12, CreateZonKuthonSentinel1())
+              .AddToLevelEntry(16, ZonKuthonSentinel2Feat())
+              .AddToLevelEntry(20, ZonKuthonSentinel3Feat())
+              .Configure();
+        }
+
+        private const string ZonKuthonSentinel1 = "SpellPower.ZonKuthonSentinel1";
+        public static readonly string ZonKuthonSentinel1Guid = "{E4F07244-5278-4A9B-90A3-E91EEC0EBB6F}";
+        internal const string ZonKuthonSentinel1DisplayName = "SpellPowerZonKuthonSentinel1.Name";
+        private const string ZonKuthonSentinel1Description = "SpellPowerZonKuthonSentinel1.Description";
+        private static BlueprintFeature CreateZonKuthonSentinel1()
+        {
+            var icon = AbilityRefs.VampiricTouchCast.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(ZonKuthonSentinel1, ZonKuthonSentinel1Guid)
+              .SetDisplayName(ZonKuthonSentinel1DisplayName)
+              .SetDescription(ZonKuthonSentinel1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { Nocticula1Ablity3Guid })
+              .Configure();
+        }
+
+        private const string ZonKuthonSentinel2 = "DeificObedience.ZonKuthonSentinel2";
+        public static readonly string ZonKuthonSentinel2Guid = "{CDCB65CA-02C1-4E60-8200-B47C59437CC1}";
+
+        internal const string ZonKuthonSentinel2DisplayName = "DeificObedienceZonKuthonSentinel2.Name";
+        private const string ZonKuthonSentinel2Description = "DeificObedienceZonKuthonSentinel2.Description";
+
+        public static BlueprintFeature ZonKuthonSentinel2Feat()
+        {
+            var icon = FeatureRefs.AnnisHagRend.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(ZonKuthonSentinel2, ZonKuthonSentinel2Guid)
+              .SetDisplayName(ZonKuthonSentinel2DisplayName)
+              .SetDescription(ZonKuthonSentinel2Description)
+              .SetIcon(icon)
+              .AddComponent<ZonKuthonTripComp>()
+              .AddAttackOfOpportunityAttackBonus(2, notAttackOfOpportunity: false)
+              .Configure();
+        }
+
+        private const string ZonKuthonSentinel3 = "DeificObedience.ZonKuthonSentinel3";
+        public static readonly string ZonKuthonSentinel3Guid = "{8B2D9DA3-C970-4F8E-B74F-EE1E82D4878E}";
+
+        internal const string ZonKuthonSentinel3DisplayName = "DeificObedienceZonKuthonSentinel3.Name";
+        private const string ZonKuthonSentinel3Description = "DeificObedienceZonKuthonSentinel3.Description";
+        public static BlueprintFeature ZonKuthonSentinel3Feat()
+        {
+            var icon = FeatureRefs.DarkLurkerBladeFromShadowsFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(ZonKuthonSentinel3, ZonKuthonSentinel3Guid)
+              .SetDisplayName(ZonKuthonSentinel3DisplayName)
+              .SetDescription(ZonKuthonSentinel3Description)
+              .SetIcon(icon)
+              .AddBlindsense(30.Feet(), false)
+              .Configure();
+        }
     }
 }
