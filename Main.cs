@@ -52,7 +52,7 @@ namespace PrestigePlus
       }
       catch (Exception e)
       {
-        Logger.Error("Failed to patch.", e);
+        Logger.Error("Failed to patch", e);
       }
       return true;
     }
