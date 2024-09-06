@@ -175,4 +175,13 @@ namespace PrestigePlus.HarmonyFix
             }
         }
     }
+
+    [HarmonyPatch(typeof(SavingThrowBonusAgainstDescriptor), nameof(SavingThrowBonusAgainstDescriptor.OnEventAboutToTrigger))]
+    internal class WeirdBonusFix7
+    {
+        static void Prefix(ref SavingThrowBonusAgainstDescriptor __instance)
+        {
+            __instance.Bonus ??= 0;
+        }
+    }
 }
