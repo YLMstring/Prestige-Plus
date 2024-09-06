@@ -5518,11 +5518,15 @@ namespace PrestigePlus.Blueprint.Feat
              .AddBuffActions(activated: buff1action, newRound: buff1action)
              .Configure();
 
+            var buff2action = ActionsBuilder.New()
+                .DealDamage(value: ContextDice.Value(DiceType.D6, bonus: 0, diceCount: ContextValues.Constant(2)), damageType: DamageTypes.Direct())
+                .Build();
+
             var buff2 = BuffConfigurator.New(ZonKuthon3Buff2, ZonKuthon3Buff2Guid)
              .SetDisplayName(ZonKuthon3DisplayName)
              .SetDescription(ZonKuthon3Description)
              .SetIcon(icon)
-
+             .AddBuffActions(activated: buff2action, newRound: buff2action)
              .Configure();
 
             var buff = BuffConfigurator.New(ZonKuthon3Buff, ZonKuthon3BuffGuid)
