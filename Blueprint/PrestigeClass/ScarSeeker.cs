@@ -628,8 +628,8 @@ namespace PrestigePlus.Blueprint.PrestigeClass
              .SetDescription(SufferingDescription)
              .SetIcon(icon)
              .AddDamageResistancePhysical(isStackable: true, value: ContextValues.Constant(2))
-             .AddSavingThrowBonusAgainstDescriptor(value: 2, spellDescriptor: SpellDescriptor.Fear)
-             .AddSavingThrowBonusAgainstDescriptor(value: 2, spellDescriptor: SpellDescriptor.Emotion)
+             .AddSavingThrowBonusAgainstDescriptor(value: 2, spellDescriptor: SpellDescriptor.Fear, bonus: 0)
+             .AddSavingThrowBonusAgainstDescriptor(value: 2, spellDescriptor: SpellDescriptor.Emotion, bonus: 0)
              .Configure();
 
             var ability = AbilityConfigurator.New(SufferingAblity, SufferingAblityGuid)

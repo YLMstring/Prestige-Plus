@@ -481,7 +481,7 @@ namespace PrestigePlus.Blueprint.Archetype
               .SetDescription(WildHeartDescription)
               .SetIcon(icon)
               .SetIsClassFeature(true)
-              .AddSavingThrowBonusAgainstDescriptor(value: 4, spellDescriptor: SpellDescriptor.MindAffecting, modifierDescriptor: ModifierDescriptor.NaturalArmorForm)
+              .AddSavingThrowBonusAgainstDescriptor(value: 4, spellDescriptor: SpellDescriptor.MindAffecting, modifierDescriptor: ModifierDescriptor.NaturalArmorForm, bonus: 0)
               .AddSavingThrowBonusAgainstSchool(value: 4, school: SpellSchool.Enchantment, modifierDescriptor: ModifierDescriptor.NaturalArmorForm)
               .AddFacts(new() { ability })
               .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
