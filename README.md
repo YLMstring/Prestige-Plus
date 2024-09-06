@@ -34,7 +34,7 @@
 - [Ragathiel](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Ragathiel): requires worshipping Ragathiel (Expanded Content) or Lawful Good
 - [Chaldira (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Chaldira): requires thievery 1, worshipping Sarenrae or Neutral Good
 - [Shelyn (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Shelyn): requires worshipping Shelyn or Neutral Good
-- [Dsena](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Desna): requires worshipping Desna or Chaotic Good
+- [Desna](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Desna): requires worshipping Desna or Chaotic Good
 - [Milani (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Milani): requires worshipping Milani (Expanded Content) or Chaotic Good
 - [Pulura](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Pulura): requires worshipping Pulura or Chaotic Good
 - [Irori](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Irori): requires worshipping Irori or Lawful Neutral
