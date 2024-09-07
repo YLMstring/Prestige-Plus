@@ -573,7 +573,7 @@ namespace PrestigePlus
         }
         catch (Exception e)
         {
-          Logger.Error("Failed to configure delayed blueprints", e);
+          Logger.Error("Failed to configure delayed blueprints.", e);
         }
       }
     }

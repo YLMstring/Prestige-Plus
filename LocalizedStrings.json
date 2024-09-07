@@ -14792,7 +14792,7 @@
     "Key": "PPNewEnduringSpells.Name",
     "ProcessTemplates": false,
     "enGB": "Enduring Spells",
-    "zhCN": "持久施法"
+    "zhCN": "持久法术"
   },
   {
     "Key": "PPNewEnduringSpells.Description",
