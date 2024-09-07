@@ -39,6 +39,7 @@
 - [Pulura](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Pulura): requires worshipping Pulura or Chaotic Good
 - [Irori](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Irori): requires worshipping Irori or Lawful Neutral
 - [Otolmens](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Otolmens): requires worshipping Otolmens (Expanded Content) or Lawful Neutral
+- [Magdh](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Magdh): requires worshipping Magdh (Expanded Content) or Lawful Neutral
 - [Gozreh (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Gozreh): requires worshipping Gozreh or Neutral
 - [Pharasma (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Pharasma): requires worshipping Pharasma or Neutral
 - [Mrtyu](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Mrtyu): requires worshipping Mrtyu (Expanded Content) or Neutral
@@ -49,6 +50,7 @@
 - [The Lantern King](https://aonprd.com/DeityDisplay.aspx?ItemName=The%20Lantern%20King): requires worshipping The Lantern King (Expanded Content) or Chaotic Neutral
 - [Nocticula (sentinel)](https://aonprd.com/DeityDisplay.aspx?ItemName=Nocticula): requires worshipping Nocticula (Expanded Content) or Chaotic Neutral
 - Some of her boons have changed because she's in the middle of [spoilers](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Nocticula%20(Redeemed))
+- [Zon-Kuthon (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Zon-Kuthon): requires worshipping Zon-Kuthon or Lawful Evil
 - [Achaekek (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Achaekek): requires worshipping Achaekek or Lawful Evil
 - [Mahathallah (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Mahathallah): requires worshipping Asmodeus or Lawful Evil
 - [Akuma](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Akuma): requires worshipping Asmodeus or Lawful Evil
@@ -460,6 +462,9 @@
 - Fix the bug(?) that you can't skip selections.
 - Fix the bug that Drunken Technique: Firewater Breath doesn't deal any damage when saved.
 - Fix the bug that activate abilities are effectively missing the last charge.
+- Fix the bug that Ghost Druidess gets herself stuck trying to cast an invalid spell.
+- Fix the bug that stat damage can't kill you for some reason.
+- Add a null check to SavingThrowBonusAgainstDescriptor.
 ## Mod Combo
 
 ### [Character Options+](https://github.com/WittleWolfie/CharacterOptionsPlus)
