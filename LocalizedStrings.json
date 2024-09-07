@@ -14787,6 +14787,28 @@
     "Key": "DeificObedienceMagdh3.Description",
     "enGB": "You can cast prediction of failure once per day.",
     "zhCN": "每日1次，你可以施放失败预言。"
+  },
+  {
+    "Key": "PPNewEnduringSpells.Name",
+    "ProcessTemplates": false,
+    "enGB": "Enduring Spells",
+    "zhCN": "持久施法"
+  },
+  {
+    "Key": "PPNewEnduringSpells.Description",
+    "enGB": "You have learned of a way to prolong the effects of your beneficial spells. Effects of your spells on your allies that should last longer than an hour but shorter than 24 hours now last 24 hours. Additionally, your effects on your allies stay on death.",
+    "zhCN": "你学会了延长有益法术效果的方法。你对友方施放的法术效果若超过一小时但不足24小时，则会延长至24小时。此外，你对友方施放的效果不会因为死亡而丢失。"
+  },
+  {
+    "Key": "PPNewDimensionRetribution.Name",
+    "ProcessTemplates": false,
+    "enGB": "Dimension Retribution",
+    "zhCN": "次元反击"
+  },
+  {
+    "Key": "PPNewDimensionRetribution.Description",
+    "enGB": "You leave a mystical link with enemy spellcasters that lets you instantly move to them. Every time you are targeted by an enemy spell, you gain the ability to teleport to the spellcaster as a move action for the next two rounds. Additionally, your extradimensional travel spells and effects can never be blocked.",
+    "zhCN": "你在敌方施法者身上留下一道能让你瞬移过去的神秘链接。每当你成为敌方法术的目标时，在接下来的两轮内你可以用移动动作传送至施法者身边。此外，你的次元法术或效果永远不会被阻断。"
   }
 
 ]

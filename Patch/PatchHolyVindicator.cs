@@ -84,7 +84,26 @@ namespace PrestigePlus.Patch
                     spell.m_Ability = BlueprintTool.GetRef<BlueprintAbilityReference>("d2cff9243a7ee804cb6d5be47af30c73");
                 }
             }
+
+            if (ModMenu.ModMenu.GetSettingValue<bool>(Main.GetKey("endure")))
+            {
+                FeatureConfigurator.For(FeatureRefs.EnduringSpells)
+                    .SetDisplayName(PPNewEnduringSpellsDisplayName)
+                    .SetDescription(PPNewEnduringSpellsDescription)
+                    .Configure();
+
+                FeatureConfigurator.For(FeatureRefs.DimensionalRetribution)
+                    .SetDisplayName(PPNewDimensionRetributionDisplayName)
+                    .SetDescription(PPNewDimensionRetributionDescription)
+                    .Configure();
+            }
         }
+
+        private static readonly string PPNewEnduringSpellsDisplayName = "PPNewEnduringSpells.Name";
+        private static readonly string PPNewEnduringSpellsDescription = "PPNewEnduringSpells.Description";
+
+        private static readonly string PPNewDimensionRetributionDisplayName = "PPNewDimensionRetribution.Name";
+        private static readonly string PPNewDimensionRetributionDescription = "PPNewDimensionRetribution.Description";
 
         private static BlueprintFeatureReference Raz = BlueprintTool.GetRef<BlueprintFeatureReference>("13d5818737694021b001641437a4ba29");
         private static BlueprintFeatureReference Raz8 = BlueprintTool.GetRef<BlueprintFeatureReference>("621aaa4baad04705a975f6023a1205d0");
