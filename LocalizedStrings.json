@@ -8236,7 +8236,7 @@
   {
     "Key": "FeatDirtyFighting.Description",
     "enGB": "You can take advantage of a distracted foe. You can increase the bonus on your attack roll for flanking to +4 for combat maneuver checks. This feat counts as having Dex 13, Int 13, Combat Expertise, and Improved Unarmed Strike for the purposes of meeting the prerequisites of the various improved combat maneuver feats, as well as feats that require those improved combat maneuver feats as prerequisites.",
-    "ruRU": "Вы можете воспользоваться отвлечением противника. Вы увеличиваете бонус к проверкам боевых маневров за численное преимущество до +4. Владелец этой черты считается имеющим ЛВК 13, ИНТ 13, и черты Боевая сноровка и Мастер кулачного боя для определения соответствия требованиям черт боевых маневров, а также черт, для который требуется наличие этих черт.",
+    "ruRU": "Вы можете воспользоваться отвлечением противника. Вы увеличиваете бонус к проверкам боевых маневров за численное преимущество до +4. Владелец этой черты считается имеющим Ловкость 13, Интеллект 13, и черты Боевая сноровка и Мастер кулачного боя для определения соответствия требованиям черт боевых маневров, а также черт, для который требуется наличие этих черт.",
     "zhCN": "你能在敌人无暇多顾时狠狠打他。每当你对一个被你夹击的敌人使用战技攻击时，你的夹击提供的攻击检定加值提升至+4加值。本专长可以在你选择任何精通战技类专长时视为拥有13敏捷，13智力，寓守于攻和精通徒手击打作为先决条件，同样也可以对需要这些精通战技专长作为先决条件的专长生效。"
   },
   {
@@ -9237,7 +9237,7 @@
   {
     "Key": "FungalPilgrimFungalCompanion.Description",
     "enGB": "At 4th level, a fungal pilgrim initiates a transformation in her companion. The animal companion gains the fungal creature template, but does not gain the create spawn, poison spore cloud, and poisonous blood special attacks. (Plant creature type and immunities, speed -10, Str +4, Dex –2, Con +4, extra natural armor +2)",
-    "ruRU": "На 4 уровне грибной паломник начинает трансформацию своего верного зверя. Верный зверь получает свойства грибов, но не их специальные атаки. (Шаблон растений, скорость -10, СИЛА +4, ЛВК -2, ВЫН +4, естественная броня +2)",
+    "ruRU": "На 4 уровне грибной паломник начинает трансформацию своего верного зверя. Верный зверь получает свойства грибов, но не их специальные атаки. (Шаблон растений, скорость -10, Сила +4, Ловкость -2, Выносливость +4, естественная броня +2)",
     "zhCN": "4级起，真菌朝圣者的动物伙伴开始了转变。动物伙伴获得真菌生物模板，但不会获得创造衍体、孢子毒云、剧毒血液等特殊能力。（植物类别及其免疫，速度-10，力量+4，敏捷-2，体质+4，天生护甲额外+2）"
   },
   {
@@ -14693,121 +14693,143 @@
     "Key": "DeificObedienceZonKuthon.Name",
     "ProcessTemplates": false,
     "enGB": "Zon-Kuthon Obedience",
+    "ruRU": "Послушание Зон-Кутона",
     "zhCN": "佐恩-库松仪典"
   },
   {
     "Key": "DeificObedienceZonKuthon.Description",
-    "enGB": "Persuade a creature to allow you to inflict a small amount of pain on it. This can be as subtle as thin needles under the skin or as overt as a lashing with a whip— whatever the subject agrees to. If you can legally procure an individual, such as through legalized slavery, you may use a purchased subject instead. If no suitable individuals can be located, coil a spiked chain into a nest and kneel on it, letting your weight sink your knees into the spikes. Whip your own back while chanting praises to Zon-Kuthon. Gain a +2 sacred bonus on saving throws against spells that deal hit point damage.",
+    "enGB": "Persuade a creature to allow you to inflict a small amount of pain on it. This can be as subtle as thin needles under the skin or as overt as a lashing with a whip — whatever the subject agrees to. If you can legally procure an individual, such as through legalized slavery, you may use a purchased subject instead. Gain a +2 sacred bonus on saving throws against spells that deal hit point damage.",
+    "ruRU": "Убедите существо позволить вам причинить ему небольшую боль. Это может быть как тонкий укол под кожу, так и явная порка плетью - все, на что согласится субъект. Если вы можете легально приобрести человека, например, через узаконенное рабство, вы можете использовать купленного субъекта. Если подходящих людей найти не удалось, сверните цепь с шипами в гнездо и встаньте на нее на колени, чтобы ваш вес погрузил колени в шипы. Хлещите себя по спине, воспевая хвалу Зон-Кутону. Вы получаете сакральный бонус +2 к спасброскам против заклинаний, которые наносят урон здоровью.",
     "zhCN": "说服一个生物，使其同意你将少量的痛苦加诸其身,可以如针刺入肌肤一般隐秘，也可以如鞭子抽打一般张扬。若你合法地拥有某人，例如在允许蓄奴的地区得到法律认可的奴隶，那么你也可以改为使用这样购买到的对象。如果你没有合适的对象，那么需要将刺链卷在膝下并跪坐下去，利用体重来让尖刺深入你的双腿。鞭笞自己后背的同时颂唱对佐恩-库松的赞歌。你在对抗造成生命值伤害的法术时的豁免上获得+2神圣加值。"
   },
   {
     "Key": "DeificObedienceZonKuthonSentinel.Name",
     "ProcessTemplates": false,
     "enGB": "Zon-Kuthon (Sentinel)",
+    "ruRU": "Зон-Кутон (часовой)",
     "zhCN": "佐恩-库松（信仰哨卫）"
   },
   {
     "Key": "DeificObedienceZonKuthonSentinel.Description",
     "enGB": "Become a Sentinel to gain access to his boons, which will be granted at certain character or class levels.",
+    "ruRU": "Вы должны стать часовым этого божества, чтобы получить доступ к его дарам.",
     "zhCN": "成为信仰哨卫来获取他的神恩资格，你会在合适的角色或职业等级得到神恩。"
   },
   {
     "Key": "SpellPowerZonKuthonSentinel1.Name",
     "ProcessTemplates": false,
     "enGB": "Envious Death",
+    "ruRU": "Завидная смерть",
     "zhCN": "嫉妒死亡"
   },
   {
     "Key": "SpellPowerZonKuthonSentinel1.Description",
     "enGB": "vampiric touch 1/day",
+    "ruRU": "Вы получаете псевдозаклинание Вампирское прикосновение 1/день.",
     "zhCN": "吸血鬼之触1次/天"
   },
   {
     "Key": "DeificObedienceZonKuthonSentinel2.Name",
     "ProcessTemplates": false,
     "enGB": "Rending Trip",
+    "ruRU": "Разрывающее сбивание с ног",
     "zhCN": "撕裂绊摔"
   },
   {
     "Key": "DeificObedienceZonKuthonSentinel2.Description",
     "enGB": "When you successfully trip an opponent with any flail in your hand, your tripped opponent immediately provokes an attack of opportunity from you. In addition, you gain a +2 bonus on any attacks of opportunity.",
+    "ruRU": "Когда вы успешно сбиваете с ног противника держа в руках кистень, то вы можете нанести по этому противнику внеочередную атаку. Кроме того, вы получаете бонус +2 ко всем внеочередным атакам.",
     "zhCN": "每当你成功绊摔对手，你可以用链枷立刻对其发起借机攻击。此外，你的所有借机攻击获得+2加值。"
   },
   {
     "Key": "DeificObedienceZonKuthonSentinel3.Name",
     "ProcessTemplates": false,
     "enGB": "Sight of Perfect Night",
+    "ruRU": "Зрелище совершенной ночи",
     "zhCN": "极夜之视"
   },
   {
     "Key": "DeificObedienceZonKuthonSentinel3.Description",
     "enGB": "All the training you have done in perfect darkness has left you with the uncanny ability to sense your surroundings even in the blackest night. You gain blindsense with a range of 20 feet.",
+    "ruRU": "Все тренировки, которые вы проводили в кромешной тьме, привели к тому, что вы обладаете удивительной способностью чувствовать окружающую обстановку даже во время самой темной ночи. Вы получаете слеповидение радиусом 20 футов.",
     "zhCN": "你在极度黑暗中完成的大量训练让你能够在最深的夜里感知周围的情况。你获得20尺盲感。"
   },
   {
     "Key": "DeificObedienceMagdh.Name",
     "ProcessTemplates": false,
     "enGB": "Magdh Obedience",
+    "ruRU": "Послушание Магд",
     "zhCN": "麦歌仪典"
   },
   {
     "Key": "DeificObedienceMagdh.Description",
     "enGB": "Paint two dots above each ear to represent Magdh’s three sets of eyes. Cast leaves, bones, or coins into a bowl of clear water, and attempt to divine meaning from the way they land. You gain a +4 bonus on Intelligence-based skill checks. Magdh is one of the Eldest, a divine fey creature of tremendous power said to be able to reshape the very fabric of the First World on a whim. Magdh is a feminine demigod with three faces and takes the role of prophetess and seer amongst the Eldest; her skills of prophecy and in understanding fate seem to be great. She watches chains of events from origin and culmination and the tangled lines that form the ultimate fates of everything, and no one knows exactly about her goals or motivations.",
+    "ruRU": "Нарисуйте по две точки над каждым ухом, чтобы изобразить три группы глаз Магд. Бросьте листья, кости или монеты в чашу с чистой водой и попытайтесь разгадать их смысл по тому, как они приземлятся. Вы получаете бонус +4 к проверкам навыков основанных на интеллекте. Магд - одна из Старейших, божественное существо-фея, обладающее огромной силой и способное по своей прихоти изменить саму ткань Первого мира. Магд - полубогиня с тремя лицами, она играет роль пророчицы и провидицы среди Старейших; ее способности к прорицанию и пониманию судьбы, похоже, велики. Она наблюдает за цепочками событий от зарождения до кульминации и за запутанными линиями, которые формируют конечные судьбы всего сущего, и никто точно не знает о ее целях и мотивах.",
     "zhCN": "在每只耳朵上方画两个点，以此代表麦歌的三双眼睛。将树叶、骨头或硬币扔进一碗清水中，并尝试从它们下沉的方式中推断出某种含义。你在基于智力的技能检定上获得+4加值。Magdh is one of the Eldest, a divine fey creature of tremendous power said to be able to reshape the very fabric of the First World on a whim. Magdh is a feminine demigod with three faces and takes the role of prophetess and seer amongst the Eldest; her skills of prophecy and in understanding fate seem to be great. She watches chains of events from origin and culmination and the tangled lines that form the ultimate fates of everything, and no one knows exactly about her goals or motivations."
   },
   {
     "Key": "SpellPowerMagdh1.Name",
     "ProcessTemplates": false,
     "enGB": "Secret Knowledge",
+    "ruRU": "Секретное знание",
     "zhCN": "隐秘知识"
   },
   {
     "Key": "SpellPowerMagdh1.Description",
     "enGB": "see invisibility 2/day",
+    "ruRU": "Вы получаете псевдозаклинание Увидеть невидимое 2/день.",
     "zhCN": "识破隐形 2次/日"
   },
   {
     "Key": "DeificObedienceMagdh2.Name",
     "ProcessTemplates": false,
     "enGB": "Sight Beyond Time",
+    "ruRU": "Взгляд за пределы времени",
     "zhCN": "宙外之视"
   },
   {
     "Key": "DeificObedienceMagdh2.Description",
     "enGB": "You constantly see a few moments down your own line of fate, and thus are never flat-footed. In addition, you gain a +2 insight bonus to AC and on Reflex saves.",
+    "ruRU": "Вы постоянно видите на несколько мгновений дальше свою собственную линию судьбы, а потому никогда не можете быть застигнуты врасплох. Кроме того, вы получаете интуитивный бонус +2 к защите и спасброскам Рекции.",
     "zhCN": "你总是能提前一会儿看到自己的命运，因此永远不会陷入措手不及。此外，你在AC和反射豁免上获得+2洞察加值。"
   },
   {
     "Key": "DeificObedienceMagdh3.Name",
     "ProcessTemplates": false,
     "enGB": "Baleful Revelation",
+    "ruRU": "Губительное откровение",
     "zhCN": "恶意启示"
   },
   {
     "Key": "DeificObedienceMagdh3.Description",
     "enGB": "You can cast prediction of failure once per day.",
+    "ruRU": "Вы можете сотворять Предвидение промаха раз в день.",
     "zhCN": "每日1次，你可以施放失败预言。"
   },
   {
     "Key": "PPNewEnduringSpells.Name",
     "ProcessTemplates": false,
     "enGB": "Enduring Spells",
+    "ruRU": "Долговременные заклинания",
     "zhCN": "持久法术"
   },
   {
     "Key": "PPNewEnduringSpells.Description",
     "enGB": "You have learned of a way to prolong the effects of your beneficial spells. Effects of your spells on your allies that should last longer than an hour but shorter than 24 hours now last 24 hours. Additionally, your effects on your allies stay on death.",
+    "ruRU": "Вы научились продлевать действие своих заклинаний, усиливающих союзников.\nПреимущество: эффекты заклинаний, действующих больше часа, но меньше суток, продлеваются до суток. Кроме того, ваши эффекты на союзников сохраняются и при их смерти.",
     "zhCN": "你学会了延长有益法术效果的方法。你对友方施放的法术效果若超过一小时但不足24小时，则会延长至24小时。此外，你对友方施放的效果不会因为死亡而丢失。"
   },
   {
     "Key": "PPNewDimensionRetribution.Name",
     "ProcessTemplates": false,
     "enGB": "Dimension Retribution",
+    "ruRU": "Пространственное воздаяние",
     "zhCN": "次元反击"
   },
   {
     "Key": "PPNewDimensionRetribution.Description",
     "enGB": "You leave a mystical link with enemy spellcasters that lets you instantly move to them. Every time you are targeted by an enemy spell, you gain the ability to teleport to the spellcaster as a move action for the next two rounds. Additionally, your extradimensional travel spells and effects can never be blocked.",
+    "ruRU": "Вы образуете мистическую связь с вражескими заклинателями, которая позволяет вам мгновенное перемещаться к ним.\nПреимущество: Каждый раз, когда вас поражает вражеское заклинание, вы получаете способность телепортироваться к заклинателю в качестве сопутствующего действия в течение 2 раундов. Кроме того, ваши заклинания и эффекты пространственного перемещения не могут быть заблокированы.",
     "zhCN": "你在敌方施法者身上留下一道能让你瞬移过去的神秘链接。每当你成为敌方法术的目标时，在接下来的两轮内你可以用移动动作传送至施法者身边。此外，你的次元法术或效果永远不会被阻断。"
   }
 
