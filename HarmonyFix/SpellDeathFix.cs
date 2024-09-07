@@ -21,7 +21,7 @@ namespace PrestigePlus.HarmonyFix
         {
             static bool Prefix(ref BuffCollection __instance)
             {
-                if (!ModMenu.ModMenu.GetSettingValue<bool>(Main.GetKey("endure"))) 
+                if (!ModMenu.ModMenu.GetSettingValue<bool>(Main.GetKey("endure")) || __instance.Owner.Unit.IsPlayersEnemy) 
                 {
                     __instance.m_IsOwnerAlive = !__instance.Owner.State.IsDead;
                     return true; 
