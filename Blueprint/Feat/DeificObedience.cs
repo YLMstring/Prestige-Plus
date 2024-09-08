@@ -5434,5 +5434,155 @@ namespace PrestigePlus.Blueprint.Feat
               .AddBlindsense(20.Feet(), false)
               .Configure();
         }
+
+        private const string Seramaydiel = "DeificObedience.Seramaydiel";
+        public static readonly string SeramaydielGuid = "{72434F90-C1DC-4350-B81C-AFE44DA9494F}";
+
+        internal const string SeramaydielDisplayName = "DeificObedienceSeramaydiel.Name";
+        private const string SeramaydielDescription = "DeificObedienceSeramaydiel.Description";
+        public static BlueprintProgression SeramaydielFeat()
+        {
+            var icon = ActivatableAbilityRefs.InspireCourageToggleAbility.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(Seramaydiel, SeramaydielGuid)
+              .SetDisplayName(SeramaydielDisplayName)
+              .SetDescription(SeramaydielDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.InspireCourageFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteFeature(FeatureRefs.MartyrInspireCourageFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteFeature(FeatureRefs.SenseiInspireCourageFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.NeutralGood, group: Prerequisite.GroupType.Any)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(1, Seramaydiel0Feat())
+              .AddToLevelEntry(12, CreateSeramaydiel1())
+              .AddToLevelEntry(16, Seramaydiel2Feat())
+              .AddToLevelEntry(20, Seramaydiel3Feat())
+              .Configure();
+        }
+
+        private const string Seramaydiel0 = "DeificObedience.Seramaydiel0";
+        public static readonly string Seramaydiel0Guid = "{AFFE8888-1FDF-4D24-8AAD-5CA435C71765}";
+
+        public static BlueprintFeature Seramaydiel0Feat()
+        {
+            var icon = ActivatableAbilityRefs.InspireCourageToggleAbility.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Seramaydiel0, Seramaydiel0Guid)
+              .SetDisplayName(SeramaydielDisplayName)
+              .SetDescription(SeramaydielDescription)
+              .SetIcon(icon)
+              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Sonic, value: 4)
+              .Configure();
+        }
+
+        private const string Seramaydiel1 = "SpellPower.Seramaydiel1";
+        public static readonly string Seramaydiel1Guid = "{60E57DED-A789-4F65-A5BB-5F2711C7AC00}";
+        internal const string Seramaydiel1DisplayName = "SpellPowerSeramaydiel1.Name";
+        private const string Seramaydiel1Description = "SpellPowerSeramaydiel1.Description";
+
+        private const string Seramaydiel1Ablity2 = "SpellPower.UseSeramaydiel12";
+        private static readonly string Seramaydiel1Ablity2Guid = "{5C0B35EC-6EE3-40D1-B003-3E8F2EA91873}";
+
+        private static BlueprintFeature CreateSeramaydiel1()
+        {
+            var icon = BlueprintTool.GetRef<BlueprintAbilityReference>("c411f9aa46b84efcbca1954c4cb16023").Get().Icon;
+
+            var ability2 = AbilityConfigurator.New(Seramaydiel1Ablity2, Seramaydiel1Ablity2Guid)
+                .CopyFrom(
+                BlueprintTool.GetRef<BlueprintAbilityReference>("c411f9aa46b84efcbca1954c4cb16023"),
+                typeof(AbilityVariants),
+                typeof(SpellComponent))
+                .AddPretendSpellLevel(spellLevel: 3)
+                .AddAbilityResourceLogic(6, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Seramaydiel1, Seramaydiel1Guid)
+              .SetDisplayName(Seramaydiel1DisplayName)
+              .SetDescription(Seramaydiel1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability2 })
+              .Configure();
+        }
+
+        private const string Seramaydiel2 = "DeificObedience.Seramaydiel2";
+        public static readonly string Seramaydiel2Guid = "{CE26A9B1-C374-454C-A792-8EAF601BCA61}";
+
+        internal const string Seramaydiel2DisplayName = "DeificObedienceSeramaydiel2.Name";
+        private const string Seramaydiel2Description = "DeificObedienceSeramaydiel2.Description";
+
+        private const string Seramaydiel2Res = "DeificObedience.Seramaydiel2Res";
+        private static readonly string Seramaydiel2ResGuid = "{B155BE61-C695-487E-9A61-649C074945E5}";
+
+        private const string Seramaydiel2Ability = "DeificObedience.Seramaydiel2Ability";
+        private static readonly string Seramaydiel2AbilityGuid = "{11F29EBB-639B-451A-A6FB-6B4A47A746A4}";
+        public static BlueprintFeature Seramaydiel2Feat()
+        {
+            var icon = AbilityRefs.BrilliantInspiration.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(Seramaydiel2Res, Seramaydiel2ResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(3))
+                .Configure();
+
+            var ability = AbilityConfigurator.New(Seramaydiel2Ability, Seramaydiel2AbilityGuid)
+                .CopyFrom(
+                AbilityRefs.BrilliantInspiration,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(ContextRankConfigs))
+                .SetType(AbilityType.SpellLike)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .AddPretendSpellLevel(spellLevel: 6)
+                .Configure();
+
+            return FeatureConfigurator.New(Seramaydiel2, Seramaydiel2Guid)
+              .SetDisplayName(Seramaydiel2DisplayName)
+              .SetDescription(Seramaydiel2Description)
+              .SetIcon(icon)
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string Seramaydiel3 = "DeificObedience.Seramaydiel3";
+        public static readonly string Seramaydiel3Guid = "{8CE81F12-7629-418F-9397-9CD6E6D3B5A0}";
+
+        internal const string Seramaydiel3DisplayName = "DeificObedienceSeramaydiel3.Name";
+        private const string Seramaydiel3Description = "DeificObedienceSeramaydiel3.Description";
+
+        private const string Seramaydiel3Res = "DeificObedience.Seramaydiel3Res";
+        private static readonly string Seramaydiel3ResGuid = "{B39D698D-E623-43EC-BD6B-2DD04866C8D1}";
+
+        private const string Seramaydiel3Ability = "DeificObedience.Seramaydiel3Ability";
+        private static readonly string Seramaydiel3AbilityGuid = "{C00878B6-4344-4D26-B832-40DFB6AFE8FC}";
+        public static BlueprintFeature Seramaydiel3Feat()
+        {
+            var icon = AbilityRefs.PredictionOfFailure.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(Seramaydiel3Res, Seramaydiel3ResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var ability = AbilityConfigurator.New(Seramaydiel3Ability, Seramaydiel3AbilityGuid)
+                .CopyFrom(
+                AbilityRefs.PredictionOfFailure,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(AbilitySpawnFx),
+                typeof(ContextRankConfigs))
+                .SetType(AbilityType.SpellLike)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .AddPretendSpellLevel(spellLevel: 8)
+                .Configure();
+
+            return FeatureConfigurator.New(Seramaydiel3, Seramaydiel3Guid)
+              .SetDisplayName(Seramaydiel3DisplayName)
+              .SetDescription(Seramaydiel3Description)
+              .SetIcon(icon)
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .AddFacts(new() { ability })
+              .Configure();
+        }
     }
 }
