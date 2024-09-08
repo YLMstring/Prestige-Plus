@@ -10,6 +10,7 @@ using Kingmaker.Blueprints.Classes.Prerequisites;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Designers.Mechanics.Buffs;
 using Kingmaker.UnitLogic.Abilities.Components;
+using Kingmaker.UnitLogic.Abilities.Components.TargetCheckers;
 using Kingmaker.UnitLogic.Mechanics.Actions;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.Utility;
@@ -97,6 +98,10 @@ namespace PrestigePlus.Patch
                     .SetDescription(PPNewDimensionRetributionDescription)
                     .Configure();
             }
+
+            AbilityConfigurator.For(AbilityRefs.VampireDominate)
+                    .AddComponent(AbilityRefs.VampireDominateSpell.Reference.Get().GetComponent<AbilityTargetHasFact>())
+                    .Configure();
         }
 
         private static readonly string PPNewEnduringSpellsDisplayName = "PPNewEnduringSpells.Name";
