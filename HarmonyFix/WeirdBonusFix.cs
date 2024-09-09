@@ -68,24 +68,6 @@ namespace PrestigePlus.HarmonyFix
         }
     }
 
-    [HarmonyPatch(typeof(AiBrainController), nameof(AiBrainController.FindBestAction))]
-    internal class WeirdBonusFix2
-    {
-        static void Postfix(ref UnitEntityData bestTargetResult, ref AiAction bestActionResult, ref UnitEntityData unit)
-        {
-            if (bestTargetResult == unit) return;
-            if (bestActionResult?.Blueprint is BlueprintAiCastSpell spell)
-            {
-                var ability = spell.Ability;
-                if (ability == null) { return; }
-                if (!ability.CanTargetEnemies && !ability.CanTargetFriends && !ability.CanTargetPoint && ability.CanTargetSelf)
-                {
-                    bestTargetResult = unit;
-                }
-            }
-        }
-    }
-
     [HarmonyPatch(typeof(SpellTurning), nameof(SpellTurning.OnEventDidTrigger))]
     internal class WeirdBonusFix3
     {
@@ -108,33 +90,41 @@ namespace PrestigePlus.HarmonyFix
     {
         static void Postfix(ref DecisionContext context, ref bool __result)
         {
-            if (!__result) { return; }
-            if (context?.Ability == null)
+            try
             {
-                return;
+                if (!__result) { return; }
+                if (context?.Target?.Unit != null)
+                {
+                    if (context?.Ability?.CanTarget(context.Target.Unit) == false)
+                    {
+                        __result = false;
+                        return;
+                    }
+                }
+                if (context.Ability.IsAOE)
+                {
+                    return;
+                }
+                if (context.Ability.Range == AbilityRange.Touch)
+                {
+                    return;
+                }
+                if (context.Ability.SpellResistance != true)
+                {
+                    return;
+                }
+                if (context.Target?.Unit?.HasFact(FeatureRefs.BeltOfArodenSpellTurningFeature.Reference) == true)
+                {
+                    __result = false;
+                    return;
+                }
+                if (context.Target?.Unit?.HasFact(Raz) == true)
+                {
+                    __result = false;
+                    return;
+                }
             }
-            if (context.Ability.IsAOE)
-            {
-                return;
-            }
-            if (context.Ability.Range == AbilityRange.Touch)
-            {
-                return;
-            }
-            if (context.Ability.SpellResistance != true)
-            {
-                return;
-            }
-            if (context.Target?.Unit?.HasFact(FeatureRefs.BeltOfArodenSpellTurningFeature.Reference) == true)
-            {
-                __result = false;
-                return;
-            }
-            if (context.Target?.Unit?.HasFact(Raz) == true)
-            {
-                __result = false;
-                return;
-            }
+            catch (Exception ex) { Main.Logger.Error("Failed to WeirdBonusFix4", ex); }
         }
 
         private static BlueprintFeatureReference Raz = BlueprintTool.GetRef<BlueprintFeatureReference>("13d5818737694021b001641437a4ba29");
@@ -155,11 +145,9 @@ namespace PrestigePlus.HarmonyFix
                     AbilityExecutionContext abilityExecutionContext = new(__instance, __instance.CalculateParams(), target.Unit, null, __instance.Caster.Unit);
                     if (resist.IsImmune(abilityExecutionContext) == true)
                     {
-                        //Main.Logger.Info(__instance.Caster.Unit.CharacterName + target?.Unit.CharacterName);
                         __result = false;
                     }
                 }
-                
             }
             catch (Exception ex) { Main.Logger.Error("Failed to WeirdBonusFix8", ex); }
         }
