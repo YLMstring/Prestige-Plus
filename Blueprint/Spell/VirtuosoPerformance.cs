@@ -53,6 +53,10 @@ namespace PrestigePlus.Blueprint.Spell
                 .Add<DeactivateAbilityFromGroup>(c => { c.group = ActivatableAbilityGroup.BardicPerformance; c.num_abilities_activated = 1; })
                 .Build();
 
+            var action1 = ActionsBuilder.New()
+                .Add<DeactivateAbilityFromGroup>(c => { c.group = ActivatableAbilityGroup.BardicPerformance; c.num_abilities_activated = 0; })
+                .Build();
+
             var action2 = ActionsBuilder.New()
                 .Add<VirtuosoSpend>(c => { c.ResGuid = AbilityResourceRefs.BardicPerformanceResource.ToString(); })
                 .Build();
@@ -62,6 +66,7 @@ namespace PrestigePlus.Blueprint.Spell
               .SetDescription(Description)
               .SetIcon(icon)
               .AddBuffActions(deactivated: action, newRound: action2)
+              .AddCombatStateTrigger(action1)
               .AddIncreaseActivatableAbilityGroupSize(ActivatableAbilityGroup.BardicPerformance)
               .Configure();
 
