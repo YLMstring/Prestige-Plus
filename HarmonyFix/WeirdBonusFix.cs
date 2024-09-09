@@ -149,10 +149,15 @@ namespace PrestigePlus.HarmonyFix
                 if (!__result) { return; }
                 if (__instance.Caster.Unit == target?.Unit) { return; }
                 var resist = target?.Unit?.Get<UnitPartSpellResistance>();
-                if (resist?.IsImmune(__instance.Blueprint, __instance.Caster.Unit) == false)
+                if (resist != null)
                 {
-                    __result = false;
+                    AbilityExecutionContext abilityExecutionContext = new(__instance, __instance.CalculateParams(), __instance.Caster.Unit, null, null);
+                    if (resist.IsImmune(abilityExecutionContext) == true)
+                    {
+                        __result = false;
+                    }
                 }
+                
             }
             catch (Exception ex) { Main.Logger.Error("Failed to WeirdBonusFix8", ex); }
         }
