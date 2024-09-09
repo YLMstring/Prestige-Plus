@@ -152,7 +152,7 @@ namespace PrestigePlus.HarmonyFix
                 var resist = target?.Unit?.Get<UnitPartSpellResistance>();
                 if (resist != null)
                 {
-                    AbilityExecutionContext abilityExecutionContext = new(__instance, __instance.CalculateParams(), __instance.Caster.Unit, null, null);
+                    AbilityExecutionContext abilityExecutionContext = new(__instance, __instance.CalculateParams(), target.Unit, null, __instance.Caster.Unit);
                     if (resist.IsImmune(abilityExecutionContext) == true)
                     {
                         //Main.Logger.Info(__instance.Caster.Unit.CharacterName + target?.Unit.CharacterName);
