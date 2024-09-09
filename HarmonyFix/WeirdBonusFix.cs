@@ -160,26 +160,6 @@ namespace PrestigePlus.HarmonyFix
         }
     }
 
-    [HarmonyPatch(typeof(UnitCommand), nameof(UnitCommand.TickApproaching))]
-    internal class WeirdBonusFix9
-    {
-        static void Postfix(ref UnitCommand __instance, ref bool __result)
-        {
-            try
-            {
-                if (__result)
-                {
-                    var path = __instance.ForcedPath ?? PathVisualizer.Instance?.CurrentPathForUnit(__instance.Executor.View);
-                    if (path != null)
-                    {
-                        __result = false;
-                    }
-                }
-            }
-            catch (Exception ex) { Main.Logger.Error("Failed to WeirdBonusFix9", ex); }
-        }
-    }
-
     [HarmonyPatch(typeof(LevelUpController), nameof(LevelUpController.FindPet))]
     internal class WeirdBonusFix5
     {
