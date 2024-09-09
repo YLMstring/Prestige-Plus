@@ -5544,45 +5544,143 @@ namespace PrestigePlus.Blueprint.Feat
               .Configure();
         }
 
-        private const string Seramaydiel3 = "DeificObedience.Seramaydiel3";
-        public static readonly string Seramaydiel3Guid = "{8CE81F12-7629-418F-9397-9CD6E6D3B5A0}";
+        private static readonly string Seramaydiel3Name = "DeificObedienceSeramaydiel3";
+        public static readonly string Seramaydiel3Guid = "{EF8A6A51-C85D-4A08-984E-05513D40E54B}";
 
-        internal const string Seramaydiel3DisplayName = "DeificObedienceSeramaydiel3.Name";
-        private const string Seramaydiel3Description = "DeificObedienceSeramaydiel3.Description";
+        private static readonly string Seramaydiel3DisplayName = "DeificObedienceSeramaydiel3.Name";
+        private static readonly string Seramaydiel3Description = "DeificObedienceSeramaydiel3.Description";
 
-        private const string Seramaydiel3Res = "DeificObedience.Seramaydiel3Res";
-        private static readonly string Seramaydiel3ResGuid = "{B39D698D-E623-43EC-BD6B-2DD04866C8D1}";
+        private const string SeramaydielAuraBuff = "DeificObedienceStyle.Seramaydiel3Aurabuff";
+        private static readonly string SeramaydielAuraBuffGuid = "{ED9F637A-01DF-45AE-85DF-98DF1A3BDB4E}";
 
-        private const string Seramaydiel3Ability = "DeificObedience.Seramaydiel3Ability";
-        private static readonly string Seramaydiel3AbilityGuid = "{C00878B6-4344-4D26-B832-40DFB6AFE8FC}";
+        private const string SeramaydielEnemyBuff = "DeificObedienceStyle.Seramaydiel3Enemybuff";
+        private static readonly string SeramaydielEnemyBuffGuid = "{D0FD825B-2B3F-4FA8-9039-099E22F2CF13}";
+
+        private const string SeramaydielEnemyBuff2 = "DeificObedienceStyle.Seramaydiel3Enemybuff2";
+        private static readonly string SeramaydielEnemyBuff2Guid = "{0559C993-ACC0-4F68-AB4A-7C53F14ED6C3}";
+
+        private const string Seramaydiel3Aura = "DeificObedienceStyle.Seramaydiel3Aura";
+        private static readonly string Seramaydiel3AuraGuid = "{8D3A5E96-3658-4CE6-93FE-19CB49A8D7DE}";
+
+        private const string Seramaydiel3Ability = "DeificObedienceStyle.Seramaydiel3Ability";
+        private static readonly string Seramaydiel3AbilityGuid = "{F5F36370-79CE-4C39-8354-E3602AF8EC84}";
+
+        private const string Seramaydiel3AbilityRes = "DeificObedienceStyle.Seramaydiel3AbilityRes";
+        private static readonly string Seramaydiel3AbilityResGuid = "{730EA44F-80D8-4EE3-8118-508BE0A24FC6}";
+
+        private const string Seramaydiel32Ablity = "DeificObedience.UseSeramaydiel32";
+        private static readonly string Seramaydiel32AblityGuid = "{62FD011A-746D-48A9-B101-B2AE1488D349}";
+
+        private const string Seramaydiel33Ablity = "DeificObedience.UseSeramaydiel33";
+        private static readonly string Seramaydiel33AblityGuid = "{54BEFE9A-84D6-4DE2-B042-E151C4F3C6AD}";
+
         public static BlueprintFeature Seramaydiel3Feat()
         {
             var icon = AbilityRefs.DeadlyBeauty.Reference.Get().Icon;
 
-            var abilityresourse = AbilityResourceConfigurator.New(Seramaydiel3Res, Seramaydiel3ResGuid)
-                .SetMaxAmount(ResourceAmountBuilder.New(1))
-                .Configure();
+            
 
-            var ability = AbilityConfigurator.New(Seramaydiel3Ability, Seramaydiel3AbilityGuid)
+            var ability3 = AbilityConfigurator.New(Seramaydiel33Ablity, Seramaydiel33AblityGuid)
                 .CopyFrom(
-                AbilityRefs.PredictionOfFailure,
-                typeof(AbilityEffectRunAction),
-                typeof(SpellComponent),
-                typeof(SpellDescriptorComponent),
-                typeof(AbilitySpawnFx),
-                typeof(ContextRankConfigs))
-                .SetType(AbilityType.SpellLike)
-                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
-                .AddPretendSpellLevel(spellLevel: 8)
+                AbilityRefs.ChannelEnergy,
+                typeof(AbilitySpawnFx))
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Omni)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                    .Conditional(conditions: ConditionsBuilder.New().IsEnemy().Build(),
+                    ifTrue: ActionsBuilder.New()
+                        .Conditional(conditions: ConditionsBuilder.New().Alignment(AlignmentComponent.Evil).Build(),
+                        ifTrue: ActionsBuilder.New()
+                            .DealDamage(value: ContextDice.Value(DiceType.D6, bonus: ContextValues.Rank(type: AbilityRankType.DamageBonus), diceCount: ContextValues.Constant(4)), damageType: DamageTypes.Energy(type: Kingmaker.Enums.Damage.DamageEnergyType.Divine), halfIfSaved: true)
+                            .Build())
+                        .Build(),
+                    ifFalse: ActionsBuilder.New()
+                        .HealTarget(ContextDice.Value(diceType: DiceType.D6, bonus: ContextValues.Rank(type: AbilityRankType.DamageBonus), diceCount: ContextValues.Constant(4)))
+                        .Build())
+                    .Conditional(conditions: ConditionsBuilder.New().IsCaster().Build(),
+                    ifTrue: ActionsBuilder.New()
+                            .ContextSpendResource(layonhandres, ContextValues.Constant(1))
+                            .CastSpell(ability2)
+                            .Build())
+                    .Build(), savingThrowType: SavingThrowType.Will)
+                .SetDisplayName(Seramaydiel3DisplayName)
+                .SetDescription(Seramaydiel3Description)
+                .SetIcon(icon)
+                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Any, radius: 30.Feet(), spreadSpeed: 40.Feet())
+                .AddContextRankConfig(ContextRankConfigs.ClassLevel(new[] { ArchetypeGuid }, type: AbilityRankType.DamageBonus))
+                .AddComponent<CustomDC>(c => { c.classguid = ArchetypeGuid; c.Property = StatType.Charisma; })
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Special)
                 .Configure();
 
-            return FeatureConfigurator.New(Seramaydiel3, Seramaydiel3Guid)
+            var EnemyBuff1 = BuffConfigurator.New(SeramaydielEnemyBuff, SeramaydielEnemyBuffGuid)
               .SetDisplayName(Seramaydiel3DisplayName)
               .SetDescription(Seramaydiel3Description)
               .SetIcon(icon)
-              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
-              .AddFacts(new() { ability })
+              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
               .Configure();
+
+            var EnemyBuff2 = BuffConfigurator.New(SeramaydielEnemyBuff2, SeramaydielEnemyBuff2Guid)
+              .SetDisplayName(Seramaydiel3DisplayName)
+              .SetDescription(Seramaydiel3Description)
+              .SetIcon(icon)
+              .AddSpellDescriptorComponent(SpellDescriptor.Paralysis)
+              .Configure();
+
+            var area = AbilityAreaEffectConfigurator.New(Seramaydiel3Aura, Seramaydiel3AuraGuid)
+                .SetAffectEnemies(true)
+                .SetTargetType(BlueprintAbilityAreaEffect.TargetType.Enemy)
+                .SetFx(AbilityAreaEffectRefs.InspireCourageArea.Reference.Get().Fx)
+                .SetAffectDead(false)
+                .SetShape(AreaEffectShape.Cylinder)
+                .SetSize(35.Feet())
+                .AddAbilityAreaEffectBuff(EnemyBuff1)
+                .Configure();
+
+            var Buff1 = BuffConfigurator.New(SeramaydielAuraBuff, SeramaydielAuraBuffGuid)
+              .SetDisplayName(Seramaydiel3DisplayName)
+              .SetDescription(Seramaydiel3Description)
+              .SetIcon(icon)
+              .SetRanks(200)
+              .SetStacking(StackingType.Ignore)
+              .AddAreaEffect(area)
+              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .Configure();
+
+            var abilityresourse = AbilityResourceConfigurator.New(Seramaydiel3AbilityRes, Seramaydiel3AbilityResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var ability = ActivatableAbilityConfigurator.New(Seramaydiel3Ability, Seramaydiel3AbilityGuid)
+                .SetDisplayName(Seramaydiel3DisplayName)
+                .SetDescription(Seramaydiel3Description)
+                .SetIcon(icon)
+                .SetBuff(Buff1)
+                .SetDeactivateIfOwnerDisabled()
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(Seramaydiel32Ablity, Seramaydiel32AblityGuid)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Omni)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                    .Conditional(conditions: ConditionsBuilder.New().IsCaster().Build(),
+                    ifTrue: ActionsBuilder.New()
+                        .Add<SeramaydielSongSelf>(c => { c.Ability = ability; c.buff = Buff1; })
+                        .Build())
+                    .Build())
+                .SetDisplayName(Seramaydiel3DisplayName)
+                .SetDescription(Seramaydiel3Description)
+                .SetIcon(icon)
+                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Any, radius: 30.Feet(), spreadSpeed: 40.Feet())
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Special)
+                .Configure();
+
+            return FeatureConfigurator.New(Seramaydiel3Name, Seramaydiel3Guid)
+                    .SetDisplayName(Seramaydiel3DisplayName)
+                    .SetDescription(Seramaydiel3Description)
+                    .SetIcon(icon)
+                    .AddFacts(new() { ability })
+                    .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+                    .Configure();
         }
     }
 }
