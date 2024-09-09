@@ -153,6 +153,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(PharasmaFeat())
               .AddToAllFeatures(MagdhFeat())
               .AddToAllFeatures(ZonKuthonFeat())
+              .AddToAllFeatures(SeramaydielFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -5608,7 +5609,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetIcon(icon)
                 .AddHideDCFromTooltip()
                 .SetSpellDescriptor(SpellDescriptor.Paralysis | SpellDescriptor.MovementImpairing | SpellDescriptor.MindAffecting | SpellDescriptor.Compulsion)
-                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Any, radius: 30.Feet(), spreadSpeed: 40.Feet())
+                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Enemy, radius: 30.Feet(), spreadSpeed: 40.Feet())
                 .AddContextRankConfig(ContextRankConfigs.BuffRank(SeramaydielAuraBuffGuid))
                 .SetRange(AbilityRange.Personal)
                 .SetType(AbilityType.Special)
@@ -5671,7 +5672,7 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetDisplayName(Seramaydiel3DisplayName)
                     .SetDescription(Seramaydiel3Description)
                     .SetIcon(icon)
-                    .AddFacts(new() { ability })
+                    .AddFacts(new() { ability, ability2 })
                     .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
                     .Configure();
         }
