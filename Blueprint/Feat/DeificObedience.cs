@@ -5612,7 +5612,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Enemy, radius: 30.Feet(), spreadSpeed: 40.Feet())
                 .AddContextRankConfig(ContextRankConfigs.BuffRank(SeramaydielAuraBuffGuid))
                 .SetRange(AbilityRange.Personal)
-                .SetType(AbilityType.Special)
+                .SetType(AbilityType.Supernatural)
                 .Configure();
 
             var area = AbilityAreaEffectConfigurator.New(Seramaydiel3Aura, Seramaydiel3AuraGuid)
@@ -5665,7 +5665,8 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetSpellDescriptor(SpellDescriptor.Paralysis | SpellDescriptor.MovementImpairing | SpellDescriptor.MindAffecting | SpellDescriptor.Compulsion)
                 .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Any, radius: 30.Feet(), spreadSpeed: 40.Feet())
                 .SetRange(AbilityRange.Personal)
-                .SetType(AbilityType.Special)
+                .SetType(AbilityType.Supernatural)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .Configure();
 
             return FeatureConfigurator.New(Seramaydiel3Name, Seramaydiel3Guid)
