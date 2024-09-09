@@ -28,6 +28,7 @@ using Kingmaker.UnitLogic.Class.LevelUp;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Parts;
+using JetBrains.Annotations;
 
 namespace PrestigePlus.HarmonyFix
 {
@@ -143,13 +144,17 @@ namespace PrestigePlus.HarmonyFix
     {
         static void Postfix(ref TargetWrapper target, ref AbilityData __instance, ref bool __result)
         {
-            if (!__result) { return; }
-            if (__instance.Caster.Unit == target?.Unit) { return; }
-            var resist = target?.Unit?.Get<UnitPartSpellResistance>();
-            if (resist?.IsImmune(__instance.Blueprint, __instance.Caster.Unit) == true) 
+            try
             {
-                __result = false;
+                if (!__result) { return; }
+                if (__instance.Caster.Unit == target?.Unit) { return; }
+                var resist = target?.Unit?.Get<UnitPartSpellResistance>();
+                if (resist?.IsImmune(__instance.Blueprint, __instance.Caster.Unit) == false)
+                {
+                    __result = false;
+                }
             }
+            catch (Exception ex) { Main.Logger.Error("Failed to WeirdBonusFix8", ex); }
         }
     }
 
