@@ -26,8 +26,6 @@ using Kingmaker.RuleSystem.Rules.Abilities;
 using BlueprintCore.Utils;
 using Kingmaker.UnitLogic.Class.LevelUp;
 using Kingmaker.Blueprints.Classes;
-using TabletopTweaks.Core.NewUnitParts;
-using Kingmaker.UnitLogic.Parts;
 
 namespace PrestigePlus.HarmonyFix
 {
@@ -111,15 +109,6 @@ namespace PrestigePlus.HarmonyFix
             {
                 return;
             }
-            var resist = context.Target?.Unit?.Get<UnitPartSpellResistance>();
-            if (resist != null)
-            {
-                if (resist.IsImmune(context.Ability.Blueprint, context.Unit))
-                {
-                    __result = false;
-                    return;
-                }
-            }
             if (context.Ability.IsAOE)
             {
                 return;
@@ -145,15 +134,6 @@ namespace PrestigePlus.HarmonyFix
         }
 
         private static BlueprintFeatureReference Raz = BlueprintTool.GetRef<BlueprintFeatureReference>("13d5818737694021b001641437a4ba29");
-    }
-
-    [HarmonyPatch(typeof(AiAction), nameof(AiAction.IsTargetValidInternal))]
-    internal class WeirdBonusFix8
-    {
-        static void Postfix(ref DecisionContext context, ref bool __result)
-        {
-
-        }
     }
 
     [HarmonyPatch(typeof(LevelUpController), nameof(LevelUpController.FindPet))]
