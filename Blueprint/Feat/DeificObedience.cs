@@ -5646,7 +5646,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetBuff(Buff1)
                 .SetDeactivateIfOwnerDisabled()
                 .SetDeactivateImmediately()
-                .SetOnlyInCombat()
+                .SetHiddenInUI()
                 .Configure();
 
             var ability2 = AbilityConfigurator.New(Seramaydiel32Ablity, Seramaydiel32AblityGuid)
@@ -5668,6 +5668,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetRange(AbilityRange.Personal)
                 .SetType(AbilityType.Supernatural)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetIsFullRoundAction()
                 .Configure();
 
             return FeatureConfigurator.New(Seramaydiel3Name, Seramaydiel3Guid)
