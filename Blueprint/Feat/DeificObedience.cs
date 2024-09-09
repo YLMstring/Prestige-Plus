@@ -5663,6 +5663,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetDisplayName(Seramaydiel3DisplayName)
                 .SetDescription(Seramaydiel3Description)
                 .SetIcon(icon)
+                .AddHideDCFromTooltip()
                 .SetSpellDescriptor(SpellDescriptor.Paralysis | SpellDescriptor.MovementImpairing | SpellDescriptor.MindAffecting | SpellDescriptor.Compulsion)
                 .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Any, radius: 30.Feet(), spreadSpeed: 40.Feet())
                 .SetRange(AbilityRange.Personal)
