@@ -30,6 +30,8 @@ using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Parts;
 using JetBrains.Annotations;
 using static Pathfinding.Util.RetainedGizmos;
+using Kingmaker.UnitLogic.Commands.Base;
+using Kingmaker.TurnBasedMode;
 
 namespace PrestigePlus.HarmonyFix
 {
