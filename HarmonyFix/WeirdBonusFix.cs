@@ -26,6 +26,8 @@ using Kingmaker.RuleSystem.Rules.Abilities;
 using BlueprintCore.Utils;
 using Kingmaker.UnitLogic.Class.LevelUp;
 using Kingmaker.Blueprints.Classes;
+using Kingmaker.UnitLogic.Abilities;
+using Kingmaker.UnitLogic.Parts;
 
 namespace PrestigePlus.HarmonyFix
 {
@@ -134,6 +136,20 @@ namespace PrestigePlus.HarmonyFix
         }
 
         private static BlueprintFeatureReference Raz = BlueprintTool.GetRef<BlueprintFeatureReference>("13d5818737694021b001641437a4ba29");
+    }
+
+    [HarmonyPatch(typeof(AbilityData), nameof(AbilityData.CanTarget))]
+    internal class WeirdBonusFix8
+    {
+        static void Postfix(ref TargetWrapper target, ref AbilityData __instance, ref bool __result)
+        {
+            if (!__result) { return; }
+            var resist = target?.Unit?.Get<UnitPartSpellResistance>();
+            if (resist?.IsImmune(__instance.Blueprint, __instance.Caster.Unit) == true) 
+            {
+                __result = false;
+            }
+        }
     }
 
     [HarmonyPatch(typeof(LevelUpController), nameof(LevelUpController.FindPet))]
