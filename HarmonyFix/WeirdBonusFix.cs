@@ -160,6 +160,38 @@ namespace PrestigePlus.HarmonyFix
         }
     }
 
+    [HarmonyPatch(typeof(UnitCommand), nameof(UnitCommand.Interrupt))]
+    internal class WeirdBonusFix9
+    {
+        static void Prefix(ref UnitCommand __instance)
+        {
+            try
+            {
+                if (__instance.ForcedPath != null)
+                {
+                    Main.Logger.Info(__instance.ForcedPath.ToString() + "not null");
+                }
+                else 
+                { 
+                    Main.Logger.Info("path is null"); 
+                }
+                if (__instance.IsStarted)
+                {
+                    Main.Logger.Info("path IsStarted");
+                }
+                if (__instance.IsActed)
+                {
+                    Main.Logger.Info("path IsActed");
+                }
+                if (__instance.IsFinished)
+                {
+                    Main.Logger.Info("path IsFinished");
+                }
+            }
+            catch (Exception ex) { Main.Logger.Error("Failed to WeirdBonusFix9", ex); }
+        }
+    }
+
     [HarmonyPatch(typeof(LevelUpController), nameof(LevelUpController.FindPet))]
     internal class WeirdBonusFix5
     {
