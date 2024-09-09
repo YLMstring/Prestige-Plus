@@ -144,6 +144,7 @@ namespace PrestigePlus.HarmonyFix
         static void Postfix(ref TargetWrapper target, ref AbilityData __instance, ref bool __result)
         {
             if (!__result) { return; }
+            if (__instance.Caster.Unit == target?.Unit) { return; }
             var resist = target?.Unit?.Get<UnitPartSpellResistance>();
             if (resist?.IsImmune(__instance.Blueprint, __instance.Caster.Unit) == true) 
             {

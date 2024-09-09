@@ -5557,7 +5557,7 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string Seramaydiel3AbilityGuid = "{C00878B6-4344-4D26-B832-40DFB6AFE8FC}";
         public static BlueprintFeature Seramaydiel3Feat()
         {
-            var icon = AbilityRefs.PredictionOfFailure.Reference.Get().Icon;
+            var icon = AbilityRefs.DeadlyBeauty.Reference.Get().Icon;
 
             var abilityresourse = AbilityResourceConfigurator.New(Seramaydiel3Res, Seramaydiel3ResGuid)
                 .SetMaxAmount(ResourceAmountBuilder.New(1))
