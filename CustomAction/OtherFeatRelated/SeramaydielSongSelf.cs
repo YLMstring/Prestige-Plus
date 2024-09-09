@@ -44,6 +44,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
             }
             var songdc = caster.GetFact(buff) as Buff;
             songdc?.SetRank(result);
+            action.Run();
         }
 
         public ActionList action;
