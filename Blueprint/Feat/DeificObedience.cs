@@ -5599,11 +5599,10 @@ namespace PrestigePlus.Blueprint.Feat
 
             var ability3 = AbilityConfigurator.New(Seramaydiel33Ablity, Seramaydiel33AblityGuid)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-                    .SavingThrow(SavingThrowType.Will, customDC: ContextValues.Rank(),
-                        onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New()
+                    .ConditionalSaved(failed: ActionsBuilder.New()
                         .ApplyBuffPermanent(EnemyBuff2)
-                        .Build()).Build())
-                    .Build())
+                        .Build())
+                    .Build(), savingThrowType: SavingThrowType.Will)
                 .SetDisplayName(Seramaydiel3DisplayName)
                 .SetDescription(Seramaydiel3Description)
                 .SetIcon(icon)
@@ -5646,6 +5645,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetBuff(Buff1)
                 .SetDeactivateIfOwnerDisabled()
                 .SetDeactivateImmediately()
+                .SetOnlyInCombat()
                 .SetHiddenInUI()
                 .Configure();
 
@@ -5676,6 +5676,7 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetDescription(Seramaydiel3Description)
                     .SetIcon(icon)
                     .AddFacts(new() { ability, ability2 })
+                    .AddComponent<SeramaydielSpecialDC>(c => { c.Ability = ability3; c.buff = Buff1; })
                     .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
                     .Configure();
         }
