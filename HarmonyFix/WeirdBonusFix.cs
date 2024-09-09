@@ -29,6 +29,7 @@ using Kingmaker.Blueprints.Classes;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Parts;
 using JetBrains.Annotations;
+using static Pathfinding.Util.RetainedGizmos;
 
 namespace PrestigePlus.HarmonyFix
 {
@@ -154,7 +155,8 @@ namespace PrestigePlus.HarmonyFix
                     AbilityExecutionContext abilityExecutionContext = new(__instance, __instance.CalculateParams(), __instance.Caster.Unit, null, null);
                     if (resist.IsImmune(abilityExecutionContext) == true)
                     {
-                        __result = false;
+                        Main.Logger.Info(__instance.Caster.Unit.CharacterName + target?.Unit.CharacterName);
+                        //__result = false;
                     }
                 }
                 
