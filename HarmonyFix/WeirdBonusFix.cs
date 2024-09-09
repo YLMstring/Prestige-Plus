@@ -93,13 +93,18 @@ namespace PrestigePlus.HarmonyFix
             try
             {
                 if (!__result) { return; }
-                if (context?.Target?.Unit != null)
+                if (context?.Ability == null)
                 {
-                    if (context?.Ability?.CanTarget(context.Target.Unit) == false)
-                    {
-                        __result = false;
-                        return;
-                    }
+                    return;
+                }
+                if (context?.Target?.Unit == null)
+                {
+                    return;
+                }
+                if (context.Ability.CanTarget(context.Target.Unit) == false)
+                {
+                    __result = false;
+                    return;
                 }
                 if (context.Ability.IsAOE)
                 {
@@ -113,12 +118,12 @@ namespace PrestigePlus.HarmonyFix
                 {
                     return;
                 }
-                if (context.Target?.Unit?.HasFact(FeatureRefs.BeltOfArodenSpellTurningFeature.Reference) == true)
+                if (context.Target.Unit.HasFact(FeatureRefs.BeltOfArodenSpellTurningFeature.Reference) == true)
                 {
                     __result = false;
                     return;
                 }
-                if (context.Target?.Unit?.HasFact(Raz) == true)
+                if (context.Target.Unit.HasFact(Raz) == true)
                 {
                     __result = false;
                     return;
