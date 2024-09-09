@@ -17,6 +17,7 @@ using Kingmaker.RuleSystem.Rules;
 using static Kingmaker.UI.Context.MenuItem;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Buffs;
+using BlueprintCore.Actions.Builder;
 
 namespace PrestigePlus.CustomAction.OtherFeatRelated
 {
@@ -44,5 +45,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
             var songdc = caster.GetFact(buff) as Buff;
             songdc?.SetRank(result);
         }
+
+        public ActionList action;
     }
 }

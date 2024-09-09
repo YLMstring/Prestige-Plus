@@ -5578,53 +5578,41 @@ namespace PrestigePlus.Blueprint.Feat
         {
             var icon = AbilityRefs.DeadlyBeauty.Reference.Get().Icon;
 
-            
-
-            var ability3 = AbilityConfigurator.New(Seramaydiel33Ablity, Seramaydiel33AblityGuid)
-                .CopyFrom(
-                AbilityRefs.ChannelEnergy,
-                typeof(AbilitySpawnFx))
-                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Omni)
-                .AddAbilityEffectRunAction(ActionsBuilder.New()
-                    .Conditional(conditions: ConditionsBuilder.New().IsEnemy().Build(),
-                    ifTrue: ActionsBuilder.New()
-                        .Conditional(conditions: ConditionsBuilder.New().Alignment(AlignmentComponent.Evil).Build(),
-                        ifTrue: ActionsBuilder.New()
-                            .DealDamage(value: ContextDice.Value(DiceType.D6, bonus: ContextValues.Rank(type: AbilityRankType.DamageBonus), diceCount: ContextValues.Constant(4)), damageType: DamageTypes.Energy(type: Kingmaker.Enums.Damage.DamageEnergyType.Divine), halfIfSaved: true)
-                            .Build())
-                        .Build(),
-                    ifFalse: ActionsBuilder.New()
-                        .HealTarget(ContextDice.Value(diceType: DiceType.D6, bonus: ContextValues.Rank(type: AbilityRankType.DamageBonus), diceCount: ContextValues.Constant(4)))
-                        .Build())
-                    .Conditional(conditions: ConditionsBuilder.New().IsCaster().Build(),
-                    ifTrue: ActionsBuilder.New()
-                            .ContextSpendResource(layonhandres, ContextValues.Constant(1))
-                            .CastSpell(ability2)
-                            .Build())
-                    .Build(), savingThrowType: SavingThrowType.Will)
-                .SetDisplayName(Seramaydiel3DisplayName)
-                .SetDescription(Seramaydiel3Description)
-                .SetIcon(icon)
-                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Any, radius: 30.Feet(), spreadSpeed: 40.Feet())
-                .AddContextRankConfig(ContextRankConfigs.ClassLevel(new[] { ArchetypeGuid }, type: AbilityRankType.DamageBonus))
-                .AddComponent<CustomDC>(c => { c.classguid = ArchetypeGuid; c.Property = StatType.Charisma; })
-                .SetRange(AbilityRange.Personal)
-                .SetType(AbilityType.Special)
-                .Configure();
+            var EnemyBuff2 = BuffConfigurator.New(SeramaydielEnemyBuff2, SeramaydielEnemyBuff2Guid)
+              .CopyFrom(
+                BuffRefs.HoldMonsterBuff,
+                typeof(BuffStatusCondition),
+                typeof(SpellDescriptorComponent))
+              .SetDisplayName(Seramaydiel3DisplayName)
+              .SetDescription(Seramaydiel3Description)
+              .SetIcon(icon)
+              .Configure();
 
             var EnemyBuff1 = BuffConfigurator.New(SeramaydielEnemyBuff, SeramaydielEnemyBuffGuid)
               .SetDisplayName(Seramaydiel3DisplayName)
               .SetDescription(Seramaydiel3Description)
               .SetIcon(icon)
               .SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddBuffActions(deactivated: ActionsBuilder.New().RemoveBuff(EnemyBuff2).Build())
               .Configure();
 
-            var EnemyBuff2 = BuffConfigurator.New(SeramaydielEnemyBuff2, SeramaydielEnemyBuff2Guid)
-              .SetDisplayName(Seramaydiel3DisplayName)
-              .SetDescription(Seramaydiel3Description)
-              .SetIcon(icon)
-              .AddSpellDescriptorComponent(SpellDescriptor.Paralysis)
-              .Configure();
+            var ability3 = AbilityConfigurator.New(Seramaydiel33Ablity, Seramaydiel33AblityGuid)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                    .SavingThrow(SavingThrowType.Will, customDC: ContextValues.Rank(),
+                        onResult: ActionsBuilder.New().ConditionalSaved(failed: ActionsBuilder.New()
+                        .ApplyBuffPermanent(EnemyBuff2)
+                        .Build()).Build())
+                    .Build())
+                .SetDisplayName(Seramaydiel3DisplayName)
+                .SetDescription(Seramaydiel3Description)
+                .SetIcon(icon)
+                .AddHideDCFromTooltip()
+                .SetSpellDescriptor(SpellDescriptor.Paralysis | SpellDescriptor.MovementImpairing | SpellDescriptor.MindAffecting | SpellDescriptor.Compulsion)
+                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Any, radius: 30.Feet(), spreadSpeed: 40.Feet())
+                .AddContextRankConfig(ContextRankConfigs.BuffRank(SeramaydielAuraBuffGuid))
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Special)
+                .Configure();
 
             var area = AbilityAreaEffectConfigurator.New(Seramaydiel3Aura, Seramaydiel3AuraGuid)
                 .SetAffectEnemies(true)
@@ -5656,6 +5644,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetIcon(icon)
                 .SetBuff(Buff1)
                 .SetDeactivateIfOwnerDisabled()
+                .SetOnlyInCombat()
                 .Configure();
 
             var ability2 = AbilityConfigurator.New(Seramaydiel32Ablity, Seramaydiel32AblityGuid)
@@ -5663,12 +5652,16 @@ namespace PrestigePlus.Blueprint.Feat
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                     .Conditional(conditions: ConditionsBuilder.New().IsCaster().Build(),
                     ifTrue: ActionsBuilder.New()
-                        .Add<SeramaydielSongSelf>(c => { c.Ability = ability; c.buff = Buff1; })
+                        .Add<SeramaydielSongSelf>(c => { c.Ability = ability; 
+                            c.buff = Buff1;
+                            c.action = ActionsBuilder.New().CastSpell(ability3).Build();
+                            })
                         .Build())
                     .Build())
                 .SetDisplayName(Seramaydiel3DisplayName)
                 .SetDescription(Seramaydiel3Description)
                 .SetIcon(icon)
+                .SetSpellDescriptor(SpellDescriptor.Paralysis)
                 .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Any, radius: 30.Feet(), spreadSpeed: 40.Feet())
                 .SetRange(AbilityRange.Personal)
                 .SetType(AbilityType.Special)
