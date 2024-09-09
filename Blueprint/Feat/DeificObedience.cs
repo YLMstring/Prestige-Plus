@@ -5570,10 +5570,10 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string Seramaydiel3AbilityResGuid = "{730EA44F-80D8-4EE3-8118-508BE0A24FC6}";
 
         private const string Seramaydiel32Ablity = "DeificObedience.UseSeramaydiel32";
-        private static readonly string Seramaydiel32AblityGuid = "{62FD011A-746D-48A9-B101-B2AE1488D349}";
+        private static readonly string Seramaydiel32AblityGuid = "{B31B5834-4C45-4136-A66E-16C07F3DA66A}";
 
         private const string Seramaydiel33Ablity = "DeificObedience.UseSeramaydiel33";
-        private static readonly string Seramaydiel33AblityGuid = "{54BEFE9A-84D6-4DE2-B042-E151C4F3C6AD}";
+        private static readonly string Seramaydiel33AblityGuid = "{30AB8E07-87DD-40AA-92B0-D82FFCA7AC74}";
 
         public static BlueprintFeature Seramaydiel3Feat()
         {
