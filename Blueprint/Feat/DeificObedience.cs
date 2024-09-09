@@ -5645,6 +5645,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetIcon(icon)
                 .SetBuff(Buff1)
                 .SetDeactivateIfOwnerDisabled()
+                .SetDeactivateImmediately()
                 .SetOnlyInCombat()
                 .Configure();
 
