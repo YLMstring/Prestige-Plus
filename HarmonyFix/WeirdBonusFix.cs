@@ -32,6 +32,9 @@ using JetBrains.Annotations;
 using static Pathfinding.Util.RetainedGizmos;
 using Kingmaker.UnitLogic.Commands.Base;
 using Kingmaker.TurnBasedMode;
+using static Kingmaker.Controllers.Combat.UnitCombatState;
+using Kingmaker.TurnBasedMode.Controllers;
+using Kingmaker;
 
 namespace PrestigePlus.HarmonyFix
 {
@@ -167,25 +170,17 @@ namespace PrestigePlus.HarmonyFix
         {
             try
             {
-                if (__instance.ForcedPath != null)
+                if (__instance.ForcedPath == null && !__instance.IsStarted)
                 {
-                    Main.Logger.Info(__instance.ForcedPath.ToString() + "not null");
-                }
-                else 
-                { 
-                    Main.Logger.Info("path is null"); 
-                }
-                if (__instance.IsStarted)
-                {
-                    Main.Logger.Info("path IsStarted");
-                }
-                if (__instance.IsActed)
-                {
-                    Main.Logger.Info("path IsActed");
-                }
-                if (__instance.IsFinished)
-                {
-                    Main.Logger.Info("path IsFinished");
+                    Main.Logger.Info("Restore the action because it's not started");
+                    var caster = __instance.Executor;
+                    caster.CombatState.Cooldown.StandardAction = 0f;
+                    var state = Game.Instance.TurnBasedCombatController?.CurrentTurn?.GetActionsStates(caster)?.ActionsStates;
+                    if (state != null)
+                    {
+                        Game.Instance.TurnBasedCombatController.CurrentTurn.GetActionsStates(caster).ActionsStates.Standard =
+                            new CombatAction(CombatAction.ActivityState.Lost, CombatAction.ActivityState.Available, CombatAction.ActivityState.Available, 0f);
+                    }
                 }
             }
             catch (Exception ex) { Main.Logger.Error("Failed to WeirdBonusFix9", ex); }
