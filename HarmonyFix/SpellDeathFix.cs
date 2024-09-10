@@ -23,7 +23,6 @@ namespace PrestigePlus.HarmonyFix
             {
                 if (!ModMenu.ModMenu.GetSettingValue<bool>(Main.GetKey("endure")) || __instance.Owner.Unit.IsPlayersEnemy) 
                 {
-                    __instance.m_IsOwnerAlive = !__instance.Owner.State.IsDead;
                     return true; 
                 }
                 if (__instance.m_IsOwnerAlive && __instance.Owner.State.IsDead)
