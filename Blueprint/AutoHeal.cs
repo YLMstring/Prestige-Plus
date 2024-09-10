@@ -79,12 +79,6 @@ namespace PrestigePlus.Blueprint
 
             FeatureConfigurator.For(FeatureRefs.SkillAbilities)
                     .AddFacts(new() { ability, ability2 })
-                    .AddComponent<AddStatBonus>(c =>
-                    {
-                        c.Stat = CustomStatType.MeleeTouchReach.Stat();
-                        c.Value = 5;
-                        c.Descriptor = ModifierDescriptor.Feat;
-                    })
                     .Configure();
         }
 
