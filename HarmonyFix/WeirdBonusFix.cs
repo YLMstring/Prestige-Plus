@@ -140,6 +140,23 @@ namespace PrestigePlus.HarmonyFix
         private static BlueprintFeatureReference Raz = BlueprintTool.GetRef<BlueprintFeatureReference>("13d5818737694021b001641437a4ba29");
     }
 
+    [HarmonyPatch(typeof(BlueprintAiCastSpell), nameof(BlueprintAiCastSpell.IsAvailable))]
+    internal class WeirdBonusFix9
+    {
+        static void Postfix(ref BlueprintAiCastSpell __instance, ref bool __result)
+        {
+            try
+            {
+                if (__instance.m_Ability?.Get() == AbilityRefs.Contagion.Reference.Get())
+                {
+                    __result = false;
+                    Main.Logger.Info("don't use contagion");
+                }
+            }
+            catch (Exception ex) { Main.Logger.Error("Failed to WeirdBonusFix9", ex); }
+        }
+    }
+
     [HarmonyPatch(typeof(AbilityData), nameof(AbilityData.CanTarget))]
     internal class WeirdBonusFix8
     {
