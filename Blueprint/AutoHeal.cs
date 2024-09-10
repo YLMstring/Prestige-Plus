@@ -6,9 +6,11 @@ using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Abilities;
 using BlueprintCore.Blueprints.CustomConfigurators.UnitLogic.Buffs;
 using BlueprintCore.Blueprints.References;
 using BlueprintCore.Utils.Types;
+using Kingmaker.Enums;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
 using Kingmaker.UnitLogic.ActivatableAbilities;
+using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.Utility;
 using PrestigePlus.Blueprint.GrappleFeat;
 using PrestigePlus.CustomAction;
@@ -17,6 +19,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static TabletopTweaks.Core.NewUnitParts.CustomStatTypes;
 
 namespace PrestigePlus.Blueprint
 {
@@ -76,6 +79,12 @@ namespace PrestigePlus.Blueprint
 
             FeatureConfigurator.For(FeatureRefs.SkillAbilities)
                     .AddFacts(new() { ability, ability2 })
+                    .AddComponent<AddStatBonus>(c =>
+                    {
+                        c.Stat = CustomStatType.MeleeTouchReach.Stat();
+                        c.Value = 5;
+                        c.Descriptor = ModifierDescriptor.Feat;
+                    })
                     .Configure();
         }
 

@@ -163,30 +163,6 @@ namespace PrestigePlus.HarmonyFix
         }
     }
 
-    [HarmonyPatch(typeof(UnitCommand), nameof(UnitCommand.Interrupt))]
-    internal class WeirdBonusFix9
-    {
-        static void Prefix(ref UnitCommand __instance)
-        {
-            try
-            {
-                if (__instance.ForcedPath == null && !__instance.IsStarted)
-                {
-                    Main.Logger.Info("Restore the action because it's not started");
-                    var caster = __instance.Executor;
-                    caster.CombatState.Cooldown.StandardAction = 0f;
-                    var state = Game.Instance.TurnBasedCombatController?.CurrentTurn?.GetActionsStates(caster)?.ActionsStates;
-                    if (state != null)
-                    {
-                        Game.Instance.TurnBasedCombatController.CurrentTurn.GetActionsStates(caster).ActionsStates.Standard =
-                            new CombatAction(CombatAction.ActivityState.Lost, CombatAction.ActivityState.Available, CombatAction.ActivityState.Available, 0f);
-                    }
-                }
-            }
-            catch (Exception ex) { Main.Logger.Error("Failed to WeirdBonusFix9", ex); }
-        }
-    }
-
     [HarmonyPatch(typeof(LevelUpController), nameof(LevelUpController.FindPet))]
     internal class WeirdBonusFix5
     {
