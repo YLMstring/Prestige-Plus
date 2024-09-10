@@ -546,6 +546,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature FreedomFeat()
         {
+            FreedomDrunkFeat();
             var icon = AbilityRefs.FreedomOfMovement.Reference.Get().Icon;
 
             var ability = AbilityConfigurator.New(FreedomAblity, FreedomAblityGuid)
@@ -571,6 +572,41 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddFacts(new() { ability })
               .AddPrerequisiteClassLevel(CharacterClassRefs.MonkClass.ToString(), 8)
               .AddToFeatureSelection(FeatureSelectionRefs.MonkKiPowerSelection.ToString())
+              .Configure();
+        }
+
+        private const string FreedomDrunk = "ManeuverMaster.FreedomDrunk";
+        public static readonly string FreedomDrunkGuid = "{48ACDFB4-5DA6-45B7-B077-EA6403D0B7CB}";
+
+        private const string FreedomDrunkAblity = "ManeuverMaster.UseFreedomDrunk";
+        private static readonly string FreedomDrunkAblityGuid = "{9F20A4B6-E7A4-46F0-96CC-B8CB42ABCC34}";
+        public static BlueprintFeature FreedomDrunkFeat()
+        {
+            var icon = AbilityRefs.FreedomOfMovement.Reference.Get().Icon;
+
+            var ability = AbilityConfigurator.New(FreedomDrunkAblity, FreedomDrunkAblityGuid)
+                .CopyFrom(
+                AbilityRefs.FreedomOfMovement,
+                typeof(AbilitySpawnFx))
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .ApplyBuff(BuffRefs.FreedomOfMovementBuff.ToString(), ContextDuration.Fixed(1))
+                        .Build())
+                .SetDisplayName(FreedomDisplayName)
+                .SetDescription(FreedomDescription)
+                .SetIcon(icon)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: "fd01f3f969a04febab7877a17aebb812")
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Swift)
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Supernatural)
+                .Configure();
+
+            return FeatureConfigurator.New(FreedomDrunk, FreedomDrunkGuid)
+              .SetDisplayName(FreedomDisplayName)
+              .SetDescription(FreedomDescription)
+              .SetIcon(icon)
+              .AddFacts(new() { ability })
+              .AddPrerequisiteClassLevel(CharacterClassRefs.MonkClass.ToString(), 8)
+              .AddToFeatureSelection("97da13a43026460f8d4d54e1c69af202")
               .Configure();
         }
 
@@ -641,6 +677,7 @@ namespace PrestigePlus.Blueprint.Archetype
 
         public static BlueprintFeature OneTouchFeat()
         {
+            OneTouchDrunkFeat();
             var icon = AbilityRefs.FingerOfDeath.Reference.Get().Icon;
 
             var Buff2 = BuffConfigurator.New(OneTouchBuff2, OneTouchBuff2Guid)
@@ -687,6 +724,68 @@ namespace PrestigePlus.Blueprint.Archetype
               .AddFacts(new() { ability, ability2 })
               .AddPrerequisiteClassLevel(CharacterClassRefs.MonkClass.ToString(), 12)
               .AddToFeatureSelection(FeatureSelectionRefs.MonkKiPowerSelection.ToString())
+              .Configure();
+        }
+
+        private const string OneTouchDrunk = "ManeuverMaster.OneTouchDrunk";
+        public static readonly string OneTouchDrunkGuid = "{38B96E86-4D50-4FBA-B110-0A352AB46F60}";
+
+        private const string OneTouchDrunkAblity = "ManeuverMaster.UseOneTouchDrunk";
+        private static readonly string OneTouchDrunkAblityGuid = "{389C6165-B279-4B37-A0D3-4E2E3B1F11BB}";
+
+        private const string OneTouchDrunkAblity2 = "ManeuverMaster.UseOneTouchDrunk2";
+        private static readonly string OneTouchDrunkAblity2Guid = "{4C9A26C8-32E1-4FF8-852C-79AA381AB592}";
+
+        private const string OneTouchDrunkBuff2 = "ManeuverMaster.OneTouchDrunkBuff2";
+        public static readonly string OneTouchDrunkBuff2Guid = "{769474D4-30F0-4F43-A081-541D1A7BDAFA}";
+        public static BlueprintFeature OneTouchDrunkFeat()
+        {
+            var icon = AbilityRefs.FingerOfDeath.Reference.Get().Icon;
+
+            var Buff2 = BuffConfigurator.New(OneTouchDrunkBuff2, OneTouchDrunkBuff2Guid)
+             .SetDisplayName(OneTouchDisplayName)
+             .SetDescription(OneTouchDescription)
+             .SetIcon(icon)
+             .AddAttackTypeChange(false, false, AttackType.Touch, AttackType.Melee)
+             .Configure();
+
+            var ability = AbilityConfigurator.New(OneTouchDrunkAblity, OneTouchDrunkAblityGuid)
+                .AllowTargeting(enemies: true)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .ApplyBuff(Buff2, ContextDuration.Fixed(1), toCaster: true)
+                        .Add<OneTouchAttack>()
+                        .Build())
+                .SetDisplayName(OneTouchDisplayName)
+                .SetDescription(OneTouchDescription)
+                .SetIcon(icon)
+                .AddComponent<AbilityRequirementHasResource>(c => { c.Amount = 1; c.Resource = BlueprintTool.GetRef<BlueprintAbilityResourceReference>("fd01f3f969a04febab7877a17aebb812"); })
+                .SetRange(AbilityRange.Weapon)
+                .SetType(AbilityType.Extraordinary)
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(OneTouchDrunkAblity2, OneTouchDrunkAblity2Guid)
+                .AllowTargeting(enemies: true)
+                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Immediate)
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                        .ApplyBuff(Buff2, ContextDuration.Fixed(1), toCaster: true)
+                        .Add<OneTouchAttack>(c => { c.ki = true; })
+                        .Build())
+                .SetDisplayName(OneTouchDisplayName2)
+                .SetDescription(OneTouchDescription2)
+                .SetIcon(icon)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: "fd01f3f969a04febab7877a17aebb812")
+                .SetRange(AbilityRange.Weapon)
+                .SetType(AbilityType.Extraordinary)
+                .Configure();
+
+            return FeatureConfigurator.New(OneTouchDrunk, OneTouchDrunkGuid)
+              .SetDisplayName(OneTouchDisplayName)
+              .SetDescription(OneTouchDescription)
+              .SetIcon(icon)
+              .AddFacts(new() { ability, ability2 })
+              .AddPrerequisiteClassLevel(CharacterClassRefs.MonkClass.ToString(), 12)
+              .AddToFeatureSelection("97da13a43026460f8d4d54e1c69af202")
               .Configure();
         }
     }
