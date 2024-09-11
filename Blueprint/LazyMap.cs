@@ -25,6 +25,13 @@ namespace PrestigePlus.Blueprint
             var map = root.m_StartGlobalMap.Get();
             map.MechanicsSpeedBase *= 1000;
             map.VisualSpeedBase *= 1000;
+
+            var root2 = RootRefs.BlueprintRoot.Reference.Get();
+            var ranks = root2.m_Kingdom.Get().RankUps.m_RankUps;
+            foreach (var rank in ranks)
+            {
+                rank.m_RequiredStatValues = [0, 1, 2, 3, 4, 5, 6, 7, 999990000];
+            }
         }
     }
 
