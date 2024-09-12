@@ -418,6 +418,9 @@ namespace PrestigePlus
             Toggle.New(GetKey("lazymap"), defaultValue: false, Helpers.CreateString("toggle-desc113", "Lazy Crusade"))
               .ShowVisualConnection())
           .AddToggle(
+            Toggle.New(GetKey("joypatch"), defaultValue: true, Helpers.CreateString("toggle-desc114", "Joy Patches"))
+              .ShowVisualConnection())
+          .AddToggle(
             Toggle.New(GetKey("ecpatch"), defaultValue: true, Helpers.CreateString("toggle-desc89", "Ensure Compability with Expanded Content"))
               .ShowVisualConnection())
           .AddToggle(
