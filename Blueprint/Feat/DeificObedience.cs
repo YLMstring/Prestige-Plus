@@ -154,6 +154,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(MagdhFeat())
               .AddToAllFeatures(ZonKuthonFeat())
               .AddToAllFeatures(SeramaydielFeat())
+              .AddToAllFeatures(NethysFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -326,6 +327,7 @@ namespace PrestigePlus.Blueprint.Feat
             var icon = AbilityRefs.IceBody.Reference.Get().Icon;
 
             var area = AbilityAreaEffectConfigurator.New(Naderi3Aura, Naderi3AuraGuid)
+                .SetFx(AbilityAreaEffectRefs.AuraofColdAreaEffect.Reference.Get().Fx)
                 .SetAffectEnemies(true)
                 .SetTargetType(BlueprintAbilityAreaEffect.TargetType.Any)
                 .SetAffectDead(false)
@@ -5678,6 +5680,171 @@ namespace PrestigePlus.Blueprint.Feat
                     .SetIcon(icon)
                     .AddFacts(new() { ability, ability2 })
                     .AddComponent<SeramaydielSpecialDC>(c => { c.Ability = ability3; c.buff = Buff1; })
+                    .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+                    .Configure();
+        }
+
+        private const string Nethys = "DeificObedience.Nethys";
+        public static readonly string NethysGuid = "{2AC35E10-11EA-4EE9-A0E7-31DE7E629452}";
+
+        internal const string NethysDisplayName = "DeificObedienceNethys.Name";
+        private const string NethysDescription = "DeificObedienceNethys.Description";
+        public static BlueprintFeature NethysFeat()
+        {
+            var icon = FeatureRefs.NethysFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Nethys, NethysGuid)
+              .SetDisplayName(NethysDisplayName)
+              .SetDescription(NethysDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.NethysFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.TrueNeutral, group: Prerequisite.GroupType.Any)
+              .AddToIsPrerequisiteFor(NethysExaltedFeat())
+              .AddConcentrationBonus(false, value: 4)
+              .Configure();
+        }
+
+        private const string NethysExalted = "DeificObedience.NethysExalted";
+        public static readonly string NethysExaltedGuid = "{D783A71F-372F-4E04-A746-BF4CF6837CBC}";
+
+        internal const string NethysExaltedDisplayName = "DeificObedienceNethysExalted.Name";
+        private const string NethysExaltedDescription = "DeificObedienceNethysExalted.Description";
+        public static BlueprintProgression NethysExaltedFeat()
+        {
+            var icon = FeatureRefs.NethysFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(NethysExalted, NethysExaltedGuid)
+              .SetDisplayName(NethysExaltedDisplayName)
+              .SetDescription(NethysExaltedDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(NethysGuid)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(12, CreateNethys1())
+              .AddToLevelEntry(16, NethysExalted2Feat())
+              .AddToLevelEntry(20, NethysExalted3Feat())
+              .Configure();
+        }
+
+        private const string Nethys1 = "SpellPower.Nethys1";
+        public static readonly string Nethys1Guid = "{FC5DE4DC-26CC-45C7-B4E6-DE008FE50E40}";
+        internal const string Nethys1DisplayName = "SpellPowerNethys1.Name";
+        private const string Nethys1Description = "SpellPowerNethys1.Description";
+
+        private const string Nethys1Ablity = "SpellPower.UseNethys1";
+        private static readonly string Nethys1AblityGuid = "{B1E54001-FBCE-4068-8C9C-D31338236524}";
+        private static BlueprintFeature CreateNethys1()
+        {
+            var icon = AbilityRefs.MageArmor.Reference.Get().Icon;
+
+            var ability = AbilityConfigurator.New(Nethys1Ablity, Nethys1AblityGuid)
+                .CopyFrom(
+                AbilityRefs.MageArmor,
+                //typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx))
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                    .CastSpell(AbilityRefs.MageArmor.ToString(), overrideSpellLevel: 1)
+                    .Build())
+                .AddPretendSpellLevel(spellLevel: 1)
+                .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Nethys1, Nethys1Guid)
+              .SetDisplayName(Nethys1DisplayName)
+              .SetDescription(Nethys1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string Nethys2 = "DeificObedience.Nethys2";
+        public static readonly string Nethys2Guid = "{DBD93612-6543-471B-A3B4-0798E0E70F6A}";
+
+        internal const string Nethys2DisplayName = "DeificObedienceNethys2.Name";
+        private const string Nethys2Description = "DeificObedienceNethys2.Description";
+        public static BlueprintFeature NethysExalted2Feat()
+        {
+            var icon = FeatureRefs.SpellStrikeFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Nethys2, Nethys2Guid)
+              .SetDisplayName(Nethys2DisplayName)
+              .SetDescription(Nethys2Description)
+              .SetIcon(icon)
+              .AddMagusMechanicPart(AddMagusMechanicPart.Feature.Spellstrike)
+              .AddFacts([ActivatableAbilityRefs.SpellStrikeAbility.ToString()])
+              .Configure();
+        }
+
+        private static readonly string Nethys3Name = "DeificObedienceNethys3";
+        public static readonly string Nethys3Guid = "{90EFBDA7-7126-4DC5-A27E-71CEED69F91F}";
+
+        private static readonly string Nethys3DisplayName = "DeificObedienceNethys3.Name";
+        private static readonly string Nethys3Description = "DeificObedienceNethys3.Description";
+
+        private const string Nethys3AuraBuff = "DeificObedienceStyle.Nethys3AuraBuff";
+        private static readonly string Nethys3AuraBuffGuid = "{F90BBE7F-6598-4300-B5C4-C58B1610386A}";
+
+        private const string Nethys3Buff = "DeificObedienceStyle.Nethys3Buff";
+        private static readonly string Nethys3BuffGuid = "{565CE3F6-9BE4-4C11-A943-45CABAA80253}";
+
+        private const string Nethys3Aura = "DeificObedienceStyle.Nethys3Aura";
+        private static readonly string Nethys3AuraGuid = "{9AE786F5-5594-4DBA-AB34-418BE83F8542}";
+
+        private const string Nethys3Ability = "DeificObedienceStyle.Nethys3Ability";
+        private static readonly string Nethys3AbilityGuid = "{CB15C482-E892-4D8A-878D-4FD74C0EEC3B}";
+
+        private const string Nethys3AbilityRes = "DeificObedienceStyle.Nethys3AbilityRes";
+        private static readonly string Nethys3AbilityResGuid = "{4D8F17EB-30B8-4E69-9233-AF704C1C6C12}";
+
+        public static BlueprintFeature NethysExalted3Feat()
+        {
+            var icon = AbilityRefs.AuraofcoldAbility.Reference.Get().Icon;
+
+            var Buff2 = BuffConfigurator.New(Nethys3Buff, Nethys3BuffGuid)
+              .SetDisplayName(Nethys3DisplayName)
+              .SetDescription(Nethys3Description)
+              .SetIcon(icon)
+              .AddIncreaseCasterLevel(value: 2)
+              .Configure();
+
+            var area = AbilityAreaEffectConfigurator.New(Nethys3Aura, Nethys3AuraGuid)
+                .SetFx(AbilityAreaEffectRefs.AuraofColdAreaEffect.Reference.Get().Fx)
+                .SetTargetType(BlueprintAbilityAreaEffect.TargetType.Ally)
+                .SetAffectDead(false)
+                .SetShape(AreaEffectShape.Cylinder)
+                .SetSize(23.Feet())
+                .AddAbilityAreaEffectBuff(Buff2)
+                .Configure();
+
+            var Buff1 = BuffConfigurator.New(Nethys3AuraBuff, Nethys3AuraBuffGuid)
+              .SetDisplayName(Nethys3DisplayName)
+              .SetDescription(Nethys3Description)
+              .SetIcon(icon)
+              .AddAreaEffect(area)
+              .SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
+              .Configure();
+
+            var abilityresourse = AbilityResourceConfigurator.New(Nethys3AbilityRes, Nethys3AbilityResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(1)
+                        .IncreaseByLevelStartPlusDivStep(classes: [CharacterClassRefs.FighterClass.ToString()], otherClassLevelsMultiplier: 1, levelsPerStep: 4, bonusPerStep: 1)
+                        .Build())
+                .Configure();
+
+            var ability = ActivatableAbilityConfigurator.New(Nethys3Ability, Nethys3AbilityGuid)
+                .SetDisplayName(Nethys3DisplayName)
+                .SetDescription(Nethys3Description)
+                .SetIcon(icon)
+                .SetBuff(Buff1)
+                .AddActivatableAbilityResourceLogic(requiredResource: abilityresourse, spendType: ActivatableAbilityResourceLogic.ResourceSpendType.NewRound)
+                .Configure();
+
+            return FeatureConfigurator.New(Nethys3Name, Nethys3Guid)
+                    .SetDisplayName(Nethys3DisplayName)
+                    .SetDescription(Nethys3Description)
+                    .SetIcon(icon)
+                    .AddFacts(new() { ability })
                     .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
                     .Configure();
         }

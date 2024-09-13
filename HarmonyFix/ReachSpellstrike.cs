@@ -32,4 +32,21 @@ namespace PrestigePlus.HarmonyFix
 
         private static BlueprintFeatureReference Ace = BlueprintTool.GetRef<BlueprintFeatureReference>(SpireDefender.ReachSpellstrikeGuid);
     }
+
+    [HarmonyPatch(typeof(UnitPartMagus), nameof(UnitPartMagus.IsSpellFromMagusSpellList))]
+    internal class ReachSpellStrike2
+    {
+        static void Postfix(ref UnitPartMagus __instance, ref AbilityData spell, ref bool __result)
+        {
+            if (!__result && __instance.Owner.HasFact(Nethys))
+            {
+                if (__instance.Owner.Unit.GetThreatHand()?.Weapon?.Blueprint?.Category == Kingmaker.Enums.WeaponCategory.Quarterstaff)
+                {
+                    __result = true;
+                }
+            }
+        }
+
+        private static BlueprintFeatureReference Nethys = BlueprintTool.GetRef<BlueprintFeatureReference>(DeificObedience.Nethys2Guid);
+    }
 }

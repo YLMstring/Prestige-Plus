@@ -77,8 +77,6 @@ namespace PrestigePlus
         [HarmonyPostfix]
         static void Postfix(SimpleBlueprint __result, BlueprintGuid guid)
         {
-            if (!ModMenu.ModMenu.GetSettingValue<bool>(Main.GetKey("joypatch"))) return;
-
             if (__result is not BlueprintScriptableObject blueprint) return;
 
             HashSet<(BlueprintScriptableObject, BlueprintComponent, BlueprintComponent)> set = [];
@@ -92,7 +90,7 @@ namespace PrestigePlus
                         var newc = Helpers.CreateCopy(c);
                         newc.OwnerBlueprint = blueprint;
                         set.Add((blueprint, c, newc));
-                        Main.Logger.Info("Replace Owner for " + c.name + " in " + blueprint.name);
+                        //Main.Logger.Info("Replace Owner for " + c.name + " in " + blueprint.name);
                     }
                 }
             }

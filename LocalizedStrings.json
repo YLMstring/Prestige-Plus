@@ -14831,6 +14831,105 @@
     "enGB": "You leave a mystical link with enemy spellcasters that lets you instantly move to them. Every time you are targeted by an enemy spell, you gain the ability to teleport to the spellcaster as a move action for the next two rounds. Additionally, your extradimensional travel spells and effects can never be blocked.",
     "ruRU": "Вы образуете мистическую связь с вражескими заклинателями, которая позволяет вам мгновенное перемещаться к ним.\nПреимущество: Каждый раз, когда вас поражает вражеское заклинание, вы получаете способность телепортироваться к заклинателю в качестве сопутствующего действия в течение 2 раундов. Кроме того, ваши заклинания и эффекты пространственного перемещения не могут быть заблокированы.",
     "zhCN": "你在敌方施法者身上留下一道能让你瞬移过去的神秘链接。每当你成为敌方法术的目标时，在接下来的两轮内你可以用移动动作传送至施法者身边。此外，你的次元法术或效果永远不会被阻断。"
+  },
+  {
+    "Key": "DeificObedienceNethys.Name",
+    "ProcessTemplates": false,
+    "enGB": "Nethys Obedience",
+    "zhCN": "涅希斯仪典"
+  },
+  {
+    "Key": "DeificObedienceNethys.Description",
+    "enGB": "Inscribe blessings to Nethys, arcane formulae, and lines of prayer on a blank parchment. Don’t inscribe a complete spell—only notations sufficient to potentially spur a reader to study magic in an effort to complete the incantation. At the culmination of your obedience, cast any spell or spell-like ability or activate a spell completion or spell trigger magic item. Gain a +4 bonus on concentration checks.",
+    "zhCN": "在一张空白的羊皮纸上写下献给涅希斯的祝词，祷文以及奥术公式。不要写下完整的法术——只写一些符号，这些符号足以激励可能的读者，令其为了完成这道法术而去研究魔法。在仪典快要完结的时候，施放任意法术，使用类法术能力或者启动一个法术完成或法术触发型魔法物品。在专注检定中获得+4加值。"
+  },
+  {
+    "Key": "DeificObedienceNethysExalted.Name",
+    "ProcessTemplates": false,
+    "enGB": "Nethys (Exalted)",
+    "zhCN": "涅希斯（大尊者）"
+  },
+  {
+    "Key": "DeificObedienceNethysExalted.Description",
+    "enGB": "Become an exalted to gain access to hIS boons, which will be granted at certain character or class levels.",
+    "zhCN": "成为大尊者来获取他的神恩资格，你会在合适的角色或职业等级得到神恩。"
+  },
+  {
+    "Key": "SpellPowerNethys1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Magical Essences",
+    "zhCN": "魔法精华"
+  },
+  {
+    "Key": "SpellPowerNethys1.Description",
+    "enGB": "mage armor 3/day",
+    "zhCN": "法师护甲 3次/日"
+  },
+  {
+    "Key": "DeificObedienceNethys2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Staff Channel",
+    "zhCN": "法杖传导"
+  },
+  {
+    "Key": "DeificObedienceNethys2.Description",
+    "enGB": "You can deliver touch spells through a quarterstaff. This functions as the magus’s spellstrike ability",
+    "zhCN": "你能够通过木棍传递接触法术。该能力如同魔战士的法术打击一般运作。"
+  },
+  {
+    "Key": "DeificObedienceNethys3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Pure Magic Aura",
+    "zhCN": "纯粹魔法灵光"
+  },
+  {
+    "Key": "DeificObedienceNethys3.Description",
+    "enGB": "You radiate an aura of the pure essence of magic. You can use this ability a number of rounds per day equal to 1 + 1 for every 4 Hit Dice you possess. These rounds don’t need to be consecutive, and you can activate and deactivate your aura as a free action. You and any allies within 20 feet of you increase your caster levels by 2.",
+    "zhCN": "你会散发出由纯粹的魔法精华形成的灵光。你能够使用该能力的轮数为1轮 + 你每具有4个生命骰再加1轮。这些轮数不必连续，而且你能够以自由动作启动或解消它。你与任何距离你20尺范围之内的盟友的施法者等级增加2。"
+  },
+  {
+    "Key": "DeificObedienceSeramaydiel.Name",
+    "ProcessTemplates": false,
+    "enGB": "Seramaydiel Obedience",
+    "zhCN": "瑟拉梅笛尔仪典"
+  },
+  {
+    "Key": "DeificObedienceSeramaydiel.Description",
+    "enGB": "Sing or play a musical instrument in public where strangers can hear you and be inspired by you. If no suitable public areas are located nearby, compose an original poem about Seramaydiel’s influence in your life and leave it where a passing stranger may find it. Gain a +4 sacred bonus on saving throws against sonic effects.",
+    "zhCN": "在公共场合歌唱或表演一段乐器，让聆听的陌生人被你的音乐所激励。如果找不到合适的场所，就瑟拉梅笛尔对你人生的影响作一首诗，留在路过的陌生人能找到的地方。在对抗音波效果的豁免上获得 +4神圣加值。"
+  },
+  {
+    "Key": "SpellPowerSeramaydiel1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Communicator",
+    "zhCN": "沟通者"
+  },
+  {
+    "Key": "SpellPowerSeramaydiel1.Description",
+    "enGB": "purging finale 1/day",
+    "zhCN": "净化谢幕曲 1次/日"
+  },
+  {
+    "Key": "DeificObedienceSeramaydiel2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Quiet Muse",
+    "zhCN": "娟好静秀"
+  },
+  {
+    "Key": "DeificObedienceSeramaydiel2.Description",
+    "enGB": "You can cast brilliant inspiration three times per day.",
+    "zhCN": "每日3次，你可以施放辉煌启言。"
+  },
+  {
+    "Key": "DeificObedienceSeramaydiel3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Paralyzing Song",
+    "zhCN": "瘫痪之歌"
+  },
+  {
+    "Key": "DeificObedienceSeramaydiel3.Description",
+    "enGB": "You make music with such skill and pathos that all around you become frozen still. Once per day as a full-round action, you may attempt a Use Magic Device check. All enemies within 30 feet who can hear you must make a successful Will save (DC equal to the result of your Use Magic Device check) or be affected as though by hold monster for as long as you continue playing.",
+    "zhCN": "你的音乐是如此富有技巧和悲情的感染力，以至于你周围的一切都静止了。每天1次，以一个整轮动作，你进行使用魔法装置检定。所有30英尺内能听到声音的敌人必须进行意志豁免（DC等于你使用魔法装置检定的结果），若失败则会如同受到怪物定身术的影响，持续到你停止表演为止。"
   }
 
 ]
