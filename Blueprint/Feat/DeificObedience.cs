@@ -327,7 +327,7 @@ namespace PrestigePlus.Blueprint.Feat
             var icon = AbilityRefs.IceBody.Reference.Get().Icon;
 
             var area = AbilityAreaEffectConfigurator.New(Naderi3Aura, Naderi3AuraGuid)
-                .SetFx(AbilityAreaEffectRefs.AuraofColdAreaEffect.Reference.Get().Fx)
+                //.SetFx(AbilityAreaEffectRefs.AuraofColdAreaEffect.Reference.Get().Fx)
                 .SetAffectEnemies(true)
                 .SetTargetType(BlueprintAbilityAreaEffect.TargetType.Any)
                 .SetAffectDead(false)
@@ -5619,7 +5619,7 @@ namespace PrestigePlus.Blueprint.Feat
             var area = AbilityAreaEffectConfigurator.New(Seramaydiel3Aura, Seramaydiel3AuraGuid)
                 .SetAffectEnemies(true)
                 .SetTargetType(BlueprintAbilityAreaEffect.TargetType.Enemy)
-                .SetFx(AbilityAreaEffectRefs.InspireCourageArea.Reference.Get().Fx)
+                .SetFx(AbilityAreaEffectRefs.InspireHeroicsArea.Reference.Get().Fx)
                 .SetAffectDead(false)
                 .SetShape(AreaEffectShape.Cylinder)
                 .SetSize(35.Feet())
@@ -5740,8 +5740,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .CopyFrom(
                 AbilityRefs.MageArmor,
                 //typeof(AbilityEffectRunAction),
-                typeof(SpellComponent),
-                typeof(AbilitySpawnFx))
+                typeof(SpellComponent))
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                     .CastSpell(AbilityRefs.MageArmor.ToString(), overrideSpellLevel: 1)
                     .Build())
@@ -5799,7 +5798,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static BlueprintFeature NethysExalted3Feat()
         {
-            var icon = AbilityRefs.AuraofcoldAbility.Reference.Get().Icon;
+            var icon = AbilityRefs.ProtectionFromSpells.Reference.Get().Icon;
 
             var Buff2 = BuffConfigurator.New(Nethys3Buff, Nethys3BuffGuid)
               .SetDisplayName(Nethys3DisplayName)
@@ -5809,7 +5808,7 @@ namespace PrestigePlus.Blueprint.Feat
               .Configure();
 
             var area = AbilityAreaEffectConfigurator.New(Nethys3Aura, Nethys3AuraGuid)
-                .SetFx(AbilityAreaEffectRefs.AuraofColdAreaEffect.Reference.Get().Fx)
+                .SetFx(AbilityAreaEffectRefs.AeonPrimordialMagicSupportGazeArea.Reference.Get().Fx)
                 .SetTargetType(BlueprintAbilityAreaEffect.TargetType.Ally)
                 .SetAffectDead(false)
                 .SetShape(AreaEffectShape.Cylinder)
