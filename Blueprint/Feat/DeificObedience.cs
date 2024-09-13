@@ -70,6 +70,8 @@ using static Kingmaker.Armies.TacticalCombat.Grid.TacticalCombatGrid;
 using Kingmaker.Designers.EventConditionActionSystem.Actions;
 using Kingmaker.UnitLogic.Abilities.Components.AreaEffects;
 using PrestigePlus.Feats;
+using BlueprintCore.Utils.Assets;
+using System.Threading;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -5614,6 +5616,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .AddContextRankConfig(ContextRankConfigs.BuffRank(SeramaydielAuraBuffGuid))
                 .SetRange(AbilityRange.Personal)
                 .SetType(AbilityType.Supernatural)
+                .AddLineOfSightIgnorance()
                 .Configure();
 
             var area = AbilityAreaEffectConfigurator.New(Seramaydiel3Aura, Seramaydiel3AuraGuid)
@@ -5647,7 +5650,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetBuff(Buff1)
                 .SetDeactivateIfOwnerDisabled()
                 .SetDeactivateImmediately()
-                .SetOnlyInCombat()
+                .SetDeactivateIfCombatEnded()
                 .SetHiddenInUI()
                 .Configure();
 
@@ -5808,7 +5811,6 @@ namespace PrestigePlus.Blueprint.Feat
               .Configure();
 
             var area = AbilityAreaEffectConfigurator.New(Nethys3Aura, Nethys3AuraGuid)
-                .SetFx(AbilityAreaEffectRefs.AeonPrimordialMagicSupportGazeArea.Reference.Get().Fx)
                 .SetTargetType(BlueprintAbilityAreaEffect.TargetType.Ally)
                 .SetAffectDead(false)
                 .SetShape(AreaEffectShape.Cylinder)
