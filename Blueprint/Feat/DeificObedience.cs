@@ -5637,6 +5637,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetStacking(StackingType.Ignore)
               .AddAreaEffect(area)
               .SetFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddCombatStateTrigger(ActionsBuilder.New().RemoveSelf().Build())
               .Configure();
 
             var abilityresourse = AbilityResourceConfigurator.New(Seramaydiel3AbilityRes, Seramaydiel3AbilityResGuid)
@@ -5650,7 +5651,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetBuff(Buff1)
                 .SetDeactivateIfOwnerDisabled()
                 .SetDeactivateImmediately()
-                .SetDeactivateIfCombatEnded()
+                //.SetDeactivateIfCombatEnded()
                 .SetHiddenInUI()
                 .Configure();
 
@@ -5802,7 +5803,7 @@ namespace PrestigePlus.Blueprint.Feat
         public static BlueprintFeature NethysExalted3Feat()
         {
             var icon = AbilityRefs.ProtectionFromSpells.Reference.Get().Icon;
-
+            
             var Buff2 = BuffConfigurator.New(Nethys3Buff, Nethys3BuffGuid)
               .SetDisplayName(Nethys3DisplayName)
               .SetDescription(Nethys3Description)
