@@ -34,6 +34,7 @@
 - [Ragathiel](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Ragathiel): requires worshipping Ragathiel (Expanded Content) or Lawful Good
 - [Chaldira (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Chaldira): requires thievery 1, worshipping Sarenrae or Neutral Good
 - [Shelyn (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Shelyn): requires worshipping Shelyn or Neutral Good
+- [Seramaydiel](https://aonprd.com/DeityDisplay.aspx?ItemName=Seramaydiel): requires Inspire Courage or Neutral Good
 - [Desna](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Desna): requires worshipping Desna or Chaotic Good
 - [Milani (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Milani): requires worshipping Milani (Expanded Content) or Chaotic Good
 - [Pulura](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Pulura): requires worshipping Pulura or Chaotic Good
@@ -42,6 +43,7 @@
 - [Magdh](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Magdh): requires worshipping Magdh (Expanded Content) or Lawful Neutral
 - [Gozreh (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Gozreh): requires worshipping Gozreh or Neutral
 - [Pharasma (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Pharasma): requires worshipping Pharasma or Neutral
+- [Nethys (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Nethys): requires worshipping Nethys or Neutral
 - [Mrtyu](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Mrtyu): requires worshipping Mrtyu (Expanded Content) or Neutral
 - [Naderi (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Naderi): requires worshipping Naderi (Expanded Content) or Neutral
 - [Nivi (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Nivi%20Rhombodazzle): requires worshipping Torag or Neutral
@@ -444,7 +446,7 @@
 - Infernal Healing: You can fully heal outside of combat by spending gold, as if you buy a wand of infernal healing and use it! (gold : hp = 3:2)
 - Weak Crits against Enemies: Symmetrical with owlcat weak crits settings, making it fair (default off)
 - English Learning Mode: Show English dialogues along with any other language of yours (default off)
-- Lazy Crusade: Global map speed * 1000, reveal range * 1000, unlimited army movement (default off)
+- Lazy Crusade: Global map speed * 1000, reveal range * 1000, unlimited army movement, easier level up (default off)
 - Spell Turning effects no longer reflect touch spells and AoE spells, as per tabletop
 - Razmiri Mask no longer reflects anything more than Aroden Belt would
 - Enemy AI now recognize your permanent Spell Turning effects and act like a sane person
@@ -454,7 +456,6 @@
 - Fix the bug that physical kinetic blasts that create an area effect don't count as magical.
 - Fix the bug(?) that a sawtooth saber can't be wielded with two hands.
 - Fix the bug that eldritch scion's arcane accuracy incorrectly uses INT.
-- Fix the bug that certain enemies trying to cast self-only spells to MC, then getting stuck forever.
 - Fix the bug that aeon bane giving crazy attack bonus.
 - Fix the bug that Clemency of Shadows triggers every AoO regardless of whether it crits or not.
 - Fix the bug that Dragon Disciple can't progress spell books other than spontaneous arcane ones (2-4, 6-8, 9-10)
@@ -462,9 +463,11 @@
 - Fix the bug(?) that you can't skip selections.
 - Fix the bug that Drunken Technique: Firewater Breath doesn't deal any damage when saved.
 - Fix the bug that activate abilities are effectively missing the last charge.
-- Fix the bug that Ghost Druidess gets herself stuck trying to cast an invalid spell.
 - Fix the bug that stat damage can't kill you for some reason.
 - Add a null check to SavingThrowBonusAgainstDescriptor.
+- Joy Patches: Fix the owner blueprint issue Wrath Patches keep complaining about.
+- You can no longer directly target an enemy with an ability which it's immune to.
+- Better AI: No longer choose invalid targets, no longer try to dominate other creatures with dominate person (vampire), no longer cast contagion (unreasonably weak, and also buggy for AI)
 ## Mod Combo
 
 ### [Character Options+](https://github.com/WittleWolfie/CharacterOptionsPlus)
