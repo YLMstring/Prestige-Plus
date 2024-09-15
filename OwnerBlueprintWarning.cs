@@ -78,7 +78,6 @@ namespace PrestigePlus
         static void Postfix(SimpleBlueprint __result, BlueprintGuid guid)
         {
             if (__result is not BlueprintScriptableObject blueprint) return;
-
             HashSet<(BlueprintScriptableObject, BlueprintComponent, BlueprintComponent)> set = [];
 
             foreach (var c in blueprint.ComponentsArray)
