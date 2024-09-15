@@ -88,9 +88,7 @@ namespace PrestigePlus
                     if (ErrorComponentTypes.Any(t => t.IsAssignableFrom(c.GetType())))
                     {
                         var newc = Helpers.CreateCopy(c);
-                        newc.OwnerBlueprint = blueprint;
                         set.Add((blueprint, c, newc));
-                        //Main.Logger.Info("Replace Owner for " + c.name + " in " + blueprint.name);
                     }
                 }
             }
