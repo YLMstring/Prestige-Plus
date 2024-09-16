@@ -52,7 +52,6 @@ using PrestigePlus.CustomComponent.PrestigeClass;
 using PrestigePlus.Patch;
 using PrestigePlus.CustomComponent;
 using PrestigePlus.Modify;
-using TabletopTweaks.Core.Utilities;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -134,12 +133,13 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .Configure();
 
             var ability = AbilityConfigurator.New(LichTouchAblity, LichTouchAblityGuid)
-                .CopyFrom(AbilityRefs.WarpriestFervorNegativeAbility)
+                .CopyFrom(
+                AbilityRefs.WarpriestFervorNegativeAbility,
+                typeof(AbilityDeliverTouch))
                 .SetDisplayName(LichTouchDisplayName)
                 .SetDescription(LichTouchDescription)
                 .SetIcon(icon)
                 .SetCanTargetSelf(true)
-                .AddComponent(Helpers.CreateCopy(AbilityRefs.WarpriestFervorNegativeAbility.Reference.Get().GetComponent<AbilityDeliverTouch>()))
                 .SetType(AbilityType.Supernatural)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
                 .Conditional(conditions: ConditionsBuilder.New().HasFact(FeatureRefs.NegativeEnergyAffinity.ToString()).Build(),

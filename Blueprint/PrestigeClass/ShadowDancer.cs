@@ -48,7 +48,6 @@ using BlueprintCore.Conditions.Builder;
 using Kingmaker.UnitLogic.Abilities.Components.TargetCheckers;
 using static Kingmaker.EntitySystem.Properties.BaseGetter.PropertyContextAccessor;
 using PrestigePlus.CustomComponent.BasePrestigeEnhance;
-using TabletopTweaks.Core.Utilities;
 
 namespace PrestigePlus.Blueprint.PrestigeClass
 {
@@ -269,9 +268,12 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetMax(4)
                 .Configure();
             var ability = AbilityConfigurator.New(ShadowCallAblity, ShadowCallAblityGuid)
-                .CopyFrom(AbilityRefs.ShadowConjuration)
-                .AddComponent(Helpers.CreateCopy(AbilityRefs.ShadowConjuration.Reference.Get().GetComponent<AbilityShadowSpell>()))
-                .AddComponent(Helpers.CreateCopy(AbilityRefs.ShadowConjuration.Reference.Get().GetComponent<SpellComponent>()))
+                .CopyFrom(
+                AbilityRefs.ShadowConjuration,
+                typeof(AbilityEffectRunAction),
+                typeof(AbilityVariants),
+                typeof(AbilityShadowSpell),
+                typeof(SpellComponent))
                 .SetType(AbilityType.SpellLike)
                 .AddAbilityCasterInCombat(true)
                 .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }, max: 10, min: 4))
@@ -293,9 +295,12 @@ namespace PrestigePlus.Blueprint.PrestigeClass
             var icon = AbilityRefs.ShadowConjurationGreater.Reference.Get().Icon;
 
             var ability = AbilityConfigurator.New(ShadowCallAblity2, ShadowCallAblityGuid2)
-                .CopyFrom(AbilityRefs.ShadowConjurationGreater)
-                .AddComponent(Helpers.CreateCopy(AbilityRefs.ShadowConjurationGreater.Reference.Get().GetComponent<AbilityShadowSpell>()))
-                .AddComponent(Helpers.CreateCopy(AbilityRefs.ShadowConjurationGreater.Reference.Get().GetComponent<SpellComponent>()))
+                .CopyFrom(
+                AbilityRefs.ShadowConjurationGreater,
+                typeof(AbilityEffectRunAction),
+                typeof(AbilityVariants),
+                typeof(AbilityShadowSpell),
+                typeof(SpellComponent))
                 .SetType(AbilityType.SpellLike)
                 .AddAbilityCasterInCombat(true)
                 .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }, max: 10, min: 4))
@@ -335,9 +340,12 @@ namespace PrestigePlus.Blueprint.PrestigeClass
                 .SetMax(2)
                 .Configure();
             var ability = AbilityConfigurator.New(ShadowPowerAblity, ShadowPowerAblityGuid)
-                .CopyFrom(AbilityRefs.ShadowEvocation)
-                .AddComponent(Helpers.CreateCopy(AbilityRefs.ShadowEvocation.Reference.Get().GetComponent<AbilityShadowSpell>()))
-                .AddComponent(Helpers.CreateCopy(AbilityRefs.ShadowEvocation.Reference.Get().GetComponent<SpellComponent>()))
+                .CopyFrom(
+                AbilityRefs.ShadowEvocation,
+                typeof(AbilityEffectRunAction),
+                typeof(AbilityVariants),
+                typeof(AbilityShadowSpell),
+                typeof(SpellComponent))
                 .SetType(AbilityType.SpellLike)
                 .AddAbilityCasterInCombat(true)
                 .AddContextRankConfig(ContextRankConfigs.ClassLevel(new string[] { ArchetypeGuid }, max: 10, min: 8))

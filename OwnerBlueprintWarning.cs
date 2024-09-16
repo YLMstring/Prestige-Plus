@@ -100,7 +100,7 @@ namespace PrestigePlus
 
                             var reader = new StreamReader(ms);
                             var jsonReader = new JsonTextReader(reader);
-                            var newc = (BlueprintComponent)Json.Serializer.Deserialize(jsonReader, c.GetType());
+                            var newc = (BlueprintComponent)Json.Serializer.Deserialize(jsonReader, c.GetType()) ?? Helpers.CreateCopy(c);
                             if (newc != null)
                             {
                                 blueprint.ComponentsArray[i] = newc;
