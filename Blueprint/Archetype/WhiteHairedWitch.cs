@@ -28,6 +28,7 @@ using Kingmaker.UnitLogic;
 using Kingmaker.Designers.Mechanics.Facts;
 using PrestigePlus.CustomAction.OtherFeatRelated;
 using PrestigePlus.CustomAction.ClassRelated;
+using TabletopTweaks.Core.Utilities;
 
 namespace PrestigePlus.Blueprint.Archetype
 {
@@ -97,9 +98,8 @@ namespace PrestigePlus.Blueprint.Archetype
                 .Build();
 
             var abilityunlimited = AbilityConfigurator.New(WhiteHairAbility, WhiteHairAbilityGuid)
-                .CopyFrom(
-                AbilityRefs.MagicMissile,
-                typeof(AbilityDeliverProjectile))
+                .CopyFrom(AbilityRefs.MagicMissile)
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.MagicMissile.Reference.Get().GetComponent<AbilityDeliverProjectile>()))
                 .SetDisplayName(WhiteHairDisplayName)
                 .SetDescription(WhiteHairDescription)
                 .SetIcon(icon)

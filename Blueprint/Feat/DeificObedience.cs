@@ -72,6 +72,7 @@ using Kingmaker.UnitLogic.Abilities.Components.AreaEffects;
 using PrestigePlus.Feats;
 using BlueprintCore.Utils.Assets;
 using System.Threading;
+using TabletopTweaks.Core.Utilities;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -434,13 +435,12 @@ namespace PrestigePlus.Blueprint.Feat
             var icon = FeatureRefs.JumpUp.Reference.Get().Icon;
 
             var ability = AbilityConfigurator.New(ShelynSentinel1Ablity, ShelynSentinel1AblityGuid)
-                .CopyFrom(
-                AbilityRefs.Entangle,
-                typeof(AbilityEffectRunAction),
-                typeof(SpellComponent),
-                typeof(AbilityAoERadius),
-                typeof(ContextRankConfig),
-                typeof(SpellDescriptorComponent))
+                .CopyFrom(AbilityRefs.Entangle)
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.Entangle.Reference.Get().GetComponent<AbilityDeliverTouch>()))
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.Entangle.Reference.Get().GetComponent<SpellComponent>()))
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.Entangle.Reference.Get().GetComponent<AbilityAoERadius>()))
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.Entangle.Reference.Get().GetComponent<ContextRankConfig>()))
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.Entangle.Reference.Get().GetComponent<SpellDescriptorComponent>()))
                 .AddPretendSpellLevel(spellLevel: 1)
                 .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
                 .SetType(AbilityType.SpellLike)
@@ -1066,8 +1066,8 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(SpellDescriptorComponent),
                 typeof(AbilitySpawnFx),
                 typeof(AbilityExecuteActionOnCast),
-                typeof(AbilityTargetHasFact),
-                typeof(ContextRankConfig))
+                typeof(AbilityTargetHasFact))
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.BeastShapeI.Reference.Get().GetComponent<ContextRankConfig>()))
                 .AddPretendSpellLevel(spellLevel: 3)
                 .AddAbilityResourceLogic(6, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
                 .SetType(AbilityType.SpellLike)
@@ -1468,12 +1468,10 @@ namespace PrestigePlus.Blueprint.Feat
             var icon = FeatureRefs.CavalierTacticianFeature.Reference.Get().Icon;
 
             var ability3 = AbilityConfigurator.New(Otolmens1Ablity3, Otolmens1Ablity3Guid)
-                .CopyFrom(
-                AbilityRefs.Blink,
-                typeof(AbilityEffectRunAction),
-                typeof(SpellComponent),
-                typeof(ContextRankConfig),
-                typeof(SpellDescriptorComponent))
+                .CopyFrom(AbilityRefs.Blink)
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.Blink.Reference.Get().GetComponent<AbilityEffectRunAction>()))
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.Blink.Reference.Get().GetComponent<SpellComponent>()))
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.Blink.Reference.Get().GetComponent<ContextRankConfig>()))
                 .SetIcon(icon)
                 .AddPretendSpellLevel(spellLevel: 3)
                 .AddAbilityResourceLogic(6, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
@@ -1718,13 +1716,12 @@ namespace PrestigePlus.Blueprint.Feat
                 .Configure();
 
             var ability3 = AbilityConfigurator.New(Lamashtu1Ablity3, Lamashtu1Ablity3Guid)
-                .CopyFrom(
-                AbilityRefs.Fear,
-                typeof(AbilityEffectRunAction),
-                typeof(SpellComponent),
-                typeof(SpellDescriptorComponent),
-                typeof(AbilityDeliverProjectile),
-                typeof(ContextRankConfig))
+                .CopyFrom(AbilityRefs.Fear)
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.Fear.Reference.Get().GetComponent<AbilityEffectRunAction>()))
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.Fear.Reference.Get().GetComponent<SpellComponent>()))
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.Fear.Reference.Get().GetComponent<SpellDescriptorComponent>()))
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.Fear.Reference.Get().GetComponent<AbilityDeliverProjectile>()))
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.Fear.Reference.Get().GetComponent<ContextRankConfig>()))
                 .AddPretendSpellLevel(spellLevel: 3)
                 .AddAbilityResourceLogic(6, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
                 .SetType(AbilityType.SpellLike)
@@ -3493,8 +3490,8 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(AbilityEffectRunAction),
                 typeof(SpellComponent),
                 typeof(ContextCalculateSharedValue),
-                typeof(AbilityDeliverProjectile),
                 typeof(SpellDescriptorComponent))
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.ColorSpray.Reference.Get().GetComponent<AbilityDeliverProjectile>()))
                 .AddPretendSpellLevel(spellLevel: 1)
                 .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
                 .SetType(AbilityType.SpellLike)
@@ -4147,10 +4144,9 @@ namespace PrestigePlus.Blueprint.Feat
                     .Build();
 
             var ability = AbilityConfigurator.New(Calistria2Ablity, Calistria2AblityGuid)
-                .CopyFrom(
-                AbilityRefs.CharmDomainBaseAbility,
-                typeof(AbilityDeliverTouch),
-                typeof(AbilityResourceLogic))
+                .CopyFrom(AbilityRefs.CharmDomainBaseAbility)
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.CharmDomainBaseAbility.Reference.Get().GetComponent<AbilityDeliverTouch>()))
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.CharmDomainBaseAbility.Reference.Get().GetComponent<AbilityResourceLogic>()))
                 .SetDisplayName(Calistria2DisplayName)
                 .SetDescription(Calistria2Description)
                 .AddAbilityEffectRunAction(shoot)
@@ -4491,12 +4487,11 @@ namespace PrestigePlus.Blueprint.Feat
                 .Configure();
 
             var ability2 = AbilityConfigurator.New(Akuma2Ablity2, Akuma2Ablity2Guid)
-                .CopyFrom(
-                AbilityRefs.DivinePower,
-                typeof(AbilityEffectRunAction),
-                typeof(SpellComponent),
-                typeof(ContextRankConfig),
-                typeof(AbilitySpawnFx))
+                .CopyFrom(AbilityRefs.DivinePower)
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.DivinePower.Reference.Get().GetComponent<AbilityEffectRunAction>()))
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.DivinePower.Reference.Get().GetComponent<SpellComponent>()))
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.DivinePower.Reference.Get().GetComponent<ContextRankConfig>()))
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.DivinePower.Reference.Get().GetComponent<AbilitySpawnFx>()))
                 .AddPretendSpellLevel(spellLevel: 4)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
                 .SetType(AbilityType.SpellLike)
@@ -4996,13 +4991,12 @@ namespace PrestigePlus.Blueprint.Feat
                 .Configure();
 
             var ability = AbilityConfigurator.New(Irori3Ability, Irori3AbilityGuid)
-                .CopyFrom(
-                AbilityRefs.Restoration,
-                typeof(AbilityEffectRunAction),
-                typeof(SpellComponent),
-                typeof(AbilityDeliverTouch),
-                typeof(AbilitySpawnFx),
-                typeof(AbilityUseOnRest))
+                .CopyFrom(AbilityRefs.Restoration)
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.Restoration.Reference.Get().GetComponent<AbilityEffectRunAction>()))
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.Restoration.Reference.Get().GetComponent<SpellComponent>()))
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.Restoration.Reference.Get().GetComponent<AbilityDeliverTouch>()))
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.Restoration.Reference.Get().GetComponent<AbilitySpawnFx>()))
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.Restoration.Reference.Get().GetComponent<AbilityUseOnRest>()))
                 .SetMaterialComponent(AbilityRefs.OwlsWisdom.Reference.Get().MaterialComponent) //effectively remove the material 
                 .SetDisplayName(Irori3DisplayName)
                 .SetDescription(Irori3Description)
