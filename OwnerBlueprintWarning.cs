@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,7 @@ using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Mechanics.Components;
 using Kingmaker.UnitLogic.Mechanics.Properties;
 using Kingmaker.Utility;
+using Newtonsoft.Json;
 using TabletopTweaks.Core.Utilities;
 
 namespace PrestigePlus
@@ -77,30 +79,37 @@ namespace PrestigePlus
         [HarmonyPostfix]
         static void Postfix(SimpleBlueprint __result, BlueprintGuid guid)
         {
-            if (__result is not BlueprintScriptableObject blueprint) return;
-            HashSet<(BlueprintScriptableObject, BlueprintComponent, BlueprintComponent)> set = [];
-
-            foreach (var c in blueprint.ComponentsArray)
+            try
             {
-                if (c.OwnerBlueprint != blueprint)
+                if (__result is not BlueprintScriptableObject blueprint) return;
+                if (blueprint.ComponentsArray.Count() == 0) return;
+                for (int i = 0; i < blueprint.ComponentsArray.Count(); i++)
                 {
-                    if (ErrorComponentTypes.Any(t => t.IsAssignableFrom(c.GetType())))
+                    var c = blueprint.ComponentsArray[i];
+                    if (c.OwnerBlueprint != blueprint)
                     {
-                        var newc = Helpers.CreateCopy(c);
-                        set.Add((blueprint, c, newc));
+                        if (ErrorComponentTypes.Any(t => t.IsAssignableFrom(c.GetType())))
+                        {
+                            var ms = new MemoryStream();
+
+                            var writer = new StreamWriter(ms);
+                            var jsonWriter = new JsonTextWriter(writer);
+                            Json.Serializer.Serialize(jsonWriter, c);
+
+                            ms.Position = 0;
+
+                            var reader = new StreamReader(ms);
+                            var jsonReader = new JsonTextReader(reader);
+                            var newc = (BlueprintComponent)Json.Serializer.Deserialize(jsonReader, c.GetType()) ?? Helpers.CreateCopy(c);
+                            if (newc != null)
+                            {
+                                blueprint.ComponentsArray[i] = newc;
+                                blueprint.ComponentsArray[i].OwnerBlueprint = blueprint;
+                            }
+                        }
                     }
                 }
-            }
-            foreach (var tuple in set)
-            {
-                ReplaceComp(tuple.Item1, tuple.Item2, tuple.Item3);
-            }
+            } catch (Exception ex) { Main.Logger.Error("Failed to joypatch " + guid.ToString(), ex); }
         }
-        private static void ReplaceComp(BlueprintScriptableObject blueprint, BlueprintComponent c, BlueprintComponent newc)
-        {
-            blueprint.RemoveComponent(c);
-            blueprint.AddComponent(newc);
-        }
-
     }
 }
