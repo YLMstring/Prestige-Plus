@@ -90,22 +90,26 @@ namespace PrestigePlus
                     {
                         if (ErrorComponentTypes.Any(t => t.IsAssignableFrom(c.GetType())))
                         {
+                            Json.BlueprintBeingRead = new BlueprintJsonWrapper(blueprint);
+
                             var ms = new MemoryStream();
 
                             var writer = new StreamWriter(ms);
                             var jsonWriter = new JsonTextWriter(writer);
                             Json.Serializer.Serialize(jsonWriter, c);
 
+                            jsonWriter.Flush();
+
                             ms.Position = 0;
 
                             var reader = new StreamReader(ms);
                             var jsonReader = new JsonTextReader(reader);
-                            var newc = (BlueprintComponent)Json.Serializer.Deserialize(jsonReader, c.GetType()) ?? Helpers.CreateCopy(c);
-                            if (newc != null)
-                            {
-                                blueprint.ComponentsArray[i] = newc;
-                                blueprint.ComponentsArray[i].OwnerBlueprint = blueprint;
-                            }
+                            blueprint.ComponentsArray[i] = (BlueprintComponent)Json.Serializer.Deserialize(jsonReader, c.GetType());
+
+                            blueprint.ComponentsArray[i].OwnerBlueprint = blueprint;
+
+                            Json.BlueprintBeingRead = null;
+                            Main.Logger.Info("Finish joypatch " + guid.ToString());
                         }
                     }
                 }
