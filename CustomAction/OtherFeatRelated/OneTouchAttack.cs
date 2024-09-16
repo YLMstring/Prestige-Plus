@@ -76,6 +76,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                 maybeCaster.Context.TriggerRule(ruleAttackWithWeapon);
                 GameHelper.RemoveBuff(maybeCaster, Buff);
                 GameHelper.RemoveBuff(maybeCaster, Buff2);
+                GameHelper.RemoveBuff(maybeCaster, Buff3);
             }
         }
 
@@ -83,5 +84,6 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
         public bool ki = false;
         private static BlueprintBuffReference Buff = BlueprintTool.GetRef<BlueprintBuffReference>(ManeuverMaster.OneTouchBuff2Guid);
         private static BlueprintBuffReference Buff2 = BlueprintTool.GetRef<BlueprintBuffReference>(WeaponMaster.UnstoppableStrikeBuff2Guid);
+        private static BlueprintBuffReference Buff3 = BlueprintTool.GetRef<BlueprintBuffReference>(ManeuverMaster.OneTouchDrunkBuff2Guid);
     }
 }
