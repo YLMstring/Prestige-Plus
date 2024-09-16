@@ -436,7 +436,7 @@ namespace PrestigePlus.Blueprint.Feat
 
             var ability = AbilityConfigurator.New(ShelynSentinel1Ablity, ShelynSentinel1AblityGuid)
                 .CopyFrom(AbilityRefs.Entangle)
-                .AddComponent(Helpers.CreateCopy(AbilityRefs.Entangle.Reference.Get().GetComponent<AbilityDeliverTouch>()))
+                .AddComponent(Helpers.CreateCopy(AbilityRefs.Entangle.Reference.Get().GetComponent<AbilityEffectRunAction>()))
                 .AddComponent(Helpers.CreateCopy(AbilityRefs.Entangle.Reference.Get().GetComponent<SpellComponent>()))
                 .AddComponent(Helpers.CreateCopy(AbilityRefs.Entangle.Reference.Get().GetComponent<AbilityAoERadius>()))
                 .AddComponent(Helpers.CreateCopy(AbilityRefs.Entangle.Reference.Get().GetComponent<ContextRankConfig>()))
