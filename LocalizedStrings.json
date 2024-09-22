@@ -12482,7 +12482,7 @@
   {
     "Key": "GeishaTeaCeremony.Name",
     "ProcessTemplates": false,
-    "enGB": "Tea Ceremony (inspire courage)",
+    "enGB": "Tea Ceremony (Inspire Courage)",
     "ruRU": "Чайная церемония (Песнь отваги)",
     "zhCN": "茶会（激发勇气）"
   },
@@ -12495,7 +12495,7 @@
   {
     "Key": "GeishaTeaCeremony2.Name",
     "ProcessTemplates": false,
-    "enGB": "Tea Ceremony (inspire competence)",
+    "enGB": "Tea Ceremony (Inspire Competence)",
     "ruRU": "Чайная церемония (Песнь мастерства)",
     "zhCN": "茶会（提振技能）"
   },
@@ -12508,7 +12508,7 @@
   {
     "Key": "GeishaTeaCeremony3.Name",
     "ProcessTemplates": false,
-    "enGB": "Tea Ceremony (inspire greatness)",
+    "enGB": "Tea Ceremony (Inspire Greatness)",
     "ruRU": "Чайная церемония (Песнь величия)",
     "zhCN": "茶会（提振战力）"
   },
@@ -12521,7 +12521,7 @@
   {
     "Key": "GeishaTeaCeremony4.Name",
     "ProcessTemplates": false,
-    "enGB": "Tea Ceremony (inspire heroics)",
+    "enGB": "Tea Ceremony (Inspire Heroics)",
     "ruRU": "Чайная церемония (Песнь героизма)",
     "zhCN": "茶会（激发豪情）"
   },
@@ -14854,7 +14854,7 @@
   },
   {
     "Key": "DeificObedienceNethysExalted.Description",
-    "enGB": "Become an exalted to gain access to hIS boons, which will be granted at certain character or class levels.",
+    "enGB": "Become an exalted to gain access to his boons, which will be granted at certain character or class levels.",
     "ruRU": "Станьте вознесенным, чтобы получить доступ к ее дарам, которые будут предоставлены на определенных уровнях персонажа или класса.",
     "zhCN": "成为大尊者来获取他的神恩资格，你会在合适的角色或职业等级得到神恩。"
   },
