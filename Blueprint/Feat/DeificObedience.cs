@@ -157,6 +157,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(ZonKuthonFeat())
               .AddToAllFeatures(SeramaydielFeat())
               .AddToAllFeatures(NethysFeat())
+              .AddToAllFeatures(ArsheaFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
