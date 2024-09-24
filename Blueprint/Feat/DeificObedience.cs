@@ -5850,5 +5850,161 @@ namespace PrestigePlus.Blueprint.Feat
                     .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
                     .Configure();
         }
+
+        private const string Arshea = "DeificObedience.Arshea";
+        public static readonly string ArsheaGuid = "{A7E36117-995C-421A-AA85-15E4C6D8152C}";
+
+        internal const string ArsheaDisplayName = "DeificObedienceArshea.Name";
+        private const string ArsheaDescription = "DeificObedienceArshea.Description";
+        public static BlueprintProgression ArsheaFeat()
+        {
+            var icon = AbilityRefs.AngelArmyOfHeaven.Reference.Get().Icon;
+            //"ArsheaFeature": "10A1CD64-E341-440F-B911-97E5907C5DF9",
+            return ProgressionConfigurator.New(Arshea, ArsheaGuid)
+              .SetDisplayName(ArsheaDisplayName)
+              .SetDescription(ArsheaDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature("10A1CD64-E341-440F-B911-97E5907C5DF9", group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.NeutralGood, group: Prerequisite.GroupType.Any)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(1, Arshea0Feat())
+              .AddToLevelEntry(12, CreateArshea1())
+              .AddToLevelEntry(16, Arshea2Feat())
+              .AddToLevelEntry(20, CreateArshea3())
+              .Configure();
+        }
+
+        private const string Arshea0 = "DeificObedience.Arshea0";
+        public static readonly string Arshea0Guid = "{BAA12443-DC11-4BBA-8455-97B44736B107}";
+
+        public static BlueprintFeature Arshea0Feat()
+        {
+            var icon = AbilityRefs.AngelArmyOfHeaven.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Arshea0, Arshea0Guid)
+              .SetDisplayName(ArsheaDisplayName)
+              .SetDescription(ArsheaDescription)
+              .SetIcon(icon)
+              .AddStatBonus(ModifierDescriptor.Sacred, false, StatType.CheckDiplomacy, 4)
+              .AddStatBonus(ModifierDescriptor.Sacred, false, StatType.CheckBluff, 4)
+              .Configure();
+        }
+
+        private const string Arshea1 = "SpellPower.Arshea1";
+        public static readonly string Arshea1Guid = "{395D4224-104B-4C87-9CFF-84C2039D0871}";
+        internal const string Arshea1DisplayName = "SpellPowerArshea1.Name";
+        private const string Arshea1Description = "SpellPowerArshea1.Description";
+        private static BlueprintFeature CreateArshea1()
+        {
+            var icon = AbilityRefs.MirrorImage.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Arshea1, Arshea1Guid)
+              .SetDisplayName(Arshea1DisplayName)
+              .SetDescription(Arshea1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { Socothbenoth1Ablity2Guid })
+              .Configure();
+        }
+
+        private const string Arshea2 = "DeificObedience.Arshea2";
+        public static readonly string Arshea2Guid = "{1CE50D39-D677-488E-B523-2061A7F5C2A5}";
+
+        internal const string Arshea2DisplayName = "DeificObedienceArshea2.Name";
+        private const string Arshea2Description = "DeificObedienceArshea2.Description";
+
+        private const string Arshea2Feature = "DeificObedience.Arshea2Feature";
+        private static readonly string Arshea2FeatureGuid = "{250F211C-AE7C-45F9-8377-39C0731B5BFF}";
+        public static BlueprintFeature Arshea2Feat()
+        {
+            var icon = AbilityRefs.OathOfPeace.Reference.Get().Icon;
+
+            var feat = FeatureConfigurator.New(Arshea2Feature, Arshea2FeatureGuid)
+             .SetDisplayName(Arshea2DisplayName)
+             .SetDescription(Arshea2Description)
+             .SetIcon(icon)
+             .AddContextStatBonus(StatType.AC, ContextValues.Property(UnitProperty.StatBonusCharisma), ModifierDescriptor.Armor, 1)
+             .AddRecalculateOnStatChange(stat: StatType.Charisma)
+             .Configure();
+
+            return FeatureConfigurator.New(Arshea2, Arshea2Guid)
+              .SetDisplayName(Arshea2DisplayName)
+              .SetDescription(Arshea2Description)
+              .SetIcon(icon)
+              .AddComponent<ArmorUnlockPP>(c => {
+                  c.NewFact = feat.ToReference<BlueprintUnitFactReference>();
+                  c.NoArmor = true;
+              })
+              .Configure();
+        }
+
+        private const string Arshea3 = "SpellPower.Arshea3";
+        public static readonly string Arshea3Guid = "{4AB8DDBD-B70A-47DF-B7E8-A77381C25E6B}";
+        internal const string Arshea3DisplayName = "SpellPowerArshea3.Name";
+        private const string Arshea3Description = "SpellPowerArshea3.Description";
+
+        private const string Arshea3Res = "DeificObedience.Arshea3Res";
+        private static readonly string Arshea3ResGuid = "{C4B273A6-B2BA-478A-A259-0F7C6B4623BB}";
+
+        private const string Arshea3Ability = "DeificObedience.Arshea3Ability";
+        private static readonly string Arshea3AbilityGuid = "{25954275-0839-4A5F-83B5-7099F0D4B16B}";
+
+        private const string Arshea3Ablity2 = "SpellPower.UseArshea32";
+        private static readonly string Arshea3Ablity2Guid = "{B40CFE19-CF8D-4577-B772-65E0F25A1666}";
+
+        private const string Arshea3Ablity3 = "SpellPower.UseArshea33";
+        private static readonly string Arshea3Ablity3Guid = "{EBFBEE47-34C2-4FC1-BA80-353AC6528B83}";
+        private static BlueprintFeature CreateArshea3()
+        {
+            var icon = AbilityRefs.FreedomOfMovement.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(Arshea3Res, Arshea3ResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(1))
+                .Configure();
+
+            var ability = AbilityConfigurator.New(Arshea3Ability, Arshea3AbilityGuid)
+                .CopyFrom(
+                AbilityRefs.FreedomOfMovement,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(ContextRankConfig),
+                typeof(AbilitySpawnFx))
+                .AddPretendSpellLevel(spellLevel: 5)
+                .SetRange(AbilityRange.Close)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(Arshea3Ablity2, Arshea3Ablity2Guid)
+                .CopyFrom(
+                AbilityRefs.StoneToFlesh,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(AbilityTargetStoneToFlesh),
+                typeof(AbilitySpawnFx))
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var ability3 = AbilityConfigurator.New(Arshea3Ablity3, Arshea3Ablity3Guid)
+                .CopyFrom(
+                AbilityRefs.WalkThroughSpace,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(SpellDescriptorComponent),
+                typeof(AbilitySpawnFx),
+                typeof(ContextRankConfigs))
+                .SetType(AbilityType.SpellLike)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .Configure();
+
+            return FeatureConfigurator.New(Arshea3, Arshea3Guid)
+              .SetDisplayName(Arshea3DisplayName)
+              .SetDescription(Arshea3Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability, ability2, ability3 })
+              .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+              .Configure();
+        }
     }
 }
