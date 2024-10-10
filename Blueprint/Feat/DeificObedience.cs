@@ -6122,7 +6122,7 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string Groetus3Description = "DeificObedienceGroetus3.Description";
 
         private const string Groetus3AuraBuff = "DeificObedienceStyle.Groetus3AuraBuff";
-        private static readonly string Groetus3AuraBuffGuid = "{F5305C4D-6819-4AC0-9F93-775380BB3F95}";
+        public static readonly string Groetus3AuraBuffGuid = "{F5305C4D-6819-4AC0-9F93-775380BB3F95}";
 
         private const string Groetus3Ability = "DeificObedienceStyle.Groetus3Ability";
         private static readonly string Groetus3AbilityGuid = "{2D114E94-7692-4C75-BD3D-F33ECF82034A}";
