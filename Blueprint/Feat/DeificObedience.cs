@@ -158,6 +158,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(SeramaydielFeat())
               .AddToAllFeatures(NethysFeat())
               .AddToAllFeatures(ArsheaFeat())
+              .AddToAllFeatures(GroetusFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -5859,7 +5860,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string ArsheaDescription = "DeificObedienceArshea.Description";
         public static BlueprintProgression ArsheaFeat()
         {
-            var icon = AbilityRefs.AngelArmyOfHeaven.Reference.Get().Icon;
+            var icon = FeatureRefs.DefensiveSpinFeature.Reference.Get().Icon;
             //"ArsheaFeature": "10A1CD64-E341-440F-B911-97E5907C5DF9",
             return ProgressionConfigurator.New(Arshea, ArsheaGuid)
               .SetDisplayName(ArsheaDisplayName)
@@ -5880,7 +5881,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static BlueprintFeature Arshea0Feat()
         {
-            var icon = AbilityRefs.AngelArmyOfHeaven.Reference.Get().Icon;
+            var icon = FeatureRefs.DefensiveSpinFeature.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Arshea0, Arshea0Guid)
               .SetDisplayName(ArsheaDisplayName)
