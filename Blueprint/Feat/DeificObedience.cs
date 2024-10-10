@@ -6104,11 +6104,14 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetType(AbilityType.SpellLike)
                 .Configure();
 
+            var action = ActionsBuilder.New().CastSpell(ability).Build();
+
             return FeatureConfigurator.New(Groetus2, Groetus2Guid)
               .SetDisplayName(Groetus2DisplayName)
               .SetDescription(Groetus2Description)
               .SetIcon(icon)
               .AddFacts([ability])
+              .AddCombatStateTrigger(action, action)
               .Configure();
         }
 
@@ -6126,7 +6129,6 @@ namespace PrestigePlus.Blueprint.Feat
 
         private const string Groetus3AbilityRes = "DeificObedienceStyle.Groetus3AbilityRes";
         private static readonly string Groetus3AbilityResGuid = "{39070388-0518-4F08-9E66-C5F527C21736}";
-
         public static BlueprintFeature GroetusExalted3Feat()
         {
             var icon = AbilityRefs.TimeTrap.Reference.Get().Icon;
