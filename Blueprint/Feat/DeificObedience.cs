@@ -6082,37 +6082,50 @@ namespace PrestigePlus.Blueprint.Feat
         }
 
         private const string Groetus2 = "DeificObedience.Groetus2";
-        public static readonly string Groetus2Guid = "{DBD93612-6543-471B-A3B4-0798E0E70F6A}";
+        public static readonly string Groetus2Guid = "{47803FF2-085C-4D3E-97FC-54DFEEAED489}";
 
         internal const string Groetus2DisplayName = "DeificObedienceGroetus2.Name";
         private const string Groetus2Description = "DeificObedienceGroetus2.Description";
+
+        private const string Groetus2Ablity = "SpellPower.UseGroetus2";
+        private static readonly string Groetus2AblityGuid = "{A616E632-5B47-48ED-9285-B7D134C41006}";
         public static BlueprintFeature GroetusExalted2Feat()
         {
-            var icon = FeatureRefs.SpellStrikeFeature.Reference.Get().Icon;
+            var icon = AbilityRefs.Invisibility.Reference.Get().Icon;
+
+            var ability = AbilityConfigurator.New(Groetus2Ablity, Groetus2AblityGuid)
+                .CopyFrom(
+                AbilityRefs.Invisibility,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx))
+                .AddPretendSpellLevel(spellLevel: 2)
+                .SetIsFullRoundAction(true)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
 
             return FeatureConfigurator.New(Groetus2, Groetus2Guid)
               .SetDisplayName(Groetus2DisplayName)
               .SetDescription(Groetus2Description)
               .SetIcon(icon)
-              .AddMagusMechanicPart(AddMagusMechanicPart.Feature.Spellstrike)
-              .AddFacts([ActivatableAbilityRefs.SpellStrikeAbility.ToString()])
+              .AddFacts([ability])
               .Configure();
         }
 
         private static readonly string Groetus3Name = "DeificObedienceGroetus3";
-        public static readonly string Groetus3Guid = "{90EFBDA7-7126-4DC5-A27E-71CEED69F91F}";
+        public static readonly string Groetus3Guid = "{5D7BF62D-3BE2-490F-893E-F7464BA31916}";
 
         private static readonly string Groetus3DisplayName = "DeificObedienceGroetus3.Name";
         private static readonly string Groetus3Description = "DeificObedienceGroetus3.Description";
 
         private const string Groetus3AuraBuff = "DeificObedienceStyle.Groetus3AuraBuff";
-        private static readonly string Groetus3AuraBuffGuid = "{F90BBE7F-6598-4300-B5C4-C58B1610386A}";
+        private static readonly string Groetus3AuraBuffGuid = "{F5305C4D-6819-4AC0-9F93-775380BB3F95}";
 
         private const string Groetus3Ability = "DeificObedienceStyle.Groetus3Ability";
-        private static readonly string Groetus3AbilityGuid = "{CB15C482-E892-4D8A-878D-4FD74C0EEC3B}";
+        private static readonly string Groetus3AbilityGuid = "{2D114E94-7692-4C75-BD3D-F33ECF82034A}";
 
         private const string Groetus3AbilityRes = "DeificObedienceStyle.Groetus3AbilityRes";
-        private static readonly string Groetus3AbilityResGuid = "{4D8F17EB-30B8-4E69-9233-AF704C1C6C12}";
+        private static readonly string Groetus3AbilityResGuid = "{39070388-0518-4F08-9E66-C5F527C21736}";
 
         public static BlueprintFeature GroetusExalted3Feat()
         {
@@ -6122,7 +6135,8 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(Groetus3DisplayName)
               .SetDescription(Groetus3Description)
               .SetIcon(icon)
-
+              .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+              .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
             var abilityresourse = AbilityResourceConfigurator.New(Groetus3AbilityRes, Groetus3AbilityResGuid)
@@ -6133,17 +6147,15 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetDisplayName(Groetus3DisplayName)
                 .SetDescription(Groetus3Description)
                 .SetIcon(icon)
-                .SetAnimation(Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionCastSpell.CastAnimationStyle.Omni)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-
+                    .ApplyBuff(Buff1, ContextDuration.Fixed(2))
+                    .Add<ContextActionRestoreAction>()
                     .Build())
                 .AddHideDCFromTooltip()
-                .SetSpellDescriptor(SpellDescriptor.Paralysis | SpellDescriptor.MovementImpairing | SpellDescriptor.MindAffecting | SpellDescriptor.Compulsion)
-                .AddAbilityTargetsAround(includeDead: false, targetType: TargetType.Any, radius: 30.Feet(), spreadSpeed: 40.Feet())
+                .SetActionType(Kingmaker.UnitLogic.Commands.Base.UnitCommand.CommandType.Free)
                 .SetRange(AbilityRange.Personal)
                 .SetType(AbilityType.Supernatural)
                 .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
-                .SetIsFullRoundAction()
                 .Configure();
 
             return FeatureConfigurator.New(Groetus3Name, Groetus3Guid)
