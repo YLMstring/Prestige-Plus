@@ -6153,7 +6153,7 @@ namespace PrestigePlus.Blueprint.Feat
                 .SetDescription(Groetus3Description)
                 .SetIcon(icon)
                 .AddAbilityEffectRunAction(ActionsBuilder.New()
-                    .ApplyBuff(Buff1, ContextDuration.Fixed(2))
+                    .ApplyBuffWithDurationSeconds(Buff1, 9)
                     .Add<ContextActionRestoreAction>()
                     .Build())
                 .AddHideDCFromTooltip()
