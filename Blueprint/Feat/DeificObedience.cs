@@ -6100,9 +6100,11 @@ namespace PrestigePlus.Blueprint.Feat
                 typeof(AbilityEffectRunAction),
                 typeof(SpellComponent),
                 typeof(AbilitySpawnFx))
-                .AddPretendSpellLevel(spellLevel: 2)
+                .SetDisplayName(Groetus2DisplayName)
+                .SetDescription(Groetus2Description)
                 .SetIsFullRoundAction(true)
-                .SetType(AbilityType.SpellLike)
+                .SetRange(AbilityRange.Personal)
+                .SetType(AbilityType.Supernatural)
                 .Configure();
 
             var action = ActionsBuilder.New().CastSpell(ability).Build();
@@ -6132,13 +6134,13 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string Groetus3AbilityResGuid = "{39070388-0518-4F08-9E66-C5F527C21736}";
         public static BlueprintFeature GroetusExalted3Feat()
         {
-            var icon = AbilityRefs.TimeTrap.Reference.Get().Icon;
+            var icon = FeatureRefs.GroetusFeature.Reference.Get().Icon;
 
             var Buff1 = BuffConfigurator.New(Groetus3AuraBuff, Groetus3AuraBuffGuid)
               .SetDisplayName(Groetus3DisplayName)
               .SetDescription(Groetus3Description)
               .SetIcon(icon)
-              .AddToFlags(BlueprintBuff.Flags.HiddenInUi)
+              //.AddToFlags(BlueprintBuff.Flags.HiddenInUi)
               .AddToFlags(BlueprintBuff.Flags.StayOnDeath)
               .Configure();
 
