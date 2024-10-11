@@ -14855,7 +14855,7 @@
   {
     "Key": "DeificObedienceNethysExalted.Description",
     "enGB": "Become an exalted to gain access to his boons, which will be granted at certain character or class levels.",
-    "ruRU": "Станьте вознесенным, чтобы получить доступ к ее дарам, которые будут предоставлены на определенных уровнях персонажа или класса.",
+    "ruRU": "Станьте вознесенным, чтобы получить доступ к его дарам, которые будут предоставлены на определенных уровнях персонажа или класса.",
     "zhCN": "成为大尊者来获取他的神恩资格，你会在合适的角色或职业等级得到神恩。"
   },
   {
@@ -14953,99 +14953,117 @@
     "Key": "DeificObedienceGroetus.Name",
     "ProcessTemplates": false,
     "enGB": "Groetus Obedience",
+    "ruRU": "Послушание гротуса",
     "zhCN": "格罗图斯仪典"
   },
   {
     "Key": "DeificObedienceGroetus.Description",
     "enGB": "Preach of the coming end times to a listener who has not yet accepted this truth. If the person leaves or otherwise refuses to listen to you for the full hour, you must find another person to preach to so that you are proselytizing the entire time. Alternatively, if no one at all is available to listen, spend an hour contemplating ways and times the world might end—do so in an empty place where nothing lives and no person except Groetan worshipers have been for at least a month. While you contemplate, deface any surface available to you with unholy images and symbols, such as a skull-like moon. You then gain a +1 profane bonus on Will saving throws.",
+    "ruRU": "Проповедуйте о грядущих последних временах слушателю, который еще не принял эту истину. Если человек уходит или отказывается слушать вас в течение всего часа, найдите другого человека, чтобы проповедовать ему все это время. В качестве альтернативы, если никто не готов слушать, проведите час, размышляя о том, как и когда может наступить конец света, - сделайте это в пустом месте, где ничто не живет и где не было никого, кроме последователей Гротуса, по крайней мере, месяц. Пока вы размышляете, оскверните любую доступную вам поверхность нечестивыми изображениями и символами, например луной, похожей на череп. После этого вы получаете нечестивый бонус +1 к спасброскам Воли.",
     "zhCN": "向尚未接受这一真理的听众宣讲即将到来的末日。如果这个人在听够一小时之前离开，或以其他方式拒绝听你的宣讲，你必须找另一个人来宣讲，让总时长达到一小时。如果根本没有人来听，则用一个小时思考世界终结的可能方式和时间。这需要在一个无人居住的空地进行，并且除了格罗图斯信徒之外，至少一个月没有人来过。在你沉思时，用污邪的图画和符号（比如​​骷髅状的月亮）来玷污你能接触到的任何表面。你在意志豁免检定上获得+1亵渎加值。"
   },
   {
     "Key": "DeificObedienceGroetusExalted.Name",
     "ProcessTemplates": false,
     "enGB": "Groetus (Exalted)",
+    "ruRU": "Гротус (вознесенный)",
     "zhCN": "格罗图斯（大尊者）"
   },
   {
     "Key": "DeificObedienceGroetusExalted.Description",
     "enGB": "Become an exalted to gain access to his boons, which will be granted at certain character or class levels.",
+    "ruRU": "Станьте вознесенным, чтобы получить доступ к его дарам, которые будут предоставлены на определенных уровнях персонажа или класса.",
     "zhCN": "成为大尊者来获取他的神恩资格，你会在合适的角色或职业等级得到神恩。"
   },
   {
     "Key": "SpellPowerGroetus1.Name",
     "ProcessTemplates": false,
     "enGB": "Maddening Voice",
+    "ruRU": "Сводящий с ума голос",
     "zhCN": "催狂魔音"
   },
   {
     "Key": "SpellPowerGroetus1.Description",
     "enGB": "confusion 1/day",
+    "ruRU": "Вы получаете псевдозаклинание Замешательство 1/день.",
     "zhCN": "困惑术 1次/天"
   },
   {
     "Key": "DeificObedienceGroetus2.Name",
     "ProcessTemplates": false,
     "enGB": "Silent Witness",
+    "ruRU": "Безмолвный свидетель",
     "zhCN": "沉默见证人"
   },
   {
     "Key": "DeificObedienceGroetus2.Description",
     "enGB": "Emulating Groetus, you can observe your surroundings and the people within them without being heeded or harmed. As a full-round action, you can protect yourself with the effects of invisibility at will.",
+    "ruRU": "Подражая Гротусу, вы можете наблюдать за окружающим миром и людьми в нем, не обращая на них внимания и не причиняя им вреда. При помощи действия полного раунда вы можете по-желанию накладывать на себя эффект невидимости.",
     "zhCN": "效仿格罗图斯，你可以在不引起注意的情况下安全观察周围的环境和人。你可以用整轮动作任意对自己施加隐形术效果。"
   },
   {
     "Key": "DeificObedienceGroetus3.Name",
     "ProcessTemplates": false,
     "enGB": "Infinite Patience",
+    "ruRU": "Бесконечное терпение",
     "zhCN": "无穷耐心"
   },
   {
     "Key": "DeificObedienceGroetus3.Description",
     "enGB": "You will serve Groetus until the end of the world, no matter how long you must wait. You cannot die of old age, even by magical means, although aging otherwise affects you normally. In addition, once per day you can restore your standard action. If you do so, you can't use a swift action until after your next turn.",
+    "ruRU": "Вы будете служить Гротусу до конца света, сколько бы времени вам ни пришлось ждать. Вы не можете умереть от старости, даже с помощью магии, хотя в остальном старение влияет на вас нормально. Кроме того, раз в день вы можете восстановить основное действие. Если вы сделаете это, то вы не сможете совершать быстрое действие до начала вашего следующего хода.",
     "zhCN": "你将侍奉格罗图斯直至世界终结，无论你要为此等待多久。你无法老死，魔法手段也不能让你老死，虽然衰老引起的其它效果还是会正常出现。此外，每天一次你可以恢复你的标准动作。若如此做，直到你的下回合结束你都不能使用迅捷动作。"
   },
   {
     "Key": "DeificObedienceArshea.Name",
     "ProcessTemplates": false,
     "enGB": "Arshea Obedience",
+    "ruRU": "Послушание Аршея",
     "zhCN": "雅谁仪典"
   },
   {
     "Key": "DeificObedienceArshea.Description",
     "enGB": "Achieve sexual release by yourself or with one or more partners. Praise the most beautiful aspects of yourself and any partners aloud, and offer a prayer to Arshea while still naked. Gain a +4 sacred bonus on Diplomacy and Bluff skill checks when interacting with an intelligent creature who could be sexually attracted to you. The angel empyreal Lord Arshea is a champion of the repressed and weary, providing mortals deliverance from their bonds. This liberation applies to many of Arshea's worshipers, who often choose to ignore conventional gender identities, eventually choosing one that fits them best.",
+    "ruRU": "Достигните сексуального оргазма самостоятельно или с одним или несколькими партнерами. Восхваляйте вслух самые прекрасные стороны себя и партнеров и возносите молитву Аршею, оставаясь обнаженным. Вы получаете сакральный бонус +4 к проверкам Дипломатии и Обмана когда взаимодействуете с существами, которые могут находить вас сексуально превлекательным. Святозарный лорд Аршей - защитник подавленных и измученных, дающий смертным освобождение от их уз. Это освобождение распространяется на многих поклонников Аршея, которые часто предпочитают игнорировать общепринятую гендерную идентичность, в итоге выбирая ту, которая подходит им больше всего.",
     "zhCN": "独自一人，或在一位或多位伴侣陪伴下达到高潮。大声赞美你自己和伴侣最美丽的一面，并赤身裸体地向雅谁祈祷。当和你对其有性吸引力的智慧生命互动时，你在沟通和唬骗检定中获得+4神圣加值。The angel empyreal Lord Arshea is a champion of the repressed and weary, providing mortals deliverance from their bonds. This liberation applies to many of Arshea's worshipers, who often choose to ignore conventional gender identities, eventually choosing one that fits them best."
   },
   {
     "Key": "SpellPowerArshea1.Name",
     "ProcessTemplates": false,
     "enGB": "Arshea's Charmer",
+    "ruRU": "Чаровник Аршея",
     "zhCN": "雅谁的小可爱"
   },
   {
     "Key": "SpellPowerArshea1.Description",
     "enGB": "mirror image 2/day",
+    "ruRU": "Вы получаете псевдозаклинание Зеркальное отражение 2/день.",
     "zhCN": "镜像术 2次/天"
   },
   {
     "Key": "DeificObedienceArshea2.Name",
     "ProcessTemplates": false,
     "enGB": "Flawless Form",
+    "ruRU": "Безупречная форма",
     "zhCN": "无瑕形态"
   },
   {
     "Key": "DeificObedienceArshea2.Description",
     "enGB": "Gain an armor bonus equal to your Charisma modifier (minimum +1) whenever you wear revealing clothing and no armor.",
+    "ruRU": "Вы получаете бонус брони, равный вашему модификатору Харизмы (минимум +1) когда вы облачены в откровенные одежды и не носите броню.",
     "zhCN": "当你不穿护甲且穿着暴露服装时，在防御等级上获得等同于魅力调整值的盔甲加值（至少为1）。"
   },
   {
     "Key": "SpellPowerArshea3.Name",
     "ProcessTemplates": false,
     "enGB": "Liberation",
+    "ruRU": "Освобождение",
     "zhCN": "解放"
   },
   {
     "Key": "SpellPowerArshea3.Description",
     "enGB": "You can cast reached freedom of movement, stone to flesh, or walk through space once per day.",
+    "ruRU": "Раз в день вы можете сотворить дальнобойное заклинание Свобода движений, Превращение камня в плоть или Шаги сквозь пространство.",
     "zhCN": "你每天能够施放一次法术及远的行动自如，解除石化或者破空步。"
   }
 
