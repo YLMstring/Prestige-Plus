@@ -14948,6 +14948,105 @@
     "enGB": "You make music with such skill and pathos that all around you become frozen still. Once per day as a full-round action, you may attempt a Use Magic Device check. All enemies within 30 feet who can hear you must make a successful Will save (DC equal to the result of your Use Magic Device check) or be affected as though by hold monster for as long as you continue playing.",
     "ruRU": "Вы исполняете музыку с таким мастерством и пафосом, что все вокруг замирают на месте. Раз в день дествием полного раунда вы можете пройти проверку Использования магических устройств. Все враги в радиусе 30 футов, которые могут слышать вас должны совершить успешный спасбросок Воли (Сложность равна результату проверки Использования магических устройств) или оказаться под действием эффекта подобного заклинанию Обездвижить чудовищу до того момента, как вы прикратите выступление.",
     "zhCN": "你的音乐是如此富有技巧和悲情的感染力，以至于你周围的一切都静止了。每天1次，以一个整轮动作，你进行使用魔法装置检定。所有30英尺内能听到声音的敌人必须进行意志豁免（DC等于你使用魔法装置检定的结果），若失败则会如同受到怪物定身术的影响，持续到你停止表演为止。"
+  },
+  {
+    "Key": "DeificObedienceGroetus.Name",
+    "ProcessTemplates": false,
+    "enGB": "Groetus Obedience",
+    "zhCN": "格罗图斯仪典"
+  },
+  {
+    "Key": "DeificObedienceGroetus.Description",
+    "enGB": "Preach of the coming end times to a listener who has not yet accepted this truth. If the person leaves or otherwise refuses to listen to you for the full hour, you must find another person to preach to so that you are proselytizing the entire time. Alternatively, if no one at all is available to listen, spend an hour contemplating ways and times the world might end—do so in an empty place where nothing lives and no person except Groetan worshipers have been for at least a month. While you contemplate, deface any surface available to you with unholy images and symbols, such as a skull-like moon. You then gain a +1 profane bonus on Will saving throws.",
+    "zhCN": "向尚未接受这一真理的听众宣讲即将到来的末日。如果这个人在听够一小时之前离开，或以其他方式拒绝听你的宣讲，你必须找另一个人来宣讲，让总时长达到一小时。如果根本没有人来听，则用一个小时思考世界终结的可能方式和时间。这需要在一个无人居住的空地进行，并且除了格罗图斯信徒之外，至少一个月没有人来过。在你沉思时，用污邪的图画和符号（比如​​骷髅状的月亮）来玷污你能接触到的任何表面。你在意志豁免检定上获得+1亵渎加值。"
+  },
+  {
+    "Key": "DeificObedienceGroetusExalted.Name",
+    "ProcessTemplates": false,
+    "enGB": "Groetus (Exalted)",
+    "zhCN": "格罗图斯（大尊者）"
+  },
+  {
+    "Key": "DeificObedienceGroetusExalted.Description",
+    "enGB": "Become an exalted to gain access to his boons, which will be granted at certain character or class levels.",
+    "zhCN": "成为大尊者来获取他的神恩资格，你会在合适的角色或职业等级得到神恩。"
+  },
+  {
+    "Key": "SpellPowerGroetus1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Maddening Voice",
+    "zhCN": "催狂魔音"
+  },
+  {
+    "Key": "SpellPowerGroetus1.Description",
+    "enGB": "confusion 1/day",
+    "zhCN": "困惑术 1次/天"
+  },
+  {
+    "Key": "DeificObedienceGroetus2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Silent Witness",
+    "zhCN": "沉默见证人"
+  },
+  {
+    "Key": "DeificObedienceGroetus2.Description",
+    "enGB": "Emulating Groetus, you can observe your surroundings and the people within them without being heeded or harmed. As a full-round action, you can protect yourself with the effects of invisibility at will.",
+    "zhCN": "效仿格罗图斯，你可以在不引起注意的情况下安全观察周围的环境和人。你可以用整轮动作任意对自己施加隐形术效果。"
+  },
+  {
+    "Key": "DeificObedienceGroetus3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Infinite Patience",
+    "zhCN": "无穷耐心"
+  },
+  {
+    "Key": "DeificObedienceGroetus3.Description",
+    "enGB": "You will serve Groetus until the end of the world, no matter how long you must wait. You cannot die of old age, even by magical means, although aging otherwise affects you normally. In addition, once per day you can restore your standard action. If you do so, you can't use a swift action until after your next turn.",
+    "zhCN": "你将侍奉格罗图斯直至世界终结，无论你要为此等待多久。你无法老死，魔法手段也不能让你老死，虽然衰老引起的其它效果还是会正常出现。此外，每天一次你可以恢复你的标准动作。若如此做，直到你的下回合结束你都不能使用迅捷动作。"
+  },
+  {
+    "Key": "DeificObedienceArshea.Name",
+    "ProcessTemplates": false,
+    "enGB": "Arshea Obedience",
+    "zhCN": "雅谁仪典"
+  },
+  {
+    "Key": "DeificObedienceArshea.Description",
+    "enGB": "Achieve sexual release by yourself or with one or more partners. Praise the most beautiful aspects of yourself and any partners aloud, and offer a prayer to Arshea while still naked. Gain a +4 sacred bonus on Diplomacy and Bluff skill checks when interacting with an intelligent creature who could be sexually attracted to you. The angel empyreal Lord Arshea is a champion of the repressed and weary, providing mortals deliverance from their bonds. This liberation applies to many of Arshea's worshipers, who often choose to ignore conventional gender identities, eventually choosing one that fits them best.",
+    "zhCN": "独自一人，或在一位或多位伴侣陪伴下达到高潮。大声赞美你自己和伴侣最美丽的一面，并赤身裸体地向雅谁祈祷。当和你对其有性吸引力的智慧生命互动时，你在沟通和唬骗检定中获得+4神圣加值。The angel empyreal Lord Arshea is a champion of the repressed and weary, providing mortals deliverance from their bonds. This liberation applies to many of Arshea's worshipers, who often choose to ignore conventional gender identities, eventually choosing one that fits them best."
+  },
+  {
+    "Key": "SpellPowerArshea1.Name",
+    "ProcessTemplates": false,
+    "enGB": "Arshea's Charmer",
+    "zhCN": "雅谁的小可爱"
+  },
+  {
+    "Key": "SpellPowerArshea1.Description",
+    "enGB": "mirror image 2/day",
+    "zhCN": "镜像术 2次/天"
+  },
+  {
+    "Key": "DeificObedienceArshea2.Name",
+    "ProcessTemplates": false,
+    "enGB": "Flawless Form",
+    "zhCN": "无瑕形态"
+  },
+  {
+    "Key": "DeificObedienceArshea2.Description",
+    "enGB": "Gain an armor bonus equal to your Charisma modifier (minimum +1) whenever you wear revealing clothing and no armor.",
+    "zhCN": "当你不穿护甲且穿着暴露服装时，在防御等级上获得等同于魅力调整值的盔甲加值（至少为1）。"
+  },
+  {
+    "Key": "SpellPowerArshea3.Name",
+    "ProcessTemplates": false,
+    "enGB": "Liberation",
+    "zhCN": "解放"
+  },
+  {
+    "Key": "SpellPowerArshea3.Description",
+    "enGB": "You can cast reached freedom of movement, stone to flesh, or walk through space once per day.",
+    "zhCN": "你每天能够施放一次法术及远的行动自如，解除石化或者破空步。"
   }
 
 ]

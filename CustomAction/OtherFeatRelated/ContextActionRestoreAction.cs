@@ -35,11 +35,15 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
                 return;
             }           
             caster.CombatState.Cooldown.StandardAction = 0f;
+            if (caster.UsedTwoMoveAction())
+            {
+                caster.CombatState.Cooldown.MoveAction = caster.IsMoveActionRestricted() ? 0f : 3f;
+            }
             var state = Game.Instance.TurnBasedCombatController?.CurrentTurn?.GetActionsStates(caster)?.ActionsStates;
             if (state != null)
             {
                 Game.Instance.TurnBasedCombatController.CurrentTurn.GetActionsStates(caster).ActionsStates.Standard = 
-                    new CombatAction(CombatAction.ActivityState.Lost, CombatAction.ActivityState.Available, CombatAction.ActivityState.Available, 0f);
+                    new CombatAction(CombatAction.ActivityState.Available, CombatAction.ActivityState.Available, CombatAction.ActivityState.Available, 0f);
             }
         }
     }

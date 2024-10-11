@@ -35,6 +35,7 @@ using Kingmaker.TurnBasedMode;
 using static Kingmaker.Controllers.Combat.UnitCombatState;
 using Kingmaker.TurnBasedMode.Controllers;
 using Kingmaker;
+using Kingmaker.Blueprints.Root;
 
 namespace PrestigePlus.HarmonyFix
 {
@@ -166,6 +167,7 @@ namespace PrestigePlus.HarmonyFix
             {
                 if (!__result) { return; }
                 if (__instance.Caster.Unit == target?.Unit) { return; }
+                if (__instance.Caster.Unit.HasFact(BuffRefs.SpellStrikeBuff.Reference)) { return; }
                 var resist = target?.Unit?.Get<UnitPartSpellResistance>();
                 if (resist != null)
                 {

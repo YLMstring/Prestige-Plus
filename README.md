@@ -35,6 +35,7 @@
 - [Chaldira (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Chaldira): requires thievery 1, worshipping Sarenrae or Neutral Good
 - [Shelyn (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Shelyn): requires worshipping Shelyn or Neutral Good
 - [Seramaydiel](https://aonprd.com/DeityDisplay.aspx?ItemName=Seramaydiel): requires Inspire Courage or Neutral Good
+- [Arshea](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Arshea): requires worshipping Arshea (Expanded Content) or Neutral Good
 - [Desna](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Desna): requires worshipping Desna or Chaotic Good
 - [Milani (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Milani): requires worshipping Milani (Expanded Content) or Chaotic Good
 - [Pulura](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Pulura): requires worshipping Pulura or Chaotic Good
@@ -52,6 +53,7 @@
 - [The Lantern King](https://aonprd.com/DeityDisplay.aspx?ItemName=The%20Lantern%20King): requires worshipping The Lantern King (Expanded Content) or Chaotic Neutral
 - [Nocticula (sentinel)](https://aonprd.com/DeityDisplay.aspx?ItemName=Nocticula): requires worshipping Nocticula (Expanded Content) or Chaotic Neutral
 - Some of her boons have changed because she's in the middle of [spoilers](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Nocticula%20(Redeemed))
+- [Groetus (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Groetus): requires worshipping Groetus (Expanded Content) or Chaotic Neutral
 - [Zon-Kuthon (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Zon-Kuthon): requires worshipping Zon-Kuthon or Lawful Evil
 - [Achaekek (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Achaekek): requires worshipping Achaekek or Lawful Evil
 - [Mahathallah (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Mahathallah): requires worshipping Asmodeus or Lawful Evil
@@ -461,6 +463,7 @@
 - Fix the bug that Dragon Disciple can't progress spell books other than spontaneous arcane ones (2-4, 6-8, 9-10)
 - Fix the bug(?) that enemies can't take a 5 foot step.
 - Fix the bug(?) that you can't skip selections.
+- Fix the bug(?) that some prestige class requirements still apply after taking the first level.
 - Fix the bug that Drunken Technique: Firewater Breath doesn't deal any damage when saved.
 - Fix the bug that activate abilities are effectively missing the last charge.
 - Fix the bug that stat damage can't kill you for some reason.
