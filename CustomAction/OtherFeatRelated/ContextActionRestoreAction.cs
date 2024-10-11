@@ -39,7 +39,7 @@ namespace PrestigePlus.CustomAction.OtherFeatRelated
             if (state != null)
             {
                 Game.Instance.TurnBasedCombatController.CurrentTurn.GetActionsStates(caster).ActionsStates.Standard = 
-                    new CombatAction(CombatAction.ActivityState.Available, CombatAction.ActivityState.Available, CombatAction.ActivityState.Available, 0f);
+                    new CombatAction(CombatAction.ActivityState.Lost, CombatAction.ActivityState.Available, CombatAction.ActivityState.Available, 0f);
             }
         }
     }
