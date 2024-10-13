@@ -11034,7 +11034,7 @@
     "Key": "DeificObediencePulura3.Description",
     "enGB": "You can cast quickened walk through space once per day.",
     "ruRU": "Раз в день, вы можете сотворить ускоренное заклинание Шаги сквозь пространство",
-    "zhCN": "你能每天瞬发一次破空步。"
+    "zhCN": "你能每天瞬发一次空间穿行。"
   },
   {
     "Key": "DeificObedienceRovagug.Name",
@@ -11093,13 +11093,13 @@
     "ProcessTemplates": false,
     "enGB": "Improved Walk Through Space",
     "ruRU": "Шаги сквозь пространство+",
-    "zhCN": "精通破空步"
+    "zhCN": "精通空间穿行"
   },
   {
     "Key": "FeatWalkThroughSpace.Description",
     "enGB": "You can cast dimensional door at will when under the effect of walk through space spell.",
     "ruRU": "Под действием заклинания Шаги сквозь пространство, вы можете сотворять дверь в пространстве по желанию.",
-    "zhCN": "你在破空步持续期间可以任意施放次元门。"
+    "zhCN": "你在空间穿行持续期间可以任意施放次元门。"
   },
   {
     "Key": "LionBlade.Name",
@@ -12841,7 +12841,7 @@
     "Key": "SpellPowerIrori3.Description",
     "enGB": "Nine runic tattoos appear on your body, three for each of the three disciplines of Irori: mind, body, and spirit. As a standard action you can discharge the power stored in a tattoo up to 3 times per day. Body Tattoos contains restoration, which you can use as a spell-like ability. Mind Tattoos can be discharged to grant you a +4 sacred bonus to Wisdom for 1 minute. Spirit Tattoos allow you to assume an ethereal state for 1 minute as though using the spell walk through space.",
     "ruRU": "На вашем теле появляется 9 рунических татуировок, по 3 на каждую дисциплину Ирори: разум, тело и дух. 3 раза в день, основным действием, вы можете высвободить силу содержающуюся в татуировках. Татуировки тела содержат в себе силу восстановления, которое вы можете применять как псевдозаклинание. Татуировки разума могут дать вам сакральный бонус +4 к Мудрости на 1 минуту. Татуировки духа позволяют вам принимать бестелесную форму на 1 минуту, как при сотворении заклинания Шаги сквозь пространство.",
-    "zhCN": "九个符文纹身出现在你的身体上，其中各有三个符文对应着义洛理的身心灵三种教导。每日3次以标准动作，你能够耗用一个纹身的力量。身之符文容有复原术作为类法术能力，心之符文使用时为你的感知提供+4神圣加值，持续1分钟。灵之符文可以使你进入灵体状态1分钟，如同破空步法术一般。"
+    "zhCN": "九个符文纹身出现在你的身体上，其中各有三个符文对应着义洛理的身心灵三种教导。每日3次以标准动作，你能够耗用一个纹身的力量。身之符文容有复原术作为类法术能力，心之符文使用时为你的感知提供+4神圣加值，持续1分钟。灵之符文可以使你进入灵体状态1分钟，如同空间穿行法术一般。"
   },
   {
     "Key": "NewSpellLockjaw.Name",
@@ -15064,7 +15064,7 @@
     "Key": "SpellPowerArshea3.Description",
     "enGB": "You can cast reached freedom of movement, stone to flesh, or walk through space once per day.",
     "ruRU": "Раз в день вы можете сотворить дальнобойное заклинание Свобода движений, Превращение камня в плоть или Шаги сквозь пространство.",
-    "zhCN": "你每天能够施放一次法术及远的行动自如，解除石化或者破空步。"
+    "zhCN": "你每天能够施放一次法术及远的行动自如，解除石化或者空间穿行。"
   }
 
 ]
