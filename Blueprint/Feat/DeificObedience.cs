@@ -6309,5 +6309,112 @@ namespace PrestigePlus.Blueprint.Feat
                     .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
                     .Configure();
         }
+
+        private const string CaydenCailean = "DeificObedience.CaydenCailean";
+        public static readonly string CaydenCaileanGuid = "{708BD5F6-4C63-4489-AAB1-BD97A687E0DB}";
+
+        internal const string CaydenCaileanDisplayName = "DeificObedienceCaydenCailean.Name";
+        private const string CaydenCaileanDescription = "DeificObedienceCaydenCailean.Description";
+        public static BlueprintFeature CaydenCaileanFeat()
+        {
+            var icon = FeatureRefs.CaydenCaileanFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(CaydenCailean, CaydenCaileanGuid)
+              .SetDisplayName(CaydenCaileanDisplayName)
+              .SetDescription(CaydenCaileanDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.CaydenCaileanFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.ChaoticGood, group: Prerequisite.GroupType.Any)
+              .AddToIsPrerequisiteFor(CaydenCaileanSentinelFeat())
+              .AddSavingThrowBonusAgainstDescriptor(modifierDescriptor: ModifierDescriptor.Sacred, spellDescriptor: SpellDescriptor.Poison, value: 4)
+              .Configure();
+        }
+
+        private const string CaydenCaileanSentinel = "DeificObedience.CaydenCaileanSentinel";
+        public static readonly string CaydenCaileanSentinelGuid = "{C74FB971-14EA-405A-9033-4722F8BFAFBC}";
+
+        internal const string CaydenCaileanSentinelDisplayName = "DeificObedienceCaydenCaileanSentinel.Name";
+        private const string CaydenCaileanSentinelDescription = "DeificObedienceCaydenCaileanSentinel.Description";
+        public static BlueprintProgression CaydenCaileanSentinelFeat()
+        {
+            var icon = FeatureRefs.CaydenCaileanFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(CaydenCaileanSentinel, CaydenCaileanSentinelGuid)
+              .SetDisplayName(CaydenCaileanSentinelDisplayName)
+              .SetDescription(CaydenCaileanSentinelDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(CaydenCaileanGuid)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(12, CreateCaydenCailean1())
+              .AddToLevelEntry(16, CaydenCailean2Feat())
+              .AddToLevelEntry(20, CaydenCailean3Feat())
+              .Configure();
+        }
+
+        private const string CaydenCailean1 = "SpellPower.CaydenCailean1";
+        public static readonly string CaydenCailean1Guid = "{5FCD24A0-2352-4084-85B5-4F90C0A7D7D4}";
+        internal const string CaydenCailean1DisplayName = "SpellPowerCaydenCailean1.Name";
+        private const string CaydenCailean1Description = "SpellPowerCaydenCailean1.Description";
+
+        private const string CaydenCailean1Ablity2 = "SpellPower.UseCaydenCailean12";
+        private static readonly string CaydenCailean1Ablity2Guid = "{7B2A9FC5-1811-4E2C-8AA8-42C5BC30CCCF}";
+        private static BlueprintFeature CreateCaydenCailean1()
+        {
+            var icon = FeatureRefs.DuelistGrace.Reference.Get().Icon;
+
+            var ability2 = AbilityConfigurator.New(CaydenCailean1Ablity2, CaydenCailean1Ablity2Guid)
+                .CopyFrom(
+                AbilityRefs.DelayPoison,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(ContextRankConfig),
+                typeof(AbilitySpawnFx))
+                .AddPretendSpellLevel(spellLevel: 2)
+                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(CaydenCailean1, CaydenCailean1Guid)
+              .SetDisplayName(CaydenCailean1DisplayName)
+              .SetDescription(CaydenCailean1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { Ragathiel1AblityGuid, ability2, Falayna1Ablity3Guid })
+              .Configure();
+        }
+
+        private const string CaydenCailean2 = "DeificObedience.CaydenCailean2";
+        public static readonly string CaydenCailean2Guid = "{0DA54EE5-B9B3-40D4-B081-8B9DF62389E2}";
+
+        internal const string CaydenCailean2DisplayName = "DeificObedienceCaydenCailean2.Name";
+        private const string CaydenCailean2Description = "DeificObedienceCaydenCailean2.Description";
+
+        public static BlueprintFeature CaydenCailean2Feat()
+        {
+            var icon = FeatureRefs.StunningFistSickenedFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(CaydenCailean2, CaydenCailean2Guid)
+              .SetDisplayName(CaydenCailean2DisplayName)
+              .SetDescription(CaydenCailean2Description)
+              .SetIcon(icon)
+              
+              .Configure();
+        }
+
+        private const string CaydenCailean3 = "DeificObedience.CaydenCailean3";
+        public static readonly string CaydenCailean3Guid = "{EF71C768-795A-4B5D-B237-E45BBDC4C5DA}";
+
+        internal const string CaydenCailean3DisplayName = "DeificObedienceCaydenCailean3.Name";
+        private const string CaydenCailean3Description = "DeificObedienceCaydenCailean3.Description";
+        public static BlueprintFeature CaydenCailean3Feat()
+        {
+            var icon = AbilityRefs.TricksterTrickFate.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(CaydenCailean3, CaydenCailean3Guid)
+              .SetDisplayName(CaydenCailean3DisplayName)
+              .SetDescription(CaydenCailean3Description)
+              .SetIcon(icon)
+              
+              .Configure();
+        }
     }
 }
