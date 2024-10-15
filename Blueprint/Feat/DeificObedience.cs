@@ -72,6 +72,8 @@ using Kingmaker.UnitLogic.Abilities.Components.AreaEffects;
 using PrestigePlus.Feats;
 using BlueprintCore.Utils.Assets;
 using System.Threading;
+using PrestigePlus.CustomAction;
+using System.Drawing;
 
 namespace PrestigePlus.Blueprint.Feat
 {
@@ -6166,6 +6168,141 @@ namespace PrestigePlus.Blueprint.Feat
             return FeatureConfigurator.New(Groetus3Name, Groetus3Guid)
                     .SetDisplayName(Groetus3DisplayName)
                     .SetDescription(Groetus3Description)
+                    .SetIcon(icon)
+                    .AddFacts(new() { ability })
+                    .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
+                    .Configure();
+        }
+
+        private const string Abadar = "DeificObedience.Abadar";
+        public static readonly string AbadarGuid = "{5170F48B-4BC8-49CB-9D14-83DEB885CF6A}";
+
+        internal const string AbadarDisplayName = "DeificObedienceAbadar.Name";
+        private const string AbadarDescription = "DeificObedienceAbadar.Description";
+        public static BlueprintFeature AbadarFeat()
+        {
+            var icon = FeatureRefs.AbadarFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Abadar, AbadarGuid)
+              .SetDisplayName(AbadarDisplayName)
+              .SetDescription(AbadarDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.AbadarFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.LawfulNeutral, group: Prerequisite.GroupType.Any)
+              .AddToIsPrerequisiteFor(AbadarExaltedFeat())
+              .AddSavingThrowBonusAgainstAlignment(AlignmentComponent.Chaotic, 4, ModifierDescriptor.Sacred)
+              .Configure();
+        }
+
+        private const string AbadarExalted = "DeificObedience.AbadarExalted";
+        public static readonly string AbadarExaltedGuid = "{0E5BDC97-C595-4469-8274-523ADD7514A6}";
+
+        internal const string AbadarExaltedDisplayName = "DeificObedienceAbadarExalted.Name";
+        private const string AbadarExaltedDescription = "DeificObedienceAbadarExalted.Description";
+        public static BlueprintProgression AbadarExaltedFeat()
+        {
+            var icon = FeatureRefs.AbadarFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(AbadarExalted, AbadarExaltedGuid)
+              .SetDisplayName(AbadarExaltedDisplayName)
+              .SetDescription(AbadarExaltedDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(AbadarGuid)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(12, CreateAbadar1())
+              .AddToLevelEntry(16, AbadarExalted2Feat())
+              .AddToLevelEntry(20, AbadarExalted3Feat())
+              .Configure();
+        }
+
+        private const string Abadar1 = "SpellPower.Abadar1";
+        public static readonly string Abadar1Guid = "{5684C07D-64B0-4C87-AF8B-F103135470E4}";
+        internal const string Abadar1DisplayName = "SpellPowerAbadar1.Name";
+        private const string Abadar1Description = "SpellPowerAbadar1.Description";
+
+        private const string Abadar1Ablity = "SpellPower.UseAbadar1";
+        private static readonly string Abadar1AblityGuid = "{3CDA9E14-5E97-4156-9AD0-616989B11543}";
+        private static BlueprintFeature CreateAbadar1()
+        {
+            var icon = AbilityRefs.AlignWeaponEvil.Reference.Get().Icon;
+
+            var ability = AbilityConfigurator.New(Abadar1Ablity, Abadar1AblityGuid)
+                .CopyFrom(
+                AbilityRefs.AlignWeaponEvil,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilitySpawnFx),
+                typeof(ContextRankConfig))
+                .AddPretendSpellLevel(spellLevel: 2)
+                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Abadar1, Abadar1Guid)
+              .SetDisplayName(Abadar1DisplayName)
+              .SetDescription(Abadar1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability })
+              .Configure();
+        }
+
+        private const string Abadar2 = "DeificObedience.Abadar2";
+        public static readonly string Abadar2Guid = "{361EE49D-7417-479C-A481-DEFDAE6D247E}";
+
+        internal const string Abadar2DisplayName = "DeificObedienceAbadar2.Name";
+        private const string Abadar2Description = "DeificObedienceAbadar2.Description";
+        public static BlueprintFeature AbadarExalted2Feat()
+        {
+            var icon = FeatureRefs.FavoriteTerrainUrban.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Abadar2, Abadar2Guid)
+              .SetDisplayName(Abadar2DisplayName)
+              .SetDescription(Abadar2Description)
+              .SetIcon(icon)
+              .AddFacts([FeatureRefs.FavoriteTerrainUrban.ToString()])
+              .Configure();
+        }
+
+        private static readonly string Abadar3Name = "DeificObedienceAbadar3";
+        public static readonly string Abadar3Guid = "{B8E0D51B-D698-46A0-9E3A-85FE93B780FF}";
+
+        private static readonly string Abadar3DisplayName = "DeificObedienceAbadar3.Name";
+        private static readonly string Abadar3Description = "DeificObedienceAbadar3.Description";
+
+        private const string Abadar3Ability = "DeificObedienceStyle.Abadar3Ability";
+        private static readonly string Abadar3AbilityGuid = "{FCCE6417-6826-476A-802D-115DE0586A3F}";
+
+        private const string Abadar3AbilityRes = "DeificObedienceStyle.Abadar3AbilityRes";
+        private static readonly string Abadar3AbilityResGuid = "{3170564C-50D9-410B-83B0-A1EDAD498280}";
+        public static BlueprintFeature AbadarExalted3Feat()
+        {
+            var icon = FeatureRefs.AbadarFeature.Reference.Get().Icon;
+
+            var abilityresourse = AbilityResourceConfigurator.New(Abadar3AbilityRes, Abadar3AbilityResGuid)
+                .SetMaxAmount(ResourceAmountBuilder.New(1).Build())
+                .Configure();
+
+            var ability = AbilityConfigurator.New(Abadar3Ability, Abadar3AbilityGuid)
+                .CopyFrom(
+                AbilityRefs.ChannelEnergyPaladinHeal,
+                typeof(AbilitySpawnFx))
+                .AddAbilityEffectRunAction(ActionsBuilder.New()
+                    .Add<SpendGoldHeal>(c => { c.CostMoney = false; })
+                    .Build())
+                .SetDisplayName(Abadar3DisplayName)
+                .SetDescription(Abadar3Description)
+                .SetIcon(icon)
+                .AddHideDCFromTooltip()
+                .SetIsFullRoundAction()
+                .SetRange(AbilityRange.Personal)
+                .AddAbilityTargetsAround(radius: 30.Feet(), targetType: Kingmaker.UnitLogic.Abilities.Components.TargetType.Ally)
+                .SetType(AbilityType.Supernatural)
+                .AddAbilityResourceLogic(isSpendResource: true, requiredResource: abilityresourse)
+                .Configure();
+
+            return FeatureConfigurator.New(Abadar3Name, Abadar3Guid)
+                    .SetDisplayName(Abadar3DisplayName)
+                    .SetDescription(Abadar3Description)
                     .SetIcon(icon)
                     .AddFacts(new() { ability })
                     .AddAbilityResources(resource: abilityresourse, restoreAmount: true)
