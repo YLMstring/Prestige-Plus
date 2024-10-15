@@ -161,6 +161,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(NethysFeat())
               .AddToAllFeatures(ArsheaFeat())
               .AddToAllFeatures(GroetusFeat())
+              .AddToAllFeatures(AbadarFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())

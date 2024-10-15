@@ -131,6 +131,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddToAllFeatures(DeificObedience.PharasmaExaltedGuid)
               .AddToAllFeatures(DeificObedience.NethysExaltedGuid)
               .AddToAllFeatures(DeificObedience.GroetusExaltedGuid)
+              .AddToAllFeatures(DeificObedience.AbadarExaltedGuid)
               .Configure();
         }
 
