@@ -6401,7 +6401,7 @@ namespace PrestigePlus.Blueprint.Feat
         }
 
         private const string CaydenCailean3 = "DeificObedience.CaydenCailean3";
-        public static readonly string CaydenCailean3Guid = "{EF71C768-795A-4B5D-B237-E45BBDC4C5DA}";
+        public static readonly string CaydenCailean3Guid = "{5816DC93-1D70-4429-8649-7080BAE54411}";
 
         internal const string CaydenCailean3DisplayName = "DeificObedienceCaydenCailean3.Name";
         private const string CaydenCailean3Description = "DeificObedienceCaydenCailean3.Description";
@@ -6413,7 +6413,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(CaydenCailean3DisplayName)
               .SetDescription(CaydenCailean3Description)
               .SetIcon(icon)
-              
+              .AddComponent<PPautoConfirm>()
               .Configure();
         }
     }
