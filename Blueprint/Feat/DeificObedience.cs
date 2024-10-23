@@ -6361,7 +6361,7 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string CaydenCailean1Ablity2Guid = "{7B2A9FC5-1811-4E2C-8AA8-42C5BC30CCCF}";
         private static BlueprintFeature CreateCaydenCailean1()
         {
-            var icon = FeatureRefs.DuelistGrace.Reference.Get().Icon;
+            var icon = AbilityRefs.BlessWeaponCast.Reference.Get().Icon;
 
             var ability2 = AbilityConfigurator.New(CaydenCailean1Ablity2, CaydenCailean1Ablity2Guid)
                 .CopyFrom(
@@ -6394,7 +6394,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static BlueprintFeature CaydenCailean2Feat()
         {
-            var icon = FeatureRefs.WeaponTrainingLightBlades.Reference.Get().Icon;
+            var icon = AbilityRefs.Grace.Reference.Get().Icon;
 
             var feat = FeatureConfigurator.New(CaydenCailean2Feature, CaydenCailean2FeatureGuid)
              .SetDisplayName(CaydenCailean2DisplayName)
