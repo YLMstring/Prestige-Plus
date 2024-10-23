@@ -6384,7 +6384,7 @@ namespace PrestigePlus.Blueprint.Feat
         }
 
         private const string CaydenCailean2 = "DeificObedience.CaydenCailean2";
-        public static readonly string CaydenCailean2Guid = "{0DA54EE5-B9B3-40D4-B081-8B9DF62389E2}";
+        public static readonly string CaydenCailean2Guid = "{363C4EFB-AB3E-4F13-9E07-741D67FFFB21}";
 
         private const string CaydenCailean2Feature = "DeificObedience.CaydenCailean2Feature";
         public static readonly string CaydenCailean2FeatureGuid = "{964CB5EF-E900-40F8-BDA0-54FD942493C5}";
