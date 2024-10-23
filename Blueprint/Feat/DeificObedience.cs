@@ -6385,6 +6385,9 @@ namespace PrestigePlus.Blueprint.Feat
         private const string CaydenCailean2 = "DeificObedience.CaydenCailean2";
         public static readonly string CaydenCailean2Guid = "{0DA54EE5-B9B3-40D4-B081-8B9DF62389E2}";
 
+        private const string CaydenCailean2Feature = "DeificObedience.CaydenCailean2Feature";
+        public static readonly string CaydenCailean2FeatureGuid = "{964CB5EF-E900-40F8-BDA0-54FD942493C5}";
+
         internal const string CaydenCailean2DisplayName = "DeificObedienceCaydenCailean2.Name";
         private const string CaydenCailean2Description = "DeificObedienceCaydenCailean2.Description";
 
@@ -6392,11 +6395,18 @@ namespace PrestigePlus.Blueprint.Feat
         {
             var icon = FeatureRefs.StunningFistSickenedFeature.Reference.Get().Icon;
 
+            var feat = FeatureConfigurator.New(CaydenCailean2Feature, CaydenCailean2FeatureGuid)
+             .SetDisplayName(CaydenCailean2DisplayName)
+             .SetDescription(CaydenCailean2Description)
+             .SetIcon(icon)
+             .AddStatBonus(ModifierDescriptor.Deflection, false, StatType.AC, 2)
+             .Configure();
+
             return FeatureConfigurator.New(CaydenCailean2, CaydenCailean2Guid)
               .SetDisplayName(CaydenCailean2DisplayName)
               .SetDescription(CaydenCailean2Description)
               .SetIcon(icon)
-              
+              .AddComponent<CaydenCaileanTraining>(c => { c.feat2 = feat; })
               .Configure();
         }
 
