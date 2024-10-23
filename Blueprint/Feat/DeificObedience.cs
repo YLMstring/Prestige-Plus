@@ -161,6 +161,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(NethysFeat())
               .AddToAllFeatures(ArsheaFeat())
               .AddToAllFeatures(GroetusFeat())
+              .AddToAllFeatures(CaydenCaileanFeat())
               .AddToAllFeatures(AbadarFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
@@ -6225,11 +6226,11 @@ namespace PrestigePlus.Blueprint.Feat
         private static readonly string Abadar1AblityGuid = "{3CDA9E14-5E97-4156-9AD0-616989B11543}";
         private static BlueprintFeature CreateAbadar1()
         {
-            var icon = AbilityRefs.AlignWeaponEvil.Reference.Get().Icon;
+            var icon = AbilityRefs.OrdersWrath.Reference.Get().Icon;
 
             var ability = AbilityConfigurator.New(Abadar1Ablity, Abadar1AblityGuid)
                 .CopyFrom(
-                AbilityRefs.AlignWeaponEvil,
+                AbilityRefs.AlignWeaponLawful,
                 typeof(AbilityEffectRunAction),
                 typeof(SpellComponent),
                 typeof(AbilitySpawnFx),
@@ -6254,7 +6255,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string Abadar2Description = "DeificObedienceAbadar2.Description";
         public static BlueprintFeature AbadarExalted2Feat()
         {
-            var icon = FeatureRefs.FavoriteTerrainUrban.Reference.Get().Icon;
+            var icon = AbilityRefs.ShieldOfFaith.Reference.Get().Icon;
 
             return FeatureConfigurator.New(Abadar2, Abadar2Guid)
               .SetDisplayName(Abadar2DisplayName)
@@ -6393,7 +6394,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static BlueprintFeature CaydenCailean2Feat()
         {
-            var icon = FeatureRefs.StunningFistSickenedFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.WeaponTrainingLightBlades.Reference.Get().Icon;
 
             var feat = FeatureConfigurator.New(CaydenCailean2Feature, CaydenCailean2FeatureGuid)
              .SetDisplayName(CaydenCailean2DisplayName)
