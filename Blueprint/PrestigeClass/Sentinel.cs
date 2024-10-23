@@ -119,6 +119,7 @@ namespace PrestigePlus.Blueprint.PrestigeClass
               .AddToAllFeatures(DeificObedience.NocticulaSentinelGuid)
               .AddToAllFeatures(DeificObedience.AchaekekSentinelGuid)
               .AddToAllFeatures(DeificObedience.ZonKuthonSentinelGuid)
+              .AddToAllFeatures(DeificObedience.CaydenCaileanSentinelGuid)
               .AddClassLevelsForPrerequisites(actualClass: ArchetypeGuid, fakeClass: CharacterClassRefs.FighterClass.ToString(), modifier: 1, summand: 0)
               .Configure();
         }
