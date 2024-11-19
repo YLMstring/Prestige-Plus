@@ -1856,7 +1856,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string ArazniDescription = "DeificObedienceArazni.Description";
         public static BlueprintFeature ArazniFeat()
         {
-            var icon = FeatureRefs.UrgathoaFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.GyronnaFeature.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(ArazniBuff, ArazniBuffGuid)
              .SetDisplayName(ArazniDisplayName)
@@ -1868,7 +1868,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(ArazniDisplayName)
               .SetDescription(ArazniDescription)
               .SetIcon(icon)
-              .AddPrerequisiteFeature(FeatureRefs.UrgathoaFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteFeature(FeatureRefs.GyronnaFeature.ToString(), group: Prerequisite.GroupType.Any)
               .AddPrerequisiteAlignment(AlignmentMaskType.NeutralEvil, group: Prerequisite.GroupType.Any)
               .AddToIsPrerequisiteFor(ArazniSentinelFeat())
               .AddComponent<ArazniObedience>(c => { c.buff = buff; })
@@ -1882,7 +1882,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string ArazniSentinelDescription = "DeificObedienceArazniSentinel.Description";
         public static BlueprintProgression ArazniSentinelFeat()
         {
-            var icon = FeatureRefs.UrgathoaFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.GyronnaFeature.Reference.Get().Icon;
 
             return ProgressionConfigurator.New(ArazniSentinel, ArazniSentinelGuid)
               .SetDisplayName(ArazniSentinelDisplayName)
