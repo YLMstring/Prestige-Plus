@@ -38,7 +38,9 @@
 - [Arshea](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Arshea): requires worshipping Arshea (Expanded Content) or Neutral Good
 - [Desna](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Desna): requires worshipping Desna or Chaotic Good
 - [Milani (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Milani): requires worshipping Milani (Expanded Content) or Chaotic Good
+- [Cayden Cailean (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Cayden%20Cailean): requires worshipping Cayden Cailean or Chaotic Good
 - [Pulura](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Pulura): requires worshipping Pulura or Chaotic Good
+- [Abadar (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Abadar): requires worshipping Abadar or Lawful Neutral
 - [Irori](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Irori): requires worshipping Irori or Lawful Neutral
 - [Otolmens](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Otolmens): requires worshipping Otolmens (Expanded Content) or Lawful Neutral
 - [Magdh](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Magdh): requires worshipping Magdh (Expanded Content) or Lawful Neutral
