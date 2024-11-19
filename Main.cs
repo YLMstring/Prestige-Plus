@@ -322,7 +322,7 @@ namespace PrestigePlus
             Toggle.New(GetKey("ragonury"), defaultValue: true, Helpers.CreateString("toggle-desc26", "Dragon Fury (Path of War)"))
               .ShowVisualConnection())
           .AddToggle(
-            Toggle.New(GetKey("seraph"), defaultValue: true, Helpers.CreateString("toggle-desc11", "Black Seraph Style (Path of War)"))
+            Toggle.New(GetKey("seraph"), defaultValue: false, Helpers.CreateString("toggle-desc11", "Black Seraph Style (Path of War)"))
               .ShowVisualConnection())
           .AddToggle(
             Toggle.New(GetKey("cloak"), defaultValue: true, Helpers.CreateString("toggle-desc53", "Cloak and Dagger Style"))
