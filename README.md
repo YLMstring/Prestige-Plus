@@ -60,7 +60,8 @@
 - [Achaekek (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Achaekek): requires worshipping Achaekek or Lawful Evil
 - [Mahathallah (exalted)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Mahathallah): requires worshipping Asmodeus or Lawful Evil
 - [Akuma](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Akuma): requires worshipping Asmodeus or Lawful Evil
-- [Arazni (sentinel)](https://aonprd.com/DeityDisplay.aspx?ItemName=Arazni): requires worshipping Urgathoa or Neutral Evil
+- [Arazni (sentinel)](https://aonprd.com/DeityDisplay.aspx?ItemName=Arazni): requires worshipping Gyrrona or Neutral Evil
+- [Urgathoa (sentinel)](https://aonprd.com/DeityDisplay.aspx?ItemName=Urgathoa): requires worshipping Urgathoa or Neutral Evil
 - [Charon (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Charon): requires worshipping Charon (Expanded Content) or Neutral Evil
 - [Norgorber](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Norgorber): requires worshipping Norgorber or Neutral Evil
 - [Szuriel (sentinel)](https://www.aonprd.com/DeityDisplay.aspx?ItemName=Szuriel): requires worshipping Szuriel (Expanded Content) or Neutral Evil
