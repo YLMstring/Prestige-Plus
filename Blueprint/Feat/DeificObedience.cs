@@ -6547,7 +6547,7 @@ namespace PrestigePlus.Blueprint.Feat
 
         public static BlueprintFeature Urgathoa2Feat()
         {
-            var icon = AbilityRefs.ArmySweepingBlow.Reference.Get().Icon;
+            var icon = AbilityRefs.BrokenPhylacteryBodyScytheAbility.Reference.Get().Icon;
 
             var feat = FeatureConfigurator.New(Urgathoa2Feature, Urgathoa2FeatureGuid)
              .SetDisplayName(Urgathoa2DisplayName)
