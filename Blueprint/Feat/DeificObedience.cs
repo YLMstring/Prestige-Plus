@@ -163,6 +163,7 @@ namespace PrestigePlus.Blueprint.Feat
               .AddToAllFeatures(GroetusFeat())
               .AddToAllFeatures(CaydenCaileanFeat())
               .AddToAllFeatures(AbadarFeat())
+              .AddToAllFeatures(UrgathoaFeat())
               .AddPrerequisiteNoFeature(FeatureRefs.AtheismFeature.ToString())
               .AddPrerequisiteNoFeature(DeificObedienceGuid)
               .AddPrerequisiteNoArchetype(DivineChampion.ArchetypeGuid, CharacterClassRefs.WarpriestClass.ToString())
@@ -1856,7 +1857,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string ArazniDescription = "DeificObedienceArazni.Description";
         public static BlueprintFeature ArazniFeat()
         {
-            var icon = FeatureRefs.UrgathoaFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.GyronnaFeature.Reference.Get().Icon;
 
             var buff = BuffConfigurator.New(ArazniBuff, ArazniBuffGuid)
              .SetDisplayName(ArazniDisplayName)
@@ -1868,7 +1869,7 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDisplayName(ArazniDisplayName)
               .SetDescription(ArazniDescription)
               .SetIcon(icon)
-              .AddPrerequisiteFeature(FeatureRefs.UrgathoaFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteFeature(FeatureRefs.GyronnaFeature.ToString(), group: Prerequisite.GroupType.Any)
               .AddPrerequisiteAlignment(AlignmentMaskType.NeutralEvil, group: Prerequisite.GroupType.Any)
               .AddToIsPrerequisiteFor(ArazniSentinelFeat())
               .AddComponent<ArazniObedience>(c => { c.buff = buff; })
@@ -1882,7 +1883,7 @@ namespace PrestigePlus.Blueprint.Feat
         private const string ArazniSentinelDescription = "DeificObedienceArazniSentinel.Description";
         public static BlueprintProgression ArazniSentinelFeat()
         {
-            var icon = FeatureRefs.UrgathoaFeature.Reference.Get().Icon;
+            var icon = FeatureRefs.GyronnaFeature.Reference.Get().Icon;
 
             return ProgressionConfigurator.New(ArazniSentinel, ArazniSentinelGuid)
               .SetDisplayName(ArazniSentinelDisplayName)
@@ -6425,6 +6426,169 @@ namespace PrestigePlus.Blueprint.Feat
               .SetDescription(CaydenCailean3Description)
               .SetIcon(icon)
               .AddComponent<PPautoConfirm>()
+              .Configure();
+        }
+
+        private const string Urgathoa = "DeificObedience.Urgathoa";
+        public static readonly string UrgathoaGuid = "{B274E7C9-3F7C-4895-BFFF-FFCA47AC8E7E}";
+
+        internal const string UrgathoaDisplayName = "DeificObedienceUrgathoa.Name";
+        private const string UrgathoaDescription = "DeificObedienceUrgathoa.Description";
+        public static BlueprintFeature UrgathoaFeat()
+        {
+            var icon = FeatureRefs.UrgathoaFeature.Reference.Get().Icon;
+
+            return FeatureConfigurator.New(Urgathoa, UrgathoaGuid)
+              .SetDisplayName(UrgathoaDisplayName)
+              .SetDescription(UrgathoaDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(FeatureRefs.UrgathoaFeature.ToString(), group: Prerequisite.GroupType.Any)
+              .AddPrerequisiteAlignment(AlignmentMaskType.NeutralEvil, group: Prerequisite.GroupType.Any)
+              .AddToIsPrerequisiteFor(UrgathoaSentinelFeat())
+              .AddIncreaseSpellSchoolCasterLevel(1, school: SpellSchool.Necromancy)
+              .Configure();
+        }
+
+        private const string UrgathoaSentinel = "DeificObedience.UrgathoaSentinel";
+        public static readonly string UrgathoaSentinelGuid = "{A1EBB99C-7F75-40AF-A901-768FE9736159}";
+
+        internal const string UrgathoaSentinelDisplayName = "DeificObedienceUrgathoaSentinel.Name";
+        private const string UrgathoaSentinelDescription = "DeificObedienceUrgathoaSentinel.Description";
+        public static BlueprintProgression UrgathoaSentinelFeat()
+        {
+            var icon = FeatureRefs.UrgathoaFeature.Reference.Get().Icon;
+
+            return ProgressionConfigurator.New(UrgathoaSentinel, UrgathoaSentinelGuid)
+              .SetDisplayName(UrgathoaSentinelDisplayName)
+              .SetDescription(UrgathoaSentinelDescription)
+              .SetIcon(icon)
+              .AddPrerequisiteFeature(UrgathoaGuid)
+              .SetGiveFeaturesForPreviousLevels(true)
+              .AddToLevelEntry(12, CreateUrgathoa1())
+              .AddToLevelEntry(16, Urgathoa2Feat())
+              .AddToLevelEntry(20, Urgathoa3Feat())
+              .Configure();
+        }
+
+        private const string Urgathoa1 = "SpellPower.Urgathoa1";
+        public static readonly string Urgathoa1Guid = "{27A7A9ED-3270-45CE-B778-B5313D8977B4}";
+        internal const string Urgathoa1DisplayName = "SpellPowerUrgathoa1.Name";
+        private const string Urgathoa1Description = "SpellPowerUrgathoa1.Description";
+
+        private const string Urgathoa1Ablity = "SpellPower.UseUrgathoa1";
+        private static readonly string Urgathoa1AblityGuid = "{11B32570-8117-4762-9CA8-46372AD68D89}";
+
+        private const string Urgathoa1Ablity2 = "SpellPower.UseUrgathoa12";
+        private static readonly string Urgathoa1Ablity2Guid = "{D7CAA417-44E3-4473-8533-46C2F1225477}";
+
+        private const string Urgathoa1Ablity3 = "SpellPower.UseUrgathoa13";
+        private static readonly string Urgathoa1Ablity3Guid = "{EC1F578D-9827-4D58-8215-28DD7C998ABC}";
+
+        private static BlueprintFeature CreateUrgathoa1()
+        {
+            var icon = AbilityRefs.NaturesExile.Reference.Get().Icon;
+
+            var ability = AbilityConfigurator.New(Urgathoa1Ablity, Urgathoa1AblityGuid)
+                .CopyFrom(
+                AbilityRefs.MagicMissile,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilityDeliverProjectile),
+                typeof(ContextRankConfig),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 1)
+                .AddAbilityResourceLogic(2, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var ability2 = AbilityConfigurator.New(Urgathoa1Ablity2, Urgathoa1Ablity2Guid)
+                .CopyFrom(
+                AbilityRefs.AcidArrow,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilityDeliverProjectile),
+                typeof(ContextRankConfig),
+                typeof(SpellDescriptorComponent))
+                .AddPretendSpellLevel(spellLevel: 2)
+                .AddAbilityResourceLogic(3, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            var ability3 = AbilityConfigurator.New(Urgathoa1Ablity3, Urgathoa1Ablity3Guid)
+                .CopyFrom(
+                AbilityRefs.Fireball,
+                typeof(AbilityEffectRunAction),
+                typeof(SpellComponent),
+                typeof(AbilityDeliverProjectile),
+                typeof(ContextRankConfig),
+                typeof(SpellDescriptorComponent),
+                typeof(AbilityTargetsAround))
+                .AddPretendSpellLevel(spellLevel: 3)
+                .AddAbilityResourceLogic(6, isSpendResource: true, requiredResource: DeificObedienceAblityResGuid)
+                .SetType(AbilityType.SpellLike)
+                .Configure();
+
+            return FeatureConfigurator.New(Urgathoa1, Urgathoa1Guid)
+              .SetDisplayName(Urgathoa1DisplayName)
+              .SetDescription(Urgathoa1Description)
+              .SetIcon(icon)
+              .AddFacts(new() { ability, ability2, ability3 })
+              .Configure();
+        }
+
+        private const string Urgathoa2 = "DeificObedience.Urgathoa2";
+        public static readonly string Urgathoa2Guid = "{D19FAF56-552D-4D39-B99D-EEEA6737BBB2}";
+
+        private const string Urgathoa2Feature = "DeificObedience.Urgathoa2Feature";
+        public static readonly string Urgathoa2FeatureGuid = "{BAEF468A-A680-429E-8D7C-BBFBB7D728B1}";
+
+        internal const string Urgathoa2DisplayName = "DeificObedienceUrgathoa2.Name";
+        private const string Urgathoa2Description = "DeificObedienceUrgathoa2.Description";
+
+        public static BlueprintFeature Urgathoa2Feat()
+        {
+            var icon = AbilityRefs.BrokenPhylacteryBodyScytheAbility.Reference.Get().Icon;
+
+            var feat = FeatureConfigurator.New(Urgathoa2Feature, Urgathoa2FeatureGuid)
+             .SetDisplayName(Urgathoa2DisplayName)
+             .SetDescription(Urgathoa2Description)
+             .SetIcon(icon)
+             .AddWeaponCategoryAttackBonus(1, WeaponCategory.Scythe)
+             .AddWeaponTypeDamageBonus(1, WeaponTypeRefs.Scythe.ToString())
+             .Configure();
+
+            return FeatureConfigurator.New(Urgathoa2, Urgathoa2Guid)
+              .SetDisplayName(Urgathoa2DisplayName)
+              .SetDescription(Urgathoa2Description)
+              .SetIcon(icon)
+              .AddComponent<UrgathoaTraining>(c => { c.feat2 = feat; })
+              .Configure();
+        }
+
+        private const string Urgathoa3 = "DeificObedience.Urgathoa3";
+        public static readonly string Urgathoa3Guid = "{2298F55A-A93B-4273-BDCE-5C39E17D5D9E}";
+
+        private const string Urgathoa3Feature = "DeificObedience.Urgathoa3Feature";
+        public static readonly string Urgathoa3FeatureGuid = "{0A5DB8B8-8175-40B3-B1AA-FC705479B63C}";
+
+        internal const string Urgathoa3DisplayName = "DeificObedienceUrgathoa3.Name";
+        private const string Urgathoa3Description = "DeificObedienceUrgathoa3.Description";
+        public static BlueprintFeature Urgathoa3Feat()
+        {
+            var icon = AbilityRefs.AnimateDead.Reference.Get().Icon;
+
+            var feat = FeatureConfigurator.New(Urgathoa3Feature, Urgathoa3FeatureGuid)
+             .SetDisplayName(Urgathoa3DisplayName)
+             .SetDescription(Urgathoa3Description)
+             .SetIcon(icon)
+             .AddSavingThrowBonusAgainstFact(checkedFact: FeatureRefs.UndeadType.ToString(), descriptor: ModifierDescriptor.Profane, value: 2)
+             .Configure();
+
+            return FeatureConfigurator.New(Urgathoa3, Urgathoa3Guid)
+              .SetDisplayName(Urgathoa3DisplayName)
+              .SetDescription(Urgathoa3Description)
+              .SetIcon(icon)
+              .AddComponent<UrgathoaBraveTraining>(c => { c.feat2 = feat; })
               .Configure();
         }
     }
