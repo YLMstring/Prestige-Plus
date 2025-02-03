@@ -6494,7 +6494,7 @@
   {
     "Key": "SpellPowerRagathiel1.Description",
     "enGB": "bless weapon 3/day, litany of righteousness 2/day, or magic vestment 1/day",
-    "ruRU": "Вы получаете псевдозаклинания: Благословенное оружие 3/день, Литания праведности 2/день, Магическое облачение 1/день.",
+    "ruRU": "Вы можете сотворять следующие псевдозаклинания: Благословенное оружие 3/день, Литания праведности 2/день или Магическое облачение 1/день.",
     "zhCN": "祝福武器3次/天，正义祷言2次/天，或魔化防具1次/天"
   },
   {
@@ -7040,7 +7040,7 @@
   {
     "Key": "SpellPowerShelynSentinel1.Description",
     "enGB": "entangle 3/day, cat’s grace 2/ day, or haste 1/day",
-    "ruRU": "Вы получаете псевдозаклинания: Опутывание 3/день, Кошачья грация 2/день, Ускорение 1/день.",
+    "ruRU": "Вы можете сотворять следующие псевдозаклинания: Опутывание 3/день, Кошачья грация 2/день или Ускорение 1/день.",
     "zhCN": "纠缠术 3次/日，猫之优雅 2次/日，或加速术 1次/日"
   },
   {
@@ -7508,7 +7508,7 @@
   {
     "Key": "SpellPowerNaderi1.Description",
     "enGB": "castigate 2/day",
-    "ruRU": "Вы получаете псевдозаклинание: Осуждение 2/день.",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Осуждение 2/день.",
     "zhCN": "严加斥责 2/天"
   },
   {
@@ -7560,7 +7560,7 @@
   {
     "Key": "SpellPowerDesna1.Description",
     "enGB": "longstrider 3/day",
-    "ruRU": "Вы получаете псевдозаклинание: Скороход 3/день.",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Скороход 3/день.",
     "zhCN": "大步奔行 3/天"
   },
   {
@@ -7612,7 +7612,7 @@
   {
     "Key": "SpellPowerErastil1.Description",
     "enGB": "cure light wounds 3/day, shield other 2/day, or prayer 1/day",
-    "ruRU": "Вы получаете псевдозаклинания: Исцеление легких ранений 3/день, Защитить других 2/день, Молебен 1/день.",
+    "ruRU": "Вы можете сотворять следующие псевдозаклинания: Исцеление легких ранений 3/день, Защитить других 2/день или Молебен 1/день.",
     "zhCN": "治疗轻伤 3次/日，护卫他人 2次/日，或祈祷术 1次/日"
   },
   {
@@ -7703,7 +7703,7 @@
   {
     "Key": "SpellPowerGorum1.Description",
     "enGB": "enlarge person 3/day, bull’s strength 2/day, or beast shape I 1/day",
-    "ruRU": "Вы получаете псевдозаклинания: Увеличение гуманоида 3/день, Бычья сила 2/день, Облик зверя I 1/день.",
+    "ruRU": "Вы можете сотворять следующие псевдозаклинания: Увеличение гуманоида 3/день, Бычья сила 2/день или Облик зверя I 1/день.",
     "zhCN": "变巨术 3次/日，牛之蛮力 2次/日，或野兽形态Ⅰ 1次/日"
   },
   {
@@ -8015,7 +8015,7 @@
   {
     "Key": "SpellPowerMahathallahExalted1.Description",
     "enGB": "invisibility 2/day",
-    "ruRU": "Вы получаете псевдозаклинание: Невидимость 2/день.",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Невидимость 2/день.",
     "zhCN": "隐形术2次/天"
   },
   {
@@ -8262,7 +8262,7 @@
   {
     "Key": "SpellPowerNorgorber1.Description",
     "enGB": "poison 1/day",
-    "ruRU": "Вы получаете псевдозаклинание: Яд 1/день.",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Яд 1/день.",
     "zhCN": "毒击术 1次/日"
   },
   {
@@ -8340,7 +8340,7 @@
   {
     "Key": "SpellPowerLamashtu1.Description",
     "enGB": "cause fear 3/day, mortal terror 2/day, or fear 1/day",
-    "ruRU": "Вы получаете псевдозаклинания Устрашение 3/день, Смертный ужас 2/день, Ужас 1/день.",
+    "ruRU": "Вы можете сотворять следующие псевдозаклинания Устрашение 3/день, Смертный ужас 2/день или Ужас 1/день.",
     "zhCN": "惊恐术 3次/日，惧死术 2次/日，或恐惧术 1次/日"
   },
   {
@@ -8392,7 +8392,7 @@
   {
     "Key": "SpellPowerOtolmens1.Description",
     "enGB": "blink 1/day",
-    "ruRU": "Вы получаете псевдозаклинание: Мерцание 1/день.",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Мерцание 1/день.",
     "zhCN": "移位术 1次/日"
   },
   {
@@ -8639,7 +8639,7 @@
   {
     "Key": "SpellPowerArazni1.Description",
     "enGB": "divine favor 3/day, effortless armor 2/day, or rage 1/day",
-    "ruRU": "Вы получаете псевдозаклинания: Милость божества 3/день, Невесомая броня 2/день, Ярость 1/день.",
+    "ruRU": "Вы можете сотворять следующие псевдозаклинания: Милость божества 3/день, Невесомая броня 2/день или Ярость 1/день.",
     "zhCN": "神恩术3/天，重甲轻装2/天，或狂暴术1/天"
   },
   {
@@ -8704,7 +8704,7 @@
   {
     "Key": "SpellPowerCharon1.Description",
     "enGB": "summon monster I 3/day",
-    "ruRU": "Вы получаете псевдозаклинание: Призыв чудовища I 3/день.",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Призыв чудовища I 3/день.",
     "zhCN": "召唤怪物1级，3次/天"
   },
   {
@@ -9406,7 +9406,7 @@
   {
     "Key": "SpellPowerIomedae1.Description",
     "enGB": "bless weapon 3/day, bull’s strength 2/day, or magic vestment 1/day",
-    "ruRU": "Вы получаете псевдозаклинания: Благословение оружия 3/день, Бычья сила 2/день, Магическое облачение 1/день.",
+    "ruRU": "Вы можете сотворять следующие псевдозаклинания: Благословение оружия 3/день, Бычья сила 2/день или Магическое облачение 1/день.",
     "zhCN": "祝福武器 3次/日，牛之蛮力 2次/日，或魔化防具 1次/日"
   },
   {
@@ -9471,7 +9471,7 @@
   {
     "Key": "SpellPowerMilani1.Description",
     "enGB": "protection from evil 3/day, shield other 2/day, or magic vestment 1/day",
-    "ruRU": "Вы получаете псевдозаклинания: Защита от зла 3/день, Защитить других 2/день, Магическое облачение 1/день.",
+    "ruRU": "Вы можете сотворять следующие псевдозаклинания: Защита от зла 3/день, Защитить других 2/день или Магическое облачение 1/день.",
     "zhCN": "防护邪恶 3次/日，护卫他人 2次/日，或魔化防具 1次/日"
   },
   {
@@ -9536,7 +9536,7 @@
   {
     "Key": "SpellPowerNivi1.Description",
     "enGB": "bless 3/day, shield other 2/day, or heroism 1/day",
-    "ruRU": "Вы получаете псевдозаклинания: Благословение 3/день, Защитить других 2/день, Героизм 1/день.",
+    "ruRU": "Вы можете сотворять следующие псевдозаклинания: Благословение 3/день, Защитить других 2/день или Героизм 1/день.",
     "zhCN": "祝福术 3次/日，护卫他人 2次/日，或英雄气概 1次/日"
   },
   {
@@ -9770,7 +9770,7 @@
   {
     "Key": "SpellPowerKabriri1.Description",
     "enGB": "ghoul touch 2/day",
-    "ruRU": "Вы получаете псевдозаклинание: Прикосновение гуля 2/день.",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Прикосновение гуля 2/день.",
     "zhCN": "食尸鬼之触 2次/天"
   },
   {
@@ -9835,7 +9835,7 @@
   {
     "Key": "SpellPowerSocothbenoth1.Description",
     "enGB": "command 3/day, mirror image 2/day, or heroism 1/day",
-    "ruRU": "Вы получаете псевдозаклинания: Команда 3/день, Зеркальное отражение 2/день, Героизм 1/день.",
+    "ruRU": "Вы можете сотворять следующие псевдозаклинания: Команда 3/день, Зеркальное отражение 2/день или Героизм 1/день.",
     "zhCN": "命令术 3次/天，镜影术 2次/天，或英雄气概 1次/天"
   },
   {
@@ -9887,7 +9887,7 @@
   {
     "Key": "SpellPowerFalayna1.Description",
     "enGB": "divine favor 3/day, bone fists 2/day, or greater magic weapon 1/day",
-    "ruRU": "Вы получаете псевдозаклинания: Милость божества 3/день, Костяные кулаки 2/день, Магическое оружие, высшее 1/день.",
+    "ruRU": "Вы можете сотворять следующие псевдозаклинания: Милость божества 3/день, Костяные кулаки 2/день или Магическое оружие, высшее 1/день.",
     "zhCN": "神恩术 3次/天，骨拳术 2次/天，或高等魔化武器 1次/天"
   },
   {
@@ -10955,7 +10955,7 @@
   {
     "Key": "SpellPowerChaldira1.Description",
     "enGB": "blink 1/day",
-    "ruRU": "Вы получаете псевдозаклинание: Мерцание 1/день.",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Мерцание 1/день.",
     "zhCN": "移位术 1次/天"
   },
   {
@@ -11007,7 +11007,7 @@
   {
     "Key": "SpellPowerPulura1.Description",
     "enGB": "color spray 3/day",
-    "ruRU": "Вы получаете псевдозаклинание: Цветные брызги 3/день.",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Цветные брызги 3/день.",
     "zhCN": "七彩喷射 3次/天"
   },
   {
@@ -11059,7 +11059,7 @@
   {
     "Key": "SpellPowerRovagug1.Description",
     "enGB": "align weapon (evil only) 2/day",
-    "ruRU": "Вы получаете псевдозаклинание: Настройка оружия (только злое) 2/день",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Настройка оружия (только злое) 2/день",
     "zhCN": "阵营武器（仅限邪恶） 2次/日"
   },
   {
@@ -11384,7 +11384,7 @@
   {
     "Key": "SpellPowerLanternKing1.Description",
     "enGB": "hideous laughter 2/day",
-    "ruRU": "Вы получаете псевдозаклинание: Безудержный смех 2/день.",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Безудержный смех 2/день.",
     "zhCN": "狂笑术 2次/日"
   },
   {
@@ -11449,7 +11449,7 @@
   {
     "Key": "SpellPowerGozreh1.Description",
     "enGB": "entangle 3/day",
-    "ruRU": "Вы получаете псевдозаклинание: Опутывание 3/день.",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Опутывание 3/день.",
     "zhCN": "纠缠术 3次/日"
   },
   {
@@ -11514,7 +11514,7 @@
   {
     "Key": "SpellPowerCalistria1.Description",
     "enGB": "eagle’s splendor 2/day",
-    "ruRU": "Вы получаете псевдозаклинание: Орлиное великолепие 2/день.",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Орлиное великолепие 2/день.",
     "zhCN": "鹰之威仪 2次/日"
   },
   {
@@ -12125,7 +12125,7 @@
   {
     "Key": "SpellPowerMrtyu1.Description",
     "enGB": " remove fear 3/day, aid 2/day, or remove blindness 1/day",
-    "ruRU": "Вы получаете псевдозаклинания: Снятие страха 3/день, Помощь 2/день, Снятие слепоты 1/день.",
+    "ruRU": "Вы можете сотворять следующие псевдозаклинания: Снятие страха 3/день, Помощь 2/день или Снятие слепоты 1/день.",
     "zhCN": "移除恐惧 3次/天，援助术 2次/天，移除目盲 1次/天"
   },
   {
@@ -12177,7 +12177,7 @@
   {
     "Key": "SpellPowerMephistopheles1.Description",
     "enGB": "litany of eloquence 2/day",
-    "ruRU": "Вы получаете псевдозаклинание: Литания красноречия 2/день.",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Литания красноречия 2/день.",
     "zhCN": "妙语祷言 2次/天"
   },
   {
@@ -12281,7 +12281,7 @@
   {
     "Key": "SpellPowerNocticula1.Description",
     "enGB": "true strike 3/day, cat’s grace 2/day, or vampiric touch 1/day",
-    "ruRU": "Вы получаете псевдозаклинания: Верный удар 3/день, Кошачья грация 2/день, Вампирское прикосновение 1/день.",
+    "ruRU": "Вы можете сотворять следующие псевдозаклинания: Верный удар 3/день, Кошачья грация 2/день или Вампирское прикосновение 1/день.",
     "zhCN": "克敌机先 3次/天，猫之优雅 2次/天，吸血鬼之触 1次/天"
   },
   {
@@ -12762,7 +12762,7 @@
   {
     "Key": "SpellPowerAchaekek1.Description",
     "enGB": "lead blades 3/day",
-    "ruRU": "Вы получаете псевдозаклинание: Свинцовые клинки 3/день.",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Свинцовые клинки 3/день.",
     "zhCN": "重压之刃 3次/日"
   },
   {
@@ -12814,7 +12814,7 @@
   {
     "Key": "SpellPowerIrori1.Description",
     "enGB": "fox’s cunning 2/day",
-    "ruRU": "Вы получаете псевдозаклинание: Лисья хитрость 2/день.",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Лисья хитрость 2/день.",
     "zhCN": "狐之狡黠 2次/日"
   },
   {
@@ -14595,7 +14595,7 @@
   {
     "Key": "SpellPowerAkuma1.Description",
     "enGB": "bear’s endurance 2/day",
-    "ruRU": "Вы получаете псевдозаклинание: Медвежья стойкость 2/день.",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Медвежья стойкость 2/день.",
     "zhCN": "熊之坚韧 2次/天"
   },
   {
@@ -14608,7 +14608,7 @@
   {
     "Key": "SpellPowerAkuma2.Description",
     "enGB": "divine power 2/day",
-    "ruRU": "Вы получаете псевдозаклинание: Божественная мощь 2/день.",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Божественная мощь 2/день.",
     "zhCN": "神能 2次/天"
   },
   {
@@ -14621,7 +14621,7 @@
   {
     "Key": "SpellPowerAkuma3.Description",
     "enGB": "transformation 2/day",
-    "ruRU": "Вы получаете псевдозаклинание: Трансформация 2/день.",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Трансформация 2/день.",
     "zhCN": "战法转换 2次/天"
   },
   {
@@ -14660,7 +14660,7 @@
   {
     "Key": "SpellPowerPharasmaExalted1.Description",
     "enGB": "hold person 1/day",
-    "ruRU": "Вы получаете псевдозаклинание: Обездвижить гуманоида 1/день.",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Обездвижить гуманоида 1/день.",
     "zhCN": "人类定身术 1次/天"
   },
   {
@@ -14725,7 +14725,7 @@
   {
     "Key": "SpellPowerZonKuthonSentinel1.Description",
     "enGB": "vampiric touch 1/day",
-    "ruRU": "Вы получаете псевдозаклинание: Вампирское прикосновение 1/день.",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Вампирское прикосновение 1/день.",
     "zhCN": "吸血鬼之触1次/天"
   },
   {
@@ -14777,7 +14777,7 @@
   {
     "Key": "SpellPowerMagdh1.Description",
     "enGB": "see invisibility 2/day",
-    "ruRU": "Вы получаете псевдозаклинание: Увидеть невидимое 2/день.",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Увидеть невидимое 2/день.",
     "zhCN": "识破隐形 2次/日"
   },
   {
@@ -14868,7 +14868,7 @@
   {
     "Key": "SpellPowerNethys1.Description",
     "enGB": "mage armor 3/day",
-    "ruRU": "Вы получаете псевдозаклинание: Магический доспех 3/день.",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Магический доспех 3/день.",
     "zhCN": "法师护甲 3次/日"
   },
   {
@@ -14920,7 +14920,7 @@
   {
     "Key": "SpellPowerSeramaydiel1.Description",
     "enGB": "purging finale 1/day",
-    "ruRU": "Вы получаете псевдозаклинание: Очищающий финал 1/день.",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Очищающий финал 1/день.",
     "zhCN": "净化谢幕曲 1次/日"
   },
   {
@@ -14985,7 +14985,7 @@
   {
     "Key": "SpellPowerGroetus1.Description",
     "enGB": "confusion 1/day",
-    "ruRU": "Вы получаете псевдозаклинание: Замешательство 1/день.",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Замешательство 1/день.",
     "zhCN": "困惑术 1次/天"
   },
   {
@@ -15037,7 +15037,7 @@
   {
     "Key": "SpellPowerArshea1.Description",
     "enGB": "mirror image 2/day",
-    "ruRU": "Вы получаете псевдозаклинание: Зеркальное отражение 2/день.",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Зеркальное отражение 2/день.",
     "zhCN": "镜像术 2次/天"
   },
   {
@@ -15102,7 +15102,7 @@
   {
     "Key": "SpellPowerAbadar1.Description",
     "enGB": "align weapon (lawful only) 2/day",
-    "ruRU": "Вы получаете псевдозаклинание: Настройка оружия (только законопослушное) 2/день",
+    "ruRU": "Вы можете сотворять следующее псевдозаклинание: Настройка оружия (только законопослушное) 2/день",
     "zhCN": "阵营武器（仅守序）2次/日"
   },
   {
@@ -15167,7 +15167,7 @@
   {
     "Key": "SpellPowerCaydenCailean1.Description",
     "enGB": "bless weapon 3/day,delay poison 2/day, or greater magic weapon 1/day",
-    "ruRU": "Вы получаете псевдозаклинания: Благословение оружия 3/день, Приостановка действия яда 2/день и Магическое оружие, высшее 1/день.",
+    "ruRU": "Вы можете сотворять следующие псевдозаклинания: Благословение оружия 3/день, Приостановка действия яда 2/день или Магическое оружие, высшее 1/день.",
     "zhCN": "祝福武器 3次/日，延缓毒发 2次/日，或高等魔化武器 1次/日"
   },
   {
@@ -15200,55 +15200,65 @@
     "Key": "DeificObedienceUrgathoa.Name",
     "ProcessTemplates": false,
     "enGB": "Urgathoa Obedience",
+    "ruRU": "Послушание Ургатоа",
     "zhCN": "乌伽娑婀仪典"
   },
   {
     "Key": "DeificObedienceUrgathoa.Description",
     "enGB": "Cover a table (or suitable flat surface) with a black velvet cloth and spread a feast atop it. If you are in the wilderness or another area where fine food is not readily available, load the table with the best quality food you can find in whatever amount you have. Eat to the point of painful fullness, sipping wine between dishes and reciting a prayer to Urgathoa. At the end of the hour, consume a piece of rotten fruit, rancid meat, moldy cheese, or other spoiled bit of food. Trust in Urgathoa to protect you from any sickness or disease that might follow. Treat your caster level as 1 higher when casting necromancy spells.",
+    "ruRU": "Накройте стол (или подходящую ровную поверхность) черной бархатной скатертью и устройте на нем пиршество. Если вы находитесь в пустыне или в другой местности, где нет доступа к изысканной пище, накройте стол самой качественной едой, которую сможете найти, в любом количестве, которое у вас есть. Ешьте до болезненной сытости, потягивая вино между блюдами и читая молитву Ургатоа. В конце часа съешьте кусочек гнилого фрукта, прогорклое мясо, заплесневелый сыр или другую испорченную пищу. Поверьте, что Ургатоа защитит вас от любого недомогания или болезни, которые могут последовать за этим. Уровень заклинателя ваших заклинаний некромантии увеличивается на 1.",
     "zhCN": "将黑天鹅绒盖在桌面上（或者其他合适的平面上），之后摆上一桌丰盛的宴席大快朵颐。若你身处荒野之中或者其他难以寻找食物的地区，那么无论你能搜集到多少食物，都要把手头最好的食物全部摆到桌上。狂吃猛吞直到胃胀腹痛为止，在进餐的期间小口饮用红酒，与此同时向乌伽娑婀诵读祷言。在这个小时的最后时刻，吃下一片腐烂的水果、发臭的肉片、生霉的奶酪或者其他腐败的食物。相信厄加图娅会庇佑你免受可能发生的呕吐与疾病之苦。当你施放死灵系法术时，将你的施法者等级视为比通常高1级。"
   },
   {
     "Key": "DeificObedienceUrgathoaSentinel.Name",
     "ProcessTemplates": false,
     "enGB": "Urgathoa (Sentinel)",
+    "ruRU": "Ургатоа (часовой)",
     "zhCN": "乌伽娑婀（信仰哨卫）"
   },
   {
     "Key": "DeificObedienceUrgathoaSentinel.Description",
     "enGB": "Become an sentinel to gain access to his boons, which will be granted at certain character or class levels.",
+    "ruRU": "Вы должны стать часовым этого божества, чтобы получить доступ к ее дарам.",
     "zhCN": "成为信仰哨卫来获取她的神恩资格，你会在合适的角色或职业等级得到神恩。"
   },
   {
     "Key": "SpellPowerUrgathoa1.Name",
     "ProcessTemplates": false,
     "enGB": "Glutton for Slaughter",
+    "ruRU": "Жажда бойни",
     "zhCN": "杀光吃尽"
   },
   {
     "Key": "SpellPowerUrgathoa1.Description",
     "enGB": "magic missile 3/day, acid arrow 2/day, or fireball 1/day",
+    "ruRU": "Вы можете сотворять следующие псевдозаклинания: Волшебная стрела 3/день, Кислотная стрела 2/день или Огненный шар 1/день.",
     "zhCN": "魔法飞弹 3次/日，强酸箭 2次/日，或火球术 1次/日"
   },
   {
     "Key": "DeificObedienceUrgathoa2.Name",
     "ProcessTemplates": false,
     "enGB": "Scythe Wielder",
+    "ruRU": "Владеющий косой",
     "zhCN": "巨镰使"
   },
   {
     "Key": "DeificObedienceUrgathoa2.Description",
     "enGB": "You have trained extensively with Urgathoa’s deadly favored weapon and with many related weapons, and you wield them with the skill of the Pallid Princess’s most favored undead champions. If you selected the heavy blades group for your weapon training class feature, increase your attack and damage bonuses with heavy blades by 1. If you don’t have the weapon training class feature, you instead gain a +1 bonus on attack and damage rolls with the scythe only.",
+    "ruRU": "Вы много тренировались со смертоносным любимым оружием Ургатоа и многими родственными видами оружия, и владеете им с мастерством самых любимых чемпионов нежити Бледной принцессы. Если у вас есть классовая способность Мастерство владения оружием (тяжелые клинки), то вы получаете бонус +1 к броскам на попадание и урон тяжелыми клинками. Если у вас нет этой способности, то этот бонус распространяется только на косы.",
     "zhCN": "通过长期大量的训练，你已经精通了乌伽娑婀那致命的偏好武器以及相关的兵刃，你运用这些武器的技巧堪比她最强大的不死勇士。若你的武器训练职业能力选择为重刃武器组，那么你的重刃攻击和伤害加值增加1点。若你不具有武器训练职业能力，则仅会在使用巨镰时的攻击和伤害检定中获得+1加值作为替代。"
   },
   {
     "Key": "DeificObedienceUrgathoa3.Name",
     "ProcessTemplates": false,
     "enGB": "Fearless in the Face of Undeath",
+    "ruRU": "Бесстрашный перед лицом Нежизни",
     "zhCN": "直面亡者"
   },
   {
     "Key": "DeificObedienceUrgathoa3.Description",
     "enGB": "You have spent too much time among the unliving to be taken in by their tricks and abilities, and you are proof against many of their powers. Increase your bravery saving throw bonus by 1. This bonus now applies to saving throws against any spells and effects generated by undead creatures, as well as against fear effects. The bonus also applies to nonmagical effects generated by undead creatures, such as a deathweb’s poison. If you don’t have the bravery class feature, you instead gain a +2 profane bonus on saving throws against spells and effects generated by undead.",
+    "ruRU": "Вы провели слишком много времени среди нежити, чтобы попадаться на их уловки и способности, и вы защищены от многих из их сил. Ваш бонус от способности воина Храбрость увеличивается на 1. Также теперь бонус от этой способности, в дополнение к эффектам страха также применяется против всех заклинаний и эффектов сотворенных нежитью. Этот бонус также применяется ко всем немагическим эффектам сотворенным нежитью, таким как яд смертопряда. Если у вас нет классовой способности Храбрость, то вместо этого вы получаете нечестивый бонус +2 к спасброскам против заклинаний и эффектов сотворенных нежитью.",
     "zhCN": "你长时间与亡灵同行，因此亡灵的诡计和能力已经很难对你生效了。将你的无畏职业能力提供的豁免检定加值增加1点。无畏提供的豁免检定加值现在适用于由不死生物施放的任何法术或效果而进行的豁免检定，以及任何对抗恐惧效果的豁免检定。这些加值还适用于不死生物所产生的非魔法效果，比如死亡之网的毒素。若你并不具有无畏职业能力，那么你会在对抗不死生物产生的法术及效果时，豁免检定获得+2亵渎加值作为替代。"
   }
 
