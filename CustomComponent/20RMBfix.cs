@@ -28,10 +28,9 @@ namespace PrestigePlus.CustomComponent
         void IRulebookHandler<RuleSavingThrow>.OnEventDidTrigger(RuleSavingThrow evt)
         {
         }
-        public BlueprintWeaponType WeaponType;
         public void OnEventAboutToTrigger(RuleCalculateWeaponStats evt)
         {
-            if (evt.Weapon.Blueprint.Type == this.WeaponType)
+            if (evt.Weapon.Blueprint.IsMelee)
             {
                 evt.AddDamageModifier(Buffnum(), base.Fact, ModifierDescriptor.UntypedStackable);
             }
@@ -44,7 +43,7 @@ namespace PrestigePlus.CustomComponent
 
         public void OnEventAboutToTrigger(RuleCalculateAttackBonusWithoutTarget evt)
         {
-            if (evt.Weapon?.Blueprint.Type == this.WeaponType)
+            if (evt.Weapon?.Blueprint?.IsMelee == true)
             {
                 evt.AddModifier(Buffnum(), base.Fact, ModifierDescriptor.UntypedStackable);
             }

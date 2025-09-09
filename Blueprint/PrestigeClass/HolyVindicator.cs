@@ -17,6 +17,7 @@ using Kingmaker.UnitLogic.Abilities.Components;
 using Kingmaker.UnitLogic.Abilities.Components.Base;
 using Kingmaker.UnitLogic.Abilities.Components.TargetCheckers;
 using PrestigePlus.CustomAction.ClassRelated;
+using PrestigePlus.CustomComponent;
 using PrestigePlus.Modify;
 using System;
 using System.Collections.Generic;
@@ -46,6 +47,10 @@ namespace PrestigePlus.Blueprint.PrestigeClass
         private static readonly string holy = "b5daf66532f5425aa22df5372c57d766";
         public static BlueprintFeature DivineWrathFeat()
         {
+            BuffConfigurator.For("8c8cb2f8d83035e45843a88655da8321")
+                .AddComponent<_20RMBfix>(c => { c.feat = FeatureRefs.MythicInspire.Reference; })
+                .Configure();
+            
             var icon = AbilityRefs.CallLightning.Reference.Get().Icon;
 
             var ability2 = AbilityConfigurator.New(DivineWrathAblity2, DivineWrathAblity2Guid)
