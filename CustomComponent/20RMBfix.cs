@@ -18,11 +18,11 @@ using Kingmaker.Blueprints.Items.Weapons;
 
 namespace PrestigePlus.CustomComponent
 {
-    internal class _20RMBfix : UnitBuffComponentDelegate, IInitiatorRulebookHandler<RuleSavingThrow>, IRulebookHandler<RuleSavingThrow>, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleCalculateWeaponStats>, IRulebookHandler<RuleCalculateWeaponStats>, IInitiatorRulebookHandler<RuleCalculateAttackBonusWithoutTarget>, IRulebookHandler<RuleCalculateAttackBonusWithoutTarget>
+    internal class _20RMBfix : UnitBuffComponentDelegate, IInitiatorRulebookHandler<RuleSavingThrow>, IRulebookHandler<RuleSavingThrow>, IUnitSubscriber, ISubscriber, IInitiatorRulebookSubscriber, IInitiatorRulebookHandler<RuleCalculateWeaponStats>, IRulebookHandler<RuleCalculateWeaponStats>, IInitiatorRulebookHandler<RuleCalculateAttackBonusWithoutTarget>, IRulebookHandler<RuleCalculateAttackBonusWithoutTarget>
     {
         void IRulebookHandler<RuleSavingThrow>.OnEventAboutToTrigger(RuleSavingThrow evt)
         {
-            evt.AddTemporaryModifier(evt.Initiator.Stats.SaveWill.AddModifier(Buffnum(), base.Runtime, ModifierDescriptor.UntypedStackable));
+            evt.AddTemporaryModifier(evt.Initiator.Stats.SaveWill.AddModifier(Buffnum(), base.Runtime));
         }
 
         void IRulebookHandler<RuleSavingThrow>.OnEventDidTrigger(RuleSavingThrow evt)
